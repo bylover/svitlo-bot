@@ -19,6 +19,8 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
           GROUP: ${{ secrets.GROUP }}
+          WIFE_ID: ${{ secrets.WIFE_ID }}
+          WIFE_NAME: ${{ secrets.WIFE_NAME }}
           SEND_NOW: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
       - name: Save state
         run: |
