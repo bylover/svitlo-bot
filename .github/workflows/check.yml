@@ -1,5 +1,4 @@
 name: Svitlo check
-name: Svitlo check
 on:
   schedule:
     - cron: "*/10 * * * *"
