@@ -2,7 +2,14 @@
  "group": "4.1",
  "fp": {
   "2026-10-07": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 540, \"start\": 0, \"type\": \"NotPlanned\"}, {\"end\": 750, \"start\": 540, \"type\": \"Definite\"}, {\"end\": 1260, \"start\": 750, \"type\": \"NotPlanned\"}, {\"end\": 1440, \"start\": 1260, \"type\": \"Definite\"}]}",
-  "2026-10-08": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 180, \"start\": 0, \"type\": \"NotPlanned\"}, {\"end\": 390, \"start\": 180, \"type\": \"Definite\"}, {\"end\": 1080, \"start\": 390, \"type\": \"NotPlanned\"}, {\"end\": 1290, \"start\": 1080, \"type\": \"Definite\"}, {\"end\": 1440, \"start\": 1290, \"type\": \"NotPlanned\"}]}"
+  "2026-10-08": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 180, \"start\": 0, \"type\": \"NotPlanned\"}, {\"end\": 390, \"start\": 180, \"type\": \"Definite\"}, {\"end\": 1080, \"start\": 390, \"type\": \"NotPlanned\"}, {\"end\": 1290, \"start\": 1080, \"type\": \"Definite\"}, {\"end\": 1440, \"start\": 1290, \"type\": \"NotPlanned\"}]}",
+  "2026-10-09": "{\"s\": \"WaitingForSchedule\", \"slots\": []}"
  },
- "reminded": []
+ "reminded": [
+  "on|2026-10-08T06:30:00+03:00"
+ ],
+ "offset": 28760138,
+ "cmds": "",
+ "subs": "BtrTuZ4GuROyPA73y/yRhF9U",
+ "warned": "2026-10-08"
 }
