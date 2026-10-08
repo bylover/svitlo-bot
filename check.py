@@ -1944,6 +1944,11 @@ def main() -> None:
         direct_m.append((c, st.get("smm_last") or "📈 Не вдалося зібрати дайджест, спробуйте пізніше.", None))
 
     # 10) Сільпо: ср — знімок цін; чт о 13:00 — топ акцій (вам, дружині, підписникам із темою); меню — топ тижня
+    if (not SILPO_BRANCH and not (st.get("silpo_branch") or {}).get("store")
+            and st.get("silpo_probe") != today_key):
+        silpo_branch(st)                              # раз на день шукаємо фізичний магазин на Калнишевського
+        if (st.get("silpo_branch") or {}).get("store") and now.weekday() == SILPO_WEEKDAY:
+            st.pop("silpo_week", None)                # знайшли — сьогоднішню підбірку перебудуємо по ньому
     if (now.weekday() == SILPO_SNAP_WEEKDAY and now.hour >= SILPO_SNAP_HOUR
             and st.get("silpo_snap") != today_key):
         silpo_snapshot(st, now)
