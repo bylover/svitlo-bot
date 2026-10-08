@@ -67,22 +67,29 @@ KINO_WEEKDAY, YT_WEEKDAY, DIGEST_HOUR = 4, 0, 11          # пт і пн о 11:0
 GEMINI_KEY = (os.environ.get("GEMINI_KEY") or "").strip()  # безкоштовний ключ aistudio.google.com
 GEMINI_MODELS = ["gemini-flash-latest", "gemini-2.5-flash", "gemini-2.0-flash"]
 GIPHY_KEY = (os.environ.get("GIPHY_KEY") or "").strip()    # безкоштовний ключ developers.giphy.com
+SMM_WEEKDAY, SMM_HOUR = 0, 13                               # дайджест SMM і таргету: пн о 13:00
+REDDIT_ID = (os.environ.get("REDDIT_ID") or "").strip()     # Reddit script app (для «Обговорення тижня 18+»)
+REDDIT_SECRET = (os.environ.get("REDDIT_SECRET") or "").strip()
+REDDIT_USER = (os.environ.get("REDDIT_USER") or "").strip()
+REDDIT_PASS = (os.environ.get("REDDIT_PASS") or "").strip()
+REDDIT_SUBS = [x.strip() for x in (os.environ.get("REDDIT_SUBS") or "sex,sexover30").split(",") if x.strip()]
 PARA_DAYS, PARA_HOUR = (2, 4), 18                          # «Для пари»: ср і пт о 18:00
-COMMANDS = [("grafik", "💡 Графік світла"), ("pogoda", "🌤 Погода"),
-            ("kino", "🍿 Кіно на вихідні"), ("youtube", "▶️ Топ YouTube"),
-            ("para", "💞 Поради 18+"),
+COMMANDS = [("grafik", "💡 Графік світла"), ("pogoda", "🌤 Погода"), ("para", "💞 Поради 18+"),
+            ("kino", "🍿 Кіно: нова підбірка"), ("youtube", "▶️ YouTube: топ за тиждень"),
+            ("smm", "📈 SMM і таргет за тиждень"),
             ("settings", "⚙️ Налаштування сповіщень"), ("help", "ℹ️ Інструкція"),
             ("stop", "🔕 Відписатися")]
 # теми сповіщень, які підписник може вмикати/вимикати
 TOPICS = [("svitlo", f"💡 Світло · група {GROUP}"), ("pogoda", "🌤 Погода"),
-          ("kino", "🍿 Кіно"), ("yt", "▶️ YouTube"), ("para", "💞 Поради 18+")]
+          ("kino", "🍿 Кіно"), ("yt", "▶️ YouTube"), ("smm", "📈 SMM і таргет"), ("para", "💞 Поради 18+")]
 ALL_TOPICS = [t for t, _ in TOPICS]
-DEFAULT_TOPICS = [t for t in ALL_TOPICS if t != "para"]     # «Для пари» підписник вмикає сам
+DEFAULT_TOPICS = [t for t in ALL_TOPICS if t not in ("para", "smm")]   # ці теми підписник вмикає сам
 SETTINGS_TEXT = ("⚙️ <b>Налаштування сповіщень</b>\n"
                  "Натисніть, щоб увімкнути ✅ або вимкнути ⬜.\n"
                  f"💡 Світло — графік, зміни, нагадування, ранкове зведення (група {GROUP}, Мінський масив)\n"
                  "🌤 Погода — щодня о 20:00 · 🍿 Кіно — пт 11:00 · ▶️ YouTube — пн 11:00\n"
-                 "💞 Поради 18+ — ср і пт о 18:00 (за замовчуванням вимкнено)\n"
+                 "📈 SMM і таргет — дайджест тижня, пн о 13:00 · 💞 Поради 18+ — ср і пт о 18:00\n"
+                 "<i>(📈 і 💞 за замовчуванням вимкнено)</i>\n"
                  "<i>Бот відповідає із затримкою до 5–20 хв.</i>")
 HELP_TEXT = ("ℹ️ <b>ЯК КОРИСТУВАТИСЯ БОТОМ</b>\n\n"
              "<b>Що вміє бот</b>\n<blockquote>"
@@ -92,11 +99,12 @@ HELP_TEXT = ("ℹ️ <b>ЯК КОРИСТУВАТИСЯ БОТОМ</b>\n\n"
              "🌤 <b>Погода</b> — прогноз на завтра щодня о 20:00\n"
              "🍿 <b>Кіно</b> — 7 фільмів і 3 серіали на вихідні, щоп'ятниці об 11:00\n"
              "▶️ <b>YouTube</b> — топ-10 українського YouTube за тиждень, щопонеділка об 11:00\n"
-             "💞 <b>Поради 18+</b> — відверті поради й цікаві статті, ср і пт о 18:00 "
+             "📈 <b>SMM і таргет</b> — дайджест новинок і фішок за тиждень, щопонеділка о 13:00 (вмикається в /settings)\n"
+             "💞 <b>Поради 18+</b> — відверті поради, обговорення й цікаві статті, ср і пт о 18:00 "
              "(вмикається в /settings)</blockquote>\n"
              "<b>Меню</b> (кнопка зліва від поля вводу)\n<blockquote>"
-             "/grafik — графік світла зараз\n/pogoda — прогноз погоди\n/kino — нова підбірка кіно\n"
-             "/youtube — топ YouTube цього тижня\n/para — нова порада 18+\n/settings — увімкнути або вимкнути сповіщення\n"
+             "/grafik — графік світла зараз\n/pogoda — прогноз погоди\n/para — нова порада 18+\n/kino — нова підбірка кіно\n"
+             "/youtube — топ YouTube за тиждень\n/smm — SMM і таргет за тиждень\n/settings — увімкнути або вимкнути сповіщення\n"
              "/help — ця інструкція\n/stop — відписатися від усього</blockquote>\n"
              "<b>Важливо</b>\n<blockquote>"
              "• Графік — за даними сайту ДТЕК. «За графіком» не означає, що світло фактично є чи немає\n"
@@ -351,10 +359,22 @@ def send(chat_id: str, text: str, markup: dict | None = None) -> None:
         except Exception as e:                    # медіа не вдалося — надсилаємо просто текст
             print(f"Медіа ({media.get('type')}): {err_text(e)}")
             text = str(text)
-    payload = {"chat_id": chat_id, "text": text, "parse_mode": "HTML", "disable_web_page_preview": True}
+    payload = {"chat_id": chat_id, "text": str(text), "parse_mode": "HTML", "disable_web_page_preview": True}
     if markup:
         payload["reply_markup"] = markup
-    http_json(f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage", payload)
+    r = http_json(f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage", payload)
+    return (r.get("result") or {}).get("message_id") if isinstance(r, dict) else None
+
+
+class Exp(str):
+    """Повідомлення, яке бот сам видалить після expire (нагадування)."""
+    expire: str = ""
+
+
+def expiring(text: str, when_dt: datetime) -> str:
+    e = Exp(text)
+    e.expire = when_dt.isoformat()
+    return e
 
 
 def tg(method: str, payload: dict) -> None:
@@ -548,11 +568,17 @@ PARA_FALLBACK = [
 ]
 
 
-def gemini(prompt: str) -> str | None:
+def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_tokens: int = 800) -> str | None:
     if not GEMINI_KEY:
         return None
-    body = {"contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"temperature": 1.0, "maxOutputTokens": 800}}
+    cfg = {"temperature": 0.7 if json_mode else 1.0, "maxOutputTokens": max_tokens}
+    if json_mode:
+        cfg["responseMimeType"] = "application/json"
+    body = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": cfg}
+    if relaxed:                                  # відверті, але не порнографічні обговорення не блокувати
+        body["safetySettings"] = [{"category": c, "threshold": "BLOCK_ONLY_HIGH"} for c in (
+            "HARM_CATEGORY_SEXUALLY_EXPLICIT", "HARM_CATEGORY_HARASSMENT",
+            "HARM_CATEGORY_HATE_SPEECH", "HARM_CATEGORY_DANGEROUS_CONTENT")]
     for model in GEMINI_MODELS:
         try:
             r = http_json(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
@@ -638,7 +664,7 @@ def para_visual(st: dict, theme: tuple, news: list) -> dict | None:
     return None
 
 
-def build_para(st: dict, now: datetime, with_news: bool = True) -> str:
+def build_para(st: dict, now: datetime, with_news: bool = True, header: str = "💞 <b>НОВА ПОРАДА 18+</b>") -> str:
     i = st.get("para_i", 0)
     th = PARA_THEMES[i % len(PARA_THEMES)]
     theme = th[1]
@@ -662,13 +688,157 @@ def build_para(st: dict, now: datetime, with_news: bool = True) -> str:
         title, body = PARA_FALLBACK[j % len(PARA_FALLBACK)]
         st["para_fb"] = j + 1
     st["para_titles"] = (recent + [title])[-30:]
-    msg = (f"💞 <b>НОВА ПОРАДА 18+</b>\n"
+    msg = (f"{header}\n"
            f"<blockquote><b>{esc(title)}</b>\n{esc(body)}</blockquote>")
     news = para_news(st, now) if with_news else []
     if news:
         msg += "\n📰 <b>Цікаве за тиждень</b>\n" + "\n".join(
             f'• <a href="{html.escape(lk)}">{esc(t)}</a>' for t, lk in news)
     return rich(msg, para_visual(st, th, news))
+
+
+# ---------- Reddit: «Обговорення тижня 18+» (пост + 5 найкращих коментарів, переклад Gemini) ----------
+def reddit_api(url: str, token: str | None = None, form: dict | None = None) -> dict:
+    headers = {"User-Agent": f"python:svitlo-bot:1.0 (by /u/{REDDIT_USER})"}
+    data = urllib.parse.urlencode(form).encode() if form else None
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+    else:
+        headers["Authorization"] = "Basic " + base64.b64encode(f"{REDDIT_ID}:{REDDIT_SECRET}".encode()).decode()
+    req = urllib.request.Request(url, data=data, headers=headers)
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return json.load(r)
+
+
+def build_reddit(st: dict) -> str | None:
+    if not (REDDIT_ID and REDDIT_SECRET and REDDIT_USER and REDDIT_PASS and GEMINI_KEY):
+        return None
+    try:
+        tok = reddit_api("https://www.reddit.com/api/v1/access_token",
+                         form={"grant_type": "password", "username": REDDIT_USER, "password": REDDIT_PASS})["access_token"]
+        seen = set(st.get("reddit_seen", []))
+        posts = []
+        for sub in REDDIT_SUBS:
+            lst = reddit_api(f"https://oauth.reddit.com/r/{sub}/top?t=week&limit=30&raw_json=1", tok)
+            for ch in (lst.get("data") or {}).get("children", []):
+                d = ch.get("data") or {}
+                if (d.get("is_self") and not d.get("stickied") and d.get("id") not in seen
+                        and len(d.get("selftext") or "") >= 200 and (d.get("num_comments") or 0) >= 15):
+                    posts.append(d)
+        if not posts:
+            print("Reddit: немає нових постів")
+            return None
+        posts.sort(key=lambda d: (d.get("score") or 0) + 3 * (d.get("num_comments") or 0), reverse=True)
+        post = posts[0]
+        tree = reddit_api(f"https://oauth.reddit.com/r/{post['subreddit']}/comments/{post['id']}"
+                          f"?sort=top&limit=30&depth=1&raw_json=1", tok)
+        coms = [c["data"] for c in (tree[1]["data"]["children"] if len(tree) > 1 else [])
+                if c.get("kind") == "t1" and c["data"].get("author") not in ("AutoModerator", "[deleted]")
+                and len(c["data"].get("body") or "") >= 40 and c["data"].get("body") not in ("[deleted]", "[removed]")]
+        coms = sorted(coms, key=lambda c: c.get("score") or 0, reverse=True)[:5]
+    except Exception as e:
+        print(f"Reddit: {err_text(e)}")
+        return None
+    src = {"title": post["title"], "post": (post.get("selftext") or "")[:3500],
+           "comments": [(c.get("body") or "")[:1200] for c in coms]}
+    prompt = (
+        "Переклади українською обговорення з Reddit для дорослих читачів. Перекладай природно й по-людськи, "
+        "як написала б жива людина, зберігаючи зміст, інтонацію й гумор; англійський сленг передавай доречними "
+        "українськими відповідниками. Пост скороти до суті, але не сильно (до ~900 символів); кожен коментар — "
+        "до ~350 символів, зберігаючи головну думку. Без вульгарності, без анатомічних подробиць, без "
+        "особистих даних. Поверни лише JSON: {\"title\": \"...\", \"post\": \"...\", \"comments\": [\"...\"]}.\n\n"
+        + json.dumps(src, ensure_ascii=False))
+    raw = gemini(prompt, json_mode=True, relaxed=True, max_tokens=2500)
+    try:
+        tr = json.loads(raw or "")
+    except Exception:
+        print("Reddit: Gemini не повернув переклад")
+        return None
+    st["reddit_seen"] = (st.get("reddit_seen", []) + [post["id"]])[-300:]
+    url = f"https://www.reddit.com{post.get('permalink', '')}"
+    parts = [f"🔥 <b>ОБГОВОРЕННЯ ТИЖНЯ 18+</b> · r/{esc(post['subreddit'])}",
+             f"<blockquote><b>{esc(tr.get('title'))}</b>\n{esc(tr.get('post'))}</blockquote>"]
+    cm = [c for c in (tr.get("comments") or []) if c][:5]
+    if cm:
+        parts.append("💬 <b>Найкращі коментарі</b>")
+        parts += [f"<blockquote>{n}. {esc(c)}</blockquote>" for n, c in enumerate(cm, 1)]
+    parts.append(f"👍 {num(post.get('score') or 0)} · 💬 {num(post.get('num_comments') or 0)} коментарів · "
+                 f'<a href="{html.escape(url)}">оригінал</a>')
+    text = "\n".join(parts)
+    while len(text) > 4000 and len(parts) > 4:     # ліміт Telegram — прибираємо останні коментарі
+        parts.pop(-2)
+        text = "\n".join(parts)
+    return text
+
+
+# ---------- SMM і таргет: дайджест тижня (Google News + Gemini) ----------
+SMM_QUERIES = [("Instagram нова функція", "uk"), ("TikTok нова функція", "uk"), ("таргетована реклама Meta", "uk"),
+               ("Instagram new feature", "en"), ("Meta ads update", "en"), ("TikTok ads new feature", "en"),
+               ("Threads new feature", "en"), ("YouTube creators new feature", "en"),
+               ("Instagram algorithm reach", "en"), ("Facebook Reels update", "en")]
+SMM_TAGS = {"new": "🆕", "ads": "🎯", "algo": "📊", "rumor": "👀"}
+
+
+def gnews(q: str, lang: str) -> list[dict]:
+    import xml.etree.ElementTree as ET
+    loc = {"uk": ("uk", "UA", "UA:uk"), "en": ("en-US", "US", "US:en")}[lang]
+    url = "https://news.google.com/rss/search?" + urllib.parse.urlencode(
+        {"q": f"{q} when:7d", "hl": loc[0], "gl": loc[1], "ceid": loc[2]})
+    try:
+        root = ET.fromstring(http_text(url))
+    except Exception as e:
+        print(f"Google News ({q}): {e}")
+        return []
+    return [{"title": (it.findtext("title") or "").strip(), "link": it.findtext("link") or "",
+             "source": (it.findtext("source") or "").strip()} for it in root.iter("item")]
+
+
+def build_smm(st: dict, now: datetime) -> str | None:
+    seen = set(st.get("smm_links", []))
+    items, titles = [], set()
+    for q, lang in SMM_QUERIES:
+        for it in gnews(q, lang)[:8]:
+            key = it["title"].lower()[:60]
+            if it["link"] and it["title"] and it["link"] not in seen and key not in titles:
+                titles.add(key)
+                items.append(it)
+    if not items:
+        return None
+    items = items[:60]
+    label = f"{(now - timedelta(days=7)):%d.%m}–{now:%d.%m}"
+    head = f"📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · {label}\n"
+    listing = "\n".join(f"{n}. {it['title']} — {it['source']}" for n, it in enumerate(items))
+    raw = gemini("Ти — редактор щотижневого дайджесту для SMM-спеціалістів і таргетологів. Ось новини за тиждень "
+                 "(номер. заголовок — джерело). Обери 8–10 найважливіших і найсвіжіших для практиків: нові функції "
+                 "соцмереж, зміни в рекламних кабінетах і таргетингу, алгоритми й охоплення, тести й чутки. Без "
+                 "повторів однієї новини і без загальних порад. Для кожної поверни об'єкт: n (номер новини), "
+                 "tag (new|ads|algo|rumor), title (короткий заголовок українською), what (1–2 речення українською: "
+                 "що сталося), tip (1 речення: як використати на практиці). Відповідь — лише JSON-масив.\n\n"
+                 + listing, json_mode=True, max_tokens=3000)
+    blocks = []
+    try:
+        picked = [p_ for p_ in json.loads(raw or "") if str(p_.get("n", "")).isdigit() and int(p_["n"]) < len(items)]
+        if not picked:
+            raise ValueError("порожній вибір")
+        for n_, p_ in enumerate(picked[:10], 1):
+            it = items[int(p_["n"])]
+            blocks.append("<blockquote>" + f"{SMM_TAGS.get(p_.get('tag'), '🆕')} <b>{n_}. {esc(p_.get('title'))}</b>\n"
+                          f"{esc(p_.get('what'))}\n💡 {esc(p_.get('tip'))}\n"
+                          f'🔗 <a href="{html.escape(it["link"])}">{esc(it["source"] or "джерело")}</a></blockquote>')
+            st.setdefault("smm_links", []).append(it["link"])
+    except Exception:
+        print("SMM: Gemini недоступний — надсилаю заголовки без обробки")
+        for n_, it in enumerate(items[:8], 1):
+            blocks.append(f'<blockquote>🆕 <b>{n_}.</b> <a href="{html.escape(it["link"])}">{esc(it["title"])}</a></blockquote>')
+            st.setdefault("smm_links", []).append(it["link"])
+    st["smm_links"] = st.get("smm_links", [])[-500:]
+    if not blocks:
+        return None
+    text = head + "\n".join(blocks) + "\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>"
+    while len(text) > 4000 and len(blocks) > 3:
+        blocks.pop()
+        text = head + "\n".join(blocks) + "\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>"
+    return text
 
 
 # ---------- YouTube (Data API v3) ----------
@@ -1075,7 +1245,7 @@ def summary(head: str, today_d, tomorrow_d, all_off, now) -> str:
 
 def settings_markup(on: list[str]) -> dict:
     b = [{"text": f"{'✅' if t in on else '⬜'} {label}", "callback_data": f"t:{t}"} for t, label in TOPICS]
-    return {"inline_keyboard": [b[0:1], b[1:2], b[2:4], b[4:5]]}
+    return {"inline_keyboard": [b[0:1], b[1:2], b[2:4], b[4:6]]}
 
 
 # ---------- головна логіка ----------
@@ -1109,9 +1279,24 @@ def check_config() -> None:
         sys.exit("❌ Виправте секрети в Settings → Secrets and variables → Actions")
 
 
+def cleanup_expired(st: dict) -> None:
+    """Видаляємо нагадування, подія яких уже минула (Telegram дозволяє протягом 48 год)."""
+    now_ = datetime.now(TZ)
+    keep = []
+    for cid, mid, exp in st.get("to_delete", []):
+        e = datetime.fromisoformat(exp)
+        if e <= now_:
+            if now_ - e < timedelta(hours=40):
+                tg("deleteMessage", {"chat_id": cid, "message_id": mid})
+        else:
+            keep.append([cid, mid, exp])
+    st["to_delete"] = keep
+
+
 def main() -> None:
     check_config()
     st = load_state()
+    cleanup_expired(st)
     if st.get("group") != GROUP or st.get("source", "yasno") != SOURCE:
         # змінили групу або джерело — графік заново (без хибного «змінено»), підписники лишаються
         st.update(group=GROUP, fp={}, reminded=[])
@@ -1162,6 +1347,7 @@ def main() -> None:
     kino_req: list[str] = []
     yt_req: list[str] = []
     para_req: list[str] = []
+    smm_req: list[str] = []
     updates = [] if WORKER_MODE else get_updates(st.get("offset"))   # з Worker команди обробляє він
     for u in updates:
         st["offset"] = u["update_id"] + 1
@@ -1237,6 +1423,8 @@ def main() -> None:
             yt_req.append(cid)
         elif cmd in ("/para", "/пара"):
             para_req.append(cid)
+        elif cmd == "/smm":
+            smm_req.append(cid)
 
     if REQ_KINO and re.fullmatch(r"-?\d+", REQ_KINO):
         kino_req.append(REQ_KINO)
@@ -1245,6 +1433,7 @@ def main() -> None:
     kino_req += [str(c) for c in worker_req.get("kino", [])]   # запити з меню, які прийняв Worker
     yt_req += [str(c) for c in worker_req.get("yt", [])]
     para_req += [str(c) for c in worker_req.get("para", [])]
+    smm_req = list(dict.fromkeys(smm_req + [str(c) for c in worker_req.get("smm", [])]))
     kino_req, yt_req = list(dict.fromkeys(kino_req)), list(dict.fromkeys(yt_req))
     para_req = list(dict.fromkeys(para_req))
 
@@ -1361,7 +1550,7 @@ def main() -> None:
                 tail = (f"🔴 далі за графіком: {when(nxt, now)}" if nxt
                         else "🟢 далі за графіком відключень не буде")
                 text = f"💡 <b>За графіком через ~{m} хв має бути світло</b> (о <b>{b:%H:%M}</b>)\n{tail}"
-            msgs.append((text, None))
+            msgs.append((expiring(text, t + timedelta(minutes=10)), None))   # сам видалиться після події
             rem.add(k)
 
     # 5) погода на завтра щодня о WEATHER_HOUR — лише вам і дружині
@@ -1412,12 +1601,31 @@ def main() -> None:
     para_due = (now.weekday() in PARA_DAYS and PARA_HOUR <= now.hour < PARA_HOUR + 4
                 and st.get("para_sent") != today_key)
     if para_due:
-        pm = build_para(st, now)
+        pm = build_para(st, now, header="💞 <b>ПОРАДА ТИЖНЯ 18+</b>")
         topic_msgs.append(("para", pm, None, pm))
+        rd = build_reddit(st)                       # «Обговорення тижня 18+» з Reddit (якщо підключено)
+        if rd:
+            topic_msgs.append(("para", rd, None, rd))
         st["para_sent"] = today_key
     if para_req:
         pm = build_para(st, now, with_news=False)
         direct_m += [(c, pm, None) for c in para_req]
+
+    # 9) SMM і таргет — пн о 13:00 (вам, дружині та підписникам, які це ввімкнули); меню — той самий дайджест тижня
+    smm_due = (now.weekday() == SMM_WEEKDAY and SMM_HOUR <= now.hour < SMM_HOUR + 4
+               and st.get("smm_week") != week_key)
+    if smm_due:
+        sm = build_smm(st, now)
+        if sm:
+            st["smm_week"], st["smm_last"] = week_key, sm
+            topic_msgs.append(("smm", sm, None, sm))
+            smm_req = [c for c in smm_req if c not in audience("smm")]
+    if smm_req and not st.get("smm_last"):
+        sm = build_smm(st, now)
+        if sm:
+            st["smm_last"] = sm
+    for c in smm_req:
+        direct_m.append((c, st.get("smm_last") or "📈 Не вдалося зібрати дайджест, спробуйте пізніше.", None))
 
     # меню команд у Telegram (оновлюється автоматично при зміні списку)
     cmd_ver = ",".join(c for c, _ in COMMANDS)
@@ -1450,8 +1658,10 @@ def main() -> None:
         if cid in removed:
             continue
         try:
-            send(cid, text, mk)
+            mid = send(cid, text, mk)
             ok += 1
+            if getattr(text, "expire", "") and mid:
+                st.setdefault("to_delete", []).append([cid, mid, text.expire])
         except urllib.error.HTTPError as e:
             if e.code in (400, 403) and cid in subs and WORKER_MODE:
                 print(f"Підписник {cid} недоступний ({e.code})")
