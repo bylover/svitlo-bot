@@ -8,6 +8,14 @@ on:
         description: "Надіслати поточний графік (1 — так, 0 — ні)"
         default: "1"
         required: false
+      kino:
+        description: "Службове"
+        default: ""
+        required: false
+      yt:
+        description: "Службове"
+        default: ""
+        required: false
 permissions:
   contents: write
 concurrency:
@@ -30,8 +38,12 @@ jobs:
           TMDB_KEY: ${{ secrets.TMDB_KEY }}
           OMDB_KEY: ${{ secrets.OMDB_KEY }}
           YT_KEY: ${{ secrets.YT_KEY }}
+          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+          GIPHY_KEY: ${{ secrets.GIPHY_KEY }}
           SYNC_URL: ${{ secrets.SYNC_URL }}
           SYNC_KEY: ${{ secrets.SYNC_KEY }}
+          REQ_KINO: ${{ inputs.kino }}
+          REQ_YT: ${{ inputs.yt }}
           SEND_NOW: ${{ github.event_name == 'workflow_dispatch' && inputs.send != '0' && '1' || '' }}
       - name: Save state
         run: |
