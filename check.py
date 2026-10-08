@@ -41,7 +41,7 @@ REQ_KINO = (os.environ.get("REQ_KINO") or "").strip()     # Worker просит�
 REQ_YT = (os.environ.get("REQ_YT") or "").strip()
 # Екстрені відключення: на сайті ДТЕК їх немає в доступних даних, тому стежимо за публічним каналом
 # будинку (пости зі словом «екстрен…»). Порожнє значення CHANNEL вимикає.
-CHANNEL = (os.environ.get("CHANNEL") if os.environ.get("CHANNEL") is not None else "yaskravyi_power").strip().lstrip("@")
+CHANNEL = (os.environ.get("CHANNEL") or "").strip().lstrip("@")   # канал ЖК для екстрених вимкнено (ненадійний)
 EMERG_ACTIVE = False
 WEEK: dict | None = None                  # тижневий прогноз ДТЕК для групи: {1..7: [[хв_від, хв_до], ...]}
 DTEK_URL = "https://raw.githubusercontent.com/mrkaktuz/outages-data/data/dtek-kem.json"
@@ -83,7 +83,7 @@ REDDIT_USER = (os.environ.get("REDDIT_USER") or "").strip()
 REDDIT_PASS = (os.environ.get("REDDIT_PASS") or "").strip()
 REDDIT_SUBS = [x.strip() for x in (os.environ.get("REDDIT_SUBS") or "sex,sexover30").split(",") if x.strip()]
 PARA_DAYS, PARA_HOUR = (2, 4), 18                          # «Для пари»: ср і пт о 18:00
-COMMANDS = [("grafik", "💡 Графік світла"), ("pogoda", "🌤 Погода"), ("para", "💞 Поради 18+"),
+COMMANDS = [("grafik", "💡 Графік світла"), ("pogoda", "🌤 Погода"), ("porady", "💞 Поради 18+"),
             ("kino", "🍿 Кіно: нова підбірка"), ("youtube", "▶️ YouTube: топ за тиждень"),
             ("smm", "📈 SMM і таргет за тиждень"), ("silpo", "🛒 Акції Сільпо за тиждень"),
             ("settings", "⚙️ Налаштування сповіщень"), ("help", "ℹ️ Інструкція"),
@@ -106,16 +106,16 @@ HELP_TEXT = ("ℹ️ <b>ЯК КОРИСТУВАТИСЯ БОТОМ</b>\n\n"
              "<b>Що вміє бот</b>\n<blockquote>"
              f"💡 <b>Світло</b> (група {GROUP}, Мінський масив) — графік ДТЕК на сьогодні й завтра; сповіщення про "
              "новий, змінений чи відкликаний графік, прогноз на тиждень, екстрені відключення; нагадування за "
-             "30–45 хв; ранкове зведення о 10:00\n"
+             "30–45 хв; стан за вашою адресою (причина й орієнтовний час відновлення); ранкове зведення о 10:00\n"
              "🌤 <b>Погода</b> — прогноз на завтра щодня о 20:00\n"
              "🍿 <b>Кіно</b> — 7 фільмів і 3 серіали на вихідні, щоп'ятниці об 11:00\n"
              "▶️ <b>YouTube</b> — топ-10 українського YouTube за тиждень, щопонеділка об 11:00\n"
              "📈 <b>SMM і таргет</b> — дайджест новинок і фішок за тиждень, щопонеділка о 13:00 (вмикається в /settings)\n"
              "🛒 <b>Акції Сільпо</b> — топ-5 у кожній категорії з реальною вигодою, щочетверга о 13:00 (вмикається в /settings)\n"
-             "💞 <b>Поради 18+</b> — по черзі: порада, стаття тижня, досвід тижня й обговорення, ср і пт о 18:00 "
+             "💞 <b>Поради 18+</b> — по одному: порада, стаття, техніка, огляд іграшок або досвід; ср і пт о 18:00 і за запитом з меню "
              "(вмикається в /settings)</blockquote>\n"
              "<b>Меню</b> (кнопка зліва від поля вводу)\n<blockquote>"
-             "/grafik — графік світла зараз\n/pogoda — прогноз погоди\n/para — нова порада, стаття або досвід 18+\n/kino — нова підбірка кіно\n"
+             "/grafik — графік світла зараз\n/pogoda — прогноз погоди\n/porady — нова порада, стаття, огляд або досвід 18+\n/kino — нова підбірка кіно\n"
              "/youtube — топ YouTube за тиждень\n/smm — SMM і таргет за тиждень\n/silpo — акції Сільпо за тиждень\n/settings — увімкнути або вимкнути сповіщення\n"
              "/help — ця інструкція і звідки дані\n/stop — відписатися від усього</blockquote>\n"
              "<b>Важливо</b>\n<blockquote>"
@@ -129,7 +129,7 @@ SOURCES_TEXT = (
     "💡 <b>Світло</b>\n"
     "<blockquote>• Графік — із сайту ДТЕК Київські електромережі (dtek-kem.com.ua) через відкрите дзеркало даних, яке оновлюється кожні ~5 хв; бот перевіряє зміни щохвилини\n"
     "• Прогноз на тиждень — з того ж сайту ДТЕК (орієнтовний)\n"
-    "• Екстрені відключення — з публічного Telegram-каналу будинку\n"
+    "• Ваша адреса (вул. Кульженків Сім'ї, 35) — перевірка на сайті ДТЕК, як у формі «Відсутня електроенергія?», кожні ~10 хв: чи є зараз відключення, причина, початок і орієнтовне відновлення\n• Екстрені відключення — за цією перевіркою адреси та офіційним статусом YASNO (компанія ДТЕК у Києві)\n"
     "• «За графіком» — це план ДТЕК, а не факт наявності світла</blockquote>\n"
     "🌤 <b>Погода</b>\n"
     "<blockquote>• Open-Meteo — поєднує кілька метеомоделей; прогноз для координат Мінського масиву\n"
@@ -141,13 +141,17 @@ SOURCES_TEXT = (
     "<blockquote>• YouTube Data API: відео минулого тижня українською, без новин, дитячого контенту й Shorts\n"
     "• Порядок — перегляди + коментарі (1 коментар ≈ 100 переглядів), не більше 2 відео з каналу</blockquote>\n"
     "📈 <b>SMM і таргет</b>\n"
-    "<blockquote>• Новини — Meta Newsroom, The Keyword (блог Google), Social Media Today, Marketing Dive і Google News — лише за останні 7 днів\n• Перегляди статей ці сайти не публікують, тож важливість визначаємо так: тема, про яку пишуть кілька джерел, — головна новина тижня; далі офіційні анонси Meta і Google та свіжість\n"
+    "<blockquote>• Новини — Meta Newsroom, The Keyword (блог Google), Social Media Today, Marketing Dive і Google News — лише за останні 7 днів\n"
+    "• Перегляди статей ці сайти не публікують, тож важливість визначаємо так: тема, про яку пишуть кілька джерел, — головна новина тижня; далі офіційні анонси Meta і Google та свіжість\n"
     "• Фішки практиків — блоги Jon Loomer, Social Media Examiner, AdEspresso, Hootsuite, Buffer, Later і Medium (теги про рекламу)\n"
     "• Відбір 8–10 найважливіших, переклад і переказ — ШІ Gemini; у кожному пункті — посилання на джерело</blockquote>\n"
     "💞 <b>Поради 18+</b>\n"
-    "<blockquote>• Порада — пише ШІ Gemini (запасний — модель Cloudflare) за темами, що чергуються: пози, техніка, прелюдія, масаж, фантазії, ігри; 30 останніх не повторюються. Картинка — ілюстрація ШІ або гіфка GIPHY\n"
-    "• Стаття тижня — RSS журналів Cosmopolitan, Men's Health, Women's Health, блогів Gottman Institute і Lovehoney та журналу WhatToy: ШІ обирає найкориснішу й переказує українською; зверху обкладинка, внизу посилання на оригінал\n"
-    "• Досвід тижня — особисті історії з Medium (sex, intimacy, relationships) і теми подкастів (зокрема Sex Unwrapped), переказ ШІ\n• Обговорення тижня — найпопулярніший пост тижня з r/sex і r/sexover30 та 5 найкращих коментарів (коли Reddit дасть доступ)</blockquote>\n"
+    "<blockquote>• Порада — пише ШІ Gemini (запасний — модель Cloudflare) за темами, що чергуються: пози, техніка, прелюдія, масаж, фантазії, ігри; без повторів. Картинка — ілюстрація ШІ або гіфка GIPHY\n"
+    "• Статті й техніки — журнали Cosmopolitan, Men's Health, Women's Health і блоги Gottman Institute, Sex With Emily, Kinkly\n"
+    "• Огляди іграшок і відгуки — Lovehoney, WhatToy, Dildo or Dildon't, Hey Epiphora, Bedbible\n"
+    "• Досвід — особисті історії з Medium і теми подкастів (зокрема Sex Unwrapped)\n"
+    "• Щоразу — один матеріал, обраний випадково серед свіжих (журнали — до 2 тижнів, огляди — до 6–8 тижнів): частіше потрапляють новіші й ті, де більше коментарів; тип і джерело чергуються; без повторів і дублікатів (одна стаття на кількох сайтах — один раз)\n"
+    "• ШІ перекладає й переказує українською і сам визначає тип — у заголовку буде «Порада», «Техніка», «Стаття», «Огляд», «Досвід» чи «Подкаст»; зверху обкладинка, внизу посилання на оригінал</blockquote>\n"
     "🛒 <b>Акції Сільпо</b>\n"
     "<blockquote>• Дані — із сайту Сільпо для магазину на вул. Калнишевського, 2\n"
     "• Беремо всі загальні акції з прямим зниженням ціни, зокрема «Ціну тижня» 🔥; без «2+1», «другий за…» і персональних\n"
@@ -728,7 +732,7 @@ def para_visual(st: dict, theme: tuple, news: list) -> dict | None:
     return None
 
 
-def build_para(st: dict, now: datetime, with_news: bool = True, header: str = "💞 <b>НОВА ПОРАДА 18+</b>") -> str:
+def build_para(st: dict, now: datetime, with_news: bool = True, header: str = "💞 <b>ПОРАДА 18+</b>") -> str:
     i = st.get("para_i", 0)
     th = PARA_THEMES[i % len(PARA_THEMES)]
     theme = th[1]
@@ -754,11 +758,7 @@ def build_para(st: dict, now: datetime, with_news: bool = True, header: str = "�
     st["para_titles"] = (recent + [title])[-30:]
     msg = (f"{header}\n"
            f"<blockquote><b>{esc(title)}</b>\n{esc(body)}</blockquote>")
-    news = para_news(st, now) if with_news else []
-    if news:
-        msg += "\n📰 <b>Цікаве за тиждень</b>\n" + "\n".join(
-            f'• <a href="{html.escape(lk)}">{esc(t)}</a>' for t, lk in news)
-    return rich(msg, para_visual(st, th, news))
+    return rich(msg, para_visual(st, th, []))         # без «топів тижня» — лише порада і картинка
 
 
 def worker_text(prompt: str) -> str | None:
@@ -1200,6 +1200,122 @@ def build_experience(st: dict) -> str | None:
             f"💡 {esc(r.get('tip'))}\n🔗 <a href=\"{html.escape(a['link'])}\">оригінал</a>")
 
 
+# ---------- «Поради 18+»: свіжі матеріали — статті, огляди іграшок, досвід (по одному) ----------
+# (джерело, адреса RSS, тип, скільки днів вважаємо свіжим, чи фільтрувати за темою)
+CONTENT_FEEDS = [
+    ("Cosmopolitan", "https://www.cosmopolitan.com/rss/sex-love.xml/", "article", 14, False),
+    ("Cosmopolitan", "https://www.cosmopolitan.com/rss/all.xml/", "article", 14, True),
+    ("Men's Health", "https://www.menshealth.com/rss/sex-relationships.xml/", "article", 14, False),
+    ("Men's Health", "https://www.menshealth.com/rss/all.xml/", "article", 14, True),
+    ("Women's Health", "https://www.womenshealthmag.com/rss/sex-and-love.xml/", "article", 14, False),
+    ("Women's Health", "https://www.womenshealthmag.com/rss/all.xml/", "article", 14, True),
+    ("Gottman Institute", "https://www.gottman.com/blog/feed/", "article", 30, True),
+    ("Sex With Emily", "https://sexwithemily.com/feed/", "article", 30, False),
+    ("Kinkly", "https://www.kinkly.com/feed", "article", 30, False),
+    ("Lovehoney", "https://www.lovehoney.co.uk/blog/feed/", "review", 45, False),
+    ("Lovehoney", "https://www.lovehoney.com/blog/feed/", "review", 45, False),
+    ("WhatToy", "https://www.whattoy.co.uk/feed/", "review", 45, False),
+    ("WhatToy", "https://whattoy.co.uk/feed/", "review", 45, False),
+    ("Dildo or Dildon't", "https://www.dildoordildont.com/feed/", "review", 60, False),
+    ("Hey Epiphora", "https://heyepiphora.com/feed/", "review", 60, False),
+    ("Bedbible", "https://bedbible.com/feed/", "review", 45, False),
+    ("Medium", "https://medium.com/feed/tag/sex", "experience", 21, True),
+    ("Medium", "https://medium.com/feed/tag/intimacy", "experience", 21, True),
+    ("Medium", "https://medium.com/feed/tag/sexuality", "experience", 21, True),
+    ("Medium", "https://medium.com/feed/tag/relationships", "experience", 21, True),
+]
+KIND_HEAD = {"tip": "💞 <b>ПОРАДА 18+</b>", "technique": "🔥 <b>ТЕХНІКА 18+</b>", "article": "📖 <b>СТАТТЯ 18+</b>",
+             "review": "🧸 <b>ОГЛЯД 18+</b>", "experience": "💬 <b>ДОСВІД 18+</b>", "podcast": "🎙 <b>ПОДКАСТ 18+</b>",
+             "discussion": "🗣 <b>ОБГОВОРЕННЯ 18+</b>"}
+
+
+def norm_title(t: str) -> str:
+    return re.sub(r"[^a-zа-яіїєґ0-9]+", " ", (t or "").lower()).strip()[:70]
+
+
+def collect_content(st: dict, now: datetime) -> None:
+    """Раз на день: свіжі матеріали з усіх джерел → пул st["content_pool"] (без повторів і дублікатів)."""
+    import xml.etree.ElementTree as ET
+    from email.utils import parsedate_to_datetime
+    if st.get("content_day") == now.date().isoformat():
+        return
+    st["content_day"] = now.date().isoformat()
+    seen = set(st.get("content_seen", [])) | set(st.get("art_seen", [])) | set(st.get("exp_pool_seen", []))
+    feeds = list(CONTENT_FEEDS) + [(n, u, "podcast", 21, True) for n, u in podcast_feeds(
+        ["Sex Unwrapped", "sex relationships", "couples intimacy"])]
+    pool, titles, ok = [], set(), []
+    for src, url, kind, days, filt in feeds:
+        try:
+            root = ET.fromstring(http_text(url))
+            ok.append(src)
+        except Exception as e:
+            print(f"Поради 18+: {src} {url} → {str(e)[:60]}")
+            continue
+        for it in list(root.iter("item"))[:60]:
+            title, link = (it.findtext("title") or "").strip(), (it.findtext("link") or "").strip()
+            body = (it.findtext("{http://purl.org/rss/1.0/modules/content/}encoded") or it.findtext("description")
+                    or it.findtext("{http://www.itunes.com/dtds/podcast-1.0.dtd}summary") or "")
+            text = strip_html(body)
+            try:
+                d = parsedate_to_datetime(it.findtext("pubDate") or "").astimezone(TZ)
+                age = (now - d).days
+            except Exception:
+                age = days // 2
+            nt = norm_title(title)
+            if (not title or not link or age > days or link in seen or nt in titles
+                    or (filt and not ARTICLE_WORDS.search(title + " " + text[:400]))):
+                continue
+            com = it.findtext("{http://purl.org/rss/1.0/modules/slash/}comments") or "0"
+            titles.add(nt)
+            pool.append({"src": src.replace("🎙 ", ""), "kind": kind, "title": title, "link": link, "age": age,
+                         "comments": int(com) if str(com).isdigit() else 0, "text": text[:900]})
+    pool.sort(key=lambda a: a["age"])
+    st["content_pool"] = pool[:80]
+    print(f"Поради 18+: працюють {sorted(set(ok))}, у пулі {len(st['content_pool'])} "
+          f"(статті {sum(a['kind'] == 'article' for a in pool)}, огляди {sum(a['kind'] == 'review' for a in pool)}, "
+          f"досвід {sum(a['kind'] in ('experience', 'podcast') for a in pool)})")
+
+
+def pick_content(pool: list, seen: set, last: dict) -> dict | None:
+    """Випадковий свіжий матеріал: важить свіжість і кількість коментарів; тип і джерело — не як минулого разу."""
+    cands = [a for a in pool if a["link"] not in seen]
+    if not cands:
+        return None
+    pref = [a for a in cands if a["kind"] != last.get("kind") and a["src"] != last.get("src")] or cands
+    weights = [(1 + min(a.get("comments", 0), 60) / 10) * (1.5 if a["age"] <= 7 else 1.0) for a in pref]
+    return random.choices(pref, weights=weights, k=1)[0]
+
+
+def build_content(st: dict) -> str | None:
+    """Один свіжий матеріал (стаття / огляд / досвід / подкаст): переказ українською, тип — у заголовку."""
+    seen = set(st.get("content_seen", []))
+    a = pick_content(st.get("content_pool", []), seen, st.get("content_last") or {})
+    if not a:
+        return None
+    raw = gemini("Ти — редактор рубрики «Поради 18+» для дорослих. Ось один свіжий матеріал (стаття, огляд інтимного "
+                 "товару, особистий досвід або тема подкасту). Перекажи його українською природно, по-людськи, "
+                 "зберігаючи головне: для огляду — що за товар, плюси, мінуси, кому підійде; для техніки — як саме "
+                 "робити. Визнач тип: tip | technique | article | review | experience | podcast | discussion. "
+                 "Поверни лише JSON: {\"kind\": \"тип\", \"title\": \"заголовок українською\", "
+                 "\"points\": [\"4–6 пунктів, кожен 1–2 речення\"], \"tip\": \"практичний висновок\"}. "
+                 "Без вульгарності та анатомічних подробиць.\n\n"
+                 + json.dumps({"source": a["src"], "title": a["title"], "text": a["text"]}, ensure_ascii=False),
+                 json_mode=True, relaxed=True, max_tokens=2000)
+    try:
+        r = json.loads(raw or "")
+    except Exception:
+        print("Поради 18+: Gemini не повернув переказ")
+        return None
+    st["content_seen"] = (st.get("content_seen", []) + [a["link"]])[-600:]
+    st["content_last"] = {"kind": a["kind"], "src": a["src"]}
+    head = KIND_HEAD.get(r.get("kind"), KIND_HEAD.get(a["kind"], "📖 <b>СТАТТЯ 18+</b>"))
+    pts = "\n".join(f"• {esc(x)}" for x in (r.get("points") or [])[:6])
+    com = f" · 💬 {a['comments']}" if a.get("comments") else ""
+    msg = (f"{head} · {esc(a['src'])}{com}\n<blockquote><b>{esc(r.get('title'))}</b>\n{pts}</blockquote>\n"
+           f"💡 {esc(r.get('tip'))}\n🔗 <a href=\"{html.escape(a['link'])}\">оригінал</a>")
+    return rich(msg, {"type": "preview", "url": a["link"]})
+
+
 # ---------- Акції Сільпо (магазин на Калнишевського, 2) ----------
 SILPO_API = "https://sf-ecom-api.silpo.ua"
 SKIP_PROMO = re.compile(r"\d\s*\+\s*\d|друг(ий|у)|при купівлі|при покупці|персональн", re.I)
@@ -1634,7 +1750,7 @@ def channel_posts() -> list[tuple[int, datetime, str]]:
     return sorted(posts)
 
 
-CANCEL_WORDS = ("скасов", "відмін", "припин", "завершен", "не застосов", "більше не",
+CANCEL_WORDS = ("скасов", "відмін", "припин", "заверш", "не застосов", "більше не", "закінч", "відновлено графік",
                 "повертаємось до граф", "повертаємося до граф")
 
 
@@ -1643,6 +1759,44 @@ def emerg_kind(text: str) -> str | None:
     if "екстрен" not in t:
         return None
     return "off" if any(w in t for w in CANCEL_WORDS) else "on"
+
+
+def emergency_yasno(st: dict, now: datetime) -> list[str] | None:
+    """Екстрені відключення за офіційним статусом YASNO (компанія ДТЕК у Києві). None — якщо YASNO недоступний."""
+    data = None
+    for attempt in range(2):
+        try:
+            data = http_json(API_URL)
+            break
+        except Exception as e:
+            print(f"YASNO (екстрені), спроба {attempt + 1}: {err_text(e)[:80]}")
+            _time.sleep(3)
+    if not isinstance(data, dict):
+        return None
+    stats = {}
+    for grp, g in data.items():
+        if isinstance(g, dict):
+            stt = ((g.get("today") or {}).get("status")) or "—"
+            stats[stt] = stats.get(stt, 0) + 1
+    on_y = stats.get("EmergencyShutdowns", 0) > 0
+    addr = st.get("addr") or {}
+    on_a = bool(addr.get("active") and addr.get("emergency"))     # перевірка за адресою на сайті ДТЕК — найточніша
+    on = on_y or on_a
+    print(f"Екстрені: {'ТАК' if on else 'ні'} · YASNO {'так' if on_y else 'ні'} {stats} · "
+          f"адреса ДТЕК {'так' if on_a else 'ні'} ({addr.get('reason') or '—'})")
+    ch = st.get("emerg") or {}
+    was = bool(ch.get("on"))
+    out = []
+    if on and not was:
+        ch.update(on=True, since=now.isoformat(), src="yasno")
+        out.append("🚨🚨🚨 <b>ЕКСТРЕНІ ВІДКЛЮЧЕННЯ!</b> 🚨🚨🚨\n"
+                   "Графік може не діяти · 🔋 зарядіть пристрої\n<i>за офіційними даними ДТЕК / YASNO</i>")
+    elif was and not on:
+        ch.update(on=False, since=now.isoformat(), src="yasno")
+        out.append("✅✅ <b>ЕКСТРЕНІ ВІДКЛЮЧЕННЯ СКАСОВАНО</b> ✅✅\n"
+                   "Знову діє графік ДТЕК\n<i>за офіційними даними ДТЕК / YASNO</i>")
+    st["emerg"] = ch
+    return out
 
 
 def emergency_check(st: dict, now: datetime) -> list[str]:
@@ -1822,9 +1976,23 @@ def now_line(off: list, now: datetime) -> str:
     return "⏳ За графіком відключень більше не буде"
 
 
+ADDR_NOW: dict = {}
+
+
+def addr_line() -> str:
+    """Що зараз за адресою (дані ДТЕК з перевірки адреси)."""
+    a = ADDR_NOW
+    if not a:
+        return ""
+    if a.get("active"):
+        return (f"🏠 <b>За адресою зараз немає світла</b> · {esc(a.get('reason'))}\n"
+                f"   з {esc(a.get('start'))}, орієнтовно до <b>{esc(a.get('end') or '—')}</b>\n")
+    return "🏠 За адресою зараз відключень немає (дані ДТЕК)\n"
+
+
 def summary(head: str, today_d, tomorrow_d, all_off, now) -> str:
     emerg = "🚨 <b>Діють екстрені відключення</b> — графік може не діяти\n" if EMERG_ACTIVE else ""
-    return (f"{head}\n{emerg}{now_line(all_off, now)}\n"
+    return (f"{head}\n{emerg}{addr_line()}{now_line(all_off, now)}\n"
             + fmt_day(today_d, "Сьогодні") + "\n" + fmt_day(tomorrow_d, "Завтра"))
 
 
@@ -1895,6 +2063,8 @@ def main() -> None:
             ex = http_json(f"{SYNC_URL}/export?key={urllib.parse.quote(SYNC_KEY)}&take=1")
             worker_req = ex.get("req") or {}
             subs = {str(k): list(v) for k, v in (ex.get("subs") or {}).items()}
+            if ex.get("content_seen"):                # що вже показали з меню (Cloudflare) — не повторюємо
+                st["content_seen"] = list(dict.fromkeys(st.get("content_seen", []) + list(ex["content_seen"])))[-600:]
             if ex.get("seen"):
                 st["kino_seen"] = list(dict.fromkeys(st.get("kino_seen", []) + list(ex["seen"])))[-600:]
             worker_alive = _time.time() * 1000 - float(ex.get("beat") or 0) < 25 * 60 * 1000
@@ -1920,7 +2090,15 @@ def main() -> None:
     fp = st["fp"]
     first_run = not fp
     global EMERG_ACTIVE
-    emerg_msgs = emergency_check(st, now)
+    try:                                              # стан за адресою (окремий процес із браузером, кожні ~10 хв)
+        st["addr"] = json.loads(Path("addr_state.json").read_text("utf-8"))
+    except Exception:
+        st.pop("addr", None)
+    global ADDR_NOW
+    ADDR_NOW = st.get("addr") or {}
+    emerg_msgs = emergency_yasno(st, now)            # офіційний статус YASNO + дані ДТЕК за адресою
+    if emerg_msgs is None:
+        emerg_msgs = emergency_check(st, now) if CHANNEL else []
     EMERG_ACTIVE = bool((st.get("emerg") or {}).get("on"))
     msgs: list[tuple[str, str | None]] = [(m, None) for m in emerg_msgs]
     # (текст для всіх, окремий текст для дружини або None)
@@ -2007,7 +2185,7 @@ def main() -> None:
             kino_req.append(cid)
         elif cmd in ("/youtube", "/ютуб"):
             yt_req.append(cid)
-        elif cmd in ("/para", "/пара"):
+        elif cmd in ("/porady", "/para", "/пара"):
             para_req.append(cid)
         elif cmd == "/smm":
             smm_req.append(cid)
@@ -2194,19 +2372,13 @@ def main() -> None:
     # 8) «Для пари» — ср і пт о 18:00 (вам, дружині та підписникам, які це ввімкнули); з меню — нова порада
     para_due = (now.weekday() in PARA_DAYS and PARA_HOUR <= now.hour < PARA_HOUR + 4
                 and st.get("para_sent") != today_key)
-    collect_articles(st, now)                         # раз на день оновлюємо пул статей журналів
-    collect_experience(st, now)                       # і пул «досвіду» (Medium, подкасти)
+    collect_content(st, now)                          # раз на день оновлюємо пул свіжих матеріалів 18+
     if para_due:
-        pm = build_para(st, now, header="💞 <b>ПОРАДА ТИЖНЯ 18+</b>")
+        pm = build_para(st, now, header="💞 <b>ПОРАДА 18+</b>")
         topic_msgs.append(("para", pm, None, pm))
-        # друге повідомлення — по черзі: ср — стаття журналу, пт — обговорення Reddit (або те, що доступне)
-        order = ([build_article, build_experience, build_reddit] if now.weekday() == PARA_DAYS[0]
-                 else [build_reddit, build_experience, build_article])
-        for fn in order:
-            extra = fn(st)
-            if extra:
-                topic_msgs.append(("para", extra, None, extra))
-                break
+        extra = build_content(st) or build_reddit(st)  # друге — один свіжий матеріал (стаття, огляд, досвід…)
+        if extra:
+            topic_msgs.append(("para", extra, None, extra))
         st["para_sent"] = today_key
     if para_req:
         pm = build_para(st, now, with_news=False)
