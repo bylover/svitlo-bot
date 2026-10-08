@@ -44,6 +44,7 @@ jobs:
           REDDIT_SECRET: ${{ secrets.REDDIT_SECRET }}
           REDDIT_USER: ${{ secrets.REDDIT_USER }}
           REDDIT_PASS: ${{ secrets.REDDIT_PASS }}
+          SILPO_BRANCH: ${{ secrets.SILPO_BRANCH }}
           SYNC_URL: ${{ secrets.SYNC_URL }}
           SYNC_KEY: ${{ secrets.SYNC_KEY }}
           REQ_KINO: ${{ inputs.kino }}
