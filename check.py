@@ -73,6 +73,7 @@ SILPO_WEEKDAY, SILPO_HOUR = 3, 13                           # акції Сіл�
 SILPO_SNAP_WEEKDAY, SILPO_SNAP_HOUR = 2, 20                 # знімок цін усіх товарів: ср після 20:00
 SILPO_LAT, SILPO_LON = 50.5135, 30.4935                     # вул. Калнишевського, 2 (Мінський масив)
 SILPO_STORE = "Калнишевськ"                                 # яку адресу шукати серед магазинів
+SILPO_BRANCH = (os.environ.get("SILPO_BRANCH") or "").strip()   # ручний вибір магазину (id), якщо знайдемо
 SILPO_TOP = 5
 SPLIT = "\n§§\n"                                            # роздільник повідомлень у довгих підбірках
 REDDIT_ID = (os.environ.get("REDDIT_ID") or "").strip()     # Reddit script app (для «Обговорення тижня 18+»)
@@ -116,6 +117,16 @@ HELP_TEXT = ("ℹ️ <b>ЯК КОРИСТУВАТИСЯ БОТОМ</b>\n\n"
              "/grafik — графік світла зараз\n/pogoda — прогноз погоди\n/para — нова порада 18+\n/kino — нова підбірка кіно\n"
              "/youtube — топ YouTube за тиждень\n/smm — SMM і таргет за тиждень\n/silpo — акції Сільпо за тиждень\n/settings — увімкнути або вимкнути сповіщення\n"
              "/help — ця інструкція\n/stop — відписатися від усього</blockquote>\n"
+             "<b>Як формується 🛒 Акції Сільпо</b>\n<blockquote>"
+             "• Беремо всі загальні акції магазину з прямим зниженням ціни, зокрема «Ціну тижня» 🔥. "
+             "Не беремо «2+1», «другий за…» і персональні пропозиції\n"
+             "• Щосереди ввечері бот запам'ятовує ціни всіх товарів магазину і зберігає їх кілька тижнів\n"
+             "• <b>Заявлена знижка</b> — від «старої» ціни на ціннику. <b>Реальна вигода</b> — від найнижчої ціни "
+             "цього товару за останні 1–3 тижні: якщо перед акцією ціну підняли, реальна вигода буде меншою\n"
+             "• Товари з реальною вигодою менше 3% у топ не потрапляють\n"
+             "• Місце в топі: реальна вигода у % (поки немає історії цін — заявлена) + бонус за рейтинг "
+             "покупців ⭐ (+5 за кожен бал понад 4) + до +5 за популярність товару\n"
+             "• Топ-5 у кожній категорії, новий список щочетверга о 13:00</blockquote>\n"
              "<b>Важливо</b>\n<blockquote>"
              "• Графік — за даними сайту ДТЕК. «За графіком» не означає, що світло фактично є чи немає\n"
              f"• Сповіщення про світло — лише для групи {GROUP}. Якщо у вас інша група, вимкніть «💡 Світло» в /settings\n"
@@ -937,21 +948,84 @@ def silpo_get(path: str, **query) -> dict:
         return json.load(r)
 
 
+def _find_store(obj, needle: str, path: str = "") -> list[tuple[str, dict]]:
+    """Рекурсивно шукає у відповіді API об'єкти, де будь-яке текстове поле містить needle."""
+    out = []
+    if isinstance(obj, dict):
+        if any(isinstance(v, str) and needle.lower() in v.lower() for v in obj.values()):
+            out.append((path, obj))
+        for k, v in obj.items():
+            out += _find_store(v, needle, f"{path}.{k}")
+    elif isinstance(obj, list):
+        for n_, v in enumerate(obj[:2000]):
+            out += _find_store(v, needle, f"{path}[{n_}]")
+    return out
+
+
+def silpo_probe_pickup() -> tuple[str, str] | None:
+    """Шукаємо фізичний магазин на Калнишевського серед точок самовивозу (кілька можливих запитів)."""
+    ext = "https://sf-external-api.silpo.ua"
+    cands = [(SILPO_API, "/v1/uk/branches", {"deliveryType": "SelfPickup"}),
+             (SILPO_API, "/v1/branches", {"deliveryType": "SelfPickup"}),
+             (SILPO_API, "/v1/self-pickup/branches", {}), (SILPO_API, "/v2/self-pickup/branches", {}),
+             (SILPO_API, "/v1/uk/self-pickup/branches", {}), (SILPO_API, "/v1/branches/self-pickup", {}),
+             (SILPO_API, "/v1/polygons/self-pickup", {"latitude": SILPO_LAT, "longitude": SILPO_LON}),
+             (SILPO_API, "/v1/self-pickup", {"latitude": SILPO_LAT, "longitude": SILPO_LON}),
+             (ext, "/v1/uk/stores", {}), (ext, "/v1/stores", {}), (ext, "/api/v1/stores", {}),
+             (ext, "/v1/uk/shops", {}), (ext, "/v1/branches", {})]
+    for base, path, q in cands:
+        url = f"{base}{path}" + (f"?{urllib.parse.urlencode(q)}" if q else "")
+        try:
+            req = urllib.request.Request(url, headers={"accept": "application/json", "origin": "https://silpo.ua",
+                                                       "referer": "https://silpo.ua/", "user-agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                data = json.load(r)
+        except Exception as e:
+            print(f"Сільпо пошук магазину: {url} → {err_text(e)[:80]}")
+            continue
+        found = _find_store(data, SILPO_STORE)
+        print(f"Сільпо пошук магазину: {url} → OK, знайдено «{SILPO_STORE}»: {len(found)}")
+        for pth, o in found[:3]:
+            print(f"   {pth}: {json.dumps(o, ensure_ascii=False)[:300]}")
+        for _, o in found:
+            bid = o.get("branchId") or o.get("id") or o.get("storeId") or o.get("filialId")
+            if bid:
+                return str(bid), "SelfPickup"
+    return None
+
+
 def silpo_branch(st: dict) -> tuple[str, str] | None:
-    """Магазин на Калнишевського: id і тип доставки (кешується у state)."""
-    if st.get("silpo_branch"):
+    """Магазин: ручний SILPO_BRANCH → магазин на Калнишевського (самовивіз) → онлайн-магазин за адресою."""
+    if SILPO_BRANCH:
+        return SILPO_BRANCH, "SelfPickup"
+    if st.get("silpo_branch") and (st["silpo_branch"].get("store") or st.get("silpo_probe") == today_str()):
         return st["silpo_branch"]["id"], st["silpo_branch"]["type"]
+    if st.get("silpo_probe") != today_str():          # пошук фізичного магазину — не частіше разу на день
+        st["silpo_probe"] = today_str()
+        found = silpo_probe_pickup()
+        if found:
+            st["silpo_branch"] = {"id": found[0], "type": found[1], "name": "Сільпо, вул. Калнишевського, 2", "store": True}
+            st.pop("silpo_last", None)
+            st.pop("silpo_week", None)
+            print("Сільпо: знайдено магазин на Калнишевського — перемикаюсь на нього")
+            return found
     try:
         modes = silpo_get("/v1/polygons/contains/all", latitude=SILPO_LAT, longitude=SILPO_LON)
         modes = modes if isinstance(modes, list) else (modes.get("items") or [modes])
         print("Сільпо, магазини поруч: " + "; ".join(f"{m.get('name')} ({m.get('deliveryType')})" for m in modes))
-        m = next((m for m in modes if SILPO_STORE.lower() in str(m.get("name", "")).lower()), modes[0])
-        st["silpo_branch"] = {"id": m["branchId"], "type": m.get("deliveryType") or "DeliveryHome", "name": m.get("name")}
-        print(f"Сільпо: обрано «{m.get('name')}»")
+        m = next((m for m in modes if SILPO_STORE.lower() in str(m.get("name", "")).lower()), None) or \
+            next((m for m in modes if m.get("deliveryType") == "DeliveryHome"), modes[0])
+        st["silpo_branch"] = {"id": m["branchId"], "type": m.get("deliveryType") or "DeliveryHome",
+                              "name": "онлайн-магазин Сільпо (доставка на Мінський масив)", "store": False}
+        print(f"Сільпо: магазин на Калнишевського не знайдено — беру «{m.get('name')}»")
         return m["branchId"], st["silpo_branch"]["type"]
     except Exception as e:
         print(f"Сільпо, магазин: {err_text(e)}")
         return None
+
+
+def today_str() -> str:
+    return datetime.now(TZ).date().isoformat()
 
 
 def silpo_categories(branch: str) -> list[dict]:
@@ -1065,7 +1139,7 @@ def build_silpo(st: dict, now: datetime) -> str | None:
     if not sections:
         return None
     head = (f"🛒 <b>АКЦІЇ СІЛЬПО · ТОП ЗА ТИЖДЕНЬ</b> · з {now:%d.%m}\n"
-            f"<i>{esc((st.get('silpo_branch') or {}).get('name') or 'вул. Калнишевського, 2')} · 🔥 — «Ціна тижня»</i>\n"
+            f"<i>{'Ціни ' + esc((st.get('silpo_branch') or {}).get('name')) if not (st.get('silpo_branch') or {}).get('store') else 'Сільпо, вул. Калнишевського, 2'} · 🔥 — «Ціна тижня»</i>\n"
             + ("<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>" if weeks
                else "<i>Реальна вигода з'явиться з наступного тижня (бот ще збирає історію цін)</i>"))
     msgs, cur = [], head                              # ділимо на повідомлення до 4000 символів
