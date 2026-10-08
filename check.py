@@ -138,7 +138,7 @@ SOURCES_TEXT = (
     "<blockquote>• Каталог і описи українською — TMDB; рейтинги — IMDb і Rotten Tomatoes (через OMDb)\n"
     "• Лише високий рейтинг, але не надто «заїжджені» фільми; без повторів, з урахуванням 👀 «бачили»</blockquote>\n"
     "▶️ <b>YouTube</b>\n"
-    "<blockquote>• YouTube Data API: відео минулого тижня українською, без новин, дитячого контенту й Shorts\n"
+    "<blockquote>• «В тренді» YouTube в Україні та пошук українською за останні 7 днів; лише україномовні відео (без російських та іноземних), без новин, дитячого контенту й Shorts\n"
     "• Порядок — перегляди + коментарі (1 коментар ≈ 100 переглядів), не більше 2 відео з каналу</blockquote>\n"
     "📈 <b>SMM і таргет</b>\n"
     "<blockquote>• Новини — Meta Newsroom, The Keyword (блог Google), Social Media Today, Marketing Dive і Google News — лише за останні 7 днів\n"
@@ -1573,54 +1573,60 @@ def dur_text(sec: int) -> str:
 
 
 def build_youtube(st: dict, now: datetime) -> str | None:
+    """Український YouTube за останні 7 днів: «В тренді» в Україні + пошук за українськими словами; суворий фільтр мови."""
     if not YT_KEY:
         print("YT_KEY не задано — YouTube пропущено")
         return None
-    monday = datetime.combine(now.date() - timedelta(days=now.weekday()), time(0), TZ)
-    start, end = monday - timedelta(days=7), monday
-    ids: list[str] = []
-    for vd in ("medium", "long"):
+    start = now - timedelta(days=7)
+    api = lambda path, **q: http_json(f"https://www.googleapis.com/youtube/v3/{path}?" + urllib.parse.urlencode({**q, "key": YT_KEY}))
+    vids, token = [], ""
+    for _ in range(4):
         try:
-            r = http_json("https://www.googleapis.com/youtube/v3/search?" + urllib.parse.urlencode({
-                "part": "id", "type": "video", "order": "viewCount", "regionCode": "UA",
-                "relevanceLanguage": "uk", "videoDuration": vd, "maxResults": 50, "key": YT_KEY,
-                "publishedAfter": start.astimezone(ZoneInfo("UTC")).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                "publishedBefore": end.astimezone(ZoneInfo("UTC")).strftime("%Y-%m-%dT%H:%M:%SZ")}))
+            r = api("videos", part="snippet,statistics,contentDetails,status", chart="mostPopular", regionCode="UA",
+                    maxResults=50, **({"pageToken": token} if token else {}))
+        except Exception as e:
+            print(f"YouTube trending: {err_text(e)[:200]}")
+            break
+        vids += r.get("items", [])
+        token = r.get("nextPageToken")
+        if not token:
+            break
+    ids: list[str] = []
+    for q in ("що|як|чому|це|коли", "україна|українською|київ|наші"):
+        try:
+            r = api("search", part="id", type="video", order="viewCount", regionCode="UA", relevanceLanguage="uk", q=q,
+                    maxResults=50, publishedAfter=start.astimezone(ZoneInfo("UTC")).strftime("%Y-%m-%dT%H:%M:%SZ"))
             ids += [x["id"]["videoId"] for x in r.get("items", []) if x.get("id", {}).get("videoId")]
         except Exception as e:
-            print(f"YouTube search: {e}")
-    seen = set(st.get("yt_seen", []))
-    ids = [i for i in dict.fromkeys(ids) if i not in seen]
-    vids = []
-    for k in range(0, len(ids), 50):
+            print(f"YouTube search: {err_text(e)[:200]}")
+    have = {v.get("id") for v in vids}
+    need = [i for i in dict.fromkeys(ids) if i not in have]
+    for k in range(0, len(need), 50):
         try:
-            r = http_json("https://www.googleapis.com/youtube/v3/videos?" + urllib.parse.urlencode({
-                "part": "snippet,statistics,contentDetails,status", "id": ",".join(ids[k:k + 50]),
-                "key": YT_KEY}))
-            vids += r.get("items", [])
+            vids += api("videos", part="snippet,statistics,contentDetails,status", id=",".join(need[k:k + 50])).get("items", [])
         except Exception as e:
-            print(f"YouTube videos: {e}")
-    good = []
+            print(f"YouTube videos: {err_text(e)[:200]}")
+    seen = set(st.get("yt_seen", []))
+    good, ids_ok = [], set()
     for v in vids:
-        sn, stt = v.get("snippet", {}), v.get("statistics", {})
+        sn = v.get("snippet", {})
         lang = (sn.get("defaultAudioLanguage") or sn.get("defaultLanguage") or "").lower()
-        title = sn.get("title", "")
-        if sn.get("categoryId") == "25":                       # новини та політика
+        txt = sn.get("title", "") + " " + (sn.get("description") or "")[:300]
+        try:
+            pub = datetime.fromisoformat(sn.get("publishedAt", "").replace("Z", "+00:00"))
+        except Exception:
             continue
-        if (v.get("status") or {}).get("madeForKids"):         # дитячий контент
-            continue
-        if lang.startswith("ru"):
-            continue
-        if iso_dur((v.get("contentDetails") or {}).get("duration")) <= 60:  # Shorts
-            continue
+        if (v.get("id") in ids_ok or v.get("id") in seen or pub < start or sn.get("categoryId") == "25"
+                or (v.get("status") or {}).get("madeForKids")
+                or iso_dur((v.get("contentDetails") or {}).get("duration")) <= 60):
+            continue                                   # повтор, старе, новини, дитяче або Shorts
+        if lang.startswith("ru") or re.search(r"[ыэъё]", txt, re.I):
+            continue                                   # російське — ні
+        if not (lang.startswith("uk") or UA_LETTERS.search(txt)):
+            continue                                   # лише українська мова
+        ids_ok.add(v.get("id"))
         good.append(v)
-    ua = [v for v in good if (v["snippet"].get("defaultAudioLanguage") or v["snippet"].get("defaultLanguage") or "").lower().startswith("uk")
-          or UA_LETTERS.search(v["snippet"].get("title", "") + " " + v["snippet"].get("channelTitle", ""))]
-    print(f"YouTube: знайдено {len(ids)}, після фільтрів {len(good)}, українських {len(ua)}")
-    if len(ua) >= 10:
-        good = ua                                    # достатньо українських — лише вони
-    else:                                            # мало — доповнюємо без російських
-        good = ua + [v for v in good if v not in ua and not re.search(r"[ыэъё]", v["snippet"].get("title", ""), re.I)]
+    print(f"YouTube: усього {len(vids)}, українських за тиждень {len(good)}")
     # популярність: перегляди + коментарі (1 коментар ≈ 100 переглядів — він показує залученість глядачів)
     good.sort(key=lambda v: int(v["statistics"].get("viewCount", 0))
               + 100 * int(v["statistics"].get("commentCount", 0) or 0), reverse=True)
@@ -1633,6 +1639,7 @@ def build_youtube(st: dict, now: datetime) -> str | None:
         top.append(v)
         if len(top) == 10:
             break
+    end = now + timedelta(days=1)                              # для підпису періоду (start … сьогодні)
     if not top:
         return None
     st["yt_seen"] = (st.get("yt_seen", []) + [v["id"] for v in top])[-800:]
@@ -1645,8 +1652,8 @@ def build_youtube(st: dict, now: datetime) -> str | None:
                      f"📺 {esc(sn.get('channelTitle'))} · ⏱ {dur_text(iso_dur(v['contentDetails']['duration']))}\n"
                      f"👁 <b>{num(views)}</b> переглядів · 💬 <b>{num(comments)}</b> коментарів\n"
                      f'🔗 <a href="https://youtu.be/{v["id"]}">Дивитися</a></blockquote>')
-    label = f"{start:%d.%m}–{(end - timedelta(days=1)):%d.%m}"
-    return f"▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · {label}</b>\n" + "\n".join(items)
+    label = f"{start:%d.%m}–{now:%d.%m}"
+    return f"▶️ <b>ТОП-{len(top)} УКРАЇНСЬКОГО YOUTUBE · {label}</b>\n" + "\n".join(items)
 
 
 # ---------- погода (Open-Meteo, без ключа) ----------
@@ -2458,6 +2465,9 @@ def main() -> None:
         pm = build_para(st, now, with_news=False)
         direct_m += [(c, pm, None) for c in para_req]
 
+    if st.get("yt_ver") != 2:                         # новий відбір YouTube (лише українське) — стару підбірку скидаємо
+        st.pop("yt_last", None)
+        st["yt_ver"] = 2
     if st.get("smm_ver") != 2:                        # нові джерела SMM — стару підбірку скидаємо, меню збере нову
         st.pop("smm_last", None)
         st["smm_ver"] = 2
