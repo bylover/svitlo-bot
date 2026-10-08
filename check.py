@@ -501,17 +501,32 @@ def build_kino(st: dict) -> tuple[str, dict] | None:
 
 
 # ---------- «Для пари» (Gemini + Google News RSS) ----------
+# (ключ, тема для Gemini, сцена для ІІ-картинки, запит для GIPHY)
 PARA_THEMES = [
-    ("нова поза", "одна нова позиція для подружжя: як називається, чим цікава, що врахувати для комфорту обох"),
-    ("прелюдія", "ідея для довшої й ніжнішої прелюдії"),
-    ("масаж", "розслаблювальний масаж для партнера: техніка та атмосфера"),
-    ("побачення вдома", "ідея романтичного вечора вдома для двох"),
-    ("розмова", "як делікатно поговорити про бажання і фантазії"),
-    ("нова поза", "ще одна нова позиція: варіант для неспішного вечора"),
-    ("гра", "легка рольова або тактильна гра для пари"),
-    ("атмосфера", "як створити атмосферу: світло, музика, аромати, дотики"),
-    ("після", "як продовжити близькість після: обійми, турбота, розмова"),
-    ("сюрприз", "невеликий романтичний сюрприз для партнера чи партнерки"),
+    ("поза", "одна нова поза для подружжя: назва, суть, чим вона приємна обом і як зробити її комфортною",
+     "a loving couple in a tender embrace, silhouettes against warm window light", "romantic couple"),
+    ("поцілунки", "техніка поцілунків і ніжних дотиків, які заводять",
+     "a couple about to kiss, close-up silhouettes, warm golden light", "romantic kiss"),
+    ("прелюдія", "як зробити прелюдію довшою, ніжнішою і яскравішою",
+     "a couple slowly dancing close together in a dim cozy room", "couple dancing"),
+    ("масаж", "чуттєвий масаж для партнера: техніка, олія, атмосфера",
+     "a relaxing couples massage with candles and towels, spa mood", "couple massage"),
+    ("техніка", "темп і ритм: як не поспішати, відчувати одне одного і продовжувати задоволення",
+     "two hands intertwined on silk sheets, soft warm light", "love"),
+    ("різноманіття", "як урізноманітнити інтимне життя в тривалих стосунках",
+     "a romantic bedroom with candles and rose petals, soft warm light", "romantic candles"),
+    ("поза", "ще одна нова поза для неспішного вечора: як увійти в неї і що врахувати",
+     "a couple cuddling closely under a blanket, cozy evening, silhouettes", "cuddle"),
+    ("фантазії", "як делікатно поговорити про фантазії і бажання та втілити одну з них",
+     "a couple whispering to each other on a sofa, intimate cozy atmosphere", "couple flirting"),
+    ("іграшки", "інтимні іграшки для пари: з чого почати і як обрати разом",
+     "a playful couple laughing on a bed with pillows, cozy evening", "couple laughing"),
+    ("гра", "легка рольова або тактильна гра для пари з повʼязкою чи кубиками",
+     "a silk blindfold and a single red rose on white sheets, artistic still life", "flirting"),
+    ("атмосфера", "як створити атмосферу: світло, музика, аромати, білизна",
+     "a cozy bedroom with candles and soft warm light, romantic mood", "romantic candles"),
+    ("після", "як продовжити близькість після: обійми, турбота, розмова, душ удвох",
+     "a couple cuddling under a blanket, peaceful morning light", "cuddle"),
 ]
 PARA_FALLBACK = [
     ("Повільний вечір", "• Домовтеся, що сьогодні нікуди не поспішаєте\n• Почніть з 10 хвилин масажу плечей і спини\n"
@@ -576,22 +591,6 @@ def para_news(st: dict, now: datetime, limit: int = 3) -> list[tuple[str, str]]:
     return out
 
 
-PARA_IMG = {
-    "нова поза": "a loving couple in a tender embrace, silhouettes against warm window light",
-    "прелюдія": "a couple slowly dancing close together in a dim cozy room",
-    "масаж": "a woman giving her partner a relaxing shoulder massage, candles, towels, spa mood",
-    "побачення вдома": "a romantic dinner for two at home, candles, wine glasses, fairy lights",
-    "розмова": "a couple talking softly face to face on a sofa under a blanket, holding hands",
-    "гра": "a playful couple laughing and hugging on a bed with pillows, cozy evening",
-    "атмосфера": "a cozy bedroom with candles, rose petals and soft warm light",
-    "після": "a couple cuddling under a blanket, peaceful, morning light",
-    "сюрприз": "a man giving a woman a small gift box with flowers, both smiling",
-}
-GIF_Q = {"нова поза": "romantic couple", "прелюдія": "couple dancing", "масаж": "couple massage",
-         "побачення вдома": "date night", "розмова": "couple love talk", "гра": "couple flirting",
-         "атмосфера": "romantic candles", "після": "cuddle", "сюрприз": "romantic surprise"}
-
-
 def resolve_url(url: str) -> str | None:
     """Справжня адреса статті (Google News перенаправляє); None — якщо не вдалося."""
     try:
@@ -603,7 +602,7 @@ def resolve_url(url: str) -> str | None:
         return None
 
 
-def para_visual(st: dict, label: str, news: list) -> dict | None:
+def para_visual(st: dict, theme: tuple, news: list) -> dict | None:
     """Картинка до поради: по черзі кожен варіант, у випадковому порядку."""
     avail = (["preview"] if news else []) + (["ai"] if WORKER_MODE else []) + (["gif"] if GIPHY_KEY else [])
     bag = [x for x in st.get("para_bag", []) if x in avail] or random.sample(avail, len(avail))
@@ -617,7 +616,7 @@ def para_visual(st: dict, label: str, news: list) -> dict | None:
                         st["para_bag"] = bag
                         return {"type": "preview", "url": real}
             elif kind == "ai":
-                scene = PARA_IMG.get(label, PARA_IMG["атмосфера"])
+                scene = theme[2]
                 r = http_json(f"{SYNC_URL}/img?key={urllib.parse.quote(SYNC_KEY)}", {"prompt":
                     f"{scene}, romantic tasteful artistic illustration, soft warm colors, gentle light, "
                     "fully clothed, no nudity, elegant, cinematic"})
@@ -627,7 +626,7 @@ def para_visual(st: dict, label: str, news: list) -> dict | None:
                 print(f"ІІ-картинка: {r.get('error')}")
             elif kind == "gif":
                 r = http_json("https://api.giphy.com/v1/gifs/search?" + urllib.parse.urlencode(
-                    {"api_key": GIPHY_KEY, "q": GIF_Q.get(label, "romantic couple"), "limit": 25, "rating": "pg"}))
+                    {"api_key": GIPHY_KEY, "q": theme[3], "limit": 25, "rating": "pg-13"}))
                 data = [g for g in r.get("data", []) if (g.get("images") or {}).get("original")]
                 if data:
                     o = random.choice(data)["images"]["original"]
@@ -641,15 +640,16 @@ def para_visual(st: dict, label: str, news: list) -> dict | None:
 
 def build_para(st: dict, now: datetime, with_news: bool = True) -> str:
     i = st.get("para_i", 0)
-    label, theme = PARA_THEMES[i % len(PARA_THEMES)]
+    th = PARA_THEMES[i % len(PARA_THEMES)]
+    theme = th[1]
     st["para_i"] = i + 1
     recent = st.get("para_titles", [])[-30:]
     prompt = (
-        "Ти — тактовний консультант зі стосунків для дорослої подружньої пари (чоловік і дружина). "
+        "Ти — сексолог і консультант зі стосунків для дорослої подружньої пари (чоловік і дружина). "
         f"Напиши одну практичну пораду на тему: {theme}. "
         "Формат: перший рядок — короткий заголовок до 6 слів без лапок; далі 3–5 пунктів, кожен з нового "
-        "рядка й починається з «• ». Тон теплий, легкий, трохи з гумором, романтичний; без вульгарності "
-        "й анатомічних подробиць; наголос на згоді, комфорті та довірі обох. Мова — українська. "
+        "рядка й починається з «• ». Тон теплий, відвертий, але без вульгарності; можна про техніку, проте "
+        "без анатомічних подробиць; наголос на згоді, комфорті та довірі обох. Мова — українська. "
         "Без Markdown, без зірочок і решіток. "
         + (f"Не повторюй ці теми: {'; '.join(recent)}." if recent else ""))
     text = gemini(prompt)
@@ -662,13 +662,13 @@ def build_para(st: dict, now: datetime, with_news: bool = True) -> str:
         title, body = PARA_FALLBACK[j % len(PARA_FALLBACK)]
         st["para_fb"] = j + 1
     st["para_titles"] = (recent + [title])[-30:]
-    msg = (f"💞 <b>ДЛЯ ВАС ДВОХ</b> · {label}\n"
+    msg = (f"💞 <b>НОВА ПОРАДА 18+</b>\n"
            f"<blockquote><b>{esc(title)}</b>\n{esc(body)}</blockquote>")
     news = para_news(st, now) if with_news else []
     if news:
         msg += "\n📰 <b>Цікаве за тиждень</b>\n" + "\n".join(
             f'• <a href="{html.escape(lk)}">{esc(t)}</a>' for t, lk in news)
-    return rich(msg, para_visual(st, label, news))
+    return rich(msg, para_visual(st, th, news))
 
 
 # ---------- YouTube (Data API v3) ----------
