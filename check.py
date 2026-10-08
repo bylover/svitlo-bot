@@ -593,7 +593,8 @@ PARA_FALLBACK = [
 def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_tokens: int = 800) -> str | None:
     if not GEMINI_KEY:
         return None
-    cfg = {"temperature": 0.7 if json_mode else 1.0, "maxOutputTokens": max_tokens}
+    cfg = {"temperature": 0.7 if json_mode else 1.0, "maxOutputTokens": max(max_tokens, 1500) + 2500,
+           "thinkingConfig": {"thinkingLevel": "low"}}      # «думати» коротко, щоб текст не обрізався
     if json_mode:
         cfg["responseMimeType"] = "application/json"
     body = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": cfg}
@@ -602,18 +603,27 @@ def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_toke
             "HARM_CATEGORY_SEXUALLY_EXPLICIT", "HARM_CATEGORY_HARASSMENT",
             "HARM_CATEGORY_HATE_SPEECH", "HARM_CATEGORY_DANGEROUS_CONTENT")]
     for model in GEMINI_MODELS:
-        for attempt in range(2):                 # при перевантаженні (503/429) — ще одна спроба
+        for attempt in range(3):                 # перевантаження (503/429) або модель без «думання» — ще спроба
             try:
                 r = http_json(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
                               f"?key={urllib.parse.quote(GEMINI_KEY)}", body)
-                parts = ((r.get("candidates") or [{}])[0].get("content") or {}).get("parts") or []
+                cand = (r.get("candidates") or [{}])[0]
+                parts = (cand.get("content") or {}).get("parts") or []
                 text = "".join(p_.get("text", "") for p_ in parts if not p_.get("thought")).strip()
+                if text and cand.get("finishReason") == "MAX_TOKENS" and not json_mode:
+                    lines = text.splitlines()        # обрізано — до останнього завершеного рядка
+                    if len(lines) > 2 and not re.search(r"[.!?…»)]$", lines[-1].strip()):
+                        text = "\n".join(lines[:-1])
                 if text:
                     return text
                 print(f"Gemini {model}: порожня відповідь ({(r.get('candidates') or [{}])[0].get('finishReason')})")
                 break
             except urllib.error.HTTPError as e:
-                print(f"Gemini {model}: {err_text(e)[:200]}")
+                msg = err_text(e)
+                print(f"Gemini {model}: {msg[:200]}")
+                if e.code == 400 and "think" in msg.lower() and "thinkingConfig" in cfg:
+                    cfg.pop("thinkingConfig")         # модель без «думання» — повторюємо без параметра
+                    continue
                 if e.code in (429, 500, 503) and attempt == 0:
                     _time.sleep(3)
                     continue
@@ -709,7 +719,7 @@ def build_para(st: dict, now: datetime, with_news: bool = True, header: str = "�
         "без анатомічних подробиць; наголос на згоді, комфорті та довірі обох. Мова — українська. "
         "Без Markdown, без зірочок і решіток. "
         + (f"Не повторюй ці теми: {'; '.join(recent)}." if recent else ""))
-    text = gemini(prompt)
+    text = gemini(prompt) or worker_text(prompt)       # Gemini, а якщо недоступний — модель Cloudflare
     if text:
         text = re.sub(r"[*#_`]+", "", text).strip()
         lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
@@ -726,6 +736,93 @@ def build_para(st: dict, now: datetime, with_news: bool = True, header: str = "�
         msg += "\n📰 <b>Цікаве за тиждень</b>\n" + "\n".join(
             f'• <a href="{html.escape(lk)}">{esc(t)}</a>' for t, lk in news)
     return rich(msg, para_visual(st, th, news))
+
+
+def worker_text(prompt: str) -> str | None:
+    """Запасна текстова модель Cloudflare Workers AI (через ваш Worker)."""
+    if not WORKER_MODE:
+        return None
+    try:
+        r = http_json(f"{SYNC_URL}/txt?key={urllib.parse.quote(SYNC_KEY)}", {"prompt": prompt})
+        t = (r.get("text") or "").strip()
+        return re.sub(r"[*#_`]+", "", t) or None
+    except Exception as e:
+        print(f"Cloudflare AI: {err_text(e)}")
+        return None
+
+
+# ---------- «Стаття тижня 18+»: RSS журналів (розділи Sex & Relationships) ----------
+ARTICLE_FEEDS = [
+    ("Cosmopolitan", "https://www.cosmopolitan.com/rss/sex-love.xml/"),
+    ("Cosmopolitan", "https://www.cosmopolitan.com/rss/all.xml/"),
+    ("Men's Health", "https://www.menshealth.com/rss/sex-relationships.xml/"),
+    ("Men's Health", "https://www.menshealth.com/rss/all.xml/"),
+    ("Women's Health", "https://www.womenshealthmag.com/rss/sex-and-love.xml/"),
+    ("Women's Health", "https://www.womenshealthmag.com/rss/all.xml/"),
+    ("Psychology Today", "https://www.psychologytoday.com/intl/topics/sex/feed"),
+    ("Psychology Today", "https://www.psychologytoday.com/us/topics/relationships/feed"),
+    ("Gottman Institute", "https://www.gottman.com/blog/feed/"),
+]
+ARTICLE_WORDS = re.compile(r"\bsex|orgasm|foreplay|position|intima|libido|bedroom|kiss|desire|arous|oral|"
+                           r"pleasure|couple|relationship|marriage|partner|love life|kink|toy", re.I)
+
+
+def strip_html(t: str) -> str:
+    return " ".join(html.unescape(re.sub(r"<[^>]+>", " ", t or "")).split())
+
+
+def collect_articles(st: dict, now: datetime) -> None:
+    """Раз на день: свіжі статті журналів про секс і стосунки → пул у state (для розсилки й меню)."""
+    import xml.etree.ElementTree as ET
+    if st.get("art_day") == now.date().isoformat():
+        return
+    st["art_day"] = now.date().isoformat()
+    seen = set(st.get("art_seen", []))
+    pool, ok_feeds = [], []
+    for src, url in ARTICLE_FEEDS:
+        try:
+            root = ET.fromstring(http_text(url))
+        except Exception as e:
+            print(f"Статті: {src} {url} → {str(e)[:60]}")
+            continue
+        ok_feeds.append(src)
+        for it in list(root.iter("item"))[:40]:
+            title = (it.findtext("title") or "").strip()
+            link = (it.findtext("link") or "").strip()
+            body = it.findtext("{http://purl.org/rss/1.0/modules/content/}encoded") or it.findtext("description") or ""
+            text = strip_html(body)
+            if not (title and link) or link in seen or not ARTICLE_WORDS.search(title + " " + text[:300]):
+                continue
+            pool.append({"src": src, "title": title, "link": link, "text": text[:2500]})
+    uniq = {a["link"]: a for a in pool}
+    st["para_articles"] = list(uniq.values())[:15]
+    print(f"Статті: працюють {sorted(set(ok_feeds))}, у пулі {len(st['para_articles'])}")
+
+
+def build_article(st: dict) -> str | None:
+    """«Стаття тижня 18+»: найкорисніша свіжа стаття, переказ українською, прев'ю оригіналу."""
+    pool = [a for a in st.get("para_articles", []) if a["link"] not in set(st.get("art_seen", []))]
+    if not pool:
+        return None
+    listing = [{"n": i, "title": a["title"], "source": a["src"], "text": a["text"][:1200]} for i, a in enumerate(pool[:10])]
+    raw = gemini("Ти — редактор рубрики для дорослої подружньої пари. Ось свіжі статті журналів про секс і стосунки. "
+                 "Обери ОДНУ найкориснішу й найцікавішу для пари (техніки, пози, близькість, бажання, дослідження) і "
+                 "перекажи українською природно, по-людськи. Поверни лише JSON: {\"n\": номер, \"title\": \"заголовок "
+                 "українською\", \"points\": [\"4–6 пунктів суті, кожен 1–2 речення\"], \"tip\": \"одна практична "
+                 "порада для пари\"}. Без вульгарності та анатомічних подробиць.\n\n" + json.dumps(listing, ensure_ascii=False),
+                 json_mode=True, relaxed=True, max_tokens=2000)
+    try:
+        r = json.loads(raw or "")
+        a = pool[int(r["n"])]
+    except Exception:
+        print("Стаття: Gemini не повернув переказ")
+        return None
+    st["art_seen"] = (st.get("art_seen", []) + [a["link"]])[-300:]
+    pts = "\n".join(f"• {esc(x)}" for x in (r.get("points") or [])[:6])
+    msg = (f"📖 <b>СТАТТЯ ТИЖНЯ 18+</b> · {esc(a['src'])}\n"
+           f"<blockquote><b>{esc(r.get('title'))}</b>\n{pts}</blockquote>\n"
+           f"💡 {esc(r.get('tip'))}\n🔗 <a href=\"{html.escape(a['link'])}\">читати оригінал</a>")
+    return rich(msg, {"type": "preview", "url": a["link"]})   # зверху — обкладинка статті
 
 
 # ---------- Reddit: «Обговорення тижня 18+» (пост + 5 найкращих коментарів, переклад Gemini) ----------
@@ -1926,12 +2023,17 @@ def main() -> None:
     # 8) «Для пари» — ср і пт о 18:00 (вам, дружині та підписникам, які це ввімкнули); з меню — нова порада
     para_due = (now.weekday() in PARA_DAYS and PARA_HOUR <= now.hour < PARA_HOUR + 4
                 and st.get("para_sent") != today_key)
+    collect_articles(st, now)                         # раз на день оновлюємо пул статей журналів
     if para_due:
         pm = build_para(st, now, header="💞 <b>ПОРАДА ТИЖНЯ 18+</b>")
         topic_msgs.append(("para", pm, None, pm))
-        rd = build_reddit(st)                       # «Обговорення тижня 18+» з Reddit (якщо підключено)
-        if rd:
-            topic_msgs.append(("para", rd, None, rd))
+        # друге повідомлення — по черзі: ср — стаття журналу, пт — обговорення Reddit (або те, що доступне)
+        order = [build_article, build_reddit] if now.weekday() == PARA_DAYS[0] else [build_reddit, build_article]
+        for fn in order:
+            extra = fn(st)
+            if extra:
+                topic_msgs.append(("para", extra, None, extra))
+                break
         st["para_sent"] = today_key
     if para_req:
         pm = build_para(st, now, with_news=False)
