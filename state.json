@@ -4,7 +4,9 @@
   "2026-10-08": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 30, \"start\": 0, \"type\": \"Definite\"}, {\"end\": 570, \"start\": 420, \"type\": \"Definite\"}, {\"end\": 1110, \"start\": 900, \"type\": \"Definite\"}]}",
   "2026-10-09": "{\"s\": \"WaitingForSchedule\", \"slots\": []}"
  },
- "reminded": [],
+ "reminded": [
+  "on|2026-10-08T18:30:00+03:00"
+ ],
  "offset": 28760142,
  "cmds": "grafik,pogoda,kino,youtube,settings,help,stop",
  "subs": "IVa7wb9H/lXkE8k4m44z1aZNweBX6a1osjOGpyjBpNXUGfNytfw2JvHnlCLZO8rN2ldu2b4q4woQoxoqqsaGk64=",
@@ -27,7 +29,18 @@
   "Повільний вечір"
  ],
  "para_bag": [],
- "to_delete": [],
+ "to_delete": [
+  [
+   "160603556",
+   152,
+   "2026-10-08T18:40:00+03:00"
+  ],
+  [
+   "936688574",
+   153,
+   "2026-10-08T18:40:00+03:00"
+  ]
+ ],
  "silpo_branch": {
   "id": "1edb6b3e-f7ef-677c-99f0-51de6a88d469",
   "type": "SelfPickup",
