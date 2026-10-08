@@ -129,7 +129,7 @@ SOURCES_TEXT = (
     "💡 <b>Світло</b>\n"
     "<blockquote>• Графік — із сайту ДТЕК Київські електромережі (dtek-kem.com.ua) через відкрите дзеркало даних, яке оновлюється кожні ~5 хв; бот перевіряє зміни щохвилини\n"
     "• Прогноз на тиждень — з того ж сайту ДТЕК (орієнтовний)\n"
-    "• Ваша адреса (вул. Кульженків Сім'ї, 35) — перевірка на сайті ДТЕК, як у формі «Відсутня електроенергія?», кожні ~10 хв: чи є зараз відключення, причина, початок і орієнтовне відновлення\n• Екстрені відключення — за цією перевіркою адреси та офіційним статусом YASNO (компанія ДТЕК у Києві)\n"
+    "• Ваша адреса (вул. Кульженків Сім'ї, 35) — перевірка на сайті ДТЕК, як у формі «Відсутня електроенергія?», кожні ~10 хв: чи є зараз відключення, причина, початок і орієнтовне відновлення\n• Екстрені відключення — за оголошенням на сторінці ДТЕК, перевіркою адреси, статусом YASNO та Telegram-каналами (ЖК «Яскравий», Укренерго — лише про Київ, ДТЕК); враховуються тільки явні оголошення й скасування, оголошення з каналу діє до 12 год\n"
     "• «За графіком» — це план ДТЕК, а не факт наявності світла</blockquote>\n"
     "🌤 <b>Погода</b>\n"
     "<blockquote>• Open-Meteo — поєднує кілька метеомоделей; прогноз для координат Мінського масиву\n"
@@ -1735,8 +1735,8 @@ def http_text(url: str) -> str:
         return r.read().decode("utf-8", "replace")
 
 
-def channel_posts() -> list[tuple[int, datetime, str]]:
-    page = http_text(f"https://t.me/s/{CHANNEL}")
+def channel_posts(channel: str | None = None) -> list[tuple[int, datetime, str]]:
+    page = http_text(f"https://t.me/s/{channel or CHANNEL}")
     posts = []
     for chunk in page.split('data-post="')[1:]:
         m_id = re.match(r'[^/"]+/(\d+)"', chunk)
@@ -1761,6 +1761,53 @@ def emerg_kind(text: str) -> str | None:
     return "off" if any(w in t for w in CANCEL_WORDS) else "on"
 
 
+# Telegram-канали для екстрених: (ім'я, назва, лише пости про Київ?)
+EMERG_CHANNELS = [("yaskravyi_power", "канал ЖК «Яскравий»", False),
+                  ("Ukrenergo", "Укренерго", True),
+                  ("dtek_kem", "ДТЕК Київські електромережі", False),
+                  ("DTEKKyivskielectromerezhi", "ДТЕК Київські електромережі", False),
+                  ("dtekkem", "ДТЕК Київські електромережі", False)]
+EM_ON = re.compile(r"(застосову\w*|діють|запроваджен\w*|оголошен\w*|введен\w*)\s+(\w+\s+){0,2}(екстрен|аварійн)\w*\s+відключ|"
+                   r"(екстрен|аварійн)\w*\s+відключення\s+(застосову|діють|запроваджен)|"
+                   r"графік\w*\s+(стабілізаційн\w*\s+)?(погодинних\s+)?відключень\s+не\s+діють", re.I)
+EM_OFF = re.compile(r"(екстрен|аварійн)\w*\s+відключення\s+(\w+\s+){0,2}(скасов|відмін|припин|заверш|закінч|не\s+застосову)|"
+                    r"(скасов|відмін|припин|заверш|закінч)\w*\s+(\w+\s+){0,2}(екстрен|аварійн)|"
+                    r"повертаємо\w*\s+до\s+графік|(знову\s+)?діють\s+(графіки|ГПВ)|відновлено\s+(застосування\s+)?графік", re.I)
+
+
+def emergency_channels(st: dict, now: datetime) -> tuple[bool, list[str]]:
+    """Останнє явне оголошення про екстрені (або їх скасування) у кожному каналі за добу; діє до 12 год."""
+    on_any, notes, found = False, [], []
+    for name, title, kyiv_only in EMERG_CHANNELS:
+        try:
+            posts = channel_posts(name)
+        except Exception as e:
+            continue
+        if not posts:
+            continue
+        found.append(name)
+        last = None
+        for pid, dt, text in posts:
+            if now - dt > timedelta(hours=24) or "екстрен" not in text.lower() and "аварійн" not in text.lower():
+                continue
+            if kyiv_only and not re.search(r"київ", text, re.I):
+                continue
+            # спершу перевіряємо скасування (в ньому теж є слово «екстрені»)
+            kind = "off" if EM_OFF.search(text) else ("on" if EM_ON.search(text) else None)
+            if kind:
+                last = (kind, dt, text, pid)
+        if last:
+            kind, dt, text, pid = last
+            active = kind == "on" and now - dt < timedelta(hours=12)
+            on_any = on_any or active
+            short = " ".join(text.split())[:140]
+            print(f"Екстрені — {title} (@{name}, {dt:%d.%m %H:%M}): {'ТАК' if active else 'ні'} · «{short}»")
+            if active:
+                notes.append(f"{title}: {short}")
+    print(f"Екстрені — канали знайдено: {found or 'жодного'}")
+    return on_any, notes
+
+
 def emergency_yasno(st: dict, now: datetime) -> list[str] | None:
     """Екстрені відключення за офіційним статусом YASNO (компанія ДТЕК у Києві). None — якщо YASNO недоступний."""
     data = None
@@ -1780,21 +1827,27 @@ def emergency_yasno(st: dict, now: datetime) -> list[str] | None:
             stats[stt] = stats.get(stt, 0) + 1
     on_y = stats.get("EmergencyShutdowns", 0) > 0
     addr = st.get("addr") or {}
-    on_a = bool(addr.get("active") and addr.get("emergency"))     # перевірка за адресою на сайті ДТЕК — найточніша
-    on = on_y or on_a
+    on_a = bool((addr.get("active") and addr.get("emergency")) or addr.get("city_emergency"))  # сайт ДТЕК — найточніше
+    on_c, ch_notes = emergency_channels(st, now)     # Telegram: ЖК, Укренерго, ДТЕК (лише явні оголошення)
+    on = on_y or on_a or on_c
     print(f"Екстрені: {'ТАК' if on else 'ні'} · YASNO {'так' if on_y else 'ні'} {stats} · "
-          f"адреса ДТЕК {'так' if on_a else 'ні'} ({addr.get('reason') or '—'})")
+          f"сайт ДТЕК {'так' if on_a else 'ні'} (адреса: {addr.get('reason') or '—'}; місто: {(addr.get('city_text') or '—')[:120]}) · "
+          f"канали {'так' if on_c else 'ні'}")
     ch = st.get("emerg") or {}
     was = bool(ch.get("on"))
     out = []
     if on and not was:
         ch.update(on=True, since=now.isoformat(), src="yasno")
+        srcs = ", ".join((["сайт ДТЕК"] if on_a else []) + (["YASNO"] if on_y else [])
+                         + [n.split(":")[0] for n in ch_notes]) or "ДТЕК"
+        note_t = addr.get("city_text") or (ch_notes[0] if ch_notes else "")
+        note = f"<blockquote>{esc(note_t)}</blockquote>\n" if note_t else ""
         out.append("🚨🚨🚨 <b>ЕКСТРЕНІ ВІДКЛЮЧЕННЯ!</b> 🚨🚨🚨\n"
-                   "Графік може не діяти · 🔋 зарядіть пристрої\n<i>за офіційними даними ДТЕК / YASNO</i>")
+                   "Графік може не діяти · 🔋 зарядіть пристрої\n" + note + f"<i>джерела: {esc(srcs)}</i>")
     elif was and not on:
         ch.update(on=False, since=now.isoformat(), src="yasno")
         out.append("✅✅ <b>ЕКСТРЕНІ ВІДКЛЮЧЕННЯ СКАСОВАНО</b> ✅✅\n"
-                   "Знову діє графік ДТЕК\n<i>за офіційними даними ДТЕК / YASNO</i>")
+                   "Знову діє графік ДТЕК\n<i>жодне джерело (сайт ДТЕК, YASNO, канали) більше не повідомляє про екстрені</i>")
     st["emerg"] = ch
     return out
 
@@ -1987,7 +2040,7 @@ def addr_line() -> str:
     if a.get("active"):
         return (f"🏠 <b>За адресою зараз немає світла</b> · {esc(a.get('reason'))}\n"
                 f"   з {esc(a.get('start'))}, орієнтовно до <b>{esc(a.get('end') or '—')}</b>\n")
-    return "🏠 За адресою зараз відключень немає (дані ДТЕК)\n"
+    return "🏠 ДТЕК зараз не показує відключень за вашою адресою\n"
 
 
 def summary(head: str, today_d, tomorrow_d, all_off, now) -> str:

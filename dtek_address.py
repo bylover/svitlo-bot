@@ -24,7 +24,11 @@ URL = "https://www.dtek-kem.com.ua/ua/shutdowns"
 
 
 def street_variants(s: str) -> list[str]:
-    v = [s, s.replace("'", "’"), s.replace("'", "ʼ"), s.replace("’", "'"), s.replace("ʼ", "'")]
+    try:                                             # спершу — варіант, який спрацював минулого разу
+        good = json.loads(STATE.read_text("utf-8")).get("street_ok")
+    except Exception:
+        good = None
+    v = ([good] if good else []) + [s, s.replace("'", "’"), s.replace("'", "ʼ"), s.replace("’", "'"), s.replace("ʼ", "'")]
     return list(dict.fromkeys(v))
 
 
@@ -43,6 +47,17 @@ def fetch_address() -> dict | None:
             print("Заголовок сторінки:", page.title()[:100])
             browser.close()
             return None
+        city = page.evaluate("""() => {
+            const t = (document.body && document.body.innerText) || '';
+            const out = [];
+            for (const line of t.split('\\n')) {
+                const l = line.trim();
+                if (l && /екстрен|аварійн|не діють|не застосов/i.test(l) && l.length < 400
+                    && !/якщо|імовірно|просимо перевірити|оформіть заявку/i.test(l)) out.push(l);
+            }
+            return out.slice(0, 8);
+        }""")
+        print("ДТЕК, текст сторінки про екстрені:", city if city else "немає")
         res = None
         for st in street_variants(STREET):
             res = page.evaluate("""async (street) => {
@@ -67,6 +82,10 @@ def fetch_address() -> dict | None:
                 data = None
             if isinstance(data, dict) and (data.get("data") or {}):
                 browser.close()
+                data["_street"] = st
+                data["_city"] = city
+                extra = {k: v for k, v in data.items() if k not in ("data", "_street", "_city")}
+                print("ДТЕК, загальні поля відповіді:", json.dumps(extra, ensure_ascii=False)[:600])
                 return data
         if res:
             print("ДТЕК: відповідь без даних:", (res.get("text") or "")[:500])
@@ -74,12 +93,17 @@ def fetch_address() -> dict | None:
         return None
 
 
-def house_info(data: dict) -> dict:
-    """Дані саме нашого будинку з відповіді getHomeNum."""
+def house_info(data: dict) -> dict | None:
+    """Дані саме нашого будинку з відповіді getHomeNum; None — якщо будинку у відповіді немає."""
     houses = data.get("data") or {}
     h = houses.get(HOUSE)
     if h is None:                                    # іноді ключі з літерами/дробами — шукаємо збіг
-        h = next((v for k, v in houses.items() if re.sub(r"\s", "", str(k)).lower() == HOUSE.lower()), {})
+        h = next((v for k, v in houses.items() if re.sub(r"\s", "", str(k)).lower() == HOUSE.lower()), None)
+    if h is None:
+        print(f"ДТЕК: будинку «{HOUSE}» у відповіді немає. Є: {', '.join(list(houses)[:40])}")
+        return None
+    print(f"ДТЕК: будинок {HOUSE} знайдено: {json.dumps(h, ensure_ascii=False)[:300]}")
+    h = h or {}
     return {"reason": (h.get("sub_type") or "").strip(), "start": (h.get("start_date") or "").strip(),
             "end": (h.get("end_date") or "").strip(), "type": str(h.get("type") or ""),
             "groups": h.get("sub_type_reason") or [], "updated": str(data.get("updateTimestamp") or "")}
@@ -99,11 +123,21 @@ def main() -> None:
     if not data:
         sys.exit(0)                                  # нічого не змінюємо — спробуємо наступного разу
     info = house_info(data)
+    if info is None:
+        sys.exit(0)                                  # не знайшли будинок — стан не змінюємо
     active = bool(info["reason"] or info["start"])
-    print(f"Адреса {STREET}, {HOUSE}: {'НЕМАЄ світла' if active else 'відключень немає'} · {info}")
+    print(f"Адреса {STREET}, {HOUSE}: {'НЕМАЄ світла' if active else 'ДТЕК не показує відключення'} · {info}")
 
+    banner = " ".join(data.get("_city") or [])
+    extra_txt = json.dumps({k: v for k, v in data.items() if k not in ("data", "_street", "_city")}, ensure_ascii=False)
+    explicit = re.compile(r"(застосову\w*|діють|запроваджен\w*|оголошен\w*)\s+(\w+\s+){0,2}екстрен|"
+                          r"екстрен\w*\s+відключення\s+(застосову|діють|запроваджен)|"
+                          r"графік\w*\s+(стабілізаційн\w*\s+)?(погодинних\s+)?відключень\s+не\s+діють", re.I)
+    city_em = bool(explicit.search(banner) or explicit.search(extra_txt))   # лише явні оголошення, не загальні підказки
+    print(f"Екстрені по місту (сторінка ДТЕК): {'ТАК' if city_em else 'ні'}")
     cur = {"active": active, **info, "emergency": bool(re.search(r"екстрен|аварійн", info["reason"], re.I)),
-           "checked": now.isoformat(), "address": f"{STREET}, {HOUSE}"}
+           "city_emergency": city_em, "city_text": banner[:300],
+           "checked": now.isoformat(), "address": f"{STREET}, {HOUSE}", "street_ok": data.get("_street")}
     msgs = []
     addr = f"🏠 {esc(STREET)}, {esc(HOUSE)}"
     planned = bool(re.search(r"стабілізаційн|планов", info["reason"], re.I))  # за графіком — про це вже є нагадування
@@ -117,8 +151,11 @@ def main() -> None:
         msgs.append(f"🕐 <b>ОНОВЛЕНО ЧАС ВІДНОВЛЕННЯ</b>\n{addr}\n💡 Тепер орієнтовно: <b>{esc(info['end'])}</b>"
                     f" (було {esc(prev.get('end') or '—')})\n<i>Дані ДТЕК, оновлено {esc(info['updated'])}</i>")
     elif not active and prev.get("active") and not prev.get("planned"):
-        msgs.append(f"💡 <b>ДТЕК ЗНЯВ ВІДКЛЮЧЕННЯ ЗА АДРЕСОЮ</b>\n{addr}\n"
-                    f"Світло має бути (відключення було з {esc(prev.get('start') or '—')})")
+        # ДТЕК прибрав запис. Це не гарантує, що світло вже є: часто запис зникає, коли минув орієнтовний час
+        msgs.append(f"ℹ️ <b>ДТЕК БІЛЬШЕ НЕ ПОКАЗУЄ ВІДКЛЮЧЕННЯ ЗА АДРЕСОЮ</b>\n{addr}\n"
+                    f"Відключення було з {esc(prev.get('start') or '—')}, орієнтовно до {esc(prev.get('end') or '—')}.\n"
+                    "Якщо світла досі немає — можлива нова аварія: ДТЕК радить перевірити ще раз через 15 хв "
+                    "або оформити заявку на сайті.\n<i>Дані ДТЕК, оновлено " + esc(info["updated"]) + "</i>")
     cur["planned"] = planned
     STATE.write_text(json.dumps(cur, ensure_ascii=False, indent=1), "utf-8")
 
