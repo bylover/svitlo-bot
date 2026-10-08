@@ -68,6 +68,13 @@ GEMINI_KEY = (os.environ.get("GEMINI_KEY") or "").strip()  # безкоштов�
 GEMINI_MODELS = ["gemini-flash-latest", "gemini-2.5-flash", "gemini-2.0-flash"]
 GIPHY_KEY = (os.environ.get("GIPHY_KEY") or "").strip()    # безкоштовний ключ developers.giphy.com
 SMM_WEEKDAY, SMM_HOUR = 0, 13                               # дайджест SMM і таргету: пн о 13:00
+SMM_SUBS = ["FacebookAds", "PPC", "socialmedia", "TikTokAds", "InstagramMarketing"]   # «Фішки від практиків»
+SILPO_WEEKDAY, SILPO_HOUR = 3, 13                           # акції Сільпо: чт о 13:00
+SILPO_SNAP_WEEKDAY, SILPO_SNAP_HOUR = 2, 20                 # знімок цін усіх товарів: ср після 20:00
+SILPO_LAT, SILPO_LON = 50.5135, 30.4935                     # вул. Калнишевського, 2 (Мінський масив)
+SILPO_STORE = "Калнишевськ"                                 # яку адресу шукати серед магазинів
+SILPO_TOP = 5
+SPLIT = "\n§§\n"                                            # роздільник повідомлень у довгих підбірках
 REDDIT_ID = (os.environ.get("REDDIT_ID") or "").strip()     # Reddit script app (для «Обговорення тижня 18+»)
 REDDIT_SECRET = (os.environ.get("REDDIT_SECRET") or "").strip()
 REDDIT_USER = (os.environ.get("REDDIT_USER") or "").strip()
@@ -76,20 +83,22 @@ REDDIT_SUBS = [x.strip() for x in (os.environ.get("REDDIT_SUBS") or "sex,sexover
 PARA_DAYS, PARA_HOUR = (2, 4), 18                          # «Для пари»: ср і пт о 18:00
 COMMANDS = [("grafik", "💡 Графік світла"), ("pogoda", "🌤 Погода"), ("para", "💞 Поради 18+"),
             ("kino", "🍿 Кіно: нова підбірка"), ("youtube", "▶️ YouTube: топ за тиждень"),
-            ("smm", "📈 SMM і таргет за тиждень"),
+            ("smm", "📈 SMM і таргет за тиждень"), ("silpo", "🛒 Акції Сільпо за тиждень"),
             ("settings", "⚙️ Налаштування сповіщень"), ("help", "ℹ️ Інструкція"),
             ("stop", "🔕 Відписатися")]
 # теми сповіщень, які підписник може вмикати/вимикати
 TOPICS = [("svitlo", f"💡 Світло · група {GROUP}"), ("pogoda", "🌤 Погода"),
-          ("kino", "🍿 Кіно"), ("yt", "▶️ YouTube"), ("smm", "📈 SMM і таргет"), ("para", "💞 Поради 18+")]
+          ("kino", "🍿 Кіно"), ("yt", "▶️ YouTube"), ("smm", "📈 SMM і таргет"), ("para", "💞 Поради 18+"),
+          ("silpo", "🛒 Акції Сільпо")]
 ALL_TOPICS = [t for t, _ in TOPICS]
-DEFAULT_TOPICS = [t for t in ALL_TOPICS if t not in ("para", "smm")]   # ці теми підписник вмикає сам
+DEFAULT_TOPICS = [t for t in ALL_TOPICS if t not in ("para", "smm", "silpo")]   # ці теми підписник вмикає сам
 SETTINGS_TEXT = ("⚙️ <b>Налаштування сповіщень</b>\n"
                  "Натисніть, щоб увімкнути ✅ або вимкнути ⬜.\n"
                  f"💡 Світло — графік, зміни, нагадування, ранкове зведення (група {GROUP}, Мінський масив)\n"
                  "🌤 Погода — щодня о 20:00 · 🍿 Кіно — пт 11:00 · ▶️ YouTube — пн 11:00\n"
                  "📈 SMM і таргет — дайджест тижня, пн о 13:00 · 💞 Поради 18+ — ср і пт о 18:00\n"
-                 "<i>(📈 і 💞 за замовчуванням вимкнено)</i>\n"
+                 "🛒 Акції Сільпо — топ тижня, чт о 13:00\n"
+                 "<i>(📈, 💞 і 🛒 за замовчуванням вимкнено)</i>\n"
                  "<i>Бот відповідає із затримкою до 5–20 хв.</i>")
 HELP_TEXT = ("ℹ️ <b>ЯК КОРИСТУВАТИСЯ БОТОМ</b>\n\n"
              "<b>Що вміє бот</b>\n<blockquote>"
@@ -100,11 +109,12 @@ HELP_TEXT = ("ℹ️ <b>ЯК КОРИСТУВАТИСЯ БОТОМ</b>\n\n"
              "🍿 <b>Кіно</b> — 7 фільмів і 3 серіали на вихідні, щоп'ятниці об 11:00\n"
              "▶️ <b>YouTube</b> — топ-10 українського YouTube за тиждень, щопонеділка об 11:00\n"
              "📈 <b>SMM і таргет</b> — дайджест новинок і фішок за тиждень, щопонеділка о 13:00 (вмикається в /settings)\n"
+             "🛒 <b>Акції Сільпо</b> — топ-5 у кожній категорії з реальною вигодою, щочетверга о 13:00 (вмикається в /settings)\n"
              "💞 <b>Поради 18+</b> — відверті поради, обговорення й цікаві статті, ср і пт о 18:00 "
              "(вмикається в /settings)</blockquote>\n"
              "<b>Меню</b> (кнопка зліва від поля вводу)\n<blockquote>"
              "/grafik — графік світла зараз\n/pogoda — прогноз погоди\n/para — нова порада 18+\n/kino — нова підбірка кіно\n"
-             "/youtube — топ YouTube за тиждень\n/smm — SMM і таргет за тиждень\n/settings — увімкнути або вимкнути сповіщення\n"
+             "/youtube — топ YouTube за тиждень\n/smm — SMM і таргет за тиждень\n/silpo — акції Сільпо за тиждень\n/settings — увімкнути або вимкнути сповіщення\n"
              "/help — ця інструкція\n/stop — відписатися від усього</blockquote>\n"
              "<b>Важливо</b>\n<blockquote>"
              "• Графік — за даними сайту ДТЕК. «За графіком» не означає, що світло фактично є чи немає\n"
@@ -838,7 +848,235 @@ def build_smm(st: dict, now: datetime) -> str | None:
     while len(text) > 4000 and len(blocks) > 3:
         blocks.pop()
         text = head + "\n".join(blocks) + "\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>"
-    return text
+    practice = build_smm_practice(st)                 # друге повідомлення — фішки з Reddit (якщо підключено)
+    return text + (SPLIT + practice if practice else "")
+
+
+def reddit_token() -> str | None:
+    if not (REDDIT_ID and REDDIT_SECRET and REDDIT_USER and REDDIT_PASS):
+        return None
+    try:
+        return reddit_api("https://www.reddit.com/api/v1/access_token",
+                          form={"grant_type": "password", "username": REDDIT_USER, "password": REDDIT_PASS})["access_token"]
+    except Exception as e:
+        print(f"Reddit токен: {err_text(e)}")
+        return None
+
+
+def build_smm_practice(st: dict) -> str | None:
+    """«Фішки від практиків»: найобговорюваніші теми тижня з Reddit (SMM/таргет), переклад Gemini."""
+    tok = reddit_token()
+    if not tok or not GEMINI_KEY:
+        return None
+    seen = set(st.get("smm_reddit_seen", []))
+    posts = []
+    for sub in SMM_SUBS:
+        try:
+            lst = reddit_api(f"https://oauth.reddit.com/r/{sub}/top?t=week&limit=25&raw_json=1", tok)
+        except Exception as e:
+            print(f"Reddit r/{sub}: {err_text(e)}")
+            continue
+        for ch in (lst.get("data") or {}).get("children", []):
+            d = ch.get("data") or {}
+            if d.get("is_self") and not d.get("stickied") and d.get("id") not in seen and (d.get("num_comments") or 0) >= 10:
+                posts.append(d)
+    posts.sort(key=lambda d: (d.get("score") or 0) + 3 * (d.get("num_comments") or 0), reverse=True)
+    picked = []
+    for d in posts[:4]:
+        try:
+            tree = reddit_api(f"https://oauth.reddit.com/r/{d['subreddit']}/comments/{d['id']}?sort=top&limit=10&depth=1&raw_json=1", tok)
+            best = [c["data"].get("body", "") for c in tree[1]["data"]["children"]
+                    if c.get("kind") == "t1" and c["data"].get("author") != "AutoModerator"
+                    and len(c["data"].get("body") or "") >= 40][:2]
+        except Exception:
+            best = []
+        picked.append({"d": d, "comments": best})
+    if not picked:
+        return None
+    src = [{"n": i, "title": x["d"]["title"], "post": (x["d"].get("selftext") or "")[:1500],
+            "comments": [c[:800] for c in x["comments"]]} for i, x in enumerate(picked)]
+    raw = gemini("Ти — редактор дайджесту для SMM-спеціалістів і таргетологів. Ось найобговорюваніші теми тижня з "
+                 "Reddit (пост і найкращі коментарі практиків). Для кожної поверни об'єкт: n, title (короткий "
+                 "заголовок українською), summary (2–3 речення: про що обговорення), tip (1–2 речення: найкорисніша "
+                 "практична фішка з коментарів). Перекладай природно, без кальок. Відповідь — лише JSON-масив.\n\n"
+                 + json.dumps(src, ensure_ascii=False), json_mode=True, max_tokens=2500)
+    try:
+        items = [x for x in json.loads(raw or "") if str(x.get("n", "")).isdigit() and int(x["n"]) < len(picked)]
+    except Exception:
+        return None
+    blocks = []
+    for k, x in enumerate(items[:4], 1):
+        d = picked[int(x["n"])]["d"]
+        blocks.append("<blockquote>" + f"💬 <b>{k}. {esc(x.get('title'))}</b> · r/{esc(d['subreddit'])}\n"
+                      f"{esc(x.get('summary'))}\n💡 {esc(x.get('tip'))}\n"
+                      f"👍 {num(d.get('score') or 0)} · 💬 {num(d.get('num_comments') or 0)} · "
+                      f'<a href="https://www.reddit.com{html.escape(d.get("permalink", ""))}">обговорення</a></blockquote>')
+        st.setdefault("smm_reddit_seen", []).append(d["id"])
+    st["smm_reddit_seen"] = st.get("smm_reddit_seen", [])[-300:]
+    return "💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · Reddit за тиждень\n" + "\n".join(blocks) if blocks else None
+
+
+# ---------- Акції Сільпо (магазин на Калнишевського, 2) ----------
+SILPO_API = "https://sf-ecom-api.silpo.ua"
+SKIP_PROMO = re.compile(r"\d\s*\+\s*\d|друг(ий|у)|при купівлі|при покупці|персональн", re.I)
+CAT_EMOJI = [("м'яс", "🥩"), ("мяс", "🥩"), ("риб", "🐟"), ("молоч", "🥛"), ("сир", "🧀"), ("яйц", "🥚"),
+             ("овоч", "🥦"), ("фрукт", "🍎"), ("хліб", "🍞"), ("випіч", "🥐"), ("солод", "🍫"), ("снек", "🍿"),
+             ("кав", "☕"), ("чай", "🍵"), ("напо", "🥤"), ("вод", "💧"), ("алкогол", "🍷"), ("вин", "🍷"),
+             ("пив", "🍺"), ("заморож", "🧊"), ("бакал", "🥫"), ("консерв", "🥫"), ("ковбас", "🌭"),
+             ("кулінар", "🍱"), ("побут", "🧴"), ("гігієн", "🧼"), ("космет", "💄"), ("дит", "🧸"),
+             ("тварин", "🐾"), ("дім", "🏠")]
+
+
+def silpo_get(path: str, **query) -> dict:
+    q = urllib.parse.urlencode({k: v for k, v in query.items() if v is not None}, doseq=True)
+    req = urllib.request.Request(f"{SILPO_API}{path}" + (f"?{q}" if q else ""), headers={
+        "accept": "application/json", "accept-language": "uk,en;q=0.9", "origin": "https://silpo.ua",
+        "referer": "https://silpo.ua/",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140 Safari/537.36"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return json.load(r)
+
+
+def silpo_branch(st: dict) -> tuple[str, str] | None:
+    """Магазин на Калнишевського: id і тип доставки (кешується у state)."""
+    if st.get("silpo_branch"):
+        return st["silpo_branch"]["id"], st["silpo_branch"]["type"]
+    try:
+        modes = silpo_get("/v1/polygons/contains/all", latitude=SILPO_LAT, longitude=SILPO_LON)
+        modes = modes if isinstance(modes, list) else (modes.get("items") or [modes])
+        print("Сільпо, магазини поруч: " + "; ".join(f"{m.get('name')} ({m.get('deliveryType')})" for m in modes))
+        m = next((m for m in modes if SILPO_STORE.lower() in str(m.get("name", "")).lower()), modes[0])
+        st["silpo_branch"] = {"id": m["branchId"], "type": m.get("deliveryType") or "DeliveryHome", "name": m.get("name")}
+        print(f"Сільпо: обрано «{m.get('name')}»")
+        return m["branchId"], st["silpo_branch"]["type"]
+    except Exception as e:
+        print(f"Сільпо, магазин: {err_text(e)}")
+        return None
+
+
+def silpo_categories(branch: str) -> list[dict]:
+    data = silpo_get(f"/v1/uk/branches/{branch}/categories")
+    cats = data.get("items") if isinstance(data, dict) else data
+    return [c for c in (cats or []) if not c.get("parentId")]
+
+
+def silpo_products(branch: str, dtype: str, category: str, promo: bool, limit: int = 100, max_pages: int = 30) -> list:
+    out = []
+    for page in range(max_pages):
+        data = silpo_get(f"/v1/uk/branches/{branch}/products", limit=limit, offset=page * limit, category=category,
+                         includeChildCategories="true", deliveryType=dtype, sortBy="popularity",
+                         sortDirection="desc", inStock="true", mustHavePromotion="true" if promo else None)
+        items = data.get("items") or []
+        out += items
+        if len(items) < limit or len(out) >= (data.get("total") or 0):
+            break
+    return out
+
+
+def p_price(p: dict) -> float:
+    return float(p.get("displayPrice") or p.get("price") or 0)
+
+
+def p_old(p: dict) -> float:
+    return float(p.get("displayOldPrice") or p.get("oldPrice") or 0)
+
+
+def silpo_snapshot(st: dict, now: datetime) -> None:
+    """Щосереди: ціни всіх товарів магазину → silpo_prices.json (зберігаємо 5 тижнів)."""
+    br = silpo_branch(st)
+    if not br:
+        return
+    path = Path("silpo_prices.json")
+    try:
+        hist = json.loads(path.read_text("utf-8"))
+    except Exception:
+        hist = {}
+    snap = {}
+    try:
+        for c in silpo_categories(br[0]):
+            for p_ in silpo_products(br[0], br[1], c.get("slug"), promo=False):
+                if p_.get("id") and p_price(p_):
+                    snap[str(p_["id"])] = round(p_price(p_), 2)
+    except Exception as e:
+        print(f"Сільпо, знімок цін: {err_text(e)}")
+    if len(snap) < 100:
+        print(f"Сільпо: знімок неповний ({len(snap)} товарів) — не зберігаю")
+        return
+    hist[now.date().isoformat()] = snap
+    for k in sorted(hist)[:-5]:
+        del hist[k]
+    path.write_text(json.dumps(hist, separators=(",", ":")), "utf-8")
+    st["silpo_snap"] = now.date().isoformat()
+    print(f"Сільпо: збережено ціни {len(snap)} товарів")
+
+
+def build_silpo(st: dict, now: datetime) -> str | None:
+    br = silpo_branch(st)
+    if not br:
+        return None
+    try:
+        hist = json.loads(Path("silpo_prices.json").read_text("utf-8"))
+    except Exception:
+        hist = {}
+    weeks = sorted(hist)[-3:]                          # мінімальна ціна за останні 1–3 тижні
+    sections, total = [], 0
+    try:
+        cats = silpo_categories(br[0])
+    except Exception as e:
+        print(f"Сільпо, категорії: {err_text(e)}")
+        return None
+    for c in cats:
+        try:
+            prods = silpo_products(br[0], br[1], c.get("slug"), promo=True, limit=100, max_pages=3)
+        except Exception as e:
+            print(f"Сільпо, {c.get('title')}: {err_text(e)}")
+            continue
+        cand = []
+        for idx, p_ in enumerate(prods):
+            price, old = p_price(p_), p_old(p_)
+            promos = " ".join(str(x.get("title") or x.get("name") or x.get("type") or "")
+                              for x in (p_.get("promotions") or []) if isinstance(x, dict))
+            if not price or not old or old <= price or SKIP_PROMO.search(promos):
+                continue                              # лише пряме зниження ціни, без «2+1»
+            declared = (old - price) / old * 100
+            past = [hist[w].get(str(p_.get("id"))) for w in weeks]
+            past = [x for x in past if x]
+            real = (min(past) - price) / min(past) * 100 if past else None
+            rating = p_.get("guestProductRating")
+            score = (real if real is not None else declared) + ((float(rating) - 4) * 5 if rating else 0) + max(0, 30 - idx) / 6
+            if real is not None and real < 3:
+                continue                              # «акція», яка насправді не дешевша — пропускаємо
+            cand.append((score, p_, price, old, declared, real, rating, "ціна тижня" in promos.lower()))
+        cand.sort(key=lambda x: x[0], reverse=True)
+        if not cand:
+            continue
+        title = str(c.get("title") or c.get("name") or "")
+        emo = next((e for k, e in CAT_EMOJI if k in title.lower()), "🛒")
+        lines = [f"{emo} <b>{esc(title)}</b>"]
+        for n_, (_, p_, price, old, declared, real, rating, week) in enumerate(cand[:SILPO_TOP], 1):
+            ratio = f", {esc(p_.get('displayRatio') or p_.get('ratio'))}" if (p_.get("displayRatio") or p_.get("ratio")) else ""
+            real_t = f" · <b>реально −{real:.0f}%</b>" if real is not None else ""
+            rate_t = f" · ⭐ {float(rating):.1f}" if rating else ""
+            lines.append(f"{n_}. {'🔥 ' if week else ''}{esc(p_.get('title'))}{ratio} — <b>{price:g} ₴</b> <s>{old:g} ₴</s> · "
+                         f"заявлено −{declared:.0f}%{real_t}{rate_t}\n"
+                         f'🔗 <a href="https://silpo.ua/product/{html.escape(str(p_.get("slug") or ""))}">відкрити</a>')
+        sections.append("<blockquote>" + "\n".join(lines) + "</blockquote>")
+        total += 1
+    if not sections:
+        return None
+    head = (f"🛒 <b>АКЦІЇ СІЛЬПО · ТОП ЗА ТИЖДЕНЬ</b> · з {now:%d.%m}\n"
+            f"<i>{esc((st.get('silpo_branch') or {}).get('name') or 'вул. Калнишевського, 2')} · 🔥 — «Ціна тижня»</i>\n"
+            + ("<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>" if weeks
+               else "<i>Реальна вигода з'явиться з наступного тижня (бот ще збирає історію цін)</i>"))
+    msgs, cur = [], head                              # ділимо на повідомлення до 4000 символів
+    for sec in sections:
+        if len(cur) + len(sec) + 1 > 3900:
+            msgs.append(cur)
+            cur = sec
+        else:
+            cur += "\n" + sec
+    msgs.append(cur)
+    return SPLIT.join(msgs)
 
 
 # ---------- YouTube (Data API v3) ----------
@@ -1245,7 +1483,7 @@ def summary(head: str, today_d, tomorrow_d, all_off, now) -> str:
 
 def settings_markup(on: list[str]) -> dict:
     b = [{"text": f"{'✅' if t in on else '⬜'} {label}", "callback_data": f"t:{t}"} for t, label in TOPICS]
-    return {"inline_keyboard": [b[0:1], b[1:2], b[2:4], b[4:6]]}
+    return {"inline_keyboard": [b[0:1], b[1:2], b[2:4], b[4:6], b[6:7]]}
 
 
 # ---------- головна логіка ----------
@@ -1348,6 +1586,7 @@ def main() -> None:
     yt_req: list[str] = []
     para_req: list[str] = []
     smm_req: list[str] = []
+    silpo_req: list[str] = []
     updates = [] if WORKER_MODE else get_updates(st.get("offset"))   # з Worker команди обробляє він
     for u in updates:
         st["offset"] = u["update_id"] + 1
@@ -1425,6 +1664,8 @@ def main() -> None:
             para_req.append(cid)
         elif cmd == "/smm":
             smm_req.append(cid)
+        elif cmd == "/silpo":
+            silpo_req.append(cid)
 
     if REQ_KINO and re.fullmatch(r"-?\d+", REQ_KINO):
         kino_req.append(REQ_KINO)
@@ -1434,6 +1675,7 @@ def main() -> None:
     yt_req += [str(c) for c in worker_req.get("yt", [])]
     para_req += [str(c) for c in worker_req.get("para", [])]
     smm_req = list(dict.fromkeys(smm_req + [str(c) for c in worker_req.get("smm", [])]))
+    silpo_req = list(dict.fromkeys(silpo_req + [str(c) for c in worker_req.get("silpo", [])]))
     kino_req, yt_req = list(dict.fromkeys(kino_req)), list(dict.fromkeys(yt_req))
     para_req = list(dict.fromkeys(para_req))
 
@@ -1627,6 +1869,26 @@ def main() -> None:
     for c in smm_req:
         direct_m.append((c, st.get("smm_last") or "📈 Не вдалося зібрати дайджест, спробуйте пізніше.", None))
 
+    # 10) Сільпо: ср — знімок цін; чт о 13:00 — топ акцій (вам, дружині, підписникам із темою); меню — топ тижня
+    if (now.weekday() == SILPO_SNAP_WEEKDAY and now.hour >= SILPO_SNAP_HOUR
+            and st.get("silpo_snap") != today_key):
+        silpo_snapshot(st, now)
+        st["silpo_snap"] = today_key                  # навіть якщо не вдалося — не повторюємо до наступної середи
+    silpo_due = (now.weekday() == SILPO_WEEKDAY and SILPO_HOUR <= now.hour < SILPO_HOUR + 4
+                 and st.get("silpo_week") != week_key)
+    if silpo_due:
+        sp = build_silpo(st, now)
+        if sp:
+            st["silpo_week"], st["silpo_last"] = week_key, sp
+            topic_msgs.append(("silpo", sp, None, sp))
+            silpo_req = [c for c in silpo_req if c not in audience("silpo")]
+    if silpo_req and not st.get("silpo_last"):
+        sp = build_silpo(st, now)
+        if sp:
+            st["silpo_last"] = sp
+    for c in silpo_req:
+        direct_m.append((c, st.get("silpo_last") or "🛒 Не вдалося отримати акції Сільпо, спробуйте пізніше.", None))
+
     # меню команд у Telegram (оновлюється автоматично при зміні списку)
     cmd_ver = ",".join(c for c, _ in COMMANDS)
     if not WORKER_MODE and st.get("cmds") != cmd_ver:
@@ -1653,6 +1915,13 @@ def main() -> None:
     jobs += [(cid, text, None) for text in change_msgs for cid in change_to]
     for topic, text, mk, plain in topic_msgs:
         jobs += [(cid, text, mk) if cid in family else (cid, plain, None) for cid in audience(topic)]
+    expanded = []                                     # довгі підбірки (Сільпо, SMM) — кількома повідомленнями
+    for cid, text, mk in jobs:
+        if type(text) is str and SPLIT in text:
+            expanded += [(cid, part, None) for part in text.split(SPLIT) if part.strip()]
+        else:
+            expanded.append((cid, text, mk))
+    jobs = expanded
     removed: set[str] = set()
     for cid, text, mk in jobs:
         if cid in removed:
