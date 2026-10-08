@@ -2170,6 +2170,11 @@ def main() -> None:
                 continue
             text = k_new[0].replace("КІНО НА ВИХІДНІ", "НОВА ПІДБІРКА КІНО", 1)
             direct_m.append((c, text, k_new[1]) if c in family else (c, text.replace(KINO_HINT, ""), None))
+    if YT_KEY and not st.get("yt_last") and not st.get("yt_try") == now.strftime("%Y-%m-%d %H"):
+        st["yt_try"] = now.strftime("%Y-%m-%d %H")      # топу ще немає — збираємо заздалегідь, без розсилки
+        y0 = build_youtube(st, now)
+        if y0:
+            st["yt_last"] = y0
     if (now.weekday() == YT_WEEKDAY and in_window and st.get("yt_week") != week_key) or yt_req:
         y = None
         if now.weekday() == YT_WEEKDAY and in_window and st.get("yt_week") != week_key:
@@ -2219,6 +2224,11 @@ def main() -> None:
             st["smm_week"], st["smm_last"] = week_key, sm
             topic_msgs.append(("smm", sm, None, sm))
             smm_req = [c for c in smm_req if c not in audience("smm")]
+    if not st.get("smm_last") and not st.get("smm_try") == now.strftime("%Y-%m-%d %H"):
+        st["smm_try"] = now.strftime("%Y-%m-%d %H")   # дайджесту ще немає — збираємо заздалегідь, без розсилки
+        sm = build_smm(st, now)
+        if sm:
+            st["smm_last"] = sm
     if smm_req and not st.get("smm_last"):
         sm = build_smm(st, now)
         if sm:
@@ -2244,6 +2254,11 @@ def main() -> None:
             st["silpo_week"], st["silpo_last"] = week_key, sp
             topic_msgs.append(("silpo", sp, None, sp))
             silpo_req = [c for c in silpo_req if c not in audience("silpo")]
+    if not st.get("silpo_last") and not st.get("silpo_try") == now.strftime("%Y-%m-%d %H"):
+        st["silpo_try"] = now.strftime("%Y-%m-%d %H")  # акцій тижня ще немає — збираємо заздалегідь, без розсилки
+        sp = build_silpo(st, now)
+        if sp:
+            st["silpo_last"] = sp
     if silpo_req and not st.get("silpo_last"):
         sp = build_silpo(st, now)
         if sp:
