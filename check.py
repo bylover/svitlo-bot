@@ -37,6 +37,8 @@ SOURCE = (os.environ.get("SOURCE") or "dtek").strip().lower()
 SYNC_URL = (os.environ.get("SYNC_URL") or "").strip().rstrip("/")
 SYNC_KEY = (os.environ.get("SYNC_KEY") or "").strip()
 WORKER_MODE = bool(SYNC_URL and SYNC_KEY)
+REQ_KINO = (os.environ.get("REQ_KINO") or "").strip()     # Worker просить зібрати кіно для цього чату
+REQ_YT = (os.environ.get("REQ_YT") or "").strip()
 # Екстрені відключення: на сайті ДТЕК їх немає в доступних даних, тому стежимо за публічним каналом
 # будинку (пости зі словом «екстрен…»). Порожнє значення CHANNEL вимикає.
 CHANNEL = (os.environ.get("CHANNEL") if os.environ.get("CHANNEL") is not None else "yaskravyi_power").strip().lstrip("@")
@@ -62,18 +64,25 @@ TMDB_KEY = (os.environ.get("TMDB_KEY") or "").strip()
 OMDB_KEY = (os.environ.get("OMDB_KEY") or "").strip()
 YT_KEY = (os.environ.get("YT_KEY") or "").strip()
 KINO_WEEKDAY, YT_WEEKDAY, DIGEST_HOUR = 4, 0, 11          # пт і пн о 11:00
+GEMINI_KEY = (os.environ.get("GEMINI_KEY") or "").strip()  # безкоштовний ключ aistudio.google.com
+GEMINI_MODELS = ["gemini-flash-latest", "gemini-2.5-flash", "gemini-2.0-flash"]
+GIPHY_KEY = (os.environ.get("GIPHY_KEY") or "").strip()    # безкоштовний ключ developers.giphy.com
+PARA_DAYS, PARA_HOUR = (2, 4), 18                          # «Для пари»: ср і пт о 18:00
 COMMANDS = [("grafik", "💡 Графік світла"), ("pogoda", "🌤 Погода"),
             ("kino", "🍿 Кіно на вихідні"), ("youtube", "▶️ Топ YouTube"),
+            ("para", "💞 Для пари 18+"),
             ("settings", "⚙️ Налаштування сповіщень"), ("help", "ℹ️ Інструкція"),
             ("stop", "🔕 Відписатися")]
 # теми сповіщень, які підписник може вмикати/вимикати
 TOPICS = [("svitlo", f"💡 Світло · група {GROUP}"), ("pogoda", "🌤 Погода"),
-          ("kino", "🍿 Кіно"), ("yt", "▶️ YouTube")]
+          ("kino", "🍿 Кіно"), ("yt", "▶️ YouTube"), ("para", "💞 Для пари 18+")]
 ALL_TOPICS = [t for t, _ in TOPICS]
+DEFAULT_TOPICS = [t for t in ALL_TOPICS if t != "para"]     # «Для пари» підписник вмикає сам
 SETTINGS_TEXT = ("⚙️ <b>Налаштування сповіщень</b>\n"
                  "Натисніть, щоб увімкнути ✅ або вимкнути ⬜.\n"
                  f"💡 Світло — графік, зміни, нагадування, ранкове зведення (група {GROUP}, Мінський масив)\n"
                  "🌤 Погода — щодня о 20:00 · 🍿 Кіно — пт 11:00 · ▶️ YouTube — пн 11:00\n"
+                 "💞 Для пари 18+ — поради для подружжя, ср і пт о 18:00 (за замовчуванням вимкнено)\n"
                  "<i>Бот відповідає із затримкою до 5–20 хв.</i>")
 HELP_TEXT = ("ℹ️ <b>ЯК КОРИСТУВАТИСЯ БОТОМ</b>\n\n"
              "<b>Що вміє бот</b>\n<blockquote>"
@@ -82,10 +91,12 @@ HELP_TEXT = ("ℹ️ <b>ЯК КОРИСТУВАТИСЯ БОТОМ</b>\n\n"
              "30–45 хв; ранкове зведення о 10:00\n"
              "🌤 <b>Погода</b> — прогноз на завтра щодня о 20:00\n"
              "🍿 <b>Кіно</b> — 7 фільмів і 3 серіали на вихідні, щоп'ятниці об 11:00\n"
-             "▶️ <b>YouTube</b> — топ-10 українського YouTube за тиждень, щопонеділка об 11:00</blockquote>\n"
+             "▶️ <b>YouTube</b> — топ-10 українського YouTube за тиждень, щопонеділка об 11:00\n"
+             "💞 <b>Для пари 18+</b> — делікатні поради для подружжя і цікаві статті, ср і пт о 18:00 "
+             "(вмикається в /settings)</blockquote>\n"
              "<b>Меню</b> (кнопка зліва від поля вводу)\n<blockquote>"
-             "/grafik — графік світла зараз\n/pogoda — прогноз погоди\n/kino — остання підбірка кіно\n"
-             "/youtube — останній топ YouTube\n/settings — увімкнути або вимкнути сповіщення\n"
+             "/grafik — графік світла зараз\n/pogoda — прогноз погоди\n/kino — нова підбірка кіно\n"
+             "/youtube — топ YouTube цього тижня\n/para — нова порада для пари\n/settings — увімкнути або вимкнути сповіщення\n"
              "/help — ця інструкція\n/stop — відписатися від усього</blockquote>\n"
              "<b>Важливо</b>\n<blockquote>"
              "• Графік — за даними сайту ДТЕК. «За графіком» не означає, що світло фактично є чи немає\n"
@@ -273,7 +284,73 @@ def fetch() -> dict:
     sys.exit("API YASNO недоступний")
 
 
+class Rich(str):
+    """Текст повідомлення з медіа: {"type": "preview"|"photo"|"animation", ...}."""
+    media: dict | None = None
+
+
+def rich(text: str, media: dict | None) -> str:
+    if not media:
+        return text
+    r = Rich(text)
+    r.media = media
+    return r
+
+
+def plain_len(t: str) -> int:
+    return len(html.unescape(re.sub(r"<[^>]+>", "", t)))
+
+
+def tg_multipart(method: str, fields: dict, file_field: str, filename: str, data: bytes, ctype: str) -> dict:
+    boundary = "----svitlo" + hashlib.md5(os.urandom(8)).hexdigest()
+    body = b""
+    for k, v in fields.items():
+        body += (f"--{boundary}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n{v}\r\n").encode()
+    body += (f"--{boundary}\r\nContent-Disposition: form-data; name=\"{file_field}\"; filename=\"{filename}\"\r\n"
+             f"Content-Type: {ctype}\r\n\r\n").encode() + data + f"\r\n--{boundary}--\r\n".encode()
+    req = urllib.request.Request(f"https://api.telegram.org/bot{BOT_TOKEN}/{method}", data=body,
+                                 headers={"Content-Type": f"multipart/form-data; boundary={boundary}"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        return json.load(r)
+
+
+def send_media(chat_id: str, text: str, media: dict, markup: dict | None) -> None:
+    if media["type"] == "preview":               # прев'ю статті з її обкладинкою над текстом
+        payload = {"chat_id": chat_id, "text": text, "parse_mode": "HTML",
+                   "link_preview_options": {"url": media["url"], "prefer_large_media": True, "show_above_text": True}}
+        if markup:
+            payload["reply_markup"] = markup
+        http_json(f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage", payload)
+        return
+    photo = media["type"] == "photo"
+    field, method = ("photo", "sendPhoto") if photo else ("animation", "sendAnimation")
+    fits = plain_len(text) <= 1000                # підпис до фото — до 1024 символів
+    caption = text if fits else text.split("\n", 1)[0]
+    fields = {"chat_id": chat_id, "caption": caption, "parse_mode": "HTML"}
+    if media.get("file_id"):                     # уже завантажене — повторно не вантажимо
+        r = http_json(f"https://api.telegram.org/bot{BOT_TOKEN}/{method}", {**fields, field: media["file_id"]})
+    elif photo:
+        r = tg_multipart(method, fields, field, "para.jpg", media["bytes"], "image/jpeg")
+    else:
+        r = http_json(f"https://api.telegram.org/bot{BOT_TOKEN}/{method}", {**fields, field: media["url"]})
+    res = r.get("result") or {}
+    fid = ((res.get("photo") or [{}])[-1].get("file_id") if photo
+           else (res.get("animation") or res.get("document") or {}).get("file_id"))
+    if fid:
+        media["file_id"] = fid
+    if not fits:
+        send(chat_id, text.split("\n", 1)[1] if "\n" in text else text, markup)
+
+
 def send(chat_id: str, text: str, markup: dict | None = None) -> None:
+    media = getattr(text, "media", None)
+    if media:
+        try:
+            send_media(chat_id, str(text), media, markup)
+            return
+        except Exception as e:                    # медіа не вдалося — надсилаємо просто текст
+            print(f"Медіа ({media.get('type')}): {err_text(e)}")
+            text = str(text)
     payload = {"chat_id": chat_id, "text": text, "parse_mode": "HTML", "disable_web_page_preview": True}
     if markup:
         payload["reply_markup"] = markup
@@ -423,6 +500,177 @@ def build_kino(st: dict) -> tuple[str, dict] | None:
     return text, markup
 
 
+# ---------- «Для пари» (Gemini + Google News RSS) ----------
+PARA_THEMES = [
+    ("нова поза", "одна нова позиція для подружжя: як називається, чим цікава, що врахувати для комфорту обох"),
+    ("прелюдія", "ідея для довшої й ніжнішої прелюдії"),
+    ("масаж", "розслаблювальний масаж для партнера: техніка та атмосфера"),
+    ("побачення вдома", "ідея романтичного вечора вдома для двох"),
+    ("розмова", "як делікатно поговорити про бажання і фантазії"),
+    ("нова поза", "ще одна нова позиція: варіант для неспішного вечора"),
+    ("гра", "легка рольова або тактильна гра для пари"),
+    ("атмосфера", "як створити атмосферу: світло, музика, аромати, дотики"),
+    ("після", "як продовжити близькість після: обійми, турбота, розмова"),
+    ("сюрприз", "невеликий романтичний сюрприз для партнера чи партнерки"),
+]
+PARA_FALLBACK = [
+    ("Повільний вечір", "• Домовтеся, що сьогодні нікуди не поспішаєте\n• Почніть з 10 хвилин масажу плечей і спини\n"
+     "• Говоріть одне одному, що подобається — це заводить більше, ніж здається"),
+    ("Побачення без телефонів", "• Вимкніть сповіщення на весь вечір\n• Приготуйте разом щось просте й смачне\n"
+     "• Завершіть вечір ванною чи душем удвох"),
+    ("Гра «три бажання»", "• Кожен по черзі називає одне маленьке бажання на вечір\n• Без оцінок і без тиску — "
+     "лише те, що комфортно обом\n• Наступного разу міняйтеся ролями"),
+    ("Масаж зі свічками", "• Приглушене світло, тепла олія, спокійна музика\n• Повільні рухи від плечей до стоп\n"
+     "• Питайте, де приємніше, — і слухайте відповідь"),
+    ("Відверта розмова", "• Оберіть спокійний момент, не перед сном після важкого дня\n• Почніть з того, що вам "
+     "найбільше подобається у вашій близькості\n• Запитайте, що партнер хотів би спробувати"),
+    ("Нове місце", "• Змініть звичну кімнату чи обстановку — навіть перестановка додає новизни\n"
+     "• Подбайте про затишок: плед, подушки, приглушене світло"),
+    ("Ранкова ніжність", "• Прокиньтеся на 20 хвилин раніше\n• Без поспіху: обійми, поцілунки, кава в ліжко\n"
+     "• Чудовий спосіб почати вихідний день"),
+    ("Зав'язані очі", "• Легка пов'язка посилює інші відчуття\n• Чергуйте ніжні дотики, тепло дихання, шовк\n"
+     "• Домовтеся про стоп-слово і вчасно знімайте пов'язку"),
+]
+
+
+def gemini(prompt: str) -> str | None:
+    if not GEMINI_KEY:
+        return None
+    body = {"contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {"temperature": 1.0, "maxOutputTokens": 800}}
+    for model in GEMINI_MODELS:
+        try:
+            r = http_json(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+                          f"?key={urllib.parse.quote(GEMINI_KEY)}", body)
+            parts = ((r.get("candidates") or [{}])[0].get("content") or {}).get("parts") or []
+            text = "".join(p_.get("text", "") for p_ in parts).strip()
+            if text:
+                return text
+            print(f"Gemini {model}: порожня відповідь ({(r.get('candidates') or [{}])[0].get('finishReason')})")
+        except Exception as e:
+            print(f"Gemini {model}: {err_text(e)}")
+    return None
+
+
+def para_news(st: dict, now: datetime, limit: int = 3) -> list[tuple[str, str]]:
+    """Свіжі статті за тиждень з Google News (українські сайти)."""
+    import xml.etree.ElementTree as ET
+    seen = set(st.get("para_links", []))
+    items = []
+    for q in ("поради для пари стосунки", "секс поради пара", "інтимні стосунки подружжя"):
+        url = ("https://news.google.com/rss/search?" + urllib.parse.urlencode(
+            {"q": f"{q} when:7d", "hl": "uk", "gl": "UA", "ceid": "UA:uk"}))
+        try:
+            root = ET.fromstring(http_text(url))
+        except Exception as e:
+            print(f"Google News: {e}")
+            continue
+        for it in root.iter("item"):
+            link, title = it.findtext("link") or "", (it.findtext("title") or "").strip()
+            if link and title and link not in seen:
+                items.append((title, link))
+                seen.add(link)
+    random.shuffle(items)
+    out = items[:limit]
+    st["para_links"] = (st.get("para_links", []) + [lk for _, lk in out])[-300:]
+    return out
+
+
+PARA_IMG = {
+    "нова поза": "a loving couple in a tender embrace, silhouettes against warm window light",
+    "прелюдія": "a couple slowly dancing close together in a dim cozy room",
+    "масаж": "a woman giving her partner a relaxing shoulder massage, candles, towels, spa mood",
+    "побачення вдома": "a romantic dinner for two at home, candles, wine glasses, fairy lights",
+    "розмова": "a couple talking softly face to face on a sofa under a blanket, holding hands",
+    "гра": "a playful couple laughing and hugging on a bed with pillows, cozy evening",
+    "атмосфера": "a cozy bedroom with candles, rose petals and soft warm light",
+    "після": "a couple cuddling under a blanket, peaceful, morning light",
+    "сюрприз": "a man giving a woman a small gift box with flowers, both smiling",
+}
+GIF_Q = {"нова поза": "romantic couple", "прелюдія": "couple dancing", "масаж": "couple massage",
+         "побачення вдома": "date night", "розмова": "couple love talk", "гра": "couple flirting",
+         "атмосфера": "romantic candles", "після": "cuddle", "сюрприз": "romantic surprise"}
+
+
+def resolve_url(url: str) -> str | None:
+    """Справжня адреса статті (Google News перенаправляє); None — якщо не вдалося."""
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            final = r.geturl()
+        return None if "news.google." in final else final
+    except Exception:
+        return None
+
+
+def para_visual(st: dict, label: str, news: list) -> dict | None:
+    """Картинка до поради: по черзі кожен варіант, у випадковому порядку."""
+    avail = (["preview"] if news else []) + (["ai"] if WORKER_MODE else []) + (["gif"] if GIPHY_KEY else [])
+    bag = [x for x in st.get("para_bag", []) if x in avail] or random.sample(avail, len(avail))
+    while bag:
+        kind = bag.pop(0)
+        try:
+            if kind == "preview":
+                for _, link in news:
+                    real = resolve_url(link)
+                    if real:
+                        st["para_bag"] = bag
+                        return {"type": "preview", "url": real}
+            elif kind == "ai":
+                scene = PARA_IMG.get(label, PARA_IMG["атмосфера"])
+                r = http_json(f"{SYNC_URL}/img?key={urllib.parse.quote(SYNC_KEY)}", {"prompt":
+                    f"{scene}, romantic tasteful artistic illustration, soft warm colors, gentle light, "
+                    "fully clothed, no nudity, elegant, cinematic"})
+                if r.get("image"):
+                    st["para_bag"] = bag
+                    return {"type": "photo", "bytes": base64.b64decode(r["image"])}
+                print(f"ІІ-картинка: {r.get('error')}")
+            elif kind == "gif":
+                r = http_json("https://api.giphy.com/v1/gifs/search?" + urllib.parse.urlencode(
+                    {"api_key": GIPHY_KEY, "q": GIF_Q.get(label, "romantic couple"), "limit": 25, "rating": "pg"}))
+                data = [g for g in r.get("data", []) if (g.get("images") or {}).get("original")]
+                if data:
+                    o = random.choice(data)["images"]["original"]
+                    st["para_bag"] = bag
+                    return {"type": "animation", "url": o.get("mp4") or o.get("url")}
+        except Exception as e:
+            print(f"Картинка ({kind}): {err_text(e)}")
+    st["para_bag"] = []
+    return None
+
+
+def build_para(st: dict, now: datetime, with_news: bool = True) -> str:
+    i = st.get("para_i", 0)
+    label, theme = PARA_THEMES[i % len(PARA_THEMES)]
+    st["para_i"] = i + 1
+    recent = st.get("para_titles", [])[-30:]
+    prompt = (
+        "Ти — тактовний консультант зі стосунків для дорослої подружньої пари (чоловік і дружина). "
+        f"Напиши одну практичну пораду на тему: {theme}. "
+        "Формат: перший рядок — короткий заголовок до 6 слів без лапок; далі 3–5 пунктів, кожен з нового "
+        "рядка й починається з «• ». Тон теплий, легкий, трохи з гумором, романтичний; без вульгарності "
+        "й анатомічних подробиць; наголос на згоді, комфорті та довірі обох. Мова — українська. "
+        "Без Markdown, без зірочок і решіток. "
+        + (f"Не повторюй ці теми: {'; '.join(recent)}." if recent else ""))
+    text = gemini(prompt)
+    if text:
+        text = re.sub(r"[*#_`]+", "", text).strip()
+        lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+        title, body = lines[0][:80], "\n".join(lines[1:])
+    else:                                          # без ключа чи при відмові моделі — вбудована база
+        j = st.get("para_fb", 0)
+        title, body = PARA_FALLBACK[j % len(PARA_FALLBACK)]
+        st["para_fb"] = j + 1
+    st["para_titles"] = (recent + [title])[-30:]
+    msg = (f"💞 <b>ДЛЯ ВАС ДВОХ</b> · {label}\n"
+           f"<blockquote><b>{esc(title)}</b>\n{esc(body)}</blockquote>")
+    news = para_news(st, now) if with_news else []
+    if news:
+        msg += "\n📰 <b>Цікаве за тиждень</b>\n" + "\n".join(
+            f'• <a href="{html.escape(lk)}">{esc(t)}</a>' for t, lk in news)
+    return rich(msg, para_visual(st, label, news))
+
+
 # ---------- YouTube (Data API v3) ----------
 UA_LETTERS = re.compile("[іїєґІЇЄҐ]")
 
@@ -484,7 +732,9 @@ def build_youtube(st: dict, now: datetime) -> str | None:
         if iso_dur((v.get("contentDetails") or {}).get("duration")) <= 60:  # Shorts
             continue
         good.append(v)
-    good.sort(key=lambda v: int(v["statistics"].get("viewCount", 0)), reverse=True)
+    # популярність: перегляди + коментарі (1 коментар ≈ 100 переглядів — він показує залученість глядачів)
+    good.sort(key=lambda v: int(v["statistics"].get("viewCount", 0))
+              + 100 * int(v["statistics"].get("commentCount", 0) or 0), reverse=True)
     top, per_channel = [], {}
     for v in good:
         ch = v["snippet"].get("channelId")
@@ -825,7 +1075,7 @@ def summary(head: str, today_d, tomorrow_d, all_off, now) -> str:
 
 def settings_markup(on: list[str]) -> dict:
     b = [{"text": f"{'✅' if t in on else '⬜'} {label}", "callback_data": f"t:{t}"} for t, label in TOPICS]
-    return {"inline_keyboard": [b[0:1], b[1:2], b[2:4]]}
+    return {"inline_keyboard": [b[0:1], b[1:2], b[2:4], b[4:5]]}
 
 
 # ---------- головна логіка ----------
@@ -866,12 +1116,14 @@ def main() -> None:
         # змінили групу або джерело — графік заново (без хибного «змінено»), підписники лишаються
         st.update(group=GROUP, fp={}, reminded=[])
     raw_subs = dec(st.get("subs"))               # {chat_id: [теми]}; старий формат — список id
-    subs: dict[str, list[str]] = ({str(x): list(ALL_TOPICS) for x in raw_subs} if isinstance(raw_subs, list)
+    subs: dict[str, list[str]] = ({str(x): list(DEFAULT_TOPICS) for x in raw_subs} if isinstance(raw_subs, list)
                                   else {str(k): list(v) for k, v in raw_subs.items()})
     worker_alive = False
+    worker_req: dict = {}
     if WORKER_MODE:                              # підписники, «бачили» і «пульс» — з Cloudflare Worker
         try:
-            ex = http_json(f"{SYNC_URL}/export?key={urllib.parse.quote(SYNC_KEY)}")
+            ex = http_json(f"{SYNC_URL}/export?key={urllib.parse.quote(SYNC_KEY)}&take=1")
+            worker_req = ex.get("req") or {}
             subs = {str(k): list(v) for k, v in (ex.get("subs") or {}).items()}
             if ex.get("seen"):
                 st["kino_seen"] = list(dict.fromkeys(st.get("kino_seen", []) + list(ex["seen"])))[-600:]
@@ -909,6 +1161,7 @@ def main() -> None:
     family = list(dict.fromkeys(CHAT_IDS + ([WIFE_ID] if WIFE_ID else [])))
     kino_req: list[str] = []
     yt_req: list[str] = []
+    para_req: list[str] = []
     updates = [] if WORKER_MODE else get_updates(st.get("offset"))   # з Worker команди обробляє він
     for u in updates:
         st["offset"] = u["update_id"] + 1
@@ -936,7 +1189,7 @@ def main() -> None:
                     tg("answerCallbackQuery", {"callback_query_id": cq["id"],
                                                "text": "Ви основний отримувач — отримуєте все"})
                 elif t in ALL_TOPICS:
-                    on = subs.setdefault(ccid, list(ALL_TOPICS))
+                    on = subs.setdefault(ccid, list(DEFAULT_TOPICS))
                     if t in on:
                         on.remove(t)
                     else:
@@ -957,7 +1210,7 @@ def main() -> None:
                                             today_d, tomorrow_d, all_off, now), True, None))
             else:
                 new_sub = cid not in subs
-                on = subs.setdefault(cid, list(ALL_TOPICS))
+                on = subs.setdefault(cid, list(DEFAULT_TOPICS))
                 if cmd == "/start":                      # одразу показуємо чинний графік
                     direct.append((cid, summary(f"📋 <b>Чинний графік</b> · група {GROUP}",
                                                 today_d, tomorrow_d, all_off, now), True, None))
@@ -982,6 +1235,18 @@ def main() -> None:
             kino_req.append(cid)
         elif cmd in ("/youtube", "/ютуб"):
             yt_req.append(cid)
+        elif cmd in ("/para", "/пара"):
+            para_req.append(cid)
+
+    if REQ_KINO and re.fullmatch(r"-?\d+", REQ_KINO):
+        kino_req.append(REQ_KINO)
+    if REQ_YT and re.fullmatch(r"-?\d+", REQ_YT):
+        yt_req.append(REQ_YT)
+    kino_req += [str(c) for c in worker_req.get("kino", [])]   # запити з меню, які прийняв Worker
+    yt_req += [str(c) for c in worker_req.get("yt", [])]
+    para_req += [str(c) for c in worker_req.get("para", [])]
+    kino_req, yt_req = list(dict.fromkeys(kino_req)), list(dict.fromkeys(yt_req))
+    para_req = list(dict.fromkeys(para_req))
 
     def audience(topic: str) -> list[str]:
         return family + [c for c, on in subs.items() if topic in on and c not in family]
@@ -1112,22 +1377,21 @@ def main() -> None:
     in_window = DIGEST_HOUR <= now.hour < DIGEST_HOUR + 4
     direct_m: list[tuple[str, str, dict | None]] = []
     kino_due = now.weekday() == KINO_WEEKDAY and in_window and st.get("kino_week") != week_key
-    if kino_due or (kino_req and not st.get("kino_last")):
+    if kino_due:                                   # щотижнева підбірка — одна для всіх
         k = build_kino(st)
         if k:
             st["kino_last"] = {"text": k[0], "markup": k[1]}
-            if kino_due:
-                st["kino_week"] = week_key
-                topic_msgs.append(("kino", k[0], k[1], k[0].replace(KINO_HINT, "")))
-                kino_req = [c for c in kino_req if c not in audience("kino")]
-    for c in kino_req:
-        last = st.get("kino_last")
-        if not last:
-            direct_m.append((c, "Кіно поки недоступне, спробуйте пізніше.", None))
-        elif c in family:
-            direct_m.append((c, last["text"], last["markup"]))
-        else:
-            direct_m.append((c, last["text"].replace(KINO_HINT, ""), None))
+            st["kino_week"] = week_key
+            topic_msgs.append(("kino", k[0], k[1], k[0].replace(KINO_HINT, "")))
+    if kino_req:                                   # з меню — щоразу НОВА підбірка (без повторів)
+        k_new = build_kino(st) if TMDB_KEY else None
+        for c in kino_req:
+            if not k_new:
+                direct_m.append((c, "🍿 Кіно ще не налаштовано (немає ключа TMDB)." if not TMDB_KEY
+                                 else "🍿 Не вдалося зібрати підбірку, спробуйте пізніше.", None))
+                continue
+            text = k_new[0].replace("КІНО НА ВИХІДНІ", "НОВА ПІДБІРКА КІНО", 1)
+            direct_m.append((c, text, k_new[1]) if c in family else (c, text.replace(KINO_HINT, ""), None))
     if (now.weekday() == YT_WEEKDAY and in_window and st.get("yt_week") != week_key) or yt_req:
         y = None
         if now.weekday() == YT_WEEKDAY and in_window and st.get("yt_week") != week_key:
@@ -1141,7 +1405,19 @@ def main() -> None:
             if y:
                 st["yt_last"] = y
         for c in yt_req:
-            direct_m.append((c, st.get("yt_last") or "YouTube поки недоступний, спробуйте пізніше.", None))
+            direct_m.append((c, st.get("yt_last") or ("▶️ YouTube ще не налаштовано (немає ключа)." if not YT_KEY
+                                                      else "▶️ Не вдалося зібрати підбірку, спробуйте пізніше."), None))
+
+    # 8) «Для пари» — ср і пт о 18:00 (вам, дружині та підписникам, які це ввімкнули); з меню — нова порада
+    para_due = (now.weekday() in PARA_DAYS and PARA_HOUR <= now.hour < PARA_HOUR + 4
+                and st.get("para_sent") != today_key)
+    if para_due:
+        pm = build_para(st, now)
+        topic_msgs.append(("para", pm, None, pm))
+        st["para_sent"] = today_key
+    if para_req:
+        pm = build_para(st, now, with_news=False)
+        direct_m += [(c, pm, None) for c in para_req]
 
     # меню команд у Telegram (оновлюється автоматично при зміні списку)
     cmd_ver = ",".join(c for c, _ in COMMANDS)
