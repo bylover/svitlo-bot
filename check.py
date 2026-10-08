@@ -65,7 +65,8 @@ OMDB_KEY = (os.environ.get("OMDB_KEY") or "").strip()
 YT_KEY = (os.environ.get("YT_KEY") or "").strip()
 KINO_WEEKDAY, YT_WEEKDAY, DIGEST_HOUR = 4, 0, 11          # пт і пн о 11:00
 GEMINI_KEY = (os.environ.get("GEMINI_KEY") or "").strip()  # безкоштовний ключ aistudio.google.com
-GEMINI_MODELS = ["gemini-flash-latest", "gemini-2.5-flash", "gemini-2.0-flash"]
+GEMINI_MODELS = [m.strip() for m in (os.environ.get("GEMINI_MODEL") or "").split(",") if m.strip()] or \
+    ["gemini-3.8-flash", "gemini-flash-latest", "gemini-flash-lite-latest"]
 GIPHY_KEY = (os.environ.get("GIPHY_KEY") or "").strip()    # безкоштовний ключ developers.giphy.com
 SMM_WEEKDAY, SMM_HOUR = 0, 13                               # дайджест SMM і таргету: пн о 13:00
 SMM_SUBS = ["FacebookAds", "PPC", "socialmedia", "TikTokAds", "InstagramMarketing"]   # «Фішки від практиків»
@@ -601,16 +602,25 @@ def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_toke
             "HARM_CATEGORY_SEXUALLY_EXPLICIT", "HARM_CATEGORY_HARASSMENT",
             "HARM_CATEGORY_HATE_SPEECH", "HARM_CATEGORY_DANGEROUS_CONTENT")]
     for model in GEMINI_MODELS:
-        try:
-            r = http_json(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-                          f"?key={urllib.parse.quote(GEMINI_KEY)}", body)
-            parts = ((r.get("candidates") or [{}])[0].get("content") or {}).get("parts") or []
-            text = "".join(p_.get("text", "") for p_ in parts).strip()
-            if text:
-                return text
-            print(f"Gemini {model}: порожня відповідь ({(r.get('candidates') or [{}])[0].get('finishReason')})")
-        except Exception as e:
-            print(f"Gemini {model}: {err_text(e)}")
+        for attempt in range(2):                 # при перевантаженні (503/429) — ще одна спроба
+            try:
+                r = http_json(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+                              f"?key={urllib.parse.quote(GEMINI_KEY)}", body)
+                parts = ((r.get("candidates") or [{}])[0].get("content") or {}).get("parts") or []
+                text = "".join(p_.get("text", "") for p_ in parts if not p_.get("thought")).strip()
+                if text:
+                    return text
+                print(f"Gemini {model}: порожня відповідь ({(r.get('candidates') or [{}])[0].get('finishReason')})")
+                break
+            except urllib.error.HTTPError as e:
+                print(f"Gemini {model}: {err_text(e)[:200]}")
+                if e.code in (429, 500, 503) and attempt == 0:
+                    _time.sleep(3)
+                    continue
+                break
+            except Exception as e:
+                print(f"Gemini {model}: {err_text(e)[:200]}")
+                break
     return None
 
 
