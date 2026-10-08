@@ -160,6 +160,7 @@ SOURCES_TEXT = (
     "• Топ-5 у кожній категорії, новий список щочетверга о 13:00</blockquote>\n"
     "<i>Переклад і переказ від ШІ можуть бути неточними — завжди є посилання на першоджерело.</i>"
 )
+WELCOME = "👋 <b>Hey there, night owl!</b>\nI'm your Kyiv blackout buddy — I know when the lights go out before your toe meets the furniture. 💡\n\n🌤 I read the sky, 🍿 pick movies for the couch, ▶️ dig up the best of YouTube, 📈 spy on marketing trends and 🛒 hunt Silpo deals.\n💞 And when it gets dark… I whisper 18+ tips that make blackouts way less boring. 😏\n\n<i>Tap the menu ☰ and let's turn the lights on — one way or another.</i>"
 KINO_HINT = "<i>Натисніть 👀 з номером, якщо вже бачили, — більше не запропоную</i>\n"
 SEND_NOW = os.environ.get("SEND_NOW") == "1"             # ручний запуск — надіслати графік одразу
 OFF_TYPES = {"Definite"} | ({"Possible"} if os.environ.get("INCLUDE_POSSIBLE") == "1" else set())
@@ -2220,6 +2221,8 @@ def main() -> None:
         if not cid:
             continue
         primary = cid in family
+        if cmd == "/start":
+            direct.append((cid, WELCOME, False, None))   # привітання англійською
         if cmd == "/start" or (cmd == "/settings" and not primary):
             if primary:
                 direct.append((cid, summary("✅ <b>Ви основний отримувач</b> — отримуєте все",
