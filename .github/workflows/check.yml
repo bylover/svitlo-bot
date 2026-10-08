@@ -1,8 +1,13 @@
 name: Svitlo check
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
+    inputs:
+      send:
+        description: "Надіслати поточний графік (1 — так, 0 — ні)"
+        default: "1"
+        required: false
 permissions:
   contents: write
 concurrency:
@@ -13,8 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
-      - uses: actions/checkout@v4
-      - run: python3 check.py
+      - uses: actions/checkout@v5
+      - name: Run bot
+        run: python3 check.py
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
@@ -24,10 +30,18 @@ jobs:
           TMDB_KEY: ${{ secrets.TMDB_KEY }}
           OMDB_KEY: ${{ secrets.OMDB_KEY }}
           YT_KEY: ${{ secrets.YT_KEY }}
-          SEND_NOW: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
+          SYNC_URL: ${{ secrets.SYNC_URL }}
+          SYNC_KEY: ${{ secrets.SYNC_KEY }}
+          SEND_NOW: ${{ github.event_name == 'workflow_dispatch' && inputs.send != '0' && '1' || '' }}
       - name: Save state
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898208+github-actions[bot]@users.noreply.github.com"
           git add state.json
-          git diff --cached --quiet || (git commit -m "state" && git push)
+          git diff --cached --quiet && exit 0
+          git commit -m "state"
+          for i in 1 2 3; do
+            git pull --rebase -q && git push -q && exit 0
+            sleep 5
+          done
+          echo "Не вдалося зберегти state.json"; exit 1
