@@ -1611,11 +1611,16 @@ def build_youtube(st: dict, now: datetime) -> str | None:
             continue
         if lang.startswith("ru"):
             continue
-        if not (lang.startswith("uk") or (not lang and UA_LETTERS.search(title))):
-            continue
         if iso_dur((v.get("contentDetails") or {}).get("duration")) <= 60:  # Shorts
             continue
         good.append(v)
+    ua = [v for v in good if (v["snippet"].get("defaultAudioLanguage") or v["snippet"].get("defaultLanguage") or "").lower().startswith("uk")
+          or UA_LETTERS.search(v["snippet"].get("title", "") + " " + v["snippet"].get("channelTitle", ""))]
+    print(f"YouTube: знайдено {len(ids)}, після фільтрів {len(good)}, українських {len(ua)}")
+    if len(ua) >= 10:
+        good = ua                                    # достатньо українських — лише вони
+    else:                                            # мало — доповнюємо без російських
+        good = ua + [v for v in good if v not in ua and not re.search(r"[ыэъё]", v["snippet"].get("title", ""), re.I)]
     # популярність: перегляди + коментарі (1 коментар ≈ 100 переглядів — він показує залученість глядачів)
     good.sort(key=lambda v: int(v["statistics"].get("viewCount", 0))
               + 100 * int(v["statistics"].get("commentCount", 0) or 0), reverse=True)
