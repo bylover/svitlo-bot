@@ -617,6 +617,9 @@ PARA_FALLBACK = [
 ]
 
 
+GEMINI_BLOCK: dict = {}                               # {модель: до якого часу не використовувати}
+
+
 def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_tokens: int = 800) -> str | None:
     if not GEMINI_KEY:
         return None
@@ -629,7 +632,10 @@ def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_toke
         body["safetySettings"] = [{"category": c, "threshold": "BLOCK_ONLY_HIGH"} for c in (
             "HARM_CATEGORY_SEXUALLY_EXPLICIT", "HARM_CATEGORY_HARASSMENT",
             "HARM_CATEGORY_HATE_SPEECH", "HARM_CATEGORY_DANGEROUS_CONTENT")]
+    blocked = GEMINI_BLOCK
     for model in GEMINI_MODELS:
+        if blocked.get(model, "") > datetime.now(TZ).isoformat():
+            continue                                 # денний ліміт моделі вичерпано
         for attempt in range(3):                 # перевантаження (503/429) або модель без «думання» — ще спроба
             try:
                 r = http_json(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
@@ -651,6 +657,12 @@ def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_toke
                 if e.code == 400 and "think" in msg.lower() and "thinkingConfig" in cfg:
                     cfg.pop("thinkingConfig")         # модель без «думання» — повторюємо без параметра
                     continue
+                if e.code == 429 and "quota" in msg.lower():  # ліміт на добу — не чіпаємо до ~10:00 (Київ)
+                    nxt = datetime.now(TZ).replace(hour=10, minute=5, second=0, microsecond=0)
+                    if nxt <= datetime.now(TZ):
+                        nxt += timedelta(days=1)
+                    blocked[model] = nxt.isoformat()
+                    break
                 if e.code in (429, 500, 503) and attempt == 0:
                     _time.sleep(3)
                     continue
@@ -2103,6 +2115,7 @@ def main() -> None:
     check_config()
     st = load_state()
     cleanup_expired(st)
+    GEMINI_BLOCK.update(st.get("gem_block") or {})
     if st.get("group") != GROUP or st.get("source", "yasno") != SOURCE:
         # змінили групу або джерело — графік заново (без хибного «змінено»), підписники лишаються
         st.update(group=GROUP, fp={}, reminded=[])
@@ -2556,6 +2569,7 @@ def main() -> None:
     if json.dumps(subs, sort_keys=True) != subs_before or "subs" not in st:   # лише при зміні
         st["subs"] = enc(subs)
 
+    st["gem_block"] = {m: t for m, t in GEMINI_BLOCK.items() if t > now.isoformat()}
     keep_from = (now.date() - timedelta(days=1)).isoformat()
     st["fp"] = {k: v for k, v in fp.items() if k >= keep_from}
     st["reminded"] = sorted(k for k in rem
