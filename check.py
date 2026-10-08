@@ -112,10 +112,10 @@ HELP_TEXT = ("ℹ️ <b>ЯК КОРИСТУВАТИСЯ БОТОМ</b>\n\n"
              "▶️ <b>YouTube</b> — топ-10 українського YouTube за тиждень, щопонеділка об 11:00\n"
              "📈 <b>SMM і таргет</b> — дайджест новинок і фішок за тиждень, щопонеділка о 13:00 (вмикається в /settings)\n"
              "🛒 <b>Акції Сільпо</b> — топ-5 у кожній категорії з реальною вигодою, щочетверга о 13:00 (вмикається в /settings)\n"
-             "💞 <b>Поради 18+</b> — відверті поради, обговорення й цікаві статті, ср і пт о 18:00 "
+             "💞 <b>Поради 18+</b> — по черзі: порада, стаття тижня, досвід тижня й обговорення, ср і пт о 18:00 "
              "(вмикається в /settings)</blockquote>\n"
              "<b>Меню</b> (кнопка зліва від поля вводу)\n<blockquote>"
-             "/grafik — графік світла зараз\n/pogoda — прогноз погоди\n/para — нова порада 18+\n/kino — нова підбірка кіно\n"
+             "/grafik — графік світла зараз\n/pogoda — прогноз погоди\n/para — нова порада, стаття або досвід 18+\n/kino — нова підбірка кіно\n"
              "/youtube — топ YouTube за тиждень\n/smm — SMM і таргет за тиждень\n/silpo — акції Сільпо за тиждень\n/settings — увімкнути або вимкнути сповіщення\n"
              "/help — ця інструкція і звідки дані\n/stop — відписатися від усього</blockquote>\n"
              "<b>Важливо</b>\n<blockquote>"
@@ -141,13 +141,13 @@ SOURCES_TEXT = (
     "<blockquote>• YouTube Data API: відео минулого тижня українською, без новин, дитячого контенту й Shorts\n"
     "• Порядок — перегляди + коментарі (1 коментар ≈ 100 переглядів), не більше 2 відео з каналу</blockquote>\n"
     "📈 <b>SMM і таргет</b>\n"
-    "<blockquote>• Новини — Google News українською й англійською за тиждень\n"
-    "• Фішки практиків — найобговорюваніші теми Reddit (r/FacebookAds, r/PPC, r/socialmedia, r/TikTokAds, r/InstagramMarketing)\n"
+    "<blockquote>• Новини — Meta Newsroom, The Keyword (блог Google), Social Media Today, Marketing Dive і Google News — лише за останні 7 днів\n• Перегляди статей ці сайти не публікують, тож важливість визначаємо так: тема, про яку пишуть кілька джерел, — головна новина тижня; далі офіційні анонси Meta і Google та свіжість\n"
+    "• Фішки практиків — блоги Jon Loomer, Social Media Examiner, AdEspresso, Hootsuite, Buffer, Later і Medium (теги про рекламу)\n"
     "• Відбір 8–10 найважливіших, переклад і переказ — ШІ Gemini; у кожному пункті — посилання на джерело</blockquote>\n"
     "💞 <b>Поради 18+</b>\n"
     "<blockquote>• Порада — пише ШІ Gemini (запасний — модель Cloudflare) за темами, що чергуються: пози, техніка, прелюдія, масаж, фантазії, ігри; 30 останніх не повторюються. Картинка — ілюстрація ШІ або гіфка GIPHY\n"
-    "• Стаття тижня — RSS журналів Cosmopolitan, Men's Health, Women's Health і блогу Gottman Institute: ШІ обирає найкориснішу й переказує українською; зверху обкладинка, внизу посилання на оригінал\n"
-    "• Обговорення тижня — найпопулярніший пост тижня з r/sex і r/sexover30 та 5 найкращих коментарів, переклад ШІ, посилання на оригінал</blockquote>\n"
+    "• Стаття тижня — RSS журналів Cosmopolitan, Men's Health, Women's Health, блогів Gottman Institute і Lovehoney та журналу WhatToy: ШІ обирає найкориснішу й переказує українською; зверху обкладинка, внизу посилання на оригінал\n"
+    "• Досвід тижня — особисті історії з Medium (sex, intimacy, relationships) і теми подкастів (зокрема Sex Unwrapped), переказ ШІ\n• Обговорення тижня — найпопулярніший пост тижня з r/sex і r/sexover30 та 5 найкращих коментарів (коли Reddit дасть доступ)</blockquote>\n"
     "🛒 <b>Акції Сільпо</b>\n"
     "<blockquote>• Дані — із сайту Сільпо для магазину на вул. Калнишевського, 2\n"
     "• Беремо всі загальні акції з прямим зниженням ціни, зокрема «Ціну тижня» 🔥; без «2+1», «другий за…» і персональних\n"
@@ -783,6 +783,10 @@ ARTICLE_FEEDS = [
     ("Women's Health", "https://www.womenshealthmag.com/rss/sex-and-love.xml/"),
     ("Women's Health", "https://www.womenshealthmag.com/rss/all.xml/"),
     ("Gottman Institute", "https://www.gottman.com/blog/feed/"),
+    ("Lovehoney", "https://www.lovehoney.co.uk/blog/feed/"),
+    ("Lovehoney", "https://www.lovehoney.com/blog/feed/"),
+    ("WhatToy", "https://www.whattoy.co.uk/feed/"),
+    ("WhatToy", "https://whattoy.co.uk/feed/"),
 ]
 ARTICLE_WORDS = re.compile(r"\bsex|orgasm|foreplay|position|intima|libido|bedroom|kiss|desire|arous|oral|"
                            r"pleasure|couple|relationship|marriage|partner|love life|kink|toy", re.I)
@@ -926,6 +930,17 @@ SMM_QUERIES = [("Instagram нова функція", "uk"), ("TikTok нова ф
                ("Threads new feature", "en"), ("YouTube creators new feature", "en"),
                ("Instagram algorithm reach", "en"), ("Facebook Reels update", "en")]
 SMM_TAGS = {"new": "🆕", "ads": "🎯", "algo": "📊", "rumor": "👀"}
+# офіційні та галузеві джерела новин (RSS); The Keyword і Meta — лише матеріали про рекламу, соцмережі, креаторів
+SMM_NEWS_FEEDS = [("Meta Newsroom", "https://about.fb.com/feed/"),
+                  ("Meta Newsroom", "https://about.fb.com/news/feed/"),
+                  ("Social Media Today", "https://www.socialmediatoday.com/feeds/news/"),
+                  ("The Keyword (Google)", "https://blog.google/products/ads-commerce/rss/"),
+                  ("The Keyword (Google)", "https://blog.google/products/youtube/rss/"),
+                  ("The Keyword (Google)", "https://blog.google/rss/"),
+                  ("Marketing Dive", "https://www.marketingdive.com/feeds/news/")]
+SMM_WORDS = re.compile(r"instagram|facebook|threads|whatsapp|reels|tiktok|youtube|shorts|creator|advertis|\bads?\b|"
+                       r"campaign|target|audience|algorithm|reach|feed|social|influencer|marketing|brand|commerce|"
+                       r"shopping|search|gemini|ai\b|linkedin|snapchat|pinterest|x\.com|twitter", re.I)
 
 
 def gnews(q: str, lang: str) -> list[dict]:
@@ -945,7 +960,22 @@ def gnews(q: str, lang: str) -> list[dict]:
 def build_smm(st: dict, now: datetime) -> str | None:
     seen = set(st.get("smm_links", []))
     items, titles = [], set()
-    for q, lang in SMM_QUERIES:
+    ok = []
+    for src, url in SMM_NEWS_FEEDS:                   # спершу офіційні й галузеві джерела за 7 днів
+        try:
+            got = feed_items(url, src, days=7)
+            ok.append(src)
+        except Exception as e:
+            print(f"SMM: {src} {url} → {str(e)[:60]}")
+            continue
+        for it in got[:25]:
+            key = it["title"].lower()[:60]
+            if (it["link"] not in seen and key not in titles
+                    and (src in ("Social Media Today", "Marketing Dive") or SMM_WORDS.search(it["title"] + " " + it["text"][:300]))):
+                titles.add(key)
+                items.append({"title": it["title"], "link": it["link"], "source": src, "date": it.get("date", "")})
+    print(f"SMM: працюють {sorted(set(ok))}, новин {len(items)}")
+    for q, lang in SMM_QUERIES:                       # далі — Google News як доповнення
         for it in gnews(q, lang)[:8]:
             key = it["title"].lower()[:60]
             if it["link"] and it["title"] and it["link"] not in seen and key not in titles:
@@ -956,11 +986,13 @@ def build_smm(st: dict, now: datetime) -> str | None:
     items = items[:60]
     label = f"{(now - timedelta(days=7)):%d.%m}–{now:%d.%m}"
     head = f"📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · {label}\n"
-    listing = "\n".join(f"{n}. {it['title']} — {it['source']}" for n, it in enumerate(items))
+    listing = "\n".join(f"{n}. [{it.get('date') or '—'}] {it['title']} — {it['source']}" for n, it in enumerate(items))
     raw = gemini("Ти — редактор щотижневого дайджесту для SMM-спеціалістів і таргетологів. Ось новини за тиждень "
-                 "(номер. заголовок — джерело). Обери 8–10 найважливіших і найсвіжіших для практиків: нові функції "
-                 "соцмереж, зміни в рекламних кабінетах і таргетингу, алгоритми й охоплення, тести й чутки. Без "
-                 "повторів однієї новини і без загальних порад. Для кожної поверни об'єкт: n (номер новини), "
+                 "(номер. [дата] заголовок — джерело). Обери 8–10 найважливіших і найсвіжіших для практиків: нові функції "
+                 "соцмереж, зміни в рекламних кабінетах і таргетингу, алгоритми й охоплення, тести й чутки. Найвищий "
+                 "пріоритет — темам, про які пишуть кілька джерел одразу (це головні новини тижня), і офіційним "
+                 "анонсам Meta та Google. Для кожної теми обери одну найкращу новину; без повторів і без загальних "
+                 "порад. Розташуй від найважливішої. Для кожної поверни об'єкт: n (номер новини), "
                  "tag (new|ads|algo|rumor), title (короткий заголовок українською), what (1–2 речення українською: "
                  "що сталося), tip (1 речення: як використати на практиці). Відповідь — лише JSON-масив.\n\n"
                  + listing, json_mode=True, max_tokens=3000)
@@ -987,7 +1019,7 @@ def build_smm(st: dict, now: datetime) -> str | None:
     while len(text) > 4000 and len(blocks) > 3:
         blocks.pop()
         text = head + "\n".join(blocks) + "\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>"
-    practice = build_smm_practice(st)                 # друге повідомлення — фішки з Reddit (якщо підключено)
+    practice = build_smm_practice(st, now)            # друге повідомлення — фішки практиків (Reddit, блоги, Medium)
     return text + (SPLIT + practice if practice else "")
 
 
@@ -1002,57 +1034,170 @@ def reddit_token() -> str | None:
         return None
 
 
-def build_smm_practice(st: dict) -> str | None:
-    """«Фішки від практиків»: найобговорюваніші теми тижня з Reddit (SMM/таргет), переклад Gemini."""
-    tok = reddit_token()
-    if not tok or not GEMINI_KEY:
-        return None
-    seen = set(st.get("smm_reddit_seen", []))
-    posts = []
-    for sub in SMM_SUBS:
+# ---------- Загальні RSS-пули (блоги, Medium, подкасти) ----------
+def feed_items(url: str, src: str, days: int = 10) -> list[dict]:
+    """Елементи RSS/Atom за останні days днів: title, link, text, src."""
+    import xml.etree.ElementTree as ET
+    from email.utils import parsedate_to_datetime
+    root = ET.fromstring(http_text(url))
+    out, now_ = [], datetime.now(TZ)
+    for it in list(root.iter("item"))[:40]:
+        title, link = (it.findtext("title") or "").strip(), (it.findtext("link") or "").strip()
+        body = (it.findtext("{http://purl.org/rss/1.0/modules/content/}encoded") or it.findtext("description")
+                or it.findtext("{http://www.itunes.com/dtds/podcast-1.0.dtd}summary") or "")
+        date = ""
         try:
-            lst = reddit_api(f"https://oauth.reddit.com/r/{sub}/top?t=week&limit=25&raw_json=1", tok)
-        except Exception as e:
-            print(f"Reddit r/{sub}: {err_text(e)}")
-            continue
-        for ch in (lst.get("data") or {}).get("children", []):
-            d = ch.get("data") or {}
-            if d.get("is_self") and not d.get("stickied") and d.get("id") not in seen and (d.get("num_comments") or 0) >= 10:
-                posts.append(d)
-    posts.sort(key=lambda d: (d.get("score") or 0) + 3 * (d.get("num_comments") or 0), reverse=True)
-    picked = []
-    for d in posts[:4]:
-        try:
-            tree = reddit_api(f"https://oauth.reddit.com/r/{d['subreddit']}/comments/{d['id']}?sort=top&limit=10&depth=1&raw_json=1", tok)
-            best = [c["data"].get("body", "") for c in tree[1]["data"]["children"]
-                    if c.get("kind") == "t1" and c["data"].get("author") != "AutoModerator"
-                    and len(c["data"].get("body") or "") >= 40][:2]
+            d = parsedate_to_datetime(it.findtext("pubDate") or "")
+            if d and (now_ - d.astimezone(TZ)).days > days:
+                continue
+            date = d.astimezone(TZ).strftime("%d.%m") if d else ""
         except Exception:
-            best = []
-        picked.append({"d": d, "comments": best})
-    if not picked:
+            pass
+        if title and link:
+            out.append({"src": src, "title": title, "link": link, "text": strip_html(body)[:2500], "date": date})
+    return out
+
+
+def collect_pool(st: dict, key: str, feeds: list, words: re.Pattern | None, now: datetime, limit: int = 20) -> None:
+    """Раз на день оновлюємо пул st[key] зі списку RSS (лише нові, за темою)."""
+    if st.get(f"{key}_day") == now.date().isoformat():
+        return
+    st[f"{key}_day"] = now.date().isoformat()
+    seen = set(st.get(f"{key}_seen", []))
+    pool, ok = [], []
+    for src, url in feeds:
+        try:
+            items = feed_items(url, src)
+            ok.append(src)
+        except Exception as e:
+            print(f"{key}: {src} {url} → {str(e)[:60]}")
+            continue
+        pool += [a for a in items if a["link"] not in seen and (not words or words.search(a["title"] + " " + a["text"][:400]))]
+    st[key] = list({a["link"]: a for a in pool}.values())[:limit]
+    print(f"{key}: працюють {sorted(set(ok))}, у пулі {len(st[key])}")
+
+
+def podcast_feeds(terms: list[str], per_term: int = 3) -> list[tuple[str, str]]:
+    """Адреси RSS подкастів за темою — через безкоштовний пошук Apple Podcasts."""
+    out = []
+    for t in terms:
+        try:
+            r = http_json("https://itunes.apple.com/search?" + urllib.parse.urlencode(
+                {"term": t, "media": "podcast", "limit": per_term}))
+            out += [(f"🎙 {x.get('collectionName')}", x["feedUrl"]) for x in r.get("results", []) if x.get("feedUrl")]
+        except Exception as e:
+            print(f"Подкасти ({t}): {err_text(e)[:60]}")
+    return list(dict(out).items()) if out else []
+
+
+SMM_FEEDS = [("Jon Loomer", "https://www.jonloomer.com/feed/"),
+             ("Social Media Examiner", "https://www.socialmediaexaminer.com/feed/"),
+             ("AdEspresso", "https://adespresso.com/feed/"),
+             ("Hootsuite", "https://blog.hootsuite.com/feed/"),
+             ("Buffer", "https://buffer.com/resources/rss/"),
+             ("Later", "https://later.com/blog/feed/"),
+             ("Medium · facebook-ads", "https://medium.com/feed/tag/facebook-ads"),
+             ("Medium · tiktok-ads", "https://medium.com/feed/tag/tiktok-ads"),
+             ("Medium · instagram-marketing", "https://medium.com/feed/tag/instagram-marketing"),
+             ("Medium · ppc", "https://medium.com/feed/tag/ppc")]
+EXP_FEEDS = [("Medium · sex", "https://medium.com/feed/tag/sex"),
+             ("Medium · intimacy", "https://medium.com/feed/tag/intimacy"),
+             ("Medium · sexuality", "https://medium.com/feed/tag/sexuality"),
+             ("Medium · relationships", "https://medium.com/feed/tag/relationships")]
+
+
+def build_smm_practice(st: dict, now: datetime | None = None) -> str | None:
+    """«Фішки від практиків»: блоги практиків і Medium, переклад Gemini."""
+    if not GEMINI_KEY:
         return None
-    src = [{"n": i, "title": x["d"]["title"], "post": (x["d"].get("selftext") or "")[:1500],
-            "comments": [c[:800] for c in x["comments"]]} for i, x in enumerate(picked)]
-    raw = gemini("Ти — редактор дайджесту для SMM-спеціалістів і таргетологів. Ось найобговорюваніші теми тижня з "
-                 "Reddit (пост і найкращі коментарі практиків). Для кожної поверни об'єкт: n, title (короткий "
-                 "заголовок українською), summary (2–3 речення: про що обговорення), tip (1–2 речення: найкорисніша "
-                 "практична фішка з коментарів). Перекладай природно, без кальок. Відповідь — лише JSON-масив.\n\n"
+    now = now or datetime.now(TZ)
+    cands = []
+    tok = None                                        # Reddit для SMM вимкнено — замість нього блоги та офіційні джерела
+    if tok:
+        seen = set(st.get("smm_reddit_seen", []))
+        posts = []
+        for sub in SMM_SUBS:
+            try:
+                lst = reddit_api(f"https://oauth.reddit.com/r/{sub}/top?t=week&limit=25&raw_json=1", tok)
+            except Exception as e:
+                print(f"Reddit r/{sub}: {err_text(e)}")
+                continue
+            posts += [ch["data"] for ch in (lst.get("data") or {}).get("children", [])
+                      if ch.get("data", {}).get("is_self") and not ch["data"].get("stickied")
+                      and ch["data"].get("id") not in seen and (ch["data"].get("num_comments") or 0) >= 10]
+        posts.sort(key=lambda d: (d.get("score") or 0) + 3 * (d.get("num_comments") or 0), reverse=True)
+        for d in posts[:3]:
+            try:
+                tree = reddit_api(f"https://oauth.reddit.com/r/{d['subreddit']}/comments/{d['id']}?sort=top&limit=10&depth=1&raw_json=1", tok)
+                best = [c["data"].get("body", "")[:800] for c in tree[1]["data"]["children"]
+                        if c.get("kind") == "t1" and c["data"].get("author") != "AutoModerator"
+                        and len(c["data"].get("body") or "") >= 40][:2]
+            except Exception:
+                best = []
+            cands.append({"src": f"r/{d['subreddit']}", "title": d["title"], "id": d["id"],
+                          "link": f"https://www.reddit.com{d.get('permalink', '')}",
+                          "text": (d.get("selftext") or "")[:1200] + "\nКоментарі: " + " | ".join(best),
+                          "meta": f"👍 {num(d.get('score') or 0)} · 💬 {num(d.get('num_comments') or 0)} · "})
+    collect_pool(st, "smm_pool", SMM_FEEDS, None, now)
+    cands += [dict(a, meta="") for a in st.get("smm_pool", [])[:12]]
+    if not cands:
+        return None
+    src = [{"n": i, "source": c["src"], "title": c["title"], "text": c["text"][:1200]} for i, c in enumerate(cands)]
+    raw = gemini("Ти — редактор дайджесту для SMM-спеціалістів і таргетологів. Ось свіжі матеріали тижня від практиків "
+                 "(обговорення Reddit, блоги, Medium). Обери 4 з найкориснішими практичними фішками (налаштування "
+                 "реклами, креативи, охоплення, алгоритми, кейси з цифрами); без загальних порад і без повторів. Для "
+                 "кожної поверни об'єкт: n, title (короткий заголовок українською), summary (2–3 речення: про що), "
+                 "tip (1–2 речення: головна практична фішка). Перекладай природно, без кальок. Відповідь — лише JSON-масив.\n\n"
                  + json.dumps(src, ensure_ascii=False), json_mode=True, max_tokens=2500)
     try:
-        items = [x for x in json.loads(raw or "") if str(x.get("n", "")).isdigit() and int(x["n"]) < len(picked)]
+        items = [x for x in json.loads(raw or "") if str(x.get("n", "")).isdigit() and int(x["n"]) < len(cands)]
     except Exception:
         return None
     blocks = []
     for k, x in enumerate(items[:4], 1):
-        d = picked[int(x["n"])]["d"]
-        blocks.append("<blockquote>" + f"💬 <b>{k}. {esc(x.get('title'))}</b> · r/{esc(d['subreddit'])}\n"
+        c = cands[int(x["n"])]
+        blocks.append("<blockquote>" + f"💬 <b>{k}. {esc(x.get('title'))}</b> · {esc(c['src'])}\n"
                       f"{esc(x.get('summary'))}\n💡 {esc(x.get('tip'))}\n"
-                      f"👍 {num(d.get('score') or 0)} · 💬 {num(d.get('num_comments') or 0)} · "
-                      f'<a href="https://www.reddit.com{html.escape(d.get("permalink", ""))}">обговорення</a></blockquote>')
-        st.setdefault("smm_reddit_seen", []).append(d["id"])
+                      f'{c["meta"]}<a href="{html.escape(c["link"])}">джерело</a></blockquote>')
+        if c.get("id"):
+            st.setdefault("smm_reddit_seen", []).append(c["id"])
+        else:
+            st.setdefault("smm_pool_seen", []).append(c["link"])
     st["smm_reddit_seen"] = st.get("smm_reddit_seen", [])[-300:]
-    return "💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · Reddit за тиждень\n" + "\n".join(blocks) if blocks else None
+    st["smm_pool_seen"] = st.get("smm_pool_seen", [])[-500:]
+    return "💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n" + "\n".join(blocks) if blocks else None
+
+
+# ---------- «Досвід тижня 18+»: Medium (sex, intimacy…) і подкасти ----------
+def collect_experience(st: dict, now: datetime) -> None:
+    if st.get("exp_pool_day") == now.date().isoformat():
+        return
+    feeds = EXP_FEEDS + podcast_feeds(["Sex Unwrapped", "sex relationships", "couples intimacy"])
+    collect_pool(st, "exp_pool", feeds, ARTICLE_WORDS, now)
+
+
+def build_experience(st: dict) -> str | None:
+    pool = [a for a in st.get("exp_pool", []) if a["link"] not in set(st.get("exp_pool_seen", []))]
+    if not pool:
+        return None
+    listing = [{"n": i, "title": a["title"], "source": a["src"], "text": a["text"][:1200]} for i, a in enumerate(pool[:10])]
+    raw = gemini("Ти — редактор рубрики для дорослої подружньої пари. Ось свіжі особисті історії, есе й теми подкастів "
+                 "про секс і близькість. Обери ОДНУ найцікавішу й найкориснішу для пари і перекажи українською природно, "
+                 "по-людськи: що за досвід або тема, що з неї можна взяти. Поверни лише JSON: {\"n\": номер, "
+                 "\"title\": \"заголовок українською\", \"points\": [\"3–5 пунктів, кожен 1–2 речення\"], "
+                 "\"tip\": \"висновок або порада для пари\"}. Без вульгарності та анатомічних подробиць.\n\n"
+                 + json.dumps(listing, ensure_ascii=False), json_mode=True, relaxed=True, max_tokens=2000)
+    try:
+        r = json.loads(raw or "")
+        a = pool[int(r["n"])]
+    except Exception:
+        print("Досвід: Gemini не повернув переказ")
+        return None
+    st["exp_pool_seen"] = (st.get("exp_pool_seen", []) + [a["link"]])[-300:]
+    pts = "\n".join(f"• {esc(x)}" for x in (r.get("points") or [])[:5])
+    return (f"💬 <b>ДОСВІД ТИЖНЯ 18+</b> · {esc(a['src'])}\n"
+            f"<blockquote><b>{esc(r.get('title'))}</b>\n{pts}</blockquote>\n"
+            f"💡 {esc(r.get('tip'))}\n🔗 <a href=\"{html.escape(a['link'])}\">оригінал</a>")
 
 
 # ---------- Акції Сільпо (магазин на Калнишевського, 2) ----------
@@ -2045,11 +2190,13 @@ def main() -> None:
     para_due = (now.weekday() in PARA_DAYS and PARA_HOUR <= now.hour < PARA_HOUR + 4
                 and st.get("para_sent") != today_key)
     collect_articles(st, now)                         # раз на день оновлюємо пул статей журналів
+    collect_experience(st, now)                       # і пул «досвіду» (Medium, подкасти)
     if para_due:
         pm = build_para(st, now, header="💞 <b>ПОРАДА ТИЖНЯ 18+</b>")
         topic_msgs.append(("para", pm, None, pm))
         # друге повідомлення — по черзі: ср — стаття журналу, пт — обговорення Reddit (або те, що доступне)
-        order = [build_article, build_reddit] if now.weekday() == PARA_DAYS[0] else [build_reddit, build_article]
+        order = ([build_article, build_experience, build_reddit] if now.weekday() == PARA_DAYS[0]
+                 else [build_reddit, build_experience, build_article])
         for fn in order:
             extra = fn(st)
             if extra:
@@ -2060,6 +2207,9 @@ def main() -> None:
         pm = build_para(st, now, with_news=False)
         direct_m += [(c, pm, None) for c in para_req]
 
+    if st.get("smm_ver") != 2:                        # нові джерела SMM — стару підбірку скидаємо, меню збере нову
+        st.pop("smm_last", None)
+        st["smm_ver"] = 2
     # 9) SMM і таргет — пн о 13:00 (вам, дружині та підписникам, які це ввімкнули); меню — той самий дайджест тижня
     smm_due = (now.weekday() == SMM_WEEKDAY and SMM_HOUR <= now.hour < SMM_HOUR + 4
                and st.get("smm_week") != week_key)
