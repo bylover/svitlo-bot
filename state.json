@@ -1,15 +1,24 @@
 {
  "group": "4.1",
  "fp": {
-  "2026-10-07": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 540, \"start\": 0, \"type\": \"NotPlanned\"}, {\"end\": 750, \"start\": 540, \"type\": \"Definite\"}, {\"end\": 1260, \"start\": 750, \"type\": \"NotPlanned\"}, {\"end\": 1440, \"start\": 1260, \"type\": \"Definite\"}]}",
-  "2026-10-08": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 180, \"start\": 0, \"type\": \"NotPlanned\"}, {\"end\": 390, \"start\": 180, \"type\": \"Definite\"}, {\"end\": 1080, \"start\": 390, \"type\": \"NotPlanned\"}, {\"end\": 1290, \"start\": 1080, \"type\": \"Definite\"}, {\"end\": 1440, \"start\": 1290, \"type\": \"NotPlanned\"}]}",
+  "2026-10-08": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 30, \"start\": 0, \"type\": \"Definite\"}, {\"end\": 570, \"start\": 420, \"type\": \"Definite\"}, {\"end\": 1110, \"start\": 900, \"type\": \"Definite\"}]}",
   "2026-10-09": "{\"s\": \"WaitingForSchedule\", \"slots\": []}"
  },
- "reminded": [
-  "on|2026-10-08T06:30:00+03:00"
+ "reminded": [],
+ "offset": 28760142,
+ "cmds": "grafik,pogoda,kino,youtube,settings,help,stop",
+ "subs": "IVa7wb9H/lXkE8k4m44z1aZNweBX6a1osjOGpyjBpNXUGfNytfw2JvHnlCLZO8rN2ldu2b4q4woQoxoqqsaGk64=",
+ "warned": "2026-10-08",
+ "source": "dtek",
+ "emerg": {
+  "last": 2477,
+  "on": true,
+  "since": "2026-10-08T10:30:08+03:00"
+ },
+ "morning": "2026-10-08",
+ "log": [
+  "08.10 12:33 Сьогодні 2026-10-08 ScheduleApplies: 00:00–00:30, 07:00–09:30, 15:00–18:30 (перший запуск — без повідомлення)",
+  "08.10 12:33 Завтра 2026-10-09 WaitingForSchedule: без відключень (перший запуск — без повідомлення)"
  ],
- "offset": 28760138,
- "cmds": "",
- "subs": "BtrTuZ4GuROyPA73y/yRhF9U",
- "warned": "2026-10-08"
+ "week_fp": "{\"1\": [], \"2\": [], \"3\": [], \"4\": [], \"5\": [], \"6\": [], \"7\": []}"
 }
