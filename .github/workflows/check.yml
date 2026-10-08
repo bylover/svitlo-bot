@@ -40,6 +40,10 @@ jobs:
           YT_KEY: ${{ secrets.YT_KEY }}
           GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
           GIPHY_KEY: ${{ secrets.GIPHY_KEY }}
+          REDDIT_ID: ${{ secrets.REDDIT_ID }}
+          REDDIT_SECRET: ${{ secrets.REDDIT_SECRET }}
+          REDDIT_USER: ${{ secrets.REDDIT_USER }}
+          REDDIT_PASS: ${{ secrets.REDDIT_PASS }}
           SYNC_URL: ${{ secrets.SYNC_URL }}
           SYNC_KEY: ${{ secrets.SYNC_KEY }}
           REQ_KINO: ${{ inputs.kino }}
