@@ -27,6 +27,8 @@ jobs:
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@v5
+      - name: Install Pillow
+        run: pip install -q pillow
       - name: Run bot
         run: python3 check.py
         env:
