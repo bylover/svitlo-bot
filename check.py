@@ -138,8 +138,11 @@ SOURCES_TEXT = (
     "• Ніч / ранок / день / вечір + поради: парасолька, мороз, вітер, різка зміна температури</blockquote>\n"
     "§§\n"
     "🍿 <b>Кіно</b>\n"
-    "<blockquote>• Каталог і описи українською — TMDB; рейтинги — IMDb і Rotten Tomatoes (через OMDb)\n"
+    "<blockquote>• Каталог і описи українською — TMDB; рейтинги — IMDb (глядачі), Rotten Tomatoes і Metacritic (критики, через OMDb)\n"
     "• Лише високий рейтинг, але не надто «заїжджені» фільми; без повторів, з урахуванням 👀 «бачили»\n"
+    "• 🏆 1–2 фестивальні фільми — переможці й номінанти Канн, Венеції, Берлінале, Санденсу (Wikidata); 💎 прихована перлина — зі списків «Hidden Gems» Trakt\n"
+    "• 📺 Де дивитися в Україні — дані JustWatch (через TMDB): Netflix, MEGOGO, Apple TV тощо; у вікні фільму — посилання на пошук у сервісі та всі варіанти перегляду\n"
+    "• 💬 Що кажуть глядачі — ШІ коротко підсумовує відгуки TMDB: що хвалять і що критикують\n"
     "• 80% підбірки — фільми й серіали за останні 10 років; натисніть на назву — відкриється вікно з постером, кадрами, акторами й описом\n"
     "• 🔞 відвертість: помірна — є оголення або постільні сцени; 🔞🔞 висока — відверті сексуальні сцени, еротика або рейтинг NC-17 (орієнтовно за тегами TMDB і віковим рейтингом США); у вікні — посилання на детальний опис з таймінгом (IMDb Parents Guide)\n"
     "• У вікні фільму імена акторів — посилання на їхню фільмографію</blockquote>\n"
@@ -527,6 +530,173 @@ def adult_level(d: dict) -> tuple[int, list[str], str]:
 LEVEL_TEXT = {1: "🔞 відвертість: помірна", 2: "🔞🔞 відвертість: висока"}
 
 
+TRAKT_ID = (os.environ.get("TRAKT_ID") or "").strip()      # необов'язково: списки «Hidden Gems» з Trakt
+OMDB_CACHE: dict = {}
+PROVIDER_SEARCH = {"Netflix": "https://www.netflix.com/search?q={q}",
+                   "MEGOGO": "https://megogo.net/ua/search-extended?q={q}",
+                   "Apple TV": "https://tv.apple.com/ua/search?term={q}", "Apple TV+": "https://tv.apple.com/ua/search?term={q}",
+                   "Amazon Prime Video": "https://www.primevideo.com/search?phrase={q}",
+                   "Google Play Movies": "https://play.google.com/store/search?q={q}&c=movies",
+                   "Takflix": "https://takflix.com/uk/search?query={q}"}
+
+
+def omdb_full(imdb_id: str | None) -> tuple[float | None, int | None, int | None]:
+    """IMDb (глядачі), Rotten Tomatoes і Metacritic (критики)."""
+    if not (OMDB_KEY and imdb_id):
+        return None, None, None
+    if imdb_id in OMDB_CACHE:
+        return OMDB_CACHE[imdb_id]
+    try:
+        r = http_json(f"https://www.omdbapi.com/?i={imdb_id}&apikey={OMDB_KEY}")
+    except Exception as e:
+        print(f"OMDb: {e}")
+        return None, None, None
+    imdb = float(r["imdbRating"]) if re.fullmatch(r"\d+(\.\d+)?", r.get("imdbRating") or "") else None
+    rt = next((int(x["Value"].rstrip("%")) for x in r.get("Ratings", [])
+               if x.get("Source") == "Rotten Tomatoes" and x.get("Value", "").rstrip("%").isdigit()), None)
+    mc = next((int(x["Value"].split("/")[0]) for x in r.get("Ratings", [])
+               if x.get("Source") == "Metacritic" and x.get("Value", "").split("/")[0].isdigit()), None)
+    OMDB_CACHE[imdb_id] = (imdb, rt, mc)
+    return imdb, rt, mc
+
+
+def wd_festivals(st: dict, now: datetime) -> list[dict]:
+    """«Фестивальні перлини» з Wikidata: переможці й номінанти Канн, Венеції, Берлінале, Санденсу за 10 років."""
+    wk = f"{now:%G-%V}"
+    if (st.get("fest_pool") or {}).get("week") == wk:
+        return st["fest_pool"]["items"]
+    q = ("SELECT ?tmdb (SAMPLE(?al) AS ?award) (MAX(?won) AS ?win) WHERE { "
+         "{ ?film wdt:P166 ?a . BIND(1 AS ?won) } UNION { ?film wdt:P1411 ?a . BIND(0 AS ?won) } "
+         "?a rdfs:label ?al . FILTER(LANG(?al) = \"en\") "
+         "FILTER(REGEX(?al, \"Palme d.Or|Golden Lion|Golden Bear|Silver Bear|Silver Lion|Grand Prix.*Cannes|Sundance|Camera d.Or|Venice|Berlin|Cannes\", \"i\")) "
+         f"?film wdt:P4947 ?tmdb ; wdt:P577 ?d . FILTER(YEAR(?d) >= {now.year - 10}) "
+         "} GROUP BY ?tmdb LIMIT 600")
+    items = []
+    try:
+        req = urllib.request.Request("https://query.wikidata.org/sparql?" + urllib.parse.urlencode({"query": q, "format": "json"}),
+                                     headers={"User-Agent": "svitlo-bot/1.0 (personal Telegram bot)", "Accept": "application/sparql-results+json"})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            rows = json.load(r)["results"]["bindings"]
+        for b in rows:
+            lab, win = b["award"]["value"], b["win"]["value"] == "1"
+            fest = ("Канни" if re.search(r"Palme|Cannes|Camera|Caméra", lab, re.I) else
+                    "Венеція" if re.search(r"Lion|Venice", lab, re.I) else
+                    "Берлінале" if re.search(r"Bear|Berlin", lab, re.I) else "Санденс")
+            items.append({"tmdb": b["tmdb"]["value"], "badge": f"{'🏆' if win else '🎞'} {fest}{'' if win else ' (номінант)'}"})
+        print(f"Wikidata: фестивальних фільмів {len(items)}")
+    except Exception as e:
+        print(f"Wikidata: {err_text(e)[:120]}")
+        return (st.get("fest_pool") or {}).get("items", [])
+    random.shuffle(items)
+    st["fest_pool"] = {"week": wk, "items": items[:300]}
+    return st["fest_pool"]["items"]
+
+
+def trakt_gems(st: dict, now: datetime) -> list[dict]:
+    """Списки «Hidden Gems / Underrated» з Trakt (якщо задано TRAKT_ID)."""
+    if not TRAKT_ID:
+        return []
+    wk = f"{now:%G-%V}"
+    if (st.get("gems_pool") or {}).get("week") == wk:
+        return st["gems_pool"]["items"]
+    hdr = {"trakt-api-version": "2", "trakt-api-key": TRAKT_ID, "Content-Type": "application/json"}
+    items = []
+    try:
+        for query in ("hidden gems", "underrated movies"):
+            lists = http_json("https://api.trakt.tv/search/list?" + urllib.parse.urlencode({"query": query, "limit": 4}), headers=hdr)
+            for l in lists:
+                lid = ((l.get("list") or {}).get("ids") or {}).get("trakt")
+                if not lid:
+                    continue
+                for it in http_json(f"https://api.trakt.tv/lists/{lid}/items/movie", headers=hdr)[:150]:
+                    tid = (((it.get("movie") or {}).get("ids")) or {}).get("tmdb")
+                    if tid:
+                        items.append({"tmdb": str(tid), "badge": "💎 Hidden gem"})
+        print(f"Trakt: прихованих перлин {len(items)}")
+    except Exception as e:
+        print(f"Trakt: {err_text(e)[:120]}")
+    items = list({x["tmdb"]: x for x in items}.values())
+    random.shuffle(items)
+    st["gems_pool"] = {"week": wk, "items": items[:300]}
+    return st["gems_pool"]["items"]
+
+
+def kino_details(kind: str, tid) -> dict:
+    d = tmdb(f"/{kind}/{tid}", language="uk-UA", include_video_language="uk,en", include_image_language="uk,en,null",
+             append_to_response="external_ids,videos,credits,images,keywords,reviews,watch/providers,"
+             + ("release_dates" if kind == "movie" else "content_ratings"))
+    if not d.get("overview"):
+        d["overview"] = tmdb(f"/{kind}/{tid}", language="en-US").get("overview", "")
+    if not (d.get("reviews") or {}).get("results"):     # відгуки українською рідко є — беремо англійські
+        try:
+            d["reviews"] = tmdb(f"/{kind}/{tid}/reviews", language="en-US")
+        except Exception:
+            pass
+    return d
+
+
+def pass_filters(kind: str, d: dict, imdb, rt, mc) -> bool:
+    min_imdb, min_rt = (7.0, 75) if kind == "movie" else (7.5, 80)
+    if (imdb is not None and imdb < min_imdb) or (rt is not None and rt < min_rt) or (mc is not None and mc < 60):
+        return False
+    return (d.get("vote_count") or 0) <= (8000 if kind == "movie" else 5000)   # не надто «заїжджені»
+
+
+def pick_from_pool(pool: list, need: int, seen: set, since: str | None = None) -> list[dict]:
+    """Фільми з фестивального пулу / Trakt — з тими ж фільтрами оцінок і «незаїжденості»."""
+    out = []
+    for p in pool:
+        key = f"m{p['tmdb']}"
+        if key in seen or len(out) >= need:
+            continue
+        try:
+            d = kino_details("movie", p["tmdb"])
+        except Exception:
+            continue
+        if since and (d.get("release_date") or "") < since:
+            continue
+        imdb, rt, mc = omdb_full((d.get("external_ids") or {}).get("imdb_id") or d.get("imdb_id"))
+        if not pass_filters("movie", d, imdb, rt, mc) or (d.get("vote_average") or 0) < 6.8:
+            continue
+        seen.add(key)
+        out.append({"key": key, "kind": "movie", "d": d, "imdb": imdb, "rt": rt, "mc": mc, "badge": p["badge"]})
+    return out
+
+
+def providers(d: dict) -> tuple[list[tuple[str, str]], str]:
+    """Де дивитися в Україні (JustWatch через TMDB): [(назва, посилання)], посилання на всі варіанти."""
+    ua = ((d.get("watch/providers") or {}).get("results") or {}).get("UA") or {}
+    title = d.get("title") or d.get("name") or ""
+    names = []
+    for kind_ in ("flatrate", "free", "ads", "rent", "buy"):
+        for p in ua.get(kind_, []):
+            n = p.get("provider_name")
+            if n and n not in [x[0] for x in names]:
+                tmpl = PROVIDER_SEARCH.get(n)
+                names.append((n, tmpl.format(q=urllib.parse.quote(title)) if tmpl else ua.get("link", "")))
+    return names[:6], ua.get("link", "")
+
+
+def review_summaries(items: list[dict]) -> None:
+    """Gemini: 1 запит на всю підбірку — що хвалять і що критикують глядачі (за відгуками TMDB)."""
+    src = []
+    for n, it in enumerate(items):
+        revs = [r.get("content", "")[:700] for r in ((it["d"].get("reviews") or {}).get("results") or [])[:3]]
+        if revs:
+            src.append({"n": n, "title": it["d"].get("title") or it["d"].get("name"), "reviews": revs})
+    if not src:
+        return
+    raw = gemini("Ось відгуки глядачів до фільмів. Для кожного коротко українською: що хвалять і що критикують "
+                 "(по 1 реченню, без спойлерів). Поверни лише JSON-масив: [{\"n\": номер, \"likes\": \"...\", "
+                 "\"dislikes\": \"...\"}].\n\n" + json.dumps(src, ensure_ascii=False), json_mode=True, max_tokens=2500)
+    try:
+        for x in json.loads(raw or ""):
+            if str(x.get("n", "")).isdigit() and int(x["n"]) < len(items):
+                items[int(x["n"])]["say"] = {"likes": x.get("likes", ""), "dislikes": x.get("dislikes", "")}
+    except Exception:
+        print("Кіно: Gemini не підсумував відгуки")
+
+
 def pick_titles(kind: str, need: int, seen: set, since: str | None = None, until: str | None = None,
                 pages: int = 2) -> list[dict]:
     """kind: movie | tv. Високий рейтинг, але не надто «заїжджені»; since/until — роки виходу."""
@@ -558,19 +728,14 @@ def pick_titles(kind: str, need: int, seen: set, since: str | None = None, until
             continue
         used.add(key)
         try:
-            d = tmdb(f"/{kind}/{c['id']}", language="uk-UA", include_video_language="uk,en",
-                     include_image_language="uk,en,null",
-                     append_to_response="external_ids,videos,credits,images,keywords,"
-                     + ("release_dates" if kind == "movie" else "content_ratings"))
-            if not d.get("overview"):
-                d["overview"] = tmdb(f"/{kind}/{c['id']}", language="en-US").get("overview", "")
+            d = kino_details(kind, c["id"])
         except Exception as e:
             print(f"TMDB details: {e}")
             continue
-        imdb, rt = omdb((d.get("external_ids") or {}).get("imdb_id") or d.get("imdb_id"))
-        if (imdb is not None and imdb < min_imdb) or (rt is not None and rt < min_rt):
+        imdb, rt, mc = omdb_full((d.get("external_ids") or {}).get("imdb_id") or d.get("imdb_id"))
+        if not pass_filters(kind, d, imdb, rt, mc):
             continue
-        out.append({"key": key, "kind": kind, "d": d, "imdb": imdb, "rt": rt})
+        out.append({"key": key, "kind": kind, "d": d, "imdb": imdb, "rt": rt, "mc": mc})
         if len(out) >= need:
             break
     return out
@@ -601,7 +766,8 @@ def kino_page(st: dict, it: dict) -> str | None:
         ", ".join(c.get("name") for c in (d.get("created_by") or [])[:2])
     genres = ", ".join(g["name"].lower() for g in d.get("genres", [])[:4])
     rating = (f"IMDb {it['imdb']}" if it["imdb"] else f"TMDB {d.get('vote_average', 0):.1f}") + \
-        (f" · Rotten Tomatoes {it['rt']}%" if it["rt"] is not None else "")
+        (f" · Rotten Tomatoes {it['rt']}%" if it["rt"] is not None else "") + \
+        (f" · Metacritic {it['mc']}" if it.get("mc") is not None else "") + (f" · {it['badge']}" if it.get("badge") else "")
     nodes = []
     if d.get("poster_path"):
         nodes.append({"tag": "img", "attrs": {"src": img(d["poster_path"])}})
@@ -620,6 +786,22 @@ def kino_page(st: dict, it: dict) -> str | None:
         nodes.append({"tag": "p", "children": [{"tag": "b", "children": ["Режисер: " if not tv else "Автори: "]}, director]})
     if d.get("overview"):
         nodes.append({"tag": "p", "children": [d["overview"]]})
+    prov, plink = providers(d)
+    if prov:                                          # де дивитися в Україні
+        ch = [{"tag": "b", "children": ["📺 Де дивитися в Україні: "]}]
+        for k_, (n_, u_) in enumerate(prov):
+            ch.append({"tag": "a", "attrs": {"href": u_}, "children": [n_]} if u_ else n_)
+            if k_ < len(prov) - 1:
+                ch.append(", ")
+        nodes.append({"tag": "p", "children": ch})
+        if plink:
+            nodes.append({"tag": "p", "children": [{"tag": "a", "attrs": {"href": plink}, "children": ["Усі варіанти перегляду"]}]})
+    if it.get("say"):                                 # що кажуть глядачі (підсумок відгуків)
+        nodes.append({"tag": "h4", "children": ["💬 Що кажуть глядачі"]})
+        if it["say"].get("likes"):
+            nodes.append({"tag": "p", "children": ["👍 Хвалять: " + it["say"]["likes"]]})
+        if it["say"].get("dislikes"):
+            nodes.append({"tag": "p", "children": ["👎 Критикують: " + it["say"]["dislikes"]]})
     level, tags, cert = adult_level(d)
     if level:
         imdb_id = (d.get("external_ids") or {}).get("imdb_id") or d.get("imdb_id")
@@ -657,16 +839,23 @@ def kino_item(i: int, it: dict, ov_len: int = 160) -> str:
     rating = [f"⭐ IMDb <b>{it['imdb']}</b>" if it["imdb"] else f"⭐ TMDB <b>{d.get('vote_average', 0):.1f}</b>"]
     if it["rt"] is not None:
         rating.append(f"🍅 <b>{it['rt']}%</b>")
+    if it.get("mc") is not None:
+        rating.append(f"Ⓜ <b>{it['mc']}</b>")
     cast = ", ".join(c.get("name") for c in (d.get("credits") or {}).get("cast", [])[:3] if c.get("name"))
     ov = (d.get("overview") or "").strip() if ov_len else ""
     if len(ov) > ov_len:
         ov = ov[:ov_len - 3].rsplit(" ", 1)[0] + "…"
     name = f'<a href="{html.escape(it["page"])}">{esc(title)}</a>' if it.get("page") else esc(title)
-    lines = [f"{'📺' if is_tv else '🎬'} <b>{i}. {name}</b> ({year})",
+    badge = f" · {it['badge']}" if it.get("badge") else ""
+    lines = [f"{'📺' if is_tv else '🎬'} <b>{i}. {name}</b> ({year}){badge}",
              " · ".join(x for x in (esc(genres), length) if x) + adult,
              " · ".join(rating)]
     if cast:
         lines.append(f"<i>🎭 {esc(cast)}</i>")
+    prov, plink = providers(d)
+    if prov:
+        names_ = ", ".join(n for n, _ in prov[:4])
+        lines.append(f'📺 <a href="{html.escape(plink)}">{esc(names_)}</a>' if plink else f"📺 {esc(names_)}")
     if ov:
         lines.append(f"📝 {esc(ov)}")
     tr = trailer(d.get("videos"))
@@ -683,11 +872,18 @@ def build_kino(st: dict, title: str = "🍿 <b>ПІДБІРКА КІНО</b>") -
     seen = set(st.get("kino_seen", []))
     y = datetime.now(TZ).year
     recent, old_until = f"{y - 10}-01-01", f"{y - 11}-12-31"
-    movies = pick_titles("movie", 6, seen, since=recent) + pick_titles("movie", 1, seen, until=old_until, pages=1)
+    now_ = datetime.now(TZ)
+    fest = pick_from_pool(wd_festivals(st, now_), 2, seen, since=recent)          # 🏆 1–2 фестивальні
+    gems = pick_from_pool(trakt_gems(st, now_), 1, seen)                           # 💎 1 прихована перлина
+    n_recent = len(fest) + sum(1 for g in gems if (g["d"].get("release_date") or "") >= recent)
+    n_old = len(gems) - (n_recent - len(fest))
+    movies = (fest + gems + pick_titles("movie", max(0, 6 - n_recent), seen, since=recent)
+              + (pick_titles("movie", 1, seen, until=old_until, pages=1) if n_old < 1 else []))
     tvs = pick_titles("tv", 2, seen, since=recent, pages=1) + pick_titles("tv", 1, seen, until=old_until, pages=1)
     items = movies + tvs
     if len(items) < 3:
         return None
+    review_summaries(items)                           # «Що кажуть глядачі» (Gemini, 1 запит)
     for it in items:                                  # окреме вікно з великим постером і кадрами
         it["page"] = kino_page(st, it)
     st["kino_seen"] = (st.get("kino_seen", []) + [x["key"] for x in items])[-600:]
