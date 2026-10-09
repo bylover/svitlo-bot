@@ -1812,8 +1812,8 @@ def build_silpo(st: dict, now: datetime) -> str | None:
                         f"заявлено −{declared:.0f}%{real_t}{rate_t}\n"
                         f'🔗 <a href="https://silpo.ua/product/{html.escape(str(p_.get("slug") or ""))}">відкрити</a>')
         ci = str(total)
-        if len(rows) > SILPO_TOP:
-            more[ci] = {"t": f"{emo} <b>{esc(title)}</b>", "b": f"{emo} {title[:16]}", "rows": rows[SILPO_TOP:]}
+        if len(rows) > SILPO_TOP:                     # до 15 позицій: «➕ ще 5 товарів» розгортає це ж повідомлення
+            more[ci] = {"t": f"{emo} <b>{esc(title)}</b>", "first": rows[:SILPO_TOP], "rows": rows[SILPO_TOP:SILPO_TOP + 10]}
         sections.append((ci, "<blockquote>" + "\n".join([f"{emo} <b>{esc(title)}</b>"] + rows[:SILPO_TOP]) + "</blockquote>"))
         total += 1
     if not sections:
@@ -1823,15 +1823,7 @@ def build_silpo(st: dict, now: datetime) -> str | None:
             + ("<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>" if weeks
                else "<i>Реальна вигода з'явиться з наступного тижня (бот ще збирає історію цін)</i>"))
     st["silpo_more"] = more
-    msgs, cur, cur_ids = [], head, []                 # ділимо на повідомлення до 4000 символів
-    for ci, sec in sections:
-        if len(cur) + len(sec) + 1 > 3800:
-            msgs.append(cur + kb_marker(cur_ids, more))
-            cur, cur_ids = sec, [ci]
-        else:
-            cur += "\n" + sec
-            cur_ids.append(ci)
-    msgs.append(cur + kb_marker(cur_ids, more))
+    msgs = [head] + [sec + kb_marker([ci], more) for ci, sec in sections]   # кожна категорія — окреме повідомлення
     return SPLIT.join(msgs)
 
 
@@ -1846,8 +1838,9 @@ def split_kb(text: str, more: dict) -> tuple[str, dict | None]:
     m = re.search(r"\n§KB:([\d,]+)$", text)
     if not m:
         return text, None
-    btns = [{"text": f"➕ {more[i]['b']}", "callback_data": f"sm:{i}:0"} for i in m.group(1).split(",") if i in more]
-    return text[:m.start()], ({"inline_keyboard": [btns[k:k + 2] for k in range(0, len(btns), 2)]} if btns else None)
+    ids = [i for i in m.group(1).split(",") if i in more]
+    btns = [{"text": "➕ ще 5 товарів", "callback_data": f"sm:{i}:{SILPO_TOP}"} for i in ids]
+    return text[:m.start()], ({"inline_keyboard": [[b] for b in btns]} if btns else None)
 
 
 # ---------- YouTube (Data API v3) ----------
@@ -2809,9 +2802,9 @@ def main() -> None:
         pm = build_para(st, now, with_news=False)
         direct_m += [(c, pm, None) for c in para_req]
 
-    if st.get("silpo_ver") != 2:                      # нова підбірка Сільпо з кнопками «➕ ще 5»
+    if st.get("silpo_ver") != 3:                      # нова підбірка Сільпо з кнопками «➕ ще 5»
         st.pop("silpo_last", None)
-        st["silpo_ver"] = 2
+        st["silpo_ver"] = 3
     if st.get("yt_ver") != 2:                         # новий відбір YouTube (лише українське) — стару підбірку скидаємо
         st.pop("yt_last", None)
         st["yt_ver"] = 2
