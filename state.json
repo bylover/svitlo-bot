@@ -812,11 +812,11 @@
   "https://medium.com/illumination/secrets-of-female-pleasure-the-technique-most-men-dont-know-bb3c7ff68098?source=rss------sex-5"
  ],
  "addr": {
-  "active": true,
-  "reason": "Аварійні ремонтні роботи",
-  "start": "13:57 09.10.2026",
-  "end": "21:45 09.10.2026",
-  "type": "2",
+  "active": false,
+  "reason": "",
+  "start": "",
+  "end": "",
+  "type": "",
   "groups": [
    "GPV4.1"
   ],
@@ -824,7 +824,7 @@
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-10-09T21:43:02.243582+03:00",
+  "checked": "2026-10-09T21:53:01.350805+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
