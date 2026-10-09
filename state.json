@@ -7,6 +7,7 @@
  },
  "reminded": [
   "off|2026-10-09T09:00:00+03:00",
+  "off|2026-10-09T18:00:00+03:00",
   "on|2026-10-08T18:30:00+03:00"
  ],
  "offset": 28760142,
@@ -16,8 +17,8 @@
  "source": "dtek",
  "emerg": {
   "last": 2484,
-  "on": true,
-  "since": "2026-10-09T14:55:38.573486+03:00",
+  "on": false,
+  "since": "2026-10-09T17:45:47.679908+03:00",
   "src": "yasno"
  },
  "morning": "2026-10-09",
@@ -34,7 +35,23 @@
   "Повільний вечір"
  ],
  "para_bag": [],
- "to_delete": [],
+ "to_delete": [
+  [
+   "160603556",
+   161,
+   "2026-10-09T18:10:00+03:00"
+  ],
+  [
+   "368433217",
+   162,
+   "2026-10-09T18:10:00+03:00"
+  ],
+  [
+   "936688574",
+   163,
+   "2026-10-09T18:10:00+03:00"
+  ]
+ ],
  "silpo_branch": {
   "id": "1edb6b3e-f7ef-677c-99f0-51de6a88d469",
   "type": "SelfPickup",
@@ -809,19 +826,19 @@
   "https://medium.com/@SensualTouchJournal/desire-isnt-what-determines-the-quality-of-tantric-sex-cb86d10f08e1?source=rss------intimacy-5"
  ],
  "addr": {
-  "active": true,
-  "reason": "Аварійні ремонтні роботи",
-  "start": "06:58 09.10.2026",
-  "end": "18:36 09.10.2026",
-  "type": "2",
+  "active": false,
+  "reason": "",
+  "start": "",
+  "end": "",
+  "type": "",
   "groups": [
    "GPV4.1"
   ],
-  "updated": "17:17 09.10.2026",
-  "emergency": true,
+  "updated": "17:33 09.10.2026",
+  "emergency": false,
   "city_emergency": false,
   "city_text": "",
-  "checked": "2026-10-09T17:33:01.742286+03:00",
+  "checked": "2026-10-09T17:43:03.568125+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -902,7 +919,16 @@
   "m9470",
   "t100757",
   "t111803",
-  "t1621"
+  "t1621",
+  "m493529",
+  "m701387",
+  "m581528",
+  "m1062722",
+  "m940721",
+  "m650",
+  "t80350",
+  "t273207",
+  "t1972"
  ],
  "yt_ver": 2,
  "yt_seen": [
@@ -1010,111 +1036,59 @@
  },
  "kino_q": [
   {
-   "id": "c9f8093053",
-   "text": "🍿 <b>ПІДБІРКА КІНО</b>\n<i>Натисніть 👀 з номером, якщо вже бачили, — більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Perekladach-2023-10-09\">Перекладач</a></b> (2023)\nвійськовий, бойовик, трилер · ⏱ 2 год 03 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>82%</b>\n<i>🎭 Джейк Джилленгол, Дар Салім, Sean Sagar</i>\n📝 Служба сержанта Джона Кінлі в Афганістані добігає кінця. В один з…\n▶️ <a href=\"https://youtu.be/02PPMPArNEQ\">Трейлер</a></blockquote>\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Graf-Monte-Krіsto-2024-10-09\">Граф Монте-Крісто</a></b> (2024)\nпригоди, бойовик, драма · ⏱ 2 год 58 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>97%</b>\n<i>🎭 П'єр Ніні, Bastien Bouillon, Анаїс Демустьє</i>\n📝 Пригодницька сага розповідає історію молодого чоловіка Едмона…\n▶️ <a href=\"https://youtu.be/mBcSeV6wywo\">Трейлер</a></blockquote>\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Tisk-2026-10-09\">Тиск</a></b> (2026)\nтрилер, історичний, військовий · ⏱ 1 год 41 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>89%</b>\n<i>🎭 Ендрю Скотт, Брендан Фрейзер, Керрі Кондон</i>\n📝 У напружені 72 години перед Днем «Д» доля світу висить на…\n▶️ <a href=\"https://youtu.be/RE5W3SaH7S4\">Трейлер</a></blockquote>\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/CHervonij-bіlij-ta-korolіvskij-sinіj-2023-10-09\">Червоний, білий та королівський синій</a></b> (2023)\nкомедія, мелодрама · ⏱ 1 год 58 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>75%</b>\n<i>🎭 Тейлор Захар Перес, Ніколас Голіцин, Ума Турман</i>\n📝 Алекс Клермонт-Діас, син президента США, і британський принц Генрі…\n▶️ <a href=\"https://youtu.be/pt56IC8gDZ4\">Трейлер</a></blockquote>\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Hizhak-Dikі-zemlі-2025-10-09\">Хижак: Дикі землі</a></b> (2025)\nбойовик, фантастика, пригоди · ⏱ 1 год 47 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>86%</b>\n<i>🎭 Елль Фаннінґ, Дімітріус Шустер-Колоаматанґі, Ravi Narayan</i>\n📝 Дія розгортається в майбутньому на віддаленій планеті, де молодий…\n▶️ <a href=\"https://youtu.be/1r_kvwIMqvs\">Трейлер</a></blockquote>\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Susіdi-zverhu-2026-10-09\">Сусіди зверху</a></b> (2026)\nкомедія, драма, мелодрама · ⏱ 1 год 47 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>96%</b>\n<i>🎭 Олівія Вайлд, Сет Роґен, Пенелопа Крус</i>\n📝 Шлюб Джо й Анджели тримається на волосині. Але після того, як вони…\n▶️ <a href=\"https://youtu.be/H8HJmLZ68i4\">Трейлер</a></blockquote>\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Rozum-і-pochuttya-1995-10-09\">Розум і почуття</a></b> (1995)\nдрама, мелодрама · ⏱ 2 год 16 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>97%</b>\n<i>🎭 Емма Томпсон, Кейт Вінслет, Алан Рікман</i>\n📝 Історія життя і кохання двох сестер - чуттєвої Елінор і…\n▶️ <a href=\"https://youtu.be/5unqnd-CGz4\">Трейлер</a></blockquote>\n<blockquote>📺 <b>8. <a href=\"https://telegra.ph/Mіlyardi-2016-10-09\">Мільярди</a></b> (2016)\nдрама · 📺 серіал · 7 сез.\n⭐ IMDb <b>8.3</b>\n<i>🎭 Пол Джаматті, Maggie Siff, Девід Костабайл</i>\n📝 У світі влади і великих грошей, в самому серці Нью-Йорка, йде…\n▶️ <a href=\"https://youtu.be/_raEUMLL-ZI\">Трейлер</a></blockquote>\n<blockquote>📺 <b>9. <a href=\"https://telegra.ph/Temna-materіya-2024-10-09\">Темна матерія</a></b> (2024)\nнауково фантастичний, драма · 📺 серіал · 2 сез.\n⭐ IMDb <b>7.6</b>\n<i>🎭 Джоел Еджертон, Дженніфер Коннеллі, Алісі Браґа</i>\n📝 Викрадений Джейсон Дессен опиняється у своєму альтернативному…\n▶️ <a href=\"https://youtu.be/g8p9o-qAdKQ\">Трейлер</a></blockquote>\n<blockquote>📺 <b>10. <a href=\"https://telegra.ph/Morska-polіcіya-Specvіddіl-2003-10-09\">Морська поліція: Спецвідділ</a></b> (2003)\nкримінал, драма, екшн і пригоди · 📺 серіал · 24 сез.\n⭐ IMDb <b>7.8</b>\n<i>🎭 Sean Murray, Wilmer Valderrama, Катріна Лоу</i>\n📝 Головні герої серіалу - група детективів, які знаходяться під…\n▶️ <a href=\"https://youtu.be/BhtDgn31XZo\">Трейлер</a></blockquote>",
+   "id": "6b3abe6716",
+   "text": "🍿 <b>ПІДБІРКА КІНО</b>\n<i>Натисніть 👀 з номером, якщо вже бачили, — більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Pіdzemellya-і-drakoni-CHest-zlodіiv-2023-10-09\">Підземелля і дракони: Честь злодіїв</a></b> (2023)\nпригоди, фентезі, комедія · ⏱ 2 год 14 хв\n⭐ IMDb <b>7.2</b> · Ⓜ <b>72</b>\n<i>🎭 Кріс Пайн, Мішель Родріґес, Джастіс Сміт</i>\n📺 <a href=\"https://www.themoviedb.org/movie/493529-dungeons-dragons-honor-among-thieves/watch?locale=UA\">Google Play Movies, Rakuten TV</a>\n▶️ <a href=\"https://youtu.be/-EBJWOUOLWI\">Трейлер</a></blockquote>\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Bugonіya-2025-10-09\">Буґонія</a></b> (2025)\nфантастика, трилер, комедія · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>87%</b> · Ⓜ <b>72</b>\n<i>🎭 Емма Стоун, Джессі Племенс, Aidan Delbis</i>\n📺 <a href=\"https://www.themoviedb.org/movie/701387-bugonia/watch?locale=UA\">Rakuten TV</a>\n▶️ <a href=\"https://youtu.be/c4ZtqVgUyZc\">Трейлер</a></blockquote>\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Gangster-kop-і-diyavol-2019-10-09\">Гангстер, коп і диявол</a></b> (2019)\nбойовик, кримінал, трилер · ⏱ 1 год 50 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>97%</b> · Ⓜ <b>65</b>\n<i>🎭 Дон Лi, Кім Му Юл, 김성규</i>\n📺 <a href=\"https://www.themoviedb.org/movie/581528/watch?locale=UA\">Apple TV Store</a>\n▶️ <a href=\"https://youtu.be/D1XANQUYSvk\">Трейлер</a></blockquote>\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Frankenshtajn-2025-10-09\">Франкенштайн</a></b> (2025)\nдрама, фентезі, жахи · ⏱ 2 год 30 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>85%</b> · Ⓜ <b>78</b>\n<i>🎭 Оскар Айзек, Джейкоб Елорді, Крістоф Вальц</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1062722-frankenstein/watch?locale=UA\">Netflix</a>\n▶️ <a href=\"https://youtu.be/hQAhgXLk1P4\">Трейлер</a></blockquote>\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Godzіlla-Mіnus-odin-2023-10-09\">Ґодзілла: Мінус один</a></b> (2023)\nфантастика, жахи, бойовик · ⏱ 2 год 05 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>99%</b> · Ⓜ <b>81</b>\n<i>🎭 Рюносуке Камікі, Хамабе Мінамі, Юкі Ямада</i>\n📺 <a href=\"https://www.themoviedb.org/movie/940721-1-0/watch?locale=UA\">Netflix</a>\n▶️ <a href=\"https://youtu.be/MSp68m8OJus\">Трейлер</a></blockquote>\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Hlopcі-na-rajonі-1991-10-09\">Хлопці на районі</a></b> (1991)\nдрама, кримінал · ⏱ 1 год 52 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>93%</b> · Ⓜ <b>76</b>\n<i>🎭 К’юба Ґудінґ-молодший, Лоренс Фішберн, Айс К'юб</i>\n📺 <a href=\"https://www.themoviedb.org/movie/650-boyz-n-the-hood/watch?locale=UA\">Apple TV Store, Google Play Movies</a>\n▶️ <a href=\"https://youtu.be/OJ_qAPj0Tkk\">Трейлер</a></blockquote>\n<blockquote>📺 <b>7. <a href=\"https://telegra.ph/Novij-Amsterdam-2018-10-09\">Новий Амстердам</a></b> (2018)\nдрама · 📺 серіал · 5 сез.\n⭐ IMDb <b>7.9</b>\n<i>🎭 Раян Егголд, Джанет Монтґомері, Jocko Sims</i>\n📺 <a href=\"https://www.themoviedb.org/tv/80350-new-amsterdam/watch?locale=UA\">Netflix</a>\n▶️ <a href=\"https://youtu.be/McdFK7DIzoo\">Трейлер</a></blockquote>\n<blockquote>📺 <b>8. <a href=\"https://telegra.ph/Nіglі-2026-10-09\">Ніглі</a></b> (2026)\nдрама, детектив, кримінал · 📺 серіал · 1 сез.\n⭐ IMDb <b>7.7</b>\n<i>🎭 Марія Стен, Greyston Holt, Аделін Рудольф</i>\n▶️ <a href=\"https://youtu.be/BOzNaa_o9_g\">Трейлер</a></blockquote>\n<blockquote>📺 <b>9. <a href=\"https://telegra.ph/Zoryanij-krejser-Galaktika-2004-10-09\">Зоряний крейсер \"Галактика\"</a></b> (2004)\nнауково фантастичний, екшн і пригоди, драма · 📺 серіал · 4 сез.\n⭐ IMDb <b>8.7</b>\n<i>🎭 Едвард Джеймс Олмос, Мері Мак-Доннелл, Jamie Bamber</i>\n▶️ <a href=\"https://youtu.be/q2x14ZhEc9k\">Трейлер</a></blockquote>",
    "markup": {
     "inline_keyboard": [
      [
       {
        "text": "👀 1",
-       "callback_data": "seen:m882569"
+       "callback_data": "seen:m493529"
       },
       {
        "text": "👀 2",
-       "callback_data": "seen:m1084736"
+       "callback_data": "seen:m701387"
       },
       {
        "text": "👀 3",
-       "callback_data": "seen:m1318413"
+       "callback_data": "seen:m581528"
       },
       {
        "text": "👀 4",
-       "callback_data": "seen:m930094"
+       "callback_data": "seen:m1062722"
       },
       {
        "text": "👀 5",
-       "callback_data": "seen:m1242898"
+       "callback_data": "seen:m940721"
       }
      ],
      [
       {
        "text": "👀 6",
-       "callback_data": "seen:m950028"
+       "callback_data": "seen:m650"
       },
       {
        "text": "👀 7",
-       "callback_data": "seen:m4584"
+       "callback_data": "seen:t80350"
       },
       {
        "text": "👀 8",
-       "callback_data": "seen:t62852"
+       "callback_data": "seen:t273207"
       },
       {
        "text": "👀 9",
-       "callback_data": "seen:t196322"
-      },
-      {
-       "text": "👀 10",
-       "callback_data": "seen:t4614"
-      }
-     ]
-    ]
-   }
-  },
-  {
-   "id": "3dab3446ce",
-   "text": "🍿 <b>ПІДБІРКА КІНО</b>\n<i>Натисніть 👀 з номером, якщо вже бачили, — більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Supermen-2025-10-09\">Супермен</a></b> (2025)\nфантастика, пригоди, бойовик · ⏱ 2 год 10 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>83%</b>\n<i>🎭 Девід Коренсвет, Рейчел Броснаген, Ніколас Голт</i>\n📝 Історія розповідає про Супермена – героя, який живе за принципами милосердя та незламної віри в доброту…\n▶️ <a href=\"https://youtu.be/ALfxbq2RhXw\">Трейлер</a></blockquote>\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Zbroya-2025-10-09\">Зброя</a></b> (2025)\nжахи, детектив · ⏱ 2 год 09 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>93%</b>\n<i>🎭 Джулія Ґарнер, Джош Бролін, Олден Еренрайх</i>\n📝 Коли всі, окрім однієї дитини з того самого класу, таємниче зникають тієї ж ночі й у той самий час,…\n▶️ <a href=\"https://youtu.be/92fsUxDxGG0\">Трейлер</a></blockquote>\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Gromoverzhcі-2025-10-09\">Громовержці*</a></b> (2025)\nбойовик, фантастика, пригоди · ⏱ 2 год 06 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>88%</b>\n<i>🎭 Флоренс Пʼю, Себастіан Стен, Джулія Луї-Дрейфус</i>\n📝 На виконання особливих завдань американський уряд відправляє унікальний загін. Він складається з тих, кого…\n▶️ <a href=\"https://youtu.be/thVWxy8oqCc\">Трейлер</a></blockquote>\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/F1-Fіlm-2025-10-09\">F1: Фільм</a></b> (2025)\nбойовик, драма · ⏱ 2 год 36 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>82%</b>\n<i>🎭 Бред Пітт, Дамсон Ідріс, Хав'єр Бардем</i>\n📝 Жахлива аварія на трасі змусила Сонні Гейза припинити кар’єру гонщика. Це сталося ще у 1990-х і тоді він…\n▶️ <a href=\"https://youtu.be/n1XwN3K-WS0\">Трейлер</a></blockquote>\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Gran-Turizmo-2023-10-09\">Ґран Туризмо</a></b> (2023)\nпригоди, драма, бойовик · ⏱ 2 год 15 хв\n⭐ IMDb <b>7.1</b>\n<i>🎭 Арчі Мадекве, Девід Гарбор, Орландо Блум</i>\n📝 Захоплива історія за мотивами реальних подій про неймовірну жагу до перемоги! Завдяки надзвичайному…\n▶️ <a href=\"https://youtu.be/4PNYhusGXC8\">Трейлер</a></blockquote>\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Rozbіrki-v-stilі-kung-fu-2004-10-09\">Розбірки в стилі кунг-фу</a></b> (2004)\nбойовик, комедія, кримінал · ⏱ 1 год 39 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>90%</b>\n<i>🎭 Стівен Чоу, 元秋, 元華</i>\n📝 Китай, сорокові роки. Невдалий шахрай Сін замислив крупну справу. Він вступає до банди зарізяк «Сокири»,…\n▶️ <a href=\"https://youtu.be/tx9fSpYumuo\">Трейлер</a></blockquote>\n<blockquote>📺 <b>7. <a href=\"https://telegra.ph/Zovnіshnі-mіlini-2020-10-09\">Зовнішні мілини</a></b> (2020)\nекшн і пригоди, детектив · 📺 серіал · 5 сез.\n⭐ IMDb <b>7.5</b>\n<i>🎭 Чейз Стокс, Медлін Клайн, Медісон Бейлі</i>\n📝 Джон Бі і його згуртовані друзі, які живуть на острові в Північній Кароліні, вирушають на пошуки…\n▶️ <a href=\"https://youtu.be/KuB1AxGCZBk\">Трейлер</a></blockquote>\n<blockquote>📺 <b>8. <a href=\"https://telegra.ph/Bіlij-lotos-2021-10-09\">Білий лотос</a></b> (2021)\nкомедія, драма, детектив · 📺 серіал · 3 сез.\n⭐ IMDb <b>8.0</b>\n<i>🎭 Леслі Бібб, Керрі Кун, Волтон Ґоґґінс</i>\n📝 Це історія про постояльців і обслуговуючий персонал фешенебельного гавайського готелю. Багатії, які…\n▶️ <a href=\"https://youtu.be/TGLq7_MonZ4\">Трейлер</a></blockquote>\n<blockquote>📺 <b>9. <a href=\"https://telegra.ph/Pіdpіlna-іmperіya-2010-10-09\">Підпільна імперія</a></b> (2010)\nкримінал, драма · 📺 серіал · 5 сез.\n⭐ IMDb <b>8.5</b>\n<i>🎭 Стів Бушемі, Келлі Мак-Дональд, Майкл Шеннон</i>\n📝 Початок «Сухого закону» в Америці. Головний герой Нік Томпсон — ґанґстер  і політик одночасно, неофіційний…\n▶️ <a href=\"https://youtu.be/SPlBxJs3npQ\">Трейлер</a></blockquote>",
-   "markup": {
-    "inline_keyboard": [
-     [
-      {
-       "text": "👀 1",
-       "callback_data": "seen:m1061474"
-      },
-      {
-       "text": "👀 2",
-       "callback_data": "seen:m1078605"
-      },
-      {
-       "text": "👀 3",
-       "callback_data": "seen:m986056"
-      },
-      {
-       "text": "👀 4",
-       "callback_data": "seen:m911430"
-      },
-      {
-       "text": "👀 5",
-       "callback_data": "seen:m980489"
-      }
-     ],
-     [
-      {
-       "text": "👀 6",
-       "callback_data": "seen:m9470"
-      },
-      {
-       "text": "👀 7",
-       "callback_data": "seen:t100757"
-      },
-      {
-       "text": "👀 8",
-       "callback_data": "seen:t111803"
-      },
-      {
-       "text": "👀 9",
-       "callback_data": "seen:t1621"
+       "callback_data": "seen:t1972"
       }
      ]
     ]
    }
   }
  ],
- "kino_q_try": "2026-10-09 11:3",
+ "kino_q_try": "2026-10-09 17:4",
  "tgph": "d9e4b812d4d847a7be044d20591e2e2b24be1ed85b060caa01126c0c043e",
  "emerg_src": {
   "YASNO": false,
-  "сайт ДТЕК": true,
+  "сайт ДТЕК": false,
   "канал ЖК «Яскравий»": false
  },
  "fact_png": "2026-10-09 17|8|2026-10-09T15:52:32+03:00",
