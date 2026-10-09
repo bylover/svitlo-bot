@@ -106,7 +106,7 @@ HELP_TEXT = ("ℹ️ <b>ЯК КОРИСТУВАТИСЯ БОТОМ</b>\n\n"
              "<b>Що вміє бот</b>\n<blockquote>"
              f"💡 <b>Світло</b> (група {GROUP}) — графік ДТЕК на сьогодні й завтра; сповіщення про "
              "новий, змінений чи відкликаний графік, прогноз на тиждень, екстрені відключення; нагадування за "
-             "30–45 хв; стан за вашою адресою (причина й орієнтовний час відновлення); ранкове зведення о 10:00\n"
+             "~30 хв; стан за вашою адресою (причина й орієнтовний час відновлення); ранкове зведення о 10:00\n"
              "🌤 <b>Погода</b> — прогноз на завтра щодня о 20:00\n"
              "🍿 <b>Кіно</b> — 7 фільмів і 3 серіали на вихідні, щоп'ятниці об 11:00\n"
              "▶️ <b>YouTube</b> — топ-10 українського YouTube за тиждень, щопонеділка об 11:00\n"
@@ -115,7 +115,7 @@ HELP_TEXT = ("ℹ️ <b>ЯК КОРИСТУВАТИСЯ БОТОМ</b>\n\n"
              "💞 <b>Поради 18+</b> — по одному: порада, стаття, техніка, огляд іграшок або досвід; ср і пт о 18:00 і за запитом з меню "
              "(вмикається в /settings)</blockquote>\n"
              "<b>Меню</b> (кнопка зліва від поля вводу)\n<blockquote>"
-             "/grafik — графік світла зараз\n/pogoda — прогноз погоди\n/porady — нова порада, стаття, огляд або досвід 18+\n/kino — підбірка кіно\n"
+             "/grafik — графік світла зараз\n/pogoda — прогноз погоди\n/porady — нова порада, стаття, огляд або досвід 18+\n/kino — підбірка кіно (мікс, жанри, українське, у кінотеатрах)\n"
              "/youtube — топ YouTube за тиждень\n/smm — SMM і таргет за тиждень\n/silpo — акції Сільпо\n/settings — увімкнути або вимкнути сповіщення\n/vidguk — відгук і побажання\n"
              "/help — ця інструкція і звідки дані\n/stop — відписатися від усього</blockquote>\n"
              "<b>Важливо</b>\n<blockquote>"
@@ -127,11 +127,12 @@ SOURCES_TEXT = (
     "ℹ️ <b>ЗВІДКИ ДАНІ І ЯК ФОРМУЄТЬСЯ</b>\n"
     "\n"
     "💡 <b>Світло</b>\n"
-    "<blockquote>• Графік — із сайту ДТЕК (dtek-kem.com.ua) через відкрите дзеркало даних, яке оновлюється кожні ~5 хв; бот перевіряє зміни щохвилини\n"
+    "<blockquote>• Графік — із сайту ДТЕК (dtek-kem.com.ua) через відкрите дзеркало даних, яке оновлюється кожні ~5 хв; бот перевіряє зміни кожні 2 хв\n"
     "• Прогноз на тиждень — з того ж сайту ДТЕК (орієнтовний)\n"
     "• Ваша адреса — перевірка на сайті ДТЕК, як у формі «Відсутня електроенергія?», кожні ~10 хв: чи є зараз відключення, причина, початок і орієнтовне відновлення\n"
-    "• Екстрені відключення — за оголошенням на сторінці ДТЕК, перевіркою адреси, статусом YASNO та Telegram-каналами (канал будинку, ДТЕК); враховуються тільки явні оголошення й скасування, оголошення з каналу діє до 12 год; загальне «🚨 / ✅» — коли перше джерело оголосило або всі скасували, а про зміну статусу кожного окремого джерела бот повідомляє основним отримувачам (📡)\n"
-    "• Фактично є/немає світла (для основних отримувачів) — СвітлоБот будинку: повідомлення при кожній зміні та стрічка за добу (також у «💡 Графік світла»); якщо світла немає, а жодне джерело не повідомляє ні про екстрені, ні про планові відключення — бот так і пише\n"
+    "• Екстрені відключення — за оголошенням на сторінці ДТЕК, перевіркою адреси, статусом YASNO та каналом будинку; YASNO і канал перевіряються кожні 2 хв, сайт ДТЕК — кожні ~10 хв; враховуються тільки явні оголошення й скасування, оголошення з каналу діє до 12 год; загальне «🚨 / ✅» — коли перше джерело оголосило або всі скасували, а про зміну статусу кожного окремого джерела бот повідомляє основним отримувачам (📡)\n"
+    "• Фактично є/немає світла (для основних отримувачів) — СвітлоБот будинку (перевірка кожні 2 хв): повідомлення при кожній зміні та стрічка за добу (також у «💡 Графік світла»); якщо світла немає, а жодне джерело не повідомляє ні про екстрені, ні про планові відключення — бот так і пише\n"
+    "• Нагадування — за ~30 хв до відключення й до увімкнення за графіком (під час екстрених не надсилаються), саме видаляється після події\n"
     "• «За графіком» — це план ДТЕК, а не факт наявності світла</blockquote>\n"
     "🌤 <b>Погода</b>\n"
     "<blockquote>• Open-Meteo — поєднує кілька метеомоделей; прогноз для координат вашого району\n"
@@ -144,8 +145,10 @@ SOURCES_TEXT = (
     "• 📺 Де дивитися в Україні — дані JustWatch (через TMDB): Netflix, MEGOGO, Apple TV тощо; у вікні фільму — посилання на пошук у сервісі та всі варіанти перегляду\n"
     "• 💬 Що кажуть глядачі — ШІ коротко підсумовує відгуки TMDB: що хвалять і що критикують\n"
     "• 80% підбірки — фільми й серіали за останні 10 років; натисніть на назву — відкриється вікно з постером, кадрами, акторами й описом\n"
-    "• 🔞 відвертість: помірна — є оголення або постільні сцени; 🔞🔞 висока — відверті сексуальні сцени, еротика або рейтинг NC-17 (орієнтовно за тегами TMDB і віковим рейтингом США); у вікні — посилання на детальний опис з таймінгом (IMDb Parents Guide)\n"
-    "• У вікні фільму імена акторів — посилання на їхню фільмографію</blockquote>\n"
+    "• 🔞 відвертість: помірна — є оголення або постільні сцени; 🔞🔞 висока — відверті сексуальні сцени, еротика або рейтинг NC-17 (орієнтовно за тегами TMDB і віковим рейтингом США); значок — лише якщо TMDB має такі теги, тож його відсутність не гарантує, що сцен немає\n"
+    "• У вікні фільму: віковий рейтинг, посилання «Що саме є у фільмі» (IMDb Parents Guide), актори — посилання на їхню фільмографію\n"
+    "• У меню — вибір: 🎲 мікс (миттєво), жанри, 📺 серіали, 🇺🇦 українське кіно (з 2010 р., м'якші пороги оцінок), 🎬 зараз у кінотеатрах\n"
+    "• 👍/👎 під підбіркою — бот запам'ятовує улюблені й небажані жанри: у міксі з'являються «❤️ за вашим смаком», а небажані жанри — рідше</blockquote>\n"
     "▶️ <b>YouTube</b>\n"
     "<blockquote>• «В тренді» YouTube в Україні та пошук українською за останні 7 днів; лише україномовні відео (без російських та іноземних), без новин, дитячого контенту й Shorts\n"
     "• Порядок — перегляди + коментарі (1 коментар ≈ 100 переглядів), не більше 2 відео з каналу</blockquote>\n"
@@ -155,13 +158,9 @@ SOURCES_TEXT = (
     "• Фішки практиків — блоги Jon Loomer, Social Media Examiner, AdEspresso, Hootsuite, Buffer, Later і Medium (теги про рекламу)\n"
     "• Відбір 8–10 найважливіших, переклад і переказ — ШІ Gemini; у кожному пункті — посилання на джерело</blockquote>\n"
     "💞 <b>Поради 18+</b>\n"
-    "<blockquote>• Порада — пише ШІ Gemini (запасний — модель Cloudflare) за темами, що чергуються: пози, техніка, прелюдія, масаж, фантазії, ігри; без повторів. Картинка — ілюстрація ШІ або гіфка GIPHY\n"
-    "• Статті й техніки — журнали Cosmopolitan, Men's Health, Women's Health, Glamour, Self, Refinery29 і блоги Gottman Institute, Sex With Emily, Kinkly, Autostraddle\n"
-    "• Огляди іграшок і відгуки — Lovehoney, LELO, Good Vibrations, WhatToy, Dildo or Dildon't, Hey Epiphora, Bedbible, Mashable, Medium (sex-toys)\n"
-    "• Досвід — особисті історії з Medium і блогу Girl on the Net і теми подкастів (зокрема Sex Unwrapped)\n"
-    "• Співвідношення: приблизно 1 порада ШІ на 3 матеріали з джерел; найчастіше — техніка, пози, іграшки й девайси, рідше — проблеми й стосунки\n"
-    "• Щоразу — один матеріал, обраний випадково серед свіжих (журнали — до 2 тижнів, огляди — до 6–8 тижнів): частіше потрапляють новіші й ті, де більше коментарів; тип і джерело чергуються; без повторів і дублікатів (одна стаття на кількох сайтах — один раз)\n"
-    "• ШІ перекладає й переказує українською і сам визначає тип — у заголовку буде «Порада», «Техніка», «Стаття», «Огляд», «Досвід» чи «Подкаст»; зверху обкладинка, внизу посилання на оригінал</blockquote>\n"
+    "<blockquote>• Джерела: журнали Cosmopolitan, Men's Health, Women's Health, Glamour, Self, Refinery29; блоги Gottman Institute, Sex With Emily, Kinkly, Autostraddle, Girl on the Net; огляди — Lovehoney, LELO, Good Vibrations, WhatToy, Dildo or Dildon't, Hey Epiphora, Bedbible, Mashable; Medium; подкасти (зокрема Sex Unwrapped)\n"
+    "• Щоразу — один свіжий матеріал (стаття, огляд чи досвід), обраний випадково серед свіжих; частіше — новіші й ті, що мають більше коментарів; без повторів і дублікатів; приблизно кожен четвертий — порада від ШІ (Gemini)\n"
+    "• Іноземні матеріали ШІ перекладає й коротко переказує українською; зверху — обкладинка, внизу — посилання на оригінал</blockquote>\n"
     "🛒 <b>Акції Сільпо</b>\n"
     "<blockquote>• Дані — із сайту Сільпо для вашого магазину; у кожній категорії кнопка «➕ ще 5»\n"
     "• Беремо всі загальні акції з прямим зниженням ціни, зокрема «Ціну тижня» 🔥; без «2+1», «другий за…» і персональних\n"
@@ -171,7 +170,7 @@ SOURCES_TEXT = (
     "<i>Переклад і переказ від ШІ можуть бути неточними — завжди є посилання на першоджерело.</i>"
 )
 WELCOME = "👋 <b>Hey there, night owl!</b>\nI'm your blackout buddy — I know when the lights go out before your toe meets the furniture. 💡\n\n🌤 I read the sky, 🍿 pick movies for the couch, ▶️ dig up the best of YouTube, 📈 spy on marketing trends and 🛒 hunt Silpo deals.\n💞 And when it gets dark… I whisper 18+ tips that make blackouts way less boring. 😏\n\n<i>Tap the menu ☰ and let's turn the lights on — one way or another.</i>"
-KINO_HINT = "<i>Натисніть 👀 з номером, якщо вже бачили, — більше не запропоную</i>\n"
+KINO_HINT = "<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n"
 SEND_NOW = os.environ.get("SEND_NOW") == "1"             # ручний запуск — надіслати графік одразу
 OFF_TYPES = {"Definite"} | ({"Possible"} if os.environ.get("INCLUDE_POSSIBLE") == "1" else set())
 POSSIBLE_TYPES = {"Possible"} - OFF_TYPES                 # показуються окремо, нагадувань не дають
@@ -698,7 +697,7 @@ def review_summaries(items: list[dict]) -> None:
 
 
 def pick_titles(kind: str, need: int, seen: set, since: str | None = None, until: str | None = None,
-                pages: int = 2) -> list[dict]:
+                pages: int = 2, extra: dict | None = None, relaxed: bool = False) -> list[dict]:
     """kind: movie | tv. Високий рейтинг, але не надто «заїжджені»; since/until — роки виходу."""
     dk = "primary_release_date" if kind == "movie" else "first_air_date"
     if kind == "movie":
@@ -712,6 +711,9 @@ def pick_titles(kind: str, need: int, seen: set, since: str | None = None, until
     base[f"{dk}.gte"] = since or "1990-01-01"
     if until:
         base[f"{dk}.lte"] = until
+    if relaxed:                                       # українське кіно: голосів менше — пороги м'якші
+        base.update({"vote_average.gte": 6.3, "vote_count.gte": 15})
+    base.update(extra or {})
     cands = []
     for page in random.sample(range(1, 7), pages):
         try:
@@ -733,7 +735,7 @@ def pick_titles(kind: str, need: int, seen: set, since: str | None = None, until
             print(f"TMDB details: {e}")
             continue
         imdb, rt, mc = omdb_full((d.get("external_ids") or {}).get("imdb_id") or d.get("imdb_id"))
-        if not pass_filters(kind, d, imdb, rt, mc):
+        if not relaxed and not pass_filters(kind, d, imdb, rt, mc):
             continue
         out.append({"key": key, "kind": kind, "d": d, "imdb": imdb, "rt": rt, "mc": mc})
         if len(out) >= need:
@@ -803,16 +805,20 @@ def kino_page(st: dict, it: dict) -> str | None:
         if it["say"].get("dislikes"):
             nodes.append({"tag": "p", "children": ["👎 Критикують: " + it["say"]["dislikes"]]})
     level, tags, cert = adult_level(d)
+    imdb_id = (d.get("external_ids") or {}).get("imdb_id") or d.get("imdb_id")
+    cert = cert or us_cert(d)
+    if cert:                                          # віковий рейтинг — у кожного фільму
+        nodes.append({"tag": "p", "children": [{"tag": "b", "children": ["Віковий рейтинг (США): "]},
+                                               f"{'🔞 ' if cert in ('R', 'NC-17', 'TV-MA', 'X') else ''}{cert}"]})
+    if imdb_id:                                       # що саме є у фільмі — у кожного фільму
+        nodes.append({"tag": "p", "children": [{"tag": "a", "attrs": {"href": f"https://www.imdb.com/title/{imdb_id}/parentalguide"},
+                                                "children": ["Що саме є у фільмі (сцени, насильство, лексика) — IMDb Parents Guide"]}]})
     if level:
-        imdb_id = (d.get("external_ids") or {}).get("imdb_id") or d.get("imdb_id")
         nodes.append({"tag": "h4", "children": [LEVEL_TEXT[level].capitalize()]})
         nodes.append({"tag": "p", "children": [
             ("Помірна — є оголення або постільні сцени. " if level == 1 else
              "Висока — відверті сексуальні сцени, еротика або рейтинг NC-17. ")
-            + f"Орієнтовно за тегами TMDB: {', '.join(tags)}" + (f"; віковий рейтинг США: {cert}" if cert else "") + "."]})
-        if imdb_id:
-            nodes.append({"tag": "p", "children": [{"tag": "a", "attrs": {"href": f"https://www.imdb.com/title/{imdb_id}/parentalguide"},
-                                                    "children": ["Повний опис сцен з таймінгом — IMDb Parents Guide"]}]})
+            + f"Орієнтовно за тегами TMDB: {', '.join(tags)}. Деталі з таймінгом — за посиланням IMDb Parents Guide вище."]})
     stills = [b.get("file_path") for b in (d.get("images") or {}).get("backdrops", [])[:4] if b.get("file_path")]
     if stills:
         nodes.append({"tag": "h4", "children": ["Кадри"]})
@@ -864,37 +870,114 @@ def kino_item(i: int, it: dict, ov_len: int = 160) -> str:
     return "<blockquote>" + "\n".join(lines) + "</blockquote>"
 
 
-def build_kino(st: dict, title: str = "🍿 <b>ПІДБІРКА КІНО</b>") -> tuple[str, dict] | None:
-    """10 позицій: ~80% — за останні 10 років (6 фільмів + 2 серіали), решта — старіші хіти."""
+KINO_GENRES = {  # код: (назва, TMDB жанр фільмів або None)
+    "mix": ("Мікс", None), "drama": ("Драма", 18), "thriller": ("Трилер", 53), "comedy": ("Комедія", 35),
+    "horror": ("Жахи", 27), "scifi": ("Фантастика", 878), "romance": ("Мелодрама", 10749),
+    "series": ("Серіали", None), "ua": ("Українське кіно", None), "now": ("Зараз у кінотеатрах", None)}
+
+
+def taste_update(st: dict, likes: list, dislikes: list) -> None:
+    """👍/👎 з меню: запам'ятовуємо жанри вподобаних і невподобаних фільмів."""
+    t = st.setdefault("taste", {"like": {}, "dislike": {}, "keys": {}})
+    for src, bucket in ((likes, "like"), (dislikes, "dislike")):
+        for key in src:
+            if t["keys"].get(key) == bucket:
+                continue
+            try:
+                d = tmdb(f"/{'movie' if key[0] == 'm' else 'tv'}/{key[1:]}", language="uk-UA")
+            except Exception:
+                continue
+            t["keys"][key] = bucket
+            for g in d.get("genres", []):
+                if g.get("id"):
+                    t[bucket][str(g["id"])] = t[bucket].get(str(g["id"]), 0) + 1
+
+
+def taste_genres(st: dict) -> tuple[int | None, list[int]]:
+    """Улюблений жанр (для «❤️ за вашим смаком») і жанри, яких краще уникати."""
+    t = st.get("taste") or {}
+    like, dis = t.get("like", {}), t.get("dislike", {})
+    fav = max(like, key=like.get) if like else None
+    avoid = [int(g) for g, n in dis.items() if n >= 2 and like.get(g, 0) == 0]
+    return (int(fav) if fav else None), avoid
+
+
+def build_now_playing(st: dict) -> tuple[str, dict] | None:
+    """🎬 Зараз у кінотеатрах України."""
+    try:
+        res = tmdb("/movie/now_playing", language="uk-UA", region="UA").get("results", [])
+    except Exception as e:
+        print(f"TMDB now_playing: {e}")
+        return None
+    items = []
+    for c in sorted(res, key=lambda x: x.get("popularity", 0), reverse=True)[:10]:
+        try:
+            d = kino_details("movie", c["id"])
+        except Exception:
+            continue
+        imdb, rt, mc = omdb_full((d.get("external_ids") or {}).get("imdb_id") or d.get("imdb_id"))
+        items.append({"key": f"m{c['id']}", "kind": "movie", "d": d, "imdb": imdb, "rt": rt, "mc": mc})
+    return finish_kino(st, items, "🎬 <b>ЗАРАЗ У КІНОТЕАТРАХ</b>", mark_seen=False) if items else None
+
+
+def build_kino(st: dict, title: str = "🍿 <b>ПІДБІРКА КІНО</b>", genre: str = "mix") -> tuple[str, dict] | None:
+    """10 позицій: ~80% — за останні 10 років. genre: mix | drama | thriller | … | series | ua | now."""
     if not TMDB_KEY:
         print("TMDB_KEY не задано — кіно пропущено")
         return None
+    if genre == "now":
+        return build_now_playing(st)
     seen = set(st.get("kino_seen", []))
     y = datetime.now(TZ).year
     recent, old_until = f"{y - 10}-01-01", f"{y - 11}-12-31"
-    now_ = datetime.now(TZ)
-    fest = pick_from_pool(wd_festivals(st, now_), 2, seen, since=recent)          # 🏆 1–2 фестивальні
-    gems = pick_from_pool(trakt_gems(st, now_), 1, seen)                           # 💎 1 прихована перлина
-    n_recent = len(fest) + sum(1 for g in gems if (g["d"].get("release_date") or "") >= recent)
-    n_old = len(gems) - (n_recent - len(fest))
-    movies = (fest + gems + pick_titles("movie", max(0, 6 - n_recent), seen, since=recent)
-              + (pick_titles("movie", 1, seen, until=old_until, pages=1) if n_old < 1 else []))
-    tvs = pick_titles("tv", 2, seen, since=recent, pages=1) + pick_titles("tv", 1, seen, until=old_until, pages=1)
-    items = movies + tvs
+    fav, avoid = taste_genres(st)
+    no_g = {"without_genres": "16,10751,99" + "".join(f",{g}" for g in avoid)} if avoid else {}
+    label, gid = KINO_GENRES.get(genre, ("Мікс", None))
+    if genre != "mix":
+        title = f"🍿 <b>ПІДБІРКА КІНО · {label.upper()}</b>"
+    if genre == "series":
+        items = pick_titles("tv", 8, seen, since=recent) + pick_titles("tv", 2, seen, until=old_until, pages=1)
+    elif genre == "ua":
+        ua = {"with_origin_country": "UA"}
+        items = (pick_titles("movie", 6, seen, since="2010-01-01", extra=ua, relaxed=True, pages=3)
+                 + pick_titles("tv", 4, seen, since="2010-01-01", extra=ua, relaxed=True, pages=2))
+    elif gid:
+        g = {"with_genres": str(gid)}
+        items = pick_titles("movie", 8, seen, since=recent, extra=g, pages=3) + pick_titles("movie", 2, seen, until=old_until, extra=g)
+    else:
+        now_ = datetime.now(TZ)
+        fest = pick_from_pool(wd_festivals(st, now_), 2, seen, since=recent)          # 🏆 1–2 фестивальні
+        gems = pick_from_pool(trakt_gems(st, now_), 1, seen)                           # 💎 1 прихована перлина
+        mine = []
+        if fav:                                                                        # ❤️ 1–2 за вашим смаком
+            mine = pick_titles("movie", 2, seen, since=recent, extra={"with_genres": str(fav), **no_g}, pages=1)
+            for m in mine:
+                m["badge"] = "❤️ за вашим смаком"
+        n_recent = len(fest) + len(mine) + sum(1 for g_ in gems if (g_["d"].get("release_date") or "") >= recent)
+        n_old = len(gems) - sum(1 for g_ in gems if (g_["d"].get("release_date") or "") >= recent)
+        movies = (fest + gems + mine + pick_titles("movie", max(0, 6 - n_recent), seen, since=recent, extra=no_g)
+                  + (pick_titles("movie", 1, seen, until=old_until, pages=1, extra=no_g) if n_old < 1 else []))
+        tvs = pick_titles("tv", 2, seen, since=recent, pages=1) + pick_titles("tv", 1, seen, until=old_until, pages=1)
+        items = movies + tvs
     if len(items) < 3:
         return None
+    return finish_kino(st, items, title)
+
+
+def finish_kino(st: dict, items: list, title: str, mark_seen: bool = True) -> tuple[str, dict]:
     review_summaries(items)                           # «Що кажуть глядачі» (Gemini, 1 запит)
     for it in items:                                  # окреме вікно з великим постером і кадрами
         it["page"] = kino_page(st, it)
-    st["kino_seen"] = (st.get("kino_seen", []) + [x["key"] for x in items])[-600:]
+    if mark_seen:
+        st["kino_seen"] = (st.get("kino_seen", []) + [x["key"] for x in items])[-600:]
     head = f"{title}\n" + KINO_HINT + "<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n"
     for ov_len in (160, 110, 70, 0):            # ліміт Telegram — 4096 символів
         text = head + "\n".join(kino_item(i, it, ov_len) for i, it in enumerate(items, 1))
         if len(text) <= 4000:
             break
-    btns = [{"text": f"👀 {i}", "callback_data": f"seen:{it['key']}"} for i, it in enumerate(items, 1)]
-    markup = {"inline_keyboard": [btns[k:k + 5] for k in range(0, len(btns), 5)]}
-    return text, markup
+    rows = [[{"text": f"{i} 👍", "callback_data": f"lk:{it['key']}"}, {"text": f"{i} 👎", "callback_data": f"dl:{it['key']}"},
+             {"text": f"{i} 👀", "callback_data": f"seen:{it['key']}"}] for i, it in enumerate(items, 1)]
+    return text, {"inline_keyboard": rows}
 
 
 # ---------- «Для пари» (Gemini + Google News RSS) ----------
@@ -2645,6 +2728,7 @@ def main() -> None:
             ex = http_json(f"{SYNC_URL}/export?key={urllib.parse.quote(SYNC_KEY)}&take=1")
             worker_req = dict(ex.get("req") or {})
             worker_req["kino_used"] = ex.get("kino_used") or []
+            taste_update(st, ex.get("likes") or [], ex.get("dislikes") or [])   # 👍/👎 з меню кіно
             subs = {str(k): list(v) for k, v in (ex.get("subs") or {}).items()}
             if ex.get("content_seen"):                # що вже показали з меню (Cloudflare) — не повторюємо
                 st["content_seen"] = list(dict.fromkeys(st.get("content_seen", []) + list(ex["content_seen"])))[-600:]
@@ -2680,6 +2764,9 @@ def main() -> None:
     global ADDR_NOW
     ADDR_NOW = st.get("addr") or {}
     emerg_msgs = emergency_yasno(st, now)            # офіційний статус YASNO + дані ДТЕК за адресою
+    if WORKER_MODE:                                   # повідомлення про екстрені надсилає Cloudflare (одразу)
+        emerg_msgs = []
+        EMERG_FAM.clear()
     if emerg_msgs is None:
         emerg_msgs = emergency_check(st, now) if CHANNEL else []
     EMERG_ACTIVE = bool((st.get("emerg") or {}).get("on"))
@@ -2695,6 +2782,8 @@ def main() -> None:
         f_reason = ("⚠️ <b>Фактично світла немає, але за джерелами (ДТЕК, YASNO, канали) немає ні екстрених, "
                     "ні планових відключень</b> — можлива аварія")
     fact_msgs = fact_update(st, now, f_reason)        # фактично є/немає світла (лише вам і дружині)
+    if WORKER_MODE:
+        fact_msgs = []                                # повідомлення миттєво надсилає Cloudflare; тут — лише стрічка за добу
     ev = (st.get("fact") or {}).get("events") or []
     png_key = f"{now:%Y-%m-%d %H}|{len(ev)}|{ev[-1][0] if ev else ''}"
     if ev and st.get("fact_png") != png_key:          # стрічка за добу для меню «Графік світла»
@@ -2914,7 +3003,7 @@ def main() -> None:
         for ev, t in (("off", a), ("on", b)):
             k = f"{ev}|{t.isoformat()}"
             left = (t - now).total_seconds() / 60
-            if EMERG_ACTIVE or not (0 < left <= REMIND_MIN) or k in rem:
+            if WORKER_MODE or EMERG_ACTIVE or not (0 < left <= REMIND_MIN) or k in rem:   # у режимі Worker нагадує Cloudflare
                 continue
             m = round(left)
             if ev == "off":
@@ -2953,6 +3042,14 @@ def main() -> None:
         kq = build_kino(st)                            # готова підбірка «про запас» — меню віддає миттєво
         if kq:
             st["kino_q"].append({"id": hashlib.md5(kq[0].encode()).hexdigest()[:10], "text": kq[0], "markup": kq[1]})
+    for k_, cids in worker_req.items():               # 🍿 жанри з меню: kg_drama, kg_ua, kg_now…
+        if k_.startswith("kg_") and cids and TMDB_KEY:
+            kg = build_kino(st, genre=k_[3:])
+            for c in dict.fromkeys(str(x) for x in cids):
+                if kg:
+                    direct_m.append((c, kg[0] if c in family else kg[0].replace(KINO_HINT, ""), kg[1] if c in family else None))
+                else:
+                    direct_m.append((c, "🍿 Не вдалося зібрати підбірку цього жанру, спробуйте пізніше.", None))
     if kino_req:                                   # з меню — щоразу НОВА підбірка (без повторів)
         k_new = build_kino(st) if TMDB_KEY else None
         for c in kino_req:
