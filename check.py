@@ -970,14 +970,9 @@ def finish_kino(st: dict, items: list, title: str, mark_seen: bool = True) -> tu
         it["page"] = kino_page(st, it)
     if mark_seen:
         st["kino_seen"] = (st.get("kino_seen", []) + [x["key"] for x in items])[-600:]
-    head = f"{title}\n" + KINO_HINT + "<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n"
-    for ov_len in (160, 110, 70, 0):            # ліміт Telegram — 4096 символів
-        text = head + "\n".join(kino_item(i, it, ov_len) for i, it in enumerate(items, 1))
-        if len(text) <= 4000:
-            break
-    rows = [[{"text": f"{i} 👍", "callback_data": f"lk:{it['key']}"}, {"text": f"{i} 👎", "callback_data": f"dl:{it['key']}"},
-             {"text": f"{i} 👀", "callback_data": f"seen:{it['key']}"}] for i, it in enumerate(items, 1)]
-    return text, {"inline_keyboard": rows}
+    head = f"{title}\n" + KINO_HINT + "<i>Натисніть на назву — відкриється постер, кадри й опис</i>"
+    parts = [head] + [kino_item(i, it, 220) + f"\n§KN:{it['key']}" for i, it in enumerate(items, 1)]
+    return SPLIT.join(parts), None                   # кожен фільм — окреме повідомлення з кнопками 👍 👎 👀
 
 
 # ---------- «Для пари» (Gemini + Google News RSS) ----------
@@ -3100,6 +3095,9 @@ def main() -> None:
         pm = build_para(st, now, with_news=False)
         direct_m += [(c, pm, None) for c in para_req]
 
+    if st.get("kino_ver") != 2:                       # новий формат кіно (кнопки під кожним фільмом)
+        st["kino_q"] = []
+        st["kino_ver"] = 2
     if st.get("silpo_ver") != 3:                      # нова підбірка Сільпо з кнопками «➕ ще 5»
         st.pop("silpo_last", None)
         st["silpo_ver"] = 3
@@ -3188,10 +3186,17 @@ def main() -> None:
         jobs += [(cid, text, mk) if cid in family else (cid, plain, None) for cid in audience(topic)]
     expanded = []                                     # довгі підбірки (Сільпо, SMM) — кількома повідомленнями
     for cid, text, mk in jobs:
-        if type(text) is str and (SPLIT in text or "\n§KB:" in text):
+        if type(text) is str and (SPLIT in text or "\n§KB:" in text or "\n§KN:" in text):
             for part in text.split(SPLIT):
                 if part.strip():
                     t_, k_ = split_kb(part, st.get("silpo_more") or {})
+                    mk_ = re.search(r"\n§KN:(\S+)$", t_)            # кнопки під фільмом — лише вам і дружині
+                    if mk_:
+                        key_ = mk_.group(1)
+                        t_ = t_[:mk_.start()]
+                        k_ = ({"inline_keyboard": [[{"text": "👍", "callback_data": f"lk:{key_}"},
+                                                     {"text": "👎", "callback_data": f"dl:{key_}"},
+                                                     {"text": "👀", "callback_data": f"seen:{key_}"}]]} if cid in family else None)
                     expanded.append((cid, t_, k_))
         else:
             expanded.append((cid, text, mk))
