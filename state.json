@@ -16,8 +16,8 @@
  "source": "dtek",
  "emerg": {
   "last": 2484,
-  "on": false,
-  "since": "2026-10-09T14:50:41.453181+03:00",
+  "on": true,
+  "since": "2026-10-09T14:55:38.573486+03:00",
   "src": "yasno"
  },
  "morning": "2026-10-09",
@@ -809,19 +809,19 @@
   "https://medium.com/@SensualTouchJournal/desire-isnt-what-determines-the-quality-of-tantric-sex-cb86d10f08e1?source=rss------intimacy-5"
  ],
  "addr": {
-  "active": false,
-  "reason": "",
-  "start": "",
-  "end": "",
-  "type": "",
+  "active": true,
+  "reason": "Аварійні ремонтні роботи",
+  "start": "06:58 09.10.2026",
+  "end": "18:36 09.10.2026",
+  "type": "2",
   "groups": [
    "GPV4.1"
   ],
-  "updated": "14:34 09.10.2026",
-  "emergency": false,
+  "updated": "14:47 09.10.2026",
+  "emergency": true,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-10-09T14:43:02.171924+03:00",
+  "checked": "2026-10-09T14:52:52.897197+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -972,7 +972,7 @@
  },
  "kino_week": "2026-41",
  "fact": {
-  "last": 2493,
+  "last": 2495,
   "events": [
    [
     "2026-10-08T09:59:18+03:00",
@@ -1098,7 +1098,7 @@
  "tgph": "d9e4b812d4d847a7be044d20591e2e2b24be1ed85b060caa01126c0c043e",
  "emerg_src": {
   "YASNO": false,
-  "сайт ДТЕК": false,
+  "сайт ДТЕК": true,
   "канал ЖК «Яскравий»": false
  },
  "fact_png": "2026-10-09 14|4|2026-10-09T06:57:56+03:00",
