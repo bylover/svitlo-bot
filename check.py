@@ -130,7 +130,7 @@ SOURCES_TEXT = (
     "<blockquote>• Графік — із сайту ДТЕК (dtek-kem.com.ua) через відкрите дзеркало даних, яке оновлюється кожні ~5 хв; бот перевіряє зміни щохвилини\n"
     "• Прогноз на тиждень — з того ж сайту ДТЕК (орієнтовний)\n"
     "• Ваша адреса — перевірка на сайті ДТЕК, як у формі «Відсутня електроенергія?», кожні ~10 хв: чи є зараз відключення, причина, початок і орієнтовне відновлення\n"
-    "• Екстрені відключення — за оголошенням на сторінці ДТЕК, перевіркою адреси, статусом YASNO та Telegram-каналами (канал будинку, Укренерго, ДТЕК); враховуються тільки явні оголошення й скасування, оголошення з каналу діє до 12 год\n"
+    "• Екстрені відключення — за оголошенням на сторінці ДТЕК, перевіркою адреси, статусом YASNO та Telegram-каналами (канал будинку, Укренерго, ДТЕК); враховуються тільки явні оголошення й скасування, оголошення з каналу діє до 12 год; загальне «🚨 / ✅» — коли перше джерело оголосило або всі скасували, а про зміну статусу кожного окремого джерела бот повідомляє основним отримувачам (📡)\n"
     "• Фактично є/немає світла (для основних отримувачів) — СвітлоБот будинку: повідомлення й стрічка за добу; якщо світла немає, а жодне джерело не повідомляє ні про екстрені, ні про планові відключення — бот так і пише\n"
     "• «За графіком» — це план ДТЕК, а не факт наявності світла</blockquote>\n"
     "🌤 <b>Погода</b>\n"
@@ -2095,9 +2095,12 @@ EM_OFF = re.compile(r"(екстрен|аварійн)\w*\s+відключенн�
                     r"повертаємо\w*\s+до\s+графік|(знову\s+)?діють\s+(графіки|ГПВ)|відновлено\s+(застосування\s+)?графік", re.I)
 
 
-def emergency_channels(st: dict, now: datetime) -> tuple[bool, list[str]]:
+EMERG_FAM: list[str] = []                             # зміни статусу окремих джерел — лише вам і дружині
+
+
+def emergency_channels(st: dict, now: datetime) -> tuple[bool, list[str], dict]:
     """Останнє явне оголошення про екстрені (або їх скасування) у кожному каналі за добу; діє до 12 год."""
-    on_any, notes, found = False, [], []
+    on_any, notes, found, per = False, [], [], {}
     for name, title, kyiv_only in EMERG_CHANNELS:
         try:
             posts = channel_posts(name)
@@ -2124,8 +2127,10 @@ def emergency_channels(st: dict, now: datetime) -> tuple[bool, list[str]]:
             print(f"Екстрені — {title} (@{name}, {dt:%d.%m %H:%M}): {'ТАК' if active else 'ні'} · «{short}»")
             if active:
                 notes.append(f"{title}: {short}")
+            label = "канал ЖК «Яскравий»" if name == "yaskravyi_power" else title
+            per[label] = {"on": active, "dt": dt.isoformat(), "text": short}
     print(f"Екстрені — канали знайдено: {found or 'жодного'}")
-    return on_any, notes
+    return on_any, notes, per
 
 
 def emergency_yasno(st: dict, now: datetime) -> list[str] | None:
@@ -2148,7 +2153,7 @@ def emergency_yasno(st: dict, now: datetime) -> list[str] | None:
     on_y = stats.get("EmergencyShutdowns", 0) > 0
     addr = st.get("addr") or {}
     on_a = bool((addr.get("active") and addr.get("emergency")) or addr.get("city_emergency"))  # сайт ДТЕК — найточніше
-    on_c, ch_notes = emergency_channels(st, now)     # Telegram: ЖК, Укренерго, ДТЕК (лише явні оголошення)
+    on_c, ch_notes, ch_per = emergency_channels(st, now)   # Telegram: ЖК, Укренерго, ДТЕК (лише явні оголошення)
     on = on_y or on_a or on_c
     print(f"Екстрені: {'ТАК' if on else 'ні'} · YASNO {'так' if on_y else 'ні'} {stats} · "
           f"сайт ДТЕК {'так' if on_a else 'ні'} (адреса: {addr.get('reason') or '—'}; місто: {(addr.get('city_text') or '—')[:120]}) · "
@@ -2169,6 +2174,21 @@ def emergency_yasno(st: dict, now: datetime) -> list[str] | None:
         out.append("✅✅ <b>ЕКСТРЕНІ ВІДКЛЮЧЕННЯ СКАСОВАНО</b> ✅✅\n"
                    "Знову діє графік ДТЕК\n<i>жодне джерело (сайт ДТЕК, YASNO, канали) більше не повідомляє про екстрені</i>")
     st["emerg"] = ch
+    # зміни статусу окремих джерел (вам і дружині) — якщо загальний статус не змінився
+    src_now = {"YASNO": {"on": on_y}, "сайт ДТЕК": {"on": on_a, "text": (addr.get("city_text") or "")[:140]}, **ch_per}
+    prev_src = st.get("emerg_src")
+    st["emerg_src"] = {k: v["on"] for k, v in src_now.items()}
+    if prev_src is not None and not out:
+        changed = [k for k, v in src_now.items() if k in prev_src and prev_src[k] != v["on"]]
+        for k in changed:
+            v = src_now[k]
+            when = f" ({datetime.fromisoformat(v['dt']):%d.%m %H:%M})" if v.get("dt") else ""
+            state_t = "🚨 <b>оголошено екстрені</b>" if v["on"] else "✅ <b>скасовано</b>"
+            still = [n for n, x in src_now.items() if x["on"]]
+            tail = (f"<i>Ще повідомляють про екстрені: {esc(', '.join(still))}</i>" if still
+                    else "<i>Жодне джерело більше не повідомляє про екстрені</i>")
+            quote = f"<blockquote>{esc(v['text'])}</blockquote>\n" if v.get("text") else ""
+            EMERG_FAM.append(f"📡 <b>Зміна статусу екстрених</b>\n{esc(k)}: {state_t}{when}\n{quote}{tail}")
     return out
 
 
@@ -2854,7 +2874,7 @@ def main() -> None:
         got_summary |= set(svitlo_to)
     jobs: list[tuple[str, str, dict | None]] = [
         (c, t, mk) for c, t, is_sum, mk in direct if not (is_sum and c in got_summary)]
-    jobs += [(cid, t, None) for t in fam_msgs + fact_msgs for cid in family]
+    jobs += [(cid, t, None) for t in fam_msgs + fact_msgs + EMERG_FAM for cid in family]
     jobs += [(cid, wife_text if (wife_text and cid == WIFE_ID) else text, None)
              for text, wife_text in msgs for cid in svitlo_to]
     jobs += direct_m
