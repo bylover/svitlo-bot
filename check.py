@@ -84,8 +84,8 @@ REDDIT_PASS = (os.environ.get("REDDIT_PASS") or "").strip()
 REDDIT_SUBS = [x.strip() for x in (os.environ.get("REDDIT_SUBS") or "sex,sexover30").split(",") if x.strip()]
 PARA_DAYS, PARA_HOUR = (2, 4), 18                          # «Для пари»: ср і пт о 18:00
 COMMANDS = [("grafik", "💡 Графік світла"), ("pogoda", "🌤 Погода"), ("porady", "💞 Поради 18+"),
-            ("kino", "🍿 Кіно: нова підбірка"), ("youtube", "▶️ YouTube: топ за тиждень"),
-            ("smm", "📈 SMM і таргет за тиждень"), ("silpo", "🛒 Акції Сільпо за тиждень"),
+            ("kino", "🍿 Кіно: підбірка"), ("youtube", "▶️ YouTube: топ за тиждень"),
+            ("smm", "📈 SMM і таргет за тиждень"), ("silpo", "🛒 Акції Сільпо"),
             ("settings", "⚙️ Налаштування сповіщень"), ("help", "ℹ️ Інструкція"),
             ("stop", "🔕 Відписатися")]
 # теми сповіщень, які підписник може вмикати/вимикати
@@ -96,7 +96,7 @@ ALL_TOPICS = [t for t, _ in TOPICS]
 DEFAULT_TOPICS = [t for t in ALL_TOPICS if t not in ("para", "smm", "silpo")]   # ці теми підписник вмикає сам
 SETTINGS_TEXT = ("⚙️ <b>Налаштування сповіщень</b>\n"
                  "Натисніть, щоб увімкнути ✅ або вимкнути ⬜.\n"
-                 f"💡 Світло — графік, зміни, нагадування, ранкове зведення (група {GROUP}, Мінський масив)\n"
+                 f"💡 Світло — графік, зміни, нагадування, ранкове зведення (група {GROUP})\n"
                  "🌤 Погода — щодня о 20:00 · 🍿 Кіно — пт 11:00 · ▶️ YouTube — пн 11:00\n"
                  "📈 SMM і таргет — дайджест тижня, пн о 13:00 · 💞 Поради 18+ — ср і пт о 18:00\n"
                  "🛒 Акції Сільпо — топ тижня, чт о 13:00\n"
@@ -104,7 +104,7 @@ SETTINGS_TEXT = ("⚙️ <b>Налаштування сповіщень</b>\n"
                  "<i>Бот відповідає із затримкою до 5–20 хв.</i>")
 HELP_TEXT = ("ℹ️ <b>ЯК КОРИСТУВАТИСЯ БОТОМ</b>\n\n"
              "<b>Що вміє бот</b>\n<blockquote>"
-             f"💡 <b>Світло</b> (група {GROUP}, Мінський масив) — графік ДТЕК на сьогодні й завтра; сповіщення про "
+             f"💡 <b>Світло</b> (група {GROUP}) — графік ДТЕК на сьогодні й завтра; сповіщення про "
              "новий, змінений чи відкликаний графік, прогноз на тиждень, екстрені відключення; нагадування за "
              "30–45 хв; стан за вашою адресою (причина й орієнтовний час відновлення); ранкове зведення о 10:00\n"
              "🌤 <b>Погода</b> — прогноз на завтра щодня о 20:00\n"
@@ -115,8 +115,8 @@ HELP_TEXT = ("ℹ️ <b>ЯК КОРИСТУВАТИСЯ БОТОМ</b>\n\n"
              "💞 <b>Поради 18+</b> — по одному: порада, стаття, техніка, огляд іграшок або досвід; ср і пт о 18:00 і за запитом з меню "
              "(вмикається в /settings)</blockquote>\n"
              "<b>Меню</b> (кнопка зліва від поля вводу)\n<blockquote>"
-             "/grafik — графік світла зараз\n/pogoda — прогноз погоди\n/porady — нова порада, стаття, огляд або досвід 18+\n/kino — нова підбірка кіно\n"
-             "/youtube — топ YouTube за тиждень\n/smm — SMM і таргет за тиждень\n/silpo — акції Сільпо за тиждень\n/settings — увімкнути або вимкнути сповіщення\n"
+             "/grafik — графік світла зараз\n/pogoda — прогноз погоди\n/porady — нова порада, стаття, огляд або досвід 18+\n/kino — підбірка кіно\n"
+             "/youtube — топ YouTube за тиждень\n/smm — SMM і таргет за тиждень\n/silpo — акції Сільпо\n/settings — увімкнути або вимкнути сповіщення\n"
              "/help — ця інструкція і звідки дані\n/stop — відписатися від усього</blockquote>\n"
              "<b>Важливо</b>\n<blockquote>"
              "• Графік — за даними сайту ДТЕК. «За графіком» не означає, що світло фактично є чи немає\n"
@@ -127,16 +127,22 @@ SOURCES_TEXT = (
     "ℹ️ <b>ЗВІДКИ ДАНІ І ЯК ФОРМУЄТЬСЯ</b>\n"
     "\n"
     "💡 <b>Світло</b>\n"
-    "<blockquote>• Графік — із сайту ДТЕК Київські електромережі (dtek-kem.com.ua) через відкрите дзеркало даних, яке оновлюється кожні ~5 хв; бот перевіряє зміни щохвилини\n"
+    "<blockquote>• Графік — із сайту ДТЕК (dtek-kem.com.ua) через відкрите дзеркало даних, яке оновлюється кожні ~5 хв; бот перевіряє зміни щохвилини\n"
     "• Прогноз на тиждень — з того ж сайту ДТЕК (орієнтовний)\n"
-    "• Ваша адреса (вул. Кульженків Сім'ї, 35) — перевірка на сайті ДТЕК, як у формі «Відсутня електроенергія?», кожні ~10 хв: чи є зараз відключення, причина, початок і орієнтовне відновлення\n• Екстрені відключення — за оголошенням на сторінці ДТЕК, перевіркою адреси, статусом YASNO та Telegram-каналами (ЖК «Яскравий», Укренерго — лише про Київ, ДТЕК); враховуються тільки явні оголошення й скасування, оголошення з каналу діє до 12 год\n"
+    "• Ваша адреса — перевірка на сайті ДТЕК, як у формі «Відсутня електроенергія?», кожні ~10 хв: чи є зараз відключення, причина, початок і орієнтовне відновлення\n"
+    "• Екстрені відключення — за оголошенням на сторінці ДТЕК, перевіркою адреси, статусом YASNO та Telegram-каналами (канал будинку, Укренерго, ДТЕК); враховуються тільки явні оголошення й скасування, оголошення з каналу діє до 12 год\n"
+    "• Фактично є/немає світла (для основних отримувачів) — СвітлоБот будинку: повідомлення й стрічка за добу; якщо світла немає, а жодне джерело не повідомляє ні про екстрені, ні про планові відключення — бот так і пише\n"
     "• «За графіком» — це план ДТЕК, а не факт наявності світла</blockquote>\n"
     "🌤 <b>Погода</b>\n"
-    "<blockquote>• Open-Meteo — поєднує кілька метеомоделей; прогноз для координат Мінського масиву\n"
+    "<blockquote>• Open-Meteo — поєднує кілька метеомоделей; прогноз для координат вашого району\n"
     "• Ніч / ранок / день / вечір + поради: парасолька, мороз, вітер, різка зміна температури</blockquote>\n"
+    "§§\n"
     "🍿 <b>Кіно</b>\n"
     "<blockquote>• Каталог і описи українською — TMDB; рейтинги — IMDb і Rotten Tomatoes (через OMDb)\n"
-    "• Лише високий рейтинг, але не надто «заїжджені» фільми; без повторів, з урахуванням 👀 «бачили»</blockquote>\n"
+    "• Лише високий рейтинг, але не надто «заїжджені» фільми; без повторів, з урахуванням 👀 «бачили»\n"
+    "• 80% підбірки — фільми й серіали за останні 10 років; натисніть на назву — відкриється вікно з постером, кадрами, акторами й описом\n"
+    "• 🔞 відвертість: помірна — є оголення або постільні сцени; 🔞🔞 висока — відверті сексуальні сцени, еротика або рейтинг NC-17 (орієнтовно за тегами TMDB і віковим рейтингом США); у вікні — посилання на детальний опис з таймінгом (IMDb Parents Guide)\n"
+    "• У вікні фільму імена акторів — посилання на їхню фільмографію</blockquote>\n"
     "▶️ <b>YouTube</b>\n"
     "<blockquote>• «В тренді» YouTube в Україні та пошук українською за останні 7 днів; лише україномовні відео (без російських та іноземних), без новин, дитячого контенту й Shorts\n"
     "• Порядок — перегляди + коментарі (1 коментар ≈ 100 переглядів), не більше 2 відео з каналу</blockquote>\n"
@@ -147,20 +153,21 @@ SOURCES_TEXT = (
     "• Відбір 8–10 найважливіших, переклад і переказ — ШІ Gemini; у кожному пункті — посилання на джерело</blockquote>\n"
     "💞 <b>Поради 18+</b>\n"
     "<blockquote>• Порада — пише ШІ Gemini (запасний — модель Cloudflare) за темами, що чергуються: пози, техніка, прелюдія, масаж, фантазії, ігри; без повторів. Картинка — ілюстрація ШІ або гіфка GIPHY\n"
-    "• Статті й техніки — журнали Cosmopolitan, Men's Health, Women's Health і блоги Gottman Institute, Sex With Emily, Kinkly\n"
-    "• Огляди іграшок і відгуки — Lovehoney, WhatToy, Dildo or Dildon't, Hey Epiphora, Bedbible\n"
-    "• Досвід — особисті історії з Medium і теми подкастів (зокрема Sex Unwrapped)\n"
+    "• Статті й техніки — журнали Cosmopolitan, Men's Health, Women's Health, Glamour, Self, Refinery29 і блоги Gottman Institute, Sex With Emily, Kinkly, Autostraddle\n"
+    "• Огляди іграшок і відгуки — Lovehoney, LELO, Good Vibrations, WhatToy, Dildo or Dildon't, Hey Epiphora, Bedbible, Mashable, Medium (sex-toys)\n"
+    "• Досвід — особисті історії з Medium і блогу Girl on the Net і теми подкастів (зокрема Sex Unwrapped)\n"
+    "• Співвідношення: приблизно 1 порада ШІ на 3 матеріали з джерел; найчастіше — техніка, пози, іграшки й девайси, рідше — проблеми й стосунки\n"
     "• Щоразу — один матеріал, обраний випадково серед свіжих (журнали — до 2 тижнів, огляди — до 6–8 тижнів): частіше потрапляють новіші й ті, де більше коментарів; тип і джерело чергуються; без повторів і дублікатів (одна стаття на кількох сайтах — один раз)\n"
     "• ШІ перекладає й переказує українською і сам визначає тип — у заголовку буде «Порада», «Техніка», «Стаття», «Огляд», «Досвід» чи «Подкаст»; зверху обкладинка, внизу посилання на оригінал</blockquote>\n"
     "🛒 <b>Акції Сільпо</b>\n"
-    "<blockquote>• Дані — із сайту Сільпо для магазину на вул. Калнишевського, 2\n"
+    "<blockquote>• Дані — із сайту Сільпо для вашого магазину; у кожній категорії кнопка «➕ ще 5»\n"
     "• Беремо всі загальні акції з прямим зниженням ціни, зокрема «Ціну тижня» 🔥; без «2+1», «другий за…» і персональних\n"
     "• Щосереди ввечері бот запам'ятовує ціни всіх товарів магазину. <b>Заявлена знижка</b> — від «старої» ціни на ціннику; <b>реальна вигода</b> — від найнижчої ціни товару за останні 1–3 тижні\n"
     "• Реальна вигода менше 3% — у топ не потрапляє. Місце в топі: реальна вигода % + бонус за рейтинг ⭐ (+5 за кожен бал понад 4) + до +5 за популярність\n"
     "• Топ-5 у кожній категорії, новий список щочетверга о 13:00</blockquote>\n"
     "<i>Переклад і переказ від ШІ можуть бути неточними — завжди є посилання на першоджерело.</i>"
 )
-WELCOME = "👋 <b>Hey there, night owl!</b>\nI'm your Kyiv blackout buddy — I know when the lights go out before your toe meets the furniture. 💡\n\n🌤 I read the sky, 🍿 pick movies for the couch, ▶️ dig up the best of YouTube, 📈 spy on marketing trends and 🛒 hunt Silpo deals.\n💞 And when it gets dark… I whisper 18+ tips that make blackouts way less boring. 😏\n\n<i>Tap the menu ☰ and let's turn the lights on — one way or another.</i>"
+WELCOME = "👋 <b>Hey there, night owl!</b>\nI'm your blackout buddy — I know when the lights go out before your toe meets the furniture. 💡\n\n🌤 I read the sky, 🍿 pick movies for the couch, ▶️ dig up the best of YouTube, 📈 spy on marketing trends and 🛒 hunt Silpo deals.\n💞 And when it gets dark… I whisper 18+ tips that make blackouts way less boring. 😏\n\n<i>Tap the menu ☰ and let's turn the lights on — one way or another.</i>"
 KINO_HINT = "<i>Натисніть 👀 з номером, якщо вже бачили, — більше не запропоную</i>\n"
 SEND_NOW = os.environ.get("SEND_NOW") == "1"             # ручний запуск — надіслати графік одразу
 OFF_TYPES = {"Definite"} | ({"Possible"} if os.environ.get("INCLUDE_POSSIBLE") == "1" else set())
@@ -479,19 +486,64 @@ def trailer(videos: dict) -> str | None:
     return f"https://youtu.be/{res[0]['key']}" if res else None
 
 
-def pick_titles(kind: str, need: int, seen: set) -> list[dict]:
-    """kind: movie | tv. Високий рейтинг, але не надто «заїжджені» (обмеження кількості голосів)."""
+ADULT_TAGS = {"nudity": "оголення", "female nudity": "оголення", "male nudity": "оголення",
+              "full frontal nudity": "оголення", "sex scene": "сексуальні сцени", "explicit sex": "відверті сексуальні сцени",
+              "erotic movie": "еротика", "erotica": "еротика", "erotic thriller": "еротичний трилер",
+              "softcore": "еротика", "sexuality": "сексуальність", "erotic drama": "еротична драма"}
+
+
+HIGH_TAGS = {"explicit sex", "erotic movie", "erotica", "softcore", "erotic thriller", "erotic drama", "full frontal nudity"}
+
+
+def adult_tags(d: dict) -> list[str]:
+    kw = (d.get("keywords") or {})
+    names = [k.get("name", "").lower() for k in (kw.get("keywords") or kw.get("results") or [])]
+    return list(dict.fromkeys(ADULT_TAGS[n] for n in names if n in ADULT_TAGS))
+
+
+def us_cert(d: dict) -> str:
+    """Віковий рейтинг США: R / NC-17 (фільми) або TV-MA (серіали)."""
+    for r in (d.get("release_dates") or {}).get("results", []):
+        if r.get("iso_3166_1") == "US":
+            c = [x.get("certification") for x in r.get("release_dates", []) if x.get("certification")]
+            if c:
+                return c[0]
+    for r in (d.get("content_ratings") or {}).get("results", []):
+        if r.get("iso_3166_1") == "US" and r.get("rating"):
+            return r["rating"]
+    return ""
+
+
+def adult_level(d: dict) -> tuple[int, list[str], str]:
+    """0 — немає; 1 — помірна (оголення, постільні сцени); 2 — висока (відверті сцени, еротика, NC-17)."""
+    kw = (d.get("keywords") or {})
+    names = {k.get("name", "").lower() for k in (kw.get("keywords") or kw.get("results") or [])}
+    tags, cert = adult_tags(d), us_cert(d)
+    if not tags:
+        return 0, [], cert
+    return (2 if names & HIGH_TAGS or cert in ("NC-17", "X") else 1), tags, cert
+
+
+LEVEL_TEXT = {1: "🔞 відвертість: помірна", 2: "🔞🔞 відвертість: висока"}
+
+
+def pick_titles(kind: str, need: int, seen: set, since: str | None = None, until: str | None = None,
+                pages: int = 2) -> list[dict]:
+    """kind: movie | tv. Високий рейтинг, але не надто «заїжджені»; since/until — роки виходу."""
+    dk = "primary_release_date" if kind == "movie" else "first_air_date"
     if kind == "movie":
         base = {"vote_average.gte": 7.2, "vote_count.gte": 300, "vote_count.lte": 6000,
-                "with_runtime.gte": 80, "without_genres": "16,10751,99",
-                "primary_release_date.gte": "2005-01-01"}
+                "with_runtime.gte": 80, "without_genres": "16,10751,99"}
         min_imdb, min_rt = 7.0, 75
     else:
         base = {"vote_average.gte": 7.5, "vote_count.gte": 150, "vote_count.lte": 4000,
-                "without_genres": "16,10762,10763,10764,10767,99", "first_air_date.gte": "2012-01-01"}
+                "without_genres": "16,10762,10763,10764,10767,99"}
         min_imdb, min_rt = 7.5, 80
+    base[f"{dk}.gte"] = since or "1990-01-01"
+    if until:
+        base[f"{dk}.lte"] = until
     cands = []
-    for page in random.sample(range(1, 9), 3):
+    for page in random.sample(range(1, 7), pages):
         try:
             r = tmdb(f"/discover/{kind}", language="uk-UA", sort_by="popularity.desc",
                      include_adult="false", page=page, **base)
@@ -506,8 +558,10 @@ def pick_titles(kind: str, need: int, seen: set) -> list[dict]:
             continue
         used.add(key)
         try:
-            d = tmdb(f"/{kind}/{c['id']}", language="uk-UA",
-                     append_to_response="external_ids,videos", include_video_language="uk,en")
+            d = tmdb(f"/{kind}/{c['id']}", language="uk-UA", include_video_language="uk,en",
+                     include_image_language="uk,en,null",
+                     append_to_response="external_ids,videos,credits,images,keywords,"
+                     + ("release_dates" if kind == "movie" else "content_ratings"))
             if not d.get("overview"):
                 d["overview"] = tmdb(f"/{kind}/{c['id']}", language="en-US").get("overview", "")
         except Exception as e:
@@ -522,27 +576,97 @@ def pick_titles(kind: str, need: int, seen: set) -> list[dict]:
     return out
 
 
+def telegraph_page(st: dict, title: str, nodes: list) -> str | None:
+    """Сторінка Telegraph (відкривається в Telegram як Instant View)."""
+    try:
+        if not st.get("tgph"):
+            st["tgph"] = http_json("https://api.telegra.ph/createAccount",
+                                   {"short_name": "svitlobot", "author_name": "Kino"})["result"]["access_token"]
+        r = http_json("https://api.telegra.ph/createPage", {"access_token": st["tgph"], "title": title[:250],
+                                                             "content": nodes, "return_content": False})
+        return (r.get("result") or {}).get("url")
+    except Exception as e:
+        print(f"Telegraph: {err_text(e)[:120]}")
+        return None
+
+
+def kino_page(st: dict, it: dict) -> str | None:
+    d, tv = it["d"], it["kind"] == "tv"
+    title = d.get("name") if tv else d.get("title")
+    year = ((d.get("first_air_date") if tv else d.get("release_date")) or "")[:4]
+    img = lambda p, w="w780": f"https://image.tmdb.org/t/p/{w}{p}"
+    cast = [(c.get("name"), c.get("id")) for c in (d.get("credits") or {}).get("cast", [])[:6] if c.get("name")]
+    crew = (d.get("credits") or {}).get("crew", [])
+    director = next((c.get("name") for c in crew if c.get("job") == "Director"), None) or \
+        ", ".join(c.get("name") for c in (d.get("created_by") or [])[:2])
+    genres = ", ".join(g["name"].lower() for g in d.get("genres", [])[:4])
+    rating = (f"IMDb {it['imdb']}" if it["imdb"] else f"TMDB {d.get('vote_average', 0):.1f}") + \
+        (f" · Rotten Tomatoes {it['rt']}%" if it["rt"] is not None else "")
+    nodes = []
+    if d.get("poster_path"):
+        nodes.append({"tag": "img", "attrs": {"src": img(d["poster_path"])}})
+    nodes.append({"tag": "p", "children": [{"tag": "b", "children": [f"{title} ({year})"]}]})
+    nodes.append({"tag": "p", "children": [" · ".join(x for x in (genres, rating) if x)]})
+    if cast:                                          # імена — посилання на фільмографію актора (TMDB)
+        ch = [{"tag": "b", "children": ["У ролях: "]}]
+        for k_, (nm, pid) in enumerate(cast):
+            ch.append({"tag": "a", "attrs": {"href": f"https://www.themoviedb.org/person/{pid}?language=uk"}, "children": [nm]}
+                      if pid else nm)
+            if k_ < len(cast) - 1:
+                ch.append(", ")
+        nodes.append({"tag": "p", "children": ch})
+        nodes.append({"tag": "p", "children": [{"tag": "i", "children": ["Натисніть на ім'я — інші фільми з цим актором"]}]})
+    if director:
+        nodes.append({"tag": "p", "children": [{"tag": "b", "children": ["Режисер: " if not tv else "Автори: "]}, director]})
+    if d.get("overview"):
+        nodes.append({"tag": "p", "children": [d["overview"]]})
+    level, tags, cert = adult_level(d)
+    if level:
+        imdb_id = (d.get("external_ids") or {}).get("imdb_id") or d.get("imdb_id")
+        nodes.append({"tag": "h4", "children": [LEVEL_TEXT[level].capitalize()]})
+        nodes.append({"tag": "p", "children": [
+            ("Помірна — є оголення або постільні сцени. " if level == 1 else
+             "Висока — відверті сексуальні сцени, еротика або рейтинг NC-17. ")
+            + f"Орієнтовно за тегами TMDB: {', '.join(tags)}" + (f"; віковий рейтинг США: {cert}" if cert else "") + "."]})
+        if imdb_id:
+            nodes.append({"tag": "p", "children": [{"tag": "a", "attrs": {"href": f"https://www.imdb.com/title/{imdb_id}/parentalguide"},
+                                                    "children": ["Повний опис сцен з таймінгом — IMDb Parents Guide"]}]})
+    stills = [b.get("file_path") for b in (d.get("images") or {}).get("backdrops", [])[:4] if b.get("file_path")]
+    if stills:
+        nodes.append({"tag": "h4", "children": ["Кадри"]})
+        nodes += [{"tag": "img", "attrs": {"src": img(p_)}} for p_ in stills]
+    tr = trailer(d.get("videos"))
+    if tr:
+        nodes.append({"tag": "p", "children": [{"tag": "a", "attrs": {"href": tr}, "children": ["▶️ Дивитися трейлер"]}]})
+    return telegraph_page(st, f"{title} ({year})", nodes)
+
+
 def kino_item(i: int, it: dict, ov_len: int = 160) -> str:
     d = it["d"]
     is_tv = it["kind"] == "tv"
     title = d.get("name") if is_tv else d.get("title")
-    year = (d.get("first_air_date") if is_tv else d.get("release_date") or "")[:4]
+    year = ((d.get("first_air_date") if is_tv else d.get("release_date")) or "")[:4]
     genres = ", ".join(g["name"].lower() for g in d.get("genres", [])[:3])
     if is_tv:
-        ns = d.get("number_of_seasons") or 0
-        length = f"📺 серіал · {ns} сез."
+        length = f"📺 серіал · {d.get('number_of_seasons') or 0} сез."
     else:
         rt_min = d.get("runtime") or 0
         length = f"⏱ {rt_min // 60} год {rt_min % 60:02d} хв" if rt_min else ""
+    lvl = adult_level(d)[0]
+    adult = f" · {LEVEL_TEXT[lvl]}" if lvl else ""
     rating = [f"⭐ IMDb <b>{it['imdb']}</b>" if it["imdb"] else f"⭐ TMDB <b>{d.get('vote_average', 0):.1f}</b>"]
     if it["rt"] is not None:
         rating.append(f"🍅 <b>{it['rt']}%</b>")
+    cast = ", ".join(c.get("name") for c in (d.get("credits") or {}).get("cast", [])[:3] if c.get("name"))
     ov = (d.get("overview") or "").strip() if ov_len else ""
     if len(ov) > ov_len:
         ov = ov[:ov_len - 3].rsplit(" ", 1)[0] + "…"
-    lines = [f"{'📺' if is_tv else '🎬'} <b>{i}. {esc(title)}</b> ({year})",
-             " · ".join(x for x in (esc(genres), length) if x),
+    name = f'<a href="{html.escape(it["page"])}">{esc(title)}</a>' if it.get("page") else esc(title)
+    lines = [f"{'📺' if is_tv else '🎬'} <b>{i}. {name}</b> ({year})",
+             " · ".join(x for x in (esc(genres), length) if x) + adult,
              " · ".join(rating)]
+    if cast:
+        lines.append(f"<i>🎭 {esc(cast)}</i>")
     if ov:
         lines.append(f"📝 {esc(ov)}")
     tr = trailer(d.get("videos"))
@@ -551,16 +675,23 @@ def kino_item(i: int, it: dict, ov_len: int = 160) -> str:
     return "<blockquote>" + "\n".join(lines) + "</blockquote>"
 
 
-def build_kino(st: dict) -> tuple[str, dict] | None:
+def build_kino(st: dict, title: str = "🍿 <b>ПІДБІРКА КІНО</b>") -> tuple[str, dict] | None:
+    """10 позицій: ~80% — за останні 10 років (6 фільмів + 2 серіали), решта — старіші хіти."""
     if not TMDB_KEY:
         print("TMDB_KEY не задано — кіно пропущено")
         return None
     seen = set(st.get("kino_seen", []))
-    items = pick_titles("movie", MOVIE_N, seen) + pick_titles("tv", TV_N, seen)
+    y = datetime.now(TZ).year
+    recent, old_until = f"{y - 10}-01-01", f"{y - 11}-12-31"
+    movies = pick_titles("movie", 6, seen, since=recent) + pick_titles("movie", 1, seen, until=old_until, pages=1)
+    tvs = pick_titles("tv", 2, seen, since=recent, pages=1) + pick_titles("tv", 1, seen, until=old_until, pages=1)
+    items = movies + tvs
     if len(items) < 3:
         return None
+    for it in items:                                  # окреме вікно з великим постером і кадрами
+        it["page"] = kino_page(st, it)
     st["kino_seen"] = (st.get("kino_seen", []) + [x["key"] for x in items])[-600:]
-    head = "🍿 <b>КІНО НА ВИХІДНІ</b>\n" + KINO_HINT
+    head = f"{title}\n" + KINO_HINT + "<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n"
     for ov_len in (160, 110, 70, 0):            # ліміт Telegram — 4096 символів
         text = head + "\n".join(kino_item(i, it, ov_len) for i, it in enumerate(items, 1))
         if len(text) <= 4000:
@@ -573,30 +704,30 @@ def build_kino(st: dict) -> tuple[str, dict] | None:
 # ---------- «Для пари» (Gemini + Google News RSS) ----------
 # (ключ, тема для Gemini, сцена для ІІ-картинки, запит для GIPHY)
 PARA_THEMES = [
-    ("поза", "одна нова поза для подружжя: назва, суть, чим вона приємна обом і як зробити її комфортною",
+    ("поза", "одна нова поза: назва, як у неї увійти, чим вона приємна обом і як зробити її комфортною",
      "a loving couple in a tender embrace, silhouettes against warm window light", "romantic couple"),
-    ("поцілунки", "техніка поцілунків і ніжних дотиків, які заводять",
-     "a couple about to kiss, close-up silhouettes, warm golden light", "romantic kiss"),
-    ("прелюдія", "як зробити прелюдію довшою, ніжнішою і яскравішою",
-     "a couple slowly dancing close together in a dim cozy room", "couple dancing"),
-    ("масаж", "чуттєвий масаж для партнера: техніка, олія, атмосфера",
-     "a relaxing couples massage with candles and towels, spa mood", "couple massage"),
-    ("техніка", "темп і ритм: як не поспішати, відчувати одне одного і продовжувати задоволення",
-     "two hands intertwined on silk sheets, soft warm light", "love"),
-    ("різноманіття", "як урізноманітнити інтимне життя в тривалих стосунках",
-     "a romantic bedroom with candles and rose petals, soft warm light", "romantic candles"),
-    ("поза", "ще одна нова поза для неспішного вечора: як увійти в неї і що врахувати",
-     "a couple cuddling closely under a blanket, cozy evening, silhouettes", "cuddle"),
-    ("фантазії", "як делікатно поговорити про фантазії і бажання та втілити одну з них",
-     "a couple whispering to each other on a sofa, intimate cozy atmosphere", "couple flirting"),
-    ("іграшки", "інтимні іграшки для пари: з чого почати і як обрати разом",
+    ("іграшки", "одна інтимна іграшка чи девайс: що це, як використовувати вдвох, на що звернути увагу при виборі",
      "a playful couple laughing on a bed with pillows, cozy evening", "couple laughing"),
-    ("гра", "легка рольова або тактильна гра для пари з повʼязкою чи кубиками",
+    ("техніка", "техніка пестощів руками: ритм, тиск, темп — як довести партнера до задоволення",
+     "two hands intertwined on silk sheets, soft warm light", "love"),
+    ("поза", "ще одна нова поза для глибшої близькості: як увійти в неї і що врахувати",
+     "a couple cuddling closely under a blanket, cozy evening, silhouettes", "cuddle"),
+    ("прелюдія", "як зробити прелюдію довшою і яскравішою: конкретні прийоми",
+     "a couple slowly dancing close together in a dim cozy room", "couple dancing"),
+    ("техніка", "техніка поцілунків і пестощів губами, які заводять",
+     "a couple about to kiss, close-up silhouettes, warm golden light", "romantic kiss"),
+    ("іграшки", "вібратор чи інший девайс для пари: як урізноманітнити ним секс",
      "a silk blindfold and a single red rose on white sheets, artistic still life", "flirting"),
-    ("атмосфера", "як створити атмосферу: світло, музика, аромати, білизна",
-     "a cozy bedroom with candles and soft warm light, romantic mood", "romantic candles"),
-    ("після", "як продовжити близькість після: обійми, турбота, розмова, душ удвох",
+    ("масаж", "чуттєвий масаж, що переходить у пестощі: техніка, олія, послідовність",
+     "a relaxing couples massage with candles and towels, spa mood", "couple massage"),
+    ("поза", "поза для неспішного ранкового сексу: як зробити її найприємнішою",
      "a couple cuddling under a blanket, peaceful morning light", "cuddle"),
+    ("гра", "легка рольова або тактильна гра з пов'язкою, кубиками чи льодом",
+     "a silk blindfold and a single red rose on white sheets, artistic still life", "flirting"),
+    ("техніка", "темп і ритм: як продовжити задоволення і досягти яскравішого оргазму",
+     "two hands intertwined on silk sheets, soft warm light", "love"),
+    ("атмосфера", "як створити атмосферу: світло, музика, білизна, мастило",
+     "a cozy bedroom with candles and soft warm light, romantic mood", "romantic candles"),
 ]
 PARA_FALLBACK = [
     ("Повільний вечір", "• Домовтеся, що сьогодні нікуди не поспішаєте\n• Почніть з 10 хвилин масажу плечей і спини\n"
@@ -1232,6 +1363,16 @@ CONTENT_FEEDS = [
     ("Dildo or Dildon't", "https://www.dildoordildont.com/feed/", "review", 60, False),
     ("Hey Epiphora", "https://heyepiphora.com/feed/", "review", 60, False),
     ("Bedbible", "https://bedbible.com/feed/", "review", 45, False),
+    ("Girl on the Net", "https://www.girlonthenet.com/feed/", "experience", 45, False),
+    ("LELO", "https://www.lelo.com/blog/feed/", "review", 60, False),
+    ("Good Vibrations", "https://www.goodvibes.com/blog/feed/", "review", 60, False),
+    ("Autostraddle", "https://www.autostraddle.com/category/sex-and-dating/feed/", "article", 30, False),
+    ("Glamour", "https://www.glamour.com/feed/tag/sex/latest/rss", "article", 21, False),
+    ("Self", "https://www.self.com/feed/rss", "article", 21, True),
+    ("Mashable", "https://mashable.com/feeds/rss/all", "review", 21, True),
+    ("Refinery29", "https://www.refinery29.com/en-us/sex/rss.xml", "article", 21, False),
+    ("Medium", "https://medium.com/feed/tag/sex-tips", "experience", 30, True),
+    ("Medium", "https://medium.com/feed/tag/sex-toys", "review", 45, True),
     ("Medium", "https://medium.com/feed/tag/sex", "experience", 21, True),
     ("Medium", "https://medium.com/feed/tag/intimacy", "experience", 21, True),
     ("Medium", "https://medium.com/feed/tag/sexuality", "experience", 21, True),
@@ -1289,13 +1430,25 @@ def collect_content(st: dict, now: datetime) -> None:
           f"досвід {sum(a['kind'] in ('experience', 'podcast') for a in pool)})")
 
 
+PREFER = re.compile(r"position|technique|how to|toy|vibrat|dildo|wand|plug|lube|review|oral|blow|cunniling|"
+                    r"orgasm|foreplay|anal|kink|bdsm|bondage|massage|handjob|fingering|masturbat|sex tip|sex move", re.I)
+DOWNPLAY = re.compile(r"breakup|divorce|dating app|marriage advice|communicat|argument|therapy|mental health|"
+                      r"relationship advice|loneliness|red flag|cheating", re.I)
+
+
+def topic_weight(a: dict) -> float:
+    """Техніка, пози, іграшки й девайси — частіше; проблеми стосунків — рідше."""
+    t = a.get("title", "") + " " + a.get("text", "")[:300]
+    return (2.5 if PREFER.search(t) else 1.0) * (0.35 if DOWNPLAY.search(t) else 1.0)
+
+
 def pick_content(pool: list, seen: set, last: dict) -> dict | None:
     """Випадковий свіжий матеріал: важить свіжість і кількість коментарів; тип і джерело — не як минулого разу."""
     cands = [a for a in pool if a["link"] not in seen]
     if not cands:
         return None
     pref = [a for a in cands if a["kind"] != last.get("kind") and a["src"] != last.get("src")] or cands
-    weights = [(1 + min(a.get("comments", 0), 60) / 10) * (1.5 if a["age"] <= 7 else 1.0) for a in pref]
+    weights = [(1 + min(a.get("comments", 0), 60) / 10) * (1.5 if a["age"] <= 7 else 1.0) * topic_weight(a) for a in pref]
     return random.choices(pref, weights=weights, k=1)[0]
 
 
@@ -1327,6 +1480,127 @@ def build_content(st: dict) -> str | None:
     msg = (f"{head} · {esc(a['src'])}{com}\n<blockquote><b>{esc(r.get('title'))}</b>\n{pts}</blockquote>\n"
            f"💡 {esc(r.get('tip'))}\n🔗 <a href=\"{html.escape(a['link'])}\">оригінал</a>")
     return rich(msg, {"type": "preview", "url": a["link"]})
+
+
+# ---------- Фактична наявність світла (СвітлоБот каналу ЖК) — лише вам і дружині ----------
+FACT_CHANNEL = "yaskravyi_power"
+
+
+def fact_kind(text: str) -> str | None:
+    t = text.lower()
+    if "невдовзі" in t or "імовірн" in t:
+        return None                                   # попередження, а не факт
+    if "електроживлення відсутнє" in t:
+        return "off"
+    if "електроживлення відновлено" in t:
+        return "on"
+    return None
+
+
+def fact_intervals(events: list, start: datetime, end: datetime) -> list[tuple[datetime, datetime]]:
+    """Інтервали без світла у вікні [start, end] за подіями [[iso, kind], ...]."""
+    ev = sorted((datetime.fromisoformat(t), k) for t, k in events)
+    state = "on"
+    for t, k in ev:                                   # стан на початок вікна
+        if t <= start:
+            state = k
+    out, off_from = [], (start if state == "off" else None)
+    for t, k in ev:
+        if t <= start or t > end:
+            continue
+        if k == "off" and off_from is None:
+            off_from = t
+        elif k == "on" and off_from is not None:
+            out.append((off_from, t))
+            off_from = None
+    if off_from is not None:
+        out.append((off_from, end))
+    return out
+
+
+def fact_png(start: datetime, end: datetime, offs: list) -> bytes | None:
+    """Тонка стрічка за добу: зелене — світло є, червоне — немає; позначки годин."""
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+    except Exception:
+        return None
+    W, H, X0, X1, Y0, Y1 = 1000, 120, 30, 970, 34, 66
+    img = Image.new("RGB", (W, H), (255, 255, 255))
+    d = ImageDraw.Draw(img)
+    try:
+        font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 20)
+    except Exception:
+        font = ImageFont.load_default()
+    span = (end - start).total_seconds()
+    x = lambda t: X0 + (X1 - X0) * (t - start).total_seconds() / span
+    d.rounded_rectangle([X0, Y0, X1, Y1], radius=8, fill=(72, 187, 120))
+    for a, b in offs:
+        d.rectangle([x(a), Y0, max(x(b), x(a) + 3), Y1], fill=(229, 62, 62))
+    t = start.replace(minute=0, second=0, microsecond=0) + timedelta(hours=1)
+    while t < end:
+        if t.hour % 3 == 0:
+            xx = x(t)
+            d.line([xx, Y1 + 2, xx, Y1 + 10], fill=(120, 120, 120), width=2)
+            d.text((xx - 11, Y1 + 14), f"{t:%H}", fill=(80, 80, 80), font=font)
+        t += timedelta(hours=1)
+    d.text((X0, 6), f"{start:%d.%m %H:%M}", fill=(80, 80, 80), font=font)
+    d.text((X1 - 150, 6), f"{end:%d.%m %H:%M}", fill=(80, 80, 80), font=font)
+    import io
+    buf = io.BytesIO()
+    img.save(buf, "PNG", optimize=True)
+    return buf.getvalue()
+
+
+def fact_update(st: dict, now: datetime, reason: str = "") -> list[str]:
+    """Нові події «світло зникло / відновлено» з каналу ЖК → повідомлення зі стрічкою за добу."""
+    try:
+        posts = channel_posts(FACT_CHANNEL)
+    except Exception as e:
+        print(f"Факт світла: канал недоступний ({str(e)[:60]})")
+        return []
+    f = st.get("fact") or {}
+    first = "events" not in f
+    events, last_id, new = f.get("events", []), f.get("last", 0), []
+    for pid, dt, text in posts:
+        k = fact_kind(text)
+        if k and pid > last_id:
+            new.append((pid, dt, k))
+            events.append([dt.isoformat(), k])
+    if posts:
+        f["last"] = max(last_id, posts[-1][0])
+    f["events"] = sorted([e for e in events if now - datetime.fromisoformat(e[0]) < timedelta(hours=48)])
+    st["fact"] = f
+    if f["events"]:
+        k_last = f["events"][-1][1]
+        print(f"Факт світла: зараз {'НЕМАЄ' if k_last == 'off' else 'є'} з {f['events'][-1][0][11:16]} "
+              f"(подій за 48 год: {len(f['events'])}, нових: {len(new)})")
+    if first or not new:
+        return []                                      # перший запуск — лише запам'ятовуємо
+    msgs = []
+    for pid, dt, k in new:
+        if k == "off":
+            msgs.append(f"🔴 <b>СВІТЛО ЗНИКЛО</b> о <b>{dt:%H:%M}</b>" + (f"\n{reason}" if reason else ""))
+        else:
+            prev = [datetime.fromisoformat(t) for t, kk in f["events"] if kk == "off" and datetime.fromisoformat(t) < dt]
+            lasted = f" · не було <b>{dur(dt - prev[-1])}</b>" if prev else ""
+            msgs.append(f"🟢 <b>СВІТЛО Є</b> з <b>{dt:%H:%M}</b>{lasted}")
+    start, end = now - timedelta(hours=24), now
+    offs = fact_intervals(f["events"], start, end)
+    total = sum((b - a for a, b in offs), timedelta())
+    lines = "\n".join(f"🔴 {a:%H:%M}–{b:%H:%M} · {dur(b - a)}" for a, b in offs) or "🟢 відключень не було"
+    caption = ("\n".join(msgs) + f"\n<blockquote>За добу без світла: <b>{dur(total)}</b>\n{lines}</blockquote>\n"
+               "<i>фактично, за даними СвітлоБота будинку</i>")
+    png = fact_png(start, end, offs)
+    return [rich(caption, {"type": "photo", "bytes": png}) if png else caption]
+
+
+def fact_now_line(st: dict, now: datetime) -> str:
+    ev = (st.get("fact") or {}).get("events") or []
+    if not ev:
+        return ""
+    t, k = datetime.fromisoformat(ev[-1][0]), ev[-1][1]
+    return (f"🔌 <b>Фактично:</b> світла немає з <b>{t:%H:%M}</b> (вже {dur(now - t)})\n" if k == "off"
+            else f"🔌 <b>Фактично:</b> світло є з <b>{t:%H:%M}</b>\n")
 
 
 # ---------- Акції Сільпо (магазин на Калнишевського, 2) ----------
@@ -1496,6 +1770,7 @@ def build_silpo(st: dict, now: datetime) -> str | None:
         hist = {}
     weeks = sorted(hist)[-3:]                          # мінімальна ціна за останні 1–3 тижні
     sections, total = [], 0
+    more: dict = {}                                   # «➕ ще 5»: решта позицій кожної категорії
     try:
         cats = silpo_categories(br[0])
     except Exception as e:
@@ -1528,15 +1803,18 @@ def build_silpo(st: dict, now: datetime) -> str | None:
             continue
         title = str(c.get("title") or c.get("name") or "")
         emo = next((e for k, e in CAT_EMOJI if k in title.lower()), "🛒")
-        lines = [f"{emo} <b>{esc(title)}</b>"]
-        for n_, (_, p_, price, old, declared, real, rating, week) in enumerate(cand[:SILPO_TOP], 1):
+        rows = []
+        for n_, (_, p_, price, old, declared, real, rating, week) in enumerate(cand[:SILPO_TOP + 20], 1):
             ratio = f", {esc(p_.get('displayRatio') or p_.get('ratio'))}" if (p_.get("displayRatio") or p_.get("ratio")) else ""
             real_t = f" · <b>реально −{real:.0f}%</b>" if real is not None else ""
             rate_t = f" · ⭐ {float(rating):.1f}" if rating else ""
-            lines.append(f"{n_}. {'🔥 ' if week else ''}{esc(p_.get('title'))}{ratio} — <b>{price:g} ₴</b> <s>{old:g} ₴</s> · "
-                         f"заявлено −{declared:.0f}%{real_t}{rate_t}\n"
-                         f'🔗 <a href="https://silpo.ua/product/{html.escape(str(p_.get("slug") or ""))}">відкрити</a>')
-        sections.append("<blockquote>" + "\n".join(lines) + "</blockquote>")
+            rows.append(f"{n_}. {'🔥 ' if week else ''}{esc(p_.get('title'))}{ratio} — <b>{price:g} ₴</b> <s>{old:g} ₴</s> · "
+                        f"заявлено −{declared:.0f}%{real_t}{rate_t}\n"
+                        f'🔗 <a href="https://silpo.ua/product/{html.escape(str(p_.get("slug") or ""))}">відкрити</a>')
+        ci = str(total)
+        if len(rows) > SILPO_TOP:
+            more[ci] = {"t": f"{emo} <b>{esc(title)}</b>", "b": f"{emo} {title[:16]}", "rows": rows[SILPO_TOP:]}
+        sections.append((ci, "<blockquote>" + "\n".join([f"{emo} <b>{esc(title)}</b>"] + rows[:SILPO_TOP]) + "</blockquote>"))
         total += 1
     if not sections:
         return None
@@ -1544,15 +1822,32 @@ def build_silpo(st: dict, now: datetime) -> str | None:
             f"<i>{'Ціни ' + esc((st.get('silpo_branch') or {}).get('name')) if not (st.get('silpo_branch') or {}).get('store') else 'Сільпо, вул. Калнишевського, 2'} · 🔥 — «Ціна тижня»</i>\n"
             + ("<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>" if weeks
                else "<i>Реальна вигода з'явиться з наступного тижня (бот ще збирає історію цін)</i>"))
-    msgs, cur = [], head                              # ділимо на повідомлення до 4000 символів
-    for sec in sections:
-        if len(cur) + len(sec) + 1 > 3900:
-            msgs.append(cur)
-            cur = sec
+    st["silpo_more"] = more
+    msgs, cur, cur_ids = [], head, []                 # ділимо на повідомлення до 4000 символів
+    for ci, sec in sections:
+        if len(cur) + len(sec) + 1 > 3800:
+            msgs.append(cur + kb_marker(cur_ids, more))
+            cur, cur_ids = sec, [ci]
         else:
             cur += "\n" + sec
-    msgs.append(cur)
+            cur_ids.append(ci)
+    msgs.append(cur + kb_marker(cur_ids, more))
     return SPLIT.join(msgs)
+
+
+def kb_marker(ids: list, more: dict) -> str:
+    """Службова позначка кнопок «➕ ще 5» для категорій цього повідомлення (розбирається при надсиланні)."""
+    ids = [i for i in ids if i in more]
+    return f"\n§KB:{','.join(ids)}" if ids else ""
+
+
+def split_kb(text: str, more: dict) -> tuple[str, dict | None]:
+    """Прибирає позначку §KB і будує кнопки «➕ ще 5»."""
+    m = re.search(r"\n§KB:([\d,]+)$", text)
+    if not m:
+        return text, None
+    btns = [{"text": f"➕ {more[i]['b']}", "callback_data": f"sm:{i}:0"} for i in m.group(1).split(",") if i in more]
+    return text[:m.start()], ({"inline_keyboard": [btns[k:k + 2] for k in range(0, len(btns), 2)]} if btns else None)
 
 
 # ---------- YouTube (Data API v3) ----------
@@ -2140,7 +2435,8 @@ def main() -> None:
     if WORKER_MODE:                              # підписники, «бачили» і «пульс» — з Cloudflare Worker
         try:
             ex = http_json(f"{SYNC_URL}/export?key={urllib.parse.quote(SYNC_KEY)}&take=1")
-            worker_req = ex.get("req") or {}
+            worker_req = dict(ex.get("req") or {})
+            worker_req["kino_used"] = ex.get("kino_used") or []
             subs = {str(k): list(v) for k, v in (ex.get("subs") or {}).items()}
             if ex.get("content_seen"):                # що вже показали з меню (Cloudflare) — не повторюємо
                 st["content_seen"] = list(dict.fromkeys(st.get("content_seen", []) + list(ex["content_seen"])))[-600:]
@@ -2180,6 +2476,17 @@ def main() -> None:
         emerg_msgs = emergency_check(st, now) if CHANNEL else []
     EMERG_ACTIVE = bool((st.get("emerg") or {}).get("on"))
     msgs: list[tuple[str, str | None]] = [(m, None) for m in emerg_msgs]
+    in_sched = any(a <= now < b for a, b in all_off)  # чи є зараз відключення за графіком
+    if EMERG_ACTIVE:
+        f_reason = "🚨 Причина: діють екстрені відключення"
+    elif in_sched:
+        f_reason = "📅 Причина: відключення за графіком"
+    elif ADDR_NOW.get("active"):
+        f_reason = f"🏠 ДТЕК за адресою: {esc(ADDR_NOW.get('reason'))}"
+    else:
+        f_reason = ("⚠️ <b>Фактично світла немає, але за джерелами (ДТЕК, YASNO, канали) немає ні екстрених, "
+                    "ні планових відключень</b> — можлива аварія")
+    fact_msgs = fact_update(st, now, f_reason)        # фактично є/немає світла (лише вам і дружині)
     # (текст для всіх, окремий текст для дружини або None)
     direct: list[tuple[str, str, bool, dict | None]] = []  # (chat_id, текст, це зведення?, кнопки)
     fam_msgs: list[str] = []                  # лише вам і дружині (запуск/ручна перевірка)
@@ -2415,11 +2722,18 @@ def main() -> None:
     direct_m: list[tuple[str, str, dict | None]] = []
     kino_due = now.weekday() == KINO_WEEKDAY and in_window and st.get("kino_week") != week_key
     if kino_due:                                   # щотижнева підбірка — одна для всіх
-        k = build_kino(st)
+        k = build_kino(st, "🍿 <b>КІНО НА ВИХІДНІ</b>")
         if k:
             st["kino_last"] = {"text": k[0], "markup": k[1]}
             st["kino_week"] = week_key
             topic_msgs.append(("kino", k[0], k[1], k[0].replace(KINO_HINT, "")))
+    used = set(worker_req.get("kino_used", [])) | set(st.get("kino_used", []))
+    st["kino_q"] = [q for q in st.get("kino_q", []) if q["id"] not in used]    # видані з меню — прибираємо
+    if TMDB_KEY and len(st["kino_q"]) < 2 and st.get("kino_q_try") != now.strftime("%Y-%m-%d %H:%M")[:15]:
+        st["kino_q_try"] = now.strftime("%Y-%m-%d %H:%M")[:15]                  # не частіше ніж раз на 10 хв
+        kq = build_kino(st)                            # готова підбірка «про запас» — меню віддає миттєво
+        if kq:
+            st["kino_q"].append({"id": hashlib.md5(kq[0].encode()).hexdigest()[:10], "text": kq[0], "markup": kq[1]})
     if kino_req:                                   # з меню — щоразу НОВА підбірка (без повторів)
         k_new = build_kino(st) if TMDB_KEY else None
         for c in kino_req:
@@ -2540,7 +2854,7 @@ def main() -> None:
         got_summary |= set(svitlo_to)
     jobs: list[tuple[str, str, dict | None]] = [
         (c, t, mk) for c, t, is_sum, mk in direct if not (is_sum and c in got_summary)]
-    jobs += [(cid, t, None) for t in fam_msgs for cid in family]
+    jobs += [(cid, t, None) for t in fam_msgs + fact_msgs for cid in family]
     jobs += [(cid, wife_text if (wife_text and cid == WIFE_ID) else text, None)
              for text, wife_text in msgs for cid in svitlo_to]
     jobs += direct_m
@@ -2550,8 +2864,11 @@ def main() -> None:
         jobs += [(cid, text, mk) if cid in family else (cid, plain, None) for cid in audience(topic)]
     expanded = []                                     # довгі підбірки (Сільпо, SMM) — кількома повідомленнями
     for cid, text, mk in jobs:
-        if type(text) is str and SPLIT in text:
-            expanded += [(cid, part, None) for part in text.split(SPLIT) if part.strip()]
+        if type(text) is str and (SPLIT in text or "\n§KB:" in text):
+            for part in text.split(SPLIT):
+                if part.strip():
+                    t_, k_ = split_kb(part, st.get("silpo_more") or {})
+                    expanded.append((cid, t_, k_))
         else:
             expanded.append((cid, text, mk))
     jobs = expanded
