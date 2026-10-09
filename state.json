@@ -1096,5 +1096,11 @@
   }
  ],
  "kino_q_try": "2026-10-09 11:3",
- "tgph": "d9e4b812d4d847a7be044d20591e2e2b24be1ed85b060caa01126c0c043e"
+ "tgph": "d9e4b812d4d847a7be044d20591e2e2b24be1ed85b060caa01126c0c043e",
+ "emerg_src": {
+  "YASNO": false,
+  "сайт ДТЕК": false,
+  "канал ЖК «Яскравий»": false,
+  "Укренерго": true
+ }
 }
