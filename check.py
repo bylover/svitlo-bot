@@ -2423,7 +2423,8 @@ def emergency_yasno(st: dict, now: datetime) -> list[str] | None:
             stats[stt] = stats.get(stt, 0) + 1
     on_y = stats.get("EmergencyShutdowns", 0) > 0
     addr = st.get("addr") or {}
-    on_a = bool((addr.get("active") and addr.get("emergency")) or addr.get("city_emergency"))  # сайт ДТЕК — найточніше
+    on_a = bool((addr.get("active") and re.search(r"екстрен", addr.get("reason") or "", re.I))
+                or addr.get("city_emergency"))      # сайт ДТЕК; «аварійні роботи» за адресою — не екстрені
     on_c, ch_notes, ch_per = emergency_channels(st, now)   # Telegram: ЖК, Укренерго, ДТЕК (лише явні оголошення)
     on = on_y or on_a or on_c
     print(f"Екстрені: {'ТАК' if on else 'ні'} · YASNO {'так' if on_y else 'ні'} {stats} · "
@@ -2445,6 +2446,8 @@ def emergency_yasno(st: dict, now: datetime) -> list[str] | None:
         out.append("✅✅ <b>ЕКСТРЕНІ ВІДКЛЮЧЕННЯ СКАСОВАНО</b> ✅✅\n"
                    "Знову діє графік ДТЕК\n<i>жодне джерело (сайт ДТЕК, YASNO, канали) більше не повідомляє про екстрені</i>")
     st["emerg"] = ch
+    global EMERG_SRC
+    EMERG_SRC = ", ".join((["YASNO"] if on_y else []) + (["сайт ДТЕК"] if on_a else []) + [n.split(":")[0] for n in ch_notes])
     # зміни статусу окремих джерел (вам і дружині) — якщо загальний статус не змінився
     src_now = {"YASNO": {"on": on_y}, "сайт ДТЕК": {"on": on_a, "text": (addr.get("city_text") or "")[:140]}, **ch_per}
     prev_src = st.get("emerg_src")
@@ -2641,6 +2644,7 @@ def now_line(off: list, now: datetime) -> str:
 
 
 ADDR_NOW: dict = {}
+EMERG_SRC = ""
 
 
 def addr_line() -> str:
@@ -2649,13 +2653,14 @@ def addr_line() -> str:
     if not a:
         return ""
     if a.get("active"):
-        return (f"🏠 <b>За адресою зараз немає світла</b> · {esc(a.get('reason'))}\n"
+        return (f"🏠 <b>За адресою зараз немає світла</b> · {esc(a.get('reason'))} <i>(дані ДТЕК)</i>\n"
                 f"   з {esc(a.get('start'))}, орієнтовно до <b>{esc(a.get('end') or '—')}</b>\n")
     return "🏠 ДТЕК зараз не показує відключень за вашою адресою\n"
 
 
 def summary(head: str, today_d, tomorrow_d, all_off, now) -> str:
-    emerg = "🚨 <b>Діють екстрені відключення</b> — графік може не діяти\n" if EMERG_ACTIVE else ""
+    emerg = (f"🚨 <b>Діють екстрені відключення</b> — графік може не діяти · <i>джерела: {esc(EMERG_SRC or 'ДТЕК')}</i>\n"
+             if EMERG_ACTIVE else "")
     return (f"{head}\n{emerg}{addr_line()}{now_line(all_off, now)}\n"
             + fmt_day(today_d, "Сьогодні") + "\n" + fmt_day(tomorrow_d, "Завтра"))
 
@@ -2773,11 +2778,11 @@ def main() -> None:
     msgs: list[tuple[str, str | None]] = [(m, None) for m in emerg_msgs]
     in_sched = any(a <= now < b for a, b in all_off)  # чи є зараз відключення за графіком
     if EMERG_ACTIVE:
-        f_reason = "🚨 Причина: діють екстрені відключення"
+        f_reason = f"🚨 Причина: діють екстрені відключення <i>(джерела: {esc(EMERG_SRC or 'ДТЕК')})</i>"
     elif in_sched:
-        f_reason = "📅 Причина: відключення за графіком"
+        f_reason = "📅 Причина: відключення за графіком <i>(ДТЕК)</i>"
     elif ADDR_NOW.get("active"):
-        f_reason = f"🏠 ДТЕК за адресою: {esc(ADDR_NOW.get('reason'))}"
+        f_reason = f"🏠 Причина: {esc(ADDR_NOW.get('reason'))} <i>(ДТЕК за адресою)</i>"
     else:
         f_reason = ("⚠️ <b>Фактично світла немає, але за джерелами (ДТЕК, YASNO, канали) немає ні екстрених, "
                     "ні планових відключень</b> — можлива аварія")

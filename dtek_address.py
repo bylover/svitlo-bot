@@ -135,7 +135,7 @@ def main() -> None:
                           r"графік\w*\s+(стабілізаційн\w*\s+)?(погодинних\s+)?відключень\s+не\s+діють", re.I)
     city_em = bool(explicit.search(banner) or explicit.search(extra_txt))   # лише явні оголошення, не загальні підказки
     print(f"Екстрені по місту (сторінка ДТЕК): {'ТАК' if city_em else 'ні'}")
-    cur = {"active": active, **info, "emergency": bool(re.search(r"екстрен|аварійн", info["reason"], re.I)),
+    cur = {"active": active, **info, "emergency": bool(re.search(r"екстрен", info["reason"], re.I)),   # аварія на лінії ≠ екстрені
            "city_emergency": city_em, "city_text": banner[:300],
            "checked": now.isoformat(), "address": f"{STREET}, {HOUSE}", "street_ok": data.get("_street")}
     msgs = []
