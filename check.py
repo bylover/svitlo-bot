@@ -99,7 +99,7 @@ PARA_DAYS, PARA_HOUR = (2, 4), 18                          # «Для пари»
 COMMANDS = [("grafik", "💡 Графік світла"), ("pogoda", "🌤 Погода"), ("porady", "💞 Поради 18+"),
             ("kino", "🍿 Кіно: підбірка"), ("youtube", "▶️ YouTube: топ за тиждень"),
             ("smm", "📈 SMM і таргет за тиждень"), ("silpo", "🛒 Акції Сільпо"), ("quiz", "🎯 Вікторина"), ("tests", "🧠 Тести"),
-            ("settings", "⚙️ Налаштування сповіщень"), ("vidguk", "💬 Відгук і побажання"), ("help", "ℹ️ Інструкція"),
+            ("settings", "⚙️ Налаштування сповіщень"), ("vidguk", "💬 Відгук і побажання"), ("help", "📖 Як це працює"), ("menu", "🔘 Кнопки меню"),
             ("stop", "🔕 Відписатися")]
 # теми сповіщень, які підписник може вмикати/вимикати
 TOPICS = [("svitlo", f"💡 Світло · група {GROUP}"), ("pogoda", "🌤 Погода"),
@@ -161,7 +161,8 @@ SOURCES_TEXT = (
     "• Нагадування — за ~30 хв до відключення й до увімкнення за графіком (під час екстрених не надсилаються), саме видаляється після події\n"
     "• Черга за адресою (підписники, Київ) — пошук на сайті ДТЕК тим самим браузером\n"
     "• Вінниця — сайт «Вінницяобленерго» закритий захистом від програм, тому графіків Вінниці в боті немає\n"
-    "• «За графіком» — це план ДТЕК, а не факт наявності світла</blockquote>\n"
+    "• «За графіком» — це план ДТЕК, а не факт наявності світла\n"
+    "• Масові сповіщення (екстрені, нагадування, зміни графіка) основним надходять одразу, підписникам — чергою по ~25 на хвилину (при 100–150 користувачах — до 5 хв)</blockquote>\n"
     "🌤 <b>Погода</b>\n"
     "<blockquote>• Open-Meteo — поєднує кілька метеомоделей; прогноз для координат обраного району (основним — Мінський масив)\n"
     "• Ніч / ранок / день / вечір + поради: парасолька, мороз, вітер, різка зміна температури</blockquote>\n"
@@ -2292,6 +2293,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
     weeks = sorted(hist)[-3:]                          # мінімальна ціна за останні 1–3 тижні
     sections, total = [], 0
     more: dict = {}                                   # «➕ ще 5»: решта позицій кожної категорії
+    best: list = []                                   # загальний топ тижня
     try:
         cats = silpo_categories(br[0])
     except Exception as e:
@@ -2333,8 +2335,10 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
                         f"заявлено −{declared:.0f}%{real_t}{rate_t}\n"
                         f'🔗 <a href="https://silpo.ua/product/{html.escape(str(p_.get("slug") or ""))}">відкрити</a>')
         ci = f"{tag}{total}"
-        if len(rows) > SILPO_TOP:                     # до 15 позицій: «➕ ще 5 товарів» розгортає це ж повідомлення
-            more[ci] = {"t": f"{emo} <b>{esc(title)}</b>", "first": rows[:SILPO_TOP], "rows": rows[SILPO_TOP:SILPO_TOP + 10]}
+        more[ci] = {"t": f"{emo} <b>{esc(title)}</b>", "b": f"{emo} {title[:18]}",       # кожна категорія — кнопка
+                    "first": rows[:SILPO_TOP], "rows": rows[SILPO_TOP:SILPO_TOP + 10]}
+        for c_ in cand[:3]:                           # кандидати в загальний «Топ-10 найвигідніших»
+            best.append((c_[0], c_[1], c_[2], c_[3], c_[5] if c_[5] is not None else c_[4], emo))
         sections.append((ci, "<blockquote>" + "\n".join([f"{emo} <b>{esc(title)}</b>"] + rows[:SILPO_TOP]) + "</blockquote>"))
         total += 1
     if not sections:
@@ -2347,8 +2351,11 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
                else "<i>Реальна вигода з'явиться з наступного тижня (бот ще збирає історію цін)</i>"))
     old = st.get("silpo_more") or {}                  # кнопки «➕ ще 5» різних магазинів не змішуємо
     st["silpo_more"] = {**{k: v for k, v in old.items() if (k[:len(tag)] != tag if tag else not k[:1].isdigit())}, **more}
-    msgs = [head] + [sec + kb_marker([ci], more) for ci, sec in sections]   # кожна категорія — окреме повідомлення
-    return SPLIT.join(msgs)
+    best.sort(key=lambda x: x[0], reverse=True)       # одне повідомлення: топ-10 + кнопки категорій
+    top = [f"{n_}. {emo_} {esc(p_.get('title'))} — <b>{price:g} ₴</b> <s>{old:g} ₴</s> · −{pct:.0f}%"
+           for n_, (_, p_, price, old, pct, emo_) in enumerate(best[:10], 1)]
+    return (head + "\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>" + "\n".join(top) + "</blockquote>\n"
+            "👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>" + f"\n§SN:{tag or 'm'}")
 
 
 def rate_kb(kind: str, id_: str) -> dict:
@@ -3418,9 +3425,10 @@ def main() -> None:
     if st.get("kino_ver") != 2:                       # новий формат кіно (кнопки під кожним фільмом)
         st["kino_q"] = []
         st["kino_ver"] = 2
-    if st.get("silpo_ver") != 3:                      # нова підбірка Сільпо з кнопками «➕ ще 5»
+    if st.get("silpo_ver") != 4:                      # Сільпо: одне повідомлення з топ-10 і кнопками категорій
         st.pop("silpo_last", None)
-        st["silpo_ver"] = 3
+        st.pop("silpo_by", None)
+        st["silpo_ver"] = 4
     if st.get("yt_ver") != 2:                         # новий відбір YouTube (лише українське) — стару підбірку скидаємо
         st.pop("yt_last", None)
         st["yt_ver"] = 2
@@ -3483,7 +3491,7 @@ def main() -> None:
     names = {x[0]: x[1] for city in ("kyiv", "vin") for x in stores.get(city, [])}
     main_id = (st.get("silpo_branch") or {}).get("id")
     sub_store = {c: (PROF.get(c) or {}).get("silpo") for c in subs if (PROF.get(c) or {}).get("silpo")}
-    wanted = list(dict.fromkeys(b for b in sub_store.values() if b and b != main_id))[:6]
+    wanted = list(dict.fromkeys(b for b in sub_store.values() if b and b != main_id))[:10]
     by = st.setdefault("silpo_by", {})
     for k_ in list(by):
         if k_ not in wanted:
@@ -3533,7 +3541,7 @@ def main() -> None:
                  if not (topic == "silpo" and cid in SILPO_OWN)]
     expanded = []                                     # довгі підбірки (Сільпо, SMM) — кількома повідомленнями
     for cid, text, mk in jobs:
-        if type(text) is str and (SPLIT in text or "\n§KB:" in text or "\n§KN:" in text or "\n§RT:" in text):
+        if type(text) is str and (SPLIT in text or "\n§KB:" in text or "\n§KN:" in text or "\n§RT:" in text or "\n§SN:" in text):
             for part in text.split(SPLIT):
                 if part.strip():
                     t_, k_ = split_kb(part, st.get("silpo_more") or {})
@@ -3545,6 +3553,14 @@ def main() -> None:
                         if cid in family:
                             row_.append({"text": "👀", "callback_data": f"seen:{key_}"})
                         k_ = {"inline_keyboard": [row_]}             # 👍/👎 — усім (статистика); 👀 — лише вам
+                    mn_ = re.search(r"\n§SN:(\w+)$", t_)              # Сільпо: кнопки категорій
+                    if mn_:
+                        t_ = t_[:mn_.start()]
+                        tg_ = "" if mn_.group(1) == "m" else mn_.group(1)
+                        more_ = st.get("silpo_more") or {}
+                        ids_ = [k for k in more_ if (k.startswith(tg_) if tg_ else k[:1].isdigit())]
+                        btns_ = [{"text": more_[k].get("b", k), "callback_data": f"sc:{k}"} for k in ids_]
+                        k_ = {"inline_keyboard": [btns_[i:i + 2] for i in range(0, len(btns_), 2)]}
                     mr_ = re.search(r"\n§RT:(\w+):(\S+)$", t_)        # 👍/👎 під матеріалом
                     if mr_:
                         t_ = t_[:mr_.start()]
