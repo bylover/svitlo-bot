@@ -38,8 +38,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898208+github-actions[bot]@users.noreply.github.com"
-          [ -f addr_state.json ] || exit 0
-          git add addr_state.json
+          [ -f addr_state.json ] && git add addr_state.json
+          [ -f voe_probe.json ] && git add voe_probe.json
           git diff --cached --quiet && exit 0
           git commit -m "addr"
           for i in 1 2 3; do
