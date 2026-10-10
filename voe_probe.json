@@ -1,0 +1,26 @@
+{
+ "day": "2026-10-10",
+ "pages": [
+  {
+   "url": "https://www.voe.com.ua/disconnection/detailed",
+   "title": "Attention Required! | Cloudflare",
+   "forms": [],
+   "text": "Sorry, you have been blocked\nYou are unable to access voe.com.ua\nWhy have I been blocked?\n\nThis website is using a security service to protect itself from online attacks. The action you just performed triggered the security solution. There are several actions that could trigger this block including submitting a certain word or phrase, a SQL command or malformed data.\n\nWhat can I do to resolve this?\n\nYou can email the site owner to let them know you were blocked. Please include what you were doing when this page came up and the Cloudflare Ray ID found at the bottom of this page.\n\nCloudflare Ray",
+   "xhr": [
+    "POST https://www.voe.com.ua/cdn-cgi/rum?",
+    "POST https://www.voe.com.ua/cdn-cgi/challenge-platform/h/g/jsd/oneshot/4df4a60fa397/0.6789955977497856:1791651922:7jQi4agHbHO4AJoIcLVpWMYqMEVZiMYFQ9-4gw0AhN4/a4875e5ed9d7637e"
+   ]
+  },
+  {
+   "url": "https://www.voe.com.ua/hrafik-pohodynnykh-vidklyuchen",
+   "title": "Attention Required! | Cloudflare",
+   "forms": [],
+   "text": "Sorry, you have been blocked\nYou are unable to access voe.com.ua\nWhy have I been blocked?\n\nThis website is using a security service to protect itself from online attacks. The action you just performed triggered the security solution. There are several actions that could trigger this block including submitting a certain word or phrase, a SQL command or malformed data.\n\nWhat can I do to resolve this?\n\nYou can email the site owner to let them know you were blocked. Please include what you were doing when this page came up and the Cloudflare Ray ID found at the bottom of this page.\n\nCloudflare Ray",
+   "xhr": [
+    "POST https://www.voe.com.ua/cdn-cgi/rum?",
+    "POST https://www.voe.com.ua/cdn-cgi/challenge-platform/h/g/jsd/oneshot/4df4a60fa397/0.6789955977497856:1791651922:7jQi4agHbHO4AJoIcLVpWMYqMEVZiMYFQ9-4gw0AhN4/a4875e5ed9d7637e",
+    "POST https://www.voe.com.ua/cdn-cgi/rum?"
+   ]
+  }
+ ]
+}
