@@ -39,6 +39,7 @@ jobs:
           WIFE_NAME: ${{ secrets.WIFE_NAME }}
           TMDB_KEY: ${{ secrets.TMDB_KEY }}
           OMDB_KEY: ${{ secrets.OMDB_KEY }}
+          TRAKT_ID: ${{ secrets.TRAKT_ID }}
           YT_KEY: ${{ secrets.YT_KEY }}
           GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
           GIPHY_KEY: ${{ secrets.GIPHY_KEY }}
@@ -59,6 +60,7 @@ jobs:
           git add state.json
           [ -f silpo_prices.json ] && git add silpo_prices.json
           [ -f fact.png ] && git add fact.png
+          [ -f quiz_pool.json ] && git add quiz_pool.json
           git diff --cached --quiet && exit 0
           git commit -m "state"
           for i in 1 2 3; do
