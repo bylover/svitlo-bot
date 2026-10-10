@@ -21,6 +21,21 @@ STREET = (os.environ.get("ADDR_STREET") or "вул. Кульженків Сім'
 HOUSE = (os.environ.get("ADDR_HOUSE") or "35").strip()
 STATE = Path("addr_state.json")
 URL = "https://www.dtek-kem.com.ua/ua/shutdowns"
+GETHOME_JS = """async (street) => {
+                const token = document.querySelector('meta[name="csrf-token"]').content;
+                const ajax = (document.querySelector('meta[name="ajaxUrl"]') || {}).content || '/ua/ajax';
+                const fact = (window.DisconSchedule && window.DisconSchedule.fact && window.DisconSchedule.fact.update) || '';
+                const body = new URLSearchParams();
+                body.append('method', 'getHomeNum');
+                body.append('data[0][name]', 'street');
+                body.append('data[0][value]', street);
+                body.append('data[1][name]', 'updateFact');
+                body.append('data[1][value]', fact);
+                const r = await fetch(ajax, { method: 'POST', body,
+                    headers: { 'X-CSRF-Token': token, 'X-Requested-With': 'XMLHttpRequest',
+                               'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' } });
+                return { status: r.status, text: await r.text() };
+            }"""
 
 
 def street_variants(s: str) -> list[str]:
@@ -60,27 +75,17 @@ def fetch_address() -> dict | None:
         print("ДТЕК, текст сторінки про екстрені:", city if city else "немає")
         res = None
         for st in street_variants(STREET):
-            res = page.evaluate("""async (street) => {
-                const token = document.querySelector('meta[name="csrf-token"]').content;
-                const ajax = (document.querySelector('meta[name="ajaxUrl"]') || {}).content || '/ua/ajax';
-                const fact = (window.DisconSchedule && window.DisconSchedule.fact && window.DisconSchedule.fact.update) || '';
-                const body = new URLSearchParams();
-                body.append('method', 'getHomeNum');
-                body.append('data[0][name]', 'street');
-                body.append('data[0][value]', street);
-                body.append('data[1][name]', 'updateFact');
-                body.append('data[1][value]', fact);
-                const r = await fetch(ajax, { method: 'POST', body,
-                    headers: { 'X-CSRF-Token': token, 'X-Requested-With': 'XMLHttpRequest',
-                               'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' } });
-                return { status: r.status, text: await r.text() };
-            }""", st)
+            res = page.evaluate(GETHOME_JS, st)
             print(f"ДТЕК getHomeNum «{st}»: HTTP {res.get('status')}, {len(res.get('text') or '')} символів")
             try:
                 data = json.loads(res.get("text") or "")
             except Exception:
                 data = None
             if isinstance(data, dict) and (data.get("data") or {}):
+                try:
+                    lookup_requests(page)              # черга за адресою для підписників
+                except Exception as e:
+                    print(f"Адреси підписників: {err_text(e)}")
                 browser.close()
                 data["_street"] = st
                 data["_city"] = city
@@ -177,6 +182,58 @@ def main() -> None:
                 print(f"Не вдалося надіслати {cid}: {err_text(e)}")
 
 
+TYPES = [("проспект", "просп."), ("просп", "просп."), ("вулиця", "вул."), ("вул", "вул."), ("бульвар", "бульв."), ("бульв", "бульв."),
+         ("провулок", "пров."), ("пров", "пров."), ("площа", "пл."), ("пл", "пл."), ("шосе", "шосе"), ("набережна", "наб."), ("узвіз", "узвіз")]
+
+
+def addr_variants(street: str) -> list[str]:
+    """«Оболонський проспект» / «просп Оболонський» / «Оболонський» → варіанти назви, як на сайті ДТЕК."""
+    words = [w for w in re.split(r"[\s,]+", street.strip()) if w]
+    kind, rest = None, []
+    for w in words:
+        k = next((full for t, full in TYPES if w.lower().rstrip(".") == t), None)
+        if k and not kind:
+            kind = k
+        else:
+            rest.append(w[:1].upper() + w[1:])
+    name = " ".join(rest)
+    kinds = [kind] if kind else ["вул.", "просп.", "бульв.", "пров.", "пл.", "шосе"]
+    out = [f"{k} {name}" for k in kinds]
+    return list(dict.fromkeys(v for x in out for v in (x, x.replace("'", "’"), x.replace("’", "'"))))
+
+
+def lookup_requests(page) -> None:
+    """Підписники ввели адресу — шукаємо їхню чергу на сайті ДТЕК і повідомляємо Worker."""
+    if not check.WORKER_MODE:
+        return
+    try:
+        reqs = (check.http_json(f"{check.SYNC_URL}/export?key={check.urllib.parse.quote(check.SYNC_KEY)}") or {}).get("addr_req") or {}
+    except Exception as e:
+        print(f"Адреси підписників: {err_text(e)}")
+        return
+    for cid, r in list(reqs.items())[:5]:
+        street, house = str(r.get("street") or ""), str(r.get("house") or "").lower().replace(" ", "")
+        found = None
+        for st in addr_variants(street):
+            res = page.evaluate(GETHOME_JS, st)
+            try:
+                data = json.loads(res.get("text") or "")
+            except Exception:
+                continue
+            houses = data.get("data") or {}
+            h = next((v for k, v in houses.items() if str(k).lower().replace(" ", "") == house), None)
+            if h is not None:
+                grp = next((g[3:] for g in (h.get("sub_type_reason") or []) if str(g).startswith("GPV")), None)
+                found = {"street": st, "house": house, "group": grp}
+                break
+        print(f"Адреса підписника: {street}, {house} → {found or 'не знайдено'}")
+        try:
+            check.http_json(f"{check.SYNC_URL}/setgroup?key={check.urllib.parse.quote(check.SYNC_KEY)}",
+                            {"cid": cid, **(found or {"error": "not_found"})})
+        except Exception as e:
+            print(f"setgroup: {err_text(e)}")
+
+
 def voe_probe() -> None:
     """Раз на день: проба сайту «Вінницяобленерго» — які форми й запити є на сторінці адресного графіка (лише в лог)."""
     p = Path("voe_probe.json")
@@ -213,8 +270,4 @@ def voe_probe() -> None:
 
 
 if __name__ == "__main__":
-    try:
-        voe_probe()                                   # етап 2b: розвідка сайту «Вінницяобленерго» (лише лог)
-    except Exception as e:
-        print(f"ВОЕ проба: {err_text(e)[:120]}")
-    main()
+    main()                                            # проба «Вінницяобленерго» вимкнена: сайт закритий захистом Cloudflare

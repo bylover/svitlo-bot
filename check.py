@@ -133,16 +133,16 @@ HELP_TEXT = ("ℹ️ <b>ЯК КОРИСТУВАТИСЯ БОТОМ</b>\n\n"
              "/help — ця інструкція і звідки дані\n/stop — відписатися від усього</blockquote>\n"
              "<b>Як почати і як оцінювати</b>\n<blockquote>"
              "• /start → кнопками оберіть місто (Київ / Вінниця) → чергу відключень → район для погоди → свій магазин Сільпо (літера вулиці → вулиця → магазин)\n"
-             "• Не знаєте черги — кнопка «🔎 Дізнатися чергу на сайті ДТЕК», потім оберіть номер у боті\n"
+             "• Не знаєте черги (Київ) — «🏠 Знайти чергу за адресою»: напишіть вулицю й будинок, бот знайде чергу на сайті ДТЕК за 1–3 хв\n"
              "• 📍 Швидше: на першому кроці натисніть «📍 Надіслати геолокацію» — бот сам визначить місто, район і найближчий Сільпо (чергу оберіть кнопкою)\n"
-             "• 📌 Панель стану — закріплене зверху чату повідомлення: світло за графіком, наступне відключення, погода; оновлюється кожні 10 хв (вимкнути — ⚙️)\n"
+             "• 📌 Панель стану — закріплене зверху чату повідомлення: чи є світло зараз, наступне відключення, графік на сьогодні, погода; оновлюється кожні 10 хв (вимкнути — ⚙️)\n"
              "• 🎯 Вікторина — оберіть тему (кіно, музика, спорт, історія, географія, наука, ерудиція, Україна, секс 18+, мікс): "
-             "15 питань-опитувань, одразу видно правильну відповідь; у кінці — «📋 Розбір відповідей» і «🏆 Рейтинг»\n"
+             "15 питань-опитувань, одразу видно правильну відповідь; у кінці — «📋 Розбір відповідей» і «🏆 Рейтинг»; тема з ⏳ ще готується\n"
              "• 🧠 Тести — «Велика п'ятірка» (характер, 60 питань): відповідайте кнопками, результат з поясненнями бачите лише ви\n"
              "• 👍/👎 під кіно, YouTube, SMM і матеріалами 18+ — ваша оцінка: у кіно вона впливає на підбірки (у основних отримувачів), решту бачить лише адміністратор у статистиці\n"
              "• Змінити — ⚙️ Налаштування → «🏙 Змінити місто, чергу чи район»\n"
              "• Пункти меню з позначкою «тест» — нові: графік вашої черги, погода вашого району й акції вашого Сільпо\n"
-             "• Вінниця: графіки «Вінницяобленерго» ще підключаємо</blockquote>\n"
+             "• Вінниця: графіки «Вінницяобленерго» бот не отримує (їхній сайт закритий від програм) — кнопка веде на їхній сайт; погода й Сільпо працюють</blockquote>\n"
              "<b>Важливо</b>\n<blockquote>"
              "• Графік — за даними сайту ДТЕК. «За графіком» не означає, що світло фактично є чи немає\n"
              f"• Сповіщення про світло — лише для групи {GROUP}. Якщо у вас інша група, вимкніть «💡 Світло» в /settings\n"
@@ -159,6 +159,8 @@ SOURCES_TEXT = (
     "• Фактично є/немає світла (для основних отримувачів) — СвітлоБот будинку (перевірка кожні 2 хв): повідомлення при кожній зміні та стрічка за добу (також у «💡 Графік світла»); якщо світла немає, а жодне джерело не повідомляє ні про екстрені, ні про планові відключення — бот так і пише\n"
     "• 📌 Панель стану — графік вашої черги, екстрені, погода (Open-Meteo), основним — ще й факт світла; оновлення кожні 10 хв\n"
     "• Нагадування — за ~30 хв до відключення й до увімкнення за графіком (під час екстрених не надсилаються), саме видаляється після події\n"
+    "• Черга за адресою (підписники, Київ) — пошук на сайті ДТЕК тим самим браузером\n"
+    "• Вінниця — сайт «Вінницяобленерго» закритий захистом від програм, тому графіків Вінниці в боті немає\n"
     "• «За графіком» — це план ДТЕК, а не факт наявності світла</blockquote>\n"
     "🌤 <b>Погода</b>\n"
     "<blockquote>• Open-Meteo — поєднує кілька метеомоделей; прогноз для координат обраного району (основним — Мінський масив)\n"
@@ -642,7 +644,7 @@ def omdb_full(imdb_id: str | None) -> tuple[float | None, int | None, int | None
     if not (OMDB_KEY and imdb_id):
         return None, None, None
     if imdb_id in OMDB_CACHE:
-        return OMDB_CACHE[imdb_id]
+        return tuple(OMDB_CACHE[imdb_id][:3])
     try:
         r = http_json(f"https://www.omdbapi.com/?i={imdb_id}&apikey={OMDB_KEY}")
     except Exception as e:
@@ -653,7 +655,7 @@ def omdb_full(imdb_id: str | None) -> tuple[float | None, int | None, int | None
                if x.get("Source") == "Rotten Tomatoes" and x.get("Value", "").rstrip("%").isdigit()), None)
     mc = next((int(x["Value"].split("/")[0]) for x in r.get("Ratings", [])
                if x.get("Source") == "Metacritic" and x.get("Value", "").split("/")[0].isdigit()), None)
-    OMDB_CACHE[imdb_id] = (imdb, rt, mc)
+    OMDB_CACHE[imdb_id] = [imdb, rt, mc, datetime.now(TZ).date().isoformat()]   # кеш 30 днів — економимо ліміт OMDb
     return imdb, rt, mc
 
 
@@ -2049,12 +2051,14 @@ def quiz_refresh(now: datetime) -> None:
     except Exception:
         pool = {"themes": {}}
     wk = f"{now:%G-%V}"
-    todo = [k for k in QUIZ_THEMES if (pool["themes"].get(k) or {}).get("week") != wk]
-    if not todo or not GEMINI_KEY:
+    todo = ([k for k in QUIZ_THEMES if k not in pool["themes"]]                       # спершу — теми, яких ще немає
+            + [k for k in QUIZ_THEMES if k in pool["themes"] and pool["themes"][k].get("week") != wk])
+    if not todo:
         return
     code = todo[0]
     name, cat = QUIZ_THEMES[code]
     qs = []
+    en_ = False
     try:
         if cat:
             r = http_json(f"https://opentdb.com/api.php?amount=50&category={cat}&type=multiple")
@@ -2065,6 +2069,9 @@ def quiz_refresh(now: datetime) -> None:
                          "пояснення правильної відповіді (до 150 символів). Поверни лише JSON-масив у тому ж порядку: "
                          "[{\"q\": \"питання\", \"a\": \"правильна\", \"w\": [\"3 неправильні\"], \"e\": \"пояснення\"}].\n\n"
                          + json.dumps(src, ensure_ascii=False), json_mode=True, max_tokens=12000)
+            if not raw:                                # ШІ недоступний — тиждень англійською, переклад пізніше
+                raw = json.dumps([{**x, "e": ""} for x in src], ensure_ascii=False)
+                en_ = True
         else:
             raw = gemini(f"Склади 40 різних цікавих питань для вікторини українською на тему: {QUIZ_GEN[code]}. "
                          "Лише перевірені факти, без двозначностей; 4 варіанти відповіді, одна правильна. До кожного — коротке "
@@ -2079,7 +2086,7 @@ def quiz_refresh(now: datetime) -> None:
     except Exception as e:
         print(f"Вікторина {code}: {err_text(e)[:120]}")
     if len(qs) >= 15:
-        pool["themes"][code] = {"name": name, "week": wk, "ai": cat is None, "q": qs}
+        pool["themes"][code] = {"name": name, "week": wk, "ai": cat is None, "en": en_, "q": qs}
         QUIZ_FILE.write_text(json.dumps(pool, ensure_ascii=False, separators=(",", ":")), "utf-8")
         print(f"Вікторина: тема «{name}» — {len(qs)} питань")
     else:
@@ -2963,6 +2970,8 @@ def main() -> None:
     check_config()
     st = load_state()
     cleanup_expired(st)
+    cut_ = (datetime.now(TZ).date() - timedelta(days=30)).isoformat()
+    OMDB_CACHE.update({k: v for k, v in (st.get("omdb_cache") or {}).items() if len(v) > 3 and v[3] >= cut_})
     GEMINI_BLOCK.update(st.get("gem_block") or {})
     if st.get("group") != GROUP or st.get("source", "yasno") != SOURCE:
         # змінили групу або джерело — графік заново (без хибного «змінено»), підписники лишаються
@@ -3334,6 +3343,15 @@ def main() -> None:
             topic_msgs.append(("kino", k[0], k[1], k[0].replace(KINO_HINT, "")))
     used = set(worker_req.get("kino_used", [])) | set(st.get("kino_used", []))
     st["kino_q"] = [q for q in st.get("kino_q", []) if q["id"] not in used]    # видані з меню — прибираємо
+    gq = st.setdefault("kino_gq", {})                 # по 1 готовій підбірці на кожен жанр — меню віддає миттєво
+    for g_ in list(gq):
+        gq[g_] = [q for q in gq[g_] if q["id"] not in used]
+    if TMDB_KEY and len(st["kino_q"]) >= 3:
+        miss = [g_ for g_ in KINO_GENRES if g_ != "mix" and not gq.get(g_)]
+        if miss:
+            kg_ = build_kino(st, genre=miss[0])
+            if kg_:
+                gq[miss[0]] = [{"id": hashlib.md5(kg_[0].encode()).hexdigest()[:10], "text": kg_[0]}]
     if TMDB_KEY and len(st["kino_q"]) < 3:            # 3 готові «Мікс» про запас — меню віддає миттєво
         kq = build_kino(st)                            # готова підбірка «про запас» — меню віддає миттєво
         if kq:
@@ -3568,6 +3586,7 @@ def main() -> None:
         st["subs"] = enc(subs)
 
     st["gem_block"] = {m: t for m, t in GEMINI_BLOCK.items() if t > now.isoformat()}
+    st["omdb_cache"] = dict(list({k: v for k, v in OMDB_CACHE.items() if isinstance(v, list)}.items())[-4000:])
     keep_from = (now.date() - timedelta(days=1)).isoformat()
     st["fp"] = {k: v for k, v in fp.items() if k >= keep_from}
     st["reminded"] = sorted(k for k in rem
