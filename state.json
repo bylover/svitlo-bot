@@ -1142,22 +1142,22 @@
   "https://bahrain12.medium.com/best-couple-friendly-remote-control-sex-toys-in-muharraq-e4818ad4e5a9?source=rss------sex_toys-5"
  ],
  "addr": {
-  "active": false,
-  "reason": "",
-  "start": "",
-  "end": "",
-  "type": "",
+  "active": true,
+  "reason": "Стабілізаційне відключення (Згідно графіку погодинних відключень)",
+  "start": "12:17 10.10.2026",
+  "end": "15:30 10.10.2026",
+  "type": "2",
   "groups": [
    "GPV4.1"
   ],
-  "updated": "13:18 10.10.2026",
+  "updated": "13:35 10.10.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Стабілізаційні графіки не діють. Повідомити про аварійні ситуації",
-  "checked": "2026-10-10T13:33:02.888870+03:00",
+  "checked": "2026-10-10T13:43:03.001320+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
-  "planned": false
+  "planned": true
  },
  "yt_try": "2026-10-08 22",
  "gem_block": {},
