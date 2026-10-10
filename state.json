@@ -5,9 +5,7 @@
   "2026-10-10": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 930, \"start\": 720, \"type\": \"Definite\"}]}",
   "2026-10-11": "{\"s\": \"WaitingForSchedule\", \"slots\": []}"
  },
- "reminded": [
-  "off|2026-10-09T18:00:00+03:00"
- ],
+ "reminded": [],
  "offset": 28760142,
  "cmds": "grafik,pogoda,kino,youtube,settings,help,stop",
  "subs": "IVa7wb9H/lXkE8k4m44z1aZNweBX6a1osjOGpyjBpNXUGfNytfw2JvHnlCLZO8rN2ldu2b4q4woQoxoqqsaGk64=",
@@ -1463,11 +1461,11 @@
   "сайт ДТЕК": false,
   "канал ЖК «Яскравий»": false
  },
- "fact_png": "2026-10-10 17|11|2026-10-10T15:20:00+03:00",
+ "fact_png": "2026-10-10 18|11|2026-10-10T15:20:00+03:00",
  "fact_day": {
-  "total": "8 год 46 хв",
+  "total": "7 год 46 хв",
   "list": [
-   "17:00–22:24 · 5 год 23 хв",
+   "18:00–22:24 · 4 год 23 хв",
    "22:25–22:45 · 20 хв",
    "12:18–15:20 · 3 год 2 хв"
   ]
