@@ -177,5 +177,44 @@ def main() -> None:
                 print(f"Не вдалося надіслати {cid}: {err_text(e)}")
 
 
+def voe_probe() -> None:
+    """Раз на день: проба сайту «Вінницяобленерго» — які форми й запити є на сторінці адресного графіка (лише в лог)."""
+    p = Path("voe_probe.json")
+    today = datetime.now(TZ).date().isoformat()
+    try:
+        if json.loads(p.read_text("utf-8")).get("day") == today:
+            return
+    except Exception:
+        pass
+    from playwright.sync_api import sync_playwright
+    found = {"day": today, "pages": []}
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch(headless=True)
+        page = browser.new_page(locale="uk-UA")
+        xhr = []
+        page.on("request", lambda r: xhr.append(f"{r.method} {r.url}") if r.resource_type in ("xhr", "fetch") else None)
+        for url in ("https://www.voe.com.ua/disconnection/detailed", "https://www.voe.com.ua/hrafik-pohodynnykh-vidklyuchen"):
+            try:
+                page.goto(url, wait_until="networkidle", timeout=60000)
+                info = page.evaluate("""() => ({ title: document.title,
+                    forms: [...document.forms].map(f => ({ action: f.action, method: f.method,
+                        fields: [...f.elements].map(e => e.name || e.id).filter(Boolean).slice(0, 30) })),
+                    text: (document.body.innerText || '').slice(0, 600) })""")
+                found["pages"].append({"url": url, **info, "xhr": xhr[-20:]})
+                print(f"ВОЕ проба {url}: «{info['title'][:80]}» · форм {len(info['forms'])} · XHR {len(xhr)}")
+                for f in info["forms"][:3]:
+                    print(f"   форма {f['method']} {f['action'][:100]} · поля: {', '.join(f['fields'][:15])}")
+                for x in xhr[-10:]:
+                    print(f"   запит: {x[:140]}")
+            except Exception as e:
+                print(f"ВОЕ проба {url}: {err_text(e)[:120]}")
+        browser.close()
+    p.write_text(json.dumps(found, ensure_ascii=False, indent=1), "utf-8")
+
+
 if __name__ == "__main__":
+    try:
+        voe_probe()                                   # етап 2b: розвідка сайту «Вінницяобленерго» (лише лог)
+    except Exception as e:
+        print(f"ВОЕ проба: {err_text(e)[:120]}")
     main()

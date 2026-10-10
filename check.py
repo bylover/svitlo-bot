@@ -70,7 +70,8 @@ DISTRICTS = {
             "sta": ("Старе місто", 49.232, 28.453), "tia": ("Тяжилів", 49.252, 28.468), "kor": ("Корея", 49.217, 28.470),
             "slo": ("Слов'янка", 49.215, 28.437), "pyr": ("Пирогово", 49.196, 28.538), "agr": ("Агрономічне", 49.195, 28.384),
             "pod": ("Поділля", 49.226, 28.505)}}
-PROF: dict = {}                                               # профілі підписників (місто, черга, район) — з Worker
+PROF: dict = {}
+SILPO_OWN: set = set()                                      # підписники зі своїм магазином Сільпо                                               # профілі підписників (місто, черга, район) — з Worker
 DTEK_DOC: dict = {}
 TMDB_KEY = (os.environ.get("TMDB_KEY") or "").strip()
 OMDB_KEY = (os.environ.get("OMDB_KEY") or "").strip()
@@ -97,7 +98,7 @@ REDDIT_SUBS = [x.strip() for x in (os.environ.get("REDDIT_SUBS") or "sex,sexover
 PARA_DAYS, PARA_HOUR = (2, 4), 18                          # «Для пари»: ср і пт о 18:00
 COMMANDS = [("grafik", "💡 Графік світла"), ("pogoda", "🌤 Погода"), ("porady", "💞 Поради 18+"),
             ("kino", "🍿 Кіно: підбірка"), ("youtube", "▶️ YouTube: топ за тиждень"),
-            ("smm", "📈 SMM і таргет за тиждень"), ("silpo", "🛒 Акції Сільпо"),
+            ("smm", "📈 SMM і таргет за тиждень"), ("silpo", "🛒 Акції Сільпо"), ("quiz", "🎯 Вікторина"), ("tests", "🧠 Тести"),
             ("settings", "⚙️ Налаштування сповіщень"), ("vidguk", "💬 Відгук і побажання"), ("help", "ℹ️ Інструкція"),
             ("stop", "🔕 Відписатися")]
 # теми сповіщень, які підписник може вмикати/вимикати
@@ -128,12 +129,19 @@ HELP_TEXT = ("ℹ️ <b>ЯК КОРИСТУВАТИСЯ БОТОМ</b>\n\n"
              "(вмикається в /settings)</blockquote>\n"
              "<b>Меню</b> (кнопка зліва від поля вводу)\n<blockquote>"
              "/grafik — графік світла зараз\n/pogoda — прогноз погоди\n/porady — нова порада, стаття, огляд або досвід 18+\n/kino — підбірка кіно (мікс, жанри, українське, у кінотеатрах)\n"
-             "/youtube — топ YouTube за тиждень\n/smm — SMM і таргет за тиждень\n/silpo — акції Сільпо\n/settings — увімкнути або вимкнути сповіщення\n/vidguk — відгук і побажання\n"
+             "/youtube — топ YouTube за тиждень\n/smm — SMM і таргет за тиждень\n/silpo — акції Сільпо\n/quiz — вікторина\n/tests — психологічні тести\n/settings — увімкнути або вимкнути сповіщення\n/vidguk — відгук і побажання\n"
              "/help — ця інструкція і звідки дані\n/stop — відписатися від усього</blockquote>\n"
-             "<b>Як почати (підписникам)</b>\n<blockquote>"
-             "• /start → кнопками оберіть місто (Київ / Вінниця) → чергу відключень → район для погоди\n"
+             "<b>Як почати і як оцінювати</b>\n<blockquote>"
+             "• /start → кнопками оберіть місто (Київ / Вінниця) → чергу відключень → район для погоди → свій магазин Сільпо (літера вулиці → вулиця → магазин)\n"
+             "• Не знаєте черги — кнопка «🔎 Дізнатися чергу на сайті ДТЕК», потім оберіть номер у боті\n"
+             "• 📍 Швидше: на першому кроці натисніть «📍 Надіслати геолокацію» — бот сам визначить місто, район і найближчий Сільпо (чергу оберіть кнопкою)\n"
+             "• 📌 Панель стану — закріплене зверху чату повідомлення: світло за графіком, наступне відключення, погода; оновлюється кожні 10 хв (вимкнути — ⚙️)\n"
+             "• 🎯 Вікторина — оберіть тему (кіно, музика, спорт, історія, географія, наука, ерудиція, Україна, секс 18+, мікс): "
+             "15 питань-опитувань, одразу видно правильну відповідь; у кінці — «📋 Розбір відповідей» і «🏆 Рейтинг»\n"
+             "• 🧠 Тести — «Велика п'ятірка» (характер, 60 питань): відповідайте кнопками, результат з поясненнями бачите лише ви\n"
+             "• 👍/👎 під кіно, YouTube, SMM і матеріалами 18+ — ваша оцінка: у кіно вона впливає на підбірки (у основних отримувачів), решту бачить лише адміністратор у статистиці\n"
              "• Змінити — ⚙️ Налаштування → «🏙 Змінити місто, чергу чи район»\n"
-             "• Пункти меню з позначкою «тест» — нові: графік вашої черги й погода вашого району\n"
+             "• Пункти меню з позначкою «тест» — нові: графік вашої черги, погода вашого району й акції вашого Сільпо\n"
              "• Вінниця: графіки «Вінницяобленерго» ще підключаємо</blockquote>\n"
              "<b>Важливо</b>\n<blockquote>"
              "• Графік — за даними сайту ДТЕК. «За графіком» не означає, що світло фактично є чи немає\n"
@@ -149,6 +157,7 @@ SOURCES_TEXT = (
     "• Ваша адреса — перевірка на сайті ДТЕК, як у формі «Відсутня електроенергія?», кожні ~10 хв: чи є зараз відключення, причина, початок і орієнтовне відновлення\n"
     "• Екстрені відключення — за оголошенням на сторінці ДТЕК, перевіркою адреси, статусом YASNO та каналом будинку; YASNO і канал перевіряються кожні 2 хв, сайт ДТЕК — кожні ~10 хв; враховуються тільки явні оголошення й скасування, оголошення з каналу діє до 12 год; загальне «🚨 / ✅» — коли перше джерело оголосило або всі скасували, а про зміну статусу кожного окремого джерела бот повідомляє основним отримувачам (📡)\n"
     "• Фактично є/немає світла (для основних отримувачів) — СвітлоБот будинку (перевірка кожні 2 хв): повідомлення при кожній зміні та стрічка за добу (також у «💡 Графік світла»); якщо світла немає, а жодне джерело не повідомляє ні про екстрені, ні про планові відключення — бот так і пише\n"
+    "• 📌 Панель стану — графік вашої черги, екстрені, погода (Open-Meteo), основним — ще й факт світла; оновлення кожні 10 хв\n"
     "• Нагадування — за ~30 хв до відключення й до увімкнення за графіком (під час екстрених не надсилаються), саме видаляється після події\n"
     "• «За графіком» — це план ДТЕК, а не факт наявності світла</blockquote>\n"
     "🌤 <b>Погода</b>\n"
@@ -180,12 +189,22 @@ SOURCES_TEXT = (
     "• Щоразу — один свіжий матеріал (стаття, огляд чи досвід), обраний випадково серед свіжих; частіше — новіші й ті, що мають більше коментарів; без повторів і дублікатів; приблизно кожен шостий — порада від ШІ (Gemini); найчастіше — техніка сексу, пози, вибір і огляди іграшок\n"
     "• Іноземні матеріали ШІ перекладає й коротко переказує українською; зверху — обкладинка, внизу — посилання на оригінал</blockquote>\n"
     "🛒 <b>Акції Сільпо</b>\n"
-    "<blockquote>• Дані — із сайту Сільпо для вашого магазину; у кожній категорії кнопка «➕ ще 5»\n"
+    "<blockquote>• 📍 За геолокацією бот обирає найближчий магазин (до 5 км) за координатами з сайту Сільпо\n"
+    "• Дані — із сайту Сільпо для вашого магазину (основним — Калнишевського, 2; підписники обирають свій у Києві чи Вінниці); у кожній категорії кнопка «➕ ще 5»\n"
+    "• Для магазинів підписників реальна вигода — орієнтовно, за історією цін мережі\n"
     "• Беремо всі загальні акції з прямим зниженням ціни, зокрема «Ціну тижня» 🔥; без «2+1», «другий за…» і персональних\n"
     "• Щосереди ввечері бот запам'ятовує ціни всіх товарів магазину. <b>Заявлена знижка</b> — від «старої» ціни на ціннику; <b>реальна вигода</b> — від найнижчої ціни товару за останні 1–3 тижні\n"
     "• Реальна вигода менше 3% — у топ не потрапляє. Місце в топі: реальна вигода % + бонус за рейтинг ⭐ (+5 за кожен бал понад 4) + до +5 за популярність\n"
     "• Топ-5 у кожній категорії, новий список щочетверга о 13:00</blockquote>\n"
-    "<i>Переклад і переказ від ШІ можуть бути неточними — завжди є посилання на першоджерело.</i>"
+    "<i>Переклад і переказ від ШІ можуть бути неточними — завжди є посилання на першоджерело.</i>\n"
+    "§§\n"
+    "🎯 <b>Вікторини</b>\n"
+    "<blockquote>• Кіно, музика, спорт, історія, географія, наука, ерудиція — перевірені питання відкритої бази Open Trivia Database, переклад і пояснення — ШІ (Gemini); банк оновлюється щотижня\n"
+    "• «Україна» і «Секс 18+» — питання складає ШІ (позначено в грі; можливі неточності)\n"
+    "• 15 випадкових питань; рейтинг — найкращий результат кожного гравця в темі</blockquote>\n"
+    "🧠 <b>Тести</b>\n"
+    "<blockquote>• «Велика п'ятірка» — науковий опитувальник IPIP-NEO (J. A. Johnson), український переклад з відкритого пакета b5 (ліцензія MIT); 60 питань — по 2 на кожну з 30 граней характеру\n"
+    "• Результат — самоопис, а не діагноз; середнє по боту — для порівняння</blockquote>"
 )
 WELCOME = "👋 <b>Hey there, night owl!</b>\nI'm your blackout buddy — I know when the lights go out before your toe meets the furniture. 💡\n\n🌤 I read the sky, 🍿 pick movies for the couch, ▶️ dig up the best of YouTube, 📈 spy on marketing trends and 🛒 hunt Silpo deals.\n💞 And when it gets dark… I whisper 18+ tips that make blackouts way less boring. 😏\n\n<i>Tap the menu ☰ and let's turn the lights on — one way or another.</i>"
 KINO_HINT = "<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n"
@@ -1544,7 +1563,8 @@ def build_smm(st: dict, now: datetime) -> str | None:
         blocks.pop()
         text = head + "\n".join(blocks) + "\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>"
     practice = build_smm_practice(st, now)            # друге повідомлення — фішки практиків (Reddit, блоги, Medium)
-    return text + (SPLIT + practice if practice else "")
+    wk = f"{now:%G%V}"                                # 👍/👎 під дайджестом — для статистики
+    return text + f"\n§RT:smm:{wk}" + (SPLIT + practice + f"\n§RT:smm:{wk}p" if practice else "")
 
 
 def reddit_token() -> str | None:
@@ -2011,6 +2031,61 @@ def fact_now_line(st: dict, now: datetime) -> str:
             else f"🔌 <b>Фактично:</b> світло є з <b>{t:%H:%M}</b>\n")
 
 
+# ---------- Етап 3: банк вікторин (OpenTDB + переклад ШІ; «Україна» і «Секс 18+» — питання від ШІ) ----------
+QUIZ_THEMES = {   # код: (назва, категорія OpenTDB або None — питання генерує ШІ)
+    "kino": ("🎬 Кіно", 11), "music": ("🎵 Музика", 12), "sport": ("⚽ Спорт", 21), "history": ("🏛 Історія", 23),
+    "geo": ("🌍 Географія", 22), "science": ("🔬 Наука", 17), "erud": ("🧠 Ерудиція", 9),
+    "ua": ("🇺🇦 Україна", None), "sex": ("🔞 Секс 18+", None)}
+QUIZ_GEN = {"ua": "Україна: історія, культура, географія, видатні українці, сучасність",
+            "sex": "секс і сексуальне здоров'я для дорослих: анатомія, фізіологія, контрацепція, історія сексуальності, "
+                   "цікаві наукові факти; без вульгарності, коректно й науково"}
+QUIZ_FILE = Path("quiz_pool.json")
+
+
+def quiz_refresh(now: datetime) -> None:
+    """Раз на тиждень оновлюємо по одній темі за запуск (OpenTDB має обмеження 1 запит на 5 с)."""
+    try:
+        pool = json.loads(QUIZ_FILE.read_text("utf-8"))
+    except Exception:
+        pool = {"themes": {}}
+    wk = f"{now:%G-%V}"
+    todo = [k for k in QUIZ_THEMES if (pool["themes"].get(k) or {}).get("week") != wk]
+    if not todo or not GEMINI_KEY:
+        return
+    code = todo[0]
+    name, cat = QUIZ_THEMES[code]
+    qs = []
+    try:
+        if cat:
+            r = http_json(f"https://opentdb.com/api.php?amount=50&category={cat}&type=multiple")
+            src = [{"q": html.unescape(x["question"]), "a": html.unescape(x["correct_answer"]),
+                    "w": [html.unescape(w) for w in x["incorrect_answers"]]} for x in r.get("results", [])]
+            raw = gemini("Переклади українською питання вікторини, природно й точно. Власні назви (фільми, гурти, міста) — "
+                         "як прийнято українською, за потреби з оригіналом у дужках. Для кожного додай коротке цікаве "
+                         "пояснення правильної відповіді (до 150 символів). Поверни лише JSON-масив у тому ж порядку: "
+                         "[{\"q\": \"питання\", \"a\": \"правильна\", \"w\": [\"3 неправильні\"], \"e\": \"пояснення\"}].\n\n"
+                         + json.dumps(src, ensure_ascii=False), json_mode=True, max_tokens=12000)
+        else:
+            raw = gemini(f"Склади 40 різних цікавих питань для вікторини українською на тему: {QUIZ_GEN[code]}. "
+                         "Лише перевірені факти, без двозначностей; 4 варіанти відповіді, одна правильна. До кожного — коротке "
+                         "пояснення (до 150 символів). Поверни лише JSON-масив: [{\"q\": \"питання\", \"a\": \"правильна\", "
+                         "\"w\": [\"3 неправильні\"], \"e\": \"пояснення\"}].", json_mode=True, relaxed=(code == "sex"), max_tokens=12000)
+        for x in json.loads(raw or "[]"):
+            opts = [str(x.get("a", ""))] + [str(w) for w in (x.get("w") or [])][:3]
+            if len(opts) != 4 or not x.get("q") or any(not o or len(o) > 100 for o in opts) or len(x["q"]) > 280:
+                continue
+            order = list(range(4)); random.shuffle(order)
+            qs.append({"q": x["q"], "o": [opts[i] for i in order], "c": order.index(0), "e": str(x.get("e") or "")[:190]})
+    except Exception as e:
+        print(f"Вікторина {code}: {err_text(e)[:120]}")
+    if len(qs) >= 15:
+        pool["themes"][code] = {"name": name, "week": wk, "ai": cat is None, "q": qs}
+        QUIZ_FILE.write_text(json.dumps(pool, ensure_ascii=False, separators=(",", ":")), "utf-8")
+        print(f"Вікторина: тема «{name}» — {len(qs)} питань")
+    else:
+        print(f"Вікторина: тема «{name}» — замало питань ({len(qs)}), спробую пізніше")
+
+
 # ---------- Акції Сільпо (магазин на Калнишевського, 2) ----------
 SILPO_API = "https://sf-ecom-api.silpo.ua"
 SKIP_PROMO = re.compile(r"\d\s*\+\s*\d|друг(ий|у)|при купівлі|при покупці|персональн", re.I)
@@ -2168,8 +2243,39 @@ def silpo_snapshot(st: dict, now: datetime) -> None:
     print(f"Сільпо: збережено ціни {len(snap)} товарів")
 
 
-def build_silpo(st: dict, now: datetime) -> str | None:
-    br = silpo_branch(st)
+def silpo_stores(st: dict, now: datetime) -> dict:
+    """Магазини Сільпо з самовивозом у Києві й Вінниці (для вибору підписниками) — раз на тиждень."""
+    wk = f"{now:%G-%V}"
+    if (st.get("silpo_stores") or {}).get("week") == wk and all(len(x) >= 4 for x in st["silpo_stores"].get("kyiv", [])[:1]):
+        return st["silpo_stores"]
+    try:
+        data = silpo_get("/v1/uk/branches", deliveryType="SelfPickup")
+        items = data.get("items") if isinstance(data, dict) else data
+        out = {"week": wk, "kyiv": [], "vin": []}
+        for b in items or []:
+            city, addr, bid = str(b.get("cityFull") or ""), str(b.get("addressFull") or "").strip(), b.get("branchId")
+            if not (bid and addr):
+                continue
+            try:                                      # координати — для «📍 геолокації» (найближчий магазин)
+                ll = [round(float(b.get("latitude")), 5), round(float(b.get("longitude")), 5)]
+            except Exception:
+                ll = [0, 0]
+            if city.strip() == "Київ":
+                out["kyiv"].append([bid, addr, *ll])
+            elif city.strip() == "Вінниця":
+                out["vin"].append([bid, addr, *ll])
+        for k in ("kyiv", "vin"):
+            out[k].sort(key=lambda x: x[1])
+        print(f"Сільпо: магазинів — Київ {len(out['kyiv'])}, Вінниця {len(out['vin'])}")
+        st["silpo_stores"] = out
+    except Exception as e:
+        print(f"Сільпо, список магазинів: {err_text(e)[:100]}")
+    return st.get("silpo_stores") or {}
+
+
+def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str | None = None, tag: str = "") -> str | None:
+    """Топ акцій тижня. branch/label — магазин підписника (етап 2b); tag — префікс кнопок «➕ ще 5»."""
+    br = (branch, "SelfPickup") if branch else silpo_branch(st)
     if not br:
         return None
     try:
@@ -2219,20 +2325,29 @@ def build_silpo(st: dict, now: datetime) -> str | None:
             rows.append(f"{n_}. {'🔥 ' if week else ''}{esc(p_.get('title'))}{ratio} — <b>{price:g} ₴</b> <s>{old:g} ₴</s> · "
                         f"заявлено −{declared:.0f}%{real_t}{rate_t}\n"
                         f'🔗 <a href="https://silpo.ua/product/{html.escape(str(p_.get("slug") or ""))}">відкрити</a>')
-        ci = str(total)
+        ci = f"{tag}{total}"
         if len(rows) > SILPO_TOP:                     # до 15 позицій: «➕ ще 5 товарів» розгортає це ж повідомлення
             more[ci] = {"t": f"{emo} <b>{esc(title)}</b>", "first": rows[:SILPO_TOP], "rows": rows[SILPO_TOP:SILPO_TOP + 10]}
         sections.append((ci, "<blockquote>" + "\n".join([f"{emo} <b>{esc(title)}</b>"] + rows[:SILPO_TOP]) + "</blockquote>"))
         total += 1
     if not sections:
         return None
+    shop = (f"Сільпо, {esc(label)}" if label else 'Ціни ' + esc((st.get('silpo_branch') or {}).get('name'))
+            if not (st.get('silpo_branch') or {}).get('store') else 'Сільпо, вул. Калнишевського, 2')
     head = (f"🛒 <b>АКЦІЇ СІЛЬПО · ТОП ЗА ТИЖДЕНЬ</b> · з {now:%d.%m}\n"
-            f"<i>{'Ціни ' + esc((st.get('silpo_branch') or {}).get('name')) if not (st.get('silpo_branch') or {}).get('store') else 'Сільпо, вул. Калнишевського, 2'} · 🔥 — «Ціна тижня»</i>\n"
+            f"<i>{shop} · 🔥 — «Ціна тижня»</i>\n"
             + ("<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>" if weeks
                else "<i>Реальна вигода з'явиться з наступного тижня (бот ще збирає історію цін)</i>"))
-    st["silpo_more"] = more
+    old = st.get("silpo_more") or {}                  # кнопки «➕ ще 5» різних магазинів не змішуємо
+    st["silpo_more"] = {**{k: v for k, v in old.items() if (k[:len(tag)] != tag if tag else not k[:1].isdigit())}, **more}
     msgs = [head] + [sec + kb_marker([ci], more) for ci, sec in sections]   # кожна категорія — окреме повідомлення
     return SPLIT.join(msgs)
+
+
+def rate_kb(kind: str, id_: str) -> dict:
+    """Кнопки 👍/👎 під матеріалом (лише статистика; для кіно — ще й смак)."""
+    return {"inline_keyboard": [[{"text": "👍", "callback_data": f"rt:{kind}:{id_}:u"},
+                                 {"text": "👎", "callback_data": f"rt:{kind}:{id_}:d"}]]}
 
 
 def kb_marker(ids: list, more: dict) -> str:
@@ -2243,7 +2358,7 @@ def kb_marker(ids: list, more: dict) -> str:
 
 def split_kb(text: str, more: dict) -> tuple[str, dict | None]:
     """Прибирає позначку §KB і будує кнопки «➕ ще 5»."""
-    m = re.search(r"\n§KB:([\d,]+)$", text)
+    m = re.search(r"\n§KB:([\w,]+)$", text)
     if not m:
         return text, None
     ids = [i for i in m.group(1).split(",") if i in more]
@@ -2349,7 +2464,7 @@ def build_youtube(st: dict, now: datetime) -> str | None:
                      f"👁 <b>{num(views)}</b> переглядів · 💬 <b>{num(comments)}</b> коментарів\n"
                      f'🔗 <a href="https://youtu.be/{v["id"]}">Дивитися</a></blockquote>')
     label = f"{start:%d.%m}–{now:%d.%m}"
-    return f"▶️ <b>ТОП-{len(top)} УКРАЇНСЬКОГО YOUTUBE · {label}</b>\n" + "\n".join(items)
+    return f"▶️ <b>ТОП-{len(top)} УКРАЇНСЬКОГО YOUTUBE · {label}</b>\n" + "\n".join(items) + f"\n§RT:yt:{now:%G%V}"
 
 
 # ---------- погода (Open-Meteo, без ключа) ----------
@@ -3265,12 +3380,18 @@ def main() -> None:
     para_due = (now.weekday() in PARA_DAYS and PARA_HOUR <= now.hour < PARA_HOUR + 4
                 and st.get("para_sent") != today_key)
     collect_content(st, now)                          # раз на день оновлюємо пул свіжих матеріалів 18+
+    try:
+        quiz_refresh(now)                             # етап 3: банк вікторин (одна тема за запуск)
+    except Exception as e:
+        print(f"Вікторина: {err_text(e)[:100]}")
     if para_due:
         pm = build_para(st, now, header="💞 <b>ПОРАДА 18+</b>")
-        topic_msgs.append(("para", pm, None, pm))
+        rk = rate_kb("p18", hashlib.md5(str(pm)[:80].encode()).hexdigest()[:8])
+        direct += [(c, pm, False, rk) for c in audience("para")]           # 👍/👎 під порадою — для статистики
         extra = build_content(st) or build_reddit(st)  # друге — один свіжий матеріал (стаття, огляд, досвід…)
         if extra:
-            topic_msgs.append(("para", extra, None, extra))
+            rk2 = rate_kb("p18", hashlib.md5(str(extra)[:80].encode()).hexdigest()[:8])
+            direct += [(c, extra, False, rk2) for c in audience("para")]
         st["para_sent"] = today_key
     if para_req:
         pm = build_para(st, now, with_news=False)
@@ -3327,6 +3448,7 @@ def main() -> None:
             st["silpo_week"], st["silpo_last"] = week_key, sp
             topic_msgs.append(("silpo", sp, None, sp))
             silpo_req = [c for c in silpo_req if c not in audience("silpo")]
+            SILPO_OWN.update(c for c in subs if (PROF.get(c) or {}).get("silpo"))   # у них свій магазин
     if not st.get("silpo_last") and not st.get("silpo_try") == now.strftime("%Y-%m-%d %H"):
         st["silpo_try"] = now.strftime("%Y-%m-%d %H")  # акцій тижня ще немає — збираємо заздалегідь, без розсилки
         sp = build_silpo(st, now)
@@ -3338,6 +3460,31 @@ def main() -> None:
             st["silpo_last"] = sp
     for c in silpo_req:
         direct_m.append((c, st.get("silpo_last") or "🛒 Не вдалося отримати акції Сільпо, спробуйте пізніше.", None))
+    # етап 2b: магазини підписників — свій топ акцій (до 6 різних магазинів)
+    stores = silpo_stores(st, now)
+    names = {x[0]: x[1] for city in ("kyiv", "vin") for x in stores.get(city, [])}
+    main_id = (st.get("silpo_branch") or {}).get("id")
+    sub_store = {c: (PROF.get(c) or {}).get("silpo") for c in subs if (PROF.get(c) or {}).get("silpo")}
+    wanted = list(dict.fromkeys(b for b in sub_store.values() if b and b != main_id))[:6]
+    by = st.setdefault("silpo_by", {})
+    for k_ in list(by):
+        if k_ not in wanted:
+            del by[k_]
+    built = 0
+    sp_week = (now - timedelta(days=(now.weekday() - SILPO_WEEKDAY) % 7)).date().isoformat()   # тиждень акцій — з четверга
+    for n_, b in enumerate(wanted):
+        req_c = [str(c) for c in worker_req.get(f"sp_{b}", [])]
+        if (by.get(b) or {}).get("week") != sp_week and built < 2:
+            sp_ = build_silpo(st, now, branch=b, label=names.get(b, "ваш магазин"), tag=f"s{n_}_")
+            built += 1
+            if sp_:
+                by[b] = {"week": sp_week, "text": sp_}
+        if (by.get(b) or {}).get("week") == sp_week and now.weekday() == SILPO_WEEKDAY and now.hour >= SILPO_HOUR \
+                and (st.get("silpo_sent_by") or {}).get(b) != sp_week:          # чт 13:00 — розсилка своїм підписникам
+            st.setdefault("silpo_sent_by", {})[b] = sp_week
+            direct_m += [(c, by[b]["text"], None) for c, sb in sub_store.items() if sb == b and "silpo" in subs.get(c, [])]
+        for c in req_c:
+            direct_m.append((c, (by.get(b) or {}).get("text") or "🛒 Не вдалося отримати акції вашого магазину, спробуйте пізніше.", None))
 
     # меню команд у Telegram (оновлюється автоматично при зміні списку)
     cmd_ver = ",".join(c for c, _ in COMMANDS)
@@ -3364,10 +3511,11 @@ def main() -> None:
     change_to = [] if worker_alive else svitlo_to      # працює Worker — зміни вже надіслав він
     jobs += [(cid, text, None) for text in change_msgs for cid in change_to]
     for topic, text, mk, plain in topic_msgs:
-        jobs += [(cid, text, mk) if cid in family else (cid, plain, None) for cid in audience(topic)]
+        jobs += [(cid, text, mk) if cid in family else (cid, plain, None) for cid in audience(topic)
+                 if not (topic == "silpo" and cid in SILPO_OWN)]
     expanded = []                                     # довгі підбірки (Сільпо, SMM) — кількома повідомленнями
     for cid, text, mk in jobs:
-        if type(text) is str and (SPLIT in text or "\n§KB:" in text or "\n§KN:" in text):
+        if type(text) is str and (SPLIT in text or "\n§KB:" in text or "\n§KN:" in text or "\n§RT:" in text):
             for part in text.split(SPLIT):
                 if part.strip():
                     t_, k_ = split_kb(part, st.get("silpo_more") or {})
@@ -3375,9 +3523,14 @@ def main() -> None:
                     if mk_:
                         key_ = mk_.group(1)
                         t_ = t_[:mk_.start()]
-                        k_ = ({"inline_keyboard": [[{"text": "👍", "callback_data": f"lk:{key_}"},
-                                                     {"text": "👎", "callback_data": f"dl:{key_}"},
-                                                     {"text": "👀", "callback_data": f"seen:{key_}"}]]} if cid in family else None)
+                        row_ = [{"text": "👍", "callback_data": f"lk:{key_}"}, {"text": "👎", "callback_data": f"dl:{key_}"}]
+                        if cid in family:
+                            row_.append({"text": "👀", "callback_data": f"seen:{key_}"})
+                        k_ = {"inline_keyboard": [row_]}             # 👍/👎 — усім (статистика); 👀 — лише вам
+                    mr_ = re.search(r"\n§RT:(\w+):(\S+)$", t_)        # 👍/👎 під матеріалом
+                    if mr_:
+                        t_ = t_[:mr_.start()]
+                        k_ = rate_kb(mr_.group(1), mr_.group(2))
                     expanded.append((cid, t_, k_))
         else:
             expanded.append((cid, text, mk))
