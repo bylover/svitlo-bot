@@ -2227,6 +2227,103 @@ def p_old(p: dict) -> float:
     return float(p.get("displayOldPrice") or p.get("oldPrice") or 0)
 
 
+# ---------- Етап 4: типи акцій (онлайн, 2+1, гуртом) і дані для «⭐ Обране» ----------
+PERSONAL = re.compile(r"персональн|за карт|бонус", re.I)
+MULTI_NM = re.compile(r"(\d+)\s*\+\s*(\d+)")
+MULTI_ZA = re.compile(r"(\d+)\s*(?:шт\.?\s*)?за\s*ціну\s*(\d+)|(\d+)\s*за\s*ціною\s*(\d+)", re.I)
+GURT = re.compile(r"гурт|від\s*\d+\s*шт|при\s+купівлі\s+від|опт", re.I)
+ONLINE = re.compile(r"онлайн|online|лише\s+в\s+застосунку|в\s+додатку", re.I)
+PROMO_SAMPLES: list = []
+ALL_PROMOS: list = []                                       # усі акції магазину — для «⭐ Обране»
+
+
+def _num_fields(o, out, path=""):
+    """Усі числові поля акції (щоб знайти ціну за штуку для «гуртом дешевше»)."""
+    if isinstance(o, dict):
+        for k, v in o.items():
+            _num_fields(v, out, f"{path}.{k}")
+    elif isinstance(o, list):
+        for v in o[:5]:
+            _num_fields(v, out, path)
+    elif isinstance(o, (int, float)) and not isinstance(o, bool):
+        out.append((path.lower(), float(o)))
+
+
+def promo_kind(p_: dict) -> tuple | None:
+    """(тип, ціна за шт, стара ціна, знижка %, позначка) або None. Тип: direct | online | multi | gurt."""
+    price, old = p_price(p_), p_old(p_)
+    pr = [x for x in (p_.get("promotions") or []) if isinstance(x, dict)]
+    text = " ".join(str(x.get("title") or x.get("name") or x.get("type") or x.get("description") or "") for x in pr)
+    if len(PROMO_SAMPLES) < 12 and pr:
+        sig = json.dumps(pr[:2], ensure_ascii=False)[:300]
+        if sig not in PROMO_SAMPLES:
+            PROMO_SAMPLES.append(sig)
+    if not price or PERSONAL.search(text):
+        return None
+    m = MULTI_NM.search(text)
+    if m:                                             # 2+1: платите за N, отримуєте N+M
+        n, k = int(m.group(1)), int(m.group(2))
+        if 0 < k <= n + k and n + k <= 20:
+            unit = price * n / (n + k)
+            return ("multi", round(unit, 2), price, k / (n + k) * 100, f"🎁 {n}+{k}")
+    m = MULTI_ZA.search(text)
+    if m:                                             # «3 за ціною 2»
+        g = [x for x in m.groups() if x]
+        n, k = int(g[0]), int(g[1])
+        if n > k > 0:
+            unit = price * k / n
+            return ("multi", round(unit, 2), price, (n - k) / n * 100, f"🎁 {n} за ціною {k}")
+    if GURT.search(text):                             # гуртом дешевше — шукаємо нижчу ціну за штуку в даних акції
+        nums = []
+        for x in pr:
+            _num_fields(x, nums)
+        unit = min((v for k_, v in nums if "price" in k_ or "ціна" in k_ or "value" in k_
+                    if 0 < v < price), default=None)
+        if unit:
+            return ("gurt", round(unit, 2), price, (price - unit) / price * 100, "📦 гуртом дешевше")
+        return None
+    if old and old > price:
+        if ONLINE.search(text):
+            return ("online", price, old, (old - price) / old * 100, "🌐 онлайн")
+        return ("direct", price, old, (old - price) / old * 100, "")
+    return None
+
+
+TRM = {"а": "a", "б": "b", "в": "v", "г": "h", "ґ": "g", "д": "d", "е": "e", "є": "ie", "ж": "zh", "з": "z", "и": "y", "і": "i", "ї": "i",
+       "й": "i", "к": "k", "л": "l", "м": "m", "н": "n", "о": "o", "п": "p", "р": "r", "с": "s", "т": "t", "у": "u", "ф": "f", "х": "kh",
+       "ц": "ts", "ч": "ch", "ш": "sh", "щ": "shch", "ь": "", "ю": "iu", "я": "ia", "ы": "y", "э": "e", "ё": "e", "ъ": ""}
+
+
+def fflat(s: str) -> str:
+    """Як у Worker: нижній регістр, транслітерація, без подвоєнь — для пошуку обраного з помилками."""
+    s = re.sub(r"[’ʼ`']", "", str(s or "").lower())
+    s = " ".join(re.sub(r"[^a-zа-яіїєґё0-9 ]+", " ", s).split())
+    s = "".join(TRM.get(c, c) for c in s).replace("kh", "h").replace("ts", "z").replace("h", "g")
+    s = re.sub(r"[yi]+", "i", s)
+    return re.sub(r"(.)\1+", r"\1", s)
+
+
+def fav_match(f: dict, it: list) -> bool:
+    t, v = f.get("t"), f.get("v")
+    if t == "p":
+        return it[0] == v
+    if t == "c":
+        return fflat(it[3]) == fflat(v)
+    if t == "b":
+        return fflat(it[2]) == fflat(v)
+    return fflat(v) in fflat(it[1]) or fflat(v) in fflat(it[2])
+
+
+FAVS: dict = {}
+
+
+def brand_of(p_: dict) -> str:
+    b = p_.get("brandTitle") or p_.get("brandName") or p_.get("brand") or ""
+    if isinstance(b, dict):
+        b = b.get("title") or b.get("name") or ""
+    return str(b).strip()
+
+
 def silpo_snapshot(st: dict, now: datetime) -> None:
     """Щосереди: ціни всіх товарів магазину → silpo_prices.json (зберігаємо 5 тижнів)."""
     br = silpo_branch(st)
@@ -2291,6 +2388,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
     br = (branch, "SelfPickup") if branch else silpo_branch(st)
     if not br:
         return None
+    ALL_PROMOS.clear()
     try:
         hist = json.loads(Path("silpo_prices.json").read_text("utf-8"))
     except Exception:
@@ -2312,38 +2410,43 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
             continue
         cand = []
         for idx, p_ in enumerate(prods):
-            price, old = p_price(p_), p_old(p_)
-            promos = " ".join(str(x.get("title") or x.get("name") or x.get("type") or "")
-                              for x in (p_.get("promotions") or []) if isinstance(x, dict))
-            if not price or not old or old <= price or SKIP_PROMO.search(promos):
-                continue                              # лише пряме зниження ціни, без «2+1»
-            declared = (old - price) / old * 100
-            past = [hist[w].get(str(p_.get("id"))) for w in weeks]
-            past = [x for x in past if x]
-            real = (min(past) - price) / min(past) * 100 if past else None
+            pk = promo_kind(p_)                       # пряма знижка, 🌐 онлайн, 🎁 2+1, 📦 гуртом
+            if not pk:
+                continue
+            kind, price, old, declared, badge = pk
+            promos = " ".join(str(x.get("title") or x.get("name") or "") for x in (p_.get("promotions") or []) if isinstance(x, dict))
+            real = None
+            if kind in ("direct", "online"):          # реальна вигода — за історією цін
+                past = [hist[w].get(str(p_.get("id"))) for w in weeks]
+                past = [x for x in past if x]
+                real = (min(past) - price) / min(past) * 100 if past else None
+                if real is not None and real < 3:
+                    continue                          # «акція», яка насправді не дешевша — пропускаємо
             rating = p_.get("guestProductRating")
-            score = (real if real is not None else declared) + ((float(rating) - 4) * 5 if rating else 0) + max(0, 30 - idx) / 6
-            if real is not None and real < 3:
-                continue                              # «акція», яка насправді не дешевша — пропускаємо
-            cand.append((score, p_, price, old, declared, real, rating, "ціна тижня" in promos.lower()))
+            weight = {"direct": 1.0, "online": 0.9, "multi": 0.8, "gurt": 0.8}[kind]   # треба більше купити / онлайн — трохи нижче
+            score = (real if real is not None else declared) * weight + ((float(rating) - 4) * 5 if rating else 0) + max(0, 30 - idx) / 6
+            cand.append((score, p_, price, old, declared, real, rating, "ціна тижня" in promos.lower(), badge, kind))
+            ALL_PROMOS.append([str(p_.get("id")), str(p_.get("title") or ""), brand_of(p_), str(c.get("title") or ""),
+                               price, old, round(declared), badge, str(p_.get("slug") or "")])
         cand.sort(key=lambda x: x[0], reverse=True)
         if not cand:
             continue
         title = str(c.get("title") or c.get("name") or "")
         emo = next((e for k, e in CAT_EMOJI if k in title.lower()), "🛒")
         rows = []
-        for n_, (_, p_, price, old, declared, real, rating, week) in enumerate(cand[:SILPO_TOP + 20], 1):
+        for n_, (_, p_, price, old, declared, real, rating, week, badge, kind) in enumerate(cand[:SILPO_TOP + 20], 1):
             ratio = f", {esc(p_.get('displayRatio') or p_.get('ratio'))}" if (p_.get("displayRatio") or p_.get("ratio")) else ""
             real_t = f" · <b>реально −{real:.0f}%</b>" if real is not None else ""
             rate_t = f" · ⭐ {float(rating):.1f}" if rating else ""
-            rows.append(f"{n_}. {'🔥 ' if week else ''}{esc(p_.get('title'))}{ratio} — <b>{price:g} ₴</b> <s>{old:g} ₴</s> · "
-                        f"заявлено −{declared:.0f}%{real_t}{rate_t}\n"
+            per = "/шт" if kind in ("multi", "gurt") else ""
+            rows.append(f"{n_}. {'🔥 ' if week else ''}{esc(p_.get('title'))}{ratio} — <b>{price:g} ₴{per}</b> <s>{old:g} ₴</s> · "
+                        f"{badge + ' ' if badge else ''}{'заявлено ' if kind in ('direct', 'online') else ''}−{declared:.0f}%{real_t}{rate_t}\n"
                         f'🔗 <a href="https://silpo.ua/product/{html.escape(str(p_.get("slug") or ""))}">відкрити</a>')
         ci = f"{tag}{total}"
         more[ci] = {"t": f"{emo} <b>{esc(title)}</b>", "b": f"{emo} {title[:18]}",       # кожна категорія — кнопка
                     "first": rows[:SILPO_TOP], "rows": rows[SILPO_TOP:SILPO_TOP + 10]}
         for c_ in cand[:3]:                           # кандидати в загальний «Топ-10 найвигідніших»
-            best.append((c_[0], c_[1], c_[2], c_[3], c_[5] if c_[5] is not None else c_[4], emo))
+            best.append((c_[0], c_[1], c_[2], c_[3], c_[5] if c_[5] is not None else c_[4], emo + (" " + c_[8] if c_[8] else "")))
         sections.append((ci, "<blockquote>" + "\n".join([f"{emo} <b>{esc(title)}</b>"] + rows[:SILPO_TOP]) + "</blockquote>"))
         total += 1
     if not sections:
@@ -2356,6 +2459,15 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
                else "<i>Реальна вигода з'явиться з наступного тижня (бот ще збирає історію цін)</i>"))
     old = st.get("silpo_more") or {}                  # кнопки «➕ ще 5» різних магазинів не змішуємо
     st["silpo_more"] = {**{k: v for k, v in old.items() if (k[:len(tag)] != tag if tag else not k[:1].isdigit())}, **more}
+    try:                                              # файл акцій магазину — для «⭐ Обране» (Worker читає його)
+        Path("silpo").mkdir(exist_ok=True)
+        cats_ = sorted({x[3] for x in ALL_PROMOS if x[3]})
+        brands_ = sorted({x[2] for x in ALL_PROMOS if x[2]})
+        Path(f"silpo/{'m' if not branch else branch}.json").write_text(json.dumps(
+            {"week": f"{now:%G-%V}", "cats": cats_, "brands": brands_, "items": ALL_PROMOS}, ensure_ascii=False, separators=(",", ":")), "utf-8")
+        print(f"Сільпо: акцій у файлі {len(ALL_PROMOS)}, брендів {len(brands_)}; приклади типів акцій: {PROMO_SAMPLES[:6]}")
+    except Exception as e:
+        print(f"Сільпо, файл акцій: {err_text(e)}")
     best.sort(key=lambda x: x[0], reverse=True)       # одне повідомлення: топ-10 + кнопки категорій
     top = [f"{n_}. {emo_} {esc(p_.get('title'))} — <b>{price:g} ₴</b> <s>{old:g} ₴</s> · −{pct:.0f}%"
            for n_, (_, p_, price, old, pct, emo_) in enumerate(best[:10], 1)]
@@ -3001,6 +3113,7 @@ def main() -> None:
             taste_update(st, ex.get("likes") or [], ex.get("dislikes") or [])   # 👍/👎 з меню кіно
             subs = {str(k): list(v) for k, v in (ex.get("subs") or {}).items()}
             PROF.update(ex.get("prof") or {})          # профілі підписників (етап 2a)
+            FAVS.update(ex.get("favs") or {})          # ⭐ обране Сільпо
             if ex.get("content_seen"):                # що вже показали з меню (Cloudflare) — не повторюємо
                 st["content_seen"] = list(dict.fromkeys(st.get("content_seen", []) + list(ex["content_seen"])))[-600:]
             if ex.get("seen"):
@@ -3455,10 +3568,10 @@ def main() -> None:
     if st.get("kino_ver") != 2:                       # новий формат кіно (кнопки під кожним фільмом)
         st["kino_q"] = []
         st["kino_ver"] = 2
-    if st.get("silpo_ver") != 4:                      # Сільпо: одне повідомлення з топ-10 і кнопками категорій
+    if st.get("silpo_ver") != 5:                      # Сільпо: + онлайн, 2+1, гуртом; файл для «⭐ Обране»
         st.pop("silpo_last", None)
         st.pop("silpo_by", None)
-        st["silpo_ver"] = 4
+        st["silpo_ver"] = 5
     if st.get("yt_ver") != 2:                         # новий відбір YouTube (лише українське) — стару підбірку скидаємо
         st.pop("yt_last", None)
         st["yt_ver"] = 2
@@ -3541,6 +3654,26 @@ def main() -> None:
             direct_m += [(c, by[b]["text"], None) for c, sb in sub_store.items() if sb == b and "silpo" in subs.get(c, [])]
         for c in req_c:
             direct_m.append((c, (by.get(b) or {}).get("text") or "🛒 Не вдалося отримати акції вашого магазину, спробуйте пізніше.", None))
+
+    # ⭐ четвер: сигнал «на ваше обране є акції» (кому ввімкнено 🔔)
+    if now.weekday() == SILPO_WEEKDAY and now.hour >= SILPO_HOUR:
+        fs = st.setdefault("fav_sent", {})
+        for c, fv in FAVS.items():
+            if not (fv or {}).get("n") or not fv.get("items") or fs.get(c) == sp_week:
+                continue
+            key = (PROF.get(c) or {}).get("silpo") if c not in family else None
+            try:
+                data = json.loads(Path(f"silpo/{key or 'm'}.json").read_text("utf-8"))
+            except Exception:
+                continue
+            hits = [(f, it) for f in fv["items"] for it in data.get("items", []) if fav_match(f, it)]
+            fs[c] = sp_week
+            if not hits:
+                continue
+            hits.sort(key=lambda x: -x[1][6])
+            lines = [f"• {esc(it[1])} — <b>{it[4]:g} ₴</b> <s>{it[5]:g} ₴</s> {esc(it[7] or '')} −{it[6]}%" for _, it in hits[:10]]
+            direct_m.append((c, f"⭐ <b>На ваше обране цього тижня — {len(hits)} акц.</b>\n<blockquote>" + "\n".join(lines) + "</blockquote>",
+                             {"inline_keyboard": [[{"text": "⭐ Усі акції для обраного", "callback_data": "fv:show"}]]}))
 
     # меню команд у Telegram (оновлюється автоматично при зміні списку)
     cmd_ver = ",".join(c for c, _ in COMMANDS)
