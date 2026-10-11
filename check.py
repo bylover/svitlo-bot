@@ -2038,10 +2038,15 @@ def fact_now_line(st: dict, now: datetime) -> str:
 QUIZ_THEMES = {   # код: (назва, категорія OpenTDB або None — питання генерує ШІ)
     "kino": ("🎬 Кіно", 11), "music": ("🎵 Музика", 12), "sport": ("⚽ Спорт", 21), "history": ("🏛 Історія", 23),
     "geo": ("🌍 Географія", 22), "science": ("🔬 Наука", 17), "erud": ("🧠 Ерудиція", 9),
-    "ua": ("🇺🇦 Україна", None), "sex": ("🔞 Секс 18+", None)}
+    "ua": ("🇺🇦 Україна", None), "sex": ("🔞 Секс 18+", None), "tech": ("🔥 Техніка сексу", None),
+    "oral": ("👅 Оральний секс", None), "anal": ("🍑 Анальний секс", None), "toys": ("🧸 Іграшки й девайси", None)}
 QUIZ_GEN = {"ua": "Україна: історія, культура, географія, видатні українці, сучасність",
             "sex": "секс і сексуальне здоров'я для дорослих: анатомія, фізіологія, контрацепція, історія сексуальності, "
-                   "цікаві наукові факти; без вульгарності, коректно й науково"}
+                   "цікаві наукові факти; без вульгарності, коректно й науково",
+            "tech": "техніка сексу для дорослих: прелюдія, темп і ритм, пози, пестощі, оргазм, міфи й факти; коректно, без вульгарності",
+            "oral": "оральні пестощі для дорослих пар: техніка, гігієна, безпека й захист від ІПСШ, комфорт і згода, міфи й факти; коректно, без вульгарності",
+            "anal": "анальний секс для дорослих: підготовка, мастило, поступовість, гігієна, безпека й захист, міфи й факти; коректно, без вульгарності",
+            "toys": "інтимні іграшки й девайси: види, матеріали (силікон, пористі матеріали), догляд і чистка, безпека, як обрати; коректно"}
 QUIZ_FILE = Path("quiz_pool.json")
 
 
@@ -2077,7 +2082,7 @@ def quiz_refresh(now: datetime) -> None:
             raw = gemini(f"Склади 40 різних цікавих питань для вікторини українською на тему: {QUIZ_GEN[code]}. "
                          "Лише перевірені факти, без двозначностей; 4 варіанти відповіді, одна правильна. До кожного — коротке "
                          "пояснення (до 150 символів). Поверни лише JSON-масив: [{\"q\": \"питання\", \"a\": \"правильна\", "
-                         "\"w\": [\"3 неправильні\"], \"e\": \"пояснення\"}].", json_mode=True, relaxed=(code == "sex"), max_tokens=12000)
+                         "\"w\": [\"3 неправильні\"], \"e\": \"пояснення\"}].", json_mode=True, relaxed=(code in ("sex", "tech", "oral", "anal", "toys")), max_tokens=12000)
         for x in json.loads(raw or "[]"):
             opts = [str(x.get("a", ""))] + [str(w) for w in (x.get("w") or [])][:3]
             if len(opts) != 4 or not x.get("q") or any(not o or len(o) > 100 for o in opts) or len(x["q"]) > 280:
@@ -3046,7 +3051,7 @@ def main() -> None:
     global ADDR_NOW
     ADDR_NOW = st.get("addr") or {}
     emerg_msgs = emergency_yasno(st, now)            # офіційний статус YASNO + дані ДТЕК за адресою
-    if WORKER_MODE:                                   # повідомлення про екстрені надсилає Cloudflare (одразу)
+    if WORKER_MODE and worker_alive:                  # екстрені надсилає Cloudflare; якщо він не відповідає — страхує GitHub
         emerg_msgs = []
         EMERG_FAM.clear()
     if emerg_msgs is None:
@@ -3203,27 +3208,45 @@ def main() -> None:
         head = "✅ <b>Бот працює</b>" if first_run else "📋 <b>Поточний графік</b>"
         fam_msgs.append(summary(f"{head} · група {GROUP}", today_d, tomorrow_d, all_off, now))
 
-    # 2) ранкове повідомлення щодня (незалежно від змін)
-    if (not first_run and st.get("morning") != today_key
-            and MORNING_HOUR <= now.hour < MORNING_HOUR + 4):
+    # 2) ранкове зведення — у свій час кожного (за замовчуванням 10:00; змінити — ⚙️ → 🕒)
+    def due_at(c: str, key: str, default: int) -> bool:
+        h = (PROF.get(c) or {}).get(key, default)
+        return h != "off" and int(h) <= now.hour < int(h) + 3
+    ms = st.setdefault("mo_sent", {})
+    if first_run:
+        for c in svitlo_to:
+            ms[c] = today_key
+    due_m = [c for c in svitlo_to if ms.get(c) != today_key and due_at(c, "mtime", MORNING_HOUR)]
+    if due_m:
         n = now.date().toordinal()
         wife_head = (f"☀️ <b>Доброго ранку, {WIFE_NAME}!</b>\n"
                      f"{wife_compliment(now)}\n"
                      f"✨ <i>{MOTIVATION[n % len(MOTIVATION)]}</i>\n{SEP}")
         common = summary(f"☀️ <b>Доброго ранку!</b> · група {GROUP}", today_d, tomorrow_d, all_off, now)
-        msgs.append((common, summary(wife_head, today_d, tomorrow_d, all_off, now)))
-        for g_, cids in svitlo_other.items():         # підписники інших черг — ранкове зведення своєї черги
-            try:
-                gd = dtek_to_days(DTEK_DOC, g_, now)
-                ao = merge(intervals(gd.get("today"), OFF_TYPES) + intervals(gd.get("tomorrow"), OFF_TYPES))
-                txt = summary(f"☀️ <b>Доброго ранку!</b> · група {g_}", gd.get("today"), gd.get("tomorrow"), ao, now)
-                txt = txt.replace(addr_line(), "") if addr_line() else txt   # адреса — лише ваша
-                direct += [(c, txt, False, None) for c in cids]
-            except Exception as e:
-                print(f"Ранок для групи {g_}: {e}")
+        wife_text = summary(wife_head, today_d, tomorrow_d, all_off, now)
+        per_group: dict = {}
+        for c in due_m:
+            ms[c] = today_key
+            if c in family or sub_group(c) == GROUP:
+                txt = wife_text if (WIFE_ID and c == WIFE_ID) else common
+                if c not in family and addr_line():
+                    txt = txt.replace(addr_line(), "")       # адреса — лише ваша
+            else:
+                g_ = sub_group(c)
+                if g_ not in per_group:
+                    try:
+                        gd = dtek_to_days(DTEK_DOC, g_, now)
+                        ao = merge(intervals(gd.get("today"), OFF_TYPES) + intervals(gd.get("tomorrow"), OFF_TYPES))
+                        t_ = summary(f"☀️ <b>Доброго ранку!</b> · група {g_}", gd.get("today"), gd.get("tomorrow"), ao, now)
+                        per_group[g_] = t_.replace(addr_line(), "") if addr_line() else t_
+                    except Exception as e:
+                        print(f"Ранок для групи {g_}: {e}")
+                        per_group[g_] = None
+                txt = per_group[g_]
+            if txt:
+                direct.append((c, txt, False, None))      # саме ранкове зведення (не дублюємо /grafik нижче)
         st["morning_sent"] = now.isoformat()
-    if first_run or st.get("morning") != today_key and now.hour >= MORNING_HOUR:
-        st["morning"] = today_key
+    st["mo_sent"] = {k: v for k, v in ms.items() if v == today_key}
 
     # 3) новий / змінений графік (якщо працює Cloudflare Worker — вам і дружині надсилає він)
     change_msgs: list[str] = []
@@ -3305,7 +3328,7 @@ def main() -> None:
         for ev, t in (("off", a), ("on", b)):
             k = f"{ev}|{t.isoformat()}"
             left = (t - now).total_seconds() / 60
-            if WORKER_MODE or EMERG_ACTIVE or not (0 < left <= REMIND_MIN) or k in rem:   # у режимі Worker нагадує Cloudflare
+            if (WORKER_MODE and worker_alive) or EMERG_ACTIVE or not (0 < left <= REMIND_MIN) or k in rem:   # нагадує Cloudflare; без нього — GitHub
                 continue
             m = round(left)
             if ev == "off":
@@ -3320,12 +3343,18 @@ def main() -> None:
 
     # 5) погода на завтра щодня о WEATHER_HOUR — лише вам і дружині
     topic_msgs: list[tuple[str, str, dict | None, str]] = []   # (тема, текст, кнопки, текст без кнопок)
-    if st.get("weather") != today_key and now.hour >= WEATHER_HOUR:
+    ws = st.setdefault("we_sent", {})                 # погода — у свій час кожного (за замовчуванням 20:00)
+    if first_run:
+        for c in audience("pogoda"):
+            ws[c] = today_key
+    due_w = [c for c in audience("pogoda") if ws.get(c) != today_key and due_at(c, "wtime", WEATHER_HOUR)]
+    if due_w:
         wt = weather_for(now)
         if wt:
             st["weather"] = today_key
             by_d: dict = {}
-            for c in audience("pogoda"):
+            for c in due_w:
+                ws[c] = today_key
                 p_ = PROF.get(c) or {}
                 key_ = (p_.get("city"), p_.get("dist")) if c not in family and p_.get("dist") else None
                 by_d.setdefault(key_, []).append(c)
@@ -3336,6 +3365,7 @@ def main() -> None:
                     nm, la, lo = DISTRICTS.get(key_[0], {}).get(key_[1], (PLACE, LAT, LON))
                     txt = weather_for(now, la, lo, nm) or wt
                 direct += [(c, txt, False, None) for c in cids]
+    st["we_sent"] = {k: v for k, v in ws.items() if v == today_key}
 
     # 6) кіно — п'ятниця 10:00; 7) YouTube — понеділок 10:00 (лише вам і дружині)
     week_key = "%d-%02d" % now.isocalendar()[:2]

@@ -182,6 +182,50 @@ def main() -> None:
                 print(f"Не вдалося надіслати {cid}: {err_text(e)}")
 
 
+STREETS_JS = """() => {                                       // список вулиць зі сторінки ДТЕК (для автопідказки)
+  const seen = new Set(), out = [];
+  const scan = (o, depth) => { if (!o || depth > 3) return;
+    for (const k of Object.keys(o)) { let v; try { v = o[k]; } catch (e) { continue; }
+      if (Array.isArray(v) && v.length > 50 && typeof v[0] === 'string') { for (const s of v) if (!seen.has(s)) { seen.add(s); out.push(s); } }
+      else if (v && typeof v === 'object' && !Array.isArray(v) && depth < 2) scan(v, depth + 1); } };
+  scan(window.DisconSchedule || {}, 0);
+  document.querySelectorAll('datalist option, #street option, [name=street] option').forEach(o => { const s = o.value || o.textContent; if (s && !seen.has(s)) { seen.add(s); out.push(s); } });
+  return out;
+}"""
+TYPE_WORDS = r"\b(вулиця|вул|проспект|просп|пр-т|пр|бульвар|бульв|б-р|провулок|пров|площа|пл|шосе|набережна|наб|узвіз|тупик|алея|майдан|станція|ст)\b\.?"
+
+
+def norm_street(s: str) -> str:
+    s = s.lower().replace("’", "'").replace("ʼ", "'").replace("`", "'").replace("ё", "е")
+    s = re.sub(TYPE_WORDS, " ", s)
+    s = re.sub(r"[^a-zа-яіїєґ0-9' -]", " ", s)
+    return " ".join(s.split())
+
+
+def match_streets(user: str, streets: list[str]) -> list[str]:
+    """Нечіткий пошук: частина назви, помилки, без «вул.», інший порядок слів."""
+    import difflib
+    q = norm_street(user)
+    if not q:
+        return []
+    scored = []
+    for st_ in streets:
+        n = norm_street(st_)
+        if not n:
+            continue
+        if q == n:
+            score = 1.0
+        elif q in n or all(w in n for w in q.split()):
+            score = 0.9 - 0.001 * len(n)               # частина назви — коротші вище
+        else:
+            score = max(difflib.SequenceMatcher(None, q, n).ratio(),
+                        max((difflib.SequenceMatcher(None, w, x).ratio() for w in q.split() for x in n.split()), default=0) - 0.05)
+        if score >= 0.72:
+            scored.append((score, st_))
+    scored.sort(key=lambda x: -x[0])
+    return [s_ for _, s_ in scored[:8]]
+
+
 TYPES = [("проспект", "просп."), ("просп", "просп."), ("вулиця", "вул."), ("вул", "вул."), ("бульвар", "бульв."), ("бульв", "бульв."),
          ("провулок", "пров."), ("пров", "пров."), ("площа", "пл."), ("пл", "пл."), ("шосе", "шосе"), ("набережна", "наб."), ("узвіз", "узвіз")]
 
@@ -211,10 +255,25 @@ def lookup_requests(page) -> None:
     except Exception as e:
         print(f"Адреси підписників: {err_text(e)}")
         return
+    try:
+        streets = page.evaluate(STREETS_JS) or []
+    except Exception:
+        streets = []
+    print(f"Адреси: список вулиць ДТЕК — {len(streets)}")
     for cid, r in list(reqs.items())[:5]:
         street, house = str(r.get("street") or ""), str(r.get("house") or "").lower().replace(" ", "")
         found = None
-        for st in addr_variants(street):
+        exact = bool(r.get("exact"))                     # користувач уже обрав вулицю зі списку
+        cands = [street] if exact else (match_streets(street, streets) if streets else [])
+        if not exact and len(cands) > 1 and norm_street(cands[0]) != norm_street(street):
+            print(f"Адреса підписника: {street} → кілька варіантів {cands[:5]}")
+            try:                                          # просимо уточнити вулицю кнопками
+                check.http_json(f"{check.SYNC_URL}/setgroup?key={check.urllib.parse.quote(check.SYNC_KEY)}",
+                                {"cid": cid, "choices": cands[:8], "house": house})
+            except Exception as e:
+                print(f"setgroup: {err_text(e)}")
+            continue
+        for st in (cands or addr_variants(street)):
             res = page.evaluate(GETHOME_JS, st)
             try:
                 data = json.loads(res.get("text") or "")
