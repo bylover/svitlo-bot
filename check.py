@@ -1092,6 +1092,73 @@ def build_kino(st: dict, title: str = "🍿 <b>ПІДБІРКА КІНО</b>", g
     return finish_kino(st, items[:10], title)
 
 
+# ---------- 🍿 Кіно: спільні пули кандидатів → кожен отримує свої 10 (особистий смак у Cloudflare) ----------
+KP_TITLES = {"mix": "🍿 <b>ПІДБІРКА КІНО</b>", "series": "🍿 <b>ПІДБІРКА · СЕРІАЛИ</b>", "ua": "🍿 <b>ПІДБІРКА · УКРАЇНСЬКЕ КІНО</b>",
+             "now": "🎬 <b>ЗАРАЗ У КІНОТЕАТРАХ</b>"}
+
+
+def kino_candidates(st: dict, genre: str) -> list[dict]:
+    """~25 кандидатів розділу (ті самі фільтри якості, що й у підбірках)."""
+    seen = set()                                      # «бачили» — у кожного свої (Cloudflare), тут не відсікаємо
+    y = datetime.now(TZ).year
+    recent = f"{y - 10}-01-01"
+    if genre == "now":
+        try:
+            res = tmdb("/movie/now_playing", language="uk-UA", region="UA").get("results", [])
+        except Exception:
+            return []
+        out = []
+        for c in sorted(res, key=lambda x: x.get("popularity", 0), reverse=True)[:20]:
+            try:
+                d = kino_details("movie", c["id"])
+            except Exception:
+                continue
+            imdb, rt, mc = omdb_full((d.get("external_ids") or {}).get("imdb_id") or d.get("imdb_id"))
+            out.append({"key": f"m{c['id']}", "kind": "movie", "d": d, "imdb": imdb, "rt": rt, "mc": mc})
+        return out
+    label, gid = KINO_GENRES.get(genre, ("Мікс", None))
+    if genre == "series":
+        return fill("tv", 25, seen, recent, old_share=5)
+    if genre == "ua":
+        ua = {"with_origin_country": "UA"}
+        return fill("movie", 15, seen, "2010-01-01", extra=ua, relaxed=True) + fill("tv", 10, seen, "2010-01-01", extra=ua, relaxed=True)
+    if gid:
+        return fill("movie", 25, seen, recent, extra={"with_genres": str(gid)}, old_share=5)
+    now_ = datetime.now(TZ)
+    return (pick_from_pool(wd_festivals(st, now_), 3, seen, since=recent) + pick_from_pool(trakt_gems(st, now_), 2, seen)
+            + fill("movie", 14, seen, recent, old_share=3) + fill("tv", 6, seen, recent, old_share=1))
+
+
+def kino_pool_refresh(st: dict, now: datetime) -> None:
+    """По одному розділу за запуск, кожен — раз на 12 год; результат — у Cloudflare (меню збирає 10 під кожного)."""
+    if not (TMDB_KEY and WORKER_MODE):
+        return
+    at = st.setdefault("kp_at", {})
+    secs = sorted(KINO_GENRES, key=lambda k: at.get(k, ""))
+    sec = next((k for k in secs if not at.get(k) or now - datetime.fromisoformat(at[k]) > timedelta(hours=12)), None)
+    if not sec:
+        return
+    items = kino_candidates(st, sec)
+    if len(items) < 5:
+        at[sec] = now.isoformat()
+        return
+    review_summaries(items)
+    out = []
+    for it in items:
+        it["page"] = kino_page(st, it)
+        d = it["d"]
+        score = (it.get("imdb") or (d.get("vote_average") or 0)) * 10 + (it.get("rt") or 0) * 0.2 + (it.get("mc") or 0) * 0.2
+        out.append({"k": it["key"], "g": [g.get("id") for g in d.get("genres", []) if g.get("id")], "sc": round(score, 1),
+                    "txt": kino_item(0, it, 220).replace("<b>0. ", "<b>{N}. ", 1)})
+    title = KP_TITLES.get(sec) or f"🍿 <b>ПІДБІРКА КІНО · {KINO_GENRES[sec][0].upper()}</b>"
+    try:
+        http_json(f"{SYNC_URL}/kpush?key={urllib.parse.quote(SYNC_KEY)}", {"sec": sec, "title": title, "items": out})
+        at[sec] = now.isoformat()
+        print(f"Кіно: пул «{sec}» — {len(out)} кандидатів")
+    except Exception as e:
+        print(f"Кіно, пул {sec}: {err_text(e)[:120]}")
+
+
 def finish_kino(st: dict, items: list, title: str, mark_seen: bool = True) -> tuple[str, dict]:
     review_summaries(items)                           # «Що кажуть глядачі» (Gemini, 1 запит)
     for it in items:                                  # окреме вікно з великим постером і кадрами
@@ -2315,6 +2382,127 @@ def fav_match(f: dict, it: list) -> bool:
 
 
 FAVS: dict = {}
+
+
+# ---------- 🔥 Фільми 18+: каталог студійних релізів (StashDB — популярність, ThePornDB — постери й трейлери) ----------
+TPDB_KEY = (os.environ.get("TPDB_KEY") or "").strip()
+STASHDB_KEY = (os.environ.get("STASHDB_KEY") or "").strip()
+X18_EXCL = re.compile(r"\b(teens?|18\s*y|eighteen|young(er)?|youth|school|schoolgirl|student|college|barely|loli|virgin|babysitter|"
+                      r"cheerleader|tiny|petite\s*teen|amateur|homemade|home\s*made|hidden\s*cam|spy\s*cam|voyeur|leak(ed)?|revenge|"
+                      r"real\s*couple\s*leak|caught|non.?consent|drunk|sleep(ing)?|forced|underage)\b", re.I)
+X18_GENRES = {   # код: (назва, регулярка тегів/назви, у «Мікс»?)
+    "rom": ("💕 Романтика", r"romantic|romance|sensual|lovemaking|passionate", True),
+    "cpl": ("👫 Для пар", r"couple", True), "mas": ("💆 Масаж", r"massage", True),
+    "lin": ("👙 Білизна", r"lingerie|stocking", True), "wet": ("🛁 Душ і ванна", r"shower|bath|pool", True),
+    "out": ("🌴 На природі", r"outdoor|beach|nature", True), "les": ("👭 Лесбі", r"lesbian|girl.?girl", True),
+    "ero": ("✨ Еротика", r"erotic|softcore|glamour|solo", True), "pov": ("👀 POV", r"\bpov\b", True),
+    "lat": ("💃 Латина", r"latina", True), "asi": ("🌸 Азійки", r"asian", True), "blo": ("👱‍♀️ Блондинки", r"blonde", True),
+    "rpl": ("🎭 Рольові сюжети", r"role.?play|\bstep|cosplay", False), "bds": ("⛓ BDSM", r"bdsm|bondage|domination|dominatrix|submission|fetish|rough|spanking", False)}
+X18_WOMEN = re.compile(r"bellesa|lust|joymii|x-art|hegre|met.?art|viv thomas|femjoy|wow\s*girls|ultra\s*films|babes|sensual", re.I)
+X18_SECTIONS = ["mix", "new", "best", "women"] + list(X18_GENRES)
+
+
+def stash_gql(query: str, variables: dict) -> dict:
+    r = http_json("https://stashdb.org/graphql", {"query": query, "variables": variables}, headers={"ApiKey": STASHDB_KEY})
+    if r.get("errors"):
+        raise RuntimeError(str(r["errors"])[:300])
+    return r.get("data") or {}
+
+
+STASH_Q = """query($input: SceneQueryInput!){ queryScenes(input:$input){ count scenes{ id title %s details duration
+ urls{ url site{ name } } images{ url width height } studio{ name } performers{ performer{ name gender } } tags{ name } } } }"""
+
+
+def stash_scenes(sort: str, page: int, per: int = 100) -> list:
+    for date_f in ("release_date", "date"):          # схема StashDB змінювалась — пробуємо обидва поля дати
+        try:
+            d = stash_gql(STASH_Q % date_f, {"input": {"page": page, "per_page": per, "sort": sort, "direction": "DESC"}})
+            out = (d.get("queryScenes") or {}).get("scenes") or []
+            for s_ in out:
+                s_["_date"] = s_.get(date_f) or ""
+            return out
+        except Exception as e:
+            err = str(e)
+    print(f"StashDB ({sort}): {err[:200]}")
+    return []
+
+
+def x18_item(s_: dict, rank: int) -> dict | None:
+    tags = [t.get("name", "") for t in (s_.get("tags") or [])]
+    title, studio = str(s_.get("title") or ""), str((s_.get("studio") or {}).get("name") or "")
+    if not title or X18_EXCL.search(title) or any(X18_EXCL.search(t) for t in tags):
+        return None                                   # виключення — до будь-якого сортування
+    imgs = sorted(s_.get("images") or [], key=lambda i: -(i.get("width") or 0))
+    perf = [p["performer"]["name"] for p in (s_.get("performers") or []) if (p.get("performer") or {}).get("name")][:4]
+    url = next((u.get("url") for u in (s_.get("urls") or []) if u.get("url")), "")
+    return {"k": s_.get("id"), "t": title[:120], "s": studio, "d": (s_.get("_date") or "")[:10], "p": perf, "g": tags[:10],
+            "img": imgs[0]["url"] if imgs else "", "imgs": [i["url"] for i in imgs[:6]], "tr": "", "u": url, "r": rank}
+
+
+def tpdb_enrich(it: dict) -> None:
+    """Постер, фон і трейлер із ThePornDB (пошук за студією й назвою)."""
+    if not TPDB_KEY:
+        return
+    try:
+        r = http_json("https://api.theporndb.net/scenes?" + urllib.parse.urlencode({"parse": f"{it['s']} {it['t']}", "per_page": 1}),
+                      headers={"Authorization": f"Bearer {TPDB_KEY}", "Accept": "application/json"})
+        d = (r.get("data") or [None])[0]
+        if not d or fflat(d.get("title", ""))[:20] != fflat(it["t"])[:20]:
+            return
+        poster = d.get("poster") or (d.get("posters") or {}).get("large") or d.get("image")
+        bg = (d.get("background") or {}).get("large") or (d.get("background") or {}).get("full")
+        if poster:
+            it["img"] = poster
+        if bg and bg not in it["imgs"]:
+            it["imgs"] = [bg] + it["imgs"][:5]
+        it["tr"] = d.get("trailer") or ""
+        it["u"] = d.get("url") or it["u"]
+    except Exception as e:
+        print(f"ThePornDB: {err_text(e)[:120]}")
+
+
+def x18_refresh(st: dict, now: datetime) -> None:
+    """Раз на 6 год оновлюємо по 2 розділи (пул ~40 кандидатів) і передаємо в Cloudflare (у репозиторій — ні)."""
+    if not (STASHDB_KEY and WORKER_MODE):
+        return
+    xs = st.setdefault("x18_at", {})
+    todo = sorted(X18_SECTIONS, key=lambda k: xs.get(k, ""))[:2]
+    todo = [k for k in todo if not xs.get(k) or (now - datetime.fromisoformat(xs[k])) > timedelta(hours=6)]
+    if not todo:
+        return
+    if "x18_trend" not in X18_CACHE:                 # популярне (TRENDING) і нове (DATE) — один раз за запуск
+        X18_CACHE["x18_trend"] = [s_ for pg in (1, 2, 3) for s_ in stash_scenes("TRENDING", pg)]
+        X18_CACHE["x18_new"] = [s_ for pg in (1, 2) for s_ in stash_scenes("DATE", pg)]
+        print(f"StashDB: популярних {len(X18_CACHE['x18_trend'])}, нових {len(X18_CACHE['x18_new'])}")
+        if X18_CACHE["x18_trend"][:1]:
+            print(f"StashDB приклад полів: {list(X18_CACHE['x18_trend'][0].keys())}")
+    trend = [x for i, s_ in enumerate(X18_CACHE["x18_trend"]) if (x := x18_item(s_, i))]
+    new = [x for i, s_ in enumerate(X18_CACHE["x18_new"]) if (x := x18_item(s_, i))]
+    in_g = lambda it, code: re.search(X18_GENRES[code][1], " ".join(it["g"]) + " " + it["t"], re.I)
+    adult_only = lambda it: any(in_g(it, c) for c, v in X18_GENRES.items() if not v[2])
+    for sec in todo:
+        if sec == "new":
+            pool = [it for it in new if not adult_only(it)]
+        elif sec == "best":
+            pool = [it for it in trend if not adult_only(it)]
+        elif sec == "mix":
+            pool = [it for it in trend[:120] + new[:60] if not adult_only(it)]
+        elif sec == "women":
+            pool = [it for it in trend + new if X18_WOMEN.search(it["s"]) or in_g(it, "rom") or in_g(it, "cpl")]
+        else:
+            pool = [it for it in trend + new if in_g(it, sec)]
+        pool = list({it["k"]: it for it in pool}.values())[:40]
+        for it in pool[:20]:
+            tpdb_enrich(it)                           # постер/трейлер — для перших 20
+        try:
+            http_json(f"{SYNC_URL}/x18push?key={urllib.parse.quote(SYNC_KEY)}", {"sec": sec, "items": pool})
+            xs[sec] = now.isoformat()
+            print(f"Фільми 18+: розділ {sec} — {len(pool)} кандидатів")
+        except Exception as e:
+            print(f"Фільми 18+ ({sec}): {err_text(e)[:120]}")
+
+
+X18_CACHE: dict = {}
 
 
 def brand_of(p_: dict) -> str:
@@ -3548,6 +3736,14 @@ def main() -> None:
     para_due = (now.weekday() in PARA_DAYS and PARA_HOUR <= now.hour < PARA_HOUR + 4
                 and st.get("para_sent") != today_key)
     collect_content(st, now)                          # раз на день оновлюємо пул свіжих матеріалів 18+
+    try:
+        kino_pool_refresh(st, now)                    # 🍿 пули кандидатів — особистий смак кожного (етап 5)
+    except Exception as e:
+        print(f"Кіно, пули: {err_text(e)[:120]}")
+    try:
+        x18_refresh(st, now)                          # 🔥 фільми 18+ (каталог; у Cloudflare, не в репозиторій)
+    except Exception as e:
+        print(f"Фільми 18+: {err_text(e)[:120]}")
     try:
         quiz_refresh(now)                             # етап 3: банк вікторин (одна тема за запуск)
     except Exception as e:
