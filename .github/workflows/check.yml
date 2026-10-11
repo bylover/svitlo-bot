@@ -61,6 +61,7 @@ jobs:
           [ -f silpo_prices.json ] && git add silpo_prices.json
           [ -f fact.png ] && git add fact.png
           [ -f quiz_pool.json ] && git add quiz_pool.json
+          [ -d silpo ] && git add silpo
           git diff --cached --quiet && exit 0
           git commit -m "state"
           for i in 1 2 3; do
