@@ -40,6 +40,8 @@ jobs:
           TMDB_KEY: ${{ secrets.TMDB_KEY }}
           OMDB_KEY: ${{ secrets.OMDB_KEY }}
           TRAKT_ID: ${{ secrets.TRAKT_ID }}
+          TPDB_KEY: ${{ secrets.TPDB_KEY }}
+          STASHDB_KEY: ${{ secrets.STASHDB_KEY }}
           YT_KEY: ${{ secrets.YT_KEY }}
           GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
           GIPHY_KEY: ${{ secrets.GIPHY_KEY }}
