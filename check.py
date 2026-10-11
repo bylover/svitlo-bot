@@ -209,7 +209,7 @@ SOURCES_TEXT = (
     "<blockquote>• «Велика п'ятірка» — науковий опитувальник IPIP-NEO (J. A. Johnson), український переклад з відкритого пакета b5 (ліцензія MIT); 60 питань — по 2 на кожну з 30 граней характеру\n"
     "• Результат — самоопис, а не діагноз; середнє по боту — для порівняння</blockquote>"
 )
-WELCOME = "👋 <b>Hey there, night owl!</b>\nI'm your blackout buddy — I know when the lights go out before your toe meets the furniture. 💡\n\n🌤 I read the sky, 🍿 pick movies for the couch, ▶️ dig up the best of YouTube, 📈 spy on marketing trends and 🛒 hunt Silpo deals.\n💞 And when it gets dark… I whisper 18+ tips that make blackouts way less boring. 😏\n\n<i>Tap the menu ☰ and let's turn the lights on — one way or another.</i>"
+WELCOME = "✨ <b>Світло. Погода. Кіно. Знижки. І трохи пікантного.</b>\n💡 Графіки й сповіщення ДТЕК — миттєво\n🌦 Погода саме для твого району\n🍿 Кіно під твій смак · ▶️ найкраще з українського YouTube\n🛒 Вигідні акції Сільпо й торгових центрів\n🎯 Вікторини · 🧠 Тести\n💞 18+ — для дорослих 😏\n\n👇 Усе — в кнопках унизу."
 KINO_HINT = "<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n"
 SEND_NOW = os.environ.get("SEND_NOW") == "1"             # ручний запуск — надіслати графік одразу
 OFF_TYPES = {"Definite"} | ({"Possible"} if os.environ.get("INCLUDE_POSSIBLE") == "1" else set())
@@ -2505,6 +2505,137 @@ def x18_refresh(st: dict, now: datetime) -> None:
 X18_CACHE: dict = {}
 
 
+# ---------- 🛍 Знижки в ТЦ (Київ, Вінниця): сторінки акцій ТЦ → ШІ витягує структуру → лише чинні ----------
+MALLS = {"kyiv": [("Lavina Mall", "https://lavina.ua"), ("Blockbuster Mall", "https://blockbuster.ua"), ("Gulliver", "https://gulliver.ua"),
+                  ("Respublika Park", "https://respublikapark.com.ua"), ("River Mall", "https://rivermall.com.ua"),
+                  ("Retroville", "https://retroville.com.ua"), ("Dream Town", "https://dreamtown.ua"), ("SkyMall", "https://skymall.ua"),
+                  ("Globus", "https://globus.com.ua"), ("Ocean Mall", "https://oceanmall.com.ua"), ("Smart Plaza", "https://smartplaza.com.ua"),
+                  ("Cosmopolite", "https://cosmopolite.com.ua")],
+         "vin": [("Megamall", "https://megamall.vn.ua"), ("Sky Park", "https://skypark.vn.ua"), ("Магігранд", "https://magigrand.com.ua"),
+                 ("Пасаж", "https://passage.vn.ua")]}
+TC_CATS = ["білизна", "одяг", "взуття", "ювелірка", "парфуми й косметика", "аксесуари", "техніка", "дитяче", "дім", "спорт", "їжа й кафе",
+           "іграшки 18+", "інше"]
+TC_WOMEN = {"білизна": 0, "одяг": 1, "ювелірка": 2, "парфуми й косметика": 3, "взуття": 4, "аксесуари": 5}   # жіночі — вище
+SEX_SHOPS = [("Насолода", "https://nasoloda.ua", "🏪 магазини + онлайн"), ("Lovespace", "https://lovespace.ua", "🏪 магазини + онлайн"),
+             ("Kazanova", "https://kazanova.ua", "🌐 онлайн"), ("Sextoys", "https://sextoys.com.ua", "🌐 онлайн"),
+             ("Sexify", "https://sexify.com.ua", "🌐 онлайн"), ("Intimshop", "https://intimshop.ua", "🌐 онлайн")]
+PROMO_LINK = re.compile(r'<a[^>]+href="([^"#]+)"[^>]*>(.*?)</a>', re.I | re.S)
+PROMO_WORD = re.compile(r"акці|знижк|sale|promo|offer|aktsi|akci|skidk|розпродаж", re.I)
+
+
+def tc_promo_url(root: str) -> str | None:
+    """Знаходимо на головній сторінці ТЦ посилання на «Акції» / «Знижки»."""
+    page = http_text(root)
+    best = None
+    for href, txt in PROMO_LINK.findall(page):
+        t = strip_html(txt)
+        if PROMO_WORD.search(t) or PROMO_WORD.search(href):
+            url = urllib.parse.urljoin(root + "/", href)
+            if urllib.parse.urlparse(url).netloc.split(":")[0].endswith(urllib.parse.urlparse(root).netloc.replace("www.", "")):
+                if not best or ("акці" in t.lower() or "знижк" in t.lower()):
+                    best = url
+                    if "акці" in t.lower():
+                        break
+    return best
+
+
+def tc_extract(mall: str, url: str, now: datetime) -> list[dict]:
+    page = http_text(url)
+    links = []
+    for href, txt in PROMO_LINK.findall(page)[:400]:
+        t = strip_html(txt)[:80]
+        if t and len(t) > 3:
+            links.append(f"{t} → {urllib.parse.urljoin(url, href)}")
+    text = strip_html(page)[:14000]
+    raw = gemini(f"Сьогодні {now:%Y-%m-%d}. Це сторінка акцій торгового центру «{mall}». Витягни ВСІ акції магазинів. "
+                 "Для кожної: shop (назва магазину), offer (коротко українською, що за акція), discount (наприклад «−30%» або «2+1», якщо є), "
+                 "start і end (YYYY-MM-DD; якщо не вказано — порожньо), url (посилання на сторінку акції зі списку посилань, якщо є), "
+                 f"category (одне з: {', '.join(TC_CATS)}). Не вигадуй — лише те, що є на сторінці. Поверни лише JSON-масив.\n\n"
+                 f"ТЕКСТ СТОРІНКИ:\n{text}\n\nПОСИЛАННЯ:\n" + "\n".join(links[:250]), json_mode=True, max_tokens=4000)
+    try:
+        arr = json.loads(raw or "[]")
+    except Exception:
+        return []
+    out = []
+    for x in arr if isinstance(arr, list) else []:
+        shop, offer = str(x.get("shop") or "").strip(), str(x.get("offer") or "").strip()
+        if not shop or not offer:
+            continue
+        out.append({"mall": mall, "shop": shop[:60], "offer": offer[:160], "disc": str(x.get("discount") or "")[:20],
+                    "start": str(x.get("start") or "")[:10], "end": str(x.get("end") or "")[:10],
+                    "url": str(x.get("url") or url)[:300], "cat": x.get("category") if x.get("category") in TC_CATS else "інше"})
+    return out
+
+
+def tc_refresh(st: dict, now: datetime) -> None:
+    """Двічі на день (≈8:00 і ≈18:00): усі ТЦ; лишаємо тільки чинні акції; результат — у Cloudflare."""
+    if not WORKER_MODE:
+        return
+    slot = f"{now:%Y-%m-%d}-{'am' if now.hour < 14 else 'pm'}"
+    if st.get("tc_slot") == slot or not (8 <= now.hour < 11 or 18 <= now.hour < 21):
+        return
+    st["tc_slot"] = slot
+    today = now.date().isoformat()
+    first = st.setdefault("tc_first", {})             # коли акцію вперше побачили (для акцій без дат — максимум 10 днів)
+    rep = []
+    for city, malls in MALLS.items():
+        items = []
+        for mall, root in malls:
+            try:
+                url = tc_promo_url(root) or root
+                got = tc_extract(mall, url, now)
+                rep.append({"mall": mall, "city": city, "ok": True, "n": len(got), "url": url})
+            except Exception as e:
+                rep.append({"mall": mall, "city": city, "ok": False, "err": err_text(e)[:80]})
+                continue
+            for it in got:
+                k = hashlib.md5(f"{mall}|{it['shop']}|{it['offer']}".encode()).hexdigest()[:10]
+                first.setdefault(k, today)
+                it["k"], it["seen"] = k, first[k]
+                if it["end"] and it["end"] < today:
+                    continue                          # закінчилась — прибираємо одразу
+                if it["start"] and it["start"] > today:
+                    continue                          # ще не почалась
+                if not it["end"] and (now.date() - datetime.fromisoformat(first[k]).date()).days > 10:
+                    continue                          # без дат — показуємо не довше 10 днів
+                items.append(it)
+        items.sort(key=lambda x: (x["seen"], -TC_WOMEN.get(x["cat"], 9), x["start"]), reverse=True)
+        try:
+            http_json(f"{SYNC_URL}/tcpush?key={urllib.parse.quote(SYNC_KEY)}",
+                      {"city": city, "items": items[:400], "at": now.strftime("%d.%m %H:%M"), "rep": [r for r in rep if r["city"] == city]})
+        except Exception as e:
+            print(f"ТЦ ({city}): {err_text(e)[:100]}")
+        print(f"ТЦ {city}: чинних акцій {len(items)} · ТЦ відкрилось {sum(1 for r in rep if r['city'] == city and r['ok'])}/{len(malls)}")
+    sx = []                                           # 🔞 секс-шопи (онлайн і офлайн) — окремо, лише в розділі 18+
+    for shop, root, kind in SEX_SHOPS:
+        try:
+            url = tc_promo_url(root) or root
+            got = tc_extract(shop, url, now)
+            rep.append({"mall": shop, "city": "sex", "ok": True, "n": len(got), "url": url})
+        except Exception as e:
+            rep.append({"mall": shop, "city": "sex", "ok": False, "err": err_text(e)[:80]})
+            continue
+        for it in got:
+            k = hashlib.md5(f"{shop}|{it['offer']}".encode()).hexdigest()[:10]
+            first.setdefault(k, today)
+            it.update(k=k, seen=first[k], kind=kind)
+            if (it["end"] and it["end"] < today) or (it["start"] and it["start"] > today) or \
+                    (not it["end"] and (now.date() - datetime.fromisoformat(first[k]).date()).days > 10):
+                continue
+            sx.append(it)
+    sx.sort(key=lambda x: (x["seen"], x["start"]), reverse=True)
+    try:
+        http_json(f"{SYNC_URL}/tcpush?key={urllib.parse.quote(SYNC_KEY)}",
+                  {"city": "sex", "items": sx[:200], "at": now.strftime("%d.%m %H:%M"), "rep": [r for r in rep if r["city"] == "sex"]})
+    except Exception as e:
+        print(f"Секс-шопи: {err_text(e)[:100]}")
+    print(f"Секс-шопи: чинних акцій {len(sx)}")
+    for r in rep:
+        print(f"   ТЦ {r['mall']}: {'✅ ' + str(r['n']) + ' акцій · ' + r['url'] if r['ok'] else '❌ ' + r['err']}")
+    cut = (now.date() - timedelta(days=60)).isoformat()
+    st["tc_first"] = {k: v for k, v in first.items() if v >= cut}
+
+
 def brand_of(p_: dict) -> str:
     b = p_.get("brandTitle") or p_.get("brandName") or p_.get("brand") or ""
     if isinstance(b, dict):
@@ -3736,6 +3867,10 @@ def main() -> None:
     para_due = (now.weekday() in PARA_DAYS and PARA_HOUR <= now.hour < PARA_HOUR + 4
                 and st.get("para_sent") != today_key)
     collect_content(st, now)                          # раз на день оновлюємо пул свіжих матеріалів 18+
+    try:
+        tc_refresh(st, now)                           # 🛍 знижки в ТЦ — двічі на день
+    except Exception as e:
+        print(f"ТЦ: {err_text(e)[:120]}")
     try:
         kino_pool_refresh(st, now)                    # 🍿 пули кандидатів — особистий смак кожного (етап 5)
     except Exception as e:
