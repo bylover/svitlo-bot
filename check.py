@@ -2591,8 +2591,17 @@ def tc_promo_url(root: str) -> str | None:
     return best
 
 
+TC_CACHE: dict = {}                                        # сторінка не змінилась — беремо минулий результат без ШІ
+
+
 def tc_extract(mall: str, url: str, now: datetime) -> list[dict]:
     page = tc_get(url)
+    h = hashlib.md5(strip_html(page)[:14000].encode()).hexdigest()[:12]
+    old = TC_CACHE.get(url)
+    if old and old.get("h") == h and old.get("items") is not None:
+        TC_STATS["cached"] += 1
+        return [dict(x) for x in old["items"]]
+    TC_STATS["ai"] += 1
     links = []
     for href, txt in PROMO_LINK.findall(page)[:400]:
         t = strip_html(txt)[:80]
@@ -2616,17 +2625,23 @@ def tc_extract(mall: str, url: str, now: datetime) -> list[dict]:
         out.append({"mall": mall, "shop": shop[:60], "offer": offer[:160], "disc": str(x.get("discount") or "")[:20],
                     "start": str(x.get("start") or "")[:10], "end": str(x.get("end") or "")[:10],
                     "url": str(x.get("url") or url)[:300], "cat": x.get("category") if x.get("category") in TC_CATS else "інше"})
+    if raw:                                           # кешуємо лише успішну відповідь ШІ
+        TC_CACHE[url] = {"h": h, "items": out}
     return out
 
 
-def tc_refresh(st: dict, now: datetime) -> None:
-    """Двічі на день (≈8:00 і ≈18:00): усі ТЦ; лишаємо тільки чинні акції; результат — у Cloudflare."""
+TC_STATS = {"ai": 0, "cached": 0}
+
+
+def tc_refresh(st: dict, now: datetime, force: bool = False) -> str | None:
+    """Двічі на день (≈8:00 і ≈18:00) або за командою /tcnow: усі ТЦ, бренди, секс-шопи; лише чинні акції → Cloudflare."""
     if not WORKER_MODE:
-        return
+        return None
     slot = f"{now:%Y-%m-%d}-{'am' if now.hour < 14 else 'pm'}"
-    if st.get("tc_slot") == slot or not (8 <= now.hour < 11 or 18 <= now.hour < 21):
-        return
+    if not force and (st.get("tc_slot") == slot or not (8 <= now.hour < 11 or 18 <= now.hour < 21)):
+        return None
     st["tc_slot"] = slot
+    TC_CACHE.update(st.get("tc_cache") or {})
     today = now.date().isoformat()
     first = st.setdefault("tc_first", {})             # коли акцію вперше побачили (для акцій без дат — максимум 10 днів)
     rep = []
@@ -2712,6 +2727,12 @@ def tc_refresh(st: dict, now: datetime) -> None:
         print(f"   ТЦ {r['mall']}: {'✅ ' + str(r['n']) + ' акцій · ' + r['url'] if r['ok'] else '❌ ' + r['err']}")
     cut = (now.date() - timedelta(days=60)).isoformat()
     st["tc_first"] = {k: v for k, v in first.items() if v >= cut}
+    st["tc_cache"] = dict(list(TC_CACHE.items())[-80:])
+    print(f"ТЦ: запитів до ШІ {TC_STATS['ai']}, без змін (з кешу) {TC_STATS['cached']}")
+    bad = [r["mall"] for r in rep if not r["ok"]]
+    zero = [r["mall"] for r in rep if r["ok"] and not r["n"]]
+    return (f"🛍 <b>Збір акцій завершено</b>\n✅ відкрилось {sum(1 for r in rep if r['ok'])}/{len(rep)} сайтів · ШІ {TC_STATS['ai']} · з кешу {TC_STATS['cached']}"
+            + (f"\n❌ не відкрились: {esc(', '.join(bad))}" if bad else "") + (f"\n⚪ 0 акцій: {esc(', '.join(zero))}" if zero else ""))
 
 
 def brand_of(p_: dict) -> str:
@@ -3947,7 +3968,11 @@ def main() -> None:
                 and st.get("para_sent") != today_key)
     collect_content(st, now)                          # раз на день оновлюємо пул свіжих матеріалів 18+
     try:
-        tc_refresh(st, now)                           # 🛍 знижки в ТЦ — двічі на день
+        tc_req = [str(c) for c in worker_req.get("tcnow", [])]
+        tc_rep = tc_refresh(st, now, force=bool(tc_req))  # 🛍 знижки в ТЦ — двічі на день або за /tcnow
+        if tc_rep and tc_req:
+            for c in tc_req:
+                send(c, tc_rep)
     except Exception as e:
         print(f"ТЦ: {err_text(e)[:120]}")
     try:
