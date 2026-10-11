@@ -1,0 +1,53 @@
+name: TC promos
+on:
+  schedule:
+    - cron: "30 7 * * *"
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+    inputs:
+      chat:
+        description: "Кому надіслати звіт (службове)"
+        default: ""
+        required: false
+permissions:
+  contents: write
+concurrency:
+  group: tc-promos
+  cancel-in-progress: false
+jobs:
+  tc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-v1
+      - name: Install browser
+        run: |
+          pip install -q playwright
+          python -m playwright install --with-deps chromium
+      - name: Collect promos
+        run: python3 tc_browser.py
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+          GROUP: ${{ secrets.GROUP }}
+          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+          SYNC_URL: ${{ secrets.SYNC_URL }}
+          SYNC_KEY: ${{ secrets.SYNC_KEY }}
+          REQ_CHAT: ${{ inputs.chat }}
+      - name: Save state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898208+github-actions[bot]@users.noreply.github.com"
+          [ -f tc_state.json ] || exit 0
+          git add tc_state.json
+          git diff --cached --quiet && exit 0
+          git commit -m "tc"
+          for i in 1 2 3; do git pull --rebase -q && git push -q && exit 0; sleep 5; done
+          exit 1
