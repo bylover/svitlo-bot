@@ -2575,8 +2575,34 @@ def tc_root(roots: str) -> str:
     raise last or RuntimeError("немає адреси")
 
 
+PROMO_PATHS = ["/akcii", "/aktsii", "/aktsiyi", "/ua/akcii", "/promo", "/ua/promo", "/sales", "/sale", "/actions", "/ua/actions", "/offers"]
+
+
+def promo_score(html_: str) -> int:
+    t = strip_html(html_).lower()
+    return t.count("%") + 3 * len(re.findall(r"знижк|акці|розпродаж|sale|-\d{2}\s*%", t))
+
+
 def tc_promo_url(root: str) -> str | None:
-    """Знаходимо на головній сторінці ТЦ посилання на «Акції» / «Знижки»."""
+    """Сторінка акцій: кандидати з посилань головної + типові адреси; беремо ту, де найбільше ознак акцій."""
+    page = tc_get(root)
+    cands = []
+    for href, txt in PROMO_LINK.findall(page):
+        t = strip_html(txt)
+        if PROMO_WORD.search(t) or PROMO_WORD.search(href):
+            url = urllib.parse.urljoin(root + "/", href)
+            if urllib.parse.urlparse(url).netloc.replace("www.", "") == urllib.parse.urlparse(root).netloc.replace("www.", ""):
+                cands.append(url)
+    cands = list(dict.fromkeys(cands))[:3] or [root.rstrip("/") + p_ for p_ in PROMO_PATHS[:4]]
+    best, best_s = None, promo_score(page) // 2          # головна — як запасний варіант
+    for u in cands:
+        try:
+            sc = promo_score(tc_get(u))
+        except Exception:
+            continue
+        if sc > best_s:
+            best, best_s = u, sc
+    return best
     page = tc_get(root)
     best = None
     for href, txt in PROMO_LINK.findall(page):
@@ -3968,11 +3994,7 @@ def main() -> None:
                 and st.get("para_sent") != today_key)
     collect_content(st, now)                          # раз на день оновлюємо пул свіжих матеріалів 18+
     try:
-        tc_req = [str(c) for c in worker_req.get("tcnow", [])]
-        tc_rep = tc_refresh(st, now, force=bool(tc_req))  # 🛍 знижки в ТЦ — двічі на день або за /tcnow
-        if tc_rep and tc_req:
-            for c in tc_req:
-                send(c, tc_rep)
+        pass                                          # 🛍 акції ТЦ збирає окремий процес із браузером (tc.yml)
     except Exception as e:
         print(f"ТЦ: {err_text(e)[:120]}")
     try:
