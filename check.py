@@ -354,7 +354,11 @@ def http_json(url: str, payload: dict | None = None, headers: dict | None = None
     req = urllib.request.Request(url, data=data, headers={
         "User-Agent": "Mozilla/5.0", "Content-Type": "application/json", **(headers or {})})
     with urllib.request.urlopen(req, timeout=30) as r:
-        return json.load(r)
+        body = r.read()
+    try:
+        return json.loads(body)
+    except ValueError:                               # відповідь не JSON (напр. «ok») — не помилка
+        return {"_text": body.decode("utf-8", "replace")[:200]}
 
 
 def fetch_dtek() -> dict:
@@ -2506,26 +2510,74 @@ X18_CACHE: dict = {}
 
 
 # ---------- 🛍 Знижки в ТЦ (Київ, Вінниця): сторінки акцій ТЦ → ШІ витягує структуру → лише чинні ----------
-MALLS = {"kyiv": [("Lavina Mall", "https://lavina.ua"), ("Blockbuster Mall", "https://blockbuster.ua"), ("Gulliver", "https://gulliver.ua"),
-                  ("Respublika Park", "https://respublikapark.com.ua"), ("River Mall", "https://rivermall.com.ua"),
-                  ("Retroville", "https://retroville.com.ua"), ("Dream Town", "https://dreamtown.ua"), ("SkyMall", "https://skymall.ua"),
-                  ("Globus", "https://globus.com.ua"), ("Ocean Mall", "https://oceanmall.com.ua"), ("Smart Plaza", "https://smartplaza.com.ua"),
-                  ("Cosmopolite", "https://cosmopolite.com.ua")],
-         "vin": [("Megamall", "https://megamall.vn.ua"), ("Sky Park", "https://skypark.vn.ua"), ("Магігранд", "https://magigrand.com.ua"),
-                 ("Пасаж", "https://passage.vn.ua")]}
+MALLS = {   # (назва, варіанти адреси — перший, що відкриється)
+    "kyiv": [("Lavina Mall", "https://lavinamall.ua|https://lavina.com.ua|https://www.lavinamall.com.ua"),
+             ("Blockbuster Mall", "https://blockbuster.ua|https://blockbustermall.com.ua"),
+             ("Gulliver", "https://gulliver.ua|https://gulliver.com.ua"), ("Respublika Park", "https://respublikapark.com.ua"),
+             ("River Mall", "https://rivermall.com.ua"), ("Retroville", "https://retroville.ua|https://www.retroville.ua|https://retroville.kiev.ua"),
+             ("Dream Town", "https://dreamtown.ua"), ("SkyMall", "https://skymall.ua"), ("Globus", "https://globus.com.ua"),
+             ("Ocean Mall", "https://oceanmall.com.ua|https://oceanmall.ua"), ("Smart Plaza", "https://smartplaza.com.ua"),
+             ("Cosmopolite", "https://cosmopolite.ua|https://cosmopolite.kiev.ua|https://www.cosmopolite.com.ua"),
+             ("Atmosfera", "https://atmosfera.ua"), ("Prospekt", "https://prospekt.ua|https://prospekt.com.ua"),
+             ("Silpo Mall / Арена", "https://arenacity.ua|https://arena-city.com.ua")],
+    "vin": [("Megamall", "https://megamall.com.ua|https://megamall.vn.ua|https://megamall.ua"),
+            ("Sky Park", "https://skypark.com.ua|https://skypark.vn.ua|https://skypark.ua"),
+            ("Магігранд", "https://magigrand.ua|https://magigrand.com.ua"), ("Плаза Парк", "https://plazapark.com.ua|https://plazapark.vn.ua"),
+            ("Ветеран", "https://veteran.vn.ua|https://tcveteran.com.ua")]}
+WOMEN_BRANDS = [   # білизна й жіночий одяг — онлайн і мережі магазинів (акції чинні по всій Україні)
+    ("Intimissimi", "https://www.intimissimi.com/ua|https://intimissimi.com.ua", "👙 білизна · 🏪 + 🌐"),
+    ("Women'secret", "https://womensecret.com/ua|https://womensecret.ua", "👙 білизна · 🏪 + 🌐"),
+    ("Milavitsa", "https://milavitsa.ua|https://milavitsa.com.ua", "👙 білизна · 🏪 + 🌐"),
+    ("Anabel Arto", "https://anabelarto.com|https://anabelarto.ua", "👙 білизна · 🏪 + 🌐"),
+    ("Jasmine", "https://jasminelingerie.com|https://jasmine-lingerie.com.ua", "👙 білизна · 🌐"),
+    ("Calzedonia", "https://www.calzedonia.com/ua|https://calzedonia.ua", "👙 білизна · 🏪 + 🌐"),
+    ("Reserved", "https://www.reserved.com/ua/uk|https://reserved.ua", "👗 одяг · 🏪 + 🌐"),
+    ("Mohito", "https://www.mohito.com/ua/uk|https://mohito.ua", "👗 одяг · 🏪 + 🌐"),
+    ("Sinsay", "https://www.sinsay.com/ua/uk", "👗 одяг · 🏪 + 🌐"),
+    ("Kasta", "https://kasta.ua", "👗 одяг · 🌐"), ("Answear", "https://answear.ua", "👗 одяг · 🌐"),
+    ("EVA", "https://eva.ua", "🌸 косметика · 🏪 + 🌐"), ("Watsons", "https://www.watsons.ua", "🌸 косметика · 🏪 + 🌐"),
+    ("Pandora", "https://pandora.ua|https://ua.pandora.net", "💍 ювелірка · 🏪 + 🌐"), ("Zarina", "https://zarina.ua", "💍 ювелірка · 🏪 + 🌐")]
 TC_CATS = ["білизна", "одяг", "взуття", "ювелірка", "парфуми й косметика", "аксесуари", "техніка", "дитяче", "дім", "спорт", "їжа й кафе",
            "іграшки 18+", "інше"]
 TC_WOMEN = {"білизна": 0, "одяг": 1, "ювелірка": 2, "парфуми й косметика": 3, "взуття": 4, "аксесуари": 5}   # жіночі — вище
 SEX_SHOPS = [("Насолода", "https://nasoloda.ua", "🏪 магазини + онлайн"), ("Lovespace", "https://lovespace.ua", "🏪 магазини + онлайн"),
+             ("Інтимка", "https://intimka.com.ua|https://intimka.ua|https://www.intimka.com.ua", "🏪 магазини + онлайн"),
+             ("Дім 69", "https://dim69.com.ua|https://dom69.com.ua|https://dim69.ua", "🏪 магазини + онлайн"),
              ("Kazanova", "https://kazanova.ua", "🌐 онлайн"), ("Sextoys", "https://sextoys.com.ua", "🌐 онлайн"),
-             ("Sexify", "https://sexify.com.ua", "🌐 онлайн"), ("Intimshop", "https://intimshop.ua", "🌐 онлайн")]
+             ("Sexify", "https://sexify.com.ua", "🌐 онлайн"), ("Intimshop", "https://intimshop.ua|https://intimshop.com.ua", "🌐 онлайн"),
+             ("Puzzle", "https://puzzle-shop.com.ua|https://puzzleshop.com.ua", "🌐 онлайн"), ("LoveYou", "https://loveyou.ua", "🌐 онлайн")]
 PROMO_LINK = re.compile(r'<a[^>]+href="([^"#]+)"[^>]*>(.*?)</a>', re.I | re.S)
 PROMO_WORD = re.compile(r"акці|знижк|sale|promo|offer|aktsi|akci|skidk|розпродаж", re.I)
 
 
+def tc_get(url: str) -> str:
+    """Сторінка сайту; якщо в сайту проблемний SSL-сертифікат — повтор без суворої перевірки (лише читання публічних сторінок)."""
+    try:
+        return http_text(url)
+    except Exception as e:
+        if "CERTIFICATE" not in str(e).upper() and "SSL" not in str(e).upper():
+            raise
+        import ssl
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=30, context=ssl._create_unverified_context()) as r:
+            return r.read().decode("utf-8", "replace")
+
+
+def tc_root(roots: str) -> str:
+    """Перший робочий варіант адреси ТЦ / магазину."""
+    last = None
+    for r_ in roots.split("|"):
+        try:
+            tc_get(r_)
+            return r_
+        except Exception as e:
+            last = e
+    raise last or RuntimeError("немає адреси")
+
+
 def tc_promo_url(root: str) -> str | None:
     """Знаходимо на головній сторінці ТЦ посилання на «Акції» / «Знижки»."""
-    page = http_text(root)
+    page = tc_get(root)
     best = None
     for href, txt in PROMO_LINK.findall(page):
         t = strip_html(txt)
@@ -2540,7 +2592,7 @@ def tc_promo_url(root: str) -> str | None:
 
 
 def tc_extract(mall: str, url: str, now: datetime) -> list[dict]:
-    page = http_text(url)
+    page = tc_get(url)
     links = []
     for href, txt in PROMO_LINK.findall(page)[:400]:
         t = strip_html(txt)[:80]
@@ -2582,6 +2634,7 @@ def tc_refresh(st: dict, now: datetime) -> None:
         items = []
         for mall, root in malls:
             try:
+                root = tc_root(root)
                 url = tc_promo_url(root) or root
                 got = tc_extract(mall, url, now)
                 rep.append({"mall": mall, "city": city, "ok": True, "n": len(got), "url": url})
@@ -2606,9 +2659,34 @@ def tc_refresh(st: dict, now: datetime) -> None:
         except Exception as e:
             print(f"ТЦ ({city}): {err_text(e)[:100]}")
         print(f"ТЦ {city}: чинних акцій {len(items)} · ТЦ відкрилось {sum(1 for r in rep if r['city'] == city and r['ok'])}/{len(malls)}")
+    br_items = []                                     # 👙 білизна, жіночий одяг, косметика, ювелірка — бренди (онлайн і магазини)
+    for shop, roots, kind in WOMEN_BRANDS:
+        try:
+            root = tc_root(roots)
+            url = tc_promo_url(root) or root
+            got = tc_extract(shop, url, now)
+            rep.append({"mall": shop, "city": "brands", "ok": True, "n": len(got), "url": url})
+        except Exception as e:
+            rep.append({"mall": shop, "city": "brands", "ok": False, "err": err_text(e)[:80]})
+            continue
+        for it in got:
+            k = hashlib.md5(f"{shop}|{it['offer']}".encode()).hexdigest()[:10]
+            first.setdefault(k, today)
+            it.update(k=k, seen=first[k], kind=kind, mall="Бренди")
+            if (it["end"] and it["end"] < today) or (it["start"] and it["start"] > today) or \
+                    (not it["end"] and (now.date() - datetime.fromisoformat(first[k]).date()).days > 10):
+                continue
+            br_items.append(it)
+    try:
+        http_json(f"{SYNC_URL}/tcpush?key={urllib.parse.quote(SYNC_KEY)}",
+                  {"city": "brands", "items": br_items[:300], "at": now.strftime("%d.%m %H:%M"), "rep": [r for r in rep if r["city"] == "brands"]})
+    except Exception as e:
+        print(f"Бренди: {err_text(e)[:100]}")
+    print(f"Бренди (білизна, одяг, косметика): чинних акцій {len(br_items)}")
     sx = []                                           # 🔞 секс-шопи (онлайн і офлайн) — окремо, лише в розділі 18+
     for shop, root, kind in SEX_SHOPS:
         try:
+            root = tc_root(root)
             url = tc_promo_url(root) or root
             got = tc_extract(shop, url, now)
             rep.append({"mall": shop, "city": "sex", "ok": True, "n": len(got), "url": url})
@@ -2788,7 +2866,8 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
     except Exception as e:
         print(f"Сільпо, файл акцій: {err_text(e)}")
     best.sort(key=lambda x: x[0], reverse=True)       # одне повідомлення: топ-10 + кнопки категорій
-    top = [f"{n_}. {emo_} {esc(p_.get('title'))} — <b>{price:g} ₴</b> <s>{old:g} ₴</s> · −{pct:.0f}%"
+    top = [f'{n_}. {emo_} <a href="https://silpo.ua/product/{html.escape(str(p_.get("slug") or ""))}">{esc(p_.get("title"))}</a>'
+           f" — <b>{price:g} ₴</b> <s>{old:g} ₴</s> · −{pct:.0f}%"          # назва — посилання на товар
            for n_, (_, p_, price, old, pct, emo_) in enumerate(best[:10], 1)]
     return (head + "\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>" + "\n".join(top) + "</blockquote>\n"
             "👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>" + f"\n§SN:{tag or 'm'}")
@@ -3899,10 +3978,10 @@ def main() -> None:
     if st.get("kino_ver") != 2:                       # новий формат кіно (кнопки під кожним фільмом)
         st["kino_q"] = []
         st["kino_ver"] = 2
-    if st.get("silpo_ver") != 5:                      # Сільпо: + онлайн, 2+1, гуртом; файл для «⭐ Обране»
+    if st.get("silpo_ver") != 6:                      # Сільпо: посилання в топ-10 (перебудовуємо підбірку)
         st.pop("silpo_last", None)
         st.pop("silpo_by", None)
-        st["silpo_ver"] = 5
+        st["silpo_ver"] = 6
     if st.get("yt_ver") != 2:                         # новий відбір YouTube (лише українське) — стару підбірку скидаємо
         st.pop("yt_last", None)
         st["yt_ver"] = 2
