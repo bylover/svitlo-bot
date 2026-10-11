@@ -1179,11 +1179,11 @@
   "groups": [
    "GPV4.1"
   ],
-  "updated": "18:49 11.10.2026",
+  "updated": "19:04 11.10.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Через атаку на енергообєкти  в столиці зафіксовано аварійне відключення в частині Деснянського, Дніпровського, Подільського, Оболонського та Шевченківського районах. Повідомити про аварійні ситуації",
-  "checked": "2026-10-11T19:02:39.885527+03:00",
+  "checked": "2026-10-11T19:12:32.656388+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -2771,7 +2771,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-11T19:10:14.716457+03:00",
+ "gh_beat": "2026-10-11T19:14:42.676352+03:00",
  "silpo_stores": {
   "week": "2026-41",
   "kyiv": [
@@ -9225,19 +9225,172 @@
    35,
    54,
    "2026-10-11"
+  ],
+  "tt28259207": [
+   7.4,
+   90,
+   74,
+   "2026-10-11"
+  ],
+  "tt5797184": [
+   6.8,
+   73,
+   56,
+   "2026-10-11"
+  ],
+  "tt7984734": [
+   7.3,
+   90,
+   83,
+   "2026-10-11"
+  ],
+  "tt32178949": [
+   7.5,
+   97,
+   84,
+   "2026-10-11"
+  ],
+  "tt5932728": [
+   7.2,
+   42,
+   27,
+   "2026-10-11"
+  ],
+  "tt3344680": [
+   7.0,
+   null,
+   null,
+   "2026-10-11"
+  ],
+  "tt27757546": [
+   5.7,
+   71,
+   null,
+   "2026-10-11"
+  ],
+  "tt7468056": [
+   7.2,
+   92,
+   null,
+   "2026-10-11"
+  ],
+  "tt1527793": [
+   7.5,
+   97,
+   86,
+   "2026-10-11"
+  ],
+  "tt15789472": [
+   6.3,
+   null,
+   null,
+   "2026-10-11"
+  ],
+  "tt8116428": [
+   7.1,
+   44,
+   null,
+   "2026-10-11"
+  ],
+  "tt13412252": [
+   6.9,
+   null,
+   null,
+   "2026-10-11"
+  ],
+  "tt14757872": [
+   6.5,
+   100,
+   null,
+   "2026-10-11"
+  ],
+  "tt22207786": [
+   7.1,
+   96,
+   80,
+   "2026-10-11"
+  ],
+  "tt21103218": [
+   6.8,
+   87,
+   64,
+   "2026-10-11"
+  ],
+  "tt33014583": [
+   8.2,
+   null,
+   null,
+   "2026-10-11"
+  ],
+  "tt0443676": [
+   7.1,
+   null,
+   null,
+   "2026-10-11"
+  ],
+  "tt1458175": [
+   7.3,
+   50,
+   52,
+   "2026-10-11"
+  ],
+  "tt3704050": [
+   7.5,
+   68,
+   52,
+   "2026-10-11"
+  ],
+  "tt0181865": [
+   7.5,
+   93,
+   86,
+   "2026-10-11"
+  ],
+  "tt0491244": [
+   7.4,
+   96,
+   83,
+   "2026-10-11"
+  ],
+  "tt0314111": [
+   6.6,
+   null,
+   null,
+   "2026-10-11"
+  ],
+  "tt2265171": [
+   7.9,
+   82,
+   71,
+   "2026-10-11"
+  ],
+  "tt0475169": [
+   7.3,
+   83,
+   61,
+   "2026-10-11"
+  ],
+  "tt0840361": [
+   7.5,
+   92,
+   74,
+   "2026-10-11"
   ]
  },
  "mo_sent": {},
  "we_sent": {},
  "kp_at": {
   "mix": "2026-10-11T19:05:13.389411+03:00",
-  "drama": "2026-10-11T19:10:15.432098+03:00"
+  "drama": "2026-10-11T19:10:15.432098+03:00",
+  "thriller": "2026-10-11T19:14:42.763480+03:00"
  },
  "x18_at": {
   "mix": "2026-10-11T19:05:13.389411+03:00",
   "new": "2026-10-11T19:05:13.389411+03:00",
   "best": "2026-10-11T19:10:15.432098+03:00",
-  "women": "2026-10-11T19:10:15.432098+03:00"
+  "women": "2026-10-11T19:10:15.432098+03:00",
+  "rom": "2026-10-11T19:14:42.763480+03:00",
+  "cpl": "2026-10-11T19:14:42.763480+03:00"
  },
  "tc_slot": "2026-10-11-pm",
  "tc_first": {
@@ -9263,13 +9416,1091 @@
   "7f650f1445": "2026-10-11",
   "5a70537ac9": "2026-10-11",
   "01cbf1d4e2": "2026-10-11",
-  "f09e8f55bc": "2026-10-11"
+  "f09e8f55bc": "2026-10-11",
+  "e87f0fef49": "2026-10-11",
+  "ed9b7fa32a": "2026-10-11",
+  "2a9db80e14": "2026-10-11",
+  "b5667810ee": "2026-10-11",
+  "a7fa7c631b": "2026-10-11",
+  "bae718c120": "2026-10-11",
+  "12e24a765d": "2026-10-11",
+  "5be067e5f9": "2026-10-11",
+  "6e45708468": "2026-10-11",
+  "88f8fc8891": "2026-10-11",
+  "1ea11b0541": "2026-10-11",
+  "b8c4263740": "2026-10-11",
+  "4cee5af2d4": "2026-10-11",
+  "3af8daf6fb": "2026-10-11",
+  "067b5aea47": "2026-10-11",
+  "aa5333b429": "2026-10-11",
+  "8620e8b5a5": "2026-10-11",
+  "1c69abf490": "2026-10-11",
+  "6cfc378ab9": "2026-10-11",
+  "dd287665d2": "2026-10-11",
+  "d261a7d3e2": "2026-10-11",
+  "744b29d86f": "2026-10-11",
+  "56da5e901b": "2026-10-11",
+  "f0837da10c": "2026-10-11",
+  "57319ebd59": "2026-10-11",
+  "b5915485cc": "2026-10-11",
+  "268113f433": "2026-10-11",
+  "5b4623603b": "2026-10-11",
+  "098acc7723": "2026-10-11",
+  "1c5d2d719d": "2026-10-11",
+  "98f363d379": "2026-10-11",
+  "8ef0e7c4c3": "2026-10-11",
+  "01839af982": "2026-10-11",
+  "c27768d985": "2026-10-11",
+  "7878113ea9": "2026-10-11",
+  "a5c8cc830a": "2026-10-11",
+  "133c20e2c8": "2026-10-11",
+  "6ce96fb175": "2026-10-11",
+  "26d124db78": "2026-10-11",
+  "8edb87eb22": "2026-10-11",
+  "baae3ca879": "2026-10-11",
+  "14f7df7640": "2026-10-11",
+  "628c19927b": "2026-10-11",
+  "ddd7d00d11": "2026-10-11",
+  "f37081b466": "2026-10-11",
+  "8bc5c895c0": "2026-10-11",
+  "2b2ae1d4fe": "2026-10-11",
+  "8d61fd6b25": "2026-10-11",
+  "858b5037b6": "2026-10-11",
+  "5d9fab82e1": "2026-10-11",
+  "d046506e86": "2026-10-11",
+  "17e6ac47b2": "2026-10-11",
+  "7956a511ab": "2026-10-11",
+  "3f282bf395": "2026-10-11",
+  "f585d744c7": "2026-10-11",
+  "6a9972bd80": "2026-10-11"
  },
  "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО · ТОП ЗА ТИЖДЕНЬ</b> · з 11.10\n<i>Сільпо, вул. Калнишевського, 2 · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода з'явиться з наступного тижня (бот ще збирає історію цін)</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🧸 <a href=\"https://silpo.ua/product/igrashka-m-iaka-svynia-gsb8194-901032\">Іграшка м'яка Свиня GSB8194</a> — <b>129 ₴</b> <s>619 ₴</s> · −79%\n2. 🧸 <a href=\"https://silpo.ua/product/igrashka-m-iaka-khaski-gsb8168-901025\">Іграшка м'яка Хаскі GSB8168</a> — <b>99 ₴</b> <s>454 ₴</s> · −78%\n3. 🛒 <a href=\"https://silpo.ua/product/kapsuly-dlia-prannia-persil-universal-946254\">Капсули для прання Persil Universal</a> — <b>399 ₴</b> <s>1099 ₴</s> · −64%\n4. 🧸 <a href=\"https://silpo.ua/product/igrashka-rapira-mylni-bulbashky-806227\">Іграшка «Рапіра» мильні бульбашки</a> — <b>37.99 ₴</b> <s>139 ₴</s> · −73%\n5. 🛒 <a href=\"https://silpo.ua/product/shlang-dlia-polyvannia-15-m-785647\">Шланг для поливання 15 м</a> — <b>149 ₴</b> <s>469 ₴</s> · −68%\n6. 🛒 <a href=\"https://silpo.ua/product/nabir-raketok-dlia-tenisu-2-sht-volanchyk-3-sht-651011\">Набір ракеток для тенісу 2 шт. + воланчик 3 шт.</a> — <b>24.99 ₴</b> <s>79.99 ₴</s> · −69%\n7. 🛒 <a href=\"https://silpo.ua/product/papir-tualetnyi-premiia-bilyi-3-sharovyi-1032120\">Папір туалетний «Премія»® білий 3-шаровий</a> — <b>399 ₴</b> <s>949 ₴</s> · −58%\n8. 🧼 <a href=\"https://silpo.ua/product/patchi-pid-ochi-mond-sub-z-vitaminom-s-gidrogelevi-949454\">Патчі під очі Mond'Sub з вітаміном С гідрогелеві</a> — <b>139 ₴</b> <s>369 ₴</s> · −62%\n9. 🛒 <a href=\"https://silpo.ua/product/sik-galicia-iabluchno-morkvianyi-priamogo-vidzhymu-549573\">Сік Galicia яблучно-морквяний прямого віджиму</a> — <b>59.99 ₴</b> <s>134 ₴</s> · −55%\n10. 🧼 <a href=\"https://silpo.ua/product/balzam-dlia-gub-mond-sub-973119\">Бальзам для губ Mond'Sub</a> — <b>99 ₴</b> <s>249 ₴</s> · −60%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
  "silpo_by": {
   "1f0bae3d-2073-62f4-b14c-f9715721ce18": {
    "week": "2026-10-08",
    "text": "🛒 <b>АКЦІЇ СІЛЬПО · ТОП ЗА ТИЖДЕНЬ</b> · з 11.10\n<i>Сільпо, вул. Калнишевського, 2 · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода з'явиться з наступного тижня (бот ще збирає історію цін)</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🍫 <a href=\"https://silpo.ua/product/marmelad-zhuvalnyi-trolli-dino-rex-zefirnyi-924079\">Мармелад жувальний Trolli Dino Rex зефірний</a> — <b>29.99 ₴</b> <s>72.99 ₴</s> · −59%\n2. 🥫 <a href=\"https://silpo.ua/product/sardyna-premiia-naturalna-z-dodavanniam-olii-kliuch-331480\">Сардина «Премія»® натуральна з додаванням олії, ключ</a> — <b>82.99 ₴</b> <s>199 ₴</s> · −58%\n3. 🛒 <a href=\"https://silpo.ua/product/papir-tualetnyi-nua-3-sharovyi-979770\">Папір туалетний NUA 3-шаровий</a> — <b>449 ₴</b> <s>899 ₴</s> · −50%\n4. 🛒 <a href=\"https://silpo.ua/product/sous-askaniia-kyslo-solodkyi-pliashka-935792\">Соус Асканія кисло-солодкий, пляшка</a> — <b>42.99 ₴</b> <s>89.49 ₴</s> · −52%\n5. 🛒 <a href=\"https://silpo.ua/product/somga-premiia-slabosolona-shmatok-na-shkiri-365811\">Сьомга «Премія»® слабосолона шматок на шкірі</a> — <b>199 ₴</b> <s>414 ₴</s> · −52%\n6. 🐟 <a href=\"https://silpo.ua/product/somga-premiia-slabosolona-shmatok-na-shkiri-365811\">Сьомга «Премія»® слабосолона шматок на шкірі</a> — <b>199 ₴</b> <s>414 ₴</s> · −52%\n7. 🐟 <a href=\"https://silpo.ua/product/forel-premiia-slabosolona-shmatok-na-shkiri-365807\">Форель «Премія»® слабосолона шматок на шкірі</a> — <b>199 ₴</b> <s>414 ₴</s> · −52%\n8. 🛒 <a href=\"https://silpo.ua/product/sous-askaniia-barbekiu-pliashka-935791\">Соус Асканія Барбекю пляшка</a> — <b>42.99 ₴</b> <s>79.99 ₴</s> · −46%\n9. 🛒 <a href=\"https://silpo.ua/product/forel-premiia-slabosolona-shmatok-na-shkiri-365807\">Форель «Премія»® слабосолона шматок на шкірі</a> — <b>199 ₴</b> <s>414 ₴</s> · −52%\n10. 🧀 <a href=\"https://silpo.ua/product/syr-ferma-suluguni-chedderyzovanyi-45-923527\">Сир Ферма Сулугуні чеддеризований 45%</a> — <b>54.99 ₴</b> <s>99 ₴</s> · −44%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s0_"
+  }
+ },
+ "tc_cache": {
+  "https://lavinamall.ua/sales": {
+   "h": "0011703065a8",
+   "items": [
+    {
+     "mall": "Lavina Mall",
+     "shop": "Люксоптика",
+     "offer": "Всесвітній день зору! Подбайте про здоров'я очей",
+     "disc": "",
+     "start": "2026-10-08",
+     "end": "2026-10-11",
+     "url": "https://lavinamall.ua/sales/8-zhovtnya-vsesvitniy-den-zoru",
+     "cat": "парфуми й косметика",
+     "k": "e87f0fef49",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Lavina Mall",
+     "shop": "COMFY",
+     "offer": "Най-най КРАЩ у COMFY",
+     "disc": "",
+     "start": "",
+     "end": "2026-10-11",
+     "url": "https://lavinamall.ua/sales/nay-nay-krashch-u-comfy98",
+     "cat": "техніка",
+     "k": "ed9b7fa32a",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Lavina Mall",
+     "shop": "COLIN’S",
+     "offer": "COLIN’S JEANS FEST розпочато!",
+     "disc": "",
+     "start": "",
+     "end": "2026-10-11",
+     "url": "https://lavinamall.ua/sales/colins-jeans-fest-rozpochato",
+     "cat": "одяг",
+     "k": "2a9db80e14",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Lavina Mall",
+     "shop": "КЮЗ",
+     "offer": "Знижки на весь асортимент прикрас",
+     "disc": "-26%",
+     "start": "",
+     "end": "2026-10-11",
+     "url": "https://lavinamall.ua/sales/26-znizhki-na-ves-asortiment-prikras-kyuz",
+     "cat": "ювелірка",
+     "k": "b5667810ee",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Lavina Mall",
+     "shop": "Люксоптика",
+     "offer": "Знижка на окуляри для зору",
+     "disc": "-20%",
+     "start": "",
+     "end": "2026-10-11",
+     "url": "https://lavinamall.ua/sales/20-na-okulyari-dlya-zoru-v-lyuksoptitsi",
+     "cat": "аксесуари",
+     "k": "a7fa7c631b",
+     "seen": "2026-10-11"
+    }
+   ]
+  },
+  "https://blockbuster.ua": {
+   "h": "76b26ea101f9",
+   "items": []
+  },
+  "https://gulliver.com.ua/promo": {
+   "h": "26717717c46d",
+   "items": [
+    {
+     "mall": "Gulliver",
+     "shop": "Gulliver",
+     "offer": "Знижки від суми накладної по оптовим цінам на всі групи товарів",
+     "disc": "до 15%",
+     "start": "",
+     "end": "",
+     "url": "https://gulliver.com.ua/promo",
+     "cat": "інше",
+     "k": "bae718c120",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Gulliver",
+     "shop": "Gulliver",
+     "offer": "Акція на тарілки",
+     "disc": "",
+     "start": "",
+     "end": "",
+     "url": "https://gulliver.com.ua/promo/aktsiya-na-tarilki",
+     "cat": "дім",
+     "k": "12e24a765d",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Gulliver",
+     "shop": "Gulliver",
+     "offer": "Акційні картини за номерами - різні розміри за найкращими цінами",
+     "disc": "",
+     "start": "",
+     "end": "",
+     "url": "https://gulliver.com.ua/promo/aktsiya-kartini-za-nomerami",
+     "cat": "інше",
+     "k": "5be067e5f9",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Gulliver",
+     "shop": "Gulliver",
+     "offer": "Акція на пакети",
+     "disc": "",
+     "start": "",
+     "end": "",
+     "url": "https://gulliver.com.ua/promo/aktsiya-na-paketi",
+     "cat": "інше",
+     "k": "6e45708468",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Gulliver",
+     "shop": "Gulliver",
+     "offer": "Акція Хеловін 2026",
+     "disc": "",
+     "start": "",
+     "end": "",
+     "url": "https://gulliver.com.ua/promo/aktsiya-helovin-2026",
+     "cat": "інше",
+     "k": "88f8fc8891",
+     "seen": "2026-10-11"
+    }
+   ]
+  },
+  "https://respublikapark.com.ua/news": {
+   "h": "03860613f225",
+   "items": []
+  },
+  "https://rivermall.com.ua/retail/cards/special_offers/": {
+   "h": "54421c630f8e",
+   "items": []
+  },
+  "https://retroville.ua/sales": {
+   "h": "77ef2ea213a5",
+   "items": [
+    {
+     "mall": "Retroville",
+     "shop": "ARBER",
+     "offer": "ARBER дарує 5000 бонусів",
+     "disc": "",
+     "start": "",
+     "end": "2026-10-11",
+     "url": "https://retroville.ua/sales/arber-darue-5000-bonusiv",
+     "cat": "одяг",
+     "k": "1ea11b0541",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Retroville",
+     "shop": "КЮЗ",
+     "offer": "Знижка -26% в КЮЗ",
+     "disc": "−26%",
+     "start": "",
+     "end": "2026-10-12",
+     "url": "https://retroville.ua/sales/znizhka-26-v-kyuz-1",
+     "cat": "ювелірка",
+     "k": "b8c4263740",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Retroville",
+     "shop": "Rozetka",
+     "offer": "Дні Rozetka",
+     "disc": "",
+     "start": "",
+     "end": "2026-10-13",
+     "url": "https://retroville.ua/sales/dni-rozetka",
+     "cat": "техніка",
+     "k": "4cee5af2d4",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Retroville",
+     "shop": "LOVE YOU",
+     "offer": "Октобер фест у LOVE YOU: знижки до -76%!",
+     "disc": "−76%",
+     "start": "",
+     "end": "2026-10-13",
+     "url": "https://retroville.ua/sales/oktober-fest-u-love-you-znizhki-do-76",
+     "cat": "ювелірка",
+     "k": "3af8daf6fb",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Retroville",
+     "shop": "SOVA",
+     "offer": "-42% у бутику SOVA",
+     "disc": "−42%",
+     "start": "",
+     "end": "2026-10-18",
+     "url": "https://retroville.ua/sales/42-u-butiku-sova",
+     "cat": "ювелірка",
+     "k": "067b5aea47",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Retroville",
+     "shop": "BROCARD",
+     "offer": "Знижки до 50% у BROCARD",
+     "disc": "−50%",
+     "start": "",
+     "end": "2026-10-20",
+     "url": "https://retroville.ua/sales/znizhki-do-50-u-brocard-2",
+     "cat": "парфуми й косметика",
+     "k": "aa5333b429",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Retroville",
+     "shop": "Sport City",
+     "offer": "1+1=3 у Sport City",
+     "disc": "1+1=3",
+     "start": "",
+     "end": "2026-10-21",
+     "url": "https://retroville.ua/sales/113-u-sport-city-3",
+     "cat": "спорт",
+     "k": "8620e8b5a5",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Retroville",
+     "shop": "EVA BEAUTY",
+     "offer": "Нові акції в EVA BEAUTY!",
+     "disc": "",
+     "start": "",
+     "end": "2026-10-21",
+     "url": "https://retroville.ua/sales/novi-aktsii-v-eva-beauty-10",
+     "cat": "парфуми й косметика",
+     "k": "1c69abf490",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Retroville",
+     "shop": "Фокстрот",
+     "offer": "До -55% у Фокстрот",
+     "disc": "−55%",
+     "start": "",
+     "end": "2026-10-28",
+     "url": "https://retroville.ua/sales/do-55-u-fokstrot-1",
+     "cat": "техніка",
+     "k": "6cfc378ab9",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Retroville",
+     "shop": "Sinsay",
+     "offer": "Розпродаж до -50% у Sinsay",
+     "disc": "−50%",
+     "start": "",
+     "end": "",
+     "url": "https://retroville.ua/sales/rozprodazh-do-50-u-sinsay",
+     "cat": "одяг",
+     "k": "dd287665d2",
+     "seen": "2026-10-11"
+    }
+   ]
+  },
+  "https://dreamtown.ua/ua/promo": {
+   "h": "dc3cc7b40e0b",
+   "items": [
+    {
+     "mall": "Dream Town",
+     "shop": "ARBER",
+     "offer": "ARBER дарує 5000 бонусів",
+     "disc": "",
+     "start": "2026-10-08",
+     "end": "2026-10-11",
+     "url": "https://dreamtown.ua/ua/promo/3716",
+     "cat": "одяг",
+     "k": "7b96290659",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Dream Town",
+     "shop": "GIULIA",
+     "offer": "ДИТЯЧІ колготи GIULIA",
+     "disc": "",
+     "start": "2026-10-09",
+     "end": "",
+     "url": "https://dreamtown.ua/ua/promo/3715",
+     "cat": "дитяче",
+     "k": "d01345c1b0",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Dream Town",
+     "shop": "GIULIA",
+     "offer": "Яскраві колготки в GIULIA",
+     "disc": "",
+     "start": "2026-10-08",
+     "end": "",
+     "url": "https://dreamtown.ua/ua/promo/3714",
+     "cat": "одяг",
+     "k": "d378b15b87",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Dream Town",
+     "shop": "Люксоптика",
+     "offer": "Перевіряйте зір за 1 грн в Люксоптиці",
+     "disc": "",
+     "start": "2026-10-08",
+     "end": "2026-10-11",
+     "url": "https://dreamtown.ua/ua/promo/3713",
+     "cat": "аксесуари",
+     "k": "6b9be1ac33",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Dream Town",
+     "shop": "Столична Ювелірна Фабрика",
+     "offer": "ДІАМАНТИ, ЩО ДОСТУПНІ КОЖНОМУ",
+     "disc": "",
+     "start": "2026-10-05",
+     "end": "2026-10-31",
+     "url": "https://dreamtown.ua/ua/promo/3712",
+     "cat": "ювелірка",
+     "k": "999b9714c2",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Dream Town",
+     "shop": "LOVE YOU",
+     "offer": "ОКТОБЕР ФЕСТ У LOVE YOU",
+     "disc": "−76%",
+     "start": "2026-10-05",
+     "end": "2026-11-13",
+     "url": "https://dreamtown.ua/ua/promo/3711",
+     "cat": "ювелірка",
+     "k": "228b06d9f6",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Dream Town",
+     "shop": "Rozetka",
+     "offer": "Дні Rozetka вже тут",
+     "disc": "",
+     "start": "2026-10-06",
+     "end": "",
+     "url": "https://dreamtown.ua/ua/promo/3710",
+     "cat": "техніка",
+     "k": "8ce4b5d029",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Dream Town",
+     "shop": "SOVA",
+     "offer": "Час оновити свої фаворити",
+     "disc": "",
+     "start": "2026-10-05",
+     "end": "2026-10-13",
+     "url": "https://dreamtown.ua/ua/promo/3709",
+     "cat": "ювелірка",
+     "k": "8e77d68e69",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Dream Town",
+     "shop": "PINKY",
+     "offer": "Правильний догляд разом з PINKY",
+     "disc": "",
+     "start": "2026-09-25",
+     "end": "2026-10-09",
+     "url": "https://dreamtown.ua/ua/promo/3708",
+     "cat": "парфуми й косметика",
+     "k": "fbf4a9be0a",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Dream Town",
+     "shop": "Люксоптика",
+     "offer": "-20% на окуляри для зору в Люксоптиці",
+     "disc": "−20%",
+     "start": "2026-09-28",
+     "end": "2026-10-11",
+     "url": "https://dreamtown.ua/ua/promo/3707",
+     "cat": "аксесуари",
+     "k": "9728d5c295",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Dream Town",
+     "shop": "GIULIA",
+     "offer": "КОЛЬОРОВІ колготи від GIULIA",
+     "disc": "",
+     "start": "2026-09-29",
+     "end": "",
+     "url": "https://dreamtown.ua/ua/promo/3706",
+     "cat": "одяг",
+     "k": "89a1e9535e",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Dream Town",
+     "shop": "SOVA",
+     "offer": "Благодійний ювелірний дроп «Імена сили»",
+     "disc": "",
+     "start": "2026-09-24",
+     "end": "",
+     "url": "https://dreamtown.ua/ua/promo/3705",
+     "cat": "ювелірка",
+     "k": "81cabc2450",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Dream Town",
+     "shop": "Люксоптика",
+     "offer": "Осінній розпродаж в Люксоптиці",
+     "disc": "",
+     "start": "2026-09-24",
+     "end": "2026-09-27",
+     "url": "https://dreamtown.ua/ua/promo/3703",
+     "cat": "аксесуари",
+     "k": "e09cb3b2d7",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Dream Town",
+     "shop": "G.Corner",
+     "offer": "Сезонний розпродаж в G.Corner",
+     "disc": "",
+     "start": "2026-09-22",
+     "end": "2026-09-27",
+     "url": "https://dreamtown.ua/ua/promo/3702",
+     "cat": "одяг",
+     "k": "14786b300e",
+     "seen": "2026-10-11"
+    }
+   ]
+  },
+  "https://skymall.ua/novini-podiyi-aktsiyi/": {
+   "h": "c21a98b1bdb7",
+   "items": []
+  },
+  "https://globus.com.ua/category/aktsiyi/": {
+   "h": "edd87f0948b8",
+   "items": [
+    {
+     "mall": "Globus",
+     "shop": "Інше",
+     "offer": "Діаманти, що доступні кожному",
+     "disc": "",
+     "start": "",
+     "end": "",
+     "url": "https://globus.com.ua/diamanty-shho-dostupni-kozhnomu/",
+     "cat": "інше",
+     "k": "d261a7d3e2",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Globus",
+     "shop": "Інше",
+     "offer": "Додай трохи містики до осіннього настрою",
+     "disc": "",
+     "start": "",
+     "end": "",
+     "url": "https://globus.com.ua/dodaj-trohy-mistyky-osinnogo-nastroyu/",
+     "cat": "інше",
+     "k": "744b29d86f",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Globus",
+     "shop": "Інше",
+     "offer": "Акція до Дня захисників та захисниць",
+     "disc": "",
+     "start": "",
+     "end": "",
+     "url": "https://globus.com.ua/aktsiya-dnya-zahysnykiv-ta-zahysnyts/",
+     "cat": "інше",
+     "k": "56da5e901b",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Globus",
+     "shop": "Інше",
+     "offer": "Більше діамантів — більше вигоди!",
+     "disc": "",
+     "start": "",
+     "end": "",
+     "url": "https://globus.com.ua/bilshe-diamantiv-bilshe-vygody/",
+     "cat": "ювелірка",
+     "k": "f0837da10c",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Globus",
+     "shop": "Люксоптика",
+     "offer": "-20% на окуляри для зору",
+     "disc": "-20%",
+     "start": "",
+     "end": "",
+     "url": "https://globus.com.ua/20-na-okulyary-dlya-zoru-v-lyuksoptytsi-3/",
+     "cat": "аксесуари",
+     "k": "57319ebd59",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Globus",
+     "shop": "AURUM",
+     "offer": "Happy Weekend в AURUM",
+     "disc": "",
+     "start": "",
+     "end": "",
+     "url": "https://globus.com.ua/happy-weekend-v-aurum/",
+     "cat": "ювелірка",
+     "k": "7f650f1445",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Globus",
+     "shop": "Інше",
+     "offer": "Осінній розпродаж. Додаткові -30% на сонцезахисні окуляри!",
+     "disc": "-30%",
+     "start": "",
+     "end": "",
+     "url": "https://globus.com.ua/osinnij-rozprodazh-dodatkovi-30-na-sontsezahysni-okulyary/",
+     "cat": "аксесуари",
+     "k": "b5915485cc",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Globus",
+     "shop": "COLIN’S",
+     "offer": "COLIN’S JEANS FEST розпочато!",
+     "disc": "",
+     "start": "",
+     "end": "",
+     "url": "https://globus.com.ua/colin-s-jeans-fest-rozpochato/",
+     "cat": "одяг",
+     "k": "01cbf1d4e2",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Globus",
+     "shop": "Люксоптика",
+     "offer": "-20% на окуляри для зору",
+     "disc": "-20%",
+     "start": "",
+     "end": "",
+     "url": "https://globus.com.ua/20-na-okulyary-dlya-zoru-v-lyuksoptytsi-2/",
+     "cat": "аксесуари",
+     "k": "57319ebd59",
+     "seen": "2026-10-11"
+    }
+   ]
+  },
+  "https://oceanmall.ua": {
+   "h": "4a0d27911b5d",
+   "items": []
+  },
+  "https://smartplaza.com.ua": {
+   "h": "fb0a04ed68d3",
+   "items": []
+  },
+  "https://cosmopolite.kiev.ua": {
+   "h": "085bbf03fc40",
+   "items": []
+  },
+  "https://atmosfera.ua": {
+   "h": "4c986efb5374",
+   "items": []
+  },
+  "https://prospekt.com.ua/ua/discounts": {
+   "h": "447c0b824259",
+   "items": [
+    {
+     "mall": "Prospekt",
+     "shop": "Золотий Вік",
+     "offer": "Знижки на прикраси з діамантами",
+     "disc": "-15%",
+     "start": "2026-10-02",
+     "end": "",
+     "url": "https://prospekt.com.ua/ua/discounts/prospekt-bilse-diamantiv-bilse-vigodi",
+     "cat": "ювелірка",
+     "k": "268113f433",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Prospekt",
+     "shop": "Фокстрот",
+     "offer": "Знижки на все, що зігріє",
+     "disc": "до -55%",
+     "start": "2026-10-02",
+     "end": "",
+     "url": "https://prospekt.com.ua/ua/discounts/prospekt-razom-z-fokstrot-teplise",
+     "cat": "техніка",
+     "k": "5b4623603b",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Prospekt",
+     "shop": "AURUM",
+     "offer": "Happy Weekend в AURUM: супер знижки на прикраси",
+     "disc": "",
+     "start": "2026-09-29",
+     "end": "",
+     "url": "https://prospekt.com.ua/ua/discounts/prospekt-happy-weekend-v-aurum",
+     "cat": "ювелірка",
+     "k": "098acc7723",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Prospekt",
+     "shop": "GIULIA",
+     "offer": "Кольорові колготки для осінніх образів",
+     "disc": "",
+     "start": "2026-09-29",
+     "end": "",
+     "url": "https://prospekt.com.ua/ua/discounts/prospekt-dodaj-askravih-barv-svoim-osinnim-obrazam-z-kolorovimi-kolgotkami-vid-giulia",
+     "cat": "аксесуари",
+     "k": "1c5d2d719d",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Prospekt",
+     "shop": "SOVA",
+     "offer": "Благодійний ювелірний дроп «Імена сили» спільно з АЗОВ.ONE",
+     "disc": "",
+     "start": "2026-09-25",
+     "end": "",
+     "url": "https://prospekt.com.ua/ua/discounts/prospekt-do-dna-zahisnikiv-i-zahisnic-ukraini-uvelirnij-dim-sova-ta-azovone-prezentuut-blagodijnij-uvelirnij-drop-imena-sili",
+     "cat": "ювелірка",
+     "k": "98f363d379",
+     "seen": "2026-10-11"
+    },
+    {
+     "mall": "Prospekt",
+     "shop": "Colin's",
+     "offer": "COLIN’S JEANS FEST: купуй джинсовий одяг та отримуй бали на бонусний рахунок",
+     "disc": "40% балами",
+     "start": "2026-09-25",
+     "end": "",
+     "url": "https://prospekt.com.ua/ua/discounts/prospekt-colins-jeans-fest-rozpocato",
+     "cat": "одяг",
+     "k": "8ef0e7c4c3",
+     "seen": "2026-10-11"
+    }
+   ]
+  },
+  "https://www.intimissimi.com/ua/search/?cgid=INT_Woman_Todays-promo": {
+   "h": "3ae4beb82193",
+   "items": [
+    {
+     "mall": "Бренди",
+     "shop": "Intimissimi",
+     "offer": "Трусики: 3+1 у подарунок",
+     "disc": "3+1",
+     "start": "",
+     "end": "",
+     "url": "https://www.intimissimi.com/ua/%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D0%B0_%D0%BA%D0%BE%D0%BB%D0%B5%D0%BA%D1%86%D1%96%D1%8F/%D0%B0%D0%BA%D1%86%D1%96%D1%97/%D1%82%D1%80%D1%83%D1%81%D0%B8%D0%BA%D0%B8_3_1_%D1%83_%D0%BF%D0%BE%D0%B4%D0%B0%D1%80%D1%83%D0%BD%D0%BE%D0%BA/",
+     "cat": "білизна",
+     "k": "01839af982",
+     "seen": "2026-10-11",
+     "kind": "👙 білизна · 🏪 + 🌐"
+    },
+    {
+     "mall": "Бренди",
+     "shop": "Intimissimi",
+     "offer": "Жіноча колекція: знижка 50% на третю одиницю",
+     "disc": "−50%",
+     "start": "",
+     "end": "",
+     "url": "https://www.intimissimi.com/ua/%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D0%B0_%D0%BA%D0%BE%D0%BB%D0%B5%D0%BA%D1%86%D1%96%D1%8F/%D0%B0%D0%BA%D1%86%D1%96%D1%97/%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D0%B0_%D0%BA%D0%BE%D0%BB%D0%B5%D0%BA%D1%86%D1%96%D1%8F_%D0%B7%D0%BD%D0%B8%D0%B6%D0%BA%D0%B0_50_%D0%BD%D0%B0_%D1%82%D1%80%",
+     "cat": "одяг",
+     "k": "c27768d985",
+     "seen": "2026-10-11",
+     "kind": "👙 білизна · 🏪 + 🌐"
+    },
+    {
+     "mall": "Бренди",
+     "shop": "Intimissimi",
+     "offer": "Чоловіча колекція 3+1",
+     "disc": "3+1",
+     "start": "",
+     "end": "",
+     "url": "https://www.intimissimi.com/ua/%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D0%B0_%D0%BA%D0%BE%D0%BB%D0%B5%D0%BA%D1%86%D1%96%D1%8F/%D0%B0%D0%BA%D1%86%D1%96%D1%97/%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D0%B0_%D0%BA%D0%BE%D0%BB%D0%B5%D0%BA%D1%86%D1%96%D1%8F_3_1/",
+     "cat": "одяг",
+     "k": "7878113ea9",
+     "seen": "2026-10-11",
+     "kind": "👙 білизна · 🏪 + 🌐"
+    },
+    {
+     "mall": "Бренди",
+     "shop": "Intimissimi",
+     "offer": "Шкарпетки: 3+3 у подарунок",
+     "disc": "3+3",
+     "start": "",
+     "end": "",
+     "url": "https://www.intimissimi.com/ua/%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D0%B0_%D0%BA%D0%BE%D0%BB%D0%B5%D0%BA%D1%86%D1%96%D1%8F/%D0%B0%D0%BA%D1%86%D1%96%D1%97/%D1%88%D0%BA%D0%B0%D1%80%D0%BF%D0%B5%D1%82%D0%BA%D0%B8_3_3/",
+     "cat": "одяг",
+     "k": "a5c8cc830a",
+     "seen": "2026-10-11",
+     "kind": "👙 білизна · 🏪 + 🌐"
+    },
+    {
+     "mall": "Бренди",
+     "shop": "Intimissimi",
+     "offer": "Трикотаж: 2+1 у подарунок",
+     "disc": "2+1",
+     "start": "",
+     "end": "",
+     "url": "https://www.intimissimi.com/ua/%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D0%B0_%D0%BA%D0%BE%D0%BB%D0%B5%D0%BA%D1%86%D1%96%D1%8F/%D0%B0%D0%BA%D1%86%D1%96%D1%97/%D1%82%D1%80%D0%B8%D0%BA%D0%BE%D1%82%D0%B0%D0%B6_2_1_%D1%83_%D0%BF%D0%BE%D0%B4%D0%B0%D1%80%D1%83%D0%BD%D0%BE%D0%BA/",
+     "cat": "одяг",
+     "k": "133c20e2c8",
+     "seen": "2026-10-11",
+     "kind": "👙 білизна · 🏪 + 🌐"
+    },
+    {
+     "mall": "Бренди",
+     "shop": "Intimissimi",
+     "offer": "Піжами та одяг для сну: знижка при покупці від двох одиниць",
+     "disc": "−20%",
+     "start": "",
+     "end": "",
+     "url": "https://www.intimissimi.com/ua/%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D0%B0_%D0%BA%D0%BE%D0%BB%D0%B5%D0%BA%D1%86%D1%96%D1%8F/%D0%B0%D0%BA%D1%86%D1%96%D1%97/%D0%BF%D1%96%D0%B6%D0%B0%D0%BC%D0%B8_%D1%82%D0%B0_%D0%BE%D0%B4%D1%8F%D0%B3_%D0%B4%D0%BB%D1%8F_%D1%81%D0%BD%D1%83_-20_%D0%BF%D1%80%D0%B8_%D0%BF%D0%BE%D0%",
+     "cat": "одяг",
+     "k": "6ce96fb175",
+     "seen": "2026-10-11",
+     "kind": "👙 білизна · 🏪 + 🌐"
+    }
+   ]
+  },
+  "https://milavitsa.com.ua": {
+   "h": "1ebc8e9bb319",
+   "items": []
+  },
+  "https://anabelarto.ua": {
+   "h": "1003bf8fa44f",
+   "items": []
+  },
+  "https://jasminelingerie.com": {
+   "h": "93d78e6d0060",
+   "items": []
+  },
+  "https://www.reserved.com/ua/uk/rozprodazh": {
+   "h": "049cac27150e",
+   "items": [
+    {
+     "mall": "Бренди",
+     "shop": "Reserved",
+     "offer": "Міжсезонний розпродаж",
+     "disc": "",
+     "start": "",
+     "end": "",
+     "url": "https://www.reserved.com/ua/uk/rozprodazh",
+     "cat": "одяг",
+     "k": "26d124db78",
+     "seen": "2026-10-11",
+     "kind": "👗 одяг · 🏪 + 🌐"
+    }
+   ]
+  },
+  "https://www.mohito.com/ua/uk/sale?brick=P1_MSS": {
+   "h": "ac678edd35fc",
+   "items": []
+  },
+  "https://www.sinsay.com/ua/uk/promotion-terms-all": {
+   "h": "c09f6b51f560",
+   "items": [
+    {
+     "mall": "Бренди",
+     "shop": "Sinsay",
+     "offer": "Розпродаж до -50%",
+     "disc": "−50%",
+     "start": "",
+     "end": "",
+     "url": "https://www.sinsay.com/ua/uk/all/rozprodazh-do-50",
+     "cat": "одяг",
+     "k": "8edb87eb22",
+     "seen": "2026-10-11",
+     "kind": "👗 одяг · 🏪 + 🌐"
+    },
+    {
+     "mall": "Бренди",
+     "shop": "Sinsay",
+     "offer": "Акція додатково -10%",
+     "disc": "−10%",
+     "start": "",
+     "end": "",
+     "url": "https://www.sinsay.com/ua/uk/promotion-terms-2",
+     "cat": "інше",
+     "k": "baae3ca879",
+     "seen": "2026-10-11",
+     "kind": "👗 одяг · 🏪 + 🌐"
+    },
+    {
+     "mall": "Бренди",
+     "shop": "Sinsay",
+     "offer": "Акція Кешбек",
+     "disc": "",
+     "start": "",
+     "end": "",
+     "url": "https://www.sinsay.com/ua/uk/promotion-terms-cashback-2",
+     "cat": "інше",
+     "k": "14f7df7640",
+     "seen": "2026-10-11",
+     "kind": "👗 одяг · 🏪 + 🌐"
+    }
+   ]
+  },
+  "https://kasta.ua/uk/page/support/campaigns/": {
+   "h": "9f6f49ee892a",
+   "items": []
+  },
+  "https://pandora.ua/skidka_5": {
+   "h": "7fa6e52bc28b",
+   "items": [
+    {
+     "mall": "Бренди",
+     "shop": "Pandora",
+     "offer": "Знижка при попередній оплаті",
+     "disc": "−5%",
+     "start": "",
+     "end": "",
+     "url": "https://pandora.ua/skidka_5",
+     "cat": "техніка",
+     "k": "628c19927b",
+     "seen": "2026-10-11",
+     "kind": "💍 ювелірка · 🏪 + 🌐"
+    }
+   ]
+  },
+  "https://nasoloda.ua/ua/blog/novosti/may-mesyats-muzhskogo-udovolstvyya-s-pjur-skydka-15/": {
+   "h": "2852422ffc32",
+   "items": [
+    {
+     "mall": "Насолода",
+     "shop": "pjur",
+     "offer": "Травень — місяць чоловічого задоволення з чоловічою косметикою",
+     "disc": "-15%",
+     "start": "2026-05-01",
+     "end": "2026-05-31",
+     "url": "https://nasoloda.ua/ua/blog/novosti/may-mesyats-muzhskogo-udovolstvyya-s-pjur-skydka-15/",
+     "cat": "парфуми й косметика",
+     "k": "ddd7d00d11",
+     "seen": "2026-10-11",
+     "kind": "🏪 магазини + онлайн"
+    }
+   ]
+  },
+  "https://intimka.com.ua": {
+   "h": "ac7546a7de83",
+   "items": []
+  },
+  "https://sexify.com.ua": {
+   "h": "cb7be2164fa4",
+   "items": []
+  },
+  "https://loveyou.ua/specials/": {
+   "h": "23d77b43e1a1",
+   "items": [
+    {
+     "mall": "LoveYou",
+     "shop": "LoveYouHome",
+     "offer": "Бамбукова серветка універсальна жовто-біла 30х30 см",
+     "disc": "−35%",
+     "start": "",
+     "end": "",
+     "url": "https://loveyou.ua/eko-salfetka-iz-bambukovogo-volokna-zhelto-belaja-30h30-sm-loveyouhome",
+     "cat": "дім",
+     "k": "f37081b466",
+     "seen": "2026-10-11",
+     "kind": "🌐 онлайн"
+    },
+    {
+     "mall": "LoveYou",
+     "shop": "LoveYouHome",
+     "offer": "Бамбукова серветка універсальна салатово-біла 30х30 см",
+     "disc": "−35%",
+     "start": "",
+     "end": "",
+     "url": "https://loveyou.ua/eko-salfetka-iz-bambukovogo-volokna-salatovo-belaja-30h30-sm-loveyouhome",
+     "cat": "дім",
+     "k": "8bc5c895c0",
+     "seen": "2026-10-11",
+     "kind": "🌐 онлайн"
+    },
+    {
+     "mall": "LoveYou",
+     "shop": "LoveYouHome",
+     "offer": "Вакуумний пакет 80х100 см для зберігання речей",
+     "disc": "−10%",
+     "start": "",
+     "end": "",
+     "url": "https://loveyou.ua/vakumnyj-paket-80h100-dlja-hranenija-veschej-loveyouhome",
+     "cat": "дім",
+     "k": "2b2ae1d4fe",
+     "seen": "2026-10-11",
+     "kind": "🌐 онлайн"
+    },
+    {
+     "mall": "LoveYou",
+     "shop": "LoveYouHome",
+     "offer": "Вакуумний пакет для верхнього одягу з вішалкою 70х135 см",
+     "disc": "−10%",
+     "start": "",
+     "end": "",
+     "url": "https://loveyou.ua/vakumnyj-paket-dlja-verhnej-odezhdy-s-veshalkoj-70h135-loveyouhome",
+     "cat": "дім",
+     "k": "8d61fd6b25",
+     "seen": "2026-10-11",
+     "kind": "🌐 онлайн"
+    },
+    {
+     "mall": "LoveYou",
+     "shop": "LoveYouHome",
+     "offer": "Вакуумний пакет для верхнього одягу з вішалкою 70х90 см",
+     "disc": "−10%",
+     "start": "",
+     "end": "",
+     "url": "https://loveyou.ua/vakumnyj-paket-dlja-verhnej-odezhdy-s-veshalkoj-70h90-loveyouhome",
+     "cat": "дім",
+     "k": "858b5037b6",
+     "seen": "2026-10-11",
+     "kind": "🌐 онлайн"
+    },
+    {
+     "mall": "LoveYou",
+     "shop": "Love You",
+     "offer": "Велюровий чохол на 2-місний диван, бежевий",
+     "disc": "−50%",
+     "start": "",
+     "end": "",
+     "url": "https://loveyou.ua/veljurovij-chohol-na-2-misnij-divan-bezhevij-love-you",
+     "cat": "дім",
+     "k": "5d9fab82e1",
+     "seen": "2026-10-11",
+     "kind": "🌐 онлайн"
+    },
+    {
+     "mall": "LoveYou",
+     "shop": "Love You",
+     "offer": "Велюровий чохол на 2-місний диван, кавовий",
+     "disc": "−50%",
+     "start": "",
+     "end": "",
+     "url": "https://loveyou.ua/veljurovij-chohol-na-2-misnij-divan-kavovij-love-you",
+     "cat": "дім",
+     "k": "d046506e86",
+     "seen": "2026-10-11",
+     "kind": "🌐 онлайн"
+    },
+    {
+     "mall": "LoveYou",
+     "shop": "Love You",
+     "offer": "Велюровий чохол на 2-місний диван, сірий",
+     "disc": "−50%",
+     "start": "",
+     "end": "",
+     "url": "https://loveyou.ua/veljurovij-chohol-na-2-misnij-divan-sirij-love-you",
+     "cat": "дім",
+     "k": "17e6ac47b2",
+     "seen": "2026-10-11",
+     "kind": "🌐 онлайн"
+    },
+    {
+     "mall": "LoveYou",
+     "shop": "Love You",
+     "offer": "Велюровий чохол на 3-місний диван, бежевий",
+     "disc": "−50%",
+     "start": "",
+     "end": "",
+     "url": "https://loveyou.ua/veljurovij-chohol-na-3-misnij-divan-bezhevij-love-you",
+     "cat": "дім",
+     "k": "7956a511ab",
+     "seen": "2026-10-11",
+     "kind": "🌐 онлайн"
+    },
+    {
+     "mall": "LoveYou",
+     "shop": "Love You",
+     "offer": "Велюровий чохол на 3-місний диван, кавовий",
+     "disc": "−50%",
+     "start": "",
+     "end": "",
+     "url": "https://loveyou.ua/veljurovij-chohol-na-3-misnij-divan-kavovij-love-you",
+     "cat": "дім",
+     "k": "3f282bf395",
+     "seen": "2026-10-11",
+     "kind": "🌐 онлайн"
+    },
+    {
+     "mall": "LoveYou",
+     "shop": "Love You",
+     "offer": "Велюровий чохол на 3-місний диван, сірий",
+     "disc": "−50%",
+     "start": "",
+     "end": "",
+     "url": "https://loveyou.ua/veljurovij-chohol-na-3-misnij-divan-sirij-love-you",
+     "cat": "дім",
+     "k": "f585d744c7",
+     "seen": "2026-10-11",
+     "kind": "🌐 онлайн"
+    },
+    {
+     "mall": "LoveYou",
+     "shop": "Love You",
+     "offer": "Велюровий чохол на 4-місний диван, бежевий",
+     "disc": "−50%",
+     "start": "",
+     "end": "",
+     "url": "https://loveyou.ua/veljurovij-chohol-na-4-misnij-divan-bezhevij-love-you",
+     "cat": "дім",
+     "k": "6a9972bd80",
+     "seen": "2026-10-11",
+     "kind": "🌐 онлайн"
+    }
+   ]
   }
  }
 }
