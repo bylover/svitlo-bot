@@ -67,7 +67,7 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -m "state"
           for i in 1 2 3; do
-            git pull --rebase -q && git push -q && exit 0
+            git pull --rebase -X theirs -q && git push -q && exit 0
             sleep 5
           done
           echo "Не вдалося зберегти state.json"; exit 1
