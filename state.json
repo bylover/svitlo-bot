@@ -2747,7 +2747,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-13T21:18:05.792853+03:00",
+ "gh_beat": "2026-10-13T21:20:16.784275+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -12463,7 +12463,7 @@
   "romance": "2026-10-13T20:25:16.639757+03:00",
   "series": "2026-10-13T20:30:20.543346+03:00",
   "ua": "2026-10-13T21:18:05.970289+03:00",
-  "now": "2026-10-13T08:05:16.019122+03:00"
+  "now": "2026-10-13T21:20:17.105412+03:00"
  },
  "x18_at": {
   "mix": "2026-10-13T19:15:18.220472+03:00",
@@ -12482,8 +12482,8 @@
   "lat": "2026-10-13T20:30:20.543346+03:00",
   "asi": "2026-10-13T21:18:05.970289+03:00",
   "blo": "2026-10-13T21:18:05.970289+03:00",
-  "rpl": "2026-10-13T14:10:18.650934+03:00",
-  "bds": "2026-10-13T14:10:18.650934+03:00"
+  "rpl": "2026-10-13T21:20:17.105412+03:00",
+  "bds": "2026-10-13T21:20:17.105412+03:00"
  },
  "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 13.10 (оновлюється щоранку)\n<i>Сільпо, вул. Калнишевського, 2 · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода з'явиться з наступного тижня (бот ще збирає історію цін)</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🧸 <a href=\"https://silpo.ua/product/igrashka-m-iaka-svynia-gsb8194-901032\">Іграшка м'яка Свиня GSB8194</a> — <b>129 ₴</b> <s>619 ₴</s> · −79%\n2. 🧸 <a href=\"https://silpo.ua/product/igrashka-m-iaka-khaski-gsb8168-901025\">Іграшка м'яка Хаскі GSB8168</a> — <b>99 ₴</b> <s>454 ₴</s> · −78%\n3. 🛒 <a href=\"https://silpo.ua/product/kapsuly-dlia-prannia-persil-universal-946254\">Капсули для прання Persil Universal</a> — <b>399 ₴</b> <s>1099 ₴</s> · −64%\n4. 🧸 <a href=\"https://silpo.ua/product/igrashka-rapira-mylni-bulbashky-806227\">Іграшка «Рапіра» мильні бульбашки</a> — <b>37.99 ₴</b> <s>139 ₴</s> · −73%\n5. 🛒 <a href=\"https://silpo.ua/product/shlang-dlia-polyvannia-15-m-785647\">Шланг для поливання 15 м</a> — <b>149 ₴</b> <s>469 ₴</s> · −68%\n6. 🛒 <a href=\"https://silpo.ua/product/vishak-gsb8912-900693\">Вішак GSB8912</a> — <b>49.99 ₴</b> <s>159 ₴</s> · −69%\n7. 🛒 <a href=\"https://silpo.ua/product/papir-tualetnyi-premiia-bilyi-3-sharovyi-1032120\">Папір туалетний «Премія»® білий 3-шаровий</a> — <b>399 ₴</b> <s>949 ₴</s> · −58%\n8. 🧼 <a href=\"https://silpo.ua/product/shampun-organist-morocco-argan-oil-zhyvylnyi-dlia-sukhogo-volossia-995859\">Шампунь Organist Morocco Argan Oil живильний для сухого волосся</a> — <b>399 ₴</b> <s>999 ₴</s> · −60%\n9. 🧼 <a href=\"https://silpo.ua/product/patchi-pid-ochi-mond-sub-z-vitaminom-s-gidrogelevi-949454\">Патчі під очі Mond'Sub з вітаміном С гідрогелеві</a> — <b>139 ₴</b> <s>369 ₴</s> · −62%\n10. 🛒 <a href=\"https://silpo.ua/product/sik-galicia-iabluchno-morkvianyi-priamogo-vidzhymu-549573\">Сік Galicia яблучно-морквяний прямого віджиму</a> — <b>59.99 ₴</b> <s>134 ₴</s> · −55%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
  "silpo_by": {
@@ -12498,7 +12498,7 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "e6508b9603f1",
+  "gs": "ceca185e8089",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "d2a747edb70d",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "e86708b98e00",
