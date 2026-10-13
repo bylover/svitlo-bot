@@ -2748,7 +2748,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-13T21:45:15.013839+03:00",
+ "gh_beat": "2026-10-13T21:50:14.891563+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -12499,7 +12499,7 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "97a77e008f1c",
+  "gs": "7a54d809d88c",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "d2a747edb70d",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "e86708b98e00",
