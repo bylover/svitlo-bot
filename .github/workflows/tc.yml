@@ -49,5 +49,5 @@ jobs:
           git add tc_state.json
           git diff --cached --quiet && exit 0
           git commit -m "tc"
-          for i in 1 2 3; do git pull --rebase -q && git push -q && exit 0; sleep 5; done
+          for i in 1 2 3; do git pull --rebase -X theirs -q && git push -q && exit 0; sleep 5; done
           exit 1
