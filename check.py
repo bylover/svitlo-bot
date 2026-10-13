@@ -76,14 +76,14 @@ DTEK_DOC: dict = {}
 TMDB_KEY = (os.environ.get("TMDB_KEY") or "").strip()
 OMDB_KEY = (os.environ.get("OMDB_KEY") or "").strip()
 YT_KEY = (os.environ.get("YT_KEY") or "").strip()
-KINO_WEEKDAY, YT_WEEKDAY, DIGEST_HOUR = 4, 0, 11          # пт і пн о 11:00
+KINO_WEEKDAY, YT_WEEKDAY, DIGEST_HOUR = 4, 0, 8           # пт і пн: збираємо з 8:00, надсилаємо у свій час кожного (за замовч. 11:00)
 GEMINI_KEY = (os.environ.get("GEMINI_KEY") or "").strip()  # безкоштовний ключ aistudio.google.com
 GEMINI_MODELS = [m.strip() for m in (os.environ.get("GEMINI_MODEL") or "").split(",") if m.strip()] or \
     ["gemini-3.8-flash", "gemini-flash-latest", "gemini-flash-lite-latest"]
 GIPHY_KEY = (os.environ.get("GIPHY_KEY") or "").strip()    # безкоштовний ключ developers.giphy.com
-SMM_WEEKDAY, SMM_HOUR = 0, 13                               # дайджест SMM і таргету: пн о 13:00
+SMM_WEEKDAY, SMM_HOUR = 0, 8                                # SMM і таргет: пн, збираємо з 8:00 (за замовч. надсилаємо о 13:00)
 SMM_SUBS = ["FacebookAds", "PPC", "socialmedia", "TikTokAds", "InstagramMarketing"]   # «Фішки від практиків»
-SILPO_WEEKDAY, SILPO_HOUR = 3, 13                           # акції Сільпо: чт о 13:00
+SILPO_WEEKDAY, SILPO_HOUR = 3, 8                            # Сільпо: чт — розсилка (з 8:00 збираємо, надсилаємо у свій час, за замовч. 13:00)
 SILPO_SNAP_WEEKDAY, SILPO_SNAP_HOUR = 2, 20                 # знімок цін усіх товарів: ср після 20:00
 SILPO_LAT, SILPO_LON = 50.5135, 30.4935                     # вул. Калнишевського, 2 (Мінський масив)
 SILPO_STORE = "Калнишевськ"                                 # яку адресу шукати серед магазинів
@@ -878,9 +878,15 @@ def telegraph_page(st: dict, title: str, nodes: list) -> str | None:
         if not st.get("tgph"):
             st["tgph"] = http_json("https://api.telegra.ph/createAccount",
                                    {"short_name": "svitlobot", "author_name": "Kino"})["result"]["access_token"]
-        r = http_json("https://api.telegra.ph/createPage", {"access_token": st["tgph"], "title": title[:250],
-                                                             "content": nodes, "return_content": False})
-        return (r.get("result") or {}).get("url")
+        for attempt in range(3):                      # Telegraph обмежує частоту — чекаємо й повторюємо
+            r = http_json("https://api.telegra.ph/createPage", {"access_token": st["tgph"], "title": title[:250],
+                                                                 "content": nodes, "return_content": False})
+            if r.get("ok") or (r.get("result") or {}).get("url"):
+                return (r.get("result") or {}).get("url")
+            m_ = re.search(r"FLOOD_WAIT_(\d+)", str(r.get("error") or ""))
+            _time.sleep(min(int(m_.group(1)) + 1, 20) if m_ else 2)
+        print(f"Telegraph: {str(r)[:120]}")
+        return None
     except Exception as e:
         print(f"Telegraph: {err_text(e)[:120]}")
         return None
@@ -980,7 +986,8 @@ def kino_item(i: int, it: dict, ov_len: int = 160) -> str:
     ov = (d.get("overview") or "").strip() if ov_len else ""
     if len(ov) > ov_len:
         ov = ov[:ov_len - 3].rsplit(" ", 1)[0] + "…"
-    name = f'<a href="{html.escape(it["page"])}">{esc(title)}</a>' if it.get("page") else esc(title)
+    href = it.get("page") or f"https://www.themoviedb.org/{'tv' if is_tv else 'movie'}/{d.get('id')}?language=uk"   # завжди клікабельно
+    name = f'<a href="{html.escape(href)}">{esc(title)}</a>'
     badge = f" · {it['badge']}" if it.get("badge") else ""
     lines = [f"{'📺' if is_tv else '🎬'} <b>{i}. {name}</b> ({year}){badge}",
              " · ".join(x for x in (esc(genres), length) if x) + adult,
@@ -1574,6 +1581,20 @@ def gnews(q: str, lang: str) -> list[dict]:
              "source": (it.findtext("source") or "").strip()} for it in root.iter("item")]
 
 
+def ai_pick_index(titles: list[str], x: dict) -> int | None:
+    """Звіряємо, що опис ШІ належить саме цьому матеріалу: за оригінальним заголовком (src_title), а не лише за номером."""
+    import difflib
+    st_ = str(x.get("src_title") or "").lower().strip()
+    n_ = int(x["n"]) if str(x.get("n", "")).isdigit() and int(x["n"]) < len(titles) else None
+    if not st_:
+        return n_
+    scores = [difflib.SequenceMatcher(None, st_, t.lower()).ratio() for t in titles]
+    best = max(range(len(titles)), key=lambda i: scores[i]) if titles else None
+    if best is not None and scores[best] >= 0.6:
+        return best                                   # знайшли за заголовком (навіть якщо номер переплутано)
+    return n_ if n_ is not None and scores[n_] >= 0.35 else None   # інакше — не показуємо, щоб не було невідповідності
+
+
 def build_smm(st: dict, now: datetime) -> str | None:
     seen = set(st.get("smm_links", []))
     items, titles = [], set()
@@ -1609,13 +1630,19 @@ def build_smm(st: dict, now: datetime) -> str | None:
                  "соцмереж, зміни в рекламних кабінетах і таргетингу, алгоритми й охоплення, тести й чутки. Найвищий "
                  "пріоритет — темам, про які пишуть кілька джерел одразу (це головні новини тижня), і офіційним "
                  "анонсам Meta та Google. Для кожної теми обери одну найкращу новину; без повторів і без загальних "
-                 "порад. Розташуй від найважливішої. Для кожної поверни об'єкт: n (номер новини), "
+                 "порад. Розташуй від найважливішої. Для кожної поверни об'єкт: n (номер новини), src_title (оригінальний заголовок цієї новини дослівно — для звірки), "
                  "tag (new|ads|algo|rumor), title (короткий заголовок українською), what (1–2 речення українською: "
                  "що сталося), tip (1 речення: як використати на практиці). Відповідь — лише JSON-масив.\n\n"
                  + listing, json_mode=True, max_tokens=3000)
     blocks = []
     try:
-        picked = [p_ for p_ in json.loads(raw or "") if str(p_.get("n", "")).isdigit() and int(p_["n"]) < len(items)]
+        titles_ = [it["title"] for it in items]
+        picked = []
+        for p_ in json.loads(raw or ""):
+            ix = ai_pick_index(titles_, p_)
+            if ix is not None and ix not in [q["n"] for q in picked]:
+                p_["n"] = ix
+                picked.append(p_)
         if not picked:
             raise ValueError("порожній вибір")
         for n_, p_ in enumerate(picked[:10], 1):
@@ -1764,11 +1791,17 @@ def build_smm_practice(st: dict, now: datetime | None = None) -> str | None:
     raw = gemini("Ти — редактор дайджесту для SMM-спеціалістів і таргетологів. Ось свіжі матеріали тижня від практиків "
                  "(обговорення Reddit, блоги, Medium). Обери 4 з найкориснішими практичними фішками (налаштування "
                  "реклами, креативи, охоплення, алгоритми, кейси з цифрами); без загальних порад і без повторів. Для "
-                 "кожної поверни об'єкт: n, title (короткий заголовок українською), summary (2–3 речення: про що), "
+                 "кожної поверни об'єкт: n, src_title (оригінальний заголовок матеріалу дослівно — для звірки), title (короткий заголовок українською), summary (2–3 речення: про що), "
                  "tip (1–2 речення: головна практична фішка). Перекладай природно, без кальок. Відповідь — лише JSON-масив.\n\n"
                  + json.dumps(src, ensure_ascii=False), json_mode=True, max_tokens=2500)
     try:
-        items = [x for x in json.loads(raw or "") if str(x.get("n", "")).isdigit() and int(x["n"]) < len(cands)]
+        titles_ = [c["title"] for c in cands]
+        items = []
+        for x in json.loads(raw or ""):
+            ix = ai_pick_index(titles_, x)
+            if ix is not None and ix not in [q["n"] for q in items]:
+                x["n"] = ix
+                items.append(x)
     except Exception:
         return None
     blocks = []
@@ -2331,6 +2364,15 @@ def promo_kind(p_: dict) -> tuple | None:
             PROMO_SAMPLES.append(sig)
     if not price or PERSONAL.search(text):
         return None
+    if p_.get("isAvailable") is False or p_.get("available") is False or p_.get("inStock") is False or \
+            str(p_.get("stock", "x")) in ("0", "0.0") or p_.get("quantity") == 0:
+        return None                                   # немає в наявності — не показуємо
+    today_ = datetime.now(TZ).date().isoformat()
+    for x in pr:                                      # акція з датою закінчення, що минула — не показуємо
+        for k_, v_ in x.items():
+            if re.search(r"end|to$|till|finish|until", str(k_), re.I) and re.match(r"\d{4}-\d{2}-\d{2}", str(v_ or "")):
+                if str(v_)[:10] < today_:
+                    return None
     m = MULTI_NM.search(text)
     if m:                                             # 2+1: платите за N, отримуєте N+M
         n, k = int(m.group(1)), int(m.group(2))
@@ -2510,20 +2552,18 @@ X18_CACHE: dict = {}
 
 
 # ---------- 🛍 Знижки в ТЦ (Київ, Вінниця): сторінки акцій ТЦ → ШІ витягує структуру → лише чинні ----------
-MALLS = {   # (назва, варіанти адреси — перший, що відкриється)
+MALLS = {   # (назва, варіанти адреси — перший, що відкриється). Лише Київ.
     "kyiv": [("Lavina Mall", "https://lavinamall.ua|https://lavina.com.ua|https://www.lavinamall.com.ua"),
              ("Blockbuster Mall", "https://blockbuster.ua|https://blockbustermall.com.ua"),
              ("Gulliver", "https://gulliver.ua|https://gulliver.com.ua"), ("Respublika Park", "https://respublikapark.com.ua"),
              ("River Mall", "https://rivermall.com.ua"), ("Retroville", "https://retroville.ua|https://www.retroville.ua|https://retroville.kiev.ua"),
              ("Dream Town", "https://dreamtown.ua"), ("SkyMall", "https://skymall.ua"), ("Globus", "https://globus.com.ua"),
-             ("Ocean Mall", "https://oceanmall.com.ua|https://oceanmall.ua"), ("Smart Plaza", "https://smartplaza.com.ua"),
-             ("Cosmopolite", "https://cosmopolite.ua|https://cosmopolite.kiev.ua|https://www.cosmopolite.com.ua"),
-             ("Atmosfera", "https://atmosfera.ua"), ("Prospekt", "https://prospekt.ua|https://prospekt.com.ua"),
-             ("Silpo Mall / Арена", "https://arenacity.ua|https://arena-city.com.ua")],
-    "vin": [("Megamall", "https://megamall.com.ua|https://megamall.vn.ua|https://megamall.ua"),
-            ("Sky Park", "https://skypark.com.ua|https://skypark.vn.ua|https://skypark.ua"),
-            ("Магігранд", "https://magigrand.ua|https://magigrand.com.ua"), ("Плаза Парк", "https://plazapark.com.ua|https://plazapark.vn.ua"),
-            ("Ветеран", "https://veteran.vn.ua|https://tcveteran.com.ua")]}
+             ("Ocean Mall", "https://oceanmall.com.ua|https://oceanmall.ua"), ("Ocean Plaza", "https://oceanplaza.com.ua"),
+             ("Smart Plaza", "https://smartplaza.com.ua"), ("Караван", "https://karavan.com.ua|https://www.karavan.com.ua"),
+             ("Метрополіс", "https://metropolis.com.ua|https://metropolis.kiev.ua"), ("Променада", "https://promenada.com.ua|https://promenadapark.com.ua"),
+             ("Квадрат Neo", "https://kvadrat.com.ua|https://kvadratneo.com.ua"), ("Комод", "https://komod.kiev.ua|https://komod.ua"),
+             ("Городок Gorodok", "https://gorodok.com.ua|https://gorodok.ua"), ("Атмосфера", "https://atmosfera.ua|https://atmosfera.kiev.ua"),
+             ("Cosmopolite", "https://cosmopolite.ua|https://cosmopolite.kiev.ua"), ("Більшовик / Rive Gauche", "https://rivegauche.com.ua")]}
 WOMEN_BRANDS = [   # білизна й жіночий одяг — онлайн і мережі магазинів (акції чинні по всій Україні)
     ("Intimissimi", "https://www.intimissimi.com/ua|https://intimissimi.com.ua", "👙 білизна · 🏪 + 🌐"),
     ("Women'secret", "https://womensecret.com/ua|https://womensecret.ua", "👙 білизна · 🏪 + 🌐"),
@@ -2540,12 +2580,13 @@ WOMEN_BRANDS = [   # білизна й жіночий одяг — онлайн 
 TC_CATS = ["білизна", "одяг", "взуття", "ювелірка", "парфуми й косметика", "аксесуари", "техніка", "дитяче", "дім", "спорт", "їжа й кафе",
            "іграшки 18+", "інше"]
 TC_WOMEN = {"білизна": 0, "одяг": 1, "ювелірка": 2, "парфуми й косметика": 3, "взуття": 4, "аксесуари": 5}   # жіночі — вище
-SEX_SHOPS = [("Насолода", "https://nasoloda.ua", "🏪 магазини + онлайн"), ("Lovespace", "https://lovespace.ua", "🏪 магазини + онлайн"),
-             ("Інтимка", "https://intimka.com.ua|https://intimka.ua|https://www.intimka.com.ua", "🏪 магазини + онлайн"),
-             ("Дім 69", "https://dim69.com.ua|https://dom69.com.ua|https://dim69.ua", "🏪 магазини + онлайн"),
-             ("Kazanova", "https://kazanova.ua", "🌐 онлайн"), ("Sextoys", "https://sextoys.com.ua", "🌐 онлайн"),
-             ("Sexify", "https://sexify.com.ua", "🌐 онлайн"), ("Intimshop", "https://intimshop.ua|https://intimshop.com.ua", "🌐 онлайн"),
-             ("Puzzle", "https://puzzle-shop.com.ua|https://puzzleshop.com.ua", "🌐 онлайн"), ("LoveYou", "https://loveyou.ua", "🌐 онлайн")]
+SEX_SHOPS = [("No Taboo", "https://no-taboo.com.ua|https://aaaa.in.ua", "🏪 мережа магазинів + онлайн"),
+             ("Полуничка", "https://www.polunichka.shop|https://polunichka.shop", "🏪 мережа магазинів + онлайн"),
+             ("Насолода", "https://www.nasoloda.shop|https://nasoloda.ua", "🏪 магазини + онлайн"),
+             ("Lovespace", "https://lovespace.ua", "🏪 магазини + онлайн"), ("Афродіта", "https://erotikon.com.ua", "🏪 інтим-бутики + онлайн"),
+             ("Амурчик", "https://amurchik.ua", "🌐 онлайн"),
+             ("Інтимка", "https://intimka.com.ua|https://intimka.ua", "🏪 магазини + онлайн"), ("Дім 69", "https://dim69.com.ua|https://dom69.com.ua", "🏪 магазини + онлайн"),
+             ("Kazanova", "https://kazanova.ua", "🌐 онлайн"), ("Sextoys", "https://sextoys.com.ua", "🌐 онлайн"), ("Sexify", "https://sexify.com.ua", "🌐 онлайн")]
 PROMO_LINK = re.compile(r'<a[^>]+href="([^"#]+)"[^>]*>(.*?)</a>', re.I | re.S)
 PROMO_WORD = re.compile(r"акці|знижк|sale|promo|offer|aktsi|akci|skidk|розпродаж", re.I)
 
@@ -2637,6 +2678,8 @@ def tc_extract(mall: str, url: str, now: datetime) -> list[dict]:
     raw = gemini(f"Сьогодні {now:%Y-%m-%d}. Це сторінка акцій торгового центру «{mall}». Витягни ВСІ акції магазинів. "
                  "Для кожної: shop (назва магазину), offer (коротко українською, що за акція), discount (наприклад «−30%» або «2+1», якщо є), "
                  "start і end (YYYY-MM-DD; якщо не вказано — порожньо), url (посилання на сторінку акції зі списку посилань, якщо є), "
+                 "status: «active» — з тексту ЯВНО видно, що акція діє сьогодні (є чинний термін або «постійна», «до кінця місяця», «лише сьогодні»), "
+                 "«ended» — закінчилась, «unknown» — неможливо зрозуміти, чи діє (стара новина, без дат); "
                  f"category (одне з: {', '.join(TC_CATS)}). Не вигадуй — лише те, що є на сторінці. Поверни лише JSON-масив.\n\n"
                  f"ТЕКСТ СТОРІНКИ:\n{text}\n\nПОСИЛАННЯ:\n" + "\n".join(links[:250]), json_mode=True, max_tokens=4000)
     try:
@@ -2650,13 +2693,23 @@ def tc_extract(mall: str, url: str, now: datetime) -> list[dict]:
             continue
         out.append({"mall": mall, "shop": shop[:60], "offer": offer[:160], "disc": str(x.get("discount") or "")[:20],
                     "start": str(x.get("start") or "")[:10], "end": str(x.get("end") or "")[:10],
-                    "url": str(x.get("url") or url)[:300], "cat": x.get("category") if x.get("category") in TC_CATS else "інше"})
+                    "url": str(x.get("url") or url)[:300], "cat": x.get("category") if x.get("category") in TC_CATS else "інше",
+                    "status": str(x.get("status") or "unknown")})
     if raw:                                           # кешуємо лише успішну відповідь ШІ
         TC_CACHE[url] = {"h": h, "items": out}
     return out
 
 
 TC_STATS = {"ai": 0, "cached": 0}
+
+
+def tc_valid(it: dict, today: str, first_seen: str, now: datetime) -> bool:
+    """Показуємо лише точно чинні: є дата закінчення й вона не минула, або сторінка прямо каже «діє зараз» (тоді ≤ 14 днів)."""
+    if it.get("status") == "ended" or (it["start"] and it["start"] > today):
+        return False
+    if it["end"]:
+        return it["end"] >= today
+    return it.get("status") == "active" and (now.date() - datetime.fromisoformat(first_seen).date()).days <= 14
 
 
 def tc_refresh(st: dict, now: datetime, force: bool = False) -> str | None:
@@ -2686,12 +2739,8 @@ def tc_refresh(st: dict, now: datetime, force: bool = False) -> str | None:
                 k = hashlib.md5(f"{mall}|{it['shop']}|{it['offer']}".encode()).hexdigest()[:10]
                 first.setdefault(k, today)
                 it["k"], it["seen"] = k, first[k]
-                if it["end"] and it["end"] < today:
-                    continue                          # закінчилась — прибираємо одразу
-                if it["start"] and it["start"] > today:
-                    continue                          # ще не почалась
-                if not it["end"] and (now.date() - datetime.fromisoformat(first[k]).date()).days > 10:
-                    continue                          # без дат — показуємо не довше 10 днів
+                if not tc_valid(it, today, first[k], now):
+                    continue                          # лише точно чинні акції
                 items.append(it)
         items.sort(key=lambda x: (x["seen"], -TC_WOMEN.get(x["cat"], 9), x["start"]), reverse=True)
         try:
@@ -2714,8 +2763,7 @@ def tc_refresh(st: dict, now: datetime, force: bool = False) -> str | None:
             k = hashlib.md5(f"{shop}|{it['offer']}".encode()).hexdigest()[:10]
             first.setdefault(k, today)
             it.update(k=k, seen=first[k], kind=kind, mall="Бренди")
-            if (it["end"] and it["end"] < today) or (it["start"] and it["start"] > today) or \
-                    (not it["end"] and (now.date() - datetime.fromisoformat(first[k]).date()).days > 10):
+            if not tc_valid(it, today, first[k], now):
                 continue
             br_items.append(it)
     try:
@@ -2738,8 +2786,7 @@ def tc_refresh(st: dict, now: datetime, force: bool = False) -> str | None:
             k = hashlib.md5(f"{shop}|{it['offer']}".encode()).hexdigest()[:10]
             first.setdefault(k, today)
             it.update(k=k, seen=first[k], kind=kind)
-            if (it["end"] and it["end"] < today) or (it["start"] and it["start"] > today) or \
-                    (not it["end"] and (now.date() - datetime.fromisoformat(first[k]).date()).days > 10):
+            if not tc_valid(it, today, first[k], now):
                 continue
             sx.append(it)
     sx.sort(key=lambda x: (x["seen"], x["start"]), reverse=True)
@@ -2897,7 +2944,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
         return None
     shop = (f"Сільпо, {esc(label)}" if label else 'Ціни ' + esc((st.get('silpo_branch') or {}).get('name'))
             if not (st.get('silpo_branch') or {}).get('store') else 'Сільпо, вул. Калнишевського, 2')
-    head = (f"🛒 <b>АКЦІЇ СІЛЬПО · ТОП ЗА ТИЖДЕНЬ</b> · з {now:%d.%m}\n"
+    head = (f"🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на {now:%d.%m} (оновлюється щоранку)\n"
             f"<i>{shop} · 🔥 — «Ціна тижня»</i>\n"
             + ("<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>" if weeks
                else "<i>Реальна вигода з'явиться з наступного тижня (бот ще збирає історію цін)</i>"))
@@ -3373,6 +3420,35 @@ def dec(s: str | None) -> list:
         return []
 
 
+GS_KEYS = ["silpo_last", "silpo_more", "silpo_stores", "yt_last", "smm_last", "fact", "fact_day", "fact_png", "emerg", "addr",
+           "gh_beat", "kino_q", "kino_gq", "silpo_by", "kino_last"]
+
+
+def push_to_worker(st: dict) -> None:
+    """Приватний репозиторій: Cloudflare не бачить state.json і файли — передаємо потрібне в його базу (лише змінене)."""
+    if not WORKER_MODE:
+        return
+    base = f"{SYNC_URL}/{{}}?key={urllib.parse.quote(SYNC_KEY)}"
+    ph = st.setdefault("pushed_h", {})
+    gs = {k: st[k] for k in GS_KEYS if k in st}
+    h = hashlib.md5(json.dumps(gs, ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:12]
+    if ph.get("gs") != h:
+        http_json(base.format("statepush"), {"gs": gs})
+        ph["gs"] = h
+    files = [Path("quiz_pool.json"), Path("fact.png")] + sorted(Path("silpo").glob("*.json")) if Path("silpo").exists() else [Path("quiz_pool.json"), Path("fact.png")]
+    for f in files:
+        if not f.exists():
+            continue
+        raw = f.read_bytes()
+        fh = hashlib.md5(raw).hexdigest()[:12]
+        if ph.get(str(f)) == fh:
+            continue
+        payload = {"name": str(f), "b64": base64.b64encode(raw).decode()} if f.suffix == ".png" else {"name": str(f), "json": json.loads(raw)}
+        http_json(base.format("filepush"), payload)
+        ph[str(f)] = fh
+        print(f"Cloudflare: передано {f}")
+
+
 def load_state() -> dict:
     try:
         return json.loads(STATE_FILE.read_text("utf-8"))
@@ -3745,8 +3821,9 @@ def main() -> None:
     kino_req, yt_req = list(dict.fromkeys(kino_req)), list(dict.fromkeys(yt_req))
     para_req = list(dict.fromkeys(para_req))
 
-    def audience(topic: str) -> list[str]:
-        return family + [c for c, on in subs.items() if topic in on and c not in family]
+    def audience(topic: str) -> list[str]:          # основні — усе, крім вимкненого в ⚙️; підписники — увімкнені теми
+        return ([c for c in family if topic not in ((PROF.get(c) or {}).get("off") or [])]
+                + [c for c, on in subs.items() if topic in on and c not in family])
 
     svitlo_to = audience("svitlo")
 
@@ -3774,7 +3851,8 @@ def main() -> None:
     if first_run:
         for c in svitlo_to:
             ms[c] = today_key
-    due_m = [c for c in svitlo_to if ms.get(c) != today_key and due_at(c, "mtime", MORNING_HOUR)]
+    due_m = [c for c in svitlo_to if ms.get(c) != today_key and due_at(c, "mtime", MORNING_HOUR)
+             and "ranok" not in ((PROF.get(c) or {}).get("off") or [])]            # ☀️ ранкове зведення можна вимкнути
     if due_m:
         n = now.date().toordinal()
         wife_head = (f"☀️ <b>Доброго ранку, {WIFE_NAME}!</b>\n"
@@ -4075,6 +4153,14 @@ def main() -> None:
             topic_msgs.append(("silpo", sp, None, sp))
             silpo_req = [c for c in silpo_req if c not in audience("silpo")]
             SILPO_OWN.update(c for c in subs if (PROF.get(c) or {}).get("silpo"))   # у них свій магазин
+    if (not silpo_due and now.hour >= 7 and st.get("silpo_day") != today_key
+            and st.get("silpo_try") != now.strftime("%Y-%m-%d %H")):   # щоранку оновлюємо підбірку меню: лише чинні й у наявності
+        st["silpo_try"] = now.strftime("%Y-%m-%d %H")
+        sp_d = build_silpo(st, now)
+        if sp_d:
+            st["silpo_last"], st["silpo_day"] = sp_d, today_key
+    if silpo_due and st.get("silpo_last"):
+        st["silpo_day"] = today_key
     if not st.get("silpo_last") and not st.get("silpo_try") == now.strftime("%Y-%m-%d %H"):
         st["silpo_try"] = now.strftime("%Y-%m-%d %H")  # акцій тижня ще немає — збираємо заздалегідь, без розсилки
         sp = build_silpo(st, now)
@@ -4105,7 +4191,7 @@ def main() -> None:
             built += 1
             if sp_:
                 by[b] = {"week": sp_week, "text": sp_}
-        if (by.get(b) or {}).get("week") == sp_week and now.weekday() == SILPO_WEEKDAY and now.hour >= SILPO_HOUR \
+        if (by.get(b) or {}).get("week") == sp_week and now.weekday() == SILPO_WEEKDAY and now.hour >= 13 \
                 and (st.get("silpo_sent_by") or {}).get(b) != sp_week:          # чт 13:00 — розсилка своїм підписникам
             st.setdefault("silpo_sent_by", {})[b] = sp_week
             direct_m += [(c, by[b]["text"], None) for c, sb in sub_store.items() if sb == b and "silpo" in subs.get(c, [])]
@@ -4113,7 +4199,7 @@ def main() -> None:
             direct_m.append((c, (by.get(b) or {}).get("text") or "🛒 Не вдалося отримати акції вашого магазину, спробуйте пізніше.", None))
 
     # ⭐ четвер: сигнал «на ваше обране є акції» (кому ввімкнено 🔔)
-    if now.weekday() == SILPO_WEEKDAY and now.hour >= SILPO_HOUR:
+    if now.weekday() == SILPO_WEEKDAY and now.hour >= 13:
         fs = st.setdefault("fav_sent", {})
         for c, fv in FAVS.items():
             if not (fv or {}).get("n") or not fv.get("items") or fs.get(c) == sp_week:
@@ -4156,9 +4242,27 @@ def main() -> None:
     jobs += direct_m
     change_to = [] if worker_alive else svitlo_to      # працює Worker — зміни вже надіслав він
     jobs += [(cid, text, None) for text in change_msgs for cid in change_to]
+    pend, got = st.setdefault("pend", {}), st.setdefault("got", {})   # тижневі розсилки — у свій час кожного (⚙️)
     for topic, text, mk, plain in topic_msgs:
-        jobs += [(cid, text, mk) if cid in family else (cid, plain, None) for cid in audience(topic)
-                 if not (topic == "silpo" and cid in SILPO_OWN)]
+        if isinstance(text, str) and isinstance(plain, str):
+            pend[topic] = {"id": now.strftime("%Y-%m-%d %H"), "t": text, "mk": mk, "p": plain, "exp": (now + timedelta(days=2)).isoformat()}
+        else:
+            jobs += [(cid, text, mk) if cid in family else (cid, plain, None) for cid in audience(topic)]
+    DEF_H = {"kino": 11, "yt": 11, "smm": 13, "silpo": 13}
+    for topic, pd in list(pend.items()):
+        if datetime.fromisoformat(pd["exp"]) < now:
+            del pend[topic]
+            got.pop(topic, None)
+            continue
+        g_ = got.setdefault(topic, {})
+        for cid in audience(topic):
+            if (topic == "silpo" and cid in SILPO_OWN) or g_.get(cid) == pd["id"]:
+                continue
+            h_ = ((PROF.get(cid) or {}).get("t") or {}).get(topic, DEF_H.get(topic, 11))
+            if first_run or now.hour >= int(h_) or now.date() > datetime.fromisoformat(pd["exp"]).date() - timedelta(days=2):
+                g_[cid] = pd["id"]
+                if not first_run:
+                    jobs.append((cid, pd["t"], pd["mk"]) if cid in family else (cid, pd["p"], None))
     expanded = []                                     # довгі підбірки (Сільпо, SMM) — кількома повідомленнями
     for cid, text, mk in jobs:
         if type(text) is str and (SPLIT in text or "\n§KB:" in text or "\n§KN:" in text or "\n§RT:" in text or "\n§SN:" in text):
@@ -4227,7 +4331,14 @@ def main() -> None:
     st["fp"] = {k: v for k, v in fp.items() if k >= keep_from}
     st["reminded"] = sorted(k for k in rem
                             if datetime.fromisoformat(k.split("|", 1)[1]) > now - timedelta(days=1))
+    for k_ in ("tc_cache", "tc_first", "tc_slot"):    # ТЦ тепер у tc_state.json — тут не тримаємо
+        st.pop(k_, None)
     STATE_FILE.write_text(json.dumps(st, ensure_ascii=False, indent=1), "utf-8")
+    try:
+        push_to_worker(st)                            # репозиторій приватний — Cloudflare отримує дані від нас
+        STATE_FILE.write_text(json.dumps(st, ensure_ascii=False, indent=1), "utf-8")
+    except Exception as e:
+        print(f"Передача в Cloudflare: {err_text(e)[:120]}")
     # недоставлені повідомлення: раз на день попередження вам у Telegram (без червоного запуску)
     if failed_ids and st.get("warned") != today_key:
         who = ", ".join("дружині" if c == WIFE_ID else c for c in sorted(failed_ids))

@@ -20,6 +20,8 @@ def main() -> None:
     with sync_playwright() as pw:
         browser = pw.chromium.launch(headless=True, args=["--disable-blink-features=AutomationControlled"])
         ctx = browser.new_context(locale="uk-UA", user_agent=UA, ignore_https_errors=True, viewport={"width": 1366, "height": 900})
+        ctx.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined});"
+                            "window.chrome = {runtime: {}}; Object.defineProperty(navigator, 'languages', {get: () => ['uk-UA', 'uk', 'en']});")
         page = ctx.new_page()
 
         def get(url: str) -> str:
