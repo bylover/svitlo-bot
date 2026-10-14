@@ -24,7 +24,7 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v5
       - name: Install Pillow
@@ -42,6 +42,7 @@ jobs:
           TRAKT_ID: ${{ secrets.TRAKT_ID }}
           TPDB_KEY: ${{ secrets.TPDB_KEY }}
           STASHDB_KEY: ${{ secrets.STASHDB_KEY }}
+          LASTFM_KEY: ${{ secrets.LASTFM_KEY }}
           YT_KEY: ${{ secrets.YT_KEY }}
           GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
           GIPHY_KEY: ${{ secrets.GIPHY_KEY }}
@@ -64,6 +65,10 @@ jobs:
           [ -f fact.png ] && git add fact.png
           [ -f quiz_pool.json ] && git add quiz_pool.json
           [ -d silpo ] && git add silpo
+          [ -f sexed.json ] && git add sexed.json
+          [ -f impulse.json ] && git add impulse.json
+          [ -f music.json ] && git add music.json
+          [ -d sx ] && git add sx
           git diff --cached --quiet && exit 0
           git commit -m "state"
           for i in 1 2 3; do
