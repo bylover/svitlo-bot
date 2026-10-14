@@ -1701,7 +1701,7 @@
   "сайт ДТЕК": false,
   "канал ЖК «Яскравий»": true
  },
- "fact_png": "2026-10-14 13|4|2026-10-13T18:19:01+03:00",
+ "fact_png": "2026-10-14 14|4|2026-10-13T18:19:01+03:00",
  "fact_day": {
   "total": "3 год 9 хв",
   "list": [
@@ -2769,7 +2769,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-14T13:55:58.660714+03:00",
+ "gh_beat": "2026-10-14T14:00:59.524938+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -12857,9 +12857,9 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "1b3edbcd6186",
+  "gs": "53b6ceb22caa",
   "quiz_pool.json": "5d94078dfb15",
-  "fact.png": "1cfbaed0fe01",
+  "fact.png": "6eed9252a4c4",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "e04c1713bf3b",
   "silpo/m.json": "fedbb73f589a",
   "sexed.json": "5d9cfc63c1d6",
