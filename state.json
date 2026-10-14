@@ -1662,7 +1662,17 @@
   "m776797",
   "m508642",
   "m92499",
-  "m56812"
+  "m56812",
+  "m447743",
+  "m438799",
+  "m604079",
+  "m375366",
+  "m188927",
+  "m1317088",
+  "m983282",
+  "m777443",
+  "m282070",
+  "m31011"
  ],
  "yt_ver": 2,
  "yt_seen": [
@@ -2486,7 +2496,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-15T01:26:19.209108+03:00",
+ "gh_beat": "2026-10-15T01:31:21.339662+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -13876,6 +13886,78 @@
    null,
    null,
    "2026-10-15"
+  ],
+  "tt14107334": [
+   6.3,
+   61,
+   56,
+   "2026-10-15"
+  ],
+  "tt4547056": [
+   6.6,
+   86,
+   67,
+   "2026-10-15"
+  ],
+  "tt8429394": [
+   4.5,
+   null,
+   null,
+   "2026-10-15"
+  ],
+  "tt2660888": [
+   7.0,
+   86,
+   68,
+   "2026-10-15"
+  ],
+  "tt10451914": [
+   5.5,
+   36,
+   45,
+   "2026-10-15"
+  ],
+  "tt3501632": [
+   7.9,
+   93,
+   74,
+   "2026-10-15"
+  ],
+  "tt2527336": [
+   6.8,
+   91,
+   84,
+   "2026-10-15"
+  ],
+  "tt7766378": [
+   5.9,
+   14,
+   30,
+   "2026-10-15"
+  ],
+  "tt1483013": [
+   7.0,
+   53,
+   54,
+   "2026-10-15"
+  ],
+  "tt1037705": [
+   6.8,
+   46,
+   53,
+   "2026-10-15"
+  ],
+  "tt0414993": [
+   7.1,
+   52,
+   51,
+   "2026-10-15"
+  ],
+  "tt0910554": [
+   6.9,
+   35,
+   null,
+   "2026-10-15"
   ]
  },
  "mo_sent": {},
@@ -13885,7 +13967,7 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "555acb1b22d2",
+  "gs": "5612f9400098",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "d0f0f03e1c06",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a315d64f80c3",
@@ -14616,6 +14698,12 @@
    {
     "id": "d1dbac3a2c",
     "text": "🍿 <b>ПІДБІРКА КІНО · ЖАХИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/745881?language=uk\">ร่างทรง</a></b> (2021)\nжахи, детектив · ⏱ 2 год 11 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>83%</b>\n<i>🎭 นริลญา กุลมงคลเพชร, สวนีย์ อุทุมมา, ศิราณี ญาณกิตติกานต์</i>\n📝 A shaman's family learn that their goddess is supposedly controlling one of them. However, their lives take a frightening turn when they realise the goddess has nothing to do with the possession.\n▶️ <a href=\"https://youtu.be/wDtJ3M4arIc\">Трейлер</a></blockquote>\n§KN:m745881\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/440021?language=uk\">Щасливий день смерті</a></b> (2017)\nкомедія, жахи, детектив · ⏱ 1 год 37 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>71%</b> · Ⓜ <b>58</b>\n<i>🎭 Джессіка Рот, Israel Broussard, Charles Aitken</i>\n📺 <a href=\"https://www.themoviedb.org/movie/440021-happy-death-day/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 На день народження вона отримала справжній сюрприз – смерть. Але на цьому історія не скінчилася, якась невідома сила дає дівчині другий шанс. Вона повинна пережити цей день знову і знову, щоб з’ясувати, хто і чому…\n▶️ <a href=\"https://youtu.be/xYN6bYTSBH8\">Трейлер</a></blockquote>\n§KN:m440021\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/381288?language=uk\">Спліт</a></b> (2017)\nжахи, трилер · ⏱ 1 год 57 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>79%</b> · Ⓜ <b>63</b>\n<i>🎭 Джеймс Мак-Евой, Аня Тейлор-Джой, Гейлі Лу Річардсон</i>\n📺 <a href=\"https://www.themoviedb.org/movie/381288-split/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Кевін страждає від психічного розладу: у його тілі живуть понад 23 різних особистості. Одна з них змушує хлопця викрасти і утримувати в полоні трьох молодих дівчат. Демон в людській подобі терзає і грається з…\n▶️ <a href=\"https://youtu.be/zVSPSY_lLq0\">Трейлер</a></blockquote>\n§KN:m381288\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/1138194?language=uk\">Єретик</a></b> (2024)\nтрилер, жахи · ⏱ 1 год 51 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>89%</b> · Ⓜ <b>71</b>\n<i>🎭 Гʼю Ґрант, Софі Тетчер, Хлоя Іст</i>\n📝 Двоє юних місіонерок змушені доводити свою віру, коли постукавши не в ті двері, їх зустрічає диявольський містер Рід, і вони потрапляють в пастку його смертоносної гри в кішки-мишки.\n▶️ <a href=\"https://youtu.be/GTiXBEgPLcw\">Трейлер</a></blockquote>\n§KN:m1138194\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/376570?language=uk\">Тиша</a></b> (2016)\nжахи, трилер · ⏱ 1 год 22 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>92%</b> · Ⓜ <b>67</b>\n<i>🎭 Джон Ґаллахер-молодший, Кейт Сіґел, Michael Trucco</i>\n📺 <a href=\"https://www.themoviedb.org/movie/376570-hush/watch?locale=UA\">Plex</a>\n📝 Глуха жінка стає об'єктом переслідування вбивці-психопата в своєму будинку у лісі.\n▶️ <a href=\"https://youtu.be/asCMNUPggf4\">Трейлер</a></blockquote>\n§KN:m376570\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/546121?language=uk\">Тікай</a></b> (2020)\nтрилер, жахи, драма · ⏱ 1 год 30 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>88%</b> · Ⓜ <b>67</b>\n<i>🎭 Сара Полсон, Kiera Allen, Pat Healy</i>\n📝 Дайан Шерман одна виховує доньку-підлітка Хлою. Дівчинка прикута до інвалідного крісла, жменями приймає пігулки і не спілкується з однолітками, адже вона знаходиться на домашньому навчанні. Згодом Хлоя починає…\n▶️ <a href=\"https://youtu.be/TWtzRzXBeIM\">Трейлер</a></blockquote>\n§KN:m546121\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/776797?language=uk\">Cмуток</a></b> (2021)\nжахи, трилер · ⏱ 1 год 40 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>88%</b> · Ⓜ <b>68</b>\n<i>🎭 朱軒洋, 雷嘉汭, Цу-Чан Ван</i>\n📝 A young couple is pushed to the limits of sanity as they attempt to be reunited amid the chaos of a pandemic outbreak. The streets erupt into violence and depravity, as those infected are driven to enact the most…\n▶️ <a href=\"https://youtu.be/q2lNlfQPTFg\">Трейлер</a></blockquote>\n§KN:m776797\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/508642?language=uk\">Психіатрична лікарня Конджіам</a></b> (2018)\nжахи, детектив · ⏱ 1 год 35 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>92%</b>\n<i>🎭 Ві Ха Чжун, Пак Чі Хьон, 오아연</i>\n📺 <a href=\"https://www.themoviedb.org/movie/508642/watch?locale=UA\">FOUND TV</a>\n📝 Психіатрична лікарня Конджіам вважається одним із найвідоміших місць із привидами у Південній Кореї. Вона відкрилася у 1969 році, але незабаром там почали відбуватися загадкові події. Кілька пацієнтів скоїли…\n▶️ <a href=\"https://youtu.be/NWKl_9B09O0\">Трейлер</a></blockquote>\n§KN:m508642\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/92499?language=uk\">오싹한 연애</a></b> (2011)\nжахи, комедія, фентезі · ⏱ 1 год 54 хв\n⭐ IMDb <b>6.8</b>\n<i>🎭 Сон Є Чжин, Лі Мін Кі, Пак Чхоль Мін</i>\n📝 A magician makes an assistant out of a strange girl with the ability to see ghosts, and the two achieve success with their shows, through thick and thin. However, another kind of magic might be brewing behind the…\n▶️ <a href=\"https://youtu.be/2HTxk13yP3M\">Трейлер</a></blockquote>\n§KN:m92499\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/56812?language=uk\">Сумна балада для труби</a></b> (2010)\nпригоди, комедія, драма · ⏱ 1 год 46 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>76%</b> · Ⓜ <b>70</b>\n<i>🎭 Carlos Areces, Carolina Bang, Antonio de la Torre</i>\n📝 Циркові мавпи нестямно волають в своїх клітках, а зовні люди вмирають і вбивають один одного. Це ще один цирк — Іспанська громадянська війна. Проти своєї волі Рудий клоун іде в ряди народного війська і бере участь в…\n▶️ <a href=\"https://youtu.be/C8sEZAB13_o\">Трейлер</a></blockquote>\n§KN:m56812"
+   }
+  ],
+  "scifi": [
+   {
+    "id": "5f8e06bd73",
+    "text": "🍿 <b>ПІДБІРКА КІНО · ФАНТАСТИКА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/447743?language=uk\">いぬやしき</a></b> (2018)\nбойовик, пригоди, фантастика · ⏱ 2 год 07 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>100%</b>\n<i>🎭 Норітаке Кінаші, Такеру Сато, Каната Хонґо</i>\n📝 A middle-aged office worker encounters aliens and is gifted with alien technology and limitless powers.</blockquote>\n§KN:m447743\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/438799?language=uk\">Оверлорд</a></b> (2018)\nжахи, військовий, фантастика · ⏱ 1 год 50 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>82%</b> · Ⓜ <b>60</b>\n<i>🎭 Джован Адепо, Ваятт Расселл, Пілоу Асбек</i>\n📺 <a href=\"https://www.themoviedb.org/movie/438799-overlord/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Фантастичний горрор від режисера Джей Джей Абрамса. 1944 рік, Нормандія. Двоє американських десантників висаджуються в тилу ворога з важливою місією. Наближаючись до своєї мети, вони усвідомлюють, що в селищі,…\n▶️ <a href=\"https://youtu.be/1XGdu5V-2d8\">Трейлер</a></blockquote>\n§KN:m438799\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/604079?language=uk\">Довга хода</a></b> (2025)\nфантастика, трилер, жахи · ⏱ 1 год 48 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>88%</b> · Ⓜ <b>71</b>\n<i>🎭 Купер Гоффман, Девід Джонссон, Garrett Wareing</i>\n📝 Дія фільму відбувається в антиутопічному світі, де група хлопців-підлітків змагається в щорічному змаганні під назвою «Довга хода», де вони повинні підтримувати певну швидкість ходьби, інакше їх застрелять.\n▶️ <a href=\"https://youtu.be/mV2kyYjUmWE\">Трейлер</a></blockquote>\n§KN:m604079\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/375366?language=uk\">Нова ера Z</a></b> (2016)\nбойовик, жахи, фантастика · ⏱ 1 год 51 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>86%</b> · Ⓜ <b>67</b>\n<i>🎭 Sennia Nanua, Джемма Артертон, Патрік Консідайн</i>\n📝 Майбутнє. Планета заражена смертоносною грибковою спорою. Головна героїня Мелані на перший погляд здається зовсім звичайною. Але насправді дівчина володіє феноменальним рівнем IQ, а в її крові живе смертельний вірус.…\n▶️ <a href=\"https://youtu.be/HjGkB_oWTe0\">Трейлер</a></blockquote>\n§KN:m375366\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/188927?language=uk\">Зоряний шлях: За межами Всесвіту</a></b> (2016)\nбойовик, пригоди, фантастика · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>86%</b> · Ⓜ <b>68</b>\n<i>🎭 Кріс Пайн, Закарі Квінто, Карл Урбан</i>\n📺 <a href=\"https://www.themoviedb.org/movie/188927-star-trek-beyond/watch?locale=UA\">Netflix, Apple TV Store, Rakuten TV</a>\n📝 Події розвиваються через 2 роки після початку п'ятирічної місії. Екіпаж зоряного корабля «Ентерпрайз», на чолі з капітаном Джеймсом Т. Кірком, були атаковані могутньою і небезпечною хвилею невідомих прибульців, які…\n▶️ <a href=\"https://youtu.be/jBHr5TWZg14\">Трейлер</a></blockquote>\n§KN:m188927\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/1317088?language=uk\">Оцінка</a></b> (2025)\nфантастика, драма, трилер · ⏱ 1 год 54 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>83%</b> · Ⓜ <b>62</b>\n<i>🎭 Елізабет Олсен, Алісія Вікандер, Гімеш Патель</i>\n📝 У світі, що потерпає від кліматичних змін, утопічне суспільство оптимізує життя, в тому числі й оцінку батьківства. Успішна пара протягом семи днів проходить перевірку на придатність до дітонародження.\n▶️ <a href=\"https://youtu.be/bYmELiSalx0\">Трейлер</a></blockquote>\n§KN:m1317088\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/983282?language=uk\">Штучна</a></b> (2023)\nфантастика, трилер, детектив · ⏱ 1 год 33 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>92%</b> · Ⓜ <b>60</b>\n<i>🎭 Tatum Matthews, Franklin Ritch, Sinda Nichols</i>\n📝 Дія сюжету відбувається виключно у приміщенні для допитів ФБР, яке є кімнатою без вікон. Двоє спецагентів правоохоронної організації Діна та Амос готуються допитати підозрюваного у певній сумнівній діяльності. Ці два…\n▶️ <a href=\"https://youtu.be/uwur0W5PpXE\">Трейлер</a></blockquote>\n§KN:m983282\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/777443?language=uk\">Електричний штат</a></b> (2025)\nбойовик, пригоди, фантастика · ⏱ 2 год 05 хв\n⭐ IMDb <b>5.9</b> · 🍅 <b>14%</b> · Ⓜ <b>30</b>\n<i>🎭 Міллі Боббі Браун, Кріс Пратт, Джонатан Ке Кван</i>\n📺 <a href=\"https://www.themoviedb.org/movie/777443-the-electric-state/watch?locale=UA\">Netflix</a>\n📝 Осиротіла дівчина-підліток вирушає на пошуки давно загубленого брата разом із загадковим роботом, контрабандистом і його дотепним помічником.\n▶️ <a href=\"https://youtu.be/BKrRX9IXPqs\">Трейлер</a></blockquote>\n§KN:m777443\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/282070?language=uk\">Паразит: Частина 2</a></b> (2015)\nфантастика, жахи, бойовик · ⏱ 1 год 57 хв\n⭐ IMDb <b>6.5</b>\n<i>🎭 Шьота Сометані, Ай Хашімото, Садаво Абе</i>\n📝 Паразити - істоти, прибулі на Землю з космосу. Вони вселяються в тіла різних тварин, включаючи людину, і прагнуть проникнути в їх мозок. Потім паразит поглинає тіло жертви і перетворюється на істоту, що виглядає як…\n▶️ <a href=\"https://youtu.be/6WsrsXJle5U\">Трейлер</a></blockquote>\n§KN:m282070\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/31011?language=uk\">Містер Ніхто</a></b> (2009)\nфантастика, драма, мелодрама · ⏱ 2 год 21 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>64%</b> · Ⓜ <b>63</b>\n<i>🎭 Джаред Лето, Сара Поллі, Даян Крюґер</i>\n📝 У недалекому майбутньому всі люди вже стали безсмертними, тільки один старий, якого всі називають просто Ніхто, виявляється смертним. У форматі телешоу його смерть транслюється по всьому світу. На порозі останніх…\n▶️ <a href=\"https://youtu.be/-GzJ1gA6Mg0\">Трейлер</a></blockquote>\n§KN:m31011"
    }
   ]
  },
