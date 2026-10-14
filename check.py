@@ -2344,6 +2344,7 @@ GURT = re.compile(r"гурт|від\s*\d+\s*шт|при\s+купівлі\s+ві�
 ONLINE = re.compile(r"онлайн|online|лише\s+в\s+застосунку|в\s+додатку", re.I)
 PROMO_SAMPLES: list = []
 ALL_PROMOS: list = []                                       # усі акції магазину — для «⭐ Обране»
+VERIFY_DROP = [0]                                           # скільки «знижок» відкинуто подвійною перевіркою
 
 
 def _num_fields(o, out, path=""):
@@ -2948,14 +2949,29 @@ SX_IMAGES = {"vulva": "vulva anatomy diagram", "clitoris": "clitoris anatomy 3D"
              "fert": "human fertilization diagram"}
 
 
+POS_BASE_EN = ["Missionary position", "Coital alignment technique", "Missionary with pillow", "Legs on shoulders", "Woman on top", "Reverse cowgirl",
+               "Lying on top", "Spooning", "Doggy style", "Prone bone", "Lotus position", "Chair position", "Edge of bed", "Standing sex position",
+               "Standing from behind", "Scissors position", "Side by side face to face", "Sixty-nine", "Cunnilingus position", "Reverse lotus",
+               "Kneeling face to face", "Butterfly position", "Spoon variation knees bent", "Pillow rear entry"]
 SX_ART_Q = [("kamasutra", "Kama Sutra illustration"), ("shunga", "shunga Japanese woodblock"), ("antique", "ancient Greek erotic pottery"),
             ("persian", "Persian erotic miniature"), ("renaissance", "Giulio Romano I Modi")]
 
 
 def sx_positions_catalog(db_: dict) -> bool:
     """Каталог поз: розділи статті Вікіпедії «List of sex positions» → ШІ переказує (з посиланням), малюнки — Wikimedia Commons."""
-    if db_.get("cat_ver") != 2:                       # перебудова каталогу з розширеними описами
-        db_["poscat"], db_["cat_ver"] = [], 2
+    pimg = db_.setdefault("posimg", {})              # малюнки для вбудованого каталогу в Cloudflare (точна назва)
+    for en in POS_BASE_EN:
+        if en in pimg:
+            continue
+        mw = [w for w in re.findall(r"[a-z0-9-]+", en.lower()) if w not in ("position", "sex", "the", "of", "a", "style", "with", "by", "to")][:2] or [en.lower()]
+        im_ = commons_image(f"{en} sex position", drawing_only=True, must=mw, must_all=True)
+        if im_ is None and _time.time() < WIKI_BLOCK["until"]:
+            break
+        pimg[en] = im_ or {}
+        if sum(1 for e in POS_BASE_EN if e in pimg) % 4 == 0:
+            break                                     # по 4 за запуск
+    if db_.get("cat_ver") != 3:                       # перебудова каталогу (до 40 поз, розширені описи)
+        db_["poscat"], db_["cat_ver"] = [], 3
     cat = db_.get("poscat") or []
     if not cat:
         try:
@@ -2967,15 +2983,15 @@ def sx_positions_catalog(db_: dict) -> bool:
             print(f"Вікіпедія (пози): {err_text(e)[:80]}")
             return False
         txt = re.sub(r"\{\{.*?\}\}|<ref.*?</ref>|<ref[^>]*/>|\[\[(?:File|Image):.*?\]\]", "", wt, flags=re.S)[:20000]
-        raw = gemini("Ось вікітекст статті Вікіпедії про сексуальні пози. Обери 22 основні пози (різні, без повторів). Для кожної поверни JSON: "
+        raw = gemini("Ось вікітекст статті Вікіпедії про сексуальні пози. Обери до 40 поз (різні, без повторів, включно з варіаціями). Для кожної поверни JSON: "
                      "name (українською), en (англійська назва), how (2 речення: як виконувати — лише за текстом статті), "
                      "why (1 речення: чим хороша), tags (з переліку: clit — більше стимуляції клітора, deep — глибина, intim — близькість і контакт очима, "
                      "rest — мало зусиль, back — щадить спину, preg — підходить під час вагітності), level (1–3, складність), "
                      "tip (1 коротка порада), detail (3–5 речень: варіанти, як зробити зручніше, кому підходить — лише за текстом статті, без вигадок), "
                      "anchor (заголовок розділу англійською як у статті). Лише JSON-масив.\n\n" + txt,
-                     json_mode=True, relaxed=True, max_tokens=6000)
+                     json_mode=True, relaxed=True, max_tokens=12000)
         try:
-            cat = [x for x in json.loads(raw or "[]") if x.get("name") and x.get("en")][:25]
+            cat = [x for x in json.loads(raw or "[]") if x.get("name") and x.get("en")][:40]
         except Exception:
             cat = []
         for x in cat:
@@ -3794,6 +3810,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
     if not br:
         return None
     ALL_PROMOS.clear()
+    VERIFY_DROP[0] = 0
     conf = st.setdefault("silpo_conf", {})            # перша поява великих знижок (перевірка «2 дні поспіль»)
     cut_c = (now.date() - timedelta(days=14)).isoformat()
     for k_ in [k_ for k_, v_ in conf.items() if v_[0] < cut_c]:
@@ -3817,11 +3834,20 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
         except Exception as e:
             print(f"Сільпо, {c.get('title')}: {err_text(e)}")
             continue
+        try:                                          # друга перевірка: та сама знижка має бути й у режимі доставки (як бачить сайт)
+            alt = {str(x.get("id")): (p_price(x), p_old(x)) for x in silpo_products(br[0], "DeliveryHome", c.get("slug"), True, max_pages=3)} or None
+        except Exception:
+            alt = None                                # режим доставки недоступний — лишаємо одну перевірку
         cand = []
         for idx, p_ in enumerate(prods):
             pk = promo_kind(p_)                       # пряма знижка, 🌐 онлайн, 🎁 2+1, 📦 гуртом
             if not pk:
                 continue
+            if alt is not None and pk[0] in ("direct", "online", "card"):
+                a_ = alt.get(str(p_.get("id")))
+                if not a_ or not a_[1] or a_[1] <= a_[0] or abs(a_[0] - pk[1]) > 1:
+                    VERIFY_DROP[0] += 1
+                    continue                          # знижка не підтвердилась — не показуємо (щоб ціна збігалась із сайтом)
             kind, price, old, declared, badge = pk
             promos = " ".join(str(x.get("title") or x.get("name") or "") for x in (p_.get("promotions") or []) if isinstance(x, dict))
             real = None
@@ -3870,7 +3896,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
     shop = (f"Сільпо, {esc(label)}" if label else 'Ціни ' + esc((st.get('silpo_branch') or {}).get('name'))
             if not (st.get('silpo_branch') or {}).get('store') else 'Сільпо, вул. Калнишевського, 2')
     head = (f"🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на {now:%d.%m} (оновлюється щоранку)\n"
-            "<i>Ціни — для цього магазину. 🌐 «лише онлайн-замовлення» — ціна діє тільки при замовленні на сайті чи в застосунку (на полиці — повна). "
+            "<i>Ціни — для цього магазину; кожну знижку бот перевіряє двічі (самовивіз і доставка) — непідтверджені не показує. 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. "
             "Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n"
             f"<i>{shop} · 🔥 — «Ціна тижня»</i>\n"
             + ("<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>" if weeks
@@ -3883,7 +3909,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
         brands_ = sorted({x[2] for x in ALL_PROMOS if x[2]})
         Path(f"silpo/{'m' if not branch else branch}.json").write_text(json.dumps(
             {"week": f"{now:%G-%V}", "cats": cats_, "brands": brands_, "items": ALL_PROMOS}, ensure_ascii=False, separators=(",", ":")), "utf-8")
-        print(f"Сільпо: акцій у файлі {len(ALL_PROMOS)}, брендів {len(brands_)}; приклади типів акцій: {PROMO_SAMPLES[:6]}")
+        print(f"Сільпо: акцій у файлі {len(ALL_PROMOS)}, брендів {len(brands_)}; не підтвердились і відкинуті: {VERIFY_DROP[0]}")
     except Exception as e:
         print(f"Сільпо, файл акцій: {err_text(e)}")
     best.sort(key=lambda x: x[0], reverse=True)       # одне повідомлення: топ-10 + кнопки категорій
@@ -4939,11 +4965,15 @@ def main() -> None:
             for c in due_w:
                 ws[c] = today_key
                 p_ = PROF.get(c) or {}
-                key_ = (p_.get("city"), p_.get("dist")) if c not in family and p_.get("dist") else None
+                wl = p_.get("wloc") if c not in family else None          # 📍 своя адреса для погоди (точні координати)
+                key_ = ("loc", wl[0], round(wl[1], 3), round(wl[2], 3)) if wl else \
+                    ((p_.get("city"), p_.get("dist")) if c not in family and p_.get("dist") else None)
                 by_d.setdefault(key_, []).append(c)
             for key_, cids in by_d.items():
                 if key_ is None:
                     txt = wt
+                elif key_[0] == "loc":
+                    txt = weather_for(now, key_[2], key_[3], key_[1]) or wt
                 else:
                     nm, la, lo = DISTRICTS.get(key_[0], {}).get(key_[1], (PLACE, LAT, LON))
                     txt = weather_for(now, la, lo, nm) or wt
@@ -5053,10 +5083,10 @@ def main() -> None:
     if st.get("kino_ver") != 2:                       # новий формат кіно (кнопки під кожним фільмом)
         st["kino_q"] = []
         st["kino_ver"] = 2
-    if st.get("silpo_ver") != 8:                      # Сільпо: коди акцій (лише онлайн, Цінотижики)
+    if st.get("silpo_ver") != 9:                      # Сільпо: подвійна перевірка знижок (самовивіз + доставка)
         st.pop("silpo_last", None)
         st.pop("silpo_by", None)
-        st["silpo_ver"] = 8
+        st["silpo_ver"] = 9
     if st.get("yt_ver") != 2:                         # новий відбір YouTube (лише українське) — стару підбірку скидаємо
         st.pop("yt_last", None)
         st["yt_ver"] = 2

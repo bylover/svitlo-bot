@@ -192,11 +192,26 @@ STREETS_JS = """() => {                                       // список в
   document.querySelectorAll('datalist option, #street option, [name=street] option').forEach(o => { const s = o.value || o.textContent; if (s && !seen.has(s)) { seen.add(s); out.push(s); } });
   return out;
 }"""
-TYPE_WORDS = r"\b(вулиця|вул|проспект|просп|пр-т|пр|бульвар|бульв|б-р|провулок|пров|площа|пл|шосе|набережна|наб|узвіз|тупик|алея|майдан|станція|ст)\b\.?"
+TYPE_WORDS = (r"(?<![а-яіїєґa-z])(вулиця|вул|улица|ул|проспект|просп|пр-т|пр|бульвар|бульв|б-р|провулок|пров|переулок|пер|площа|площадь|пл|"
+              r"шосе|шоссе|набережна|набережная|наб|узвіз|спуск|тупик|алея|аллея|майдан|станція|ст)(?![а-яіїєґa-z])\.?")
+CITY_WORDS = re.compile(r"(?<![а-яіїєґa-z])(в|у|м\.?|г\.?)?\s*(києві|київ|киеве|киев|kyiv|kiev|вінниці|вінниця|виннице|винница)(?![а-яіїєґa-z])", re.I)
+
+
+def skel(s: str) -> str:
+    """Кістяк назви без голосних — однаковий для укр. і рос. написання («Героїв Дніпра» = «Героев Днепра» → «грв днпр»)."""
+    s = norm_street(s).replace("ґ", "г").replace("щ", "шч").replace("'", "")
+    return " ".join(re.sub(r"[аеєиіїйоуюяыэёьъ]", "", w) for w in s.split())
+
+
+def hkey(h: str) -> str:
+    """Номер будинку в одному форматі: 42б = 42 Б = 42-б = 42b; 3/1 = 3 / 1."""
+    h = str(h).lower().replace(" ", "").replace("-", "")
+    return h.translate(str.maketrans({"a": "а", "b": "б", "v": "в", "g": "г", "d": "д", "e": "е", "k": "к", "c": "с", "o": "о"}))
 
 
 def norm_street(s: str) -> str:
-    s = s.lower().replace("’", "'").replace("ʼ", "'").replace("`", "'").replace("ё", "е")
+    s = CITY_WORDS.sub(" ", s.lower())
+    s = s.replace("’", "'").replace("ʼ", "'").replace("`", "'").replace("ё", "е")
     s = re.sub(TYPE_WORDS, " ", s)
     s = re.sub(r"[^a-zа-яіїєґ0-9' -]", " ", s)
     return " ".join(s.split())
@@ -215,6 +230,8 @@ def match_streets(user: str, streets: list[str]) -> list[str]:
             continue
         if q == n:
             score = 1.0
+        elif skel(user) and skel(user) == skel(st_):
+            score = 0.97                               # те саме, інше написання (рос./укр., помилка в голосних)
         elif q in n or all(w in n for w in q.split()):
             score = 0.9 - 0.001 * len(n)               # частина назви — коротші вище
         else:
@@ -260,11 +277,18 @@ def lookup_requests(page) -> None:
     except Exception:
         streets = []
     print(f"Адреси: список вулиць ДТЕК — {len(streets)}")
+    try:                                              # список вулиць — у Cloudflare (вибір вулиці за першою літерою в боті)
+        if streets and check.WORKER_MODE:
+            check.http_json(f"{check.SYNC_URL}/filepush?key={check.urllib.parse.quote(check.SYNC_KEY)}", {"name": "streets_kyiv.json", "json": sorted(set(streets))})
+    except Exception as e:
+        print(f"Список вулиць → Cloudflare: {err_text(e)[:60]}")
     for cid, r in list(reqs.items())[:5]:
         street, house = str(r.get("street") or ""), str(r.get("house") or "").lower().replace(" ", "")
         found = None
         exact = bool(r.get("exact"))                     # користувач уже обрав вулицю зі списку
         cands = [street] if exact else (match_streets(street, streets) if streets else [])
+        if len(cands) > 1 and skel(cands[0]) == skel(street):
+            cands = cands[:1]                         # точний збіг (інше написання) — не питаємо
         if not exact and len(cands) > 1 and norm_street(cands[0]) != norm_street(street):
             print(f"Адреса підписника: {street} → кілька варіантів {cands[:5]}")
             try:                                          # просимо уточнити вулицю кнопками
@@ -280,12 +304,15 @@ def lookup_requests(page) -> None:
             except Exception:
                 continue
             houses = data.get("data") or {}
-            h = next((v for k, v in houses.items() if str(k).lower().replace(" ", "") == house), None)
+            h = next((v for k, v in houses.items() if hkey(k) == hkey(house)), None)
+            if h is None and houses and len(cands) == 1:   # вулицю знайдено, а такого будинку немає — запропонуємо список
+                found = {"street": st, "houses": sorted(houses, key=lambda k: (re.sub(r"\D.*", "", str(k)).zfill(5), str(k)))[:60], "house": house}
+                break
             if h is not None:
                 grp = next((g[3:] for g in (h.get("sub_type_reason") or []) if str(g).startswith("GPV")), None)
                 found = {"street": st, "house": house, "group": grp}
                 break
-        print(f"Адреса підписника: {street}, {house} → {found or 'не знайдено'}")
+        print(f"Адреса підписника: {street}, {house} → {(found or {}).get('group') or ('список будинків' if (found or {}).get('houses') else 'не знайдено')}")
         try:
             check.http_json(f"{check.SYNC_URL}/setgroup?key={check.urllib.parse.quote(check.SYNC_KEY)}",
                             {"cid": cid, **(found or {"error": "not_found"})})
