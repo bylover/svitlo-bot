@@ -40,11 +40,12 @@
   "14.10 16:50 Сьогодні 2026-10-14 ScheduleApplies: 00:00–00:30, 18:00–21:30"
  ],
  "week_fp": "{\"1\": [], \"2\": [], \"3\": [], \"4\": [], \"5\": [], \"6\": [], \"7\": []}",
- "para_i": 2,
+ "para_i": 3,
  "para_fb": 1,
  "para_titles": [
   "Повільний вечір",
-  "Віброкуля для двох у ліжку"
+  "Віброкуля для двох у ліжку",
+  "Танець дотиків: шлях до насолоди"
  ],
  "para_bag": [],
  "to_delete": [],
@@ -1033,7 +1034,8 @@
   "https://www.healthline.com/health-news/fda-approves-eli-lilly-oral-combo-drug-common-breast-cancer-mutation",
   "https://www.lelo.com/blog/how-to-make-a-woman-orgasm/",
   "https://www.womenshealthmag.com/health/a74083702/sexual-assault-survivors-psychology/",
-  "https://www.girlonthenet.com/blog/i-want-to-make-you-tremble/"
+  "https://www.girlonthenet.com/blog/i-want-to-make-you-tremble/",
+  "https://sex.cosmopolitan.com/pleasure/a74051665/womanizer-sex-toy-deals-amazon-prime-day/"
  ],
  "addr": {
   "active": false,
@@ -1567,11 +1569,11 @@
   "сайт ДТЕК": false,
   "канал ЖК «Яскравий»": true
  },
- "fact_png": "2026-10-14 17|4|2026-10-13T18:19:01+03:00",
+ "fact_png": "2026-10-14 18|4|2026-10-13T18:19:01+03:00",
  "fact_day": {
-  "total": "1 год 18 хв",
+  "total": "18 хв",
   "list": [
-   "17:01–18:19 · 1 год 18 хв"
+   "18:01–18:19 · 18 хв"
   ]
  },
  "silpo_ver": 8,
@@ -2616,10 +2618,10 @@
   }
  },
  "content_last": {
-  "kind": "experience",
-  "src": "Medium"
+  "kind": "article",
+  "src": "Cosmopolitan"
  },
- "para_sent": "2026-10-09",
+ "para_sent": "2026-10-14",
  "taste": {
   "like": {
    "27": 1,
@@ -2635,7 +2637,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-14T17:56:00.720073+03:00",
+ "gh_beat": "2026-10-14T18:01:25.537916+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -12723,9 +12725,9 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "785929280df3",
+  "gs": "88ff8936a7aa",
   "quiz_pool.json": "5d94078dfb15",
-  "fact.png": "d9849dd9322a",
+  "fact.png": "a7be875c93f5",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "8ab98915384f",
   "silpo/m.json": "53ca80d0ea71",
   "sexed.json": "08b164503f36",
