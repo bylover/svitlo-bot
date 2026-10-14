@@ -1697,7 +1697,7 @@
   "YASNO": false,
   "сайт ДТЕК": false
  },
- "fact_png": "2026-10-14 08|6|2026-10-13T18:19:01+03:00",
+ "fact_png": "2026-10-14 09|6|2026-10-13T18:19:01+03:00",
  "fact_day": {
   "total": "3 год 9 хв",
   "list": [
@@ -2775,7 +2775,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-14T08:55:26.017974+03:00",
+ "gh_beat": "2026-10-14T09:00:38.204945+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -12848,9 +12848,9 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "c0cbff2a46b6",
+  "gs": "2ae21561828f",
   "quiz_pool.json": "5d94078dfb15",
-  "fact.png": "7c17f6fb6dd1",
+  "fact.png": "ac1bcc787ec3",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "e86708b98e00",
   "silpo/m.json": "69a28fc67324"
  }
