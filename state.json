@@ -1178,11 +1178,11 @@
   "groups": [
    "GPV4.1"
   ],
-  "updated": "12:49 14.10.2026",
+  "updated": "13:05 14.10.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Повідомити про аварійні ситуації",
-  "checked": "2026-10-14T13:03:33.012457+03:00",
+  "checked": "2026-10-14T13:13:27.809891+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -2768,7 +2768,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-14T13:11:03.445443+03:00",
+ "gh_beat": "2026-10-14T13:15:58.863796+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -12856,7 +12856,7 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "f460e86cb103",
+  "gs": "19077c706439",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "1cfbaed0fe01",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "e04c1713bf3b",
