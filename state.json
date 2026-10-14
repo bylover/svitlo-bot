@@ -1171,7 +1171,7 @@
   "emergency": false,
   "city_emergency": false,
   "city_text": "Повідомити про аварійні ситуації",
-  "checked": "2026-10-14T12:03:18.763685+03:00",
+  "checked": "2026-10-14T12:12:57.262599+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -2764,7 +2764,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-14T12:10:33.627919+03:00",
+ "gh_beat": "2026-10-14T12:15:26.051127+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -12859,7 +12859,7 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "c76ceeb194c5",
+  "gs": "61a1ddea2f5d",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "3676d9b11bc0",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "e86708b98e00",
