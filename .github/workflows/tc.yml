@@ -17,7 +17,7 @@ concurrency:
 jobs:
   tc:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
@@ -32,7 +32,7 @@ jobs:
           pip install -q playwright
           python -m playwright install --with-deps chromium
       - name: Collect promos
-        run: python3 tc_browser.py
+        run: python3 -u tc_browser.py
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
