@@ -1622,7 +1622,17 @@
   "m2502",
   "t241259",
   "t119769",
-  "t39272"
+  "t39272",
+  "m310307",
+  "m451915",
+  "m974036",
+  "m467909",
+  "m502033",
+  "m661539",
+  "m795811",
+  "m633515",
+  "m47931",
+  "m312221"
  ],
  "yt_ver": 2,
  "yt_seen": [
@@ -2446,7 +2456,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-15T01:06:19.786045+03:00",
+ "gh_beat": "2026-10-15T01:11:20.195429+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -13650,6 +13660,36 @@
    null,
    null,
    "2026-10-15"
+  ],
+  "tt6048922": [
+   7.0,
+   77,
+   64,
+   "2026-10-15"
+  ],
+  "tt28618488": [
+   6.9,
+   93,
+   85,
+   "2026-10-15"
+  ],
+  "tt5093026": [
+   7.2,
+   52,
+   51,
+   "2026-10-15"
+  ],
+  "tt1070874": [
+   7.7,
+   89,
+   76,
+   "2026-10-15"
+  ],
+  "tt2106476": [
+   8.3,
+   92,
+   77,
+   "2026-10-15"
   ]
  },
  "mo_sent": {},
@@ -13659,7 +13699,7 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "1bc447648f81",
+  "gs": "191561aef16c",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "d0f0f03e1c06",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a315d64f80c3",
@@ -14367,10 +14407,18 @@
    "markup": null
   }
  ],
- "kino_gq": {},
+ "kino_gq": {
+  "drama": [
+   {
+    "id": "41cecf1cdd",
+    "text": "🍿 <b>ПІДБІРКА КІНО · ДРАМА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Zasnovnik-2016-10-14\">Засновник</a></b> (2016)\nдрама, історичний · ⏱ 1 год 55 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>80%</b> · Ⓜ <b>66</b>\n<i>🎭 Майкл Кітон, Нік Офферман, Джон Керролл Лінч</i>\n📺 <a href=\"https://www.themoviedb.org/movie/310307-the-founder/watch?locale=UA\">Apple TV Store</a>\n📝 Справжня історія про те, як Рей Крок, продавець з Іллінойсу, зустрів Мака і Діка Макдональдсів, які продавали гамбургери в південній Каліфорнії в 1950-х роках. Рей був вражений системою швидкого приготування цих…\n▶️ <a href=\"https://youtu.be/oprJX5BomEc\">Трейлер</a></blockquote>\n§KN:m310307\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Garnij-hlopchik-2018-10-14-2\">Гарний хлопчик</a></b> (2018)\nдрама · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>67%</b> · Ⓜ <b>62</b>\n<i>🎭 Стів Карелл, Тімоті Шаламе, Мора Тірні</i>\n📺 <a href=\"https://www.themoviedb.org/movie/451915-beautiful-boy/watch?locale=UA\">Apple TV Store</a>\n📝 Девід Шефф переживає трагедію: його милий і чарівний син Нік став наркоманом. Звідки взялася згубна звичка? Нік росте в люблячій сім'ї, він відмінно вчиться. Розлучення батьків пройшло спокійно. З матір'ю, яка живе в…\n▶️ <a href=\"https://youtu.be/8NR8w8s9zWA\">Трейлер</a></blockquote>\n§KN:m451915\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/YAngoli-sered-nas-2024-10-14-2\">Янголи серед нас</a></b> (2024)\nдрама · ⏱ 1 год 58 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>84%</b> · Ⓜ <b>57</b>\n<i>🎭 Гіларі Свенк, Алан Річсон, Емілі Мітчелл</i>\n📺 <a href=\"https://www.themoviedb.org/movie/974036-ordinary-angels/watch?locale=UA\">Rakuten TV</a>\n📝 У невеликому містечку Кентуккі живе Шерон Стівенс, яка працює звичайним перукарем. Одного разу жінка зустрічає вдівця Еда Шмідта, який самотужки виховує двох дочок. Дізнавшись про серйозну хворобу його молодшої…\n▶️ <a href=\"https://youtu.be/Nh9vNnimfTo\">Трейлер</a></blockquote>\n§KN:m974036\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Na-visotah-Nyu-Jorka-2021-10-14-3\">На висотах Нью-Йорка</a></b> (2021)\nдрама, мелодрама · ⏱ 2 год 23 хв\n⭐ IMDb <b>7.2</b> · Ⓜ <b>84</b>\n<i>🎭 Ентоні Рамос, Корі Говкінс, Leslie Grace</i>\n📺 <a href=\"https://www.themoviedb.org/movie/467909-in-the-heights/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Запах гарячої кави витає в повітрі біля станції метро «181-а вулиця», а калейдоскоп бажань єднає там гучних і дружніх жителів цього району Нью-Йорка. У цей вихор потрапляє і Уснаві, харизматичний власник невеликого…\n▶️ <a href=\"https://youtu.be/DJtJiVLPrq4\">Трейлер</a></blockquote>\n§KN:m467909\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Zvuk-metalu-2020-10-14-2\">Звук металу</a></b> (2020)\nдрама, музика · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>97%</b> · Ⓜ <b>82</b>\n<i>🎭 Різ Ахмед, Олівія Кук, Пол Рейсі</i>\n📺 <a href=\"https://www.themoviedb.org/movie/502033-sound-of-metal/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Барабанщик починає втрачати слух, і його життя — як в групі, так і з подругою — дає тріщину. Герою доведеться змиритися з неминучістю: до самого кінця він має жити в тиші.\n▶️ <a href=\"https://youtu.be/RZckioG6vBg\">Трейлер</a></blockquote>\n§KN:m502033\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Bob-Dіlan-Cіlkovitij-neznajomec-2024-10-14-2\">Боб Ділан: Цілковитий незнайомець</a></b> (2024)\nдрама, музика · ⏱ 2 год 21 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>81%</b> · Ⓜ <b>70</b>\n<i>🎭 Тімоті Шаламе, Едвард Нортон, Елль Фаннінґ</i>\n📺 <a href=\"https://www.themoviedb.org/movie/661539-a-complete-unknown/watch?locale=UA\">Rakuten TV</a>\n📝 Фільм розповідає історію 19-річного музиканта з Міннесоти Боба Ділана, який стрімко перетворюється з локального фолк-виконавця на зірку з вершин хіт-парадів. Його пісні та загадковий образ стали світовою сенсацією, а…\n▶️ <a href=\"https://youtu.be/ob4SHtT6cC0\">Трейлер</a></blockquote>\n§KN:m661539\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/偶然と想像-2021-10-14-2\">偶然と想像</a></b> (2021)\nдрама, мелодрама · ⏱ 2 год 01 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>99%</b> · Ⓜ <b>86</b>\n<i>🎭 Котоне Фурукава, Аюму Накаджіма, Хюнрі</i>\n📺 <a href=\"https://www.themoviedb.org/movie/795811/watch?locale=UA\">Apple TV Store</a>\n📝 An unexpected love triangle, a seduction trap, and a random encounter are the three episodes, told in three movements to depict three female characters and trace the trajectories between their choices and regrets.\n▶️ <a href=\"https://youtu.be/e3IDB--grzs\">Трейлер</a></blockquote>\n§KN:m795811\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Zabuta-bitva-2021-10-14\">Забута битва</a></b> (2021)\nвійськовий, історичний, драма · ⏱ 2 год 07 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>100%</b>\n<i>🎭 Gijs Blom, Jamie Flatters, Susan Radder</i>\n📺 <a href=\"https://www.themoviedb.org/movie/633515-de-slag-om-de-schelde/watch?locale=UA\">Netflix</a>\n📝 Під час Другої світової у вирішальній битві на Шельді трагічно переплітаються долі пілота параплана, рядового нациста й новобранки Руху Опору.\n▶️ <a href=\"https://youtu.be/OTUVCacyTgU\">Трейлер</a></blockquote>\n§KN:m633515\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Elіtnij-zagіn-2-Vorog-sered-nas-2010-10-14\">Елітний загін 2: Ворог серед нас</a></b> (2010)\nдрама, бойовик, кримінал · ⏱ 1 год 55 хв\n⭐ IMDb <b>8.0</b> · 🍅 <b>91%</b> · Ⓜ <b>71</b>\n<i>🎭 Ваґнер Моура, Irandhir Santos, André Ramiro</i>\n📝 Елітний загін показав себе досить ефективним засобом боротьби з наркокартелями, перекривши кисень організованій злочинності та розгромивши кілька банд. Але тут зовсім несподівано сили правопорядку починають терпіти…\n▶️ <a href=\"https://youtu.be/b29OE1BtOGI\">Трейлер</a></blockquote>\n§KN:m47931\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Krіd-Spadok-Rokkі-Balboa-2015-10-14\">Крід: Спадок Роккі Бальбоа</a></b> (2015)\nдрама · ⏱ 2 год 13 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>95%</b> · Ⓜ <b>82</b>\n<i>🎭 Майкл Б. Джордан, Сильвестер Сталлоне, Тесса Томпсон</i>\n📺 <a href=\"https://www.themoviedb.org/movie/312221-creed/watch?locale=UA\">Apple TV Store</a>\n📝 У центрі уваги син Аполло Кріда - перший серйозного суперника Роккі Бальбоа на рингу, який пізніше став кращим другом героя. Молода людина не відчуває жодної пристрасті до боксу, втім, і його сім'я не бажає бачити…\n▶️ <a href=\"https://youtu.be/RRMY3XRgt78\">Трейлер</a></blockquote>\n§KN:m312221"
+   }
+  ]
+ },
  "yt_last": "▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · 08.10–15.10</b>\n<blockquote>▶️ <b>1. ФБР негайно у КРЕМЛІ. Екстрене попередження України. Ось що НАМ нарешті пропонують. Заява президента</b>\n📺 Микола Давидюк · ⏱ 17 хв\n👁 <b>191 тис</b> переглядів · 💬 <b>456</b> коментарів\n🔗 <a href=\"https://youtu.be/kANioqq15MM\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>2. ТЕРМІНОВО! ЦЕ ЩОСЬ ГІРШЕ ЗА ЧУМУ! СВІДКИ ЗАГОВОРИЛИ ПРАВДУ! Під час експерименту СТАЛАСЯ АВАРІЯ в РФ</b>\n📺 БІБІК ONLINE · ⏱ 11 хв\n👁 <b>179 тис</b> переглядів · 💬 <b>163</b> коментарів\n🔗 <a href=\"https://youtu.be/MEDLCd8ygDY\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>3. ЗАЙШЛИ В ТИЛ \"АЗОВУ\"! Як армії РФ вдалося ОБІЙТИ ОБОРОНУ? Драпатий ВИСЛАВ ШТУРМОВИКІВ на зачистку</b>\n📺 БІБІК ONLINE · ⏱ 10 хв\n👁 <b>179 тис</b> переглядів · 💬 <b>109</b> коментарів\n🔗 <a href=\"https://youtu.be/b3n-Zi7zEdk\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>4. ПОЛЬЩА – УКРАЇНА | ДРАМА У МАТЧІ ЗА ВИХІД ІЗ ГРУПИ | Еліт-раунд відбору на Євро-2027</b>\n📺 Київстар ТБ Спорт · ⏱ 16 хв\n👁 <b>163 тис</b> переглядів · 💬 <b>51</b> коментарів\n🔗 <a href=\"https://youtu.be/YikUUF2wwlI\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>5. [UA] Vitality проти MOUZ | Grand Final | ESL Pro League Season 24</b>\n📺 CS2 Maincast · ⏱ 7 год 33 хв\n👁 <b>168 тис</b> переглядів · 💬 <b>0</b> коментарів\n🔗 <a href=\"https://youtu.be/nBOAVh7qDDs\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>6. Ти не бійся ночі</b>\n📺 в метре от тебя - Topic · ⏱ 3 хв\n👁 <b>155 тис</b> переглядів · 💬 <b>0</b> коментарів\n🔗 <a href=\"https://youtu.be/tdqVg2qlRVI\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>7. Селяві бай бай</b>\n📺 DJ KAIFAR - Topic · ⏱ 2 хв\n👁 <b>147 тис</b> переглядів · 💬 <b>19</b> коментарів\n🔗 <a href=\"https://youtu.be/E-3Cdh-TZRk\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>8. І у темною ніч</b>\n📺 Black Noir - Topic · ⏱ 3 хв\n👁 <b>144 тис</b> переглядів · 💬 <b>0</b> коментарів\n🔗 <a href=\"https://youtu.be/rHf6bD-oGEk\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>9. МОРИТЬ ГОЛОДОМ скаліченого чоловіка! Чому вона чекає його смерті? \"Говорить Україна\". Архів</b>\n📺 Говорить Україна. Архів · ⏱ 58 хв\n👁 <b>127 тис</b> переглядів · 💬 <b>170</b> коментарів\n🔗 <a href=\"https://youtu.be/N7V2QaWxtZg\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>10. Ніхто Не Знає, Що У Нас Була Любов</b>\n📺 Вільний Вітер - Topic · ⏱ 5 хв\n👁 <b>130 тис</b> переглядів · 💬 <b>32</b> коментарів\n🔗 <a href=\"https://youtu.be/xqEPTPD3Q3w\">Дивитися</a></blockquote>\n§RT:yt:202642",
  "kp_at": {
-  "mix": "2026-10-15T01:01:21.230124+03:00"
+  "mix": "2026-10-15T01:01:21.230124+03:00",
+  "drama": "2026-10-15T01:11:20.275545+03:00"
  },
  "x18_at": {
   "mix": "2026-10-15T01:01:21.230124+03:00",
