@@ -2908,7 +2908,7 @@ def sx_chart(c: dict) -> bytes | None:
 WIKI_BLOCK = {"until": 0.0}
 
 
-def commons_image(query: str, drawing_only: bool = False, must: list | None = None) -> dict | None:
+def commons_image(query: str, drawing_only: bool = False, must: list | None = None, must_all: bool = False) -> dict | None:
     """Ілюстрація з Wikimedia Commons (відкрита ліцензія, з автором); drawing_only — лише малюнки/схеми, без фото."""
     if _time.time() < WIKI_BLOCK["until"]:
         return None                                   # отримали 429 — до наступного запуску не турбуємо
@@ -2920,7 +2920,8 @@ def commons_image(query: str, drawing_only: bool = False, must: list | None = No
             "gsrlimit": 5, "prop": "imageinfo", "iiprop": "url|extmetadata", "iiurlwidth": 900}),
             headers={"User-Agent": "svitlo-bot/1.0 (https://github.com/bylover; Telegram educational bot)"})
         for p_ in sorted((r.get("query") or {}).get("pages", {}).values(), key=lambda x: x.get("index", 99)):
-            if must and not any(w.lower() in str(p_.get("title", "")).lower() for w in must):
+            t_ = str(p_.get("title", "")).lower().replace("_", " ")
+            if must and not (all if must_all else any)(w.lower() in t_ for w in must):
                 continue                              # назва файлу не про те, що шукаємо — не беремо (краще без картинки)
             ii = (p_.get("imageinfo") or [{}])[0]
             lic = ((ii.get("extmetadata") or {}).get("LicenseShortName") or {}).get("value", "")
@@ -2986,11 +2987,11 @@ def sx_positions_catalog(db_: dict) -> bool:
     for x in cat:                                     # малюнки — до 6 за запуск
         if "img" in x or n >= 6:
             continue
-        mw = [w for w in re.findall(r"[a-z0-9-]+", x["en"].lower()) if w not in ("position", "sex", "the", "of", "a")][:2] or [x["en"].lower()]
-        im_ = commons_image(f"{x['en']} sex position", drawing_only=True, must=mw)
+        mw = [w for w in re.findall(r"[a-z0-9-]+", x["en"].lower()) if w not in ("position", "sex", "the", "of", "a", "style")][:2] or [x["en"].lower()]
+        im_ = commons_image(f"{x['en']} sex position", drawing_only=True, must=mw, must_all=True)   # усі слова назви — у назві файлу
         if im_ is None and _time.time() < WIKI_BLOCK["until"]:
             break                                     # 429 — спробуємо наступного разу
-        x["img"] = im_ or openverse_image(f"{x['en']} sex position illustration", must=mw) or {}
+        x["img"] = im_ or {}                          # не знайшли точного малюнка — без картинки (є розширений опис)
         n += 1
     return True
 
@@ -3487,12 +3488,12 @@ def health_refresh(st: dict, now: datetime) -> None:
     except Exception:
         db_ = {"ex": {}, "img": {}}
     ch = False
-    if db_.get("img_ver") != 2:                       # фото добавок і вправ — заново, з перевіркою назви файлу
+    if db_.get("img_ver") != 3:                       # фото добавок і вправ — заново, з перевіркою назви файлу
         db_["img"] = {}
         for x in db_.get("ex", {}).values():
             for k_ in ("pic", "pic_by", "pic_lic"):
                 x.pop(k_, None)
-        db_["img_ver"] = 2; ch = True
+        db_["img_ver"] = 3; ch = True
     if len(db_["ex"]) < len(HX_NAMES) and not db_.get("ex_try") == now.date().isoformat():
         db_["ex_try"] = now.date().isoformat()
         try:
@@ -3517,15 +3518,18 @@ def health_refresh(st: dict, now: datetime) -> None:
         except Exception as e:
             print(f"Здоров'я (база вправ): {err_text(e)[:80]}")
     n_pic = 0                                         # немає анімації — хоча б фото вправи (Commons / Openverse), по 3 за запуск
+    NOFR = {"birddog": ["bird dog", "bird-dog"], "march": ["march", "high knee"], "clam": ["clamshell", "clam shell"]}
+    for code in NOFR:
+        db_["ex"].setdefault(code, {"name": code, "img": [], "tips": []})
     for code, x in db_["ex"].items():
-        if x.get("img") or "pic" in x or n_pic >= 3:
-            continue
+        if code not in NOFR or "pic" in x or n_pic >= 3:
+            continue                                  # решта вправ має точні кадри (прив'язані в Cloudflare)
         q_ = HX_NAMES.get(code, [x.get("name", code)])[0]
-        mw = [w for w in re.findall(r"[a-z]+", q_.lower()) if w not in ("dumbbell", "the", "with", "one", "arm", "two", "over", "bent")][:2] or [q_.lower()]
-        im = commons_image(f"{q_} exercise", must=mw)
+        mw = NOFR[code]
+        im = commons_image(f"{mw[0]} exercise", must=mw)
         if im is None and _time.time() < WIKI_BLOCK["until"]:
             break
-        im = im or openverse_image(f"{q_} exercise", must=mw)
+        im = im or openverse_image(f"{mw[0]} exercise", must=mw)
         x["pic"] = (im or {}).get("url", ""); x["pic_by"] = (im or {}).get("by", ""); x["pic_lic"] = (im or {}).get("lic", "")
         n_pic += 1; ch = True
     for k, q in HS_IMG.items():                       # фото добавок — по 2 за запуск
@@ -3566,11 +3570,15 @@ def sexed_refresh(st: dict, now: datetime) -> None:
     n_study = sum(1 for x in db_["items"] if x["kind"] == "study")
     n_survey = sum(1 for x in db_["items"] if x["kind"] == "survey")
     extra_ch = False                                  # каталог поз, мистецтво, схеми технік — поступово
-    if db_.get("img_ver") != 2:                       # картинки підібрані без перевірки назви — скидаємо й підбираємо заново
-        db_["img"], db_["pos"], db_["art"] = {}, {}, {}
+    if db_.get("img_ver") != 3:                       # картинки поз — суворіша перевірка; скидаємо й підбираємо заново
+        db_["pos"] = {}
         for x in db_.get("poscat") or []:
             x.pop("img", None)
-        db_["img_ver"] = 2; extra_ch = True
+        if db_.get("img_ver") != 2:
+            db_["img"], db_["art"] = {}, {}
+        for x in db_.get("poscat") or []:
+            x.pop("img", None)
+        db_["img_ver"] = 3; extra_ch = True
     try:
         extra_ch |= sx_positions_catalog(db_)
         extra_ch |= sx_art_images(db_)
