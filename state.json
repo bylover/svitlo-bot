@@ -1646,10 +1646,6 @@
   "last": 2539,
   "events": [
    [
-    "2026-10-12T21:59:07+03:00",
-    "on"
-   ],
-   [
     "2026-10-13T15:09:54+03:00",
     "off"
    ],
@@ -1666,7 +1662,7 @@
   "сайт ДТЕК": false,
   "канал ЖК «Яскравий»": true
  },
- "fact_png": "2026-10-14 21|3|2026-10-13T18:19:01+03:00",
+ "fact_png": "2026-10-14 22|2|2026-10-13T18:19:01+03:00",
  "fact_day": {
   "total": "0 хв",
   "list": []
@@ -1768,7 +1764,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-14T21:55:24.631456+03:00",
+ "gh_beat": "2026-10-14T22:00:22.353162+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -12852,9 +12848,9 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "dc4b98ff6923",
+  "gs": "9a915da12435",
   "quiz_pool.json": "5d94078dfb15",
-  "fact.png": "3a52e8e1e220",
+  "fact.png": "dc531482e885",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "bc5ff14594e2",
   "silpo/m.json": "5ef57e58f064",
   "sexed.json": "e7668ebffc68",
@@ -13332,7 +13328,9 @@
   ]
  },
  "imp_sent": {},
- "ero_sent": {},
+ "ero_sent": {
+  "160603556": "2026-10-14"
+ },
  "silpo_snap": "2026-10-14",
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 07.10–14.10\n<blockquote>🆕 <b>1. Facebook додає налаштування алгоритму стрічки за текстовими запитами</b>\nMeta запускає функцію «Your Algorithm», яка дозволяє користувачам змінювати та формувати рекомендації у Facebook за допомогою простих текстових запитів.\n💡 Враховуйте зміни в поведінці користувачів і те, як персоналізація стрічки може вплинути на органічне охоплення ваших публікацій.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTE5IVU55eHJoSkk5SGl3RUJyb1FzUmhaVGkzMW1aN3dPM3dfZ1UtYy1MaVV6SGhPdGJEeW0yZExLWUNLdWN6S3hUcjBFZTllZERpVEV6STlrZzZhQkpYeU90aV92VVZCVEVxaE5hbEtBNTlnOG9naWltbHln0gF_QVVfeXFMUDQ1UDMwczh3STAzdzJmNFE5ckNkeUtNUUlFVTIyazFXcWVodld4MmRZRkRLeUhLMHdtSkNIbGlQc3VVMXdKczUtLVRFUmw5Nmgza2E2cVBuZWstQzBCVzRkZHYxNTN0TG1mZlpiZ0MtYjhTMnFDWGthSnIwdlRvcw?oc=5\">Facebook</a></blockquote>\n<blockquote>🎯 <b>2. Нові функції пріоритезації та розподілу бюджету в рекламних кампаніях Google</b>\nGoogle випустив оновлення, які дають рекламодавцям більше інструментів для керування витратами та розподілу бюджету між кампаніями.\n💡 Протестуйте нові функції розподілу бюджету для оптимізації витрат на найбільш конверсійні кампанії.\n🔗 <a href=\"https://blog.google/products/ads-commerce/channel-prioritization-budget-allocation/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>3. Google випустив нову модель Gemini 4 Argon для розробників</b>\nКомпанія Google оголосила про офіційний доступ до нової передової моделі Gemini 4 Argon, створеної для вирішення складних завдань.\n💡 Використовуйте нові можливості штучного інтелекту для автоматизації рутинних SMM-завдань та генерації контенту.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-argon/\">The Keyword (Google)</a></blockquote>\n<blockquote>📊 <b>4. Threads перетворює «якісну дискусію» на новий сигнал ранжування</b>\nПлатформа Threads почала враховувати глибокі та змістовні обговорення під постами як ключовий фактор для підвищення охоплень.\n💡 Створюйте у своїх публікаціях провокативні або дискусійні запитання, які стимулюють користувачів залишати розгорнуті коментарі.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTE13QU44Mk92eUVwcElkbk9HazZWRzVGdjRTUTlSbFZNcE9DaE42OFFQVkdSeTRnMS0ydkpVUUQ5bzNRTmlfVG13MldRNmdjTGIxRTRUMGJCSmJ2TGsxWjVmWVlzTWlxbWs0T3c5cHhBU3BkWTFaTnByY05B?oc=5\">WeRSM</a></blockquote>\n<blockquote>🆕 <b>5. Meta запускає передові моделі штучного інтелекту Muse Wonder</b>\nMeta представила нові ШІ-моделі Muse Wonder, спрямовані на розширення можливостей платформи та тестування платних функцій для користувачів.\n💡 Слідкуйте за появою нових ШІ-інструментів від Meta, щоб першими інтегрувати їх у створення візуального контенту.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-launches-advanced-muse-wonder-ai-models/832795/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>6. TikTok розширює рекламні формати на основі штучного інтелекту</b>\nTikTok оновив рекламний кабінет, додавши нові ШІ-інструменти для пошукової реклами, креативів та просування товарів.\n💡 Протестуйте нові пошукові формати реклами в TikTok для залучення гарячої аудиторії, яка вже шукає ваш продукт.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxQbU9GV1Q5Y245NW5Ob2FBUHpXTkQ5OU5HNk1wVDUwQU9xd2EtdC10Y29jZnBqcWZ4QVgwNXltNmQzaEx2bE9iRnhFdWhUbENWQ3lWbWNkbmVZV1dFOC1KVTkxWWJrM0lyT0dMVTR6TGZEdlM0djZFcm9xM0xTUnFlbWNEdWhPcXhyM09UY3BFdVNsZGRVaTNLZXRHOEExRERGajJKZkhCX0MzVmM?oc=5\">MediaPost</a></blockquote>\n<blockquote>🆕 <b>7. WhatsApp дозволив запрошувати будь-кого на дзвінки</b>\nMeta оновила функціонал WhatsApp, спростивши процес приєднання до дзвінків для користувачів, які не є у списку контактів.\n💡 Використовуйте посилання на дзвінки у WhatsApp для швидкої та зручної комунікації з клієнтами під час продажу послуг.\n🔗 <a href=\"https://about.fb.com/news/2026/10/introducing-whatsapp-guest-calling/\">Meta Newsroom</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202642",
  "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 14.10 (оновлюється щоранку)\n<i>Ціни — для цього магазину; кожну знижку бот перевіряє двічі (самовивіз і доставка) — непідтверджені не показує. 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Калнишевського, 2 · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🍞 <a href=\"https://silpo.ua/product/khlib-kyivkhlib-rustykalnyi-tsilnozernovyi-narizanyi-v-upakovtsi-976758\">Хліб Київхліб Рустикальний цільнозерновий нарізаний в упаковці</a> — <b>42.99 ₴</b> <s>50.99 ₴</s> · −16%\n2. 🍞 <a href=\"https://silpo.ua/product/khlib-premiia-fitnes-tostovyi-narizanyi-1011571\">Хліб «Премія»® Фітнес тостовий нарізаний</a> — <b>34.99 ₴</b> <s>39.49 ₴</s> · −11%\n3. 🛒 <a href=\"https://silpo.ua/product/khlib-premiia-fitnes-tostovyi-narizanyi-1011571\">Хліб «Премія»® Фітнес тостовий нарізаний</a> — <b>34.99 ₴</b> <s>39.49 ₴</s> · −11%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
@@ -13431,6 +13429,8 @@
   "les": "2026-10-14T21:40:23.135151+03:00",
   "ero": "2026-10-14T21:40:23.135151+03:00",
   "pov": "2026-10-14T21:55:25.008853+03:00",
-  "lat": "2026-10-14T21:55:25.008853+03:00"
+  "lat": "2026-10-14T21:55:25.008853+03:00",
+  "asi": "2026-10-14T22:00:22.481378+03:00",
+  "blo": "2026-10-14T22:00:22.481378+03:00"
  }
 }
