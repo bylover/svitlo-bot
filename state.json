@@ -2,7 +2,7 @@
  "group": "4.1",
  "fp": {
   "2026-10-13": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 1110, \"start\": 900, \"type\": \"Definite\"}, {\"end\": 1440, \"start\": 1380, \"type\": \"Definite\"}]}",
-  "2026-10-14": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 30, \"start\": 0, \"type\": \"Definite\"}, {\"end\": 1230, \"start\": 1020, \"type\": \"Definite\"}]}",
+  "2026-10-14": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 30, \"start\": 0, \"type\": \"Definite\"}, {\"end\": 1290, \"start\": 1080, \"type\": \"Definite\"}]}",
   "2026-10-15": "{\"s\": \"WaitingForSchedule\", \"slots\": []}"
  },
  "reminded": [],
@@ -36,7 +36,8 @@
   "12.10 20:50 Завтра 2026-10-13 ScheduleApplies: 15:00–18:30, 23:00–24:00",
   "13.10 00:00 Завтра 2026-10-14 WaitingForSchedule: без відключень",
   "13.10 21:35 Завтра 2026-10-14 ScheduleApplies: 00:00–00:30, 17:00–20:30",
-  "14.10 00:00 Завтра 2026-10-15 WaitingForSchedule: без відключень"
+  "14.10 00:00 Завтра 2026-10-15 WaitingForSchedule: без відключень",
+  "14.10 16:50 Сьогодні 2026-10-14 ScheduleApplies: 00:00–00:30, 18:00–21:30"
  ],
  "week_fp": "{\"1\": [], \"2\": [], \"3\": [], \"4\": [], \"5\": [], \"6\": [], \"7\": []}",
  "para_i": 2,
@@ -2634,7 +2635,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-14T16:46:03.317949+03:00",
+ "gh_beat": "2026-10-14T16:50:59.859400+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -12722,7 +12723,7 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "2e4cc499f54c",
+  "gs": "f0cda80f2526",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "619059cb87cc",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "8ab98915384f",
