@@ -2563,7 +2563,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-14T20:05:22.548685+03:00",
+ "gh_beat": "2026-10-14T20:10:23.741412+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -12883,12 +12883,12 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "11b2a5d1aa1b",
+  "gs": "e05b263ece7b",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "fad5a19f2a5e",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "6c738d6d3cda",
   "silpo/m.json": "2f12335573cd",
-  "sexed.json": "84127eb696f7",
+  "sexed.json": "e3782a2762b3",
   "sx/28213723.png": "ce00a0099b9a",
   "sx/33637451.png": "4c77d42e81e5",
   "sx/tech_angling.png": "1426e1022a9e",
