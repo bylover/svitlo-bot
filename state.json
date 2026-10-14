@@ -1096,8 +1096,8 @@
   "updated": "01:01 15.10.2026",
   "emergency": false,
   "city_emergency": false,
-  "city_text": "",
-  "checked": "2026-10-15T01:03:45.065297+03:00",
+  "city_text": "Стабілізаційні графіки в Києві не діють. Повідомити про аварійні ситуації",
+  "checked": "2026-10-15T01:13:48.639896+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1632,7 +1632,17 @@
   "m795811",
   "m633515",
   "m47931",
-  "m312221"
+  "m312221",
+  "m1046090",
+  "m726759",
+  "m379170",
+  "m489999",
+  "m499932",
+  "m559969",
+  "m663260",
+  "m491584",
+  "m25376",
+  "m209764"
  ],
  "yt_ver": 2,
  "yt_seen": [
@@ -2456,7 +2466,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-15T01:11:20.195429+03:00",
+ "gh_beat": "2026-10-15T01:16:22.746457+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -13690,6 +13700,42 @@
    92,
    77,
    "2026-10-15"
+  ],
+  "tt1433811": [
+   7.5,
+   70,
+   64,
+   "2026-10-15"
+  ],
+  "tt2990738": [
+   7.1,
+   null,
+   null,
+   "2026-10-15"
+  ],
+  "tt2625030": [
+   7.5,
+   63,
+   58,
+   "2026-10-15"
+  ],
+  "tt1063669": [
+   7.6,
+   67,
+   null,
+   "2026-10-15"
+  ],
+  "tt0796212": [
+   7.2,
+   80,
+   73,
+   "2026-10-15"
+  ],
+  "tt0434008": [
+   7.1,
+   86,
+   73,
+   "2026-10-15"
   ]
  },
  "mo_sent": {},
@@ -13699,7 +13745,7 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "191561aef16c",
+  "gs": "72273aa3e52a",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "d0f0f03e1c06",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a315d64f80c3",
@@ -14413,16 +14459,25 @@
     "id": "41cecf1cdd",
     "text": "🍿 <b>ПІДБІРКА КІНО · ДРАМА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Zasnovnik-2016-10-14\">Засновник</a></b> (2016)\nдрама, історичний · ⏱ 1 год 55 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>80%</b> · Ⓜ <b>66</b>\n<i>🎭 Майкл Кітон, Нік Офферман, Джон Керролл Лінч</i>\n📺 <a href=\"https://www.themoviedb.org/movie/310307-the-founder/watch?locale=UA\">Apple TV Store</a>\n📝 Справжня історія про те, як Рей Крок, продавець з Іллінойсу, зустрів Мака і Діка Макдональдсів, які продавали гамбургери в південній Каліфорнії в 1950-х роках. Рей був вражений системою швидкого приготування цих…\n▶️ <a href=\"https://youtu.be/oprJX5BomEc\">Трейлер</a></blockquote>\n§KN:m310307\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Garnij-hlopchik-2018-10-14-2\">Гарний хлопчик</a></b> (2018)\nдрама · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>67%</b> · Ⓜ <b>62</b>\n<i>🎭 Стів Карелл, Тімоті Шаламе, Мора Тірні</i>\n📺 <a href=\"https://www.themoviedb.org/movie/451915-beautiful-boy/watch?locale=UA\">Apple TV Store</a>\n📝 Девід Шефф переживає трагедію: його милий і чарівний син Нік став наркоманом. Звідки взялася згубна звичка? Нік росте в люблячій сім'ї, він відмінно вчиться. Розлучення батьків пройшло спокійно. З матір'ю, яка живе в…\n▶️ <a href=\"https://youtu.be/8NR8w8s9zWA\">Трейлер</a></blockquote>\n§KN:m451915\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/YAngoli-sered-nas-2024-10-14-2\">Янголи серед нас</a></b> (2024)\nдрама · ⏱ 1 год 58 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>84%</b> · Ⓜ <b>57</b>\n<i>🎭 Гіларі Свенк, Алан Річсон, Емілі Мітчелл</i>\n📺 <a href=\"https://www.themoviedb.org/movie/974036-ordinary-angels/watch?locale=UA\">Rakuten TV</a>\n📝 У невеликому містечку Кентуккі живе Шерон Стівенс, яка працює звичайним перукарем. Одного разу жінка зустрічає вдівця Еда Шмідта, який самотужки виховує двох дочок. Дізнавшись про серйозну хворобу його молодшої…\n▶️ <a href=\"https://youtu.be/Nh9vNnimfTo\">Трейлер</a></blockquote>\n§KN:m974036\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Na-visotah-Nyu-Jorka-2021-10-14-3\">На висотах Нью-Йорка</a></b> (2021)\nдрама, мелодрама · ⏱ 2 год 23 хв\n⭐ IMDb <b>7.2</b> · Ⓜ <b>84</b>\n<i>🎭 Ентоні Рамос, Корі Говкінс, Leslie Grace</i>\n📺 <a href=\"https://www.themoviedb.org/movie/467909-in-the-heights/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Запах гарячої кави витає в повітрі біля станції метро «181-а вулиця», а калейдоскоп бажань єднає там гучних і дружніх жителів цього району Нью-Йорка. У цей вихор потрапляє і Уснаві, харизматичний власник невеликого…\n▶️ <a href=\"https://youtu.be/DJtJiVLPrq4\">Трейлер</a></blockquote>\n§KN:m467909\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Zvuk-metalu-2020-10-14-2\">Звук металу</a></b> (2020)\nдрама, музика · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>97%</b> · Ⓜ <b>82</b>\n<i>🎭 Різ Ахмед, Олівія Кук, Пол Рейсі</i>\n📺 <a href=\"https://www.themoviedb.org/movie/502033-sound-of-metal/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Барабанщик починає втрачати слух, і його життя — як в групі, так і з подругою — дає тріщину. Герою доведеться змиритися з неминучістю: до самого кінця він має жити в тиші.\n▶️ <a href=\"https://youtu.be/RZckioG6vBg\">Трейлер</a></blockquote>\n§KN:m502033\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Bob-Dіlan-Cіlkovitij-neznajomec-2024-10-14-2\">Боб Ділан: Цілковитий незнайомець</a></b> (2024)\nдрама, музика · ⏱ 2 год 21 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>81%</b> · Ⓜ <b>70</b>\n<i>🎭 Тімоті Шаламе, Едвард Нортон, Елль Фаннінґ</i>\n📺 <a href=\"https://www.themoviedb.org/movie/661539-a-complete-unknown/watch?locale=UA\">Rakuten TV</a>\n📝 Фільм розповідає історію 19-річного музиканта з Міннесоти Боба Ділана, який стрімко перетворюється з локального фолк-виконавця на зірку з вершин хіт-парадів. Його пісні та загадковий образ стали світовою сенсацією, а…\n▶️ <a href=\"https://youtu.be/ob4SHtT6cC0\">Трейлер</a></blockquote>\n§KN:m661539\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/偶然と想像-2021-10-14-2\">偶然と想像</a></b> (2021)\nдрама, мелодрама · ⏱ 2 год 01 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>99%</b> · Ⓜ <b>86</b>\n<i>🎭 Котоне Фурукава, Аюму Накаджіма, Хюнрі</i>\n📺 <a href=\"https://www.themoviedb.org/movie/795811/watch?locale=UA\">Apple TV Store</a>\n📝 An unexpected love triangle, a seduction trap, and a random encounter are the three episodes, told in three movements to depict three female characters and trace the trajectories between their choices and regrets.\n▶️ <a href=\"https://youtu.be/e3IDB--grzs\">Трейлер</a></blockquote>\n§KN:m795811\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Zabuta-bitva-2021-10-14\">Забута битва</a></b> (2021)\nвійськовий, історичний, драма · ⏱ 2 год 07 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>100%</b>\n<i>🎭 Gijs Blom, Jamie Flatters, Susan Radder</i>\n📺 <a href=\"https://www.themoviedb.org/movie/633515-de-slag-om-de-schelde/watch?locale=UA\">Netflix</a>\n📝 Під час Другої світової у вирішальній битві на Шельді трагічно переплітаються долі пілота параплана, рядового нациста й новобранки Руху Опору.\n▶️ <a href=\"https://youtu.be/OTUVCacyTgU\">Трейлер</a></blockquote>\n§KN:m633515\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Elіtnij-zagіn-2-Vorog-sered-nas-2010-10-14\">Елітний загін 2: Ворог серед нас</a></b> (2010)\nдрама, бойовик, кримінал · ⏱ 1 год 55 хв\n⭐ IMDb <b>8.0</b> · 🍅 <b>91%</b> · Ⓜ <b>71</b>\n<i>🎭 Ваґнер Моура, Irandhir Santos, André Ramiro</i>\n📝 Елітний загін показав себе досить ефективним засобом боротьби з наркокартелями, перекривши кисень організованій злочинності та розгромивши кілька банд. Але тут зовсім несподівано сили правопорядку починають терпіти…\n▶️ <a href=\"https://youtu.be/b29OE1BtOGI\">Трейлер</a></blockquote>\n§KN:m47931\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Krіd-Spadok-Rokkі-Balboa-2015-10-14\">Крід: Спадок Роккі Бальбоа</a></b> (2015)\nдрама · ⏱ 2 год 13 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>95%</b> · Ⓜ <b>82</b>\n<i>🎭 Майкл Б. Джордан, Сильвестер Сталлоне, Тесса Томпсон</i>\n📺 <a href=\"https://www.themoviedb.org/movie/312221-creed/watch?locale=UA\">Apple TV Store</a>\n📝 У центрі уваги син Аполло Кріда - перший серйозного суперника Роккі Бальбоа на рингу, який пізніше став кращим другом героя. Молода людина не відчуває жодної пристрасті до боксу, втім, і його сім'я не бажає бачити…\n▶️ <a href=\"https://youtu.be/RRMY3XRgt78\">Трейлер</a></blockquote>\n§KN:m312221"
    }
+  ],
+  "thriller": [
+   {
+    "id": "5e3601fde9",
+    "text": "🍿 <b>ПІДБІРКА КІНО · ТРИЛЕР</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/周處除三害-2023-10-14\">周處除三害</a></b> (2023)\nкримінал, драма, трилер · ⏱ 2 год 14 хв\n⭐ IMDb <b>7.3</b>\n<i>🎭 Ітан Дзюань, 王淨, 李李仁</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1046090/watch?locale=UA\">Netflix</a>\n📝 The arrogant, third most-wanted criminal in Taiwan, decides to get rid of the top two competitors and crowns himself the most-wanted criminal before dying.\n▶️ <a href=\"https://youtu.be/tFyzEsPcyrg\">Трейлер</a></blockquote>\n§KN:m1046090\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Tetris-2023-10-14\">Тетрис</a></b> (2023)\nтрилер, історичний, драма · ⏱ 1 год 58 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>81%</b> · Ⓜ <b>61</b>\n<i>🎭 Тарон Еджертон, Никита Ефремов, Софья Лебедева</i>\n📺 <a href=\"https://www.themoviedb.org/movie/726759-tetris/watch?locale=UA\">Apple TV</a>\n📝 Фільм заснований на реальній історії американця — продавця відеоігор Генка Роджерса, який у 1988 році дізнався про «Тетріс». Він вирішує зробити цю гру відомою в усьому світі й потрапляє в небезпечні тенета брехні й…\n▶️ <a href=\"https://youtu.be/-BLM1naCfME\">Трейлер</a></blockquote>\n§KN:m726759\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/SHerlok-Bridka-narechena-2016-10-14\">Шерлок: Бридка наречена</a></b> (2016)\nкримінал, драма, детектив · ⏱ 1 год 30 хв\n⭐ IMDb <b>8.0</b>\n<i>🎭 Бенедикт Камбербетч, Мартін Фрімен, Уна Стаббс</i>\n📝 Лондон, 1895 рік. Інспектор Лестрейд оповідає Холмсу і Ватсону про справу Емілії Ріколетті, яка у весільній сукні розстріляла перехожих з балкона, після чого застрелилася сама. Того ж вечора, містер Ріколетті також…\n▶️ <a href=\"https://youtu.be/V8LWfc29J_E\">Трейлер</a></blockquote>\n§KN:m379170\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Poshuk-2018-10-14\">Пошук</a></b> (2018)\nдрама, детектив, трилер · ⏱ 1 год 42 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>92%</b> · Ⓜ <b>71</b>\n<i>🎭 Джон Чо, Michelle La, Дебра Мессінґ</i>\n📺 <a href=\"https://www.themoviedb.org/movie/489999-searching/watch?locale=UA\">Apple TV Store</a>\n📝 У світі сучасних технологій ми не маємо приватного простору і не можемо зникнути безслідно. 16-річна донька Девіда Кіма не дає про себе знати протягом доби. Розслідування заходить у глухий кут, де єдиною зачіпкою…\n▶️ <a href=\"https://youtu.be/mVHyu8YQ9s4\">Трейлер</a></blockquote>\n§KN:m489999\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Diyavol-nazavzhdi-2020-10-14\">Диявол назавжди</a></b> (2020)\nкримінал, драма, трилер · ⏱ 2 год 18 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>65%</b> · Ⓜ <b>55</b>\n<i>🎭 Том Голланд, Роберт Паттінсон, Білл Скашґорд</i>\n📺 <a href=\"https://www.themoviedb.org/movie/499932-the-devil-all-the-time/watch?locale=UA\">Netflix</a>\n📝 У Нокемстіффі, штат Огайо, та довколишніх густих лісах лиховісні персонажі — нечестивий проповідник, збочена парочка й корумпований шериф — сходяться довкола молодого Арвіна Расселла, котрий намагається боротися зі…\n▶️ <a href=\"https://youtu.be/EIzazUv2gtI\">Трейлер</a></blockquote>\n§KN:m499932\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/El-Kamіno-Pustitisya-berega-2019-10-14-2\">Ель Каміно: Пуститися берега</a></b> (2019)\nкримінал, драма, трилер · ⏱ 2 год 02 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>92%</b> · Ⓜ <b>72</b>\n<i>🎭 Аарон Пол, Джессі Племенс, Charles Baker</i>\n📺 <a href=\"https://www.themoviedb.org/movie/559969-el-camino-a-breaking-bad-movie/watch?locale=UA\">Netflix</a>\n📝 Дія відбувається після останнього епізоду серіалу Пуститися берега «Феліна». Джессі Пінкман намагається здобути свободу після втечі від своїх викрадачів.\n▶️ <a href=\"https://youtu.be/rklOejPnD3Y\">Трейлер</a></blockquote>\n§KN:m559969\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/CHorna-skrinka-2021-10-14\">Чорна скринька</a></b> (2021)\nдетектив, трилер, драма · ⏱ 2 год 09 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>72%</b>\n<i>🎭 П'єр Ніні, Lou de Laâge, Андре Дюссольє</i>\n📺 <a href=\"https://www.themoviedb.org/movie/663260-boite-noire/watch?locale=UA\">Apple TV Store</a>\n📝 Сталася масштабна авіакатастрофа — розбився літак із 300 пасажирами на борту. Блискучий експерт з розшифровки бортових самописців має дізнатись справжні причини аварії. Чорна скринька з борту — єдиний ключ до правди……\n▶️ <a href=\"https://youtu.be/Cm6daCQ7Alo\">Трейлер</a></blockquote>\n§KN:m663260\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Spalennya-2018-10-14-2\">Спалення</a></b> (2018)\nдетектив, драма, трилер · ⏱ 2 год 28 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>95%</b> · Ⓜ <b>91</b>\n<i>🎭 Ю А Ін, Стівен Юн, 전종서</i>\n📺 <a href=\"https://www.themoviedb.org/movie/491584/watch?locale=UA\">Apple TV Store</a>\n📝 За сюжетом, син фермера Чон-су переїздить до великого міста. Він має університетський диплом з літератури, але хлопець заробляє дуже мало і лише мріє про те, щоб стати письменником. Якось Чон-су зустрічає красуню…\n▶️ <a href=\"https://youtu.be/irBLY-Ev9vo\">Трейлер</a></blockquote>\n§KN:m491584\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Sekret-u-ihnіh-ochah-2009-10-14\">Секрет у їхніх очах</a></b> (2009)\nдетектив, трилер, драма · ⏱ 2 год 10 хв\n⭐ IMDb <b>8.2</b> · 🍅 <b>89%</b> · Ⓜ <b>80</b>\n<i>🎭 Ricardo Darín, Соледад Вільяміль, Pablo Rago</i>\n📝 1974 рік. Судовий службовець Бенхамін Еспосіто разом з двома напарниками приступає до розслідування гучної справи, що сталася в Буенос-Айресі. Жінка була згвалтована і жорстоко вбита прямо у себе вдома. Слідчі…\n▶️ <a href=\"https://youtu.be/ZhEuUDO0YUQ\">Трейлер</a></blockquote>\n§KN:m25376\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/더-테러-라이브-2013-10-14\">더 테러 라이브</a></b> (2013)\nкримінал, драма, трилер · ⏱ 1 год 37 хв\n⭐ IMDb <b>7.1</b>\n<i>🎭 Ха Чон У, 김대명, Лі Кьон Йон</i>\n📝 A newsman discovers he's been rigged with a bomb after he has an exclusive interview with a terrorist who blew up a bridge.\n▶️ <a href=\"https://youtu.be/e_FSvAQMGNc\">Трейлер</a></blockquote>\n§KN:m209764"
+   }
   ]
  },
  "yt_last": "▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · 08.10–15.10</b>\n<blockquote>▶️ <b>1. ФБР негайно у КРЕМЛІ. Екстрене попередження України. Ось що НАМ нарешті пропонують. Заява президента</b>\n📺 Микола Давидюк · ⏱ 17 хв\n👁 <b>191 тис</b> переглядів · 💬 <b>456</b> коментарів\n🔗 <a href=\"https://youtu.be/kANioqq15MM\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>2. ТЕРМІНОВО! ЦЕ ЩОСЬ ГІРШЕ ЗА ЧУМУ! СВІДКИ ЗАГОВОРИЛИ ПРАВДУ! Під час експерименту СТАЛАСЯ АВАРІЯ в РФ</b>\n📺 БІБІК ONLINE · ⏱ 11 хв\n👁 <b>179 тис</b> переглядів · 💬 <b>163</b> коментарів\n🔗 <a href=\"https://youtu.be/MEDLCd8ygDY\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>3. ЗАЙШЛИ В ТИЛ \"АЗОВУ\"! Як армії РФ вдалося ОБІЙТИ ОБОРОНУ? Драпатий ВИСЛАВ ШТУРМОВИКІВ на зачистку</b>\n📺 БІБІК ONLINE · ⏱ 10 хв\n👁 <b>179 тис</b> переглядів · 💬 <b>109</b> коментарів\n🔗 <a href=\"https://youtu.be/b3n-Zi7zEdk\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>4. ПОЛЬЩА – УКРАЇНА | ДРАМА У МАТЧІ ЗА ВИХІД ІЗ ГРУПИ | Еліт-раунд відбору на Євро-2027</b>\n📺 Київстар ТБ Спорт · ⏱ 16 хв\n👁 <b>163 тис</b> переглядів · 💬 <b>51</b> коментарів\n🔗 <a href=\"https://youtu.be/YikUUF2wwlI\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>5. [UA] Vitality проти MOUZ | Grand Final | ESL Pro League Season 24</b>\n📺 CS2 Maincast · ⏱ 7 год 33 хв\n👁 <b>168 тис</b> переглядів · 💬 <b>0</b> коментарів\n🔗 <a href=\"https://youtu.be/nBOAVh7qDDs\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>6. Ти не бійся ночі</b>\n📺 в метре от тебя - Topic · ⏱ 3 хв\n👁 <b>155 тис</b> переглядів · 💬 <b>0</b> коментарів\n🔗 <a href=\"https://youtu.be/tdqVg2qlRVI\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>7. Селяві бай бай</b>\n📺 DJ KAIFAR - Topic · ⏱ 2 хв\n👁 <b>147 тис</b> переглядів · 💬 <b>19</b> коментарів\n🔗 <a href=\"https://youtu.be/E-3Cdh-TZRk\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>8. І у темною ніч</b>\n📺 Black Noir - Topic · ⏱ 3 хв\n👁 <b>144 тис</b> переглядів · 💬 <b>0</b> коментарів\n🔗 <a href=\"https://youtu.be/rHf6bD-oGEk\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>9. МОРИТЬ ГОЛОДОМ скаліченого чоловіка! Чому вона чекає його смерті? \"Говорить Україна\". Архів</b>\n📺 Говорить Україна. Архів · ⏱ 58 хв\n👁 <b>127 тис</b> переглядів · 💬 <b>170</b> коментарів\n🔗 <a href=\"https://youtu.be/N7V2QaWxtZg\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>10. Ніхто Не Знає, Що У Нас Була Любов</b>\n📺 Вільний Вітер - Topic · ⏱ 5 хв\n👁 <b>130 тис</b> переглядів · 💬 <b>32</b> коментарів\n🔗 <a href=\"https://youtu.be/xqEPTPD3Q3w\">Дивитися</a></blockquote>\n§RT:yt:202642",
  "kp_at": {
   "mix": "2026-10-15T01:01:21.230124+03:00",
-  "drama": "2026-10-15T01:11:20.275545+03:00"
+  "drama": "2026-10-15T01:11:20.275545+03:00",
+  "thriller": "2026-10-15T01:16:22.863206+03:00"
  },
  "x18_at": {
   "mix": "2026-10-15T01:01:21.230124+03:00",
-  "new": "2026-10-15T01:01:21.230124+03:00"
+  "new": "2026-10-15T01:01:21.230124+03:00",
+  "best": "2026-10-15T01:16:22.863206+03:00",
+  "women": "2026-10-15T01:16:22.863206+03:00"
  },
  "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 15.10 (оновлюється щоранку)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Калнишевського, 2 · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <a href=\"https://silpo.ua/product/zasib-dlia-prannia-perwoll-vidnovlennia-ta-aromat-949302\">Засіб для прання Perwoll Відновлення та аромат</a> — <b>399 ₴</b> <s>999 ₴</s> · −60%\n2. 🛒 <a href=\"https://silpo.ua/product/ketchup-korolivskyi-smak-lagidnyi-931498\">Кетчуп Королівський смак Лагідний</a> — <b>19.99 ₴</b> <s>38.99 ₴</s> · −56%\n3. 🥤 <a href=\"https://silpo.ua/product/nektar-lito-tomatnyi-696928\">Нектар «Літо» томатний</a> — <b>34.99 ₴</b> <s>78.49 ₴</s> · −59%\n4. 🍫 <a href=\"https://silpo.ua/product/tsukerky-zozole-raibow-z-fruktovym-smakom-zheleini-960824\">Цукерки Zozole Raibow з фруктовим смаком желейні</a> — <b>22.99 ₴</b> <s>52.99 ₴</s> · −59%\n5. 🛒 <a href=\"https://silpo.ua/product/ketchup-korolivskyi-smak-do-shashlyku-931500\">Кетчуп Королівський смак До шашлику</a> — <b>19.99 ₴</b> <s>38.99 ₴</s> · −52%\n6. 🛒 <a href=\"https://silpo.ua/product/pryprava-premiia-do-ryby-320507\">Приправа «Премія»® до риби</a> — <b>13.99 ₴</b> <s>31.99 ₴</s> · −59%\n7. 🛒 <a href=\"https://silpo.ua/product/pakety-dlia-smittia-premiia-z-ruchkamy-35-l-948287\">Пакети для сміття «Премія»® з ручками 35 л</a> — <b>35.99 ₴</b> <s>81.99 ₴</s> · −53%\n8. 🧊 <a href=\"https://silpo.ua/product/morozyvo-zolotyi-kashtan-klasychnyi-plombir-u-vershkovii-glazuri-542504\">Морозиво «Золотий Каштан» «Класичний» пломбір у вершковій глазурі</a> — <b>32.99 ₴</b> <s>66.99 ₴</s> · −60%\n9. 🛒 <a href=\"https://silpo.ua/product/pryprava-premiia-do-ryby-320507\">Приправа «Премія»® до риби</a> — <b>13.99 ₴</b> <s>31.99 ₴</s> · −59%\n10. 🛒 <a href=\"https://silpo.ua/product/pakety-dlia-smittia-premiia-z-ruchkamy-35-l-948287\">Пакети для сміття «Премія»® з ручками 35 л</a> — <b>35.99 ₴</b> <s>81.99 ₴</s> · −53%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m"
 }
