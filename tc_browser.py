@@ -24,20 +24,31 @@ def main() -> None:
                             "window.chrome = {runtime: {}}; Object.defineProperty(navigator, 'languages', {get: () => ['uk-UA', 'uk', 'en']});")
         page = ctx.new_page()
 
+        cache: dict = {}
+
         def get(url: str) -> str:
-            r = page.goto(url, wait_until="domcontentloaded", timeout=40000)
+            if url in cache:                          # кожна сторінка — один раз за збір
+                if isinstance(cache[url], Exception):
+                    raise cache[url]
+                return cache[url]
             try:
-                page.wait_for_load_state("networkidle", timeout=8000)
-            except Exception:
-                pass
-            try:                                      # гортаємо вниз — підвантажуються «ліниві» блоки акцій
-                page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-                page.wait_for_timeout(1200)
-            except Exception:
-                pass
-            if r is not None and r.status >= 400:
-                raise RuntimeError(f"HTTP {r.status}")
-            return page.content()
+                r = page.goto(url, wait_until="domcontentloaded", timeout=20000)
+                try:
+                    page.wait_for_load_state("networkidle", timeout=3000)
+                except Exception:
+                    pass
+                try:                                  # гортаємо вниз — підвантажуються «ліниві» блоки акцій
+                    page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+                    page.wait_for_timeout(800)
+                except Exception:
+                    pass
+                if r is not None and r.status >= 400:
+                    raise RuntimeError(f"HTTP {r.status}")
+                cache[url] = page.content()
+            except Exception as e:
+                cache[url] = e
+                raise
+            return cache[url]
 
         check.tc_get = get
         report = check.tc_refresh(st, datetime.now(check.TZ), force=True)

@@ -1692,12 +1692,17 @@ def feed_items(url: str, src: str, days: int = 10) -> list[dict]:
                 or it.findtext("{http://www.itunes.com/dtds/podcast-1.0.dtd}summary") or "")
         date = ""
         try:
-            d = parsedate_to_datetime(it.findtext("pubDate") or "")
-            if d and (now_ - d.astimezone(TZ)).days > days:
-                continue
-            date = d.astimezone(TZ).strftime("%d.%m") if d else ""
+            d = parsedate_to_datetime(it.findtext("pubDate") or it.findtext("{http://purl.org/dc/elements/1.1/}date") or "")
         except Exception:
-            pass
+            d = None
+        if not d:                                     # без зрозумілої дати — не беремо (щоб не потрапили старі статті)
+            continue
+        if (now_ - d.astimezone(TZ)).days > days:
+            continue
+        mu = re.search(r"/(20\d\d)/(\d\d)/", link)  # дата в адресі статті (/2024/05/…) — додаткова перевірка
+        if mu and (now_.year - int(mu.group(1))) * 12 + (now_.month - int(mu.group(2))) > max(1, days // 30 + 1):
+            continue
+        date = d.astimezone(TZ).strftime("%d.%m")
         if title and link:
             out.append({"src": src, "title": title, "link": link, "text": strip_html(body)[:2500], "date": date})
     return out
@@ -1740,7 +1745,6 @@ SMM_FEEDS = [("Jon Loomer", "https://www.jonloomer.com/feed/"),
              ("AdEspresso", "https://adespresso.com/feed/"),
              ("Hootsuite", "https://blog.hootsuite.com/feed/"),
              ("Buffer", "https://buffer.com/resources/rss/"),
-             ("Later", "https://later.com/blog/feed/"),
              ("Medium · facebook-ads", "https://medium.com/feed/tag/facebook-ads"),
              ("Medium · tiktok-ads", "https://medium.com/feed/tag/tiktok-ads"),
              ("Medium · instagram-marketing", "https://medium.com/feed/tag/instagram-marketing"),
@@ -2358,7 +2362,8 @@ def promo_kind(p_: dict) -> tuple | None:
     """(тип, ціна за шт, стара ціна, знижка %, позначка) або None. Тип: direct | online | multi | gurt."""
     price, old = p_price(p_), p_old(p_)
     pr = [x for x in (p_.get("promotions") or []) if isinstance(x, dict)]
-    text = " ".join(str(x.get("title") or x.get("name") or x.get("type") or x.get("description") or "") for x in pr)
+    ids = [str(x.get("id") or "") for x in pr if x.get("type") != "set"]   # коди акцій Сільпо (set — кешбек-програми, не знижка)
+    text = " ".join(str(x.get("title") or x.get("name") or x.get("description") or "") for x in pr) + " " + " ".join(ids)
     if len(PROMO_SAMPLES) < 12 and pr:
         sig = json.dumps(pr[:2], ensure_ascii=False)[:300]
         if sig not in PROMO_SAMPLES:
@@ -2399,8 +2404,8 @@ def promo_kind(p_: dict) -> tuple | None:
     if old and old > price:
         if CARD.search(text):                         # знижка лише з карткою лояльності — сайт без входу покаже повну ціну
             return ("card", price, old, (old - price) / old * 100, "💳 з карткою «Власний рахунок»")
-        if ONLINE.search(text):
-            return ("online", price, old, (old - price) / old * 100, "🌐 онлайн")
+        if "only_online" in ids or ONLINE.search(text):  # ціна лише в онлайн-замовленні (на полиці — повна)
+            return ("online", price, old, (old - price) / old * 100, "🌐 лише онлайн-замовлення")
         return ("direct", price, old, (old - price) / old * 100, "")
     return None
 
@@ -2608,7 +2613,9 @@ def tc_get(url: str) -> str:
 
 
 def tc_root(roots: str) -> str:
-    """Перший робочий варіант адреси ТЦ / магазину."""
+    """Перший робочий варіант адреси ТЦ / магазину (і старт таймера сайту — не довше 45 с)."""
+    TC_SITE_T0["t"] = _time.time()
+    print(f"   … {roots.split('|')[0]}", flush=True)       # живий лог: який сайт зараз
     last = None
     for r_ in roots.split("|"):
         try:
@@ -2637,7 +2644,7 @@ def tc_promo_url(root: str) -> str | None:
             url = urllib.parse.urljoin(root + "/", href)
             if urllib.parse.urlparse(url).netloc.replace("www.", "") == urllib.parse.urlparse(root).netloc.replace("www.", ""):
                 cands.append(url)
-    cands = list(dict.fromkeys(cands))[:3] or [root.rstrip("/") + p_ for p_ in PROMO_PATHS[:4]]
+    cands = list(dict.fromkeys(cands))[:2] or [root.rstrip("/") + p_ for p_ in PROMO_PATHS[:2]]   # ≤2 кандидати — швидше
     best, best_s = None, promo_score(page) // 2          # головна — як запасний варіант
     for u in cands:
         try:
@@ -2664,7 +2671,12 @@ def tc_promo_url(root: str) -> str | None:
 TC_CACHE: dict = {}                                        # сторінка не змінилась — беремо минулий результат без ШІ
 
 
+TC_SITE_T0 = {"t": 0.0}
+
+
 def tc_extract(mall: str, url: str, now: datetime) -> list[dict]:
+    if TC_SITE_T0["t"] and _time.time() - TC_SITE_T0["t"] > 45:
+        raise RuntimeError("сайт відповідає надто довго (>45 с) — пропущено")
     page = tc_get(url)
     h = hashlib.md5(strip_html(page)[:14000].encode()).hexdigest()[:12]
     old = TC_CACHE.get(url)
@@ -2893,24 +2905,43 @@ def sx_chart(c: dict) -> bytes | None:
         return None
 
 
-def commons_image(query: str, drawing_only: bool = False) -> dict | None:
+WIKI_BLOCK = {"until": 0.0}
+
+
+def commons_image(query: str, drawing_only: bool = False, must: list | None = None) -> dict | None:
     """Ілюстрація з Wikimedia Commons (відкрита ліцензія, з автором); drawing_only — лише малюнки/схеми, без фото."""
+    if _time.time() < WIKI_BLOCK["until"]:
+        return None                                   # отримали 429 — до наступного запуску не турбуємо
+    _time.sleep(1.2)                                  # ввічлива пауза між запитами
     try:
         r = http_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode({
             "action": "query", "format": "json", "generator": "search",
             "gsrsearch": f"filetype:{'drawing' if drawing_only else 'bitmap|drawing'} {query}", "gsrnamespace": 6,
-            "gsrlimit": 5, "prop": "imageinfo", "iiprop": "url|extmetadata", "iiurlwidth": 900}), headers={"User-Agent": "svitlo-bot/1.0 (education)"})
+            "gsrlimit": 5, "prop": "imageinfo", "iiprop": "url|extmetadata", "iiurlwidth": 900}),
+            headers={"User-Agent": "svitlo-bot/1.0 (https://github.com/bylover; Telegram educational bot)"})
         for p_ in sorted((r.get("query") or {}).get("pages", {}).values(), key=lambda x: x.get("index", 99)):
+            if must and not any(w.lower() in str(p_.get("title", "")).lower() for w in must):
+                continue                              # назва файлу не про те, що шукаємо — не беремо (краще без картинки)
             ii = (p_.get("imageinfo") or [{}])[0]
             lic = ((ii.get("extmetadata") or {}).get("LicenseShortName") or {}).get("value", "")
             if ii.get("thumburl") and re.search(r"CC|Public domain|PD", lic, re.I):
                 art = strip_html(((ii.get("extmetadata") or {}).get("Artist") or {}).get("value", ""))[:60]
                 return {"url": ii["thumburl"], "page": ii.get("descriptionurl", ""), "lic": lic, "by": art}
     except Exception as e:
-        print(f"Wikimedia: {err_text(e)[:80]}")
+        if "429" in str(e):
+            WIKI_BLOCK["until"] = _time.time() + 3600
+            print("Wikimedia: 429 — пауза до наступного запуску")
+        else:
+            print(f"Wikimedia: {err_text(e)[:80]}")
     return None
 
 
+SX_MUST = {"vulva": ["vulva"], "clitoris": ["clitoris", "clitoral"], "vagina": ["female reproductive", "vagina", "uterus"], "penis": ["penis"],
+           "male": ["male reproductive", "testis", "testicle", "prostate"], "cycle": ["menstrual"], "fert": ["fertiliz", "fertilis", "zygote", "sperm"],
+           "missionary": ["missionary"], "cat": ["coital", "missionary"], "top": ["woman on top", "cowgirl", "on top"], "spoon": ["spoon"],
+           "rear": ["doggy", "rear entry", "from behind", "rear-entry"], "69": ["69", "sixty-nine", "sixty nine"],
+           "kamasutra": ["kama", "sutra"], "shunga": ["shunga"], "antique": ["greek", "attic", "kylix", "vase", "pottery"], "persian": ["persian"],
+           "renaissance": ["modi", "giulio", "raimondi", "romano"]}
 SX_IMAGES = {"vulva": "vulva anatomy diagram", "clitoris": "clitoris anatomy 3D", "vagina": "female reproductive system diagram",
              "penis": "penis anatomy diagram", "male": "male reproductive system diagram", "cycle": "menstrual cycle diagram",
              "fert": "human fertilization diagram"}
@@ -2922,6 +2953,8 @@ SX_ART_Q = [("kamasutra", "Kama Sutra illustration"), ("shunga", "shunga Japanes
 
 def sx_positions_catalog(db_: dict) -> bool:
     """Каталог поз: розділи статті Вікіпедії «List of sex positions» → ШІ переказує (з посиланням), малюнки — Wikimedia Commons."""
+    if db_.get("cat_ver") != 2:                       # перебудова каталогу з розширеними описами
+        db_["poscat"], db_["cat_ver"] = [], 2
     cat = db_.get("poscat") or []
     if not cat:
         try:
@@ -2937,7 +2970,8 @@ def sx_positions_catalog(db_: dict) -> bool:
                      "name (українською), en (англійська назва), how (2 речення: як виконувати — лише за текстом статті), "
                      "why (1 речення: чим хороша), tags (з переліку: clit — більше стимуляції клітора, deep — глибина, intim — близькість і контакт очима, "
                      "rest — мало зусиль, back — щадить спину, preg — підходить під час вагітності), level (1–3, складність), "
-                     "tip (1 коротка порада), anchor (заголовок розділу англійською як у статті). Лише JSON-масив.\n\n" + txt,
+                     "tip (1 коротка порада), detail (3–5 речень: варіанти, як зробити зручніше, кому підходить — лише за текстом статті, без вигадок), "
+                     "anchor (заголовок розділу англійською як у статті). Лише JSON-масив.\n\n" + txt,
                      json_mode=True, relaxed=True, max_tokens=6000)
         try:
             cat = [x for x in json.loads(raw or "[]") if x.get("name") and x.get("en")][:25]
@@ -2952,7 +2986,11 @@ def sx_positions_catalog(db_: dict) -> bool:
     for x in cat:                                     # малюнки — до 6 за запуск
         if "img" in x or n >= 6:
             continue
-        x["img"] = commons_image(f"{x['en']} sex position", drawing_only=True) or {}
+        mw = [w for w in re.findall(r"[a-z0-9-]+", x["en"].lower()) if w not in ("position", "sex", "the", "of", "a")][:2] or [x["en"].lower()]
+        im_ = commons_image(f"{x['en']} sex position", drawing_only=True, must=mw)
+        if im_ is None and _time.time() < WIKI_BLOCK["until"]:
+            break                                     # 429 — спробуємо наступного разу
+        x["img"] = im_ or openverse_image(f"{x['en']} sex position illustration", must=mw) or {}
         n += 1
     return True
 
@@ -2962,7 +3000,10 @@ def sx_art_images(db_: dict) -> bool:
     ch = False
     for k, q in SX_ART_Q:
         if k not in art:
-            art[k] = commons_image(q) or {}
+            im = commons_image(q, must=SX_MUST.get(k))
+            if im is None and _time.time() < WIKI_BLOCK["until"]:
+                break
+            art[k] = im or {}
             ch = True
             break                                     # по одному за запуск
     return ch
@@ -3016,6 +3057,25 @@ IMP_BOOKS = [   # суспільне надбання (Project Gutenberg): ві�
 IMP_KEYS = re.compile(r"\b(kiss|lips|bosom|breast|desire|passion|naked|embrace|trembl|whip|lust|caress|thigh|fur|pleasure|ardent|flesh|"
                       r"love|beloved|body|bed|blood|burn|sweet)\w*", re.I)
 AGE_OK: set = set()
+GUT_IDS = {"Venus in Furs": 6852, "Fanny Hill": 25305, "Women in Love": 4240, "Kama Sutra": 27827, "Leaves of Grass": 1322,
+           "Flowers of Evil": 36098, "Carmilla": 10007, "Dracula": 345, "Salome": 42704, "Nana": 5250, "The Awakening": 160}   # номери Project Gutenberg
+
+
+def gutenberg_book(title: str) -> tuple[int | None, str]:
+    """Текст книги прямо з gutenberg.org: за відомим номером або через пошук Gutenberg."""
+    bid = GUT_IDS.get(title)
+    if not bid:
+        page = http_text("https://www.gutenberg.org/ebooks/search/?" + urllib.parse.urlencode({"query": title}))
+        m = re.search(r'href="/ebooks/(\d+)"', page)
+        bid = int(m.group(1)) if m else None
+    if not bid:
+        return None, ""
+    for u in (f"https://www.gutenberg.org/cache/epub/{bid}/pg{bid}.txt", f"https://www.gutenberg.org/files/{bid}/{bid}-0.txt"):
+        try:
+            return bid, http_text(u)
+        except Exception:
+            continue
+    return bid, ""
 
 
 def impulse_refresh(st: dict, now: datetime) -> None:
@@ -3041,18 +3101,18 @@ def impulse_refresh(st: dict, now: datetime) -> None:
                 db_["mot"], db_["mot_week"], ch = mot, wk, True
         except Exception as e:
             print(f"Імпульс (мотивація): {err_text(e)[:100]}")
-    todo = [b for b in IMP_BOOKS if b[0] not in db_["books"]][:1]
+    tried = db_.setdefault("tried", {})               # невдалі спроби — повтор через добу, а поки беремо наступну книгу
+    todo = [b for b in IMP_BOOKS if b[0] not in db_["books"] and tried.get(b[0]) != now.date().isoformat()][:1]
     for title, author, year in todo:                  # дослівні фрагменти з Project Gutenberg (суспільне надбання)
         try:
-            r = http_json("https://gutendex.com/books/?" + urllib.parse.urlencode({"search": title}))
-            key_ = max(re.findall(r"[a-z]+", title.lower()), key=len)          # найдовше слово назви — надійніший збіг
-            bk = next((b for b in r.get("results", []) if key_ in b.get("title", "").lower()), None)
-            if not bk:
-                db_["books"][title] = {"none": True}; ch = True
+            bid, text = gutenberg_book(title)
+            if not bid:
+                db_["books"][title] = {"none": True}; ch = True   # книги немає на Gutenberg — пропускаємо назавжди
                 continue
-            fm = bk.get("formats", {})
-            url = next((u for k, u in fm.items() if k.startswith("text/plain")), None)
-            text = http_text(url) if url else ""
+            if not text:
+                tried[title] = now.date().isoformat(); ch = True
+                continue
+            bk = {"id": bid}
             paras = [re.sub(r"\s+", " ", p_).strip() for p_ in re.split(r"\n\s*\n", text)]
             cands = [p_ for p_ in paras if 150 < len(p_) < 700 and IMP_KEYS.search(p_)][:60]
             raw = gemini("Ось абзаци з класичного твору (суспільне надбання). Обери 10 найчуттєвіших або найтемніших фрагментів. Для кожного візьми "
@@ -3066,7 +3126,8 @@ def impulse_refresh(st: dict, now: datetime) -> None:
             db_["books"][title] = {"id": bk.get("id"), "n": len(got)}; ch = True
             print(f"Імпульс: «{title}» — фрагментів {sum(1 for d in db_['dark'] if d['book'] == title)}")
         except Exception as e:
-            print(f"Імпульс ({title}): {err_text(e)[:100]}")
+            tried[title] = now.date().isoformat(); ch = True
+            print(f"Імпульс ({title}): {err_text(e)[:100]} — повторю завтра, беру наступну")
     if ch:
         IMP_FILE.write_text(json.dumps(db_, ensure_ascii=False, separators=(",", ":")), "utf-8")
 
@@ -3277,7 +3338,7 @@ def music_refresh(st: dict, now: datetime) -> None:
             for d in [d for d in s_ if d < cut and datetime.fromisoformat(d).weekday() != 0]:
                 del s_[d]
     charts = music_charts(db_, now)
-    meta = {k: {kk: x.get(kk) for kk in ("a", "t", "g", "dzurl", "prev", "cover", "aid", "ytid", "ls")} for k, x in db_["tracks"].items()
+    meta = {k: {kk: x.get(kk) for kk in ("a", "t", "g", "dzurl", "dzid", "prev", "cover", "aid", "ytid", "ls")} for k, x in db_["tracks"].items()
             if any(k in [r[0] for per in c.values() for lst in per.values() for r in lst] for c in charts.values())}
     sid = lambda k: hashlib.md5(k.encode()).hexdigest()[:10]   # короткі ключі для кнопок Telegram (≤ 64 байти)
     charts = {g: {per: {md: [[sid(r[0])] + r[1:] for r in lst] for md, lst in v.items()} for per, v in c.items()} for g, c in charts.items()}
@@ -3292,6 +3353,207 @@ def music_refresh(st: dict, now: datetime) -> None:
         print(f"Музика → Cloudflare: {err_text(e)[:100]}")
 
 
+SX_KW = {   # тема → короткий англійський запит для OpenAlex / Europe PMC
+    "частота сексу": "sexual frequency", "задоволеність сексом": "sexual satisfaction couples", "оргазм і «оргазмовий розрив»": "orgasm gap",
+    "стимуляція клітора": "clitoral stimulation", "розміри статевого члена": "penis size", "секс-іграшки й вібратори": "vibrator use",
+    "сексуальне бажання": "sexual desire", "секс у шлюбі й тривалих стосунках": "marital sexuality", "прелюдія й тривалість сексу": "foreplay duration",
+    "сквирт і жіноча еякуляція": "female ejaculation", "множинний оргазм": "multiple orgasms", "оргазм з іграшкою, наодинці й з партнером": "orgasm masturbation partnered",
+    "іграшки в парі": "couples sex toys", "оргазм у гетеро, лесбі, бі": "orgasm sexual orientation", "улюблені пози": "sexual positions",
+    "кількість партнерів і подвійні стандарти": "sexual double standard partners", "розмір: що важливо жінкам (довжина, обхват)": "penis size preference women",
+    "відповідність розмірів пари": "vaginal dimensions"}
+SX_NEWS_Q = [("Kinsey Institute survey sex", "📊 Kinsey Institute"), ("YouGov sex survey", "📰 опитування YouGov"),
+             ("Pew Research relationships sex survey", "📰 опитування Pew"), ("Gallup sexual survey", "📰 опитування Gallup"),
+             ("Lovehoney survey sex", "📢 опитування бренду"), ("Durex sex survey", "📢 опитування бренду"), ("Womanizer survey orgasm", "📢 опитування бренду")]
+
+
+def ntitle(t: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", str(t).lower())[:80]
+
+
+def openalex(kw: str, mindate: str, n: int = 6) -> list[dict]:
+    """OpenAlex: рецензовані статті з анотацією, відсортовані за цитуваннями (найвпливовіші)."""
+    r = http_json("https://api.openalex.org/works?" + urllib.parse.urlencode({
+        "search": kw, "filter": f"from_publication_date:{mindate}-01-01,has_abstract:true,type:article", "sort": "cited_by_count:desc",
+        "per-page": n, "mailto": "svitlo-bot@users.noreply.github.com"}))
+    out = []
+    for w in r.get("results", []):
+        inv = w.get("abstract_inverted_index") or {}
+        words = sorted(((p_, wd) for wd, ps in inv.items() for p_ in ps))
+        ab = " ".join(wd for _, wd in words)
+        src = (((w.get("primary_location") or {}).get("source") or {}).get("display_name")) or ""
+        url = w.get("doi") or w.get("id")
+        out.append({"pid": "oa:" + str(w.get("id", "")).rsplit("/", 1)[-1], "title": w.get("title") or "", "journal": src,
+                    "year": str(w.get("publication_year") or ""), "abstract": ab[:2500], "url": url, "cites": w.get("cited_by_count") or 0})
+    return out
+
+
+def europepmc(kw: str, mindate: str, n: int = 6) -> list[dict]:
+    """Europe PMC: усе з PubMed + європейські журнали й препринти (позначаємо)."""
+    r = http_json("https://www.ebi.ac.uk/europepmc/webservices/rest/search?" + urllib.parse.urlencode({
+        "query": f'"{kw}" AND PUB_YEAR:[{mindate} TO 3000] AND HAS_ABSTRACT:y', "resultType": "core", "format": "json", "pageSize": n}))
+    out = []
+    for x in (r.get("resultList") or {}).get("result", []):
+        pre = x.get("source") == "PPR"
+        url = f"https://europepmc.org/article/{x.get('source')}/{x.get('id')}"
+        out.append({"pid": f"epmc:{x.get('source')}{x.get('id')}", "title": x.get("title") or "", "journal": ((x.get("journalInfo") or {}).get("journal") or {}).get("title") or ("препринт" if pre else ""),
+                    "year": str(x.get("pubYear") or ""), "abstract": strip_html(x.get("abstractText") or "")[:2500], "url": url,
+                    "cites": x.get("citedByCount") or 0, "pre": pre})
+    return out
+
+
+def sx_news_surveys(db_: dict, now: datetime, known_titles: set) -> int:
+    """Свіжі опитування з медіа й брендів (Google News RSS) — з позначкою джерела; лише за останній рік."""
+    added = 0
+    for q, lab in SX_NEWS_Q[:3] if db_.get("news_i", 0) % 2 == 0 else SX_NEWS_Q[3:]:
+        try:
+            items = feed_items("https://news.google.com/rss/search?" + urllib.parse.urlencode({"q": q + " when:365d", "hl": "en-US", "gl": "US", "ceid": "US:en"}), lab, days=365)[:6]
+        except Exception as e:
+            print(f"Секс-освіта (новини {q}): {err_text(e)[:60]}")
+            continue
+        items = [it for it in items if ntitle(it["title"]) not in known_titles and re.search(r"sex|orgasm|intimacy|relationship|libido|toy|vibrator", it["title"], re.I)][:3]
+        if not items:
+            continue
+        raw = gemini("Ось заголовки й анотації новин про опитування щодо сексу. Для кожного поверни JSON: n, title (українською), "
+                     "sum (1–2 речення: що показало опитування, цифри — лише якщо є в тексті). Лише JSON-масив.\n\n"
+                     + json.dumps([{"n": i, "title": it["title"], "text": it["text"][:600]} for i, it in enumerate(items)], ensure_ascii=False),
+                     json_mode=True, relaxed=True, max_tokens=1500)
+        try:
+            res = json.loads(raw or "[]")
+        except Exception:
+            res = []
+        for x in res:
+            i = x.get("n")
+            if not isinstance(i, int) or i >= len(items) or not x.get("sum"):
+                continue
+            it = items[i]
+            db_["items"].insert(0, {"id": "news:" + hashlib.md5(it["link"].encode()).hexdigest()[:10], "kind": "survey", "topic": "опитування в медіа",
+                                    "lab": lab, "title": str(x.get("title"))[:140], "orig": it["title"][:200], "year": str(now.year),
+                                    "source": lab.split(" ", 1)[1] if " " in lab else lab, "url": it["link"], "sum": str(x["sum"])[:500],
+                                    "added": now.date().isoformat()})
+            known_titles.add(ntitle(it["title"])); added += 1
+    db_["news_i"] = db_.get("news_i", 0) + 1
+    return added
+
+
+def openverse_image(query: str, must: list | None = None) -> dict | None:
+    """Openverse: зображення під вільними ліцензіями (Flickr, Commons, музеї) — запасне джерело ілюстрацій."""
+    try:
+        r = http_json("https://api.openverse.org/v1/images/?" + urllib.parse.urlencode({"q": query, "mature": "true", "page_size": 5}),
+                      headers={"User-Agent": "svitlo-bot/1.0 (https://github.com/bylover)"})
+        for x in r.get("results", []):
+            if must and not any(w.lower() in (str(x.get("title", "")) + " " + " ".join(t.get("name", "") for t in (x.get("tags") or []))).lower() for w in must):
+                continue
+            if x.get("url") and x.get("license"):
+                return {"url": x["url"], "page": x.get("foreign_landing_url") or "", "lic": f"CC {x['license'].upper()} {x.get('license_version') or ''}".strip(),
+                        "by": (x.get("creator") or "")[:60]}
+    except Exception as e:
+        print(f"Openverse: {err_text(e)[:60]}")
+    return None
+
+
+# ---------- ❤️ Здоров'я: картинки вправ (free-exercise-db, суспільне надбання), фото добавок (Commons), квартальний огляд досліджень ----------
+HEALTH_FILE = Path("health.json")
+HX_DB = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json"
+HX_IMG = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/"
+HX_NAMES = {   # наш код вправи → назви для пошуку в базі (перша, що знайдеться)
+    "goblet": ["Goblet Squat"], "row": ["One-Arm Dumbbell Row", "Bent Over Two-Dumbbell Row"], "floorpress": ["Dumbbell Floor Press", "Dumbbell Bench Press"],
+    "lunge": ["Dumbbell Rear Lunge", "Dumbbell Lunges"], "bridge": ["Butt Lift (Bridge)", "Glute Bridge"], "ohp": ["Dumbbell Shoulder Press", "Standing Dumbbell Press"],
+    "rdl": ["Stiff-Legged Dumbbell Deadlift", "Romanian Deadlift"], "pushup": ["Pushups", "Push-Ups With Feet Elevated"], "deadbug": ["Dead Bug"],
+    "birddog": ["Bird Dog", "Superman"], "sideplank": ["Side Bridge", "Side Plank"], "plank": ["Plank"], "revcrunch": ["Reverse Crunch"],
+    "curlup": ["Crunches", "Crunch - Hands Overhead"], "curl": ["Dumbbell Bicep Curl"], "hammer": ["Hammer Curls"],
+    "tricext": ["Standing Dumbbell Triceps Extension", "Seated Triceps Press"], "kickback": ["Tricep Dumbbell Kickback"], "lateral": ["Side Lateral Raise"],
+    "thruster": ["Dumbbell Squat", "Goblet Squat"], "climber": ["Mountain Climbers"], "march": ["Step-up with Knee Raise", "Jumping Jacks"],
+    "sitstand": ["Bodyweight Squat", "Chair Squat"], "bandwalk": ["Monster Walk", "Lateral Band Walk"], "donkey": ["Glute Kickback", "Donkey Kicks"],
+    "clam": ["Clam", "Side-Lying Clam"], "hipabd": ["Side Leg Raises", "Lying Side Hip Abduction"], "calf": ["Standing Dumbbell Calf Raise", "Calf Raise"],
+    "renegade": ["Alternating Renegade Row"], "reversefly": ["Bent Over Dumbbell Rear Delt Raise With Head On Bench", "Reverse Flyes"]}
+HS_MUST = {"creatine": ["creatine"], "protein": ["protein", "whey"], "vitd": ["vitamin d", "cholecalciferol", "vitamin_d"], "omega3": ["fish oil", "omega"],
+           "mg": ["magnesium"], "b12": ["b12", "cobalamin"], "psyllium": ["psyllium", "plantago"], "caffeine": ["coffee", "caffeine"], "calcium": ["calcium"],
+           "iron": ["iron", "ferrous"], "collagen": ["collagen", "gelatin"], "ashwagandha": ["withania", "ashwagandha"]}
+HS_IMG = {"creatine": "creatine powder", "protein": "whey protein powder", "vitd": "vitamin D capsules", "omega3": "fish oil capsules",
+          "mg": "magnesium supplement", "b12": "vitamin B12", "psyllium": "psyllium husk", "caffeine": "coffee beans", "calcium": "calcium tablets",
+          "iron": "iron supplement tablets", "collagen": "collagen powder", "ashwagandha": "Withania somnifera"}
+HR_TOPICS = [("тренування вдома й час", "time-efficient resistance training systematic review"), ("схуднення й сила", "resistance training fat loss meta-analysis"),
+             ("прес і спина", "core stability exercise low back systematic review"), ("креатин", "creatine supplementation meta-analysis"),
+             ("вітамін D", "vitamin D supplementation umbrella review"), ("омега-3", "omega-3 supplementation meta-analysis"),
+             ("магній", "magnesium supplementation meta-analysis"), ("протеїн 35+", "protein supplementation older adults muscle meta-analysis")]
+
+
+def health_refresh(st: dict, now: datetime) -> None:
+    """Раз: зіставити вправи з відкритою базою (кадри руху), фото добавок; раз на квартал — огляд нових досліджень для адміна."""
+    if not WORKER_MODE:
+        return
+    try:
+        db_ = json.loads(HEALTH_FILE.read_text("utf-8"))
+    except Exception:
+        db_ = {"ex": {}, "img": {}}
+    ch = False
+    if db_.get("img_ver") != 2:                       # фото добавок і вправ — заново, з перевіркою назви файлу
+        db_["img"] = {}
+        for x in db_.get("ex", {}).values():
+            for k_ in ("pic", "pic_by", "pic_lic"):
+                x.pop(k_, None)
+        db_["img_ver"] = 2; ch = True
+    if len(db_["ex"]) < len(HX_NAMES) and not db_.get("ex_try") == now.date().isoformat():
+        db_["ex_try"] = now.date().isoformat()
+        try:
+            allx = http_json(HX_DB)
+            byname = {fflat(x.get("name", "")): x for x in allx}
+            for code, names in HX_NAMES.items():
+                if code in db_["ex"]:
+                    continue
+                hit = next((byname[fflat(n)] for n in names if fflat(n) in byname), None)
+                if not hit:                            # нечіткий пошук за словами
+                    w = set(fflat(names[0]).split())
+                    hit = max(allx, key=lambda x: len(w & set(fflat(x.get("name", "")).split())), default=None)
+                    if hit and len(w & set(fflat(hit.get("name", "")).split())) < max(1, len(w) - 1):
+                        hit = None
+                if hit and hit.get("images"):
+                    db_["ex"][code] = {"name": hit.get("name"), "img": [HX_IMG + i for i in hit["images"][:2]],
+                                       "tips": [str(t)[:220] for t in (hit.get("instructions") or [])[:4]]}
+                else:
+                    db_["ex"][code] = {"name": names[0], "img": [], "tips": []}
+                ch = True
+            print(f"Здоров'я: вправ із кадрами {sum(1 for v in db_['ex'].values() if v['img'])}/{len(HX_NAMES)}")
+        except Exception as e:
+            print(f"Здоров'я (база вправ): {err_text(e)[:80]}")
+    n_pic = 0                                         # немає анімації — хоча б фото вправи (Commons / Openverse), по 3 за запуск
+    for code, x in db_["ex"].items():
+        if x.get("img") or "pic" in x or n_pic >= 3:
+            continue
+        q_ = HX_NAMES.get(code, [x.get("name", code)])[0]
+        mw = [w for w in re.findall(r"[a-z]+", q_.lower()) if w not in ("dumbbell", "the", "with", "one", "arm", "two", "over", "bent")][:2] or [q_.lower()]
+        im = commons_image(f"{q_} exercise", must=mw)
+        if im is None and _time.time() < WIKI_BLOCK["until"]:
+            break
+        im = im or openverse_image(f"{q_} exercise", must=mw)
+        x["pic"] = (im or {}).get("url", ""); x["pic_by"] = (im or {}).get("by", ""); x["pic_lic"] = (im or {}).get("lic", "")
+        n_pic += 1; ch = True
+    for k, q in HS_IMG.items():                       # фото добавок — по 2 за запуск
+        if k in db_["img"]:
+            continue
+        im = commons_image(q, must=HS_MUST.get(k))
+        if im is None and _time.time() < WIKI_BLOCK["until"]:
+            break
+        db_["img"][k] = im or {}; ch = True
+        if sum(1 for kk in HS_IMG if kk in db_["img"]) % 2 == 0:
+            break
+    qtr = f"{now.year}-Q{(now.month - 1) // 3 + 1}"
+    if db_.get("review") != qtr and now.day >= 2:     # квартальний огляд: нові систематичні огляди — звіт адміну (програми не змінюються самі)
+        lines = []
+        for name, term in HR_TOPICS:
+            try:
+                arts = pubmed(term + " AND (systematic review[pt] OR meta-analysis[pt])", f"{now.year if now.month > 3 else now.year - 1}", 3)
+                lines += [f"• <b>{esc(name)}</b>: <a href=\"https://pubmed.ncbi.nlm.nih.gov/{a['pmid']}/\">{esc(a['title'][:110])}</a> ({esc(a['year'])})" for a in arts[:2]]
+            except Exception as e:
+                print(f"Здоров'я (огляд {name}): {err_text(e)[:60]}")
+        db_["review"] = qtr; ch = True
+        if lines and CHAT_IDS:
+            send(CHAT_IDS[0], f"❤️ <b>Здоров'я: огляд нових досліджень · {qtr}</b>\nПрограми й картки не змінюються самі — перегляньте й напишіть, що оновити.\n\n"
+                 + "\n".join(lines[:16]))
+    if ch:
+        HEALTH_FILE.write_text(json.dumps(db_, ensure_ascii=False, separators=(",", ":")), "utf-8")
+
+
 def sexed_refresh(st: dict, now: datetime) -> None:
     """Дослідження й опитування: старт ~20+20, далі раз на місяць нові; раз на 6 міс — «що нового» для статей. → Cloudflare."""
     if not WORKER_MODE:
@@ -3304,6 +3566,11 @@ def sexed_refresh(st: dict, now: datetime) -> None:
     n_study = sum(1 for x in db_["items"] if x["kind"] == "study")
     n_survey = sum(1 for x in db_["items"] if x["kind"] == "survey")
     extra_ch = False                                  # каталог поз, мистецтво, схеми технік — поступово
+    if db_.get("img_ver") != 2:                       # картинки підібрані без перевірки назви — скидаємо й підбираємо заново
+        db_["img"], db_["pos"], db_["art"] = {}, {}, {}
+        for x in db_.get("poscat") or []:
+            x.pop("img", None)
+        db_["img_ver"] = 2; extra_ch = True
     try:
         extra_ch |= sx_positions_catalog(db_)
         extra_ch |= sx_art_images(db_)
@@ -3311,28 +3578,66 @@ def sexed_refresh(st: dict, now: datetime) -> None:
     except Exception as e:
         print(f"Секс-освіта (каталог/мистецтво): {err_text(e)[:100]}")
     covered = {x["topic"] for x in db_["items"]}
-    seeding = n_study < 20 or n_survey < 20 or any(q[0] not in covered and db_["done_q"].get(q[0]) != "seed" for q in SX_QUERIES)
+    seeding = n_study < 40 or n_survey < 40 or any(q[0] not in covered and db_["done_q"].get(q[0]) != "seed" for q in SX_QUERIES)
+    if n_survey < 40 and all(db_["done_q"].get(q[0] + " · опитування") == "seed" for q in SX_QUERIES):
+        seeding = n_study < 40 or any(q[0] not in covered and db_["done_q"].get(q[0]) != "seed" for q in SX_QUERIES)   # опитувань більше немає
     changed = extra_ch
+    miss = [x for x in db_["items"] if x.get("id", "").startswith("pmid:") and not x.get("chart") and not x.get("long")][:8]
+    if miss and budget_ok(150):                       # дозаповнюємо розширені виписки (де немає діаграми)
+        try:
+            ids = [x["id"][5:] for x in miss]
+            xml = http_text("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&rettype=abstract&retmode=xml&id=" + ",".join(ids))
+            abs_ = {}
+            for art in re.split(r"<PubmedArticle>", xml)[1:]:
+                pm = (re.search(r"<PMID[^>]*>(\d+)</PMID>", art) or [None, None])[1]
+                if pm:
+                    abs_[pm] = strip_html(" ".join(re.findall(r"<AbstractText[^>]*>(.*?)</AbstractText>", art, re.S)))[:2500]
+            raw = gemini("Ти науковий редактор. Суворо: лише факти з анотації, нічого не додавати й не узагальнювати понад текст; цифри, відсотки, розміри вибірки — точно як в оригіналі; якщо чогось немає в анотації — не згадувати. Для кожної анотації напиши long — 5–8 речень українською без «води»: дизайн і вибірка, "
+                         "головні результати з точними цифрами, практичний висновок, обмеження (якщо вказані). JSON-масив [{\"id\": \"…\", \"long\": \"…\"}].\n\n"
+                         + json.dumps([{"id": i, "abstract": abs_.get(i, "")} for i in ids if abs_.get(i)], ensure_ascii=False), json_mode=True, relaxed=True, max_tokens=5000)
+            got = {str(y.get("id")): str(y.get("long") or "") for y in json.loads(raw or "[]") if isinstance(y, dict)}
+            for x in miss:
+                if got.get(x["id"][5:]):
+                    x["long"] = got[x["id"][5:]][:1800]; changed = True
+        except Exception as e:
+            print(f"Секс-освіта (розширені виписки): {err_text(e)[:80]}")
     if not seeding and db_.get("month") == month:
         if changed:
             SX_FILE.write_text(json.dumps(db_, ensure_ascii=False, separators=(",", ":")), "utf-8")
         return
     todo = [q for q in SX_QUERIES if db_["done_q"].get(q[0]) != (month if not seeding else "seed")][:3]   # ≤3 тем за запуск
+    if n_survey < 40 and not todo:                    # опитувань замало — окремо шукаємо саме опитування за тими ж темами
+        todo = [(t + " · опитування", q + " AND (survey[tiab] OR questionnaire[tiab] OR nationally representative[tiab] OR poll[tiab])")
+                for t, q in SX_QUERIES if db_["done_q"].get(t + " · опитування") != "seed"][:3]
     known = {x["id"] for x in db_["items"]}
+    known_t = {ntitle(x.get("orig") or x.get("title")) for x in db_["items"]}   # дублікати між базами — за назвою
+    if not todo:                                      # PubMed пройдено — додаємо OpenAlex (найвпливовіші) і Europe PMC
+        todo = [(t + " · " + src_, q) for src_ in ("OpenAlex", "Europe PMC") for t, q in SX_QUERIES
+                if t in SX_KW and db_["done_q"].get(t + " · " + src_) != (month if not seeding else "seed")][:2]
     for topic, term in todo:
+        base_t = topic.split(" · ")[0]
+        mind = "2006" if seeding else f"{now.year - 1}"
         try:
-            arts = pubmed(term, "2006" if seeding else f"{now.year - 1}", 8)
+            if topic.endswith("OpenAlex"):
+                arts = [dict(a, pmid=a["pid"]) for a in openalex(SX_KW[base_t], mind)]
+            elif topic.endswith("Europe PMC"):
+                arts = [dict(a, pmid=a["pid"]) for a in europepmc(SX_KW[base_t], mind)]
+            else:
+                arts = pubmed(term, mind, 10)
         except Exception as e:
-            print(f"PubMed ({topic}): {err_text(e)[:80]}")
+            print(f"Секс-освіта ({topic}): {err_text(e)[:80]}")
             continue
-        arts = [a for a in arts if f"pmid:{a['pmid']}" not in known and SX_JOURNALS.search(a["journal"]) and len(a["abstract"]) > 300][:4]
+        arts = [a for a in arts if (f"pmid:{a['pmid']}" not in known and a["pmid"] not in known) and ntitle(a["title"]) not in known_t
+                and (SX_JOURNALS.search(a["journal"]) or a.get("pre") or str(a["pmid"]).startswith("oa:")) and len(a["abstract"]) > 300][:6]
         if not arts:
             db_["done_q"][topic] = month if not seeding else "seed"
             continue
-        raw = gemini("Ти науковий редактор розділу секс-освіти для дорослих. Для кожної публікації поверни JSON-об'єкт: n, "
+        raw = gemini("Ти науковий редактор розділу секс-освіти для дорослих. Суворо: лише факти з анотації, нічого не додавати й не узагальнювати понад текст; цифри, відсотки, розміри вибірки — точно як в оригіналі; якщо чогось немає в анотації — не згадувати. Для кожної публікації поверни JSON-об'єкт: n, "
                      "kind («survey» — якщо це опитування/репрезентативне анкетування людей, інакше «study»), title (коротко українською), "
                      "sum (2–4 речення українською: що з'ясували, головні цифри; без вигадок — лише з анотації), "
-                     "chart (якщо в анотації є 2–7 порівнюваних чисел: {title, labels[], values[], unit}; інакше null). "
+                     "chart (якщо в анотації є 2–7 порівнюваних чисел: {title, labels[], values[], unit}; інакше null), "
+                     "long (5–8 речень українською без «води»: дизайн дослідження й вибірка (хто, скільки, де, коли — якщо є), головні результати з точними цифрами, "
+                     "практичний висновок, обмеження — якщо вказані). "
                      "Лише JSON-масив.\n\n" + json.dumps([{"n": i, "title": a["title"], "journal": a["journal"], "year": a["year"],
                                                           "abstract": a["abstract"]} for i, a in enumerate(arts)], ensure_ascii=False),
                      json_mode=True, relaxed=True, max_tokens=3500)
@@ -3345,32 +3650,48 @@ def sexed_refresh(st: dict, now: datetime) -> None:
             if ix is None:
                 continue
             a = arts[ix]
-            it = {"id": f"pmid:{a['pmid']}", "kind": "survey" if x.get("kind") == "survey" else "study", "topic": topic,
+            pid_ = a["pmid"] if ":" in str(a["pmid"]) else f"pmid:{a['pmid']}"
+            lab_ = "⚠️ препринт — ще не рецензовано" if a.get("pre") else ("🔬 рецензоване дослідження")
+            it = {"id": pid_, "kind": "survey" if x.get("kind") == "survey" or "опитування" in topic else "study", "lab": lab_, "cites": a.get("cites", 0),
+                  "topic": base_t,
                   "title": str(x.get("title") or a["title"])[:140], "orig": a["title"][:200], "year": a["year"], "source": a["journal"][:80],
-                  "url": f"https://pubmed.ncbi.nlm.nih.gov/{a['pmid']}/", "sum": str(x.get("sum") or "")[:700], "added": now.date().isoformat()}
+                  "url": a.get("url") or f"https://pubmed.ncbi.nlm.nih.gov/{a['pmid']}/", "sum": str(x.get("sum") or "")[:700],
+                  "long": str(x.get("long") or "")[:1800], "added": now.date().isoformat()}
             ch = x.get("chart")
             if isinstance(ch, dict) and ch.get("values"):
                 ch["src"] = f"{a['journal'][:60]} · {a['year']}"
                 png = sx_chart(ch)
                 if png:
                     Path("sx").mkdir(exist_ok=True)
-                    Path(f"sx/{a['pmid']}.png").write_bytes(png)
-                    it["chart"] = f"sx/{a['pmid']}.png"
+                    fn_ = re.sub(r"[^A-Za-z0-9]+", "_", str(a["pmid"]))
+                    Path(f"sx/{fn_}.png").write_bytes(png)
+                    it["chart"] = f"sx/{fn_}.png"
             db_["items"].insert(0, it)                 # нові — зверху; старі лишаються нижче
-            known.add(it["id"]); changed = True
+            known.add(it["id"]); known_t.add(ntitle(a["title"])); changed = True
         db_["done_q"][topic] = month if not seeding else "seed"
+    if db_.get("news_m") != month or db_.get("news_i", 0) % 2 == 1:   # опитування з медіа й брендів — раз на місяць (2 проходи)
+        try:
+            if sx_news_surveys(db_, now, known_t):
+                changed = True
+            if db_.get("news_i", 0) % 2 == 0:
+                db_["news_m"] = month
+        except Exception as e:
+            print(f"Секс-освіта (медіа): {err_text(e)[:80]}")
     if not seeding and all(db_["done_q"].get(q[0]) == month for q in SX_QUERIES):
         db_["month"] = month
     db_.setdefault("pos", {})
     for k, name, q, link in SX_POS:                   # пози — лише малюнки (filetype:drawing), один раз
         if k not in db_["pos"]:
-            im = commons_image(q.replace("drawing", "").strip(), drawing_only=True)
+            im = commons_image(q.replace("drawing", "").strip(), drawing_only=True, must=SX_MUST.get(k))
+            if im is None and _time.time() < WIKI_BLOCK["until"]:
+                break                                 # 429 — наступного разу
             db_["pos"][k] = {"name": name, "link": link, **(im or {})}; changed = True
     for k, q in SX_IMAGES.items():                    # ілюстрації — один раз
         if k not in db_["img"]:
-            im = commons_image(q)
-            if im:
-                db_["img"][k] = im; changed = True
+            im = commons_image(q, must=SX_MUST.get(k))
+            if im is None and _time.time() < WIKI_BLOCK["until"]:
+                break
+            db_["img"][k] = im or {}; changed = True
     half = f"{now.year}-{'H1' if now.month <= 6 else 'H2'}"
     if not seeding and db_["upd"].get("half") != half:     # раз на пів року — «що нового» для статей
         recent = [x for x in db_["items"] if x["added"] >= (now.date() - timedelta(days=183)).isoformat()][:12]
@@ -3509,9 +3830,10 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
                 conf[ck] = seen_ if seen_ and abs(seen_[1] - declared) < 6 else [now.date().isoformat(), declared]
                 if conf[ck][0] >= now.date().isoformat():
                     continue
-            weight = {"direct": 1.0, "online": 0.9, "card": 0.85, "multi": 0.8, "gurt": 0.8}[kind]   # треба більше купити / картка / онлайн — нижче
+            weight = {"direct": 1.0, "online": 0.8, "card": 0.85, "multi": 0.8, "gurt": 0.8}[kind]   # треба більше купити / картка / лише онлайн — нижче
             score = (real if real is not None else declared) * weight + ((float(rating) - 4) * 5 if rating else 0) + max(0, 30 - idx) / 6
-            cand.append((score, p_, price, old, declared, real, rating, "ціна тижня" in promos.lower(), badge, kind))
+            is_week = "ціна тижня" in promos.lower() or any(x.get("id") == "cinotyzhyky" for x in (p_.get("promotions") or []) if isinstance(x, dict))
+            cand.append((score, p_, price, old, declared, real, rating, is_week, badge, kind))
             ALL_PROMOS.append([str(p_.get("id")), str(p_.get("title") or ""), brand_of(p_), str(c.get("title") or ""),
                                price, old, round(declared), badge, str(p_.get("slug") or "")])
         cand.sort(key=lambda x: x[0], reverse=True)
@@ -3540,7 +3862,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
     shop = (f"Сільпо, {esc(label)}" if label else 'Ціни ' + esc((st.get('silpo_branch') or {}).get('name'))
             if not (st.get('silpo_branch') or {}).get('store') else 'Сільпо, вул. Калнишевського, 2')
     head = (f"🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на {now:%d.%m} (оновлюється щоранку)\n"
-            "<i>Ціни — для цього магазину: на сайті оберіть його й увійдіть із карткою «Власний рахунок», інакше ціна може бути інша. "
+            "<i>Ціни — для цього магазину. 🌐 «лише онлайн-замовлення» — ціна діє тільки при замовленні на сайті чи в застосунку (на полиці — повна). "
             "Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n"
             f"<i>{shop} · 🔥 — «Ціна тижня»</i>\n"
             + ("<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>" if weeks
@@ -4040,7 +4362,7 @@ def push_to_worker(st: dict) -> None:
     if ph.get("gs") != h:
         http_json(base.format("statepush"), {"gs": gs})
         ph["gs"] = h
-    files = [Path("quiz_pool.json"), Path("fact.png"), Path("sexed.json")]   # impulse.json Worker не потрібен
+    files = [Path("quiz_pool.json"), Path("fact.png"), Path("sexed.json"), Path("health.json")]   # impulse.json Worker не потрібен
     for d_ in ("silpo", "sx"):
         if Path(d_).exists():
             files += sorted(Path(d_).glob("*.json")) + sorted(Path(d_).glob("*.png"))
@@ -4692,7 +5014,8 @@ def main() -> None:
     # ВАЖКЕ — по одній задачі за запуск по черзі й лише якщо є час (ліміт запуску GitHub — 12 хв, ціль — до 4 хв)
     heavy = [("кіно, пули", lambda: kino_pool_refresh(st, now)), ("фільми 18+", lambda: x18_refresh(st, now)),
              ("секс-освіта", lambda: sexed_refresh(st, now)), ("вікторина", lambda: quiz_refresh(now)),
-             ("ранковий імпульс", lambda: impulse_refresh(st, now)), ("музика", lambda: music_refresh(st, now))]
+             ("ранковий імпульс", lambda: impulse_refresh(st, now)), ("музика", lambda: music_refresh(st, now)),
+             ("здоров'я", lambda: health_refresh(st, now))]
     slot = (now.hour * 12 + now.minute // 5) % len(heavy)
     for k_ in range(len(heavy)):
         name_, fn_ = heavy[(slot + k_) % len(heavy)]
@@ -4722,16 +5045,17 @@ def main() -> None:
     if st.get("kino_ver") != 2:                       # новий формат кіно (кнопки під кожним фільмом)
         st["kino_q"] = []
         st["kino_ver"] = 2
-    if st.get("silpo_ver") != 7:                      # Сільпо: картка лояльності, підтвердження великих знижок
+    if st.get("silpo_ver") != 8:                      # Сільпо: коди акцій (лише онлайн, Цінотижики)
         st.pop("silpo_last", None)
         st.pop("silpo_by", None)
-        st["silpo_ver"] = 7
+        st["silpo_ver"] = 8
     if st.get("yt_ver") != 2:                         # новий відбір YouTube (лише українське) — стару підбірку скидаємо
         st.pop("yt_last", None)
         st["yt_ver"] = 2
-    if st.get("smm_ver") != 3:                        # звірка описів ШІ з посиланнями — перебудовуємо SMM
+    if st.get("smm_ver") != 4:                        # суворі дати (без старих статей) — перебудовуємо SMM
         st.pop("smm_last", None)
-        st["smm_ver"] = 3
+        st.pop("smm_pool", None)
+        st["smm_ver"] = 4
     if worker_req.get("rebuild"):                     # 👑 «🔄 Оновити підбірки» — скидаємо й перебудовуємо поступово
         for k_ in ("smm_last", "yt_last", "silpo_last", "silpo_day", "silpo_by", "kino_q", "kino_gq", "kp_at", "x18_at"):
             st.pop(k_, None)
