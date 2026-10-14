@@ -1642,7 +1642,17 @@
   "m663260",
   "m491584",
   "m25376",
-  "m209764"
+  "m209764",
+  "m1026227",
+  "m1404684",
+  "m1245347",
+  "m1465563",
+  "m490132",
+  "m572164",
+  "m338967",
+  "m1182047",
+  "m401",
+  "m49020"
  ],
  "yt_ver": 2,
  "yt_seen": [
@@ -2466,7 +2476,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-15T01:16:22.746457+03:00",
+ "gh_beat": "2026-10-15T01:21:19.597507+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -13736,6 +13746,78 @@
    86,
    73,
    "2026-10-15"
+  ],
+  "tt31728330": [
+   6.3,
+   66,
+   50,
+   "2026-10-15"
+  ],
+  "tt3564472": [
+   6.2,
+   91,
+   71,
+   "2026-10-15"
+  ],
+  "tt13521006": [
+   6.6,
+   67,
+   63,
+   "2026-10-15"
+  ],
+  "tt4925292": [
+   7.4,
+   99,
+   93,
+   "2026-10-15"
+  ],
+  "tt31973693": [
+   6.6,
+   64,
+   58,
+   "2026-10-15"
+  ],
+  "tt8368368": [
+   7.1,
+   83,
+   64,
+   "2026-10-15"
+  ],
+  "tt27543578": [
+   6.4,
+   79,
+   61,
+   "2026-10-15"
+  ],
+  "tt14298328": [
+   6.3,
+   62,
+   49,
+   "2026-10-15"
+  ],
+  "tt11291274": [
+   7.0,
+   87,
+   68,
+   "2026-10-15"
+  ],
+  "tt36544524": [
+   7.8,
+   100,
+   85,
+   "2026-10-15"
+  ],
+  "tt36935050": [
+   6.0,
+   null,
+   null,
+   "2026-10-15"
+  ],
+  "tt4034354": [
+   6.9,
+   73,
+   64,
+   "2026-10-15"
   ]
  },
  "mo_sent": {},
@@ -13745,7 +13827,7 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "72273aa3e52a",
+  "gs": "7bc579cf0692",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "d0f0f03e1c06",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a315d64f80c3",
@@ -14464,6 +14546,12 @@
    {
     "id": "5e3601fde9",
     "text": "🍿 <b>ПІДБІРКА КІНО · ТРИЛЕР</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/周處除三害-2023-10-14\">周處除三害</a></b> (2023)\nкримінал, драма, трилер · ⏱ 2 год 14 хв\n⭐ IMDb <b>7.3</b>\n<i>🎭 Ітан Дзюань, 王淨, 李李仁</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1046090/watch?locale=UA\">Netflix</a>\n📝 The arrogant, third most-wanted criminal in Taiwan, decides to get rid of the top two competitors and crowns himself the most-wanted criminal before dying.\n▶️ <a href=\"https://youtu.be/tFyzEsPcyrg\">Трейлер</a></blockquote>\n§KN:m1046090\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Tetris-2023-10-14\">Тетрис</a></b> (2023)\nтрилер, історичний, драма · ⏱ 1 год 58 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>81%</b> · Ⓜ <b>61</b>\n<i>🎭 Тарон Еджертон, Никита Ефремов, Софья Лебедева</i>\n📺 <a href=\"https://www.themoviedb.org/movie/726759-tetris/watch?locale=UA\">Apple TV</a>\n📝 Фільм заснований на реальній історії американця — продавця відеоігор Генка Роджерса, який у 1988 році дізнався про «Тетріс». Він вирішує зробити цю гру відомою в усьому світі й потрапляє в небезпечні тенета брехні й…\n▶️ <a href=\"https://youtu.be/-BLM1naCfME\">Трейлер</a></blockquote>\n§KN:m726759\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/SHerlok-Bridka-narechena-2016-10-14\">Шерлок: Бридка наречена</a></b> (2016)\nкримінал, драма, детектив · ⏱ 1 год 30 хв\n⭐ IMDb <b>8.0</b>\n<i>🎭 Бенедикт Камбербетч, Мартін Фрімен, Уна Стаббс</i>\n📝 Лондон, 1895 рік. Інспектор Лестрейд оповідає Холмсу і Ватсону про справу Емілії Ріколетті, яка у весільній сукні розстріляла перехожих з балкона, після чого застрелилася сама. Того ж вечора, містер Ріколетті також…\n▶️ <a href=\"https://youtu.be/V8LWfc29J_E\">Трейлер</a></blockquote>\n§KN:m379170\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Poshuk-2018-10-14\">Пошук</a></b> (2018)\nдрама, детектив, трилер · ⏱ 1 год 42 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>92%</b> · Ⓜ <b>71</b>\n<i>🎭 Джон Чо, Michelle La, Дебра Мессінґ</i>\n📺 <a href=\"https://www.themoviedb.org/movie/489999-searching/watch?locale=UA\">Apple TV Store</a>\n📝 У світі сучасних технологій ми не маємо приватного простору і не можемо зникнути безслідно. 16-річна донька Девіда Кіма не дає про себе знати протягом доби. Розслідування заходить у глухий кут, де єдиною зачіпкою…\n▶️ <a href=\"https://youtu.be/mVHyu8YQ9s4\">Трейлер</a></blockquote>\n§KN:m489999\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Diyavol-nazavzhdi-2020-10-14\">Диявол назавжди</a></b> (2020)\nкримінал, драма, трилер · ⏱ 2 год 18 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>65%</b> · Ⓜ <b>55</b>\n<i>🎭 Том Голланд, Роберт Паттінсон, Білл Скашґорд</i>\n📺 <a href=\"https://www.themoviedb.org/movie/499932-the-devil-all-the-time/watch?locale=UA\">Netflix</a>\n📝 У Нокемстіффі, штат Огайо, та довколишніх густих лісах лиховісні персонажі — нечестивий проповідник, збочена парочка й корумпований шериф — сходяться довкола молодого Арвіна Расселла, котрий намагається боротися зі…\n▶️ <a href=\"https://youtu.be/EIzazUv2gtI\">Трейлер</a></blockquote>\n§KN:m499932\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/El-Kamіno-Pustitisya-berega-2019-10-14-2\">Ель Каміно: Пуститися берега</a></b> (2019)\nкримінал, драма, трилер · ⏱ 2 год 02 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>92%</b> · Ⓜ <b>72</b>\n<i>🎭 Аарон Пол, Джессі Племенс, Charles Baker</i>\n📺 <a href=\"https://www.themoviedb.org/movie/559969-el-camino-a-breaking-bad-movie/watch?locale=UA\">Netflix</a>\n📝 Дія відбувається після останнього епізоду серіалу Пуститися берега «Феліна». Джессі Пінкман намагається здобути свободу після втечі від своїх викрадачів.\n▶️ <a href=\"https://youtu.be/rklOejPnD3Y\">Трейлер</a></blockquote>\n§KN:m559969\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/CHorna-skrinka-2021-10-14\">Чорна скринька</a></b> (2021)\nдетектив, трилер, драма · ⏱ 2 год 09 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>72%</b>\n<i>🎭 П'єр Ніні, Lou de Laâge, Андре Дюссольє</i>\n📺 <a href=\"https://www.themoviedb.org/movie/663260-boite-noire/watch?locale=UA\">Apple TV Store</a>\n📝 Сталася масштабна авіакатастрофа — розбився літак із 300 пасажирами на борту. Блискучий експерт з розшифровки бортових самописців має дізнатись справжні причини аварії. Чорна скринька з борту — єдиний ключ до правди……\n▶️ <a href=\"https://youtu.be/Cm6daCQ7Alo\">Трейлер</a></blockquote>\n§KN:m663260\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Spalennya-2018-10-14-2\">Спалення</a></b> (2018)\nдетектив, драма, трилер · ⏱ 2 год 28 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>95%</b> · Ⓜ <b>91</b>\n<i>🎭 Ю А Ін, Стівен Юн, 전종서</i>\n📺 <a href=\"https://www.themoviedb.org/movie/491584/watch?locale=UA\">Apple TV Store</a>\n📝 За сюжетом, син фермера Чон-су переїздить до великого міста. Він має університетський диплом з літератури, але хлопець заробляє дуже мало і лише мріє про те, щоб стати письменником. Якось Чон-су зустрічає красуню…\n▶️ <a href=\"https://youtu.be/irBLY-Ev9vo\">Трейлер</a></blockquote>\n§KN:m491584\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Sekret-u-ihnіh-ochah-2009-10-14\">Секрет у їхніх очах</a></b> (2009)\nдетектив, трилер, драма · ⏱ 2 год 10 хв\n⭐ IMDb <b>8.2</b> · 🍅 <b>89%</b> · Ⓜ <b>80</b>\n<i>🎭 Ricardo Darín, Соледад Вільяміль, Pablo Rago</i>\n📝 1974 рік. Судовий службовець Бенхамін Еспосіто разом з двома напарниками приступає до розслідування гучної справи, що сталася в Буенос-Айресі. Жінка була згвалтована і жорстоко вбита прямо у себе вдома. Слідчі…\n▶️ <a href=\"https://youtu.be/ZhEuUDO0YUQ\">Трейлер</a></blockquote>\n§KN:m25376\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/더-테러-라이브-2013-10-14\">더 테러 라이브</a></b> (2013)\nкримінал, драма, трилер · ⏱ 1 год 37 хв\n⭐ IMDb <b>7.1</b>\n<i>🎭 Ха Чон У, 김대명, Лі Кьон Йон</i>\n📝 A newsman discovers he's been rigged with a bomb after he has an exclusive interview with a terrorist who blew up a bridge.\n▶️ <a href=\"https://youtu.be/e_FSvAQMGNc\">Трейлер</a></blockquote>\n§KN:m209764"
+   }
+  ],
+  "comedy": [
+   {
+    "id": "542f1a1e25",
+    "text": "🍿 <b>ПІДБІРКА КІНО · КОМЕДІЯ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/1026227?language=uk\">C'è ancora domani</a></b> (2023)\nдрама, комедія, історичний · ⏱ 1 год 58 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>89%</b> · Ⓜ <b>59</b>\n<i>🎭 Paola Cortellesi, Valerio Mastandrea, Romana Maggiora Vergano</i>\n📝 In postwar Rome, a working-class woman dreams of a better future for herself and her daughter while facing abuse at the hands of her domineering husband. When a mysterious letter arrives, she discovers the courage to…\n▶️ <a href=\"https://youtu.be/Z5hAvdF6xQA\">Трейлер</a></blockquote>\n§KN:m1026227\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/1404684?language=uk\">Juste une illusion</a></b> (2026)\nкомедія, драма · ⏱ 1 год 59 хв\n⭐ TMDB <b>7.3</b>\n<i>🎭 Луї Ґаррель, Камілль Коттен, Simon Boublil</i>\n📝 In 1985 suburban Paris, 12-year-old Vincent lives with his distant older brother and quarrelling parents. Amid laughter and unease, he navigates friendship and first love, while beginning to confront the adult world.\n▶️ <a href=\"https://youtu.be/vZtK0AdeXk8\">Трейлер</a></blockquote>\n§KN:m1404684\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/1245347?language=uk\">Без близнюка</a></b> (2025)\nкомедія, драма · ⏱ 1 год 40 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>97%</b> · Ⓜ <b>79</b>\n<i>🎭 Ділан О'Браєн, Джеймс Свіні, Ешлінґ Франчозі</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1245347-twinless/watch?locale=UA\">Rakuten TV</a>\n📝 Двоє чоловіків, які пережили втрату, знайомляться в групі підтримки й несподівано стають друзями.\n▶️ <a href=\"https://youtu.be/dTVJeEb69e0\">Трейлер</a></blockquote>\n§KN:m1245347\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/1465563?language=uk\">Un poeta</a></b> (2025)\nкомедія, драма · ⏱ 2 год 03 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>100%</b> · Ⓜ <b>85</b>\n<i>🎭 Ubeimar Rios, Rebeca Andrade, Guillermo Cardona</i>\n📝 An aging poet finds purpose mentoring Yurlady, a talented teen, though exposing her to the poetry scene might be unwise. His own poetic pursuits led nowhere, leaving him a stereotypical obscure writer.\n▶️ <a href=\"https://youtu.be/xRyVkKYG3BA\">Трейлер</a></blockquote>\n§KN:m1465563\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/490132?language=uk\">Зелена книга</a></b> (2018)\nдрама, комедія, історичний · ⏱ 2 год 10 хв\n⭐ IMDb <b>8.2</b> · 🍅 <b>77%</b> · Ⓜ <b>69</b>\n<i>🎭 Віґґо Мортенсен, Магершала Алі, Лінда Карделліні</i>\n📝 Тоні «Базіка» — людина, яка ніколи не вміла тримати язика за зубами. Але зате у нього досить добре без будь-яких слів виходить махати кулаками. Саме таку людину в 1962 році найняв до себе у водії досить витончений…\n▶️ <a href=\"https://youtu.be/hbVLPp0ph8Y\">Трейлер</a></blockquote>\n§KN:m490132\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/572164?language=uk\">엑시트</a></b> (2019)\nбойовик, комедія · ⏱ 1 год 43 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>83%</b>\n<i>🎭 조정석, Ім Ю На, Ко Ду Шім</i>\n📺 <a href=\"https://www.themoviedb.org/movie/572164/watch?locale=UA\">Apple TV Store</a>\n📝 At his mother's 70th birthday party, Yong-nam runs into Eui-joo, who rejected him in college. When the city is engulfed in toxic gas from a terrorist attack, the two must find a way to escape using all the techniques…\n▶️ <a href=\"https://youtu.be/Sp_Uex375YM\">Трейлер</a></blockquote>\n§KN:m572164\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/338967?language=uk\">Зомбіленд: Подвійний постріл</a></b> (2019)\nкомедія, жахи · ⏱ 1 год 37 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>68%</b> · Ⓜ <b>55</b>\n<i>🎭 Джессі Айзенберґ, Вуді Гаррельсон, Емма Стоун</i>\n📺 <a href=\"https://www.themoviedb.org/movie/338967-zombieland-double-tap/watch?locale=UA\">Apple TV Store</a>\n📝 Команді доведеться протистояти новому виду зомбі. Потвори об’єднуються у групи і швидко рухаються містами, перетворюючи їх на пустку. Хто зупинить зомбі-апокаліпсис?\n▶️ <a href=\"https://youtu.be/cE_a5PbnGlI\">Трейлер</a></blockquote>\n§KN:m338967\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/1182047?language=uk\">Учень. Історія Трампа</a></b> (2024)\nісторичний, драма, комедія · ⏱ 2 год 02 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>83%</b> · Ⓜ <b>64</b>\n<i>🎭 Себастіан Стен, Джеремі Стронґ, Мартін Донован</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1182047-the-apprentice/watch?locale=UA\">Rakuten TV</a>\n📝 Нью-Йорк, 70-80-ті роки минулого століття. Дональд - амбітний син “короля нетрів” Френка Трампа, наймає одіозного адвоката Роя Кона. Молодий Трамп хоче не тільки врятувати імперію батька, а й побудувати власну. І…\n▶️ <a href=\"https://youtu.be/fjXYZfqsic8\">Трейлер</a></blockquote>\n§KN:m1182047\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/401?language=uk\">Країна садів</a></b> (2004)\nкомедія, драма, мелодрама · ⏱ 1 год 42 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>86%</b> · Ⓜ <b>67</b>\n<i>🎭 Зак Брафф, Наталі Портман, Ієн Голм</i>\n📺 <a href=\"https://www.themoviedb.org/movie/401-garden-state/watch?locale=UA\">Apple TV Store</a>\n📝 Невдоволений своїм життям актор Ендрю Ларджман через десять років повертається додому на похорон своєї матері. Тут він зустрічає Сем, яка допомагає йому позбавитись емоційних стресів та почати нове життя...  Проте…\n▶️ <a href=\"https://youtu.be/u82n0e1mgmQ\">Трейлер</a></blockquote>\n§KN:m401\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/49020?language=uk\">Субмарина</a></b> (2011)\nдрама, комедія, мелодрама · ⏱ 1 год 37 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>88%</b> · Ⓜ <b>76</b>\n<i>🎭 Ноа Тейлор, Патрік Консідайн, Крейґ Робертс</i>\n📝 Олівер Тейт, 15-річний школяр із Вельсу, закохується у свою однокласницю. Тепер у його житті з’являється мета — втратити незайманість до наступного дня народження. Проте в той же час його батьки опиняються на межі…\n▶️ <a href=\"https://youtu.be/6CAntLzsQ74\">Трейлер</a></blockquote>\n§KN:m49020"
    }
   ]
  },
