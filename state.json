@@ -2634,7 +2634,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-14T14:50:58.916314+03:00",
+ "gh_beat": "2026-10-14T14:53:19.230512+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -12722,12 +12722,12 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "46ea832c5cd2",
+  "gs": "b383ef6c2059",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "6eed9252a4c4",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "8ab98915384f",
   "silpo/m.json": "53ca80d0ea71",
-  "sexed.json": "1e499d64bb83",
+  "sexed.json": "8fd888499ed3",
   "sx/28213723.png": "ce00a0099b9a",
   "sx/33637451.png": "4c77d42e81e5",
   "sx/tech_angling.png": "1426e1022a9e",
@@ -12766,8 +12766,13 @@
   "sx/39779300.png": "50cb4287c868",
   "sx/39883553.png": "620ff84f84c1",
   "health.json": "231b35a174d0",
-  "sx/39460381.png": "9f2b1e33c212",
-  "sx/42668418.png": "e0902229f383"
+  "sx/38323606.png": "820525ee9df7",
+  "sx/39460381.png": "279aa00da84e",
+  "sx/39965005.png": "f95f874aa2ea",
+  "sx/40413794.png": "38c5a8135502",
+  "sx/40543759.png": "256441a3e928",
+  "sx/40693893.png": "7819cd20abb6",
+  "sx/42668418.png": "7fb471668c47"
  },
  "smm_try": "2026-10-14 14",
  "silpo_conf": {
