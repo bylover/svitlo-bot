@@ -209,7 +209,7 @@ SOURCES_TEXT = (
     "<blockquote>• «Велика п'ятірка» — науковий опитувальник IPIP-NEO (J. A. Johnson), український переклад з відкритого пакета b5 (ліцензія MIT); 60 питань — по 2 на кожну з 30 граней характеру\n"
     "• Результат — самоопис, а не діагноз; середнє по боту — для порівняння</blockquote>"
 )
-WELCOME = "✨ <b>Світло. Погода. Кіно. Знижки. І трохи пікантного.</b>\n💡 Графіки й сповіщення ДТЕК — миттєво\n🌦 Погода саме для твого району\n🍿 Кіно під твій смак · ▶️ найкраще з українського YouTube\n🛒 Вигідні акції Сільпо й торгових центрів\n🎯 Вікторини · 🧠 Тести\n💞 18+ — для дорослих 😏\n\n👇 Усе — в кнопках унизу."
+WELCOME = "🔥 <b>Світло. Погода. Кіно. Музика. Знижки. Здоровʼя. І секс — по науці.</b>\n💡 ДТЕК · 🌤 погода · 🍿🎵 підбірки за смаком · 🛒🛍 акції · ❤️ тренування · 🔞 18+\nПеревірені джерела — і трохи перчинки. 😏\n\n👇 Усе в кнопках."
 KINO_HINT = "<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n"
 SEND_NOW = os.environ.get("SEND_NOW") == "1"             # ручний запуск — надіслати графік одразу
 OFF_TYPES = {"Definite"} | ({"Possible"} if os.environ.get("INCLUDE_POSSIBLE") == "1" else set())
@@ -2344,7 +2344,8 @@ GURT = re.compile(r"гурт|від\s*\d+\s*шт|при\s+купівлі\s+ві�
 ONLINE = re.compile(r"онлайн|online|лише\s+в\s+застосунку|в\s+додатку", re.I)
 PROMO_SAMPLES: list = []
 ALL_PROMOS: list = []                                       # усі акції магазину — для «⭐ Обране»
-VERIFY_DROP = [0]                                           # скільки «знижок» відкинуто подвійною перевіркою
+VERIFY_DROP = [0]                                           # скільки «знижок» відкинуто перевіркою
+SILPO_DTYPE = "DeliveryHome"                                # ціни Сільпо — для доставки (як бачить користувач на сайті)
 
 
 def _num_fields(o, out, path=""):
@@ -2433,7 +2434,8 @@ def fav_match(f: dict, it: list) -> bool:
         return fflat(it[3]) == fflat(v)
     if t == "b":
         return fflat(it[2]) == fflat(v)
-    return fflat(v) in fflat(it[1]) or fflat(v) in fflat(it[2])
+    fv = fflat(v).replace(" ", "")
+    return fflat(v) in fflat(it[1]) or fflat(v) in fflat(it[2]) or fv in fflat(it[1]).replace(" ", "") or fv in fflat(it[2]).replace(" ", "")
 
 
 FAVS: dict = {}
@@ -3758,7 +3760,7 @@ def silpo_snapshot(st: dict, now: datetime) -> None:
     snap = {}
     try:
         for c in silpo_categories(br[0]):
-            for p_ in silpo_products(br[0], br[1], c.get("slug"), promo=False):
+            for p_ in silpo_products(br[0], SILPO_DTYPE, c.get("slug"), promo=False):
                 if p_.get("id") and p_price(p_):
                     snap[str(p_["id"])] = round(p_price(p_), 2)
     except Exception as e:
@@ -3830,12 +3832,12 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
         return None
     for c in cats:
         try:
-            prods = silpo_products(br[0], br[1], c.get("slug"), promo=True, limit=100, max_pages=3)
+            prods = silpo_products(br[0], SILPO_DTYPE, c.get("slug"), promo=True, limit=100, max_pages=3)   # ціни доставки — як на сайті
         except Exception as e:
             print(f"Сільпо, {c.get('title')}: {err_text(e)}")
             continue
         try:                                          # друга перевірка: та сама знижка має бути й у режимі доставки (як бачить сайт)
-            alt = {str(x.get("id")): (p_price(x), p_old(x)) for x in silpo_products(br[0], "DeliveryHome", c.get("slug"), True, max_pages=3)} or None
+            alt = None                                # основний режим — доставка; ціни беремо саме з нього
         except Exception:
             alt = None                                # режим доставки недоступний — лишаємо одну перевірку
         cand = []
@@ -3896,7 +3898,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
     shop = (f"Сільпо, {esc(label)}" if label else 'Ціни ' + esc((st.get('silpo_branch') or {}).get('name'))
             if not (st.get('silpo_branch') or {}).get('store') else 'Сільпо, вул. Калнишевського, 2')
     head = (f"🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на {now:%d.%m} (оновлюється щоранку)\n"
-            "<i>Ціни — для цього магазину; кожну знижку бот перевіряє двічі (самовивіз і доставка) — непідтверджені не показує. 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. "
+            "<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. "
             "Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n"
             f"<i>{shop} · 🔥 — «Ціна тижня»</i>\n"
             + ("<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>" if weeks
@@ -5083,10 +5085,10 @@ def main() -> None:
     if st.get("kino_ver") != 2:                       # новий формат кіно (кнопки під кожним фільмом)
         st["kino_q"] = []
         st["kino_ver"] = 2
-    if st.get("silpo_ver") != 9:                      # Сільпо: подвійна перевірка знижок (самовивіз + доставка)
+    if st.get("silpo_ver") != 10:                     # Сільпо: ціни доставки (основний режим)
         st.pop("silpo_last", None)
         st.pop("silpo_by", None)
-        st["silpo_ver"] = 9
+        st["silpo_ver"] = 10
     if st.get("yt_ver") != 2:                         # новий відбір YouTube (лише українське) — стару підбірку скидаємо
         st.pop("yt_last", None)
         st["yt_ver"] = 2
