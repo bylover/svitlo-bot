@@ -68,6 +68,7 @@ jobs:
           [ -f sexed.json ] && git add sexed.json
           [ -f impulse.json ] && git add impulse.json
           [ -f music.json ] && git add music.json
+          [ -f health.json ] && git add health.json
           [ -d sx ] && git add sx
           git diff --cached --quiet && exit 0
           git commit -m "state"
