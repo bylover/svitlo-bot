@@ -1503,7 +1503,17 @@
   "m458156",
   "m1560681",
   "m220289",
-  "m553"
+  "m553",
+  "m432068",
+  "m1056360",
+  "m1037113",
+  "m1019939",
+  "m489925",
+  "m434616",
+  "m371645",
+  "m334533",
+  "m40096",
+  "m61202"
  ],
  "yt_ver": 2,
  "yt_seen": [
@@ -1595,10 +1605,6 @@
   "last": 2539,
   "events": [
    [
-    "2026-10-12T20:37:17+03:00",
-    "off"
-   ],
-   [
     "2026-10-12T21:59:07+03:00",
     "on"
    ],
@@ -1619,7 +1625,7 @@
   "сайт ДТЕК": false,
   "канал ЖК «Яскравий»": true
  },
- "fact_png": "2026-10-14 20|4|2026-10-13T18:19:01+03:00",
+ "fact_png": "2026-10-14 20|3|2026-10-13T18:19:01+03:00",
  "fact_day": {
   "total": "0 хв",
   "list": []
@@ -1721,7 +1727,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-14T20:35:21.130230+03:00",
+ "gh_beat": "2026-10-14T20:40:30.132984+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -12349,6 +12355,72 @@
    72,
    68,
    "2026-10-14"
+  ],
+  "tt5699154": [
+   6.9,
+   80,
+   null,
+   "2026-10-14"
+  ],
+  "tt12818328": [
+   7.5,
+   97,
+   82,
+   "2026-10-14"
+  ],
+  "tt5598100": [
+   7.2,
+   null,
+   null,
+   "2026-10-14"
+  ],
+  "tt14140954": [
+   6.5,
+   null,
+   null,
+   "2026-10-14"
+  ],
+  "tt14586118": [
+   7.2,
+   94,
+   65,
+   "2026-10-14"
+  ],
+  "tt6868216": [
+   7.3,
+   100,
+   null,
+   "2026-10-14"
+  ],
+  "tt0248126": [
+   7.5,
+   100,
+   null,
+   "2026-10-14"
+  ],
+  "tt1673423": [
+   6.2,
+   null,
+   null,
+   "2026-10-14"
+  ],
+  "tt1131729": [
+   7.3,
+   59,
+   58,
+   "2026-10-14"
+  ],
+  "tt0271383": [
+   8.6,
+   null,
+   null,
+   "2026-10-14"
+  ],
+  "tt0412922": [
+   7.4,
+   77,
+   52,
+   "2026-10-14"
   ]
  },
  "mo_sent": {
@@ -12366,9 +12438,9 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "8748810c6d33",
+  "gs": "dba1a5bbb954",
   "quiz_pool.json": "5d94078dfb15",
-  "fact.png": "fad5a19f2a5e",
+  "fact.png": "96892be0f7a0",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "bc5ff14594e2",
   "silpo/m.json": "5ef57e58f064",
   "sexed.json": "e7668ebffc68",
@@ -12885,6 +12957,12 @@
    {
     "id": "7fd921ca63",
     "text": "🍿 <b>ПІДБІРКА КІНО · ТРИЛЕР</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Z-Bogami-Dva-svіti-2017-10-14-2\">З Богами: Два світи</a></b> (2017)\nбойовик, пригоди, драма · ⏱ 2 год 19 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>70%</b>\n<i>🎭 Ха Чон У, 차태현, 주지훈</i>\n📺 <a href=\"https://www.themoviedb.org/movie/397567/watch?locale=UA\">Netflix</a>\n📝 Коли людина помирає, вона проходить сім випробувань протягом 49 днів, після чого постає перед великим судом, де їй виносять вердикт — швидка реінкарнація, якщо душа справді чиста, або ж довгі роки болісного очищення…\n▶️ <a href=\"https://youtu.be/dyh_OY1DgqU\">Трейлер</a></blockquote>\n§KN:m397567\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Rіshennya-pіti-2022-10-14-3\">Рішення піти</a></b> (2022)\nтрилер, детектив, мелодрама · ⏱ 2 год 19 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>94%</b> · Ⓜ <b>85</b>\n<i>🎭 Тан Вей, 박해일, 이정현</i>\n📺 <a href=\"https://www.themoviedb.org/movie/705996/watch?locale=UA\">Apple TV Store</a>\n📝 Біля підніжжя гір знаходять понівечене тіло альпініста. Розбитий годинник, покинуті речі та інші деталі вказують на нещасний випадок або самогубство. За таких обставин слідчі мають допитати найближчих родичів.…\n▶️ <a href=\"https://youtu.be/OJTJYipFvgM\">Трейлер</a></blockquote>\n§KN:m705996\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Krimіnalne-mіsto-2017-10-14\">Кримінальне місто</a></b> (2017)\nбойовик, кримінал, трилер · ⏱ 2 год 01 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>92%</b>\n<i>🎭 Дон Лi, 윤계상, Чо Че Юн</i>\n📺 <a href=\"https://www.themoviedb.org/movie/479718/watch?locale=UA\">Apple TV Store</a>\n📝 У 2004 році в китайському кварталі Сеула, сумно відомому високим рівнем злочинності, з'являються три мігранта-колектора і замість того, щоб по-старому вилучати гроші у боржників, відразу вбивають главу одного зі…\n▶️ <a href=\"https://youtu.be/UbLzMUbiMmY\">Трейлер</a></blockquote>\n§KN:m479718\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Nіchnі-zvіrі-2016-10-14-2\">Нічні звірі</a></b> (2016)\nдрама, трилер · ⏱ 1 год 56 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>74%</b> · Ⓜ <b>67</b>\n<i>🎭 Емі Адамс, Джейк Джилленгол, Майкл Шеннон</i>\n📺 <a href=\"https://www.themoviedb.org/movie/340666-nocturnal-animals/watch?locale=UA\">Netflix, Apple TV Store</a>\n📝 У Сьюзен розкішне життя в Лос-Анджелесі, прекрасний чоловік і власна галерея. Але одного разу вона отримує несподівану посилку від колишнього чоловіка - він хотів би зустрітися, але спочатку просить прочитати його…\n▶️ <a href=\"https://youtu.be/SI45fDplBpw\">Трейлер</a></blockquote>\n§KN:m340666\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Nіch-u-rayu-2020-10-14\">Ніч у раю</a></b> (2020)\nкримінал, трилер, бойовик · ⏱ 2 год 11 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>68%</b> · Ⓜ <b>59</b>\n<i>🎭 엄태구, 전여빈, Чха Син Вон</i>\n📺 <a href=\"https://www.themoviedb.org/movie/606523/watch?locale=UA\">Netflix</a>\n📝 Це історія кримінального авторитета на ім'я Парк Те-ґу, який разом із своєю родиною стає розмінною монетою в боротьбі між двома ворогуючими угруповуваннями. Та разом з тим, зворушлива історія кохання двох приречених…\n▶️ <a href=\"https://youtu.be/y9XGC6iwgwM\">Трейлер</a></blockquote>\n§KN:m606523\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Sluzhnicya-2025-10-14\">Служниця</a></b> (2025)\nдетектив, трилер · ⏱ 2 год 11 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>74%</b> · Ⓜ <b>65</b>\n<i>🎭 Сідні Свіні, Аманда Сайфред, Брендон Скленар</i>\n📝 Міллі - молода дівчина з похмурим минулим, отримує місце служниці з проживанням у розкішному маєтку родини Вінчестерів, які наче зійшли зі сторінок модного журналу. Ідеальна дружина Ніна, її привабливий…\n▶️ <a href=\"https://youtu.be/Vcdc-DspVzs\">Трейлер</a></blockquote>\n§KN:m1368166\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Dzhon-Uіk-3-2019-10-14\">Джон Уік 3</a></b> (2019)\nбойовик, трилер, кримінал · ⏱ 2 год 11 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>89%</b> · Ⓜ <b>73</b>\n<i>🎭 Кіану Рівз, Геллі Беррі, Ієн Мак-Шейн</i>\n📝 Джон Уік все ще перебуває в бігах після вбивства члена Високого Столу. $ 14 млн. — глобальний контракт за його голову. Його ціль — вибратися з Нью-Йорка.\n▶️ <a href=\"https://youtu.be/lNGOlvIKvd4\">Трейлер</a></blockquote>\n§KN:m458156\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Kolori-zla-CHornij-2026-10-14\">Кольори зла: Чорний</a></b> (2026)\nтрилер, детектив, кримінал · ⏱ 1 год 50 хв\n⭐ TMDB <b>6.8</b>\n<i>🎭 Якуб Ґєршал, Marianna Zydek, Анджей Хира</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1560681-kolory-zla-czern/watch?locale=UA\">Netflix</a>\n📝 Коли в маленькому тихому містечку зникає хлопчик, щойно переведений прокурор виявляє несподівані зв’язки зі старою справою про зникнення.\n▶️ <a href=\"https://youtu.be/KPkW59ypFl0\">Трейлер</a></blockquote>\n§KN:m1560681\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Zvyazok-2014-10-14\">Зв’язок</a></b> (2014)\nтрилер, фантастика · ⏱ 1 год 29 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>89%</b> · Ⓜ <b>65</b>\n<i>🎭 Emily Baldoni, Maury Sterling, Ніколас Брендон</i>\n📺 <a href=\"https://www.themoviedb.org/movie/220289-coherence/watch?locale=UA\">Apple TV Store</a>\n📝 У ніч з астрологічною аномалією вісім друзів випробовують на собі дивну зміну реальності.\n▶️ <a href=\"https://youtu.be/YixSld-6PqM\">Трейлер</a></blockquote>\n§KN:m220289\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Dogvіl-2003-10-14\">Доґвіль</a></b> (2003)\nкримінал, драма, трилер · ⏱ 2 год 58 хв\n⭐ IMDb <b>8.0</b> · 🍅 <b>70%</b> · Ⓜ <b>61</b>\n<i>🎭 Ніколь Кідман, Пол Беттані, Джон Герт</i>\n📺 <a href=\"https://www.themoviedb.org/movie/553-dogville/watch?locale=UA\">Apple TV Store</a>\n📝 Дія фільму відбувається в 1930-ті роки у США (часи Великої депресії). Режисер використовує надзвичайно мінімальний набір декорацій, щоб висвітлити історію Ґрейс, утікачки від бандитів, котра прибуває до маленького…\n▶️ <a href=\"https://youtu.be/J5-LqwUHTaM\">Трейлер</a></blockquote>\n§KN:m553"
+   }
+  ],
+  "comedy": [
+   {
+    "id": "dcce67ff98",
+    "text": "🍿 <b>ПІДБІРКА КІНО · КОМЕДІЯ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/432068?language=uk\">1+1=Весілля</a></b> (2017)\nкомедія · ⏱ 1 год 55 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>80%</b>\n<i>🎭 Жан-П'єр Бакрі, Жиль Лелуш, Жан-Поль Рув</i>\n📝 Макс, організатор заходів, повинен провести весілля в замку 17-го століття. Під його контролем все - банкет, фотограф, кухарі та офіціанти, здавалося б, що може піти не так? Але як відомо, якщо щось може трапитися -…\n▶️ <a href=\"https://youtu.be/s2FlOVO1qQc\">Трейлер</a></blockquote>\n§KN:m432068\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/1056360?language=uk\">Американське чтиво</a></b> (2023)\nкомедія, драма · ⏱ 1 год 57 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>93%</b> · Ⓜ <b>81</b>\n<i>🎭 Джеффрі Райт, Джон Ортіс, Erika Alexander</i>\n📝 Письменницька кар'єра Телоніуса \"Монка\" Елісона стала на паузу, бо його твори вважали недостатньо \"чорними\". Монк, письменник та вчитель англійської, пише сатиричний роман під псевдонімом, прагнучи викрити…\n▶️ <a href=\"https://youtu.be/5_4RlHpqVWM\">Трейлер</a></blockquote>\n§KN:m1056360\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/1037113?language=uk\">Закусочна</a></b> (2024)\nкомедія, драма · ⏱ 1 год 52 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>82%</b> · Ⓜ <b>64</b>\n<i>🎭 Conor Sherry, Gabriel LaBelle, Міка Абдалла</i>\n📝 Небраска-Сіті, 1991 рік. Двоє найкращих друзів отримують можливість керувати закусочною біля басейну, що згодом стає ідеальним сценарієм для веселощів, особистих відкриттів та романтики.\n▶️ <a href=\"https://youtu.be/BdXFIKFPWoQ\">Трейлер</a></blockquote>\n§KN:m1037113\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/1019939?language=uk\">Hundreds of Beavers</a></b> (2024)\nкомедія, пригоди · ⏱ 1 год 48 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>97%</b> · Ⓜ <b>82</b>\n<i>🎭 Ryland Brickson Cole Tews, Olivia Graves, Doug Mancheski</i>\n📝 In the 19th century, a drunken applejack salesman must go from zero to hero and become North America's greatest fur trapper by defeating hundreds of beavers.\n▶️ <a href=\"https://youtu.be/Dm5XHpQZvek\">Трейлер</a></blockquote>\n§KN:m1019939\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/489925?language=uk\">Восьмий клас</a></b> (2018)\nкомедія, драма · ⏱ 1 год 33 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>99%</b> · Ⓜ <b>85</b>\n<i>🎭 Елсі Фішер, Джош Гамільтон, Емілі Робінсон</i>\n📺 <a href=\"https://www.themoviedb.org/movie/489925-eighth-grade/watch?locale=UA\">Apple TV Store</a>\n📝 Кейла Дей — сором’язлива восьмикласниця, яка намагається знайти своє місце в житті. Ні однолітки, ні навіть батько не підтримують дівчинку, і вона вирішує почати публікувати відео в інтернеті. Тільки в цих роликах…\n▶️ <a href=\"https://youtu.be/caY9YOfP69c\">Трейлер</a></blockquote>\n§KN:m489925\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/434616?language=uk\">Patients</a></b> (2017)\nдрама, комедія · ⏱ 1 год 50 хв\n⭐ IMDb <b>7.2</b>\n<i>🎭 Pablo Pauly, Soufiane Guerrab, Moussa Mansaly</i>\n📝 After a serious sport accident in a swimming pool, Ben, now an incomplete quadriplegic, arrives in a rehabilitation center. He meets with other handicapped persons (tetraplegics, paraplegics, traumatized crania), all…\n▶️ <a href=\"https://youtu.be/iJgP-O1Yrqg\">Трейлер</a></blockquote>\n§KN:m434616\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/371645?language=uk\">Полювання на дикунів</a></b> (2016)\nпригоди, комедія, драма · ⏱ 1 год 41 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>97%</b> · Ⓜ <b>81</b>\n<i>🎭 Сем Нілл, Джуліан Деннісон, Rima Te Wiata</i>\n📺 <a href=\"https://www.themoviedb.org/movie/371645-hunt-for-the-wilderpeople/watch?locale=UA\">Netflix, Rakuten TV, Apple TV Store</a>\n📝 Сирота Ріккі Бейкер – невиправний хуліган. Співробітниця соціальної служби Пола Голл відвозить підлітка в сільську місцевість, де живе єдина сім'я, яка готова його прийняти, – Белла та її відлюдькуватий чоловік Гек.…\n▶️ <a href=\"https://youtu.be/h8YqfkKctBA\">Трейлер</a></blockquote>\n§KN:m371645\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/334533?language=uk\">Капітан Фантастік</a></b> (2016)\nдрама, комедія · ⏱ 1 год 58 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>82%</b> · Ⓜ <b>72</b>\n<i>🎭 Віґґо Мортенсен, Джордж МакКей, Samantha Isler</i>\n📺 <a href=\"https://www.themoviedb.org/movie/334533-captain-fantastic/watch?locale=UA\">Apple TV Store</a>\n📝 Бен і Леслі Кеш живуть зі своїми дітьми в будиночку в горах штату Вашингтон. Ці діти розмовляють декількома мовами, знають квантову фізику і розбираються у філософії. Вони живуть у лісі у повній гармонії з природою,…\n▶️ <a href=\"https://youtu.be/VjzwzEsVxA0\">Трейлер</a></blockquote>\n§KN:m334533\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/40096?language=uk\">Ауто про співчуття</a></b> (2000)\nкомедія, драма, фентезі · ⏱ 1 год 44 хв\n⭐ IMDb <b>8.6</b>\n<i>🎭 Matheus Nachtergaele, Selton Mello, Фернанда Монтенегру</i>\n📝 У цьому фентезійному фільмі (адаптація п'єси, на основі якої перед цим був знятий популярний бразильський серіал) розповідається про двох бідних, але кмітливих молодих людей - Джека на прізвисько Цвіркун і Чіко - і…\n▶️ <a href=\"https://youtu.be/wDVdgnhiNlY\">Трейлер</a></blockquote>\n§KN:m40096\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/61202?language=uk\">Життя не може бути нудним</a></b> (2011)\nдрама, комедія, мелодрама · ⏱ 2 год 34 хв\n⭐ IMDb <b>8.2</b> · 🍅 <b>89%</b>\n<i>🎭 Рітік Рошан, Abhay Deol, Farhan Akhtar</i>\n📺 <a href=\"https://www.themoviedb.org/movie/61202/watch?locale=UA\">Netflix, Apple TV Store</a>\n📝 Троє молодих людей їдуть на канікули, які змінять їхнє життя. Кабір зустрічає дівчину Наташу і шість місяців потому вони заручуються. Він хоче влаштувати щось на зразок розширеного варіанту парубочої вечірки -…\n▶️ <a href=\"https://youtu.be/FJrpcDgC3zU\">Трейлер</a></blockquote>\n§KN:m61202"
    }
   ]
  },
