@@ -2882,7 +2882,17 @@ SX_QUERIES = [   # (тема, запит PubMed) — рецензовані жу
     ("улюблені пози", "sexual position*[tiab] OR coital position*[tiab]"),
     ("кількість партнерів і подвійні стандарти", "number of sexual partners[tiab] AND (women[tiab] OR double standard[tiab] OR gender[tiab])"),
     ("розмір: що важливо жінкам (довжина, обхват)", "penis size[tiab] AND (women[tiab] OR preference*[tiab] OR girth[tiab])"),
-    ("відповідність розмірів пари", "vaginal length[tiab] OR vaginal dimensions[tiab] OR penile girth[tiab]")]
+    ("відповідність розмірів пари", "vaginal length[tiab] OR vaginal dimensions[tiab] OR penile girth[tiab]"),
+    ("анатомія вульви й піхви", "(vulva[ti] OR vulvar anatomy[tiab] OR vaginal anatomy[tiab] OR labia[ti]) AND (anatomy OR morphology OR variation)"),
+    ("анатомія пеніса й ерекція", "(penile anatomy[tiab] OR penis[ti] OR erection[ti]) AND (anatomy OR physiology OR morphology)"),
+    ("клітор: будова й чутливість", "clitoris[ti] OR clitoral[ti]"),
+    ("оральний секс", "oral sex[tiab] OR cunnilingus[tiab] OR fellatio[tiab]"),
+    ("анальний секс", "anal sex[tiab] OR anal intercourse[tiab]"),
+    ("мастурбація", "masturbation[ti]"),
+    ("тривалість статевого акту", "intravaginal ejaculation latency[tiab] OR intercourse duration[tiab]"),
+    ("точка G і вагінальний оргазм", "G-spot[tiab] OR vaginal orgasm[tiab]"),
+    ("жіноча еякуляція й оргазм — фізіологія", "female orgasm[ti] AND (physiology OR mechanism OR brain)")]
+SX_CORE = re.compile(r"sex|orgasm|penis|penile|vagin|vulv|clitor|labia|erect|ejacul|intercourse|coital|masturbat|vibrator|cunnilingus|fellatio|libido|arousal|g-spot|squirt", re.I)
 SX_POS = [   # пози — ілюстрації з Wikimedia Commons (лише малюнки), опис — за посиланням на джерело
     ("missionary", "Місіонерська", "missionary position sex drawing", "https://uk.wikipedia.org/wiki/Місіонерська_позиція"),
     ("cat", "CAT — зсув угору (більше стимуляції клітора)", "coital alignment technique drawing", "https://pubmed.ncbi.nlm.nih.gov/?term=coital+alignment+technique"),
@@ -3660,6 +3670,11 @@ def sexed_refresh(st: dict, now: datetime) -> None:
     n_study = sum(1 for x in db_["items"] if x["kind"] == "study")
     n_survey = sum(1 for x in db_["items"] if x["kind"] == "survey")
     extra_ch = False                                  # каталог поз, мистецтво, схеми технік — поступово
+    if db_.get("core_ver") != 1:                      # прибираємо дотичні теми: лишаємо лише про секс і статеві органи
+        before = len(db_["items"])
+        db_["items"] = [x for x in db_["items"] if x.get("id", "").startswith("news:") or SX_CORE.search(str(x.get("orig") or x.get("title") or ""))]
+        db_["core_ver"] = 1; extra_ch = True
+        print(f"Секс-освіта: прибрано дотичних записів {before - len(db_['items'])}")
     if db_.get("img_ver") != 3:                       # картинки поз — суворіша перевірка; скидаємо й підбираємо заново
         db_["pos"] = {}
         for x in db_.get("poscat") or []:
@@ -3726,7 +3741,7 @@ def sexed_refresh(st: dict, now: datetime) -> None:
         except Exception as e:
             print(f"Секс-освіта ({topic}): {err_text(e)[:80]}")
             continue
-        arts = [a for a in arts if (f"pmid:{a['pmid']}" not in known and a["pmid"] not in known) and ntitle(a["title"]) not in known_t
+        arts = [a for a in arts if SX_CORE.search(a["title"]) and (f"pmid:{a['pmid']}" not in known and a["pmid"] not in known) and ntitle(a["title"]) not in known_t
                 and (SX_JOURNALS.search(a["journal"]) or a.get("pre") or str(a["pmid"]).startswith("oa:")) and len(a["abstract"]) > 300][:6]
         if not arts:
             db_["done_q"][topic] = month if not seeding else "seed"
@@ -3833,7 +3848,7 @@ def silpo_snapshot(st: dict, now: datetime) -> None:
     snap = {}
     try:
         for c in silpo_categories(br[0]):
-            for p_ in silpo_products(br[0], SILPO_DTYPE, c.get("slug"), promo=False):
+            for p_ in silpo_products(br[0], family_silpo_dtype(), c.get("slug"), promo=False):
                 if p_.get("id") and p_price(p_):
                     snap[str(p_["id"])] = round(p_price(p_), 2)
     except Exception as e:
@@ -3852,12 +3867,24 @@ def silpo_snapshot(st: dict, now: datetime) -> None:
 def silpo_stores(st: dict, now: datetime) -> dict:
     """Магазини Сільпо з самовивозом у Києві й Вінниці (для вибору підписниками) — раз на тиждень."""
     wk = f"{now:%G-%V}"
-    if (st.get("silpo_stores") or {}).get("week") == wk and all(len(x) >= 4 for x in st["silpo_stores"].get("kyiv", [])[:1]):
+    if (st.get("silpo_stores") or {}).get("week") == wk and (st.get("silpo_stores") or {}).get("v") == 2:
         return st["silpo_stores"]
     try:
         data = silpo_get("/v1/uk/branches", deliveryType="SelfPickup")
         items = data.get("items") if isinstance(data, dict) else data
-        out = {"week": wk, "kyiv": [], "vin": []}
+        out = {"week": wk, "v": 2, "kyiv": [], "vin": [], "kyiv_dl": [], "vin_dl": []}
+        try:                                          # 🚚 окремий список — магазини (склади), що обслуговують доставку
+            dd = silpo_get("/v1/uk/branches", deliveryType="DeliveryHome")
+            for b in (dd.get("items") if isinstance(dd, dict) else dd) or []:
+                city, addr, bid = str(b.get("cityFull") or ""), str(b.get("addressFull") or b.get("name") or "").strip(), b.get("branchId")
+                try:
+                    ll = [round(float(b.get("latitude")), 5), round(float(b.get("longitude")), 5)]
+                except Exception:
+                    ll = [0, 0]
+                if bid and addr and city.strip() in ("Київ", "Вінниця"):
+                    out["kyiv_dl" if city.strip() == "Київ" else "vin_dl"].append([bid, addr, *ll])
+        except Exception as e:
+            print(f"Сільпо, магазини доставки: {err_text(e)[:80]}")
         for b in items or []:
             city, addr, bid = str(b.get("cityFull") or ""), str(b.get("addressFull") or "").strip(), b.get("branchId")
             if not (bid and addr):
@@ -3870,13 +3897,21 @@ def silpo_stores(st: dict, now: datetime) -> dict:
                 out["kyiv"].append([bid, addr, *ll])
             elif city.strip() == "Вінниця":
                 out["vin"].append([bid, addr, *ll])
-        for k in ("kyiv", "vin"):
+        for k in ("kyiv", "vin", "kyiv_dl", "vin_dl"):
             out[k].sort(key=lambda x: x[1])
-        print(f"Сільпо: магазинів — Київ {len(out['kyiv'])}, Вінниця {len(out['vin'])}")
+        print(f"Сільпо: магазинів (самовивіз) — Київ {len(out['kyiv'])}, Вінниця {len(out['vin'])}; доставки — Київ {len(out['kyiv_dl'])}, Вінниця {len(out['vin_dl'])}")
         st["silpo_stores"] = out
     except Exception as e:
         print(f"Сільпо, список магазинів: {err_text(e)[:100]}")
     return st.get("silpo_stores") or {}
+
+
+def silpo_choice(p_: dict) -> tuple:
+    """(магазин, тип цін, ключ файлу): 🚚 доставка — ціни складу доставки; 🏪 самовивіз — ціни торгового залу."""
+    b, mode = (p_ or {}).get("silpo"), (p_ or {}).get("silpo_mode") or "dl"
+    if not b:
+        return None, None, None
+    return b, ("DeliveryHome" if mode == "dl" else "SelfPickup"), b + ("@dl" if mode == "dl" else "")
 
 
 def family_silpo_branch() -> str | None:
@@ -3888,10 +3923,19 @@ def family_silpo_branch() -> str | None:
     return None
 
 
-def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str | None = None, tag: str = "") -> str | None:
+def family_silpo_dtype() -> str:
+    for c in CHAT_IDS:
+        if (PROF.get(c) or {}).get("silpo"):
+            return silpo_choice(PROF.get(c))[1]
+    return SILPO_DTYPE
+
+
+def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str | None = None, tag: str = "", dtype: str | None = None,
+                fkey: str | None = None) -> str | None:
     """Топ акцій тижня. branch/label — магазин підписника (етап 2b); tag — префікс кнопок «➕ ще 5»."""
     fb = None if branch else family_silpo_branch()
     br = (branch or fb, "SelfPickup") if (branch or fb) else silpo_branch(st)
+    DT_ = dtype or (family_silpo_dtype() if not branch else SILPO_DTYPE)
     if not br:
         return None
     ALL_PROMOS.clear()
@@ -3915,7 +3959,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
         return None
     for c in cats:
         try:
-            prods = silpo_products(br[0], SILPO_DTYPE, c.get("slug"), promo=True, limit=100, max_pages=3)   # ціни доставки — як на сайті
+            prods = silpo_products(br[0], DT_, c.get("slug"), promo=True, limit=100, max_pages=3)   # 🚚 доставка або 🏪 самовивіз — як обрано
         except Exception as e:
             print(f"Сільпо, {c.get('title')}: {err_text(e)}")
             continue
@@ -4006,7 +4050,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
         Path("silpo").mkdir(exist_ok=True)
         cats_ = sorted({x[3] for x in ALL_PROMOS if x[3]})
         brands_ = sorted({x[2] for x in ALL_PROMOS if x[2]})
-        Path(f"silpo/{'m' if not branch else branch}.json").write_text(json.dumps(
+        Path(f"silpo/{'m' if not branch else (fkey or branch)}.json").write_text(json.dumps(
             {"week": f"{now:%G-%V}", "cats": cats_, "brands": brands_, "items": ALL_PROMOS}, ensure_ascii=False, separators=(",", ":")), "utf-8")
         print(f"Сільпо: акцій у файлі {len(ALL_PROMOS)}, брендів {len(brands_)}; не підтвердились і відкинуті: {VERIFY_DROP[0]}")
     except Exception as e:
@@ -5201,7 +5245,7 @@ def main() -> None:
     if st.get("kino_ver") != 2:                       # новий формат кіно (кнопки під кожним фільмом)
         st["kino_q"] = []
         st["kino_ver"] = 2
-    fam_b = (family_silpo_branch() or "") + "|" + ",".join(sorted(SILPO_BAD))
+    fam_b = (family_silpo_branch() or "") + "|" + family_silpo_dtype() + "|" + ",".join(sorted(SILPO_BAD))
     if st.get("silpo_ver") != 11 or st.get("silpo_fb") != fam_b:   # суворіші перевірки / змінився магазин для цін
         st.pop("silpo_last", None)
         st.pop("silpo_by", None)
@@ -5282,10 +5326,11 @@ def main() -> None:
         direct_m.append((c, st.get("silpo_last") or "🛒 Не вдалося отримати акції Сільпо, спробуйте пізніше.", None))
     # етап 2b: магазини підписників — свій топ акцій (до 6 різних магазинів)
     stores = silpo_stores(st, now)
-    names = {x[0]: x[1] for city in ("kyiv", "vin") for x in stores.get(city, [])}
+    names = {x[0]: x[1] for city in ("kyiv", "vin", "kyiv_dl", "vin_dl") for x in stores.get(city, [])}
     main_id = (st.get("silpo_branch") or {}).get("id")
-    sub_store = {c: (PROF.get(c) or {}).get("silpo") for c in subs if (PROF.get(c) or {}).get("silpo")}
-    wanted = list(dict.fromkeys(b for b in sub_store.values() if b and b != main_id))[:10]
+    sub_store = {c: silpo_choice(PROF.get(c))[2] for c in subs if (PROF.get(c) or {}).get("silpo")}   # ключ = магазин + режим
+    key_info = {silpo_choice(PROF.get(c))[2]: silpo_choice(PROF.get(c)) for c in subs if (PROF.get(c) or {}).get("silpo")}
+    wanted = list(dict.fromkeys(b for b in sub_store.values() if b))[:10]
     by = st.setdefault("silpo_by", {})
     for k_ in list(by):
         if k_ not in wanted:
@@ -5295,7 +5340,9 @@ def main() -> None:
     for n_, b in enumerate(wanted):
         req_c = [str(c) for c in worker_req.get(f"sp_{b}", [])]
         if (by.get(b) or {}).get("week") != sp_week and built < 2:
-            sp_ = build_silpo(st, now, branch=b, label=names.get(b, "ваш магазин"), tag=f"s{n_}_")
+            bid_, dt_, _ = key_info.get(b, (b, SILPO_DTYPE, b))
+            sp_ = build_silpo(st, now, branch=bid_, label=(names.get(bid_, "ваш магазин") + (" · 🚚 доставка" if dt_ == "DeliveryHome" else " · 🏪 самовивіз")),
+                              tag=f"s{n_}_", dtype=dt_, fkey=b)
             built += 1
             if sp_:
                 by[b] = {"week": sp_week, "text": sp_}
@@ -5312,7 +5359,7 @@ def main() -> None:
         for c, fv in FAVS.items():
             if not (fv or {}).get("n") or not fv.get("items") or fs.get(c) == sp_week:
                 continue
-            key = (PROF.get(c) or {}).get("silpo") if c not in family else None
+            key = silpo_choice(PROF.get(c))[2] if c not in family else None
             try:
                 data = json.loads(Path(f"silpo/{key or 'm'}.json").read_text("utf-8"))
             except Exception:
