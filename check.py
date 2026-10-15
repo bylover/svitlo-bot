@@ -7,7 +7,7 @@
     CHAT_ID     ваш chat id (від @userinfobot); кілька — через кому: 111,222
     GROUP       ваша черга/група, наприклад 3.1
     WIFE_ID     (необов'язково) chat id дружини — отримує все те саме + компліменти зранку
-    WIFE_NAME   (необов'язково) як звертатися зранку, за замовчуванням «кохана»
+    WIFE_NAME   (необов'язково) як звертатися зранку
 
 Підписка: будь-хто натискає /start у боті — і отримує сповіщення; /stop — відписатися;
 Меню команд вимкнено; /start і /stop працюють для підписки (відповідь до ~10–20 хв).
@@ -57,9 +57,9 @@ GROUP = (os.environ.get("GROUP") or "1.1").strip()
 REMIND_MIN = int(os.environ.get("REMIND_MIN") or 45)    # вікно нагадування (із запасом на затримки GitHub)
 MORNING_HOUR = int(os.environ.get("MORNING_HOUR") or 10)  # ранкове повідомлення щодня
 WEATHER_HOUR = int(os.environ.get("WEATHER_HOUR") or 20)  # прогноз погоди на завтра щодня
-LAT = float(os.environ.get("LAT") or 50.512)               # Мінський масив, Київ
-LON = float(os.environ.get("LON") or 30.494)
-PLACE = os.environ.get("PLACE") or "Мінський масив"
+LAT = float(os.environ.get("LAT") or 50.4501)              # координати основних — із секретів LAT/LON (за замовчуванням центр Києва)
+LON = float(os.environ.get("LON") or 30.5234)
+PLACE = os.environ.get("PLACE") or "Київ"
 # етап 2a: райони погоди для підписників (код → назва, широта, довгота) — як у Worker
 DISTRICTS = {
     "kyiv": {"hol": ("Голосіївський", 50.39, 30.50), "dar": ("Дарницький", 50.41, 30.64), "des": ("Деснянський", 50.51, 30.60),
@@ -85,8 +85,8 @@ SMM_WEEKDAY, SMM_HOUR = 0, 8                                # SMM і тарге�
 SMM_SUBS = ["FacebookAds", "PPC", "socialmedia", "TikTokAds", "InstagramMarketing"]   # «Фішки від практиків»
 SILPO_WEEKDAY, SILPO_HOUR = 3, 8                            # Сільпо: чт — розсилка (з 8:00 збираємо, надсилаємо у свій час, за замовч. 13:00)
 SILPO_SNAP_WEEKDAY, SILPO_SNAP_HOUR = 2, 20                 # знімок цін усіх товарів: ср після 20:00
-SILPO_LAT, SILPO_LON = 50.5135, 30.4935                     # вул. Калнишевського, 2 (Мінський масив)
-SILPO_STORE = "Калнишевськ"                                 # яку адресу шукати серед магазинів
+SILPO_LAT, SILPO_LON = LAT, LON                             # типовий магазин — найближчий до координат основних
+SILPO_STORE = (os.environ.get("SILPO_STORE") or "").strip()  # частина адреси типового магазину (секрет; інакше — обраний в ⚙️)
 SILPO_BRANCH = (os.environ.get("SILPO_BRANCH") or "").strip()   # ручний вибір магазину (id), якщо знайдемо
 SILPO_TOP = 5
 SPLIT = "\n§§\n"                                            # роздільник повідомлень у довгих підбірках
@@ -152,7 +152,7 @@ SOURCES_TEXT = (
     "ℹ️ <b>ЗВІДКИ ДАНІ І ЯК ФОРМУЄТЬСЯ</b>\n"
     "\n"
     "💡 <b>Світло</b>\n"
-    "<blockquote>• Графік вашої черги (основним — група 4.1, підписникам — обрана) — із сайту ДТЕК (dtek-kem.com.ua) через відкрите дзеркало даних, яке оновлюється кожні ~5 хв; бот перевіряє зміни кожні 2 хв\n"
+    "<blockquote>• Графік вашої черги (основним — ваша група, підписникам — обрана) — із сайту ДТЕК (dtek-kem.com.ua) через відкрите дзеркало даних, яке оновлюється кожні ~5 хв; бот перевіряє зміни кожні 2 хв\n"
     "• Прогноз на тиждень — з того ж сайту ДТЕК (орієнтовний)\n"
     "• Ваша адреса — перевірка на сайті ДТЕК, як у формі «Відсутня електроенергія?», кожні ~10 хв: чи є зараз відключення, причина, початок і орієнтовне відновлення\n"
     "• Екстрені відключення — за оголошенням на сторінці ДТЕК, перевіркою адреси, статусом YASNO та каналом будинку; YASNO і канал перевіряються кожні 2 хв, сайт ДТЕК — кожні ~10 хв; враховуються тільки явні оголошення й скасування, оголошення з каналу діє до 12 год; загальне «🚨 / ✅» — коли перше джерело оголосило або всі скасували, а про зміну статусу кожного окремого джерела бот повідомляє основним отримувачам (📡)\n"
@@ -164,7 +164,7 @@ SOURCES_TEXT = (
     "• «За графіком» — це план ДТЕК, а не факт наявності світла\n"
     "• Масові сповіщення (екстрені, нагадування, зміни графіка) основним надходять одразу, підписникам — чергою по ~25 на хвилину (при 100–150 користувачах — до 5 хв)</blockquote>\n"
     "🌤 <b>Погода</b>\n"
-    "<blockquote>• Open-Meteo — поєднує кілька метеомоделей; прогноз для координат обраного району (основним — Мінський масив)\n"
+    "<blockquote>• Open-Meteo — поєднує кілька метеомоделей; прогноз для координат обраного району \n"
     "• Ніч / ранок / день / вечір + поради: парасолька, мороз, вітер, різка зміна температури</blockquote>\n"
     "§§\n"
     "🍿 <b>Кіно</b>\n"
@@ -193,7 +193,7 @@ SOURCES_TEXT = (
     "• Іноземні матеріали ШІ перекладає й коротко переказує українською; зверху — обкладинка, внизу — посилання на оригінал</blockquote>\n"
     "🛒 <b>Акції Сільпо</b>\n"
     "<blockquote>• 📍 За геолокацією бот обирає найближчий магазин (до 5 км) за координатами з сайту Сільпо\n"
-    "• Дані — із сайту Сільпо для вашого магазину (основним — Калнишевського, 2; підписники обирають свій у Києві чи Вінниці); у кожній категорії кнопка «➕ ще 5»\n"
+    "• Дані — із сайту Сільпо для вашого магазину (обраний у ⚙️ «🛒 Магазин для цін Сільпо»); у кожній категорії кнопка «➕ ще 5»\n"
     "• Для магазинів підписників реальна вигода — орієнтовно, за історією цін мережі\n"
     "• Беремо всі загальні акції з прямим зниженням ціни, зокрема «Ціну тижня» 🔥; без «2+1», «другий за…» і персональних\n"
     "• Щосереди ввечері бот запам'ятовує ціни всіх товарів магазину. <b>Заявлена знижка</b> — від «старої» ціни на ціннику; <b>реальна вигода</b> — від найнижчої ціни товару за останні 1–3 тижні\n"
@@ -209,7 +209,7 @@ SOURCES_TEXT = (
     "<blockquote>• «Велика п'ятірка» — науковий опитувальник IPIP-NEO (J. A. Johnson), український переклад з відкритого пакета b5 (ліцензія MIT); 60 питань — по 2 на кожну з 30 граней характеру\n"
     "• Результат — самоопис, а не діагноз; середнє по боту — для порівняння</blockquote>"
 )
-WELCOME = "🔥 <b>Світло. Погода. Кіно. Музика. Знижки. Здоровʼя. І секс — по науці.</b>\n💡 ДТЕК · 🌤 погода · 🍿🎵 підбірки за смаком · 🛒🛍 акції · ❤️ тренування · 🔞 18+\nПеревірені джерела — і трохи перчинки. 😏\n\n👇 Усе в кнопках."
+WELCOME = "😏 <b>Я знаю, коли вимкнуть світло, що подивитися ввечері і як зробити цей вечір незабутнім.</b>\n💡 ДТЕК · 🌤 погода · 🍿 кіно · 🎵 музика · 🛒 Сільпо · 🛍 знижки · ❤️ тренування · 🎯 вікторини\n🔞 А для дорослих — секс по науці.\n\n👇 Почнемо?"
 KINO_HINT = "<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n"
 SEND_NOW = os.environ.get("SEND_NOW") == "1"             # ручний запуск — надіслати графік одразу
 OFF_TYPES = {"Definite"} | ({"Possible"} if os.environ.get("INCLUDE_POSSIBLE") == "1" else set())
@@ -2207,7 +2207,7 @@ def quiz_refresh(now: datetime) -> None:
         print(f"Вікторина: тема «{name}» — замало питань ({len(qs)}), спробую пізніше")
 
 
-# ---------- Акції Сільпо (магазин на Калнишевського, 2) ----------
+# ---------- Акції Сільпо (магазин, обраний у ⚙️) ----------
 SILPO_API = "https://sf-ecom-api.silpo.ua"
 SKIP_PROMO = re.compile(r"\d\s*\+\s*\d|друг(ий|у)|при купівлі|при покупці|персональн", re.I)
 CAT_EMOJI = [("м'яс", "🥩"), ("мяс", "🥩"), ("риб", "🐟"), ("молоч", "🥛"), ("сир", "🧀"), ("яйц", "🥚"),
@@ -2243,7 +2243,7 @@ def _find_store(obj, needle: str, path: str = "") -> list[tuple[str, dict]]:
 
 
 def silpo_probe_pickup() -> tuple[str, str] | None:
-    """Шукаємо фізичний магазин на Калнишевського серед точок самовивозу (кілька можливих запитів)."""
+    """Шукаємо типовий фізичний магазин серед точок самовивозу (кілька можливих запитів)."""
     ext = "https://sf-external-api.silpo.ua"
     cands = [(SILPO_API, "/v1/uk/branches", {"deliveryType": "SelfPickup"}),
              (SILPO_API, "/v1/branches", {"deliveryType": "SelfPickup"}),
@@ -2275,7 +2275,7 @@ def silpo_probe_pickup() -> tuple[str, str] | None:
 
 
 def silpo_branch(st: dict) -> tuple[str, str] | None:
-    """Магазин: ручний SILPO_BRANCH → магазин на Калнишевського (самовивіз) → онлайн-магазин за адресою."""
+    """Магазин: обраний у ⚙️ → ручний SILPO_BRANCH → типовий магазин (самовивіз) → онлайн-магазин за координатами."""
     if SILPO_BRANCH:
         return SILPO_BRANCH, "SelfPickup"
     if st.get("silpo_branch") and (st["silpo_branch"].get("store") or st.get("silpo_probe") == today_str()):
@@ -2284,10 +2284,10 @@ def silpo_branch(st: dict) -> tuple[str, str] | None:
         st["silpo_probe"] = today_str()
         found = silpo_probe_pickup()
         if found:
-            st["silpo_branch"] = {"id": found[0], "type": found[1], "name": "Сільпо, вул. Калнишевського, 2", "store": True}
+            st["silpo_branch"] = {"id": found[0], "type": found[1], "name": "Сільпо (типовий магазин)", "store": True}
             st.pop("silpo_last", None)
             st.pop("silpo_week", None)
-            print("Сільпо: знайдено магазин на Калнишевського — перемикаюсь на нього")
+            print("Сільпо: знайдено типовий магазин — перемикаюсь на нього")
             return found
     try:
         modes = silpo_get("/v1/polygons/contains/all", latitude=SILPO_LAT, longitude=SILPO_LON)
@@ -2296,8 +2296,8 @@ def silpo_branch(st: dict) -> tuple[str, str] | None:
         m = next((m for m in modes if SILPO_STORE.lower() in str(m.get("name", "")).lower()), None) or \
             next((m for m in modes if m.get("deliveryType") == "DeliveryHome"), modes[0])
         st["silpo_branch"] = {"id": m["branchId"], "type": m.get("deliveryType") or "DeliveryHome",
-                              "name": "онлайн-магазин Сільпо (доставка на Мінський масив)", "store": False}
-        print(f"Сільпо: магазин на Калнишевського не знайдено — беру «{m.get('name')}»")
+                              "name": "онлайн-магазин Сільпо", "store": False}
+        print(f"Сільпо: типовий магазин не знайдено — беру «{m.get('name')}»")
         return m["branchId"], st["silpo_branch"]["type"]
     except Exception as e:
         print(f"Сільпо, магазин: {err_text(e)}")
@@ -2345,6 +2345,19 @@ ONLINE = re.compile(r"онлайн|online|лише\s+в\s+застосунку|�
 PROMO_SAMPLES: list = []
 ALL_PROMOS: list = []                                       # усі акції магазину — для «⭐ Обране»
 VERIFY_DROP = [0]                                           # скільки «знижок» відкинуто перевіркою
+SILPO_BAD: set = set()                                      # товари, про які повідомили «ціна не збігається»
+SILPO_MARKET = re.compile(r"nova.?po[sš]h?ta|novaposhta|нова\s*пошта|новою\s*поштою|marketplace|маркетплейс|seller|продавець|partner|партнер", re.I)
+
+
+def silpo_excluded(p_: dict) -> str:
+    """Чому товар не показуємо: доставка Новою поштою / маркетплейс (інші ціни, ніж у магазині) або акція без коду."""
+    raw = json.dumps({k: v for k, v in p_.items() if k not in ("images", "description", "title")}, ensure_ascii=False)
+    if SILPO_MARKET.search(raw) or SILPO_MARKET.search(str(p_.get("deliveryType") or "")):
+        return "маркетплейс / Нова пошта"
+    ids = [x.get("id") for x in (p_.get("promotions") or []) if isinstance(x, dict) and x.get("type") != "set"]
+    if not ids and not (p_.get("promos") or p_.get("specialPrices")):
+        return "знижка без коду акції"
+    return ""
 SILPO_DTYPE = "DeliveryHome"                                # ціни Сільпо — для доставки (як бачить користувач на сайті)
 
 
@@ -2921,7 +2934,7 @@ def commons_image(query: str, drawing_only: bool = False, must: list | None = No
             "action": "query", "format": "json", "generator": "search",
             "gsrsearch": f"filetype:{'drawing' if drawing_only else 'bitmap|drawing'} {query}", "gsrnamespace": 6,
             "gsrlimit": 5, "prop": "imageinfo", "iiprop": "url|extmetadata", "iiurlwidth": 900}),
-            headers={"User-Agent": "svitlo-bot/1.0 (https://github.com/bylover; Telegram educational bot)"})
+            headers={"User-Agent": "svitlo-bot/1.0 (educational Telegram bot)"})
         for p_ in sorted((r.get("query") or {}).get("pages", {}).values(), key=lambda x: x.get("index", 99)):
             t_ = str(p_.get("title", "")).lower().replace("_", " ")
             if must and not (all if must_all else any)(w.lower() in t_ for w in must):
@@ -3026,6 +3039,41 @@ def sx_art_images(db_: dict) -> bool:
             ch = True
             break                                     # по одному за запуск
     return ch
+
+
+def sx_size_chart() -> None:
+    """Діаграма «Розподіл довжини пеніса в ерекції» — за даними Veale et al., 2015 (BJU Int., ~15 500 чоловіків): середнє 13,12 см, SD 1,66."""
+    fp = Path("sx/penis_size.png")
+    if fp.exists():
+        return
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+        import math
+    except Exception:
+        return
+    Path("sx").mkdir(exist_ok=True)
+    W, H, L, R, T, B = 900, 470, 60, 860, 70, 390
+    img = Image.new("RGB", (W, H), (255, 255, 255)); d = ImageDraw.Draw(img)
+    try:
+        f = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18); fb = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 22)
+    except Exception:
+        f = fb = ImageFont.load_default()
+    mu, sd, x0, x1 = 13.12, 1.66, 7.0, 19.5
+    X = lambda v: L + (v - x0) / (x1 - x0) * (R - L)
+    pdf = lambda v: math.exp(-((v - mu) / sd) ** 2 / 2)
+    Y = lambda p_: B - p_ * (B - T - 20)
+    lo, hi = mu - 1.645 * sd, mu + 1.645 * sd     # 5–95 перцентилі
+    pts = [(X(x0 + i * (x1 - x0) / 400), Y(pdf(x0 + i * (x1 - x0) / 400))) for i in range(401)]
+    band = [(X(lo), B)] + [p for p in pts if X(lo) <= p[0] <= X(hi)] + [(X(hi), B)]
+    d.polygon(band, fill=(248, 205, 225)); d.line(pts, fill=(214, 51, 132), width=4); d.line([(L, B), (R, B)], fill=(90, 90, 90), width=2)
+    for v in range(8, 20):
+        d.line([(X(v), B), (X(v), B + 6)], fill=(90, 90, 90), width=2); d.text((X(v) - 10, B + 10), str(v), fill=(60, 60, 60), font=f)
+    d.line([(X(mu), T + 15), (X(mu), B)], fill=(120, 30, 80), width=2)
+    d.text((X(mu) + 10, T + 5), f"середнє {mu:.1f} см".replace(".", ","), fill=(120, 30, 80), font=f)
+    d.text((X(lo) + 8, B - 40), "90% чоловіків:", fill=(60, 60, 60), font=f); d.text((X(lo) + 8, B - 18), f"{lo:.1f}–{hi:.1f} см".replace(".", ","), fill=(60, 60, 60), font=f)
+    d.text((L, 18), "Довжина пеніса в ерекції — розподіл", fill=(30, 30, 30), font=fb)
+    d.text((L, H - 35), "Veale et al., BJU International, 2015 · ~15 500 чоловіків · см", fill=(130, 130, 130), font=f)
+    img.save(fp, "PNG", optimize=True)
 
 
 def sx_technique_diagrams() -> None:
@@ -3458,7 +3506,7 @@ def openverse_image(query: str, must: list | None = None) -> dict | None:
     """Openverse: зображення під вільними ліцензіями (Flickr, Commons, музеї) — запасне джерело ілюстрацій."""
     try:
         r = http_json("https://api.openverse.org/v1/images/?" + urllib.parse.urlencode({"q": query, "mature": "true", "page_size": 5}),
-                      headers={"User-Agent": "svitlo-bot/1.0 (https://github.com/bylover)"})
+                      headers={"User-Agent": "svitlo-bot/1.0 (educational Telegram bot)"})
         for x in r.get("results", []):
             if must and not any(w.lower() in (str(x.get("title", "")) + " " + " ".join(t.get("name", "") for t in (x.get("tags") or []))).lower() for w in must):
                 continue
@@ -3601,6 +3649,7 @@ def sexed_refresh(st: dict, now: datetime) -> None:
         extra_ch |= sx_positions_catalog(db_)
         extra_ch |= sx_art_images(db_)
         sx_technique_diagrams()
+        sx_size_chart()
     except Exception as e:
         print(f"Секс-освіта (каталог/мистецтво): {err_text(e)[:100]}")
     covered = {x["topic"] for x in db_["items"]}
@@ -3806,9 +3855,19 @@ def silpo_stores(st: dict, now: datetime) -> dict:
     return st.get("silpo_stores") or {}
 
 
+def family_silpo_branch() -> str | None:
+    """Магазин для цін Сільпо, який обрали в ⚙️ основні отримувачі (перший обраний) — інакше SILPO_BRANCH."""
+    for c in CHAT_IDS:
+        b = (PROF.get(c) or {}).get("silpo")
+        if b:
+            return b
+    return None
+
+
 def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str | None = None, tag: str = "") -> str | None:
     """Топ акцій тижня. branch/label — магазин підписника (етап 2b); tag — префікс кнопок «➕ ще 5»."""
-    br = (branch, "SelfPickup") if branch else silpo_branch(st)
+    fb = None if branch else family_silpo_branch()
+    br = (branch or fb, "SelfPickup") if (branch or fb) else silpo_branch(st)
     if not br:
         return None
     ALL_PROMOS.clear()
@@ -3842,6 +3901,15 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
             alt = None                                # режим доставки недоступний — лишаємо одну перевірку
         cand = []
         for idx, p_ in enumerate(prods):
+            why_ = silpo_excluded(p_)
+            if why_:
+                VERIFY_DROP[0] += 1
+                if VERIFY_DROP[0] <= 3:
+                    print(f"Сільпо виключено ({why_}): {str(p_.get('title'))[:50]}")
+                continue
+            if str(p_.get("id")) in SILPO_BAD:      # повідомили про невідповідність — виключаємо й пишемо сирі дані для аналізу
+                print(f"Сільпо невідповідність: {str(p_.get('title'))[:50]} | {json.dumps({k_: v_ for k_, v_ in p_.items() if k_ not in ('images', 'description')}, ensure_ascii=False)[:900]}")
+                continue
             pk = promo_kind(p_)                       # пряма знижка, 🌐 онлайн, 🎁 2+1, 📦 гуртом
             if not pk:
                 continue
@@ -3859,8 +3927,11 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
                 real = (min(past) - price) / min(past) * 100 if past else None
                 if real is not None and real < 3:
                     continue                          # «акція», яка насправді не дешевша — пропускаємо
+                if real is not None and real > declared + 3:
+                    VERIFY_DROP[0] += 1
+                    continue                          # «реальна» вигода більша за заявлену — дані суперечливі, не показуємо
             rating = p_.get("guestProductRating")
-            if declared >= 50 and real is None:      # велика знижка без історії цін — лише якщо підтвердилась 2 дні поспіль
+            if declared >= 50:                        # велика знижка — лише якщо підтвердилась 2 дні поспіль (навіть з історією цін)
                 ck = f"{br[0]}|{p_.get('id')}"
                 seen_ = conf.get(ck)
                 conf[ck] = seen_ if seen_ and abs(seen_[1] - declared) < 6 else [now.date().isoformat(), declared]
@@ -3896,8 +3967,8 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
     if not sections:
         return None
     shop = (f"Сільпо, {esc(label)}" if label else 'Ціни ' + esc((st.get('silpo_branch') or {}).get('name'))
-            if not (st.get('silpo_branch') or {}).get('store') else 'Сільпо, вул. Калнишевського, 2')
-    head = (f"🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на {now:%d.%m} (оновлюється щоранку)\n"
+            if not (st.get('silpo_branch') or {}).get('store') else 'Сільпо')
+    head = (f"🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на {now:%d.%m %H:%M} (оновлюється двічі на день)\n"
             "<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. "
             "Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n"
             f"<i>{shop} · 🔥 — «Ціна тижня»</i>\n"
@@ -4609,6 +4680,7 @@ def main() -> None:
             subs = {str(k): list(v) for k, v in (ex.get("subs") or {}).items()}
             PROF.update(ex.get("prof") or {})          # профілі підписників (етап 2a)
             FAVS.update(ex.get("favs") or {})          # ⭐ обране Сільпо
+            SILPO_BAD.update(str(x) for x in (ex.get("silpo_bad") or []))   # «⚠️ ціна не збігається» — виключені товари
             AGE_OK.update(str(c) for c in (ex.get("ages") or []))   # підтвердили 18+
             if ex.get("content_seen"):                # що вже показали з меню (Cloudflare) — не повторюємо
                 st["content_seen"] = list(dict.fromkeys(st.get("content_seen", []) + list(ex["content_seen"])))[-600:]
@@ -5085,10 +5157,12 @@ def main() -> None:
     if st.get("kino_ver") != 2:                       # новий формат кіно (кнопки під кожним фільмом)
         st["kino_q"] = []
         st["kino_ver"] = 2
-    if st.get("silpo_ver") != 10:                     # Сільпо: ціни доставки (основний режим)
+    fam_b = (family_silpo_branch() or "") + "|" + ",".join(sorted(SILPO_BAD))
+    if st.get("silpo_ver") != 11 or st.get("silpo_fb") != fam_b:   # суворіші перевірки / змінився магазин для цін
         st.pop("silpo_last", None)
         st.pop("silpo_by", None)
-        st["silpo_ver"] = 10
+        st["silpo_ver"] = 11
+        st["silpo_fb"] = fam_b
     if st.get("yt_ver") != 2:                         # новий відбір YouTube (лише українське) — стару підбірку скидаємо
         st.pop("yt_last", None)
         st["yt_ver"] = 2
@@ -5126,7 +5200,7 @@ def main() -> None:
     # 10) Сільпо: ср — знімок цін; чт о 13:00 — топ акцій (вам, дружині, підписникам із темою); меню — топ тижня
     if (not SILPO_BRANCH and not (st.get("silpo_branch") or {}).get("store")
             and st.get("silpo_probe") != today_key):
-        silpo_branch(st)                              # раз на день шукаємо фізичний магазин на Калнишевського
+        silpo_branch(st)                              # раз на день — типовий магазин
         if (st.get("silpo_branch") or {}).get("store") and now.weekday() == SILPO_WEEKDAY:
             st.pop("silpo_week", None)                # знайшли — сьогоднішню підбірку перебудуємо по ньому
     if (now.weekday() == SILPO_SNAP_WEEKDAY and now.hour >= SILPO_SNAP_HOUR
@@ -5142,14 +5216,15 @@ def main() -> None:
             topic_msgs.append(("silpo", sp, None, sp))
             silpo_req = [c for c in silpo_req if c not in audience("silpo")]
             SILPO_OWN.update(c for c in subs if (PROF.get(c) or {}).get("silpo"))   # у них свій магазин
-    if (not silpo_due and now.hour >= 7 and st.get("silpo_day") != today_key
+    half_ = f"{today_key}-{'am' if now.hour < 15 else 'pm'}"   # двічі на день: зранку й після 15:00
+    if (not silpo_due and now.hour >= 7 and st.get("silpo_day") != half_
             and st.get("silpo_try") != now.strftime("%Y-%m-%d %H")):   # щоранку оновлюємо підбірку меню: лише чинні й у наявності
         st["silpo_try"] = now.strftime("%Y-%m-%d %H")
         sp_d = build_silpo(st, now)
         if sp_d:
-            st["silpo_last"], st["silpo_day"] = sp_d, today_key
+            st["silpo_last"], st["silpo_day"] = sp_d, half_
     if silpo_due and st.get("silpo_last"):
-        st["silpo_day"] = today_key
+        st["silpo_day"] = half_
     if not st.get("silpo_last") and not st.get("silpo_try") == now.strftime("%Y-%m-%d %H"):
         st["silpo_try"] = now.strftime("%Y-%m-%d %H")  # акцій тижня ще немає — збираємо заздалегідь, без розсилки
         sp = build_silpo(st, now)
@@ -5277,7 +5352,8 @@ def main() -> None:
                         more_ = st.get("silpo_more") or {}
                         ids_ = [k for k in more_ if (k.startswith(tg_) if tg_ else k[:1].isdigit())]
                         btns_ = [{"text": more_[k].get("b", k), "callback_data": f"sc:{k}"} for k in ids_]
-                        k_ = {"inline_keyboard": [btns_[i:i + 2] for i in range(0, len(btns_), 2)]}
+                        k_ = {"inline_keyboard": [btns_[i:i + 2] for i in range(0, len(btns_), 2)]
+                              + [[{"text": "⚠️ Ціна не збігається з сайтом", "callback_data": "sb:ask"}]]}
                     mr_ = re.search(r"\n§RT:(\w+):(\S+)$", t_)        # 👍/👎 під матеріалом
                     if mr_:
                         t_ = t_[:mr_.start()]

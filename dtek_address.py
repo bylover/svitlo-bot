@@ -4,7 +4,7 @@
 той самий запит getHomeNum, що й сайт. Запускається окремим workflow кожні ~10 хв.
 
 Змінні середовища (секрети GitHub): BOT_TOKEN, CHAT_ID, WIFE_ID, SYNC_URL, SYNC_KEY,
-ADDR_STREET (за замовчуванням «вул. Кульженків Сім'ї»), ADDR_HOUSE (за замовчуванням «35»).
+ADDR_STREET і ADDR_HOUSE — лише із секретів GitHub (адреса не зберігається в коді).
 Стан — у файлі addr_state.json (його читає й основний бот).
 """
 import json
@@ -17,8 +17,8 @@ from pathlib import Path
 import check  # спільні функції основного бота (надсилання, підписники тощо)
 from check import TZ, CHAT_IDS, WIFE_ID, esc, send, err_text
 
-STREET = (os.environ.get("ADDR_STREET") or "вул. Кульженків Сім'ї").strip()
-HOUSE = (os.environ.get("ADDR_HOUSE") or "35").strip()
+STREET = (os.environ.get("ADDR_STREET") or "").strip()      # з секрету ADDR_STREET
+HOUSE = (os.environ.get("ADDR_HOUSE") or "").strip()        # з секрету ADDR_HOUSE
 STATE = Path("addr_state.json")
 URL = "https://www.dtek-kem.com.ua/ua/shutdowns"
 GETHOME_JS = """async (street) => {
@@ -73,19 +73,23 @@ def fetch_address() -> dict | None:
             return out.slice(0, 8);
         }""")
         print("ДТЕК, текст сторінки про екстрені:", city if city else "немає")
+        try:
+            lookup_requests(page)                      # черга за адресою для підписників — завжди, незалежно від нашої адреси
+        except Exception as e:
+            print(f"Адреси підписників: {err_text(e)}")
+        if not STREET or not HOUSE:
+            print("ДТЕК: секрети ADDR_STREET / ADDR_HOUSE не задано — власну адресу не перевіряю")
+            browser.close()
+            return None
         res = None
         for st in street_variants(STREET):
             res = page.evaluate(GETHOME_JS, st)
-            print(f"ДТЕК getHomeNum «{st}»: HTTP {res.get('status')}, {len(res.get('text') or '')} символів")
+            print(f"ДТЕК getHomeNum (власна адреса, варіант): HTTP {res.get('status')}, {len(res.get('text') or '')} символів")
             try:
                 data = json.loads(res.get("text") or "")
             except Exception:
                 data = None
             if isinstance(data, dict) and (data.get("data") or {}):
-                try:
-                    lookup_requests(page)              # черга за адресою для підписників
-                except Exception as e:
-                    print(f"Адреси підписників: {err_text(e)}")
                 browser.close()
                 data["_street"] = st
                 data["_city"] = city
@@ -102,12 +106,12 @@ def house_info(data: dict) -> dict | None:
     """Дані саме нашого будинку з відповіді getHomeNum; None — якщо будинку у відповіді немає."""
     houses = data.get("data") or {}
     h = houses.get(HOUSE)
-    if h is None:                                    # іноді ключі з літерами/дробами — шукаємо збіг
-        h = next((v for k, v in houses.items() if re.sub(r"\s", "", str(k)).lower() == HOUSE.lower()), None)
+    if h is None:                                    # ключі з літерами/дробами: 42/Б = 42Б = 42 б
+        h = next((v for k, v in houses.items() if hkey(k).replace("/", "") == hkey(HOUSE).replace("/", "")), None)
     if h is None:
-        print(f"ДТЕК: будинку «{HOUSE}» у відповіді немає. Є: {', '.join(list(houses)[:40])}")
+        print(f"ДТЕК: власного будинку у відповіді немає (будинків на вулиці: {len(houses)})")
         return None
-    print(f"ДТЕК: будинок {HOUSE} знайдено: {json.dumps(h, ensure_ascii=False)[:300]}")
+    print(f"ДТЕК: власний будинок знайдено: {json.dumps(h, ensure_ascii=False)[:300]}")
     h = h or {}
     return {"reason": (h.get("sub_type") or "").strip(), "start": (h.get("start_date") or "").strip(),
             "end": (h.get("end_date") or "").strip(), "type": str(h.get("type") or ""),
@@ -131,7 +135,7 @@ def main() -> None:
     if info is None:
         sys.exit(0)                                  # не знайшли будинок — стан не змінюємо
     active = bool(info["reason"] or info["start"])
-    print(f"Адреса {STREET}, {HOUSE}: {'НЕМАЄ світла' if active else 'ДТЕК не показує відключення'} · {info}")
+    print(f"Власна адреса: {'НЕМАЄ світла' if active else 'ДТЕК не показує відключення'} · {info}")
 
     banner = " ".join(data.get("_city") or [])
     extra_txt = json.dumps({k: v for k, v in data.items() if k not in ("data", "_street", "_city")}, ensure_ascii=False)
@@ -259,7 +263,8 @@ def addr_variants(street: str) -> list[str]:
             rest.append(w[:1].upper() + w[1:])
     name = " ".join(rest)
     kinds = [kind] if kind else ["вул.", "просп.", "бульв.", "пров.", "пл.", "шосе"]
-    out = [f"{k} {name}" for k in kinds]
+    full = {"вул.": "вулиця", "просп.": "проспект", "бульв.": "бульвар", "пров.": "провулок", "пл.": "площа"}
+    out = [f"{k} {name}" for k in kinds] + [f"{full[k]} {name}" for k in kinds if k in full] + [name] + [f"{name} {k}" for k in kinds[:2]]
     return list(dict.fromkeys(v for x in out for v in (x, x.replace("'", "’"), x.replace("’", "'"))))
 
 
@@ -285,6 +290,7 @@ def lookup_requests(page) -> None:
     for cid, r in list(reqs.items())[:5]:
         street, house = str(r.get("street") or ""), str(r.get("house") or "").lower().replace(" ", "")
         found = None
+        tried: list = []                                  # діагностика: які варіанти пробували й скільки будинків повернув ДТЕК
         exact = bool(r.get("exact"))                     # користувач уже обрав вулицю зі списку
         cands = [street] if exact else (match_streets(street, streets) if streets else [])
         if len(cands) > 1 and skel(cands[0]) == skel(street):
@@ -297,14 +303,20 @@ def lookup_requests(page) -> None:
             except Exception as e:
                 print(f"setgroup: {err_text(e)}")
             continue
-        for st in (cands or addr_variants(street)):
+        for st in (cands or addr_variants(street))[:14]:
             res = page.evaluate(GETHOME_JS, st)
             try:
                 data = json.loads(res.get("text") or "")
             except Exception:
                 continue
             houses = data.get("data") or {}
-            h = next((v for k, v in houses.items() if hkey(k) == hkey(house)), None)
+            tried.append(f"{st}→{len(houses)}")
+            h = next((v for k, v in houses.items() if hkey(k) == hkey(house) or hkey(k).replace("/", "") == hkey(house).replace("/", "")), None)
+            if h is None and houses:
+                num = re.match(r"\d+", hkey(house))
+                same = [k for k in houses if num and re.match(r"\d+", hkey(k)) and re.match(r"\d+", hkey(k)).group(0) == num.group(0)]
+                if len(same) == 1:                     # «42б» ↔ «42 корп. Б» тощо — єдиний будинок з цим номером
+                    h = houses[same[0]]
             if h is None and houses and len(cands) == 1:   # вулицю знайдено, а такого будинку немає — запропонуємо список
                 found = {"street": st, "houses": sorted(houses, key=lambda k: (re.sub(r"\D.*", "", str(k)).zfill(5), str(k)))[:60], "house": house}
                 break
@@ -312,7 +324,8 @@ def lookup_requests(page) -> None:
                 grp = next((g[3:] for g in (h.get("sub_type_reason") or []) if str(g).startswith("GPV")), None)
                 found = {"street": st, "house": house, "group": grp}
                 break
-        print(f"Адреса підписника: {street}, {house} → {(found or {}).get('group') or ('список будинків' if (found or {}).get('houses') else 'не знайдено')}")
+        print(f"Адреса підписника: {street}, {re.sub(r'\d', '•', house)} → {(found or {}).get('group') or ('список будинків' if (found or {}).get('houses') else 'не знайдено')}"
+              f" · кандидати зі списку ДТЕК: {cands[:3]} · спроби: {tried[:8]}")
         try:
             check.http_json(f"{check.SYNC_URL}/setgroup?key={check.urllib.parse.quote(check.SYNC_KEY)}",
                             {"cid": cid, **(found or {"error": "not_found"})})
