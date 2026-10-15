@@ -1085,22 +1085,22 @@
   "https://sex.cosmopolitan.com/pleasure/a74051665/womanizer-sex-toy-deals-amazon-prime-day/"
  ],
  "addr": {
-  "active": false,
-  "reason": "",
-  "start": "",
-  "end": "",
-  "type": "",
+  "active": true,
+  "reason": "Стабілізаційне відключення (Згідно графіку погодинних відключень)",
+  "start": "17:34 15.10.2026",
+  "end": "20:30 15.10.2026",
+  "type": "2",
   "groups": [
    "GPV4.1"
   ],
-  "updated": "13:02 15.10.2026",
+  "updated": "19:32 15.10.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-10-15T13:13:46.590978+03:00",
+  "checked": "2026-10-15T19:33:09.141741+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
-  "planned": false
+  "planned": true
  },
  "yt_try": "2026-10-15 00",
  "gem_block": {},
@@ -1788,16 +1788,8 @@
  },
  "kino_week": "2026-41",
  "fact": {
-  "last": 2545,
+  "last": 2546,
   "events": [
-   [
-    "2026-10-13T15:09:54+03:00",
-    "off"
-   ],
-   [
-    "2026-10-13T18:19:01+03:00",
-    "on"
-   ],
    [
     "2026-10-15T06:05:08+03:00",
     "off"
@@ -1805,6 +1797,10 @@
    [
     "2026-10-15T09:20:24+03:00",
     "on"
+   ],
+   [
+    "2026-10-15T17:34:35+03:00",
+    "off"
    ]
   ]
  },
@@ -1815,15 +1811,16 @@
   "сайт ДТЕК": false,
   "канал ЖК «Яскравий»": false
  },
- "fact_png": "2026-10-15 13|4|2026-10-15T09:20:24+03:00",
+ "fact_png": "2026-10-15 19|3|2026-10-15T17:34:35+03:00",
  "fact_day": {
-  "total": "3 год 15 хв",
+  "total": "5 год 16 хв",
   "list": [
-   "06:05–09:20 · 3 год 15 хв"
+   "06:05–09:20 · 3 год 15 хв",
+   "17:34–19:35 · 2 год 1 хв"
   ]
  },
- "silpo_ver": 10,
- "silpo_try": "2026-10-15 07",
+ "silpo_ver": 11,
+ "silpo_try": "2026-10-15 19",
  "silpo_more": {
   "s0_0": {
    "t": "🥦 <b>Фрукти, овочі</b>",
@@ -1989,23 +1986,23 @@
    "t": "🛒 <b>Добрі промо</b>",
    "b": "🛒 Добрі промо",
    "first": [
-    "1. Снеки Taro рибні зі смаком чилі, 52г — <b>79.99 ₴</b> <s>149 ₴</s> · заявлено −46% · <b>реально −50%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/sneky-taro-rybni-zi-smakom-chyli-955465\">відкрити</a>",
-    "2. 🔥 Чипси Pringles зі смаком печеної картоплі, сиру та бекону, 158г — <b>139 ₴</b> <s>259 ₴</s> · заявлено −46% · <b>реально −50%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/chypsy-pringles-zi-smakom-pechenoi-kartopli-syru-ta-bekonu-1011646\">відкрити</a>",
-    "3. 🔥 Напій кавовий Jacobs Cappuccino choco, 500г — <b>189 ₴</b> <s>344 ₴</s> · заявлено −45% · <b>реально −48%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/napii-kavovyi-jacobs-cappuccino-choco-911743\">відкрити</a>",
-    "4. Снеки Taro рибні зі смаком барбекю, 52г — <b>79.99 ₴</b> <s>139 ₴</s> · заявлено −42% · <b>реально −46%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/sneky-taro-rybni-zi-smakom-barbekiu-955464\">відкрити</a>",
-    "5. 🔥 Напій кавовий Jacobs Caramel latte 3в1 розчинний, 450г — <b>169 ₴</b> <s>284 ₴</s> · заявлено −40% · <b>реально −45%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/napii-kavovyi-jacobs-caramel-latte-3v1-rozchynnyi-979586\">відкрити</a>"
+    "1. 🔥 Кава розчинна Jacobs Monarch натуральна сублімована с/б, 95г — <b>194 ₴</b> <s>344 ₴</s> · заявлено −44% · <b>реально −46%</b> · ⭐ 3.7\n🔗 <a href=\"https://silpo.ua/product/kava-rozchynna-jacobs-monarch-naturalna-sublimovana-s-b-579161\">відкрити</a>",
+    "2. Попкорн Candy Pop TWIX, 28г — <b>69.99 ₴</b> <s>130 ₴</s> · заявлено −46% · ⭐ 3.5\n🔗 <a href=\"https://silpo.ua/product/popkorn-candy-pop-twix-959413\">відкрити</a>",
+    "3. 🔥 Кава розчинна Jacobs Cronat Gold сублімована д/п, 300г — <b>499 ₴</b> <s>849 ₴</s> · заявлено −41% · <b>реально −43%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/kava-rozchynna-jacobs-cronat-gold-sublimovana-d-p-983778\">відкрити</a>",
+    "4. Пиво Benediktiner Weissbier світле нефільтроване з/б, 0,5л — <b>60.99 ₴</b> <s>100 ₴</s> · заявлено −39% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/pyvo-benediktiner-weissbier-svitle-nefiltrovane-z-b-921786\">відкрити</a>",
+    "5. Віскі The Pogues Streams of whiskey, 0,7л — <b>649 ₴</b> <s>1099 ₴</s> · заявлено −41%\n🔗 <a href=\"https://silpo.ua/product/viski-the-pogues-streams-of-whiskey-941521\">відкрити</a>"
    ],
    "rows": [
-    "6. 🔥 Чипси Pringles зі смаком солі та оцту, 158г — <b>139 ₴</b> <s>224 ₴</s> · заявлено −38% · <b>реально −50%</b> · ⭐ 3.2\n🔗 <a href=\"https://silpo.ua/product/chypsy-pringles-zi-smakom-soli-ta-otstu-1011647\">відкрити</a>",
-    "7. 🔥 Кава розчинна Jacobs Monarch натуральна сублімована с/б, 95г — <b>194 ₴</b> <s>344 ₴</s> · заявлено −44% · <b>реально −46%</b> · ⭐ 3.7\n🔗 <a href=\"https://silpo.ua/product/kava-rozchynna-jacobs-monarch-naturalna-sublimovana-s-b-579161\">відкрити</a>",
-    "8. 🔥 Попкорн «Премія»® для мікрохвильової печі зі смаком вершкового масла, 100г — <b>29.99 ₴</b> <s>46.99 ₴</s> · заявлено −36% · <b>реально −40%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/popkorn-premiia-dlia-mikrokhvylovoi-pechi-zi-smakom-vershkovogo-masla-454942\">відкрити</a>",
-    "9. Попкорн Candy Pop TWIX, 28г — <b>69.99 ₴</b> <s>130 ₴</s> · заявлено −46% · ⭐ 3.5\n🔗 <a href=\"https://silpo.ua/product/popkorn-candy-pop-twix-959413\">відкрити</a>",
-    "10. Снеки Taro рибні з гострим смаком, 52г — <b>114 ₴</b> <s>169 ₴</s> · заявлено −33% · <b>реально −36%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/sneky-taro-rybni-z-gostrym-smakom-955463\">відкрити</a>",
-    "11. 🔥 Кава розчинна Jacobs Cronat Gold сублімована д/п, 300г — <b>499 ₴</b> <s>849 ₴</s> · заявлено −41% · <b>реально −43%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/kava-rozchynna-jacobs-cronat-gold-sublimovana-d-p-983778\">відкрити</a>",
-    "12. Пиво Benediktiner Weissbier світле нефільтроване з/б, 0,5л — <b>60.99 ₴</b> <s>100 ₴</s> · заявлено −39% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/pyvo-benediktiner-weissbier-svitle-nefiltrovane-z-b-921786\">відкрити</a>",
-    "13. Віскі The Pogues Streams of whiskey, 0,7л — <b>649 ₴</b> <s>1099 ₴</s> · заявлено −41%\n🔗 <a href=\"https://silpo.ua/product/viski-the-pogues-streams-of-whiskey-941521\">відкрити</a>",
-    "14. 🔥 Снек пікантний Pringles зі смаком сиру чеддер, 158г — <b>139 ₴</b> <s>224 ₴</s> · заявлено −38% · <b>реально −39%</b> · ⭐ 3.3\n🔗 <a href=\"https://silpo.ua/product/snek-pikantnyi-pringles-zi-smakom-syru-chedder-949359\">відкрити</a>",
-    "15. Горілка Staritsky &amp; Levitsky Distil №9, 1л — <b>464 ₴</b> <s>749 ₴</s> · заявлено −38% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/gorilka-staritsky-levitsky-distil-9-753716\">відкрити</a>"
+    "6. 🔥 Снек пікантний Pringles зі смаком сиру чеддер, 158г — <b>139 ₴</b> <s>224 ₴</s> · заявлено −38% · <b>реально −39%</b> · ⭐ 3.3\n🔗 <a href=\"https://silpo.ua/product/snek-pikantnyi-pringles-zi-smakom-syru-chedder-949359\">відкрити</a>",
+    "7. Горілка Staritsky &amp; Levitsky Distil №9, 1л — <b>464 ₴</b> <s>749 ₴</s> · заявлено −38% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/gorilka-staritsky-levitsky-distil-9-753716\">відкрити</a>",
+    "8. Кава мелена Jacobs Espresso Gold Kronung смажена, 200г — <b>199.9 ₴</b> <s>369 ₴</s> · 🌐 лише онлайн-замовлення заявлено −46% · <b>реально −46%</b> · ⭐ 3.6\n🔗 <a href=\"https://silpo.ua/product/kava-melena-jacobs-espresso-gold-kronung-smazhena-977653\">відкрити</a>",
+    "9. Пиво Erdinger темне, 0,5л — <b>90.99 ₴</b> <s>140 ₴</s> · заявлено −35% · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/pyvo-erdinger-temne-104553\">відкрити</a>",
+    "10. 🔥 Кава мелена Stefano Галантна шоколадна смажена, 230г — <b>199 ₴</b> <s>309 ₴</s> · заявлено −36% · <b>реально −37%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/kava-melena-stefano-galantna-shokoladna-smazhena-947057\">відкрити</a>",
+    "11. 🔥 Кава мелена Stefano Файна кремова смажена, 230г — <b>199 ₴</b> <s>309 ₴</s> · заявлено −36% · <b>реально −37%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/kava-melena-stefano-faina-kremova-smazhena-947706\">відкрити</a>",
+    "12. Пиво Lauterbacher Natur Hell світле, 0,5л — <b>99 ₴</b> <s>149 ₴</s> · заявлено −34% · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/pyvo-lauterbacher-natur-hell-svitle-972458\">відкрити</a>",
+    "13. 🔥 Чай чорний Pickwick Earl Grey з ароматом бергамота, 20*2г — <b>54.99 ₴</b> <s>87.99 ₴</s> · заявлено −38% · <b>реально −40%</b> · ⭐ 3.4\n🔗 <a href=\"https://silpo.ua/product/chai-chornyi-pickwick-earl-grey-z-aromatom-bergamota-907477\">відкрити</a>",
+    "14. 🔥 Снек пікантний Pringles зі смаком піци, 158г — <b>139 ₴</b> <s>224 ₴</s> · заявлено −38% · <b>реально −39%</b> · ⭐ 3.4\n🔗 <a href=\"https://silpo.ua/product/snek-pikantnyi-pringles-zi-smakom-pitsy-896880\">відкрити</a>",
+    "15. Вино Cavino Ionos червоне сухе, 0,75л — <b>269 ₴</b> <s>419 ₴</s> · заявлено −36%\n🔗 <a href=\"https://silpo.ua/product/vyno-cavino-ionos-chervone-sukhe-914802\">відкрити</a>"
    ]
   },
   "1": {
@@ -2020,15 +2017,15 @@
    ],
    "rows": [
     "6. 🔥 Морква «Премія»® по-корейськи, 200г — <b>29.99 ₴</b> <s>52.49 ₴</s> · заявлено −43% · <b>реально −43%</b> · ⭐ 3.2\n🔗 <a href=\"https://silpo.ua/product/morkva-premiia-po-koreisky-962377\">відкрити</a>",
-    "7. 🔥 Манго натуральне сушене, 150г — <b>79.99 ₴</b> <s>119 ₴</s> · заявлено −33% · <b>реально −38%</b> · ⭐ 3.4\n🔗 <a href=\"https://silpo.ua/product/mango-naturalne-sushene-875411\">відкрити</a>",
-    "8. 🔥 Яблуко Гала відбірне, 100г — <b>3.99 ₴</b> <s>5.49 ₴</s> · заявлено −27% · <b>реально −30%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/yabluko-gala-vidbirne-519741\">відкрити</a>",
-    "9. 🔥 Буряк «Премія»® відварений цілий, 300г — <b>29.99 ₴</b> <s>50.99 ₴</s> · заявлено −41% · <b>реально −29%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/buriak-premiia-vidvarenyi-tsilyi-994477\">відкрити</a>",
-    "10. Кеш'ю сушений, 150г — <b>129 ₴</b> <s>189 ₴</s> · заявлено −32% · <b>реально −32%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/kesh-iu-sushenyi-975471\">відкрити</a>",
-    "11. Насіння гарбуза Roni, 150г — <b>99 ₴</b> <s>144 ₴</s> · заявлено −31% · <b>реально −26%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/nasinnia-garbuza-roni-914999\">відкрити</a>",
-    "12. 🔥 Салат Зелена Країна Бебі мікс листовий, 75г — <b>49.99 ₴</b> <s>69.99 ₴</s> · заявлено −29% · <b>реально −31%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/salat-zelena-kraina-bebi-miks-lystovyi-931148\">відкрити</a>",
-    "13. 🔥 Салат Fit&amp;Easy Active, 100г — <b>42.99 ₴</b> <s>59.99 ₴</s> · заявлено −28% · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/salat-fit-easy-active-980380\">відкрити</a>",
-    "14. 🔥 Хумус Yofi! з бобових з грибами, 250г — <b>57.99 ₴</b> <s>73.49 ₴</s> · заявлено −21% · <b>реально −26%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/khumus-yofi-z-bobovykh-z-grybamy-893310\">відкрити</a>",
-    "15. 🔥 Салат Fit&amp;Easy Party, 100г — <b>42.99 ₴</b> <s>59.99 ₴</s> · заявлено −28% · <b>реально −25%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/salat-fit-easy-party-980381\">відкрити</a>"
+    "7. 🔥 Яблуко Гала відбірне, 100г — <b>3.99 ₴</b> <s>5.49 ₴</s> · заявлено −27% · <b>реально −30%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/yabluko-gala-vidbirne-519741\">відкрити</a>",
+    "8. 🔥 Буряк «Премія»® відварений цілий, 300г — <b>29.99 ₴</b> <s>50.99 ₴</s> · заявлено −41% · <b>реально −29%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/buriak-premiia-vidvarenyi-tsilyi-994477\">відкрити</a>",
+    "9. Кеш'ю сушений, 150г — <b>129 ₴</b> <s>189 ₴</s> · заявлено −32% · <b>реально −32%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/kesh-iu-sushenyi-975471\">відкрити</a>",
+    "10. Насіння гарбуза Roni, 150г — <b>99 ₴</b> <s>144 ₴</s> · заявлено −31% · <b>реально −26%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/nasinnia-garbuza-roni-914999\">відкрити</a>",
+    "11. 🔥 Салат Зелена Країна Бебі мікс листовий, 75г — <b>49.99 ₴</b> <s>69.99 ₴</s> · заявлено −29% · <b>реально −31%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/salat-zelena-kraina-bebi-miks-lystovyi-931148\">відкрити</a>",
+    "12. 🔥 Салат Fit&amp;Easy Active, 100г — <b>42.99 ₴</b> <s>59.99 ₴</s> · заявлено −28% · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/salat-fit-easy-active-980380\">відкрити</a>",
+    "13. 🔥 Салат Fit&amp;Easy Party, 100г — <b>42.99 ₴</b> <s>59.99 ₴</s> · заявлено −28% · <b>реально −25%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/salat-fit-easy-party-980381\">відкрити</a>",
+    "14. 🔥 Яблуко Чемпіон, 100г — <b>3.49 ₴</b> <s>4.49 ₴</s> · заявлено −22% · <b>реально −25%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/yabluko-chempion-152947\">відкрити</a>",
+    "15. Фісташки «Премія»® смажені солоні, 120г — <b>139.3 ₴</b> <s>199 ₴</s> · 🌐 лише онлайн-замовлення заявлено −30% · <b>реально −30%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/fistashky-premiia-smazheni-soloni-842270\">відкрити</a>"
    ]
   },
   "2": {
@@ -2058,161 +2055,161 @@
    "t": "🐟 <b>Риба</b>",
    "b": "🐟 Риба",
    "first": [
-    "1. Креветка королівська в панцирі 40/80 с/м, 100г — <b>39.9 ₴</b> <s>79.9 ₴</s> · заявлено −50% · <b>реально −53%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/krevetka-korolivska-v-pantsyri-40-80-s-m-864125\">відкрити</a>",
-    "2. 🔥 Сьомга Norven філе-шматок слабосолена, 130г — <b>199 ₴</b> <s>339 ₴</s> · заявлено −41% · <b>реально −46%</b> · ⭐ 3.7\n🔗 <a href=\"https://silpo.ua/product/somga-norven-file-shmatok-slabosolena-880480\">відкрити</a>",
-    "3. 🔥 Креветки Delfin із часником варено-морожені очищені, 150г — <b>259 ₴</b> <s>499 ₴</s> · заявлено −48% · <b>реально −48%</b> · ⭐ 3.1\n🔗 <a href=\"https://silpo.ua/product/krevetky-delfin-iz-chasnykom-vareno-morozheni-ochyshcheni-920204\">відкрити</a>",
-    "4. 🔥 Сьомга слабосолена «Премія»®, нарізка, 100г — <b>149 ₴</b> <s>259 ₴</s> · заявлено −42% · ⭐ 3.2\n🔗 <a href=\"https://silpo.ua/product/somga-slabosolena-premiia-narizka-358709\">відкрити</a>",
-    "5. 🔥 Форель слабосолена «Премія»®, нарізка, 100г — <b>149 ₴</b> <s>244 ₴</s> · заявлено −39% · ⭐ 3.2\n🔗 <a href=\"https://silpo.ua/product/forel-slabosolena-premiia-narizka-358706\">відкрити</a>"
+    "1. 🔥 Креветки Delfin із часником варено-морожені очищені, 150г — <b>259 ₴</b> <s>499 ₴</s> · заявлено −48% · <b>реально −48%</b> · ⭐ 3.1\n🔗 <a href=\"https://silpo.ua/product/krevetky-delfin-iz-chasnykom-vareno-morozheni-ochyshcheni-920204\">відкрити</a>",
+    "2. 🔥 Сьомга слабосолена «Премія»®, нарізка, 100г — <b>149 ₴</b> <s>259 ₴</s> · заявлено −42% · ⭐ 3.2\n🔗 <a href=\"https://silpo.ua/product/somga-slabosolena-premiia-narizka-358709\">відкрити</a>",
+    "3. 🔥 Форель слабосолена «Премія»®, нарізка, 100г — <b>149 ₴</b> <s>244 ₴</s> · заявлено −39% · ⭐ 3.2\n🔗 <a href=\"https://silpo.ua/product/forel-slabosolena-premiia-narizka-358706\">відкрити</a>",
+    "4. Креветки Сільпо тигрові чорні цілі в панцирі сирі глазуровані свіжоморожені 21/30, 1кг — <b>599 ₴</b> <s>999 ₴</s> · заявлено −40% · <b>реально −40%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/krevetky-silpo-tygrovi-chorni-tsili-v-pantsyri-syri-glazurovani-svizhomorozheni-21-30-1000863\">відкрити</a>",
+    "5. Сьомга Norven слабосолена філе шматок, 180г — <b>299 ₴</b> <s>429 ₴</s> · заявлено −30% · <b>реально −33%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/somga-norven-slabosolena-file-shmatok-415204\">відкрити</a>"
    ],
    "rows": [
-    "6. Креветки Сільпо тигрові чорні цілі в панцирі сирі глазуровані свіжоморожені 21/30, 1кг — <b>599 ₴</b> <s>999 ₴</s> · заявлено −40% · <b>реально −40%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/krevetky-silpo-tygrovi-chorni-tsili-v-pantsyri-syri-glazurovani-svizhomorozheni-21-30-1000863\">відкрити</a>",
-    "7. Сьомга Norven слабосолена філе шматок, 180г — <b>299 ₴</b> <s>429 ₴</s> · заявлено −30% · <b>реально −33%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/somga-norven-slabosolena-file-shmatok-415204\">відкрити</a>",
-    "8. Мідії у соусі «Чімічуррі», 100г — <b>39.9 ₴</b> <s>61.9 ₴</s> · заявлено −36% · <b>реально −40%</b> · ⭐ 3.1\n🔗 <a href=\"https://silpo.ua/product/midii-u-sousi-chimichurri-745200\">відкрити</a>",
-    "9. Ікра минтая, 100г — <b>84.9 ₴</b> <s>129.9 ₴</s> · заявлено −35%\n🔗 <a href=\"https://silpo.ua/product/ikra-myntaia-529261\">відкрити</a>",
-    "10. Креветка у соусі Тартар, 100г — <b>79.9 ₴</b> <s>119.9 ₴</s> · заявлено −33% · <b>реально −38%</b> · ⭐ 3.1\n🔗 <a href=\"https://silpo.ua/product/krevetka-u-sousi-tartar-928874\">відкрити</a>",
-    "11. 🔥 Мідії Norven в часниковому соусі, 170г — <b>69.99 ₴</b> <s>96.99 ₴</s> · заявлено −28% · <b>реально −29%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/midii-norven-v-chasnykovomu-sousi-914979\">відкрити</a>",
-    "12. 🔥 Креветки Coldwater Prawns очищені варено-морожені, 200г — <b>229 ₴</b> <s>299 ₴</s> · заявлено −23% · <b>реально −27%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/krevetky-coldwater-prawns-ochyshcheni-vareno-morozheni-976480\">відкрити</a>",
-    "13. Крабові палички «Премія»® продукт з сурімі заморожені, 500г — <b>129.35 ₴</b> <s>199 ₴</s> · 🌐 лише онлайн-замовлення заявлено −35% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/krabovi-palychky-premiia-produkt-z-surimi-zamorozheni-326001\">відкрити</a>",
-    "14. 🔥 Ікра лососева Norven Форелі зерниста з/б, 110г — <b>459 ₴</b> <s>599 ₴</s> · заявлено −23% · <b>реально −28%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/ikra-lososeva-norven-foreli-zernysta-z-b-936589\">відкрити</a>",
-    "15. Мідії гарячого копчення, 100г — <b>49.9 ₴</b> <s>68.9 ₴</s> · заявлено −28% · <b>реально −29%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/midii-gariachogo-kopchennia-751869\">відкрити</a>"
+    "6. Ікра минтая, 100г — <b>84.9 ₴</b> <s>129.9 ₴</s> · заявлено −35%\n🔗 <a href=\"https://silpo.ua/product/ikra-myntaia-529261\">відкрити</a>",
+    "7. 🔥 Мідії Norven в часниковому соусі, 170г — <b>69.99 ₴</b> <s>96.99 ₴</s> · заявлено −28% · <b>реально −29%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/midii-norven-v-chasnykovomu-sousi-914979\">відкрити</a>",
+    "8. Крабові палички «Премія»® продукт з сурімі заморожені, 500г — <b>129.35 ₴</b> <s>199 ₴</s> · 🌐 лише онлайн-замовлення заявлено −35% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/krabovi-palychky-premiia-produkt-z-surimi-zamorozheni-326001\">відкрити</a>",
+    "9. Мідії гарячого копчення, 100г — <b>49.9 ₴</b> <s>68.9 ₴</s> · заявлено −28% · <b>реально −29%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/midii-gariachogo-kopchennia-751869\">відкрити</a>",
+    "10. 🔥 Креветки «Премія»® очищені варено-морожені, 250г — <b>339 ₴</b> <s>449 ₴</s> · заявлено −24% · <b>реально −27%</b> · ⭐ 3.4\n🔗 <a href=\"https://silpo.ua/product/krevetky-premiia-ochyshcheni-vareno-morozheni-346948\">відкрити</a>",
+    "11. 🔥 Водорості морські Грінвіль Чука мариновані, 200г — <b>94.99 ₴</b> <s>139 ₴</s> · заявлено −32% · ⭐ 2.7\n🔗 <a href=\"https://silpo.ua/product/vodorosti-morski-grinvil-chuka-marynovani-995909\">відкрити</a>",
+    "12. Окунь без голови свіжоморожений, 100г — <b>27.93 ₴</b> <s>39.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −30% · <b>реально −30%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/okun-bez-golovy-svizhomorozhenyi-34483\">відкрити</a>",
+    "13. Креветки варено-морожені без глазурі, 100г — <b>39.9 ₴</b> <s>53.9 ₴</s> · заявлено −26% · ⭐ 3.7\n🔗 <a href=\"https://silpo.ua/product/krevetky-vareno-morozheni-bez-glazuri-402730\">відкрити</a>",
+    "14. 🔥 Ікра форелі Disas холодного копчення, 100г — <b>499 ₴</b> <s>629 ₴</s> · заявлено −21% · <b>реально −21%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/ikra-foreli-disas-kholodnogo-kopchennia-1009983\">відкрити</a>",
+    "15. 🔥 Кальмар Norven смужки варені з кунжутом в соусі Унагі, 100г — <b>89.99 ₴</b> <s>120 ₴</s> · заявлено −25% · ⭐ 3.3\n🔗 <a href=\"https://silpo.ua/product/kalmar-norven-smuzhky-vareni-z-kunzhutom-v-sousi-unagi-1000068\">відкрити</a>"
    ]
   },
   "4": {
    "t": "🥩 <b>Ковбаси і м'ясні делікатеси</b>",
    "b": "🥩 Ковбаси і м'ясні д",
    "first": [
-    "1. 🔥 Сардельки «Ятрань» «Домашні» н/о 1 ґ, 100г — <b>9.9 ₴</b> <s>19.9 ₴</s> · заявлено −50% · <b>реально −55%</b> · ⭐ 3.4\n🔗 <a href=\"https://silpo.ua/product/sardelky-yatran-domashni-n-o-1-g-794129\">відкрити</a>",
-    "2. 🔥 Ковбаса Salsus Вісбаден к/з в/ґ, 300г — <b>139 ₴</b> <s>299 ₴</s> · заявлено −54% · <b>реально −42%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/kovbasa-salsus-visbaden-k-z-v-g-924217\">відкрити</a>",
-    "3. 🔥 Ковбаса «Премія»® Салямі Золотиста с/к в/ґ, нарізка, 80г — <b>54.99 ₴</b> <s>81.99 ₴</s> · заявлено −33% · <b>реально −42%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/kovbasa-premiia-saliami-zolotysta-s-k-v-g-narizka-830896\">відкрити</a>",
-    "4. Сосиски Mr.Grill «Прем'єра» в/ґ в/у, 330г — <b>109 ₴</b> <s>174 ₴</s> · 🌐 лише онлайн-замовлення заявлено −37% · <b>реально −37%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/sosysky-mr-grill-prem-iera-v-g-v-u-834787\">відкрити</a>",
-    "5. 🔥 Ковбаса «Алан» «Сервелат» с/к в/ґ, 80г — <b>69.99 ₴</b> <s>99 ₴</s> · заявлено −29% · <b>реально −36%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/kovbasa-alan-servelat-s-k-v-g-758169\">відкрити</a>"
+    "1. Сосиски Mr.Grill «Прем'єра» в/ґ в/у, 330г — <b>109 ₴</b> <s>174 ₴</s> · 🌐 лише онлайн-замовлення заявлено −37% · <b>реально −37%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/sosysky-mr-grill-prem-iera-v-g-v-u-834787\">відкрити</a>",
+    "2. 🔥 Кабаноси Дмитрук Delicate курячі в/к, 80г — <b>64.99 ₴</b> <s>91.49 ₴</s> · заявлено −29% · <b>реально −32%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/kabanosy-dmytruk-delicate-kuriachi-v-k-920222\">відкрити</a>",
+    "3. Мус Pate Grand-Mere De Volaille Exclusive журавлина, 100г — <b>89.9 ₴</b> <s>139.9 ₴</s> · заявлено −36% · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/mus-pate-grand-mere-de-volaille-exclusive-zhuravlyna-774348\">відкрити</a>",
+    "4. 🔥 Кабаноси Дмитрук Original зі свинини в/к, 80г — <b>64.99 ₴</b> <s>91.49 ₴</s> · заявлено −29% · <b>реально −32%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/kabanosy-dmytruk-original-zi-svynyny-v-k-920221\">відкрити</a>",
+    "5. Балик Ситий двір Марочний к/в в/ґ м/в, 100г — <b>36.9 ₴</b> <s>57.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −36% · <b>реально −36%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/balyk-sytyi-dvir-marochnyi-k-v-v-g-m-v-979715\">відкрити</a>"
    ],
    "rows": [
-    "6. 🔥 Кабаноси Дмитрук Delicate курячі в/к, 80г — <b>64.99 ₴</b> <s>91.49 ₴</s> · заявлено −29% · <b>реально −32%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/kabanosy-dmytruk-delicate-kuriachi-v-k-920222\">відкрити</a>",
-    "7. 🔥 Ковбаса «Ювілейний» «Дрогобицька» н/к в/ґ, 100г — <b>59.9 ₴</b> <s>89.9 ₴</s> · заявлено −33% · <b>реально −37%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/kovbasa-yuvileinyi-drogobytska-n-k-v-g-35081\">відкрити</a>",
-    "8. Мус Pate Grand-Mere De Volaille Exclusive журавлина, 100г — <b>89.9 ₴</b> <s>139.9 ₴</s> · заявлено −36% · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/mus-pate-grand-mere-de-volaille-exclusive-zhuravlyna-774348\">відкрити</a>",
-    "9. 🔥 Сардельки Глобино Мортадельки в/ґ н/о, 100г — <b>28.9 ₴</b> <s>39.9 ₴</s> · заявлено −28% · <b>реально −32%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/sardelky-globyno-mortadelky-v-g-n-o-709973\">відкрити</a>",
-    "10. 🔥 Кабаноси Дмитрук Original зі свинини в/к, 80г — <b>64.99 ₴</b> <s>91.49 ₴</s> · заявлено −29% · <b>реально −32%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/kabanosy-dmytruk-original-zi-svynyny-v-k-920221\">відкрити</a>",
-    "11. Балик Ситий двір Марочний к/в в/ґ м/в, 100г — <b>36.9 ₴</b> <s>57.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −36% · <b>реально −36%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/balyk-sytyi-dvir-marochnyi-k-v-v-g-m-v-979715\">відкрити</a>",
-    "12. Ковбаски Алан Баварські с/к в/ґ, 120г — <b>88.99 ₴</b> <s>144 ₴</s> · 🌐 лише онлайн-замовлення заявлено −38% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/kovbasky-alan-bavarski-s-k-v-g-703251\">відкрити</a>",
-    "13. 🔥 Сосиски «Алан» «Віденські», 100г — <b>39.9 ₴</b> <s>56.9 ₴</s> · заявлено −30% · <b>реально −32%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/sosysky-alan-videnski-26886\">відкрити</a>",
-    "14. Сосиски М'ясна Гільдія Міні з курячим філе в/ґ, 0,3кг — <b>99 ₴</b> <s>159 ₴</s> · заявлено −38% · ⭐ 3.1\n🔗 <a href=\"https://silpo.ua/product/sosysky-m-iasna-gildiia-mini-z-kuriachym-file-v-g-994317\">відкрити</a>",
-    "15. 🔥 Джерки PREMIA Теріякі курячі, 70г — <b>99 ₴</b> <s>159 ₴</s> · заявлено −38% · <b>реально −41%</b> · ⭐ 2.2\n🔗 <a href=\"https://silpo.ua/product/dzherky-premia-teriiaki-kuriachi-994076\">відкрити</a>"
+    "6. Ковбаски Алан Баварські с/к в/ґ, 120г — <b>88.99 ₴</b> <s>144 ₴</s> · 🌐 лише онлайн-замовлення заявлено −38% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/kovbasky-alan-bavarski-s-k-v-g-703251\">відкрити</a>",
+    "7. 🔥 Сосиски «Алан» «Віденські», 100г — <b>39.9 ₴</b> <s>56.9 ₴</s> · заявлено −30% · <b>реально −32%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/sosysky-alan-videnski-26886\">відкрити</a>",
+    "8. Сосиски М'ясна Гільдія Міні з курячим філе в/ґ, 0,3кг — <b>99 ₴</b> <s>159 ₴</s> · заявлено −38% · ⭐ 3.1\n🔗 <a href=\"https://silpo.ua/product/sosysky-m-iasna-gildiia-mini-z-kuriachym-file-v-g-994317\">відкрити</a>",
+    "9. Ковбаса Алан Спец-цех Державна Елітна в/к в/ґ, 100г — <b>99.9 ₴</b> <s>139.9 ₴</s> · заявлено −29% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/kovbasa-alan-spets-tsekh-derzhavna-elitna-v-k-v-g-456091\">відкрити</a>",
+    "10. Сосиски «Алан» «Фітнес» варені в/ґ в/у, 225г — <b>114 ₴</b> <s>164 ₴</s> · заявлено −30% · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/sosysky-alan-fitnes-vareni-v-g-v-u-559727\">відкрити</a>",
+    "11. Ковбаса «Алан» «Краківська» н/к в/ґ, 100г — <b>64.9 ₴</b> <s>93.9 ₴</s> · заявлено −31% · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/kovbasa-alan-krakivska-n-k-v-g-819371\">відкрити</a>",
+    "12. Ковбаса Алан Салямі в чорному перці с/в в/ґ, нарізка, 80г — <b>99 ₴</b> <s>144 ₴</s> · заявлено −31%\n🔗 <a href=\"https://silpo.ua/product/kovbasa-alan-saliami-v-chornomu-pertsi-s-v-v-g-narizka-959331\">відкрити</a>",
+    "13. Сосиски Ювілейний Малятко варені н/о в/ґ, 275г — <b>129 ₴</b> <s>189 ₴</s> · заявлено −32% · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/sosysky-yuvileinyi-maliatko-vareni-n-o-v-g-440960\">відкрити</a>",
+    "14. Ковбаса «Премія»® Українська с/к в/ґ в/у м/б ДСТУ, 100г — <b>99.9 ₴</b> <s>139.9 ₴</s> · заявлено −29% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/kovbasa-premiia-ukrainska-s-k-v-g-v-u-m-b-dstu-547038\">відкрити</a>",
+    "15. Ковбаса «Премія»® Брауншвейгська с/к в/ґ, нарізка, 80г — <b>79.99 ₴</b> <s>109 ₴</s> · заявлено −27% · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/kovbasa-premiia-braunshveigska-s-k-v-g-narizka-745901\">відкрити</a>"
    ]
   },
   "5": {
    "t": "🧀 <b>Сири</b>",
    "b": "🧀 Сири",
    "first": [
-    "1. 🔥 Сир Bonfetto Сулугуні 45%, 180г — <b>54.99 ₴</b> <s>86.99 ₴</s> · заявлено −37% · <b>реально −44%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/syr-bonfetto-suluguni-45-941429\">відкрити</a>",
-    "2. 🔥 Крем-сир Біло Original 55%, 160г — <b>49.99 ₴</b> <s>81.99 ₴</s> · заявлено −39% · <b>реально −42%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/krem-syr-bilo-original-55-1002027\">відкрити</a>",
-    "3. 🔥 Сир Bonfetto Моцарела 45%, 180г — <b>54.99 ₴</b> <s>86.99 ₴</s> · заявлено −37% · <b>реально −44%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/syr-bonfetto-motsarela-45-941428\">відкрити</a>",
-    "4. Сир Deli Q Daily Маасдам 45% з коров’ячого молока нарізка, 150г — <b>99.9 ₴</b> <s>189 ₴</s> · 🌐 лише онлайн-замовлення заявлено −47% · <b>реально −47%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/syr-deli-q-daily-maasdam-45-z-korov-iachogo-moloka-narizka-999589\">відкрити</a>",
-    "5. 🔥 Сир Galbani Mascarpone 80%, 250г — <b>129 ₴</b> <s>199 ₴</s> · заявлено −35% · <b>реально −40%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/syr-galbani-mascarpone-80-960570\">відкрити</a>"
+    "1. 🔥 Крем-сир Біло Original 55%, 160г — <b>49.99 ₴</b> <s>81.99 ₴</s> · заявлено −39% · <b>реально −42%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/krem-syr-bilo-original-55-1002027\">відкрити</a>",
+    "2. Сир Deli Q Daily Маасдам 45% з коров’ячого молока нарізка, 150г — <b>99.9 ₴</b> <s>189 ₴</s> · 🌐 лише онлайн-замовлення заявлено −47% · <b>реально −47%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/syr-deli-q-daily-maasdam-45-z-korov-iachogo-moloka-narizka-999589\">відкрити</a>",
+    "3. 🔥 Сир Kaserei «Дор Блю Лайб» 55%, 100г — <b>79.9 ₴</b> <s>119.9 ₴</s> · заявлено −33% · <b>реально −33%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/syr-kaserei-dor-bliu-laib-55-500804\">відкрити</a>",
+    "4. Крем-сир Good milk 20%, 150г — <b>54.9 ₴</b> <s>89.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −39% · <b>реально −39%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/krem-syr-good-milk-20-968146\">відкрити</a>",
+    "5. Сир «Брі Діжон» 60% з коров'ячого молока, 100г — <b>54.9 ₴</b> <s>99.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −45% · <b>реально −39%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/syr-bri-dizhon-60-z-korov-iachogo-moloka-543663\">відкрити</a>"
    ],
    "rows": [
-    "6. 🔥 Сир Jager «Моцарела» 45% з коров'ячого молока, 125г — <b>54.99 ₴</b> <s>74.49 ₴</s> · заявлено −26% · <b>реально −31%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/syr-jager-motsarela-45-z-korov-iachogo-moloka-486793\">відкрити</a>",
-    "7. 🔥 Сир Kaserei «Дор Блю Лайб» 55%, 100г — <b>79.9 ₴</b> <s>119.9 ₴</s> · заявлено −33% · <b>реально −33%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/syr-kaserei-dor-bliu-laib-55-500804\">відкрити</a>",
-    "8. Крем-сир Good milk 20%, 150г — <b>54.9 ₴</b> <s>89.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −39% · <b>реально −39%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/krem-syr-good-milk-20-968146\">відкрити</a>",
-    "9. Сир «Брі Діжон» 60% з коров'ячого молока, 100г — <b>54.9 ₴</b> <s>99.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −45% · <b>реально −39%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/syr-bri-dizhon-60-z-korov-iachogo-moloka-543663\">відкрити</a>",
-    "10. 🔥 Сир Deli Q Daily Маасдам 45% з коров’ячого молока слайси, 300г — <b>169 ₴</b> <s>299 ₴</s> · заявлено −43% · <b>реально −32%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/syr-deli-q-daily-maasdam-45-z-korov-iachogo-moloka-slaisy-999588\">відкрити</a>",
-    "11. Сир Комо InSalata 50%, 200г — <b>59.9 ₴</b> <s>92.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −35% · <b>реально −35%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/syr-komo-insalata-50-920343\">відкрити</a>",
-    "12. 🔥 Сир «Премія»® Українські традиції 50%, 100г — <b>39.9 ₴</b> <s>56.9 ₴</s> · заявлено −30% · <b>реально −37%</b> · ⭐ 3.4\n🔗 <a href=\"https://silpo.ua/product/syr-premiia-ukrainski-tradytsii-50-404600\">відкрити</a>",
-    "13. 🔥 Сир Moulin du Boulay Брі 60%, 180г — <b>129 ₴</b> <s>219 ₴</s> · заявлено −41% · <b>реально −28%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/syr-moulin-du-boulay-bri-60-1007861\">відкрити</a>",
-    "14. Сир плавлений Ферма із зеленню 35%, брикет, 70г — <b>24.99 ₴</b> <s>33.99 ₴</s> · заявлено −26% · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/syr-plavlenyi-ferma-iz-zelenniu-35-bryket-999933\">відкрити</a>",
-    "15. Сир Veldhuyzen Kaas Basiron Халапеньо 50% порційний, 100г — <b>109.9 ₴</b> <s>149.9 ₴</s> · заявлено −27% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/syr-veldhuyzen-kaas-basiron-khalapeno-50-portsiinyi-991746\">відкрити</a>"
+    "6. 🔥 Сир Deli Q Daily Маасдам 45% з коров’ячого молока слайси, 300г — <b>169 ₴</b> <s>299 ₴</s> · заявлено −43% · <b>реально −32%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/syr-deli-q-daily-maasdam-45-z-korov-iachogo-moloka-slaisy-999588\">відкрити</a>",
+    "7. Сир Комо InSalata 50%, 200г — <b>59.9 ₴</b> <s>92.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −35% · <b>реально −35%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/syr-komo-insalata-50-920343\">відкрити</a>",
+    "8. 🔥 Сир Moulin du Boulay Брі 60%, 180г — <b>129 ₴</b> <s>219 ₴</s> · заявлено −41% · <b>реально −28%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/syr-moulin-du-boulay-bri-60-1007861\">відкрити</a>",
+    "9. Сир плавлений Ферма із зеленню 35%, брикет, 70г — <b>24.99 ₴</b> <s>33.99 ₴</s> · заявлено −26% · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/syr-plavlenyi-ferma-iz-zelenniu-35-bryket-999933\">відкрити</a>",
+    "10. Сир Veldhuyzen Kaas Basiron Халапеньо 50% порційний, 100г — <b>109.9 ₴</b> <s>149.9 ₴</s> · заявлено −27% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/syr-veldhuyzen-kaas-basiron-khalapeno-50-portsiinyi-991746\">відкрити</a>",
+    "11. Сир Ферма Моцарелла чеддеризований 45%, 180г — <b>76.9 ₴</b> <s>111 ₴</s> · 🌐 лише онлайн-замовлення заявлено −31% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/syr-ferma-motsarella-chedderyzovanyi-45-923529\">відкрити</a>",
+    "12. 🔥 Сир Premialle Бринза 35%, 180г — <b>49.99 ₴</b> <s>92.99 ₴</s> · заявлено −46% · <b>реально −28%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/syr-premialle-brynza-35-964003\">відкрити</a>",
+    "13. Сир Новгород-Сіверський Монастирський 50% порційний, 100г — <b>44.9 ₴</b> <s>61.9 ₴</s> · заявлено −27%\n🔗 <a href=\"https://silpo.ua/product/syr-novgorod-siverskyi-monastyrskyi-50-portsiinyi-1004474\">відкрити</a>",
+    "14. Сир Ghidetti «Грана Падано» тертий 42% з коров'ячого молока 10 місяців, 90г — <b>129 ₴</b> <s>169 ₴</s> · заявлено −24% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/syr-ghidetti-grana-padano-tertyi-42-z-korov-iachogo-moloka-10-misiatsiv-809305\">відкрити</a>",
+    "15. Сир Ферма Моцарела чеддеризований 45%, 300г — <b>129 ₴</b> <s>179 ₴</s> · 🌐 лише онлайн-замовлення заявлено −28% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/syr-ferma-motsarela-chedderyzovanyi-45-1023469\">відкрити</a>"
    ]
   },
   "6": {
    "t": "🍞 <b>Хліб та випічка</b>",
    "b": "🍞 Хліб та випічка",
    "first": [
-    "1. 🔥 Хлібці Leksands цільнозернові житні, 200г — <b>59.99 ₴</b> <s>123 ₴</s> · заявлено −51% · <b>реально −55%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/khlibtsi-leksands-tsilnozernovi-zhytni-993978\">відкрити</a>",
-    "2. 🔥 Хлібці Leksands Brownb цільнозернові житні, 200г — <b>59.99 ₴</b> <s>123 ₴</s> · заявлено −51% · <b>реально −55%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/khlibtsi-leksands-brownb-tsilnozernovi-zhytni-1004095\">відкрити</a>",
-    "3. 🔥 Пряники Delicia Ворзельські заварні з декором, 0,4кг — <b>69.99 ₴</b> <s>139 ₴</s> · заявлено −50% · <b>реально −53%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/prianyky-delicia-vorzelski-zavarni-z-dekorom-938160\">відкрити</a>",
-    "4. 🔥 Пряники Delicia Ведмедики заварні, 0,3кг — <b>49.99 ₴</b> <s>91.99 ₴</s> · заявлено −46% · <b>реально −50%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/prianyky-delicia-vedmedyky-zavarni-953273\">відкрити</a>",
-    "5. Пряники «Премія»® у молочному шоколаді, 400г — <b>169 ₴</b> <s>239 ₴</s> · заявлено −29% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/prianyky-premiia-u-molochnomu-shokoladi-884967\">відкрити</a>"
+    "1. Пряники «Премія»® у молочному шоколаді, 400г — <b>169 ₴</b> <s>239 ₴</s> · заявлено −29% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/prianyky-premiia-u-molochnomu-shokoladi-884967\">відкрити</a>",
+    "2. Круасан з абрикосовою начинкою, 75г — <b>36.99 ₴</b> <s>52.99 ₴</s> · заявлено −30% · <b>реально −33%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/kruasan-z-abrykosovoiu-nachynkoiu-976806\">відкрити</a>",
+    "3. 🔥 Пиріжок з яблуками, 100г — <b>21.99 ₴</b> <s>31.49 ₴</s> · заявлено −30% · <b>реально −26%</b> · ⭐ 3.6\n🔗 <a href=\"https://silpo.ua/product/pyrizhok-z-iablukamy-231494\">відкрити</a>",
+    "4. Круасан з начинкою солона карамель, 75г — <b>41.99 ₴</b> <s>52.99 ₴</s> · заявлено −21% · <b>реально −24%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/kruasan-z-nachynkoiu-solona-karamel-976971\">відкрити</a>",
+    "5. Хліб Київхліб Королівський злаковий нарізаний, 350г — <b>42.99 ₴</b> <s>54.49 ₴</s> · заявлено −21% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/khlib-kyivkhlib-korolivskyi-zlakovyi-narizanyi-977673\">відкрити</a>"
    ],
    "rows": [
-    "6. 🔥 Сирна паличка, 70г — <b>15.99 ₴</b> <s>20.99 ₴</s> · заявлено −24% · <b>реально −29%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/syrna-palychka-221793\">відкрити</a>",
-    "7. Хлібці Leksands цільнозернові житні з насінням та морською сіллю, 200г — <b>99 ₴</b> <s>129 ₴</s> · заявлено −23% · <b>реально −29%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/khlibtsi-leksands-tsilnozernovi-zhytni-z-nasinniam-ta-morskoiu-silliu-993979\">відкрити</a>",
-    "8. Круасан з абрикосовою начинкою, 75г — <b>36.99 ₴</b> <s>52.99 ₴</s> · заявлено −30% · <b>реально −33%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/kruasan-z-abrykosovoiu-nachynkoiu-976806\">відкрити</a>",
-    "9. Круасан Panavi, 50г — <b>26.99 ₴</b> <s>34.99 ₴</s> · заявлено −23% · <b>реально −26%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/kruasan-panavi-437495\">відкрити</a>",
-    "10. 🔥 Тортилья «Премія»® пшенична, 240г — <b>54.99 ₴</b> <s>71.99 ₴</s> · заявлено −24% · <b>реально −27%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/tortylia-premiia-pshenychna-1001013\">відкрити</a>",
-    "11. 🔥 Пиріжок з яблуками, 100г — <b>21.99 ₴</b> <s>31.49 ₴</s> · заявлено −30% · <b>реально −26%</b> · ⭐ 3.6\n🔗 <a href=\"https://silpo.ua/product/pyrizhok-z-iablukamy-231494\">відкрити</a>",
-    "12. Круасан з начинкою солона карамель, 75г — <b>41.99 ₴</b> <s>52.99 ₴</s> · заявлено −21% · <b>реально −24%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/kruasan-z-nachynkoiu-solona-karamel-976971\">відкрити</a>",
-    "13. Хліб «Рум'янець» цільнозерновий пшеничний, 400г — <b>47.99 ₴</b> <s>56.49 ₴</s> · заявлено −15% · <b>реально −23%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/khlib-rum-ianets-tsilnozernovyi-pshenychnyi-813640\">відкрити</a>",
-    "14. Пряники Кулиничі Вишенька, 300г — <b>49.99 ₴</b> <s>61.49 ₴</s> · заявлено −19% · <b>реально −27%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/prianyky-kulynychi-vyshenka-922745\">відкрити</a>",
-    "15. 🔥 Рулетик «Рум'янець» з повидлом та ароматом абрикоса, 100г — <b>14.99 ₴</b> <s>19.49 ₴</s> · заявлено −23% · <b>реально −27%</b>\n🔗 <a href=\"https://silpo.ua/product/ruletyk-rum-ianets-z-povydlom-ta-aromatom-abrykosa-871566\">відкрити</a>"
+    "6. Круасан з вишневою начинкою, 75г — <b>44.99 ₴</b> <s>57.99 ₴</s> · заявлено −22% · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/kruasan-z-vyshnevoiu-nachynkoiu-976807\">відкрити</a>",
+    "7. Хліб «Крафтяр» «Скандинавський», 100г — <b>10.58 ₴</b> <s>12.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −18% · <b>реально −18%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/khlib-kraftiar-skandynavskyi-758013\">відкрити</a>",
+    "8. 🔥 Хліб «Київхліб» тостовий світлий нарізаний, 350г — <b>28.99 ₴</b> <s>33.49 ₴</s> · заявлено −13% · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/khlib-kyivkhlib-tostovyi-svitlyi-narizanyi-764208\">відкрити</a>",
+    "9. Хліб Київхліб Рустикальний цільнозерновий нарізаний в упаковці, 350г — <b>42.99 ₴</b> <s>50.99 ₴</s> · заявлено −16% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/khlib-kyivkhlib-rustykalnyi-tsilnozernovyi-narizanyi-v-upakovtsi-976758\">відкрити</a>",
+    "10. 🔥 Хліб Київхліб Бородинський заварний половинка нарізаний, 400г — <b>37.99 ₴</b> <s>43.99 ₴</s> · заявлено −14% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/khlib-kyivkhlib-borodynskyi-zavarnyi-polovynka-narizanyi-962295\">відкрити</a>",
+    "11. Набір мініпончиків «Пінкі Шоко» «Паті», 3*22г/уп — <b>55.07 ₴</b> <s>67.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −19% · <b>реально −19%</b> · ⭐ 3.7\n🔗 <a href=\"https://silpo.ua/product/nabir-miniponchykiv-pinki-shoko-pati-879221\">відкрити</a>",
+    "12. Кекс з сиром, 100г — <b>41.92 ₴</b> <s>49.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −16% · <b>реально −16%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/keks-z-syrom-906138\">відкрити</a>",
+    "13. Сухарики Finn Crisp Житні Original Taste, 200г — <b>88.99 ₴</b> <s>99 ₴</s> · заявлено −10% · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/sukharyky-finn-crisp-zhytni-original-taste-28295\">відкрити</a>",
+    "14. Круасан Рум'янець з наповнювачем солона карамель, 65г — <b>21.99 ₴</b> <s>27.49 ₴</s> · заявлено −20% · ⭐ 3.3\n🔗 <a href=\"https://silpo.ua/product/kruasan-rum-ianets-z-napovniuvachem-solona-karamel-941534\">відкрити</a>",
+    "15. Круасан Рум'янець з наповнювачем полуниця, 65г — <b>21.99 ₴</b> <s>25.99 ₴</s> · заявлено −15% · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/kruasan-rum-ianets-z-napovniuvachem-polunytsia-941533\">відкрити</a>"
    ]
   },
   "7": {
    "t": "🍱 <b>Готові страви і кулінарія</b>",
    "b": "🍱 Готові страви і ку",
    "first": [
-    "1. Мідії у соусі «Чімічуррі», 100г — <b>39.9 ₴</b> <s>61.9 ₴</s> · заявлено −36% · <b>реально −40%</b> · ⭐ 3.1\n🔗 <a href=\"https://silpo.ua/product/midii-u-sousi-chimichurri-745200\">відкрити</a>",
-    "2. Креветка у соусі Тартар, 100г — <b>79.9 ₴</b> <s>119.9 ₴</s> · заявлено −33% · <b>реально −38%</b> · ⭐ 3.1\n🔗 <a href=\"https://silpo.ua/product/krevetka-u-sousi-tartar-928874\">відкрити</a>",
-    "3. Мідії гарячого копчення, 100г — <b>49.9 ₴</b> <s>68.9 ₴</s> · заявлено −28% · <b>реально −29%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/midii-gariachogo-kopchennia-751869\">відкрити</a>",
-    "4. 🔥 Пиріжок з яблуками, 100г — <b>21.99 ₴</b> <s>31.49 ₴</s> · заявлено −30% · <b>реально −26%</b> · ⭐ 3.6\n🔗 <a href=\"https://silpo.ua/product/pyrizhok-z-iablukamy-231494\">відкрити</a>",
-    "5. Коктейль морський гриль, 100г — <b>69.9 ₴</b> <s>87.9 ₴</s> · заявлено −20% · <b>реально −20%</b> · ⭐ 3.3\n🔗 <a href=\"https://silpo.ua/product/kokteil-morskyi-gryl-928312\">відкрити</a>"
+    "1. Мідії гарячого копчення, 100г — <b>49.9 ₴</b> <s>68.9 ₴</s> · заявлено −28% · <b>реально −29%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/midii-gariachogo-kopchennia-751869\">відкрити</a>",
+    "2. 🔥 Пиріжок з яблуками, 100г — <b>21.99 ₴</b> <s>31.49 ₴</s> · заявлено −30% · <b>реально −26%</b> · ⭐ 3.6\n🔗 <a href=\"https://silpo.ua/product/pyrizhok-z-iablukamy-231494\">відкрити</a>",
+    "3. Коктейль морський гриль, 100г — <b>69.9 ₴</b> <s>87.9 ₴</s> · заявлено −20% · <b>реально −20%</b> · ⭐ 3.3\n🔗 <a href=\"https://silpo.ua/product/kokteil-morskyi-gryl-928312\">відкрити</a>",
+    "4. Коктейль морський в олії, 100г — <b>69.68 ₴</b> <s>92.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −25% · <b>реально −25%</b> · ⭐ 3.1\n🔗 <a href=\"https://silpo.ua/product/kokteil-morskyi-v-olii-882100\">відкрити</a>",
+    "5. Курка теріякі з овочами, 100г — <b>41.08 ₴</b> <s>48.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −16% · <b>реально −16%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/kurka-teriiaki-z-ovochamy-600395\">відкрити</a>"
    ],
    "rows": [
-    "6. Коктейль морський в олії, 100г — <b>69.68 ₴</b> <s>92.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −25% · <b>реально −25%</b> · ⭐ 3.1\n🔗 <a href=\"https://silpo.ua/product/kokteil-morskyi-v-olii-882100\">відкрити</a>",
-    "7. Курка теріякі з овочами, 100г — <b>41.08 ₴</b> <s>48.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −16% · <b>реально −16%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/kurka-teriiaki-z-ovochamy-600395\">відкрити</a>",
-    "8. Морква по-корейськи, 100г — <b>18.4 ₴</b> <s>21.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −16% · <b>реально −16%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/morkva-po-koreisky-412293\">відкрити</a>",
-    "9. Пиріжок з сиром, 100г — <b>19.99 ₴</b> <s>29.49 ₴</s> · заявлено −32% · <b>реально −17%</b> · ⭐ 3.5\n🔗 <a href=\"https://silpo.ua/product/pyrizhok-z-syrom-360143\">відкрити</a>",
-    "10. Млинці з вишнею, 300г — <b>141.96 ₴</b> <s>169 ₴</s> · 🌐 лише онлайн-замовлення заявлено −16% · <b>реально −16%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/mlyntsi-z-vyshneiu-995464\">відкрити</a>",
-    "11. Салат Бурячок, 100г — <b>22.02 ₴</b> <s>25.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −15% · <b>реально −15%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/salat-buriachok-905058\">відкрити</a>",
-    "12. Салат з курячим філе та шампіньйонами, 100г — <b>39.86 ₴</b> <s>46.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −15% · <b>реально −15%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/salat-z-kuriachym-file-ta-shampinionamy-96385\">відкрити</a>",
-    "13. Млинці з курячим філе і печерицями та вершками, 100г — <b>50.92 ₴</b> <s>59.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −15% · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/mlyntsi-z-kuriachym-file-i-pecherytsiamy-ta-vershkamy-918850\">відкрити</a>",
-    "14. Олів'є, 100г — <b>26.26 ₴</b> <s>30.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −15% · <b>реально −15%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/oliv-ie-18157\">відкрити</a>",
-    "15. Салат з копченим курячим філе та ананасом, 100г — <b>40.24 ₴</b> <s>47.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −16% · <b>реально −16%</b> · ⭐ 3.2\n🔗 <a href=\"https://silpo.ua/product/salat-z-kopchenym-kuriachym-file-ta-ananasom-817294\">відкрити</a>"
+    "6. Морква по-корейськи, 100г — <b>18.4 ₴</b> <s>21.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −16% · <b>реально −16%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/morkva-po-koreisky-412293\">відкрити</a>",
+    "7. Пиріжок з сиром, 100г — <b>19.99 ₴</b> <s>29.49 ₴</s> · заявлено −32% · <b>реально −17%</b> · ⭐ 3.5\n🔗 <a href=\"https://silpo.ua/product/pyrizhok-z-syrom-360143\">відкрити</a>",
+    "8. Млинці з вишнею, 300г — <b>141.96 ₴</b> <s>169 ₴</s> · 🌐 лише онлайн-замовлення заявлено −16% · <b>реально −16%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/mlyntsi-z-vyshneiu-995464\">відкрити</a>",
+    "9. Салат Бурячок, 100г — <b>22.02 ₴</b> <s>25.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −15% · <b>реально −15%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/salat-buriachok-905058\">відкрити</a>",
+    "10. Салат з курячим філе та шампіньйонами, 100г — <b>39.86 ₴</b> <s>46.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −15% · <b>реально −15%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/salat-z-kuriachym-file-ta-shampinionamy-96385\">відкрити</a>",
+    "11. Млинці з курячим філе і печерицями та вершками, 100г — <b>50.92 ₴</b> <s>59.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −15% · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/mlyntsi-z-kuriachym-file-i-pecherytsiamy-ta-vershkamy-918850\">відкрити</a>",
+    "12. Олів'є, 100г — <b>26.26 ₴</b> <s>30.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −15% · <b>реально −15%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/oliv-ie-18157\">відкрити</a>",
+    "13. Салат з копченим курячим філе та ананасом, 100г — <b>40.24 ₴</b> <s>47.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −16% · <b>реально −16%</b> · ⭐ 3.2\n🔗 <a href=\"https://silpo.ua/product/salat-z-kopchenym-kuriachym-file-ta-ananasom-817294\">відкрити</a>",
+    "14. Курячий шашлик з ананасом, 100г — <b>53.46 ₴</b> <s>62.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −15% · <b>реально −15%</b> · ⭐ 3.4\n🔗 <a href=\"https://silpo.ua/product/kuriachyi-shashlyk-z-ananasom-90749\">відкрити</a>",
+    "15. Салат Віні-Грет Пух-Тухмберг, 100г — <b>22.02 ₴</b> <s>25.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −15% · <b>реально −15%</b> · ⭐ 3.7\n🔗 <a href=\"https://silpo.ua/product/salat-vini-gret-pukh-tukhmberg-905059\">відкрити</a>"
    ]
   },
   "8": {
    "t": "🥛 <b>Молочні продукти та яйця</b>",
    "b": "🥛 Молочні продукти т",
    "first": [
-    "1. 🔥 Напій Anhhong Nata De Coco кокос та персик, 90г — <b>19.99 ₴</b> <s>41.99 ₴</s> · заявлено −52% · <b>реально −56%</b> · ⭐ 3.5\n🔗 <a href=\"https://silpo.ua/product/napii-anhhong-nata-de-coco-kokos-ta-persyk-978674\">відкрити</a>",
-    "2. 🔥 Сирок Волошкове поле Лісова ягода в кольоровій глазурі з лаймом 26%, 36г — <b>12.49 ₴</b> <s>20.99 ₴</s> · заявлено −40% · <b>реально −46%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/syrok-voloshkove-pole-lisova-iagoda-v-kolorovii-glazuri-z-laimom-26-951591\">відкрити</a>",
-    "3. 🔥 Напій Anhhong Nata De Coco кокос та диня, 90г — <b>19.99 ₴</b> <s>36.49 ₴</s> · заявлено −45% · <b>реально −48%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/napii-anhhong-nata-de-coco-kokos-ta-dynia-978675\">відкрити</a>",
-    "4. 🔥 Вершки ПростоНаше 15% т/б, 200г — <b>32.99 ₴</b> <s>51.49 ₴</s> · заявлено −36% · <b>реально −45%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/vershky-prostonashe-15-t-b-935152\">відкрити</a>",
-    "5. 🔥 Кефір «Яготинський» 2,5%, пляшка, 850г — <b>41.99 ₴</b> <s>69.99 ₴</s> · заявлено −40% · <b>реально −44%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/kefir-yagotynskyi-2-5-pliashka-842283\">відкрити</a>"
+    "1. 🔥 Напій Anhhong Nata De Coco кокос та диня, 90г — <b>19.99 ₴</b> <s>36.49 ₴</s> · заявлено −45% · <b>реально −48%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/napii-anhhong-nata-de-coco-kokos-ta-dynia-978675\">відкрити</a>",
+    "2. Йогурт Lekker з суницею 8,5%, 125г — <b>44.99 ₴</b> <s>77.49 ₴</s> · заявлено −42% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/yogurt-lekker-z-sunytseiu-8-5-909877\">відкрити</a>",
+    "3. 🔥 Сирок Волошкове поле Ананас в кольоровій глазурі з манго 26%, 36г — <b>12.49 ₴</b> <s>20.99 ₴</s> · заявлено −40% · <b>реально −42%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/syrok-voloshkove-pole-ananas-v-kolorovii-glazuri-z-mango-26-951590\">відкрити</a>",
+    "4. 🔥 Кефір «Яготинський» 1%, пляшка, 850г — <b>41.99 ₴</b> <s>71.99 ₴</s> · заявлено −42% · <b>реально −41%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/kefir-yagotynskyi-1-pliashka-842282\">відкрити</a>",
+    "5. 🔥 Сметана ПростоНаше 20% стакан, 300г — <b>49.99 ₴</b> <s>73.99 ₴</s> · заявлено −32% · <b>реально −35%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/smetana-prostonashe-20-stakan-954289\">відкрити</a>"
    ],
    "rows": [
-    "6. Йогурт Lekker з суницею 8,5%, 125г — <b>44.99 ₴</b> <s>77.49 ₴</s> · заявлено −42% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/yogurt-lekker-z-sunytseiu-8-5-909877\">відкрити</a>",
-    "7. 🔥 Сирок Волошкове поле Ананас в кольоровій глазурі з манго 26%, 36г — <b>12.49 ₴</b> <s>20.99 ₴</s> · заявлено −40% · <b>реально −42%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/syrok-voloshkove-pole-ananas-v-kolorovii-glazuri-z-mango-26-951590\">відкрити</a>",
-    "8. 🔥 Продукт кисломолочний Actimel Strawberry Banana 1,4%, 4*100г — <b>86.99 ₴</b> <s>134 ₴</s> · заявлено −35% · <b>реально −40%</b> · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/produkt-kyslomolochnyi-actimel-strawberry-banana-1-4-972125\">відкрити</a>",
-    "9. 🔥 Кефір «Яготинський» 1%, пляшка, 850г — <b>41.99 ₴</b> <s>71.99 ₴</s> · заявлено −42% · <b>реально −41%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/kefir-yagotynskyi-1-pliashka-842282\">відкрити</a>",
-    "10. 🔥 Сметана ПростоНаше 20% стакан, 300г — <b>49.99 ₴</b> <s>73.99 ₴</s> · заявлено −32% · <b>реально −35%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/smetana-prostonashe-20-stakan-954289\">відкрити</a>",
-    "11. Йогурт Feels good По-грецьки 3%, 1кг — <b>99.9 ₴</b> <s>174 ₴</s> · 🌐 лише онлайн-замовлення заявлено −43% · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/yogurt-feels-good-po-gretsky-3-993989\">відкрити</a>",
-    "12. 🔥 Йогурт Milupa з біфідобактеріями біфілакт 2,2%, 207г — <b>17.99 ₴</b> <s>26.99 ₴</s> · заявлено −33% · <b>реально −38%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/yogurt-milupa-z-bifidobakteriiamy-bifilakt-2-2-953863\">відкрити</a>",
-    "13. 🔥 Продукт кисломолочний Actimel чорниця 1,4%, пляшка, 4*100г — <b>74.99 ₴</b> <s>99 ₴</s> · заявлено −24% · <b>реально −32%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/produkt-kyslomolochnyi-actimel-chornytsia-1-4-pliashka-935096\">відкрити</a>",
-    "14. 🔥 Йогурт Деліссімо Fantasia з кульками злаковими в шоколадній глазурі 6,3%, 100г — <b>33.99 ₴</b> <s>47.49 ₴</s> · заявлено −28% · <b>реально −32%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/yogurt-delissimo-fantasia-z-kulkamy-zlakovymy-v-shokoladnii-glazuri-6-3-947496\">відкрити</a>",
-    "15. 🔥 Продукт кисломолочний Actimel малина 1,4%, пляшка, 4*100г — <b>74.99 ₴</b> <s>99 ₴</s> · заявлено −24% · <b>реально −32%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/produkt-kyslomolochnyi-actimel-malyna-1-4-pliashka-935095\">відкрити</a>"
+    "6. Йогурт Feels good По-грецьки 3%, 1кг — <b>99.9 ₴</b> <s>174 ₴</s> · 🌐 лише онлайн-замовлення заявлено −43% · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/yogurt-feels-good-po-gretsky-3-993989\">відкрити</a>",
+    "7. Пудинг рисовий Muller ваніль 2,5%, 200г — <b>46.99 ₴</b> <s>64.99 ₴</s> · заявлено −28% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/pudyng-rysovyi-muller-vanil-2-5-881291\">відкрити</a>",
+    "8. Пудинг рисовий Muller шоколад 2,5%, 200г — <b>46.99 ₴</b> <s>64.99 ₴</s> · заявлено −28% · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/pudyng-rysovyi-muller-shokolad-2-5-881290\">відкрити</a>",
+    "9. Пудинг рисовий Muller вишня 2,2%, 200г — <b>46.99 ₴</b> <s>64.99 ₴</s> · заявлено −28% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/pudyng-rysovyi-muller-vyshnia-2-2-881294\">відкрити</a>",
+    "10. Ряжанка Яготинська  3,2% стакан, 300г — <b>30.49 ₴</b> <s>39.99 ₴</s> · заявлено −24% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/riazhanka-yagotynska-3-2-stakan-953422\">відкрити</a>",
+    "11. Йогурт Muller з шоколадними кульками 3,8%, 150г — <b>43.99 ₴</b> <s>57.99 ₴</s> · заявлено −24% · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/yogurt-muller-z-shokoladnymy-kulkamy-3-8-836238\">відкрити</a>",
+    "12. Кефір «Ферма» 1%, 840г — <b>56.9 ₴</b> <s>78.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −28% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/kefir-ferma-1-837451\">відкрити</a>",
+    "13. Напій ультрапастеризований Vega Milk кокосовий з рисом, 500мл — <b>53.99 ₴</b> <s>69.49 ₴</s> · заявлено −22% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/napii-ultrapasteryzovanyi-vega-milk-kokosovyi-z-rysom-949581\">відкрити</a>",
+    "14. Молоко «Яготинське для дітей» ультрапастеризоване безлактозне від 9 міс. 3,2%, 950г — <b>79.99 ₴</b> <s>99 ₴</s> · заявлено −19% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/moloko-yagotynske-dlia-ditei-ultrapasteryzovane-bezlaktozne-vid-9-mis-3-2-777701\">відкрити</a>",
+    "15. Сирок «Фанні» на печиві зі згущеним молоком снек, 50г — <b>20.99 ₴</b> <s>25.99 ₴</s> · заявлено −19% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/syrok-fanni-na-pechyvi-zi-zghushchenym-molokom-snek-186388\">відкрити</a>"
    ]
   },
   "9": {
    "t": "🛒 <b>Власні марки</b>",
    "b": "🛒 Власні марки",
    "first": [
-    "1. 🔥 Приправа «Премія»® до риби, 20г — <b>13.99 ₴</b> <s>31.99 ₴</s> · заявлено −56% · <b>реально −59%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/pryprava-premiia-do-ryby-320507\">відкрити</a>",
-    "2. 🔥 Пакети для сміття «Премія»® з ручками 35 л, 30шт — <b>35.99 ₴</b> <s>81.99 ₴</s> · заявлено −56% · <b>реально −53%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/pakety-dlia-smittia-premiia-z-ruchkamy-35-l-948287\">відкрити</a>",
-    "3. 🔥 Приправа «Премія»® до курки, 20г — <b>11.99 ₴</b> <s>23.99 ₴</s> · заявлено −50% · <b>реально −53%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/pryprava-premiia-do-kurky-320511\">відкрити</a>",
-    "4. 🔥 Вироби макаронні «Премія»® Спагеті з твердих сортів пшениці, 500г — <b>44.99 ₴</b> <s>71.99 ₴</s> · заявлено −38% · <b>реально −45%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/vyroby-makaronni-premiia-spageti-z-tverdykh-sortiv-pshenytsi-943585\">відкрити</a>",
-    "5. 🔥 Серветки для прибирання «Премія»® целюлозні, 3шт — <b>39.99 ₴</b> <s>79.49 ₴</s> · заявлено −50% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/servetky-dlia-prybyrannia-premiia-tseliulozni-774993\">відкрити</a>"
+    "1. 🔥 Серветки для прибирання «Премія»® целюлозні, 3шт — <b>39.99 ₴</b> <s>79.49 ₴</s> · заявлено −50% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/servetky-dlia-prybyrannia-premiia-tseliulozni-774993\">відкрити</a>",
+    "2. Крем-мило «Премія»® з екстрактом оливи, 300мл — <b>30.49 ₴</b> <s>56.99 ₴</s> · заявлено −46% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/krem-mylo-premiia-z-ekstraktom-olyvy-507792\">відкрити</a>",
+    "3. 🔥 Перець духмяний «Премія»®, 10г — <b>15.99 ₴</b> <s>27.99 ₴</s> · заявлено −43% · <b>реально −46%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/perets-dukhmianyi-premiia-320481\">відкрити</a>",
+    "4. 🔥 Паста арахісова «Премія»® з сіллю і кранчами, 340г — <b>119 ₴</b> <s>199 ₴</s> · заявлено −40% · <b>реально −40%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/pasta-arakhisova-premiia-z-silliu-i-kranchamy-630901\">відкрити</a>",
+    "5. 🔥 Паста арахісова «Премія»® з сіллю, 340г — <b>119 ₴</b> <s>194 ₴</s> · заявлено −39% · <b>реально −40%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/pasta-arakhisova-premiia-z-silliu-630899\">відкрити</a>"
    ],
    "rows": [
-    "6. Крем-мило «Премія»® з екстрактом оливи, 300мл — <b>30.49 ₴</b> <s>56.99 ₴</s> · заявлено −46% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/krem-mylo-premiia-z-ekstraktom-olyvy-507792\">відкрити</a>",
-    "7. 🔥 Горошок зелений «Премія»® консервований, 460г — <b>39.99 ₴</b> <s>59.99 ₴</s> · заявлено −33% · <b>реально −43%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/goroshok-zelenyi-premiia-konservovanyi-836178\">відкрити</a>",
-    "8. 🔥 Перець духмяний «Премія»®, 10г — <b>15.99 ₴</b> <s>27.99 ₴</s> · заявлено −43% · <b>реально −46%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/perets-dukhmianyi-premiia-320481\">відкрити</a>",
-    "9. 🔥 Приправа «Премія»® до свинини, 20г — <b>13.99 ₴</b> <s>19.99 ₴</s> · заявлено −30% · <b>реально −46%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/pryprava-premiia-do-svynyny-320513\">відкрити</a>",
-    "10. 🔥 Кукурудза «Премія»® цукрова консервована, 340г — <b>39.99 ₴</b> <s>59.99 ₴</s> · заявлено −33% · <b>реально −39%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/kukurudza-premiia-tsukrova-konservovana-935789\">відкрити</a>",
-    "11. 🔥 Паста арахісова «Премія»® з сіллю і кранчами, 340г — <b>119 ₴</b> <s>199 ₴</s> · заявлено −40% · <b>реально −40%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/pasta-arakhisova-premiia-z-silliu-i-kranchamy-630901\">відкрити</a>",
-    "12. 🔥 Баклажани «Премія»® з овочами в томатному соусі, 450г — <b>69.99 ₴</b> <s>109 ₴</s> · заявлено −36% · <b>реально −40%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/baklazhany-premiia-z-ovochamy-v-tomatnomu-sousi-367485\">відкрити</a>",
-    "13. 🔥 Паста арахісова «Премія»® з сіллю, 340г — <b>119 ₴</b> <s>194 ₴</s> · заявлено −39% · <b>реально −40%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/pasta-arakhisova-premiia-z-silliu-630899\">відкрити</a>",
-    "14. 🔥 Попкорн «Премія»® для мікрохвильової печі зі смаком вершкового масла, 100г — <b>29.99 ₴</b> <s>46.99 ₴</s> · заявлено −36% · <b>реально −40%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/popkorn-premiia-dlia-mikrokhvylovoi-pechi-zi-smakom-vershkovogo-masla-454942\">відкрити</a>",
-    "15. 🔥 Ковбаса «Премія»® Салямі Золотиста с/к в/ґ, нарізка, 80г — <b>54.99 ₴</b> <s>81.99 ₴</s> · заявлено −33% · <b>реально −42%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/kovbasa-premiia-saliami-zolotysta-s-k-v-g-narizka-830896\">відкрити</a>"
+    "6. 🔥 Шкарпетки Bartolini спортивні чорно-білі р.29, 2 пари — <b>59.99 ₴</b> <s>113 ₴</s> · заявлено −47% · <b>реально −39%</b>\n🔗 <a href=\"https://silpo.ua/product/shkarpetky-bartolini-sportyvni-chorno-bili-r-29-970935\">відкрити</a>",
+    "7. 🔥 Сьомга слабосолена «Премія»®, нарізка, 100г — <b>149 ₴</b> <s>259 ₴</s> · заявлено −42% · ⭐ 3.2\n🔗 <a href=\"https://silpo.ua/product/somga-slabosolena-premiia-narizka-358709\">відкрити</a>",
+    "8. 🔥 Кава розчинна Mioro Coffee сублімована, 300г — <b>399 ₴</b> <s>729 ₴</s> · заявлено −45% · <b>реально −45%</b> · ⭐ 2.9\n🔗 <a href=\"https://silpo.ua/product/kava-rozchynna-mioro-coffee-sublimovana-966750\">відкрити</a>",
+    "9. Йогурт Feels good По-грецьки 3%, 1кг — <b>99.9 ₴</b> <s>174 ₴</s> · 🌐 лише онлайн-замовлення заявлено −43% · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/yogurt-feels-good-po-gretsky-3-993989\">відкрити</a>",
+    "10. 🔥 Арахіс «Премія»® солоний смажений, 150г — <b>39.99 ₴</b> <s>65.99 ₴</s> · заявлено −39% · <b>реально −39%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/arakhis-premiia-solonyi-smazhenyi-345513\">відкрити</a>",
+    "11. 🔥 Морква «Премія»® по-корейськи, 200г — <b>29.99 ₴</b> <s>52.49 ₴</s> · заявлено −43% · <b>реально −43%</b> · ⭐ 3.2\n🔗 <a href=\"https://silpo.ua/product/morkva-premiia-po-koreisky-962377\">відкрити</a>",
+    "12. 🔥 Шкарпетки Bartolini спортивні чорно-білі р.25, 2 пари — <b>59.99 ₴</b> <s>113 ₴</s> · заявлено −47% · <b>реально −39%</b>\n🔗 <a href=\"https://silpo.ua/product/shkarpetky-bartolini-sportyvni-chorno-bili-r-25-970933\">відкрити</a>",
+    "13. 🔥 Шкарпетки Bartolini спортивні чорно-білі р.23, 2 пари — <b>59.99 ₴</b> <s>113 ₴</s> · заявлено −47% · <b>реально −39%</b>\n🔗 <a href=\"https://silpo.ua/product/shkarpetky-bartolini-sportyvni-chorno-bili-r-23-970932\">відкрити</a>",
+    "14. 🔥 Шпроти «Премія»® в олії, ключ, 240г — <b>119 ₴</b> <s>199 ₴</s> · заявлено −40% · <b>реально −40%</b> · ⭐ 3.6\n🔗 <a href=\"https://silpo.ua/product/shproty-premiia-v-olii-kliuch-329571\">відкрити</a>",
+    "15. Вареники Крафтяр з картоплею та грибами заморожені, 800г — <b>129 ₴</b> <s>219 ₴</s> · 🌐 лише онлайн-замовлення заявлено −41% · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/varenyky-kraftiar-z-kartopleiu-ta-grybamy-zamorozheni-1012488\">відкрити</a>"
    ]
   },
   "10": {
@@ -2238,291 +2235,289 @@
    ],
    "rows": [
     "6. 🔥 Чай зелений English Tea Shop органічний, 20*2г/уп — <b>119 ₴</b> <s>159 ₴</s> · заявлено −25% · <b>реально −25%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/chai-zelenyi-english-tea-shop-organichnyi-572223\">відкрити</a>",
-    "7. 🔥 Хумус Yofi! з бобових з грибами, 250г — <b>57.99 ₴</b> <s>73.49 ₴</s> · заявлено −21% · <b>реально −26%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/khumus-yofi-z-bobovykh-z-grybamy-893310\">відкрити</a>",
-    "8. Оцет De Nigris гранатовий органічний, 500мл — <b>187 ₴</b> <s>249 ₴</s> · 🌐 лише онлайн-замовлення заявлено −25% · <b>реально −25%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/otset-de-nigris-granatovyi-organichnyi-774855\">відкрити</a>",
-    "9. Сік Galicia яблучний прямого віджиму, 1л — <b>123.29 ₴</b> <s>139 ₴</s> · 🌐 лише онлайн-замовлення заявлено −11% · <b>реально −27%</b> · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/sik-galicia-ialuchnyi-priamogo-vidzhymu-507168\">відкрити</a>",
-    "10. Молоко «Яготинське для дітей» ультрапастеризоване безлактозне від 9 міс. 3,2%, 950г — <b>79.99 ₴</b> <s>99 ₴</s> · заявлено −19% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/moloko-yagotynske-dlia-ditei-ultrapasteryzovane-bezlaktozne-vid-9-mis-3-2-777701\">відкрити</a>",
-    "11. Йогурт «Галичина» «Карпатський» без цукру безлактозний 2,2%, 300г — <b>38.49 ₴</b> <s>45.49 ₴</s> · заявлено −15% · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/yogurt-galychyna-karpatskyi-bez-tsukru-bezlaktoznyi-2-2-830216\">відкрити</a>",
-    "12. Сир Комо InSalata безлактозна 50%, 170г — <b>79.99 ₴</b> <s>95.99 ₴</s> · заявлено −17% · <b>реально −17%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/syr-komo-insalata-bezlaktozna-50-962089\">відкрити</a>",
-    "13. Пластівці вівсяні Elovena органічні без глютену, 500г — <b>139 ₴</b> <s>179 ₴</s> · заявлено −22%\n🔗 <a href=\"https://silpo.ua/product/plastivtsi-vivsiani-elovena-organichni-bez-gliutenu-816959\">відкрити</a>",
-    "14. Пюре Gerber яблуко, груша, малина, чорниця, 90г — <b>46.99 ₴</b> <s>51.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −9% · <b>реально −20%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/piure-gerber-iabluko-grusha-malyna-chornytsia-714975\">відкрити</a>",
-    "15. Сухарики Finn Crisp Житні Original Taste, 200г — <b>88.99 ₴</b> <s>99 ₴</s> · заявлено −10% · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/sukharyky-finn-crisp-zhytni-original-taste-28295\">відкрити</a>"
+    "7. Оцет De Nigris гранатовий органічний, 500мл — <b>187 ₴</b> <s>249 ₴</s> · 🌐 лише онлайн-замовлення заявлено −25% · <b>реально −25%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/otset-de-nigris-granatovyi-organichnyi-774855\">відкрити</a>",
+    "8. Молоко «Яготинське для дітей» ультрапастеризоване безлактозне від 9 міс. 3,2%, 950г — <b>79.99 ₴</b> <s>99 ₴</s> · заявлено −19% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/moloko-yagotynske-dlia-ditei-ultrapasteryzovane-bezlaktozne-vid-9-mis-3-2-777701\">відкрити</a>",
+    "9. Йогурт «Галичина» «Карпатський» без цукру безлактозний 2,2%, 300г — <b>38.49 ₴</b> <s>45.49 ₴</s> · заявлено −15% · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/yogurt-galychyna-karpatskyi-bez-tsukru-bezlaktoznyi-2-2-830216\">відкрити</a>",
+    "10. Сир Комо InSalata безлактозна 50%, 170г — <b>79.99 ₴</b> <s>95.99 ₴</s> · заявлено −17% · <b>реально −17%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/syr-komo-insalata-bezlaktozna-50-962089\">відкрити</a>",
+    "11. Пластівці вівсяні Elovena органічні без глютену, 500г — <b>139 ₴</b> <s>179 ₴</s> · заявлено −22%\n🔗 <a href=\"https://silpo.ua/product/plastivtsi-vivsiani-elovena-organichni-bez-gliutenu-816959\">відкрити</a>",
+    "12. Сухарики Finn Crisp Житні Original Taste, 200г — <b>88.99 ₴</b> <s>99 ₴</s> · заявлено −10% · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/sukharyky-finn-crisp-zhytni-original-taste-28295\">відкрити</a>",
+    "13. Йогурт «Волошкове поле» Чорна смородинина безлактозний 2,8%, 140г — <b>30.49 ₴</b> <s>35.49 ₴</s> · заявлено −14% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/yogurt-voloshkove-pole-chorna-smorodynyna-bezlaktoznyi-2-8-919397\">відкрити</a>",
+    "14. Сухарики Finn Crisp Multigrain із декількох видів зерна, 175г — <b>88.99 ₴</b> <s>99 ₴</s> · заявлено −10% · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/sukharyky-finn-crisp-multigrain-iz-dekilkokh-vydiv-zerna-28296\">відкрити</a>",
+    "15. Хумус Yofi! з соусом песто, 250г — <b>87.12 ₴</b> <s>99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −12% · <b>реально −12%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/khumus-yofi-z-sousom-pesto-930529\">відкрити</a>"
    ]
   },
   "12": {
    "t": "🥫 <b>Бакалія і консерви</b>",
    "b": "🥫 Бакалія і консерви",
    "first": [
-    "1. 🔥 Пластівці Doctor Benner Вівсяні цільнозернові, 400г — <b>24.99 ₴</b> <s>54.49 ₴</s> · заявлено −54% · <b>реально −52%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/plastivtsi-doctor-benner-vivsiani-tsilnozernovi-902478\">відкрити</a>",
-    "2. 🔥 Вироби макаронні «Премія»® Спагеті з твердих сортів пшениці, 500г — <b>44.99 ₴</b> <s>71.99 ₴</s> · заявлено −38% · <b>реально −45%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/vyroby-makaronni-premiia-spageti-z-tverdykh-sortiv-pshenytsi-943585\">відкрити</a>",
-    "3. 🔥 Горошок зелений «Премія»® консервований, 460г — <b>39.99 ₴</b> <s>59.99 ₴</s> · заявлено −33% · <b>реально −43%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/goroshok-zelenyi-premiia-konservovanyi-836178\">відкрити</a>",
-    "4. 🔥 Локшина Oyakata зі смаком кімчі швидкого приготування, 92г — <b>49.99 ₴</b> <s>94.99 ₴</s> · заявлено −47% · <b>реально −50%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/lokshyna-oyakata-zi-smakom-kimchi-shvydkogo-prygotuvannia-997062\">відкрити</a>",
-    "5. 🔥 Локшина швидкого приготування Oyakata в японському стилі карі, 90г — <b>49.99 ₴</b> <s>94.99 ₴</s> · заявлено −47% · <b>реально −50%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/lokshyna-shvydkogo-prygotuvannia-oyakata-v-iaponskomu-styli-kari-896848\">відкрити</a>"
+    "1. 🔥 Локшина Oyakata зі смаком кімчі швидкого приготування, 92г — <b>49.99 ₴</b> <s>94.99 ₴</s> · заявлено −47% · <b>реально −50%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/lokshyna-oyakata-zi-smakom-kimchi-shvydkogo-prygotuvannia-997062\">відкрити</a>",
+    "2. 🔥 Локшина швидкого приготування Oyakata в японському стилі карі, 90г — <b>49.99 ₴</b> <s>94.99 ₴</s> · заявлено −47% · <b>реально −50%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/lokshyna-shvydkogo-prygotuvannia-oyakata-v-iaponskomu-styli-kari-896848\">відкрити</a>",
+    "3. Оливки Iberica з креветкою з/б, 280г — <b>65.99 ₴</b> <s>117 ₴</s> · заявлено −44% · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/olyvky-iberica-z-krevetkoiu-z-b-851851\">відкрити</a>",
+    "4. Оливки Iberica з лимоном з/б, 280г — <b>65.99 ₴</b> <s>118 ₴</s> · заявлено −44% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/olyvky-iberica-z-lymonom-z-b-851852\">відкрити</a>",
+    "5. 🔥 Локшина швидкого приготування Oyakata Пад-тай зі смаком курки, 93г — <b>49.99 ₴</b> <s>94.99 ₴</s> · заявлено −47% · <b>реально −50%</b> · ⭐ 3.3\n🔗 <a href=\"https://silpo.ua/product/lokshyna-shvydkogo-prygotuvannia-oyakata-pad-tai-zi-smakom-kurky-896850\">відкрити</a>"
    ],
    "rows": [
-    "6. 🔥 Огірки «Верес» мариновані, 300г — <b>59.99 ₴</b> <s>99 ₴</s> · заявлено −39% · <b>реально −45%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/ogirky-veres-marynovani-21507\">відкрити</a>",
-    "7. 🔥 Вироби макаронні Cantare Spaghetti, 400г — <b>34.99 ₴</b> <s>58.99 ₴</s> · заявлено −41% · <b>реально −45%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/vyroby-makaronni-cantare-spaghetti-878321\">відкрити</a>",
-    "8. 🔥 Кукурудза «Премія»® цукрова консервована, 340г — <b>39.99 ₴</b> <s>59.99 ₴</s> · заявлено −33% · <b>реально −39%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/kukurudza-premiia-tsukrova-konservovana-935789\">відкрити</a>",
-    "9. Оливки Iberica з креветкою з/б, 280г — <b>65.99 ₴</b> <s>117 ₴</s> · заявлено −44% · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/olyvky-iberica-z-krevetkoiu-z-b-851851\">відкрити</a>",
-    "10. Оливки Iberica з лимоном з/б, 280г — <b>65.99 ₴</b> <s>118 ₴</s> · заявлено −44% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/olyvky-iberica-z-lymonom-z-b-851852\">відкрити</a>",
-    "11. 🔥 Локшина швидкого приготування Oyakata Пад-тай зі смаком курки, 93г — <b>49.99 ₴</b> <s>94.99 ₴</s> · заявлено −47% · <b>реально −50%</b> · ⭐ 3.3\n🔗 <a href=\"https://silpo.ua/product/lokshyna-shvydkogo-prygotuvannia-oyakata-pad-tai-zi-smakom-kurky-896850\">відкрити</a>",
-    "12. 🔥 Вироби макаронні Cantare Fusilli, 400г — <b>34.99 ₴</b> <s>58.99 ₴</s> · заявлено −41% · <b>реально −45%</b> · ⭐ 3.3\n🔗 <a href=\"https://silpo.ua/product/vyroby-makaronni-cantare-fusilli-878330\">відкрити</a>",
-    "13. 🔥 Олія оливкова Rock'n R'Olive Picual Extra Virgin, 500мл — <b>449 ₴</b> <s>699 ₴</s> · заявлено −36% · <b>реально −40%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/oliia-olyvkova-rock-n-r-olive-picual-extra-virgin-820907\">відкрити</a>",
-    "14. 🔥 Паста арахісова «Премія»® з сіллю і кранчами, 340г — <b>119 ₴</b> <s>199 ₴</s> · заявлено −40% · <b>реально −40%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/pasta-arakhisova-premiia-z-silliu-i-kranchamy-630901\">відкрити</a>",
-    "15. 🔥 Соус Ponti «Глейзер» з бальзамічним оцтом з Модени, 250г — <b>159 ₴</b> <s>239 ₴</s> · заявлено −33% · <b>реально −39%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/sous-ponti-gleizer-z-balzamichnym-otstom-z-modeny-581942\">відкрити</a>"
+    "6. 🔥 Паста арахісова «Премія»® з сіллю і кранчами, 340г — <b>119 ₴</b> <s>199 ₴</s> · заявлено −40% · <b>реально −40%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/pasta-arakhisova-premiia-z-silliu-i-kranchamy-630901\">відкрити</a>",
+    "7. 🔥 Оцет Ponti бальзамічний з Модени, 250мл — <b>144 ₴</b> <s>229 ₴</s> · заявлено −37% · <b>реально −40%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/otset-ponti-balzamichnyi-z-modeny-391346\">відкрити</a>",
+    "8. 🔥 Паста арахісова «Премія»® з сіллю, 340г — <b>119 ₴</b> <s>194 ₴</s> · заявлено −39% · <b>реально −40%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/pasta-arakhisova-premiia-z-silliu-630899\">відкрити</a>",
+    "9. Оливки El Faro зелені сорту Гордаль без кісточки, 800г — <b>254 ₴</b> <s>399 ₴</s> · заявлено −36% · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/olyvky-el-faro-zeleni-sortu-gordal-bez-kistochky-914400\">відкрити</a>",
+    "10. 🔥 Олія оливкова Rock'n R'Olive Arbequina Extra Virgin, 500мл — <b>449 ₴</b> <s>699 ₴</s> · заявлено −36% · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/oliia-olyvkova-rock-n-r-olive-arbequina-extra-virgin-820906\">відкрити</a>",
+    "11. 🔥 Оцет De Nigris бальзамічний з Модени, 250мл — <b>149 ₴</b> <s>239 ₴</s> · заявлено −38% · <b>реально −40%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/otset-de-nigris-balzamichnyi-z-modeny-774864\">відкрити</a>",
+    "12. Соус Sacla песто з базиліком, 190г — <b>109 ₴</b> <s>194 ₴</s> · 🌐 лише онлайн-замовлення заявлено −44% · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/sous-sacla-pesto-z-bazylikom-412790\">відкрити</a>",
+    "13. Джем Helios з чорного інжиру, 330г — <b>129 ₴</b> <s>199 ₴</s> · заявлено −35% · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/dzhem-helios-z-chornogo-inzhyru-995548\">відкрити</a>",
+    "14. Олія Pelzmann штирійська традиційна з насіння гарбуза, 250мл — <b>324 ₴</b> <s>499 ₴</s> · заявлено −35% · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/oliia-pelzmann-shtyriiska-tradytsiina-z-nasinnia-garbuza-530022\">відкрити</a>",
+    "15. Вироби макароні Pastificio Bragagnolo Касерче, 500г — <b>99 ₴</b> <s>149 ₴</s> · заявлено −34% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/vyroby-makaroni-pastificio-bragagnolo-kaserche-973359\">відкрити</a>"
    ]
   },
   "13": {
    "t": "🛒 <b>Соуси і спеції</b>",
    "b": "🛒 Соуси і спеції",
    "first": [
-    "1. 🔥 Кетчуп Королівський смак Лагідний, 250г — <b>19.99 ₴</b> <s>38.99 ₴</s> · заявлено −49% · <b>реально −56%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/ketchup-korolivskyi-smak-lagidnyi-931498\">відкрити</a>",
-    "2. 🔥 Кетчуп Королівський смак До шашлику, 250г — <b>19.99 ₴</b> <s>38.99 ₴</s> · заявлено −49% · <b>реально −52%</b> · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/ketchup-korolivskyi-smak-do-shashlyku-931500\">відкрити</a>",
-    "3. 🔥 Приправа «Премія»® до риби, 20г — <b>13.99 ₴</b> <s>31.99 ₴</s> · заявлено −56% · <b>реально −59%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/pryprava-premiia-do-ryby-320507\">відкрити</a>",
-    "4. 🔥 Приправа «Премія»® до курки, 20г — <b>11.99 ₴</b> <s>23.99 ₴</s> · заявлено −50% · <b>реально −53%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/pryprava-premiia-do-kurky-320511\">відкрити</a>",
-    "5. 🔥 Соус «Руна» «Сацебелі», 485г — <b>37.99 ₴</b> <s>63.99 ₴</s> · заявлено −41% · <b>реально −49%</b> · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/sous-runa-satsebeli-383222\">відкрити</a>"
+    "1. Приправа «Приправка» Grill&amp;BBQ «Сицилійська рибка», 30г — <b>29.99 ₴</b> <s>56.49 ₴</s> · заявлено −47% · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/pryprava-prypravka-grill-bbq-sytsyliiska-rybka-797202\">відкрити</a>",
+    "2. 🔥 Перець духмяний «Премія»®, 10г — <b>15.99 ₴</b> <s>27.99 ₴</s> · заявлено −43% · <b>реально −46%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/perets-dukhmianyi-premiia-320481\">відкрити</a>",
+    "3. 🔥 Соус соєвий Bonsai класичний, 1000мл — <b>59.99 ₴</b> <s>109 ₴</s> · заявлено −45% · <b>реально −46%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/sous-soievyi-bonsai-klasychnyi-915345\">відкрити</a>",
+    "4. 🔥 Майонез «Оліс» «Столовий» 67%, 300г — <b>41.99 ₴</b> <s>67.49 ₴</s> · заявлено −38% · <b>реально −40%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/maionez-olis-stolovyi-67-762031\">відкрити</a>",
+    "5. 🔥 Кориця мелена «Премія»®, 15г — <b>19.99 ₴</b> <s>30.99 ₴</s> · заявлено −35% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/korytsia-melena-premiia-546777\">відкрити</a>"
    ],
    "rows": [
-    "6. Приправа «Приправка» Grill&amp;BBQ «Сицилійська рибка», 30г — <b>29.99 ₴</b> <s>56.49 ₴</s> · заявлено −47% · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/pryprava-prypravka-grill-bbq-sytsyliiska-rybka-797202\">відкрити</a>",
-    "7. 🔥 Перець духмяний «Премія»®, 10г — <b>15.99 ₴</b> <s>27.99 ₴</s> · заявлено −43% · <b>реально −46%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/perets-dukhmianyi-premiia-320481\">відкрити</a>",
-    "8. 🔥 Соус соєвий Bonsai класичний, 1000мл — <b>59.99 ₴</b> <s>109 ₴</s> · заявлено −45% · <b>реально −46%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/sous-soievyi-bonsai-klasychnyi-915345\">відкрити</a>",
-    "9. 🔥 Приправа «Премія»® до свинини, 20г — <b>13.99 ₴</b> <s>19.99 ₴</s> · заявлено −30% · <b>реально −46%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/pryprava-premiia-do-svynyny-320513\">відкрити</a>",
-    "10. 🔥 Майонез «Оліс» «Столовий» 67%, 300г — <b>41.99 ₴</b> <s>67.49 ₴</s> · заявлено −38% · <b>реально −40%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/maionez-olis-stolovyi-67-762031\">відкрити</a>",
-    "11. 🔥 Гірчиця «Королівський смак» «Королівська» міцна, 130г — <b>19.99 ₴</b> <s>27.99 ₴</s> · заявлено −29% · <b>реально −32%</b> · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/girchytsia-korolivskyi-smak-korolivska-mitsna-527984\">відкрити</a>",
-    "12. 🔥 Кориця мелена «Премія»®, 15г — <b>19.99 ₴</b> <s>30.99 ₴</s> · заявлено −35% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/korytsia-melena-premiia-546777\">відкрити</a>",
-    "13. 🔥 Горіх мускатний PREMIA мелений, 10г — <b>17.99 ₴</b> <s>25.99 ₴</s> · заявлено −31% · <b>реально −36%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/gorikh-muskatnyi-premia-melenyi-972394\">відкрити</a>",
-    "14. 🔥 Соус соєвий House of Asia чорний, 150мл — <b>99 ₴</b> <s>149 ₴</s> · заявлено −34% · <b>реально −34%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/sous-soievyi-house-of-asia-chornyi-918955\">відкрити</a>",
-    "15. 🔥 Суміш перців PREMIA горошком, 20г — <b>26.99 ₴</b> <s>39.99 ₴</s> · заявлено −33% · <b>реально −33%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/sumish-pertsiv-premia-goroshkom-972388\">відкрити</a>"
+    "6. 🔥 Соус соєвий House of Asia чорний, 150мл — <b>99 ₴</b> <s>149 ₴</s> · заявлено −34% · <b>реально −34%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/sous-soievyi-house-of-asia-chornyi-918955\">відкрити</a>",
+    "7. 🔥 Суміш перців PREMIA горошком, 20г — <b>26.99 ₴</b> <s>39.99 ₴</s> · заявлено −33% · <b>реально −33%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/sumish-pertsiv-premia-goroshkom-972388\">відкрити</a>",
+    "8. 🔥 Суміш перців PREMIA подрібнених, 20г — <b>26.99 ₴</b> <s>39.99 ₴</s> · заявлено −33% · <b>реально −33%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/sumish-pertsiv-premia-podribnenykh-972387\">відкрити</a>",
+    "9. Цукор ванільний «Премія»®, 10г — <b>3.99 ₴</b> <s>5.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −33% · <b>реально −33%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/tsukor-vanilnyi-premiia-919762\">відкрити</a>",
+    "10. Суміш трав PREMIA Трави середземноморської кухні, 10г — <b>14.99 ₴</b> <s>22.49 ₴</s> · заявлено −33% · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/sumish-trav-premia-travy-seredzemnomorskoi-kukhni-972397\">відкрити</a>",
+    "11. 🔥 Гірчиця «Королівський смак» «Французька» з зернами, 130г — <b>21.99 ₴</b> <s>29.99 ₴</s> · заявлено −27% · <b>реально −29%</b>\n🔗 <a href=\"https://silpo.ua/product/girchytsia-korolivskyi-smak-frantsuzka-z-zernamy-527986\">відкрити</a>",
+    "12. Кетчуп Ascania Шашличний, 250г — <b>32.49 ₴</b> <s>45.99 ₴</s> · заявлено −29% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/ketchup-ascania-shashlychnyi-961405\">відкрити</a>",
+    "13. Майонез Торчин Домашній 50% д/п, 150г — <b>25.49 ₴</b> <s>33.49 ₴</s> · заявлено −24% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/maionez-torchyn-domashnii-50-d-p-925596\">відкрити</a>",
+    "14. Дріжджі «Львівські» пресовані, 42г — <b>7.49 ₴</b> <s>9.54 ₴</s> · заявлено −21% · <b>реально −24%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/drizhdzhi-lvivski-presovani-63491\">відкрити</a>",
+    "15. Перець червоний «Премія»® гострий, 20г — <b>25.49 ₴</b> <s>34.99 ₴</s> · заявлено −27% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/perets-chervonyi-premiia-gostryi-320478\">відкрити</a>"
    ]
   },
   "14": {
    "t": "🍫 <b>Солодощі</b>",
    "b": "🍫 Солодощі",
    "first": [
-    "1. 🔥 Цукерки Zozole Raibow з фруктовим смаком желейні, 75г — <b>22.99 ₴</b> <s>52.99 ₴</s> · заявлено −57% · <b>реально −59%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/tsukerky-zozole-raibow-z-fruktovym-smakom-zheleini-960824\">відкрити</a>",
-    "2. 🔥 Цукерки Zozole Sticks з фруктовим смаком желейні, 75г — <b>22.99 ₴</b> <s>50.99 ₴</s> · заявлено −55% · <b>реально −59%</b>\n🔗 <a href=\"https://silpo.ua/product/tsukerky-zozole-sticks-z-fruktovym-smakom-zheleini-960826\">відкрити</a>",
-    "3. 🔥 Пряники Delicia Ворзельські заварні з декором, 0,4кг — <b>69.99 ₴</b> <s>139 ₴</s> · заявлено −50% · <b>реально −53%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/prianyky-delicia-vorzelski-zavarni-z-dekorom-938160\">відкрити</a>",
-    "4. 🔥 Шоколад чорний Світоч Exclusive з вишневою начинкою, з какао та лісових горіхів, 225г — <b>129 ₴</b> <s>239 ₴</s> · заявлено −46% · <b>реально −50%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/shokolad-chornyi-svitoch-exclusive-z-vyshnevoiu-nachynkoiu-z-kakao-ta-lisovykh-gorikhiv-1006279\">відкрити</a>",
-    "5. 🔥 Пряники Delicia Ведмедики заварні, 0,3кг — <b>49.99 ₴</b> <s>91.99 ₴</s> · заявлено −46% · <b>реально −50%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/prianyky-delicia-vedmedyky-zavarni-953273\">відкрити</a>"
+    "1. Цукерки Lindt Lindor асорті, 200г — <b>319 ₴</b> <s>579 ₴</s> · заявлено −45% · <b>реально −45%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/tsukerky-lindt-lindor-asorti-389619\">відкрити</a>",
+    "2. Печиво Leibniz Minis вершкове, 100г — <b>63.99 ₴</b> <s>115 ₴</s> · заявлено −44% · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/pechyvo-leibniz-minis-vershkove-550725\">відкрити</a>",
+    "3. 🔥 Торт Чотири Зустрічі, 1,1кг — <b>319 ₴</b> <s>549 ₴</s> · заявлено −42% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/tort-chotyry-zustrichi-702030\">відкрити</a>",
+    "4. Шоколад молочний Millennium Very Peri з начинкою, печивом та арахісом, 100г — <b>39.99 ₴</b> <s>70.99 ₴</s> · заявлено −44% · <b>реально −46%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/shokolad-molochnyi-millennium-very-peri-z-nachynkoiu-pechyvom-ta-arakhisom-947682\">відкрити</a>",
+    "5. 🔥 Печиво Delicia зі смаком апельсину здобне, 0,3кг — <b>59.99 ₴</b> <s>99 ₴</s> · заявлено −39% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/pechyvo-delicia-zi-smakom-apelsynu-zdobne-938161\">відкрити</a>"
    ],
    "rows": [
-    "6. Цукерки Lindt Lindor асорті, 200г — <b>319 ₴</b> <s>579 ₴</s> · заявлено −45% · <b>реально −45%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/tsukerky-lindt-lindor-asorti-389619\">відкрити</a>",
-    "7. Печиво Leibniz Minis вершкове, 100г — <b>63.99 ₴</b> <s>115 ₴</s> · заявлено −44% · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/pechyvo-leibniz-minis-vershkove-550725\">відкрити</a>",
-    "8. 🔥 Торт Чотири Зустрічі, 1,1кг — <b>319 ₴</b> <s>549 ₴</s> · заявлено −42% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/tort-chotyry-zustrichi-702030\">відкрити</a>",
-    "9. 🔥 Печиво Bahlsen «Хіт» какао, 220г — <b>59.99 ₴</b> <s>99 ₴</s> · заявлено −39% · <b>реально −45%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/pechyvo-bahlsen-khit-kakao-592752\">відкрити</a>",
-    "10. Шоколад молочний Millennium Very Peri з начинкою, печивом та арахісом, 100г — <b>39.99 ₴</b> <s>70.99 ₴</s> · заявлено −44% · <b>реально −46%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/shokolad-molochnyi-millennium-very-peri-z-nachynkoiu-pechyvom-ta-arakhisom-947682\">відкрити</a>",
-    "11. 🔥 Печиво Delicia зі смаком апельсину здобне, 0,3кг — <b>59.99 ₴</b> <s>99 ₴</s> · заявлено −39% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/pechyvo-delicia-zi-smakom-apelsynu-zdobne-938161\">відкрити</a>",
-    "12. Вафлі Loacker Classic Napolitaner з горіховою начинкою, 175г — <b>199 ₴</b> <s>369 ₴</s> · заявлено −46%\n🔗 <a href=\"https://silpo.ua/product/vafli-loacker-classic-napolitaner-z-gorikhovoiu-nachynkoiu-173813\">відкрити</a>",
-    "13. Зефір «Богуславна» зі шматочками полуниці, 230г — <b>79.99 ₴</b> <s>159 ₴</s> · 🌐 лише онлайн-замовлення заявлено −50% · <b>реально −51%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/zefir-boguslavna-zi-shmatochkamy-polunytsi-886669\">відкрити</a>",
-    "14. 🔥 Шоколад молочний Світоч Exclusive начинка лісові горіхи та фісташки, 225г — <b>129 ₴</b> <s>239 ₴</s> · заявлено −46% · <b>реально −50%</b> · ⭐ 2.9\n🔗 <a href=\"https://silpo.ua/product/shokolad-molochnyi-svitoch-exclusive-nachynka-lisovi-gorikhy-ta-fistashky-1006587\">відкрити</a>",
-    "15. Шоколад Milka з арахісом і карамеллю, 276г — <b>179 ₴</b> <s>284 ₴</s> · заявлено −37% · <b>реально −40%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/shokolad-milka-z-arakhisom-i-karamelliu-728271\">відкрити</a>"
+    "6. Вафлі Loacker Classic Napolitaner з горіховою начинкою, 175г — <b>199 ₴</b> <s>369 ₴</s> · заявлено −46%\n🔗 <a href=\"https://silpo.ua/product/vafli-loacker-classic-napolitaner-z-gorikhovoiu-nachynkoiu-173813\">відкрити</a>",
+    "7. Зефір «Богуславна» зі шматочками полуниці, 230г — <b>79.99 ₴</b> <s>159 ₴</s> · 🌐 лише онлайн-замовлення заявлено −50% · <b>реально −51%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/zefir-boguslavna-zi-shmatochkamy-polunytsi-886669\">відкрити</a>",
+    "8. Печиво Bahlsen «Хіт» горіх, 220г — <b>64.99 ₴</b> <s>109 ₴</s> · заявлено −40% · <b>реально −40%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/pechyvo-bahlsen-khit-gorikh-592751\">відкрити</a>",
+    "9. Зефір «Богуславна» зі смаком фісташки, 230г — <b>79.99 ₴</b> <s>159 ₴</s> · 🌐 лише онлайн-замовлення заявлено −50% · <b>реально −51%</b> · ⭐ 3.3\n🔗 <a href=\"https://silpo.ua/product/zefir-boguslavna-zi-smakom-fistashky-886671\">відкрити</a>",
+    "10. 🔥 Халва Zolotoi Vek соняшникова ванільна глазурована, 70г — <b>14.99 ₴</b> <s>22.99 ₴</s> · заявлено −35% · <b>реально −36%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/khalva-zolotoi-vek-soniashnykova-vanilna-glazurovana-876069\">відкрити</a>",
+    "11. 🔥 Шоколад молочний Milka без добавок, 90г — <b>64.99 ₴</b> <s>99 ₴</s> · заявлено −34% · <b>реально −34%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/shokolad-molochnyi-milka-bez-dobavok-581713\">відкрити</a>",
+    "12. Вафлі Loacker Tortina Original, 6*21г — <b>289 ₴</b> <s>474 ₴</s> · заявлено −39%\n🔗 <a href=\"https://silpo.ua/product/vafli-loacker-tortina-original-952328\">відкрити</a>",
+    "13. 🔥 Халва Zolotoi Vek соняшникова з арахісом, 60г — <b>12.99 ₴</b> <s>19.49 ₴</s> · заявлено −33% · <b>реально −35%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/khalva-zolotoi-vek-soniashnykova-z-arakhisom-660847\">відкрити</a>",
+    "14. Печиво Delicia Супер-Моніка здобне, 0,3кг — <b>54.99 ₴</b> <s>79.99 ₴</s> · заявлено −31% · <b>реально −34%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/pechyvo-delicia-super-monika-zdobne-938168\">відкрити</a>",
+    "15. Мармелад Bob Snail яблуко-вишня, 90г — <b>75.99 ₴</b> <s>122 ₴</s> · заявлено −38%\n🔗 <a href=\"https://silpo.ua/product/marmelad-bob-snail-iabluko-vyshnia-957303\">відкрити</a>"
    ]
   },
   "15": {
    "t": "🍿 <b>Снеки та чипси</b>",
    "b": "🍿 Снеки та чипси",
    "first": [
-    "1. 🔥 Чипси Shrips креветочні класичні, 50г — <b>54.99 ₴</b> <s>99 ₴</s> · заявлено −44% · <b>реально −51%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/chypsy-shrips-krevetochni-klasychni-904682\">відкрити</a>",
-    "2. Снеки Taro рибні зі смаком чилі, 52г — <b>79.99 ₴</b> <s>149 ₴</s> · заявлено −46% · <b>реально −50%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/sneky-taro-rybni-zi-smakom-chyli-955465\">відкрити</a>",
-    "3. 🔥 Фісташки Wonderful смажені несолоні, 250г — <b>399 ₴</b> <s>699 ₴</s> · заявлено −43% · <b>реально −50%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/fistashky-wonderful-smazheni-nesoloni-486139\">відкрити</a>",
-    "4. 🔥 Чипси Pringles зі смаком печеної картоплі, сиру та бекону, 158г — <b>139 ₴</b> <s>259 ₴</s> · заявлено −46% · <b>реально −50%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/chypsy-pringles-zi-smakom-pechenoi-kartopli-syru-ta-bekonu-1011646\">відкрити</a>",
-    "5. Снеки Taro рибні зі смаком барбекю, 52г — <b>79.99 ₴</b> <s>139 ₴</s> · заявлено −42% · <b>реально −46%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/sneky-taro-rybni-zi-smakom-barbekiu-955464\">відкрити</a>"
+    "1. 🔥 Чипси Shrips креветкові з вершково-часниковим смаком, 50г — <b>54.99 ₴</b> <s>99 ₴</s> · заявлено −44% · <b>реально −44%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/chypsy-shrips-krevetkovi-z-vershkovo-chasnykovym-smakom-936485\">відкрити</a>",
+    "2. 🔥 Чипси кукурудзяні Doritos зі смаком барбекю, 90г — <b>44.99 ₴</b> <s>74.99 ₴</s> · заявлено −40% · <b>реально −38%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/chypsy-kukurudziani-doritos-zi-smakom-barbekiu-929717\">відкрити</a>",
+    "3. Кеш'ю Winway смажене, 100г — <b>99 ₴</b> <s>164 ₴</s> · заявлено −40% · <b>реально −40%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/kesh-iu-winway-smazhene-769976\">відкрити</a>",
+    "4. Попкорн Candy Pop TWIX, 28г — <b>69.99 ₴</b> <s>130 ₴</s> · заявлено −46% · ⭐ 3.5\n🔗 <a href=\"https://silpo.ua/product/popkorn-candy-pop-twix-959413\">відкрити</a>",
+    "5. 🔥 Снек пікантний Pringles зі смаком сиру чеддер, 158г — <b>139 ₴</b> <s>224 ₴</s> · заявлено −38% · <b>реально −39%</b> · ⭐ 3.3\n🔗 <a href=\"https://silpo.ua/product/snek-pikantnyi-pringles-zi-smakom-syru-chedder-949359\">відкрити</a>"
    ],
    "rows": [
-    "6. 🔥 Чипси Shrips креветкові з вершково-часниковим смаком, 50г — <b>54.99 ₴</b> <s>99 ₴</s> · заявлено −44% · <b>реально −44%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/chypsy-shrips-krevetkovi-z-vershkovo-chasnykovym-smakom-936485\">відкрити</a>",
-    "7. 🔥 Чипси Pringles зі смаком солі та оцту, 158г — <b>139 ₴</b> <s>224 ₴</s> · заявлено −38% · <b>реально −50%</b> · ⭐ 3.2\n🔗 <a href=\"https://silpo.ua/product/chypsy-pringles-zi-smakom-soli-ta-otstu-1011647\">відкрити</a>",
-    "8. 🔥 Чипси кукурудзяні Doritos зі смаком барбекю, 90г — <b>44.99 ₴</b> <s>74.99 ₴</s> · заявлено −40% · <b>реально −38%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/chypsy-kukurudziani-doritos-zi-smakom-barbekiu-929717\">відкрити</a>",
-    "9. Кеш'ю Winway смажене, 100г — <b>99 ₴</b> <s>164 ₴</s> · заявлено −40% · <b>реально −40%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/kesh-iu-winway-smazhene-769976\">відкрити</a>",
-    "10. Попкорн Candy Pop TWIX, 28г — <b>69.99 ₴</b> <s>130 ₴</s> · заявлено −46% · ⭐ 3.5\n🔗 <a href=\"https://silpo.ua/product/popkorn-candy-pop-twix-959413\">відкрити</a>",
-    "11. 🔥 Чипси Pringles зі смаком сиру, 165г — <b>119 ₴</b> <s>189 ₴</s> · заявлено −37% · <b>реально −40%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/chypsy-pringles-zi-smakom-syru-423899\">відкрити</a>",
-    "12. 🔥 Попкорн «Премія»® для мікрохвильової печі зі смаком вершкового масла, 100г — <b>29.99 ₴</b> <s>46.99 ₴</s> · заявлено −36% · <b>реально −40%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/popkorn-premiia-dlia-mikrokhvylovoi-pechi-zi-smakom-vershkovogo-masla-454942\">відкрити</a>",
-    "13. Снеки Taro рибні з гострим смаком, 52г — <b>114 ₴</b> <s>169 ₴</s> · заявлено −33% · <b>реально −36%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/sneky-taro-rybni-z-gostrym-smakom-955463\">відкрити</a>",
-    "14. 🔥 Снек пікантний Pringles зі смаком сиру чеддер, 158г — <b>139 ₴</b> <s>224 ₴</s> · заявлено −38% · <b>реально −39%</b> · ⭐ 3.3\n🔗 <a href=\"https://silpo.ua/product/snek-pikantnyi-pringles-zi-smakom-syru-chedder-949359\">відкрити</a>",
-    "15. Чипси Shrips креветкові зі смаком том-ям, 50г — <b>61.99 ₴</b> <s>99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −37% · <b>реально −44%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/chypsy-shrips-krevetkovi-zi-smakom-tom-iam-969268\">відкрити</a>"
+    "6. 🔥 Арахіс «Премія»® солоний смажений, 150г — <b>39.99 ₴</b> <s>65.99 ₴</s> · заявлено −39% · <b>реально −39%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/arakhis-premiia-solonyi-smazhenyi-345513\">відкрити</a>",
+    "7. 🔥 Кабаноси Дмитрук Delicate курячі в/к, 80г — <b>64.99 ₴</b> <s>91.49 ₴</s> · заявлено −29% · <b>реально −32%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/kabanosy-dmytruk-delicate-kuriachi-v-k-920222\">відкрити</a>",
+    "8. 🔥 Кабаноси Дмитрук Original зі свинини в/к, 80г — <b>64.99 ₴</b> <s>91.49 ₴</s> · заявлено −29% · <b>реально −32%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/kabanosy-dmytruk-original-zi-svynyny-v-k-920221\">відкрити</a>",
+    "9. 🔥 Чипси кукурудзяні Doritos зі смаком сиру, 90г — <b>44.99 ₴</b> <s>74.99 ₴</s> · заявлено −40% · <b>реально −33%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/chypsy-kukurudziani-doritos-zi-smakom-syru-929719\">відкрити</a>",
+    "10. 🔥 Снек пікантний Pringles зі смаком піци, 158г — <b>139 ₴</b> <s>224 ₴</s> · заявлено −38% · <b>реально −39%</b> · ⭐ 3.4\n🔗 <a href=\"https://silpo.ua/product/snek-pikantnyi-pringles-zi-smakom-pitsy-896880\">відкрити</a>",
+    "11. 🔥 Кеш'ю «Премія»® смажені ядра солоні, 70г — <b>59.99 ₴</b> <s>88.99 ₴</s> · заявлено −33% · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/kesh-iu-premiia-smazheni-iadra-soloni-937087\">відкрити</a>",
+    "12. 🔥 Насіння соняшникове Sun Snack Спокуслава Лаком смажене несолоне, 150г — <b>44.99 ₴</b> <s>68.99 ₴</s> · заявлено −35% · ⭐ 3.2\n🔗 <a href=\"https://silpo.ua/product/nasinnia-soniashnykove-sun-snack-spokuslava-lakom-smazhene-nesolone-942032\">відкрити</a>",
+    "13. 🔥 Насіння соняшника «Премія»® смажене солоне, 110г — <b>29.99 ₴</b> <s>43.49 ₴</s> · заявлено −31% · <b>реально −31%</b> · ⭐ 3.6\n🔗 <a href=\"https://silpo.ua/product/nasinnia-soniashnyka-premiia-smazhene-solone-909008\">відкрити</a>",
+    "14. Снеки Smiltene сирні зі смаком блакитного сиру, 50г — <b>124 ₴</b> <s>189 ₴</s> · 🌐 лише онлайн-замовлення заявлено −34%\n🔗 <a href=\"https://silpo.ua/product/sneky-smiltene-syrni-zi-smakom-blakytnogo-syru-1009342\">відкрити</a>",
+    "15. Снеки Smiltene сирні зі смаком сметани та цибулі, 50г — <b>124 ₴</b> <s>189 ₴</s> · 🌐 лише онлайн-замовлення заявлено −34%\n🔗 <a href=\"https://silpo.ua/product/sneky-smiltene-syrni-zi-smakom-smetany-ta-tsybuli-1009340\">відкрити</a>"
    ]
   },
   "16": {
    "t": "☕ <b>Кава, чай</b>",
    "b": "☕ Кава, чай",
    "first": [
-    "1. 🔥 Кава мелена Ambassador Crema натуральна смажена, 225г — <b>154 ₴</b> <s>344 ₴</s> · заявлено −55% · <b>реально −56%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/kava-melena-ambassador-crema-naturalna-smazhena-941925\">відкрити</a>",
-    "2. 🔥 Кава мелена Carte Noire Classique натуральна смажена, 250г — <b>229 ₴</b> <s>519 ₴</s> · заявлено −56% · <b>реально −56%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/kava-melena-carte-noire-classique-naturalna-smazhena-963722\">відкрити</a>",
-    "3. 🔥 Кава мелена Ambassador Strong, 225г — <b>144 ₴</b> <s>294 ₴</s> · заявлено −51% · <b>реально −52%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/kava-melena-ambassador-strong-854224\">відкрити</a>",
-    "4. 🔥 Кава мелена Ambassador Premium, 225г — <b>164 ₴</b> <s>309 ₴</s> · заявлено −47% · <b>реально −50%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/kava-melena-ambassador-premium-854222\">відкрити</a>",
-    "5. 🔥 Чай чорний G'tea! Англійський до сніданку, 25*2г — <b>64.99 ₴</b> <s>121 ₴</s> · заявлено −46% · <b>реально −48%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/chai-chornyi-g-tea-angliiskyi-do-snidanku-497046\">відкрити</a>"
+    "1. 🔥 Чай чорний G'tea! Англійський до сніданку, 25*2г — <b>64.99 ₴</b> <s>121 ₴</s> · заявлено −46% · <b>реально −48%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/chai-chornyi-g-tea-angliiskyi-do-snidanku-497046\">відкрити</a>",
+    "2. Чай чорний Sherlock Secrets Spring Feeling, 22*1,8г — <b>64.99 ₴</b> <s>106 ₴</s> · заявлено −39% · <b>реально −40%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/chai-chornyi-sherlock-secrets-spring-feeling-971485\">відкрити</a>",
+    "3. 🔥 Кава розчинна Jacobs Monarch натуральна сублімована с/б, 95г — <b>194 ₴</b> <s>344 ₴</s> · заявлено −44% · <b>реально −46%</b> · ⭐ 3.7\n🔗 <a href=\"https://silpo.ua/product/kava-rozchynna-jacobs-monarch-naturalna-sublimovana-s-b-579161\">відкрити</a>",
+    "4. Чай чорний Sherlock Secrets Pleasure Time, 22*1,8г — <b>64.99 ₴</b> <s>106 ₴</s> · заявлено −39% · <b>реально −40%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/chai-chornyi-sherlock-secrets-pleasure-time-971486\">відкрити</a>",
+    "5. 🔥 Кава розчинна Carte Noire натуральна сублімована, 140г — <b>349 ₴</b> <s>549 ₴</s> · заявлено −36% · <b>реально −39%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/kava-rozchynna-carte-noire-naturalna-sublimovana-783913\">відкрити</a>"
    ],
    "rows": [
-    "6. 🔥 Напій кавовий Jacobs Cappuccino choco, 500г — <b>189 ₴</b> <s>344 ₴</s> · заявлено −45% · <b>реально −48%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/napii-kavovyi-jacobs-cappuccino-choco-911743\">відкрити</a>",
-    "7. 🔥 Чай чорний Basilur Uva без конверту, 25*2г/уп — <b>59.99 ₴</b> <s>110 ₴</s> · заявлено −45% · <b>реально −49%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/chai-chornyi-basilur-uva-bez-konvertu-896891\">відкрити</a>",
-    "8. 🔥 Напій кавовий Jacobs Caramel latte 3в1 розчинний, 450г — <b>169 ₴</b> <s>284 ₴</s> · заявлено −40% · <b>реально −45%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/napii-kavovyi-jacobs-caramel-latte-3v1-rozchynnyi-979586\">відкрити</a>",
-    "9. 🔥 Чай зелений Basilur Oriental White moon улун, 25*1,5г — <b>64.99 ₴</b> <s>115 ₴</s> · заявлено −43% · <b>реально −47%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/chai-zelenyi-basilur-oriental-white-moon-ulun-878816\">відкрити</a>",
-    "10. 🔥 Чай G'tea! Queen's Tea Bergamot чорний, 25*2г — <b>64.99 ₴</b> <s>109 ₴</s> · заявлено −40% · <b>реально −45%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/chai-g-tea-queen-s-tea-bergamot-chornyi-497045\">відкрити</a>",
-    "11. Чай чорний Sherlock Secrets Spring Feeling, 22*1,8г — <b>64.99 ₴</b> <s>106 ₴</s> · заявлено −39% · <b>реально −40%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/chai-chornyi-sherlock-secrets-spring-feeling-971485\">відкрити</a>",
-    "12. 🔥 Кава розчинна Jacobs Monarch натуральна сублімована с/б, 95г — <b>194 ₴</b> <s>344 ₴</s> · заявлено −44% · <b>реально −46%</b> · ⭐ 3.7\n🔗 <a href=\"https://silpo.ua/product/kava-rozchynna-jacobs-monarch-naturalna-sublimovana-s-b-579161\">відкрити</a>",
-    "13. Чай чорний Sherlock Secrets Pleasure Time, 22*1,8г — <b>64.99 ₴</b> <s>106 ₴</s> · заявлено −39% · <b>реально −40%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/chai-chornyi-sherlock-secrets-pleasure-time-971486\">відкрити</a>",
-    "14. 🔥 Кава розчинна Carte Noire натуральна сублімована, 140г — <b>349 ₴</b> <s>549 ₴</s> · заявлено −36% · <b>реально −39%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/kava-rozchynna-carte-noire-naturalna-sublimovana-783913\">відкрити</a>",
-    "15. 🔥 Напій кавовий Jacobs Monarch 3 в 1, 15г — <b>8.99 ₴</b> <s>12.99 ₴</s> · заявлено −31% · <b>реально −36%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/napii-kavovyi-jacobs-monarch-3-v-1-764878\">відкрити</a>"
+    "6. 🔥 Чай чорний Basilur Рухуна, 100г — <b>119 ₴</b> <s>199 ₴</s> · заявлено −40% · <b>реально −40%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/chai-chornyi-basilur-rukhuna-739674\">відкрити</a>",
+    "7. 🔥 Кава розчинна Jacobs Cronat Gold сублімована д/п, 300г — <b>499 ₴</b> <s>849 ₴</s> · заявлено −41% · <b>реально −43%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/kava-rozchynna-jacobs-cronat-gold-sublimovana-d-p-983778\">відкрити</a>",
+    "8. Кава мелена Dolce Gusto Lungo смажена, 16*5,6г — <b>269 ₴</b> <s>429 ₴</s> · заявлено −37% · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/kava-melena-dolce-gusto-lungo-smazhena-949749\">відкрити</a>",
+    "9. Кава мелена Dolce Gusto Espresso, 16*5,5г — <b>269 ₴</b> <s>424 ₴</s> · заявлено −37% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/kava-melena-dolce-gusto-espresso-834406\">відкрити</a>",
+    "10. Кава розчинна MacCoffee Gold натуральна д/п, 60г — <b>89.99 ₴</b> <s>144 ₴</s> · заявлено −38% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/kava-rozchynna-maccoffee-gold-naturalna-d-p-851695\">відкрити</a>",
+    "11. 🔥 Кава розчинна Mioro Coffee сублімована, 300г — <b>399 ₴</b> <s>729 ₴</s> · заявлено −45% · <b>реально −45%</b> · ⭐ 2.9\n🔗 <a href=\"https://silpo.ua/product/kava-rozchynna-mioro-coffee-sublimovana-966750\">відкрити</a>",
+    "12. 🔥 Кава розчинна Jacobs Barista Editions Americano, 150г — <b>349 ₴</b> <s>519 ₴</s> · заявлено −33% · <b>реально −35%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/kava-rozchynna-jacobs-barista-editions-americano-806873\">відкрити</a>",
+    "13. 🔥 Кава зернова Starbucks Espresso Roast Blonde натуральна смажена, 200г — <b>299 ₴</b> <s>539 ₴</s> · заявлено −45% · <b>реально −38%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/kava-zernova-starbucks-espresso-roast-blonde-naturalna-smazhena-840452\">відкрити</a>",
+    "14. Чай чорний Hillway Forest Berries, 25*1,5г — <b>59.99 ₴</b> <s>99 ₴</s> · заявлено −39%\n🔗 <a href=\"https://silpo.ua/product/chai-chornyi-hillway-forest-berries-659389\">відкрити</a>",
+    "15. Кава мелена Jacobs Espresso Gold Kronung смажена, 200г — <b>199.9 ₴</b> <s>369 ₴</s> · 🌐 лише онлайн-замовлення заявлено −46% · <b>реально −46%</b> · ⭐ 3.6\n🔗 <a href=\"https://silpo.ua/product/kava-melena-jacobs-espresso-gold-kronung-smazhena-977653\">відкрити</a>"
    ]
   },
   "17": {
    "t": "🥤 <b>Напої</b>",
    "b": "🥤 Напої",
    "first": [
-    "1. 🔥 Нектар «Літо» томатний, 0,9л — <b>34.99 ₴</b> <s>78.49 ₴</s> · заявлено −55% · <b>реально −59%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/nektar-lito-tomatnyi-696928\">відкрити</a>",
-    "2. 🔥 Нектар «Літо» мультифрукт, 0,9л — <b>34.99 ₴</b> <s>61.99 ₴</s> · заявлено −44% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/nektar-lito-multyfrukt-696930\">відкрити</a>",
-    "3. 🔥 Напій енергетичний Best Shot безалкогольний з/б, 0,5л — <b>34.99 ₴</b> <s>49.49 ₴</s> · заявлено −29% · <b>реально −33%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-best-shot-bezalkogolnyi-z-b-953742\">відкрити</a>",
-    "4. Напій соковмісний Capri-Sun Monster alarm, 0,2л — <b>23.49 ₴</b> <s>35.99 ₴</s> · заявлено −35%\n🔗 <a href=\"https://silpo.ua/product/napii-sokovmisnyi-capri-sun-monster-alarm-904624\">відкрити</a>",
-    "5. Вода мінеральна «Набеглаві», 0,5л — <b>39.99 ₴</b> <s>46.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −14% · <b>реально −33%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/voda-mineralna-nabeglavi-332537\">відкрити</a>"
+    "1. 🔥 Нектар «Літо» мультифрукт, 0,9л — <b>34.99 ₴</b> <s>61.99 ₴</s> · заявлено −44% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/nektar-lito-multyfrukt-696930\">відкрити</a>",
+    "2. Напій соковмісний Capri-Sun Monster alarm, 0,2л — <b>23.49 ₴</b> <s>35.99 ₴</s> · заявлено −35%\n🔗 <a href=\"https://silpo.ua/product/napii-sokovmisnyi-capri-sun-monster-alarm-904624\">відкрити</a>",
+    "3. Вода мінеральна Cristaline Aurele природна негазована, 0,5л — <b>23.99 ₴</b> <s>39.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −40% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/voda-mineralna-cristaline-aurele-pryrodna-negazovana-679041\">відкрити</a>",
+    "4. Нектар Granini ананасовий, 1л — <b>139 ₴</b> <s>229 ₴</s> · 🌐 лише онлайн-замовлення заявлено −39% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/nektar-granini-ananasovyi-914250\">відкрити</a>",
+    "5. 🔥 Напій енергетичний Tiger Classic Zero безалкогольний газований, 0,25л — <b>29.99 ₴</b> <s>44.99 ₴</s> · заявлено −33% · ⭐ 3.5\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-tiger-classic-zero-bezalkogolnyi-gazovanyi-981980\">відкрити</a>"
    ],
    "rows": [
-    "6. Вода мінеральна Borjomi сильногазована, скло, 0,5л — <b>59.99 ₴</b> <s>83.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −29% · <b>реально −37%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/voda-mineralna-borjomi-sylnogazovana-sklo-1008\">відкрити</a>",
-    "7. Вода мінеральна Cristaline Aurele природна негазована, 0,5л — <b>23.99 ₴</b> <s>39.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −40% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/voda-mineralna-cristaline-aurele-pryrodna-negazovana-679041\">відкрити</a>",
-    "8. Нектар Granini ананасовий, 1л — <b>139 ₴</b> <s>229 ₴</s> · 🌐 лише онлайн-замовлення заявлено −39% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/nektar-granini-ananasovyi-914250\">відкрити</a>",
-    "9. 🔥 Напій енергетичний Tiger Classic Zero безалкогольний газований, 0,25л — <b>29.99 ₴</b> <s>44.99 ₴</s> · заявлено −33% · ⭐ 3.5\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-tiger-classic-zero-bezalkogolnyi-gazovanyi-981980\">відкрити</a>",
-    "10. Напій Canada Dry Ginger Ale з/б, 0,33л — <b>40.49 ₴</b> <s>55.49 ₴</s> · заявлено −27% · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/napii-canada-dry-ginger-ale-z-b-755162\">відкрити</a>",
-    "11. Напій Crush Strawberry безалкогольний газований з/б, 0,355л — <b>70.99 ₴</b> <s>100 ₴</s> · заявлено −29% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/napii-crush-strawberry-bezalkogolnyi-gazovanyi-z-b-993856\">відкрити</a>",
-    "12. Нектар Cido ананасовий, 1л — <b>99 ₴</b> <s>159 ₴</s> · 🌐 лише онлайн-замовлення заявлено −38% · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/nektar-cido-ananasovyi-905941\">відкрити</a>",
-    "13. Чай холодний Arizona чорний зі смаком персика з/б, 0,33л — <b>50.99 ₴</b> <s>69.49 ₴</s> · заявлено −27% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/chai-kholodnyi-arizona-chornyi-zi-smakom-persyka-z-b-896719\">відкрити</a>",
-    "14. Напій Alvera Класік зі шматочками алое 6%, 0,5л — <b>60.99 ₴</b> <s>80.99 ₴</s> · заявлено −25% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/napii-alvera-klasik-zi-shmatochkamy-aloe-6-896418\">відкрити</a>",
-    "15. Напій Kidibul Яблуко-полуниця безалкогольний сильногазований, 0,75л — <b>169 ₴</b> <s>249 ₴</s> · 🌐 лише онлайн-замовлення заявлено −32% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/napii-kidibul-yabluko-polunytsia-bezalkogolnyi-sylnogazovanyi-452749\">відкрити</a>"
+    "6. Напій Canada Dry Ginger Ale з/б, 0,33л — <b>40.49 ₴</b> <s>55.49 ₴</s> · заявлено −27% · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/napii-canada-dry-ginger-ale-z-b-755162\">відкрити</a>",
+    "7. Напій Crush Strawberry безалкогольний газований з/б, 0,355л — <b>70.99 ₴</b> <s>100 ₴</s> · заявлено −29% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/napii-crush-strawberry-bezalkogolnyi-gazovanyi-z-b-993856\">відкрити</a>",
+    "8. Нектар Cido ананасовий, 1л — <b>99 ₴</b> <s>159 ₴</s> · 🌐 лише онлайн-замовлення заявлено −38% · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/nektar-cido-ananasovyi-905941\">відкрити</a>",
+    "9. Чай холодний Arizona чорний зі смаком персика з/б, 0,33л — <b>50.99 ₴</b> <s>69.49 ₴</s> · заявлено −27% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/chai-kholodnyi-arizona-chornyi-zi-smakom-persyka-z-b-896719\">відкрити</a>",
+    "10. Напій Alvera Класік зі шматочками алое 6%, 0,5л — <b>60.99 ₴</b> <s>80.99 ₴</s> · заявлено −25% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/napii-alvera-klasik-zi-shmatochkamy-aloe-6-896418\">відкрити</a>",
+    "11. Напій Kidibul Яблуко-полуниця безалкогольний сильногазований, 0,75л — <b>169 ₴</b> <s>249 ₴</s> · 🌐 лише онлайн-замовлення заявлено −32% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/napii-kidibul-yabluko-polunytsia-bezalkogolnyi-sylnogazovanyi-452749\">відкрити</a>",
+    "12. Напій «Живчик» з соком яблука негазований, 1л — <b>29.99 ₴</b> <s>40.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −27% · <b>реально −29%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/napii-zhyvchyk-z-sokom-iabluka-negazovanyi-437626\">відкрити</a>",
+    "13. Нектар Granini апельсин з м'якоттю, 1л — <b>174 ₴</b> <s>244 ₴</s> · заявлено −29%\n🔗 <a href=\"https://silpo.ua/product/nektar-granini-apelsyn-z-m-iakottiu-981670\">відкрити</a>",
+    "14. Сік Happy Day ананасовий, 1л — <b>204 ₴</b> <s>284 ₴</s> · заявлено −28%\n🔗 <a href=\"https://silpo.ua/product/sik-happy-day-ananasovyi-507663\">відкрити</a>",
+    "15. Сік «Наш Сік» Полуниця-яблуко з м'якоттю, 0,33л — <b>28.49 ₴</b> <s>38.49 ₴</s> · заявлено −26%\n🔗 <a href=\"https://silpo.ua/product/sik-nash-sik-polunytsia-iabluko-z-m-iakottiu-432533\">відкрити</a>"
    ]
   },
   "18": {
    "t": "🧊 <b>Заморожена продукція</b>",
    "b": "🧊 Заморожена продукц",
    "first": [
-    "1. 🔥 Морозиво «Золотий Каштан» «Класичний» пломбір у вершковій глазурі, 70г — <b>32.99 ₴</b> <s>66.99 ₴</s> · заявлено −51% · <b>реально −60%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/morozyvo-zolotyi-kashtan-klasychnyi-plombir-u-vershkovii-glazuri-542504\">відкрити</a>",
-    "2. 🔥 Пельмені Laska «Ма-ню-ням» з м'ясом курки та телятиною, 400г — <b>69.99 ₴</b> <s>144 ₴</s> · заявлено −51% · <b>реально −56%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/pelmeni-laska-ma-niu-niam-z-m-iasom-kurky-ta-teliatynoiu-842298\">відкрити</a>",
-    "3. Креветка королівська в панцирі 40/80 с/м, 100г — <b>39.9 ₴</b> <s>79.9 ₴</s> · заявлено −50% · <b>реально −53%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/krevetka-korolivska-v-pantsyri-40-80-s-m-864125\">відкрити</a>",
-    "4. 🔥 Пельмені Laska «Маню-ням» з м'ясом індика та кролика, 400г — <b>69.99 ₴</b> <s>139 ₴</s> · заявлено −50% · <b>реально −51%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/pelmeni-laska-maniu-niam-z-m-iasom-indyka-ta-krolyka-912911\">відкрити</a>",
-    "5. 🔥 Пельмені Laska «Ма-ню-ням» з м'ясом курки та вершковим маслом, 400г — <b>69.99 ₴</b> <s>139 ₴</s> · заявлено −50% · <b>реально −51%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/pelmeni-laska-ma-niu-niam-z-m-iasom-kurky-ta-vershkovym-maslom-842297\">відкрити</a>"
+    "1. 🔥 Пельмені Laska «Маню-ням» з м'ясом індика та кролика, 400г — <b>69.99 ₴</b> <s>139 ₴</s> · заявлено −50% · <b>реально −51%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/pelmeni-laska-maniu-niam-z-m-iasom-indyka-ta-krolyka-912911\">відкрити</a>",
+    "2. 🔥 Пельмені Laska «Ма-ню-ням» з м'ясом курки та вершковим маслом, 400г — <b>69.99 ₴</b> <s>139 ₴</s> · заявлено −50% · <b>реально −51%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/pelmeni-laska-ma-niu-niam-z-m-iasom-kurky-ta-vershkovym-maslom-842297\">відкрити</a>",
+    "3. Морозиво Лавка Традицій Soloviov Чорниця пломбір з овечого молока 12%, 300г — <b>154 ₴</b> <s>299 ₴</s> · заявлено −48% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/morozyvo-lavka-tradytsii-soloviov-chornytsia-plombir-z-ovechogo-moloka-12-992306\">відкрити</a>",
+    "4. Морозиво Лавка Традицій Soloviov Вишня пломбір з овечого молока 12%, 300г — <b>154 ₴</b> <s>299 ₴</s> · заявлено −48% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/morozyvo-lavka-tradytsii-soloviov-vyshnia-plombir-z-ovechogo-moloka-12-992305\">відкрити</a>",
+    "5. 🔥 Креветки Delfin із часником варено-морожені очищені, 150г — <b>259 ₴</b> <s>499 ₴</s> · заявлено −48% · <b>реально −48%</b> · ⭐ 3.1\n🔗 <a href=\"https://silpo.ua/product/krevetky-delfin-iz-chasnykom-vareno-morozheni-ochyshcheni-920204\">відкрити</a>"
    ],
    "rows": [
-    "6. Морозиво Лавка Традицій Soloviov Чорниця пломбір з овечого молока 12%, 300г — <b>154 ₴</b> <s>299 ₴</s> · заявлено −48% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/morozyvo-lavka-tradytsii-soloviov-chornytsia-plombir-z-ovechogo-moloka-12-992306\">відкрити</a>",
-    "7. Морозиво Лавка Традицій Soloviov Вишня пломбір з овечого молока 12%, 300г — <b>154 ₴</b> <s>299 ₴</s> · заявлено −48% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/morozyvo-lavka-tradytsii-soloviov-vyshnia-plombir-z-ovechogo-moloka-12-992305\">відкрити</a>",
-    "8. 🔥 Морозиво «Золотий Каштан» шоколадний пломбір у вершковій глазурі, 70г — <b>32.99 ₴</b> <s>66.49 ₴</s> · заявлено −50% · <b>реально −48%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/morozyvo-zolotyi-kashtan-shokoladnyi-plombir-u-vershkovii-glazuri-574811\">відкрити</a>",
-    "9. 🔥 Креветки Delfin із часником варено-морожені очищені, 150г — <b>259 ₴</b> <s>499 ₴</s> · заявлено −48% · <b>реально −48%</b> · ⭐ 3.1\n🔗 <a href=\"https://silpo.ua/product/krevetky-delfin-iz-chasnykom-vareno-morozheni-ochyshcheni-920204\">відкрити</a>",
-    "10. 🔥 Вареники Хуторок з картоплею та грибами, 800г — <b>89.99 ₴</b> <s>144 ₴</s> · заявлено −38% · <b>реально −42%</b> · ⭐ 3.5\n🔗 <a href=\"https://silpo.ua/product/varenyky-khutorok-z-kartopleiu-ta-grybamy-1008092\">відкрити</a>",
-    "11. Креветки Сільпо тигрові чорні цілі в панцирі сирі глазуровані свіжоморожені 21/30, 1кг — <b>599 ₴</b> <s>999 ₴</s> · заявлено −40% · <b>реально −40%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/krevetky-silpo-tygrovi-chorni-tsili-v-pantsyri-syri-glazurovani-svizhomorozheni-21-30-1000863\">відкрити</a>",
-    "12. Чебуреки Хуторок смажені заморожені, 600г — <b>99.9 ₴</b> <s>174 ₴</s> · 🌐 лише онлайн-замовлення заявлено −43% · <b>реально −43%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/chebureky-khutorok-smazheni-zamorozheni-1006646\">відкрити</a>",
-    "13. Вареники Крафтяр з картоплею та грибами заморожені, 800г — <b>129 ₴</b> <s>219 ₴</s> · 🌐 лише онлайн-замовлення заявлено −41% · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/varenyky-kraftiar-z-kartopleiu-ta-grybamy-zamorozheni-1012488\">відкрити</a>",
-    "14. 🔥 Морозиво «МО?» Бачіо, 300г — <b>199 ₴</b> <s>299 ₴</s> · заявлено −33% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/morozyvo-mo-bachio-947730\">відкрити</a>",
-    "15. Тальятелле Pasta Fresca Voltan, 250г — <b>80.99 ₴</b> <s>99 ₴</s> · заявлено −18% · <b>реально −32%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/taliatelle-pasta-fresca-voltan-781497\">відкрити</a>"
+    "6. Креветки Сільпо тигрові чорні цілі в панцирі сирі глазуровані свіжоморожені 21/30, 1кг — <b>599 ₴</b> <s>999 ₴</s> · заявлено −40% · <b>реально −40%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/krevetky-silpo-tygrovi-chorni-tsili-v-pantsyri-syri-glazurovani-svizhomorozheni-21-30-1000863\">відкрити</a>",
+    "7. Чебуреки Хуторок смажені заморожені, 600г — <b>99.9 ₴</b> <s>174 ₴</s> · 🌐 лише онлайн-замовлення заявлено −43% · <b>реально −43%</b> · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/chebureky-khutorok-smazheni-zamorozheni-1006646\">відкрити</a>",
+    "8. Вареники Крафтяр з картоплею та грибами заморожені, 800г — <b>129 ₴</b> <s>219 ₴</s> · 🌐 лише онлайн-замовлення заявлено −41% · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/varenyky-kraftiar-z-kartopleiu-ta-grybamy-zamorozheni-1012488\">відкрити</a>",
+    "9. 🔥 Морозиво «МО?» Бачіо, 300г — <b>199 ₴</b> <s>299 ₴</s> · заявлено −33% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/morozyvo-mo-bachio-947730\">відкрити</a>",
+    "10. Суміш овочева «Премія»® Мікс з Броколі заморожена, 400г — <b>56.9 ₴</b> <s>87.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −35% · <b>реально −35%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/sumish-ovocheva-premiia-miks-z-brokoli-zamorozhena-975421\">відкрити</a>",
+    "11. 🔥 Сорбет «МО?» Манго, 300г — <b>199 ₴</b> <s>299 ₴</s> · заявлено −33% · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/sorbet-mo-mango-745917\">відкрити</a>",
+    "12. 🔥 Морозиво «МО?» Чорничне з ароматом лаванди, 300г — <b>199 ₴</b> <s>299 ₴</s> · заявлено −33% · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/morozyvo-mo-chornychne-z-aromatom-lavandy-787770\">відкрити</a>",
+    "13. 🔥 Морозиво Ма? Макарун пломбір смак фісташка, 240г — <b>149 ₴</b> <s>219 ₴</s> · заявлено −32% · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/morozyvo-ma-makarun-plombir-smak-fistashka-994026\">відкрити</a>",
+    "14. Суміш овочів «Премія»® заморожена «Мексиканська», 400г — <b>56.9 ₴</b> <s>85.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −33% · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/sumish-ovochiv-premiia-zamorozhena-meksykanska-325889\">відкрити</a>",
+    "15. Сирники «Хуторок», 500г — <b>139 ₴</b> <s>224 ₴</s> · 🌐 лише онлайн-замовлення заявлено −38% · <b>реально −30%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/syrnyky-khutorok-778665\">відкрити</a>"
    ]
   },
   "19": {
    "t": "🍷 <b>Алкоголь</b>",
    "b": "🍷 Алкоголь",
    "first": [
-    "1. 🔥 Пиво Corona Extra світле, 0,33л — <b>49.99 ₴</b> <s>86.99 ₴</s> · заявлено −43% · <b>реально −46%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/pyvo-corona-extra-svitle-839544\">відкрити</a>",
-    "2. Пиво Kronenbourg 1664 Blanc світле з/б, 4*0,5л — <b>149 ₴</b> <s>279 ₴</s> · заявлено −47% · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/pyvo-kronenbourg-1664-blanc-svitle-z-b-836378\">відкрити</a>",
-    "3. 🔥 Пиво Stella Artois з/б, мультипак, 4*0,5л — <b>139 ₴</b> <s>259 ₴</s> · заявлено −46% · <b>реально −51%</b> · ⭐ 3.6\n🔗 <a href=\"https://silpo.ua/product/pyvo-stella-artois-z-b-multypak-452778\">відкрити</a>",
-    "4. Віскі Teacher's, 0,7л — <b>504 ₴</b> <s>919 ₴</s> · заявлено −45% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/viski-teacher-s-55192\">відкрити</a>",
-    "5. 🔥 Сидр Somersby, 0,95л — <b>54.99 ₴</b> <s>94.99 ₴</s> · заявлено −42% · <b>реально −44%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/sydr-somersby-733555\">відкрити</a>"
+    "1. Пиво Kronenbourg 1664 Blanc світле з/б, 4*0,5л — <b>149 ₴</b> <s>279 ₴</s> · заявлено −47% · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/pyvo-kronenbourg-1664-blanc-svitle-z-b-836378\">відкрити</a>",
+    "2. Віскі Teacher's, 0,7л — <b>504 ₴</b> <s>919 ₴</s> · заявлено −45% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/viski-teacher-s-55192\">відкрити</a>",
+    "3. 🔥 Сидр Somersby, 0,95л — <b>54.99 ₴</b> <s>94.99 ₴</s> · заявлено −42% · <b>реально −44%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/sydr-somersby-733555\">відкрити</a>",
+    "4. 🔥 Пиво Закарпатське Оригінальне світле з/б, 0,5л — <b>24.99 ₴</b> <s>45.99 ₴</s> · заявлено −46% · <b>реально −44%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/pyvo-zakarpatske-oryginalne-svitle-z-b-818888\">відкрити</a>",
+    "5. Пиво Guinness Draught 0% темне безалкогольне з/б, 0,44л — <b>149 ₴</b> <s>249 ₴</s> · заявлено −40% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/pyvo-guinness-draught-0-temne-bezalkogolne-z-b-969246\">відкрити</a>"
    ],
    "rows": [
-    "6. 🔥 Пиво Закарпатське Оригінальне світле з/б, 0,5л — <b>24.99 ₴</b> <s>45.99 ₴</s> · заявлено −46% · <b>реально −44%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/pyvo-zakarpatske-oryginalne-svitle-z-b-818888\">відкрити</a>",
-    "7. Пиво Leffe Brune з/б, 0,5л — <b>64.99 ₴</b> <s>99 ₴</s> · заявлено −34% · <b>реально −40%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/pyvo-leffe-brune-z-b-478576\">відкрити</a>",
-    "8. Пиво Guinness Draught 0% темне безалкогольне з/б, 0,44л — <b>149 ₴</b> <s>249 ₴</s> · заявлено −40% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/pyvo-guinness-draught-0-temne-bezalkogolne-z-b-969246\">відкрити</a>",
-    "9. Пиво Leffe Blond з/б, 0,5л — <b>64.99 ₴</b> <s>99 ₴</s> · заявлено −34% · <b>реально −40%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/pyvo-leffe-blond-z-b-478571\">відкрити</a>",
-    "10. 🔥 Вино Casaletto bianco біле сухе, 0,75л — <b>139 ₴</b> <s>229 ₴</s> · заявлено −39% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/vyno-casaletto-bianco-bile-sukhe-522639\">відкрити</a>",
-    "11. 🔥 Вермут Martini Extra dry, 0,5л — <b>219 ₴</b> <s>344 ₴</s> · заявлено −36% · <b>реально −39%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/vermut-martini-extra-dry-24125\">відкрити</a>",
-    "12. Напій винний Fratelli Fragolino Bianco напівсолодкий газований з/б, 0,33л — <b>37.99 ₴</b> <s>54.99 ₴</s> · заявлено −31% · <b>реально −37%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/napii-vynnyi-fratelli-fragolino-bianco-napivsolodkyi-gazovanyi-z-b-978649\">відкрити</a>",
-    "13. 🔥 Бренді Arame вірменський 3 зірки, 0,5л — <b>299 ₴</b> <s>499 ₴</s> · заявлено −40%\n🔗 <a href=\"https://silpo.ua/product/brendi-arame-virmenskyi-3-zirky-350076\">відкрити</a>",
-    "14. Напій винний Fratelli Moscato Bianco напівсолодкий газований з/б, 0,33л — <b>37.99 ₴</b> <s>54.99 ₴</s> · заявлено −31% · <b>реально −37%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/napii-vynnyi-fratelli-moscato-bianco-napivsolodkyi-gazovanyi-z-b-982064\">відкрити</a>",
-    "15. 🔥 Лікер Jack Daniel's Tennessee Honey Liqueur, 1л — <b>899 ₴</b> <s>1299 ₴</s> · заявлено −31% · <b>реально −31%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/liker-jack-daniel-s-tennessee-honey-liqueur-726428\">відкрити</a>"
+    "6. 🔥 Вино Casaletto bianco біле сухе, 0,75л — <b>139 ₴</b> <s>229 ₴</s> · заявлено −39% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/vyno-casaletto-bianco-bile-sukhe-522639\">відкрити</a>",
+    "7. 🔥 Вермут Martini Extra dry, 0,5л — <b>219 ₴</b> <s>344 ₴</s> · заявлено −36% · <b>реально −39%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/vermut-martini-extra-dry-24125\">відкрити</a>",
+    "8. 🔥 Бренді Arame вірменський 3 зірки, 0,5л — <b>299 ₴</b> <s>499 ₴</s> · заявлено −40%\n🔗 <a href=\"https://silpo.ua/product/brendi-arame-virmenskyi-3-zirky-350076\">відкрити</a>",
+    "9. 🔥 Лікер Jack Daniel's Tennessee Honey Liqueur, 1л — <b>899 ₴</b> <s>1299 ₴</s> · заявлено −31% · <b>реально −31%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/liker-jack-daniel-s-tennessee-honey-liqueur-726428\">відкрити</a>",
+    "10. 🔥 Лікер Jack Daniel's Tennessee Apple, 1л — <b>899 ₴</b> <s>1299 ₴</s> · заявлено −31% · <b>реально −31%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/liker-jack-daniel-s-tennessee-apple-956317\">відкрити</a>",
+    "11. 🔥 Пиво Heineken світле, 0,33л — <b>36.99 ₴</b> <s>54.99 ₴</s> · заявлено −33% · <b>реально −35%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/pyvo-heineken-svitle-655365\">відкрити</a>",
+    "12. 🔥 Пиво «Перша приватна броварня» «Бочкове» світле нефільтроване з/б, 0,5л — <b>34.99 ₴</b> <s>53.99 ₴</s> · заявлено −35% · <b>реально −35%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/pyvo-persha-pryvatna-brovarnia-bochkove-svitle-nefiltrovane-z-b-783830\">відкрити</a>",
+    "13. 🔥 Віскі Jack Daniels, 1л — <b>899 ₴</b> <s>1299 ₴</s> · заявлено −31% · <b>реально −31%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/viski-jack-daniels-4103\">відкрити</a>",
+    "14. Бренді Shabo XO виноградний 10 років, 0,5л — <b>299 ₴</b> <s>429 ₴</s> · заявлено −30% · <b>реально −33%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/brendi-shabo-xo-vynogradnyi-10-rokiv-799892\">відкрити</a>",
+    "15. 🔥 Вино La Ronde Red Semi Sweet, 0,75л — <b>169 ₴</b> <s>249 ₴</s> · заявлено −32% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/vyno-la-ronde-red-semi-sweet-819359\">відкрити</a>"
    ]
   },
   "20": {
    "t": "🛒 <b>Для дому</b>",
    "b": "🛒 Для дому",
    "first": [
-    "1. 🔥 Засіб для прання Perwoll Відновлення та аромат, 3л — <b>399 ₴</b> <s>999 ₴</s> · заявлено −60% · <b>реально −60%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/zasib-dlia-prannia-perwoll-vidnovlennia-ta-aromat-949302\">відкрити</a>",
-    "2. 🔥 Пакети для сміття «Премія»® з ручками 35 л, 30шт — <b>35.99 ₴</b> <s>81.99 ₴</s> · заявлено −56% · <b>реально −53%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/pakety-dlia-smittia-premiia-z-ruchkamy-35-l-948287\">відкрити</a>",
-    "3. 🔥 Засіб миючий Frosch Зелений лимон, 500мл — <b>59.99 ₴</b> <s>109 ₴</s> · заявлено −45% · <b>реально −51%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/zasib-myiuchyi-frosch-zelenyi-lymon-123098\">відкрити</a>",
-    "4. 🔥 Рушники вологі Чиста Перемога Мілітарі антибактеріальні, 8шт — <b>19.99 ₴</b> <s>49.49 ₴</s> · заявлено −60% · <b>реально −62%</b> · ⭐ 3.4\n🔗 <a href=\"https://silpo.ua/product/rushnyky-vologi-chysta-peremoga-militari-antybakterialni-910535\">відкрити</a>",
-    "5. 🔥 Серветки для прибирання «Премія»® целюлозні, 3шт — <b>39.99 ₴</b> <s>79.49 ₴</s> · заявлено −50% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/servetky-dlia-prybyrannia-premiia-tseliulozni-774993\">відкрити</a>"
+    "1. 🔥 Серветки для прибирання «Премія»® целюлозні, 3шт — <b>39.99 ₴</b> <s>79.49 ₴</s> · заявлено −50% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/servetky-dlia-prybyrannia-premiia-tseliulozni-774993\">відкрити</a>",
+    "2. 🔥 Гель Somat Excellence Duo для посудомийних машин, 540мл — <b>309 ₴</b> <s>579 ₴</s> · заявлено −47% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/gel-somat-excellence-duo-dlia-posudomyinykh-mashyn-880468\">відкрити</a>",
+    "3. Диски для прання Persil Color, 13*16,5г — <b>264 ₴</b> <s>449 ₴</s> · заявлено −41% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/dysky-dlia-prannia-persil-color-948314\">відкрити</a>",
+    "4. Засіб для прання Perwoll Renew Color + Black, 2*3л — <b>1199 ₴</b> <s>1999 ₴</s> · заявлено −40%\n🔗 <a href=\"https://silpo.ua/product/zasib-dlia-prannia-perwoll-renew-color-black-951246\">відкрити</a>",
+    "5. 🔥 Шкарпетки Bartolini спортивні чорно-білі р.29, 2 пари — <b>59.99 ₴</b> <s>113 ₴</s> · заявлено −47% · <b>реально −39%</b>\n🔗 <a href=\"https://silpo.ua/product/shkarpetky-bartolini-sportyvni-chorno-bili-r-29-970935\">відкрити</a>"
    ],
    "rows": [
-    "6. 🔥 Гель Somat Excellence Duo для посудомийних машин, 540мл — <b>309 ₴</b> <s>579 ₴</s> · заявлено −47% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/gel-somat-excellence-duo-dlia-posudomyinykh-mashyn-880468\">відкрити</a>",
-    "7. Гель для прання Persil Expert Sensitive, 1,8л — <b>549 ₴</b> <s>1099 ₴</s> · заявлено −50% · <b>реально −50%</b>\n🔗 <a href=\"https://silpo.ua/product/gel-dlia-prannia-persil-expert-sensitive-962970\">відкрити</a>",
-    "8. 🔥 Засіб для прання Perwoll для темних та чорних речей, 3л — <b>399 ₴</b> <s>999 ₴</s> · заявлено −60% · <b>реально −43%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/zasib-dlia-prannia-perwoll-dlia-temnykh-ta-chornykh-rechei-948335\">відкрити</a>",
-    "9. Диски для прання Persil Color, 13*16,5г — <b>264 ₴</b> <s>449 ₴</s> · заявлено −41% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/dysky-dlia-prannia-persil-color-948314\">відкрити</a>",
-    "10. 🔥 Засіб для прання Perwoll для вовни, шовку та делікатних тканин, 1л — <b>279 ₴</b> <s>399 ₴</s> · заявлено −30% · <b>реально −36%</b> · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/zasib-dlia-prannia-perwoll-dlia-vovny-shovku-ta-delikatnykh-tkanyn-948318\">відкрити</a>",
-    "11. Засіб для прання Perwoll Renew Color + Black, 2*3л — <b>1199 ₴</b> <s>1999 ₴</s> · заявлено −40%\n🔗 <a href=\"https://silpo.ua/product/zasib-dlia-prannia-perwoll-renew-color-black-951246\">відкрити</a>",
-    "12. 🔥 Шкарпетки Bartolini спортивні чорно-білі р.29, 2 пари — <b>59.99 ₴</b> <s>113 ₴</s> · заявлено −47% · <b>реально −39%</b>\n🔗 <a href=\"https://silpo.ua/product/shkarpetky-bartolini-sportyvni-chorno-bili-r-29-970935\">відкрити</a>",
-    "13. 🔥 Туалетний папір Zewa Baby Moist вологий, 80шт — <b>149 ₴</b> <s>224 ₴</s> · заявлено −33% · <b>реально −38%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/tualetnyi-papir-zewa-baby-moist-vologyi-878524\">відкрити</a>",
-    "14. 🔥 Папір туалетний  Zewa Just One 5-шаровий, 6шт — <b>299 ₴</b> <s>439 ₴</s> · заявлено −32% · <b>реально −37%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/papir-tualetnyi-zewa-just-one-5-sharovyi-878527\">відкрити</a>",
-    "15. Ополіскувач Silan Aromatherapy Fascinating Jungle, 770мл — <b>124 ₴</b> <s>199 ₴</s> · заявлено −38% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/opoliskuvach-silan-aromatherapy-fascinating-jungle-927911\">відкрити</a>"
+    "6. Ополіскувач Silan Aromatherapy Fascinating Jungle, 770мл — <b>124 ₴</b> <s>199 ₴</s> · заявлено −38% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/opoliskuvach-silan-aromatherapy-fascinating-jungle-927911\">відкрити</a>",
+    "7. 🔥 Шкарпетки Bartolini спортивні чорно-білі р.25, 2 пари — <b>59.99 ₴</b> <s>113 ₴</s> · заявлено −47% · <b>реально −39%</b>\n🔗 <a href=\"https://silpo.ua/product/shkarpetky-bartolini-sportyvni-chorno-bili-r-25-970933\">відкрити</a>",
+    "8. Гель для прання Persil Active, 1,485л — <b>499 ₴</b> <s>799 ₴</s> · заявлено −38%\n🔗 <a href=\"https://silpo.ua/product/gel-dlia-prannia-persil-active-948315\">відкрити</a>",
+    "9. Засіб для миття посуду Wash&amp;Free яблуко-едельвейс, 500г — <b>29.99 ₴</b> <s>54 ₴</s> · 🌐 лише онлайн-замовлення заявлено −44% · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/zasib-dlia-myttia-posudu-wash-free-iabluko-edelveis-894058\">відкрити</a>",
+    "10. Засіб для унітаза Bref «Арктичний океан» блискучий гель, 42г — <b>79.99 ₴</b> <s>134 ₴</s> · заявлено −40% · ⭐ 3.2\n🔗 <a href=\"https://silpo.ua/product/zasib-dlia-unitaza-bref-arktychnyi-okean-blyskuchyi-gel-860755\">відкрити</a>",
+    "11. Засіб для прання Perwoll Renew для світлих і білих речей, 1л — <b>279 ₴</b> <s>399 ₴</s> · заявлено −30% · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/zasib-dlia-prannia-perwoll-renew-dlia-svitlykh-i-bilykh-rechei-982299\">відкрити</a>",
+    "12. Хустинки гігієнічні Selpak, шт — <b>9.99 ₴</b> <s>16.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −41%\n🔗 <a href=\"https://silpo.ua/product/khustynky-gigiienichni-selpak-71496\">відкрити</a>",
+    "13. Миюча рідина для підлоги та стін Mr.Proper Спокій лаванди, 1л — <b>149 ₴</b> <s>229 ₴</s> · 🌐 лише онлайн-замовлення заявлено −35% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/myiucha-ridyna-dlia-pidlogy-ta-stin-mr-proper-spokii-lavandy-702279\">відкрити</a>",
+    "14. 🔥 Папір туалетний «Премія»® з ароматом лаванди 3-шаровий, 8шт — <b>119 ₴</b> <s>164 ₴</s> · заявлено −27% · <b>реально −30%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/papir-tualetnyi-premiia-z-aromatom-lavandy-3-sharovyi-970361\">відкрити</a>",
+    "15. Засіб для прання Perwoll для темних та чорних речей, 1л — <b>279 ₴</b> <s>399 ₴</s> · заявлено −30% · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/zasib-dlia-prannia-perwoll-dlia-temnykh-ta-chornykh-rechei-948317\">відкрити</a>"
    ]
   },
   "21": {
    "t": "🧼 <b>Гігієна та краса</b>",
    "b": "🧼 Гігієна та краса",
    "first": [
-    "1. 🔥 Рушники вологі Чиста Перемога Мілітарі антибактеріальні, 8шт — <b>19.99 ₴</b> <s>49.49 ₴</s> · заявлено −60% · <b>реально −62%</b> · ⭐ 3.4\n🔗 <a href=\"https://silpo.ua/product/rushnyky-vologi-chysta-peremoga-militari-antybakterialni-910535\">відкрити</a>",
-    "2. Крем-мило «Премія»® з екстрактом оливи, 300мл — <b>30.49 ₴</b> <s>56.99 ₴</s> · заявлено −46% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/krem-mylo-premiia-z-ekstraktom-olyvy-507792\">відкрити</a>",
-    "3. 🔥 Диски ватні Cleanic Pure effect Maxi, 60шт — <b>44.99 ₴</b> <s>76.99 ₴</s> · заявлено −42% · <b>реально −44%</b> · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/dysky-vatni-cleanic-pure-effect-maxi-979731\">відкрити</a>",
-    "4. 🔥 Дезодорант роликовий Fa Men Xtreme Invisible, 50мл — <b>69.99 ₴</b> <s>119 ₴</s> · заявлено −41% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/dezodorant-rolykovyi-fa-men-xtreme-invisible-538325\">відкрити</a>",
-    "5. 🔥 Прокладки щоденні Libresse Natural Care Normal, 58шт — <b>114 ₴</b> <s>169 ₴</s> · заявлено −33% · <b>реально −38%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/prokladky-shchodenni-libresse-natural-care-normal-917660\">відкрити</a>"
+    "1. Крем-мило «Премія»® з екстрактом оливи, 300мл — <b>30.49 ₴</b> <s>56.99 ₴</s> · заявлено −46% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/krem-mylo-premiia-z-ekstraktom-olyvy-507792\">відкрити</a>",
+    "2. 🔥 Диски ватні Cleanic Pure effect Maxi, 60шт — <b>44.99 ₴</b> <s>76.99 ₴</s> · заявлено −42% · <b>реально −44%</b> · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/dysky-vatni-cleanic-pure-effect-maxi-979731\">відкрити</a>",
+    "3. 🔥 Дезодорант роликовий Fa Men Xtreme Invisible, 50мл — <b>69.99 ₴</b> <s>119 ₴</s> · заявлено −41% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/dezodorant-rolykovyi-fa-men-xtreme-invisible-538325\">відкрити</a>",
+    "4. Маска для ніг Mond'Sub мед та мигдаль живильна тканинна, шт — <b>60.99 ₴</b> <s>94.99 ₴</s> · заявлено −36% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/maska-dlia-nig-mond-sub-med-ta-mygdal-zhyvylna-tkanynna-822585\">відкрити</a>",
+    "5. Маска Fructis SupFood «Банан» для сухого волосся, 390мл — <b>244 ₴</b> <s>394 ₴</s> · заявлено −38%\n🔗 <a href=\"https://silpo.ua/product/maska-fructis-supfood-banan-dlia-sukhogo-volossia-759173\">відкрити</a>"
    ],
    "rows": [
-    "6. 🔥 Шампунь для волосся Gliss Kur Oil Nutritive, 400мл — <b>169 ₴</b> <s>249 ₴</s> · заявлено −32% · <b>реально −37%</b>\n🔗 <a href=\"https://silpo.ua/product/shampun-dlia-volossia-gliss-kur-oil-nutritive-605752\">відкрити</a>",
-    "7. 🔥 Бальзам Gliss Kur Nutritive, 200мл — <b>139 ₴</b> <s>199 ₴</s> · заявлено −30% · <b>реально −37%</b>\n🔗 <a href=\"https://silpo.ua/product/balzam-gliss-kur-nutritive-330592\">відкрити</a>",
-    "8. 🔥 Гель для душу Fa Men Sport Energy Boost, 400мл — <b>154 ₴</b> <s>199 ₴</s> · заявлено −23% · <b>реально −31%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/gel-dlia-dushu-fa-men-sport-energy-boost-734944\">відкрити</a>",
-    "9. 🔥 Серветки паперові «Повна Чаша»® «Мікс» 2-шарові в картонній коробці, 150шт — <b>34.99 ₴</b> <s>46.49 ₴</s> · заявлено −25% · <b>реально −30%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/servetky-paperovi-povna-chasha-miks-2-sharovi-v-kartonnii-korobtsi-890523\">відкрити</a>",
-    "10. Маска для ніг Mond'Sub мед та мигдаль живильна тканинна, шт — <b>60.99 ₴</b> <s>94.99 ₴</s> · заявлено −36% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/maska-dlia-nig-mond-sub-med-ta-mygdal-zhyvylna-tkanynna-822585\">відкрити</a>",
-    "11. Гель для душу Sanex Natural Prebiotic Hydratant, 700мл — <b>169 ₴</b> <s>299 ₴</s> · 🌐 лише онлайн-замовлення заявлено −43% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/gel-dlia-dushu-sanex-natural-prebiotic-hydratant-979863\">відкрити</a>",
-    "12. Маска Fructis SupFood «Банан» для сухого волосся, 390мл — <b>244 ₴</b> <s>394 ₴</s> · заявлено −38%\n🔗 <a href=\"https://silpo.ua/product/maska-fructis-supfood-banan-dlia-sukhogo-volossia-759173\">відкрити</a>",
-    "13. Шампунь Syoss Men Power для нормального волосся, 440мл — <b>199 ₴</b> <s>299 ₴</s> · заявлено −33% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/shampun-syoss-men-power-dlia-normalnogo-volossia-840470\">відкрити</a>",
-    "14. Шампунь Syoss Men Clean&amp;Cool для нормального і жирного волосся, 440мл — <b>199 ₴</b> <s>284 ₴</s> · заявлено −30% · <b>реально −33%</b>\n🔗 <a href=\"https://silpo.ua/product/shampun-syoss-men-clean-cool-dlia-normalnogo-i-zhyrnogo-volossia-840466\">відкрити</a>",
-    "15. Маска для ніг Mond'Sub лаванда відлущувальна тканинна, шт — <b>60.99 ₴</b> <s>94.99 ₴</s> · заявлено −36% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/maska-dlia-nig-mond-sub-lavanda-vidlushchuvalna-tkanynna-822586\">відкрити</a>"
+    "6. Шампунь Syoss Men Power для нормального волосся, 440мл — <b>199 ₴</b> <s>299 ₴</s> · заявлено −33% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/shampun-syoss-men-power-dlia-normalnogo-volossia-840470\">відкрити</a>",
+    "7. Маска для ніг Mond'Sub лаванда відлущувальна тканинна, шт — <b>60.99 ₴</b> <s>94.99 ₴</s> · заявлено −36% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/maska-dlia-nig-mond-sub-lavanda-vidlushchuvalna-tkanynna-822586\">відкрити</a>",
+    "8. Дезодорант кульковий Garnier Mineral Активний контроль, 50мл — <b>79.99 ₴</b> <s>127 ₴</s> · заявлено −37%\n🔗 <a href=\"https://silpo.ua/product/dezodorant-kulkovyi-garnier-mineral-aktyvnyi-kontrol-813129\">відкрити</a>",
+    "9. Дезодорант-спрей Garnier «Весняна свіжість», 150мл — <b>114 ₴</b> <s>169 ₴</s> · заявлено −33% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/dezodorant-sprei-garnier-vesniana-svizhist-569230\">відкрити</a>",
+    "10. Мило рідке Galax «Чорна орхідея», 500г — <b>39 ₴</b> <s>64.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −40% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/mylo-ridke-galax-chorna-orkhideia-834491\">відкрити</a>",
+    "11. Крем-гель для душу Tesori d'Oriente Byzantium, 250мл — <b>129 ₴</b> <s>199 ₴</s> · заявлено −35%\n🔗 <a href=\"https://silpo.ua/product/krem-gel-dlia-dushu-tesori-d-oriente-byzantium-922478\">відкрити</a>",
+    "12. Мило рідке Galax класичне антибактеріальне, 500г — <b>39 ₴</b> <s>64.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −40% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/mylo-ridke-galax-klasychne-antybakterialne-817282\">відкрити</a>",
+    "13. Бальзам Syoss Keratin для ламкого волосся, 440мл — <b>179 ₴</b> <s>259 ₴</s> · заявлено −31% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/balzam-syoss-keratin-dlia-lamkogo-volossia-840462\">відкрити</a>",
+    "14. Диски ватні Olea косметичні квадратні, 50шт — <b>45.99 ₴</b> <s>69.99 ₴</s> · заявлено −34%\n🔗 <a href=\"https://silpo.ua/product/dysky-vatni-olea-kosmetychni-kvadratni-860840\">відкрити</a>",
+    "15. Хустинки гігієнічні Selpak, шт — <b>9.99 ₴</b> <s>16.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −41%\n🔗 <a href=\"https://silpo.ua/product/khustynky-gigiienichni-selpak-71496\">відкрити</a>"
    ]
   },
   "22": {
    "t": "🧸 <b>Дитячі товари</b>",
    "b": "🧸 Дитячі товари",
    "first": [
-    "1. Книга Vivat 1000 англійських слів Словник у малюнках, шт — <b>160 ₴</b> <s>320 ₴</s> · 🌐 лише онлайн-замовлення заявлено −50% · <b>реально −59%</b>\n🔗 <a href=\"https://silpo.ua/product/knyga-vivat-1000-angliiskykh-sliv-slovnyk-u-maliunkakh-945248\">відкрити</a>",
-    "2. Книга Vivat Казки на ніч з усіх куточків світу, шт — <b>215 ₴</b> <s>430 ₴</s> · 🌐 лише онлайн-замовлення заявлено −50% · <b>реально −59%</b>\n🔗 <a href=\"https://silpo.ua/product/knyga-vivat-kazky-na-nich-z-usikh-kutochkiv-svitu-918558\">відкрити</a>",
-    "3. Книга Vivat Дракони Велика книга, шт — <b>95 ₴</b> <s>190 ₴</s> · 🌐 лише онлайн-замовлення заявлено −50% · <b>реально −59%</b>\n🔗 <a href=\"https://silpo.ua/product/knyga-vivat-drakony-velyka-knyga-814502\">відкрити</a>",
-    "4. 🔥 Туалетний папір Zewa Baby Moist вологий, 80шт — <b>149 ₴</b> <s>224 ₴</s> · заявлено −33% · <b>реально −38%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/tualetnyi-papir-zewa-baby-moist-vologyi-878524\">відкрити</a>",
-    "5. 🔥 Йогурт Milupa з біфідобактеріями біфілакт 2,2%, 207г — <b>17.99 ₴</b> <s>26.99 ₴</s> · заявлено −33% · <b>реально −38%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/yogurt-milupa-z-bifidobakteriiamy-bifilakt-2-2-953863\">відкрити</a>"
+    "1. Книга Vivat Чарівні істоти українського міфу Духи-шкідники, шт — <b>353.4 ₴</b> <s>589 ₴</s> · 🌐 лише онлайн-замовлення заявлено −40% · <b>реально −40%</b>\n🔗 <a href=\"https://silpo.ua/product/knyga-vivat-charivni-istoty-ukrainskogo-mifu-dukhy-shkidnyky-847527\">відкрити</a>",
+    "2. Книга Vivat Чарівні істоти українського міфу Домашні духи, укр., шт — <b>353.4 ₴</b> <s>589 ₴</s> · 🌐 лише онлайн-замовлення заявлено −40% · <b>реально −40%</b>\n🔗 <a href=\"https://silpo.ua/product/knyga-vivat-charivni-istoty-ukrainskogo-mifu-domashni-dukhy-ukr-812606\">відкрити</a>",
+    "3. Розмальовка-антистрес Vivat Творча насолода, шт — <b>35.4 ₴</b> <s>59 ₴</s> · 🌐 лише онлайн-замовлення заявлено −40% · <b>реально −40%</b>\n🔗 <a href=\"https://silpo.ua/product/rozmalovka-antystres-vivat-tvorcha-nasoloda-916883\">відкрити</a>",
+    "4. Паста зубна Splat Juicy «Тутті-фрутті», 35мл — <b>129 ₴</b> <s>179 ₴</s> · заявлено −28%\n🔗 <a href=\"https://silpo.ua/product/pasta-zubna-splat-juicy-tutti-frutti-602716\">відкрити</a>",
+    "5. Порошок пральний Вухастик універсальний, 2,4кг — <b>229 ₴</b> <s>319 ₴</s> · 🌐 лише онлайн-замовлення заявлено −28% · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/poroshok-pralnyi-vukhastyk-universalnyi-936728\">відкрити</a>"
    ],
    "rows": [
-    "6. Книга Vivat Школа монстрів Про Мері та кошлатого Сема, шт — <b>75 ₴</b> <s>150 ₴</s> · 🌐 лише онлайн-замовлення заявлено −50% · <b>реально −51%</b>\n🔗 <a href=\"https://silpo.ua/product/knyga-vivat-shkola-monstriv-pro-meri-ta-koshlatogo-sema-916888\">відкрити</a>",
-    "7. Книга Vivat Арчибальд Пригоди лисеняти, шт — <b>85 ₴</b> <s>170 ₴</s> · 🌐 лише онлайн-замовлення заявлено −50% · <b>реально −51%</b>\n🔗 <a href=\"https://silpo.ua/product/knyga-vivat-archybald-prygody-lyseniaty-918861\">відкрити</a>",
-    "8. Книга Vivat Уроки історії, шт — <b>90 ₴</b> <s>180 ₴</s> · 🌐 лише онлайн-замовлення заявлено −50% · <b>реально −51%</b>\n🔗 <a href=\"https://silpo.ua/product/knyga-vivat-uroky-istorii-919371\">відкрити</a>",
-    "9. Книга Vivat Лускунчик та мишачий король, шт — <b>90 ₴</b> <s>180 ₴</s> · 🌐 лише онлайн-замовлення заявлено −50% · <b>реально −51%</b>\n🔗 <a href=\"https://silpo.ua/product/knyga-vivat-luskunchyk-ta-myshachyi-korol-847529\">відкрити</a>",
-    "10. Книга Vivat Мімі, укр., шт — <b>95 ₴</b> <s>190 ₴</s> · 🌐 лише онлайн-замовлення заявлено −50% · <b>реально −51%</b>\n🔗 <a href=\"https://silpo.ua/product/knyga-vivat-mimi-ukr-880588\">відкрити</a>",
-    "11. Книга Vivat Буркотун і Родзинка, шт — <b>97.5 ₴</b> <s>195 ₴</s> · 🌐 лише онлайн-замовлення заявлено −50% · <b>реально −51%</b>\n🔗 <a href=\"https://silpo.ua/product/knyga-vivat-burkotun-i-rodzynka-763510\">відкрити</a>",
-    "12. Книга Vivat Що робити коли 2, шт — <b>105 ₴</b> <s>210 ₴</s> · 🌐 лише онлайн-замовлення заявлено −50% · <b>реально −51%</b>\n🔗 <a href=\"https://silpo.ua/product/knyga-vivat-shcho-robyty-koly-2-763527\">відкрити</a>",
-    "13. Книга Vivat Наука в коміксах Коти природа і піклування, шт — <b>110 ₴</b> <s>220 ₴</s> · 🌐 лише онлайн-замовлення заявлено −50% · <b>реально −51%</b>\n🔗 <a href=\"https://silpo.ua/product/knyga-vivat-nauka-v-komiksakh-koty-pryroda-i-pikluvannia-865220\">відкрити</a>",
-    "14. Книга Vivat Наука в коміксах Собаки від хижака до захисника, шт — <b>110 ₴</b> <s>220 ₴</s> · 🌐 лише онлайн-замовлення заявлено −50% · <b>реально −51%</b>\n🔗 <a href=\"https://silpo.ua/product/knyga-vivat-nauka-v-komiksakh-sobaky-vid-khyzhaka-do-zakhysnyka-865221\">відкрити</a>",
-    "15. Книга Vivat Агов Де ти Чарівний Принце, укр., шт — <b>112.5 ₴</b> <s>225 ₴</s> · 🌐 лише онлайн-замовлення заявлено −50% · <b>реально −51%</b>\n🔗 <a href=\"https://silpo.ua/product/knyga-vivat-agov-de-ty-charivnyi-pryntse-ukr-812589\">відкрити</a>"
+    "6. Конструктор LEGO Ninjago Робот Коула для місії і Дракон Зейн 71854, шт — <b>1099 ₴</b> <s>1479 ₴</s> · заявлено −26%\n🔗 <a href=\"https://silpo.ua/product/konstruktor-lego-ninjago-robot-koula-dlia-misii-i-drakon-zein-71854-1006366\">відкрити</a>",
+    "7. Конструктор LEGO Botanicals Міні орхідея 10343, шт — <b>1099 ₴</b> <s>1479 ₴</s> · заявлено −26%\n🔗 <a href=\"https://silpo.ua/product/konstruktor-lego-botanicals-mini-orkhideia-10343-978962\">відкрити</a>",
+    "8. Йогурт Яготинське для дітей Банан з вітамінами 1,5%, 185г — <b>21.49 ₴</b> <s>27.49 ₴</s> · заявлено −22%\n🔗 <a href=\"https://silpo.ua/product/yogurt-yagotynske-dlia-ditei-banan-z-vitaminamy-1-5-968996\">відкрити</a>",
+    "9. Конструктор LEGO Friends Вечір кіно з друзям 42642, шт — <b>499 ₴</b> <s>729 ₴</s> · 🌐 лише онлайн-замовлення заявлено −32%\n🔗 <a href=\"https://silpo.ua/product/konstruktor-lego-friends-vechir-kino-z-druziam-42642-993289\">відкрити</a>",
+    "10. Конструктор LEGO DUPLO Мій перший потяг із цифрами: вчимося рахувати 10954, шт — <b>729 ₴</b> <s>969 ₴</s> · заявлено −25%\n🔗 <a href=\"https://silpo.ua/product/konstruktor-lego-duplo-mii-pershyi-potiag-iz-tsyframy-vchymosia-rakhuvaty-10954-882026\">відкрити</a>",
+    "11. Книга Vivat Велика книга про пори року, шт — <b>251.3 ₴</b> <s>359 ₴</s> · 🌐 лише онлайн-замовлення заявлено −30% · <b>реально −30%</b>\n🔗 <a href=\"https://silpo.ua/product/knyga-vivat-velyka-knyga-pro-pory-roku-918862\">відкрити</a>",
+    "12. Підгузки Huggies Extra Care Mega 3 (6-10 кг), 72шт — <b>999 ₴</b> <s>1289 ₴</s> · 🌐 лише онлайн-замовлення заявлено −22% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/pidguzky-huggies-extra-care-mega-3-6-10-kg-888435\">відкрити</a>",
+    "13. 🔥 Серветки вологі Bibby дитячі 1+1, 2*72шт — <b>59.99 ₴</b> <s>81.99 ₴</s> · заявлено −27% · <b>реально −28%</b> · ⭐ 2.5\n🔗 <a href=\"https://silpo.ua/product/servetky-vologi-bibby-dytiachi-1-1-990939\">відкрити</a>",
+    "14. Підгузки-трусики для хлопчиків Huggies Little Movers Jumbo 5 (12-17 кг), 34шт — <b>529 ₴</b> <s>699 ₴</s> · 🌐 лише онлайн-замовлення заявлено −24% · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/pidguzky-trusyky-dlia-khlopchykiv-huggies-little-movers-jumbo-5-12-17-kg-773217\">відкрити</a>",
+    "15. Конструктор LEGO Botanicals Польові квіти 30701, шт — <b>159 ₴</b> <s>199 ₴</s> · заявлено −20%\n🔗 <a href=\"https://silpo.ua/product/konstruktor-lego-botanicals-polovi-kvity-30701-979008\">відкрити</a>"
    ]
   },
   "23": {
    "t": "🐾 <b>Для тварин</b>",
    "b": "🐾 Для тварин",
    "first": [
-    "1. 🔥 Корм для котів Cat Chef м'ясо курки з кальмарами, 80г — <b>54.99 ₴</b> <s>82.99 ₴</s> · заявлено −34% · <b>реально −37%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-kotiv-cat-chef-m-iaso-kurky-z-kalmaramy-672483\">відкрити</a>",
-    "2. 🔥 Корм для котів PreVital з лососем у соусі, 100г — <b>12.99 ₴</b> <s>21.99 ₴</s> · заявлено −41% · <b>реально −43%</b> · ⭐ 3.4\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-kotiv-prevital-z-lososem-u-sousi-991275\">відкрити</a>",
-    "3. 🔥 Корм для котів Cat Chef тунець з лососем у желе, 80г — <b>54.99 ₴</b> <s>79.99 ₴</s> · заявлено −31% · <b>реально −35%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-kotiv-cat-chef-tunets-z-lososem-u-zhele-672478\">відкрити</a>",
-    "4. 🔥 Корм для котів PreVital з яловичиною у желе, 100г — <b>12.99 ₴</b> <s>21.99 ₴</s> · заявлено −41% · <b>реально −43%</b> · ⭐ 3.1\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-kotiv-prevital-z-ialovychynoiu-u-zhele-991272\">відкрити</a>",
-    "5. 🔥 Корм для котів Cat Chef м'ясо курки зі спаржею, 80г — <b>54.99 ₴</b> <s>79.99 ₴</s> · заявлено −31% · <b>реально −35%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-kotiv-cat-chef-m-iaso-kurky-zi-sparzheiu-672485\">відкрити</a>"
+    "1. 🔥 Корм для котів PreVital з лососем у соусі, 100г — <b>12.99 ₴</b> <s>21.99 ₴</s> · заявлено −41% · <b>реально −43%</b> · ⭐ 3.4\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-kotiv-prevital-z-lososem-u-sousi-991275\">відкрити</a>",
+    "2. 🔥 Корм для котів PreVital з яловичиною у желе, 100г — <b>12.99 ₴</b> <s>21.99 ₴</s> · заявлено −41% · <b>реально −43%</b> · ⭐ 3.1\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-kotiv-prevital-z-ialovychynoiu-u-zhele-991272\">відкрити</a>",
+    "3. Корм для собак ONE Mini з яловичиною, картоплею та морквою, 85г — <b>19.99 ₴</b> <s>29.99 ₴</s> · заявлено −33%\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-sobak-one-mini-z-ialovychynoiu-kartopleiu-ta-morkvoiu-938138\">відкрити</a>",
+    "4. Корм для цуценят Plaisir з куркою в соусі, 100г — <b>27.49 ₴</b> <s>39.99 ₴</s> · заявлено −31%\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-tsutseniat-plaisir-z-kurkoiu-v-sousi-895672\">відкрити</a>",
+    "5. Корм для котів Encore філе тунця з креветками з/б, 70г — <b>89.99 ₴</b> <s>129 ₴</s> · заявлено −30%\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-kotiv-encore-file-tuntsia-z-krevetkamy-z-b-929394\">відкрити</a>"
    ],
    "rows": [
-    "6. Корм для собак ONE Mini з яловичиною, картоплею та морквою, 85г — <b>19.99 ₴</b> <s>29.99 ₴</s> · заявлено −33%\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-sobak-one-mini-z-ialovychynoiu-kartopleiu-ta-morkvoiu-938138\">відкрити</a>",
-    "7. Корм для цуценят Plaisir з куркою в соусі, 100г — <b>27.49 ₴</b> <s>39.99 ₴</s> · заявлено −31%\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-tsutseniat-plaisir-z-kurkoiu-v-sousi-895672\">відкрити</a>",
-    "8. Корм для котів Encore філе тунця з креветками з/б, 70г — <b>89.99 ₴</b> <s>129 ₴</s> · заявлено −30%\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-kotiv-encore-file-tuntsia-z-krevetkamy-z-b-929394\">відкрити</a>",
-    "9. Корм для котів Friskies з лососем та овочами, 1,5кг — <b>199 ₴</b> <s>352 ₴</s> · 🌐 лише онлайн-замовлення заявлено −43% · <b>реально −30%</b>\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-kotiv-friskies-z-lososem-ta-ovochamy-558288\">відкрити</a>",
-    "10. Корм для котів Encore курка з бурим рисом, 70г — <b>89.99 ₴</b> <s>119 ₴</s> · заявлено −24%\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-kotiv-encore-kurka-z-burym-rysom-929400\">відкрити</a>",
-    "11. Ласощі DentaLife для собак малих порід, 115г — <b>59.99 ₴</b> <s>82.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −27%\n🔗 <a href=\"https://silpo.ua/product/lasoshchi-dentalife-dlia-sobak-malykh-porid-851933\">відкрити</a>",
-    "12. Ласощі DentaLife для собак середніх порід, 115г — <b>59.99 ₴</b> <s>82.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −27%\n🔗 <a href=\"https://silpo.ua/product/lasoshchi-dentalife-dlia-sobak-serednikh-porid-851934\">відкрити</a>",
-    "13. Корм для котів PreVital з кроликом та індичкою у желе, 100г — <b>17.99 ₴</b> <s>21.99 ₴</s> · заявлено −18% · <b>реально −22%</b> · ⭐ 3.0\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-kotiv-prevital-z-krolykom-ta-indychkoiu-u-zhele-991274\">відкрити</a>",
-    "14. Корм Friskies для домашніх котів, 1,5кг — <b>219 ₴</b> <s>357 ₴</s> · 🌐 лише онлайн-замовлення заявлено −39% · <b>реально −27%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/korm-friskies-dlia-domashnikh-kotiv-558292\">відкрити</a>",
-    "15. Корм для котів PreVital з куркою у желе, 100г — <b>17.99 ₴</b> <s>21.99 ₴</s> · заявлено −18% · <b>реально −22%</b> · ⭐ 3.0\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-kotiv-prevital-z-kurkoiu-u-zhele-991273\">відкрити</a>"
+    "6. Корм для котів Friskies з лососем та овочами, 1,5кг — <b>199 ₴</b> <s>352 ₴</s> · 🌐 лише онлайн-замовлення заявлено −43% · <b>реально −30%</b>\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-kotiv-friskies-z-lososem-ta-ovochamy-558288\">відкрити</a>",
+    "7. Корм для котів Encore курка з бурим рисом, 70г — <b>89.99 ₴</b> <s>119 ₴</s> · заявлено −24%\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-kotiv-encore-kurka-z-burym-rysom-929400\">відкрити</a>",
+    "8. Ласощі DentaLife для собак малих порід, 115г — <b>59.99 ₴</b> <s>82.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −27%\n🔗 <a href=\"https://silpo.ua/product/lasoshchi-dentalife-dlia-sobak-malykh-porid-851933\">відкрити</a>",
+    "9. Ласощі DentaLife для собак середніх порід, 115г — <b>59.99 ₴</b> <s>82.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −27%\n🔗 <a href=\"https://silpo.ua/product/lasoshchi-dentalife-dlia-sobak-serednikh-porid-851934\">відкрити</a>",
+    "10. Корм Friskies для домашніх котів, 1,5кг — <b>219 ₴</b> <s>357 ₴</s> · 🌐 лише онлайн-замовлення заявлено −39% · <b>реально −27%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/korm-friskies-dlia-domashnikh-kotiv-558292\">відкрити</a>",
+    "11. Корм для котів ONE з куркою сухий, 450г — <b>144 ₴</b> <s>164 ₴</s> · заявлено −12%\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-kotiv-one-z-kurkoiu-sukhyi-951100\">відкрити</a>",
+    "12. Корм для тварин фарш Юніор, 500г — <b>52.69 ₴</b> <s>61.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −15% · <b>реально −15%</b> · ⭐ 2.3\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-tvaryn-farsh-yunior-420991\">відкрити</a>",
+    "13. Корм для тварин фарш рублений, 500г — <b>55.17 ₴</b> <s>61.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −11% · <b>реально −11%</b> · ⭐ 2.6\n🔗 <a href=\"https://silpo.ua/product/korm-dlia-tvaryn-farsh-rublenyi-420992\">відкрити</a>"
    ]
   }
  },
@@ -2546,7 +2541,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-15T13:21:25.379204+03:00",
+ "gh_beat": "2026-10-15T19:35:36.289291+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -14218,6 +14213,84 @@
    43,
    null,
    "2026-10-15"
+  ],
+  "tt30319503": [
+   7.3,
+   null,
+   78,
+   "2026-10-15"
+  ],
+  "tt10384744": [
+   7.2,
+   92,
+   null,
+   "2026-10-15"
+  ],
+  "tt10276470": [
+   6.1,
+   85,
+   58,
+   "2026-10-15"
+  ],
+  "tt11698630": [
+   6.6,
+   null,
+   null,
+   "2026-10-15"
+  ],
+  "tt27674982": [
+   7.4,
+   97,
+   78,
+   "2026-10-15"
+  ],
+  "tt7998848": [
+   7.2,
+   null,
+   null,
+   "2026-10-15"
+  ],
+  "tt10329566": [
+   6.0,
+   null,
+   null,
+   "2026-10-15"
+  ],
+  "tt0268126": [
+   7.6,
+   90,
+   83,
+   "2026-10-15"
+  ],
+  "tt0248845": [
+   7.7,
+   92,
+   85,
+   "2026-10-15"
+  ],
+  "tt0445336": [
+   7.4,
+   98,
+   81,
+   "2026-10-15"
+  ],
+  "tt0242519": [
+   8.2,
+   null,
+   null,
+   "2026-10-15"
+  ],
+  "tt0319769": [
+   7.5,
+   80,
+   64,
+   "2026-10-15"
+  ],
+  "tt4057632": [
+   7.2,
+   null,
+   null,
+   "2026-10-15"
   ]
  },
  "mo_sent": {
@@ -14799,6 +14872,282 @@
   "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb8a2b-dce6-6eec-9dc0-b5cfa3b7b301": [
    "2026-10-15",
    50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb8c52-3b12-6e62-87a9-39a07e017bad": [
+   "2026-10-15",
+   50.08347245409015
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ed07699-5689-677e-9d27-bd2f9278424b": [
+   "2026-10-15",
+   50.06257822277848
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ee3c815-8526-67c2-a713-57aa32a17f1d": [
+   "2026-10-15",
+   53.51170568561873
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1eecde88-50a7-684c-b84d-2155cb7c5b18": [
+   "2026-10-15",
+   56.104402975972675
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ed075f3-3b55-68dc-a592-dd63763181f9": [
+   "2026-10-15",
+   50.02084201750729
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ed075f3-3b54-6b58-b38e-dd63763181f9": [
+   "2026-10-15",
+   56.267583619881215
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ed23b66-27cd-6b2c-99d6-df201f31f02c": [
+   "2026-10-15",
+   54.13837401358048
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ef409f5-6734-696c-bdba-6f660dae0316": [
+   "2026-10-15",
+   56.61445555765239
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ee804eb-b377-6d6c-97d9-4fe3a5ae14dc": [
+   "2026-10-15",
+   55.23255813953488
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ed2df8d-a261-6d86-92f0-8f05abac3364": [
+   "2026-10-15",
+   51.02040816326531
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ef61a33-e521-62da-b2e1-ffddab862a39": [
+   "2026-10-15",
+   55.8766859344894
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edaf4e9-91b0-6cca-b959-21996f99fc3d": [
+   "2026-10-15",
+   50.38351631824334
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1eed820f-8a23-60d2-9d79-25a4ee41022c": [
+   "2026-10-15",
+   60.06006006006006
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1eed820f-6ad9-6852-9447-0b60baf5c222": [
+   "2026-10-15",
+   60.06006006006006
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1eef9200-9cdf-64d4-8ad7-6dfd74ef757b": [
+   "2026-10-15",
+   61.544378698224854
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ed0cf78-8c1f-6d1a-99a1-9bae8c8e013d": [
+   "2026-10-15",
+   59.60800161648818
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1f0d9518-5cba-6afa-a509-2950464d875e": [
+   "2026-10-15",
+   50.04549590536852
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ed07664-1660-6a24-b31d-dd63763181f9": [
+   "2026-10-15",
+   53.0268456375839
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ed07664-165f-6ef8-8f52-dd63763181f9": [
+   "2026-10-15",
+   53.0268456375839
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ed07664-1660-6498-9e2e-dd63763181f9": [
+   "2026-10-15",
+   53.0268456375839
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ef5b55d-dcd0-65d0-a34e-cdfb217e7b5d": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb9590-2f5b-6f5a-8bef-53e7405e8b7a": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb8d75-65f6-6024-8698-53e7405e8b7a": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1eec9fc5-1dfe-635c-a66d-2155cb7c5b18": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1eec9fcb-aa85-616c-8958-4b820e9e5d9a": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb9589-926a-6cb0-b260-53e7405e8b7a": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb9586-2bdb-6380-8db1-53e7405e8b7a": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1eec9fcb-9145-6b3e-85ee-4b820e9e5d9a": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1eec9fcb-89a6-62a2-ae58-2155cb7c5b18": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1eec9fcb-965e-6eae-a3df-2155cb7c5b18": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1eec9fcb-9da4-6588-978b-4b820e9e5d9a": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1eec9fcb-df29-6d28-aa2d-4b820e9e5d9a": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb9590-2f10-6028-8ec8-53e7405e8b7a": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ee484d3-b777-6db8-916e-1d170a264c1c": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ee484d3-bd82-606e-aad2-1d170a264c1c": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ee5803a-4b84-672e-bc3c-ad5505f196ff": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ef5a8ec-e35b-6c10-b3e7-cdfb217e7b5d": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ef5b55d-2936-6a6a-bba0-97aba778658c": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ef5a8ee-4135-6f2e-be12-97aba778658c": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1eec9fcb-a993-6178-ac21-2155cb7c5b18": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1eec9fcb-b2c7-6870-b718-4b820e9e5d9a": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ee5803a-2ead-6e2a-af91-ad5505f196ff": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ee484d4-12ab-6b1c-b771-0917eae58c3c": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1eec9fcb-7a5f-61d6-ac5e-4b820e9e5d9a": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1eec9fcb-8a6c-6268-959b-4b820e9e5d9a": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1eec9fcb-d75b-6be6-9109-4b820e9e5d9a": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1ee58034-1d70-6690-96fb-ad5505f196ff": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb01a7-b147-6cc6-83f8-531a8721bc44": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb0297-f41a-6b02-bfb3-9f7fd78fecf4": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb0231-cdb0-65f4-94a1-9f7fd78fecf4": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb958e-7dcd-61fe-9386-53e7405e8b7a": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb01b5-c292-648c-a2f3-531a8721bc44": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb01b5-c292-6860-87f4-531a8721bc44": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb01a7-b148-6036-80fb-531a8721bc44": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb01a7-b148-63ec-b266-531a8721bc44": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb01a7-b148-6770-927f-531a8721bc44": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb008a-b7cf-6026-8ed9-dd4c0c66fb27": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb008b-fb7c-684a-b86e-dd4c0c66fb27": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb8a2c-bfdd-634a-af47-69d695bb8b20": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb8a2c-df4f-689a-b918-53e7405e8b7a": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb8bed-5515-6482-bba5-5dc9096b392c": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb0231-cdb0-627a-827e-9f7fd78fecf4": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb0299-28a8-6bd4-a9c1-9f7fd78fecf4": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb029b-c180-6b0c-8bb2-9f7fd78fecf4": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb8c8f-2102-6ada-b1e5-350473e48254": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb8924-ebce-6f34-a54c-69d695bb8b20": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb8a66-eabe-6be2-bc3a-5dc9096b392c": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edb8b55-ba2c-696c-990e-39a07e017bad": [
+   "2026-10-15",
+   50.0
+  ],
+  "1edb6b3e-f7ef-677c-99f0-51de6a88d469|1edafe6e-1e5c-6e02-a8c0-c9a9c5f7a57c": [
+   "2026-10-15",
+   50.0
   ]
  },
  "imp_sent": {},
@@ -14947,12 +15296,6 @@
   }
  ],
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 08.10–15.10\n<blockquote>📊 <b>1. Налаштування стрічки Facebook через текстові запити</b>\nMeta дозволила користувачам коригувати алгоритми рекомендацій у Facebook і Reels за допомогою простих текстових запитів до ШІ.\n💡 Використовуйте розуміння того, як користувачі керують своїми стрічками, створюючи максимально чіткий і релевантний контекст у перших рядках постів.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxPYk9ZTTcxVTBBWk42elR1Z3RFN0dadnJubkxkYzNmeUdCdlF5TmdsNktwa05zbEVESXNyM3Q4T1ZjWVo1QmpHaFB0NW1SLVkxb2M0ZWM4Yzg4TTFKTUYybkNRZUpkWE16ZEhtRGNELTNQTnE5ZVEtaVl3WmVwOU9tY3UyeVU3Qm83Ym5JLVRZeDhjSmFPdzg2MU5yRkJ1Wm5IWmtLeGYydEluOXV2c3g0ZS1BNHJ5RkJDVHNrQVBWS3BGY3JDR0piYlg2bnVMQdIBwwFBVV95cUxPUVBlbjNDRjJBN1pfRzU5TWY5c3BVdDVfNlE5cGxKTGVRamt3cXIyQ3RsdGdBbzdPakZTZkJnQWtOX2hHMVZ1TEkyaFpGNFN3c1J0dV9sNEg4VWxveTdiUUgtU3RxVkZXRDRvaEc5SGtxR0ItTWlaSV9pV29VZXpjMnRaemVZZWliR0lqM2NVN3ZMUFBQQ25GQnJTMDJZUjBFVDhsRjhFb25Gbll5UlBDMWVicjBWT3BLYWdqVW5vMG96V0U?oc=5\">NV Техно</a></blockquote>\n<blockquote>🎯 <b>2. Meta блокує рекламу TikTok на своїх платформах</b>\nMeta почала блокувати всю рекламу та платні повідомлення від ByteDance, включно з третіми сторонами, які посилаються на TikTok, у кількох ключових країнах.\n💡 Перевірте свої рекламні кампанії та креативи на наявність кросплатформних посилань на TikTok, щоб уникнути блокування.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTE5OdTV3cGJfZjZDc2tMNWdzTGpkZV91cWlLakhheU91MlJpV1ZmdWZzYTk2Q0h4cUE5UFhxcEVET2lZc3RYcW1DQnAwblNmLVU2WjBpVDQyRnhrVk9WMEJneGdRMDl3cmdTMnVpRHB1Wll3Qy1uQ053VUx5RmJvZw?oc=5\">Yahoo! Finance Canada</a></blockquote>\n<blockquote>🆕 <b>3. Програма нагороджень Gems у Threads</b>\nThreads запускає внутрішню програму Gems для відзначення найкращих та найпопулярніших публікацій у застосунку.\n💡 Аналізуйте типи контенту, які отримують нагороди Gems, щоб адаптувати свої текстові стратегії під алгоритми видачі Threads.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxNY25UWExCbHIxQ0U0bUhZWVBDQjlvZzNVMXVZblhhaFppMXdSNWZ1RVY3akY2MDNCT1Vhci1FV3d4QlRkWTl1T1BqQWt0Wk1Nck0wNTB6eXhqV2hUWmNITTZPcTZkMG9mcVlLaE03Wm5YY29BRWlfcDZSd2k4UFFSYUNPNmVsRjc3YXRnYUVQWXhEdmxlQ0ltWUk0VFNOLV9u?oc=5\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>4. Конверсійний пошук Ask YouTube</b>\nYouTube випустив функцію розмовного пошуку Ask YouTube для вебверсій, мобільних пристроїв та телевізорів.\n💡 Оптимізуйте назви та описи відео під природні розмовні запити користувачів, оскільки ШІ тепер глибше шукає контент.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMicEFVX3lxTFByMVViY21PTHFvbFZVQmhjemU1YjRPaDJfV3FYQldlazJuMVNNMlZtYVZmMUgzT3BuWi1KVFEteHRVeElwX0ppWnpNMWJBY20zNzlQbVNvakZPa1VVWWNzZ1hDY3YzZjdPVXFOOHpkZnc?oc=5\">YouTube Official Blog</a></blockquote>\n<blockquote>🎯 <b>5. Нові агенти ШІ для реклами від Meta та TikTok</b>\nПлатформи анонсували нові рекламні функції на базі агентського штучного інтелекту для автоматизації процесів та оптимізації кампаній.\n💡 Протестуйте нові інструменти автооптимізації бюджету, але ретельно контролюйте показники ефективності перших запусків.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxQcXRLNkd1UGM0NjhsODJPSW1uQk83eG5BVVlacTFfLTdLYndfVkRJWFBxbTh1SGNFeHVoUkt6QW8xRExyX1RUbWx1SWMyU1BRbWwybF9tZXFLTGZrY2RTMVZnSFlqVy12VURrSHluQW9WSUZGd3RxNnZHMnU2LUZKTFBNQmFJbk1NNlluQWZQc1ViQmE3N0xLVUpB?oc=5\">Music Ally</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202642\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Створення лендингів за допомогою ШІ</b> · Social Media Examiner\nПокроковий робочий процес використання ChatGPT та Codex для планування, дизайну, написання текстів та хостингу конверсійних лендингів без залучення розробників чи дизайнерів.\n💡 Використовуйте зв'язку ChatGPT та Codex для повного циклу створення посадкових сторінок: від первинного проєкту до публікації готового сайту.\n<a href=\"https://www.socialmediaexaminer.com/ai-landing-pages-from-project-plan-to-published-page/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Економіка переглядів на YouTube у 2026 році</b> · Hootsuite\nРозбір того, як працює монетизація YouTube, чому платформа платить саме за показ реклами, а не за загальні перегляди відео, та які фактори впливають на дохід.\n💡 Зважайте, що ви отримуєте кошти лише за рекламні перегляди (у середньому $5–$15 за 1000 показів реклами після вирахування комісії YouTube), тому оптимізуйте довжину відео та нішу під advertisers demand.\n<a href=\"https://blog.hootsuite.com/how-much-does-youtube-pay-per-view/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Сторітелінг на основі даних у соцмережах</b> · Hootsuite\nМетодологія перетворення сухих цифр і статистики на переконливий контент за допомогою комбінації даних, наративу та візуальних ефектів.\n💡 Будуйте контент за структурою «аудиторія — вибір релевантних даних — спрощення — наратив — візуал», щоб поєднати логіку цифр з емоціями бренду.\n<a href=\"https://blog.hootsuite.com/storytelling-with-data/\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Трекові звуки в Instagram для каруселей і фото</b> · Buffer\nОгляд актуальних трендів аудіо на платформі та можливості додавати трекові звуки не лише до Reels, а й до каруселей і звичайних фотопостів.\n💡 Додавайте популярні треки до каруселей та фото, щоб підвищити шанси потрапити у стрічку Reels та на сторінку Explore, суттєво розширивши охоплення.\n<a href=\"https://buffer.com/resources/trending-audio-instagram/\">джерело</a></blockquote>\n§RT:smm:202642p",
- "silpo_by": {
-  "1f0bae3d-2073-62f4-b14c-f9715721ce18": {
-   "week": "2026-10-15",
-   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 15.10 (оновлюється щоранку)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Калнишевського, 2 · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <a href=\"https://silpo.ua/product/gel-dlia-prannia-losk-color-1027554\">Гель для прання Losk Color</a> — <b>699 ₴</b> <s>1299 ₴</s> · −46%\n2. 🍫 <a href=\"https://silpo.ua/product/khalva-zolotoi-vek-soniashnykova-z-arakhisom-660847\">Халва Zolotoi Vek соняшникова з арахісом</a> — <b>11.99 ₴</b> <s>19.99 ₴</s> · −40%\n3. 🛒 <a href=\"https://silpo.ua/product/pliashka-dlia-vody-dytiacha-600-ml-973168-973168\">Пляшка для води дитяча 600 мл 973168</a> — <b>164 ₴</b> <s>289 ₴</s> · −43%\n4. 🍫 <a href=\"https://silpo.ua/product/khalva-zolotoi-vek-soniashnykova-vanilna-glazurovana-876069\">Халва Zolotoi Vek соняшникова ванільна глазурована</a> — <b>14.99 ₴</b> <s>23.49 ₴</s> · −36%\n5. 🛒 <a href=\"https://silpo.ua/product/olyvky-premiia-kalamata-z-kistochkamy-v-rozsoli-882049\">Оливки «Премія»® «Каламата» з кісточками в розсолі</a> — <b>119 ₴</b> <s>179 ₴</s> · −37%\n6. 🥫 <a href=\"https://silpo.ua/product/olyvky-premiia-kalamata-z-kistochkamy-v-rozsoli-882049\">Оливки «Премія»® «Каламата» з кісточками в розсолі</a> — <b>119 ₴</b> <s>179 ₴</s> · −37%\n7. 🥩 <a href=\"https://silpo.ua/product/kovbasa-casademont-fuet-ekstra-syro-v-ialena-798898\">Ковбаса Casademont «Фует» екстра сиро-в'ялена</a> — <b>189 ₴</b> <s>294 ₴</s> · −36%\n8. 🛒 <a href=\"https://silpo.ua/product/kubyky-dlia-unitazu-bref-aktyv-ochyshchuiuchi-580727\">Кубики для унітазу Bref «Актив» очищуючі</a> — <b>149 ₴</b> <s>224 ₴</s> · −33%\n9. 🥩 <a href=\"https://silpo.ua/product/kovbasa-casademont-fuet-z-syrom-mini-376663\">Ковбаса Casademont «Фует» з сиром міні</a> — <b>99 ₴</b> <s>154 ₴</s> · −36%\n10. 🥤 <a href=\"https://silpo.ua/product/napii-geo-natura-lymonad-krem-soda-789516\">Напій Geo Natura Лимонад крем-сода</a> — <b>46.99 ₴</b> <s>63.99 ₴</s> · −30%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s0_"
-  }
- },
  "kino_q": [
   {
    "id": "0592e08406",
@@ -15047,10 +15390,13 @@
   "rpl": "2026-10-15T08:36:14.743309+03:00",
   "bds": "2026-10-15T08:36:14.743309+03:00"
  },
- "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 15.10 (оновлюється щоранку)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Калнишевського, 2 · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <a href=\"https://silpo.ua/product/zasib-dlia-prannia-perwoll-vidnovlennia-ta-aromat-949302\">Засіб для прання Perwoll Відновлення та аромат</a> — <b>399 ₴</b> <s>999 ₴</s> · −60%\n2. 🛒 <a href=\"https://silpo.ua/product/ketchup-korolivskyi-smak-lagidnyi-931498\">Кетчуп Королівський смак Лагідний</a> — <b>19.99 ₴</b> <s>38.99 ₴</s> · −56%\n3. 🥤 <a href=\"https://silpo.ua/product/nektar-lito-tomatnyi-696928\">Нектар «Літо» томатний</a> — <b>34.99 ₴</b> <s>78.49 ₴</s> · −59%\n4. 🍫 <a href=\"https://silpo.ua/product/tsukerky-zozole-raibow-z-fruktovym-smakom-zheleini-960824\">Цукерки Zozole Raibow з фруктовим смаком желейні</a> — <b>22.99 ₴</b> <s>52.99 ₴</s> · −59%\n5. 🛒 <a href=\"https://silpo.ua/product/ketchup-korolivskyi-smak-do-shashlyku-931500\">Кетчуп Королівський смак До шашлику</a> — <b>19.99 ₴</b> <s>38.99 ₴</s> · −52%\n6. 🛒 <a href=\"https://silpo.ua/product/pryprava-premiia-do-ryby-320507\">Приправа «Премія»® до риби</a> — <b>13.99 ₴</b> <s>31.99 ₴</s> · −59%\n7. 🛒 <a href=\"https://silpo.ua/product/pakety-dlia-smittia-premiia-z-ruchkamy-35-l-948287\">Пакети для сміття «Премія»® з ручками 35 л</a> — <b>35.99 ₴</b> <s>81.99 ₴</s> · −53%\n8. 🧊 <a href=\"https://silpo.ua/product/morozyvo-zolotyi-kashtan-klasychnyi-plombir-u-vershkovii-glazuri-542504\">Морозиво «Золотий Каштан» «Класичний» пломбір у вершковій глазурі</a> — <b>32.99 ₴</b> <s>66.99 ₴</s> · −60%\n9. 🛒 <a href=\"https://silpo.ua/product/pryprava-premiia-do-ryby-320507\">Приправа «Премія»® до риби</a> — <b>13.99 ₴</b> <s>31.99 ₴</s> · −59%\n10. 🛒 <a href=\"https://silpo.ua/product/zasib-myiuchyi-frosch-zelenyi-lymon-123098\">Засіб миючий Frosch Зелений лимон</a> — <b>59.99 ₴</b> <s>109 ₴</s> · −51%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
- "silpo_day": "2026-10-15",
+ "silpo_day": "2026-10-15-pm",
  "silpo_sent_by": {
   "1f0bae3d-2073-62f4-b14c-f9715721ce18": "2026-10-15"
  },
- "fav_sent": {}
+ "fav_sent": {},
+ "cf_down_since": "2026-10-15T19:35:36.289309+03:00",
+ "silpo_fb": "|",
+ "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 15.10 19:35 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <a href=\"https://silpo.ua/product/morozyvo-lavka-tradytsii-soloviov-chornytsia-plombir-z-ovechogo-moloka-12-992306\">Морозиво Лавка Традицій Soloviov Чорниця пломбір з овечого молока 12%</a> — <b>154 ₴</b> <s>299 ₴</s> · −48%\n2. 🧼 <a href=\"https://silpo.ua/product/krem-mylo-premiia-z-ekstraktom-olyvy-507792\">Крем-мило «Премія»® з екстрактом оливи</a> — <b>30.49 ₴</b> <s>56.99 ₴</s> · −46%\n3. 🧊 <a href=\"https://silpo.ua/product/pelmeni-laska-maniu-niam-z-m-iasom-indyka-ta-krolyka-912911\">Пельмені Laska «Маню-ням» з м'ясом індика та кролика</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −51%\n4. 🧊 <a href=\"https://silpo.ua/product/pelmeni-laska-ma-niu-niam-z-m-iasom-kurky-ta-vershkovym-maslom-842297\">Пельмені Laska «Ма-ню-ням» з м'ясом курки та вершковим маслом</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −51%\n5. 🛒 <a href=\"https://silpo.ua/product/servetky-dlia-prybyrannia-premiia-tseliulozni-774993\">Серветки для прибирання «Премія»® целюлозні</a> — <b>39.99 ₴</b> <s>79.49 ₴</s> · −50%\n6. 🛒 <a href=\"https://silpo.ua/product/servetky-dlia-prybyrannia-premiia-tseliulozni-774993\">Серветки для прибирання «Премія»® целюлозні</a> — <b>39.99 ₴</b> <s>79.49 ₴</s> · −50%\n7. 🛒 <a href=\"https://silpo.ua/product/krem-mylo-premiia-z-ekstraktom-olyvy-507792\">Крем-мило «Премія»® з екстрактом оливи</a> — <b>30.49 ₴</b> <s>56.99 ₴</s> · −46%\n8. 🧊 <a href=\"https://silpo.ua/product/morozyvo-lavka-tradytsii-soloviov-chornytsia-plombir-z-ovechogo-moloka-12-992306\">Морозиво Лавка Традицій Soloviov Чорниця пломбір з овечого молока 12%</a> — <b>154 ₴</b> <s>299 ₴</s> · −48%\n9. 🛒 <a href=\"https://silpo.ua/product/gel-somat-excellence-duo-dlia-posudomyinykh-mashyn-880468\">Гель Somat Excellence Duo для посудомийних машин</a> — <b>309 ₴</b> <s>579 ₴</s> · −47%\n10. 🥫 <a href=\"https://silpo.ua/product/lokshyna-oyakata-zi-smakom-kimchi-shvydkogo-prygotuvannia-997062\">Локшина Oyakata зі смаком кімчі швидкого приготування</a> — <b>49.99 ₴</b> <s>94.99 ₴</s> · −50%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
+ "silpo_by": {}
 }
