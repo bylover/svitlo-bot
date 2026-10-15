@@ -1043,11 +1043,11 @@
   "groups": [
    "GPV4.1"
   ],
-  "updated": "00:33 16.10.2026",
+  "updated": "00:46 16.10.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Через атаку на енергообʼєкти столиці зафіксовані аварійні відключення у Голосіївському, Соломянському та Печерському районах. Тут графіки не діють. Повідомити про аварійні ситуації",
-  "checked": "2026-10-16T00:43:17.788824+03:00",
+  "checked": "2026-10-16T00:53:16.000894+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1058,16 +1058,6 @@
   "gemini-flash-latest": "2026-10-16T10:05:00+03:00"
  },
  "kino_seen": [
-  "m765245",
-  "m586791",
-  "m500664",
-  "m522402",
-  "m387426",
-  "m530254",
-  "m863873",
-  "m569547",
-  "m7551",
-  "m38",
   "m369557",
   "m964960",
   "m1064213",
@@ -1657,7 +1647,17 @@
   "m332562",
   "m398818",
   "m188538",
-  "m1259"
+  "m1259",
+  "t135157",
+  "t97539",
+  "t95403",
+  "t80968",
+  "t108978",
+  "t113962",
+  "t125988",
+  "t72071",
+  "t2430",
+  "t46896"
  ],
  "yt_ver": 2,
  "yt_seen": [
@@ -2852,7 +2852,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-16T00:51:01.604987+03:00",
+ "gh_beat": "2026-10-16T00:55:54.317475+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "v": 2,
@@ -16569,6 +16569,24 @@
    72,
    68,
    "2026-10-16"
+  ],
+  "tt31806037": [
+   8.1,
+   null,
+   null,
+   "2026-10-16"
+  ],
+  "tt0972534": [
+   6.8,
+   null,
+   null,
+   "2026-10-16"
+  ],
+  "tt0408381": [
+   8.4,
+   null,
+   null,
+   "2026-10-16"
   ]
  },
  "mo_sent": {},
@@ -16592,7 +16610,7 @@
   }
  },
  "pushed_h": {
-  "gs": "928a0976925c",
+  "gs": "f97ed980f844",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "073ab25d88d2",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
@@ -18337,6 +18355,12 @@
    {
     "id": "cd44fe45d3",
     "text": "🍿 <b>ПІДБІРКА КІНО · МЕЛОДРАМА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/583903?language=uk\">Друзі назавжди</a></b> (2019)\nдрама, мелодрама · ⏱ 2 год 04 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>85%</b> · Ⓜ <b>57</b>\n<i>🎭 Дакота Джонсон, Кейсі Аффлек, Джейсон Сіґел</i>\n📺 <a href=\"https://www.themoviedb.org/movie/583903-our-friend/watch?locale=UA\">Apple TV Store</a>\n📝 Історія про Метта, його дружину Ніколь та їхніх двох донечок. Життя родини кардинально змінює невиліковна хвороба Ніколь. Тепер, коли Меттові стає дедалі важче бути одночасно і опікуном, і батьком, найкращий друг…\n▶️ <a href=\"https://youtu.be/dNgV09eKySY\">Трейлер</a></blockquote>\n§KN:m583903\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/401698?language=uk\">Baisers cachés</a></b> (2016)\nдрама, мелодрама, телефільм · ⏱ 1 год 27 хв\n⭐ IMDb <b>7.3</b>\n<i>🎭 Patrick Timsit, Bérenger Anceaux, Jules Houplain</i>\n📝 Nathan, 16, lives alone with his father Stephane. A newcomer in high school, he is invited to a party and falls in love with Louis, a boy in his class. They find themselves out of sight and kiss each other, but…\n▶️ <a href=\"https://youtu.be/or7FcsBSOvs\">Трейлер</a></blockquote>\n§KN:m401698\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/1630423?language=uk\">เลือดรักนักฆ่า</a></b> (2026)\nбойовик, драма, мелодрама · ⏱ 2 год 08 хв\n⭐ TMDB <b>8.6</b>\n<i>🎭 พิมพ์ชนก ลือวิเศษไพบูลย์, ธนภพ ลีรัตนขจร, ศิวกร อดุลสุทธิกุล</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1630423/watch?locale=UA\">Netflix</a>\n📝 Hunted for her rare blood type, a caged woman vows to fight alongside the assassin she loves to protect their future when an old enemy resurfaces.</blockquote>\n§KN:m1630423\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/523977?language=uk\">Край вічного літа</a></b> (2020)\nдрама, мелодрама · ⏱ 1 год 39 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>88%</b> · Ⓜ <b>56</b>\n<i>🎭 Джемма Артертон, Гугу Мбата-Роу, Penelope Wilton</i>\n📝 Друга світова війна. Жінка відкриває своє серце хлопчику, якого евакуювали з Лондона, хоча спершу намагалася його спекатися.\n▶️ <a href=\"https://youtu.be/LknYw22SBR4\">Трейлер</a></blockquote>\n§KN:m523977\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/436343?language=uk\">Тіло і душа</a></b> (2017)\nдрама, мелодрама, фентезі · ⏱ 1 год 56 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>90%</b> · Ⓜ <b>77</b>\n<i>🎭 Borbély Alexandra, Morcsányi Géza, Tenki Réka</i>\n📝 Сором'язлива Марія і товариський, але самотній Ендре – колеги. Обидва ведуть замкнутий спосіб життя і намагаються уникати спілкування одне з одним. Несподівано вони дізнаються, що щоночі їм сняться однакові сни.…\n▶️ <a href=\"https://youtu.be/JwpFshHAZng\">Трейлер</a></blockquote>\n§KN:m436343\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/458423?language=uk\">Мама Мія! 2</a></b> (2018)\nкомедія, мелодрама · ⏱ 1 год 54 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>80%</b> · Ⓜ <b>60</b>\n<i>🎭 Аманда Сайфред, Лілі Джеймс, Пірс Броснан</i>\n📺 <a href=\"https://www.themoviedb.org/movie/458423-mamma-mia-here-we-go-again/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Для Софі та її матері Донни шматочок раю на Землі, тобто грецький острів Калокаїрі, уже давно став чимось знаковим. Дівчина мріяла провести своє весілля в цьому чудовому місці - і в неї це вийшло. Зараз же вона…\n▶️ <a href=\"https://youtu.be/v7R0k8LVM3s\">Трейлер</a></blockquote>\n§KN:m458423\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/332562?language=uk\">Народження зірки</a></b> (2018)\nмузика, драма, мелодрама · ⏱ 2 год 16 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>90%</b> · Ⓜ <b>88</b>\n<i>🎭 Леді Ґаґа, Бредлі Купер, Сем Елліотт</i>\n📺 <a href=\"https://www.themoviedb.org/movie/332562-a-star-is-born/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Джексон Майн — зірка кантрі-музики, чия популярність поступово згасає. Одного разу він знайомиться з талановитою Еллі. Молоді люди закохуються, і Джек допомагає дівчині досягти успіху. Але коли кар’єра Еллі затьмарює…\n▶️ <a href=\"https://youtu.be/IbSm7J3OTkA\">Трейлер</a></blockquote>\n§KN:m332562\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/398818?language=uk\">Назви мене своїм ім'ям</a></b> (2017)\nмелодрама, драма · ⏱ 2 год 12 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>95%</b> · Ⓜ <b>94</b>\n<i>🎭 Тімоті Шаламе, Армі Гаммер, Майкл Сталберг</i>\n📺 <a href=\"https://www.themoviedb.org/movie/398818-call-me-by-your-name/watch?locale=UA\">Rakuten TV, Apple TV Store</a>\n📝 Історія раптового роману, що виник між підлітком і річним гостем, який відвідав особняк його батьків на італійській Рів'єрі. Протягом декількох неспокійних тижнів невблаганний, але приречений потік нав'язливої ідеї,…\n▶️ <a href=\"https://youtu.be/Z9AYPxH5NTM\">Трейлер</a></blockquote>\n§KN:m398818\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/188538?language=uk\">Запам’ятай неділю</a></b> (2013)\nтелефільм, мелодрама, драма · ⏱ 1 год 36 хв\n⭐ IMDb <b>6.9</b>\n<i>🎭 Алексіс Бледел, Закарі Лівай, Меррітт Вівер</i>\n📝 Самотня офіціантка Моллі зустрічає гарного хлопця на ім'я Гас, який працює у магазині ювелірних прикрас. Моллі вважає, що нарешті зустріла свого єдиного, але чим більше вона впізнає його, тим більшою загадкою…</blockquote>\n§KN:m188538\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/1259?language=uk\">Скандальний щоденник</a></b> (2006)\nдрама, мелодрама · ⏱ 1 год 32 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>87%</b> · Ⓜ <b>73</b>\n<i>🎭 Джуді Денч, Кейт Бланшетт, Білл Наї</i>\n📝 Викладачка гуманітарних наук Шеба Харт заводить роман зі своїм п'ятнадцятирічним учнем. Таємний зв'язок погрожує стати надбанням громадськості, коли про це дізнається інша викладачка на ім'я Барбара ...\n▶️ <a href=\"https://youtu.be/AruRpjQquQQ\">Трейлер</a></blockquote>\n§KN:m1259"
+   }
+  ],
+  "series": [
+   {
+    "id": "759a2048fb",
+    "text": "🍿 <b>ПІДБІРКА КІНО · СЕРІАЛИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>📺 <b>1. <a href=\"https://www.themoviedb.org/tv/135157?language=uk\">Алхімія душ</a></b> (2022)\nдрама, науково фантастичний, екшн і пригоди · 📺 серіал · 2 сез.\n⭐ IMDb <b>8.7</b>\n<i>🎭 이재욱, Ко Юн Чон, 황민현</i>\n📺 <a href=\"https://www.themoviedb.org/tv/135157/watch?locale=UA\">Netflix</a>\n📝 Могутня чарівниця в тілі сліпої жінки зустрічає чоловіка із впливової родини, який просить допомогти змінити його долю.\n▶️ <a href=\"https://youtu.be/50kLmhGpt1s\">Трейлер</a></blockquote>\n§KN:t135157\n§§\n<blockquote>📺 <b>2. <a href=\"https://www.themoviedb.org/tv/97539?language=uk\">Self Made: Inspired by the Life of Madam C.J. Walker</a></b> (2020)\nдрама · 📺 серіал · 1 сез.\n⭐ IMDb <b>7.3</b>\n<i>🎭 Октавія Спенсер, Тіффані Геддіш, Кармен Іджого</i>\n📝 An African American washerwoman rises from poverty to build a beauty empire and become the first female self-made millionaire.\n▶️ <a href=\"https://youtu.be/yYDJvnDfB2w\">Трейлер</a></blockquote>\n§KN:t97539\n§§\n<blockquote>📺 <b>3. <a href=\"https://www.themoviedb.org/tv/95403?language=uk\">Периферійні пристрої</a></b> (2022)\nнауково фантастичний, драма · 📺 серіал · 1 сез.\n⭐ IMDb <b>7.5</b>\n<i>🎭 Хлоя Ґрейс Морец, Gary Carr, Джек Рейнор</i>\n📝 Флінн Фішер живе у провінційній Америці, працює у 3D-друкарні та грає у VR-ігри. Якось на прохання брата Бертона вона тестує відеогру, яка переносить її в футуристичний Лондон кінця XXI століття. Поступово Флін…\n▶️ <a href=\"https://youtu.be/bRdkRQzcrrc\">Трейлер</a></blockquote>\n§KN:t95403\n§§\n<blockquote>📺 <b>4. <a href=\"https://www.themoviedb.org/tv/80968?language=uk\">Нарко: Мексика</a></b> (2018)\nдрама, кримінал · 📺 серіал · 3 сез.\n⭐ IMDb <b>8.3</b>\n<i>🎭 Скут Мак-Нейрі, José María Yázpik, Alejandro Edda</i>\n📺 <a href=\"https://www.themoviedb.org/tv/80968-narcos-mexico/watch?locale=UA\">Netflix</a>\n📝 Колишній поліцейський, а нині дрібний торговець маріхуаною, Мігель Анхель Фелікс Ґалардо пробиває собі шлях до керівництва злочинної організації і прагне побудувати імперію. Противником мексиканського злочинного…\n▶️ <a href=\"https://youtu.be/BoDrQ8JktVg\">Трейлер</a></blockquote>\n§KN:t80968\n§§\n<blockquote>📺 <b>5. <a href=\"https://www.themoviedb.org/tv/108978?language=uk\">Річер</a></b> (2022)\nекшн і пригоди, кримінал · 📺 серіал · 4 сез.\n⭐ IMDb <b>8.0</b>\n<i>🎭 Алан Річсон, Аґнес Мо, Sydelle Noel</i>\n📝 Джека Річера, колишнього майора армійської військової поліції, заарештовують за підозрою у вбивстві. Знявши з себе підозри, герой сам береться за пошуки кілера.\n▶️ <a href=\"https://youtu.be/GSycMV-_Csw\">Трейлер</a></blockquote>\n§KN:t108978\n§§\n<blockquote>📺 <b>6. <a href=\"https://www.themoviedb.org/tv/113962?language=uk\">Спецзагін \"Левиця\"</a></b> (2023)\nдрама, політика та війна · 📺 серіал · 3 сез.\n⭐ IMDb <b>7.8</b>\n<i>🎭 Зої Салдана, Лейсла Де Олівейра, Dave Annable</i>\n📝 Оперативниця ЦРУ Джо намагається збалансувати особисте та професійне життя, будучи вістрям списа у війні агентства з тероризмом.\n▶️ <a href=\"https://youtu.be/uEjcXhW7CXo\">Трейлер</a></blockquote>\n§KN:t113962\n§§\n<blockquote>📺 <b>7. <a href=\"https://www.themoviedb.org/tv/125988?language=uk\">Таємниця бункера</a></b> (2023)\nнауково фантастичний, драма · 📺 серіал · 4 сез.\n⭐ IMDb <b>8.1</b>\n<i>🎭 Ребекка Ферґюсон, Common, Чіназа Уче</i>\n📺 <a href=\"https://www.themoviedb.org/tv/125988-silo/watch?locale=UA\">Apple TV</a>\n📝 У занапащеному й небезпечному майбутньому тисячі людей живуть у великому підземному бункері. Коли шериф порушує його основоположне правило, а жителі гинуть за загадкових обставин, інженер Джулієт береться розкривати…\n▶️ <a href=\"https://youtu.be/kw_Id4p-kFI\">Трейлер</a></blockquote>\n§KN:t125988\n§§\n<blockquote>📺 <b>8. <a href=\"https://www.themoviedb.org/tv/72071?language=uk\">Чі</a></b> (2018)\nдрама · 📺 серіал · 8 сез.\n⭐ IMDb <b>7.5</b>\n📝 Релевантна, своєчасна та характерна історія дорослішання про пів дюжини взаємопов’язаних персонажів у південній частині Чикаго. У центрі історії — Брендон, амбітний і впевнений у собі молодий чоловік, який мріє…\n▶️ <a href=\"https://youtu.be/22if69BjkPI\">Трейлер</a></blockquote>\n§KN:t72071\n§§\n<blockquote>📺 <b>9. <a href=\"https://www.themoviedb.org/tv/2430?language=uk\">Doc Martin</a></b> (2004)\nкомедія, драма · 📺 серіал · 10 сез.\n⭐ IMDb <b>8.4</b>\n<i>🎭 Мартін Клунз, Caroline Catz, Joe Absolom</i>\n📝 Doc Martin is a British television comedy drama series starring Martin Clunes in the title role. It was created by Dominic Minghella after the character of Dr. Martin Bamford in the 2000 comedy film Saving Grace. The…\n▶️ <a href=\"https://youtu.be/aDbhPdHhUm4\">Трейлер</a></blockquote>\n§KN:t2430\n§§\n<blockquote>📺 <b>10. <a href=\"https://www.themoviedb.org/tv/46896?language=uk\">Первородні</a></b> (2013)\nнауково фантастичний, драма, детектив · 📺 серіал · 5 сез.\n⭐ IMDb <b>8.2</b>\n<i>🎭 Joseph Morgan, Daniel Gillies, Чарльз Майкл Девіс</i>\n📝 Ребекка, Клаус і Елайджа в 20-х роках активно брали участь в житті міста Новий Орлеан. Вони таємно керували його жителями, зробивши його дуже зручним для життя надприродних істот. Тут, в місті клубів і алкоголю, їх…\n▶️ <a href=\"https://youtu.be/GXrDYboUnnw\">Трейлер</a></blockquote>\n§KN:t46896"
    }
   ]
  },
