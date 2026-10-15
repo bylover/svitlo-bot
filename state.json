@@ -58,7 +58,7 @@
   "store": true
  },
  "silpo_probe": "2026-10-08",
- "silpo_week": "2026-41",
+ "silpo_week": "2026-42",
  "art_day": "2026-10-08",
  "para_articles": [
   {
@@ -1814,11 +1814,11 @@
   "сайт ДТЕК": true,
   "канал ЖК «Яскравий»": false
  },
- "fact_png": "2026-10-15 07|3|2026-10-15T06:05:08+03:00",
+ "fact_png": "2026-10-15 08|3|2026-10-15T06:05:08+03:00",
  "fact_day": {
-  "total": "56 хв",
+  "total": "1 год 56 хв",
   "list": [
-   "06:05–07:01 · 56 хв"
+   "06:05–08:01 · 1 год 56 хв"
   ]
  },
  "silpo_ver": 10,
@@ -2020,8 +2020,8 @@
    "rows": [
     "6. 🔥 Морква «Премія»® по-корейськи, 200г — <b>29.99 ₴</b> <s>52.49 ₴</s> · заявлено −43% · <b>реально −43%</b> · ⭐ 3.2\n🔗 <a href=\"https://silpo.ua/product/morkva-premiia-po-koreisky-962377\">відкрити</a>",
     "7. 🔥 Манго натуральне сушене, 150г — <b>79.99 ₴</b> <s>119 ₴</s> · заявлено −33% · <b>реально −38%</b> · ⭐ 3.4\n🔗 <a href=\"https://silpo.ua/product/mango-naturalne-sushene-875411\">відкрити</a>",
-    "8. 🔥 Буряк «Премія»® відварений цілий, 300г — <b>29.99 ₴</b> <s>50.99 ₴</s> · заявлено −41% · <b>реально −29%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/buriak-premiia-vidvarenyi-tsilyi-994477\">відкрити</a>",
-    "9. 🔥 Яблуко Гала відбірне, 100г — <b>3.99 ₴</b> <s>5.49 ₴</s> · заявлено −27% · <b>реально −30%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/yabluko-gala-vidbirne-519741\">відкрити</a>",
+    "8. 🔥 Яблуко Гала відбірне, 100г — <b>3.99 ₴</b> <s>5.49 ₴</s> · заявлено −27% · <b>реально −30%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/yabluko-gala-vidbirne-519741\">відкрити</a>",
+    "9. 🔥 Буряк «Премія»® відварений цілий, 300г — <b>29.99 ₴</b> <s>50.99 ₴</s> · заявлено −41% · <b>реально −29%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/buriak-premiia-vidvarenyi-tsilyi-994477\">відкрити</a>",
     "10. Кеш'ю сушений, 150г — <b>129 ₴</b> <s>189 ₴</s> · заявлено −32% · <b>реально −32%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/kesh-iu-sushenyi-975471\">відкрити</a>",
     "11. Насіння гарбуза Roni, 150г — <b>99 ₴</b> <s>144 ₴</s> · заявлено −31% · <b>реально −26%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/nasinnia-garbuza-roni-914999\">відкрити</a>",
     "12. 🔥 Салат Зелена Країна Бебі мікс листовий, 75г — <b>49.99 ₴</b> <s>69.99 ₴</s> · заявлено −29% · <b>реально −31%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/salat-zelena-kraina-bebi-miks-lystovyi-931148\">відкрити</a>",
@@ -2545,7 +2545,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-15T07:56:12.978367+03:00",
+ "gh_beat": "2026-10-15T08:01:22.089071+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -14205,12 +14205,22 @@
  "we_sent": {},
  "yt_week": "2026-42",
  "smm_week": "2026-42",
- "pend": {},
- "got": {},
+ "pend": {
+  "silpo": {
+   "id": "2026-10-15 08",
+   "t": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 15.10 (оновлюється щоранку)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Калнишевського, 2 · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <a href=\"https://silpo.ua/product/zasib-dlia-prannia-perwoll-vidnovlennia-ta-aromat-949302\">Засіб для прання Perwoll Відновлення та аромат</a> — <b>399 ₴</b> <s>999 ₴</s> · −60%\n2. 🛒 <a href=\"https://silpo.ua/product/ketchup-korolivskyi-smak-lagidnyi-931498\">Кетчуп Королівський смак Лагідний</a> — <b>19.99 ₴</b> <s>38.99 ₴</s> · −56%\n3. 🥤 <a href=\"https://silpo.ua/product/nektar-lito-tomatnyi-696928\">Нектар «Літо» томатний</a> — <b>34.99 ₴</b> <s>78.49 ₴</s> · −59%\n4. 🍫 <a href=\"https://silpo.ua/product/tsukerky-zozole-raibow-z-fruktovym-smakom-zheleini-960824\">Цукерки Zozole Raibow з фруктовим смаком желейні</a> — <b>22.99 ₴</b> <s>52.99 ₴</s> · −59%\n5. 🛒 <a href=\"https://silpo.ua/product/ketchup-korolivskyi-smak-do-shashlyku-931500\">Кетчуп Королівський смак До шашлику</a> — <b>19.99 ₴</b> <s>38.99 ₴</s> · −52%\n6. 🛒 <a href=\"https://silpo.ua/product/pryprava-premiia-do-ryby-320507\">Приправа «Премія»® до риби</a> — <b>13.99 ₴</b> <s>31.99 ₴</s> · −59%\n7. 🛒 <a href=\"https://silpo.ua/product/pakety-dlia-smittia-premiia-z-ruchkamy-35-l-948287\">Пакети для сміття «Премія»® з ручками 35 л</a> — <b>35.99 ₴</b> <s>81.99 ₴</s> · −53%\n8. 🧊 <a href=\"https://silpo.ua/product/morozyvo-zolotyi-kashtan-klasychnyi-plombir-u-vershkovii-glazuri-542504\">Морозиво «Золотий Каштан» «Класичний» пломбір у вершковій глазурі</a> — <b>32.99 ₴</b> <s>66.99 ₴</s> · −60%\n9. 🛒 <a href=\"https://silpo.ua/product/pryprava-premiia-do-ryby-320507\">Приправа «Премія»® до риби</a> — <b>13.99 ₴</b> <s>31.99 ₴</s> · −59%\n10. 🛒 <a href=\"https://silpo.ua/product/zasib-myiuchyi-frosch-zelenyi-lymon-123098\">Засіб миючий Frosch Зелений лимон</a> — <b>59.99 ₴</b> <s>109 ₴</s> · −51%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
+   "mk": null,
+   "p": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 15.10 (оновлюється щоранку)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Калнишевського, 2 · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <a href=\"https://silpo.ua/product/zasib-dlia-prannia-perwoll-vidnovlennia-ta-aromat-949302\">Засіб для прання Perwoll Відновлення та аромат</a> — <b>399 ₴</b> <s>999 ₴</s> · −60%\n2. 🛒 <a href=\"https://silpo.ua/product/ketchup-korolivskyi-smak-lagidnyi-931498\">Кетчуп Королівський смак Лагідний</a> — <b>19.99 ₴</b> <s>38.99 ₴</s> · −56%\n3. 🥤 <a href=\"https://silpo.ua/product/nektar-lito-tomatnyi-696928\">Нектар «Літо» томатний</a> — <b>34.99 ₴</b> <s>78.49 ₴</s> · −59%\n4. 🍫 <a href=\"https://silpo.ua/product/tsukerky-zozole-raibow-z-fruktovym-smakom-zheleini-960824\">Цукерки Zozole Raibow з фруктовим смаком желейні</a> — <b>22.99 ₴</b> <s>52.99 ₴</s> · −59%\n5. 🛒 <a href=\"https://silpo.ua/product/ketchup-korolivskyi-smak-do-shashlyku-931500\">Кетчуп Королівський смак До шашлику</a> — <b>19.99 ₴</b> <s>38.99 ₴</s> · −52%\n6. 🛒 <a href=\"https://silpo.ua/product/pryprava-premiia-do-ryby-320507\">Приправа «Премія»® до риби</a> — <b>13.99 ₴</b> <s>31.99 ₴</s> · −59%\n7. 🛒 <a href=\"https://silpo.ua/product/pakety-dlia-smittia-premiia-z-ruchkamy-35-l-948287\">Пакети для сміття «Премія»® з ручками 35 л</a> — <b>35.99 ₴</b> <s>81.99 ₴</s> · −53%\n8. 🧊 <a href=\"https://silpo.ua/product/morozyvo-zolotyi-kashtan-klasychnyi-plombir-u-vershkovii-glazuri-542504\">Морозиво «Золотий Каштан» «Класичний» пломбір у вершковій глазурі</a> — <b>32.99 ₴</b> <s>66.99 ₴</s> · −60%\n9. 🛒 <a href=\"https://silpo.ua/product/pryprava-premiia-do-ryby-320507\">Приправа «Премія»® до риби</a> — <b>13.99 ₴</b> <s>31.99 ₴</s> · −59%\n10. 🛒 <a href=\"https://silpo.ua/product/zasib-myiuchyi-frosch-zelenyi-lymon-123098\">Засіб миючий Frosch Зелений лимон</a> — <b>59.99 ₴</b> <s>109 ₴</s> · −51%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
+   "exp": "2026-10-17T08:01:22.420299+03:00"
+  }
+ },
+ "got": {
+  "silpo": {}
+ },
  "pushed_h": {
-  "gs": "a701a64de421",
+  "gs": "f5c8eeb17370",
   "quiz_pool.json": "5d94078dfb15",
-  "fact.png": "6ddcb9444c64",
+  "fact.png": "bef763e84f98",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a315d64f80c3",
   "silpo/m.json": "b73a9d87b1b9",
   "sexed.json": "e7668ebffc68",
