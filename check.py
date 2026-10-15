@@ -1964,6 +1964,7 @@ def collect_content(st: dict, now: datetime) -> None:
                          "comments": int(com) if str(com).isdigit() else 0, "text": text[:900]})
     pool.sort(key=lambda a: a["age"])
     st["content_pool"] = pool[:120]
+    mark_upd(st, "💞 Матеріали 18+ (журнали)", bool(pool), f"{len(pool)} шт.")
     print(f"Поради 18+: працюють {sorted(set(ok))}, у пулі {len(st['content_pool'])} "
           f"(статті {sum(a['kind'] == 'article' for a in pool)}, огляди {sum(a['kind'] == 'review' for a in pool)}, "
           f"досвід {sum(a['kind'] in ('experience', 'podcast') for a in pool)})")
@@ -2734,7 +2735,8 @@ def tc_extract(mall: str, url: str, now: datetime) -> list[dict]:
                  "Для кожної: shop (назва магазину), offer (коротко українською, що за акція), discount (наприклад «−30%» або «2+1», якщо є), "
                  "start і end (YYYY-MM-DD; якщо не вказано — порожньо), url (посилання на сторінку акції зі списку посилань, якщо є), "
                  "status: «active» — з тексту ЯВНО видно, що акція діє сьогодні (є чинний термін або «постійна», «до кінця місяця», «лише сьогодні»), "
-                 "«ended» — закінчилась, «unknown» — неможливо зрозуміти, чи діє (стара новина, без дат); "
+                 "«ended» — закінчилась, «unknown» — неможливо зрозуміти, чи діє (стара новина, архів). Якщо це актуальний перелік акцій магазину/ТЦ "
+                 "(не архів і не новина з минулою датою), а термін просто не вказано — status «active»; "
                  f"category (одне з: {', '.join(TC_CATS)}). Не вигадуй — лише те, що є на сторінці. Поверни лише JSON-масив.\n\n"
                  f"ТЕКСТ СТОРІНКИ:\n{text}\n\nПОСИЛАННЯ:\n" + "\n".join(links[:250]), json_mode=True, max_tokens=4000)
     try:
@@ -3837,7 +3839,8 @@ def brand_of(p_: dict) -> str:
 
 def silpo_snapshot(st: dict, now: datetime) -> None:
     """Щосереди: ціни всіх товарів магазину → silpo_prices.json (зберігаємо 5 тижнів)."""
-    br = silpo_branch(st)
+    fb_ = family_silpo_branch()
+    br = (fb_, "SelfPickup") if fb_ else silpo_branch(st)       # той самий магазин, що й підбірка (обраний у ⚙️)
     if not br:
         return
     path = Path("silpo_prices.json")
@@ -4529,9 +4532,14 @@ def dec(s: str | None) -> list:
         return []
 
 
-GS_KEYS = ["silpo_last", "silpo_more", "silpo_stores", "yt_last", "smm_last", "fact", "fact_day", "fact_png", "emerg", "addr",
+GS_KEYS = ["upd", "silpo_last", "silpo_more", "silpo_stores", "yt_last", "smm_last", "fact", "fact_day", "fact_png", "emerg", "addr",
            "gh_beat", "kino_q", "kino_gq", "silpo_by", "kino_last",
            "content_pool", "content_seen", "exp_pool", "exp_pool_seen", "para_articles", "kino_seen", "art_seen", "reddit_seen", "push"]   # матеріали 18+ з журналів тощо
+
+
+def mark_upd(st: dict, name: str, ok: bool = True, note: str = "") -> None:
+    """Коли й чи успішно оновилась підбірка — для кнопки адміна «🕒 Останнє оновлення»."""
+    st.setdefault("upd", {})[name] = {"at": datetime.now(TZ).strftime("%d.%m %H:%M"), "ts": int(_time.time()), "ok": ok, "note": note[:60]}
 
 
 def push_to_worker(st: dict) -> None:
@@ -5127,9 +5135,9 @@ def main() -> None:
             for c in due_w:
                 ws[c] = today_key
                 p_ = PROF.get(c) or {}
-                wl = p_.get("wloc") if c not in family else None          # 📍 своя адреса для погоди (точні координати)
+                wl = p_.get("wloc")                                        # 📍 своє місце для погоди (і для основних)
                 key_ = ("loc", wl[0], round(wl[1], 3), round(wl[2], 3)) if wl else \
-                    ((p_.get("city"), p_.get("dist")) if c not in family and p_.get("dist") else None)
+                    ((p_.get("city") or "kyiv", p_.get("dist")) if p_.get("dist") else None)
                 by_d.setdefault(key_, []).append(c)
             for key_, cids in by_d.items():
                 if key_ is None:
@@ -5196,6 +5204,7 @@ def main() -> None:
             y = build_youtube(st, now)
             if y:
                 st["yt_week"], st["yt_last"] = week_key, y
+                mark_upd(st, "▶️ YouTube")
                 topic_msgs.append(("yt", y, None, y))
                 yt_req = [c for c in yt_req if c not in audience("yt")]
         elif yt_req and not st.get("yt_last"):
@@ -5217,6 +5226,11 @@ def main() -> None:
              ("ранковий імпульс", lambda: impulse_refresh(st, now)), ("музика", lambda: music_refresh(st, now)),
              ("здоров'я", lambda: health_refresh(st, now))]
     slot = (now.hour * 12 + now.minute // 5) % len(heavy)
+    forced = st.get("force_heavy") or []
+    if forced:                                        # позапланово (кнопка «🔄 Оновити підбірки») — спершу кіно й музика
+        heavy = [h for h in heavy if h[0] in forced] + [h for h in heavy if h[0] not in forced]
+        slot = 0
+        st["force_heavy"] = forced[1:]
     for k_ in range(len(heavy)):
         name_, fn_ = heavy[(slot + k_) % len(heavy)]
         if not budget_ok(100 if k_ == 0 else 60):     # перша задача — якщо минуло < 100 с, наступні — лише якщо дуже швидко
@@ -5224,7 +5238,10 @@ def main() -> None:
         t_ = _time.time()
         try:
             fn_()
+            mark_upd(st, {"кіно, пули": "🍿 Кіно (пули)", "фільми 18+": "🔥 Фільми 18+", "секс-освіта": "🎓 Секс-освіта", "вікторина": "🎯 Вікторини",
+                          "ранковий імпульс": "🌅 Імпульс / 🕯 класика", "музика": "🎵 Музика", "здоров'я": "❤️ Здоровʼя"}.get(name_, name_))
         except Exception as e:
+            mark_upd(st, name_, False, err_text(e)[:60])
             print(f"{name_}: {err_text(e)[:120]}")
         print(f"⏱ {name_}: {(_time.time() - t_):.0f} с")
         if k_ == 0 and _time.time() - t_ > 20:
@@ -5246,9 +5263,10 @@ def main() -> None:
         st["kino_q"] = []
         st["kino_ver"] = 2
     fam_b = (family_silpo_branch() or "") + "|" + family_silpo_dtype() + "|" + ",".join(sorted(SILPO_BAD))
-    if st.get("silpo_ver") != 11 or st.get("silpo_fb") != fam_b:   # суворіші перевірки / змінився магазин для цін
-        st.pop("silpo_last", None)
-        st.pop("silpo_by", None)
+    if worker_alive and (st.get("silpo_ver") != 11 or st.get("silpo_fb") != fam_b):   # змінився магазин/режим — перебудова,
+        st["silpo_day"] = ""                          # але стару підбірку НЕ видаляємо (щоб не було «⏳ Готую…» щоразу)
+        for v_ in (st.get("silpo_by") or {}).values():
+            v_["built"] = ""
         st["silpo_ver"] = 11
         st["silpo_fb"] = fam_b
     if st.get("yt_ver") != 2:                         # новий відбір YouTube (лише українське) — стару підбірку скидаємо
@@ -5258,12 +5276,20 @@ def main() -> None:
         st.pop("smm_last", None)
         st.pop("smm_pool", None)
         st["smm_ver"] = 4
-    if worker_req.get("rebuild"):                     # 👑 «🔄 Оновити підбірки» — скидаємо й перебудовуємо поступово
-        for k_ in ("smm_last", "yt_last", "silpo_last", "silpo_day", "silpo_by", "kino_q", "kino_gq", "kp_at", "x18_at"):
-            st.pop(k_, None)
+    if worker_req.get("rebuild"):                     # 👑 «🔄 Оновити підбірки»: кіно, музика, Сільпо, ТЦ — позапланово (18+, SMM, здоровʼя — за розкладом)
+        st["silpo_day"] = ""
+        for v_ in (st.get("silpo_by") or {}).values():
+            v_["built"] = ""
+        st.pop("kino_q", None); st.pop("kino_gq", None); st.pop("kp_at", None)
+        try:
+            mdb_ = json.loads(MUSIC_FILE.read_text("utf-8")); mdb_["snap"] = {}; mdb_["yt_day"] = ""
+            MUSIC_FILE.write_text(json.dumps(mdb_, ensure_ascii=False, separators=(",", ":")), "utf-8")
+        except Exception:
+            pass
+        st["force_heavy"] = ["кіно, пули", "музика"]
         for c in worker_req["rebuild"]:
-            direct_m.append((str(c), "🔄 Підбірки скинуто: SMM, YouTube, Сільпо, кіно й 18+ оновлюються. SMM, YouTube і Сільпо — протягом "
-                                     "~10–20 хв, пули кіно й 18+ — протягом ~1–2 год (по одній задачі за запуск).", None))
+            direct_m.append((str(c), "🔄 Позапланове оновлення запущено: 🛒 Сільпо (основна й підписників) — ~10–20 хв; 🍿 кіно й 🎵 музика — "
+                                     "~30–60 хв; 🛍 ТЦ — окремим процесом ~10–15 хв. 18+, SMM і здоровʼя оновлюються за своїм розкладом.", None))
     # 9) SMM і таргет — пн о 13:00 (вам, дружині та підписникам, які це ввімкнули); меню — той самий дайджест тижня
     smm_due = (now.weekday() == SMM_WEEKDAY and SMM_HOUR <= now.hour < SMM_HOUR + 4
                and st.get("smm_week") != week_key)
@@ -5271,6 +5297,7 @@ def main() -> None:
         sm = build_smm(st, now)
         if sm:
             st["smm_week"], st["smm_last"] = week_key, sm
+            mark_upd(st, "📈 SMM і таргет")
             topic_msgs.append(("smm", sm, None, sm))
             smm_req = [c for c in smm_req if c not in audience("smm")]
     if not st.get("smm_last") and not st.get("smm_try") == now.strftime("%Y-%m-%d %H"):
@@ -5309,6 +5336,7 @@ def main() -> None:
             and st.get("silpo_try") != now.strftime("%Y-%m-%d %H")):   # щоранку оновлюємо підбірку меню: лише чинні й у наявності
         st["silpo_try"] = now.strftime("%Y-%m-%d %H")
         sp_d = build_silpo(st, now)
+        mark_upd(st, "🛒 Сільпо (основна)", bool(sp_d))
         if sp_d:
             st["silpo_last"], st["silpo_day"] = sp_d, half_
     if silpo_due and st.get("silpo_last"):
@@ -5339,13 +5367,15 @@ def main() -> None:
     sp_week = (now - timedelta(days=(now.weekday() - SILPO_WEEKDAY) % 7)).date().isoformat()   # тиждень акцій — з четверга
     for n_, b in enumerate(wanted):
         req_c = [str(c) for c in worker_req.get(f"sp_{b}", [])]
-        if (by.get(b) or {}).get("week") != sp_week and built < 2:
+        half_b = f"{today_key}-{'am' if now.hour < 15 else 'pm'}"
+        if ((by.get(b) or {}).get("week") != sp_week or (by.get(b) or {}).get("built") != half_b) and built < 2 and now.hour >= 7:
             bid_, dt_, _ = key_info.get(b, (b, SILPO_DTYPE, b))
             sp_ = build_silpo(st, now, branch=bid_, label=(names.get(bid_, "ваш магазин") + (" · 🚚 доставка" if dt_ == "DeliveryHome" else " · 🏪 самовивіз")),
                               tag=f"s{n_}_", dtype=dt_, fkey=b)
             built += 1
+            mark_upd(st, "🛒 Сільпо (підписники)", bool(sp_))
             if sp_:
-                by[b] = {"week": sp_week, "text": sp_}
+                by[b] = {"week": sp_week, "text": sp_, "built": half_b, "at": now.strftime("%d.%m %H:%M")}
         if (by.get(b) or {}).get("week") == sp_week and now.weekday() == SILPO_WEEKDAY and now.hour >= 13 \
                 and (st.get("silpo_sent_by") or {}).get(b) != sp_week:          # чт 13:00 — розсилка своїм підписникам
             st.setdefault("silpo_sent_by", {})[b] = sp_week
