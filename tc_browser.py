@@ -32,14 +32,14 @@ def main() -> None:
                     raise cache[url]
                 return cache[url]
             try:
-                r = page.goto(url, wait_until="domcontentloaded", timeout=20000)
+                r = page.goto(url, wait_until="domcontentloaded", timeout=35000)
                 try:
-                    page.wait_for_load_state("networkidle", timeout=3000)
+                    page.wait_for_load_state("networkidle", timeout=6000)
                 except Exception:
                     pass
                 try:                                  # гортаємо вниз — підвантажуються «ліниві» блоки акцій
                     page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-                    page.wait_for_timeout(800)
+                    page.wait_for_timeout(1200)
                 except Exception:
                     pass
                 if r is not None and r.status >= 400:

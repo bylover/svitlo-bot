@@ -2346,6 +2346,30 @@ PROMO_SAMPLES: list = []
 ALL_PROMOS: list = []                                       # усі акції магазину — для «⭐ Обране»
 VERIFY_DROP = [0]                                           # скільки «знижок» відкинуто перевіркою
 SILPO_BAD: set = set()                                      # товари, про які повідомили «ціна не збігається»
+BAD_SEEN: dict = {}                                         # товар із «⚠️» → (назва, категорія) — для перевірки по магазинах
+
+
+def silpo_probe(st: dict, main_branch: str) -> None:
+    """«Слідопит»: для товарів із «⚠️» дивимось ціну в 8 найближчих магазинах (доставка й самовивіз) — щоб знайти, який магазин бачить сайт."""
+    stores = (st.get("silpo_stores") or {}).get("kyiv") or []
+    me = next((x for x in stores if x[0] == main_branch), None)
+    print(f"Сільпо: основний магазин для цін — {me[1] if me else main_branch}")
+    if not me or not BAD_SEEN:
+        return
+    near = sorted(stores, key=lambda x: (x[2] - me[2]) ** 2 + (x[3] - me[3]) ** 2)[:8]
+    for pid, (title, slug) in list(BAD_SEEN.items())[:3]:
+        out = []
+        for b in near:
+            for dt in ("DeliveryHome", "SelfPickup"):
+                try:
+                    hit = next((x for x in silpo_products(b[0], dt, slug, False, max_pages=4) if str(x.get("id")) == pid), None)
+                except Exception:
+                    hit = None
+                if hit:
+                    out.append(f"{b[1][:32]} [{'дост' if dt == 'DeliveryHome' else 'самов'}]: {p_price(hit):g}" + (f"/{p_old(hit):g}" if p_old(hit) else ""))
+        print(f"Сільпо слідопит «{title[:40]}»: " + (" · ".join(out) or "не знайдено в сусідніх магазинах"))
+
+
 SILPO_MARKET = re.compile(r"nova.?po[sš]h?ta|novaposhta|нова\s*пошта|новою\s*поштою|marketplace|маркетплейс|seller|продавець|partner|партнер", re.I)
 
 
@@ -2660,7 +2684,7 @@ def tc_promo_url(root: str) -> str | None:
             url = urllib.parse.urljoin(root + "/", href)
             if urllib.parse.urlparse(url).netloc.replace("www.", "") == urllib.parse.urlparse(root).netloc.replace("www.", ""):
                 cands.append(url)
-    cands = list(dict.fromkeys(cands))[:2] or [root.rstrip("/") + p_ for p_ in PROMO_PATHS[:2]]   # ≤2 кандидати — швидше
+    cands = list(dict.fromkeys(cands))[:3] or [root.rstrip("/") + p_ for p_ in PROMO_PATHS[:3]]
     best, best_s = None, promo_score(page) // 2          # головна — як запасний варіант
     for u in cands:
         try:
@@ -2691,8 +2715,8 @@ TC_SITE_T0 = {"t": 0.0}
 
 
 def tc_extract(mall: str, url: str, now: datetime) -> list[dict]:
-    if TC_SITE_T0["t"] and _time.time() - TC_SITE_T0["t"] > 45:
-        raise RuntimeError("сайт відповідає надто довго (>45 с) — пропущено")
+    if TC_SITE_T0["t"] and _time.time() - TC_SITE_T0["t"] > 75:
+        raise RuntimeError("сайт відповідає надто довго (>75 с) — пропущено")
     page = tc_get(url)
     h = hashlib.md5(strip_html(page)[:14000].encode()).hexdigest()[:12]
     old = TC_CACHE.get(url)
@@ -3907,6 +3931,8 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
                 if VERIFY_DROP[0] <= 3:
                     print(f"Сільпо виключено ({why_}): {str(p_.get('title'))[:50]}")
                 continue
+            if str(p_.get("id")) in SILPO_BAD and not branch:
+                BAD_SEEN[str(p_.get("id"))] = (str(p_.get("title") or ""), p_.get("sectionSlug") or c.get("slug"))
             if str(p_.get("id")) in SILPO_BAD:      # повідомили про невідповідність — виключаємо й пишемо сирі дані для аналізу
                 print(f"Сільпо невідповідність: {str(p_.get('title'))[:50]} | {json.dumps({k_: v_ for k_, v_ in p_.items() if k_ not in ('images', 'description')}, ensure_ascii=False)[:900]}")
                 continue
@@ -3985,6 +4011,11 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
         print(f"Сільпо: акцій у файлі {len(ALL_PROMOS)}, брендів {len(brands_)}; не підтвердились і відкинуті: {VERIFY_DROP[0]}")
     except Exception as e:
         print(f"Сільпо, файл акцій: {err_text(e)}")
+    if not branch:
+        try:
+            silpo_probe(st, br[0])                    # «слідопит» по сусідніх магазинах для товарів із «⚠️»
+        except Exception as e:
+            print(f"Сільпо слідопит: {err_text(e)[:80]}")
     best.sort(key=lambda x: x[0], reverse=True)       # одне повідомлення: топ-10 + кнопки категорій
     if not branch:                                    # діагностика: сирі дані топ-10 (звірити з сайтом)
         for _, p_, price, old, pct, emo_ in best[:10]:
@@ -4455,7 +4486,8 @@ def dec(s: str | None) -> list:
 
 
 GS_KEYS = ["silpo_last", "silpo_more", "silpo_stores", "yt_last", "smm_last", "fact", "fact_day", "fact_png", "emerg", "addr",
-           "gh_beat", "kino_q", "kino_gq", "silpo_by", "kino_last"]
+           "gh_beat", "kino_q", "kino_gq", "silpo_by", "kino_last",
+           "content_pool", "content_seen", "exp_pool", "exp_pool_seen", "para_articles", "kino_seen", "art_seen", "reddit_seen", "push"]   # матеріали 18+ з журналів тощо
 
 
 def push_to_worker(st: dict) -> None:
@@ -4673,7 +4705,15 @@ def main() -> None:
     worker_req: dict = {}
     if WORKER_MODE:                              # підписники, «бачили» і «пульс» — з Cloudflare Worker
         try:
-            ex = http_json(f"{SYNC_URL}/export?key={urllib.parse.quote(SYNC_KEY)}&take=1")
+            ex = None
+            for att_ in range(3):                      # 3 спроби — разовий збій мережі не означає, що Cloudflare «впав»
+                try:
+                    ex = http_json(f"{SYNC_URL}/export?key={urllib.parse.quote(SYNC_KEY)}&take=1")
+                    break
+                except Exception:
+                    if att_ == 2:
+                        raise
+                    _time.sleep(4)
             worker_req = dict(ex.get("req") or {})
             worker_req["kino_used"] = ex.get("kino_used") or []
             taste_update(st, ex.get("likes") or [], ex.get("dislikes") or [])   # 👍/👎 з меню кіно
@@ -4696,9 +4736,12 @@ def main() -> None:
     if WORKER_MODE:
         now_s = datetime.now(TZ)
         if not worker_alive:
+            if st.get("cf_down_since") and (now_s - datetime.fromisoformat(st["cf_down_since"])).total_seconds() > 3 * 3600 and st.get("cf_fails", 0) < 2:
+                st.pop("cf_down_since", None)          # стара позначка з часу, коли GitHub не працював — не рахуємо
             st.setdefault("cf_down_since", now_s.isoformat())
+            st["cf_fails"] = st.get("cf_fails", 0) + 1
             down_min = (now_s - datetime.fromisoformat(st["cf_down_since"])).total_seconds() / 60
-            if down_min >= 15 and not st.get("cf_alerted"):
+            if down_min >= 15 and st["cf_fails"] >= 3 and not st.get("cf_alerted"):
                 st["cf_alerted"] = True
                 svc_msgs.append("⚠️ <b>Збій у постачальника: Cloudflare не відповідає</b>\n"
                                 "Меню бота може не працювати, а сповіщення приходитимуть повільніше (раз на 5–15 хв) — "
@@ -4707,6 +4750,7 @@ def main() -> None:
             if st.pop("cf_alerted", None):
                 svc_msgs.append("✅ <b>Cloudflare знову працює</b> — меню й швидкі сповіщення відновлено.")
             st.pop("cf_down_since", None)
+            st.pop("cf_fails", None)
 
     st["source"] = SOURCE
     g, keys = get_group(datetime.now(TZ))
@@ -5121,8 +5165,8 @@ def main() -> None:
     # 8) «Для пари» — ср і пт о 18:00 (вам, дружині та підписникам, які це ввімкнули); з меню — нова порада
     para_due = (now.weekday() in PARA_DAYS and PARA_HOUR <= now.hour < PARA_HOUR + 4
                 and st.get("para_sent") != today_key)
-    if budget_ok(150):
-        collect_content(st, now)                      # раз на день оновлюємо пул свіжих матеріалів 18+
+    if budget_ok(240):
+        collect_content(st, now)                      # раз на день — пул свіжих матеріалів 18+ із журналів і сайтів
     # ВАЖКЕ — по одній задачі за запуск по черзі й лише якщо є час (ліміт запуску GitHub — 12 хв, ціль — до 4 хв)
     heavy = [("кіно, пули", lambda: kino_pool_refresh(st, now)), ("фільми 18+", lambda: x18_refresh(st, now)),
              ("секс-освіта", lambda: sexed_refresh(st, now)), ("вікторина", lambda: quiz_refresh(now)),
