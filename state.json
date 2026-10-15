@@ -1058,16 +1058,6 @@
   "gemini-flash-latest": "2026-10-16T10:05:00+03:00"
  },
  "kino_seen": [
-  "m1114513",
-  "m315011",
-  "m333371",
-  "m744857",
-  "m938614",
-  "m393519",
-  "m259693",
-  "m791177",
-  "m4552",
-  "m3021",
   "m765245",
   "m586791",
   "m500664",
@@ -1657,7 +1647,17 @@
   "m406990",
   "m1242898",
   "m1858",
-  "m101299"
+  "m101299",
+  "m583903",
+  "m401698",
+  "m1630423",
+  "m523977",
+  "m436343",
+  "m458423",
+  "m332562",
+  "m398818",
+  "m188538",
+  "m1259"
  ],
  "yt_ver": 2,
  "yt_seen": [
@@ -2852,7 +2852,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-16T00:46:05.867201+03:00",
+ "gh_beat": "2026-10-16T00:51:01.604987+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "v": 2,
@@ -16509,6 +16509,66 @@
    93,
    84,
    "2026-10-16"
+  ],
+  "tt13069986": [
+   4.8,
+   9,
+   null,
+   "2026-10-16"
+  ],
+  "tt9308382": [
+   6.4,
+   70,
+   58,
+   "2026-10-16"
+  ],
+  "tt1517451": [
+   7.6,
+   90,
+   88,
+   "2026-10-16"
+  ],
+  "tt5726616": [
+   7.8,
+   95,
+   94,
+   "2026-10-16"
+  ],
+  "tt4978342": [
+   5.9,
+   31,
+   39,
+   "2026-10-16"
+  ],
+  "tt2674426": [
+   7.4,
+   55,
+   51,
+   "2026-10-16"
+  ],
+  "tt2172954": [
+   6.8,
+   46,
+   49,
+   "2026-10-16"
+  ],
+  "tt2770480": [
+   6.9,
+   null,
+   null,
+   "2026-10-16"
+  ],
+  "tt0448124": [
+   7.4,
+   63,
+   54,
+   "2026-10-16"
+  ],
+  "tt3478962": [
+   7.1,
+   72,
+   68,
+   "2026-10-16"
   ]
  },
  "mo_sent": {},
@@ -16532,7 +16592,7 @@
   }
  },
  "pushed_h": {
-  "gs": "fc8c2648894f",
+  "gs": "928a0976925c",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "073ab25d88d2",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
@@ -18271,6 +18331,12 @@
    {
     "id": "020cd44a55",
     "text": "🍿 <b>ПІДБІРКА КІНО · ФАНТАСТИКА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/520763?language=uk\">Тихе місце 2</a></b> (2021)\nфантастика, трилер, жахи · ⏱ 1 год 36 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>91%</b> · Ⓜ <b>71</b>\n<i>🎭 Емілі Блант, Джон Кразінські, Millicent Simmonds</i>\n📺 <a href=\"https://www.themoviedb.org/movie/520763-a-quiet-place-part-ii/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Родина Ебботтів продовжує в повній тиші боротися за життя. Після сутички з істотами у власній оселі вони опиняються віч-на-віч із жахами зовнішнього світу. Ступивши в невідомість, сім’я з’ясовує, що створіння, котрі…\n▶️ <a href=\"https://youtu.be/Ualv2vIEpvM\">Трейлер</a></blockquote>\n§KN:m520763\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/505948?language=uk\">Дитя робота</a></b> (2019)\nфантастика, трилер · ⏱ 1 год 53 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>89%</b> · Ⓜ <b>64</b>\n<i>🎭 Clara Rugaard, Роуз Бірн, Гіларі Свенк</i>\n📺 <a href=\"https://www.themoviedb.org/movie/505948-i-am-mother/watch?locale=UA\">Apple TV Store</a>\n📝 Епідемія знищила життя на Землі. Єдиний шлях до спасіння — бункер, де робот-гуманоїд «Мати» повинен виховати у безпеці дитину. Дівчинка росте здоровою та нічого не потребує. Вона ніколи не виходила назовні та не…\n▶️ <a href=\"https://youtu.be/tgYJ15Yd6MU\">Трейлер</a></blockquote>\n§KN:m505948\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/330459?language=uk\">Бунтар Один. Зоряні війни: Історія</a></b> (2016)\nбойовик, пригоди, фантастика · ⏱ 2 год 13 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>84%</b> · Ⓜ <b>65</b>\n<i>🎭 Фелісіті Джонс, Дієґо Луна, Алан Тьюдік</i>\n📺 <a href=\"https://www.themoviedb.org/movie/330459-rogue-one-a-star-wars-story/watch?locale=UA\">Apple TV Store</a>\n📝 Фільм розповідає про групу повстанців, яка планує викрасти креслення \"Зірки смерті\", найпотужнішої бойової станції Імперії, здатної нищити цілі планети.\n▶️ <a href=\"https://youtu.be/x7i8Q5syCLw\">Трейлер</a></blockquote>\n§KN:m330459\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/1100988?language=uk\">28 років по тому</a></b> (2025)\nжахи, трилер, фантастика · ⏱ 1 год 55 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>88%</b> · Ⓜ <b>77</b>\n<i>🎭 Аарон Тейлор-Джонсон, Алфі Вільямс, Рейф Файнз</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1100988-28-years-later/watch?locale=UA\">Rakuten TV</a>\n📝 Минуло майже три десятиліття з моменту, як вірус люті вирвався з лабораторії біологічної зброї. Зараз, перебуваючи під жорстким карантином, деякі все ж знайшли способи виживати серед інфікованих. Одна з таких груп,…\n▶️ <a href=\"https://youtu.be/ehYD5HpuLUo\">Трейлер</a></blockquote>\n§KN:m1100988\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/505642?language=uk\">Чорна пантера: Ваканда назавжди</a></b> (2022)\nбойовик, пригоди, фантастика · ⏱ 2 год 42 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>84%</b> · Ⓜ <b>67</b>\n<i>🎭 Летиція Райт, Теноч Уерта, Люпіта Ніонґо</i>\n📺 <a href=\"https://www.themoviedb.org/movie/505642-black-panther-wakanda-forever/watch?locale=UA\">Rakuten TV, Apple TV Store</a>\n📝 Після смерті ТʼЧалли африканська країна Ваканда залишається без короля і захисника. Тепер королеві Рамонді, Шурі й іншим доведеться шукати новий шлях розвитку країни та нового героя, гідного звання Чорної пантери.\n▶️ <a href=\"https://youtu.be/jPsj_JWAJtQ\">Трейлер</a></blockquote>\n§KN:m505642\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/626412?language=uk\">외계+인 2부</a></b> (2024)\nбойовик, фентезі, пригоди · ⏱ 2 год 02 хв\n⭐ IMDb <b>6.5</b>\n<i>🎭 류준열, 김태리, Кім У Бін</i>\n📝 Ean has a critical mission to return to the future to save everyone. However, she becomes trapped in the distant past while trying to prevent the escape of alien prisoners who are locked up in the bodies of humans.…\n▶️ <a href=\"https://youtu.be/s3MawvrYNH4\">Трейлер</a></blockquote>\n§KN:m626412\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/406990?language=uk\">Сім сестер</a></b> (2017)\nфантастика, трилер, детектив · ⏱ 2 год 03 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>62%</b> · Ⓜ <b>47</b>\n<i>🎭 Нумі Рапас, Ґленн Клоуз, Віллем Дефо</i>\n📺 <a href=\"https://www.themoviedb.org/movie/406990-what-happened-to-monday/watch?locale=UA\">Apple TV Store</a>\n📝 У світі, де сімейним парам дозволено мати тільки одну дитину, народжується сім сестер-близнят. Батьки вирішують зберегти всіх і дають малятам імена на честь днів тижня. Так дівчинки і з'являються на людях - кожна в…\n▶️ <a href=\"https://youtu.be/tvt46KXB0oc\">Трейлер</a></blockquote>\n§KN:m406990\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/1242898?language=uk\">Хижак: Дикі землі</a></b> (2025)\nбойовик, фантастика, пригоди · ⏱ 1 год 47 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>86%</b> · Ⓜ <b>71</b>\n<i>🎭 Елль Фаннінґ, Дімітріус Шустер-Колоаматанґі, Ravi Narayan</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1242898-predator-badlands/watch?locale=UA\">Rakuten TV</a>\n📝 Дія розгортається в майбутньому на віддаленій планеті, де молодий Хижак, вигнаний зі свого клану, знаходить малоймовірного союзника в особі Тії та вирушає в підступну подорож на пошуки свого остаточного супротивника.\n▶️ <a href=\"https://youtu.be/1r_kvwIMqvs\">Трейлер</a></blockquote>\n§KN:m1242898\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/1858?language=uk\">Трансформери</a></b> (2007)\nпригоди, фантастика, бойовик · ⏱ 2 год 24 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>57%</b> · Ⓜ <b>61</b>\n<i>🎭 Шая Лабаф, Меґан Фокс, Марк Раян</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1858-transformers/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Протягом багатьох століть дві раси роботів-інопланетян — Автоботи та Десептикони — вели війну, ставкою в якій була доля Bсесвіту. Ця війна вже дісталась Землі. Єдине, чого не вистачає Десептиконам для отримання…\n▶️ <a href=\"https://youtu.be/ahYjx0rQvqQ\">Трейлер</a></blockquote>\n§KN:m1858\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/101299?language=uk\">Голодні ігри: У вогні</a></b> (2013)\nпригоди, бойовик, фантастика · ⏱ 2 год 26 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>90%</b> · Ⓜ <b>76</b>\n<i>🎭 Дженніфер Лоренс, Джош Гатчерсон, Ліам Гемсворт</i>\n📺 <a href=\"https://www.themoviedb.org/movie/101299-the-hunger-games-catching-fire/watch?locale=UA\">Apple TV Store</a>\n📝 Зумівши вижити на безжальних \"Голодних іграх\", Кітніс Евердін і Піта Мелано марно намагаються забути про те, що сталося з ними в Капітолії. Але президент Сноу, диктатор держави Панем, і його оточення не готові…\n▶️ <a href=\"https://youtu.be/_eypaHOjY4E\">Трейлер</a></blockquote>\n§KN:m101299"
+   }
+  ],
+  "romance": [
+   {
+    "id": "cd44fe45d3",
+    "text": "🍿 <b>ПІДБІРКА КІНО · МЕЛОДРАМА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/583903?language=uk\">Друзі назавжди</a></b> (2019)\nдрама, мелодрама · ⏱ 2 год 04 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>85%</b> · Ⓜ <b>57</b>\n<i>🎭 Дакота Джонсон, Кейсі Аффлек, Джейсон Сіґел</i>\n📺 <a href=\"https://www.themoviedb.org/movie/583903-our-friend/watch?locale=UA\">Apple TV Store</a>\n📝 Історія про Метта, його дружину Ніколь та їхніх двох донечок. Життя родини кардинально змінює невиліковна хвороба Ніколь. Тепер, коли Меттові стає дедалі важче бути одночасно і опікуном, і батьком, найкращий друг…\n▶️ <a href=\"https://youtu.be/dNgV09eKySY\">Трейлер</a></blockquote>\n§KN:m583903\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/401698?language=uk\">Baisers cachés</a></b> (2016)\nдрама, мелодрама, телефільм · ⏱ 1 год 27 хв\n⭐ IMDb <b>7.3</b>\n<i>🎭 Patrick Timsit, Bérenger Anceaux, Jules Houplain</i>\n📝 Nathan, 16, lives alone with his father Stephane. A newcomer in high school, he is invited to a party and falls in love with Louis, a boy in his class. They find themselves out of sight and kiss each other, but…\n▶️ <a href=\"https://youtu.be/or7FcsBSOvs\">Трейлер</a></blockquote>\n§KN:m401698\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/1630423?language=uk\">เลือดรักนักฆ่า</a></b> (2026)\nбойовик, драма, мелодрама · ⏱ 2 год 08 хв\n⭐ TMDB <b>8.6</b>\n<i>🎭 พิมพ์ชนก ลือวิเศษไพบูลย์, ธนภพ ลีรัตนขจร, ศิวกร อดุลสุทธิกุล</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1630423/watch?locale=UA\">Netflix</a>\n📝 Hunted for her rare blood type, a caged woman vows to fight alongside the assassin she loves to protect their future when an old enemy resurfaces.</blockquote>\n§KN:m1630423\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/523977?language=uk\">Край вічного літа</a></b> (2020)\nдрама, мелодрама · ⏱ 1 год 39 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>88%</b> · Ⓜ <b>56</b>\n<i>🎭 Джемма Артертон, Гугу Мбата-Роу, Penelope Wilton</i>\n📝 Друга світова війна. Жінка відкриває своє серце хлопчику, якого евакуювали з Лондона, хоча спершу намагалася його спекатися.\n▶️ <a href=\"https://youtu.be/LknYw22SBR4\">Трейлер</a></blockquote>\n§KN:m523977\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/436343?language=uk\">Тіло і душа</a></b> (2017)\nдрама, мелодрама, фентезі · ⏱ 1 год 56 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>90%</b> · Ⓜ <b>77</b>\n<i>🎭 Borbély Alexandra, Morcsányi Géza, Tenki Réka</i>\n📝 Сором'язлива Марія і товариський, але самотній Ендре – колеги. Обидва ведуть замкнутий спосіб життя і намагаються уникати спілкування одне з одним. Несподівано вони дізнаються, що щоночі їм сняться однакові сни.…\n▶️ <a href=\"https://youtu.be/JwpFshHAZng\">Трейлер</a></blockquote>\n§KN:m436343\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/458423?language=uk\">Мама Мія! 2</a></b> (2018)\nкомедія, мелодрама · ⏱ 1 год 54 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>80%</b> · Ⓜ <b>60</b>\n<i>🎭 Аманда Сайфред, Лілі Джеймс, Пірс Броснан</i>\n📺 <a href=\"https://www.themoviedb.org/movie/458423-mamma-mia-here-we-go-again/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Для Софі та її матері Донни шматочок раю на Землі, тобто грецький острів Калокаїрі, уже давно став чимось знаковим. Дівчина мріяла провести своє весілля в цьому чудовому місці - і в неї це вийшло. Зараз же вона…\n▶️ <a href=\"https://youtu.be/v7R0k8LVM3s\">Трейлер</a></blockquote>\n§KN:m458423\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/332562?language=uk\">Народження зірки</a></b> (2018)\nмузика, драма, мелодрама · ⏱ 2 год 16 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>90%</b> · Ⓜ <b>88</b>\n<i>🎭 Леді Ґаґа, Бредлі Купер, Сем Елліотт</i>\n📺 <a href=\"https://www.themoviedb.org/movie/332562-a-star-is-born/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Джексон Майн — зірка кантрі-музики, чия популярність поступово згасає. Одного разу він знайомиться з талановитою Еллі. Молоді люди закохуються, і Джек допомагає дівчині досягти успіху. Але коли кар’єра Еллі затьмарює…\n▶️ <a href=\"https://youtu.be/IbSm7J3OTkA\">Трейлер</a></blockquote>\n§KN:m332562\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/398818?language=uk\">Назви мене своїм ім'ям</a></b> (2017)\nмелодрама, драма · ⏱ 2 год 12 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>95%</b> · Ⓜ <b>94</b>\n<i>🎭 Тімоті Шаламе, Армі Гаммер, Майкл Сталберг</i>\n📺 <a href=\"https://www.themoviedb.org/movie/398818-call-me-by-your-name/watch?locale=UA\">Rakuten TV, Apple TV Store</a>\n📝 Історія раптового роману, що виник між підлітком і річним гостем, який відвідав особняк його батьків на італійській Рів'єрі. Протягом декількох неспокійних тижнів невблаганний, але приречений потік нав'язливої ідеї,…\n▶️ <a href=\"https://youtu.be/Z9AYPxH5NTM\">Трейлер</a></blockquote>\n§KN:m398818\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/188538?language=uk\">Запам’ятай неділю</a></b> (2013)\nтелефільм, мелодрама, драма · ⏱ 1 год 36 хв\n⭐ IMDb <b>6.9</b>\n<i>🎭 Алексіс Бледел, Закарі Лівай, Меррітт Вівер</i>\n📝 Самотня офіціантка Моллі зустрічає гарного хлопця на ім'я Гас, який працює у магазині ювелірних прикрас. Моллі вважає, що нарешті зустріла свого єдиного, але чим більше вона впізнає його, тим більшою загадкою…</blockquote>\n§KN:m188538\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/1259?language=uk\">Скандальний щоденник</a></b> (2006)\nдрама, мелодрама · ⏱ 1 год 32 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>87%</b> · Ⓜ <b>73</b>\n<i>🎭 Джуді Денч, Кейт Бланшетт, Білл Наї</i>\n📝 Викладачка гуманітарних наук Шеба Харт заводить роман зі своїм п'ятнадцятирічним учнем. Таємний зв'язок погрожує стати надбанням громадськості, коли про це дізнається інша викладачка на ім'я Барбара ...\n▶️ <a href=\"https://youtu.be/AruRpjQquQQ\">Трейлер</a></blockquote>\n§KN:m1259"
    }
   ]
  },
