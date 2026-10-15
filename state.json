@@ -2920,7 +2920,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-15T21:15:48.985174+03:00",
+ "gh_beat": "2026-10-15T21:20:32.873247+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "v": 2,
@@ -15962,12 +15962,12 @@
   }
  },
  "pushed_h": {
-  "gs": "361cf179cc37",
+  "gs": "7232b7407e53",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "55e82ee0fccc",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
   "silpo/m.json": "af641c4f7e79",
-  "sexed.json": "240edc1b2a7c",
+  "sexed.json": "86829bfb6705",
   "sx/28213723.png": "ce00a0099b9a",
   "sx/33637451.png": "4c77d42e81e5",
   "sx/tech_angling.png": "1426e1022a9e",
