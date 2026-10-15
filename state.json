@@ -1043,11 +1043,11 @@
   "groups": [
    "GPV4.1"
   ],
-  "updated": "00:18 16.10.2026",
+  "updated": "00:33 16.10.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Через атаку на енергообʼєкти столиці зафіксовані аварійні відключення у Голосіївському, Соломянському та Печерському районах. Тут графіки не діють. Повідомити про аварійні ситуації",
-  "checked": "2026-10-16T00:33:14.656710+03:00",
+  "checked": "2026-10-16T00:43:17.788824+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1058,16 +1058,6 @@
   "gemini-flash-latest": "2026-10-16T10:05:00+03:00"
  },
  "kino_seen": [
-  "m1072371",
-  "m370755",
-  "m375262",
-  "m497828",
-  "m1000866",
-  "m389015",
-  "m437586",
-  "m636565",
-  "m228194",
-  "m11421",
   "m1114513",
   "m315011",
   "m333371",
@@ -1657,7 +1647,17 @@
   "m567609",
   "m951491",
   "m138843",
-  "m22970"
+  "m22970",
+  "m520763",
+  "m505948",
+  "m330459",
+  "m1100988",
+  "m505642",
+  "m626412",
+  "m406990",
+  "m1242898",
+  "m1858",
+  "m101299"
  ],
  "yt_ver": 2,
  "yt_seen": [
@@ -2852,7 +2852,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-16T00:41:09.544348+03:00",
+ "gh_beat": "2026-10-16T00:46:05.867201+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "v": 2,
@@ -16491,6 +16491,24 @@
    92,
    72,
    "2026-10-16"
+  ],
+  "tt0418279": [
+   7.1,
+   57,
+   61,
+   "2026-10-16"
+  ],
+  "tt0448134": [
+   7.2,
+   77,
+   64,
+   "2026-10-16"
+  ],
+  "tt1276104": [
+   7.4,
+   93,
+   84,
+   "2026-10-16"
   ]
  },
  "mo_sent": {},
@@ -16514,7 +16532,7 @@
   }
  },
  "pushed_h": {
-  "gs": "05e43a6bf353",
+  "gs": "fc8c2648894f",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "073ab25d88d2",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
@@ -18247,6 +18265,12 @@
    {
     "id": "d40614a597",
     "text": "🍿 <b>ПІДБІРКА КІНО · ЖАХИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/524251?language=uk\">Я тебе бачу</a></b> (2019)\nжахи, трилер, детектив · ⏱ 1 год 36 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>73%</b> · Ⓜ <b>65</b>\n<i>🎭 Гелен Гант, Джон Тенні, Оуен Тіг</i>\n📺 <a href=\"https://www.themoviedb.org/movie/524251-i-see-you/watch?locale=UA\">Apple TV Store</a>\n📝 У маленькому містечку зникає 12-річний хлопчик. Головний слідчий, Ґреґ Гарпер, ледве витримує напругу від розслідування та проблем із дружиною, Джекі. Нещодавно сім’я пережила зраду, яка залишила незгладимий слід та…\n▶️ <a href=\"https://youtu.be/k72fdSYHHvQ\">Трейлер</a></blockquote>\n§KN:m524251\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/1078605?language=uk\">Зброя</a></b> (2025)\nжахи, детектив · ⏱ 2 год 09 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>93%</b> · Ⓜ <b>81</b>\n<i>🎭 Джулія Ґарнер, Джош Бролін, Олден Еренрайх</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1078605-weapons/watch?locale=UA\">HBO Max, Rakuten TV</a>\n📝 Коли всі, окрім однієї дитини з того самого класу, таємниче зникають тієї ж ночі й у той самий час, спільнота залишається із запитанням – хто або що стоїть за їхнім зникненням?\n▶️ <a href=\"https://youtu.be/92fsUxDxGG0\">Трейлер</a></blockquote>\n§KN:m1078605\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/800815?language=uk\">Блідо-блакитне око</a></b> (2022)\nтрилер, кримінал, жахи · ⏱ 2 год 10 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>62%</b> · Ⓜ <b>56</b>\n<i>🎭 Крістіан Бейл, Гаррі Меллінґ, Lucy Boynton</i>\n📺 <a href=\"https://www.themoviedb.org/movie/800815-the-pale-blue-eye/watch?locale=UA\">Netflix</a>\n📝 Ветеран-детектив наймає кмітливого курсанта Вест-Пойнта Едгара Аллана По, щоб той допоміг йому розкрити таємницю жорстоких убивств у Військовій академії США.\n▶️ <a href=\"https://youtu.be/NJx4No3wg3U\">Трейлер</a></blockquote>\n§KN:m800815\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/1216191?language=uk\">Дивакуватість</a></b> (2024)\nжахи, детектив · ⏱ 1 год 38 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>96%</b> · Ⓜ <b>78</b>\n<i>🎭 Carolyn Bracken, Gwilym Lee, Steve Wall</i>\n📝 Головна героїня — сліпа дівчина, яка тяжко переживає смерть своєї сестри-близнючки. Вона підробляє медіумом, і сама намагається розкрити таємницю загибелі любої сестри. У таємній кунсткамері вона зберігає дерев'яний…\n▶️ <a href=\"https://youtu.be/ktIqbb0TS7s\">Трейлер</a></blockquote>\n§KN:m1216191\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/458723?language=uk\">Ми</a></b> (2019)\nжахи, детектив · ⏱ 1 год 56 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>93%</b> · Ⓜ <b>81</b>\n<i>🎭 Люпіта Ніонґо, Вінстон Дюк, Елізабет Мосс</i>\n📺 <a href=\"https://www.themoviedb.org/movie/458723-us/watch?locale=UA\">Apple TV Store</a>\n📝 Родина вирушає до пляжного будинку, щоб відпочити та весело провести час біля моря. Вони не підозрюють, що зовсім скоро моторошні гості-двійники перетворять їхнє життя на пекло. Шляху для втечі не існує – адже від…\n▶️ <a href=\"https://youtu.be/3anyqxKJpEc\">Трейлер</a></blockquote>\n§KN:m458723\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/398173?language=uk\">Дім, який побудував Джек</a></b> (2018)\nдрама, жахи, кримінал · ⏱ 2 год 32 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>59%</b> · Ⓜ <b>42</b>\n<i>🎭 Matt Dillon, Бруно Ґанц, Ума Турман</i>\n📝 США 70-х років ХХ століття. Перед нами Джек – серійний маніяк, який вважає кожне своє вбивство витвором мистецтва. Ми побачимо, як за 12 років за 5 інцидентів цей чоловік зі звичайної людини виріс у серійного вбивцю.…\n▶️ <a href=\"https://youtu.be/hZKNJvT_fc8\">Трейлер</a></blockquote>\n§KN:m398173\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/567609?language=uk\">Гра в хованки</a></b> (2019)\nжахи, комедія · ⏱ 1 год 36 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>89%</b> · Ⓜ <b>64</b>\n<i>🎭 Самара Вівінг, Адам Броді, Марк О’Браєн</i>\n📺 <a href=\"https://www.themoviedb.org/movie/567609-ready-or-not/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Історія про юну наречену, яка входить до заможної та дивакуватої родини свого нового чоловіка зі стародавньою традицією, що переростає в смертельну гру, де кожен бореться за власне виживання.\n▶️ <a href=\"https://youtu.be/We6rtywxT5E\">Трейлер</a></blockquote>\n§KN:m567609\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/951491?language=uk\">Пила Х</a></b> (2023)\nжахи, детектив · ⏱ 1 год 58 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>81%</b> · Ⓜ <b>60</b>\n<i>🎭 Тобін Белл, Shawnee Smith, Synnøve Macody Lund</i>\n📝 Події фільму відбуваються між подіями фільмів «Пила I» та «II», коли хворий та зневірений Джон вирушає до Мексики, щоб пройти ризиковану експериментальну медичну процедуру в надії на дивовижне лікування від свого…\n▶️ <a href=\"https://youtu.be/hJ2qA8ueLk0\">Трейлер</a></blockquote>\n§KN:m951491\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/138843?language=uk\">Закляття</a></b> (2013)\nжахи, трилер · ⏱ 1 год 52 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>86%</b> · Ⓜ <b>68</b>\n<i>🎭 Віра Фарміґа, Патрік Вілсон, Лілі Тейлор</i>\n📺 <a href=\"https://www.themoviedb.org/movie/138843-the-conjuring/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 У центрі сюжету стрічки - життя родини у не примітному на перший погляд будинку. Паранормальні явища, які паралізують своєю непередбачуваністю та несподіваністю, тримають Перронів у страху. На допомогу переляканій…\n▶️ <a href=\"https://youtu.be/_JwCpDWGnlo\">Трейлер</a></blockquote>\n§KN:m138843\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/22970?language=uk\">Хижа в лісі</a></b> (2012)\nжахи, детектив, комедія · ⏱ 1 год 35 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>92%</b> · Ⓜ <b>72</b>\n<i>🎭 Kristen Connolly, Fran Kranz, Кріс Гемсворт</i>\n📝 Галаслива компанія з п'яти друзів тікає на вік-енд побешкетувати в ізольовану від усього світу сільську хижу. Звучить знайомо? Ну так ви й не уявляєте, що вас чекає насправді.\n▶️ <a href=\"https://youtu.be/7NiAWF7VIFY\">Трейлер</a></blockquote>\n§KN:m22970"
+   }
+  ],
+  "scifi": [
+   {
+    "id": "020cd44a55",
+    "text": "🍿 <b>ПІДБІРКА КІНО · ФАНТАСТИКА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/520763?language=uk\">Тихе місце 2</a></b> (2021)\nфантастика, трилер, жахи · ⏱ 1 год 36 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>91%</b> · Ⓜ <b>71</b>\n<i>🎭 Емілі Блант, Джон Кразінські, Millicent Simmonds</i>\n📺 <a href=\"https://www.themoviedb.org/movie/520763-a-quiet-place-part-ii/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Родина Ебботтів продовжує в повній тиші боротися за життя. Після сутички з істотами у власній оселі вони опиняються віч-на-віч із жахами зовнішнього світу. Ступивши в невідомість, сім’я з’ясовує, що створіння, котрі…\n▶️ <a href=\"https://youtu.be/Ualv2vIEpvM\">Трейлер</a></blockquote>\n§KN:m520763\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/505948?language=uk\">Дитя робота</a></b> (2019)\nфантастика, трилер · ⏱ 1 год 53 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>89%</b> · Ⓜ <b>64</b>\n<i>🎭 Clara Rugaard, Роуз Бірн, Гіларі Свенк</i>\n📺 <a href=\"https://www.themoviedb.org/movie/505948-i-am-mother/watch?locale=UA\">Apple TV Store</a>\n📝 Епідемія знищила життя на Землі. Єдиний шлях до спасіння — бункер, де робот-гуманоїд «Мати» повинен виховати у безпеці дитину. Дівчинка росте здоровою та нічого не потребує. Вона ніколи не виходила назовні та не…\n▶️ <a href=\"https://youtu.be/tgYJ15Yd6MU\">Трейлер</a></blockquote>\n§KN:m505948\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/330459?language=uk\">Бунтар Один. Зоряні війни: Історія</a></b> (2016)\nбойовик, пригоди, фантастика · ⏱ 2 год 13 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>84%</b> · Ⓜ <b>65</b>\n<i>🎭 Фелісіті Джонс, Дієґо Луна, Алан Тьюдік</i>\n📺 <a href=\"https://www.themoviedb.org/movie/330459-rogue-one-a-star-wars-story/watch?locale=UA\">Apple TV Store</a>\n📝 Фільм розповідає про групу повстанців, яка планує викрасти креслення \"Зірки смерті\", найпотужнішої бойової станції Імперії, здатної нищити цілі планети.\n▶️ <a href=\"https://youtu.be/x7i8Q5syCLw\">Трейлер</a></blockquote>\n§KN:m330459\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/1100988?language=uk\">28 років по тому</a></b> (2025)\nжахи, трилер, фантастика · ⏱ 1 год 55 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>88%</b> · Ⓜ <b>77</b>\n<i>🎭 Аарон Тейлор-Джонсон, Алфі Вільямс, Рейф Файнз</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1100988-28-years-later/watch?locale=UA\">Rakuten TV</a>\n📝 Минуло майже три десятиліття з моменту, як вірус люті вирвався з лабораторії біологічної зброї. Зараз, перебуваючи під жорстким карантином, деякі все ж знайшли способи виживати серед інфікованих. Одна з таких груп,…\n▶️ <a href=\"https://youtu.be/ehYD5HpuLUo\">Трейлер</a></blockquote>\n§KN:m1100988\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/505642?language=uk\">Чорна пантера: Ваканда назавжди</a></b> (2022)\nбойовик, пригоди, фантастика · ⏱ 2 год 42 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>84%</b> · Ⓜ <b>67</b>\n<i>🎭 Летиція Райт, Теноч Уерта, Люпіта Ніонґо</i>\n📺 <a href=\"https://www.themoviedb.org/movie/505642-black-panther-wakanda-forever/watch?locale=UA\">Rakuten TV, Apple TV Store</a>\n📝 Після смерті ТʼЧалли африканська країна Ваканда залишається без короля і захисника. Тепер королеві Рамонді, Шурі й іншим доведеться шукати новий шлях розвитку країни та нового героя, гідного звання Чорної пантери.\n▶️ <a href=\"https://youtu.be/jPsj_JWAJtQ\">Трейлер</a></blockquote>\n§KN:m505642\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/626412?language=uk\">외계+인 2부</a></b> (2024)\nбойовик, фентезі, пригоди · ⏱ 2 год 02 хв\n⭐ IMDb <b>6.5</b>\n<i>🎭 류준열, 김태리, Кім У Бін</i>\n📝 Ean has a critical mission to return to the future to save everyone. However, she becomes trapped in the distant past while trying to prevent the escape of alien prisoners who are locked up in the bodies of humans.…\n▶️ <a href=\"https://youtu.be/s3MawvrYNH4\">Трейлер</a></blockquote>\n§KN:m626412\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/406990?language=uk\">Сім сестер</a></b> (2017)\nфантастика, трилер, детектив · ⏱ 2 год 03 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>62%</b> · Ⓜ <b>47</b>\n<i>🎭 Нумі Рапас, Ґленн Клоуз, Віллем Дефо</i>\n📺 <a href=\"https://www.themoviedb.org/movie/406990-what-happened-to-monday/watch?locale=UA\">Apple TV Store</a>\n📝 У світі, де сімейним парам дозволено мати тільки одну дитину, народжується сім сестер-близнят. Батьки вирішують зберегти всіх і дають малятам імена на честь днів тижня. Так дівчинки і з'являються на людях - кожна в…\n▶️ <a href=\"https://youtu.be/tvt46KXB0oc\">Трейлер</a></blockquote>\n§KN:m406990\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/1242898?language=uk\">Хижак: Дикі землі</a></b> (2025)\nбойовик, фантастика, пригоди · ⏱ 1 год 47 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>86%</b> · Ⓜ <b>71</b>\n<i>🎭 Елль Фаннінґ, Дімітріус Шустер-Колоаматанґі, Ravi Narayan</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1242898-predator-badlands/watch?locale=UA\">Rakuten TV</a>\n📝 Дія розгортається в майбутньому на віддаленій планеті, де молодий Хижак, вигнаний зі свого клану, знаходить малоймовірного союзника в особі Тії та вирушає в підступну подорож на пошуки свого остаточного супротивника.\n▶️ <a href=\"https://youtu.be/1r_kvwIMqvs\">Трейлер</a></blockquote>\n§KN:m1242898\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/1858?language=uk\">Трансформери</a></b> (2007)\nпригоди, фантастика, бойовик · ⏱ 2 год 24 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>57%</b> · Ⓜ <b>61</b>\n<i>🎭 Шая Лабаф, Меґан Фокс, Марк Раян</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1858-transformers/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Протягом багатьох століть дві раси роботів-інопланетян — Автоботи та Десептикони — вели війну, ставкою в якій була доля Bсесвіту. Ця війна вже дісталась Землі. Єдине, чого не вистачає Десептиконам для отримання…\n▶️ <a href=\"https://youtu.be/ahYjx0rQvqQ\">Трейлер</a></blockquote>\n§KN:m1858\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/101299?language=uk\">Голодні ігри: У вогні</a></b> (2013)\nпригоди, бойовик, фантастика · ⏱ 2 год 26 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>90%</b> · Ⓜ <b>76</b>\n<i>🎭 Дженніфер Лоренс, Джош Гатчерсон, Ліам Гемсворт</i>\n📺 <a href=\"https://www.themoviedb.org/movie/101299-the-hunger-games-catching-fire/watch?locale=UA\">Apple TV Store</a>\n📝 Зумівши вижити на безжальних \"Голодних іграх\", Кітніс Евердін і Піта Мелано марно намагаються забути про те, що сталося з ними в Капітолії. Але президент Сноу, диктатор держави Панем, і його оточення не готові…\n▶️ <a href=\"https://youtu.be/_eypaHOjY4E\">Трейлер</a></blockquote>\n§KN:m101299"
    }
   ]
  },
