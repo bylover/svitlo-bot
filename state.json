@@ -1129,16 +1129,6 @@
   "gemini-flash-latest": "2026-10-16T10:05:00+03:00"
  },
  "kino_seen": [
-  "t222766",
-  "t95",
-  "m15255",
-  "t87917",
-  "t125935",
-  "t2673",
-  "m1368337",
-  "m969681",
-  "m103663",
-  "t103516",
   "t69740",
   "t4556",
   "m663870",
@@ -1728,7 +1718,17 @@
   "m431937",
   "m614945",
   "m18438",
-  "m191714"
+  "m191714",
+  "t93740",
+  "t245318",
+  "t82428",
+  "t113988",
+  "t211684",
+  "t250307",
+  "t154385",
+  "t71915",
+  "t1395",
+  "t12786"
  ],
  "yt_ver": 2,
  "yt_seen": [
@@ -2923,7 +2923,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-15T22:15:33.249199+03:00",
+ "gh_beat": "2026-10-15T22:20:39.646200+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "v": 2,
@@ -16370,6 +16370,24 @@
    null,
    null,
    "2026-10-15"
+  ],
+  "tt1869454": [
+   8.0,
+   null,
+   null,
+   "2026-10-15"
+  ],
+  "tt27740241": [
+   7.2,
+   null,
+   null,
+   "2026-10-15"
+  ],
+  "tt5232792": [
+   7.3,
+   null,
+   null,
+   "2026-10-15"
   ]
  },
  "mo_sent": {
@@ -16403,7 +16421,7 @@
   }
  },
  "pushed_h": {
-  "gs": "546082e44a5e",
+  "gs": "27ad144a20ae",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "087aed448754",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
@@ -18072,6 +18090,12 @@
    {
     "id": "61976d3704",
     "text": "🍿 <b>ПІДБІРКА КІНО · МЕЛОДРАМА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/581791?language=uk\">Блондин</a></b> (2019)\nдрама, мелодрама · ⏱ 1 год 48 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>90%</b>\n<i>🎭 Gaston Re, Alfonso Barón, Malena Irusta</i>\n📝 Gabriel has just moved in with Juan. Shy and reserved, Gabo resists Juan’s wandering hands and intense gaze. With a parade of beauties filing out of Juan’s bedroom, his machismo seems firmly entrenched. Yet, the…\n▶️ <a href=\"https://youtu.be/5dDyzvEXz1M\">Трейлер</a></blockquote>\n§KN:m581791\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/950028?language=uk\">Сусіди зверху</a></b> (2026)\nкомедія, драма, мелодрама · ⏱ 1 год 47 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>96%</b> · Ⓜ <b>82</b>\n<i>🎭 Олівія Вайлд, Сет Роґен, Пенелопа Крус</i>\n📝 Шлюб Джо й Анджели тримається на волосині. Але після того, як вони запрошують на вечерю своїх таємничих сусідів із поверху вище, вечір набуває зовсім непередбачуваного повороту.\n▶️ <a href=\"https://youtu.be/H8HJmLZ68i4\">Трейлер</a></blockquote>\n§KN:m950028\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/359784?language=uk\">Моді</a></b> (2016)\nдрама, мелодрама, історичний · ⏱ 1 год 55 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>90%</b> · Ⓜ <b>65</b>\n<i>🎭 Саллі Гокінз, Ітан Гоук, Ґабріела Роз</i>\n📺 <a href=\"https://www.themoviedb.org/movie/359784-maudie/watch?locale=UA\">Rakuten TV, Apple TV Store</a>\n📝 Правдива історія неймовірного роману між скупим риботорговцем Евереттом і його економкою Моді, чиї руки скалічила хвороба. Холостяк-самітник, підкорений її силою і світлом, допомагає Моді розкритися в творчості і…\n▶️ <a href=\"https://youtu.be/u6E8isRedHo\">Трейлер</a></blockquote>\n§KN:m359784\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/420622?language=uk\">Професор Марстон і Диво-жінки</a></b> (2017)\nдрама, мелодрама · ⏱ 1 год 48 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>87%</b> · Ⓜ <b>68</b>\n<i>🎭 Люк Еванс, Ребекка Голл, Bella Heathcote</i>\n📺 <a href=\"https://www.themoviedb.org/movie/420622-professor-marston-and-the-wonder-women/watch?locale=UA\">Netflix, Rakuten TV, Apple TV Store</a>\n📝 Гарвардський учений-психолог Вільям Марстон залишив слід в історії як винахідник детектора брехні та піонер теорії фемінізму. Творець коміксів Макс Гейнс запропонував Марстону, який високо ставив роль коміксів у…\n▶️ <a href=\"https://youtu.be/OILVviwLfUM\">Трейлер</a></blockquote>\n§KN:m420622\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/858024?language=uk\">Гамнет</a></b> (2025)\nдрама, мелодрама · ⏱ 2 год 05 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>86%</b> · Ⓜ <b>84</b>\n<i>🎭 Джессі Баклі, Пол Мескаль, Емілі Вотсон</i>\n📺 <a href=\"https://www.themoviedb.org/movie/858024-hamnet/watch?locale=UA\">Rakuten TV</a>\n📝 Від володарки премії «Оскар», сценаристки та режисерки Хлої Чжао. Зворушлива історія кохання, що надихнула на створення одного з найвеличніших шедеврів Шекспіра — «Гамлет».\n▶️ <a href=\"https://youtu.be/xYcgQMxQwmk\">Трейлер</a></blockquote>\n§KN:m858024\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/570503?language=uk\">유열의 음악앨범</a></b> (2019)\nмелодрама, драма · ⏱ 2 год 02 хв\n⭐ IMDb <b>7.2</b>\n<i>🎭 Кім Ко Ин, Чон Хе Ін, Пак Хе Чжун</i>\n📺 <a href=\"https://www.themoviedb.org/movie/570503/watch?locale=UA\">Netflix</a>\n📝 During the 1990s, hardworking Mi-soo and optimistic Hyun-woo meet at a bakery and fall in love while exchanging stories on a radio station, but while their paths keep crossing, the timing never seems to work out.\n▶️ <a href=\"https://youtu.be/O2x8gaL5Omw\">Трейлер</a></blockquote>\n§KN:m570503\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/431937?language=uk\">Він і вона</a></b> (2017)\nмелодрама, драма, комедія · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.3</b>\n<i>🎭 Nicolas Bedos, Дорія Тільє, Denis Podalydès</i>\n📺 <a href=\"https://www.themoviedb.org/movie/431937-mr-mme-adelman/watch?locale=UA\">Apple TV Store</a>\n📝 Віктор - письменник-початківець, Сара - магістр з класичної літератури, їхня спільна слабкість - Джойс і Достоєвський. Вони були вільними й безтурботними, але їхня випадкова зустріч у барі затягнеться на довгі 45…\n▶️ <a href=\"https://youtu.be/gHFQMzMICP4\">Трейлер</a></blockquote>\n§KN:m431937\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/614945?language=uk\">Повідомлення до Ізабелі</a></b> (2026)\nмелодрама, комедія, драма · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>88%</b> · Ⓜ <b>62</b>\n<i>🎭 Зої Дойч, Нік Робінсон, Гаррі Шам молодший</i>\n📺 <a href=\"https://www.themoviedb.org/movie/614945-voicemails-for-isabelle/watch?locale=UA\">Netflix</a>\n📝 Надзвичайно відверті голосові повідомлення молодої жінки покійній сестрі випадково перенаправляються незнайомцю, який починає закохуватися в неї на відстані.\n▶️ <a href=\"https://youtu.be/H4aT0nVavLU\">Трейлер</a></blockquote>\n§KN:m614945\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/18438?language=uk\">김씨 표류기</a></b> (2009)\nдрама, комедія, мелодрама · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.9</b>\n<i>🎭 정재영, 정려원, 양미경</i>\n📝 Mr. Kim is jobless, lost in debt and has been dumped by his girlfriend. He decides to end it all by jumping into the Han River – only to find himself washed up on a small, mid-river island. He soon abandons thoughts…\n▶️ <a href=\"https://youtu.be/061ZyqHhdCo\">Трейлер</a></blockquote>\n§KN:m18438\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/191714?language=uk\">The Lunchbox</a></b> (2013)\nдрама, мелодрама · ⏱ 1 год 44 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>97%</b> · Ⓜ <b>76</b>\n<i>🎭 Іррфан Хан, Nimrat Kaur, Nawazuddin Siddiqui</i>\n📺 <a href=\"https://www.themoviedb.org/movie/191714-the-lunchbox/watch?locale=UA\">MUBI</a>\n📝 A mistaken delivery in Mumbai's famously efficient lunchbox delivery system (Mumbai's Dabbawallahs) connects a young housewife to a stranger in the dusk of his life. They build a fantasy world together through notes…\n▶️ <a href=\"https://youtu.be/lJxLudSPxsQ\">Трейлер</a></blockquote>\n§KN:m191714"
+   }
+  ],
+  "series": [
+   {
+    "id": "9017254dd5",
+    "text": "🍿 <b>ПІДБІРКА КІНО · СЕРІАЛИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>📺 <b>1. <a href=\"https://www.themoviedb.org/tv/93740?language=uk\">Фундація</a></b> (2021)\nнауково фантастичний, драма · 📺 серіал · 3 сез.\n⭐ IMDb <b>7.6</b>\n<i>🎭 Джаред Гарріс, Лі Пейс, Lou Llobell</i>\n📺 <a href=\"https://www.themoviedb.org/tv/93740-foundation/watch?locale=UA\">Apple TV</a>\n📝 У науково-фантастичному серіалі за циклом романів Айзека Азімова «Фундація» група вигнанців мусить урятувати людство й відродити цивілізацію під час краху Галактичної імперії.\n▶️ <a href=\"https://youtu.be/-ikWB2wrOXw\">Трейлер</a></blockquote>\n§KN:t93740\n§§\n<blockquote>📺 <b>2. <a href=\"https://www.themoviedb.org/tv/245318?language=uk\">У Марґо проблеми з грошима</a></b> (2026)\nдрама, комедія · 📺 серіал · 1 сез.\n⭐ IMDb <b>7.3</b>\n<i>🎭 Елль Фаннінґ, Мішель Файффер, Нік Офферман</i>\n📺 <a href=\"https://www.themoviedb.org/tv/245318-margo-s-got-money-troubles/watch?locale=UA\">Apple TV</a>\n📝 Молода письменниця Марґо Мілле дізнається, що вагітна. Вона кидає університет і вимушена самостійно долати фінансові труднощі. Однак поява в її житті відчуженого батька, колишнього професійного рестлера, відкриває…\n▶️ <a href=\"https://youtu.be/AjI52haEerU\">Трейлер</a></blockquote>\n§KN:t245318\n§§\n<blockquote>📺 <b>3. <a href=\"https://www.themoviedb.org/tv/82428?language=uk\">Американська мрія</a></b> (2018)\nдрама · 📺 серіал · 8 сез.\n⭐ IMDb <b>7.6</b>\n<i>🎭 Michael Evans Behling, Greta Onieogou, Bre-Z</i>\n📝 Спенсер — зірка шкільної футбольної команди з Південного Централа, району Лос-Анджелеса, сумно відомого своєю кримінальною обстановкою і частими конфліктами на ґрунті расової ворожнечі. Хлопець не збирався їхати з…</blockquote>\n§KN:t82428\n§§\n<blockquote>📺 <b>4. <a href=\"https://www.themoviedb.org/tv/113988?language=uk\">Дамер - Чудовисько: Історія Джеффрі Дамера</a></b> (2022)\nкримінал, драма · 📺 серіал · 1 сез.\n⭐ TMDB <b>8.0</b>\n<i>🎭 Еван Пітерс, Річард Дженкінс, Моллі Рінґволд</i>\n📺 <a href=\"https://www.themoviedb.org/tv/113988-dahmer-monster-the-jeffrey-dahmer-story/watch?locale=UA\">Netflix</a>\n📝 Протягом більш ніж десяти років Джеффрі Дамер убивав людей. Його жертвами стали 17 підлітків і молодих чоловіків. Як йому вдавалося так довго уникати арешту?\n▶️ <a href=\"https://youtu.be/yrfi-V6ifSY\">Трейлер</a></blockquote>\n§KN:t113988\n§§\n<blockquote>📺 <b>5. <a href=\"https://www.themoviedb.org/tv/211684?language=uk\">Ходячі мерці: Деріл Діксон</a></b> (2023)\nнауково фантастичний, екшн і пригоди, драма · 📺 серіал · 4 сез.\n⭐ IMDb <b>7.5</b>\n<i>🎭 Норман Рідус, Мелісса Макбрайд, Едуардо Норієґа</i>\n📝 Деріл Діксон вирушає з Америки до Франції. Там він продовжує боротьбу із зомбі-апокаліпсисом, але світ за Атлантикою привносить абсолютно новий рівень божевілля.\n▶️ <a href=\"https://youtu.be/iTOaFootkSk\">Трейлер</a></blockquote>\n§KN:t211684\n§§\n<blockquote>📺 <b>6. <a href=\"https://www.themoviedb.org/tv/250307?language=uk\">Пітт</a></b> (2025)\nдрама · 📺 серіал · 3 сез.\n⭐ IMDb <b>8.9</b>\n<i>🎭 Ноа Вайлі, Patrick Ball, Кетрін Ланаса</i>\n📺 <a href=\"https://www.themoviedb.org/tv/250307-the-pitt/watch?locale=UA\">HBO Max</a>\n📝 Співробітники травматологічного медичного центру Піттсбурга працюють цілодобово, рятуючи життя в переповненому і недофінансованому відділенні невідкладної допомоги.\n▶️ <a href=\"https://youtu.be/ufR_08V38sQ\">Трейлер</a></blockquote>\n§KN:t250307\n§§\n<blockquote>📺 <b>7. <a href=\"https://www.themoviedb.org/tv/154385?language=uk\">Сварка</a></b> (2023)\nкомедія, драма · 📺 серіал · 2 сез.\n⭐ IMDb <b>8.0</b>\n<i>🎭 Оскар Айзек, Кері Малліґан, Кейлі Спейні</i>\n📺 <a href=\"https://www.themoviedb.org/tv/154385-beef/watch?locale=UA\">Netflix</a>\n📝 Дорожній конфлікт між невдатним підрядником і незадоволеною життям підприємницею призводить до протистояння, у якому проявляються їхні найтемніші пориви.\n▶️ <a href=\"https://youtu.be/xYR69EIG6S0\">Трейлер</a></blockquote>\n§KN:t154385\n§§\n<blockquote>📺 <b>8. <a href=\"https://www.themoviedb.org/tv/71915?language=uk\">Добрі передвісники</a></b> (2019)\nкомедія, драма, науково фантастичний · 📺 серіал · 3 сез.\n⭐ IMDb <b>8.0</b>\n<i>🎭 Майкл Шин, Девід Теннант</i>\n📝 Азірафаель і Кроулі, з небес і пекла відповідно, полюбили Землю. Тож їх вразила жахлива звістка про те, що Землі скоро настане кінець. Армії добра і зла готуються до бою. Чотири вершники готові вирушати. Усе йде…\n▶️ <a href=\"https://youtu.be/On0RbFjh8tI\">Трейлер</a></blockquote>\n§KN:t71915\n§§\n<blockquote>📺 <b>9. <a href=\"https://www.themoviedb.org/tv/1395?language=uk\">Пліткарка</a></b> (2007)\nдрама · 📺 серіал · 6 сез.\n⭐ IMDb <b>7.5</b>\n<i>🎭 Блейк Лайвлі, Лейтон Містер, Пенн Беджлі</i>\n📝 Журнaльнi шпaльти вiджили свoє. Тeпeр усi читaють в Інтeрнeтi. Нью-Йoрк знaйшoв сoбi нoву любoв i звaти її \"Плiткaркa\". Одeржимiсть нeю стaлa oфiцiйнoю! Алкoгoль, мaрихуaнa, дoрoгi шмoтки, сeкс у пeнтхaусi, вeчiрки,…\n▶️ <a href=\"https://youtu.be/m3Y7JEYrAtg\">Трейлер</a></blockquote>\n§KN:t1395\n§§\n<blockquote>📺 <b>10. <a href=\"https://www.themoviedb.org/tv/12786?language=uk\">Загадки Мердока</a></b> (2008)\nдетектив, драма · 📺 серіал · 20 сез.\n⭐ IMDb <b>8.2</b>\n<i>🎭 Yannick Bisson, Helene Joy, Thomas Craig</i>\n📝 Детективний серіал \"Загадки Мердока\", відзнятий за романами Морін Дженнінгс.\n\nХитромудрі злочини розплутує поліцейський Вільям Мердок. Його характеризують як людину з допитливим розумом, уважну до дрібниць і новинок…\n▶️ <a href=\"https://youtu.be/f17UNwtTMgQ\">Трейлер</a></blockquote>\n§KN:t12786"
    }
   ]
  },
