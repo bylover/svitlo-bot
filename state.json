@@ -53,18 +53,7 @@
   "Танець дотиків: шлях до насолоди"
  ],
  "para_bag": [],
- "to_delete": [
-  [
-   "160603556",
-   2610,
-   "2026-10-15T20:40:00+03:00"
-  ],
-  [
-   "368433217",
-   2611,
-   "2026-10-15T20:40:00+03:00"
-  ]
- ],
+ "to_delete": [],
  "silpo_branch": {
   "id": "1edb6b3e-f7ef-677c-99f0-51de6a88d469",
   "type": "SelfPickup",
@@ -1097,7 +1086,10 @@
   "https://www.womenshealthmag.com/health/a74083702/sexual-assault-survivors-psychology/",
   "https://www.girlonthenet.com/blog/i-want-to-make-you-tremble/",
   "https://sex.cosmopolitan.com/pleasure/a74051665/womanizer-sex-toy-deals-amazon-prime-day/",
-  "https://share.transistor.fm/s/0d04cc20"
+  "https://share.transistor.fm/s/0d04cc20",
+  "https://medium.com/illumination/masturbating-before-sex-see-what-happens-to-your-body-7d241b67dde7?source=rss------sexual_health-5",
+  "https://share.transistor.fm/s/80596b78",
+  "https://medium.com/@SensualTouchJournal/im-still-learning-what-turns-me-on-28ff5bdca92e?source=rss------intimacy-5"
  ],
  "addr": {
   "active": false,
@@ -2927,7 +2919,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-15T20:35:35.418627+03:00",
+ "gh_beat": "2026-10-15T20:40:41.312766+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -14943,7 +14935,7 @@
   }
  },
  "pushed_h": {
-  "gs": "a814d968c2c1",
+  "gs": "d8eebd1f0bf1",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "bba631deaa8b",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
@@ -16325,7 +16317,7 @@
   "romance": "2026-10-15T20:27:24.029049+03:00",
   "series": "2026-10-15T20:30:31.394412+03:00",
   "ua": "2026-10-15T20:35:35.634683+03:00",
-  "now": "2026-10-15T02:21:14.909199+03:00"
+  "now": "2026-10-15T20:40:41.417898+03:00"
  },
  "x18_at": {
   "mix": "2026-10-15T13:06:26.466298+03:00",
