@@ -55,12 +55,12 @@
  "to_delete": [
   [
    "160603556",
-   2606,
+   2610,
    "2026-10-15T20:40:00+03:00"
   ],
   [
    "368433217",
-   2607,
+   2611,
    "2026-10-15T20:40:00+03:00"
   ]
  ],
@@ -1117,6 +1117,7 @@
  },
  "yt_try": "2026-10-15 00",
  "gem_block": {
+  "gemini-3.8-flash": "2026-10-16T10:05:00+03:00",
   "gemini-flash-latest": "2026-10-16T10:05:00+03:00"
  },
  "kino_seen": [
@@ -2556,7 +2557,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-15T19:49:15.412611+03:00",
+ "gh_beat": "2026-10-15T19:50:45.621703+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -14307,15 +14308,27 @@
    null,
    "2026-10-15"
   ],
-  "tt7242142": [
+  "tt1190536": [
    7.4,
-   94,
-   75,
+   83,
+   65,
    "2026-10-15"
   ],
-  "tt14544192": [
-   8.6,
-   95,
+  "tt2378281": [
+   7.5,
+   63,
+   55,
+   "2026-10-15"
+  ],
+  "tt1798243": [
+   7.4,
+   65,
+   52,
+   "2026-10-15"
+  ],
+  "tt0293715": [
+   7.9,
+   null,
    null,
    "2026-10-15"
   ]
@@ -15425,5 +15438,6 @@
  "cf_down_since": "2026-10-15T19:35:36.289309+03:00",
  "silpo_fb": "|",
  "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 15.10 19:35 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <a href=\"https://silpo.ua/product/morozyvo-lavka-tradytsii-soloviov-chornytsia-plombir-z-ovechogo-moloka-12-992306\">Морозиво Лавка Традицій Soloviov Чорниця пломбір з овечого молока 12%</a> — <b>154 ₴</b> <s>299 ₴</s> · −48%\n2. 🧼 <a href=\"https://silpo.ua/product/krem-mylo-premiia-z-ekstraktom-olyvy-507792\">Крем-мило «Премія»® з екстрактом оливи</a> — <b>30.49 ₴</b> <s>56.99 ₴</s> · −46%\n3. 🧊 <a href=\"https://silpo.ua/product/pelmeni-laska-maniu-niam-z-m-iasom-indyka-ta-krolyka-912911\">Пельмені Laska «Маню-ням» з м'ясом індика та кролика</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −51%\n4. 🧊 <a href=\"https://silpo.ua/product/pelmeni-laska-ma-niu-niam-z-m-iasom-kurky-ta-vershkovym-maslom-842297\">Пельмені Laska «Ма-ню-ням» з м'ясом курки та вершковим маслом</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −51%\n5. 🛒 <a href=\"https://silpo.ua/product/servetky-dlia-prybyrannia-premiia-tseliulozni-774993\">Серветки для прибирання «Премія»® целюлозні</a> — <b>39.99 ₴</b> <s>79.49 ₴</s> · −50%\n6. 🛒 <a href=\"https://silpo.ua/product/servetky-dlia-prybyrannia-premiia-tseliulozni-774993\">Серветки для прибирання «Премія»® целюлозні</a> — <b>39.99 ₴</b> <s>79.49 ₴</s> · −50%\n7. 🛒 <a href=\"https://silpo.ua/product/krem-mylo-premiia-z-ekstraktom-olyvy-507792\">Крем-мило «Премія»® з екстрактом оливи</a> — <b>30.49 ₴</b> <s>56.99 ₴</s> · −46%\n8. 🧊 <a href=\"https://silpo.ua/product/morozyvo-lavka-tradytsii-soloviov-chornytsia-plombir-z-ovechogo-moloka-12-992306\">Морозиво Лавка Традицій Soloviov Чорниця пломбір з овечого молока 12%</a> — <b>154 ₴</b> <s>299 ₴</s> · −48%\n9. 🛒 <a href=\"https://silpo.ua/product/gel-somat-excellence-duo-dlia-posudomyinykh-mashyn-880468\">Гель Somat Excellence Duo для посудомийних машин</a> — <b>309 ₴</b> <s>579 ₴</s> · −47%\n10. 🥫 <a href=\"https://silpo.ua/product/lokshyna-oyakata-zi-smakom-kimchi-shvydkogo-prygotuvannia-997062\">Локшина Oyakata зі смаком кімчі швидкого приготування</a> — <b>49.99 ₴</b> <s>94.99 ₴</s> · −50%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
- "silpo_by": {}
+ "silpo_by": {},
+ "cf_alerted": true
 }
