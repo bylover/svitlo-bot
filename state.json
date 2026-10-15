@@ -1118,7 +1118,7 @@
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-10-15T22:02:58.325677+03:00",
+  "checked": "2026-10-15T22:12:58.813222+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1129,16 +1129,6 @@
   "gemini-flash-latest": "2026-10-16T10:05:00+03:00"
  },
  "kino_seen": [
-  "m407448",
-  "m1419406",
-  "m451657",
-  "m1280738",
-  "m6075",
-  "m9075",
-  "m1423191",
-  "m1233413",
-  "m74643",
-  "t135157",
   "t222766",
   "t95",
   "m15255",
@@ -1728,7 +1718,17 @@
   "m842675",
   "m912649",
   "m54138",
-  "m12914"
+  "m12914",
+  "m581791",
+  "m950028",
+  "m359784",
+  "m420622",
+  "m858024",
+  "m570503",
+  "m431937",
+  "m614945",
+  "m18438",
+  "m191714"
  ],
  "yt_ver": 2,
  "yt_seen": [
@@ -2923,7 +2923,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-15T22:10:35.098404+03:00",
+ "gh_beat": "2026-10-15T22:15:33.249199+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "v": 2,
@@ -16403,7 +16403,7 @@
   }
  },
  "pushed_h": {
-  "gs": "c0df65f47017",
+  "gs": "546082e44a5e",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "087aed448754",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
@@ -18066,6 +18066,12 @@
    {
     "id": "9c94be970a",
     "text": "🍿 <b>ПІДБІРКА КІНО · ФАНТАСТИКА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/696806?language=uk\">Проєкт «Адам»</a></b> (2022)\nпригоди, фантастика, комедія · ⏱ 1 год 46 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>68%</b> · Ⓜ <b>55</b>\n<i>🎭 Раян Рейнольдс, Walker Scobell, Марк Раффало</i>\n📺 <a href=\"https://www.themoviedb.org/movie/696806-the-adam-project/watch?locale=UA\">Netflix</a>\n📝 Після аварійної посадки у 2022 році Адам Рід, пілот-винищувач, що мандрує в часі, об’єднує зусилля із 12-річним собою, щоб урятувати майбутнє.\n▶️ <a href=\"https://youtu.be/EOX9rYgU3cs\">Трейлер</a></blockquote>\n§KN:m696806\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/614282?language=uk\">Medida Provisória</a></b> (2022)\nдрама, фантастика · ⏱ 1 год 42 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>88%</b>\n<i>🎭 Альфред Енох, Taís Araújo, Seu Jorge</i>\n📝 In a dystopian future, the Brazilian government decrees a measure that forces black citizens to migrate to Africa in an attempt to return to their origins. Seeing themselves in the center of terror, two cousins take…\n▶️ <a href=\"https://youtu.be/ILEcUPviEyM\">Трейлер</a></blockquote>\n§KN:m614282\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/181808?language=uk\">Зоряні війни: Епізод 8 — Останні джедаї</a></b> (2017)\nпригоди, бойовик, фантастика · ⏱ 2 год 32 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>91%</b> · Ⓜ <b>84</b>\n<i>🎭 Марк Гемілл, Керрі Фішер, Адам Драйвер</i>\n📺 <a href=\"https://www.themoviedb.org/movie/181808-star-wars-the-last-jedi/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Баланс Сили порушено, і міжгалактичний конфлікт набирає нових обертів. На Рей, Фінна та дроїда БіБі-8 чекає жорстоке протистояння…\n▶️ <a href=\"https://youtu.be/SEGYUIDyV4o\">Трейлер</a></blockquote>\n§KN:m181808\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/670292?language=uk\">Творець</a></b> (2023)\nфантастика, бойовик, пригоди · ⏱ 2 год 14 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>67%</b> · Ⓜ <b>63</b>\n<i>🎭 Джон Девід Вашинґтон, Madeleine Yuna Voyles, Джемма Чан</i>\n📺 <a href=\"https://www.themoviedb.org/movie/670292-the-creator/watch?locale=UA\">Netflix, Rakuten TV</a>\n📝 Наближається війна між людством і штучним інтелектом. Очолити боротьбу за виживання випадає Джошуа, загартованому колишньому агенту спецназу, котрий горює через зникнення своєї дружини. Його завербовують, щоб…\n▶️ <a href=\"https://youtu.be/MAZuGdi32bk\">Трейлер</a></blockquote>\n§KN:m670292\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/399579?language=uk\">Аліта: Бойовий ангел</a></b> (2019)\nбойовик, фантастика, пригоди · ⏱ 2 год 02 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>61%</b> · Ⓜ <b>53</b>\n<i>🎭 Роза Салазар, Крістоф Вальц, Дженніфер Коннеллі</i>\n📺 <a href=\"https://www.themoviedb.org/movie/399579-alita-battle-angel/watch?locale=UA\">Apple TV Store</a>\n📝 XXVI століття. На планеті Земля багатії живуть у Небесному місті, біднота задовольняється життям у Нижньому місті, куди скидаються всі відходи й сміття.  Якось у купі металобрухту Нижнього міста вчений знаходить…\n▶️ <a href=\"https://youtu.be/CpO174tXn-s\">Трейлер</a></blockquote>\n§KN:m399579\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/795813?language=uk\">НЕідеальний чоловік</a></b> (2021)\nфантастика, комедія, мелодрама · ⏱ 1 год 45 хв\n⭐ IMDb <b>7.1</b> · Ⓜ <b>78</b>\n<i>🎭 Maren Eggert, Ден Стівенс, Сандра Гюллер</i>\n📺 <a href=\"https://www.themoviedb.org/movie/795813-ich-bin-dein-mensch/watch?locale=UA\">Apple TV Store</a>\n📝 Том — втілення ідеального чоловіка для однієї виняткової жінки. Але неординарна Альма не така проста й передбачувана. У Тома є всього три тижні, щоб довести їй свою досконалість та розібратися в тому, що таке…\n▶️ <a href=\"https://youtu.be/F7B-mnH_7zU\">Трейлер</a></blockquote>\n§KN:m795813\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/842675?language=uk\">Мандрівна Земля 2</a></b> (2023)\nфантастика, бойовик, пригоди · ⏱ 2 год 54 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>83%</b> · Ⓜ <b>56</b>\n<i>🎭 吴京, 劉德華, 李雪健</i>\n📝 Людство продовжує подорож Всесвітом у пошуках нового притулку і стикається з черговими труднощами.\n▶️ <a href=\"https://youtu.be/23XQsJMYG84\">Трейлер</a></blockquote>\n§KN:m842675\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/912649?language=uk\">Веном: Останній танець</a></b> (2024)\nфантастика, бойовик, пригоди · ⏱ 1 год 49 хв\n⭐ IMDb <b>6.0</b> · 🍅 <b>40%</b> · Ⓜ <b>41</b>\n<i>🎭 Том Гарді, Чиветел Еджіофор, Джуно Темпл</i>\n📺 <a href=\"https://www.themoviedb.org/movie/912649-venom-the-last-dance/watch?locale=UA\">Rakuten TV</a>\n📝 Едді та Веном змушені тікати, адже тепер їх переслідує два світи, які закручують усе в одну павутину. Тож вони повинні прийняти доленосне рішення, яке стане їхнім останнім танцем.\n▶️ <a href=\"https://youtu.be/7PkzUIq5Fq0\">Трейлер</a></blockquote>\n§KN:m912649\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/54138?language=uk\">Стартрек: Відплата</a></b> (2013)\nбойовик, пригоди, фантастика · ⏱ 2 год 12 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>84%</b> · Ⓜ <b>72</b>\n<i>🎭 Кріс Пайн, Закарі Квінто, Зої Салдана</i>\n📺 <a href=\"https://www.themoviedb.org/movie/54138-star-trek-into-darkness/watch?locale=UA\">Netflix, Apple TV Store, Rakuten TV</a>\n📝 Коли команда Ентерпрайза отримує наказ повернутися додому, то бачить, що неспинна хвиля жаху, що йде зсередини їх власної організації, знищила флот і все, за що вона боролася, зануривши Землю в безодню кризи. Маючи…\n▶️ <a href=\"https://youtu.be/HErsLNJMmzc\">Трейлер</a></blockquote>\n§KN:m54138\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/12914?language=uk\">Зоряна брама: Континуум</a></b> (2008)\nбойовик, пригоди, фантастика · ⏱ 1 год 38 хв\n⭐ IMDb <b>7.5</b>\n<i>🎭 Ben Browder, Аманда Таппінґ, Крістофер Джадж</i>\n📺 <a href=\"https://www.themoviedb.org/movie/12914-stargate-continuum/watch?locale=UA\">Apple TV Store</a>\n📝 Сюжет розкриває деякі аспекти подорожей у часі. Владиці гоа'улду Ба'алу вдалося змінити лінію часу таким чином, аби земляни забули про існування Зоряної брами і були беззахисними перед навалою гоа'улдів.  Генерал…\n▶️ <a href=\"https://youtu.be/C4gNXCnHFsg\">Трейлер</a></blockquote>\n§KN:m12914"
+   }
+  ],
+  "romance": [
+   {
+    "id": "61976d3704",
+    "text": "🍿 <b>ПІДБІРКА КІНО · МЕЛОДРАМА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/581791?language=uk\">Блондин</a></b> (2019)\nдрама, мелодрама · ⏱ 1 год 48 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>90%</b>\n<i>🎭 Gaston Re, Alfonso Barón, Malena Irusta</i>\n📝 Gabriel has just moved in with Juan. Shy and reserved, Gabo resists Juan’s wandering hands and intense gaze. With a parade of beauties filing out of Juan’s bedroom, his machismo seems firmly entrenched. Yet, the…\n▶️ <a href=\"https://youtu.be/5dDyzvEXz1M\">Трейлер</a></blockquote>\n§KN:m581791\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/950028?language=uk\">Сусіди зверху</a></b> (2026)\nкомедія, драма, мелодрама · ⏱ 1 год 47 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>96%</b> · Ⓜ <b>82</b>\n<i>🎭 Олівія Вайлд, Сет Роґен, Пенелопа Крус</i>\n📝 Шлюб Джо й Анджели тримається на волосині. Але після того, як вони запрошують на вечерю своїх таємничих сусідів із поверху вище, вечір набуває зовсім непередбачуваного повороту.\n▶️ <a href=\"https://youtu.be/H8HJmLZ68i4\">Трейлер</a></blockquote>\n§KN:m950028\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/359784?language=uk\">Моді</a></b> (2016)\nдрама, мелодрама, історичний · ⏱ 1 год 55 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>90%</b> · Ⓜ <b>65</b>\n<i>🎭 Саллі Гокінз, Ітан Гоук, Ґабріела Роз</i>\n📺 <a href=\"https://www.themoviedb.org/movie/359784-maudie/watch?locale=UA\">Rakuten TV, Apple TV Store</a>\n📝 Правдива історія неймовірного роману між скупим риботорговцем Евереттом і його економкою Моді, чиї руки скалічила хвороба. Холостяк-самітник, підкорений її силою і світлом, допомагає Моді розкритися в творчості і…\n▶️ <a href=\"https://youtu.be/u6E8isRedHo\">Трейлер</a></blockquote>\n§KN:m359784\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/420622?language=uk\">Професор Марстон і Диво-жінки</a></b> (2017)\nдрама, мелодрама · ⏱ 1 год 48 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>87%</b> · Ⓜ <b>68</b>\n<i>🎭 Люк Еванс, Ребекка Голл, Bella Heathcote</i>\n📺 <a href=\"https://www.themoviedb.org/movie/420622-professor-marston-and-the-wonder-women/watch?locale=UA\">Netflix, Rakuten TV, Apple TV Store</a>\n📝 Гарвардський учений-психолог Вільям Марстон залишив слід в історії як винахідник детектора брехні та піонер теорії фемінізму. Творець коміксів Макс Гейнс запропонував Марстону, який високо ставив роль коміксів у…\n▶️ <a href=\"https://youtu.be/OILVviwLfUM\">Трейлер</a></blockquote>\n§KN:m420622\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/858024?language=uk\">Гамнет</a></b> (2025)\nдрама, мелодрама · ⏱ 2 год 05 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>86%</b> · Ⓜ <b>84</b>\n<i>🎭 Джессі Баклі, Пол Мескаль, Емілі Вотсон</i>\n📺 <a href=\"https://www.themoviedb.org/movie/858024-hamnet/watch?locale=UA\">Rakuten TV</a>\n📝 Від володарки премії «Оскар», сценаристки та режисерки Хлої Чжао. Зворушлива історія кохання, що надихнула на створення одного з найвеличніших шедеврів Шекспіра — «Гамлет».\n▶️ <a href=\"https://youtu.be/xYcgQMxQwmk\">Трейлер</a></blockquote>\n§KN:m858024\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/570503?language=uk\">유열의 음악앨범</a></b> (2019)\nмелодрама, драма · ⏱ 2 год 02 хв\n⭐ IMDb <b>7.2</b>\n<i>🎭 Кім Ко Ин, Чон Хе Ін, Пак Хе Чжун</i>\n📺 <a href=\"https://www.themoviedb.org/movie/570503/watch?locale=UA\">Netflix</a>\n📝 During the 1990s, hardworking Mi-soo and optimistic Hyun-woo meet at a bakery and fall in love while exchanging stories on a radio station, but while their paths keep crossing, the timing never seems to work out.\n▶️ <a href=\"https://youtu.be/O2x8gaL5Omw\">Трейлер</a></blockquote>\n§KN:m570503\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/431937?language=uk\">Він і вона</a></b> (2017)\nмелодрама, драма, комедія · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.3</b>\n<i>🎭 Nicolas Bedos, Дорія Тільє, Denis Podalydès</i>\n📺 <a href=\"https://www.themoviedb.org/movie/431937-mr-mme-adelman/watch?locale=UA\">Apple TV Store</a>\n📝 Віктор - письменник-початківець, Сара - магістр з класичної літератури, їхня спільна слабкість - Джойс і Достоєвський. Вони були вільними й безтурботними, але їхня випадкова зустріч у барі затягнеться на довгі 45…\n▶️ <a href=\"https://youtu.be/gHFQMzMICP4\">Трейлер</a></blockquote>\n§KN:m431937\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/614945?language=uk\">Повідомлення до Ізабелі</a></b> (2026)\nмелодрама, комедія, драма · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>88%</b> · Ⓜ <b>62</b>\n<i>🎭 Зої Дойч, Нік Робінсон, Гаррі Шам молодший</i>\n📺 <a href=\"https://www.themoviedb.org/movie/614945-voicemails-for-isabelle/watch?locale=UA\">Netflix</a>\n📝 Надзвичайно відверті голосові повідомлення молодої жінки покійній сестрі випадково перенаправляються незнайомцю, який починає закохуватися в неї на відстані.\n▶️ <a href=\"https://youtu.be/H4aT0nVavLU\">Трейлер</a></blockquote>\n§KN:m614945\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/18438?language=uk\">김씨 표류기</a></b> (2009)\nдрама, комедія, мелодрама · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.9</b>\n<i>🎭 정재영, 정려원, 양미경</i>\n📝 Mr. Kim is jobless, lost in debt and has been dumped by his girlfriend. He decides to end it all by jumping into the Han River – only to find himself washed up on a small, mid-river island. He soon abandons thoughts…\n▶️ <a href=\"https://youtu.be/061ZyqHhdCo\">Трейлер</a></blockquote>\n§KN:m18438\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/191714?language=uk\">The Lunchbox</a></b> (2013)\nдрама, мелодрама · ⏱ 1 год 44 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>97%</b> · Ⓜ <b>76</b>\n<i>🎭 Іррфан Хан, Nimrat Kaur, Nawazuddin Siddiqui</i>\n📺 <a href=\"https://www.themoviedb.org/movie/191714-the-lunchbox/watch?locale=UA\">MUBI</a>\n📝 A mistaken delivery in Mumbai's famously efficient lunchbox delivery system (Mumbai's Dabbawallahs) connects a young housewife to a stranger in the dusk of his life. They build a fantasy world together through notes…\n▶️ <a href=\"https://youtu.be/lJxLudSPxsQ\">Трейлер</a></blockquote>\n§KN:m191714"
    }
   ]
  },
