@@ -1093,11 +1093,11 @@
   "groups": [
    "GPV4.1"
   ],
-  "updated": "05:17 15.10.2026",
+  "updated": "05:31 15.10.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "",
-  "checked": "2026-10-15T05:23:51.095459+03:00",
+  "checked": "2026-10-15T05:33:45.613854+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -2516,7 +2516,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-15T05:31:23.258625+03:00",
+ "gh_beat": "2026-10-15T05:36:17.545310+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -14179,7 +14179,7 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "893c439d22d0",
+  "gs": "a921f40105be",
   "quiz_pool.json": "5d94078dfb15",
   "fact.png": "bdf7a882463d",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a315d64f80c3",
