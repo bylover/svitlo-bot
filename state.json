@@ -5,7 +5,9 @@
   "2026-10-15": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 570, \"start\": 360, \"type\": \"Definite\"}, {\"end\": 1230, \"start\": 1020, \"type\": \"Definite\"}]}",
   "2026-10-16": "{\"s\": \"WaitingForSchedule\", \"slots\": []}"
  },
- "reminded": [],
+ "reminded": [
+  "on|2026-10-15T20:30:00+03:00"
+ ],
  "offset": 28760142,
  "cmds": "grafik,pogoda,kino,youtube,settings,help,stop",
  "subs": "IVa7wb9H/lXkE8k4m44z1aZNweBX6a1osjOGpyjBpNXUGfNytfw2JvHnlCLZO8rN2ldu2b4q4woQoxoqqsaGk64=",
@@ -50,7 +52,18 @@
   "Танець дотиків: шлях до насолоди"
  ],
  "para_bag": [],
- "to_delete": [],
+ "to_delete": [
+  [
+   "160603556",
+   2606,
+   "2026-10-15T20:40:00+03:00"
+  ],
+  [
+   "368433217",
+   2607,
+   "2026-10-15T20:40:00+03:00"
+  ]
+ ],
  "silpo_branch": {
   "id": "1edb6b3e-f7ef-677c-99f0-51de6a88d469",
   "type": "SelfPickup",
@@ -1097,13 +1110,15 @@
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-10-15T19:33:09.141741+03:00",
+  "checked": "2026-10-15T19:42:58.707575+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": true
  },
  "yt_try": "2026-10-15 00",
- "gem_block": {},
+ "gem_block": {
+  "gemini-flash-latest": "2026-10-16T10:05:00+03:00"
+ },
  "kino_seen": [
   "m186",
   "m491418",
@@ -2541,7 +2556,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-15T19:35:36.289291+03:00",
+ "gh_beat": "2026-10-15T19:49:15.412611+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "kyiv": [
@@ -14289,6 +14304,18 @@
   "tt4057632": [
    7.2,
    null,
+   null,
+   "2026-10-15"
+  ],
+  "tt7242142": [
+   7.4,
+   94,
+   75,
+   "2026-10-15"
+  ],
+  "tt14544192": [
+   8.6,
+   95,
    null,
    "2026-10-15"
   ]
