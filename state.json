@@ -46,12 +46,13 @@
   "16.10 00:00 Завтра 2026-10-17 WaitingForSchedule: без відключень"
  ],
  "week_fp": "{\"1\": [], \"2\": [], \"3\": [], \"4\": [], \"5\": [], \"6\": [], \"7\": []}",
- "para_i": 3,
+ "para_i": 4,
  "para_fb": 1,
  "para_titles": [
   "Повільний вечір",
   "Віброкуля для двох у ліжку",
-  "Танець дотиків: шлях до насолоди"
+  "Танець дотиків: шлях до насолоди",
+  "Глибина злиття: поза повного обличчя"
  ],
  "para_bag": [],
  "to_delete": [],
@@ -1042,7 +1043,8 @@
   "https://medium.com/@nancysnookvirginia/shift-workers-night-owls-and-naval-schedules-how-to-find-time-for-intimacy-when-your-hours-dont-4dab0819b70b?source=rss------intimacy-5",
   "https://www.healthline.com/health-news/healthy-diet-fitness-program-improves-prostate-cancer-treatment",
   "https://medium.com/@sidpawar1010/the-luxury-intimacy-shift-most-expensive-relationship-secret-costs-absolutely-nothing-669e3cb6a6cd?source=rss------intimacy-5",
-  "https://www.allure.com/story/olivia-colman-wicker-curls"
+  "https://www.allure.com/story/olivia-colman-wicker-curls",
+  "https://medium.com/@adp.india25/how-to-shop-for-intimate-products-safely-and-privately-online-2cd21bee35af?source=rss------sex_toys-5"
  ],
  "addr": {
   "active": false,
@@ -1764,11 +1766,11 @@
   "сайт ДТЕК": false,
   "канал ЖК «Яскравий»": true
  },
- "fact_png": "2026-10-16 17|6|2026-10-16T16:14:11+03:00",
+ "fact_png": "2026-10-16 18|6|2026-10-16T16:14:11+03:00",
  "fact_day": {
-  "total": "5 год 54 хв",
+  "total": "5 год 27 хв",
   "list": [
-   "17:34–20:15 · 2 год 41 хв",
+   "18:00–20:15 · 2 год 15 хв",
    "13:01–16:14 · 3 год 13 хв"
   ]
  },
@@ -2839,10 +2841,10 @@
   }
  },
  "content_last": {
-  "kind": "article",
-  "src": "Cosmopolitan"
+  "kind": "review",
+  "src": "Medium"
  },
- "para_sent": "2026-10-14",
+ "para_sent": "2026-10-16",
  "taste": {
   "like": {
    "27": 1,
@@ -2858,7 +2860,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-16T17:55:27.348820+03:00",
+ "gh_beat": "2026-10-16T18:00:35.487812+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "v": 2,
@@ -16964,9 +16966,9 @@
   }
  },
  "pushed_h": {
-  "gs": "484796439854",
+  "gs": "2d817e87d41e",
   "quiz_pool.json": "5d94078dfb15",
-  "fact.png": "aae9a5d98e42",
+  "fact.png": "0a0fa3dc94cf",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
   "silpo/m.json": "d583992f1c37",
   "sexed.json": "4efede1d8ea5",
@@ -19038,44 +19040,44 @@
  "silpo_day": "2026-10-16-pm",
  "upd": {
   "🔥 Фільми 18+": {
-   "at": "16.10 17:55",
-   "ts": 1792162532,
+   "at": "16.10 18:00",
+   "ts": 1792162840,
    "ok": true,
    "note": ""
   },
   "🎓 Секс-освіта": {
-   "at": "16.10 17:55",
-   "ts": 1792162532,
+   "at": "16.10 18:00",
+   "ts": 1792162840,
    "ok": true,
    "note": ""
   },
   "🎯 Вікторини": {
-   "at": "16.10 17:55",
-   "ts": 1792162532,
+   "at": "16.10 18:00",
+   "ts": 1792162840,
    "ok": true,
    "note": ""
   },
   "🌅 Імпульс / 🕯 класика": {
-   "at": "16.10 17:55",
-   "ts": 1792162532,
+   "at": "16.10 18:00",
+   "ts": 1792162840,
    "ok": true,
    "note": ""
   },
   "🎵 Музика": {
-   "at": "16.10 17:55",
-   "ts": 1792162532,
+   "at": "16.10 18:00",
+   "ts": 1792162841,
    "ok": true,
    "note": ""
   },
   "❤️ Здоровʼя": {
-   "at": "16.10 17:55",
-   "ts": 1792162532,
+   "at": "16.10 18:00",
+   "ts": 1792162840,
    "ok": true,
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "16.10 17:55",
-   "ts": 1792162532,
+   "at": "16.10 18:00",
+   "ts": 1792162840,
    "ok": true,
    "note": ""
   },
