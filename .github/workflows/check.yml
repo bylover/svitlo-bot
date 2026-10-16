@@ -69,6 +69,7 @@ jobs:
           [ -f impulse.json ] && git add impulse.json
           [ -f music.json ] && git add music.json
           [ -f health.json ] && git add health.json
+          [ -f cofid.json ] && git add cofid.json
           [ -d sx ] && git add sx
           git diff --cached --quiet && exit 0
           git commit -m "state"
