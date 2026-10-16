@@ -3008,6 +3008,66 @@ SX_ART_Q = [("kamasutra", "Kama Sutra illustration"), ("shunga", "shunga Japanes
             ("persian", "Persian erotic miniature"), ("renaissance", "Giulio Romano I Modi")]
 
 
+WIKI_GAL = {   # ключ галереї → стаття англ. Вікіпедії (зображення в статті вже відібрані редакторами під тему)
+    "vulva": "Vulva", "clitoris": "Clitoris", "vagina": "Vagina", "penis": "Human penis", "male": "Male reproductive system",
+    "female": "Female reproductive system", "cycle": "Menstrual cycle", "fert": "Human fertilization", "size": "Human penis size",
+    "gspot": "G-spot", "orgasm": "Orgasm", "erection": "Erection", "foreplay": "Foreplay", "cunni": "Cunnilingus"}
+WIKI_POS = {"Missionary position": "Missionary position", "Coital alignment technique": "Coital alignment technique", "Woman on top": "Woman on top",
+            "Doggy style": "Doggy style", "Spooning": "Spooning", "Sixty-nine": "69 (sex position)", "Lotus position": "Yab-yum",
+            "Reverse cowgirl": "Woman on top", "Cunnilingus position": "Cunnilingus", "Standing sex position": "List of sex positions"}
+GAL_SKIP = re.compile(r"logo|icon|commons|wiki|question|edit|symbol|flag|map|portal|ambox|padlock|stub|disambig|nuvola|crystal|audio|speaker|sound", re.I)
+
+
+def wiki_gallery(article: str, n: int = 8) -> list[dict]:
+    """Зображення статті Вікіпедії → Commons (адреса, автор, ліцензія, тип: схема чи фото)."""
+    _time.sleep(1.2)
+    r = http_json("https://en.wikipedia.org/w/api.php?" + urllib.parse.urlencode({"action": "query", "format": "json", "titles": article, "prop": "images", "imlimit": 50}),
+                  headers={"User-Agent": "svitlo-bot/1.0 (educational Telegram bot)"})
+    files = [im["title"] for p_ in (r.get("query") or {}).get("pages", {}).values() for im in (p_.get("images") or [])]
+    files = [f for f in files if not GAL_SKIP.search(f) and re.search(r"\.(jpe?g|png|svg|gif|tiff?)$", f, re.I)][:20]
+    if not files:
+        return []
+    _time.sleep(1.2)
+    info = http_json("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode({
+        "action": "query", "format": "json", "titles": "|".join(files), "prop": "imageinfo", "iiprop": "url|extmetadata|mime", "iiurlwidth": 900}),
+        headers={"User-Agent": "svitlo-bot/1.0 (educational Telegram bot)"})
+    out = []
+    for p_ in (info.get("query") or {}).get("pages", {}).values():
+        ii = (p_.get("imageinfo") or [{}])[0]
+        md = ii.get("extmetadata") or {}
+        lic = (md.get("LicenseShortName") or {}).get("value", "")
+        if not ii.get("thumburl") or not re.search(r"CC|Public domain|PD", lic, re.I):
+            continue
+        mime = ii.get("mime", "")
+        out.append({"url": ii["thumburl"], "page": ii.get("descriptionurl", ""), "lic": lic, "by": strip_html((md.get("Artist") or {}).get("value", ""))[:60],
+                    "title": strip_html((md.get("ImageDescription") or {}).get("value", "") or p_.get("title", ""))[:120],
+                    "kind": "photo" if mime == "image/jpeg" else "draw", "anim": mime == "image/gif"})
+    out.sort(key=lambda x: (x["kind"] != "draw", not x["anim"]))
+    return out[:n]
+
+
+def sx_galleries(db_: dict, now: datetime) -> bool:
+    """Галереї з Вікіпедії/Commons — по 3 статті за запуск, оновлення раз на 90 днів."""
+    gal, pg, ch = db_.setdefault("gal", {}), db_.setdefault("posgal", {}), False
+    fresh = lambda x: x and x.get("at", "") >= (now.date() - timedelta(days=90)).isoformat()
+    todo = [("g", k, a) for k, a in WIKI_GAL.items() if not fresh(gal.get(k))] + [("p", k, a) for k, a in WIKI_POS.items() if not fresh(pg.get(k))]
+    for typ, k, art in todo[:3]:
+        if _time.time() < WIKI_BLOCK["until"]:
+            break
+        try:
+            items = wiki_gallery(art)
+        except Exception as e:
+            if "429" in str(e):
+                WIKI_BLOCK["until"] = _time.time() + 3600
+                break
+            print(f"Галерея ({art}): {err_text(e)[:60]}")
+            continue
+        (gal if typ == "g" else pg)[k] = {"at": now.date().isoformat(), "items": items}
+        ch = True
+        print(f"Галерея «{art}»: схем {sum(1 for x in items if x['kind'] == 'draw')}, фото {sum(1 for x in items if x['kind'] == 'photo')}")
+    return ch
+
+
 def sx_positions_catalog(db_: dict) -> bool:
     """Каталог поз: розділи статті Вікіпедії «List of sex positions» → ШІ переказує (з посиланням), малюнки — Wikimedia Commons."""
     pimg = db_.setdefault("posimg", {})              # малюнки для вбудованого каталогу в Cloudflare (точна назва)
@@ -3687,6 +3747,7 @@ def sexed_refresh(st: dict, now: datetime) -> None:
             x.pop("img", None)
         db_["img_ver"] = 3; extra_ch = True
     try:
+        extra_ch |= sx_galleries(db_, now)            # 🖼 проверені зображення зі статей Вікіпедії (Commons)
         extra_ch |= sx_positions_catalog(db_)
         extra_ch |= sx_art_images(db_)
         sx_technique_diagrams()
