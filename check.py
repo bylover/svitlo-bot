@@ -3727,32 +3727,63 @@ def health_refresh(st: dict, now: datetime) -> None:
 
 # ---------- 🥗 КБЖВ: перевірка API Сільпо (харчова цінність), імпорт CoFID (офіційна таблиця Великої Британії) ----------
 def kb_probe(st: dict, now: datetime) -> None:
-    """Раз на тиждень: дивимось, як Сільпо віддає харчову цінність (для розбору в боті) — у лог."""
-    if st.get("kb_probe") == f"{now:%G-%V}":
+    """Раз на тиждень: як Сільпо віддає харчову цінність і пошук (для розбору в боті) — у лог. Кожна спроба окремо."""
+    if st.get("kb_probe2") == f"{now:%G-%V}":       # нова версія перевірки — запуститься одразу
         return
-    st["kb_probe"] = f"{now:%G-%V}"
+    st["kb_probe2"] = f"{now:%G-%V}"
     br = family_silpo_branch() or (silpo_branch(st) or ("", ""))[0]
+    base = {"limit": 3, "deliveryType": "DeliveryHome", "sortBy": "popularity", "sortDirection": "desc", "includeChildCategories": "true"}
+    slug = None
     try:
-        items = silpo_get(f"/v1/uk/branches/{br}/products", limit=1, category="kefir-4975", deliveryType="DeliveryHome").get("items") or \
-            silpo_get(f"/v1/uk/branches/{br}/products", limit=1, deliveryType="DeliveryHome").get("items") or []
+        cat = (silpo_categories(br) or [{}])[0].get("slug")
+        items = silpo_get(f"/v1/uk/branches/{br}/products", category=cat, **base).get("items") or []
         slug = (items[0] if items else {}).get("slug")
-        for path in (f"/v1/uk/branches/{br}/products/{slug}", f"/v1/uk/products/{slug}"):
-            try:
-                d = silpo_get(path)
-                txt = json.dumps(d, ensure_ascii=False)
-                m = re.search(r".{0,120}(білк|Білк|жир|Жир|вуглевод|Вуглевод|ккал|калор).{0,200}", txt)
-                print(f"КБЖВ: деталі {path.split('/products/')[0]}/products/… → ключі {list(d)[:15]} · фрагмент: {m.group(0) if m else 'немає'}")
-                break
-            except Exception as e:
-                print(f"КБЖВ: {path[:40]}… → {err_text(e)[:60]}")
-        for prm in ("search", "query", "q"):
-            try:
-                r = silpo_get(f"/v1/uk/branches/{br}/products", limit=3, deliveryType="DeliveryHome", **{prm: "кефір"})
-                print(f"КБЖВ: пошук «{prm}=» → {len(r.get('items') or [])} · {[x.get('title') for x in (r.get('items') or [])][:3]}")
-            except Exception as e:
-                print(f"КБЖВ: пошук «{prm}=» → {err_text(e)[:60]}")
+        print(f"КБЖВ: категорія «{cat}» → товарів {len(items)}, приклад «{(items[0] if items else {}).get('title')}»")
     except Exception as e:
-        print(f"КБЖВ (перевірка): {err_text(e)[:80]}")
+        print(f"КБЖВ: список товарів → {err_text(e)[:80]}")
+    for path in ([f"/v1/uk/branches/{br}/products/{slug}", f"/v1/uk/products/{slug}"] if slug else []):
+        try:
+            d = silpo_get(path)
+            txt = json.dumps(d, ensure_ascii=False)
+            m = re.search(r".{0,120}(білк|Білк|жир|Жир|вуглевод|Вуглевод|ккал|калор).{0,200}", txt)
+            print(f"КБЖВ: деталі {'/branches/…' if 'branches' in path else '/products/…'} → ключі {list(d)[:15]} · фрагмент: {m.group(0) if m else 'немає'}")
+            break
+        except Exception as e:
+            print(f"КБЖВ: деталі {path[:30]}… → {err_text(e)[:60]}")
+    for prm in ("search", "query", "q", "term"):
+        try:
+            r = silpo_get(f"/v1/uk/branches/{br}/products", **{prm: "кефір"}, **base)
+            print(f"КБЖВ: пошук «{prm}=» → {len(r.get('items') or [])} · {[x.get('title') for x in (r.get('items') or [])][:3]}")
+        except Exception as e:
+            print(f"КБЖВ: пошук «{prm}=» → {err_text(e)[:60]}")
+
+
+def cofid_translate(st: dict, now: datetime) -> None:
+    """Назви CoFID українською (по 200 за запуск) — щоб шукати українською чи російською → Cloudflare."""
+    try:
+        db_ = json.loads(Path("cofid.json").read_text("utf-8"))
+    except Exception:
+        st["cofid"] = ""                              # локальної копії ще немає — переімпорт при наступному запуску
+        return
+    items = db_.get("items", [])
+    todo = [i for i, r in enumerate(items) if len(r) < 8 or not r[7]][:200]
+    if todo:
+        raw = gemini("Переклади назви продуктів харчування українською — коротко й зрозуміло (як на упаковці чи в довіднику), зберігаючи суть: "
+                     "сирий/варений/смажений, жирність тощо. Поверни JSON-масив перекладів у тому ж порядку, лише рядки.\n\n"
+                     + json.dumps([items[i][0] for i in todo], ensure_ascii=False), json_mode=True, relaxed=True, max_tokens=8000)
+        try:
+            tr = json.loads(raw or "[]")
+        except Exception:
+            tr = []
+        for i, t in zip(todo, tr):
+            while len(items[i]) < 8:
+                items[i].append("")
+            items[i][7] = str(t)[:90]
+        Path("cofid.json").write_text(json.dumps(db_, ensure_ascii=False, separators=(",", ":")), "utf-8")
+        print(f"CoFID: перекладено назв {len([1 for r in items if len(r) > 7 and r[7]])}/{len(items)}")
+    if WORKER_MODE and (todo or st.get("cofid_pushed") != db_.get("at")):
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "cofid.json", "json": db_})
+        st["cofid_pushed"] = db_.get("at")
 
 
 def cofid_import(st: dict, now: datetime) -> None:
@@ -3792,7 +3823,12 @@ def cofid_import(st: dict, now: datetime) -> None:
                 out.append([nm[:80], num("kcal"), num("p"), num("f"), num("c"), num("s"), num("fib")])
             except Exception:
                 continue
-        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "cofid.json", "json": {"items": out, "at": now.strftime("%d.%m.%Y")}})
+        try:                                          # зберігаємо вже зроблені переклади назв
+            old = {r[0]: r[7] for r in json.loads(Path("cofid.json").read_text("utf-8")).get("items", []) if len(r) > 7 and r[7]}
+        except Exception:
+            old = {}
+        out = [r + [old.get(r[0], "")] for r in out]
+        Path("cofid.json").write_text(json.dumps({"items": out, "at": now.strftime("%d.%m.%Y")}, ensure_ascii=False, separators=(",", ":")), "utf-8")
         print(f"CoFID: імпортовано {len(out)} продуктів")
     except Exception as e:
         st["cofid"] = ""
@@ -5364,7 +5400,7 @@ def main() -> None:
     heavy = [("кіно, пули", lambda: kino_pool_refresh(st, now)), ("фільми 18+", lambda: x18_refresh(st, now)),
              ("секс-освіта", lambda: sexed_refresh(st, now)), ("вікторина", lambda: quiz_refresh(now)),
              ("ранковий імпульс", lambda: impulse_refresh(st, now)), ("музика", lambda: music_refresh(st, now)),
-             ("здоров'я", lambda: (health_refresh(st, now), kb_probe(st, now), cofid_import(st, now)))]
+             ("здоров'я", lambda: (health_refresh(st, now), kb_probe(st, now), cofid_import(st, now), cofid_translate(st, now)))]
     slot = (now.hour * 12 + now.minute // 5) % len(heavy)
     forced = st.get("force_heavy") or []
     if forced:                                        # позапланово (кнопка «🔄 Оновити підбірки») — спершу кіно й музика
@@ -5426,7 +5462,8 @@ def main() -> None:
             MUSIC_FILE.write_text(json.dumps(mdb_, ensure_ascii=False, separators=(",", ":")), "utf-8")
         except Exception:
             pass
-        st["force_heavy"] = ["кіно, пули", "музика"]
+        st["force_heavy"] = ["кіно, пули", "музика", "здоров'я"]
+        st["cofid"] = ""; st.pop("kb_probe2", None)      # 🥗 КБЖВ: переімпорт CoFID і перевірка Сільпо
         for c in worker_req["rebuild"]:
             direct_m.append((str(c), "🔄 Позапланове оновлення запущено: 🛒 Сільпо (основна й підписників) — ~10–20 хв; 🍿 кіно й 🎵 музика — "
                                      "~30–60 хв; 🛍 ТЦ — окремим процесом ~10–15 хв. 18+, SMM і здоровʼя оновлюються за своїм розкладом.", None))
