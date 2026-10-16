@@ -3725,6 +3725,80 @@ def health_refresh(st: dict, now: datetime) -> None:
         HEALTH_FILE.write_text(json.dumps(db_, ensure_ascii=False, separators=(",", ":")), "utf-8")
 
 
+# ---------- 🥗 КБЖВ: перевірка API Сільпо (харчова цінність), імпорт CoFID (офіційна таблиця Великої Британії) ----------
+def kb_probe(st: dict, now: datetime) -> None:
+    """Раз на тиждень: дивимось, як Сільпо віддає харчову цінність (для розбору в боті) — у лог."""
+    if st.get("kb_probe") == f"{now:%G-%V}":
+        return
+    st["kb_probe"] = f"{now:%G-%V}"
+    br = family_silpo_branch() or (silpo_branch(st) or ("", ""))[0]
+    try:
+        items = silpo_get(f"/v1/uk/branches/{br}/products", limit=1, category="kefir-4975", deliveryType="DeliveryHome").get("items") or \
+            silpo_get(f"/v1/uk/branches/{br}/products", limit=1, deliveryType="DeliveryHome").get("items") or []
+        slug = (items[0] if items else {}).get("slug")
+        for path in (f"/v1/uk/branches/{br}/products/{slug}", f"/v1/uk/products/{slug}"):
+            try:
+                d = silpo_get(path)
+                txt = json.dumps(d, ensure_ascii=False)
+                m = re.search(r".{0,120}(білк|Білк|жир|Жир|вуглевод|Вуглевод|ккал|калор).{0,200}", txt)
+                print(f"КБЖВ: деталі {path.split('/products/')[0]}/products/… → ключі {list(d)[:15]} · фрагмент: {m.group(0) if m else 'немає'}")
+                break
+            except Exception as e:
+                print(f"КБЖВ: {path[:40]}… → {err_text(e)[:60]}")
+        for prm in ("search", "query", "q"):
+            try:
+                r = silpo_get(f"/v1/uk/branches/{br}/products", limit=3, deliveryType="DeliveryHome", **{prm: "кефір"})
+                print(f"КБЖВ: пошук «{prm}=» → {len(r.get('items') or [])} · {[x.get('title') for x in (r.get('items') or [])][:3]}")
+            except Exception as e:
+                print(f"КБЖВ: пошук «{prm}=» → {err_text(e)[:60]}")
+    except Exception as e:
+        print(f"КБЖВ (перевірка): {err_text(e)[:80]}")
+
+
+def cofid_import(st: dict, now: datetime) -> None:
+    """CoFID (McCance & Widdowson, уряд Великої Британії, Open Government Licence) — раз на квартал → Cloudflare."""
+    qtr = f"{now.year}-Q{(now.month - 1) // 3 + 1}"
+    if st.get("cofid") == qtr or not WORKER_MODE:
+        return
+    st["cofid"] = qtr
+    try:
+        page = http_text("https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid")
+        link = next((l for l in re.findall(r'href="([^"]+\.xlsx)"', page) if re.search(r"cofid|composition|mccance", l, re.I)), None)
+        if not link:
+            print("CoFID: посилання на таблицю не знайдено"); return
+        import io, zipfile, xml.etree.ElementTree as ET
+        raw = urllib.request.urlopen(urllib.request.Request(urllib.parse.urljoin("https://www.gov.uk/", link), headers={"User-Agent": "Mozilla/5.0"}), timeout=60).read()
+        z = zipfile.ZipFile(io.BytesIO(raw)); ns = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
+        ss = [("".join(t.text or "" for t in si.iter("{%s}t" % ns["m"]))) for si in ET.fromstring(z.read("xl/sharedStrings.xml")).findall("m:si", ns)] if "xl/sharedStrings.xml" in z.namelist() else []
+        wb = ET.fromstring(z.read("xl/workbook.xml")); names = [sh.get("name") for sh in wb.find("m:sheets", ns)]
+        idx = next((i for i, n in enumerate(names) if re.search(r"proximates", n, re.I)), 1) + 1
+        sheet = ET.fromstring(z.read(f"xl/worksheets/sheet{idx}.xml"))
+        def cell(c):
+            v = c.find("m:v", ns)
+            if v is None: return ""
+            return ss[int(v.text)] if c.get("t") == "s" else v.text
+        rows_ = [[cell(c) for c in r.findall("m:c", ns)] for r in sheet.find("m:sheetData", ns).findall("m:row", ns)]
+        head = next((r for r in rows_[:6] if any(re.search(r"protein", str(x), re.I) for x in r)), None)
+        if not head:
+            print("CoFID: не знайшов заголовки"); return
+        hi = {k: next((i for i, h in enumerate(head) if re.search(p_, str(h), re.I)), None) for k, p_ in
+              (("name", r"food name"), ("kcal", r"energy.*kcal"), ("p", r"^protein"), ("f", r"^fat"), ("c", r"^carbohydrate"), ("s", r"total sugars"), ("fib", r"aoac|fibre"))}
+        out = []
+        for r in rows_[rows_.index(head) + 1:]:
+            try:
+                nm = r[hi["name"]]
+                if not nm: continue
+                num = lambda k: (round(float(r[hi[k]]), 1) if hi.get(k) is not None and re.match(r"^[\d.]+$", str(r[hi[k]] or "")) else None)
+                out.append([nm[:80], num("kcal"), num("p"), num("f"), num("c"), num("s"), num("fib")])
+            except Exception:
+                continue
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "cofid.json", "json": {"items": out, "at": now.strftime("%d.%m.%Y")}})
+        print(f"CoFID: імпортовано {len(out)} продуктів")
+    except Exception as e:
+        st["cofid"] = ""
+        print(f"CoFID: {err_text(e)[:100]}")
+
+
 def sexed_refresh(st: dict, now: datetime) -> None:
     """Дослідження й опитування: старт ~20+20, далі раз на місяць нові; раз на 6 міс — «що нового» для статей. → Cloudflare."""
     if not WORKER_MODE:
@@ -5290,7 +5364,7 @@ def main() -> None:
     heavy = [("кіно, пули", lambda: kino_pool_refresh(st, now)), ("фільми 18+", lambda: x18_refresh(st, now)),
              ("секс-освіта", lambda: sexed_refresh(st, now)), ("вікторина", lambda: quiz_refresh(now)),
              ("ранковий імпульс", lambda: impulse_refresh(st, now)), ("музика", lambda: music_refresh(st, now)),
-             ("здоров'я", lambda: health_refresh(st, now))]
+             ("здоров'я", lambda: (health_refresh(st, now), kb_probe(st, now), cofid_import(st, now)))]
     slot = (now.hour * 12 + now.minute // 5) % len(heavy)
     forced = st.get("force_heavy") or []
     if forced:                                        # позапланово (кнопка «🔄 Оновити підбірки») — спершу кіно й музика
