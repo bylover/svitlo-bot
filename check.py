@@ -2629,13 +2629,18 @@ WOMEN_BRANDS = [   # білизна й жіночий одяг — онлайн 
 TC_CATS = ["білизна", "одяг", "взуття", "ювелірка", "парфуми й косметика", "аксесуари", "техніка", "дитяче", "дім", "спорт", "їжа й кафе",
            "іграшки 18+", "інше"]
 TC_WOMEN = {"білизна": 0, "одяг": 1, "ювелірка": 2, "парфуми й косметика": 3, "взуття": 4, "аксесуари": 5}   # жіночі — вище
-SEX_SHOPS = [("No Taboo", "https://no-taboo.com.ua|https://aaaa.in.ua", "🏪 мережа магазинів + онлайн"),
-             ("Полуничка", "https://www.polunichka.shop|https://polunichka.shop", "🏪 мережа магазинів + онлайн"),
-             ("Насолода", "https://www.nasoloda.shop|https://nasoloda.ua", "🏪 магазини + онлайн"),
-             ("Lovespace", "https://lovespace.ua", "🏪 магазини + онлайн"), ("Афродіта", "https://erotikon.com.ua", "🏪 інтим-бутики + онлайн"),
-             ("Амурчик", "https://amurchik.ua", "🌐 онлайн"),
-             ("Інтимка", "https://intimka.com.ua|https://intimka.ua", "🏪 магазини + онлайн"), ("Дім 69", "https://dim69.com.ua|https://dom69.com.ua", "🏪 магазини + онлайн"),
-             ("Kazanova", "https://kazanova.ua", "🌐 онлайн"), ("Sextoys", "https://sextoys.com.ua", "🌐 онлайн"), ("Sexify", "https://sexify.com.ua", "🌐 онлайн")]
+SEX_SHOPS = [   # секс-шопи (онлайн і мережі магазинів) — варіанти адреси через «|»
+    ("No Taboo", "https://notaboo.com.ua|https://no-taboo.com.ua|https://aaaa.in.ua", "🏪 мережа магазинів + онлайн"),
+    ("Полуничка", "https://polunichka.ua|https://www.polunichka.shop", "🏪 мережа магазинів + онлайн"),
+    ("Насолода", "https://www.nasoloda.shop|https://nasoloda.ua", "🏪 магазини + онлайн"),
+    ("Lovespace", "https://lovespace.ua", "🏪 магазини + онлайн"), ("Афродіта / Erotikon", "https://erotikon.com.ua", "🏪 інтим-бутики + онлайн"),
+    ("Амурчик", "https://amurchik.ua", "🌐 онлайн"), ("Intimka", "https://intimka.ua|https://intimka.com.ua", "🌐 онлайн"),
+    ("Перчинка", "https://perchinka.ua", "🌐 онлайн"), ("TopSexShop", "https://topsexshop.com.ua", "🌐 онлайн"),
+    ("Candor Place", "https://candorplace.com", "🌐 онлайн · преміум"), ("Світ Інтиму", "https://mir-intima.ua", "🏪 магазини + онлайн"),
+    ("iSex", "https://isex.com.ua", "🌐 онлайн"), ("Toppers", "https://toppers.ua", "🌐 онлайн · преміум (Womanizer, We-Vibe, LELO)"),
+    ("Pestoshchi", "https://pestoshchi.com", "🌐 онлайн · білизна"), ("Shop-Sex", "https://shop-sex.com.ua", "🌐 онлайн"),
+    ("Sex-Shop.ua", "https://sex-shop.ua", "🌐 онлайн"), ("Kazanova", "https://kazanova.ua", "🏪 магазин + онлайн"),
+    ("Sextoys", "https://sextoys.com.ua", "🌐 онлайн"), ("Sexify", "https://sexify.com.ua", "🌐 онлайн")]
 PROMO_LINK = re.compile(r'<a[^>]+href="([^"#]+)"[^>]*>(.*?)</a>', re.I | re.S)
 PROMO_WORD = re.compile(r"акці|знижк|sale|promo|offer|aktsi|akci|skidk|розпродаж", re.I)
 
@@ -3014,7 +3019,7 @@ WIKI_GAL = {   # ключ галереї → стаття англ. Вікіпе
     "gspot": "G-spot", "orgasm": "Orgasm", "erection": "Erection", "foreplay": "Foreplay", "cunni": "Cunnilingus"}
 WIKI_POS = {"Missionary position": "Missionary position", "Coital alignment technique": "Coital alignment technique", "Woman on top": "Woman on top",
             "Doggy style": "Doggy style", "Spooning": "Spooning", "Sixty-nine": "69 (sex position)", "Lotus position": "Yab-yum",
-            "Reverse cowgirl": "Woman on top", "Cunnilingus position": "Cunnilingus", "Standing sex position": "List of sex positions"}
+            "Reverse cowgirl": "Woman on top", "Cunnilingus position": "Cunnilingus", "Prone bone": "Doggy style"}
 GAL_SKIP = re.compile(r"logo|icon|commons|wiki|question|edit|symbol|flag|map|portal|ambox|padlock|stub|disambig|nuvola|crystal|audio|speaker|sound", re.I)
 
 
@@ -3070,8 +3075,8 @@ def sx_galleries(db_: dict, now: datetime) -> bool:
 
 def sx_positions_catalog(db_: dict) -> bool:
     """Каталог поз: розділи статті Вікіпедії «List of sex positions» → ШІ переказує (з посиланням), малюнки — Wikimedia Commons."""
-    pimg = db_.setdefault("posimg", {})              # малюнки для вбудованого каталогу в Cloudflare (точна назва)
-    for en in POS_BASE_EN:
+    pimg = db_.setdefault("posimg", {})              # пошук малюнків поз у Commons вимкнено — давав невідповідності;
+    for en in []:                                     # тепер — лише зображення зі статті Вікіпедії про цю позу (posgal)
         if en in pimg:
             continue
         mw = [w for w in re.findall(r"[a-z0-9-]+", en.lower()) if w not in ("position", "sex", "the", "of", "a", "style", "with", "by", "to")][:2] or [en.lower()]
@@ -3115,10 +3120,10 @@ def sx_positions_catalog(db_: dict) -> bool:
         if "img" in x or n >= 6:
             continue
         mw = [w for w in re.findall(r"[a-z0-9-]+", x["en"].lower()) if w not in ("position", "sex", "the", "of", "a", "style")][:2] or [x["en"].lower()]
-        im_ = commons_image(f"{x['en']} sex position", drawing_only=True, must=mw, must_all=True)   # усі слова назви — у назві файлу
+        im_ = {}                                      # пошук по Commons вимкнено (невідповідності) — лише статті про позу
         if im_ is None and _time.time() < WIKI_BLOCK["until"]:
             break                                     # 429 — спробуємо наступного разу
-        x["img"] = im_ or {}                          # не знайшли точного малюнка — без картинки (є розширений опис)
+        x["img"] = {}                                 # лише зображення зі статті про позу (posgal) — інакше без картинки
         n += 1
     return True
 
