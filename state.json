@@ -1,9 +1,9 @@
 {
  "group": "4.1",
  "fp": {
-  "2026-10-16": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 930, \"start\": 720, \"type\": \"Definite\"}]}",
   "2026-10-17": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 1440, \"start\": 1320, \"type\": \"Definite\"}]}",
-  "2026-10-18": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 630, \"start\": 420, \"type\": \"Definite\"}]}"
+  "2026-10-18": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 630, \"start\": 420, \"type\": \"Definite\"}]}",
+  "2026-10-19": "{\"s\": \"WaitingForSchedule\", \"slots\": []}"
  },
  "reminded": [],
  "offset": 28760142,
@@ -44,7 +44,8 @@
   "16.10 00:00 Завтра 2026-10-17 WaitingForSchedule: без відключень",
   "17.10 00:00 Завтра 2026-10-18 WaitingForSchedule: без відключень",
   "17.10 00:20 Сьогодні 2026-10-17 ScheduleApplies: 22:00–24:00",
-  "17.10 20:55 Завтра 2026-10-18 ScheduleApplies: 07:00–10:30"
+  "17.10 20:55 Завтра 2026-10-18 ScheduleApplies: 07:00–10:30",
+  "18.10 00:00 Завтра 2026-10-19 WaitingForSchedule: без відключень"
  ],
  "week_fp": "{\"1\": [], \"2\": [], \"3\": [], \"4\": [], \"5\": [], \"6\": [], \"7\": []}",
  "para_i": 4,
@@ -367,32 +368,230 @@
   "https://buffer.com/resources/trending-audio-instagram/"
  ],
  "smm_reddit_seen": [],
- "content_day": "2026-10-17",
+ "content_day": "2026-10-18",
  "content_pool": [
+  {
+   "src": "Mashable",
+   "kind": "review",
+   "title": "Apple adds further App Store restrictions around AI nudify apps",
+   "link": "https://mashable.com/tech/apple-app-store-nudify-apps",
+   "age": 0,
+   "comments": 0,
+   "text": "Apple is trying to tighten its control of the iOS App Store, especially as it regards AI deepfake nude photos. In a brief note on its developer website , Apple announced a change to its moderation tactics for the App Store. These new measures target apps capable of generating \"nonconsensual intimate imagery\" of real people using user-generated content tools. Pornographic material is already banned on the App Store, and so are apps explicitly designed to do that, but apps that have the potential to do so are now also required to filter such content, provide a way to report it, prevent uploads, and remove anything that gets through all of that. SEE ALSO: The 5 best smartwatches of 2026: Comparing the latest models from Apple, Google, and Samsung The change here, essentially, is that app makers are now required to self-police more thoroughly against AI nude photos. If any app is found to vi"
+  },
+  {
+   "src": "Mashable",
+   "kind": "review",
+   "title": "Influencers are shilling libido products. Which ones should you use?",
+   "link": "https://mashable.com/life/libido-definition-how-to-boost-women-libido",
+   "age": 0,
+   "comments": 0,
+   "text": "In our \" maxxing \" culture of optimization, no aspect of life is safe from attempts to make it as enhanced as possible. This includes our sex lives: We have to want more sex, have more sex, and have better sex. And there are always products to help you do just that. In 2026, there are a ton of libido products on the market, especially for women and people with vulvas. Mashable checked with experts which ones are actually worth trying, with the knowledge that there's no end-all, be-all solution. SEE ALSO: The 10 best hookup apps of 2026: I swiped until my thumb hurt What is libido? \"Libido\" is difficult to define. In general, though, it's about desire, interest in intimacy and sex, and thoughts about it, OBGYN and co-director of the University of Chicago Medicine Center for Women's Integrated Health, Dr. Melinda Lukens , told Mashable. Libido is also incredibly personal and changes throug"
+  },
+  {
+   "src": "Mashable",
+   "kind": "review",
+   "title": "The 10 best hookup apps of 2026: I swiped until my thumb hurt",
+   "link": "https://mashable.com/roundup/best-hookup-apps-2026",
+   "age": 0,
+   "comments": 0,
+   "text": "In the age of on-demand everything, it’s no surprise that we can get \"dates\" (and I use that term loosely) with the tap of a button. Thanks to classic hookup apps like Tinder and newcomers like Pure , finding a sexy new friend can be as straightforward as ordering a pizza. As for the quality? That’s about the same as your pizza — hit or miss, depending on the time of day, where you're located, and how hungry you are. SEE ALSO: 6 AdultFriendFinder features other hookup sites lack Fortunately, you’ve got me, your resident dating app expert (though I prefer modern-day Carrie Bradshaw), to guide you to the promised land, aka the best hookup apps. I’ve spent the past four years (yes, years) testing dozens of the top dating apps for Mashable, from discreet sexting apps to dating sites for serious relationships . My goal is simple: to find the best apps for every kind of dater, including the on"
+  },
+  {
+   "src": "Mashable",
+   "kind": "review",
+   "title": "AdultFriendFinder vs. Feeld: Which is better for couples?",
+   "link": "https://mashable.com/life/adultfriendfinder-vs-feeld-for-couples",
+   "age": 0,
+   "comments": 0,
+   "text": "When dating sites and apps first emerged on the scene, they were not only fairly straightforward in their design and matchmaking abilities, but they were also very much conservative in their outlook, designed for heterosexual singles to find a monogamous relationship. Fast forward to today, however, and mainstream online dating has loosened its restrictions considerably, with a wider embrace of human sexual orientations and a greater legitimacy given to connections of all shapes, sizes, and durations. Couples dating, however, is still not as widely supported, with only a handful of apps and sites offering native support for non-monogamous lifestyles. Two of the standouts in that respect are AdultFriendFinder , one of the internet's oldest adult dating sites, and Feeld (originally 3nder), an app designed from the ground up for practitioners of polyamory, kink, and swinging to connect. Whe"
+  },
+  {
+   "src": "Medium",
+   "kind": "article",
+   "title": "How to Have Better Sex: A Guide to Mutual Satisfaction",
+   "link": "https://medium.com/illumination/how-to-have-better-sex-a-guide-to-mutual-satisfaction-d4c621d04370?source=rss------sexual_health-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Discover how communication, emotional connection, and understanding each other’s needs can support a healthier intimate relationship. Continue reading on ILLUMINATION »"
+  },
+  {
+   "src": "Medium",
+   "kind": "article",
+   "title": "Demystifying Youth Sexual Health: Essential Realities Every Man Should Consider Before Marriage",
+   "link": "https://medium.com/@tayyabarain8432/demystifying-youth-sexual-health-essential-realities-every-man-should-consider-before-marriage-ee6dde0fbfac?source=rss------sexual_health-5",
+   "age": 0,
+   "comments": 0,
+   "text": "When patients visit clinics and dispensaries for sexual treatments, rest assured that about 90% of them are actually dealing with mental… Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "article",
+   "title": "Common Sexual Mistakes Couples Should Avoid",
+   "link": "https://medium.com/@IntimaWiseHealth/common-sexual-mistakes-couples-should-avoid-2388d4f4ad1d?source=rss------sexual_health-5",
+   "age": 0,
+   "comments": 0,
+   "text": "7 Important Lessons About Consent, Communication, and Healthy Intimacy Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "article",
+   "title": "Kegel Exercises for Men: Can They Improve Sexual Health?",
+   "link": "https://medium.com/@IntimaWiseHealth/kegel-exercises-for-men-can-they-improve-sexual-health-474add8bdaff?source=rss------sexual_health-5",
+   "age": 0,
+   "comments": 0,
+   "text": "A Practical Guide to Pelvic Floor Strength, Erectile Function, and Ejaculation Control Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "article",
+   "title": "When Your Partner Masturbates and You Feel Rejected",
+   "link": "https://medium.com/life-and-psychology/when-your-partner-masturbates-and-you-feel-rejected-9a7451c63f6d?source=rss------sexual_health-5",
+   "age": 0,
+   "comments": 0,
+   "text": "How to talk about solo sex, loneliness, and trust without making either person feel ashamed. Continue reading on Life & Psychology »"
+  },
+  {
+   "src": "Medium",
+   "kind": "review",
+   "title": "How to Choose a Sex Toy for Women: Essential Features That Actually Matter",
+   "link": "https://medium.com/@selovemngr/how-to-choose-a-sex-toy-for-women-essential-features-that-actually-matter-1394d0560238?source=rss------sex_toys-5",
+   "age": 0,
+   "comments": 0,
+   "text": "When shopping for a sex toy for women, it’s easy to get distracted by flashy designs and endless settings. But the features that truly… Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "The Bedroom Isn’t Where Intimacy Ends: 7 Things That Make Someone Feel Truly Desired",
+   "link": "https://lyrakensington.medium.com/the-bedroom-isnt-where-intimacy-ends-7-things-that-make-someone-feel-truly-desired-de609573a84f?source=rss------sex-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Being physically attracted to someone is one thing. Making them feel genuinely wanted, understood, and appreciated is something entirely… Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "The 10 Minutes After Sex That Reveal What Words Never Can",
+   "link": "https://lyrakensington.medium.com/the-10-minutes-after-sex-that-reveal-what-words-never-can-82a2abc1a6e1?source=rss------sex-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Physical chemistry can bring two people together. What happens afterward can reveal how safe, valued, and connected they feel. Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "At A Party, A Friend Found A Book Of Dirty Party Game Ideas",
+   "link": "https://medium.com/alona-women/at-a-party-a-friend-found-a-book-of-dirty-party-game-ideas-14bda2d3525f?source=rss------sex-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Two couples did a clothing swap race, and I got paired with a girl I’d just met to play “find the grape” Continue reading on Sex & Champagne »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "Blackmailed and Owned by His Sexy Boss",
+   "link": "https://medium.com/kinky-tales/blackmailed-and-owned-by-his-sexy-boss-73fc6444321e?source=rss------sex-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Erotica Continue reading on Kinky Tales »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "The Revelation Sex Position #9 — Complete Guide (Otkrovenie)",
+   "link": "https://medium.com/sage-kamasutra/the-revelation-sex-position-9-complete-guide-otkrovenie-5d1e06926cc1?source=rss------sex-5",
+   "age": 0,
+   "comments": 0,
+   "text": "A commanding goddess squat straddle designed for empowering top control, deep vertical leverage, and breathtaking visual intimacy. Continue reading on Sage Kamasutra »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "The Enigma of Intimacy",
+   "link": "https://medium.com/@akashsharma.eu.1998/the-enigma-of-intimacy-76524bb8b24a?source=rss------intimacy-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Where mind, body, and surrender converge into something transcendent. Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "9 Sex Positions For Small Penis That Help Couples Enjoy Intimacy",
+   "link": "https://medium.com/@mahnooor356/9-sex-positions-for-small-penis-that-help-couples-enjoy-intimacy-390c60c83e70?source=rss------intimacy-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Penis size doesn’t determine your ability to satisfy your partner. Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "The Quiet Choreography of a Kiss I No Longer Wanted",
+   "link": "https://medium.com/quirky-rants/the-quiet-choreography-of-a-kiss-i-no-longer-wanted-c3acc1855054?source=rss------intimacy-5",
+   "age": 0,
+   "comments": 0,
+   "text": "On the slow, domestic art of performing intimacy when your body has already said goodbye Continue reading on Quirky Rants »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "I Didn’t Know How Much Sexuality Could Change Me",
+   "link": "https://medium.com/@SensualTouchJournal/i-didnt-know-how-much-sexuality-could-change-me-7266eca987b3?source=rss------intimacy-5",
+   "age": 0,
+   "comments": 0,
+   "text": "For a long time, I never thought of sexuality as something that could change a person Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "The Fear of Feeling Too Much During Intimacy",
+   "link": "https://medium.com/@SensualTouchJournal/the-fear-of-feeling-too-much-during-intimacy-f01841293ced?source=rss------intimacy-5",
+   "age": 0,
+   "comments": 0,
+   "text": "There is a fear we talk about far less than the fear of rejection Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "Her husband pays me to fuck his wife while he watches",
+   "link": "https://medium.com/creative-touch/her-husband-pays-me-to-fuck-his-wife-while-he-watches-0b6c4b5bf8c2?source=rss------sexuality-5",
+   "age": 0,
+   "comments": 0,
+   "text": "She rides my cock facing him so he can see every moan leave her mouth Continue reading on Erotic Desires »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "Across 45 countries women still tend to prefer older partners",
+   "link": "https://medium.com/@iamna4640/across-45-countries-women-still-tend-to-prefer-older-partners-078ebf70110f?source=rss------sexuality-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Some women will be interested in your money and very little else. You can’t fully screen for them, and no haircut will do it. But if those… Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "The Quiet Arithmetic of a Marriage That Already Ended",
+   "link": "https://medium.com/@UnaTolkien/the-quiet-arithmetic-of-a-marriage-that-already-ended-bc156e6799ee?source=rss------relationships-5",
+   "age": 0,
+   "comments": 0,
+   "text": "You don’t leave on the day you figure it out. You leave the day your body finally stops pretending. Continue reading on Medium »"
+  },
   {
    "src": "Cosmopolitan",
    "kind": "article",
    "title": "The 30 Sexiest Movies of All Time, From Steamy Classics to Modern Obsessions",
    "link": "https://sex.cosmopolitan.com/pleasure/g64289006/sexiest-movies-of-all-time/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "Erotic thrillers, messy love triangles, and affairs that’ll have you “watching for the plot.”"
   },
   {
    "src": "Cosmopolitan",
    "kind": "article",
-   "title": "What’s It Like to Have a Real Life Vampire Kink?",
-   "link": "https://sex.cosmopolitan.com/pleasure/a74135787/vampire-kink-blood-play-sex/",
-   "age": 0,
-   "comments": 0,
-   "text": "And no, I don’t just mean wanting Edward Cullen to bite you."
-  },
-  {
-   "src": "Cosmopolitan",
-   "kind": "article",
    "title": "Comments Miley Cyrus Made Back in 2020 About Sex Are Going Viral Again, But the Internet Should Calm Down",
    "link": "https://sex.cosmopolitan.com/pleasure/a74124445/miley-cyrus-sexuality-comments/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "I think we all need to get a grip!"
   },
@@ -401,7 +600,7 @@
    "kind": "article",
    "title": "You Live Together Now. So,  How’s the Sex?",
    "link": "https://sex.cosmopolitan.com/pleasure/a74111256/sex-life-moving-in-together/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "Asking for myself."
   },
@@ -410,7 +609,7 @@
    "kind": "article",
    "title": "It’s Normal to Not Love Penetrative Sex",
    "link": "https://sex.cosmopolitan.com/pleasure/a74057501/penetrative-sex-clitoral-pleasure/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "It’s just one piece of the delicious pie of sex."
   },
@@ -419,7 +618,7 @@
    "kind": "article",
    "title": "107 Fun and Romantic Dates for Couples That Aren't Just Dinner and a Movie",
    "link": "https://www.cosmopolitan.com/relationships/a74108590/dates-for-couple/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "Your standing takeout order could use a night off."
   },
@@ -428,7 +627,7 @@
    "kind": "article",
    "title": "Time to Dance Through ‘DWTS’ Pros Jenna Johnson and Val Chmerkovskiy’s Relationship Timeline",
    "link": "https://www.cosmopolitan.com/entertainment/celebs/a74057183/val-chmerkovskiy-jenna-johnson-relationship-timeline/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "It’s been a dramatic ride, to say the least."
   },
@@ -437,7 +636,7 @@
    "kind": "article",
    "title": "Data Says Men Would Rather Be Rejected Than Financially Dependent on a Partner",
    "link": "https://www.cosmopolitan.com/relationships/a74083968/men-financial-dependence-relationships/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "We’ve regressed."
   },
@@ -446,205 +645,16 @@
    "kind": "article",
    "title": "Put Down the Gas Station Dick Pills",
    "link": "https://www.menshealth.com/health/a73959289/supplements-for-better-sex-erections/",
-   "age": 0,
-   "comments": 0,
-   "text": "Skip the sketchy sex pills and choose a supplement that helps you rise to the occasion."
-  },
-  {
-   "src": "Dildo or Dildon't",
-   "kind": "review",
-   "title": "17 Ways to Use the We-Vibe Shared Touch",
-   "link": "https://www.dildoordildont.com/17-ways-to-use-the-we-vibe-shared-touch/?utm_source=rss&utm_medium=rss&utm_campaign=17-ways-to-use-the-we-vibe-shared-touch",
-   "age": 0,
-   "comments": 0,
-   "text": "Clearly, I need to talk about the We-Vibe Shared Touch , because the box is selling it short. Officially, the We-Vibe Shared Touch is a couples vibrator, but I’m here to tell you that limiting it to couples, or even partnered play in general, is seriously underselling what this little toy can do. One side features a soft, ridged, concave cradle designed to wrap around a penis, while the other has a sculpted tip that’s great for focused stimulation on sensitive spots like the clitoris, nipples, under the head of the penis, etc. It even has two fluttery little wings that open up more possibilities. The idea is to slip it between two bodies so everyone can enjoy the vibrations together. Sounds great, right? But that’s just scratching the surface. I’ve spent years helping people find pleasure products that work for their bodies, relationships, and interests, and one thing I always try to rem"
-  },
-  {
-   "src": "Mashable",
-   "kind": "review",
-   "title": "Does You Can See Everything live up to the hype?",
-   "link": "https://mashable.com/entertainment/you-can-see-everything-review",
-   "age": 0,
-   "comments": 0,
-   "text": "The energy in the lobby of Alice Tully Hall was kinetic on the night of Sept. 30, as press, patrons, and the public eagerly awaited the New York Film Festival's New York premiere of You Can See Everything. The documentary's existence went from a well-kept secret to an internet sensation when A24 dropped a teaser on Sept. 6 showing notorious Theranos founder Elizabeth Holmes having an intimate conversation with heralded comedian Nathan Fielder. The project seemed preposterous, like something born from MadLibs or a brain-rot meme. However, the world premiere at a secret screening at the Telluride Film Festival, which was timed to the teaser debut, not only proved this movie was real, but also launched much buzz and absolutely unhinged rumors about what it contains. SEE ALSO: NYFF 2026 preview: 14 films you'll want to see (and how) The New York crowd was downright giddy to see for themselve"
-  },
-  {
-   "src": "Medium",
-   "kind": "article",
-   "title": "3 Positions That Put Her Pleasure First",
-   "link": "https://medium.com/illumination/3-positions-that-put-her-pleasure-first-7a38165f24a1?source=rss------sexual_health-5",
-   "age": 0,
-   "comments": 0,
-   "text": "Precision over acrobatics: the arrangements that reliably bring a woman to climax. Continue reading on ILLUMINATION »"
-  },
-  {
-   "src": "Medium",
-   "kind": "article",
-   "title": "Why Is It Hard to Get Another Erection After Sex?",
-   "link": "https://medium.com/@rilakamaldeen/why-is-it-hard-to-get-another-erection-after-sex-aea46a86e1f0?source=rss------sexual_health-5",
-   "age": 0,
-   "comments": 0,
-   "text": "Understanding the Male Refractory Period and What It Means Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "article",
-   "title": "Grandparents Don’t Have Sex, Surely. 59% of Men and 34% of Women in Their 70s Do.",
-   "link": "https://medium.com/@thepull/grandparents-dont-have-sex-surely-59-of-men-and-34-of-women-in-their-70s-do-7b28e16f0987?source=rss------sexual_health-5",
-   "age": 0,
-   "comments": 0,
-   "text": "We treat it as a punchline. Past 80, 31% of men and 14% of women in England were still sexually active. Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "article",
-   "title": "Andrology Treatment in Madurai: A Complete Guide to Men’s Reproductive and Sexual Health",
-   "link": "https://medium.com/@sandheephospital/andrology-treatment-in-madurai-a-complete-guide-to-mens-reproductive-and-sexual-health-57323bd4039b?source=rss------sexual_health-5",
-   "age": 0,
-   "comments": 0,
-   "text": "Understanding Andrology Treatment in Madurai Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "article",
-   "title": "WHY DO SOME WOMEN EXPERIENCE IRRITATION AFTER SEX? 10 Possible Reasons We Shouldn't Ignore",
-   "link": "https://medium.com/@worksample89/why-do-some-women-experience-irritation-after-sex-10-possible-reasons-we-shouldnt-ignore-48bb7afc147c?source=rss------sexual_health-5",
-   "age": 0,
-   "comments": 0,
-   "text": "Sex is supposed to be an intimate experience, but what happens when discomfort follows afterward? Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "article",
-   "title": "Why Expensive Sex Toys Are Not Always Better",
-   "link": "https://toybenchreviews.medium.com/why-expensive-sex-toys-are-not-always-better-7a6a13b06b1c?source=rss------sexual_health-5",
-   "age": 0,
-   "comments": 0,
-   "text": "A higher price doesn’t always mean better quality, more comfort, or better value. Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "article",
-   "title": "Female Orgasm Explained: Why Clitoral Stimulation Matters",
-   "link": "https://medium.com/illumination/female-orgasm-explained-why-clitoral-stimulation-matters-3abc175a6316?source=rss------sexual_health-5",
-   "age": 0,
-   "comments": 0,
-   "text": "Understanding Female Anatomy, Sexual Pleasure, and Healthy Intimacy Continue reading on ILLUMINATION »"
-  },
-  {
-   "src": "Allure",
-   "kind": "article",
-   "title": "Allure Had a Pizza Party to Celebrate Best of Beauty’s Birthday",
-   "link": "https://www.allure.com/story/allure-best-of-beauty-mamas-too-partnership",
-   "age": 0,
-   "comments": 0,
-   "text": "We partnered with Mama’s TOO! in New York City to raise a slice to the big 3-0."
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "The Cornell Seven and the Men Who Said Nothing",
-   "link": "https://medium.com/bouncin-and-behavin-blogs/the-cornell-seven-and-the-men-who-said-nothing-a5a9e89d0d02?source=rss------sex-5",
-   "age": 0,
-   "comments": 0,
-   "text": "What the Cornell group chat reveals about male solidarity, sexual violence, and the lessons being modeled from the highest levels of power. Continue reading on Bouncin’ and Behavin’ Blogs »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "Fucking My Horny Neighbor’s Wife | Erotic Sex Story",
-   "link": "https://medium.com/@VelvetDesires66/fucking-my-horny-neighbors-wife-erotic-sex-story-d10209158e56?source=rss------sex-5",
-   "age": 0,
-   "comments": 0,
-   "text": "We barely made it three steps before she dropped to her knees right there in the living room, yanked my cock out, and swallowed me to the… Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "Sex Addict (Obsession)",
-   "link": "https://medium.com/@cacafesol1/sex-addict-obsession-219e85adf3a2?source=rss------sex-5",
-   "age": 0,
-   "comments": 0,
-   "text": "I had been in a relationship for three years and was certain I had finally cured my addiction to sex. My life had become carefully… Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "As Your Wife, I’m Entitled to Sex",
-   "link": "https://longafterthethrill.medium.com/as-your-wife-im-entitled-to-sex-cda0fe67c236?source=rss------sex-5",
-   "age": 0,
-   "comments": 0,
-   "text": "So get your shit together Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "HEARTS ARE BROKEN ’CAUSE WE BELIEVE IN LOVE",
-   "link": "https://medium.com/@l.maggiemofo/hearts-are-broken-cause-we-believe-in-love-b227220aa69b?source=rss------sex-5",
-   "age": 0,
-   "comments": 0,
-   "text": "Your recovery from heartbreak will determine who you become in your next relationship Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "The Intimacy We Taught Each Other to Stop Wanting",
-   "link": "https://medium.com/@edithtali/the-intimacy-we-taught-each-other-to-stop-wanting-1f861a5c82ec?source=rss------intimacy-5",
-   "age": 0,
-   "comments": 0,
-   "text": "I watched her perform not caring. In every move, I recognized the lessons I’d taught myself in the dark. Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "Where Can I Buy Sex Toys in Goa? | Orgasmsextoy.com",
-   "link": "https://medium.com/@adultpassion123/where-can-i-buy-sex-toys-in-goa-orgasmsextoy-com-e0177ba4d032?source=rss------intimacy-5",
-   "age": 0,
-   "comments": 0,
-   "text": "If you are searching for a sex toy in Goa, you are part of a growing number of people in India who see intimate wellness as a normal part… Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "My Ex Said “I Miss You” Every Night. He Never Came Home.",
-   "link": "https://medium.com/@florareggie/my-ex-said-i-miss-you-every-night-he-never-came-home-0ded4a3f7f7a?source=rss------intimacy-5",
-   "age": 0,
-   "comments": 0,
-   "text": "Three strangers in a Brooklyn coffee shop taught me what three years of marriage couldn’t. Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "I Woke Up With My Step-Dad’s Cock Already Inside Me and Made Him Finish the Job Hard",
-   "link": "https://medium.com/creative-touch/i-woke-up-with-my-step-dads-cock-already-inside-me-and-made-him-finish-the-job-hard-ab91e2d58cf3?source=rss------intimacy-5",
-   "age": 0,
-   "comments": 0,
-   "text": "I still get wet every time I think about the way his face went white when he realized where he was. God, the shame on him… Continue reading on Erotic Desires »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "I Never Knew Yoga Could Feel This Intimate",
-   "link": "https://medium.com/@claire_claire/sensual-body-worship-anal-play-creampie-1a0080a36303?source=rss------sexuality-5",
-   "age": 0,
-   "comments": 0,
-   "text": "“Reach up now,” he said. “Stretch those arms, fingertips to the sky, up on your tiptoes, and take a deep breath.” Continue reading on Medium »"
-  },
-  {
-   "src": "Cosmopolitan",
-   "kind": "article",
-   "title": "Behold: The Lucky Husbands, Boyfriends, and Partners of the 2026 Victoria’s Secret Fashion Show Models",
-   "link": "https://www.cosmopolitan.com/entertainment/celebs/a74148589/victorias-secret-fashion-show-angels-dating/",
    "age": 1,
    "comments": 0,
-   "text": "Gigi, Imaan, Paloma, and more are walking...but who are they dating?"
+   "text": "Skip the sketchy sex pills and choose a supplement that helps you rise to the occasion."
   },
   {
    "src": "Gottman Institute",
    "kind": "article",
    "title": "Have We Been Thinking About Weaponized Incompetence All Wrong?",
    "link": "https://www.gottman.com/blog/weaponized-incompetence/",
-   "age": 1,
+   "age": 2,
    "comments": 0,
    "text": "Your Partner Offers to Help. You End Up With One More Job. The post Have We Been Thinking About Weaponized Incompetence All Wrong? appeared first on The Gottman Institute ."
   },
@@ -653,25 +663,16 @@
    "kind": "article",
    "title": "When the Fight Never Ends: Why Most Couple Conflict Isn’t Meant to Be Solved",
    "link": "https://www.gottman.com/blog/when-the-fight-never-ends/",
-   "age": 1,
+   "age": 2,
    "comments": 0,
    "text": "Most couples conflict can't be solved and that's ok. Your relationship can still be healthy and successful- here's how. The post When the Fight Never Ends: Why Most Couple Conflict Isn’t Meant to Be Solved appeared first on The Gottman Institute ."
-  },
-  {
-   "src": "Girl on the Net",
-   "kind": "experience",
-   "title": "Guest blog: Why I write porn for my wife",
-   "link": "https://www.girlonthenet.com/blog/i-write-porn-for-my-wife/",
-   "age": 1,
-   "comments": 4,
-   "text": "When you’re in a relationship with someone, treating sex as a hobby that you enjoy together is a fabulous way to maintain connection and keep things interesting – I believe this very strongly and I know I bang on about it a lot here. Rarely do I get such a perfect, horny, beautiful example of […] The post Guest blog: Why I write porn for my wife appeared first on Girl on the Net ."
   },
   {
    "src": "Medium",
    "kind": "review",
    "title": "Couples Sex Toys & Communication: How to Introduce Toys Without the Awkwardness",
    "link": "https://medium.com/@business_38725/couples-sex-toys-communication-how-to-introduce-toys-without-the-awkwardness-1ef48eea0a73?source=rss------sex_toys-5",
-   "age": 1,
+   "age": 2,
    "comments": 0,
    "text": "Introducing a sex toy into a relationship starts with three questions: What would you like to experience? How does your partner feel about… Continue reading on Medium »"
   },
@@ -680,16 +681,25 @@
    "kind": "review",
    "title": "Why Choose The Stag Shop Online Canada for Your Shopping Needs",
    "link": "https://medium.com/@stag-shop/why-choose-the-stag-shop-online-canada-for-your-shopping-needs-69c2530c1182?source=rss------sex_toys-5",
-   "age": 2,
+   "age": 3,
    "comments": 0,
    "text": "The Stag Shop Online Canada offers a convenient and discreet way to explore a wide range of adult wellness and intimate products. With a… Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "article",
+   "title": "Female Orgasm Explained: What Every Woman Should Know",
+   "link": "https://medium.com/@IntimaWiseHealth/female-orgasm-explained-what-every-woman-should-know-7067139879ae?source=rss------sex_education-5",
+   "age": 4,
+   "comments": 0,
+   "text": "Discover the role of anatomy, emotional well-being, and communication in sexual health. Continue reading on Medium »"
   },
   {
    "src": "The RISE to Intimacy Podcast | Sex Therapy, Couples Therapy & Relationships",
    "kind": "podcast",
    "title": "Why Your Partner Gets Defensive When You’re Not Criticizing Them",
    "link": "https://www.risetointimacy.com/post/why-your-partner-gets-defensive-when-you-re-not-criticizing-them",
-   "age": 3,
+   "age": 4,
    "comments": 0,
    "text": "You bring up something small with your partner. Maybe it’s the trash that still hasn’t gone out, something they shared in front of friends, or a moment where you felt dismissed. You’re trying to talk about one specific thing, and suddenly you’re hearing, “I can’t do anything right.” When your partner gets defensive like this, the conversation can quickly shift away from what you were actually trying to address. Sometimes the way something is brought up does matter. Leading with “you always” or “you never,” criticizing your partner’s character, or telling them how they made you feel can set them up to go on the defense. Other times, even when you bring something up carefully, your partner may still experience the complaint as a threat to who they are, and that can show up as denying, rationalizing, shutting down, or moving into a shame spiral. In this episode of The RISE to Intimacy Podca"
   },
@@ -698,7 +708,7 @@
    "kind": "article",
    "title": "Hey Dr Sue — Why Do I Enjoy Touching Myself So Much, But I Don’t Enjoy Sex With Another Person?",
    "link": "https://drsuemilstein.medium.com/hey-dr-sue-why-do-i-enjoy-touching-myself-so-much-but-i-dont-enjoy-sex-with-another-person-a7600341cdf7?source=rss------sex_education-5",
-   "age": 4,
+   "age": 5,
    "comments": 0,
    "text": "I get this question way more often than people might think! Continue reading on Medium »"
   },
@@ -707,7 +717,7 @@
    "kind": "article",
    "title": "14 Fig Fragrances to Spritz This Season",
    "link": "https://www.allure.com/story/fig-fragrance-trend",
-   "age": 4,
+   "age": 5,
    "comments": 0,
    "text": "The trending fruit note sits at a crossroads between several olfactive families—green, fruity, creamy, woody, floral—making it smell like heaven on everyone."
   },
@@ -716,7 +726,7 @@
    "kind": "review",
    "title": "A Soul For A Soul Part 3 – An Erotic Story",
    "link": "https://www.lelo.com/blog/a-soul-for-a-soul-part-3-an-erotic-story/",
-   "age": 5,
+   "age": 6,
    "comments": 0,
    "text": "Alex Evans was as handsome as Perle remembered. She was relieved that, in nights of loneliness, her imagination had not embellished the man whom she had met in her art gallery. Now was their second meeting. It was not an art gallery in the city but in his home. He was on his land. He was in his own environment. He sat on the edge of a large leather armchair with his elbows on his knees. Alex had Leo talking […] The post A Soul For A Soul Part 3 – An Erotic Story appeared first on Volonté ."
   },
@@ -725,25 +735,16 @@
    "kind": "article",
    "title": "Behind Closed Doors: The Secrets of Female Solo Pleasure",
    "link": "https://medium.com/sensual-enchantment/behind-closed-doors-the-secrets-of-female-solo-pleasure-fc9a4d44ac1b?source=rss------sex_education-5",
-   "age": 5,
+   "age": 6,
    "comments": 0,
    "text": "The private side of female sexuality Continue reading on Sensual: An Erotic Life »"
-  },
-  {
-   "src": "Women's Health",
-   "kind": "article",
-   "title": "Your Bedroom May Be Working Against Your Heart Health—and You Might Not Even Notice It",
-   "link": "https://www.womenshealthmag.com/health/a74082945/sleep-darkness-heart-risk-study/",
-   "age": 7,
-   "comments": 0,
-   "text": "The good news is you can make some easy fixes."
   },
   {
    "src": "Medium",
    "kind": "article",
    "title": "Sex Ed Doesn’t Make Teens Have Sex Sooner. Abstinence-Only Classes Didn’t Delay It Either.",
    "link": "https://medium.com/@thepull/sex-ed-doesnt-make-teens-have-sex-sooner-abstinence-only-classes-didn-t-delay-it-either-24910e615f21?source=rss------sex_education-5",
-   "age": 7,
+   "age": 8,
    "comments": 0,
    "text": "In a federal trial of 2,057 teens, both groups first had sex at 14.9 on average. What we teach matters more. Continue reading on Medium »"
   },
@@ -752,7 +753,7 @@
    "kind": "article",
    "title": "Why Decentering Penetration Will Save Your Sex Life",
    "link": "https://sexwithemily.com/decentering-penetration-sex-life/?utm_source=rss&utm_medium=rss&utm_campaign=decentering-penetration-sex-life",
-   "age": 8,
+   "age": 9,
    "comments": 0,
    "text": "When did we decide penetration was the thing that makes sex feel like “real sex”? Because here’s the problem with that script: most vulva owners don’t orgasm from penetration alone. And yet penis-in-vagina intercourse is still treated like the main event, while the things that are often far more effective for pleasure and orgasm—clitoral stimulation, oral sex, hands, toys, grinding—get labeled “foreplay.” Think about that. We’ve centered sex around an act that doesn’t reliably lead to orgasm for a huge percentage of people, and then when someone doesn’t orgasm from penetration, they wonder if something is wrong with their body. Maybe the body isn’t the problem. Maybe the script is. Decentering penetration isn’t about banning it forever. I love penetration. It’s about taking it off the pedestal and making room for all the other ways we can experience pleasure. Because when penetration bec"
   },
@@ -761,7 +762,7 @@
    "kind": "article",
    "title": "Which Trojan Condom Is Right for You? 10 Best Options for Every Need",
    "link": "https://sex.cosmopolitan.com/pleasure/a73866891/best-trojan-condoms/",
-   "age": 10,
+   "age": 11,
    "comments": 0,
    "text": "Spoiler: protection is HOT!"
   },
@@ -770,7 +771,7 @@
    "kind": "podcast",
    "title": "Answering Relationship Questions About Sex and Connection",
    "link": "https://www.risetointimacy.com/post/answering-relationship-questions-about-sex-and-connection",
-   "age": 10,
+   "age": 11,
    "comments": 0,
    "text": "You can be talking to your partner about the same relationship and interpret the conversation completely differently. I learned that recently when I told my partner, Dallas, I was feeling disconnected and found out he heard that very differently than I intended it. Neither of us knew there was a misunderstanding until we actually talked about what that word meant to each of us. While I spend my days talking about sex and relationships as a couples therapist, Dallas didn’t grow up talking about feelings and certainly didn’t learn to do it during his time in the Marine Corps. We have very different levels of comfort with some of these conversations, so we’ve had to keep talking through what we each mean and what we need from each other. In this episode of The RISE to Intimacy Podcast, Dallas joins me to answer relationship questions about sex and connection from Reddit. We start with after"
   },
@@ -779,7 +780,7 @@
    "kind": "review",
    "title": "What Science Knows About Pleasure in 2026: The Latest Orgasm Research",
    "link": "https://www.lelo.com/blog/orgasm-research/",
-   "age": 11,
+   "age": 12,
    "comments": 0,
    "text": "Science is important. Sex is important. We gathered the most recent compilation of research on the compelling and magical topic of… orgasms. Female Orgasm Gap: Translating Contemporary Scientific Understanding and Sociocultural Movement into Clinical Wisdom Journal of Psychosexual Health, August 2025 Findings The “orgasm gap,” a persistent disparity between cisgender women and men during heterosexual intercourse, reflects multiple complex physiological and sociocultural factors. Women who experience orgasm more frequently during sexual intercourse report increased levels of sexual and relational satisfaction. […] The post What Science Knows About Pleasure in 2026: The Latest Orgasm Research appeared first on Volonté ."
   },
@@ -788,7 +789,7 @@
    "kind": "experience",
    "title": "Seven Sexual Fantasizes She Has, But Will Never Tell You About",
    "link": "https://samarel.medium.com/seven-sexual-fantasizes-she-has-a9741aa2521c?source=rss------sex_tips-5",
-   "age": 11,
+   "age": 12,
    "comments": 0,
    "text": "A guide to the desires most women carry quietly and what it means for your relationship if you actually pay attention Continue reading on Medium »"
   },
@@ -797,7 +798,7 @@
    "kind": "article",
    "title": "Cornell Has A Sex-Education Problem",
    "link": "https://medium.com/take-back-america/cornell-has-a-sex-education-problem-109c58874b9b?source=rss------sex_education-5",
-   "age": 11,
+   "age": 12,
    "comments": 0,
    "text": "From feminist porn awards to group-sex checklists, Cornell University owes families an explanation Continue reading on Take Back America »"
   },
@@ -806,7 +807,7 @@
    "kind": "experience",
    "title": "How to be difficult",
    "link": "https://www.girlonthenet.com/blog/how-to-be-difficult/",
-   "age": 12,
+   "age": 13,
    "comments": 2,
    "text": "Earlier this week I wrote a post about the Cornell rapes – about how awkward it can be to speak up against rape culture, and why it’s so important that men try to do it anyway. I’d love you guys to understand that being a ‘good guy’ doesn’t usually mean saying the right thing and […] The post How to be difficult appeared first on Girl on the Net ."
   },
@@ -815,7 +816,7 @@
    "kind": "article",
    "title": "your sexual desires are not your own, porn gave them to you",
    "link": "https://medium.com/@whoischiii/your-sexual-desires-are-not-your-own-porn-gave-them-to-you-c35e8a8e3dbe?source=rss------sex_education-5",
-   "age": 13,
+   "age": 14,
    "comments": 0,
    "text": "learning the expressions of our sexuality through a screen and the problems that arise from that Continue reading on Medium »"
   },
@@ -831,15 +832,6 @@
   {
    "src": "Healthline",
    "kind": "article",
-   "title": "Oral GLP-1 Orforglipron (Foundayo) Achieves Weight Loss for Women of All Ages",
-   "link": "https://www.healthline.com/health-news/oral-glp-1-orforglipron-foundayo-uniform-weight-loss-women",
-   "age": 15,
-   "comments": 0,
-   "text": "A new analysis found that the diabetes medication orforglipron (Foundayo), an oral GLP-1, helped women lose weight regardless of their menopausal status. Healthline/Photo by Eli Lilly A new analysis of previous studies found that orforglipron promoted weight loss in women regardless of their menopausal status. This is important since the decline in estrogen after menopause can make weight loss more difficult. Menopausal women also tend to gain weight around their midsection, which is associated with health risks. The fact that the new GLP-1 comes in a pill form offers a convenient option for many women. However, doctors stress that it is also important to select the treatment that is the most effective for you. A new GLP-1 pill called orforglipron (Foundayo) has been shown to help women lose weight, regardless of menopausal status, according to new research. A group of researchers, inclu"
-  },
-  {
-   "src": "Healthline",
-   "kind": "article",
    "title": "Love to Read? Your Book Habit May Lower Alzheimer’s Risk by 33%",
    "link": "https://www.healthline.com/health-news/book-habit-may-lower-alzheimers-risk",
    "age": 15,
@@ -851,7 +843,7 @@
    "kind": "article",
    "title": "How to talk about sex with your friends.. and not freak out….",
    "link": "https://medium.com/@patsyagpalza.lcsw/how-to-talk-about-sex-with-your-friends-and-not-freak-out-e9a0ca8fc144?source=rss------sex_education-5",
-   "age": 16,
+   "age": 17,
    "comments": 0,
    "text": "Lets Talk about Sex: It can be hard and awkard to talk about sex. Period. Continue reading on Medium »"
   },
@@ -860,7 +852,7 @@
    "kind": "podcast",
    "title": "Is Watching Porn Cheating in a Relationship?",
    "link": "https://www.risetointimacy.com/post/is-watching-porn-cheating-in-a-relationship",
-   "age": 17,
+   "age": 18,
    "comments": 0,
    "text": "You found porn on your partner’s phone, and now you’re wondering if watching porn is cheating or if you’re overreacting. Or maybe you’re the one whose partner found it, and you genuinely don’t understand why something you never considered cheating suddenly feels like betrayal to them. Either way, you can end up arguing about a question neither of you ever actually said out loud. That’s why couples can so easily talk past each other when it comes to porn. One person is focused on the fact that no touching happened and no one else was in the room. The other is focused on sexual arousal happening outside the relationship and the fact that it was kept from them. When you’ve never talked about what porn means in your relationship, that silence can create a gap between what each of you thought you had agreed to. In this episode of The RISE to Intimacy Podcast, I break down three common myths a"
   },
@@ -869,7 +861,7 @@
    "kind": "review",
    "title": "A Sole for a Soul Part 2 – An Erotic Story",
    "link": "https://www.lelo.com/blog/a-sole-for-a-soul-part-2-an-erotic-story/",
-   "age": 18,
+   "age": 19,
    "comments": 0,
    "text": "Perle gazed at the name on the shipping paperwork she held. Just seeing the name warmed her, even etching her lips into a smile, despite the disorganized day. She didn’t realize it, until later, that the name made her mind escape, exactly like that single painting had let Alex Evans escape. Perle sat in her office chair, left leg crossed over her right, so she could see her kitten heel slingbacks. The glossy pair was inlayed with memory foam, so […] The post A Sole for a Soul Part 2 – An Erotic Story appeared first on Volonté ."
   },
@@ -878,7 +870,7 @@
    "kind": "experience",
    "title": "Gang bang club: lend a man, borrow a team",
    "link": "https://www.girlonthenet.com/blog/gang-bang-club/",
-   "age": 19,
+   "age": 20,
    "comments": 1,
    "text": "The first rule of gang bang club is that you have to talk about gang bang club: these things don’t organise themselves. Here’s the concept: a group of five friends each contribute a man to the gang bang pool. You don’t need to split by gender, obviously, but I’m doing it here because I’m mostly […] The post Gang bang club: lend a man, borrow a team appeared first on Girl on the Net ."
   },
@@ -887,25 +879,16 @@
    "kind": "experience",
    "title": "Tired of Being the One Who Always Has to Ask for Sex?",
    "link": "https://samarel.medium.com/tired-of-being-the-one-who-always-has-to-ask-for-sex-78b9df728e6d?source=rss------sex_tips-5",
-   "age": 20,
+   "age": 21,
    "comments": 0,
    "text": "Why Begging for Sexual Contact Hurts So Much. A ‘Dear Deni’ Relationship tip from our ‘Intimacy and Relationships’ collection Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "Your Average Dick Size Is Just Fine",
-   "link": "https://samarel.medium.com/your-average-dick-size-is-just-fine-58a01af68317?source=rss------sex_tips-5",
-   "age": 20,
-   "comments": 0,
-   "text": "Stop Worrying About Size and Start Paying Attention to Her Real Needs in the Bedroom. A ‘Dear Deni’ Sex Tip for Men Continue reading on Medium »"
   },
   {
    "src": "LELO",
    "kind": "review",
    "title": "How-To Guide on Giving Exceptional Thrusting Blowjobs",
    "link": "https://www.lelo.com/blog/face-thrusting-blowjobs-guide/",
-   "age": 24,
+   "age": 25,
    "comments": 0,
    "text": "Right off the bat, what is a thrusting blowjob? Well, we’ve used this term as it’s way more PG than saying face fvcking or skull fvcking, but essentially, it’s a specific style of blowjob where the receiving partner takes active control of the movement and depth instead of the giver. And while this may seem similar to deepthroating (and there are many similarities) it isn’t actually the same thing. Additionally, a thrusting blowjob has distinct differences from a regular blowjob. […] The post How-To Guide on Giving Exceptional Thrusting Blowjobs appeared first on Volonté ."
   },
@@ -914,7 +897,7 @@
    "kind": "review",
    "title": "Can Paralyzed People Have Sex?",
    "link": "https://www.lelo.com/blog/can-paralyzed-people-have-sex/",
-   "age": 27,
+   "age": 28,
    "comments": 0,
    "text": "Paralysis is the loss of voluntary muscle control. It is primarily caused by damage to the nervous system, the body’s command, control, and communication center that’s intricately made up of the brain, the spinal cord, and trillions of peripheral nerves. Having a stroke is the leading cause, often resulting in hemiplegia (one-sided paralysis). On the other hand, Spinal Cord Injury (SCI) resulting from trauma generally causes paraplegia (lower body palsy) or quadriplegia (paralysis of all limbs). Neurological diseases like Multiple […] The post Can Paralyzed People Have Sex? appeared first on Volonté ."
   },
@@ -923,7 +906,7 @@
    "kind": "review",
    "title": "A Sole for a Soul, Part 1 – An Erotic Story",
    "link": "https://www.lelo.com/blog/a-sole-for-a-soul-part-1-an-erotic-story/",
-   "age": 27,
+   "age": 28,
    "comments": 0,
    "text": "The art show had concluded. Two hours ago, in fact. Yet, conversations and connections between buyers and sellers, critics and curators, kept the gallery from closing its doors on time. Nevertheless, their exchanges were invaluable. One deal made after hours could be a boon for this gallery. The night could not go on forever though. Soon the wine would be talking, and all things said would be forgotten—or questioned—in the morning. Perle had, with professionally gentle ease, encouraged the lollygaggers […] The post A Sole for a Soul, Part 1 – An Erotic Story appeared first on Volonté ."
   },
@@ -932,7 +915,7 @@
    "kind": "experience",
    "title": "Guest blog: Please please please… deny me",
    "link": "https://www.girlonthenet.com/blog/please-deny-me/",
-   "age": 29,
+   "age": 30,
    "comments": 2,
    "text": "I am fully grinning from ear to ear as I write the intro to this post. The fabulous @EuclideanPoint – who has written here before about letting a kinky stranger hand her control, a very kinky interrogation, and denying a partner’s orgasm – is back with another phenomenal guest blog. This time it’s her who […] The post Guest blog: Please please please… deny me appeared first on Girl on the Net ."
   },
@@ -941,7 +924,7 @@
    "kind": "experience",
    "title": "I’ve been called a lot of things in my time, but never this",
    "link": "https://www.girlonthenet.com/blog/called-a-lot-but-never-this/",
-   "age": 33,
+   "age": 34,
    "comments": 12,
    "text": "There’s one word no one’s ever used to describe me. Well, OK there are probably plenty. No one’s ever described me as ‘svelte’ or ‘pious’, after all. I’ve never heard ‘classy’ except through a thick layer of sarcasm, while I’m in the throes of strawpedo-ing a bottle of Lambrini. But the particular word I’m thinking […] The post I’ve been called a lot of things in my time, but never this appeared first on Girl on the Net ."
   },
@@ -950,7 +933,7 @@
    "kind": "experience",
    "title": "Seven different ways to come in my mouth",
    "link": "https://www.girlonthenet.com/blog/seven-ways-come-in-my-mouth/",
-   "age": 40,
+   "age": 41,
    "comments": 2,
    "text": "Let’s start with the obvious: hard and heavy and thick and copious, deep down the back of my throat. After a few rounds of me teasing you with my lips and tongue and hands and spit and all the bells and whistles. Building you up and up and up in time to the music, then […] The post Seven different ways to come in my mouth appeared first on Girl on the Net ."
   },
@@ -959,7 +942,7 @@
    "kind": "review",
    "title": "The Next Frontier of Male Sexual Fitness: LELO F2S Double Sonic",
    "link": "https://www.lelo.com/blog/f2s-double-sonic-masturbator/",
-   "age": 53,
+   "age": 54,
    "comments": 0,
    "text": "For decades, male wellness conversations stopped at gym routines, skincare, and sleep trackers. Yet a quiet revolution has been taking place in men’s health – one that replaces outdated taboos with emotional literacy and holistic self-care. Today, self-pleasure is no longer a secret routine; it is recognized as a vital pillar of mental decompression, prostate health, and sexual fitness. LELO has officially unveiled its newest flagship device: the F2S Double Sonic. Designed for the modern man who values quality over […] The post The Next Frontier of Male Sexual Fitness: LELO F2S Double Sonic appeared first on Volonté ."
   }
@@ -1721,7 +1704,7 @@
   "сайт ДТЕК": false,
   "канал ЖК «Яскравий»": false
  },
- "fact_png": "2026-10-17 23|2|2026-10-16T16:14:11+03:00",
+ "fact_png": "2026-10-18 00|2|2026-10-16T16:14:11+03:00",
  "fact_day": {
   "total": "0 хв",
   "list": []
@@ -2817,7 +2800,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-17T23:55:31.878505+03:00",
+ "gh_beat": "2026-10-18T00:00:32.838107+03:00",
  "silpo_stores": {
   "week": "2026-42",
   "v": 2,
@@ -17088,17 +17071,8 @@
    "2026-10-17"
   ]
  },
- "mo_sent": {
-  "160603556": "2026-10-17",
-  "368433217": "2026-10-17",
-  "8283670046": "2026-10-17"
- },
- "we_sent": {
-  "368433217": "2026-10-17",
-  "936688574": "2026-10-17",
-  "8283670046": "2026-10-17",
-  "160603556": "2026-10-17"
- },
+ "mo_sent": {},
+ "we_sent": {},
  "yt_week": "2026-42",
  "smm_week": "2026-42",
  "pend": {
@@ -17119,9 +17093,9 @@
   }
  },
  "pushed_h": {
-  "gs": "cdbc76aae7ac",
+  "gs": "da1e28a980b5",
   "quiz_pool.json": "5d94078dfb15",
-  "fact.png": "01e7b06ec4c7",
+  "fact.png": "e7b6ee1716d6",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
   "silpo/m.json": "c6e80663a7e0",
   "sexed.json": "4efede1d8ea5",
@@ -19069,12 +19043,8 @@
    50.90178571428571
   ]
  },
- "imp_sent": {
-  "160603556": "2026-10-17"
- },
- "ero_sent": {
-  "160603556": "2026-10-17"
- },
+ "imp_sent": {},
+ "ero_sent": {},
  "silpo_snap": "2026-10-14",
  "smm_pool": [
   {
@@ -19259,44 +19229,44 @@
  "silpo_day": "2026-10-17-pm",
  "upd": {
   "🔥 Фільми 18+": {
-   "at": "17.10 23:55",
-   "ts": 1792270536,
+   "at": "18.10 00:00",
+   "ts": 1792270852,
    "ok": true,
    "note": ""
   },
   "🎓 Секс-освіта": {
-   "at": "17.10 23:55",
-   "ts": 1792270536,
+   "at": "18.10 00:00",
+   "ts": 1792270852,
    "ok": true,
    "note": ""
   },
   "🎯 Вікторини": {
-   "at": "17.10 23:55",
-   "ts": 1792270536,
+   "at": "18.10 00:00",
+   "ts": 1792270852,
    "ok": true,
    "note": ""
   },
   "🌅 Імпульс / 🕯 класика": {
-   "at": "17.10 23:55",
-   "ts": 1792270536,
+   "at": "18.10 00:00",
+   "ts": 1792270852,
    "ok": true,
    "note": ""
   },
   "🎵 Музика": {
-   "at": "17.10 23:55",
-   "ts": 1792270538,
+   "at": "18.10 00:00",
+   "ts": 1792270856,
    "ok": true,
    "note": ""
   },
   "❤️ Здоровʼя": {
-   "at": "17.10 23:55",
-   "ts": 1792270538,
+   "at": "18.10 00:00",
+   "ts": 1792270856,
    "ok": true,
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "17.10 23:55",
-   "ts": 1792270536,
+   "at": "18.10 00:00",
+   "ts": 1792270852,
    "ok": true,
    "note": ""
   },
@@ -19313,10 +19283,10 @@
    "note": ""
   },
   "💞 Матеріали 18+ (журнали)": {
-   "at": "17.10 00:01",
-   "ts": 1792184462,
+   "at": "18.10 00:00",
+   "ts": 1792270852,
    "ok": true,
-   "note": "66 шт."
+   "note": "64 шт."
   }
  },
  "force_heavy": [],
