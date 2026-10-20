@@ -3319,7 +3319,18 @@ def impulse_messages(st: dict, now: datetime, today_key: str) -> list:
                 continue
             if kind == "dark" and c not in AGE_OK:
                 continue
-            x = pool[(now.date().toordinal() + int(hashlib.md5((c + sub).encode()).hexdigest()[:6], 16)) % len(pool)]
+            if kind == "dark":                        # 🕯 щодня інша книга (випадково), без повторів уривків
+                import random as _r
+                seen_ = st.setdefault("ero_seen", {}).setdefault(c, [])
+                books_ = sorted({x_["book"] for x_ in pool})
+                last_b = st.setdefault("ero_book", {}).get(c)
+                pick_b = _r.choice([b_ for b_ in books_ if b_ != last_b] or books_)
+                cand_ = [x_ for x_ in pool if x_["book"] == pick_b and x_["orig"][:40] not in seen_] or [x_ for x_ in pool if x_["book"] == pick_b]
+                x = _r.choice(cand_)
+                st["ero_book"][c] = pick_b
+                st["ero_seen"][c] = (seen_ + [x["orig"][:40]])[-200:]
+            else:
+                x = pool[(now.date().toordinal() + int(hashlib.md5((c + sub).encode()).hexdigest()[:6], 16)) % len(pool)]
             if kind == "dark":
                 txt = (f"🕯 <b>Шепіт класиків · 18+</b>\n\n«{esc(x['uk'])}»\n\n<i>{esc(x['orig'])}</i>\n— <b>{esc(x['author'])}</b>, «{esc(x['book'])}» ({esc(x['year'])}) · "
                        f'<a href="{x["url"]}">Project Gutenberg</a>')
