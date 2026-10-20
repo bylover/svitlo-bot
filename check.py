@@ -804,10 +804,12 @@ def review_summaries(items: list[dict]) -> None:
 KINO_LEVELS = {   # рівні суворості: якщо фільмів мало — «розширюємо радіус»
     "movie": [{"vote_average.gte": 7.0, "vote_count.gte": 200, "vote_count.lte": 9000, "imdb": 6.8, "rt": 65, "mc": 55, "cap": 9000},
               {"vote_average.gte": 6.6, "vote_count.gte": 100, "vote_count.lte": 20000, "imdb": 6.5, "rt": 55, "mc": 0, "cap": 20000},
-              {"vote_average.gte": 6.3, "vote_count.gte": 40, "imdb": 0, "rt": 0, "mc": 0, "cap": 10 ** 9}],
+              {"vote_average.gte": 6.3, "vote_count.gte": 40, "imdb": 0, "rt": 0, "mc": 0, "cap": 10 ** 9},
+              {"vote_average.gte": 6.0, "vote_count.gte": 20, "imdb": 0, "rt": 0, "mc": 0, "cap": 10 ** 9}],   # розширений відбір
     "tv": [{"vote_average.gte": 7.3, "vote_count.gte": 100, "vote_count.lte": 6000, "imdb": 7.2, "rt": 70, "mc": 0, "cap": 6000},
            {"vote_average.gte": 7.0, "vote_count.gte": 50, "vote_count.lte": 15000, "imdb": 7.0, "rt": 0, "mc": 0, "cap": 15000},
-           {"vote_average.gte": 6.6, "vote_count.gte": 20, "imdb": 0, "rt": 0, "mc": 0, "cap": 10 ** 9}]}
+           {"vote_average.gte": 6.6, "vote_count.gte": 20, "imdb": 0, "rt": 0, "mc": 0, "cap": 10 ** 9},
+           {"vote_average.gte": 6.3, "vote_count.gte": 10, "imdb": 0, "rt": 0, "mc": 0, "cap": 10 ** 9}]}
 
 
 def pick_titles(kind: str, need: int, seen: set, since: str | None = None, until: str | None = None,
@@ -854,7 +856,7 @@ def pick_titles(kind: str, need: int, seen: set, since: str | None = None, until
                     or (mc is not None and mc < lvl["mc"]) or (d.get("vote_count") or 0) > lvl["cap"]):
                 continue
             used.add(key)
-            out.append({"key": key, "kind": kind, "d": d, "imdb": imdb, "rt": rt, "mc": mc})
+            out.append({"key": key, "kind": kind, "d": d, "imdb": imdb, "rt": rt, "mc": mc, "lvl": lvl_i + (1 if relaxed else 0)})
     for it in out:
         seen.add(it["key"])
     return out
@@ -1009,7 +1011,11 @@ def kino_item(i: int, it: dict, ov_len: int = 160) -> str:
 KINO_GENRES = {  # код: (назва, TMDB жанр фільмів або None)
     "mix": ("Мікс", None), "drama": ("Драма", 18), "thriller": ("Трилер", 53), "comedy": ("Комедія", 35),
     "horror": ("Жахи", 27), "scifi": ("Фантастика", 878), "romance": ("Мелодрама", 10749),
-    "series": ("Серіали", None), "ua": ("Українське кіно", None), "now": ("Зараз у кінотеатрах", None)}
+    "series": ("Серіали", None), "ua": ("Українське кіно", None), "now": ("Зараз у кінотеатрах", None),
+    "gems": ("Недооцінені фільми", None),
+    "ser_best": ("Серіали · найкращі", None), "ser_gems": ("Серіали · недооцінені", None), "ser_hot": ("Серіали · вистрілили", None),
+    "ser_new": ("Серіали · нові", None), "ser_crime": ("Серіали · кримінал", None), "ser_comedy": ("Серіали · комедії", None),
+    "ser_drama": ("Серіали · драми", None), "ser_scifi": ("Серіали · фантастика", None), "ser_mystery": ("Серіали · детективи", None)}
 
 
 def taste_update(st: dict, likes: list, dislikes: list) -> None:
@@ -1104,8 +1110,63 @@ def build_kino(st: dict, title: str = "🍿 <b>ПІДБІРКА КІНО</b>", g
 
 
 # ---------- 🍿 Кіно: спільні пули кандидатів → кожен отримує свої 10 (особистий смак у Cloudflare) ----------
-KP_TITLES = {"mix": "🍿 <b>ПІДБІРКА КІНО</b>", "series": "🍿 <b>ПІДБІРКА · СЕРІАЛИ</b>", "ua": "🍿 <b>ПІДБІРКА · УКРАЇНСЬКЕ КІНО</b>",
+KP_TITLES = {"gems": "💎 <b>КІНО · НЕДООЦІНЕНІ ПЕРЛИНИ</b>", "ser_best": "📺 <b>СЕРІАЛИ · НАЙКРАЩІ ЗА ГЛЯДАЧАМИ</b>", "ser_gems": "📺 <b>СЕРІАЛИ · НЕДООЦІНЕНІ ПЕРЛИНИ</b>",
+             "ser_hot": "📺 <b>СЕРІАЛИ · ВИСТРІЛИЛИ ЗАРАЗ</b>", "ser_new": "📺 <b>СЕРІАЛИ · НОВІ (2 РОКИ)</b>",
+             "mix": "🍿 <b>ПІДБІРКА КІНО</b>", "series": "🍿 <b>ПІДБІРКА · СЕРІАЛИ</b>", "ua": "🍿 <b>ПІДБІРКА · УКРАЇНСЬКЕ КІНО</b>",
              "now": "🎬 <b>ЗАРАЗ У КІНОТЕАТРАХ</b>"}
+
+
+PACE_FAST = {"plot twist", "twist ending", "suspense", "mystery", "heist", "chase", "investigation", "whodunit", "conspiracy", "survival",
+             "cat and mouse", "race against time", "serial killer", "psychological thriller", "dark comedy", "black comedy", "time loop",
+             "escape", "revenge", "detective", "hostage", "kidnapping", "manhunt", "parody", "satire", "witty", "fast paced"}
+PACE_SLOW = {"slow burn", "slow cinema", "art house", "arthouse", "contemplative", "meditative", "minimalism", "experimental film", "melancholy"}
+
+
+def pace_score(it: dict) -> float:
+    """«Не нудно»: динамічний сюжет (+), «повільне кіно» (−), довгі фільми з не надто високою оцінкою (−); ставка на глядачів."""
+    d = it.get("d") or {}
+    kw = {str(k.get("name", "")).lower() for k in ((d.get("keywords") or {}).get("keywords") or (d.get("keywords") or {}).get("results") or [])}
+    sc = 4 * min(3, len(kw & PACE_FAST)) - 8 * len(kw & PACE_SLOW)
+    rt_ = d.get("runtime") or 0
+    if rt_ > 150 and (it.get("imdb") or 0) < 8:
+        sc -= 10
+    return sc
+
+
+def series_candidates(genre: str) -> list[dict]:
+    """📺 Серіали: найкращі, недооцінені, «вистрілили», нові, за жанрами — з розширенням, якщо суворий фільтр дав мало."""
+    seen, y = set(), datetime.now(TZ).year
+    G = {"ser_crime": 80, "ser_comedy": 35, "ser_drama": 18, "ser_scifi": 10765, "ser_mystery": 9648}
+    if genre == "ser_hot":                            # «вистрілили»: у тренді цього тижня, будь-якого року, з високою оцінкою
+        out = []
+        try:
+            res = [c for c in tmdb("/trending/tv/week", language="uk-UA").get("results", []) if (c.get("vote_average") or 0) >= 7.2 and (c.get("vote_count") or 0) >= 50]
+        except Exception:
+            res = []
+        for c in res[:20]:
+            try:
+                d = kino_details("tv", c["id"])
+            except Exception:
+                continue
+            imdb, rt, mc = omdb_full((d.get("external_ids") or {}).get("imdb_id"))
+            out.append({"key": f"t{c['id']}", "kind": "tv", "d": d, "imdb": imdb, "rt": rt, "mc": mc, "lvl": 0})
+        items = out
+    elif genre == "ser_gems":                         # недооцінені: висока оцінка при невеликій кількості голосів
+        items = fill("tv", 25, seen, "2000-01-01", extra={"vote_count.lte": 2500})
+    elif genre == "ser_new":
+        items = fill("tv", 25, seen, f"{y - 2}-01-01")
+    elif genre in G:
+        items = fill("tv", 25, seen, "2000-01-01", extra={"with_genres": str(G[genre])})
+    else:                                             # ser_best — найкращі за глядачами з 2000-го
+        items = fill("tv", 25, seen, "2000-01-01")
+    if len(items) < 10:                               # мало — розширюємо фільтр (жанр зберігаємо), щоб підбірка набралась
+        ext_ = {"with_genres": str(G[genre])} if genre in G else None
+        since_ = f"{y - 4}-01-01" if genre == "ser_new" else "1995-01-01"
+        more_ = fill("tv", 25 - len(items), seen, since_, extra=ext_, relaxed=True)
+        for m_ in more_:
+            m_["lvl"] = max(m_.get("lvl", 0), 3)
+        items += more_
+    return items
 
 
 def kino_candidates(st: dict, genre: str) -> list[dict]:
@@ -1127,6 +1188,16 @@ def kino_candidates(st: dict, genre: str) -> list[dict]:
             imdb, rt, mc = omdb_full((d.get("external_ids") or {}).get("imdb_id") or d.get("imdb_id"))
             out.append({"key": f"m{c['id']}", "kind": "movie", "d": d, "imdb": imdb, "rt": rt, "mc": mc})
         return out
+    if genre.startswith("ser_"):
+        return series_candidates(genre)
+    if genre == "gems":                               # 💎 недооцінені фільми: висока оцінка глядачів, мало голосів, з 2000-го
+        items = fill("movie", 25, seen, "2000-01-01", extra={"vote_count.lte": 3000})
+        if len(items) < 10:
+            more_ = fill("movie", 25 - len(items), seen, "1990-01-01", extra={"vote_count.lte": 6000}, relaxed=True)
+            for m_ in more_:
+                m_["lvl"] = max(m_.get("lvl", 0), 3)
+            items += more_
+        return items
     label, gid = KINO_GENRES.get(genre, ("Мікс", None))
     if genre == "series":
         return fill("tv", 25, seen, recent, old_share=5)
@@ -1134,7 +1205,13 @@ def kino_candidates(st: dict, genre: str) -> list[dict]:
         ua = {"with_origin_country": "UA"}
         return fill("movie", 15, seen, "2010-01-01", extra=ua, relaxed=True) + fill("tv", 10, seen, "2010-01-01", extra=ua, relaxed=True)
     if gid:
-        return fill("movie", 25, seen, recent, extra={"with_genres": str(gid)}, old_share=5)
+        items = fill("movie", 25, seen, recent, extra={"with_genres": str(gid)}, old_share=5)
+        if len(items) < 10:                           # суворий фільтр дав мало — розширюємо
+            more_ = fill("movie", 25 - len(items), seen, "1990-01-01", extra={"with_genres": str(gid)}, relaxed=True)
+            for m_ in more_:
+                m_["lvl"] = max(m_.get("lvl", 0), 3)
+            items += more_
+        return items
     now_ = datetime.now(TZ)
     return (pick_from_pool(wd_festivals(st, now_), 3, seen, since=recent) + pick_from_pool(trakt_gems(st, now_), 2, seen)
             + fill("movie", 14, seen, recent, old_share=3) + fill("tv", 6, seen, recent, old_share=1))
@@ -1158,9 +1235,11 @@ def kino_pool_refresh(st: dict, now: datetime) -> None:
     for it in items:
         it["page"] = kino_page(st, it)
         d = it["d"]
-        score = (it.get("imdb") or (d.get("vote_average") or 0)) * 10 + (it.get("rt") or 0) * 0.2 + (it.get("mc") or 0) * 0.2
-        out.append({"k": it["key"], "g": [g.get("id") for g in d.get("genres", []) if g.get("id")], "sc": round(score, 1),
-                    "txt": kino_item(0, it, 220).replace("<b>0. ", "<b>{N}. ", 1)})
+        score = (it.get("imdb") or (d.get("vote_average") or 0)) * 10 + (it.get("rt") or 0) * 0.1 + (it.get("mc") or 0) * 0.05 + pace_score(it)
+        if sec in ("ser_gems", "gems"):
+            score += max(0, 8 - (d.get("vote_count") or 0) / 400)    # недооцінені — менше голосів = вище
+        txt_ = kino_item(0, it, 220).replace("<b>0. ", "<b>{N}. ", 1) + ("\n<i>· розширений відбір</i>" if it.get("lvl", 0) >= 2 else "")
+        out.append({"k": it["key"], "g": [g.get("id") for g in d.get("genres", []) if g.get("id")], "sc": round(score, 1), "txt": txt_})
     title = KP_TITLES.get(sec) or f"🍿 <b>ПІДБІРКА КІНО · {KINO_GENRES[sec][0].upper()}</b>"
     try:
         http_json(f"{SYNC_URL}/kpush?key={urllib.parse.quote(SYNC_KEY)}", {"sec": sec, "title": title, "items": out})
@@ -2309,10 +2388,24 @@ def today_str() -> str:
     return datetime.now(TZ).date().isoformat()
 
 
+SILPO_ALLCATS: list = []                                    # повне дерево категорій (для підкатегорій)
+
+
 def silpo_categories(branch: str) -> list[dict]:
     data = silpo_get(f"/v1/uk/branches/{branch}/categories")
     cats = data.get("items") if isinstance(data, dict) else data
+    SILPO_ALLCATS[:] = cats or []
     return [c for c in (cats or []) if not c.get("parentId")]
+
+
+def silpo_subcat(top_id, leaf_slug: str) -> tuple:
+    """Підкатегорія 2-го рівня для товару (за slug кінцевої категорії): (slug, назва)."""
+    by_slug = {c.get("slug"): c for c in SILPO_ALLCATS}
+    by_id = {c.get("id"): c for c in SILPO_ALLCATS}
+    c = by_slug.get(leaf_slug)
+    while c and c.get("parentId") and c.get("parentId") != top_id:
+        c = by_id.get(c.get("parentId"))
+    return (c.get("slug"), str(c.get("title") or c.get("name") or "")) if c and c.get("parentId") == top_id else (None, None)
 
 
 def silpo_products(branch: str, dtype: str, category: str, promo: bool, limit: int = 100, max_pages: int = 30) -> list:
@@ -4209,7 +4302,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
         title = str(c.get("title") or c.get("name") or "")
         emo = next((e for k, e in CAT_EMOJI if k in title.lower()), "🛒")
         rows = []
-        for n_, (_, p_, price, old, declared, real, rating, week, badge, kind) in enumerate(cand[:SILPO_TOP + 20], 1):
+        for n_, (_, p_, price, old, declared, real, rating, week, badge, kind) in enumerate(cand[:SILPO_TOP + 60], 1):
             ratio = f", {esc(p_.get('displayRatio') or p_.get('ratio'))}" if (p_.get("displayRatio") or p_.get("ratio")) else ""
             real_t = f" · <b>реально −{real:.0f}%</b>" if real is not None else ""
             rate_t = f" · ⭐ {float(rating):.1f}" if rating else ""
@@ -4220,6 +4313,23 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
         ci = f"{tag}{total}"
         more[ci] = {"t": f"{emo} <b>{esc(title)}</b>", "b": f"{emo} {title[:18]}",       # кожна категорія — кнопка
                     "first": rows[:SILPO_TOP], "rows": rows[SILPO_TOP:SILPO_TOP + 10]}
+        groups_: dict = {}                            # 📂 підкатегорії: свій топ-5 (+5) усередині категорії
+        for i_, c_ in enumerate(cand[:SILPO_TOP + 60]):
+            sslug, stitle = silpo_subcat(c.get("id"), c_[1].get("sectionSlug") or "")
+            if sslug:
+                groups_.setdefault((sslug, stitle), []).append(i_)
+        subs_ = []
+        for j_, ((sslug, stitle), idxs) in enumerate(sorted(groups_.items(), key=lambda kv: -len(kv[1]))[:12]):
+            if len(groups_) < 2:
+                break
+            sub_rows = [re.sub(r"^\d+\.", f"{n_}.", rows[i_]) if i_ < len(rows) else None for n_, i_ in enumerate(idxs, 1)]
+            sub_rows = [r_ for r_ in sub_rows if r_]
+            if not sub_rows:
+                continue
+            sk = f"{ci}x{j_}"
+            more[sk] = {"t": f"{emo} <b>{esc(title)} › {esc(stitle)}</b>", "b": stitle[:22], "first": sub_rows[:SILPO_TOP], "rows": sub_rows[SILPO_TOP:SILPO_TOP + 10], "par": ci}
+            subs_.append(sk)
+        more[ci]["subs"] = subs_
         for c_ in cand[:3]:                           # кандидати в загальний «Топ-10 найвигідніших»
             best.append((c_[0], c_[1], c_[2], c_[3], c_[5] if c_[5] is not None else c_[4], emo + (" " + c_[8] if c_[8] else "")))
         sections.append((ci, "<blockquote>" + "\n".join([f"{emo} <b>{esc(title)}</b>"] + rows[:SILPO_TOP]) + "</blockquote>"))
@@ -5659,7 +5769,7 @@ def main() -> None:
                         t_ = t_[:mn_.start()]
                         tg_ = "" if mn_.group(1) == "m" else mn_.group(1)
                         more_ = st.get("silpo_more") or {}
-                        ids_ = [k for k in more_ if (k.startswith(tg_) if tg_ else k[:1].isdigit())]
+                        ids_ = [k for k in more_ if "x" not in k and (k.startswith(tg_) if tg_ else k[:1].isdigit())]
                         btns_ = [{"text": more_[k].get("b", k), "callback_data": f"sc:{k}"} for k in ids_]
                         k_ = {"inline_keyboard": [btns_[i:i + 2] for i in range(0, len(btns_), 2)]
                               + [[{"text": "⚠️ Ціна не збігається з сайтом", "callback_data": "sb:ask"}]]}

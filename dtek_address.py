@@ -77,6 +77,12 @@ def fetch_address() -> dict | None:
             lookup_requests(page)                      # черга за адресою для підписників — завжди, незалежно від нашої адреси
         except Exception as e:
             print(f"Адреси підписників: {err_text(e)}")
+        try:
+            vp = browser.new_page()                    # 🏙 Вінниця: сайт ВОЕ за адресами підписників
+            voe_requests(vp)
+            vp.close()
+        except Exception as e:
+            print(f"ВОЕ: {err_text(e)[:80]}")
         if not STREET or not HOUSE:
             print("ДТЕК: секрети ADDR_STREET / ADDR_HOUSE не задано — власну адресу не перевіряю")
             browser.close()
@@ -266,6 +272,69 @@ def addr_variants(street: str) -> list[str]:
     full = {"вул.": "вулиця", "просп.": "проспект", "бульв.": "бульвар", "пров.": "провулок", "пл.": "площа"}
     out = [f"{k} {name}" for k in kinds] + [f"{full[k]} {name}" for k in kinds if k in full] + [name] + [f"{name} {k}" for k in kinds[:2]]
     return list(dict.fromkeys(v for x in out for v in (x, x.replace("'", "’"), x.replace("’", "'"))))
+
+
+# ---------- 🏙 Вінниця: сайт «Вінницяобленерго» (браузер) — що показує сайт за адресою підписника ----------
+VOE_URL = "https://www.voe.com.ua/disconnection/detailed"
+
+
+def voe_lookup(page, street: str, house: str) -> str | None:
+    """Відкриваємо сторінку ВОЕ, вводимо вулицю й будинок (із підказок сайту) і читаємо блок із результатом."""
+    page.goto(VOE_URL, wait_until="domcontentloaded", timeout=45000)
+    page.wait_for_timeout(2500)
+    inputs = [i for i in page.query_selector_all("input[type=text], input:not([type])") if i.is_visible()]
+    print(f"ВОЕ: полів введення {len(inputs)} · заголовок «{page.title()[:50]}»")
+    if len(inputs) < 2:
+        return None
+    vals = (["Вінниця", street, house] if len(inputs) >= 3 else [street, house])
+    for inp, val in zip(inputs[-len(vals):], vals):
+        typed = val
+        if val == street:                             # вулиця: вводимо початок найдовшого слова — підказки сайту знайдуть і рос./укр. написання
+            w_ = max(re.findall(r"[а-яіїєґa-z']+", norm_street(val)) or [val], key=len)
+            typed = w_[:4]
+        inp.click(); inp.fill(""); inp.type(typed, delay=60)
+        page.wait_for_timeout(1500)
+        sug = [x for x in page.query_selector_all("ul li, .ui-menu-item, .autocomplete-suggestion, [role=option]") if x.is_visible()]
+        if sug:
+            import difflib
+            best = max(sug, key=lambda x: (1 if skel(x.inner_text() or "") == skel(val) else 0,
+                                           difflib.SequenceMatcher(None, skel(val), skel(x.inner_text() or "")).ratio()))
+            best.click(); page.wait_for_timeout(1500)
+    for b in page.query_selector_all("button, input[type=submit]"):
+        if b.is_visible() and re.search(r"показ|пошук|знайти|перевір", (b.inner_text() or b.get_attribute("value") or ""), re.I):
+            b.click(); break
+    page.wait_for_timeout(4000)
+    txt = page.inner_text("body")
+    m = re.search(r"(За вашою адресою[\s\S]{0,700}?)(?:Часові проміжки|Графік|$)", txt)
+    sched = re.findall(r"(\d{2}-\d{2})\s*\n?\s*(Світла немає|Можливе|Світло є|відключ\w*)", txt)
+    if not m and not sched:
+        frag = re.sub(r"\s+", " ", txt)[:300]
+        print(f"ВОЕ: результат не знайдено · фрагмент: {frag}")
+        return None
+    out = re.sub(r"\n{2,}", "\n", (m.group(1) if m else "")).strip()
+    return out[:900]
+
+
+def voe_requests(page) -> None:
+    """Підписники з Вінниці, які ввели адресу: перевіряємо сайт ВОЕ (до 6 за запуск) і передаємо результат у Worker."""
+    if not check.WORKER_MODE:
+        return
+    try:
+        ex = check.http_json(f"{check.SYNC_URL}/export?key={check.urllib.parse.quote(check.SYNC_KEY)}") or {}
+    except Exception as e:
+        print(f"ВОЕ: експорт — {err_text(e)[:60]}"); return
+    addrs = ex.get("voe") or {}
+    for cid, a in list(addrs.items())[:6]:
+        try:
+            res = voe_lookup(page, a.get("street", ""), a.get("house", ""))
+        except Exception as e:
+            print(f"ВОЕ ({a.get('street', '')}, ••): {err_text(e)[:80]}"); continue
+        print(f"ВОЕ ({a.get('street', '')}, ••): {'є результат' if res else 'немає'}")
+        if res is not None:
+            try:
+                check.http_json(f"{check.SYNC_URL}/voepush?key={check.urllib.parse.quote(check.SYNC_KEY)}", {"cid": cid, "text": res})
+            except Exception as e:
+                print(f"ВОЕ → Worker: {err_text(e)[:60]}")
 
 
 def lookup_requests(page) -> None:
