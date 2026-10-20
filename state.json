@@ -3,7 +3,7 @@
  "fp": {
   "2026-10-19": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 180, \"start\": 30, \"type\": \"Definite\"}, {\"end\": 750, \"start\": 540, \"type\": \"Definite\"}, {\"end\": 1290, \"start\": 1080, \"type\": \"Definite\"}]}",
   "2026-10-20": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 750, \"start\": 540, \"type\": \"Definite\"}, {\"end\": 1290, \"start\": 1080, \"type\": \"Definite\"}]}",
-  "2026-10-21": "{\"s\": \"WaitingForSchedule\", \"slots\": []}"
+  "2026-10-21": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 540, \"start\": 330, \"type\": \"Definite\"}, {\"end\": 1080, \"start\": 870, \"type\": \"Definite\"}]}"
  },
  "reminded": [],
  "offset": 28760142,
@@ -53,7 +53,8 @@
   "18.10 22:19 Завтра 2026-10-19 ScheduleApplies: 00:30–03:00, 09:00–12:30, 18:00–21:30",
   "19.10 00:00 Завтра 2026-10-20 WaitingForSchedule: без відключень",
   "19.10 20:35 Завтра 2026-10-20 ScheduleApplies: 09:00–12:30, 18:00–21:30",
-  "20.10 00:00 Завтра 2026-10-21 WaitingForSchedule: без відключень"
+  "20.10 00:00 Завтра 2026-10-21 WaitingForSchedule: без відключень",
+  "20.10 22:10 Завтра 2026-10-21 ScheduleApplies: 05:30–09:00, 14:30–18:00"
  ],
  "week_fp": "{\"1\": [], \"2\": [], \"3\": [], \"4\": [], \"5\": [], \"6\": [], \"7\": []}",
  "para_i": 4,
@@ -1019,16 +1020,6 @@
   "gemini-flash-latest": "2026-10-21T10:05:00+03:00"
  },
  "kino_seen": [
-  "m906126",
-  "m974576",
-  "m153",
-  "m1791",
-  "m687163",
-  "m693134",
-  "m83533",
-  "m335984",
-  "m617126",
-  "m695721",
   "m363088",
   "m1058424",
   "m16320",
@@ -1618,7 +1609,17 @@
   "m597208",
   "m316029",
   "m10775",
-  "m3131"
+  "m3131",
+  "m363579",
+  "m529216",
+  "m429200",
+  "m393624",
+  "m502425",
+  "m872906",
+  "m744857",
+  "m838209",
+  "m254201",
+  "m15451"
  ],
  "yt_ver": 2,
  "yt_seen": [
@@ -8772,7 +8773,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-20T22:05:42.703722+03:00",
+ "gh_beat": "2026-10-20T22:10:44.554032+03:00",
  "silpo_stores": {
   "week": "2026-43",
   "v": 2,
@@ -23537,7 +23538,7 @@
   }
  },
  "pushed_h": {
-  "gs": "063b8bcbda90",
+  "gs": "8a982def4ed7",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "e11dbc148eca",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
@@ -25939,6 +25940,12 @@
    {
     "id": "e5f78293e3",
     "text": "🍿 <b>ПІДБІРКА КІНО · ДРАМА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/758866?language=uk\">Кермуй моїм авто</a></b> (2021)\nдрама · ⏱ 2 год 59 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>97%</b> · Ⓜ <b>91</b>\n<i>🎭 Хідетоші Нішіджіма, Токо Міура, Масакі Окада</i>\n📝 Театральний актор і режисер Юсуке раптово втрачає кохану дружину. Через два роки чоловік отримує роботу на театральному фестивалі, куди приїздить на своєму авто. Через проблеми із зором він змушений користуватися…\n▶️ <a href=\"https://youtu.be/YyDSxD51WRE\">Трейлер</a></blockquote>\n§KN:m758866\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/814340?language=uk\">Крок у доросле життя</a></b> (2022)\nкомедія, драма, мелодрама · ⏱ 1 год 47 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>85%</b> · Ⓜ <b>69</b>\n<i>🎭 Купер Рефф, Дакота Джонсон, Evan Assante</i>\n📺 <a href=\"https://www.themoviedb.org/movie/814340-cha-cha-real-smooth/watch?locale=UA\">Apple TV</a>\n📝 Ендрю 22 роки, він щойно закінчив коледж і тепер застряг удома в Нью-Джерсі, не уявляючи, куди рухатися далі. Хлопець починає працювати аніматором на бар- і батміцвах, де в нього зав’язується незвичайна дружба з…\n▶️ <a href=\"https://youtu.be/QRyyagJ9GPo\">Трейлер</a></blockquote>\n§KN:m814340\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/375262?language=uk\">Фаворитка</a></b> (2018)\nісторичний, комедія, драма · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>93%</b> · Ⓜ <b>91</b>\n<i>🎭 Емма Стоун, Олівія Колман, Рейчел Вайс</i>\n📺 <a href=\"https://www.themoviedb.org/movie/375262-the-favourite/watch?locale=UA\">Apple TV Store</a>\n📝 Дія картини проходить за часів правління королеви Анни, останнього представника династії Стюартів.\n▶️ <a href=\"https://youtu.be/SYb-wkehT1g\">Трейлер</a></blockquote>\n§KN:m375262\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/535544?language=uk\">Абатство Даунтон</a></b> (2019)\nдрама, мелодрама, історичний · ⏱ 2 год 02 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>85%</b> · Ⓜ <b>64</b>\n<i>🎭 Г'ю Бонневіль, Лора Кармайкл, Джим Картер</i>\n📺 <a href=\"https://www.themoviedb.org/movie/535544-downton-abbey/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Епічна екранізація від творців одного з найуспішніших серіалів сучасності. Інтриги, кохання і тонкий гумор в захопливій історії.\n▶️ <a href=\"https://youtu.be/Y-hGzQRnJM8\">Трейлер</a></blockquote>\n§KN:m535544\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/1064213?language=uk\">Анора</a></b> (2024)\nдрама, комедія, мелодрама · ⏱ 2 год 19 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>93%</b> · Ⓜ <b>91</b>\n<i>🎭 Майкі Медісон, Марк Эйдельштейн, Юра Борисов</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1064213-anora/watch?locale=UA\">Netflix</a>\n📝 Ані — молода стриптизерка узбецько-американського походження з Брайтон-Біч, російськомовного анклаву в Нью-Йорку. Оскільки вона трохи знає російську, її бос підбирає її до російськомовних клієнтів. Після знайомства з…\n▶️ <a href=\"https://youtu.be/8m6UrWMl18M\">Трейлер</a></blockquote>\n§KN:m1064213\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/396371?language=uk\">Гра Моллі</a></b> (2017)\nдрама, кримінал · ⏱ 2 год 21 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>82%</b> · Ⓜ <b>71</b>\n<i>🎭 Джессіка Честейн, Ідріс Ельба, Кевін Костнер</i>\n📺 <a href=\"https://www.themoviedb.org/movie/396371-molly-s-game/watch?locale=UA\">Apple TV Store</a>\n📝 Сюжет розповідає про талановиту 26-річну лижницю олімпійського розряду на ім’я Моллі Блум, яка прославилася як хазяйка найпрестижнішого у Каліфорнії підпільного покерного клубу. Серед її гравців були знамениті…\n▶️ <a href=\"https://youtu.be/OYp4qXH6BZM\">Трейлер</a></blockquote>\n§KN:m396371\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/597208?language=uk\">Алея жаху</a></b> (2021)\nкримінал, драма, трилер · ⏱ 2 год 31 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>80%</b> · Ⓜ <b>70</b>\n<i>🎭 Бредлі Купер, Кейт Бланшетт, Тоні Коллетт</i>\n📺 <a href=\"https://www.themoviedb.org/movie/597208-nightmare-alley/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Амбітний карнавальний фокусник має талант маніпулювати людьми кількома добре підібраними словами, та одного дня знайомиться з жінкою-психіатром навіть небезпечнішою за нього самого.\n▶️ <a href=\"https://youtu.be/OhBZ1jfDzSs\">Трейлер</a></blockquote>\n§KN:m597208\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/316029?language=uk\">Найвеличніший шоумен</a></b> (2017)\nдрама · ⏱ 1 год 45 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>56%</b> · Ⓜ <b>48</b>\n<i>🎭 Гʼю Джекман, Зак Ефрон, Мішель Вільямс</i>\n📺 <a href=\"https://www.themoviedb.org/movie/316029-the-greatest-showman/watch?locale=UA\">Apple TV Store</a>\n📝 Фінеас Тейлор Барнум завжди мріяв увійти в історію, але всі його заняття не приносили йому задоволення. І коли, здавалося, весь світ обернувся проти нього, він вирішує піти слідом за своєю мрією. Барнум створює…\n▶️ <a href=\"https://youtu.be/pAUi0k4PG1E\">Трейлер</a></blockquote>\n§KN:m316029\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/10775?language=uk\">Подвійна рокіровка</a></b> (2002)\nдрама, трилер, кримінал · ⏱ 1 год 41 хв\n⭐ IMDb <b>8.0</b> · 🍅 <b>94%</b> · Ⓜ <b>75</b>\n<i>🎭 劉德華, Тоні Люн Чу-Вай, Ентоні Вонг Чау-Сан</i>\n📝 Історія двох людей, які щомиті ризикують життям. Один з них — агент мафії в поліції, інший — поліцейський під прикриттям. Кожен прагне до одного: викрити ворога.\n▶️ <a href=\"https://youtu.be/GqdXakBnmsE\">Трейлер</a></blockquote>\n§KN:m10775\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/3131?language=uk\">Банди Нью-Йорка</a></b> (2002)\nдрама, історичний, кримінал · ⏱ 2 год 48 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>72%</b> · Ⓜ <b>72</b>\n<i>🎭 Леонардо Ді Капріо, Деніел Дей-Льюїс, Камерон Діас</i>\n📝 Дія відбувається в 1863 році в Нью-Йорку, коли від рук лідера корінних американців гине ватажок ірландської банди Валлон. Його сина відправляють у виправну школу, з якої Амстердам виходить уже дорослим хлопцем.…\n▶️ <a href=\"https://youtu.be/1bjh979vVG0\">Трейлер</a></blockquote>\n§KN:m3131"
+   }
+  ],
+  "thriller": [
+   {
+    "id": "1abbfcdc40",
+    "text": "🍿 <b>ПІДБІРКА КІНО · ТРИЛЕР</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/363579?language=uk\">밀정</a></b> (2016)\nбойовик, трилер, історичний · ⏱ 2 год 20 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>100%</b> · Ⓜ <b>78</b>\n<i>🎭 Сон Кан Хо, Кон Ю, 한지민</i>\n📝 Set in the late 1920s, The Age of Shadows follows the cat-and-mouse game that unfolds between a group of resistance fighters trying to bring in explosives from Shanghai to destroy key Japanese facilities in Seoul,…\n▶️ <a href=\"https://youtu.be/Pmg168t67Vs\">Трейлер</a></blockquote>\n§KN:m363579\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/529216?language=uk\">Під час грози</a></b> (2018)\nтрилер, драма, детектив · ⏱ 2 год 09 хв\n⭐ IMDb <b>7.4</b>\n<i>🎭 Адріана Угарте, Chino Darín, Javier Gutiérrez</i>\n📺 <a href=\"https://www.themoviedb.org/movie/529216-durante-la-tormenta/watch?locale=UA\">Netflix</a>\n📝 Щаслива жінка Віра з чоловіком і маленькою донькою переїжджає в новий будинок. А там під час сильної грози відбувається зміщення часових пластів, в результаті чого жінка намагається врятувати від загибелі хлопчика,…\n▶️ <a href=\"https://youtu.be/3NCOwTBWYdE\">Трейлер</a></blockquote>\n§KN:m529216\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/429200?language=uk\">Гарні часи</a></b> (2017)\nкримінал, трилер, драма · ⏱ 1 год 41 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>91%</b> · Ⓜ <b>80</b>\n<i>🎭 Роберт Паттінсон, Бенні Сафді, Buddy Duress</i>\n📺 <a href=\"https://www.themoviedb.org/movie/429200-good-time/watch?locale=UA\">Apple TV Store</a>\n📝 Після невдалого пограбування банку молодший брат головного героя потрапляє до в'язниці. Старшому доведеться вирушиту у химерну одіссею, повну насильства і хаосу: у нього є лише одна ніч, щоб спробувати обігнати час і…\n▶️ <a href=\"https://youtu.be/XaL7J0Ffd4E\">Трейлер</a></blockquote>\n§KN:m429200\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/393624?language=uk\">Державні таємниці</a></b> (2019)\nтрилер, історичний, драма · ⏱ 1 год 52 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>82%</b> · Ⓜ <b>63</b>\n<i>🎭 Кіра Найтлі, Метт Сміт, Рейф Файнз</i>\n📺 <a href=\"https://www.themoviedb.org/movie/393624-official-secrets/watch?locale=UA\">Apple TV Store</a>\n📝 Головна героїня — перекладач Центру урядового зв’язку Великобританії Кетрін Ґан. У 2003 році, напередодні вторгнення Британії та США в Ірак, Кетрін отримує таємний лист, в якому уряди двох країн обговорюють питання…\n▶️ <a href=\"https://youtu.be/t64H3S7r4wo\">Трейлер</a></blockquote>\n§KN:m393624\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/502425?language=uk\">Втеча з Преторії</a></b> (2020)\nдрама, історичний, трилер · ⏱ 1 год 42 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>73%</b> · Ⓜ <b>56</b>\n<i>🎭 Денієл Редкліфф, Деніел Веббер, Ієн Гарт</i>\n📺 <a href=\"https://www.themoviedb.org/movie/502425-escape-from-pretoria/watch?locale=UA\">Apple TV Store</a>\n📝 У центрі сюжету реальна історія, що відбулась у африканському місті Преторія. У 1970-х роках під час апартеїду активіста Тіма Дженкінса запроторили до в’язниці суворого режиму. Він разом з двома ув’язненими…\n▶️ <a href=\"https://youtu.be/CpRggsB56Pc\">Трейлер</a></blockquote>\n§KN:m502425\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/872906?language=uk\">जवान</a></b> (2023)\nбойовик, трилер · ⏱ 2 год 49 хв\n⭐ IMDb <b>6.9</b>\n<i>🎭 Шаг-Рух Хан, நயன்தாரா, விஜய் சேதுபதி</i>\n📺 <a href=\"https://www.themoviedb.org/movie/872906/watch?locale=UA\">Netflix</a>\n📝 An emotional journey of a prison warden, driven by a personal vendetta while keeping up to a promise made years ago, recruits inmates to commit outrageous crimes that shed light on corruption and injustice, in an…\n▶️ <a href=\"https://youtu.be/MWOlnZSnXJo\">Трейлер</a></blockquote>\n§KN:m872906\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/744857?language=uk\">Коли зло ховається</a></b> (2023)\nжахи, трилер · ⏱ 1 год 39 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>96%</b> · Ⓜ <b>75</b>\n<i>🎭 Ezequiel Rodríguez, Demián Salomón, Silvina Sabater</i>\n📝 У глухому селі двоє братів знаходять зараженого демоном чоловіка, який став ідеальною оболонкою для народження зла. Вони вирішують позбутися тіла, але лише поширюють хаос.\n▶️ <a href=\"https://youtu.be/h-znWvRYJIs\">Трейлер</a></blockquote>\n§KN:m744857\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/838209?language=uk\">Ексгумація</a></b> (2024)\nдетектив, жахи, трилер · ⏱ 2 год 14 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>93%</b> · Ⓜ <b>80</b>\n<i>🎭 Чхве Мін-сік, Кім Ко Ин, 유해진</i>\n📝 Заможна сім’я, що живе в Лос-Анджелесі, викликає дует молодих шаманів - Хва Рим та Бон Кіля, аби врятувати новонароджене дитя від містичної недуги. Коли вони прибувають, Хва Рим відчуває, що темна тінь їхнього предка…\n▶️ <a href=\"https://youtu.be/j_6_wLF1pDg\">Трейлер</a></blockquote>\n§KN:m838209\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/254201?language=uk\">Містеріум. Мисливці на фазанів</a></b> (2014)\nтрилер · ⏱ 1 год 56 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>92%</b> · Ⓜ <b>61</b>\n<i>🎭 Ніколай Лі Кос, Fares Fares, Пілоу Асбек</i>\n📝 Детектив спеціального підрозділу копенгагенської поліції по розслідуванню найскладніших та найважливіших справ Карл Мерк знаходить на власному робочому столі кримінальну справу двадцятирічної давнини. Він вирішує…\n▶️ <a href=\"https://youtu.be/x9Zq_Op5LJ8\">Трейлер</a></blockquote>\n§KN:m254201\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/15451?language=uk\">Revanche</a></b> (2008)\nкримінал, драма, мелодрама · ⏱ 2 год 01 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>96%</b> · Ⓜ <b>84</b>\n<i>🎭 Johannes Krisch, Irina Potapenko, Andreas Lust</i>\n📺 <a href=\"https://www.themoviedb.org/movie/15451-revanche/watch?locale=UA\">MUBI</a>\n📝 Alex, an ex-con working as muscle in a Vienna brothel, dreams of escaping with his girlfriend Tamara, who also works there. Their attempt to break free sets off a chain of events that links their fate with a rural…\n▶️ <a href=\"https://youtu.be/ZEcRo5GeSls\">Трейлер</a></blockquote>\n§KN:m15451"
    }
   ]
  },
