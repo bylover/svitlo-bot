@@ -1070,25 +1070,26 @@
   "https://samarel.medium.com/seven-sexual-fantasizes-she-has-a9741aa2521c?source=rss------sex_tips-5",
   "https://www.risetointimacy.com/post/how-to-talk-about-sex-when-your-partner-shuts-down",
   "https://medium.com/erotica-paradise/why-your-partner-masturbates-even-when-the-sex-is-great-6f20f90ee6e4?source=rss------sexual_health-5",
-  "https://www.girlonthenet.com/blog/4-reasons-swipe-left/"
+  "https://www.girlonthenet.com/blog/4-reasons-swipe-left/",
+  "https://sex.cosmopolitan.com/pleasure/a37319725/sex-toys-for-couples/"
  ],
  "addr": {
-  "active": false,
-  "reason": "",
-  "start": "",
-  "end": "",
-  "type": "",
+  "active": true,
+  "reason": "Стабілізаційне відключення (Згідно графіку погодинних відключень)",
+  "start": "08:01 21.10.2026",
+  "end": "09:00 21.10.2026",
+  "type": "2",
   "groups": [
    "GPV4.1"
   ],
-  "updated": "08:01 21.10.2026",
+  "updated": "08:16 21.10.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-10-21T08:13:08.639831+03:00",
+  "checked": "2026-10-21T08:23:07.351096+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
-  "planned": false
+  "planned": true
  },
  "yt_try": "2026-10-15 21",
  "gem_block": {
@@ -8957,7 +8958,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-21T08:20:47.315047+03:00",
+ "gh_beat": "2026-10-21T08:25:42.513723+03:00",
  "silpo_stores": {
   "week": "2026-43",
   "v": 2,
@@ -24825,7 +24826,7 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "cde03b7866a4",
+  "gs": "a818fc85ce9d",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "614076518b84",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
@@ -27168,44 +27169,44 @@
  "silpo_day": "2026-10-21-am",
  "upd": {
   "🔥 Фільми 18+": {
-   "at": "21.10 08:20",
-   "ts": 1792560053,
+   "at": "21.10 08:25",
+   "ts": 1792560346,
    "ok": true,
    "note": ""
   },
   "🎓 Секс-освіта": {
-   "at": "21.10 08:20",
-   "ts": 1792560052,
+   "at": "21.10 08:25",
+   "ts": 1792560346,
    "ok": true,
    "note": ""
   },
   "🎯 Вікторини": {
-   "at": "21.10 08:20",
-   "ts": 1792560052,
+   "at": "21.10 08:25",
+   "ts": 1792560345,
    "ok": true,
    "note": ""
   },
   "🌅 Імпульс / 🕯 класика": {
-   "at": "21.10 08:20",
-   "ts": 1792560052,
+   "at": "21.10 08:25",
+   "ts": 1792560345,
    "ok": true,
    "note": ""
   },
   "🎵 Музика": {
-   "at": "21.10 08:20",
-   "ts": 1792560053,
+   "at": "21.10 08:25",
+   "ts": 1792560346,
    "ok": true,
    "note": ""
   },
   "❤️ Здоровʼя": {
-   "at": "21.10 08:20",
-   "ts": 1792560053,
+   "at": "21.10 08:25",
+   "ts": 1792560346,
    "ok": true,
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "21.10 08:20",
-   "ts": 1792560053,
+   "at": "21.10 08:25",
+   "ts": 1792560346,
    "ok": true,
    "note": ""
   },
