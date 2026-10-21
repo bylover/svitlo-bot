@@ -73,6 +73,8 @@ jobs:
           [ -f cofid.json ] && git add cofid.json
           [ -f games.json ] && git add games.json
           [ -f audiobooks.json ] && git add audiobooks.json
+          [ -f match.json ] && git add match.json
+          [ -f recipes.json ] && git add recipes.json
           [ -d sx ] && git add sx
           git diff --cached --quiet && exit 0
           git commit -m "state"
