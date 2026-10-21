@@ -1241,6 +1241,10 @@ def kino_pool_refresh(st: dict, now: datetime) -> None:
             score += max(0, 8 - (d.get("vote_count") or 0) / 400)    # недооцінені — менше голосів = вище
         txt_ = kino_item(0, it, 220).replace("<b>0. ", "<b>{N}. ", 1) + ("\n<i>· розширений відбір</i>" if it.get("lvl", 0) >= 2 else "")
         out.append({"k": it["key"], "g": [g.get("id") for g in d.get("genres", []) if g.get("id")], "sc": round(score, 1), "txt": txt_})
+        if d.get("poster_path"):                          # 🍿💞 для Кіномэтчу — вже відібрані «не нудні»
+            st.setdefault("km_pick", {})[it["key"]] = {"title": d.get("title") or d.get("name"), "year": (d.get("release_date") or d.get("first_air_date") or "")[:4],
+                "rating": round(it.get("imdb") or d.get("vote_average") or 0, 1), "genres": [g.get("name") for g in d.get("genres", [])][:3],
+                "g": [g.get("id") for g in d.get("genres", []) if g.get("id")][:4], "ov": (d.get("overview") or "")[:220], "poster": f"https://image.tmdb.org/t/p/w500{d['poster_path']}"}
     title = KP_TITLES.get(sec) or f"🍿 <b>ПІДБІРКА КІНО · {KINO_GENRES[sec][0].upper()}</b>"
     try:
         http_json(f"{SYNC_URL}/kpush?key={urllib.parse.quote(SYNC_KEY)}", {"sec": sec, "title": title, "items": out})
@@ -4230,6 +4234,222 @@ def audiobooks_refresh(st: dict, now: datetime) -> None:
     mark_upd(st, "🎧 Аудіокниги", bool(out))
 
 
+# ---------- 🍿💞 Кіномэтч: пул (готові підбірки + топ глядачів із 1980-го), раз на місяць ----------
+MATCH_FILE = Path("match.json")
+
+
+def match_refresh(st: dict, now: datetime) -> None:
+    """Пул для свайпів: усе з готових підбірок + найкращі за глядачами фільми й серіали з 1980 року (TMDB)."""
+    if not WORKER_MODE or not TMDB_KEY or st.get("match_month") == f"{now:%Y-%m}":
+        return
+    gmap = {}
+    try:
+        for kind in ("movie", "tv"):
+            for g in tmdb(f"/genre/{kind}/list", language="uk-UA").get("genres", []):
+                gmap[g["id"]] = g["name"]
+    except Exception:
+        pass
+    pool = {}
+    def add(c, kind, src):
+        k = f"{'m' if kind == 'movie' else 't'}{c['id']}"
+        if k in pool or not c.get("poster_path"):
+            return
+        pool[k] = {"k": k, "kind": kind, "t": c.get("title") or c.get("name"), "y": (c.get("release_date") or c.get("first_air_date") or "")[:4],
+                   "r": round(c.get("vote_average") or 0, 1), "v": c.get("vote_count") or 0, "g": [gmap.get(x, "") for x in (c.get("genre_ids") or [])][:3],
+                   "gi": (c.get("genre_ids") or [])[:4], "o": (c.get("overview") or "")[:220], "p": f"https://image.tmdb.org/t/p/w500{c['poster_path']}", "src": src}
+    for dec in range(1980, now.year + 1, 5):          # Б: найкращі за глядачами, кожні 5 років — і класика 80–90-х
+        for kind, vmin in (("movie", 2000), ("tv", 800)):
+            try:
+                r = tmdb(f"/discover/{kind}", language="uk-UA", sort_by="vote_average.desc", **{"vote_count.gte": vmin, "vote_average.gte": 7.2,
+                         ("primary_release_date.gte" if kind == "movie" else "first_air_date.gte"): f"{dec}-01-01",
+                         ("primary_release_date.lte" if kind == "movie" else "first_air_date.lte"): f"{dec + 4}-12-31", "without_genres": "99,10770,10767,10763"})
+                for c in r.get("results", [])[:20]:
+                    add(c, kind, "top")
+            except Exception as e:
+                print(f"Кіномэтч ({dec}): {err_text(e)[:50]}"); break
+    try:                                              # А: усе з готових підбірок кіно й серіалів (там уже фільтр «не нудно»)
+        for k, it in (st.get("km_pick") or {}).items():
+            if True:
+                if k and k not in pool and it.get("poster"):
+                    pool[k] = {"k": k, "kind": "movie" if k.startswith("m") else "tv", "t": it.get("title", ""), "y": it.get("year", ""), "r": it.get("rating", 0),
+                               "v": 0, "g": it.get("genres", [])[:3], "gi": it.get("g", [])[:4], "o": it.get("ov", "")[:220], "p": it["poster"], "src": "pick"}
+    except Exception:
+        pass
+    items = sorted(pool.values(), key=lambda x: (-x["r"], -x["v"]))
+    kp_ = st.get("km_pick") or {}
+    if len(kp_) > 600:
+        st["km_pick"] = dict(list(kp_.items())[-600:])
+    MATCH_FILE.write_text(json.dumps({"at": now.strftime("%d.%m.%Y"), "items": items}, ensure_ascii=False, separators=(",", ":")), "utf-8")
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "match.json", "json": json.loads(MATCH_FILE.read_text("utf-8"))})
+        st["match_month"] = f"{now:%Y-%m}"
+    except Exception as e:
+        print(f"Кіномэтч → Cloudflare: {err_text(e)[:60]}")
+    print(f"Кіномэтч: пул {len(items)} (фільми {sum(1 for x in items if x['kind'] == 'movie')}, серіали {sum(1 for x in items if x['kind'] == 'tv')})")
+    mark_upd(st, "🍿💞 Кіномэтч", bool(items))
+
+
+# ---------- 🎮 Знижки PS Store (Україна) на ігри з рейтингу — щодня ----------
+def ps_deals_refresh(st: dict, now: datetime) -> None:
+    if not WORKER_MODE or st.get("ps_day") == now.date().isoformat() or not GAMES_FILE.exists():
+        return
+    st["ps_day"] = now.date().isoformat()
+    try:
+        g = json.loads(GAMES_FILE.read_text("utf-8"))
+    except Exception:
+        return
+    top = {}
+    for sec in g.get("secs", {}).values():
+        for x in sec.get("items", []):
+            top[fflat(x["n"])] = x
+    deals, seen = [], set()
+    for page in range(1, 6):                          # PSPrices: актуальні знижки в українському PS Store для PS5
+        try:
+            h = http_text(f"https://psprices.com/region-ua/discounts?platform=PS5&sort=popularity&page={page}")
+        except Exception as e:
+            print(f"Знижки PS Store: {err_text(e)[:60]}"); break
+        for m in re.finditer(r'<a[^>]+href="(/region-ua/game/[^"]+)"[^>]*>([\s\S]{0,1500}?)</a>', h):
+            blk = re.sub(r"<[^>]+>", " ", m.group(2)); blk = re.sub(r"\s+", " ", blk).strip()
+            title_m = re.search(r'title="([^"]+)"|alt="([^"]+)"', m.group(0))
+            title = (title_m.group(1) or title_m.group(2)) if title_m else blk[:60]
+            prices = [float(x.replace(" ", "").replace(",", ".")) for x in re.findall(r"(\d[\d\s]{0,6}(?:[.,]\d{2})?)\s*(?:UAH|грн|₴)", blk)]
+            pct = re.search(r"-\s?(\d{1,2})\s?%", blk)
+            key = fflat(title)
+            if key in seen or not pct:
+                continue
+            seen.add(key)
+            hit = top.get(key) or next((v for k, v in top.items() if k and (k in key or key in k)), None)
+            if hit:
+                deals.append({"n": hit["n"], "pct": int(pct.group(1)), "now": min(prices) if prices else None, "old": max(prices) if len(prices) > 1 else None,
+                              "url": "https://psprices.com" + m.group(1), "mc": hit.get("mc"), "u": hit.get("u"), "img": hit.get("img")})
+        if len(deals) >= 30:
+            break
+    deals.sort(key=lambda d: (-(d.get("u") or 0), -d["pct"]))
+    g["deals"] = {"at": now.strftime("%d.%m %H:%M"), "items": deals[:30]}
+    GAMES_FILE.write_text(json.dumps(g, ensure_ascii=False, separators=(",", ":")), "utf-8")
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "games.json", "json": g})
+    except Exception as e:
+        print(f"Знижки PS → Cloudflare: {err_text(e)[:60]}")
+    print(f"Знижки PS Store: на ігри з рейтингу — {len(deals)} · {[d['n'] + ' −' + str(d['pct']) + '%' for d in deals[:3]]}")
+    mark_upd(st, "🔥 Знижки PS Store", True)
+
+
+# ---------- 🥗 ПП-страви: рецепти дієтологів (BBC Good Food → Healthy, JSON-LD з КБЖВ) + українські страви за принципами МОЗ; раз на місяць ----------
+RECIPES_FILE = Path("recipes.json")
+RC_BBC = {"breakfast": "https://www.bbcgoodfood.com/recipes/collection/healthy-breakfast-recipes", "lunch": "https://www.bbcgoodfood.com/recipes/collection/healthy-lunch-recipes",
+          "dinner": "https://www.bbcgoodfood.com/recipes/collection/healthy-dinner-recipes", "snack": "https://www.bbcgoodfood.com/recipes/collection/healthy-snack-recipes"}
+RC_MEALS = {"breakfast": "сніданок", "lunch": "обід", "dinner": "вечеря", "snack": "перекус"}
+
+
+def _iso_min(s: str) -> int:
+    m = re.match(r"PT(?:(\d+)H)?(?:(\d+)M)?", str(s or ""))
+    return (int(m.group(1) or 0) * 60 + int(m.group(2) or 0)) if m else 0
+
+
+def rc_bbc(meal: str, url: str, have: set, limit: int = 6) -> list:
+    """Рецепти зі збірки BBC Good Food «Healthy»: JSON-LD Recipe (інгредієнти, кроки, час, КБЖВ на порцію)."""
+    out = []
+    try:
+        links = list(dict.fromkeys(re.findall(r'href="(https://www\.bbcgoodfood\.com/recipes/[a-z0-9-]+)"', http_text(url))))
+    except Exception as e:
+        print(f"ПП-страви (BBC {meal}): {err_text(e)[:60]}"); return out
+    for link in links:
+        if len(out) >= limit or link in have or "/collection/" in link:
+            continue
+        try:
+            h = http_text(link)
+            for blk in re.findall(r'<script[^>]+application/ld\+json[^>]*>([\s\S]*?)</script>', h):
+                d = json.loads(blk); d = next((x for x in (d if isinstance(d, list) else d.get("@graph", [d])) if "Recipe" in str(x.get("@type"))), None)
+                if not d:
+                    continue
+                nu, tm = d.get("nutrition") or {}, _iso_min(d.get("totalTime")) or _iso_min(d.get("cookTime")) + _iso_min(d.get("prepTime"))
+                num = lambda k: float(re.sub(r"[^\d.]", "", str(nu.get(k) or "0")) or 0)
+                if not nu or tm > 45 or num("calories") > 650:
+                    break
+                steps = [re.sub(r"<[^>]+>", "", (x.get("text") if isinstance(x, dict) else str(x))) for x in (d.get("recipeInstructions") or [])]
+                img = d.get("image"); img = (img[0] if isinstance(img, list) else (img or {}).get("url") if isinstance(img, dict) else img) or ""
+                serv = int(re.sub(r"\D", "", str(d.get("recipeYield") or "1")) or 1) if not isinstance(d.get("recipeYield"), list) else int(re.sub(r"\D", "", str(d["recipeYield"][0])) or 1)
+                out.append({"id": "b" + hashlib.md5(link.encode()).hexdigest()[:8], "meal": meal, "orig": d.get("name"), "ing": d.get("recipeIngredient") or [], "steps": steps,
+                            "time": tm, "serv": max(1, serv), "kcal": num("calories"), "p": num("proteinContent"), "f": num("fatContent"), "c": num("carbohydrateContent"),
+                            "img": img, "src": {"n": "BBC Good Food · Healthy", "u": link}, "badge": "👩‍⚕️ рецепт перевірений дієтологом"})
+                break
+        except Exception:
+            continue
+    return out
+
+
+def recipes_refresh(st: dict, now: datetime) -> None:
+    """Поступово: щомісяця +рецепти; переклад і адаптація до українських продуктів (ШІ, з позначкою); українські страви — КБЖВ за таблицею CoFID."""
+    if not WORKER_MODE:
+        return
+    try:
+        db_ = json.loads(RECIPES_FILE.read_text("utf-8"))
+    except Exception:
+        db_ = {"items": [], "month": ""}
+    items, mon = db_["items"], f"{now:%Y-%m}"
+    if db_.get("month") == mon and len(items) >= 120 and not st.get("rc_force"):
+        return
+    have = {x.get("src", {}).get("u") for x in items}
+    new = []
+    for meal, url in RC_BBC.items():                  # 👩‍⚕️ перевірені рецепти (по кілька за запуск)
+        new += rc_bbc(meal, url, have, 3)
+    if new:                                           # переклад, адаптація до українських магазинів, спрощення кроків
+        raw = gemini("Ти дієтолог-кулінар. Переклади рецепти українською й адаптуй до продуктів, що є в українських супермаркетах (рідкісне замінюй на доступне й познач «(заміна: …)»). "
+                     "Кроки — коротко й просто, 3–7 пунктів. Кількості — у грамах/шт. Не змінюй КБЖВ і час. Поверни JSON-масив об'єктів у тому ж порядку: "
+                     "{\"t\": назва, \"ing\": [рядки], \"steps\": [рядки], \"tags\": [з: protein, veg, quick, budget]}.\n\n"
+                     + json.dumps([{"name": x["orig"], "ing": x["ing"][:20], "steps": x["steps"][:10], "time": x["time"]} for x in new], ensure_ascii=False), json_mode=True, relaxed=True, max_tokens=12000)
+        try:
+            for x, y in zip(new, json.loads(raw or "[]")):
+                x.update({"t": y.get("t") or x["orig"], "ing": y.get("ing") or x["ing"], "steps": y.get("steps") or x["steps"], "tags": y.get("tags") or []})
+                if x["time"] <= 20 and "quick" not in x["tags"]:
+                    x["tags"].append("quick")
+                items.append(x)
+        except Exception as e:
+            print(f"ПП-страви (переклад): {err_text(e)[:60]}")
+    ua_n = sum(1 for x in items if x["id"].startswith("u"))
+    if ua_n < 80:                                     # 🇺🇦 українські страви за принципами МОЗ — КБЖВ рахуємо самі за CoFID
+        try:
+            cof = {r[0]: r for r in json.loads(Path("cofid.json").read_text("utf-8")).get("items", [])}
+        except Exception:
+            cof = {}
+        meal = list(RC_MEALS)[ua_n % 4]
+        raw = gemini(f"Склади 8 різних простих корисних страв української кухні для прийому їжі «{RC_MEALS[meal]}» за принципами «Здорова тарілка» МОЗ України: "
+                     "більше овочів і цільних круп, нежирний білок, мало олії й цукру, до 30 хв, лише продукти з будь-якого українського супермаркету, 1 порція до 550 ккал. "
+                     "Уникай повторів: " + ", ".join(x["t"] for x in items if x["meal"] == meal)[:1500] + ". "
+                     "Для кожного інгредієнта дай відповідник із британської таблиці CoFID англійською (поле en, напр. «Buckwheat, boiled»). "
+                     "JSON-масив: {\"t\": назва, \"time\": хв, \"serv\": порцій, \"ing\": [{\"name\": укр, \"g\": грами, \"en\": CoFID}], \"steps\": [3–6 коротких кроків], \"tags\": [protein, veg, quick, budget]}.",
+                     json_mode=True, relaxed=True, max_tokens=9000)
+        try:
+            for y in json.loads(raw or "[]"):
+                tot, ok = {"kcal": 0, "p": 0, "f": 0, "c": 0}, 0
+                for g in y.get("ing", []):
+                    r = cof.get(g.get("en")) or next((v for k, v in cof.items() if g.get("en") and str(g["en"]).split(",")[0].lower() in k.lower()), None)
+                    if r and r[1] is not None:
+                        ok += 1
+                        for k_, i_ in (("kcal", 1), ("p", 2), ("f", 3), ("c", 4)):
+                            tot[k_] += (r[i_] or 0) * float(g.get("g") or 0) / 100
+                serv = max(1, int(y.get("serv") or 1))
+                if not y.get("ing") or ok < len(y["ing"]) * 0.6:
+                    continue                          # КБЖВ не можна надійно порахувати — не додаємо
+                items.append({"id": "u" + hashlib.md5(y["t"].encode()).hexdigest()[:8], "meal": meal, "t": y["t"], "time": int(y.get("time") or 25), "serv": serv,
+                              "ing": [f"{g['name']} — {g.get('g')} г" for g in y["ing"]], "steps": y.get("steps", []), "tags": y.get("tags", []),
+                              **{k_: round(v_ / serv, 1) for k_, v_ in tot.items()}, "img": "", "src": {"n": "Здорова тарілка МОЗ України (принципи)", "u": "https://moz.gov.ua/"},
+                              "badge": "🇺🇦 за принципами МОЗ · КБЖВ за таблицею CoFID"})
+        except Exception as e:
+            print(f"ПП-страви (українські): {err_text(e)[:60]}")
+    seen_ = set(); db_["items"] = [x for x in items if not (x["id"] in seen_ or seen_.add(x["id"]))]
+    if len(db_["items"]) >= 120:
+        db_["month"] = mon; st["rc_force"] = False
+    RECIPES_FILE.write_text(json.dumps(db_, ensure_ascii=False, separators=(",", ":")), "utf-8")
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "recipes.json", "json": {"items": [{k: v for k, v in x.items() if k not in ("orig",)} for x in db_["items"]]}})
+    except Exception as e:
+        print(f"ПП-страви → Cloudflare: {err_text(e)[:60]}")
+    print(f"ПП-страви: усього {len(db_['items'])} (👩‍⚕️ {sum(1 for x in db_['items'] if x['id'].startswith('b'))}, 🇺🇦 {sum(1 for x in db_['items'] if x['id'].startswith('u'))}), нових за запуск {len(new)}")
+    mark_upd(st, "🥗 ПП-страви", True)
+
+
 def sexed_refresh(st: dict, now: datetime) -> None:
     """Дослідження й опитування: старт ~20+20, далі раз на місяць нові; раз на 6 міс — «що нового» для статей. → Cloudflare."""
     if not WORKER_MODE:
@@ -5813,7 +6033,8 @@ def main() -> None:
              ("секс-освіта", lambda: sexed_refresh(st, now)), ("вікторина", lambda: quiz_refresh(now)),
              ("ранковий імпульс", lambda: impulse_refresh(st, now)), ("музика", lambda: music_refresh(st, now)),
              ("здоров'я", lambda: (health_refresh(st, now), kb_probe(st, now), cofid_import(st, now), cofid_translate(st, now))),
-             ("ігри PS5", lambda: games_refresh(st, now)), ("аудіокниги", lambda: audiobooks_refresh(st, now))]
+             ("ігри PS5", lambda: (games_refresh(st, now), ps_deals_refresh(st, now))), ("аудіокниги", lambda: audiobooks_refresh(st, now)),
+             ("кіномэтч", lambda: match_refresh(st, now)), ("пп-страви", lambda: recipes_refresh(st, now))]
     slot = (now.hour * 12 + now.minute // 5) % len(heavy)
     forced = st.get("force_heavy") or []
     if forced:                                        # позапланово (кнопка «🔄 Оновити підбірки») — спершу кіно й музика
