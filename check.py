@@ -4418,7 +4418,7 @@ def recipes_refresh(st: dict, now: datetime) -> None:
                      "більше овочів і цільних круп, нежирний білок, мало олії й цукру, до 30 хв, лише продукти з будь-якого українського супермаркету, 1 порція до 550 ккал. "
                      "Уникай повторів: " + ", ".join(x["t"] for x in items if x["meal"] == meal)[:1500] + ". "
                      "Для кожного інгредієнта дай відповідник із британської таблиці CoFID англійською (поле en, напр. «Buckwheat, boiled»). "
-                     "JSON-масив: {\"t\": назва, \"time\": хв, \"serv\": порцій, \"ing\": [{\"name\": укр, \"g\": грами, \"en\": CoFID}], \"steps\": [3–6 коротких кроків], \"tags\": [protein, veg, quick, budget]}.",
+                     "JSON-масив: {\"t\": назва, \"en\": коротка назва страви англійською (для пошуку фото), \"time\": хв, \"serv\": порцій, \"ing\": [{\"name\": укр, \"g\": грами, \"en\": CoFID}], \"steps\": [3–6 коротких кроків], \"tags\": [protein, veg, quick, budget]}.",
                      json_mode=True, relaxed=True, max_tokens=9000)
         try:
             for y in json.loads(raw or "[]"):
@@ -4432,12 +4432,32 @@ def recipes_refresh(st: dict, now: datetime) -> None:
                 serv = max(1, int(y.get("serv") or 1))
                 if not y.get("ing") or ok < len(y["ing"]) * 0.6:
                     continue                          # КБЖВ не можна надійно порахувати — не додаємо
-                items.append({"id": "u" + hashlib.md5(y["t"].encode()).hexdigest()[:8], "meal": meal, "t": y["t"], "time": int(y.get("time") or 25), "serv": serv,
+                items.append({"id": "u" + hashlib.md5(y["t"].encode()).hexdigest()[:8], "meal": meal, "t": y["t"], "en": str(y.get("en") or "")[:60], "time": int(y.get("time") or 25), "serv": serv,
                               "ing": [f"{g['name']} — {g.get('g')} г" for g in y["ing"]], "steps": y.get("steps", []), "tags": y.get("tags", []),
                               **{k_: round(v_ / serv, 1) for k_, v_ in tot.items()}, "img": "", "src": {"n": "Здорова тарілка МОЗ України (принципи)", "u": "https://moz.gov.ua/"},
                               "badge": "🇺🇦 за принципами МОЗ · КБЖВ за таблицею CoFID"})
         except Exception as e:
             print(f"ПП-страви (українські): {err_text(e)[:60]}")
+    noen = [x for x in items if not x.get("img") and not x.get("en") and not x.get("noimg")][:30]
+    if noen:                                          # англійська назва для пошуку фото (для вже доданих страв)
+        try:
+            tr = json.loads(gemini("Коротка назва страви англійською для пошуку фото (2–4 слова). JSON-масив рядків у тому ж порядку.\n\n"
+                                   + json.dumps([x["t"] for x in noen], ensure_ascii=False), json_mode=True, relaxed=True, max_tokens=1500) or "[]")
+            for x, e in zip(noen, tr):
+                x["en"] = str(e)[:60]
+        except Exception:
+            pass
+    n_img = 0
+    for x in items:                                   # 📷 реальне фото страви з відкритих баз (Wikimedia Commons, Openverse), назва файлу має відповідати страві
+        if x.get("img") or x.get("noimg") or not x.get("en") or n_img >= 6 or _time.time() < WIKI_BLOCK["until"]:
+            continue
+        mw = [w for w in re.findall(r"[a-z]{4,}", x["en"].lower()) if w not in ("with", "baked", "fresh", "light", "healthy", "salad", "soup")][:2] or re.findall(r"[a-z]{4,}", x["en"].lower())[:1]
+        im = commons_image(f"{x['en']} food", must=mw, must_all=len(mw) > 1) or openverse_image(f"{x['en']} dish", must=mw)
+        n_img += 1
+        if im and im.get("url"):
+            x["img"], x["img_by"], x["img_lic"] = im["url"], im.get("by", ""), im.get("lic", "")
+        else:
+            x["noimg"] = 1                            # не знайшли відповідного — без фото (краще, ніж чуже)
     seen_ = set(); db_["items"] = [x for x in items if not (x["id"] in seen_ or seen_.add(x["id"]))]
     if len(db_["items"]) >= 120:
         db_["month"] = mon; st["rc_force"] = False
