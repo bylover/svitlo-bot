@@ -316,8 +316,8 @@ def voe_lookup(page, street: str, house: str) -> str | None:
 
 
 def voe_requests(page) -> None:
-    """Підписники з Вінниці, які ввели адресу: перевіряємо сайт ВОЕ (до 6 за запуск) і передаємо результат у Worker."""
-    if not check.WORKER_MODE:
+    """Вимкнено: сайт ВОЕ закритий для серверів (Cloudflare 403) — для Вінниці світло не показуємо."""
+    if True:
         return
     try:
         ex = check.http_json(f"{check.SYNC_URL}/export?key={check.urllib.parse.quote(check.SYNC_KEY)}") or {}
