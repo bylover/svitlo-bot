@@ -4393,7 +4393,7 @@ def recipes_refresh(st: dict, now: datetime) -> None:
     have = {x.get("src", {}).get("u") for x in items}
     new = []
     for meal, url in RC_BBC.items():                  # 👩‍⚕️ перевірені рецепти (по кілька за запуск)
-        new += rc_bbc(meal, url, have, 3)
+        new += rc_bbc(meal, url, have, 6 if len(items) < 120 else 3)
     if new:                                           # переклад, адаптація до українських магазинів, спрощення кроків
         raw = gemini("Ти дієтолог-кулінар. Переклади рецепти українською й адаптуй до продуктів, що є в українських супермаркетах (рідкісне замінюй на доступне й познач «(заміна: …)»). "
                      "Кроки — коротко й просто, 3–7 пунктів. Кількості — у грамах/шт. Не змінюй КБЖВ і час. Поверни JSON-масив об'єктів у тому ж порядку: "
@@ -4414,7 +4414,7 @@ def recipes_refresh(st: dict, now: datetime) -> None:
         except Exception:
             cof = {}
         meal = list(RC_MEALS)[ua_n % 4]
-        raw = gemini(f"Склади 8 різних простих корисних страв української кухні для прийому їжі «{RC_MEALS[meal]}» за принципами «Здорова тарілка» МОЗ України: "
+        raw = gemini(f"Склади 12 різних простих корисних страв української кухні для прийому їжі «{RC_MEALS[meal]}» за принципами «Здорова тарілка» МОЗ України: "
                      "більше овочів і цільних круп, нежирний білок, мало олії й цукру, до 30 хв, лише продукти з будь-якого українського супермаркету, 1 порція до 550 ккал. "
                      "Уникай повторів: " + ", ".join(x["t"] for x in items if x["meal"] == meal)[:1500] + ". "
                      "Для кожного інгредієнта дай відповідник із британської таблиці CoFID англійською (поле en, напр. «Buckwheat, boiled»). "
@@ -4441,6 +4441,7 @@ def recipes_refresh(st: dict, now: datetime) -> None:
     seen_ = set(); db_["items"] = [x for x in items if not (x["id"] in seen_ or seen_.add(x["id"]))]
     if len(db_["items"]) >= 120:
         db_["month"] = mon; st["rc_force"] = False
+    st["rc_need"] = len(db_["items"]) < 120          # поки база мала — ПП-страви першими в черзі
     RECIPES_FILE.write_text(json.dumps(db_, ensure_ascii=False, separators=(",", ":")), "utf-8")
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "recipes.json", "json": {"items": [{k: v for k, v in x.items() if k not in ("orig",)} for x in db_["items"]]}})
@@ -6036,11 +6037,12 @@ def main() -> None:
              ("ігри PS5", lambda: (games_refresh(st, now), ps_deals_refresh(st, now))), ("аудіокниги", lambda: audiobooks_refresh(st, now)),
              ("кіномэтч", lambda: match_refresh(st, now)), ("пп-страви", lambda: recipes_refresh(st, now))]
     slot = (now.hour * 12 + now.minute // 5) % len(heavy)
-    forced = st.get("force_heavy") or []
+    rc_turn = st.get("rc_need", True) and (now.minute // 5) % 2 == 0   # через запуск, щоб інші задачі не чекали
+    forced = (st.get("force_heavy") or []) + (["пп-страви"] if rc_turn and "пп-страви" not in (st.get("force_heavy") or []) else [])
     if forced:                                        # позапланово (кнопка «🔄 Оновити підбірки») — спершу кіно й музика
         heavy = [h for h in heavy if h[0] in forced] + [h for h in heavy if h[0] not in forced]
         slot = 0
-        st["force_heavy"] = forced[1:]
+        st["force_heavy"] = [f_ for f_ in (st.get("force_heavy") or []) if f_ != heavy[0][0]]
     for k_ in range(len(heavy)):
         name_, fn_ = heavy[(slot + k_) % len(heavy)]
         if not budget_ok(100 if k_ == 0 else 60):     # перша задача — якщо минуло < 100 с, наступні — лише якщо дуже швидко
