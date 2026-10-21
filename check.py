@@ -17,6 +17,7 @@ import base64
 import hashlib
 import html
 import json
+import math
 import os
 import random
 import re
@@ -2439,6 +2440,7 @@ ONLINE = re.compile(r"онлайн|online|лише\s+в\s+застосунку|�
 PROMO_SAMPLES: list = []
 ALL_PROMOS: list = []                                       # усі акції магазину — для «⭐ Обране»
 VERIFY_DROP = [0]                                           # скільки «знижок» відкинуто перевіркою
+GURT_SAMPLES: list = []                                     # приклади «гуртом дешевше» для логу
 SILPO_BAD: set = set()                                      # товари, про які повідомили «ціна не збігається»
 BAD_SEEN: dict = {}                                         # товар із «⚠️» → (назва, категорія) — для перевірки по магазинах
 
@@ -2525,6 +2527,22 @@ def promo_kind(p_: dict) -> tuple | None:
         if n > k > 0:
             unit = price * k / n
             return ("multi", round(unit, 2), price, (n - k) / n * 100, f"🎁 {n} за ціною {k}")
+    sp_ = [x for x in (p_.get("specialPrices") or []) if isinstance(x, dict)]
+    if sp_:                                           # 📦 «гуртом дешевше»: спецціна від N шт (окреме поле Сільпо, без «старої» ціни)
+        if len(GURT_SAMPLES) < 3:
+            GURT_SAMPLES.append(json.dumps(sp_[:2], ensure_ascii=False)[:200]); print(f"Сільпо гуртом (приклад): {str(p_.get('title'))[:40]} | ціна {price} | {GURT_SAMPLES[-1]}")
+        best = None
+        for x in sp_:
+            cnt = next((int(float(x[k_])) for k_ in ("count", "quantity", "minCount", "minQuantity", "amount", "qty") if str(x.get(k_, "")).replace(".", "", 1).isdigit()), 0)
+            val = next((float(x[k_]) for k_ in ("price", "value", "displayPrice", "specialPrice", "unitPrice") if isinstance(x.get(k_), (int, float)) or str(x.get(k_, "")).replace(".", "", 1).isdigit()), 0)
+            if cnt < 2 or not val:
+                continue
+            unit = val if val < price else (val / cnt if val / cnt < price else 0)   # «69,99 від 3 шт» або «209,97 за 3 шт»
+            if unit and (best is None or unit < best[0]):
+                best = (unit, cnt)
+        if best:
+            onl = " · 🌐 онлайн" if "only_online" in ids else ""
+            return ("gurt", round(best[0], 2), price, (price - best[0]) / price * 100, f"📦 від {best[1]} шт — {best[0]:.2f} ₴/шт{onl}")
     if GURT.search(text):                             # гуртом дешевше — шукаємо нижчу ціну за штуку в даних акції
         nums = []
         for x in pr:
@@ -3937,6 +3955,279 @@ def cofid_import(st: dict, now: datetime) -> None:
     except Exception as e:
         st["cofid"] = ""
         print(f"CoFID: {err_text(e)[:100]}")
+
+
+# ---------- 🎮 Ігри PS5: рейтинг найкращих за 10 років (RAWG: оцінки гравців + Metacritic), раз на місяць ----------
+RAWG_KEY = os.environ.get("RAWG_KEY", "")
+GAMES_FILE = Path("games.json")
+GAME_SECS = {   # розділ: (назва, параметри RAWG)
+    "top": ("🏆 Топ PS5", {}), "action": ("⚔️ Екшн", {"genres": "action"}), "rpg": ("🧙 RPG", {"genres": "role-playing-games-rpg"}),
+    "shooter": ("🔫 Шутери", {"genres": "shooter"}), "adventure": ("🗺 Пригоди", {"genres": "adventure"}), "racing": ("🏎 Гонки", {"genres": "racing"}),
+    "horror": ("👻 Хорори", {"tags": "horror"}), "indie": ("🎨 Інді", {"genres": "indie"}), "sports": ("⚽ Спорт", {"genres": "sports"}),
+    "fighting": ("🥊 Файтинги", {"genres": "fighting"}), "coop": ("👥 Кооператив", {"tags": "co-op"}),
+    "family": ("👨‍👩‍👧 Для всієї родини (10+)", {"esrb": "1,2"}), "teen": ("🧑 13+", {"esrb": "3"}), "mature": ("🔞 17+", {"esrb": "4"}),
+    "gems": ("💎 Недооцінені", {})}
+GAME_LEVELS = [(80, 4.0, 300), (75, 3.8, 150), (70, 3.6, 50), (0, 3.4, 20)]   # Metacritic, оцінка гравців, мін. оцінок — ступінчасто розширюємо
+
+
+def rawg(path: str, **q) -> dict:
+    return http_json(f"https://api.rawg.io/api/{path}?" + urllib.parse.urlencode({"key": RAWG_KEY, **q}))
+
+
+def games_refresh(st: dict, now: datetime) -> None:
+    """Раз на місяць — усі розділи; результат — у Cloudflare (games.json)."""
+    if not RAWG_KEY or not WORKER_MODE or st.get("games_month") == f"{now:%Y-%m}" and not st.get("games_force"):
+        return
+    since = f"{now.year - 10}-01-01,{now:%Y-%m-%d}"
+    pool = {}
+    for page in range(1, 9):                          # спільний пул PS5 за 10 років (до ~320 ігор із найвищими оцінками)
+        try:
+            r = rawg("games", platforms=187, dates=since, ordering="-metacritic", page_size=40, page=page)
+        except Exception as e:
+            print(f"Ігри PS5: {err_text(e)[:80]}"); break
+        for g in r.get("results", []):
+            pool[g["id"]] = g
+        if not r.get("next"):
+            break
+    def score(g):
+        u, mc, n = g.get("rating") or 0, g.get("metacritic") or 0, g.get("ratings_count") or 0
+        return round(u * 20 * 0.6 + (mc or u * 20) * 0.4 + min(5, math.log10(max(1, g.get("added") or 1))), 1)
+    def card(g, lvl):
+        return {"id": g["id"], "n": g.get("name"), "y": (g.get("released") or "")[:4], "mc": g.get("metacritic"), "u": g.get("rating"), "uc": g.get("ratings_count"),
+                "g": [x.get("name") for x in (g.get("genres") or [])][:3], "age": ((g.get("esrb_rating") or {}).get("name") or ""), "pt": g.get("playtime"),
+                "img": g.get("background_image"), "slug": g.get("slug"), "sc": score(g), "lvl": lvl}
+    out = {}
+    for sec, (title, prm) in GAME_SECS.items():
+        cands = list(pool.values())
+        if prm:                                       # розділ — окремий запит із фільтром (жанр/тег/вік)
+            cands = []
+            for page in range(1, 4):
+                try:
+                    r = rawg("games", platforms=187, dates=since, ordering="-metacritic", page_size=40, page=page, **({"esrb_rating": prm["esrb"]} if "esrb" in prm else {}),
+                             **({k: v for k, v in prm.items() if k != "esrb"}))
+                except Exception:
+                    break
+                cands += r.get("results", [])
+                if not r.get("next"):
+                    break
+        items = []
+        for lvl, (mc_min, u_min, n_min) in enumerate(GAME_LEVELS):
+            if len(items) >= 15:
+                break
+            for g in cands:
+                if any(x["id"] == g["id"] for x in items):
+                    continue
+                mc, u, n = g.get("metacritic") or 0, g.get("rating") or 0, g.get("ratings_count") or 0
+                if sec == "gems":                     # недооцінені: висока оцінка гравців, але мало оцінок
+                    if u >= max(4.0, u_min) and 20 <= n <= 800 and (mc == 0 or mc >= 70):
+                        items.append(card(g, lvl))
+                elif (mc >= mc_min or (mc == 0 and lvl >= 2)) and u >= u_min and n >= n_min:
+                    items.append(card(g, lvl))
+        items.sort(key=lambda x: (-(x["sc"] + (8 - min(8, (x["uc"] or 0) / 100) if sec == "gems" else 0))))
+        out[sec] = {"t": title, "items": items[:30]}
+    st["games_month"], st["games_force"] = f"{now:%Y-%m}", False
+    GAMES_FILE.write_text(json.dumps({"at": now.strftime("%d.%m.%Y"), "secs": out}, ensure_ascii=False, separators=(",", ":")), "utf-8")
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "games.json", "json": json.loads(GAMES_FILE.read_text("utf-8"))})
+    except Exception as e:
+        print(f"Ігри → Cloudflare: {err_text(e)[:60]}")
+    print(f"Ігри PS5: пул {len(pool)} · розділів {len(out)} · топ: {[x['n'] for x in out.get('top', {}).get('items', [])[:3]]}")
+    mark_upd(st, "🎮 Ігри PS5", bool(out))
+
+
+# ---------- 🎧 Аудіокниги: рейтинг найкращих (оцінки читачів з усіх джерел), озвучка спершу 🇺🇦, інакше 🇷🇺; раз на місяць ----------
+AB_FILE = Path("audiobooks.json")
+AB_SECS = {"top": "🏆 Топ", "detective": "🔍 Детективи й трилери", "dystopia": "🌍 Антиутопії", "psych": "🧠 Психологія",
+           "self": "🚀 Саморозвиток", "love": "❤️ Стосунки й секс", "classic": "📚 Класика", "gems": "💎 Недооцінені"}
+AB_SEED = {   # визнані книги (стартовий пул); щомісяця пул доповнюється з Google Books за темами
+    "detective": [("Дівчина з татуюванням дракона", "Stieg Larsson", "The Girl with the Dragon Tattoo"), ("Зникла", "Gillian Flynn", "Gone Girl"),
+                  ("Убивство в «Східному експресі»", "Agatha Christie", "Murder on the Orient Express"), ("І не лишилось жодного", "Agatha Christie", "And Then There Were None"),
+                  ("Собака Баскервілів", "Arthur Conan Doyle", "The Hound of the Baskervilles"), ("Сніговик", "Jo Nesbø", "The Snowman"),
+                  ("Мовчання ягнят", "Thomas Harris", "The Silence of the Lambs"), ("Безмовний пацієнт", "Alex Michaelides", "The Silent Patient"),
+                  ("Код да Вінчі", "Dan Brown", "The Da Vinci Code"), ("Таємна історія", "Donna Tartt", "The Secret History")],
+    "dystopia": [("1984", "George Orwell", "Nineteen Eighty-Four"), ("Прекрасний новий світ", "Aldous Huxley", "Brave New World"), ("451° за Фаренгейтом", "Ray Bradbury", "Fahrenheit 451"),
+                 ("Оповідь служниці", "Margaret Atwood", "The Handmaid's Tale"), ("Ми", "Yevgeny Zamyatin", "We"), ("Не відпускай мене", "Kazuo Ishiguro", "Never Let Me Go"),
+                 ("Дорога", "Cormac McCarthy", "The Road"), ("Голодні ігри", "Suzanne Collins", "The Hunger Games"), ("Колгосп тварин", "George Orwell", "Animal Farm")],
+    "psych": [("Мислення швидке й повільне", "Daniel Kahneman", "Thinking, Fast and Slow"), ("Людина в пошуках справжнього сенсу", "Viktor Frankl", "Man's Search for Meaning"),
+              ("Психологія впливу", "Robert Cialdini", "Influence"), ("Тіло веде лік", "Bessel van der Kolk", "The Body Keeps the Score"),
+              ("Емоційний інтелект", "Daniel Goleman", "Emotional Intelligence"), ("Ігри, у які грають люди", "Eric Berne", "Games People Play"), ("Сапієнс", "Yuval Noah Harari", "Sapiens")],
+    "self": [("Атомні звички", "James Clear", "Atomic Habits"), ("7 звичок надзвичайно ефективних людей", "Stephen Covey", "The 7 Habits of Highly Effective People"),
+             ("Сила звички", "Charles Duhigg", "The Power of Habit"), ("Глибока робота", "Cal Newport", "Deep Work"), ("Тонке мистецтво пофігізму", "Mark Manson", "The Subtle Art of Not Giving a F*ck"),
+             ("Есенціалізм", "Greg McKeown", "Essentialism"), ("Думай повільно — вирішуй швидко", "Daniel Kahneman", "Thinking, Fast and Slow")],
+    "love": [("Як є", "Emily Nagoski", "Come As You Are"), ("Секс у полоні", "Esther Perel", "Mating in Captivity"), ("Сім принципів щасливого шлюбу", "John Gottman", "The Seven Principles for Making Marriage Work"),
+             ("П'ять мов любові", "Gary Chapman", "The Five Love Languages"), ("Прив'язаність", "Amir Levine", "Attached"), ("Стан справ", "Esther Perel", "The State of Affairs"),
+             ("Обійми мене міцніше", "Sue Johnson", "Hold Me Tight"), ("Секс на світанку", "Christopher Ryan", "Sex at Dawn")],
+    "classic": [("Три товариші", "Erich Maria Remarque", "Three Comrades"), ("Майстер і Маргарита", "Mikhail Bulgakov", "The Master and Margarita"), ("Граф Монте-Крісто", "Alexandre Dumas", "The Count of Monte Cristo"),
+                ("Великий Гетсбі", "F. Scott Fitzgerald", "The Great Gatsby"), ("Гордість і упередження", "Jane Austen", "Pride and Prejudice"), ("Портрет Доріана Грея", "Oscar Wilde", "The Picture of Dorian Gray"),
+                ("Сто років самотності", "Gabriel García Márquez", "One Hundred Years of Solitude"), ("Маленький принц", "Antoine de Saint-Exupéry", "The Little Prince")]}
+AB_SUBJ = {"detective": "detective", "dystopia": "dystopian", "psych": "psychology", "self": "self-help", "love": "relationships", "classic": "classics"}
+
+
+def ab_ratings(orig: str, author: str) -> tuple:
+    """Оцінки читачів: Google Books + Open Library (середня з урахуванням кількості)."""
+    tot, n = 0.0, 0
+    try:
+        g = http_json("https://www.googleapis.com/books/v1/volumes?" + urllib.parse.urlencode({"q": f'intitle:"{orig}" inauthor:"{author.split()[-1]}"', "maxResults": 5}))
+        for it in g.get("items", []):
+            vi = it.get("volumeInfo", {})
+            if vi.get("averageRating") and vi.get("ratingsCount"):
+                tot += vi["averageRating"] * vi["ratingsCount"]; n += vi["ratingsCount"]
+    except Exception:
+        pass
+    try:
+        o = http_json("https://openlibrary.org/search.json?" + urllib.parse.urlencode({"title": orig, "author": author, "fields": "ratings_average,ratings_count,want_to_read_count", "limit": 3}))
+        for d in o.get("docs", []):
+            if d.get("ratings_average") and d.get("ratings_count"):
+                tot += d["ratings_average"] * d["ratings_count"]; n += d["ratings_count"]
+    except Exception:
+        pass
+    for name, fn in (("Goodreads", ab_goodreads), ("LiveLib", ab_livelib), ("ЛитРес", ab_litres)):   # великі сайти відгуків
+        try:
+            r_, n_ = fn(orig, author)
+            if r_ and n_:
+                tot += r_ * n_; n += n_
+        except Exception as e:
+            if len(AB_LOG) < 6:
+                AB_LOG.append(f"{name}: {err_text(e)[:40]}")
+    return (round(tot / n, 2) if n else None, n)
+
+
+def _num(x: str) -> int:
+    return int(re.sub(r"[^\d]", "", x) or 0)
+
+
+def ab_goodreads(orig: str, author: str) -> tuple:
+    """Goodreads: «avg rating 4.27 — 1,234,567 ratings» на сторінці пошуку."""
+    h = http_text("https://www.goodreads.com/search?q=" + urllib.parse.quote(f"{orig} {author}"))
+    m = re.search(r"avg rating\s*([\d.]+)\s*(?:&mdash;|—|-)\s*([\d,\s]+)\s*rating", h)
+    return (float(m.group(1)), _num(m.group(2))) if m else (None, 0)
+
+
+def ab_livelib(orig: str, author: str) -> tuple:
+    """LiveLib — найбільший російськомовний сайт відгуків: рейтинг із 5 і кількість оцінок."""
+    h = http_text("https://www.livelib.ru/find/books/" + urllib.parse.quote(f"{orig} {author.split()[-1]}"))
+    m = re.search(r'rating-value[^>]*>\s*([\d.,]+)\s*<', h)
+    c = re.search(r'(\d[\d\s]*)\s*(?:оцен|рейтинг)', h)
+    return (float(m.group(1).replace(",", ".")), _num(c.group(1)) if c else 50) if m else (None, 0)
+
+
+def ab_litres(orig: str, author: str) -> tuple:
+    """ЛитРес: середня оцінка й кількість оцінок (зі сторінки пошуку)."""
+    h = http_text("https://www.litres.ru/search/?q=" + urllib.parse.quote(f"{orig} {author.split()[-1]}"))
+    m = re.search(r'"ratingValue"\s*:\s*"?([\d.]+)', h) or re.search(r'rating[^>]{0,80}>\s*([\d][.,]\d)\s*<', h)
+    c = re.search(r'"ratingCount"\s*:\s*"?(\d+)', h) or re.search(r'(\d[\d\s]*)\s*оцен', h)
+    return (float(m.group(1).replace(",", ".")), _num(c.group(1)) if c else 30) if m else (None, 0)
+
+
+def ab_audio(title_ua: str, author: str) -> dict:
+    """Чи є озвучка: спершу 🇺🇦 (Абук, Yakaboo), інакше 🇷🇺 (Yakaboo). Повертає посилання й мову."""
+    q = urllib.parse.quote(title_ua)
+    for name, url, mark in (("Абук", f"https://abuk.com.ua/search?q={q}", "uk"), ("Yakaboo", f"https://www.yakaboo.ua/ua/search?q={q}&cat=audiobooks", "uk")):
+        try:
+            html_ = http_text(url)[:400000]
+            low = html_.lower()
+            if title_ua.lower()[:12] in low and ("аудіокниг" in low or "audiobook" in low or name == "Абук"):
+                lang = "ru" if re.search(r"мова[^<]{0,40}російськ", low) and "українськ" not in low[:200000] else mark
+                return {"src": name, "url": url, "lang": lang}
+        except Exception as e:
+            if len(AB_LOG) < 4:
+                AB_LOG.append(f"{name}: {err_text(e)[:50]}")
+    if YT_KEY:                                        # YouTube: повні аудіокниги (спершу 🇺🇦, потім 🇷🇺) — довгі відео з назвою книги
+        for lang, qq in (("uk", f"аудіокнига {title_ua} {author.split()[-1]}"), ("ru", f"аудиокнига {title_ua} {author.split()[-1]}")):
+            try:
+                r = http_json("https://www.googleapis.com/youtube/v3/search?" + urllib.parse.urlencode({"part": "snippet", "q": qq, "type": "video", "videoDuration": "long",
+                              "maxResults": 5, "relevanceLanguage": lang, "key": YT_KEY}))
+                key_w = [w for w in re.findall(r"[а-яіїєґa-z]{4,}", title_ua.lower())][:2]
+                for v in r.get("items", []):
+                    t_ = (v["snippet"].get("title") or "").lower()
+                    if re.search(r"аудіокниг|аудиокниг|audiobook", t_) and all(w[:5] in t_ for w in key_w):
+                        ru_ = lang == "ru" or (re.search(r"[ыэъё]", t_) and not re.search(r"[іїєґ]", t_))
+                        return {"src": "YouTube", "url": f"https://www.youtube.com/watch?v={v['id']['videoId']}", "lang": "ru" if ru_ else "uk"}
+            except Exception as e:
+                if len(AB_LOG) < 4:
+                    AB_LOG.append(f"YouTube: {err_text(e)[:50]}")
+                break
+    try:                                              # 🇷🇺 російська озвучка — ЛитРес (аудіокниги)
+        h = http_text(f"https://www.litres.ru/search/?q={q}&art_types=audiobook")
+        if any(w[:5] in h.lower() for w in re.findall(r"[а-яіїєґ]{5,}", title_ua.lower())[:1]) and ("аудиокниг" in h.lower() or "audiobook" in h.lower()):
+            return {"src": "ЛитРес", "url": f"https://www.litres.ru/search/?q={q}&art_types=audiobook", "lang": "ru",
+                    "more": [["Яндекс Книги", f"https://books.yandex.ru/search/?text={q}"]]}
+    except Exception as e:
+        if len(AB_LOG) < 6:
+            AB_LOG.append(f"ЛитРес: {err_text(e)[:40]}")
+    return {"src": "", "url": f"https://www.yakaboo.ua/ua/search?q={q}", "lang": "",   # інші площадки — пошуком
+            "more": [["Google Play Книги", f"https://play.google.com/store/search?q={q}&c=audiobooks"], ["Storytel", f"https://www.storytel.com/search?query={q}"],
+                     ["YouTube", f"https://www.youtube.com/results?search_query={urllib.parse.quote('аудіокнига ' + title_ua)}"],
+                     ["ЛитРес", f"https://www.litres.ru/search/?q={q}&art_types=audiobook"], ["Яндекс Книги", f"https://books.yandex.ru/search/?text={q}"]]}
+
+
+AB_LOG: list = []
+
+
+def audiobooks_refresh(st: dict, now: datetime) -> None:
+    """Раз на місяць: пул книг (визнані + нові з Google Books), оцінки читачів з усіх джерел, наявність озвучки, «зачіпка» від ШІ."""
+    if not WORKER_MODE or st.get("ab_month") == f"{now:%Y-%m}" and not st.get("ab_force"):
+        return
+    try:
+        old = json.loads(AB_FILE.read_text("utf-8"))
+    except Exception:
+        old = {"books": {}}
+    books = old.get("books", {})
+    for sec, seeds in AB_SEED.items():                # стартовий пул
+        for ua, au, orig in seeds:
+            books.setdefault(f"{orig}|{au}", {"ua": ua, "au": au, "orig": orig, "sec": sec})
+    for sec, subj in AB_SUBJ.items():                 # нові визнані книги за темою (Google Books, з оцінками)
+        try:
+            g = http_json("https://www.googleapis.com/books/v1/volumes?" + urllib.parse.urlencode({"q": f"subject:{subj}", "orderBy": "relevance", "maxResults": 20, "langRestrict": "en"}))
+            for it in g.get("items", []):
+                vi = it.get("volumeInfo", {})
+                if (vi.get("averageRating") or 0) >= 4.2 and (vi.get("ratingsCount") or 0) >= 50 and vi.get("authors"):
+                    books.setdefault(f"{vi['title']}|{vi['authors'][0]}", {"ua": vi["title"], "au": vi["authors"][0], "orig": vi["title"], "sec": sec})
+        except Exception:
+            pass
+    t0 = _time.time()
+    for k, b in list(books.items()):                  # оцінки й озвучка — оновлюємо раз на місяць (з обмеженням часу)
+        if b.get("m") == f"{now:%Y-%m}" or _time.time() - t0 > 240:
+            continue
+        b["r"], b["n"] = ab_ratings(b["orig"], b["au"])
+        b["audio"] = ab_audio(b["ua"], b["au"])
+        b["m"] = f"{now:%Y-%m}"
+    todo = [k for k, b in books.items() if not b.get("hook")][:40]
+    if todo:                                          # коротка «зачіпка» без спойлерів, українською
+        raw = gemini("Для кожної книги напиши 1–2 речення українською — чим вона захоплює, без спойлерів, без «води». Поверни JSON-масив рядків у тому ж порядку.\n\n"
+                     + json.dumps([f"{books[k]['orig']} — {books[k]['au']}" for k in todo], ensure_ascii=False), json_mode=True, relaxed=True, max_tokens=4000)
+        try:
+            for k, h in zip(todo, json.loads(raw or "[]")):
+                books[k]["hook"] = str(h)[:260]
+        except Exception:
+            pass
+    def score(b):                                     # байєсівське середнє: багато оцінок — надійніше; бонус за озвучку 🇺🇦
+        r, n = b.get("r") or 0, b.get("n") or 0
+        return round((r * n + 3.9 * 200) / (n + 200) * 20 + (2 if (b.get("audio") or {}).get("lang") == "uk" else 0), 2)
+    out = {}
+    for sec, title in AB_SECS.items():
+        pool = [b for b in books.values() if (sec in ("top", "gems") or b["sec"] == sec)]
+        for lvl, (rmin, nmin) in enumerate([(4.2, 300), (4.0, 100), (3.8, 30), (0, 0)]):
+            items = [b for b in pool if (b.get("r") or 0) >= rmin and (b.get("n") or 0) >= nmin]
+            if sec == "gems":
+                items = [b for b in pool if (b.get("r") or 0) >= max(4.1, rmin) and 20 <= (b.get("n") or 0) <= 800]
+            if len(items) >= 8:
+                break
+        items.sort(key=score, reverse=True)
+        out[sec] = {"t": title, "items": [{"ua": b["ua"], "au": b["au"], "orig": b["orig"], "r": b.get("r"), "n": b.get("n"), "audio": b.get("audio") or {},
+                                           "hook": b.get("hook", ""), "lvl": lvl} for b in items[:30]]}
+    pending = sum(1 for b in books.values() if b.get("m") != f"{now:%Y-%m}")
+    if not pending:                                   # усі книги перевірено — до наступного місяця; інакше продовжимо в наступних запусках
+        st["ab_month"], st["ab_force"] = f"{now:%Y-%m}", False
+    AB_FILE.write_text(json.dumps({"at": now.strftime("%d.%m.%Y"), "books": books}, ensure_ascii=False, separators=(",", ":")), "utf-8")
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "audiobooks.json", "json": {"at": now.strftime("%d.%m.%Y"), "secs": out}})
+    except Exception as e:
+        print(f"Аудіокниги → Cloudflare: {err_text(e)[:60]}")
+    ua_ = sum(1 for b in books.values() if (b.get("audio") or {}).get("lang") == "uk")
+    ru_ = sum(1 for b in books.values() if (b.get("audio") or {}).get("lang") == "ru")
+    print(f"Аудіокниги: книг {len(books)} (ще перевірити {pending}) · озвучка 🇺🇦 {ua_}, 🇷🇺 {ru_} · {'; '.join(AB_LOG) or 'усі джерела відповідають'}")
+    mark_upd(st, "🎧 Аудіокниги", bool(out))
 
 
 def sexed_refresh(st: dict, now: datetime) -> None:
@@ -5521,7 +5812,8 @@ def main() -> None:
     heavy = [("кіно, пули", lambda: kino_pool_refresh(st, now)), ("фільми 18+", lambda: x18_refresh(st, now)),
              ("секс-освіта", lambda: sexed_refresh(st, now)), ("вікторина", lambda: quiz_refresh(now)),
              ("ранковий імпульс", lambda: impulse_refresh(st, now)), ("музика", lambda: music_refresh(st, now)),
-             ("здоров'я", lambda: (health_refresh(st, now), kb_probe(st, now), cofid_import(st, now), cofid_translate(st, now)))]
+             ("здоров'я", lambda: (health_refresh(st, now), kb_probe(st, now), cofid_import(st, now), cofid_translate(st, now))),
+             ("ігри PS5", lambda: games_refresh(st, now)), ("аудіокниги", lambda: audiobooks_refresh(st, now))]
     slot = (now.hour * 12 + now.minute // 5) % len(heavy)
     forced = st.get("force_heavy") or []
     if forced:                                        # позапланово (кнопка «🔄 Оновити підбірки») — спершу кіно й музика
@@ -5560,11 +5852,11 @@ def main() -> None:
         st["kino_q"] = []
         st["kino_ver"] = 2
     fam_b = (family_silpo_branch() or "") + "|" + family_silpo_dtype() + "|" + ",".join(sorted(SILPO_BAD))
-    if worker_alive and (st.get("silpo_ver") != 11 or st.get("silpo_fb") != fam_b):   # змінився магазин/режим — перебудова,
+    if worker_alive and (st.get("silpo_ver") != 12 or st.get("silpo_fb") != fam_b):   # змінився магазин/режим — перебудова,
         st["silpo_day"] = ""                          # але стару підбірку НЕ видаляємо (щоб не було «⏳ Готую…» щоразу)
         for v_ in (st.get("silpo_by") or {}).values():
             v_["built"] = ""
-        st["silpo_ver"] = 11
+        st["silpo_ver"] = 12
         st["silpo_fb"] = fam_b
     if st.get("yt_ver") != 2:                         # новий відбір YouTube (лише українське) — стару підбірку скидаємо
         st.pop("yt_last", None)
@@ -5583,7 +5875,8 @@ def main() -> None:
             MUSIC_FILE.write_text(json.dumps(mdb_, ensure_ascii=False, separators=(",", ":")), "utf-8")
         except Exception:
             pass
-        st["force_heavy"] = ["кіно, пули", "музика", "здоров'я"]
+        st["force_heavy"] = ["кіно, пули", "музика", "здоров'я", "ігри PS5", "аудіокниги"]
+        st["games_force"] = st["ab_force"] = True
         st["cofid"] = ""; st.pop("kb_probe2", None)      # 🥗 КБЖВ: переімпорт CoFID і перевірка Сільпо
         for c in worker_req["rebuild"]:
             direct_m.append((str(c), "🔄 Позапланове оновлення запущено: 🛒 Сільпо (основна й підписників) — ~10–20 хв; 🍿 кіно й 🎵 музика — "
