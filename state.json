@@ -1059,11 +1059,11 @@
   "groups": [
    "GPV4.1"
   ],
-  "updated": "11:02 22.10.2026",
+  "updated": "11:16 22.10.2026",
   "emergency": false,
   "city_emergency": false,
-  "city_text": "",
-  "checked": "2026-10-22T11:13:10.030971+03:00",
+  "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
+  "checked": "2026-10-22T11:24:54.808269+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": true
@@ -4758,14 +4758,14 @@
    "rows": [
     "6. Біфідойогурт Яготинський без наповнювача 1,5%, 270г — <b>23.99 ₴</b> <s>30.99 ₴</s> · заявлено −23% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/bifidoiogurt-yagotynskyi-bez-napovniuvacha-1-5-935758\">відкрити</a>",
     "7. Йогурт Яготинський з полуницею 1,5%, 270г — <b>29.99 ₴</b> <s>39.99 ₴</s> · заявлено −25% · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/yogurt-yagotynskyi-z-polunytseiu-1-5-842280\">відкрити</a>",
-    "8. Десерт Bakoma Satino зі смаком карамелі 2,4%, 165г — <b>36.9 ₴/шт</b> <s>54.49 ₴</s> · 📦 від 3 шт — 36.90 ₴/шт −32% · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/desert-bakoma-satino-zi-smakom-karameli-2-4-944855\">відкрити</a>",
-    "9. Десерт Bakoma Satino зі смаком ванілі 2,4%, 165г — <b>36.9 ₴/шт</b> <s>54.49 ₴</s> · 📦 від 3 шт — 36.90 ₴/шт −32% · ⭐ 3.7\n🔗 <a href=\"https://silpo.ua/product/desert-bakoma-satino-zi-smakom-vanili-2-4-944854\">відкрити</a>",
-    "10. Йогурт «Галичина» «Карпатський» Лісова ягода 2,2%, 800г — <b>73.99 ₴</b> <s>91.49 ₴</s> · заявлено −19% · <b>реально −22%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/yogurt-galychyna-karpatskyi-lisova-iagoda-2-2-844102\">відкрити</a>",
-    "11. Йогурт Яготинський з манго та соком маракуї 1,5%, 270г — <b>29.99 ₴</b> <s>37.99 ₴</s> · заявлено −21% · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/yogurt-yagotynskyi-z-mango-ta-sokom-marakui-1-5-935466\">відкрити</a>",
-    "12. Йогурт «На здоров'я» «Турецький» 5%, 280г — <b>46.9 ₴/шт</b> <s>60.99 ₴</s> · 📦 від 2 шт — 46.90 ₴/шт −23% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/yogurt-na-zdorov-ia-turetskyi-5-917588\">відкрити</a>",
-    "13. Йогурт «Галичина» «Карпатський» Полуниця 2,2%, 800г — <b>73.99 ₴</b> <s>91.49 ₴</s> · заявлено −19% · <b>реально −22%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/yogurt-galychyna-karpatskyi-polunytsia-2-2-844103\">відкрити</a>",
-    "14. Йогурт Яготинський з персиком 1,5%, 270г — <b>29.99 ₴</b> <s>37.99 ₴</s> · заявлено −21% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/yogurt-yagotynskyi-z-persykom-1-5-842279\">відкрити</a>",
-    "15. Коктейль молочний «Яготинське для дітей» «Шоколад» 2,5%, 200г — <b>22.99 ₴</b> <s>28.49 ₴</s> · заявлено −19% · <b>реально −22%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/kokteil-molochnyi-yagotynske-dlia-ditei-shokolad-2-5-862237\">відкрити</a>"
+    "8. Десерт Bakoma Satino зі смаком ванілі 2,4%, 165г — <b>36.9 ₴/шт</b> <s>54.49 ₴</s> · 📦 від 3 шт — 36.90 ₴/шт −32% · ⭐ 3.7\n🔗 <a href=\"https://silpo.ua/product/desert-bakoma-satino-zi-smakom-vanili-2-4-944854\">відкрити</a>",
+    "9. Йогурт «Галичина» «Карпатський» Лісова ягода 2,2%, 800г — <b>73.99 ₴</b> <s>91.49 ₴</s> · заявлено −19% · <b>реально −22%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/yogurt-galychyna-karpatskyi-lisova-iagoda-2-2-844102\">відкрити</a>",
+    "10. Йогурт Яготинський з манго та соком маракуї 1,5%, 270г — <b>29.99 ₴</b> <s>37.99 ₴</s> · заявлено −21% · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/yogurt-yagotynskyi-z-mango-ta-sokom-marakui-1-5-935466\">відкрити</a>",
+    "11. Йогурт «На здоров'я» «Турецький» 5%, 280г — <b>46.9 ₴/шт</b> <s>60.99 ₴</s> · 📦 від 2 шт — 46.90 ₴/шт −23% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/yogurt-na-zdorov-ia-turetskyi-5-917588\">відкрити</a>",
+    "12. Йогурт «Галичина» «Карпатський» Полуниця 2,2%, 800г — <b>73.99 ₴</b> <s>91.49 ₴</s> · заявлено −19% · <b>реально −22%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/yogurt-galychyna-karpatskyi-polunytsia-2-2-844103\">відкрити</a>",
+    "13. Йогурт Яготинський з персиком 1,5%, 270г — <b>29.99 ₴</b> <s>37.99 ₴</s> · заявлено −21% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/yogurt-yagotynskyi-z-persykom-1-5-842279\">відкрити</a>",
+    "14. Коктейль молочний «Яготинське для дітей» «Шоколад» 2,5%, 200г — <b>22.99 ₴</b> <s>28.49 ₴</s> · заявлено −19% · <b>реально −22%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/kokteil-molochnyi-yagotynske-dlia-ditei-shokolad-2-5-862237\">відкрити</a>",
+    "15. Йогурт «Молокія» полуниця 1,4% пет, 770г — <b>75.9 ₴/шт</b> <s>98.99 ₴</s> · 📦 від 2 шт — 75.90 ₴/шт −23% · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/yogurt-molokiia-polunytsia-1-4-pet-894503\">відкрити</a>"
    ],
    "par": "s0_8"
   },
@@ -4803,7 +4803,8 @@
     "6. Кефір «Селянський» 1% п/е, 900г — <b>50.9 ₴/шт</b> <s>62.49 ₴</s> · 📦 від 2 шт — 50.90 ₴/шт −19% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/kefir-selianskyi-1-p-e-774675\">відкрити</a>",
     "7. Кефір «Селянський» 2,5%, 950г — <b>59.9 ₴/шт</b> <s>73.49 ₴</s> · 📦 від 2 шт — 59.90 ₴/шт −18% · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/kefir-selianskyi-2-5-674753\">відкрити</a>",
     "8. Кефір «Селянський» 2,5%, 450г — <b>37.9 ₴/шт</b> <s>46.49 ₴</s> · 📦 від 2 шт — 37.90 ₴/шт −18% · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/kefir-selianskyi-2-5-719170\">відкрити</a>",
-    "9. Кефір «Селянський» 1%, 450г — <b>32.9 ₴/шт</b> <s>39.99 ₴</s> · 📦 від 2 шт — 32.90 ₴/шт −18% · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/kefir-selianskyi-1-719169\">відкрити</a>"
+    "9. Кефір «Селянський» 1%, 450г — <b>32.9 ₴/шт</b> <s>39.99 ₴</s> · 📦 від 2 шт — 32.90 ₴/шт −18% · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/kefir-selianskyi-1-719169\">відкрити</a>",
+    "10. Ряжанка «Селянська» 4%, 950г — <b>73.9 ₴/шт</b> <s>91.49 ₴</s> · 📦 від 2 шт — 73.90 ₴/шт −19% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/riazhanka-selianska-4-843894\">відкрити</a>"
    ],
    "par": "s0_8"
   },
@@ -7890,22 +7891,22 @@
    "b": "🥤 Напої",
    "first": [
     "1. 🔥 Сік «Наш Сік» яблучно-персиковий з м’якоттю, 0,95л — <b>44.99 ₴</b> <s>86.9 ₴</s> · заявлено −48% · <b>реально −48%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/sik-nash-sik-iabluchno-persykovyi-z-m-iakottiu-913809\">відкрити</a>",
-    "2. 🔥 Сік «Наш Сік» томатний з м'якоттю, 0,95л — <b>44.99 ₴</b> <s>86.9 ₴</s> · заявлено −48% · <b>реально −48%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/sik-nash-sik-tomatnyi-z-m-iakottiu-576298\">відкрити</a>",
-    "3. 🔥 Нектар «Наш Сік» яблучно-виноградний освітлений, 0,95л — <b>39.99 ₴</b> <s>75.3 ₴</s> · заявлено −47% · <b>реально −47%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/nektar-nash-sik-iabluchno-vynogradnyi-osvitlenyi-819225\">відкрити</a>",
-    "4. 🔥 Сік «Наш Сік» мультивітамінний, 0,95л — <b>44.99 ₴</b> <s>75.3 ₴</s> · заявлено −40% · <b>реально −40%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/sik-nash-sik-multyvitaminnyi-58907\">відкрити</a>",
-    "5. Сік Happy Day яблучний, 1л — <b>99 ₴</b> <s>189 ₴</s> · 🌐 лише онлайн-замовлення заявлено −48% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/sik-happy-day-iabluchnyi-507678\">відкрити</a>"
+    "2. 🔥 Нектар «Наш Сік» яблучно-виноградний освітлений, 0,95л — <b>39.99 ₴</b> <s>75.3 ₴</s> · заявлено −47% · <b>реально −47%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/nektar-nash-sik-iabluchno-vynogradnyi-osvitlenyi-819225\">відкрити</a>",
+    "3. 🔥 Сік «Наш Сік» мультивітамінний, 0,95л — <b>44.99 ₴</b> <s>75.3 ₴</s> · заявлено −40% · <b>реально −40%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/sik-nash-sik-multyvitaminnyi-58907\">відкрити</a>",
+    "4. Сік Happy Day яблучний, 1л — <b>99 ₴</b> <s>189 ₴</s> · 🌐 лише онлайн-замовлення заявлено −48% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/sik-happy-day-iabluchnyi-507678\">відкрити</a>",
+    "5. 🔥 Сік Jaffa яблучний, 0,95л — <b>79.99 ₴</b> <s>122.6 ₴</s> · заявлено −35% · <b>реально −35%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/sik-jaffa-iabluchnyi-760347\">відкрити</a>"
    ],
    "rows": [
-    "6. 🔥 Сік Jaffa яблучний, 0,95л — <b>79.99 ₴</b> <s>122.6 ₴</s> · заявлено −35% · <b>реально −35%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/sik-jaffa-iabluchnyi-760347\">відкрити</a>",
-    "7. 🔥 Нектар Jaffa вишневий, 0,95л — <b>74.99 ₴</b> <s>114.6 ₴</s> · заявлено −35% · <b>реально −35%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/nektar-jaffa-vyshnevyi-760340\">відкрити</a>",
-    "8. 🔥 Сік Jaffa томатний з морською сіллю, 0,95л — <b>74.99 ₴</b> <s>114.6 ₴</s> · заявлено −35% · <b>реально −35%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/sik-jaffa-tomatnyi-z-morskoiu-silliu-760346\">відкрити</a>",
-    "9. Вода мінеральна Cristaline Jean Baptiste природна негазована, 1л — <b>29.99 ₴</b> <s>49.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −40% · <b>реально −40%</b> · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/voda-mineralna-cristaline-jean-baptiste-pryrodna-negazovana-679046\">відкрити</a>",
-    "10. 🔥 Напій енергетичний Best Shot Blueberry безалкогольний з/б, 0,25л — <b>24.99 ₴</b> <s>35.99 ₴</s> · заявлено −31% · <b>реально −31%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-best-shot-blueberry-bezalkogolnyi-z-b-1022423\">відкрити</a>",
-    "11. Напій Rubicon Lyche сильногазований з/б, 0,33л — <b>59.99 ₴</b> <s>96.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −38% · <b>реально −38%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/napii-rubicon-lyche-sylnogazovanyi-z-b-826256\">відкрити</a>",
-    "12. Напій Dr.Pepper Blackberry газований з/б, 0,355л — <b>54.99 ₴</b> <s>80.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −32% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/napii-dr-pepper-blackberry-gazovanyi-z-b-984638\">відкрити</a>",
-    "13. Напій Thomas Henry Tonic Water безалкогольний сильногазований, 0,75л — <b>149 ₴</b> <s>249 ₴</s> · 🌐 лише онлайн-замовлення заявлено −40% · <b>реально −40%</b>\n🔗 <a href=\"https://silpo.ua/product/napii-thomas-henry-tonic-water-bezalkogolnyi-sylnogazovanyi-833472\">відкрити</a>",
-    "14. Сік Hohes C Classic апельсин-ацерола, 1л — <b>199 ₴</b> <s>289 ₴</s> · заявлено −31%\n🔗 <a href=\"https://silpo.ua/product/sik-hohes-c-classic-apelsyn-atserola-1017675\">відкрити</a>",
-    "15. 🔥 Сік Galicia яблучно-чорничний прямого віджиму, 1л — <b>89.99 ₴</b> <s>124 ₴</s> · заявлено −27% · <b>реально −27%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/sik-galicia-iabluchno-chornychnyi-priamogo-vidzhymu-549562\">відкрити</a>"
+    "6. 🔥 Нектар Jaffa вишневий, 0,95л — <b>74.99 ₴</b> <s>114.6 ₴</s> · заявлено −35% · <b>реально −35%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/nektar-jaffa-vyshnevyi-760340\">відкрити</a>",
+    "7. 🔥 Сік Jaffa томатний з морською сіллю, 0,95л — <b>74.99 ₴</b> <s>114.6 ₴</s> · заявлено −35% · <b>реально −35%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/sik-jaffa-tomatnyi-z-morskoiu-silliu-760346\">відкрити</a>",
+    "8. Вода мінеральна Cristaline Jean Baptiste природна негазована, 1л — <b>29.99 ₴</b> <s>49.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −40% · <b>реально −40%</b> · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/voda-mineralna-cristaline-jean-baptiste-pryrodna-negazovana-679046\">відкрити</a>",
+    "9. 🔥 Напій енергетичний Best Shot Blueberry безалкогольний з/б, 0,25л — <b>24.99 ₴</b> <s>35.99 ₴</s> · заявлено −31% · <b>реально −31%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-best-shot-blueberry-bezalkogolnyi-z-b-1022423\">відкрити</a>",
+    "10. Напій Rubicon Lyche сильногазований з/б, 0,33л — <b>59.99 ₴</b> <s>96.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −38% · <b>реально −38%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/napii-rubicon-lyche-sylnogazovanyi-z-b-826256\">відкрити</a>",
+    "11. Напій Dr.Pepper Blackberry газований з/б, 0,355л — <b>54.99 ₴</b> <s>80.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −32% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/napii-dr-pepper-blackberry-gazovanyi-z-b-984638\">відкрити</a>",
+    "12. Напій Thomas Henry Tonic Water безалкогольний сильногазований, 0,75л — <b>149 ₴</b> <s>249 ₴</s> · 🌐 лише онлайн-замовлення заявлено −40% · <b>реально −40%</b>\n🔗 <a href=\"https://silpo.ua/product/napii-thomas-henry-tonic-water-bezalkogolnyi-sylnogazovanyi-833472\">відкрити</a>",
+    "13. Сік Hohes C Classic апельсин-ацерола, 1л — <b>199 ₴</b> <s>289 ₴</s> · заявлено −31%\n🔗 <a href=\"https://silpo.ua/product/sik-hohes-c-classic-apelsyn-atserola-1017675\">відкрити</a>",
+    "14. 🔥 Сік Galicia яблучно-чорничний прямого віджиму, 1л — <b>89.99 ₴</b> <s>124 ₴</s> · заявлено −27% · <b>реально −27%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/sik-galicia-iabluchno-chornychnyi-priamogo-vidzhymu-549562\">відкрити</a>",
+    "15. Вода мінеральна St-Yorre натуральна газована, скло, 0,75л — <b>99 ₴</b> <s>139 ₴</s> · заявлено −29%\n🔗 <a href=\"https://silpo.ua/product/voda-mineralna-st-yorre-naturalna-gazovana-sklo-860314\">відкрити</a>"
    ],
    "subs": [
     "s1_18x0",
@@ -7945,22 +7946,22 @@
    "b": "Соки і нектари",
    "first": [
     "1. 🔥 Сік «Наш Сік» яблучно-персиковий з м’якоттю, 0,95л — <b>44.99 ₴</b> <s>86.9 ₴</s> · заявлено −48% · <b>реально −48%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/sik-nash-sik-iabluchno-persykovyi-z-m-iakottiu-913809\">відкрити</a>",
-    "2. 🔥 Сік «Наш Сік» томатний з м'якоттю, 0,95л — <b>44.99 ₴</b> <s>86.9 ₴</s> · заявлено −48% · <b>реально −48%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/sik-nash-sik-tomatnyi-z-m-iakottiu-576298\">відкрити</a>",
-    "3. 🔥 Нектар «Наш Сік» яблучно-виноградний освітлений, 0,95л — <b>39.99 ₴</b> <s>75.3 ₴</s> · заявлено −47% · <b>реально −47%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/nektar-nash-sik-iabluchno-vynogradnyi-osvitlenyi-819225\">відкрити</a>",
-    "4. 🔥 Сік «Наш Сік» мультивітамінний, 0,95л — <b>44.99 ₴</b> <s>75.3 ₴</s> · заявлено −40% · <b>реально −40%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/sik-nash-sik-multyvitaminnyi-58907\">відкрити</a>",
-    "5. Сік Happy Day яблучний, 1л — <b>99 ₴</b> <s>189 ₴</s> · 🌐 лише онлайн-замовлення заявлено −48% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/sik-happy-day-iabluchnyi-507678\">відкрити</a>"
+    "2. 🔥 Нектар «Наш Сік» яблучно-виноградний освітлений, 0,95л — <b>39.99 ₴</b> <s>75.3 ₴</s> · заявлено −47% · <b>реально −47%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/nektar-nash-sik-iabluchno-vynogradnyi-osvitlenyi-819225\">відкрити</a>",
+    "3. 🔥 Сік «Наш Сік» мультивітамінний, 0,95л — <b>44.99 ₴</b> <s>75.3 ₴</s> · заявлено −40% · <b>реально −40%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/sik-nash-sik-multyvitaminnyi-58907\">відкрити</a>",
+    "4. Сік Happy Day яблучний, 1л — <b>99 ₴</b> <s>189 ₴</s> · 🌐 лише онлайн-замовлення заявлено −48% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/sik-happy-day-iabluchnyi-507678\">відкрити</a>",
+    "5. 🔥 Сік Jaffa яблучний, 0,95л — <b>79.99 ₴</b> <s>122.6 ₴</s> · заявлено −35% · <b>реально −35%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/sik-jaffa-iabluchnyi-760347\">відкрити</a>"
    ],
    "rows": [
-    "6. 🔥 Сік Jaffa яблучний, 0,95л — <b>79.99 ₴</b> <s>122.6 ₴</s> · заявлено −35% · <b>реально −35%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/sik-jaffa-iabluchnyi-760347\">відкрити</a>",
-    "7. 🔥 Нектар Jaffa вишневий, 0,95л — <b>74.99 ₴</b> <s>114.6 ₴</s> · заявлено −35% · <b>реально −35%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/nektar-jaffa-vyshnevyi-760340\">відкрити</a>",
-    "8. 🔥 Сік Jaffa томатний з морською сіллю, 0,95л — <b>74.99 ₴</b> <s>114.6 ₴</s> · заявлено −35% · <b>реально −35%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/sik-jaffa-tomatnyi-z-morskoiu-silliu-760346\">відкрити</a>",
-    "9. Сік Hohes C Classic апельсин-ацерола, 1л — <b>199 ₴</b> <s>289 ₴</s> · заявлено −31%\n🔗 <a href=\"https://silpo.ua/product/sik-hohes-c-classic-apelsyn-atserola-1017675\">відкрити</a>",
-    "10. 🔥 Сік Galicia яблучно-чорничний прямого віджиму, 1л — <b>89.99 ₴</b> <s>124 ₴</s> · заявлено −27% · <b>реально −27%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/sik-galicia-iabluchno-chornychnyi-priamogo-vidzhymu-549562\">відкрити</a>",
-    "11. Напій соковий Maaza гуава негазований тетра, 1л — <b>124 ₴</b> <s>174 ₴</s> · заявлено −29%\n🔗 <a href=\"https://silpo.ua/product/napii-sokovyi-maaza-guava-negazovanyi-tetra-896940\">відкрити</a>",
-    "12. Напій соковий Maaza гранат негазований тетра, 1л — <b>124 ₴</b> <s>174 ₴</s> · заявлено −29%\n🔗 <a href=\"https://silpo.ua/product/napii-sokovyi-maaza-granat-negazovanyi-tetra-896941\">відкрити</a>",
-    "13. Сік Dawtona томатний з селерою, 0,3л — <b>47.99 ₴</b> <s>60.99 ₴</s> · заявлено −21% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/sik-dawtona-tomatnyi-z-seleroiu-914224\">відкрити</a>",
-    "14. Нектар Granini ананасовий 50%, 0,25л — <b>64.99 ₴</b> <s>94.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −32%\n🔗 <a href=\"https://silpo.ua/product/nektar-granini-ananasovyi-50-603022\">відкрити</a>",
-    "15. Напій соковий Happy Day Dragonfruit, 1л — <b>99 ₴</b> <s>139 ₴</s> · 🌐 лише онлайн-замовлення заявлено −29%\n🔗 <a href=\"https://silpo.ua/product/napii-sokovyi-happy-day-dragonfruit-896911\">відкрити</a>"
+    "6. 🔥 Нектар Jaffa вишневий, 0,95л — <b>74.99 ₴</b> <s>114.6 ₴</s> · заявлено −35% · <b>реально −35%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/nektar-jaffa-vyshnevyi-760340\">відкрити</a>",
+    "7. 🔥 Сік Jaffa томатний з морською сіллю, 0,95л — <b>74.99 ₴</b> <s>114.6 ₴</s> · заявлено −35% · <b>реально −35%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/sik-jaffa-tomatnyi-z-morskoiu-silliu-760346\">відкрити</a>",
+    "8. Сік Hohes C Classic апельсин-ацерола, 1л — <b>199 ₴</b> <s>289 ₴</s> · заявлено −31%\n🔗 <a href=\"https://silpo.ua/product/sik-hohes-c-classic-apelsyn-atserola-1017675\">відкрити</a>",
+    "9. 🔥 Сік Galicia яблучно-чорничний прямого віджиму, 1л — <b>89.99 ₴</b> <s>124 ₴</s> · заявлено −27% · <b>реально −27%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/sik-galicia-iabluchno-chornychnyi-priamogo-vidzhymu-549562\">відкрити</a>",
+    "10. Напій соковий Maaza гуава негазований тетра, 1л — <b>124 ₴</b> <s>174 ₴</s> · заявлено −29%\n🔗 <a href=\"https://silpo.ua/product/napii-sokovyi-maaza-guava-negazovanyi-tetra-896940\">відкрити</a>",
+    "11. Напій соковий Maaza гранат негазований тетра, 1л — <b>124 ₴</b> <s>174 ₴</s> · заявлено −29%\n🔗 <a href=\"https://silpo.ua/product/napii-sokovyi-maaza-granat-negazovanyi-tetra-896941\">відкрити</a>",
+    "12. Сік Dawtona томатний з селерою, 0,3л — <b>47.99 ₴</b> <s>60.99 ₴</s> · заявлено −21% · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/sik-dawtona-tomatnyi-z-seleroiu-914224\">відкрити</a>",
+    "13. Нектар Granini ананасовий 50%, 0,25л — <b>64.99 ₴</b> <s>94.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −32%\n🔗 <a href=\"https://silpo.ua/product/nektar-granini-ananasovyi-50-603022\">відкрити</a>",
+    "14. Напій соковий Happy Day Dragonfruit, 1л — <b>99 ₴</b> <s>139 ₴</s> · 🌐 лише онлайн-замовлення заявлено −29%\n🔗 <a href=\"https://silpo.ua/product/napii-sokovyi-happy-day-dragonfruit-896911\">відкрити</a>",
+    "15. Нектар Cido вишневий, 1л — <b>129 ₴</b> <s>179 ₴</s> · 🌐 лише онлайн-замовлення заявлено −28% · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/nektar-cido-vyshnevyi-905945\">відкрити</a>"
    ],
    "par": "s1_18"
   },
@@ -8675,7 +8676,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-22T11:21:53.548148+03:00",
+ "gh_beat": "2026-10-22T11:26:08.129401+03:00",
  "silpo_stores": {
   "week": "2026-43",
   "v": 2,
@@ -25548,7 +25549,7 @@
   "silpo": {}
  },
  "pushed_h": {
-  "gs": "33ff2493d1ba",
+  "gs": "998a22caf21b",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "352e4330b4d4",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
@@ -25629,8 +25630,8 @@
   "sx/41513281.png": "cbace6d4226d",
   "sx/27871956.png": "eee3375ddbb5",
   "sx/33428468.png": "bdca07267914",
-  "silpo/1edb6b54-d26b-681e-aa85-b5ff7ea46636.json": "1f4348974e7d",
-  "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "53c00ad5dcf8"
+  "silpo/1edb6b54-d26b-681e-aa85-b5ff7ea46636.json": "a414d1a3093d",
+  "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "9b5a9d9732de"
  },
  "smm_try": "2026-10-15 21",
  "silpo_conf": {
@@ -28496,15 +28497,15 @@
  "silpo_by": {
   "1edb6b54-d26b-681e-aa85-b5ff7ea46636": {
    "week": "2026-10-22",
-   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.10 11:21 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Оводова Миколи, 51 · 🏪 самовивіз · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-oberny-shcho-vyishlo-chudesa-v-mori-987298\">Книга Ранок Оберни Що вийшло Чудеса в морі</a> — <b>0.19 ₴</b> <s>179 ₴</s> · −100%\n2. 🍷 <a href=\"https://silpo.ua/product/vyno-remy-pannier-rose-d-anjou-rozheve-988294\">Вино Remy Pannier Rose d'Anjou рожеве</a> — <b>299 ₴</b> <s>639 ₴</s> · −53%\n3. 🥤 <a href=\"https://silpo.ua/product/sik-nash-sik-iabluchno-persykovyi-z-m-iakottiu-913809\">Сік «Наш Сік» яблучно-персиковий з м’якоттю</a> — <b>44.99 ₴</b> <s>86.9 ₴</s> · −48%\n4. 🥛 <a href=\"https://silpo.ua/product/moloko-zghushchene-ichnia-nezbyrane-z-tsukrom-8-5-585867\">Молоко згущене «Ічня» незбиране з цукром 8,5%</a> — <b>42.99 ₴</b> <s>84.49 ₴</s> · −49%\n5. 🧼 <a href=\"https://silpo.ua/product/gel-dlia-dushu-str8-freak-1035547\">Гель для душу STR8 Freak</a> — <b>59.99 ₴</b> <s>119 ₴</s> · −50%\n6. 🥤 <a href=\"https://silpo.ua/product/sik-nash-sik-tomatnyi-z-m-iakottiu-576298\">Сік «Наш Сік» томатний з м'якоттю</a> — <b>44.99 ₴</b> <s>86.9 ₴</s> · −48%\n7. 🛒 <a href=\"https://silpo.ua/product/kapsuly-dlia-posudomyinoi-mashyny-finish-ultimate-plus-1028017\">Капсули для посудомийної машини Finish Ultimate Plus</a> — <b>1199 ₴</b> <s>2599 ₴</s> · −54%\n8. 🛒 <a href=\"https://silpo.ua/product/tabletky-dlia-posudomyinykh-mashyn-somat-classic-lemon-fresh-990880\">Таблетки для посудомийних машин Somat Classic Lemon fresh</a> — <b>439 ₴</b> <s>949 ₴</s> · −54%\n9. 🥩 <a href=\"https://silpo.ua/product/sosysky-globyno-niamski-zi-svynyny-b-o-v-g-830989\">Сосиски «Глобино» «Нямські» зі свинини б/о в/ґ</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −50%\n10. 🛒 <a href=\"https://silpo.ua/product/gel-somat-excellence-duo-dlia-posudomyinykh-mashyn-880468\">Гель Somat Excellence Duo для посудомийних машин</a> — <b>319 ₴</b> <s>619 ₴</s> · −48%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s1_",
+   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.10 11:26 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Оводова Миколи, 51 · 🏪 самовивіз · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-oberny-shcho-vyishlo-chudesa-v-mori-987298\">Книга Ранок Оберни Що вийшло Чудеса в морі</a> — <b>0.19 ₴</b> <s>179 ₴</s> · −100%\n2. 🍷 <a href=\"https://silpo.ua/product/vyno-remy-pannier-rose-d-anjou-rozheve-988294\">Вино Remy Pannier Rose d'Anjou рожеве</a> — <b>299 ₴</b> <s>639 ₴</s> · −53%\n3. 🥤 <a href=\"https://silpo.ua/product/sik-nash-sik-iabluchno-persykovyi-z-m-iakottiu-913809\">Сік «Наш Сік» яблучно-персиковий з м’якоттю</a> — <b>44.99 ₴</b> <s>86.9 ₴</s> · −48%\n4. 🥛 <a href=\"https://silpo.ua/product/moloko-zghushchene-ichnia-nezbyrane-z-tsukrom-8-5-585867\">Молоко згущене «Ічня» незбиране з цукром 8,5%</a> — <b>42.99 ₴</b> <s>84.49 ₴</s> · −49%\n5. 🧼 <a href=\"https://silpo.ua/product/gel-dlia-dushu-str8-freak-1035547\">Гель для душу STR8 Freak</a> — <b>59.99 ₴</b> <s>119 ₴</s> · −50%\n6. 🛒 <a href=\"https://silpo.ua/product/kapsuly-dlia-posudomyinoi-mashyny-finish-ultimate-plus-1028017\">Капсули для посудомийної машини Finish Ultimate Plus</a> — <b>1199 ₴</b> <s>2599 ₴</s> · −54%\n7. 🛒 <a href=\"https://silpo.ua/product/tabletky-dlia-posudomyinykh-mashyn-somat-classic-lemon-fresh-990880\">Таблетки для посудомийних машин Somat Classic Lemon fresh</a> — <b>439 ₴</b> <s>949 ₴</s> · −54%\n8. 🥩 <a href=\"https://silpo.ua/product/sosysky-globyno-niamski-zi-svynyny-b-o-v-g-830989\">Сосиски «Глобино» «Нямські» зі свинини б/о в/ґ</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −50%\n9. 🛒 <a href=\"https://silpo.ua/product/gel-somat-excellence-duo-dlia-posudomyinykh-mashyn-880468\">Гель Somat Excellence Duo для посудомийних машин</a> — <b>319 ₴</b> <s>619 ₴</s> · −48%\n10. 🥫 <a href=\"https://silpo.ua/product/pasta-lino-lada-gold-gorikhova-z-kakao-i-fundukom-859945\">Паста Lino Lada Gold горіхова з какао і фундуком</a> — <b>129 ₴</b> <s>249 ₴</s> · −48%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s1_",
    "built": "2026-10-22-am",
-   "at": "22.10 11:21"
+   "at": "22.10 11:26"
   },
   "1ed43e73-051b-6842-a111-a5ad042eb496@dl": {
    "week": "2026-10-22",
-   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.10 11:21 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, просп. Володимира Івасюка, 46 · 🚚 доставка · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <a href=\"https://silpo.ua/product/servetky-vologi-premiia-dlia-intymnoi-gigiieny-822109\">Серветки вологі «Премія»® для інтимної гігієни</a> — <b>17.99 ₴</b> <s>45.49 ₴</s> · −63%\n2. 🧼 <a href=\"https://silpo.ua/product/servetky-vologi-premiia-dlia-intymnoi-gigiieny-822109\">Серветки вологі «Премія»® для інтимної гігієни</a> — <b>17.99 ₴</b> <s>45.49 ₴</s> · −63%\n3. 🛒 <a href=\"https://silpo.ua/product/tabletky-dlia-posudomyinykh-mashyn-finish-all-in-1-672814\">Таблетки для посудомийних машин Finish All in 1</a> — <b>559 ₴</b> <s>1299 ₴</s> · −57%\n4. 🧼 <a href=\"https://silpo.ua/product/krem-mylo-premiia-z-ekstraktom-olyvy-507792\">Крем-мило «Премія»® з екстрактом оливи</a> — <b>29.99 ₴</b> <s>56.99 ₴</s> · −47%\n5. 🥫 <a href=\"https://silpo.ua/product/olyvky-iberica-z-lymonom-z-b-851852\">Оливки Iberica з лимоном з/б</a> — <b>59.99 ₴</b> <s>113 ₴</s> · −49%\n6. 🥦 <a href=\"https://silpo.ua/product/mango-ostin-846480\">Манго Остін</a> — <b>59.99 ₴</b> <s>119 ₴</s> · −51%\n7. 🥫 <a href=\"https://silpo.ua/product/olyvky-iberica-z-krevetkoiu-z-b-851851\">Оливки Iberica з креветкою з/б</a> — <b>59.99 ₴</b> <s>113 ₴</s> · −49%\n8. 🛒 <a href=\"https://silpo.ua/product/krem-mylo-premiia-z-ekstraktom-olyvy-507792\">Крем-мило «Премія»® з екстрактом оливи</a> — <b>29.99 ₴</b> <s>56.99 ₴</s> · −47%\n9. 🛒 <a href=\"https://silpo.ua/product/gel-somat-excellence-duo-dlia-posudomyinykh-mashyn-880468\">Гель Somat Excellence Duo для посудомийних машин</a> — <b>319 ₴</b> <s>579 ₴</s> · −45%\n10. ☕ <a href=\"https://silpo.ua/product/kava-rozchynna-chorna-karta-gold-s-b-878777\">Кава розчинна «Чорна карта» Gold с/б</a> — <b>334 ₴</b> <s>619 ₴</s> · −49%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s0_",
+   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.10 11:26 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, просп. Володимира Івасюка, 46 · 🚚 доставка · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <a href=\"https://silpo.ua/product/servetky-vologi-premiia-dlia-intymnoi-gigiieny-822109\">Серветки вологі «Премія»® для інтимної гігієни</a> — <b>17.99 ₴</b> <s>45.49 ₴</s> · −63%\n2. 🧼 <a href=\"https://silpo.ua/product/servetky-vologi-premiia-dlia-intymnoi-gigiieny-822109\">Серветки вологі «Премія»® для інтимної гігієни</a> — <b>17.99 ₴</b> <s>45.49 ₴</s> · −63%\n3. 🛒 <a href=\"https://silpo.ua/product/tabletky-dlia-posudomyinykh-mashyn-finish-all-in-1-672814\">Таблетки для посудомийних машин Finish All in 1</a> — <b>559 ₴</b> <s>1299 ₴</s> · −57%\n4. 🧼 <a href=\"https://silpo.ua/product/krem-mylo-premiia-z-ekstraktom-olyvy-507792\">Крем-мило «Премія»® з екстрактом оливи</a> — <b>29.99 ₴</b> <s>56.99 ₴</s> · −47%\n5. 🥫 <a href=\"https://silpo.ua/product/olyvky-iberica-z-lymonom-z-b-851852\">Оливки Iberica з лимоном з/б</a> — <b>59.99 ₴</b> <s>113 ₴</s> · −49%\n6. 🥦 <a href=\"https://silpo.ua/product/mango-ostin-846480\">Манго Остін</a> — <b>59.99 ₴</b> <s>119 ₴</s> · −51%\n7. 🥫 <a href=\"https://silpo.ua/product/olyvky-iberica-z-krevetkoiu-z-b-851851\">Оливки Iberica з креветкою з/б</a> — <b>59.99 ₴</b> <s>113 ₴</s> · −49%\n8. 🛒 <a href=\"https://silpo.ua/product/krem-mylo-premiia-z-ekstraktom-olyvy-507792\">Крем-мило «Премія»® з екстрактом оливи</a> — <b>29.99 ₴</b> <s>56.99 ₴</s> · −47%\n9. 🛒 <a href=\"https://silpo.ua/product/gel-somat-excellence-duo-dlia-posudomyinykh-mashyn-880468\">Гель Somat Excellence Duo для посудомийних машин</a> — <b>319 ₴</b> <s>579 ₴</s> · −45%\n10. ☕ <a href=\"https://silpo.ua/product/kava-rozchynna-chorna-karta-gold-s-b-878777\">Кава розчинна «Чорна карта» Gold с/б</a> — <b>334 ₴</b> <s>619 ₴</s> · −49%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s0_",
    "built": "2026-10-22-am",
-   "at": "22.10 11:21"
+   "at": "22.10 11:26"
   }
  },
  "x18_at": {
@@ -28527,7 +28528,7 @@
   "rpl": "2026-10-22T07:30:42.979775+03:00",
   "bds": "2026-10-22T07:30:42.979775+03:00"
  },
- "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.10 11:21 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-naipovnisha-entsyklopediia-vsogo-tvii-dovidnyk-pro-svit-983375\">Книга Ранок Найповніша енциклопедія всього Твій довідник про світ</a> — <b>0.19 ₴</b> <s>2299 ₴</s> · −100%\n2. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-entsyklopediia-pro-vse-nash-svit-u-maliunkakh-983376\">Книга Ранок Енциклопедія про все Наш світ у малюнках</a> — <b>0.19 ₴</b> <s>1599 ₴</s> · −100%\n3. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-fabula-suchasna-proza-ukrainy-usi-ikhni-demony-983412\">Книга Фабула Сучасна проза України Усі їхні демони</a> — <b>0.19 ₴</b> <s>454 ₴</s> · −100%\n4. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/komiks-varvar-publishing-mailz-moralez-udarni-khvyli-982426\">Комікс Varvar Publishing Майлз Моралез Ударні хвилі</a> — <b>0.19 ₴</b> <s>389 ₴</s> · −100%\n5. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-frenki-d-vampir-vegan-988185\">Книга Ранок Френкі Д вампір-веган</a> — <b>0.19 ₴</b> <s>324 ₴</s> · −100%\n6. 🥩 <a href=\"https://silpo.ua/product/kovbasa-yuvileinyi-braunshveigska-s-k-v-g-928638\">Ковбаса Ювілейний Брауншвейгська с/к в/ґ</a> — <b>179 ₴</b> <s>349 ₴</s> · −51%\n7. 🥦 <a href=\"https://silpo.ua/product/mango-ostin-846480\">Манго Остін</a> — <b>59.99 ₴</b> <s>119 ₴</s> · −51%\n8. 🥛 <a href=\"https://silpo.ua/product/moloko-zghushchene-ichnia-nezbyrane-z-tsukrom-8-5-585867\">Молоко згущене «Ічня» незбиране з цукром 8,5%</a> — <b>42.99 ₴</b> <s>81.99 ₴</s> · −49%\n9. 🛒 <a href=\"https://silpo.ua/product/sous-korolivskyi-smak-satsebeli-806856\">Соус «Королівський смак» «Сацебелі»</a> — <b>39.99 ₴</b> <s>75.99 ₴</s> · −50%\n10. 🛒 📦 від 2 шт — 169.00 ₴/шт <a href=\"https://silpo.ua/product/papir-tualetnyi-nua-3-sharovyi-979726\">Папір туалетний Nua 3-шаровий</a> — <b>169 ₴</b> <s>399 ₴</s> · −58%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
+ "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.10 11:26 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-naipovnisha-entsyklopediia-vsogo-tvii-dovidnyk-pro-svit-983375\">Книга Ранок Найповніша енциклопедія всього Твій довідник про світ</a> — <b>0.19 ₴</b> <s>2299 ₴</s> · −100%\n2. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-entsyklopediia-pro-vse-nash-svit-u-maliunkakh-983376\">Книга Ранок Енциклопедія про все Наш світ у малюнках</a> — <b>0.19 ₴</b> <s>1599 ₴</s> · −100%\n3. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-fabula-suchasna-proza-ukrainy-usi-ikhni-demony-983412\">Книга Фабула Сучасна проза України Усі їхні демони</a> — <b>0.19 ₴</b> <s>454 ₴</s> · −100%\n4. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/komiks-varvar-publishing-mailz-moralez-udarni-khvyli-982426\">Комікс Varvar Publishing Майлз Моралез Ударні хвилі</a> — <b>0.19 ₴</b> <s>389 ₴</s> · −100%\n5. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-frenki-d-vampir-vegan-988185\">Книга Ранок Френкі Д вампір-веган</a> — <b>0.19 ₴</b> <s>324 ₴</s> · −100%\n6. 🥩 <a href=\"https://silpo.ua/product/kovbasa-yuvileinyi-braunshveigska-s-k-v-g-928638\">Ковбаса Ювілейний Брауншвейгська с/к в/ґ</a> — <b>179 ₴</b> <s>349 ₴</s> · −51%\n7. 🥦 <a href=\"https://silpo.ua/product/mango-ostin-846480\">Манго Остін</a> — <b>59.99 ₴</b> <s>119 ₴</s> · −51%\n8. 🥛 <a href=\"https://silpo.ua/product/moloko-zghushchene-ichnia-nezbyrane-z-tsukrom-8-5-585867\">Молоко згущене «Ічня» незбиране з цукром 8,5%</a> — <b>42.99 ₴</b> <s>81.99 ₴</s> · −49%\n9. 🛒 <a href=\"https://silpo.ua/product/sous-korolivskyi-smak-satsebeli-806856\">Соус «Королівський смак» «Сацебелі»</a> — <b>39.99 ₴</b> <s>75.99 ₴</s> · −50%\n10. 🛒 📦 від 2 шт — 169.00 ₴/шт <a href=\"https://silpo.ua/product/papir-tualetnyi-nua-3-sharovyi-979726\">Папір туалетний Nua 3-шаровий</a> — <b>169 ₴</b> <s>399 ₴</s> · −58%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
  "silpo_day": "2026-10-22-am",
  "upd": {
   "🔥 Фільми 18+": {
@@ -28555,14 +28556,14 @@
    "note": ""
   },
   "🎵 Музика": {
-   "at": "22.10 11:16",
-   "ts": 1792656995,
+   "at": "22.10 11:26",
+   "ts": 1792657572,
    "ok": true,
    "note": ""
   },
   "❤️ Здоровʼя": {
-   "at": "22.10 11:16",
-   "ts": 1792656995,
+   "at": "22.10 11:26",
+   "ts": 1792657573,
    "ok": true,
    "note": ""
   },
@@ -28573,14 +28574,14 @@
    "note": ""
   },
   "🛒 Сільпо (основна)": {
-   "at": "22.10 11:25",
-   "ts": 1792657515,
+   "at": "22.10 11:31",
+   "ts": 1792657901,
    "ok": true,
    "note": ""
   },
   "🛒 Сільпо (підписники)": {
-   "at": "22.10 11:25",
-   "ts": 1792657550,
+   "at": "22.10 11:32",
+   "ts": 1792657933,
    "ok": true,
    "note": ""
   },
@@ -28609,8 +28610,8 @@
    "note": ""
   },
   "ігри PS5": {
-   "at": "22.10 11:16",
-   "ts": 1792656995,
+   "at": "22.10 11:26",
+   "ts": 1792657573,
    "ok": true,
    "note": ""
   },
@@ -28621,8 +28622,8 @@
    "note": ""
   },
   "аудіокниги": {
-   "at": "22.10 11:16",
-   "ts": 1792656995,
+   "at": "22.10 11:26",
+   "ts": 1792657573,
    "ok": true,
    "note": ""
   },
@@ -28639,20 +28640,20 @@
    "note": ""
   },
   "кіномэтч": {
-   "at": "22.10 11:16",
-   "ts": 1792656995,
+   "at": "22.10 11:26",
+   "ts": 1792657573,
    "ok": true,
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "22.10 11:24",
-   "ts": 1792657495,
+   "at": "22.10 11:31",
+   "ts": 1792657877,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "22.10 11:24",
-   "ts": 1792657495,
+   "at": "22.10 11:31",
+   "ts": 1792657877,
    "ok": true,
    "note": ""
   }
@@ -28662,7 +28663,8 @@
   "музика",
   "здоров'я",
   "ігри PS5",
-  "аудіокниги"
+  "аудіокниги",
+  "пп-страви"
  ],
  "kb_probe": "2026-42",
  "cofid": "",
@@ -28683,7 +28685,7 @@
  "ps_day": "2026-10-22",
  "match_month": "2026-10",
  "rc_need": true,
- "rc_force": false,
+ "rc_force": true,
  "km_pick": {
   "m49046": {
    "title": "На Західному фронті без змін",
