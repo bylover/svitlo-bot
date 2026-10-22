@@ -1074,16 +1074,6 @@
   "gemini-flash-latest": "2026-10-23T10:05:00+03:00"
  },
  "kino_seen": [
-  "m929590",
-  "m843",
-  "t245927",
-  "t236235",
-  "t4607",
-  "m582014",
-  "m607844",
-  "m1419406",
-  "m541671",
-  "m574475",
   "m1523145",
   "m170",
   "t83631",
@@ -1673,7 +1663,17 @@
   "m696806",
   "m438799",
   "m13001",
-  "m12914"
+  "m12914",
+  "m377263",
+  "m1289936",
+  "m851644",
+  "m449176",
+  "m532444",
+  "m672647",
+  "m536743",
+  "m930094",
+  "m86000",
+  "m18438"
  ],
  "yt_ver": 2,
  "yt_seen": [
@@ -8678,7 +8678,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-22T12:15:43.585312+03:00",
+ "gh_beat": "2026-10-22T12:20:44.139212+03:00",
  "silpo_stores": {
   "week": "2026-43",
   "v": 2,
@@ -25569,6 +25569,12 @@
    null,
    null,
    "2026-10-22"
+  ],
+  "tt26440619": [
+   7.0,
+   91,
+   82,
+   "2026-10-22"
   ]
  },
  "mo_sent": {
@@ -25593,7 +25599,7 @@
   "silpo": {}
  },
  "pushed_h": {
-  "gs": "437cc0dc7664",
+  "gs": "a18251338249",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "d97c8c67e2bc",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
@@ -35963,6 +35969,12 @@
    {
     "id": "3b7e8c2ed5",
     "text": "🍿 <b>ПІДБІРКА КІНО · ФАНТАСТИКА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/795813?language=uk\">НЕідеальний чоловік</a></b> (2021)\nфантастика, комедія, мелодрама · ⏱ 1 год 45 хв\n⭐ IMDb <b>7.1</b> · Ⓜ <b>78</b>\n<i>🎭 Maren Eggert, Ден Стівенс, Сандра Гюллер</i>\n📺 <a href=\"https://www.themoviedb.org/movie/795813-ich-bin-dein-mensch/watch?locale=UA\">Apple TV Store</a>\n📝 Том — втілення ідеального чоловіка для однієї виняткової жінки. Але неординарна Альма не така проста й передбачувана. У Тома є всього три тижні, щоб довести їй свою досконалість та розібратися в тому, що таке…\n▶️ <a href=\"https://youtu.be/F7B-mnH_7zU\">Трейлер</a></blockquote>\n§KN:m795813\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/539892?language=uk\">Почвари</a></b> (2019)\nфантастика, трилер · ⏱ 1 год 45 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>88%</b> · Ⓜ <b>63</b>\n<i>🎭 Еміль Гірш, Брюс Дерн, Grace Park</i>\n📺 <a href=\"https://www.themoviedb.org/movie/539892-freaks/watch?locale=UA\">Apple TV Store</a>\n📝 Замкнена в чотирьох стінах будинку за волею батька, семирічна Хлої живе в страху перед зовнішнім світом, який водночас її неймовірно цікавить. Там так звані «Ненормальні» стають джерелом постійної небезпеки, чи…\n▶️ <a href=\"https://youtu.be/sBQF9t1qKkA\">Трейлер</a></blockquote>\n§KN:m539892\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/1100988?language=uk\">28 років по тому</a></b> (2025)\nжахи, трилер, фантастика · ⏱ 1 год 55 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>88%</b> · Ⓜ <b>77</b>\n<i>🎭 Аарон Тейлор-Джонсон, Алфі Вільямс, Рейф Файнз</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1100988-28-years-later/watch?locale=UA\">Rakuten TV</a>\n📝 Минуло майже три десятиліття з моменту, як вірус люті вирвався з лабораторії біологічної зброї. Зараз, перебуваючи під жорстким карантином, деякі все ж знайшли способи виживати серед інфікованих. Одна з таких груп,…\n▶️ <a href=\"https://youtu.be/ehYD5HpuLUo\">Трейлер</a></blockquote>\n§KN:m1100988\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/1154538?language=uk\">Nirvanna the Band the Show the Movie</a></b> (2026)\nкомедія, фантастика, пригоди · ⏱ 1 год 40 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>95%</b> · Ⓜ <b>80</b>\n<i>🎭 Метт Джонсон, Jay McCarrol, Ben Petrie</i>\n📝 When their plan to book a show at the Rivoli goes horribly wrong, Matt and Jay accidentally travel back to the year 2008.\n▶️ <a href=\"https://youtu.be/y2K9ccMREOI\">Трейлер</a></blockquote>\n§KN:m1154538\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/471498?language=uk\">Кисень</a></b> (2021)\nфантастика, трилер, жахи · ⏱ 1 год 40 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>90%</b> · Ⓜ <b>67</b>\n<i>🎭 Мелані Лоран, Матьє Амальрік, Малік Зіді</i>\n📺 <a href=\"https://www.themoviedb.org/movie/471498-oxygene/watch?locale=UA\">Netflix</a>\n📝 Прокинувшись в кріогенній камері, Ліз щосили намагається вижити і згадати, хто вона, поки не скінчився кисень.\n▶️ <a href=\"https://youtu.be/DSEVCpNEQMk\">Трейлер</a></blockquote>\n§KN:m471498\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/958487?language=uk\">PLAN 75</a></b> (2022)\nдрама, фантастика · ⏱ 1 год 53 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>95%</b> · Ⓜ <b>70</b>\n<i>🎭 Чіеко Байшьо, Хаято Ісомура, Стефані Аріанн</i>\n📝 In a Japan of the near future, the government program Plan 75 encourages senior citizens to be voluntarily euthanized to remedy a super-aged society. An elderly woman whose means of survival are vanishing, a…\n▶️ <a href=\"https://youtu.be/K4VaoNCsj_0\">Трейлер</a></blockquote>\n§KN:m958487\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/696806?language=uk\">Проєкт «Адам»</a></b> (2022)\nпригоди, фантастика, комедія · ⏱ 1 год 46 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>68%</b> · Ⓜ <b>55</b>\n<i>🎭 Раян Рейнольдс, Walker Scobell, Марк Раффало</i>\n📺 <a href=\"https://www.themoviedb.org/movie/696806-the-adam-project/watch?locale=UA\">Netflix</a>\n📝 Після аварійної посадки у 2022 році Адам Рід, пілот-винищувач, що мандрує в часі, об’єднує зусилля із 12-річним собою, щоб урятувати майбутнє.\n▶️ <a href=\"https://youtu.be/EOX9rYgU3cs\">Трейлер</a></blockquote>\n§KN:m696806\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/438799?language=uk\">Оверлорд</a></b> (2018)\nжахи, військовий, фантастика · ⏱ 1 год 50 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>82%</b> · Ⓜ <b>60</b>\n<i>🎭 Джован Адепо, Ваятт Расселл, Пілоу Асбек</i>\n📺 <a href=\"https://www.themoviedb.org/movie/438799-overlord/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Фантастичний горрор від режисера Джей Джей Абрамса. 1944 рік, Нормандія. Двоє американських десантників висаджуються в тилу ворога з важливою місією. Наближаючись до своєї мети, вони усвідомлюють, що в селищі,…\n▶️ <a href=\"https://youtu.be/1XGdu5V-2d8\">Трейлер</a></blockquote>\n§KN:m438799\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/13001?language=uk\">Зоряна брама: Ковчег істини</a></b> (2008)\nбойовик, пригоди, фантастика · ⏱ 1 год 41 хв\n⭐ IMDb <b>7.4</b>\n<i>🎭 Ben Browder, Аманда Таппінґ, Крістофер Джадж</i>\n📺 <a href=\"https://www.themoviedb.org/movie/13001-stargate-the-ark-of-truth/watch?locale=UA\">Apple TV Store</a>\n📝 Сила богоподібних Орай опинилася в руках фанатичної Адрії, що готує армаду для повного знищення Землі. Єдине, що може зупинити її армію — це артефакт Древніх під назвою Ковчег правди. Артефакт знаходиться в рідній…\n▶️ <a href=\"https://youtu.be/A1n6nq9vtuU\">Трейлер</a></blockquote>\n§KN:m13001\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/12914?language=uk\">Зоряна брама: Континуум</a></b> (2008)\nбойовик, пригоди, фантастика · ⏱ 1 год 38 хв\n⭐ IMDb <b>7.5</b>\n<i>🎭 Ben Browder, Аманда Таппінґ, Крістофер Джадж</i>\n📺 <a href=\"https://www.themoviedb.org/movie/12914-stargate-continuum/watch?locale=UA\">Apple TV Store</a>\n📝 Сюжет розкриває деякі аспекти подорожей у часі. Владиці гоа'улду Ба'алу вдалося змінити лінію часу таким чином, аби земляни забули про існування Зоряної брами і були беззахисними перед навалою гоа'улдів.  Генерал…\n▶️ <a href=\"https://youtu.be/C4gNXCnHFsg\">Трейлер</a></blockquote>\n§KN:m12914"
+   }
+  ],
+  "romance": [
+   {
+    "id": "c02bdf8ae7",
+    "text": "🍿 <b>ПІДБІРКА КІНО · МЕЛОДРАМА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/377263?language=uk\">Франц</a></b> (2016)\nісторичний, драма, мелодрама · ⏱ 1 год 53 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>91%</b> · Ⓜ <b>73</b>\n<i>🎭 П'єр Ніні, Паула Бер, Ernst Stötzner</i>\n📺 <a href=\"https://www.themoviedb.org/movie/377263-frantz/watch?locale=UA\">Plex, Apple TV Store</a>\n📝 Події відбуваються після закінчення Першої світової війни. Німкеня Анна щодня приходить на могилу свого нареченого Франца, який загинув у Франції. Одного разу вона зустрічає там француза Адріена, який теж приніс…\n▶️ <a href=\"https://youtu.be/sRry8VjP200\">Трейлер</a></blockquote>\n§KN:m377263\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/1289936?language=uk\">Абатство Даунтон: Величний фінал</a></b> (2025)\nдрама, мелодрама · ⏱ 2 год 03 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>91%</b> · Ⓜ <b>66</b>\n<i>🎭 Мішель Докері, Г'ю Бонневіль, Елізабет Мак-Ґоверн</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1289936-downton-abbey-the-grand-finale/watch?locale=UA\">Rakuten TV</a>\n📝 Події розгортаються на початку 1930-х років, коли родина Кроулі знову постає перед викликами часу. Зіркові актори, улюблені персонажі в історії, на яку так довго чекали. У світі, що стрімко змінюється, кожному з них…\n▶️ <a href=\"https://youtu.be/C1GZyFV8mJU\">Трейлер</a></blockquote>\n§KN:m1289936\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/851644?language=uk\">Дівчина XX століття</a></b> (2022)\nмелодрама, драма · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>86%</b>\n<i>🎭 Кім Ю Чжун, Бьон У Сок, 박정우</i>\n📺 <a href=\"https://www.themoviedb.org/movie/851644-20/watch?locale=UA\">Netflix</a>\n📝 1999 рік. Дівчинка пильно стежить за хлопцем на прохання глибоко закоханої в нього подруги, а потім потрапляє у вир власної історії кохання.\n▶️ <a href=\"https://youtu.be/KFS4_qevE7M\">Трейлер</a></blockquote>\n§KN:m851644\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/449176?language=uk\">З любов’ю, Саймон</a></b> (2018)\nкомедія, драма, мелодрама · ⏱ 1 год 50 хв · 🔞 відвертість: помірна\n⭐ IMDb <b>7.5</b> · 🍅 <b>92%</b> · Ⓜ <b>72</b>\n<i>🎭 Нік Робінсон, Дженніфер Ґарнер, Джош Дюамель</i>\n📺 <a href=\"https://www.themoviedb.org/movie/449176-love-simon/watch?locale=UA\">Apple TV Store</a>\n📝 Старшокласник Саймон приховує від друзів свою гомосексуальність, але його листування з анонімним коханим потрапляє в чужі руки. Шкільний «клоун» Мартін загрожує викрити Саймона, якщо той не допоможе йому зав'язати…\n▶️ <a href=\"https://youtu.be/E0cbWdlQg_8\">Трейлер</a></blockquote>\n§KN:m449176\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/532444?language=uk\">너의 결혼식</a></b> (2018)\nмелодрама, драма · ⏱ 1 год 50 хв\n⭐ IMDb <b>7.1</b>\n<i>🎭 Пак По Йон, 김영광, Кан Кі Йон</i>\n📝 Through the course of their lives, a man and his first love  are repeatedly separated from each other because of circumstances out of their control.\n▶️ <a href=\"https://youtu.be/QJEe_JEhvw8\">Трейлер</a></blockquote>\n§KN:m532444\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/672647?language=uk\">Карта ідеальних дрібниць</a></b> (2021)\nфентезі, мелодрама · ⏱ 1 год 39 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>78%</b> · Ⓜ <b>61</b>\n<i>🎭 Кайл Аллен, Кетрін Ньютон, Jermaine Harris</i>\n📝 Кмітливий підліток Марк із задоволенням проживає один і той самий день знов і знов. Його світ перевертається догори дриґом, коли він зустрічає таємничу Марґарет, яка також стала заручницею часової петлі. Удвох вони…\n▶️ <a href=\"https://youtu.be/ZOxsfKQWrUg\">Трейлер</a></blockquote>\n§KN:m672647\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/536743?language=uk\">Квін і Слім</a></b> (2019)\nкримінал, драма, мелодрама · ⏱ 2 год 12 хв\n⭐ IMDb <b>7.1</b> · Ⓜ <b>74</b>\n<i>🎭 Деніел Калуя, Джоді Тернер-Сміт, Бокім Вудбайн</i>\n📺 <a href=\"https://www.themoviedb.org/movie/536743-queen-slim/watch?locale=UA\">Apple TV Store</a>\n📝 Під час нічим не прикметного першого побачення в Огайо, чорного чоловіка та чорну жінку зупиняє поліція за незначне порушення на дорозі. Ситуація виходить з-під контролю з несподіваними та трагічними наслідками, коли…\n▶️ <a href=\"https://youtu.be/Ip3iE416WxE\">Трейлер</a></blockquote>\n§KN:m536743\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/930094?language=uk\">Червоний, білий та королівський синій</a></b> (2023)\nкомедія, мелодрама · ⏱ 1 год 58 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>75%</b> · Ⓜ <b>62</b>\n<i>🎭 Тейлор Захар Перес, Ніколас Голіцин, Ума Турман</i>\n📝 Алекс Клермонт-Діас, син президента США, і британський принц Генрі мають багато спільного, але ставляться один до одного з абсолютною зневагою. Після публічного конфлікту, щоб уникнути негативних наслідків для своїх…\n▶️ <a href=\"https://youtu.be/pt56IC8gDZ4\">Трейлер</a></blockquote>\n§KN:m930094\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/86000?language=uk\">Завжди</a></b> (2011)\nмелодрама, драма · ⏱ 1 год 48 хв\n⭐ IMDb <b>7.7</b>\n<i>🎭 소지섭, 한효주, Кан Шін Іль</i>\n📝 Чан Чель Мін — колишній боксер із темним минулим, який тепер розвозить бутельовану воду, а нещодавно влаштувався працювати охоронцем на автомобільному паркуванні. Пізно ввечері коротаючи час у тісній кабінці за…\n▶️ <a href=\"https://youtu.be/RhNR8iUF9Gw\">Трейлер</a></blockquote>\n§KN:m86000\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/18438?language=uk\">김씨 표류기</a></b> (2009)\nдрама, комедія, мелодрама · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.9</b>\n<i>🎭 정재영, 정려원, 양미경</i>\n📝 Mr. Kim is jobless, lost in debt and has been dumped by his girlfriend. He decides to end it all by jumping into the Han River – only to find himself washed up on a small, mid-river island. He soon abandons thoughts…\n▶️ <a href=\"https://youtu.be/061ZyqHhdCo\">Трейлер</a></blockquote>\n§KN:m18438"
    }
   ]
  },
