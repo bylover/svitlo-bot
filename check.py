@@ -3980,10 +3980,19 @@ def rawg(path: str, **q) -> dict:
 
 def games_refresh(st: dict, now: datetime) -> None:
     """Раз на місяць — усі розділи; результат — у Cloudflare (games.json)."""
-    if not RAWG_KEY or not WORKER_MODE or st.get("games_month") == f"{now:%Y-%m}" and not st.get("games_force"):
+    if not RAWG_KEY or not WORKER_MODE or st.get("games_month") == f"{now:%Y-%m}" and not st.get("games_force") and st.get("games_v") == 2:
         return
     since = f"{now.year - 10}-01-01,{now:%Y-%m-%d}"
     pool = {}
+    for page in range(1, 4):                          # 🆕 окремо — найкращі за останні 3 роки (щоб свіжих було більше)
+        try:
+            r = rawg("games", platforms=187, dates=f"{now.year - 3}-01-01,{now:%Y-%m-%d}", ordering="-metacritic", page_size=40, page=page)
+            for g in r.get("results", []):
+                pool[g["id"]] = g
+            if not r.get("next"):
+                break
+        except Exception:
+            break
     for page in range(1, 9):                          # спільний пул PS5 за 10 років (до ~320 ігор із найвищими оцінками)
         try:
             r = rawg("games", platforms=187, dates=since, ordering="-metacritic", page_size=40, page=page)
@@ -4027,9 +4036,10 @@ def games_refresh(st: dict, now: datetime) -> None:
                         items.append(card(g, lvl))
                 elif (mc >= mc_min or (mc == 0 and lvl >= 2)) and u >= u_min and n >= n_min:
                     items.append(card(g, lvl))
-        items.sort(key=lambda x: (-(x["sc"] + (8 - min(8, (x["uc"] or 0) / 100) if sec == "gems" else 0))))
+        fresh_y = now.year - 3                        # свіжіше: ігри останніх ~3 років — вище в рейтингу
+        items.sort(key=lambda x: (-(x["sc"] + (8 - min(8, (x["uc"] or 0) / 100) if sec == "gems" else 0) + (6 if str(x.get("y") or "0") >= str(fresh_y) else 0))))
         out[sec] = {"t": title, "items": items[:30]}
-    st["games_month"], st["games_force"] = f"{now:%Y-%m}", False
+    st["games_month"], st["games_force"], st["games_v"] = f"{now:%Y-%m}", False, 2
     GAMES_FILE.write_text(json.dumps({"at": now.strftime("%d.%m.%Y"), "secs": out}, ensure_ascii=False, separators=(",", ":")), "utf-8")
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "games.json", "json": json.loads(GAMES_FILE.read_text("utf-8"))})
@@ -4451,6 +4461,197 @@ def rc_ru(have: set, limit: int = 8) -> list:
     return out
 
 
+# ---------- 🔥🎧 Фантазія тижня: відверта історія (ШІ) + озвучка українською (Gemini TTS → OGG/voice), раз на тиждень ----------
+def fantasy_refresh(st: dict, now: datetime) -> None:
+    wk = f"{now:%G-%V}"
+    if not WORKER_MODE or not GEMINI_KEY or st.get("fan_wk") == wk:
+        return
+    text = gemini("Напиши максимально відверту, пристрасну еротичну історію-сценарій для подружньої пари (обоє дорослі, повна взаємна згода) на вечір удвох, 350–450 слів, українською. "
+                  "Детально й відкрито описуй роздягання, поцілунки, оральні пестощі, проникнення, рухи, звуки, запахи, відчуття, наростання збудження й оргазм обох. "
+                  "Пиши від другої особи («ти»), живо й чуттєво, з 3–4 репліками, які партнери можуть сказати вголос. Без насильства, без грубої лайки. Без Markdown.",
+                  relaxed=True, max_tokens=2500) or ""
+    text = re.sub(r"[*#]", "", text).strip()
+    if len(text) < 300:
+        print("Фантазія тижня: ШІ не написав історію (ліміт або фільтр) — спробую пізніше"); return
+    voice_id = ""
+    try:                                              # 🎧 озвучка: Gemini TTS (PCM 24 кГц) → ffmpeg → OGG/Opus → Telegram (file_id для миттєвої відправки)
+        r = http_json(f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key={urllib.parse.quote(GEMINI_KEY)}",
+                      {"contents": [{"parts": [{"text": "Прочитай повільно, тихо, інтимно й чуттєво, з паузами: " + text}]}],
+                       "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": "Aoede"}}}}})
+        b64 = r["candidates"][0]["content"]["parts"][0]["inlineData"]["data"]
+        import base64, subprocess, tempfile
+        with tempfile.TemporaryDirectory() as td:
+            Path(td, "a.pcm").write_bytes(base64.b64decode(b64))
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "s16le", "-ar", "24000", "-ac", "1", "-i", f"{td}/a.pcm", "-c:a", "libopus", "-b:a", "32k", f"{td}/a.ogg"], check=True, timeout=120)
+            res = tg_multipart("sendVoice", {"chat_id": CHAT_IDS[0], "caption": "🎧 Фантазія тижня — озвучка готова (службове)", "disable_notification": "true"},
+                               "voice", "fantasy.ogg", Path(td, "a.ogg").read_bytes(), "audio/ogg")
+            voice_id = ((res.get("result") or {}).get("voice") or {}).get("file_id", "")
+    except Exception as e:
+        print(f"Фантазія тижня (озвучка): {err_text(e)[:80]}")
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "fantasy.json", "json": {"wk": wk, "text": text, "voice": voice_id}})
+        st["fan_wk"] = wk
+        print(f"Фантазія тижня: {len(text)} символів · озвучка {'є' if voice_id else 'немає'}")
+    except Exception as e:
+        print(f"Фантазія тижня → Cloudflare: {err_text(e)[:60]}")
+
+
+# ---------- 🛍 Prom.ua: розумний топ у категоріях і «усе в одного продавця» (сторінки каталогу; рейтинг продавця ≥95%) ----------
+PROM_FILE = Path("prom.json")
+PROM_CATS = [("🔞 Вібратори", "вібратор"), ("🔞 Вакуумні стимулятори", "вакуумний стимулятор клітора"), ("🔞 Мастурбатори", "мастурбатор"), ("🔞 Анальні іграшки", "анальна пробка"),
+             ("🔞 Ерекційні кільця", "ерекційне кільце"), ("🔞 Лубриканти", "лубрикант"), ("🔞 Презервативи", "презервативи"), ("🔞 БДСМ", "бдсм набір"),
+             ("🎧 Навушники", "бездротові навушники"), ("🔋 Павербанки", "павербанк"), ("⚡ Зарядні станції", "зарядна станція"), ("⌚ Смарт-годинники", "смарт годинник"),
+             ("🤖 Роботи-пилососи", "робот пилосос"), ("☕ Кавоварки", "кавоварка"), ("🏋️ Гантелі", "гантелі розбірні"), ("👟 Кросівки", "кросівки чоловічі")]
+PROM_RATING = 95
+PROM_LOG: list = []
+
+
+def prom_page(q: str, page: int = 1) -> str:
+    url = "https://prom.ua/ua/search?" + urllib.parse.urlencode({"search_term": q, **({"page": page} if page > 1 else {})})
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140 Safari/537.36",
+                                               "Accept-Language": "uk-UA,uk;q=0.9", "Accept": "text/html,application/xhtml+xml"})
+    return urllib.request.urlopen(req, timeout=30).read().decode("utf-8", "replace")
+
+
+def _num(v) -> float:
+    try:
+        return float(re.sub(r"[^\d.]", "", str(v).replace(",", ".")) or 0)
+    except Exception:
+        return 0.0
+
+
+def prom_offers(q: str, pages: int = 2) -> list:
+    """Пропозиції з пошуку Prom: назва, ціна, посилання, продавець і його % позитивних відгуків, відгуки товару, зірки, продажі."""
+    out = []
+    for pg in range(1, pages + 1):
+        try:
+            h = prom_page(q, pg)
+        except Exception as e:
+            PROM_LOG.append(f"{q}: {err_text(e)[:50]}"); break
+        blobs = []
+        for m in re.finditer(r"window\.ApolloCacheState\s*=\s*(\{.*?\});\s*</script>", h, re.S):
+            blobs.append(m.group(1))
+        for m in re.finditer(r'<script[^>]*id="__NEXT_DATA__"[^>]*>(.*?)</script>', h, re.S):
+            blobs.append(m.group(1))
+        cache = {}
+        for b in blobs:
+            try:
+                d = json.loads(b); cache.update(d if isinstance(d, dict) else {})
+            except Exception:
+                continue
+        if pg == 1 and len(PROM_LOG) < 3:
+            PROM_LOG.append(f"«{q}»: сторінка {len(h)} симв., JSON-блоків {len(blobs)}, обʼєктів {len(cache)}")
+        def deref(v):
+            return cache.get(v["__ref"], {}) if isinstance(v, dict) and "__ref" in v else v
+        def find(d, rx, want=float, depth=0):
+            if not isinstance(d, dict) or depth > 3:
+                return None
+            for k, v in d.items():
+                v = deref(v)
+                if re.search(rx, k, re.I) and not isinstance(v, (dict, list)) and v not in (None, ""):
+                    return want(v) if want is float and _num(v) else (v if want is not float else None)
+            for v in d.values():
+                v = deref(v)
+                if isinstance(v, dict):
+                    r = find(v, rx, want, depth + 1)
+                    if r is not None:
+                        return r
+            return None
+        for k, v in cache.items():
+            if not isinstance(v, dict) or not (str(v.get("__typename", "")) == "Product" or str(k).startswith("Product:")):
+                continue
+            name = v.get("name") or v.get("nameForCatalog")
+            disc = _num(find(v, r"discountedPrice|priceWithDiscount|discountPrice|salePrice") or 0)
+            price = disc or _num(v.get("price") or find(v, r"^price$|priceValue"))   # ціна зі знижкою, якщо є — саме за неї продають
+            pres = deref(v.get("presence")) if isinstance(v.get("presence"), dict) else v.get("presence")
+            avail_txt = json.dumps(pres, ensure_ascii=False).lower() if pres is not None else str(find(v, r"presence|avail|inStock|stock", want=str) or "").lower()
+            if re.search(r"not_avail|unavailable|немає в наявності|нет в наличии|закінчився|\"isavailable\":\s*false|false|out_of_stock|під замовлення|под заказ|waiting", avail_txt):
+                continue                                  # 📦 лише те, що є в наявності (не «під замовлення»)
+            comp = deref(v.get("company")) or {}
+            if not name or not price or not comp:
+                continue
+            url = v.get("urlForProductCatalog") or v.get("url") or ""
+            out.append({"n": str(name)[:140], "p": price, "u": ("https://prom.ua" + url) if url.startswith("/") else url,
+                        "s": str(comp.get("name") or "")[:60], "sid": str(comp.get("id") or ""),
+                        "r": find(comp, r"positive.*percent|opinionPositivePercent|rating") or 0,
+                        "rv": find(v, r"opinion.*(count|total)|reviews?Count|feedbacks?Count") or 0, "st": find(v, r"^rating$|averageRating|productRating") or 0,
+                        "sold": find(v, r"sales|ordersCount|soldCount|bought|purchases") or 0})
+        _time.sleep(1.0)
+    if out and len(PROM_LOG) < 5:
+        PROM_LOG.append(f"«{q}»: пропозицій {len(out)}, приклад: {json.dumps(out[0], ensure_ascii=False)[:200]}")
+    return out
+
+
+def _tok(s: str) -> set:
+    return {w for w in re.findall(r"[a-zа-яіїєґ0-9]{3,}", str(s).lower()) if w not in {"для", "with", "the", "and", "або"}}
+
+
+def prom_top(st: dict, now: datetime) -> None:
+    """Раз на добу: у кожній категорії групуємо однакові товари різних продавців, беремо найпопулярніші й найдешевшу пропозицію від продавця з рейтингом ≥95%."""
+    if not WORKER_MODE or st.get("prom_day") == now.date().isoformat() and not st.get("prom_force"):
+        return
+    res, t0 = {}, _time.time()
+    for title, q in PROM_CATS:
+        if _time.time() - t0 > 200:
+            break
+        offers = prom_offers(q, 2)
+        clusters = []                                 # однакові позиції: ≥60% спільних слів назви
+        for o in offers:
+            tk = _tok(o["n"])
+            cl = next((c for c in clusters if len(tk & c["tk"]) >= 0.6 * max(1, min(len(tk), len(c["tk"])))), None)
+            (cl["o"].append(o) if cl else clusters.append({"tk": tk, "o": [o]}))
+        top = []
+        for c in clusters:
+            good = [o for o in c["o"] if (o["r"] or 0) >= PROM_RATING]
+            if not good:
+                continue
+            pop = sum(o["sold"] for o in c["o"]) + 5 * sum(o["rv"] for o in c["o"]) + 10 * len(c["o"])
+            stars = max((o["st"] for o in c["o"]), default=0)
+            best = min(good, key=lambda o: o["p"])
+            top.append({**best, "pop": pop, "stars": stars, "n_off": len(c["o"]), "pmin": min(o["p"] for o in c["o"]), "pmax": max(o["p"] for o in c["o"])})
+        top.sort(key=lambda x: (-(x["pop"] + 20 * (x["stars"] or 0)), x["p"]))
+        res[title] = top[:15]
+    st["prom_day"], st["prom_force"] = now.date().isoformat(), False
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "prom.json", "json": {"at": now.strftime("%d.%m %H:%M"), "cats": res}})
+    except Exception as e:
+        print(f"Prom → Cloudflare: {err_text(e)[:60]}")
+    print(f"Prom.ua: категорій {len(res)}, позицій {sum(len(v) for v in res.values())} · {'; '.join(PROM_LOG[:4]) or 'ок'}")
+    mark_upd(st, "🛍 Prom.ua", bool(res))
+
+
+def prom_cart(text: str) -> str:
+    """«Усе в одного продавця»: для кожної позиції — пропозиції; продавці, в яких є все, з рейтингом ≥95%; найменша сума."""
+    items = [x.strip() for x in re.split(r"[,;\n]", text) if x.strip()][:6]
+    if not items:
+        return "🧺 Напишіть товари через кому."
+    by_seller, cheapest = {}, {}
+    for it in items:
+        tk = _tok(it)
+        offers = [o for o in prom_offers(it, 2) if len(_tok(o["n"]) & tk) >= max(1, round(0.6 * len(tk)))]
+        if offers:
+            cheapest[it] = min(offers, key=lambda o: o["p"])
+        for o in offers:
+            key = o["sid"] or o["s"]
+            cur = by_seller.setdefault(key, {"s": o["s"], "r": o["r"], "items": {}})
+            if it not in cur["items"] or o["p"] < cur["items"][it]["p"]:
+                cur["items"][it] = o
+    full = [v for v in by_seller.values() if len(v["items"]) == len(items) and (v["r"] or 0) >= PROM_RATING]
+    full.sort(key=lambda v: sum(o["p"] for o in v["items"].values()))
+    sep = sum(o["p"] for o in cheapest.values())
+    if not full:
+        part = sorted([v for v in by_seller.values() if (v["r"] or 0) >= PROM_RATING], key=lambda v: (-len(v["items"]), sum(o["p"] for o in v["items"].values())))[:2]
+        return ("🧺 <b>Продавця, в якого є все, не знайшов</b> (рейтинг ≥95%).\n" + ("\n".join(f"• {esc(v['s'])} ({v['r']:.0f}%) — є {len(v['items'])} з {len(items)}" for v in part) or "") +
+                (f"\n\nНайдешевше окремо: {sep:.0f} ₴" if cheapest else "") + "\n<i>Спробуйте коротші назви (бренд + модель).</i>")
+    out = [f"🧺 <b>Усе в одного продавця</b> · {len(items)} позицій\n"]
+    for i, v in enumerate(full[:3], 1):
+        tot = sum(o["p"] for o in v["items"].values())
+        out.append(f"{i}. <b>{esc(v['s'])}</b> · ⭐ {v['r']:.0f}% позитивних · <b>{tot:.0f} ₴</b>\n" +
+                   "\n".join(f"   • <a href=\"{o['u']}\">{esc(o['n'][:60])}</a> — {o['p']:.0f} ₴" for o in v["items"].values()))
+    out.append(f"\n<i>Для порівняння: найдешевше окремо в різних продавців — {sep:.0f} ₴ (але кілька доставок).</i>")
+    return "\n".join(out)
+
+
 def recipes_refresh(st: dict, now: datetime) -> None:
     """Поступово: щомісяця +рецепти; переклад і адаптація до українських продуктів (ШІ, з позначкою); українські страви — КБЖВ за таблицею CoFID."""
     if not WORKER_MODE:
@@ -4492,7 +4693,7 @@ def recipes_refresh(st: dict, now: datetime) -> None:
         except Exception as e:
             print(f"ПП-страви (переклад): {err_text(e)[:60]}")
     ua_n = sum(1 for x in items if x["id"].startswith("u"))
-    if ua_n < RC_TARGET // 2:                                     # 🇺🇦 українські страви за принципами МОЗ — КБЖВ рахуємо самі за CoFID
+    if ua_n < 150:                                     # 🇺🇦 українські страви за принципами МОЗ — КБЖВ рахуємо самі за CoFID
         try:
             cof = {r[0]: r for r in json.loads(Path("cofid.json").read_text("utf-8")).get("items", [])}
         except Exception:
@@ -4521,7 +4722,7 @@ def recipes_refresh(st: dict, now: datetime) -> None:
                     continue                          # КБЖВ не можна надійно порахувати — не додаємо
                 items.append({"id": "u" + hashlib.md5(y["t"].encode()).hexdigest()[:8], "meal": meal, "t": y["t"], "en": str(y.get("en") or "")[:60], "time": int(y.get("time") or 25), "serv": serv,
                               "ing": [f"{g['name']} — {g.get('g')} г" for g in y["ing"]], "steps": y.get("steps", []), "tags": y.get("tags", []),
-                              **{k_: round(v_ / serv, 1) for k_, v_ in tot.items()}, "ib": ib, "img": "", "src": {"n": "Здорова тарілка МОЗ України (принципи)", "u": "https://moz.gov.ua/"},
+                              **{k_: round(v_ / serv, 1) for k_, v_ in tot.items()}, "ib": ib, "pw": round(sum(float(g.get("g") or 0) for g in y.get("ing", [])) / serv), "img": "", "src": {"n": "Здорова тарілка МОЗ України (принципи)", "u": "https://moz.gov.ua/"},
                               "badge": "🇺🇦 за принципами МОЗ · КБЖВ за таблицею CoFID", "grp": "our"})
         except Exception as e:
             print(f"ПП-страви (українські): {err_text(e)[:60]}")
@@ -4529,7 +4730,7 @@ def recipes_refresh(st: dict, now: datetime) -> None:
         cof2 = {r[0]: r for r in json.loads(Path("cofid.json").read_text("utf-8")).get("items", [])}
     except Exception:
         cof2 = {}
-    need_ib = [x for x in items if "ib" not in x][:20] if cof2 else []
+    need_ib = []                                      # точність понад усе: розбір інгредієнтів — лише для страв, де грами відомі точно (наші, CoFID)
     for chunk in [need_ib[i:i + 10] for i in range(0, len(need_ib), 10)]:
         if not budget_ok(60):
             break
@@ -4579,7 +4780,7 @@ def recipes_refresh(st: dict, now: datetime) -> None:
     seen_ = set(); db_["items"] = [x for x in items if not (x["id"] in seen_ or seen_.add(x["id"]))]
     if len(db_["items"]) >= RC_TARGET:
         db_["month"] = mon; st["rc_force"] = False
-    st["rc_need"] = len(db_["items"]) < RC_TARGET or any("ib" not in x for x in db_["items"])   # ще й розбір інгредієнтів          # поки база мала — ПП-страви першими в черзі
+    st["rc_need"] = len(db_["items"]) < RC_TARGET or sum(1 for x in db_["items"] if x.get("grp") == "our") < 150   # ще й розбір інгредієнтів          # поки база мала — ПП-страви першими в черзі
     RECIPES_FILE.write_text(json.dumps(db_, ensure_ascii=False, separators=(",", ":")), "utf-8")
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "recipes.json", "json": {"items": [{k: v for k, v in x.items() if k not in ("orig",)} for x in db_["items"]]}})
@@ -5702,6 +5903,7 @@ def main() -> None:
                                   else {str(k): list(v) for k, v in raw_subs.items()})
     worker_alive = False
     worker_req: dict = {}
+    ex_promq: dict = {}
     if WORKER_MODE:                              # підписники, «бачили» і «пульс» — з Cloudflare Worker
         try:
             ex = None
@@ -5714,6 +5916,7 @@ def main() -> None:
                         raise
                     _time.sleep(4)
             worker_req = dict(ex.get("req") or {})
+            ex_promq = dict(ex.get("promq") or {})     # 🛍 Prom: списки товарів «усе в одного продавця»
             worker_req["kino_used"] = ex.get("kino_used") or []
             taste_update(st, ex.get("likes") or [], ex.get("dislikes") or [])   # 👍/👎 з меню кіно
             subs = {str(k): list(v) for k, v in (ex.get("subs") or {}).items()}
@@ -6123,6 +6326,12 @@ def main() -> None:
         kq = build_kino(st)                            # готова підбірка «про запас» — меню віддає миттєво
         if kq:
             st["kino_q"].append({"id": hashlib.md5(kq[0].encode()).hexdigest()[:10], "text": kq[0], "markup": kq[1]})
+    for c in dict.fromkeys(str(x) for x in (worker_req.get("prom_cart") or [])):   # 🛍 Prom: «усе в одного продавця»
+        q_ = ((ex_promq or {}).get(c) or "").strip()
+        try:
+            direct_m.append((c, prom_cart(q_) if q_ else "🧺 Не бачу списку товарів — спробуйте ще раз.", None))
+        except Exception as e:
+            direct_m.append((c, f"🧺 Не вдалося перевірити Prom.ua зараз ({err_text(e)[:40]}). Спробуйте пізніше.", None))
     for k_, cids in worker_req.items():               # 🍿 жанри з меню: kg_drama, kg_ua, kg_now…
         if k_.startswith("kg_") and cids and TMDB_KEY:
             kg = build_kino(st, genre=k_[3:])
@@ -6173,7 +6382,7 @@ def main() -> None:
              ("ранковий імпульс", lambda: impulse_refresh(st, now)), ("музика", lambda: music_refresh(st, now)),
              ("здоров'я", lambda: (health_refresh(st, now), kb_probe(st, now), cofid_import(st, now), cofid_translate(st, now))),
              ("ігри PS5", lambda: (games_refresh(st, now), ps_deals_refresh(st, now))), ("аудіокниги", lambda: audiobooks_refresh(st, now)),
-             ("кіномэтч", lambda: match_refresh(st, now)), ("пп-страви", lambda: recipes_refresh(st, now))]
+             ("кіномэтч", lambda: match_refresh(st, now)), ("пп-страви", lambda: recipes_refresh(st, now)), ("фантазія тижня", lambda: fantasy_refresh(st, now)), ("prom.ua", lambda: prom_top(st, now))]
     slot = (now.hour * 12 + now.minute // 5) % len(heavy)
     rc_turn = st.get("rc_need", True) and (now.minute // 5) % 2 == 0   # через запуск, щоб інші задачі не чекали
     forced = (st.get("force_heavy") or []) + (["пп-страви"] if rc_turn and "пп-страви" not in (st.get("force_heavy") or []) else [])
@@ -6236,7 +6445,9 @@ def main() -> None:
             MUSIC_FILE.write_text(json.dumps(mdb_, ensure_ascii=False, separators=(",", ":")), "utf-8")
         except Exception:
             pass
-        st["force_heavy"] = ["кіно, пули", "музика", "здоров'я", "ігри PS5", "аудіокниги", "пп-страви"]
+        st["force_heavy"] = ["кіно, пули", "музика", "здоров'я", "ігри PS5", "аудіокниги", "пп-страви", "кіномэтч", "prom.ua"]
+        st["prom_force"] = True
+        st["match_month"] = ""; st["ps_day"] = ""                # 🍿💞 пул Кіномэтчу й 🔥 знижки PS — теж свіжі
         st["games_force"] = st["ab_force"] = st["rc_force"] = True     # 🥗 ПП-страви — позапланове поповнення
         st["cofid"] = ""; st.pop("kb_probe2", None)      # 🥗 КБЖВ: переімпорт CoFID і перевірка Сільпо
         for c in worker_req["rebuild"]:

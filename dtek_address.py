@@ -11,7 +11,7 @@ import json
 import os
 import re
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 import check  # спільні функції основного бота (надсилання, підписники тощо)
@@ -47,6 +47,44 @@ def street_variants(s: str) -> list[str]:
     return list(dict.fromkeys(v))
 
 
+def dtek_live_push(page) -> None:
+    """⚡ Графіки всіх черг напряму зі сторінки ДТЕК (DisconSchedule.fact) → Worker (швидше за дзеркало)."""
+    if not check.WORKER_MODE:
+        return
+    try:
+        fact = page.evaluate("() => (window.DisconSchedule && window.DisconSchedule.fact) || null")
+    except Exception:
+        fact = None
+    if not fact or not isinstance(fact, dict) or not fact.get("data"):
+        print("ДТЕК напряму: графіків на сторінці не знайдено"); return
+    schedules, days = {}, {}
+    for ts, groups in (fact.get("data") or {}).items():
+        try:
+            d0 = datetime.fromtimestamp(int(ts), TZ).date()
+        except Exception:
+            continue
+        days[str(ts)] = {}
+        for gk, hours in (groups or {}).items():
+            g = re.sub(r"^GPV", "", str(gk))
+            ivs = schedules.setdefault(g, {"intervals": []})["intervals"]
+            for h in range(1, 25):
+                v = str((hours or {}).get(str(h), "yes")).lower()
+                s0 = (h - 1) * 60
+                span = {"no": (0, 60), "first": (0, 30), "second": (30, 60), "maybe": (0, 60), "mfirst": (0, 30), "msecond": (30, 60)}.get(v)
+                if not span:
+                    continue
+                a, b = s0 + span[0], s0 + span[1]
+                iso = lambda m: (datetime.combine(d0, datetime.min.time(), TZ) + timedelta(minutes=m)).strftime("%Y-%m-%dT%H:%M:00")
+                ivs.append({"start": iso(a), "end": iso(b), "origin": "fact", "kind": "off" if v in ("no", "first", "second") else "maybe"})
+    upd = str(fact.get("update") or "")
+    text = json.dumps({"schedules": schedules, "raw": {"fact": {"data": days, "update": upd}}}, ensure_ascii=False)
+    try:
+        check.http_json(f"{check.SYNC_URL}/dtekpush?key={check.urllib.parse.quote(check.SYNC_KEY)}", {"update": upd, "text": text})
+        print(f"ДТЕК напряму: графіки {len(schedules)} черг, днів {len(days)}, оновлено ДТЕК: {upd or '?'}")
+    except Exception as e:
+        print(f"ДТЕК напряму → Worker: {err_text(e)[:60]}")
+
+
 def fetch_address() -> dict | None:
     """Відкриває сторінку ДТЕК і повертає відповідь getHomeNum для нашої вулиці."""
     from playwright.sync_api import sync_playwright
@@ -73,6 +111,10 @@ def fetch_address() -> dict | None:
             return out.slice(0, 8);
         }""")
         print("ДТЕК, текст сторінки про екстрені:", city if city else "немає")
+        try:
+            dtek_live_push(page)                       # ⚡ графіки всіх черг напряму — першими
+        except Exception as e:
+            print(f"ДТЕК напряму: {err_text(e)[:80]}")
         try:
             lookup_requests(page)                      # черга за адресою для підписників — завжди, незалежно від нашої адреси
         except Exception as e:
