@@ -554,7 +554,7 @@
   "t90802",
   "t39793"
  ],
- "gh_beat": "2026-10-23T01:00:43.163906+03:00",
+ "gh_beat": "2026-10-23T01:05:42.066337+03:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -565,11 +565,11 @@
   "groups": [
    "GPV4.1"
   ],
-  "updated": "00:46 23.10.2026",
+  "updated": "01:02 23.10.2026",
   "emergency": false,
   "city_emergency": false,
-  "city_text": "",
-  "checked": "2026-10-23T00:58:49.765476+03:00",
+  "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
+  "checked": "2026-10-23T01:03:08.702783+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1526,8 +1526,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "22.10 22:56",
-   "ts": 1792698992,
+   "at": "23.10 01:06",
+   "ts": 1792706791,
    "ok": true,
    "note": ""
   },
@@ -16409,7 +16409,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "85b187a4768a",
+  "gs": "9cf22c96a9f4",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "e6e7973367fa",
   "sexed.json": "4efede1d8ea5",
@@ -18164,6 +18164,410 @@
    ],
    "ov": "Шість короткометражних новел, об'єднаних темою помсти. Невдале паркування, подружня зрада або нахабний обгін на трасі – персонажі «Диких історій» не терплять образ. В кожному оповіданні проілюстровано як по-різному може ",
    "poster": "https://image.tmdb.org/t/p/w500/wFr8LAncZMcMy9ModDmUqF8yb0Q.jpg"
+  },
+  "m348657": {
+   "title": "Гірська жінка: На війні",
+   "year": "2018",
+   "rating": 7.4,
+   "genres": [
+    "Драма",
+    "Трилер",
+    "Комедія"
+   ],
+   "g": [
+    18,
+    53,
+    35
+   ],
+   "ov": "Жінкам у країнах минулих століть завжди жилося дуже тяжко, їх часто утискали та взагалі не вважали за нормальних людей. Зараз же ситуація трохи змінилася — у так званої «слабкої статі» багато прав, вони в більшості своїй",
+   "poster": "https://image.tmdb.org/t/p/w500/sWWgwMUo0PQJMIjAY1k3TJts8pc.jpg"
+  },
+  "m609242": {
+   "title": "Афера століття",
+   "year": "2020",
+   "rating": 7.1,
+   "genres": [
+    "Комедія",
+    "Трилер",
+    "Кримінал"
+   ],
+   "g": [
+    35,
+    53,
+    80
+   ],
+   "ov": "У самому фешенебельному передмісті Буенос-Айреса п’ятеро грабіжників увірвалися в будівлю банку Ріо де Акассусо. Взявши в заручники всіх співробітників і відвідувачів банку, вони почали переговори з поліцією. Поки сотні ",
+   "poster": "https://image.tmdb.org/t/p/w500/cKDWVrENuLPkrNox2dltFnpS7uk.jpg"
+  },
+  "m1122099": {
+   "title": "Балада про острів Волліс",
+   "year": "2025",
+   "rating": 7.3,
+   "genres": [
+    "Комедія",
+    "Драма",
+    "Музика"
+   ],
+   "g": [
+    35,
+    18,
+    10402
+   ],
+   "ov": "Чарльз, дивний переможець лотереї, який живе самотньо на віддаленому острові, намагається втілити свої фантазії в життя, запросивши свого улюбленого співака Герба МакҐвайра виступити на особливому приватному заході.",
+   "poster": "https://image.tmdb.org/t/p/w500/haS6bnqDqZoi5sYcCPJWaj2yMbB.jpg"
+  },
+  "m663870": {
+   "title": "Лицарі справедливості",
+   "year": "2020",
+   "rating": 7.5,
+   "genres": [
+    "Бойовик",
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    28,
+    35,
+    18,
+    53
+   ],
+   "ov": "Коли дружина Маркуса гине в залізничній катастрофі, це здається трагічною випадковістю. А якщо це ретельно сплановане вбивство? Військовий, божевільний математик і парочка ґіків об’єднуються, щоб з’ясувати, що сталося на",
+   "poster": "https://image.tmdb.org/t/p/w500/tkaQn7tAKrAhUVC8CRTy6QLizap.jpg"
+  },
+  "m375794": {
+   "title": "No manches, Frida",
+   "year": "2016",
+   "rating": 7.7,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "After being released from prison, Zequi, a bank robber, sets out to recover money buried by his accomplice; but is horrified to learn that a high school gymnasium is now over the site where the loot is hidden.",
+   "poster": "https://image.tmdb.org/t/p/w500/6HfyXfIEywLa2HvcswKi44dDKxL.jpg"
+  },
+  "m837335": {
+   "title": "Химера",
+   "year": "2023",
+   "rating": 7.3,
+   "genres": [
+    "Драма",
+    "Фентезі",
+    "Комедія"
+   ],
+   "g": [
+    18,
+    14,
+    35
+   ],
+   "ov": "Повернувшись у рідне містечко на узбережжі моря, Артур стикається з місцевою бандою розкрадачів гробниць. Чоловік має дар, який дуже цікавить чорних археологів — уміння відчувати порожнечу. Його сила допомагає збагатитис",
+   "poster": "https://image.tmdb.org/t/p/w500/7V9m36KYFRZTX51Pp6MAiXMd3u9.jpg"
+  },
+  "m607259": {
+   "title": "Мій тато",
+   "year": "2021",
+   "rating": 7.5,
+   "genres": [
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    18,
+    35
+   ],
+   "ov": "Після смерті дружини молодий батько присвячує своє життя вихованню маленької доньки. Їхній шлях непростий — сміх і сльози, серйозні виклики і віддана безмежна любов.",
+   "poster": "https://image.tmdb.org/t/p/w500/axi0UkUsHLIxlhaYKKBSuU3frAS.jpg"
+  },
+  "m1404684": {
+   "title": "Juste une illusion",
+   "year": "2026",
+   "rating": 7.3,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "In 1985 suburban Paris, 12-year-old Vincent lives with his distant older brother and quarrelling parents. Amid laughter and unease, he navigates friendship and first love, while beginning to confront the adult world.",
+   "poster": "https://image.tmdb.org/t/p/w500/eWPq3wSvJEMakESTXzaBECUNBYr.jpg"
+  },
+  "m437586": {
+   "title": "Середина 90-х",
+   "year": "2018",
+   "rating": 7.4,
+   "genres": [
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    18,
+    35
+   ],
+   "ov": "Стіві - тринадцятирічний хлопчик у Лос-Анджелесі 1990-х років, який проводить літо, балансуючи між неспокійним домашнім життям і групою нових друзів, яких він зустрічає у скейт-крамниці на Мотор Авеню.",
+   "poster": "https://image.tmdb.org/t/p/w500/njMKWqNiMUF2mJJeMuKGDhMmJ0b.jpg"
+  },
+  "m851303": {
+   "title": "En attendant Bojangles",
+   "year": "2021",
+   "rating": 7.3,
+   "genres": [
+    "Драма",
+    "Комедія",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    35,
+    10749
+   ],
+   "ov": "A boy and his eccentric parents leave their home in Paris for a country house in Spain. As the mother descends deeper into her own mind, it's up to the boy and his father to keep her safe and happy.",
+   "poster": "https://image.tmdb.org/t/p/w500/1w9WQexYgNUWzklEDHFZEyK2xNX.jpg"
+  },
+  "m653664": {
+   "title": "Dinner in America",
+   "year": "2022",
+   "rating": 7.8,
+   "genres": [
+    "Мелодрама",
+    "Комедія"
+   ],
+   "g": [
+    10749,
+    35
+   ],
+   "ov": "An on-the-lam punk rocker and a young woman obsessed with a local band go on an unexpected and epic journey together through the decaying suburbs of the American Midwest.",
+   "poster": "https://image.tmdb.org/t/p/w500/t63UhnHaWQGcuE3pViuW3LSjBJj.jpg"
+  },
+  "m1026227": {
+   "title": "C'è ancora domani",
+   "year": "2023",
+   "rating": 8.1,
+   "genres": [
+    "Драма",
+    "Комедія",
+    "Історичний"
+   ],
+   "g": [
+    18,
+    35,
+    36
+   ],
+   "ov": "In postwar Rome, a working-class woman dreams of a better future for herself and her daughter while facing abuse at the hands of her domineering husband. When a mysterious letter arrives, she discovers the courage to cha",
+   "poster": "https://image.tmdb.org/t/p/w500/hc9SHN0vB6iyr6MBYI6bKrpDHvJ.jpg"
+  },
+  "m570131": {
+   "title": "Кохання з другого погляду",
+   "year": "2019",
+   "rating": 7.0,
+   "genres": [
+    "Комедія",
+    "Мелодрама",
+    "Фентезі"
+   ],
+   "g": [
+    35,
+    10749,
+    14
+   ],
+   "ov": "Відомий та успішний письменник одного разу прокидається і розуміє, що його життя перевернуте догори дриґом. Тепер він повний лузер і холостяк, який працює звичайним вчителем в школі, а його дівчина-простачка - успішна пі",
+   "poster": "https://image.tmdb.org/t/p/w500/kPpBdy29UxkjAo9HwvIkgXw8KLE.jpg"
+  },
+  "m455714": {
+   "title": "Поганий геній",
+   "year": "2017",
+   "rating": 7.6,
+   "genres": [
+    "Драма",
+    "Кримінал",
+    "Трилер"
+   ],
+   "g": [
+    18,
+    80,
+    53,
+    35
+   ],
+   "ov": "Відмінниця і медалістка Лінн переводиться в дорогу престижну школу, де вчиться золота молодь, і відразу заводить дружбу з Грейс, яка не сильна в математиці. Одного разу Лінн допомагає кращій подрузі на іспиті, і ось вже ",
+   "poster": "https://image.tmdb.org/t/p/w500/a7nM3dJ0ExLSSwDN8xfcN5wcAk3.jpg"
+  },
+  "m1235304": {
+   "title": "Перетин часів",
+   "year": "2025",
+   "rating": 7.3,
+   "genres": [
+    "Історичний",
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    36,
+    18,
+    35,
+    10749
+   ],
+   "ov": "Абсолютно не знайомі між собою тридцять дальніх родичів дізнаються, що успадкували закинутий будинок. Чотирьом з них доручено провести інвентаризацію. Новоспечені кузени вирушають далеко на північ від Парижа. І несподіва",
+   "poster": "https://image.tmdb.org/t/p/w500/3UOwZEaqVHyz51FLEIRlHSEns7a.jpg"
+  },
+  "m1000866": {
+   "title": "Фанфари",
+   "year": "2024",
+   "rating": 7.4,
+   "genres": [
+    "Комедія",
+    "Драма",
+    "Музика"
+   ],
+   "g": [
+    35,
+    18,
+    10402
+   ],
+   "ov": "Тібо — відомий диригент, який раптово виявляє, що був усиновлений. Працівник їдальні та аматор-тромбоніст Джиммі — його молодший брат, про існування якого він ніколи не знав",
+   "poster": "https://image.tmdb.org/t/p/w500/AaGMh3vUcvMfxa1ELkMOKCH0Izl.jpg"
+  },
+  "m1299046": {
+   "title": "Діаманти",
+   "year": "2024",
+   "rating": 7.1,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "In 1970s Rome, a filmmaker gathers actresses for a new project, which triggers memories of his past working in a Roman costume shop, run by Alberta and Gabriella, navigating personal and professional challenges while cre",
+   "poster": "https://image.tmdb.org/t/p/w500/l9Gwwr7nMQzCsOZ9B0b6FlOWTU6.jpg"
+  },
+  "m555285": {
+   "title": "Ти тут, Боже? Це я, Марґарет",
+   "year": "2023",
+   "rating": 7.1,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Шестикласниця Марґарет Саймон та її родина переїжджають із Нью-Йорка до передмістя Нью-Джерсі. Оскільки її мати християнка, а батько єврей, вона вирушає на пошуки, щоб дізнатися свою релігійну ідентичність.",
+   "poster": "https://image.tmdb.org/t/p/w500/hjsLqli6b3HSw2KgyPFeZF4mXBj.jpg"
+  },
+  "m1158915": {
+   "title": "Братик",
+   "year": "2024",
+   "rating": 7.3,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Улітку перед старшою школою американський підліток тайванського походження долає труднощі в дружбі, коханні й сімейних стосунках і краще пізнає себе.",
+   "poster": "https://image.tmdb.org/t/p/w500/3UCTNaZgxW6BbeHMMTe6uL07MpV.jpg"
+  },
+  "m595975": {
+   "title": "Кафе бажань",
+   "year": "2019",
+   "rating": 7.4,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Життя Віктора, якому вже за шістдесят, обертається з ніг на голову, коли успішний підприємець Антуан пропонує йому новітню розвагу. За допомогою театральної майстерності та історичної реконструкції його компанія надає кл",
+   "poster": "https://image.tmdb.org/t/p/w500/pO5q8RuxSP2iCNuR5pZiWOaB3mH.jpg"
+  },
+  "m4254": {
+   "title": "कल हो ना हो",
+   "year": "2003",
+   "rating": 7.5,
+   "genres": [
+    "Комедія",
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    35,
+    18,
+    10749
+   ],
+   "ov": "An uptight MBA student falls for the charismatic new neighbor who charms her troubled family – but he has a secret that forces him to push her away.",
+   "poster": "https://image.tmdb.org/t/p/w500/zhMI6I0kSLnewTMwE0A8Tz3Cj2f.jpg"
+  },
+  "m25205": {
+   "title": "Концерт",
+   "year": "2009",
+   "rating": 7.2,
+   "genres": [
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    18,
+    35
+   ],
+   "ov": "За брежнєвської доби Андрій Філіпов був одним з найвідоміших диригентів СРСР та керував славнозвісним оркестром Великого театру. Але після того, як він не схотів звільняти з роботи музикантів, через їх єврейське походжен",
+   "poster": "https://image.tmdb.org/t/p/w500/3ntrKSpuPjLjRrd8IqEIiOOAgCr.jpg"
+  },
+  "m148265": {
+   "title": "Муха",
+   "year": "2012",
+   "rating": 7.7,
+   "genres": [
+    "Фентезі",
+    "Бойовик",
+    "Комедія"
+   ],
+   "g": [
+    14,
+    28,
+    35,
+    18
+   ],
+   "ov": "Симпатичний і привабливий хлопець Нані закохується в Бінду, і та відповідає йому взаємністю. Але в цій історії є третій — Бінду подобається справжньому бандиту, який не зупиниться ні перед чим, щоб отримати бажане. Він в",
+   "poster": "https://image.tmdb.org/t/p/w500/etHmdDnlfZv1dBilHhZ5zSuJnem.jpg"
+  },
+  "m67884": {
+   "title": "Китайська казка",
+   "year": "2011",
+   "rating": 7.3,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Розчарований у житті власник магазину побутової техніки в Буенос-Айресі, всупереч здоровому глузду, надає притулок загубленому китайцеві, який зовсім не розуміє іспанської. З тієї миті їхні життя починають змінюватися.",
+   "poster": "https://image.tmdb.org/t/p/w500/aol93ghyDZqgc1s9WnlQlUmwHp3.jpg"
+  },
+  "m92499": {
+   "title": "오싹한 연애",
+   "year": "2011",
+   "rating": 7.4,
+   "genres": [
+    "Жахи",
+    "Комедія",
+    "Фентезі"
+   ],
+   "g": [
+    27,
+    35,
+    14,
+    10749
+   ],
+   "ov": "A magician makes an assistant out of a strange girl with the ability to see ghosts, and the two achieve success with their shows, through thick and thin. However, another kind of magic might be brewing behind the scenes ",
+   "poster": "https://image.tmdb.org/t/p/w500/1Zyt479H8mVxT15WUUo0VqHjeqp.jpg"
   }
  },
  "cofid_pushed": "22.10.2026",
@@ -18186,7 +18590,8 @@
  "kp_at": {
   "mix": "2026-10-22T19:15:44.418674+03:00",
   "drama": "2026-10-22T21:05:43.209760+03:00",
-  "thriller": "2026-10-22T22:55:42.477118+03:00"
+  "thriller": "2026-10-22T22:55:42.477118+03:00",
+  "comedy": "2026-10-23T01:05:42.208479+03:00"
  },
  "ero_seen": {
   "160603556": [
