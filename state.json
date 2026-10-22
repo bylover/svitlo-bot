@@ -9108,7 +9108,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-22T05:15:43.574248+03:00",
+ "gh_beat": "2026-10-22T05:20:43.751589+03:00",
  "silpo_stores": {
   "week": "2026-43",
   "v": 2,
@@ -25939,6 +25939,18 @@
    null,
    null,
    "2026-10-22"
+  ],
+  "tt1663676": [
+   7.5,
+   null,
+   null,
+   "2026-10-22"
+  ],
+  "tt0497152": [
+   5.8,
+   null,
+   null,
+   "2026-10-22"
   ]
  },
  "mo_sent": {},
@@ -25948,7 +25960,7 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "97795ff0ce5a",
+  "gs": "89d8c63f3b76",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "c395d3364654",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
@@ -28443,44 +28455,44 @@
  "silpo_day": "2026-10-21-pm",
  "upd": {
   "🔥 Фільми 18+": {
-   "at": "22.10 05:16",
-   "ts": 1792635386,
+   "at": "22.10 05:21",
+   "ts": 1792635690,
    "ok": true,
    "note": ""
   },
   "🎓 Секс-освіта": {
-   "at": "22.10 05:16",
-   "ts": 1792635386,
+   "at": "22.10 05:21",
+   "ts": 1792635690,
    "ok": true,
    "note": ""
   },
   "🎯 Вікторини": {
-   "at": "22.10 05:16",
-   "ts": 1792635386,
+   "at": "22.10 05:21",
+   "ts": 1792635690,
    "ok": true,
    "note": ""
   },
   "🌅 Імпульс / 🕯 класика": {
-   "at": "22.10 05:16",
-   "ts": 1792635386,
+   "at": "22.10 05:21",
+   "ts": 1792635690,
    "ok": true,
    "note": ""
   },
   "🎵 Музика": {
-   "at": "22.10 05:16",
-   "ts": 1792635387,
+   "at": "22.10 05:21",
+   "ts": 1792635691,
    "ok": true,
    "note": ""
   },
   "❤️ Здоровʼя": {
-   "at": "22.10 05:16",
-   "ts": 1792635387,
+   "at": "22.10 05:21",
+   "ts": 1792635691,
    "ok": true,
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "22.10 05:16",
-   "ts": 1792635386,
+   "at": "22.10 05:21",
+   "ts": 1792635690,
    "ok": true,
    "note": ""
   },
@@ -28521,8 +28533,8 @@
    "note": ""
   },
   "ігри PS5": {
-   "at": "22.10 05:16",
-   "ts": 1792635387,
+   "at": "22.10 05:21",
+   "ts": 1792635691,
    "ok": true,
    "note": ""
   },
@@ -28533,8 +28545,8 @@
    "note": ""
   },
   "аудіокниги": {
-   "at": "22.10 05:15",
-   "ts": 1792635347,
+   "at": "22.10 05:21",
+   "ts": 1792635691,
    "ok": true,
    "note": ""
   },
@@ -28551,8 +28563,8 @@
    "note": ""
   },
   "кіномэтч": {
-   "at": "22.10 05:15",
-   "ts": 1792635347,
+   "at": "22.10 05:20",
+   "ts": 1792635648,
    "ok": true,
    "note": ""
   },
@@ -28563,8 +28575,8 @@
    "note": ""
   },
   "пп-страви": {
-   "at": "22.10 05:15",
-   "ts": 1792635347,
+   "at": "22.10 05:20",
+   "ts": 1792635648,
    "ok": true,
    "note": ""
   }
@@ -28735,7 +28747,7 @@
   "ser_hot": "2026-10-22T05:05:47.373538+03:00",
   "ser_new": "2026-10-22T05:10:50.698877+03:00",
   "ser_crime": "2026-10-22T05:15:43.698520+03:00",
-  "ser_comedy": "2026-10-21T17:15:45.583205+03:00",
+  "ser_comedy": "2026-10-22T05:20:43.906851+03:00",
   "ser_drama": "2026-10-21T17:20:44.588456+03:00",
   "ser_scifi": "2026-10-21T17:31:00.854802+03:00",
   "ser_mystery": "2026-10-21T17:42:11.147396+03:00"
@@ -34283,6 +34295,315 @@
    ],
    "ov": "Вони не розплутують низки загадкових доказів. Вони не проводять час у криміналістичних лабораторіях. Вони рідко використовують пістолети. Адже їхня головна зброя - розум. Члени елітного підрозділу ФБР навчились мислити, ",
    "poster": "https://image.tmdb.org/t/p/w500/hdGsPySzgMG3TnFsso3k0QIoTUz.jpg"
+  },
+  "t62649": {
+   "title": "Супермаркет",
+   "year": "2015",
+   "rating": 7.8,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Серіал про великий різношерстий колектив працівників гіпермаркету, які на своєму робочому місці переживають безліч пригод, незважаючи на те, що територія їх проживання обмежується стінами магазину.",
+   "poster": "https://image.tmdb.org/t/p/w500/tbFz1fWpQWKAu62yMvo2VhYUfmm.jpg"
+  },
+  "t112888": {
+   "title": "Справжня краса",
+   "year": "2020",
+   "rating": 7.9,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "After being bullied and discriminated because of her ugly looks, a high school girl transforms herself into a gorgeous \"goddess\" and quickly rises to fame after mastering the art of makeup via online tutorial videos.",
+   "poster": "https://image.tmdb.org/t/p/w500/gaCOvKGG2qEnsijNHEAigYcQ1U3.jpg"
+  },
+  "t65495": {
+   "title": "Атланта",
+   "year": "2016",
+   "rating": 8.6,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Щоб витягнути своїм сім'ї з глибокої бідності, два кузена вирішують стати крутими і відомими реперами в Атланті.",
+   "poster": "https://image.tmdb.org/t/p/w500/iMLGE165IisWqOvKbhRY867So5o.jpg"
+  },
+  "t17174": {
+   "title": "Привиди",
+   "year": "2019",
+   "rating": 8.4,
+   "genres": [
+    "Комедія",
+    "Науково фантастичний"
+   ],
+   "g": [
+    35,
+    10765
+   ],
+   "ov": "A cash-strapped young couple inherits a grand country house, only to find it is both falling apart and teeming with the ghosts of former inhabitants.",
+   "poster": "https://image.tmdb.org/t/p/w500/3Xz4JtqISyVCKct96O94k4Mz5sU.jpg"
+  },
+  "t61662": {
+   "title": "Шіттс Крік",
+   "year": "2015",
+   "rating": 8.5,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Серіал розповідає про сімейство Роузів: Джонні Роуз — мільярдер, який заробив статок на мережі відеосалонів, його дружина — актриса мильних опер, і двоє дітей — гіпстер Девід та світська левиця Алексіс. Після того, як бі",
+   "poster": "https://image.tmdb.org/t/p/w500/3UuaOsE12RIN0IixGRYhh0asao.jpg"
+  },
+  "t36994": {
+   "title": "Трудоголіки",
+   "year": "2011",
+   "rating": 8.1,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Комедія розповідає про трьох друзів, які працюють разом з 9 до 5 і живуть разом з 5 до 9. Рекомендований стиль одягу, встановлені терміни, підйом до полудня - це не ті речі, до яких звикли хлопці. Їх мізки все ще на авто",
+   "poster": "https://image.tmdb.org/t/p/w500/kXg4tFUHN7h7bNdBTeLIIKqw9UJ.jpg"
+  },
+  "t69630": {
+   "title": "The Bold Type",
+   "year": "2017",
+   "rating": 7.8,
+   "genres": [
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    18,
+    35
+   ],
+   "ov": "A glimpse into the outrageous lives of Jane, Kat and Sutton, who are working at the nation's top women's magazine, Scarlet, while navigating their careers, identities and individual voices.",
+   "poster": "https://image.tmdb.org/t/p/w500/cKloQpl6zE7kdFf8SUeYU2qPT9H.jpg"
+  },
+  "t86248": {
+   "title": "Завантаження",
+   "year": "2020",
+   "rating": 7.7,
+   "genres": [
+    "Комедія",
+    "Науково фантастичний",
+    "Драма"
+   ],
+   "g": [
+    35,
+    10765,
+    18
+   ],
+   "ov": "Події серіалу відбуваються в недалекому майбутньому. Технології настільки увірвалися в життя людей, що вже ніхто не уявляє себе без гаджетів і соціальних мереж. Натан - юний програміст, у якого повно ідей. Він з величезн",
+   "poster": "https://image.tmdb.org/t/p/w500/pxQVGCnI4ySxg4V6MLehLLCZ3Zo.jpg"
+  },
+  "t93812": {
+   "title": "Велика",
+   "year": "2020",
+   "rating": 8.1,
+   "genres": [
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    18,
+    35
+   ],
+   "ov": "Не надто достовірна історична трагікомедія, де юна Катерина ІІ знайомиться з російськими звичаями її чоловіка-тирана.",
+   "poster": "https://image.tmdb.org/t/p/w500/s7YRGfy3IyQzcAw5Rh77hRbPQTu.jpg"
+  },
+  "t39859": {
+   "title": "Незграба",
+   "year": "2011",
+   "rating": 7.5,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Старшокласниця Дженна Гемілтон сама пересічна учениця місцевої школи. Від інших її відрізняє лише вміння потрапляти в безглузді ситуації. Так само, як і її ровесниці, Дженна хоче опинитися в центрі уваги та перестати бут",
+   "poster": "https://image.tmdb.org/t/p/w500/7PLO6PdGmfKiV3KER2Rd08Ga8kM.jpg"
+  },
+  "t94796": {
+   "title": "Crash Landing on You",
+   "year": "2019",
+   "rating": 8.7,
+   "genres": [
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    18,
+    35
+   ],
+   "ov": "Під час польоту на параплані південнокорейська спадкоємиця випадково опиняється в Північній Кореї та стає частиною життя військового, який допомагає їй сховатися.",
+   "poster": "https://image.tmdb.org/t/p/w500/mvy18bPg93JNLwTQHHP2ZjPYP0A.jpg"
+  },
+  "t61746": {
+   "title": "У дев'ятому номері",
+   "year": "2014",
+   "rating": 8.5,
+   "genres": [
+    "Комедія",
+    "Детектив",
+    "Кримінал"
+   ],
+   "g": [
+    35,
+    9648,
+    80,
+    10765
+   ],
+   "ov": "An anthology of darkly comic twisted tales, each one taking place behind a door marked 'number 9'.",
+   "poster": "https://image.tmdb.org/t/p/w500/lbHTsN5x7h6aCt7DqPQN4kYHfky.jpg"
+  },
+  "t117581": {
+   "title": "Джинні й Джорджія",
+   "year": "2021",
+   "rating": 7.5,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "У пошуках нового життя рішуча Джорджія переїжджає зі своїми дітьми, Джинні й Остіном, на північ. Але шлях до перемін буває тернистим.",
+   "poster": "https://image.tmdb.org/t/p/w500/gTlmMJOz7eiqrbohsKF90K2K9O8.jpg"
+  },
+  "t276161": {
+   "title": "Дам тобі науку",
+   "year": "2026",
+   "rating": 8.4,
+   "genres": [
+    "Екшн і Пригоди",
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    10759,
+    18,
+    35
+   ],
+   "ov": "Коли в школах зникає повага, прибувають незвичайні інспектори, що наводять лад за допомогою жорстких безкомпромісних уроків, яких не знайти в підручниках.",
+   "poster": "https://image.tmdb.org/t/p/w500/supW3Y9CjoPPBv6Ha3NOuPAV5ZV.jpg"
+  },
+  "t61864": {
+   "title": "Добра відьма",
+   "year": "2015",
+   "rating": 7.3,
+   "genres": [
+    "Комедія",
+    "Драма",
+    "Науково фантастичний"
+   ],
+   "g": [
+    35,
+    18,
+    10765
+   ],
+   "ov": "Cassie Nightingale, Middleton’s favorite enchantress, and her young-teenage daughter Grace, who shares that same special intuition as her mom, welcome Dr. Sam Radford and his son to town. When the New York transplants mo",
+   "poster": "https://image.tmdb.org/t/p/w500/c5B9CdRs9MY6Fgknv5uZQKWtl6F.jpg"
+  },
+  "t65294": {
+   "title": "Низка злощасних подій",
+   "year": "2017",
+   "rating": 7.7,
+   "genres": [
+    "Екшн і Пригоди",
+    "Сімейний",
+    "Комедія"
+   ],
+   "g": [
+    10759,
+    10751,
+    35,
+    9648
+   ],
+   "ov": "Все починається із сумної події: за загадкових обставин згорає будинок Бодлерів, у пожежі гинуть батьки Вайолет, Клауса і Санні. Діти змушені покладатися лише на себе та на свою кмітливість, коли з’ясовується, що признач",
+   "poster": "https://image.tmdb.org/t/p/w500/7i6MekRbBtef889v6XYvngzrhSz.jpg"
+  },
+  "t81357": {
+   "title": "Мертвий для мене",
+   "year": "2019",
+   "rating": 7.9,
+   "genres": [
+    "Драма",
+    "Комедія",
+    "Кримінал"
+   ],
+   "g": [
+    18,
+    35,
+    80
+   ],
+   "ov": "Запальна вдова, яка шукає водія-втікача, що збив її чоловіка, заводить нову подругу — ексцентричну оптимістку. Але вона не зовсім та, за кого себе видає.",
+   "poster": "https://image.tmdb.org/t/p/w500/80khVZV0yfBT64kKOTVrnUOETfm.jpg"
+  },
+  "t95842": {
+   "title": "庆余年",
+   "year": "2019",
+   "rating": 8.2,
+   "genres": [
+    "Драма",
+    "Комедія",
+    "Науково фантастичний"
+   ],
+   "g": [
+    18,
+    35,
+    10765,
+    10768
+   ],
+   "ov": "Zhang Qing, a present-day college student in culture and history major wants to study in professor Ye's postgraduate class, so he decides to write a historical fiction to elaborate his perspective of analyzing ancient li",
+   "poster": "https://image.tmdb.org/t/p/w500/wHJvPo9CLpXwX1ncDg6uD0QJIZo.jpg"
+  },
+  "t35338": {
+   "title": "La que se avecina",
+   "year": "2007",
+   "rating": 7.6,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "La que se avecina is a Spanish television comedy created by Alberto Caballero, Laura Caballero and Daniel Deorador. The TV-series focusing around the inhabitants of Mirador de Montepinar, a fictional building located on ",
+   "poster": "https://image.tmdb.org/t/p/w500/ceoJyZgsHBaenUxhobHUA6mXXf0.jpg"
+  },
+  "t82782": {
+   "title": "Праведні Джемстоуни",
+   "year": "2019",
+   "rating": 8.1,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Сюжет розгортається навколо сім'ї телеєвангелістів Джемстоунів, які перетворили релігію в прибутковий та перспективний бізнес. Подорожуючи по світу, вони будують власні церкви та розповсюджують Боже слово, користуючись в",
+   "poster": "https://image.tmdb.org/t/p/w500/aKBe4YDpKR7tHIfd399Swb59cs.jpg"
   }
  }
 }
