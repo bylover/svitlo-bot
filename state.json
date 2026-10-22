@@ -1058,11 +1058,11 @@
   "groups": [
    "GPV4.1"
   ],
-  "updated": "06:47 22.10.2026",
+  "updated": "07:02 22.10.2026",
   "emergency": false,
   "city_emergency": false,
-  "city_text": "",
-  "checked": "2026-10-22T06:53:09.425285+03:00",
+  "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
+  "checked": "2026-10-22T07:03:09.659637+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -8651,7 +8651,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-22T07:00:44.668472+03:00",
+ "gh_beat": "2026-10-22T07:05:59.186529+03:00",
  "silpo_stores": {
   "week": "2026-43",
   "v": 2,
@@ -25509,9 +25509,9 @@
  "pend": {},
  "got": {},
  "pushed_h": {
-  "gs": "f73d38386aa5",
+  "gs": "5e4c2844c84d",
   "quiz_pool.json": "5e887a1905fd",
-  "fact.png": "78de98451af8",
+  "fact.png": "b0dffc0c597d",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
   "silpo/m.json": "ada60dd5c84c",
   "sexed.json": "4efede1d8ea5",
@@ -28421,15 +28421,15 @@
  "silpo_by": {
   "1edb6b54-d26b-681e-aa85-b5ff7ea46636": {
    "week": "2026-10-22",
-   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.10 07:00 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Оводова Миколи, 51 · 🏪 самовивіз · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-oberny-shcho-vyishlo-chudesa-v-mori-987298\">Книга Ранок Оберни Що вийшло Чудеса в морі</a> — <b>0.19 ₴</b> <s>179 ₴</s> · −100%\n2. 🍷 <a href=\"https://silpo.ua/product/vyno-remy-pannier-rose-d-anjou-rozheve-988294\">Вино Remy Pannier Rose d'Anjou рожеве</a> — <b>299 ₴</b> <s>639 ₴</s> · −53%\n3. 🥤 <a href=\"https://silpo.ua/product/sik-nash-sik-iabluchno-persykovyi-z-m-iakottiu-913809\">Сік «Наш Сік» яблучно-персиковий з м’якоттю</a> — <b>44.99 ₴</b> <s>86.9 ₴</s> · −48%\n4. 🥛 <a href=\"https://silpo.ua/product/moloko-zghushchene-ichnia-nezbyrane-z-tsukrom-8-5-585867\">Молоко згущене «Ічня» незбиране з цукром 8,5%</a> — <b>42.99 ₴</b> <s>84.49 ₴</s> · −49%\n5. 🥤 <a href=\"https://silpo.ua/product/sik-nash-sik-tomatnyi-z-m-iakottiu-576298\">Сік «Наш Сік» томатний з м'якоттю</a> — <b>44.99 ₴</b> <s>86.9 ₴</s> · −48%\n6. 🛒 <a href=\"https://silpo.ua/product/kapsuly-dlia-posudomyinoi-mashyny-finish-ultimate-plus-1028017\">Капсули для посудомийної машини Finish Ultimate Plus</a> — <b>1199 ₴</b> <s>2599 ₴</s> · −54%\n7. 🛒 <a href=\"https://silpo.ua/product/tabletky-dlia-posudomyinykh-mashyn-somat-classic-lemon-fresh-990880\">Таблетки для посудомийних машин Somat Classic Lemon fresh</a> — <b>439 ₴</b> <s>949 ₴</s> · −54%\n8. 🥩 <a href=\"https://silpo.ua/product/sosysky-globyno-niamski-zi-svynyny-b-o-v-g-830989\">Сосиски «Глобино» «Нямські» зі свинини б/о в/ґ</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −50%\n9. 🛒 <a href=\"https://silpo.ua/product/gel-somat-excellence-duo-dlia-posudomyinykh-mashyn-880468\">Гель Somat Excellence Duo для посудомийних машин</a> — <b>319 ₴</b> <s>619 ₴</s> · −48%\n10. 🥫 <a href=\"https://silpo.ua/product/pasta-lino-lada-gold-gorikhova-z-kakao-i-fundukom-859945\">Паста Lino Lada Gold горіхова з какао і фундуком</a> — <b>129 ₴</b> <s>249 ₴</s> · −48%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s1_",
+   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.10 07:05 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Оводова Миколи, 51 · 🏪 самовивіз · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-oberny-shcho-vyishlo-chudesa-v-mori-987298\">Книга Ранок Оберни Що вийшло Чудеса в морі</a> — <b>0.19 ₴</b> <s>179 ₴</s> · −100%\n2. 🍷 <a href=\"https://silpo.ua/product/vyno-remy-pannier-rose-d-anjou-rozheve-988294\">Вино Remy Pannier Rose d'Anjou рожеве</a> — <b>299 ₴</b> <s>639 ₴</s> · −53%\n3. 🥤 <a href=\"https://silpo.ua/product/sik-nash-sik-iabluchno-persykovyi-z-m-iakottiu-913809\">Сік «Наш Сік» яблучно-персиковий з м’якоттю</a> — <b>44.99 ₴</b> <s>86.9 ₴</s> · −48%\n4. 🥛 <a href=\"https://silpo.ua/product/moloko-zghushchene-ichnia-nezbyrane-z-tsukrom-8-5-585867\">Молоко згущене «Ічня» незбиране з цукром 8,5%</a> — <b>42.99 ₴</b> <s>84.49 ₴</s> · −49%\n5. 🥤 <a href=\"https://silpo.ua/product/sik-nash-sik-tomatnyi-z-m-iakottiu-576298\">Сік «Наш Сік» томатний з м'якоттю</a> — <b>44.99 ₴</b> <s>86.9 ₴</s> · −48%\n6. 🛒 <a href=\"https://silpo.ua/product/kapsuly-dlia-posudomyinoi-mashyny-finish-ultimate-plus-1028017\">Капсули для посудомийної машини Finish Ultimate Plus</a> — <b>1199 ₴</b> <s>2599 ₴</s> · −54%\n7. 🛒 <a href=\"https://silpo.ua/product/tabletky-dlia-posudomyinykh-mashyn-somat-classic-lemon-fresh-990880\">Таблетки для посудомийних машин Somat Classic Lemon fresh</a> — <b>439 ₴</b> <s>949 ₴</s> · −54%\n8. 🥩 <a href=\"https://silpo.ua/product/sosysky-globyno-niamski-zi-svynyny-b-o-v-g-830989\">Сосиски «Глобино» «Нямські» зі свинини б/о в/ґ</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −50%\n9. 🛒 <a href=\"https://silpo.ua/product/gel-somat-excellence-duo-dlia-posudomyinykh-mashyn-880468\">Гель Somat Excellence Duo для посудомийних машин</a> — <b>319 ₴</b> <s>619 ₴</s> · −48%\n10. 🥫 <a href=\"https://silpo.ua/product/pasta-lino-lada-gold-gorikhova-z-kakao-i-fundukom-859945\">Паста Lino Lada Gold горіхова з какао і фундуком</a> — <b>129 ₴</b> <s>249 ₴</s> · −48%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s1_",
    "built": "2026-10-22-am",
-   "at": "22.10 07:00"
+   "at": "22.10 07:05"
   },
   "1ed43e73-051b-6842-a111-a5ad042eb496@dl": {
    "week": "2026-10-22",
-   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.10 07:00 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, просп. Володимира Івасюка, 46 · 🚚 доставка · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <a href=\"https://silpo.ua/product/servetky-vologi-premiia-dlia-intymnoi-gigiieny-822109\">Серветки вологі «Премія»® для інтимної гігієни</a> — <b>17.99 ₴</b> <s>45.49 ₴</s> · −63%\n2. 🧼 <a href=\"https://silpo.ua/product/servetky-vologi-premiia-dlia-intymnoi-gigiieny-822109\">Серветки вологі «Премія»® для інтимної гігієни</a> — <b>17.99 ₴</b> <s>45.49 ₴</s> · −63%\n3. 🛒 <a href=\"https://silpo.ua/product/tabletky-dlia-posudomyinykh-mashyn-finish-all-in-1-672814\">Таблетки для посудомийних машин Finish All in 1</a> — <b>559 ₴</b> <s>1299 ₴</s> · −57%\n4. 🧼 <a href=\"https://silpo.ua/product/krem-mylo-premiia-z-ekstraktom-olyvy-507792\">Крем-мило «Премія»® з екстрактом оливи</a> — <b>29.99 ₴</b> <s>56.99 ₴</s> · −47%\n5. 🥫 <a href=\"https://silpo.ua/product/olyvky-iberica-z-lymonom-z-b-851852\">Оливки Iberica з лимоном з/б</a> — <b>59.99 ₴</b> <s>113 ₴</s> · −49%\n6. 🥦 <a href=\"https://silpo.ua/product/mango-ostin-846480\">Манго Остін</a> — <b>59.99 ₴</b> <s>119 ₴</s> · −51%\n7. 🥫 <a href=\"https://silpo.ua/product/olyvky-iberica-z-krevetkoiu-z-b-851851\">Оливки Iberica з креветкою з/б</a> — <b>59.99 ₴</b> <s>113 ₴</s> · −49%\n8. 🛒 <a href=\"https://silpo.ua/product/krem-mylo-premiia-z-ekstraktom-olyvy-507792\">Крем-мило «Премія»® з екстрактом оливи</a> — <b>29.99 ₴</b> <s>56.99 ₴</s> · −47%\n9. 🛒 <a href=\"https://silpo.ua/product/gel-somat-excellence-duo-dlia-posudomyinykh-mashyn-880468\">Гель Somat Excellence Duo для посудомийних машин</a> — <b>319 ₴</b> <s>579 ₴</s> · −45%\n10. ☕ <a href=\"https://silpo.ua/product/kava-rozchynna-chorna-karta-gold-s-b-878777\">Кава розчинна «Чорна карта» Gold с/б</a> — <b>334 ₴</b> <s>619 ₴</s> · −49%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s0_",
+   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.10 07:05 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, просп. Володимира Івасюка, 46 · 🚚 доставка · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <a href=\"https://silpo.ua/product/servetky-vologi-premiia-dlia-intymnoi-gigiieny-822109\">Серветки вологі «Премія»® для інтимної гігієни</a> — <b>17.99 ₴</b> <s>45.49 ₴</s> · −63%\n2. 🧼 <a href=\"https://silpo.ua/product/servetky-vologi-premiia-dlia-intymnoi-gigiieny-822109\">Серветки вологі «Премія»® для інтимної гігієни</a> — <b>17.99 ₴</b> <s>45.49 ₴</s> · −63%\n3. 🛒 <a href=\"https://silpo.ua/product/tabletky-dlia-posudomyinykh-mashyn-finish-all-in-1-672814\">Таблетки для посудомийних машин Finish All in 1</a> — <b>559 ₴</b> <s>1299 ₴</s> · −57%\n4. 🧼 <a href=\"https://silpo.ua/product/krem-mylo-premiia-z-ekstraktom-olyvy-507792\">Крем-мило «Премія»® з екстрактом оливи</a> — <b>29.99 ₴</b> <s>56.99 ₴</s> · −47%\n5. 🥫 <a href=\"https://silpo.ua/product/olyvky-iberica-z-lymonom-z-b-851852\">Оливки Iberica з лимоном з/б</a> — <b>59.99 ₴</b> <s>113 ₴</s> · −49%\n6. 🥦 <a href=\"https://silpo.ua/product/mango-ostin-846480\">Манго Остін</a> — <b>59.99 ₴</b> <s>119 ₴</s> · −51%\n7. 🥫 <a href=\"https://silpo.ua/product/olyvky-iberica-z-krevetkoiu-z-b-851851\">Оливки Iberica з креветкою з/б</a> — <b>59.99 ₴</b> <s>113 ₴</s> · −49%\n8. 🛒 <a href=\"https://silpo.ua/product/krem-mylo-premiia-z-ekstraktom-olyvy-507792\">Крем-мило «Премія»® з екстрактом оливи</a> — <b>29.99 ₴</b> <s>56.99 ₴</s> · −47%\n9. 🛒 <a href=\"https://silpo.ua/product/gel-somat-excellence-duo-dlia-posudomyinykh-mashyn-880468\">Гель Somat Excellence Duo для посудомийних машин</a> — <b>319 ₴</b> <s>579 ₴</s> · −45%\n10. ☕ <a href=\"https://silpo.ua/product/kava-rozchynna-chorna-karta-gold-s-b-878777\">Кава розчинна «Чорна карта» Gold с/б</a> — <b>334 ₴</b> <s>619 ₴</s> · −49%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s0_",
    "built": "2026-10-22-am",
-   "at": "22.10 07:00"
+   "at": "22.10 07:05"
   }
  },
  "x18_at": {
@@ -28445,67 +28445,67 @@
   "out": "2026-10-22T06:35:42.700446+03:00",
   "les": "2026-10-22T06:55:42.206547+03:00",
   "ero": "2026-10-22T06:55:42.206547+03:00",
-  "pov": "2026-10-22T07:00:44.732632+03:00",
-  "lat": "2026-10-22T07:00:44.732632+03:00",
+  "pov": "2026-10-22T07:05:59.261272+03:00",
+  "lat": "2026-10-22T07:05:59.261272+03:00",
   "asi": "2026-10-22T01:10:43.386062+03:00",
   "blo": "2026-10-22T01:10:43.386062+03:00",
   "rpl": "2026-10-22T01:25:44.052277+03:00",
   "bds": "2026-10-22T01:25:44.052277+03:00"
  },
- "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.10 07:00 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-naipovnisha-entsyklopediia-vsogo-tvii-dovidnyk-pro-svit-983375\">Книга Ранок Найповніша енциклопедія всього Твій довідник про світ</a> — <b>0.19 ₴</b> <s>2299 ₴</s> · −100%\n2. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-entsyklopediia-pro-vse-nash-svit-u-maliunkakh-983376\">Книга Ранок Енциклопедія про все Наш світ у малюнках</a> — <b>0.19 ₴</b> <s>1599 ₴</s> · −100%\n3. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-fabula-suchasna-proza-ukrainy-usi-ikhni-demony-983412\">Книга Фабула Сучасна проза України Усі їхні демони</a> — <b>0.19 ₴</b> <s>454 ₴</s> · −100%\n4. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/komiks-varvar-publishing-mailz-moralez-udarni-khvyli-982426\">Комікс Varvar Publishing Майлз Моралез Ударні хвилі</a> — <b>0.19 ₴</b> <s>389 ₴</s> · −100%\n5. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-frenki-d-vampir-vegan-988185\">Книга Ранок Френкі Д вампір-веган</a> — <b>0.19 ₴</b> <s>324 ₴</s> · −100%\n6. 🥩 <a href=\"https://silpo.ua/product/kovbasa-yuvileinyi-braunshveigska-s-k-v-g-928638\">Ковбаса Ювілейний Брауншвейгська с/к в/ґ</a> — <b>179 ₴</b> <s>349 ₴</s> · −51%\n7. 🥦 <a href=\"https://silpo.ua/product/mango-ostin-846480\">Манго Остін</a> — <b>59.99 ₴</b> <s>119 ₴</s> · −51%\n8. 🥛 <a href=\"https://silpo.ua/product/moloko-zghushchene-ichnia-nezbyrane-z-tsukrom-8-5-585867\">Молоко згущене «Ічня» незбиране з цукром 8,5%</a> — <b>42.99 ₴</b> <s>81.99 ₴</s> · −49%\n9. 🛒 <a href=\"https://silpo.ua/product/sous-korolivskyi-smak-satsebeli-806856\">Соус «Королівський смак» «Сацебелі»</a> — <b>39.99 ₴</b> <s>75.99 ₴</s> · −50%\n10. 🛒 📦 від 2 шт — 169.00 ₴/шт <a href=\"https://silpo.ua/product/papir-tualetnyi-nua-3-sharovyi-979726\">Папір туалетний Nua 3-шаровий</a> — <b>169 ₴</b> <s>399 ₴</s> · −58%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
+ "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.10 07:05 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-naipovnisha-entsyklopediia-vsogo-tvii-dovidnyk-pro-svit-983375\">Книга Ранок Найповніша енциклопедія всього Твій довідник про світ</a> — <b>0.19 ₴</b> <s>2299 ₴</s> · −100%\n2. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-entsyklopediia-pro-vse-nash-svit-u-maliunkakh-983376\">Книга Ранок Енциклопедія про все Наш світ у малюнках</a> — <b>0.19 ₴</b> <s>1599 ₴</s> · −100%\n3. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-fabula-suchasna-proza-ukrainy-usi-ikhni-demony-983412\">Книга Фабула Сучасна проза України Усі їхні демони</a> — <b>0.19 ₴</b> <s>454 ₴</s> · −100%\n4. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/komiks-varvar-publishing-mailz-moralez-udarni-khvyli-982426\">Комікс Varvar Publishing Майлз Моралез Ударні хвилі</a> — <b>0.19 ₴</b> <s>389 ₴</s> · −100%\n5. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-frenki-d-vampir-vegan-988185\">Книга Ранок Френкі Д вампір-веган</a> — <b>0.19 ₴</b> <s>324 ₴</s> · −100%\n6. 🥩 <a href=\"https://silpo.ua/product/kovbasa-yuvileinyi-braunshveigska-s-k-v-g-928638\">Ковбаса Ювілейний Брауншвейгська с/к в/ґ</a> — <b>179 ₴</b> <s>349 ₴</s> · −51%\n7. 🥦 <a href=\"https://silpo.ua/product/mango-ostin-846480\">Манго Остін</a> — <b>59.99 ₴</b> <s>119 ₴</s> · −51%\n8. 🥛 <a href=\"https://silpo.ua/product/moloko-zghushchene-ichnia-nezbyrane-z-tsukrom-8-5-585867\">Молоко згущене «Ічня» незбиране з цукром 8,5%</a> — <b>42.99 ₴</b> <s>81.99 ₴</s> · −49%\n9. 🛒 <a href=\"https://silpo.ua/product/sous-korolivskyi-smak-satsebeli-806856\">Соус «Королівський смак» «Сацебелі»</a> — <b>39.99 ₴</b> <s>75.99 ₴</s> · −50%\n10. 🛒 📦 від 2 шт — 169.00 ₴/шт <a href=\"https://silpo.ua/product/papir-tualetnyi-nua-3-sharovyi-979726\">Папір туалетний Nua 3-шаровий</a> — <b>169 ₴</b> <s>399 ₴</s> · −58%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
  "silpo_day": "2026-10-22-am",
  "upd": {
   "🔥 Фільми 18+": {
-   "at": "22.10 07:04",
-   "ts": 1792641888,
+   "at": "22.10 07:06",
+   "ts": 1792641983,
    "ok": true,
    "note": ""
   },
   "🎓 Секс-освіта": {
-   "at": "22.10 06:50",
-   "ts": 1792641051,
+   "at": "22.10 07:06",
+   "ts": 1792641983,
    "ok": true,
    "note": ""
   },
   "🎯 Вікторини": {
-   "at": "22.10 06:50",
-   "ts": 1792641051,
+   "at": "22.10 07:06",
+   "ts": 1792641983,
    "ok": true,
    "note": ""
   },
   "🌅 Імпульс / 🕯 класика": {
-   "at": "22.10 06:50",
-   "ts": 1792641051,
+   "at": "22.10 07:06",
+   "ts": 1792641983,
    "ok": true,
    "note": ""
   },
   "🎵 Музика": {
-   "at": "22.10 06:50",
-   "ts": 1792641051,
+   "at": "22.10 07:06",
+   "ts": 1792641984,
    "ok": true,
    "note": ""
   },
   "❤️ Здоровʼя": {
-   "at": "22.10 06:55",
-   "ts": 1792641346,
+   "at": "22.10 07:06",
+   "ts": 1792641984,
    "ok": true,
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "22.10 07:00",
-   "ts": 1792641647,
+   "at": "22.10 07:06",
+   "ts": 1792641962,
    "ok": true,
    "note": ""
   },
   "🛒 Сільпо (основна)": {
-   "at": "22.10 07:05",
-   "ts": 1792641910,
+   "at": "22.10 07:06",
+   "ts": 1792641999,
    "ok": true,
    "note": ""
   },
   "🛒 Сільпо (підписники)": {
-   "at": "22.10 07:05",
-   "ts": 1792641941,
+   "at": "22.10 07:06",
+   "ts": 1792642015,
    "ok": true,
    "note": ""
   },
@@ -28534,8 +28534,8 @@
    "note": ""
   },
   "ігри PS5": {
-   "at": "22.10 07:00",
-   "ts": 1792641647,
+   "at": "22.10 07:06",
+   "ts": 1792641984,
    "ok": true,
    "note": ""
   },
@@ -28546,8 +28546,8 @@
    "note": ""
   },
   "аудіокниги": {
-   "at": "22.10 07:00",
-   "ts": 1792641647,
+   "at": "22.10 07:06",
+   "ts": 1792641962,
    "ok": true,
    "note": ""
   },
@@ -28564,8 +28564,8 @@
    "note": ""
   },
   "кіномэтч": {
-   "at": "22.10 07:00",
-   "ts": 1792641647,
+   "at": "22.10 07:06",
+   "ts": 1792641962,
    "ok": true,
    "note": ""
   },
@@ -28576,8 +28576,8 @@
    "note": ""
   },
   "пп-страви": {
-   "at": "22.10 07:00",
-   "ts": 1792641647,
+   "at": "22.10 07:06",
+   "ts": 1792641962,
    "ok": true,
    "note": ""
   }
