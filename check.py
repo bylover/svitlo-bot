@@ -4434,8 +4434,12 @@ def rc_ru(have: set, limit: int = 8) -> list:
         p_ = float(re.sub(r"[^\d.]", "", str(nu.get("proteinContent") or "")) or 0) or g(r"белк\w*[^0-9]{0,20}(\d+[.,]?\d*)")
         f_ = float(re.sub(r"[^\d.]", "", str(nu.get("fatContent") or "")) or 0) or g(r"жир\w*[^0-9]{0,20}(\d+[.,]?\d*)")
         c_ = float(re.sub(r"[^\d.]", "", str(nu.get("carbohydrateContent") or "")) or 0) or g(r"углевод\w*[^0-9]{0,20}(\d+[.,]?\d*)")
-        if not name or not kcal or kcal > 650 or (tm and tm > 45):
-            continue
+        serv_m = re.search(r"(\d{1,2})\s*(?:порц|персон)", txt, re.I) or re.search(r"(?:порций|порции|выход)[^0-9]{0,15}(\d{1,2})", txt, re.I)
+        serv_n = int(serv_m.group(1)) if serv_m and 1 <= int(serv_m.group(1)) <= 20 else 1
+        if kcal > 900 and serv_n > 1:                 # на сторінці — на все блюдо: ділимо на порції
+            kcal, p_, f_, c_ = kcal / serv_n, p_ / serv_n, f_ / serv_n, c_ / serv_n
+        if not name or not kcal or kcal > 650 or kcal < 40 or (tm and tm > 45) or abs(p_ * 4 + f_ * 9 + c_ * 4 - kcal) > max(150, kcal * 0.45):
+            continue                                  # неправдоподібні дані (не та одиниця) — не беремо
         if not ing:                                       # інгредієнти зі сторінки (список)
             ing = [re.sub(r"<[^>]+>", " ", x).strip() for x in re.findall(r"<li[^>]*>([\s\S]{3,120}?)</li>", h) if re.search(r"\d|по вкусу|шт|г\b|мл", x)][:15]
         if not ing:
@@ -4503,22 +4507,48 @@ def recipes_refresh(st: dict, now: datetime) -> None:
                      json_mode=True, relaxed=True, max_tokens=9000)
         try:
             for y in json.loads(raw or "[]"):
-                tot, ok = {"kcal": 0, "p": 0, "f": 0, "c": 0}, 0
+                tot, ok, ib = {"kcal": 0, "p": 0, "f": 0, "c": 0}, 0, []
                 for g in y.get("ing", []):
                     r = cof.get(g.get("en")) or next((v for k, v in cof.items() if g.get("en") and str(g["en"]).split(",")[0].lower() in k.lower()), None)
+                    gg = float(g.get("g") or 0)
                     if r and r[1] is not None:
                         ok += 1
                         for k_, i_ in (("kcal", 1), ("p", 2), ("f", 3), ("c", 4)):
-                            tot[k_] += (r[i_] or 0) * float(g.get("g") or 0) / 100
+                            tot[k_] += (r[i_] or 0) * gg / 100
+                        ib.append([g.get("name", ""), gg] + [round((r[i_] or 0) * gg / 100, 1) for i_ in (1, 2, 3, 4)])
                 serv = max(1, int(y.get("serv") or 1))
                 if not y.get("ing") or ok < len(y["ing"]) * 0.6:
                     continue                          # КБЖВ не можна надійно порахувати — не додаємо
                 items.append({"id": "u" + hashlib.md5(y["t"].encode()).hexdigest()[:8], "meal": meal, "t": y["t"], "en": str(y.get("en") or "")[:60], "time": int(y.get("time") or 25), "serv": serv,
                               "ing": [f"{g['name']} — {g.get('g')} г" for g in y["ing"]], "steps": y.get("steps", []), "tags": y.get("tags", []),
-                              **{k_: round(v_ / serv, 1) for k_, v_ in tot.items()}, "img": "", "src": {"n": "Здорова тарілка МОЗ України (принципи)", "u": "https://moz.gov.ua/"},
+                              **{k_: round(v_ / serv, 1) for k_, v_ in tot.items()}, "ib": ib, "img": "", "src": {"n": "Здорова тарілка МОЗ України (принципи)", "u": "https://moz.gov.ua/"},
                               "badge": "🇺🇦 за принципами МОЗ · КБЖВ за таблицею CoFID", "grp": "our"})
         except Exception as e:
             print(f"ПП-страви (українські): {err_text(e)[:60]}")
+    try:
+        cof2 = {r[0]: r for r in json.loads(Path("cofid.json").read_text("utf-8")).get("items", [])}
+    except Exception:
+        cof2 = {}
+    need_ib = [x for x in items if "ib" not in x][:20] if cof2 else []
+    for chunk in [need_ib[i:i + 10] for i in range(0, len(need_ib), 10)]:
+        if not budget_ok(60):
+            break
+        try:                                          # 🔎 КБЖВ інгредієнтів: продукт + грами (ложки, шт → грами) + відповідник у CoFID
+            raw = gemini("Для кожного рецепта розбери інгредієнти: name (українською, коротко), g (грами на ВЕСЬ рецепт; шт/ложки/склянки переведи в грами; «за смаком», сіль, спеції — 0), "
+                         "en (найближча назва з британської таблиці CoFID англійською, напр. «Buckwheat, raw», «Chicken, breast, raw», «Olive oil»; порожньо, якщо незначне). "
+                         "Поверни JSON-масив масивів у тому ж порядку рецептів: [[{name,g,en},…],…].\n\n"
+                         + json.dumps([x.get("ing", [])[:18] for x in chunk], ensure_ascii=False), json_mode=True, relaxed=True, max_tokens=7000)
+            res = json.loads(raw or "[]")
+        except Exception as e:
+            print(f"ПП-страви (КБЖВ інгредієнтів): {err_text(e)[:60]}"); break
+        for x, lines in zip(chunk, res if isinstance(res, list) else []):
+            ib = []
+            for g in lines if isinstance(lines, list) else []:
+                en, gg = str(g.get("en") or ""), float(g.get("g") or 0)
+                r = cof2.get(en) or (next((v for k, v in cof2.items() if en and en.split(",")[0].lower() in k.lower()), None) if en else None)
+                vals = [round((r[i_] or 0) * gg / 100, 1) for i_ in (1, 2, 3, 4)] if r and r[1] is not None else [0, 0, 0, 0]
+                ib.append([str(g.get("name") or "")[:50], gg] + vals + ([] if r or not en else ["?"]))
+            x["ib"] = ib
     noen = [x for x in items if not x.get("img") and not x.get("en") and not x.get("noimg")][:30]
     if noen:                                          # англійська назва для пошуку фото (для вже доданих страв)
         try:
@@ -4539,12 +4569,17 @@ def recipes_refresh(st: dict, now: datetime) -> None:
             x["img"], x["img_by"], x["img_lic"] = im["url"], im.get("by", ""), im.get("lic", "")
         else:
             x["noimg"] = 1                            # не знайшли відповідного — без фото (краще, ніж чуже)
+    bad_ = [x for x in items if not (40 <= float(x.get("kcal") or 0) <= 900) or
+            abs(float(x.get("p") or 0) * 4 + float(x.get("f") or 0) * 9 + float(x.get("c") or 0) * 4 - float(x.get("kcal") or 0)) > max(150, float(x.get("kcal") or 0) * 0.45)]
+    if bad_:                                          # прибираємо страви з неправдоподібним КБЖВ (наприклад, ккал на все блюдо замість порції)
+        print(f"ПП-страви: прибрано з неправдоподібним КБЖВ — {len(bad_)}: {[x.get('t') for x in bad_][:5]}")
+        items = [x for x in items if x not in bad_]
     for x in items:                                   # групи: 🇺🇦🇷🇺 «наша кухня» (u*, r*) і 🌍 «світові» (b*)
         x.setdefault("grp", "world" if x["id"].startswith("b") else "our")
     seen_ = set(); db_["items"] = [x for x in items if not (x["id"] in seen_ or seen_.add(x["id"]))]
     if len(db_["items"]) >= RC_TARGET:
         db_["month"] = mon; st["rc_force"] = False
-    st["rc_need"] = len(db_["items"]) < RC_TARGET          # поки база мала — ПП-страви першими в черзі
+    st["rc_need"] = len(db_["items"]) < RC_TARGET or any("ib" not in x for x in db_["items"])   # ще й розбір інгредієнтів          # поки база мала — ПП-страви першими в черзі
     RECIPES_FILE.write_text(json.dumps(db_, ensure_ascii=False, separators=(",", ":")), "utf-8")
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "recipes.json", "json": {"items": [{k: v for k, v in x.items() if k not in ("orig",)} for x in db_["items"]]}})
