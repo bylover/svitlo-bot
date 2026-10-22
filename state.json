@@ -78,7 +78,8 @@
   "https://www.dildoordildont.com/the-best-lube-for-perimenopause-dryness/?utm_source=rss&utm_medium=rss&utm_campaign=the-best-lube-for-perimenopause-dryness",
   "https://medium.com/@SensualTouchJournal/the-need-to-control-pleasure-why-letting-go-of-control-can-lead-us-somewhere-beautiful-0288bc0eafc9?source=rss------intimacy-5",
   "https://share.transistor.fm/s/36b8ddbe",
-  "https://sexwithemily.com/decentering-penetration-sex-life/?utm_source=rss&utm_medium=rss&utm_campaign=decentering-penetration-sex-life"
+  "https://sexwithemily.com/decentering-penetration-sex-life/?utm_source=rss&utm_medium=rss&utm_campaign=decentering-penetration-sex-life",
+  "https://medium.com/@selovemngr/how-to-choose-a-sex-toy-for-women-essential-features-that-actually-matter-1394d0560238?source=rss------sex_toys-5"
  ],
  "kino_seen": [
   "m186",
@@ -547,7 +548,7 @@
   "t90802",
   "t39793"
  ],
- "gh_beat": "2026-10-22T23:45:44.793708+03:00",
+ "gh_beat": "2026-10-22T23:49:52.940993+03:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -558,11 +559,11 @@
   "groups": [
    "GPV4.1"
   ],
-  "updated": "23:31 22.10.2026",
+  "updated": "23:47 22.10.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-10-22T23:43:08.779366+03:00",
+  "checked": "2026-10-22T23:48:06.447136+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1599,6 +1600,18 @@
   "🔥 Фільми 18+": {
    "at": "22.10 22:06",
    "ts": 1792695980,
+   "ok": true,
+   "note": ""
+  },
+  "🛍 Prom.ua": {
+   "at": "22.10 23:52",
+   "ts": 1792702332,
+   "ok": true,
+   "note": ""
+  },
+  "prom.ua": {
+   "at": "22.10 23:52",
+   "ts": 1792702332,
    "ok": true,
    "note": ""
   }
@@ -16404,7 +16417,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "a3a428d7da39",
+  "gs": "1fc0dfec5317",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "67ac20016797",
   "sexed.json": "4efede1d8ea5",
@@ -18186,5 +18199,7 @@
  },
  "ero_book": {
   "160603556": "Dracula"
- }
+ },
+ "prom_day": "2026-10-22",
+ "prom_force": false
 }
