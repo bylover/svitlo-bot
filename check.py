@@ -4381,10 +4381,69 @@ def rc_bbc(meal: str, url: str, have: set, limit: int = 6) -> list:
                 serv = int(re.sub(r"\D", "", str(d.get("recipeYield") or "1")) or 1) if not isinstance(d.get("recipeYield"), list) else int(re.sub(r"\D", "", str(d["recipeYield"][0])) or 1)
                 out.append({"id": "b" + hashlib.md5(link.encode()).hexdigest()[:8], "meal": meal, "orig": d.get("name"), "ing": d.get("recipeIngredient") or [], "steps": steps,
                             "time": tm, "serv": max(1, serv), "kcal": num("calories"), "p": num("proteinContent"), "f": num("fatContent"), "c": num("carbohydrateContent"),
-                            "img": img, "src": {"n": "BBC Good Food · Healthy", "u": link}, "badge": "👩‍⚕️ рецепт перевірений дієтологом"})
+                            "img": img, "src": {"n": "BBC Good Food · Healthy", "u": link}, "badge": "👩‍⚕️ рецепт перевірений дієтологом", "grp": "world"})
                 break
         except Exception:
             continue
+    return out
+
+
+RC_RU_BASE = "https://xn----8sbehgcimb3cfabqj3b.xn--p1ai"      # здоровое-питание.рф (Роспотребнадзор)
+RC_RU_LISTS = [RC_RU_BASE + "/healthy-nutrition/recipes/", RC_RU_BASE + "/recipes/"]
+
+
+def rc_ru(have: set, limit: int = 8) -> list:
+    """Рецепти порталу «Здоровое питание» (Роспотребнадзор): назва, інгредієнти, кроки, КБЖВ (JSON-LD або текст сторінки)."""
+    out, links = [], []
+    for lst in RC_RU_LISTS:
+        for page in range(1, 4):
+            try:
+                h = http_text(lst + (f"?PAGEN_1={page}" if page > 1 else ""))
+            except Exception as e:
+                print(f"ПП-страви (РФ, список): {err_text(e)[:60]}"); break
+            for l_ in re.findall(r'href="(/[^"]*recipe[s]?/[^"?#]+/)"', h):
+                u_ = RC_RU_BASE + l_
+                if u_ not in links and u_.rstrip("/") not in (x.rstrip("/") for x in RC_RU_LISTS):
+                    links.append(u_)
+        if links:
+            break
+    for link in links:
+        if len(out) >= limit or link in have:
+            continue
+        try:
+            h = http_text(link)
+        except Exception:
+            continue
+        name, ing, steps, nu, tm, img = None, [], [], {}, 0, ""
+        for blk in re.findall(r'<script[^>]+application/ld\+json[^>]*>([\s\S]*?)</script>', h):
+            try:
+                d = json.loads(blk); d = next((x for x in (d if isinstance(d, list) else d.get("@graph", [d])) if "Recipe" in str(x.get("@type"))), None)
+            except Exception:
+                d = None
+            if d:
+                name, ing = d.get("name"), d.get("recipeIngredient") or []
+                steps = [re.sub(r"<[^>]+>", "", (x.get("text") if isinstance(x, dict) else str(x))) for x in (d.get("recipeInstructions") or [])]
+                nu, tm = d.get("nutrition") or {}, _iso_min(d.get("totalTime")) or _iso_min(d.get("cookTime"))
+                im_ = d.get("image"); img = (im_[0] if isinstance(im_, list) else (im_ or {}).get("url") if isinstance(im_, dict) else im_) or ""
+                break
+        txt = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", h))
+        if not name:
+            m_ = re.search(r"<h1[^>]*>([\s\S]*?)</h1>", h); name = re.sub(r"<[^>]+>", "", m_.group(1)).strip() if m_ else None
+        g = lambda rx: float((re.search(rx, txt, re.I) or [None, "0"])[1].replace(",", "."))
+        kcal = float(re.sub(r"[^\d.]", "", str(nu.get("calories") or "")) or 0) or g(r"(\d+[.,]?\d*)\s*ккал")
+        p_ = float(re.sub(r"[^\d.]", "", str(nu.get("proteinContent") or "")) or 0) or g(r"белк\w*[^0-9]{0,20}(\d+[.,]?\d*)")
+        f_ = float(re.sub(r"[^\d.]", "", str(nu.get("fatContent") or "")) or 0) or g(r"жир\w*[^0-9]{0,20}(\d+[.,]?\d*)")
+        c_ = float(re.sub(r"[^\d.]", "", str(nu.get("carbohydrateContent") or "")) or 0) or g(r"углевод\w*[^0-9]{0,20}(\d+[.,]?\d*)")
+        if not name or not kcal or kcal > 650 or (tm and tm > 45):
+            continue
+        if not ing:                                       # інгредієнти зі сторінки (список)
+            ing = [re.sub(r"<[^>]+>", " ", x).strip() for x in re.findall(r"<li[^>]*>([\s\S]{3,120}?)</li>", h) if re.search(r"\d|по вкусу|шт|г\b|мл", x)][:15]
+        if not ing:
+            continue
+        out.append({"id": "r" + hashlib.md5(link.encode()).hexdigest()[:8], "orig": name, "ing": ing, "steps": steps, "time": tm or 30, "serv": 1,
+                    "kcal": kcal, "p": p_, "f": f_, "c": c_, "img": img if str(img).startswith("http") else (RC_RU_BASE + img if img else ""),
+                    "src": {"n": "Здоровое питание (Роспотребнадзор)", "u": link}, "badge": "🇷🇺 перевірено спеціалістами порталу «Здоровое питание»", "grp": "our"})
+    print(f"ПП-страви (РФ): посилань {len(links)}, нових рецептів {len(out)}")
     return out
 
 
@@ -4406,10 +4465,14 @@ def recipes_refresh(st: dict, now: datetime) -> None:
         new += rc_bbc(meal, url, have | {x.get("src", {}).get("u") for x in new}, per_)
         if len(new) >= 24:
             break
+    ru_new = rc_ru(have | {x.get("src", {}).get("u") for x in new}, 8 if len(items) < RC_TARGET else 4)
+    for x in ru_new:
+        x["meal"] = "lunch"                               # прийом їжі визначить ШІ нижче
+    new += ru_new
     if new:                                           # переклад, адаптація до українських магазинів, спрощення кроків
         raw = gemini("Ти дієтолог-кулінар. Переклади рецепти українською й адаптуй до продуктів, що є в українських супермаркетах (рідкісне замінюй на доступне й познач «(заміна: …)»). "
                      "Кроки — коротко й просто, 3–7 пунктів. Кількості — у грамах/шт. Не змінюй КБЖВ і час. Поверни JSON-масив об'єктів у тому ж порядку: "
-                     "{\"t\": назва, \"ing\": [рядки], \"steps\": [рядки], \"tags\": [з: protein, veg, quick, budget], "
+                     "{\"t\": назва, \"ing\": [рядки], \"steps\": [рядки], \"tags\": [з: protein, veg, quick, budget], \"meal\": breakfast|lunch|dinner|snack, "
                      "\"ok\": true/false — чи можна все купити в звичайному АТБ або Сільпо без пошуків (false, якщо потрібні рідкісні продукти навіть після заміни)}.\n\n"
                      + json.dumps([{"name": x["orig"], "ing": x["ing"][:20], "steps": x["steps"][:10], "time": x["time"]} for x in new], ensure_ascii=False), json_mode=True, relaxed=True, max_tokens=12000)
         try:
@@ -4417,6 +4480,8 @@ def recipes_refresh(st: dict, now: datetime) -> None:
                 if y.get("ok") is False:
                     continue                              # недоступні в Україні продукти — пропускаємо
                 x.update({"t": y.get("t") or x["orig"], "ing": y.get("ing") or x["ing"], "steps": y.get("steps") or x["steps"], "tags": y.get("tags") or []})
+                if x["id"].startswith("r") and y.get("meal") in RC_MEALS:
+                    x["meal"] = y["meal"]
                 if x["time"] <= 20 and "quick" not in x["tags"]:
                     x["tags"].append("quick")
                 items.append(x)
@@ -4451,7 +4516,7 @@ def recipes_refresh(st: dict, now: datetime) -> None:
                 items.append({"id": "u" + hashlib.md5(y["t"].encode()).hexdigest()[:8], "meal": meal, "t": y["t"], "en": str(y.get("en") or "")[:60], "time": int(y.get("time") or 25), "serv": serv,
                               "ing": [f"{g['name']} — {g.get('g')} г" for g in y["ing"]], "steps": y.get("steps", []), "tags": y.get("tags", []),
                               **{k_: round(v_ / serv, 1) for k_, v_ in tot.items()}, "img": "", "src": {"n": "Здорова тарілка МОЗ України (принципи)", "u": "https://moz.gov.ua/"},
-                              "badge": "🇺🇦 за принципами МОЗ · КБЖВ за таблицею CoFID"})
+                              "badge": "🇺🇦 за принципами МОЗ · КБЖВ за таблицею CoFID", "grp": "our"})
         except Exception as e:
             print(f"ПП-страви (українські): {err_text(e)[:60]}")
     noen = [x for x in items if not x.get("img") and not x.get("en") and not x.get("noimg")][:30]
@@ -4474,6 +4539,8 @@ def recipes_refresh(st: dict, now: datetime) -> None:
             x["img"], x["img_by"], x["img_lic"] = im["url"], im.get("by", ""), im.get("lic", "")
         else:
             x["noimg"] = 1                            # не знайшли відповідного — без фото (краще, ніж чуже)
+    for x in items:                                   # групи: 🇺🇦🇷🇺 «наша кухня» (u*, r*) і 🌍 «світові» (b*)
+        x.setdefault("grp", "world" if x["id"].startswith("b") else "our")
     seen_ = set(); db_["items"] = [x for x in items if not (x["id"] in seen_ or seen_.add(x["id"]))]
     if len(db_["items"]) >= RC_TARGET:
         db_["month"] = mon; st["rc_force"] = False
@@ -4483,7 +4550,7 @@ def recipes_refresh(st: dict, now: datetime) -> None:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "recipes.json", "json": {"items": [{k: v for k, v in x.items() if k not in ("orig",)} for x in db_["items"]]}})
     except Exception as e:
         print(f"ПП-страви → Cloudflare: {err_text(e)[:60]}")
-    print(f"ПП-страви: усього {len(db_['items'])} (👩‍⚕️ {sum(1 for x in db_['items'] if x['id'].startswith('b'))}, 🇺🇦 {sum(1 for x in db_['items'] if x['id'].startswith('u'))}), нових за запуск {len(new)}")
+    print(f"ПП-страви: усього {len(db_['items'])} (🌍 {sum(1 for x in db_['items'] if x['id'].startswith('b'))}, 🇺🇦 {sum(1 for x in db_['items'] if x['id'].startswith('u'))}, 🇷🇺 {sum(1 for x in db_['items'] if x['id'].startswith('r'))}), нових за запуск {len(new)}")
     mark_upd(st, "🥗 ПП-страви", True)
 
 
