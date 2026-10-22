@@ -6134,12 +6134,12 @@ def main() -> None:
             MUSIC_FILE.write_text(json.dumps(mdb_, ensure_ascii=False, separators=(",", ":")), "utf-8")
         except Exception:
             pass
-        st["force_heavy"] = ["кіно, пули", "музика", "здоров'я", "ігри PS5", "аудіокниги"]
-        st["games_force"] = st["ab_force"] = True
+        st["force_heavy"] = ["кіно, пули", "музика", "здоров'я", "ігри PS5", "аудіокниги", "пп-страви"]
+        st["games_force"] = st["ab_force"] = st["rc_force"] = True     # 🥗 ПП-страви — позапланове поповнення
         st["cofid"] = ""; st.pop("kb_probe2", None)      # 🥗 КБЖВ: переімпорт CoFID і перевірка Сільпо
         for c in worker_req["rebuild"]:
             direct_m.append((str(c), "🔄 Позапланове оновлення запущено: 🛒 Сільпо (основна й підписників) — ~10–20 хв; 🍿 кіно й 🎵 музика — "
-                                     "~30–60 хв; 🛍 ТЦ — окремим процесом ~10–15 хв. 18+, SMM і здоровʼя оновлюються за своїм розкладом.", None))
+                                     "~30–60 хв; 🛍 ТЦ — окремим процесом ~10–15 хв; 🎮 ігри, 🎧 аудіокниги, 🥗 ПП-страви — протягом кількох годин по черзі. 18+ і SMM оновлюються за своїм розкладом.", None))
     # 9) SMM і таргет — пн о 13:00 (вам, дружині та підписникам, які це ввімкнули); меню — той самий дайджест тижня
     smm_due = (now.weekday() == SMM_WEEKDAY and SMM_HOUR <= now.hour < SMM_HOUR + 4
                and st.get("smm_week") != week_key)
