@@ -1059,11 +1059,11 @@
   "groups": [
    "GPV4.1"
   ],
-  "updated": "12:19 22.10.2026",
+  "updated": "12:33 22.10.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "",
-  "checked": "2026-10-22T12:33:05.537114+03:00",
+  "checked": "2026-10-22T12:43:09.220482+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1074,16 +1074,6 @@
   "gemini-flash-latest": "2026-10-23T10:05:00+03:00"
  },
  "kino_seen": [
-  "m937287",
-  "m44115",
-  "t80350",
-  "t117488",
-  "t2490",
-  "m1195506",
-  "m38700",
-  "m501170",
-  "m615457",
-  "m259693",
   "m1008042",
   "m25793",
   "t111110",
@@ -1673,7 +1663,17 @@
   "m85350",
   "t68398",
   "t289560",
-  "t269"
+  "t269",
+  "m607844",
+  "m1114513",
+  "m398978",
+  "m1317149",
+  "m493529",
+  "m1281331",
+  "m16804",
+  "t203857",
+  "t213375",
+  "t1972"
  ],
  "yt_ver": 2,
  "yt_seen": [
@@ -8678,7 +8678,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-22T12:40:45.552280+03:00",
+ "gh_beat": "2026-10-22T12:45:49.484719+03:00",
  "silpo_stores": {
   "week": "2026-43",
   "v": 2,
@@ -25599,7 +25599,7 @@
   "silpo": {}
  },
  "pushed_h": {
-  "gs": "310f4b864279",
+  "gs": "afb4fff22865",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "d97c8c67e2bc",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
@@ -28699,14 +28699,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "22.10 12:44",
-   "ts": 1792662250,
+   "at": "22.10 12:49",
+   "ts": 1792662575,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "22.10 12:44",
-   "ts": 1792662250,
+   "at": "22.10 12:49",
+   "ts": 1792662575,
    "ok": true,
    "note": ""
   }
@@ -35999,6 +35999,12 @@
    {
     "id": "2c4897050c",
     "text": "🍿 <b>ПІДБІРКА КІНО · НЕДООЦІНЕНІ ФІЛЬМИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Bojka-nezaperechnij-4-2016-10-22\">Бойка: незаперечний 4</a></b> (2016) · ❤️ за вашим смаком\nбойовик, драма, трилер · ⏱ 1 год 27 хв\n⭐ IMDb <b>7.0</b>\n<i>🎭 Скотт Едкінс, Teodora Duhovnikova, Alon Aboutboul</i>\n📺 <a href=\"https://www.themoviedb.org/movie/348893-boyka-undisputed-iv/watch?locale=UA\">Apple TV Store</a>\n📝 Юрій Бойка - російський боксер зі складною долею. Він пройшов загартування в підпільних боях без правил, а після - став відомим в тюремних колах, перемагаючи досвідчених суперників в чемпіонаті серед ув'язнених. Що б…\n▶️ <a href=\"https://youtu.be/Lo-OXY1iXVU\">Трейлер</a></blockquote>\n§KN:m348893\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Mayak-2019-10-22\">Маяк</a></b> (2019) · ❤️ за вашим смаком\nдрама, фентезі, трилер · ⏱ 1 год 49 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>90%</b> · Ⓜ <b>83</b>\n<i>🎭 Роберт Паттінсон, Віллем Дефо, Валерія Караман</i>\n📺 <a href=\"https://www.themoviedb.org/movie/503919-the-lighthouse/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Маяк оповідає про пригоди двох доглядачів маяка, коли вони стикаються з самотністю, дружбою та своїми найгіршими страхами.\n▶️ <a href=\"https://youtu.be/42_UHhpq530\">Трейлер</a></blockquote>\n§KN:m503919\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Supermen-2025-10-22-2\">Супермен</a></b> (2025)\nфантастика, пригоди, бойовик · ⏱ 2 год 10 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>83%</b> · Ⓜ <b>68</b>\n<i>🎭 Девід Коренсвет, Рейчел Броснаген, Ніколас Голт</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1061474-superman/watch?locale=UA\">Rakuten TV</a>\n📝 Історія розповідає про Супермена – героя, який живе за принципами милосердя та незламної віри в доброту людства.\n▶️ <a href=\"https://youtu.be/ALfxbq2RhXw\">Трейлер</a></blockquote>\n§KN:m1061474\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/F1-Fіlm-2025-10-22\">F1: Фільм</a></b> (2025)\nбойовик, драма · ⏱ 2 год 36 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>82%</b> · Ⓜ <b>68</b>\n<i>🎭 Бред Пітт, Дамсон Ідріс, Хав'єр Бардем</i>\n📺 <a href=\"https://www.themoviedb.org/movie/911430-f1/watch?locale=UA\">Apple TV</a>\n📝 Жахлива аварія на трасі змусила Сонні Гейза припинити кар’єру гонщика. Це сталося ще у 1990-х і тоді він вважався найперспективнішим пілотом свого покоління. Колишній напарник Рубен Сервантес нині очолює одну з…\n▶️ <a href=\"https://youtu.be/n1XwN3K-WS0\">Трейлер</a></blockquote>\n§KN:m911430\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Polyuvannya-na-tіn-2025-10-22-2\">Полювання на тінь</a></b> (2025)\nбойовик, кримінал, драма · ⏱ 2 год 22 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>82%</b>\n<i>🎭 Джекі Чан, 张子枫, 梁家輝</i>\n📝 Поліція Макао залучає до роботи експерта з розшуку, який вийшов на пенсію, щоб допомогти зловити небезпечну групу професійних злодіїв.\n▶️ <a href=\"https://youtu.be/xvmADAJOoCg\">Трейлер</a></blockquote>\n§KN:m1419406\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Vartovі-galaktiki-3-2023-10-22\">Вартові галактики 3</a></b> (2023)\nфантастика, пригоди, бойовик · ⏱ 2 год 30 хв\n⭐ IMDb <b>7.9</b> · 🍅 <b>82%</b> · Ⓜ <b>64</b>\n<i>🎭 Кріс Пратт, Зої Салдана, Дейв Батіста</i>\n📺 <a href=\"https://www.themoviedb.org/movie/447365-guardians-of-the-galaxy-vol-3/watch?locale=UA\">Rakuten TV</a>\n📝 Пітер Квілл, усе ще оговтуючись від утрати Ґамори, має знову об’єднати команду, щоб захистити Всесвіт та одного з них. Якщо ця місія провалиться, це може стати кінцем Вартових, якими ми їх знаємо.\n▶️ <a href=\"https://youtu.be/OCjs5Cd7UWk\">Трейлер</a></blockquote>\n§KN:m447365\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/YUnіst-2014-10-22\">Юність</a></b> (2014)\nдрама · ⏱ 2 год 45 хв\n⭐ IMDb <b>7.9</b> · 🍅 <b>97%</b> · Ⓜ <b>100</b>\n<i>🎭 Ellar Coltrane, Патриція Аркетт, Ітан Гоук</i>\n📺 <a href=\"https://www.themoviedb.org/movie/85350-boyhood/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 У центрі сюжету картини — життя хлопчика Мейсона. Його та сестру Саманту мама Олівія виховує сама, без чоловіка. У картині зображується, як поступово, починаючи від шести років, рік за роком, Мейсон дорослішає,…\n▶️ <a href=\"https://youtu.be/Fqsxmn4OC_g\">Трейлер</a></blockquote>\n§KN:m85350\n§§\n<blockquote>📺 <b>8. <a href=\"https://telegra.ph/낭만닥터-김사부-2016-10-22\">낭만닥터 김사부</a></b> (2016)\nдрама · 📺 серіал · 3 сез.\n⭐ IMDb <b>8.4</b>\n<i>🎭 한석규, Лі Сон Кьон, Ан Хьо Соп</i>\n📝 An eccentric, triple board-certified virtuoso surgeon leaves a top job in Seoul and ends up at a provincial hospital, where he mentors young doctors.</blockquote>\n§KN:t68398\n§§\n<blockquote>📺 <b>9. <a href=\"https://telegra.ph/CRU-2026-10-22\">ЦРУ</a></b> (2026)\nкримінал, драма · 📺 серіал · 2 сез.\n⭐ TMDB <b>8.4</b>\n<i>🎭 Том Елліс, Nick Gehlfuss, Natalee Linez</i>\n📝 Історія про гента ФБР та співробітника ЦРУ, які працюють разом у таємному підрозділі, щоб запобігти внутрішньому тероризму в Нью-Йорку.\n▶️ <a href=\"https://youtu.be/4kOSs4ybDF0\">Трейлер</a></blockquote>\n§KN:t289560\n§§\n<blockquote>📺 <b>10. <a href=\"https://telegra.ph/SHkola-vizhivannya-2003-10-22\">Школа виживання</a></b> (2003)\nдрама · 📺 серіал · 9 сез.\n⭐ IMDb <b>7.8</b>\n<i>🎭 James Lafferty, Bethany Joy Lenz, Софія Буш</i>\n📝 В центрі сюжету – історія двох хлопців, Лукаса та Нейтена, яких об’єднує лише дві речі. Про одну з них, любов до баскетболу, знає майже все містечко. Інша – таємниця, адже у хлопців один батько. Хлопці різні за…\n▶️ <a href=\"https://youtu.be/GIFbz7uTOKI\">Трейлер</a></blockquote>\n§KN:t269"
+   }
+  ],
+  "ser_best": [
+   {
+    "id": "e4263f7fd3",
+    "text": "🍿 <b>ПІДБІРКА КІНО · СЕРІАЛИ · НАЙКРАЩІ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/모가디슈-2021-10-22\">모가디슈</a></b> (2021) · ❤️ за вашим смаком\nвійськовий, бойовик, трилер · ⏱ 2 год 01 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>95%</b> · Ⓜ <b>71</b>\n<i>🎭 Кім Юн Сок, Чо Ін Сон, Хо Джун Хо</i>\n📝 Diplomats from the North and South Korean embassies in Somalia attempt a daring joint escape from Mogadishu when the outbreak of civil war leaves them stranded.\n▶️ <a href=\"https://youtu.be/uDyM8zmhQtc\">Трейлер</a></blockquote>\n§KN:m607844\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Ne-govori-zі-zlom-2024-10-22-2\">Не говори зі злом</a></b> (2024) · ❤️ за вашим смаком\nжахи, трилер · ⏱ 1 год 50 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>83%</b> · Ⓜ <b>66</b>\n<i>🎭 Джеймс Мак-Евой, Маккензі Девіс, Скут Мак-Нейрі</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1114513-speak-no-evil/watch?locale=UA\">Rakuten TV</a>\n📝 Американська родина вирушає у розкішний заміський маєток до британської сім’ї, з якою вони подружилися під час відпустки. Проте вони навіть не підозрюють, що зовсім скоро відпочинок мрії перетвориться на справжній…\n▶️ <a href=\"https://youtu.be/hdsUz6sT9Ek\">Трейлер</a></blockquote>\n§KN:m1114513\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Іrlandec-2019-10-22\">Ірландець</a></b> (2019)\nкримінал, драма, історичний · ⏱ 3 год 29 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>95%</b> · Ⓜ <b>94</b>\n<i>🎭 Роберт Де Ніро, Аль Пачіно, Джо Пеші</i>\n📺 <a href=\"https://www.themoviedb.org/movie/398978-the-irishman/watch?locale=UA\">Netflix</a>\n📝 Історія про Френка Ширена на прізвисько Ірландець, якому приписують вбивство 25 гангстерів, включаючи самого Джиммі Гоффу.\n▶️ <a href=\"https://youtu.be/RS3aHkkfuEI\">Трейлер</a></blockquote>\n§KN:m398978\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/YA-layus-2025-10-22-2\">Я лаюсь</a></b> (2025)\nдрама, історичний · ⏱ 2 год 01 хв\n⭐ IMDb <b>8.3</b> · 🍅 <b>96%</b> · Ⓜ <b>70</b>\n<i>🎭 Роберт Арамайо, Максін Пік, Пітер Муллан</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1317149-i-swear/watch?locale=UA\">Rakuten TV</a>\n📝 Джон Девідсон: у дитинстві йому діагностували синдром Туретта, через що він відчував відчуження від однолітків і змушений був боротися з розладом, який мало хто бачив на власні очі.\n▶️ <a href=\"https://youtu.be/10ynpduiRpM\">Трейлер</a></blockquote>\n§KN:m1317149\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Pіdzemellya-і-drakoni-CHest-zlodіiv-2023-10-22\">Підземелля і дракони: Честь злодіїв</a></b> (2023)\nпригоди, фентезі, комедія · ⏱ 2 год 14 хв\n⭐ IMDb <b>7.2</b> · Ⓜ <b>72</b>\n<i>🎭 Кріс Пайн, Мішель Родріґес, Джастіс Сміт</i>\n📺 <a href=\"https://www.themoviedb.org/movie/493529-dungeons-dragons-honor-among-thieves/watch?locale=UA\">Rakuten TV</a>\n📝 Чарівний злодій та група умілих авантюристів вирішують здійснити епічне пограбування, щоб повернути втрачену реліквію. Але все йде шкереберть, коли на шляху героїв постає неочікувана перешкода...\n▶️ <a href=\"https://youtu.be/-EBJWOUOLWI\">Трейлер</a></blockquote>\n§KN:m493529\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Socіalna-rozplata-2026-10-22-3\">Соціальна розплата</a></b> (2026)\nдрама, трилер · ⏱ 1 год 53 хв\n⭐ TMDB <b>7.0</b>\n<i>🎭 Майкі Медісон, Джеремі Аллен Вайт, Джеремі Стронґ</i>\n📝 Історія Френсіс Гауґен – молодої інженерки Facebook, яка за підтримки журналіста The Wall Street Journal Джеффа Горвіца наважилася викрити світові найпотаємніші секрети соціальної мережі.\n▶️ <a href=\"https://youtu.be/a5c1pPTE07I\">Трейлер</a></blockquote>\n§KN:m1281331\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Vіdbuttya-2008-10-22\">Відбуття</a></b> (2008)\nдрама · ⏱ 2 год 10 хв\n⭐ IMDb <b>8.0</b> · 🍅 <b>80%</b> · Ⓜ <b>68</b>\n<i>🎭 Масахіро Мотокі, Рьоко Хіросуе, Цутому Ямадзакі</i>\n📺 <a href=\"https://www.themoviedb.org/movie/16804/watch?locale=UA\">Apple TV Store</a>\n📝 Віолончеліст Дайго Кобаяші - тепер безробітний, оскільки його оркестр було розформовано. Дайго повертається зі столиці до свого рідного містечка, де намагається знайти хоч якусь роботу, аби прогодувати себе та…\n▶️ <a href=\"https://youtu.be/RXTP_wRSHQw\">Трейлер</a></blockquote>\n§KN:m16804\n§§\n<blockquote>📺 <b>8. <a href=\"https://telegra.ph/Diplomatka-2023-10-22-2\">Дипломатка</a></b> (2023)\nдрама, політика та війна · 📺 серіал · 4 сез.\n⭐ IMDb <b>8.0</b>\n<i>🎭 Кері Расселл, Руфус Сьюелл, Ali Ahn</i>\n📺 <a href=\"https://www.themoviedb.org/tv/203857-the-diplomat/watch?locale=UA\">Netflix</a>\n📝 У розпал міжнародної кризи американська дипломатка намагається впоратися з престижною роботою посла у Великій Британії та напруженим шлюбом із відомим політиком.\n▶️ <a href=\"https://youtu.be/lV6sJlBbhPs\">Трейлер</a></blockquote>\n§KN:t203857\n§§\n<blockquote>📺 <b>9. <a href=\"https://telegra.ph/Zavdannya-Vіzhena-2026-10-22-2\">Завдання Віжена</a></b> (2026)\nнауково фантастичний, драма · 📺 серіал · 1 сез.\n⭐ TMDB <b>8.8</b>\n<i>🎭 Пол Беттані, Джеймс Спейдер, Ruaridh Mollica</i>\n📝 Після подій «ВандаВіжен» Білий Віжен намагається встановити зв’язок із переданими йому спогадами, оскільки не має пов’язаних із ними емоцій та почуттів.\n▶️ <a href=\"https://youtu.be/sXKnmgmbkoE\">Трейлер</a></blockquote>\n§KN:t213375\n§§\n<blockquote>📺 <b>10. <a href=\"https://telegra.ph/Zoryanij-krejser-Galaktika-2004-10-22\">Зоряний крейсер \"Галактика\"</a></b> (2004)\nнауково фантастичний, екшн і пригоди, драма · 📺 серіал · 4 сез.\n⭐ IMDb <b>8.7</b>\n<i>🎭 Едвард Джеймс Олмос, Мері Мак-Доннелл, Jamie Bamber</i>\n📝 У  далекому майбутньому у далеких просторах галактики, лідери дванадцяти людських колоній об'єднуються для захисту від масштабного вторгнення біомеханічної цивілізації Сайлонів. Їх мета - знищити расу людей.…\n▶️ <a href=\"https://youtu.be/q2x14ZhEc9k\">Трейлер</a></blockquote>\n§KN:t1972"
    }
   ]
  },
