@@ -4337,9 +4337,17 @@ def ps_deals_refresh(st: dict, now: datetime) -> None:
 
 # ---------- 🥗 ПП-страви: рецепти дієтологів (BBC Good Food → Healthy, JSON-LD з КБЖВ) + українські страви за принципами МОЗ; раз на місяць ----------
 RECIPES_FILE = Path("recipes.json")
-RC_BBC = {"breakfast": "https://www.bbcgoodfood.com/recipes/collection/healthy-breakfast-recipes", "lunch": "https://www.bbcgoodfood.com/recipes/collection/healthy-lunch-recipes",
-          "dinner": "https://www.bbcgoodfood.com/recipes/collection/healthy-dinner-recipes", "snack": "https://www.bbcgoodfood.com/recipes/collection/healthy-snack-recipes"}
+RC_BBC = [("breakfast", "https://www.bbcgoodfood.com/recipes/collection/healthy-breakfast-recipes"), ("lunch", "https://www.bbcgoodfood.com/recipes/collection/healthy-lunch-recipes"),
+          ("dinner", "https://www.bbcgoodfood.com/recipes/collection/healthy-dinner-recipes"), ("snack", "https://www.bbcgoodfood.com/recipes/collection/healthy-snack-recipes"),
+          ("dinner", "https://www.bbcgoodfood.com/recipes/collection/low-calorie-recipes"), ("lunch", "https://www.bbcgoodfood.com/recipes/collection/high-protein-recipes"),
+          ("dinner", "https://www.bbcgoodfood.com/recipes/collection/healthy-chicken-recipes"), ("lunch", "https://www.bbcgoodfood.com/recipes/collection/healthy-soup-recipes"),
+          ("lunch", "https://www.bbcgoodfood.com/recipes/collection/healthy-vegetarian-recipes"), ("dinner", "https://www.bbcgoodfood.com/recipes/collection/healthy-fish-recipes"),
+          ("breakfast", "https://www.bbcgoodfood.com/recipes/collection/healthy-egg-recipes")]   # кілька збірок «Healthy» — щоб база росла до 300
 RC_MEALS = {"breakfast": "сніданок", "lunch": "обід", "dinner": "вечеря", "snack": "перекус"}
+RC_TARGET = 300                                             # цільовий обсяг бази страв
+RC_RARE = re.compile(r"mirin|miso|fish sauce|lemongrass|galangal|kaffir|gochujang|harissa|za.?atar|sriracha|pak choi|bok choy|edamame|tempeh|wasabi|"
+                     r"samphire|kohlrabi|pomegranate molasses|ras el hanout|sumac|chipotle|jalape|tamarind|yuzu|shiitake|enoki|nori|dashi|kimchi|"
+                     r"cavolo nero|chorizo|pancetta|prosciutto|halloumi|paneer|ricotta salata|mascarpone|creme fraiche|crème fraîche|buttermilk", re.I)
 
 
 def _iso_min(s: str) -> int:
@@ -4365,8 +4373,9 @@ def rc_bbc(meal: str, url: str, have: set, limit: int = 6) -> list:
                     continue
                 nu, tm = d.get("nutrition") or {}, _iso_min(d.get("totalTime")) or _iso_min(d.get("cookTime")) + _iso_min(d.get("prepTime"))
                 num = lambda k: float(re.sub(r"[^\d.]", "", str(nu.get(k) or "0")) or 0)
-                if not nu or tm > 45 or num("calories") > 650:
-                    break
+                if not nu or tm > 40 or num("calories") > 650 or len(d.get("recipeIngredient") or []) > 12 or \
+                        sum(1 for i_ in (d.get("recipeIngredient") or []) if RC_RARE.search(str(i_))) > 0:
+                    break                                 # довго, складно або рідкісні інгредієнти — не беремо
                 steps = [re.sub(r"<[^>]+>", "", (x.get("text") if isinstance(x, dict) else str(x))) for x in (d.get("recipeInstructions") or [])]
                 img = d.get("image"); img = (img[0] if isinstance(img, list) else (img or {}).get("url") if isinstance(img, dict) else img) or ""
                 serv = int(re.sub(r"\D", "", str(d.get("recipeYield") or "1")) or 1) if not isinstance(d.get("recipeYield"), list) else int(re.sub(r"\D", "", str(d["recipeYield"][0])) or 1)
@@ -4388,19 +4397,25 @@ def recipes_refresh(st: dict, now: datetime) -> None:
     except Exception:
         db_ = {"items": [], "month": ""}
     items, mon = db_["items"], f"{now:%Y-%m}"
-    if db_.get("month") == mon and len(items) >= 120 and not st.get("rc_force"):
+    if db_.get("month") == mon and len(items) >= RC_TARGET and not st.get("rc_force"):
         return
     have = {x.get("src", {}).get("u") for x in items}
     new = []
-    for meal, url in RC_BBC.items():                  # 👩‍⚕️ перевірені рецепти (по кілька за запуск)
-        new += rc_bbc(meal, url, have, 6 if len(items) < 120 else 3)
+    per_ = 4 if len(items) < RC_TARGET else 2
+    for meal, url in RC_BBC:                          # 👩‍⚕️ перевірені рецепти (по кілька з кожної збірки за запуск)
+        new += rc_bbc(meal, url, have | {x.get("src", {}).get("u") for x in new}, per_)
+        if len(new) >= 24:
+            break
     if new:                                           # переклад, адаптація до українських магазинів, спрощення кроків
         raw = gemini("Ти дієтолог-кулінар. Переклади рецепти українською й адаптуй до продуктів, що є в українських супермаркетах (рідкісне замінюй на доступне й познач «(заміна: …)»). "
                      "Кроки — коротко й просто, 3–7 пунктів. Кількості — у грамах/шт. Не змінюй КБЖВ і час. Поверни JSON-масив об'єктів у тому ж порядку: "
-                     "{\"t\": назва, \"ing\": [рядки], \"steps\": [рядки], \"tags\": [з: protein, veg, quick, budget]}.\n\n"
+                     "{\"t\": назва, \"ing\": [рядки], \"steps\": [рядки], \"tags\": [з: protein, veg, quick, budget], "
+                     "\"ok\": true/false — чи можна все купити в звичайному АТБ або Сільпо без пошуків (false, якщо потрібні рідкісні продукти навіть після заміни)}.\n\n"
                      + json.dumps([{"name": x["orig"], "ing": x["ing"][:20], "steps": x["steps"][:10], "time": x["time"]} for x in new], ensure_ascii=False), json_mode=True, relaxed=True, max_tokens=12000)
         try:
             for x, y in zip(new, json.loads(raw or "[]")):
+                if y.get("ok") is False:
+                    continue                              # недоступні в Україні продукти — пропускаємо
                 x.update({"t": y.get("t") or x["orig"], "ing": y.get("ing") or x["ing"], "steps": y.get("steps") or x["steps"], "tags": y.get("tags") or []})
                 if x["time"] <= 20 and "quick" not in x["tags"]:
                     x["tags"].append("quick")
@@ -4408,14 +4423,15 @@ def recipes_refresh(st: dict, now: datetime) -> None:
         except Exception as e:
             print(f"ПП-страви (переклад): {err_text(e)[:60]}")
     ua_n = sum(1 for x in items if x["id"].startswith("u"))
-    if ua_n < 80:                                     # 🇺🇦 українські страви за принципами МОЗ — КБЖВ рахуємо самі за CoFID
+    if ua_n < RC_TARGET // 2:                                     # 🇺🇦 українські страви за принципами МОЗ — КБЖВ рахуємо самі за CoFID
         try:
             cof = {r[0]: r for r in json.loads(Path("cofid.json").read_text("utf-8")).get("items", [])}
         except Exception:
             cof = {}
         meal = list(RC_MEALS)[ua_n % 4]
         raw = gemini(f"Склади 12 різних простих корисних страв української кухні для прийому їжі «{RC_MEALS[meal]}» за принципами «Здорова тарілка» МОЗ України: "
-                     "більше овочів і цільних круп, нежирний білок, мало олії й цукру, до 30 хв, лише продукти з будь-якого українського супермаркету, 1 порція до 550 ккал. "
+                     "більше овочів і цільних круп, нежирний білок, мало олії й цукру, до 30 хв, до 8 інгредієнтів, лише звичайні продукти, які завжди є в АТБ чи Сільпо "
+                     "(жодних рідкісних спецій, соусів чи екзотики), бюджетно, без складної техніки (каструля, сковорода, духовка), 1 порція до 550 ккал. "
                      "Уникай повторів: " + ", ".join(x["t"] for x in items if x["meal"] == meal)[:1500] + ". "
                      "Для кожного інгредієнта дай відповідник із британської таблиці CoFID англійською (поле en, напр. «Buckwheat, boiled»). "
                      "JSON-масив: {\"t\": назва, \"en\": коротка назва страви англійською (для пошуку фото), \"time\": хв, \"serv\": порцій, \"ing\": [{\"name\": укр, \"g\": грами, \"en\": CoFID}], \"steps\": [3–6 коротких кроків], \"tags\": [protein, veg, quick, budget]}.",
@@ -4459,9 +4475,9 @@ def recipes_refresh(st: dict, now: datetime) -> None:
         else:
             x["noimg"] = 1                            # не знайшли відповідного — без фото (краще, ніж чуже)
     seen_ = set(); db_["items"] = [x for x in items if not (x["id"] in seen_ or seen_.add(x["id"]))]
-    if len(db_["items"]) >= 120:
+    if len(db_["items"]) >= RC_TARGET:
         db_["month"] = mon; st["rc_force"] = False
-    st["rc_need"] = len(db_["items"]) < 120          # поки база мала — ПП-страви першими в черзі
+    st["rc_need"] = len(db_["items"]) < RC_TARGET          # поки база мала — ПП-страви першими в черзі
     RECIPES_FILE.write_text(json.dumps(db_, ensure_ascii=False, separators=(",", ":")), "utf-8")
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "recipes.json", "json": {"items": [{k: v for k, v in x.items() if k not in ("orig",)} for x in db_["items"]]}})
