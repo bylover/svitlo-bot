@@ -1051,22 +1051,22 @@
   "https://sex.cosmopolitan.com/pleasure/a37319725/sex-toys-for-couples/"
  ],
  "addr": {
-  "active": true,
-  "reason": "Стабілізаційне відключення (Згідно графіку погодинних відключень)",
-  "start": "09:31 22.10.2026",
-  "end": "14:45 22.10.2026",
-  "type": "2",
+  "active": false,
+  "reason": "",
+  "start": "",
+  "end": "",
+  "type": "",
   "groups": [
    "GPV4.1"
   ],
-  "updated": "12:04 22.10.2026",
+  "updated": "12:19 22.10.2026",
   "emergency": false,
   "city_emergency": false,
-  "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-10-22T12:14:00.987472+03:00",
+  "city_text": "Через атаку на енергообʼєкти в столиці зафіксована аварія у частині Голосіївського району, тут графіки не діють. Повідомити про аварійні ситуації",
+  "checked": "2026-10-22T12:23:08.273061+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
-  "planned": true
+  "planned": false
  },
  "yt_try": "2026-10-15 21",
  "gem_block": {
@@ -1074,16 +1074,6 @@
   "gemini-flash-latest": "2026-10-23T10:05:00+03:00"
  },
  "kino_seen": [
-  "m1523145",
-  "m170",
-  "t83631",
-  "t69740",
-  "t41956",
-  "m603692",
-  "m870028",
-  "m1220564",
-  "m398978",
-  "m331482",
   "m937278",
   "m8321",
   "t86248",
@@ -1673,7 +1663,17 @@
   "m536743",
   "m930094",
   "m86000",
-  "m18438"
+  "m18438",
+  "t82428",
+  "t95057",
+  "t91239",
+  "t224372",
+  "t219246",
+  "t73107",
+  "t78191",
+  "t154385",
+  "t40008",
+  "t61511"
  ],
  "yt_ver": 2,
  "yt_seen": [
@@ -8678,7 +8678,7 @@
   }
  },
  "kino_ver": 2,
- "gh_beat": "2026-10-22T12:20:44.139212+03:00",
+ "gh_beat": "2026-10-22T12:25:43.861514+03:00",
  "silpo_stores": {
   "week": "2026-43",
   "v": 2,
@@ -25599,7 +25599,7 @@
   "silpo": {}
  },
  "pushed_h": {
-  "gs": "a18251338249",
+  "gs": "40d41cc9dea3",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "d97c8c67e2bc",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
@@ -35975,6 +35975,12 @@
    {
     "id": "c02bdf8ae7",
     "text": "🍿 <b>ПІДБІРКА КІНО · МЕЛОДРАМА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/377263?language=uk\">Франц</a></b> (2016)\nісторичний, драма, мелодрама · ⏱ 1 год 53 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>91%</b> · Ⓜ <b>73</b>\n<i>🎭 П'єр Ніні, Паула Бер, Ernst Stötzner</i>\n📺 <a href=\"https://www.themoviedb.org/movie/377263-frantz/watch?locale=UA\">Plex, Apple TV Store</a>\n📝 Події відбуваються після закінчення Першої світової війни. Німкеня Анна щодня приходить на могилу свого нареченого Франца, який загинув у Франції. Одного разу вона зустрічає там француза Адріена, який теж приніс…\n▶️ <a href=\"https://youtu.be/sRry8VjP200\">Трейлер</a></blockquote>\n§KN:m377263\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/1289936?language=uk\">Абатство Даунтон: Величний фінал</a></b> (2025)\nдрама, мелодрама · ⏱ 2 год 03 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>91%</b> · Ⓜ <b>66</b>\n<i>🎭 Мішель Докері, Г'ю Бонневіль, Елізабет Мак-Ґоверн</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1289936-downton-abbey-the-grand-finale/watch?locale=UA\">Rakuten TV</a>\n📝 Події розгортаються на початку 1930-х років, коли родина Кроулі знову постає перед викликами часу. Зіркові актори, улюблені персонажі в історії, на яку так довго чекали. У світі, що стрімко змінюється, кожному з них…\n▶️ <a href=\"https://youtu.be/C1GZyFV8mJU\">Трейлер</a></blockquote>\n§KN:m1289936\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/851644?language=uk\">Дівчина XX століття</a></b> (2022)\nмелодрама, драма · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>86%</b>\n<i>🎭 Кім Ю Чжун, Бьон У Сок, 박정우</i>\n📺 <a href=\"https://www.themoviedb.org/movie/851644-20/watch?locale=UA\">Netflix</a>\n📝 1999 рік. Дівчинка пильно стежить за хлопцем на прохання глибоко закоханої в нього подруги, а потім потрапляє у вир власної історії кохання.\n▶️ <a href=\"https://youtu.be/KFS4_qevE7M\">Трейлер</a></blockquote>\n§KN:m851644\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/449176?language=uk\">З любов’ю, Саймон</a></b> (2018)\nкомедія, драма, мелодрама · ⏱ 1 год 50 хв · 🔞 відвертість: помірна\n⭐ IMDb <b>7.5</b> · 🍅 <b>92%</b> · Ⓜ <b>72</b>\n<i>🎭 Нік Робінсон, Дженніфер Ґарнер, Джош Дюамель</i>\n📺 <a href=\"https://www.themoviedb.org/movie/449176-love-simon/watch?locale=UA\">Apple TV Store</a>\n📝 Старшокласник Саймон приховує від друзів свою гомосексуальність, але його листування з анонімним коханим потрапляє в чужі руки. Шкільний «клоун» Мартін загрожує викрити Саймона, якщо той не допоможе йому зав'язати…\n▶️ <a href=\"https://youtu.be/E0cbWdlQg_8\">Трейлер</a></blockquote>\n§KN:m449176\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/532444?language=uk\">너의 결혼식</a></b> (2018)\nмелодрама, драма · ⏱ 1 год 50 хв\n⭐ IMDb <b>7.1</b>\n<i>🎭 Пак По Йон, 김영광, Кан Кі Йон</i>\n📝 Through the course of their lives, a man and his first love  are repeatedly separated from each other because of circumstances out of their control.\n▶️ <a href=\"https://youtu.be/QJEe_JEhvw8\">Трейлер</a></blockquote>\n§KN:m532444\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/672647?language=uk\">Карта ідеальних дрібниць</a></b> (2021)\nфентезі, мелодрама · ⏱ 1 год 39 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>78%</b> · Ⓜ <b>61</b>\n<i>🎭 Кайл Аллен, Кетрін Ньютон, Jermaine Harris</i>\n📝 Кмітливий підліток Марк із задоволенням проживає один і той самий день знов і знов. Його світ перевертається догори дриґом, коли він зустрічає таємничу Марґарет, яка також стала заручницею часової петлі. Удвох вони…\n▶️ <a href=\"https://youtu.be/ZOxsfKQWrUg\">Трейлер</a></blockquote>\n§KN:m672647\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/536743?language=uk\">Квін і Слім</a></b> (2019)\nкримінал, драма, мелодрама · ⏱ 2 год 12 хв\n⭐ IMDb <b>7.1</b> · Ⓜ <b>74</b>\n<i>🎭 Деніел Калуя, Джоді Тернер-Сміт, Бокім Вудбайн</i>\n📺 <a href=\"https://www.themoviedb.org/movie/536743-queen-slim/watch?locale=UA\">Apple TV Store</a>\n📝 Під час нічим не прикметного першого побачення в Огайо, чорного чоловіка та чорну жінку зупиняє поліція за незначне порушення на дорозі. Ситуація виходить з-під контролю з несподіваними та трагічними наслідками, коли…\n▶️ <a href=\"https://youtu.be/Ip3iE416WxE\">Трейлер</a></blockquote>\n§KN:m536743\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/930094?language=uk\">Червоний, білий та королівський синій</a></b> (2023)\nкомедія, мелодрама · ⏱ 1 год 58 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>75%</b> · Ⓜ <b>62</b>\n<i>🎭 Тейлор Захар Перес, Ніколас Голіцин, Ума Турман</i>\n📝 Алекс Клермонт-Діас, син президента США, і британський принц Генрі мають багато спільного, але ставляться один до одного з абсолютною зневагою. Після публічного конфлікту, щоб уникнути негативних наслідків для своїх…\n▶️ <a href=\"https://youtu.be/pt56IC8gDZ4\">Трейлер</a></blockquote>\n§KN:m930094\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/86000?language=uk\">Завжди</a></b> (2011)\nмелодрама, драма · ⏱ 1 год 48 хв\n⭐ IMDb <b>7.7</b>\n<i>🎭 소지섭, 한효주, Кан Шін Іль</i>\n📝 Чан Чель Мін — колишній боксер із темним минулим, який тепер розвозить бутельовану воду, а нещодавно влаштувався працювати охоронцем на автомобільному паркуванні. Пізно ввечері коротаючи час у тісній кабінці за…\n▶️ <a href=\"https://youtu.be/RhNR8iUF9Gw\">Трейлер</a></blockquote>\n§KN:m86000\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/18438?language=uk\">김씨 표류기</a></b> (2009)\nдрама, комедія, мелодрама · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.9</b>\n<i>🎭 정재영, 정려원, 양미경</i>\n📝 Mr. Kim is jobless, lost in debt and has been dumped by his girlfriend. He decides to end it all by jumping into the Han River – only to find himself washed up on a small, mid-river island. He soon abandons thoughts…\n▶️ <a href=\"https://youtu.be/061ZyqHhdCo\">Трейлер</a></blockquote>\n§KN:m18438"
+   }
+  ],
+  "series": [
+   {
+    "id": "4d5dfad1ef",
+    "text": "🍿 <b>ПІДБІРКА КІНО · СЕРІАЛИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>📺 <b>1. <a href=\"https://www.themoviedb.org/tv/82428?language=uk\">Американська мрія</a></b> (2018)\nдрама · 📺 серіал · 8 сез.\n⭐ IMDb <b>7.6</b>\n<i>🎭 Michael Evans Behling, Greta Onieogou, Bre-Z</i>\n📝 Спенсер — зірка шкільної футбольної команди з Південного Централа, району Лос-Анджелеса, сумно відомого своєю кримінальною обстановкою і частими конфліктами на ґрунті расової ворожнечі. Хлопець не збирався їхати з…</blockquote>\n§KN:t82428\n§§\n<blockquote>📺 <b>2. <a href=\"https://www.themoviedb.org/tv/95057?language=uk\">Супермен і Лоїс</a></b> (2021)\nдрама, науково фантастичний · 📺 серіал · 4 сез.\n⭐ IMDb <b>7.8</b>\n<i>🎭 Тайлер Геклін, Elizabeth Tulloch, Alex Garfin</i>\n📝 Після багатьох років зіткнення з мегаломанськими суперзлодіями, монстрами, що руйнують Метрополіс, і інопланетними загарбниками, які прагнуть знищити людську расу, Людина зі сталі, вона ж Кларк Кент і Лоїс Лейн,…\n▶️ <a href=\"https://youtu.be/sgGnWUe-iSQ\">Трейлер</a></blockquote>\n§KN:t95057\n§§\n<blockquote>📺 <b>3. <a href=\"https://www.themoviedb.org/tv/91239?language=uk\">Бріджертони</a></b> (2020)\nдрама · 📺 серіал · 5 сез.\n⭐ IMDb <b>7.5</b>\n<i>🎭 Рут Ґеммелл, Люк Томпсон, Yerin Ha</i>\n📺 <a href=\"https://www.themoviedb.org/tv/91239-bridgerton/watch?locale=UA\">Netflix</a>\n📝 Вісім близьких братів і сестер із родини Бріджертонів намагаються знайти любов і щастя в Лондоні. Серіал за мотивами романів-бестселерів Джулії Квінн.\n▶️ <a href=\"https://youtu.be/Q7xYGhRfjMg\">Трейлер</a></blockquote>\n§KN:t91239\n§§\n<blockquote>📺 <b>4. <a href=\"https://www.themoviedb.org/tv/224372?language=uk\">Лицар Сімох Королівств</a></b> (2026)\nдрама, науково фантастичний, екшн і пригоди · 📺 серіал · 1 сез.\n⭐ IMDb <b>8.6</b>\n<i>🎭 Peter Claffey, Dexter Sol Ansell</i>\n📺 <a href=\"https://www.themoviedb.org/tv/224372-a-knight-of-the-seven-kingdoms/watch?locale=UA\">HBO Max</a>\n📝 За століття до подій «Гри престолів» Вестеросом блукали два несподівані герої... молодий, наївний, але сміливий лицар, сер Дункан Високий, та його мініатюрний зброєновець, Егг. Події відбуваються в епоху, коли рід…\n▶️ <a href=\"https://youtu.be/sItUCKJQLTU\">Трейлер</a></blockquote>\n§KN:t224372\n§§\n<blockquote>📺 <b>5. <a href=\"https://www.themoviedb.org/tv/219246?language=uk\">Гарна робота</a></b> (2025)\nдрама · 📺 серіал · 1 сез.\n⭐ IMDb <b>9.0</b>\n<i>🎭 Айю, Пак Бо Ґом, Мун Со Рі</i>\n📺 <a href=\"https://www.themoviedb.org/tv/219246/watch?locale=UA\">Netflix</a>\n📝 Стосунки сміливої дівчини й непохитного хлопця з острова Чеджу виливаються в історію злетів і падінь довжиною в життя й доводять, що кохання непідвладне часу.\n▶️ <a href=\"https://youtu.be/4ECAaQkNAbc\">Трейлер</a></blockquote>\n§KN:t219246\n§§\n<blockquote>📺 <b>6. <a href=\"https://www.themoviedb.org/tv/73107?language=uk\">Баррі</a></b> (2018)\nкомедія, кримінал, драма · 📺 серіал · 4 сез.\n⭐ IMDb <b>8.3</b>\n<i>🎭 Білл Гейдер, Sarah Goldberg, Ентоні Керріґан</i>\n📺 <a href=\"https://www.themoviedb.org/tv/73107-barry/watch?locale=UA\">HBO Max</a>\n📝 Баррі — колишній морський піхотинець, а тепер — найманий вбивця, якому набридла його робота та спосіб життя. Опинившись у справах у Лос-Анджелесі, Баррі випадково потрапляє на заняття з акторської майстерності та…\n▶️ <a href=\"https://youtu.be/BKaL8jiAGuI\">Трейлер</a></blockquote>\n§KN:t73107\n§§\n<blockquote>📺 <b>7. <a href=\"https://www.themoviedb.org/tv/78191?language=uk\">Ти</a></b> (2018)\nдетектив, кримінал, драма · 📺 серіал · 5 сез.\n⭐ IMDb <b>7.6</b>\n<i>🎭 Пенн Беджлі, Шарлотт Річі, Griffin Matthews</i>\n📺 <a href=\"https://www.themoviedb.org/tv/78191-you/watch?locale=UA\">Netflix</a>\n📝 Страшенно чарівний, але одержимий чоловік не зупиниться ні перед чим, щоб увійти в життя жінок, якими він захоплюється.\n▶️ <a href=\"https://youtu.be/OlpEp_LHZkM\">Трейлер</a></blockquote>\n§KN:t78191\n§§\n<blockquote>📺 <b>8. <a href=\"https://www.themoviedb.org/tv/154385?language=uk\">Сварка</a></b> (2023)\nкомедія, драма · 📺 серіал · 2 сез.\n⭐ IMDb <b>8.0</b>\n<i>🎭 Оскар Айзек, Кері Малліґан, Кейлі Спейні</i>\n📺 <a href=\"https://www.themoviedb.org/tv/154385-beef/watch?locale=UA\">Netflix</a>\n📝 Дорожній конфлікт між невдатним підрядником і незадоволеною життям підприємницею призводить до протистояння, у якому проявляються їхні найтемніші пориви.\n▶️ <a href=\"https://youtu.be/xYR69EIG6S0\">Трейлер</a></blockquote>\n§KN:t154385\n§§\n<blockquote>📺 <b>9. <a href=\"https://www.themoviedb.org/tv/40008?language=uk\">Ганнібал </a></b> (2013)\nдрама, кримінал · 📺 серіал · 3 сез.\n⭐ IMDb <b>8.5</b>\n<i>🎭 Мадс Міккельсен, Гʼю Денсі, Лоренс Фішберн</i>\n📝 Вілл Ґрем - обдарований профайлер, який разом з ФБР розшукує серійного вбивцю. Унікальний спосіб мислення Ґрема дарує йому дивовижну здатність глибоко перейматися почуттями іншої людини, навіть психопата. Він може…\n▶️ <a href=\"https://youtu.be/RuiklpUQ-p4\">Трейлер</a></blockquote>\n§KN:t40008\n§§\n<blockquote>📺 <b>10. <a href=\"https://www.themoviedb.org/tv/61511?language=uk\">Отець Браун</a></b> (2013)\nдрама, кримінал, детектив · 📺 серіал · 13 сез.\n⭐ IMDb <b>7.8</b>\n<i>🎭 Марк Вільямс, John Burton, Tom Chambers</i>\n📝 Отець Браун - непримітного вигляду священик, який володіє влучним оком, здатним помічати найдрібніші хвилювання в душах людей, які приходять до нього за порадою і підтримкою.\n▶️ <a href=\"https://youtu.be/0zW6fjkoSe4\">Трейлер</a></blockquote>\n§KN:t61511"
    }
   ]
  },
