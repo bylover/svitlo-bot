@@ -93,16 +93,6 @@
   "https://toybenchreviews.medium.com/how-to-tell-if-a-sex-toy-review-is-actually-helpful-dbcbb447d3a9?source=rss------sex_toys-5"
  ],
  "kino_seen": [
-  "t65494",
-  "t95603",
-  "t32895",
-  "m388399",
-  "m768362",
-  "m661539",
-  "m324786",
-  "m872585",
-  "m533535",
-  "m134",
   "t69740",
   "t66573",
   "t1415",
@@ -692,9 +682,19 @@
   "t73375",
   "t97546",
   "t1421",
-  "t2290"
+  "t2290",
+  "m807888",
+  "m1005141",
+  "m608872",
+  "m1013052",
+  "m293122",
+  "m332270",
+  "t101504",
+  "t153459",
+  "t64480",
+  "t96256"
  ],
- "gh_beat": "2026-10-23T14:57:37.982735+03:00",
+ "gh_beat": "2026-10-23T15:00:47.379785+03:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -757,11 +757,11 @@
    ]
   ]
  },
- "fact_png": "2026-10-23 14|7|2026-10-23T13:24:55+03:00",
+ "fact_png": "2026-10-23 15|7|2026-10-23T13:24:55+03:00",
  "fact_day": {
-  "total": "6 год 38 хв",
+  "total": "6 год 23 хв",
   "list": [
-   "14:45–18:31 · 3 год 46 хв",
+   "15:00–18:31 · 3 год 31 хв",
    "10:32–13:24 · 2 год 52 хв"
   ]
  },
@@ -1489,14 +1489,14 @@
    "note": "75 шт."
   },
   "🛒 Сільпо (основна)": {
-   "at": "23.10 14:08",
-   "ts": 1792753723,
+   "at": "23.10 15:03",
+   "ts": 1792757004,
    "ok": true,
    "note": ""
   },
   "🛒 Сільпо (підписники)": {
-   "at": "23.10 14:09",
-   "ts": 1792753771,
+   "at": "23.10 15:04",
+   "ts": 1792757054,
    "ok": true,
    "note": ""
   },
@@ -1628,7 +1628,7 @@
   }
  },
  "kino_ver": 2,
- "silpo_day": "2026-10-23-am",
+ "silpo_day": "2026-10-23-pm",
  "silpo_ver": 12,
  "silpo_fb": "1f0bae3d-2073-62f4-b14c-f9715721ce18|DeliveryHome|",
  "yt_ver": 2,
@@ -1803,7 +1803,7 @@
   "name": "Сільпо (типовий магазин)",
   "store": true
  },
- "silpo_try": "2026-10-23 14",
+ "silpo_try": "2026-10-23 15",
  "silpo_conf": {
   "1f0bae3d-2073-62f4-b14c-f9715721ce18|1ed07671-a94b-63e0-b61e-dd63763181f9": [
    "2026-10-22",
@@ -3300,10 +3300,10 @@
     "9. Сардельки М'ясна Гільдія Міні Сарделіні, 0,33кг — <b>129 ₴/шт</b> <s>189 ₴</s> · 📦 від 2 шт — 129.00 ₴/шт −32% · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/sardelky-m-iasna-gildiia-mini-sardelini-980888\">відкрити</a>",
     "10. Горіх Макадамія в шкарлупі, 100г — <b>90.3 ₴/шт</b> <s>129 ₴</s> · 📦 від 2 шт — 90.30 ₴/шт −30% · ⭐ 3.4\n🔗 <a href=\"https://silpo.ua/product/gorikh-makadamiia-v-shkarlupi-972881\">відкрити</a>",
     "11. 🔥 Шинка Алан Куряча в/к в/ґ, нарізка, 100г — <b>79.99 ₴</b> <s>134 ₴</s> · заявлено −40% · <b>реально −19%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/shynka-alan-kuriacha-v-k-v-g-narizka-940179\">відкрити</a>",
-    "12. Чипси кукурудзяні Zanuy солоні, 200г — <b>104 ₴</b> <s>139 ₴</s> · 🌐 лише онлайн-замовлення заявлено −25% · <b>реально −25%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/chypsy-kukurudziani-zanuy-soloni-657574\">відкрити</a>",
-    "13. 🔥 Гранола PREMIA з тропічними фруктами, 375г — <b>74.99 ₴</b> <s>99 ₴</s> · заявлено −24% · <b>реально −24%</b> · ⭐ 3.5\n🔗 <a href=\"https://silpo.ua/product/granola-premia-z-tropichnymy-fruktamy-974926\">відкрити</a>",
-    "14. Слайси «Глобино» «На ходу» з курятини, 50г — <b>69.9 ₴/шт</b> <s>90.99 ₴</s> · 📦 від 2 шт — 69.90 ₴/шт −23% · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/slaisy-globyno-na-khodu-z-kuriatyny-879810\">відкрити</a>",
-    "15. Сирники Makey Premium смажені, 300г — <b>129 ₴/шт</b> <s>174 ₴</s> · 📦 від 2 шт — 129.00 ₴/шт −26% · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/syrnyky-makey-premium-smazheni-930562\">відкрити</a>"
+    "12. Вареники «Три ведмеді» з вишнею, 400г — <b>99 ₴</b> <s>139 ₴</s> · 🌐 лише онлайн-замовлення заявлено −29% · ⭐ 3.3\n🔗 <a href=\"https://silpo.ua/product/varenyky-try-vedmedi-z-vyshneiu-880900\">відкрити</a>",
+    "13. Чипси кукурудзяні Zanuy солоні, 200г — <b>104 ₴</b> <s>139 ₴</s> · 🌐 лише онлайн-замовлення заявлено −25% · <b>реально −25%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/chypsy-kukurudziani-zanuy-soloni-657574\">відкрити</a>",
+    "14. 🔥 Гранола PREMIA з тропічними фруктами, 375г — <b>74.99 ₴</b> <s>99 ₴</s> · заявлено −24% · <b>реально −24%</b> · ⭐ 3.5\n🔗 <a href=\"https://silpo.ua/product/granola-premia-z-tropichnymy-fruktamy-974926\">відкрити</a>",
+    "15. Слайси «Глобино» «На ходу» з курятини, 50г — <b>69.9 ₴/шт</b> <s>90.99 ₴</s> · 📦 від 2 шт — 69.90 ₴/шт −23% · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/slaisy-globyno-na-khodu-z-kuriatyny-879810\">відкрити</a>"
    ],
    "subs": []
   },
@@ -3958,17 +3958,15 @@
     "2. 🔥 Круасан Toniya з наповнювачем вишня, 60г — <b>15.99 ₴</b> <s>24.99 ₴</s> · заявлено −36% · <b>реально −33%</b>\n🔗 <a href=\"https://silpo.ua/product/kruasan-toniya-z-napovniuvachem-vyshnia-945944\">відкрити</a>",
     "3. Хлібці Жменька Dark Chocolate рисові глазуровані, 30г — <b>21.99 ₴</b> <s>30.99 ₴</s> · заявлено −29% · <b>реально −30%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/khlibtsi-zhmenka-dark-chocolate-rysovi-glazurovani-908434\">відкрити</a>",
     "4. Круасан з мигдалевим кремом, 100г — <b>39.99 ₴/шт</b> <s>55.99 ₴</s> · 📦 від 3 шт — 39.99 ₴/шт −29% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/kruasan-z-mygdalevym-kremom-800505\">відкрити</a>",
-    "5. Хліб Київхліб Королівський злаковий нарізаний, 350г — <b>42.99 ₴</b> <s>54.49 ₴</s> · заявлено −21% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/khlib-kyivkhlib-korolivskyi-zlakovyi-narizanyi-977673\">відкрити</a>"
+    "5. 🔥 Пряники Хлібодар з начинкою зі згущеним молоком, 225г — <b>25.99 ₴</b> <s>39.99 ₴</s> · заявлено −35% · <b>реально −23%</b>\n🔗 <a href=\"https://silpo.ua/product/prianyky-khlibodar-z-nachynkoiu-zi-zghushchenym-molokom-922581\">відкрити</a>"
    ],
    "rows": [
     "6. Пончик Panavi рожевий з маршмелоу, 54г — <b>34.99 ₴/шт</b> <s>46.99 ₴</s> · 📦 від 2 шт — 34.99 ₴/шт −26% · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/ponchyk-panavi-rozhevyi-z-marshmelou-662309\">відкрити</a>",
-    "7. 🔥 Пряники Хлібодар з начинкою зі згущеним молоком, 225г — <b>25.99 ₴</b> <s>39.99 ₴</s> · заявлено −35% · <b>реально −23%</b>\n🔗 <a href=\"https://silpo.ua/product/prianyky-khlibodar-z-nachynkoiu-zi-zghushchenym-molokom-922581\">відкрити</a>",
-    "8. Штрудель Віденський, 100г — <b>35.62 ₴</b> <s>42.4 ₴</s> · 🌐 лише онлайн-замовлення заявлено −16% · <b>реально −16%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/shtrudel-videnskyi-266520\">відкрити</a>",
-    "9. Вертута з сиром та зеленню, 110г — <b>36.54 ₴</b> <s>42.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −15% · <b>реально −15%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/vertuta-z-syrom-ta-zelenniu-993326\">відкрити</a>",
-    "10. Хліб 100% житній «Фінський» міні, 300г — <b>52.06 ₴</b> <s>58.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −11% · <b>реально −11%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/khlib-100-zhytnii-finskyi-mini-770357\">відкрити</a>",
-    "11. Хліб Цар-Хліб Цей тост Класичний нарізаний, 330г — <b>27.99 ₴</b> <s>35.99 ₴</s> · заявлено −22% · <b>реально −0%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/khlib-tsar-khlib-tsei-tost-klasychnyi-narizanyi-991207\">відкрити</a>",
-    "12. Хлібці Leksands цільнозернові житні з насінням та морською сіллю, 200г — <b>99 ₴</b> <s>129 ₴</s> · заявлено −23% · <b>реально −0%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/khlibtsi-leksands-tsilnozernovi-zhytni-z-nasinniam-ta-morskoiu-silliu-993979\">відкрити</a>",
-    "13. Хліб Boulangerie бездріжджовий з висівками, 350г — <b>39.6 ₴</b> <s>44.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −11% · <b>реально −7%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/khlib-boulangerie-bezdrizhdzhovyi-z-vysivkamy-711838\">відкрити</a>"
+    "7. Штрудель Віденський, 100г — <b>35.62 ₴</b> <s>42.4 ₴</s> · 🌐 лише онлайн-замовлення заявлено −16% · <b>реально −16%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/shtrudel-videnskyi-266520\">відкрити</a>",
+    "8. Хліб 100% житній «Фінський» міні, 300г — <b>52.06 ₴</b> <s>58.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −11% · <b>реально −11%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/khlib-100-zhytnii-finskyi-mini-770357\">відкрити</a>",
+    "9. Хліб Цар-Хліб Цей тост Класичний нарізаний, 330г — <b>27.99 ₴</b> <s>35.99 ₴</s> · заявлено −22% · <b>реально −0%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/khlib-tsar-khlib-tsei-tost-klasychnyi-narizanyi-991207\">відкрити</a>",
+    "10. Хлібці Leksands цільнозернові житні з насінням та морською сіллю, 200г — <b>99 ₴</b> <s>129 ₴</s> · заявлено −23% · <b>реально −0%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/khlibtsi-leksands-tsilnozernovi-zhytni-z-nasinniam-ta-morskoiu-silliu-993979\">відкрити</a>",
+    "11. Хліб Boulangerie бездріжджовий з висівками, 350г — <b>39.6 ₴</b> <s>44.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −11% · <b>реально −7%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/khlib-boulangerie-bezdrizhdzhovyi-z-vysivkamy-711838\">відкрити</a>"
    ],
    "subs": [
     "6x0",
@@ -3977,19 +3975,6 @@
    ]
   },
   "6x0": {
-   "t": "🍞 <b>Хліб та випічка › Випічка</b>",
-   "b": "Випічка",
-   "first": [
-    "1. 🔥 Круасан Toniya з наповнювачем вишня, 60г — <b>15.99 ₴</b> <s>24.99 ₴</s> · заявлено −36% · <b>реально −33%</b>\n🔗 <a href=\"https://silpo.ua/product/kruasan-toniya-z-napovniuvachem-vyshnia-945944\">відкрити</a>",
-    "2. Круасан з мигдалевим кремом, 100г — <b>39.99 ₴/шт</b> <s>55.99 ₴</s> · 📦 від 3 шт — 39.99 ₴/шт −29% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/kruasan-z-mygdalevym-kremom-800505\">відкрити</a>",
-    "3. Пончик Panavi рожевий з маршмелоу, 54г — <b>34.99 ₴/шт</b> <s>46.99 ₴</s> · 📦 від 2 шт — 34.99 ₴/шт −26% · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/ponchyk-panavi-rozhevyi-z-marshmelou-662309\">відкрити</a>",
-    "4. Штрудель Віденський, 100г — <b>35.62 ₴</b> <s>42.4 ₴</s> · 🌐 лише онлайн-замовлення заявлено −16% · <b>реально −16%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/shtrudel-videnskyi-266520\">відкрити</a>",
-    "5. Вертута з сиром та зеленню, 110г — <b>36.54 ₴</b> <s>42.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −15% · <b>реально −15%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/vertuta-z-syrom-ta-zelenniu-993326\">відкрити</a>"
-   ],
-   "rows": [],
-   "par": "6"
-  },
-  "6x1": {
    "t": "🍞 <b>Хліб та випічка › Сушка, хлібці, пряники</b>",
    "b": "Сушка, хлібці, пряники",
    "first": [
@@ -4001,14 +3986,25 @@
    "rows": [],
    "par": "6"
   },
+  "6x1": {
+   "t": "🍞 <b>Хліб та випічка › Випічка</b>",
+   "b": "Випічка",
+   "first": [
+    "1. 🔥 Круасан Toniya з наповнювачем вишня, 60г — <b>15.99 ₴</b> <s>24.99 ₴</s> · заявлено −36% · <b>реально −33%</b>\n🔗 <a href=\"https://silpo.ua/product/kruasan-toniya-z-napovniuvachem-vyshnia-945944\">відкрити</a>",
+    "2. Круасан з мигдалевим кремом, 100г — <b>39.99 ₴/шт</b> <s>55.99 ₴</s> · 📦 від 3 шт — 39.99 ₴/шт −29% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/kruasan-z-mygdalevym-kremom-800505\">відкрити</a>",
+    "3. Пончик Panavi рожевий з маршмелоу, 54г — <b>34.99 ₴/шт</b> <s>46.99 ₴</s> · 📦 від 2 шт — 34.99 ₴/шт −26% · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/ponchyk-panavi-rozhevyi-z-marshmelou-662309\">відкрити</a>",
+    "4. Штрудель Віденський, 100г — <b>35.62 ₴</b> <s>42.4 ₴</s> · 🌐 лише онлайн-замовлення заявлено −16% · <b>реально −16%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/shtrudel-videnskyi-266520\">відкрити</a>"
+   ],
+   "rows": [],
+   "par": "6"
+  },
   "6x2": {
    "t": "🍞 <b>Хліб та випічка › Хлібобулочні вироби</b>",
    "b": "Хлібобулочні вироби",
    "first": [
-    "1. Хліб Київхліб Королівський злаковий нарізаний, 350г — <b>42.99 ₴</b> <s>54.49 ₴</s> · заявлено −21% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/khlib-kyivkhlib-korolivskyi-zlakovyi-narizanyi-977673\">відкрити</a>",
-    "2. Хліб 100% житній «Фінський» міні, 300г — <b>52.06 ₴</b> <s>58.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −11% · <b>реально −11%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/khlib-100-zhytnii-finskyi-mini-770357\">відкрити</a>",
-    "3. Хліб Цар-Хліб Цей тост Класичний нарізаний, 330г — <b>27.99 ₴</b> <s>35.99 ₴</s> · заявлено −22% · <b>реально −0%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/khlib-tsar-khlib-tsei-tost-klasychnyi-narizanyi-991207\">відкрити</a>",
-    "4. Хліб Boulangerie бездріжджовий з висівками, 350г — <b>39.6 ₴</b> <s>44.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −11% · <b>реально −7%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/khlib-boulangerie-bezdrizhdzhovyi-z-vysivkamy-711838\">відкрити</a>"
+    "1. Хліб 100% житній «Фінський» міні, 300г — <b>52.06 ₴</b> <s>58.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −11% · <b>реально −11%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/khlib-100-zhytnii-finskyi-mini-770357\">відкрити</a>",
+    "2. Хліб Цар-Хліб Цей тост Класичний нарізаний, 330г — <b>27.99 ₴</b> <s>35.99 ₴</s> · заявлено −22% · <b>реально −0%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/khlib-tsar-khlib-tsei-tost-klasychnyi-narizanyi-991207\">відкрити</a>",
+    "3. Хліб Boulangerie бездріжджовий з висівками, 350г — <b>39.6 ₴</b> <s>44.49 ₴</s> · 🌐 лише онлайн-замовлення заявлено −11% · <b>реально −7%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/khlib-boulangerie-bezdrizhdzhovyi-z-vysivkamy-711838\">відкрити</a>"
    ],
    "rows": [],
    "par": "6"
@@ -4512,8 +4508,7 @@
     "6. Олія оливкова Vivo Spray Extra Virgin Чорний трюфель спрей, 200мл — <b>299 ₴</b> <s>529 ₴</s> · заявлено −43% · <b>реально −0%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/oliia-olyvkova-vivo-spray-extra-virgin-chornyi-triufel-sprei-932973\">відкрити</a>",
     "7. Олія оливкова Gaea Extra Virgin «Сітія», 500мл — <b>569 ₴</b> <s>799 ₴</s> · заявлено −29% · <b>реально −-3%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/oliia-olyvkova-gaea-extra-virgin-sitiia-858313\">відкрити</a>",
     "8. Олія оливкова DeCarlo Тенута Аркамоне Extra Virgin органік, 250мл — <b>599 ₴</b> <s>799 ₴</s> · 🌐 лише онлайн-замовлення заявлено −25% · <b>реально −1%</b>\n🔗 <a href=\"https://silpo.ua/product/oliia-olyvkova-decarlo-tenuta-arkamone-extra-virgin-organik-980709\">відкрити</a>",
-    "9. Олія кокосова Vera рафінована, 500мл — <b>259 ₴</b> <s>349 ₴</s> · заявлено −26% · <b>реально −-2%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/oliia-kokosova-vera-rafinovana-879219\">відкрити</a>",
-    "10. Олія оливкова Olymp Extra Virgin, 500мл — <b>399 ₴</b> <s>499 ₴</s> · заявлено −20% · <b>реально −0%</b>\n🔗 <a href=\"https://silpo.ua/product/oliia-olyvkova-olymp-extra-virgin-987220\">відкрити</a>"
+    "9. Олія кокосова Vera рафінована, 500мл — <b>259 ₴</b> <s>349 ₴</s> · заявлено −26% · <b>реально −-2%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/oliia-kokosova-vera-rafinovana-879219\">відкрити</a>"
    ],
    "par": "13"
   },
@@ -4565,7 +4560,8 @@
    "b": "Крупи",
    "first": [
     "1. Квасоля чорна сушена, 300г — <b>39.89 ₴/шт</b> <s>56.99 ₴</s> · 📦 від 2 шт — 39.89 ₴/шт −30%\n🔗 <a href=\"https://silpo.ua/product/kvasolia-chorna-sushena-881393\">відкрити</a>",
-    "2. Квасоля сушена біла, 500г — <b>59.75 ₴/шт</b> <s>82.99 ₴</s> · 📦 від 2 шт — 59.75 ₴/шт −28% · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/kvasolia-sushena-bila-916066\">відкрити</a>"
+    "2. Квасоля сушена біла, 500г — <b>59.75 ₴/шт</b> <s>82.99 ₴</s> · 📦 від 2 шт — 59.75 ₴/шт −28% · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/kvasolia-sushena-bila-916066\">відкрити</a>",
+    "3. Рис Attuale довгозернистий пропарений, 1кг — <b>92.99 ₴</b> <s>119 ₴</s> · заявлено −22% · <b>реально −0%</b>\n🔗 <a href=\"https://silpo.ua/product/rys-attuale-dovgozernystyi-proparenyi-733068\">відкрити</a>"
    ],
    "rows": [],
    "par": "13"
@@ -4744,7 +4740,7 @@
     "7. Цукерки TOM з солоною карамеллю шоколадні, 225г — <b>236 ₴</b> <s>364 ₴</s> · 🌐 лише онлайн-замовлення заявлено −35% · <b>реально −20%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/tsukerky-tom-z-solonoiu-karamelliu-shokoladni-940839\">відкрити</a>",
     "8. 🔥 Цукерки Pure Chocolate з молочного шоколаду з начинкою тоффі, 153г — <b>199 ₴</b> <s>264 ₴</s> · заявлено −25% · <b>реально −18%</b> · ⭐ 3.3\n🔗 <a href=\"https://silpo.ua/product/tsukerky-pure-chocolate-z-molochnogo-shokoladu-z-nachynkoiu-toffi-873271\">відкрити</a>",
     "9. 🔥 Цукерки Pure Chocolate трюфель асорті, 135г — <b>214 ₴</b> <s>269 ₴</s> · заявлено −20% · <b>реально −12%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/tsukerky-pure-chocolate-triufel-asorti-763042\">відкрити</a>",
-    "10. 🔥 Цукерки Siam Bites зі смаком дуріану желейні, 138г — <b>39.99 ₴</b> <s>91.99 ₴</s> · заявлено −57% · <b>реально −20%</b> · ⭐ 2.5\n🔗 <a href=\"https://silpo.ua/product/tsukerky-siam-bites-zi-smakom-durianu-zheleini-1000003\">відкрити</a>",
+    "10. 🔥 Цукерки Siam Bites зі смаком дуріану желейні, 138г — <b>39.99 ₴</b> <s>91.99 ₴</s> · заявлено −57% · <b>реально −20%</b> · ⭐ 2.6\n🔗 <a href=\"https://silpo.ua/product/tsukerky-siam-bites-zi-smakom-durianu-zheleini-1000003\">відкрити</a>",
     "11. 🔥 Цукерки Nestle Lion, 100г — <b>44.9 ₴</b> <s>55.9 ₴</s> · заявлено −20% · <b>реально −20%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/tsukerky-nestle-lion-457072\">відкрити</a>",
     "12. Цукерки Zhytomyr Lasoshchi Цитрон глазуровані, 100г — <b>19.4 ₴</b> <s>23.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −19% · <b>реально −19%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/tsukerky-zhytomyr-lasoshchi-tsytron-glazurovani-923070\">відкрити</a>",
     "13. Ірис Zhytomyr Lasoshchi Мілк Вау, 100г — <b>22.6 ₴</b> <s>27.9 ₴</s> · 🌐 лише онлайн-замовлення заявлено −19% · <b>реально −19%</b> · ⭐ 3.3\n🔗 <a href=\"https://silpo.ua/product/irys-zhytomyr-lasoshchi-milk-vau-923075\">відкрити</a>",
@@ -5183,9 +5179,9 @@
     "9. Вареники «Премія»® з вишнею, 400г — <b>109 ₴/шт</b> <s>164 ₴</s> · 📦 від 2 шт — 109.00 ₴/шт −34% · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/varenyky-premiia-z-vyshneiu-804875\">відкрити</a>",
     "10. Сирник Справжній смак Jam персик та абрикос, 360г — <b>239 ₴</b> <s>349 ₴</s> · 🌐 лише онлайн-замовлення заявлено −32% · <b>реально −27%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/syrnyk-spravzhnii-smak-jam-persyk-ta-abrykos-1017841\">відкрити</a>",
     "11. Пельмені Laska «Ма-ню-ням» з м'ясом курки та телятиною, 400г — <b>109 ₴/шт</b> <s>159 ₴</s> · 📦 від 2 шт — 109.00 ₴/шт −31% · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/pelmeni-laska-ma-niu-niam-z-m-iasom-kurky-ta-teliatynoiu-842298\">відкрити</a>",
-    "12. Сирник Справжній смак Jam вишня, 360г — <b>239 ₴</b> <s>349 ₴</s> · 🌐 лише онлайн-замовлення заявлено −32% · <b>реально −27%</b>\n🔗 <a href=\"https://silpo.ua/product/syrnyk-spravzhnii-smak-jam-vyshnia-1017842\">відкрити</a>",
-    "13. Пельмені Makey з куркою та грибами, 800г — <b>169 ₴/шт</b> <s>239 ₴</s> · 📦 від 2 шт — 169.00 ₴/шт −29% · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/pelmeni-makey-z-kurkoiu-ta-grybamy-972638\">відкрити</a>",
-    "14. Різото Garde Manger з грибами, 400г — <b>129 ₴/шт</b> <s>184 ₴</s> · 📦 від 2 шт — 129.00 ₴/шт −30% · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/rizoto-garde-manger-z-grybamy-842288\">відкрити</a>",
+    "12. Пельмені Makey з куркою та грибами, 800г — <b>169 ₴/шт</b> <s>239 ₴</s> · 📦 від 2 шт — 169.00 ₴/шт −29% · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/pelmeni-makey-z-kurkoiu-ta-grybamy-972638\">відкрити</a>",
+    "13. Різото Garde Manger з грибами, 400г — <b>129 ₴/шт</b> <s>184 ₴</s> · 📦 від 2 шт — 129.00 ₴/шт −30% · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/rizoto-garde-manger-z-grybamy-842288\">відкрити</a>",
+    "14. Сирник Справжній смак Jam вишня, 360г — <b>239 ₴</b> <s>349 ₴</s> · 🌐 лише онлайн-замовлення заявлено −32% · <b>реально −27%</b>\n🔗 <a href=\"https://silpo.ua/product/syrnyk-spravzhnii-smak-jam-vyshnia-1017842\">відкрити</a>",
     "15. Закуски Picard Смаки сонця міні, 360г — <b>369 ₴</b> <s>529 ₴</s> · 🌐 лише онлайн-замовлення заявлено −30% · <b>реально −30%</b>\n🔗 <a href=\"https://silpo.ua/product/zakusky-picard-smaky-sontsia-mini-1013335\">відкрити</a>"
    ],
    "par": "19"
@@ -10735,7 +10731,7 @@
    "par": "s1_24"
   }
  },
- "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 23.10 14:05 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-naipovnisha-entsyklopediia-vsogo-tvii-dovidnyk-pro-svit-983375\">Книга Ранок Найповніша енциклопедія всього Твій довідник про світ</a> — <b>0.19 ₴</b> <s>2299 ₴</s> · −100%\n2. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-entsyklopediia-pro-vse-nash-svit-u-maliunkakh-983376\">Книга Ранок Енциклопедія про все Наш світ у малюнках</a> — <b>0.19 ₴</b> <s>1599 ₴</s> · −100%\n3. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-fabula-mystetstvo-govoryty-808573\">Книга Фабула Мистецтво говорити</a> — <b>0.19 ₴</b> <s>454 ₴</s> · −100%\n4. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-fabula-suchasna-proza-ukrainy-usi-ikhni-demony-983412\">Книга Фабула Сучасна проза України Усі їхні демони</a> — <b>0.19 ₴</b> <s>454 ₴</s> · −100%\n5. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/komiks-varvar-publishing-mailz-moralez-udarni-khvyli-982426\">Комікс Varvar Publishing Майлз Моралез Ударні хвилі</a> — <b>0.19 ₴</b> <s>389 ₴</s> · −100%\n6. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-frenki-d-vampir-vegan-988185\">Книга Ранок Френкі Д вампір-веган</a> — <b>0.19 ₴</b> <s>324 ₴</s> · −100%\n7. 🍿 <a href=\"https://silpo.ua/product/sneky-natural-garden-nori-zi-smakom-sousu-teriiaki-smazheni-761263\">Снеки Natural Garden норі зі смаком соусу теріякі смажені</a> — <b>19.99 ₴</b> <s>45.99 ₴</s> · −57%\n8. 🛒 <a href=\"https://silpo.ua/product/sneky-natural-garden-nori-zi-smakom-sousu-teriiaki-smazheni-761263\">Снеки Natural Garden норі зі смаком соусу теріякі смажені</a> — <b>19.99 ₴</b> <s>45.99 ₴</s> · −57%\n9. 🥫 <a href=\"https://silpo.ua/product/ikra-kabachkova-nizhyn-25673\">Ікра кабачкова «Ніжин»</a> — <b>49.99 ₴</b> <s>115 ₴</s> · −56%\n10. 🛒 <a href=\"https://silpo.ua/product/kava-rozchynna-jacobs-gold-cronat-895952\">Кава розчинна Jacobs Gold Cronat</a> — <b>309 ₴</b> <s>719 ₴</s> · −59%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
+ "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 23.10 15:00 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-naipovnisha-entsyklopediia-vsogo-tvii-dovidnyk-pro-svit-983375\">Книга Ранок Найповніша енциклопедія всього Твій довідник про світ</a> — <b>0.19 ₴</b> <s>2299 ₴</s> · −100%\n2. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-entsyklopediia-pro-vse-nash-svit-u-maliunkakh-983376\">Книга Ранок Енциклопедія про все Наш світ у малюнках</a> — <b>0.19 ₴</b> <s>1599 ₴</s> · −100%\n3. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-fabula-mystetstvo-govoryty-808573\">Книга Фабула Мистецтво говорити</a> — <b>0.19 ₴</b> <s>454 ₴</s> · −100%\n4. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-fabula-suchasna-proza-ukrainy-usi-ikhni-demony-983412\">Книга Фабула Сучасна проза України Усі їхні демони</a> — <b>0.19 ₴</b> <s>454 ₴</s> · −100%\n5. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/komiks-varvar-publishing-mailz-moralez-udarni-khvyli-982426\">Комікс Varvar Publishing Майлз Моралез Ударні хвилі</a> — <b>0.19 ₴</b> <s>389 ₴</s> · −100%\n6. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-frenki-d-vampir-vegan-988185\">Книга Ранок Френкі Д вампір-веган</a> — <b>0.19 ₴</b> <s>324 ₴</s> · −100%\n7. 🍿 <a href=\"https://silpo.ua/product/sneky-natural-garden-nori-zi-smakom-sousu-teriiaki-smazheni-761263\">Снеки Natural Garden норі зі смаком соусу теріякі смажені</a> — <b>19.99 ₴</b> <s>45.99 ₴</s> · −57%\n8. 🛒 <a href=\"https://silpo.ua/product/sneky-natural-garden-nori-zi-smakom-sousu-teriiaki-smazheni-761263\">Снеки Natural Garden норі зі смаком соусу теріякі смажені</a> — <b>19.99 ₴</b> <s>45.99 ₴</s> · −57%\n9. 🥫 <a href=\"https://silpo.ua/product/ikra-kabachkova-nizhyn-25673\">Ікра кабачкова «Ніжин»</a> — <b>49.99 ₴</b> <s>115 ₴</s> · −56%\n10. 🛒 <a href=\"https://silpo.ua/product/kava-rozchynna-jacobs-gold-cronat-895952\">Кава розчинна Jacobs Gold Cronat</a> — <b>309 ₴</b> <s>719 ₴</s> · −59%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
  "silpo_stores": {
   "week": "2026-43",
   "v": 2,
@@ -12779,15 +12775,15 @@
  "silpo_by": {
   "1ed43e73-051b-6842-a111-a5ad042eb496@dl": {
    "week": "2026-10-22",
-   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 23.10 14:05 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, просп. Володимира Івасюка, 46 · 🚚 доставка · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <a href=\"https://silpo.ua/product/servetky-vologi-premiia-dlia-intymnoi-gigiieny-822109\">Серветки вологі «Премія»® для інтимної гігієни</a> — <b>17.99 ₴</b> <s>45.49 ₴</s> · −63%\n2. 🧼 <a href=\"https://silpo.ua/product/servetky-vologi-premiia-dlia-intymnoi-gigiieny-822109\">Серветки вологі «Премія»® для інтимної гігієни</a> — <b>17.99 ₴</b> <s>45.49 ₴</s> · −63%\n3. 🍿 <a href=\"https://silpo.ua/product/sneky-natural-garden-nori-zi-smakom-sousu-teriiaki-smazheni-761263\">Снеки Natural Garden норі зі смаком соусу теріякі смажені</a> — <b>19.99 ₴</b> <s>45.99 ₴</s> · −57%\n4. 🛒 <a href=\"https://silpo.ua/product/sneky-natural-garden-nori-zi-smakom-sousu-teriiaki-smazheni-761263\">Снеки Natural Garden норі зі смаком соусу теріякі смажені</a> — <b>19.99 ₴</b> <s>45.99 ₴</s> · −57%\n5. 🥫 <a href=\"https://silpo.ua/product/ikra-kabachkova-nizhyn-25673\">Ікра кабачкова «Ніжин»</a> — <b>49.99 ₴</b> <s>115 ₴</s> · −56%\n6. 🛒 <a href=\"https://silpo.ua/product/sneky-natural-garden-nori-zi-smakom-vasabi-smazheni-947977\">Снеки Natural Garden норі зі смаком васабі смажені</a> — <b>19.99 ₴</b> <s>45.99 ₴</s> · −57%\n7. 🍿 <a href=\"https://silpo.ua/product/sneky-natural-garden-nori-zi-smakom-vasabi-smazheni-947977\">Снеки Natural Garden норі зі смаком васабі смажені</a> — <b>19.99 ₴</b> <s>45.99 ₴</s> · −57%\n8. ☕ <a href=\"https://silpo.ua/product/chai-kvitkovo-trav-ianyi-tea-moments-alpine-meadow-983624\">Чай квітково-трав'яний Tea Moments Alpine Meadow</a> — <b>74.99 ₴</b> <s>169 ₴</s> · −58%\n9. 🛒 <a href=\"https://silpo.ua/product/pryprava-premia-12-ovochiv-i-trav-universalna-granulovana-963440\">Приправа PREMIA 12 овочів і трав універсальна гранульована</a> — <b>27.99 ₴</b> <s>69.99 ₴</s> · −62%\n10. 🛒 <a href=\"https://silpo.ua/product/pryprava-premia-12-ovochiv-i-trav-universalna-granulovana-963440\">Приправа PREMIA 12 овочів і трав універсальна гранульована</a> — <b>27.99 ₴</b> <s>69.99 ₴</s> · −62%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s0_",
-   "built": "2026-10-23-am",
-   "at": "23.10 14:05"
+   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 23.10 15:00 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, просп. Володимира Івасюка, 46 · 🚚 доставка · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <a href=\"https://silpo.ua/product/servetky-vologi-premiia-dlia-intymnoi-gigiieny-822109\">Серветки вологі «Премія»® для інтимної гігієни</a> — <b>17.99 ₴</b> <s>45.49 ₴</s> · −63%\n2. 🧼 <a href=\"https://silpo.ua/product/servetky-vologi-premiia-dlia-intymnoi-gigiieny-822109\">Серветки вологі «Премія»® для інтимної гігієни</a> — <b>17.99 ₴</b> <s>45.49 ₴</s> · −63%\n3. 🍿 <a href=\"https://silpo.ua/product/sneky-natural-garden-nori-zi-smakom-sousu-teriiaki-smazheni-761263\">Снеки Natural Garden норі зі смаком соусу теріякі смажені</a> — <b>19.99 ₴</b> <s>45.99 ₴</s> · −57%\n4. 🛒 <a href=\"https://silpo.ua/product/sneky-natural-garden-nori-zi-smakom-sousu-teriiaki-smazheni-761263\">Снеки Natural Garden норі зі смаком соусу теріякі смажені</a> — <b>19.99 ₴</b> <s>45.99 ₴</s> · −57%\n5. 🥫 <a href=\"https://silpo.ua/product/ikra-kabachkova-nizhyn-25673\">Ікра кабачкова «Ніжин»</a> — <b>49.99 ₴</b> <s>115 ₴</s> · −56%\n6. 🛒 <a href=\"https://silpo.ua/product/sneky-natural-garden-nori-zi-smakom-vasabi-smazheni-947977\">Снеки Natural Garden норі зі смаком васабі смажені</a> — <b>19.99 ₴</b> <s>45.99 ₴</s> · −57%\n7. 🍿 <a href=\"https://silpo.ua/product/sneky-natural-garden-nori-zi-smakom-vasabi-smazheni-947977\">Снеки Natural Garden норі зі смаком васабі смажені</a> — <b>19.99 ₴</b> <s>45.99 ₴</s> · −57%\n8. ☕ <a href=\"https://silpo.ua/product/chai-kvitkovo-trav-ianyi-tea-moments-alpine-meadow-983624\">Чай квітково-трав'яний Tea Moments Alpine Meadow</a> — <b>74.99 ₴</b> <s>169 ₴</s> · −58%\n9. 🛒 <a href=\"https://silpo.ua/product/pryprava-premia-12-ovochiv-i-trav-universalna-granulovana-963440\">Приправа PREMIA 12 овочів і трав універсальна гранульована</a> — <b>27.99 ₴</b> <s>69.99 ₴</s> · −62%\n10. 🛒 <a href=\"https://silpo.ua/product/pryprava-premia-12-ovochiv-i-trav-universalna-granulovana-963440\">Приправа PREMIA 12 овочів і трав універсальна гранульована</a> — <b>27.99 ₴</b> <s>69.99 ₴</s> · −62%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s0_",
+   "built": "2026-10-23-pm",
+   "at": "23.10 15:00"
   },
   "1edb6b54-d26b-681e-aa85-b5ff7ea46636": {
    "week": "2026-10-22",
-   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 23.10 14:05 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Оводова Миколи, 51 · 🏪 самовивіз · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-oberny-shcho-vyishlo-chudesa-v-mori-987298\">Книга Ранок Оберни Що вийшло Чудеса в морі</a> — <b>0.19 ₴</b> <s>179 ₴</s> · −100%\n2. 🛒 <a href=\"https://silpo.ua/product/papir-tualetnyi-ruta-selecta-romashka-bilyi-3-shary-927768\">Папір туалетний Ruta Selecta ромашка білий 3 шари</a> — <b>399 ₴</b> <s>949 ₴</s> · −58%\n3. 🥫 <a href=\"https://silpo.ua/product/ikra-kabachkova-nizhyn-25673\">Ікра кабачкова «Ніжин»</a> — <b>49.99 ₴</b> <s>115 ₴</s> · −56%\n4. 🍫 <a href=\"https://silpo.ua/product/tsukerky-trolli-squiggles-bdzholy-zhuvalni-933841\">Цукерки Trolli Squiggles Бджоли жувальні</a> — <b>32.99 ₴</b> <s>75.49 ₴</s> · −56%\n5. 🛒 <a href=\"https://silpo.ua/product/nabir-konteineriv-dlia-zberigannia-sp-berner-synii-17-sht-970111\">Набір контейнерів для зберігання Sp Berner синій 17 шт.</a> — <b>269 ₴</b> <s>699 ₴</s> · −62%\n6. ☕ <a href=\"https://silpo.ua/product/kava-rozchynna-jacobs-gold-cronat-895952\">Кава розчинна Jacobs Gold Cronat</a> — <b>309 ₴</b> <s>719 ₴</s> · −59%\n7. 🛒 <a href=\"https://silpo.ua/product/kava-rozchynna-jacobs-gold-cronat-895952\">Кава розчинна Jacobs Gold Cronat</a> — <b>309 ₴</b> <s>719 ₴</s> · −59%\n8. ☕ <a href=\"https://silpo.ua/product/chai-kvitkovo-trav-ianyi-tea-moments-alpine-meadow-983624\">Чай квітково-трав'яний Tea Moments Alpine Meadow</a> — <b>74.99 ₴</b> <s>169 ₴</s> · −58%\n9. 🛒 <a href=\"https://silpo.ua/product/pryprava-premia-12-ovochiv-i-trav-universalna-granulovana-963440\">Приправа PREMIA 12 овочів і трав універсальна гранульована</a> — <b>27.99 ₴</b> <s>69.99 ₴</s> · −62%\n10. 🛒 <a href=\"https://silpo.ua/product/pryprava-premia-12-ovochiv-i-trav-universalna-granulovana-963440\">Приправа PREMIA 12 овочів і трав універсальна гранульована</a> — <b>27.99 ₴</b> <s>69.99 ₴</s> · −62%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s1_",
-   "built": "2026-10-23-am",
-   "at": "23.10 14:05"
+   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 23.10 15:00 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Оводова Миколи, 51 · 🏪 самовивіз · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🧸 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/knyga-ranok-oberny-shcho-vyishlo-chudesa-v-mori-987298\">Книга Ранок Оберни Що вийшло Чудеса в морі</a> — <b>0.19 ₴</b> <s>179 ₴</s> · −100%\n2. 🛒 <a href=\"https://silpo.ua/product/papir-tualetnyi-ruta-selecta-romashka-bilyi-3-shary-927768\">Папір туалетний Ruta Selecta ромашка білий 3 шари</a> — <b>399 ₴</b> <s>949 ₴</s> · −58%\n3. 🥫 <a href=\"https://silpo.ua/product/ikra-kabachkova-nizhyn-25673\">Ікра кабачкова «Ніжин»</a> — <b>49.99 ₴</b> <s>115 ₴</s> · −56%\n4. 🍫 <a href=\"https://silpo.ua/product/tsukerky-trolli-squiggles-bdzholy-zhuvalni-933841\">Цукерки Trolli Squiggles Бджоли жувальні</a> — <b>32.99 ₴</b> <s>75.49 ₴</s> · −56%\n5. 🛒 <a href=\"https://silpo.ua/product/nabir-konteineriv-dlia-zberigannia-sp-berner-synii-17-sht-970111\">Набір контейнерів для зберігання Sp Berner синій 17 шт.</a> — <b>269 ₴</b> <s>699 ₴</s> · −62%\n6. ☕ <a href=\"https://silpo.ua/product/kava-rozchynna-jacobs-gold-cronat-895952\">Кава розчинна Jacobs Gold Cronat</a> — <b>309 ₴</b> <s>719 ₴</s> · −59%\n7. 🛒 <a href=\"https://silpo.ua/product/kava-rozchynna-jacobs-gold-cronat-895952\">Кава розчинна Jacobs Gold Cronat</a> — <b>309 ₴</b> <s>719 ₴</s> · −59%\n8. ☕ <a href=\"https://silpo.ua/product/chai-kvitkovo-trav-ianyi-tea-moments-alpine-meadow-983624\">Чай квітково-трав'яний Tea Moments Alpine Meadow</a> — <b>74.99 ₴</b> <s>169 ₴</s> · −58%\n9. 🛒 <a href=\"https://silpo.ua/product/pryprava-premia-12-ovochiv-i-trav-universalna-granulovana-963440\">Приправа PREMIA 12 овочів і трав універсальна гранульована</a> — <b>27.99 ₴</b> <s>69.99 ₴</s> · −62%\n10. 🛒 <a href=\"https://silpo.ua/product/pryprava-premia-12-ovochiv-i-trav-universalna-granulovana-963440\">Приправа PREMIA 12 овочів і трав універсальна гранульована</a> — <b>27.99 ₴</b> <s>69.99 ₴</s> · −62%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s1_",
+   "built": "2026-10-23-pm",
+   "at": "23.10 15:00"
   }
  },
  "silpo_sent_by": {
@@ -21765,17 +21761,17 @@
   ]
  },
  "pushed_h": {
-  "gs": "f412f3634a0e",
+  "gs": "891ab5d40a56",
   "quiz_pool.json": "5e887a1905fd",
-  "fact.png": "049ef5e5d7ea",
+  "fact.png": "c6c4a6a1033e",
   "sexed.json": "4efede1d8ea5",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "ca249c14d237",
   "silpo/1edb6b29-bf5c-6046-b60c-c3cf7b8c82cf.json": "b99a8f257f4c",
-  "silpo/1edb6b54-d26b-681e-aa85-b5ff7ea46636.json": "52b2a144c485",
+  "silpo/1edb6b54-d26b-681e-aa85-b5ff7ea46636.json": "37b9e9936d76",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "a84d1ab3bd9b",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18@dl.json": "48a8eb895460",
-  "silpo/m.json": "8e987c0cb4eb",
+  "silpo/m.json": "2f8e427c9aad",
   "sx/19453874.png": "be608f6e242c",
   "sx/19454097.png": "45696a81af3b",
   "sx/19473282.png": "1ff4e0b3380c",
@@ -31104,6 +31100,12 @@
    {
     "id": "61baaf3af3",
     "text": "🍿 <b>ПІДБІРКА КІНО · СЕРІАЛИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>📺 <b>1. <a href=\"https://telegra.ph/CHі-2018-10-23-3\">Чі</a></b> (2018)\nдрама · 📺 серіал · 8 сез.\n⭐ IMDb <b>7.5</b>\n📝 Релевантна, своєчасна та характерна історія дорослішання про пів дюжини взаємопов’язаних персонажів у південній частині Чикаго. У центрі історії — Брендон, амбітний і впевнений у собі молодий чоловік, який мріє…\n▶️ <a href=\"https://youtu.be/22if69BjkPI\">Трейлер</a></blockquote>\n§KN:t72071\n§§\n<blockquote>📺 <b>2. <a href=\"https://telegra.ph/Pravdiva-terapіya-2023-10-23\">Правдива терапія</a></b> (2023)\nдрама, комедія · 📺 серіал · 3 сез.\n⭐ IMDb <b>8.2</b>\n<i>🎭 Джейсон Сіґел, Гаррісон Форд, Jessica Williams</i>\n📺 <a href=\"https://www.themoviedb.org/tv/136311-shrinking/watch?locale=UA\">Apple TV</a>\n📝 Джиммі переживає втрату дружини, і йому важко водночас бути батьком, другом і психотерапевтом. Він вирішує змінити своє ставлення до людей і стати абсолютно чесним, без жодних фільтрів. Покращиться від цього ситуація…\n▶️ <a href=\"https://youtu.be/YjHfjQDWl1A\">Трейлер</a></blockquote>\n§KN:t136311\n§§\n<blockquote>📺 <b>3. <a href=\"https://telegra.ph/YElloustoun-1923-2022-10-23-3\">Єллоустоун: 1923</a></b> (2022)\nдрама, вестерн · 📺 серіал · 2 сез.\n⭐ IMDb <b>8.3</b>\n<i>🎭 Гелен Міррен, Гаррісон Форд, Брендон Скленар</i>\n📝 Даттони стикаються з новими проблемами на початку 20-го століття, включаючи зростання західної експансії, сухий закон та Велику депресію.\n▶️ <a href=\"https://youtu.be/v88e9Dwnqo0\">Трейлер</a></blockquote>\n§KN:t157744\n§§\n<blockquote>📺 <b>4. <a href=\"https://telegra.ph/Vіdous-Bej-2026-10-23-2\">Відоус-Бей</a></b> (2026)\nдрама, комедія, детектив · 📺 серіал · 2 сез.\n⭐ IMDb <b>8.1</b>\n<i>🎭 Метью Ріс, Kate O'Flynn, Kevin Carroll</i>\n📺 <a href=\"https://www.themoviedb.org/tv/270476-widow-s-bay/watch?locale=UA\">Apple TV</a>\n📝 Мер містечка в Новій Англії має намір перетворити його на туристичну принаду, попри застереження місцевих про те, що це місце прокляте.\n▶️ <a href=\"https://youtu.be/VcpYPxKeGAc\">Трейлер</a></blockquote>\n§KN:t270476\n§§\n<blockquote>📺 <b>5. <a href=\"https://telegra.ph/Kerrі-2026-10-23-4\">Керрі</a></b> (2026)\nдетектив, драма, науково фантастичний · 📺 серіал · 2 сез.\n⭐ IMDb <b>7.8</b>\n<i>🎭 Саммер Г. Гавелл, Саманта Слоян, Сієна Агудонг</i>\n📝 Самотня старшокласниця Керрі Вайт усе життя провела в ізоляції під суворим контролем своєї владної матері. Після раптової смерті батька вона змушена зіткнутися з труднощами навчання у звичайній школі, пережити…\n▶️ <a href=\"https://youtu.be/jkUw2nh6fT0\">Трейлер</a></blockquote>\n§KN:t288673\n§§\n<blockquote>📺 <b>6. <a href=\"https://telegra.ph/YElloustoun-2018-10-23\">Єллоустоун</a></b> (2018)\nвестерн, драма · 📺 серіал · 5 сез.\n⭐ IMDb <b>8.6</b>\n<i>🎭 Люк Ґраймс, Келлі Райллі, Вес Бентлі</i>\n📺 <a href=\"https://www.themoviedb.org/tv/73586-yellowstone/watch?locale=UA\">Netflix</a>\n📝 Єллоустон — перший в світі національний парк, одне з найвідвідуваніших місць в США. Але тут, на кордоні цивілізації, відбувається багато такого, чого не бачать туристи, що не освітлюється засобами масової інформації.…\n▶️ <a href=\"https://youtu.be/suobrMPBLlo\">Трейлер</a></blockquote>\n§KN:t73586\n§§\n<blockquote>📺 <b>7. <a href=\"https://telegra.ph/Dzhek-Rayan-2018-10-23-3\">Джек Раян</a></b> (2018)\nекшн і пригоди, драма · 📺 серіал · 4 сез.\n⭐ IMDb <b>8.0</b>\n<i>🎭 Джон Кразінські, Венделл Пірс, Еббі Корніш</i>\n📝 Аналітик ЦРУ Джек Раян звертає увагу на підозрілу серію банківських переказів і починає власне розслідування. Це змушує його залишити роботу в офісі та взяти участь у небезпечній операції у Європі та на Близькому…\n▶️ <a href=\"https://youtu.be/wjpcQ-6F12Q\">Трейлер</a></blockquote>\n§KN:t73375\n§§\n<blockquote>📺 <b>8. <a href=\"https://telegra.ph/Ted-Lasso-2020-10-23\">Тед Лассо</a></b> (2020)\nдрама, комедія · 📺 серіал · 4 сез.\n⭐ IMDb <b>8.7</b>\n<i>🎭 Джейсон Судейкіс, Ханна Воддінгем, Джеремі Свіфт</i>\n📺 <a href=\"https://www.themoviedb.org/tv/97546-ted-lasso/watch?locale=UA\">Apple TV</a>\n📝 Тед Лассо, американський тренер з футболу, переїжджає до Англії, коли його найняли керувати футбольною командою — незважаючи на відсутність досвіду. З цинічними гравцями та сумнівним містечком, чи змусить він їх…\n▶️ <a href=\"https://youtu.be/BwPcMIDFVKw\">Трейлер</a></blockquote>\n§KN:t97546\n§§\n<blockquote>📺 <b>9. <a href=\"https://telegra.ph/Amerikanska-sіmejka-2009-10-23\">Американська сімейка</a></b> (2009)\nкомедія · 📺 серіал · 11 сез.\n⭐ IMDb <b>8.5</b>\n<i>🎭 Ед О'Нілл, Софія Вергара, Джулі Бовен</i>\n📝 Історія про три абсолютно різні американські сім’ї: Клер — мати-домогосподарка у звичайній традиційній сім’ї, її батько Джей одружений із жінкою, що майже у два рази молодша за нього та брат Мітчелл який разом зі…\n▶️ <a href=\"https://youtu.be/rbpTUPisA78\">Трейлер</a></blockquote>\n§KN:t1421\n§§\n<blockquote>📺 <b>10. <a href=\"https://telegra.ph/Zoryana-brama-Atlantida-2004-10-23-3\">Зоряна брама: Атлантида</a></b> (2004)\nнауково фантастичний, екшн і пригоди, драма · 📺 серіал · 5 сез.\n⭐ IMDb <b>8.2</b>\n<i>🎭 Joe Flanigan, Девід Г'юлетт, Rachel Luttrell</i>\n📝 Використовуючи стародавні технології, доктор Деніел Джексон знаходить загублене місто Атлантида, куди відправляється міжнародна експедиція під керівництвом Елізабет Вейра. Однак він знаходиться в галактиці Пегаса, що…\n▶️ <a href=\"https://youtu.be/j7ZXaSMffjo\">Трейлер</a></blockquote>\n§KN:t2290"
+   }
+  ],
+  "ua": [
+   {
+    "id": "c3702649f4",
+    "text": "🍿 <b>ПІДБІРКА КІНО · УКРАЇНСЬКЕ КІНО</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/807888?language=uk\">Носоріг</a></b> (2021)\nдрама, кримінал, трилер · ⏱ 1 год 40 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>78%</b>\n<i>🎭 Serhii Filimonov, Євген Черников, Євгеній Григор'єв</i>\n📝 Колишній бандит згадує історію свого життя. З дитинства він добре знає, що треба бути сильним і безжальним — тільки так можна здобути авторитет і вижити у 90-ті. Бійки, розбірки, вбивства, катування — сила,…\n▶️ <a href=\"https://youtu.be/dVoE23Cbe8Y\">Трейлер</a></blockquote>\n§KN:m807888\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/1005141?language=uk\">Люксембург, Люксембург</a></b> (2023)\nкомедія, драма · ⏱ 1 год 46 хв\n⭐ IMDb <b>7.9</b> · 🍅 <b>83%</b>\n<i>🎭 Аміл Насіров, Раміл Насіров, Nataliia Hnitii</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1005141/watch?locale=UA\">Netflix</a>\n📝 Фільм розповідає про братів-близнюків, які намагаються дати раду власному життю, в якому раптово з’являється давно зниклий батько.\n▶️ <a href=\"https://youtu.be/keQEs4tL_FM\">Трейлер</a></blockquote>\n§KN:m1005141\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/608872?language=uk\">Пульс</a></b> (2021)\nдрама · ⏱ 1 год 40 хв\n⭐ TMDB <b>6.8</b>\n<i>🎭 Наталія Бабенко, Viktoriia Levchenko, Олександр Кобзар</i>\n📺 <a href=\"https://www.themoviedb.org/movie/608872/watch?locale=UA\">Netflix</a>\n📝 Унаслідок жахливої автомобільної аварії молода українська легкоатлетка Оксана Ботурчук зазнає багато важких травм та майже втрачає зір. Але після тривалої реабілітації та повернення до неймовірних тренувань вона бере…\n▶️ <a href=\"https://youtu.be/c3w82wb3OjQ\">Трейлер</a></blockquote>\n§KN:m608872\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/1013052?language=uk\">Ти – космос</a></b> (2025)\nфантастика, пригоди, комедія · ⏱ 1 год 41 хв\n⭐ TMDB <b>7.6</b>\n<i>🎭 Володимир Кравчук, Алексія Депікер, Леонід Попадько</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1013052/watch?locale=UA\">Netflix</a>\n📝 Український космічний далекобійник Андрій перевозить ядерні відходи з Землі на супутник Юпітера. Після несподіваного вибуху Землі, уламки якої знищують все навколо, Андрій залишається останньою людиною у Всесвіті.\n▶️ <a href=\"https://youtu.be/xRc7oWuDjR4\">Трейлер</a></blockquote>\n§KN:m1013052\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/293122?language=uk\">Поводир</a></b> (2014)\nісторичний, драма · ⏱ 2 год 04 хв\n⭐ IMDb <b>7.6</b>\n<i>🎭 Anton Sviatoslav Greene, Станіслав Боклан, Jamala</i>\n📝 Україна 1930-х років. Хлопчик, до рук якого потрапляють небезпечні політичні документи, мандрує незнайомими землями зі сліпим кобзарем.\n▶️ <a href=\"https://youtu.be/s4XYstz2np8\">Трейлер</a></blockquote>\n§KN:m293122\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/332270?language=uk\">Незламна</a></b> (2015)\nвійськовий, драма, мелодрама · ⏱ 2 год 02 хв\n⭐ IMDb <b>7.0</b>\n<i>🎭 Юлія Пересільд, Евгений Цыганов, Нателла Абелева-Таганова</i>\n📝 Кохання під нескінченним вогнем ворога, дружба з Елеанор Рузвельт, виступ на конференції, що вплинула на результат Другої Світової Війни, бажання жити і страх втратити кохану людину - чи впорається з усім цим…\n▶️ <a href=\"https://youtu.be/CcKo8H_MTxQ\">Трейлер</a></blockquote>\n§KN:m332270\n§§\n<blockquote>📺 <b>7. <a href=\"https://www.themoviedb.org/tv/101504?language=uk\">Спіймати Кайдаша</a></b> (2020)\nдрама, комедія · 📺 серіал · 1 сез.\n⭐ IMDb <b>8.9</b>\n<i>🎭 Віктор Жданов, Ірина Мак, Григорій Бакланов</i>\n📺 <a href=\"https://www.themoviedb.org/tv/101504/watch?locale=UA\">Netflix</a>\n📝 Сучасна версія класичного твору «Кайдашева сім’я» Івана Нечуя-Левицького. Історія починається з того, що Лаврін, молодший син Кайдаша, повертається з армії. Він скучив по клубу, танцям і дівчатам, тому відчайдушно…\n▶️ <a href=\"https://youtu.be/j2d-luSrGGA\">Трейлер</a></blockquote>\n§KN:t101504\n§§\n<blockquote>📺 <b>8. <a href=\"https://www.themoviedb.org/tv/153459?language=uk\">Зломовчання</a></b> (2021)\nдетектив, драма, кримінал · 📺 серіал · 2 сез.\n⭐ IMDb <b>7.6</b>\n<i>🎭 Ксенія Мішина, Goran Bogdan, Darko Milas</i>\n📝 6-серійна історія базується на реальних подіях і викриває сексуальне рабство та контрабанду зброї, якими займалися чиновники Хорватії та України.</blockquote>\n§KN:t153459\n§§\n<blockquote>📺 <b>9. <a href=\"https://www.themoviedb.org/tv/64480?language=uk\">Слуга народу</a></b> (2015)\nкомедія · 📺 серіал · 3 сез.\n⭐ IMDb <b>7.3</b>\n<i>🎭 Володимир Зеленський, Станіслав Боклан, Євген Кошовий</i>\n📝 У країни, де процвітають крадіжки, корупція і злочинність, здавалося б, немає шансів на успішне майбутнє. Але ось одного разу, несподівано для всіх, президентом країни стає звичайний учитель географії. Завдяки учням…</blockquote>\n§KN:t64480\n§§\n<blockquote>📺 <b>10. <a href=\"https://www.themoviedb.org/tv/96256?language=uk\">Перші Ластівки</a></b> (2019)\nдрама · 📺 серіал · 2 сез.\n⭐ IMDb <b>8.1</b>\n<i>🎭 Вікторія Литвиненко, Олександр Рудинський, Oleh Hotsuliak</i>\n📝 «Перші ластівки» — український молодіжний телесеріал. Сюжет серіалу розповідає про проблеми, з якими стикаються школярі та їх оточення в підлітковому віці: дорослішання, статева зрілість, прийняття себе, формування…\n▶️ <a href=\"https://youtu.be/0-_GDYk5GS4\">Трейлер</a></blockquote>\n§KN:t96256"
    }
   ]
  },
