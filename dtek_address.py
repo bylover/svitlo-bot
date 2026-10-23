@@ -85,11 +85,19 @@ def dtek_live_push(page) -> None:
         print(f"ДТЕК напряму → Worker: {err_text(e)[:60]}")
 
 
+def launch_browser(pw):
+    """Спершу системний Chrome сервера GitHub (без завантаження), інакше — Chromium Playwright."""
+    try:
+        return pw.chromium.launch(headless=True, channel="chrome")
+    except Exception:
+        return pw.chromium.launch(headless=True)
+
+
 def fetch_address() -> dict | None:
     """Відкриває сторінку ДТЕК і повертає відповідь getHomeNum для нашої вулиці."""
     from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = launch_browser(p)
         page = browser.new_page(locale="uk-UA", user_agent=(
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140 Safari/537.36"))
         page.goto(URL, wait_until="domcontentloaded", timeout=60000)
@@ -456,7 +464,7 @@ def voe_probe() -> None:
     from playwright.sync_api import sync_playwright
     found = {"day": today, "pages": []}
     with sync_playwright() as pw:
-        browser = pw.chromium.launch(headless=True)
+        browser = launch_browser(pw)
         page = browser.new_page(locale="uk-UA")
         xhr = []
         page.on("request", lambda r: xhr.append(f"{r.method} {r.url}") if r.resource_type in ("xhr", "fetch") else None)

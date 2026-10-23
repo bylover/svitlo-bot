@@ -2444,6 +2444,7 @@ ONLINE = re.compile(r"онлайн|online|лише\s+в\s+застосунку|�
 PROMO_SAMPLES: list = []
 ALL_PROMOS: list = []                                       # усі акції магазину — для «⭐ Обране»
 VERIFY_DROP = [0]                                           # скільки «знижок» відкинуто перевіркою
+SILPO_WHY: dict = {}                                        # 🧪 назва → чому (не) в підбірці — для адмінки
 GURT_SAMPLES: list = []                                     # приклади «гуртом дешевше» для логу
 SILPO_BAD: set = set()                                      # товари, про які повідомили «ціна не збігається»
 BAD_SEEN: dict = {}                                         # товар із «⚠️» → (назва, категорія) — для перевірки по магазинах
@@ -4504,6 +4505,7 @@ PROM_CATS = [("🔞 Вібратори", "вібратор"), ("🔞 Вакуу�
              ("🤖 Роботи-пилососи", "робот пилосос"), ("☕ Кавоварки", "кавоварка"), ("🏋️ Гантелі", "гантелі розбірні"), ("👟 Кросівки", "кросівки чоловічі")]
 PROM_RATING = 95
 PROM_LOG: list = []
+PROM_DBG: dict = {}
 
 
 def prom_page(q: str, page: int = 1) -> str:
@@ -4533,10 +4535,24 @@ def prom_offers(q: str, pages: int = 2) -> list:
             blobs.append(m.group(1))
         for m in re.finditer(r'<script[^>]*id="__NEXT_DATA__"[^>]*>(.*?)</script>', h, re.S):
             blobs.append(m.group(1))
+        for m in re.finditer(r'JSON\.parse\(\s*"((?:[^"\\]|\\.){500,})"\s*\)', h):   # екранований JSON усередині скрипта
+            try:
+                blobs.append(json.loads('"' + m.group(1) + '"'))
+            except Exception:
+                pass
+        for m in re.finditer(r'<script[^>]*type="application/(?:json|ld\+json)"[^>]*>(.*?)</script>', h, re.S):
+            if '"__typename"' in m.group(1) or '"Product"' in m.group(1):
+                blobs.append(m.group(1))
+        for m in re.finditer(r'window\.(\w+)\s*=\s*(\{"[\s\S]{500,}?\});\s*(?:window\.|</script>)', h):
+            if '__typename' in m.group(2):
+                blobs.append(m.group(2))
         cache = {}
         for b in blobs:
             try:
-                d = json.loads(b); cache.update(d if isinstance(d, dict) else {})
+                d = json.loads(b) if isinstance(b, str) else b
+                if isinstance(d, dict) and "props" in d:         # __NEXT_DATA__: шукаємо Apollo-кеш усередині
+                    d = d.get("props", {}).get("apolloState") or d.get("props", {}).get("pageProps", {}).get("apolloState") or d
+                cache.update(d if isinstance(d, dict) else {})
             except Exception:
                 continue
         if pg == 1 and len(PROM_LOG) < 3:
@@ -4557,6 +4573,30 @@ def prom_offers(q: str, pages: int = 2) -> list:
                     if r is not None:
                         return r
             return None
+        if pg == 1 and not PROM_DBG:                    # 🧪 що бачимо на сторінці — для адмінки
+            marks = {k_: h.count(k_) for k_ in ("ApolloCacheState", "__typename", '\\"__typename', "JSON.parse(", 'data-qaid="product_block"', 'data-qaid="product_price"',
+                                                 'data-qaid="product_name"', 'data-qaid="company_name"', 'data-qaid="product_presence"', "itemprop=\"price\"", '"@type":"Product"')}
+            i_ = max(h.find('data-qaid="product_price"'), h.find('"price"'), 0)
+            PROM_DBG.update({"q": q, "len": len(h), "marks": marks, "snip": re.sub(r"\s+", " ", h[max(0, i_ - 700):i_ + 700])})
+        if not cache and 'data-qaid="product_block"' in h:   # запасний спосіб: картки товарів у HTML (data-qaid)
+            for blk in h.split('data-qaid="product_block"')[1:]:
+                blk = blk[:6000]
+                nm = re.search(r'data-qaid="product_name"[^>]*?(?:title="([^"]+)"|>([^<]{3,200})<)', blk)
+                pr = re.search(r'data-qaid="product_price"[^>]*?(?:data-qaprice="([\d.,\s]+)"|>([\d\s.,]+)<)', blk)
+                co = re.search(r'data-qaid="company_name"[^>]*>([^<]{2,80})<', blk)
+                rt = re.search(r'(\d{2,3})\s*%\s*(?:позитивн|положительн)', blk)
+                pres = re.search(r'data-qaid="product_presence"[^>]*>([^<]{2,60})<', blk)
+                href = re.search(r'href="(/ua/p\d+[^"]*|https://prom\.ua/ua/p\d+[^"]*)"', blk)
+                if not (nm and pr and co):
+                    continue
+                if pres and re.search(r"немає|нет в|закінч|під замовл|под заказ", pres.group(1), re.I):
+                    continue
+                u_ = href.group(1) if href else ""
+                out.append({"n": html.unescape(nm.group(1) or nm.group(2)).strip()[:140], "p": _num(pr.group(1) or pr.group(2)),
+                            "u": ("https://prom.ua" + u_) if u_.startswith("/") else u_, "s": html.unescape(co.group(1)).strip()[:60], "sid": html.unescape(co.group(1)).strip()[:60],
+                            "r": float(rt.group(1)) if rt else 0, "rv": _num((re.search(r'(\d+)\s*відгук', blk) or [None, 0])[1]),
+                            "st": _num((re.search(r'data-qaid="product_rating"[^>]*?(?:title|aria-label)="[^"]*?([\d.,]+)', blk) or [None, 0])[1]),
+                            "sold": _num((re.search(r'(?:Купили|Продано)\D{0,15}(\d+)', blk) or [None, 0])[1])})
         for k, v in cache.items():
             if not isinstance(v, dict) or not (str(v.get("__typename", "")) == "Product" or str(k).startswith("Product:")):
                 continue
@@ -4616,7 +4656,11 @@ def prom_top(st: dict, now: datetime) -> None:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "prom.json", "json": {"at": now.strftime("%d.%m %H:%M"), "cats": res}})
     except Exception as e:
         print(f"Prom → Cloudflare: {err_text(e)[:60]}")
-    print(f"Prom.ua: категорій {len(res)}, позицій {sum(len(v) for v in res.values())} · {'; '.join(PROM_LOG[:4]) or 'ок'}")
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "prom_dbg.json", "json": {**PROM_DBG, "log": PROM_LOG[:6], "at": now.strftime("%d.%m %H:%M")}})
+    except Exception:
+        pass
+    print(f"Prom.ua: категорій {len(res)}, позицій {sum(len(v) for v in res.values())} · {'; '.join(PROM_LOG[:4]) or 'ок'} · маркери: {PROM_DBG.get('marks')}")
     mark_upd(st, "🛍 Prom.ua", bool(res))
 
 
@@ -4649,6 +4693,127 @@ def prom_cart(text: str) -> str:
         out.append(f"{i}. <b>{esc(v['s'])}</b> · ⭐ {v['r']:.0f}% позитивних · <b>{tot:.0f} ₴</b>\n" +
                    "\n".join(f"   • <a href=\"{o['u']}\">{esc(o['n'][:60])}</a> — {o['p']:.0f} ₴" for o in v["items"].values()))
     out.append(f"\n<i>Для порівняння: найдешевше окремо в різних продавців — {sep:.0f} ₴ (але кілька доставок).</i>")
+    return "\n".join(out)
+
+
+# ---------- 🟢 Rozetka: розумний топ і «усе в одного продавця» (публічні JSON-сервіси сайту); Rozetka / Rozetka EU / інші продавці ----------
+RZ_DBG: dict = {}
+RZ_LOG: list = []
+
+
+def rz_json(url: str) -> dict:
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140 Safari/537.36",
+                                               "Accept": "application/json", "Accept-Language": "uk-UA,uk;q=0.9", "Origin": "https://rozetka.com.ua", "Referer": "https://rozetka.com.ua/"})
+    return json.loads(urllib.request.urlopen(req, timeout=30).read().decode("utf-8", "replace"))
+
+
+def rz_offers(q: str, pages: int = 2) -> list:
+    """Пошук → id товарів → картки (назва, ціна, наявність, продавець, оцінка, відгуки)."""
+    ids = []
+    for pg in range(1, pages + 1):
+        try:
+            d = rz_json("https://search.rozetka.com.ua/ua/search/api/v6/?" + urllib.parse.urlencode({"front-type": "xl", "country": "UA", "lang": "ua", "text": q, "page": pg}))
+        except Exception as e:
+            RZ_LOG.append(f"«{q}» пошук: {err_text(e)[:50]}"); break
+        g = (d.get("data") or {}).get("goods") or (d.get("data") or {}).get("ids") or []
+        ids += [x.get("id") if isinstance(x, dict) else x for x in g]
+        if pg == 1 and not RZ_DBG:
+            RZ_DBG.update({"q": q, "search_keys": list((d.get("data") or {}).keys())[:20], "first": json.dumps(g[:1], ensure_ascii=False)[:400]})
+        _time.sleep(0.8)
+    ids = [str(i) for i in ids if i][:120]
+    out = []
+    for b in range(0, len(ids), 60):
+        try:
+            d = rz_json("https://xl-catalog-api.rozetka.com.ua/v4/goods/get?" + urllib.parse.urlencode({"front-type": "xl", "country": "UA", "lang": "ua", "goods_ids": ",".join(ids[b:b + 60])}))
+        except Exception as e:
+            RZ_LOG.append(f"«{q}» картки: {err_text(e)[:50]}"); break
+        goods = d.get("data") if isinstance(d.get("data"), list) else (d.get("data") or {}).get("goods") or []
+        if goods and "card" not in RZ_DBG:
+            RZ_DBG["card"] = json.dumps(goods[0], ensure_ascii=False)[:1200]
+        for x in goods:
+            if str(x.get("sell_status") or x.get("status") or "available") not in ("available", "limited", "active"):
+                continue                                  # 📦 лише в наявності
+            sel = x.get("seller") or {}
+            sname = str(sel.get("title") or sel.get("name") or x.get("seller_title") or ("Rozetka" if x.get("seller_id") in (5, "5") else ""))
+            grp = "eu" if re.search(r"\beu\b|європ|europe", sname, re.I) or x.get("is_eu") else "rz" if re.search(r"^rozetka$", sname.strip(), re.I) or str(x.get("seller_id")) == "5" else "other"
+            price = _num(x.get("price") or 0)
+            if not price:
+                continue
+            out.append({"n": str(x.get("title") or "")[:140], "p": price, "u": x.get("href") or f"https://rozetka.com.ua/ua/{x.get('id')}/p{x.get('id')}/",
+                        "s": sname or "Rozetka", "sid": str(sel.get("id") or x.get("seller_id") or sname), "grp": grp,
+                        "r": _num(sel.get("rating") or sel.get("positive_percent") or (100 if grp in ("rz", "eu") else 0)),
+                        "rv": _num(x.get("comments_amount") or 0), "st": _num(x.get("comments_mark") or x.get("rating") or 0), "sold": _num(x.get("sold") or x.get("buys") or 0)})
+        _time.sleep(0.8)
+    if out and len(RZ_LOG) < 5:
+        RZ_LOG.append(f"«{q}»: пропозицій {len(out)} (Rozetka {sum(o['grp'] == 'rz' for o in out)}, EU {sum(o['grp'] == 'eu' for o in out)}, інші {sum(o['grp'] == 'other' for o in out)})")
+    return out
+
+
+def rz_top(st: dict, now: datetime) -> None:
+    """Раз на добу: топ у категоріях (ті самі категорії, що й Prom), окремо Rozetka / EU / інші; рейтинг за відгуками й оцінкою, ціна — найнижча."""
+    if not WORKER_MODE or st.get("rz_day") == now.date().isoformat() and not st.get("rz_force"):
+        return
+    res, t0 = {}, _time.time()
+    for title, q in PROM_CATS:
+        if _time.time() - t0 > 200:
+            break
+        offers = rz_offers(q, 2)
+        cl_ = []
+        for o in offers:
+            tk = _tok(o["n"])
+            c = next((c for c in cl_ if len(tk & c["tk"]) >= 0.6 * max(1, min(len(tk), len(c["tk"])))), None)
+            (c["o"].append(o) if c else cl_.append({"tk": tk, "o": [o]}))
+        tops = {"all": [], "rz": [], "eu": [], "other": []}   # окремі топи: усі / Rozetka / EU / інші продавці
+        for c in cl_:
+            good = [o for o in c["o"] if o["grp"] in ("rz", "eu") or (o["r"] or 0) >= PROM_RATING or not o["r"]]
+            if not good:
+                continue
+            pop = sum(o["rv"] for o in c["o"]) * 5 + sum(o["sold"] for o in c["o"]) + 20 * max(o["st"] for o in c["o"])
+            meta = {"pop": pop, "n_off": len(c["o"]), "pmin": min(o["p"] for o in c["o"]), "pmax": max(o["p"] for o in c["o"])}
+            tops["all"].append({**min(good, key=lambda o: o["p"]), **meta})
+            for g_ in ("rz", "eu", "other"):
+                gg = [o for o in good if o["grp"] == g_]
+                if gg:
+                    tops[g_].append({**min(gg, key=lambda o: o["p"]), **meta})
+        for g_ in tops:
+            tops[g_].sort(key=lambda x: (-x["pop"], x["p"])); tops[g_] = tops[g_][:15]
+        res[title] = tops
+    st["rz_day"], st["rz_force"] = now.date().isoformat(), False
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "rozetka.json", "json": {"at": now.strftime("%d.%m %H:%M"), "cats": res}})
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "rz_dbg.json", "json": {**RZ_DBG, "log": RZ_LOG[:6], "at": now.strftime("%d.%m %H:%M")}})
+    except Exception as e:
+        print(f"Rozetka → Cloudflare: {err_text(e)[:60]}")
+    print(f"Rozetka: категорій {len(res)}, позицій {sum(len(v['all']) for v in res.values())} · {'; '.join(RZ_LOG[:4]) or 'ок'}")
+    mark_upd(st, "🟢 Rozetka", any(v["all"] for v in res.values()))
+
+
+def rz_cart(text: str) -> str:
+    """Усе в одного продавця на Rozetka (сама Rozetka, Rozetka EU або продавець маркетплейсу)."""
+    items = [x.strip() for x in re.split(r"[,;\n]", text) if x.strip()][:6]
+    if not items:
+        return "🧺 Напишіть товари через кому."
+    by, cheapest = {}, {}
+    for it in items:
+        tk = _tok(it)
+        offs = [o for o in rz_offers(it, 1) if len(_tok(o["n"]) & tk) >= max(1, round(0.6 * len(tk)))]
+        if offs:
+            cheapest[it] = min(offs, key=lambda o: o["p"])
+        for o in offs:
+            cur = by.setdefault(o["sid"], {"s": o["s"], "grp": o["grp"], "r": o["r"], "items": {}})
+            if it not in cur["items"] or o["p"] < cur["items"][it]["p"]:
+                cur["items"][it] = o
+    full = sorted([v for v in by.values() if len(v["items"]) == len(items) and (v["grp"] in ("rz", "eu") or (v["r"] or 0) >= PROM_RATING or not v["r"])],
+                  key=lambda v: sum(o["p"] for o in v["items"].values()))
+    sep = sum(o["p"] for o in cheapest.values())
+    if not full:
+        return "🧺 <b>На Rozetka немає продавця, в якого є все.</b>" + (f"\nНайдешевше окремо: {sep:.0f} ₴" if cheapest else "") + "\n<i>Спробуйте коротші назви (бренд + модель).</i>"
+    lab = {"rz": "🟢 Rozetka", "eu": "🇪🇺 Rozetka EU", "other": "🏪 продавець"}
+    out = [f"🧺 <b>Rozetka · усе в одного продавця</b> · {len(items)} позицій\n"]
+    for i, v in enumerate(full[:3], 1):
+        out.append(f"{i}. <b>{esc(v['s'])}</b> ({lab[v['grp']]}) · <b>{sum(o['p'] for o in v['items'].values()):.0f} ₴</b>\n" +
+                   "\n".join(f"   • <a href=\"{o['u']}\">{esc(o['n'][:60])}</a> — {o['p']:.0f} ₴" for o in v["items"].values()))
+    out.append(f"\n<i>Найдешевше окремо в різних продавців — {sep:.0f} ₴.</i>")
     return "\n".join(out)
 
 
@@ -4698,10 +4863,13 @@ def recipes_refresh(st: dict, now: datetime) -> None:
             cof = {r[0]: r for r in json.loads(Path("cofid.json").read_text("utf-8")).get("items", [])}
         except Exception:
             cof = {}
+        cof_low = {k.lower(): v for k, v in cof.items()}
         meal = list(RC_MEALS)[ua_n % 4]
         raw = gemini(f"Склади 12 різних простих корисних страв української кухні для прийому їжі «{RC_MEALS[meal]}» за принципами «Здорова тарілка» МОЗ України: "
                      "більше овочів і цільних круп, нежирний білок, мало олії й цукру, до 30 хв, до 8 інгредієнтів, лише звичайні продукти, які завжди є в АТБ чи Сільпо "
                      "(жодних рідкісних спецій, соусів чи екзотики), бюджетно, без складної техніки (каструля, сковорода, духовка), 1 порція до 550 ккал. "
+                     "ЗБАЛАНСОВАНО: енергія порції приблизно білки 30% · жири 30% · вуглеводи 40%, не менше 20 г білка на порцію; частіше мʼясо, птиця, риба, яйця, кисломолочний сир, бобові; "
+                     "уникай страв, де майже все — вуглеводи. Назви en — ТОЧНО як у таблиці CoFID (наприклад «Eggs, chicken, whole, raw», «Chicken, breast, grilled», «Buckwheat, raw», «Cottage cheese, plain»). "
                      "Уникай повторів: " + ", ".join(x["t"] for x in items if x["meal"] == meal)[:1500] + ". "
                      "Для кожного інгредієнта дай відповідник із британської таблиці CoFID англійською (поле en, напр. «Buckwheat, boiled»). "
                      "JSON-масив: {\"t\": назва, \"en\": коротка назва страви англійською (для пошуку фото), \"time\": хв, \"serv\": порцій, \"ing\": [{\"name\": укр, \"g\": грами, \"en\": CoFID}], \"steps\": [3–6 коротких кроків], \"tags\": [protein, veg, quick, budget]}.",
@@ -4710,7 +4878,7 @@ def recipes_refresh(st: dict, now: datetime) -> None:
             for y in json.loads(raw or "[]"):
                 tot, ok, ib = {"kcal": 0, "p": 0, "f": 0, "c": 0}, 0, []
                 for g in y.get("ing", []):
-                    r = cof.get(g.get("en")) or next((v for k, v in cof.items() if g.get("en") and str(g["en"]).split(",")[0].lower() in k.lower()), None)
+                    r = cof_low.get(str(g.get("en") or "").strip().lower())   # лише точний збіг із таблицею CoFID (без «схожих» — звідси були помилки)
                     gg = float(g.get("g") or 0)
                     if r and r[1] is not None:
                         ok += 1
@@ -4770,7 +4938,13 @@ def recipes_refresh(st: dict, now: datetime) -> None:
             x["img"], x["img_by"], x["img_lic"] = im["url"], im.get("by", ""), im.get("lic", "")
         else:
             x["noimg"] = 1                            # не знайшли відповідного — без фото (краще, ніж чуже)
+    def _pw(x):
+        try:
+            return float(x.get("pw") or 0) or (sum(float(r[1] or 0) for r in x.get("ib") or []) / max(1, float(x.get("serv") or 1)) if str(x.get("id", "")).startswith("u") else 0)
+        except Exception:
+            return 0
     bad_ = [x for x in items if not (40 <= float(x.get("kcal") or 0) <= 900) or
+            (_pw(x) > 0 and (float(x.get("p") or 0) + float(x.get("f") or 0) + float(x.get("c") or 0) > 0.6 * _pw(x) or float(x.get("c") or 0) > 0.6 * _pw(x))) or
             abs(float(x.get("p") or 0) * 4 + float(x.get("f") or 0) * 9 + float(x.get("c") or 0) * 4 - float(x.get("kcal") or 0)) > max(150, float(x.get("kcal") or 0) * 0.45)]
     if bad_:                                          # прибираємо страви з неправдоподібним КБЖВ (наприклад, ккал на все блюдо замість порції)
         print(f"ПП-страви: прибрано з неправдоподібним КБЖВ — {len(bad_)}: {[x.get('t') for x in bad_][:5]}")
@@ -5093,7 +5267,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
         return None
     for c in cats:
         try:
-            prods = silpo_products(br[0], DT_, c.get("slug"), promo=True, limit=100, max_pages=3)   # 🚚 доставка або 🏪 самовивіз — як обрано
+            prods = silpo_products(br[0], DT_, c.get("slug"), promo=True, limit=100, max_pages=6)   # до 600 акційних у категорії (великі — «Кава, чай», «Бакалія»)
         except Exception as e:
             print(f"Сільпо, {c.get('title')}: {err_text(e)}")
             continue
@@ -5104,7 +5278,9 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
         cand = []
         for idx, p_ in enumerate(prods):
             why_ = silpo_excluded(p_)
+            nm_ = str(p_.get("title") or "")[:90]
             if why_:
+                SILPO_WHY[nm_] = f"виключено: {why_}"
                 VERIFY_DROP[0] += 1
                 if VERIFY_DROP[0] <= 3:
                     print(f"Сільпо виключено ({why_}): {str(p_.get('title'))[:50]}")
@@ -5116,6 +5292,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
                 continue
             pk = promo_kind(p_)                       # пряма знижка, 🌐 онлайн, 🎁 2+1, 📦 гуртом
             if not pk:
+                SILPO_WHY[nm_] = "немає зрозумілої знижки (ціна без «старої», тип акції не розпізнано)"
                 continue
             if alt is not None and pk[0] in ("direct", "online", "card"):
                 a_ = alt.get(str(p_.get("id")))
@@ -5129,9 +5306,11 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
                 past = [hist[w].get(str(p_.get("id"))) for w in weeks]
                 past = [x for x in past if x]
                 real = (min(past) - price) / min(past) * 100 if past else None
-                if real is not None and real < 3:
-                    continue                          # «акція», яка насправді не дешевша — пропускаємо
+                if real is not None and real < 3 and declared < 20:
+                    SILPO_WHY[nm_] = f"за історією цін не дешевше, ніж раніше (заявлено −{declared:.0f}%)"
+                    continue                          # «акція», яка насправді не дешевша — пропускаємо (знижки від 20% — завжди беремо)
                 if real is not None and real > declared + 3:
+                    SILPO_WHY[nm_] = "суперечливі дані (реальна вигода більша за заявлену)"
                     VERIFY_DROP[0] += 1
                     continue                          # «реальна» вигода більша за заявлену — дані суперечливі, не показуємо
             rating = p_.get("guestProductRating")
@@ -5140,14 +5319,17 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
                 seen_ = conf.get(ck)
                 conf[ck] = seen_ if seen_ and abs(seen_[1] - declared) < 6 else [now.date().isoformat(), declared]
                 if conf[ck][0] >= now.date().isoformat():
+                    SILPO_WHY[nm_] = f"знижка −{declared:.0f}% ≥50% — чекаємо підтвердження 2 дні поспіль"
                     continue
             weight = {"direct": 1.0, "online": 0.8, "card": 0.85, "multi": 0.8, "gurt": 0.8}[kind]   # треба більше купити / картка / лише онлайн — нижче
-            score = (real if real is not None else declared) * weight + ((float(rating) - 4) * 5 if rating else 0) + max(0, 30 - idx) / 6
+            score = (real if real is not None else declared) * weight + ((float(rating) - 4) * 5 if rating else 0) + max(0, 30 - idx) / 6 + (8 if declared >= 20 else 0)   # від 20% — вище
             is_week = "ціна тижня" in promos.lower() or any(x.get("id") == "cinotyzhyky" for x in (p_.get("promotions") or []) if isinstance(x, dict))
             cand.append((score, p_, price, old, declared, real, rating, is_week, badge, kind))
             ALL_PROMOS.append([str(p_.get("id")), str(p_.get("title") or ""), brand_of(p_), str(c.get("title") or ""),
                                price, old, round(declared), badge, str(p_.get("slug") or "")])
         cand.sort(key=lambda x: x[0], reverse=True)
+        for r_, x_ in enumerate(cand, 1):                # 🧪 «чому немає товару» — місце в категорії
+            SILPO_WHY[str(x_[1].get("title") or "")[:90]] = f"у підбірці: «{c.get('title')}», місце {r_} з {len(cand)}" + (" (видно в топ-5 і «ще 5»)" if r_ <= 15 else " (далі за «ще 5» — у підкатегорії)")
         if not cand:
             continue
         title = str(c.get("title") or c.get("name") or "")
@@ -5197,6 +5379,11 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
                else "<i>Реальна вигода з'явиться з наступного тижня (бот ще збирає історію цін)</i>"))
     old = st.get("silpo_more") or {}                  # кнопки «➕ ще 5» різних магазинів не змішуємо
     st["silpo_more"] = {**{k: v for k, v in old.items() if (k[:len(tag)] != tag if tag else not k[:1].isdigit())}, **more}
+    if not tag and SILPO_WHY and WORKER_MODE:         # 🧪 «чому немає товару» — для основної збірки
+        try:
+            http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "silpo_why.json", "json": {"at": now.strftime("%d.%m %H:%M"), "w": dict(list(SILPO_WHY.items())[:5000])}})
+        except Exception:
+            pass
     try:                                              # файл акцій магазину — для «⭐ Обране» (Worker читає його)
         Path("silpo").mkdir(exist_ok=True)
         cats_ = sorted({x[3] for x in ALL_PROMOS if x[3]})
@@ -6326,6 +6513,12 @@ def main() -> None:
         kq = build_kino(st)                            # готова підбірка «про запас» — меню віддає миттєво
         if kq:
             st["kino_q"].append({"id": hashlib.md5(kq[0].encode()).hexdigest()[:10], "text": kq[0], "markup": kq[1]})
+    for c in dict.fromkeys(str(x) for x in (worker_req.get("rz_cart") or [])):     # 🟢 Rozetka: «усе в одного продавця»
+        q_ = ((ex_promq or {}).get("rz:" + c) or "").strip()
+        try:
+            direct_m.append((c, rz_cart(q_) if q_ else "🧺 Не бачу списку товарів — спробуйте ще раз.", None))
+        except Exception as e:
+            direct_m.append((c, f"🧺 Не вдалося перевірити Rozetka зараз ({err_text(e)[:40]}).", None))
     for c in dict.fromkeys(str(x) for x in (worker_req.get("prom_cart") or [])):   # 🛍 Prom: «усе в одного продавця»
         q_ = ((ex_promq or {}).get(c) or "").strip()
         try:
@@ -6382,7 +6575,7 @@ def main() -> None:
              ("ранковий імпульс", lambda: impulse_refresh(st, now)), ("музика", lambda: music_refresh(st, now)),
              ("здоров'я", lambda: (health_refresh(st, now), kb_probe(st, now), cofid_import(st, now), cofid_translate(st, now))),
              ("ігри PS5", lambda: (games_refresh(st, now), ps_deals_refresh(st, now))), ("аудіокниги", lambda: audiobooks_refresh(st, now)),
-             ("кіномэтч", lambda: match_refresh(st, now)), ("пп-страви", lambda: recipes_refresh(st, now)), ("фантазія тижня", lambda: fantasy_refresh(st, now)), ("prom.ua", lambda: prom_top(st, now))]
+             ("кіномэтч", lambda: match_refresh(st, now)), ("пп-страви", lambda: recipes_refresh(st, now)), ("фантазія тижня", lambda: fantasy_refresh(st, now)), ("prom.ua", lambda: prom_top(st, now)), ("rozetka", lambda: rz_top(st, now))]
     slot = (now.hour * 12 + now.minute // 5) % len(heavy)
     rc_turn = st.get("rc_need", True) and (now.minute // 5) % 2 == 0   # через запуск, щоб інші задачі не чекали
     forced = (st.get("force_heavy") or []) + (["пп-страви"] if rc_turn and "пп-страви" not in (st.get("force_heavy") or []) else [])
@@ -6445,8 +6638,8 @@ def main() -> None:
             MUSIC_FILE.write_text(json.dumps(mdb_, ensure_ascii=False, separators=(",", ":")), "utf-8")
         except Exception:
             pass
-        st["force_heavy"] = ["кіно, пули", "музика", "здоров'я", "ігри PS5", "аудіокниги", "пп-страви", "кіномэтч", "prom.ua"]
-        st["prom_force"] = True
+        st["force_heavy"] = ["кіно, пули", "музика", "здоров'я", "ігри PS5", "аудіокниги", "пп-страви", "кіномэтч", "prom.ua", "rozetka"]
+        st["prom_force"] = st["rz_force"] = True
         st["match_month"] = ""; st["ps_day"] = ""                # 🍿💞 пул Кіномэтчу й 🔥 знижки PS — теж свіжі
         st["games_force"] = st["ab_force"] = st["rc_force"] = True     # 🥗 ПП-страви — позапланове поповнення
         st["cofid"] = ""; st.pop("kb_probe2", None)      # 🥗 КБЖВ: переімпорт CoFID і перевірка Сільпо
