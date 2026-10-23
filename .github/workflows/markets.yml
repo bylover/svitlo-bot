@@ -3,15 +3,24 @@ on:
   schedule:
     - cron: "15 5 * * *"
   workflow_dispatch:
+    inputs:
+      q:
+        description: "Hotline: список товарів (усе в одного магазину)"
+        required: false
+        default: ""
+      chat:
+        description: "кому відповісти"
+        required: false
+        default: ""
 permissions:
   contents: read
 concurrency:
-  group: markets
+  group: markets-${{ github.event.inputs.chat || 'top' }}
   cancel-in-progress: false
 jobs:
-  rozetka:
+  hotline:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
@@ -21,7 +30,7 @@ jobs:
         run: |
           pip install -q playwright
           python -m playwright install chromium || true
-      - name: Rozetka (browser)
+      - name: Hotline (browser)
         run: python3 rz_browser.py
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
@@ -29,3 +38,5 @@ jobs:
           GROUP: ${{ secrets.GROUP }}
           SYNC_URL: ${{ secrets.SYNC_URL }}
           SYNC_KEY: ${{ secrets.SYNC_KEY }}
+          HL_Q: ${{ github.event.inputs.q }}
+          HL_CHAT: ${{ github.event.inputs.chat }}
