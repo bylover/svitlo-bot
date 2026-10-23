@@ -93,16 +93,6 @@
   "https://toybenchreviews.medium.com/how-to-tell-if-a-sex-toy-review-is-actually-helpful-dbcbb447d3a9?source=rss------sex_toys-5"
  ],
  "kino_seen": [
-  "t108255",
-  "t200709",
-  "t1620",
-  "m698948",
-  "m626872",
-  "m1325734",
-  "m1564614",
-  "m438631",
-  "m580489",
-  "m20766",
   "t250307",
   "t79501",
   "t4046",
@@ -692,9 +682,19 @@
   "m1429",
   "t71694",
   "t106379",
-  "t46648"
+  "t46648",
+  "m1393326",
+  "m619730",
+  "m872585",
+  "m335984",
+  "m1377237",
+  "m259693",
+  "m2757",
+  "t70128",
+  "t96677",
+  "t3764"
  ],
- "gh_beat": "2026-10-23T15:20:47.441294+03:00",
+ "gh_beat": "2026-10-23T15:25:45.365367+03:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -705,11 +705,11 @@
   "groups": [
    "GPV4.1"
   ],
-  "updated": "15:05 23.10.2026",
+  "updated": "15:19 23.10.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "За наказом НЕК Укренерго введені екстрені відключення електроенергії. Повідомити про аварійні ситуації",
-  "checked": "2026-10-23T15:12:51.495601+03:00",
+  "checked": "2026-10-23T15:22:55.692690+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -21830,10 +21830,40 @@
    92,
    81,
    "2026-10-23"
+  ],
+  "tt15398776": [
+   8.2,
+   93,
+   90,
+   "2026-10-23"
+  ],
+  "tt5463162": [
+   7.6,
+   83,
+   66,
+   "2026-10-23"
+  ],
+  "tt0265086": [
+   7.7,
+   77,
+   74,
+   "2026-10-23"
+  ],
+  "tt4955642": [
+   8.2,
+   null,
+   null,
+   "2026-10-23"
+  ],
+  "tt1124373": [
+   8.5,
+   null,
+   null,
+   "2026-10-23"
   ]
  },
  "pushed_h": {
-  "gs": "ee76de5bf42f",
+  "gs": "1a1a3fa76642",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "3c183165e024",
   "sexed.json": "4efede1d8ea5",
@@ -21918,7 +21948,6 @@
   "sx/tech_shallowing.png": "0f0dd9f56c27"
  },
  "force_heavy": [
-  "ігри PS5",
   "аудіокниги",
   "пп-страви",
   "кіномэтч",
@@ -31209,6 +31238,12 @@
    {
     "id": "6a795c0fc7",
     "text": "🍿 <b>ПІДБІРКА КІНО · СЕРІАЛИ · НЕДООЦІНЕНІ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/1607127?language=uk\">One Last Shot</a></b> (2026) · ❤️ за вашим смаком\nбойовик, трилер · ⏱ 1 год 38 хв\n⭐ TMDB <b>7.4</b>\n<i>🎭 Скотт Едкінс, Стівен Крі, Ганна Вейр</i>\n📝 Navy Seal Jake Harris must stop a team of mercenaries, led by his disillusioned former comrade, from disabling the US missile defense network.\n▶️ <a href=\"https://youtu.be/8PAy3i9uU0A\">Трейлер</a></blockquote>\n§KN:m1607127\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/1368166?language=uk\">Служниця</a></b> (2025) · ❤️ за вашим смаком\nдетектив, трилер · ⏱ 2 год 11 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>74%</b> · Ⓜ <b>65</b>\n<i>🎭 Сідні Свіні, Аманда Сайфред, Брендон Скленар</i>\n📝 Міллі - молода дівчина з похмурим минулим, отримує місце служниці з проживанням у розкішному маєтку родини Вінчестерів, які наче зійшли зі сторінок модного журналу. Ідеальна дружина Ніна, її привабливий…\n▶️ <a href=\"https://youtu.be/Vcdc-DspVzs\">Трейлер</a></blockquote>\n§KN:m1368166\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/398978?language=uk\">Ірландець</a></b> (2019)\nкримінал, драма, історичний · ⏱ 3 год 29 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>95%</b> · Ⓜ <b>94</b>\n<i>🎭 Роберт Де Ніро, Аль Пачіно, Джо Пеші</i>\n📺 <a href=\"https://www.themoviedb.org/movie/398978-the-irishman/watch?locale=UA\">Netflix</a>\n📝 Історія про Френка Ширена на прізвисько Ірландець, якому приписують вбивство 25 гангстерів, включаючи самого Джиммі Гоффу.\n▶️ <a href=\"https://youtu.be/RS3aHkkfuEI\">Трейлер</a></blockquote>\n§KN:m398978\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/530915?language=uk\">1917</a></b> (2019)\nвійськовий, драма, історичний · ⏱ 1 год 59 хв\n⭐ IMDb <b>8.2</b> · 🍅 <b>88%</b> · Ⓜ <b>78</b>\n<i>🎭 Джордж МакКей, Дін-Чарльз Чепмен, Марк Стронґ</i>\n📺 <a href=\"https://www.themoviedb.org/movie/530915-1917/watch?locale=UA\">Apple TV Store</a>\n📝 Двоє молодих солдатів отримують наказ доставити важливе повідомлення в глибокий тил ворога. Часу критично мало, а якщо операція провалиться, то загине понад тисячу бійців, серед яких рідний брат одного з героїв.…\n▶️ <a href=\"https://youtu.be/OXuyIM-opQU\">Трейлер</a></blockquote>\n§KN:m530915\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/466272?language=uk\">Одного разу в… Голлівуді</a></b> (2019)\nкомедія, драма, трилер · ⏱ 2 год 42 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>86%</b> · Ⓜ <b>84</b>\n<i>🎭 Леонардо Ді Капріо, Бред Пітт, Марґо Роббі</i>\n📺 <a href=\"https://www.themoviedb.org/movie/466272-once-upon-a-time-in-hollywood/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Лос-Анджелес, 1969 рік. Телезірка Рік Далтон, актор-початківець, що спеціалізується на вестернах, та каскадер Кліфф Бут, його найкращий друг, намагаються вижити в постійно мінливій кіноіндустрії. Далтон — сусід…\n▶️ <a href=\"https://youtu.be/ycpcUp1OIdg\">Трейлер</a></blockquote>\n§KN:m466272\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/359724?language=uk\">Аутсайдери</a></b> (2019)\nдрама, історичний, бойовик · ⏱ 2 год 33 хв\n⭐ IMDb <b>8.1</b> · 🍅 <b>92%</b> · Ⓜ <b>81</b>\n<i>🎭 Метт Деймон, Крістіан Бейл, Джон Бернтал</i>\n📺 <a href=\"https://www.themoviedb.org/movie/359724-ford-v-ferrari/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Сюжет оповідає про групу американських інженерів і дизайнерів. У 1960-х під керівництвом конструктора Керролла Шелбі і за підтримки британського гонщика Кена Майлса вони повинні були з нуля зробити абсолютно новий…\n▶️ <a href=\"https://youtu.be/-KD0Bi23ezs\">Трейлер</a></blockquote>\n§KN:m359724\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/1429?language=uk\">25-та година</a></b> (2002)\nкримінал, драма · ⏱ 2 год 15 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>79%</b> · Ⓜ <b>69</b>\n<i>🎭 Едвард Нортон, Філіп Сеймур Гоффман, Баррі Пеппер</i>\n📝 Монті Броган свого часу мріяв стати пожежником, але згодом ступив на слизький шлях наркодилера. У фільмі описується останній день його вільного життя після засудження на сім років в'язниці за торгівлю наркотиками.…\n▶️ <a href=\"https://youtu.be/5TBu6e1IC_0\">Трейлер</a></blockquote>\n§KN:m1429\n§§\n<blockquote>📺 <b>8. <a href=\"https://www.themoviedb.org/tv/71694?language=uk\">Снігопад</a></b> (2017)\nдрама, кримінал · 📺 серіал · 6 сез.\n⭐ IMDb <b>8.5</b>\n<i>🎭 Дамсон Ідріс, Carter Hudson, Sergio Peris-Mencheta</i>\n📝 Серіал про початок кокаїнової епідемії в Лос-Анджелесі початку 1980-х, коли на вулицях Америки з'явився дешевий крек з Домінікани, і країну захлеснуло неконтрольоване зростання злочинності. Події побачені очима трьох…\n▶️ <a href=\"https://youtu.be/hoJzibuefgU\">Трейлер</a></blockquote>\n§KN:t71694\n§§\n<blockquote>📺 <b>9. <a href=\"https://www.themoviedb.org/tv/106379?language=uk\">Фолаут</a></b> (2024)\nекшн і пригоди, науково фантастичний, драма · 📺 серіал · 2 сез.\n⭐ IMDb <b>8.3</b>\n<i>🎭 Елла Пернелл, Аарон Мотен, Мозес Аріас</i>\n📝 У постапокаліптичному Лос-Анджелесі громадяни змушені жити в підземних бункерах, щоб захистити себе від радіації, мутантів і бандитів, які заполонили світ після ядерної катастрофи.\n▶️ <a href=\"https://youtu.be/57_atR7oLh4\">Трейлер</a></blockquote>\n§KN:t106379\n§§\n<blockquote>📺 <b>10. <a href=\"https://www.themoviedb.org/tv/46648?language=uk\">Справжній детектив</a></b> (2014)\nдрама, детектив · 📺 серіал · 5 сез.\n⭐ IMDb <b>8.8</b>\n<i>🎭 Джоді Фостер, Калі Реїс, Фіона Шоу</i>\n📺 <a href=\"https://www.themoviedb.org/tv/46648-true-detective/watch?locale=UA\">HBO Max</a>\n📝 Американський детективний серіал з паралельними оповідями, в яких розслідування викриває особисті та професійні секрети всіх причетних - як в межах, так і поза законом.\n▶️ <a href=\"https://youtu.be/RmqIkN9OeKI\">Трейлер</a></blockquote>\n§KN:t46648"
+   }
+  ],
+  "ser_hot": [
+   {
+    "id": "f647b181f7",
+    "text": "🍿 <b>ПІДБІРКА КІНО · СЕРІАЛИ · ВИСТРІЛИЛИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/1393326?language=uk\">Ghost in the Cell</a></b> (2026) · ❤️ за вашим смаком\nжахи, комедія, трилер · ⏱ 1 год 46 хв\n⭐ TMDB <b>6.9</b> · 🍅 <b>100%</b>\n<i>🎭 Abimana Aryasatya, Bront Palarae, Dimas Danang</i>\n📝 In a notorious prison, an invisible force begins killing inmates brutally, compelling enemy gangs and corrupt guards to work together as they try to survive the mounting bloodshed.\n▶️ <a href=\"https://youtu.be/otL78_pk_A0\">Трейлер</a></blockquote>\n§KN:m1393326\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/619730?language=uk\">Не хвилюйся, серденько</a></b> (2022) · ❤️ за вашим смаком\nдетектив, фантастика, жахи · ⏱ 2 год 03 хв\n⭐ IMDb <b>6.3</b> · 🍅 <b>38%</b> · Ⓜ <b>48</b>\n<i>🎭 Флоренс Пʼю, Гаррі Стайлз, Кріс Пайн</i>\n📺 <a href=\"https://www.themoviedb.org/movie/619730-don-t-worry-darling/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Домогосподарка 1950-х років, яка живе зі своїм чоловіком в утопічній експериментальній спільноті, починає переживати, що його гламурна компанія, можливо, приховує тривожні таємниці.\n▶️ <a href=\"https://youtu.be/bW9aRVXIwaY\">Трейлер</a></blockquote>\n§KN:m619730\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/872585?language=uk\">Оппенгеймер</a></b> (2023)\nдрама, історичний, військовий · ⏱ 3 год 01 хв\n⭐ IMDb <b>8.2</b> · 🍅 <b>93%</b> · Ⓜ <b>90</b>\n<i>🎭 Кілліан Мерфі, Емілі Блант, Метт Деймон</i>\n📺 <a href=\"https://www.themoviedb.org/movie/872585-oppenheimer/watch?locale=UA\">Rakuten TV</a>\n📝 Історія створення атомної бомби Дж. Робертом Оппенгеймером під час Другої світової війни.\n▶️ <a href=\"https://youtu.be/eZYD5NRum4A\">Трейлер</a></blockquote>\n§KN:m872585\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/335984?language=uk\">Той, хто біжить по лезу 2049</a></b> (2017)\nфантастика, драма · ⏱ 2 год 44 хв\n⭐ IMDb <b>8.0</b> · 🍅 <b>88%</b> · Ⓜ <b>81</b>\n<i>🎭 Раян Ґослінґ, Гаррісон Форд, Ана де Армас</i>\n📺 <a href=\"https://www.themoviedb.org/movie/335984-blade-runner-2049/watch?locale=UA\">Netflix, Apple TV Store</a>\n📝 Офіцер поліції Лос-Анджелеса на імя Кей розслідує давно забуту таємницю, здатну занурити в хаос залишки суспільства. Це відкриття змушує його відшукати зниклого 30 років тому Ріка Декарда - колишнього службовця…\n▶️ <a href=\"https://youtu.be/86DAw64-0uw\">Трейлер</a></blockquote>\n§KN:m335984\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/1377237?language=uk\">Перевізник</a></b> (2026)\nбойовик, комедія · ⏱ 1 год 37 хв\n⭐ IMDb <b>6.6</b> · Ⓜ <b>55</b>\n<i>🎭 Алан Річсон, Овен Вілсон, Родріґо Санторо</i>\n📝 У Хенка Мелоуна, елітного кур’єра, є три години, щоб доставити печінку й урятувати семирічну дівчинку, якій потрібна термінова трансплантація. Проста задача перетворюється на смертельне випробування, коли глава…\n▶️ <a href=\"https://youtu.be/KEUyoXigWow\">Трейлер</a></blockquote>\n§KN:m1377237\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/259693?language=uk\">Закляття 2: Енфілдська справа</a></b> (2016)\nжахи · ⏱ 2 год 13 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>80%</b> · Ⓜ <b>65</b>\n<i>🎭 Віра Фарміґа, Патрік Вілсон, Медісон Вулф</i>\n📺 <a href=\"https://www.themoviedb.org/movie/259693-the-conjuring-2/watch?locale=UA\">HBO Max, Apple TV Store, Rakuten TV</a>\n📝 «Закляття 2: Енфілдська справа» - продовження відомого фільму жахів. Цього разу Воррени, подружжя-екстрасенси, потрапляють в місто Енфілд, де на них чекає могутній демон. Скептично налаштовані городяни не вірять у…\n▶️ <a href=\"https://youtu.be/E14daIZRjmk\">Трейлер</a></blockquote>\n§KN:m259693\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/2757?language=uk\">Адаптація.</a></b> (2002)\nкомедія, кримінал, драма · ⏱ 1 год 55 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>90%</b> · Ⓜ <b>83</b>\n<i>🎭 Ніколас Кейдж, Меріл Стріп, Кріс Купер</i>\n📝 Після прочитання книги знаменитої письменниці Сьюзан Орлінз «Викрадач орхідей», що оповідає про садівника – любителя, що займається клонуванням рідкісних порід орхідей, відомий сценарист Чарлі Кауфман вирішує…\n▶️ <a href=\"https://youtu.be/pK5jYt9QNIY\">Трейлер</a></blockquote>\n§KN:m2757\n§§\n<blockquote>📺 <b>8. <a href=\"https://www.themoviedb.org/tv/70128?language=uk\">Геній</a></b> (2017)\nдрама · 📺 серіал · 4 сез.\n⭐ IMDb <b>8.2</b>\n<i>🎭 Аарон П'єр, Kelvin Harrison Jr., Джеймі Ловсон</i>\n📝 Геній - серіал про наповнене бурхливими подіями життя фізика, який стане справжньою іконою свого часу, - Альберта Ейнштейна. Абсолютно незалежний, геніальний від народження, з розумом, що все піддає сумніву, Ейнштейн…\n▶️ <a href=\"https://youtu.be/SICLBlHizUY\">Трейлер</a></blockquote>\n§KN:t70128\n§§\n<blockquote>📺 <b>9. <a href=\"https://www.themoviedb.org/tv/96677?language=uk\">Люпен</a></b> (2021)\nкримінал, драма, детектив · 📺 серіал · 3 сез.\n⭐ IMDb <b>7.5</b>\n<i>🎭 Омар Сі</i>\n📺 <a href=\"https://www.themoviedb.org/tv/96677-lupin/watch?locale=UA\">Netflix</a>\n📝 Натхненний пригодами Арсена Люпена, благородний грабіжник Ассан Діоп вирішує помститися за свого батька, життя якого безкарно зруйнувала одна заможна родина.\n▶️ <a href=\"https://youtu.be/n7CAJtqv_oI\">Трейлер</a></blockquote>\n§KN:t96677\n§§\n<blockquote>📺 <b>10. <a href=\"https://www.themoviedb.org/tv/3764?language=uk\">Hustle</a></b> (2004)\nкомедія, кримінал, драма · 📺 серіал · 8 сез.\n⭐ IMDb <b>8.2</b>\n<i>🎭 Адріан Лестер, Robert Glenister, Matt Di Angelo</i>\n📝 A motley group of London con artists pull of a series of daring and intricate stings.\n▶️ <a href=\"https://youtu.be/hCw2Hmv2FFI\">Трейлер</a></blockquote>\n§KN:t3764"
    }
   ]
  },
