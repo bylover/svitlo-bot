@@ -4692,8 +4692,8 @@ def _tok(s: str) -> set:
 
 def prom_top(st: dict, now: datetime) -> None:
     """Раз на добу: у кожній категорії групуємо однакові товари різних продавців, беремо найпопулярніші й найдешевшу пропозицію від продавця з рейтингом ≥95%."""
-    if not WORKER_MODE or st.get("prom_day") == now.date().isoformat() and not st.get("prom_force"):
-        return
+    if not WORKER_MODE or st.get("prom_day") == now.date().isoformat() and not st.get("prom_force") and st.get("prom_v") == 4:
+        return                                        # нова версія розбору — збираємо одразу, не чекаючи завтра
     res, t0 = {}, _time.time()
     for title, q in PROM_CATS:
         if _time.time() - t0 > 200:
@@ -4715,7 +4715,7 @@ def prom_top(st: dict, now: datetime) -> None:
             top.append({**best, "pop": pop, "stars": stars, "n_off": len(c["o"]), "pmin": min(o["p"] for o in c["o"]), "pmax": max(o["p"] for o in c["o"])})
         top.sort(key=lambda x: (-(x["pop"] + 20 * (x["stars"] or 0)), x["p"]))
         res[title] = top[:15]
-    st["prom_day"], st["prom_force"] = now.date().isoformat(), False
+    st["prom_day"], st["prom_force"], st["prom_v"] = now.date().isoformat(), False, 4
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "prom.json", "json": {"at": now.strftime("%d.%m %H:%M"), "cats": res}})
     except Exception as e:

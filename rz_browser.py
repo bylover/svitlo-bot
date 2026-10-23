@@ -60,9 +60,22 @@ def launch(pw):
         return pw.chromium.launch(headless=True, args=["--disable-blink-features=AutomationControlled"])
 
 
+CAUGHT: list = []                                       # JSON-відповіді, які отримав сам браузер (пошук і картки товарів)
+
+
+def on_response(resp):
+    try:
+        u = resp.url
+        if resp.request.resource_type in ("xhr", "fetch") and re.search(r"search\.rozetka|xl-catalog-api|goods/get|catalog-api|search/api", u):
+            CAUGHT.append({"u": u[:160], "j": resp.json()})
+    except Exception:
+        pass
+
+
 def search(page, q: str) -> list:
     url = "https://rozetka.com.ua/ua/search/?" + urllib.parse.urlencode({"text": q})
     rec = {"q": q}
+    CAUGHT.clear()
     try:
         page.goto(url, wait_until="domcontentloaded", timeout=45000)
         for _ in range(12):                                # «Трохи зачекайте…» — перевірка захисту, чекаємо до ~30 с
@@ -81,6 +94,22 @@ def search(page, q: str) -> list:
             rec["tile0"] = tiles[0]
         st = re.search(r'<script[^>]+id="rz-client-state"[^>]*>(.*?)</script>', html, re.S)
         rec["state"] = len(st.group(1)) if st else 0
+        page.wait_for_timeout(3000)
+        rec["xhr"] = [c["u"] for c in CAUGHT][:4]
+        if not tiles:                                      # товари з відповідей, які браузер отримав сам
+            goods = []
+            for c in CAUGHT:
+                goods += state_goods(c["j"])
+            rec["xhr_goods"] = len(goods)
+            if goods and "good0" not in rec:
+                rec["good0"] = {k: goods[0].get(k) for k in list(goods[0])[:25]}
+            for g in goods:
+                sel = g.get("seller") or {}
+                tiles.append({"title": str(g.get("title") or ""), "price": str(g.get("price") or g.get("price_pcs") or ""),
+                              "avail": "" if str(g.get("sell_status") or "available") in ("available", "limited") else "немає",
+                              "rev": str(g.get("comments_amount") or ""), "st": str(g.get("comments_mark") or ""),
+                              "seller": str((sel.get("title") if isinstance(sel, dict) else "") or ("Rozetka" if str(g.get("seller_id")) == "5" else "")),
+                              "href": g.get("href") or f"https://rozetka.com.ua/ua/{g.get('id')}/p{g.get('id')}/"})
         if st and not tiles:                               # товари з даних сторінки
             try:
                 raw = st.group(1).replace("&q;", '"').replace("&a;", "&").replace("&s;", "'").replace("&l;", "<").replace("&g;", ">")
@@ -121,6 +150,16 @@ def main() -> None:
         ctx = br.new_context(locale="uk-UA", viewport={"width": 1366, "height": 900},
                              user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140 Safari/537.36")
         page = ctx.new_page()
+        page.on("response", on_response)
+        try:                                               # спершу головна — пройти перевірку «Трохи зачекайте…» й отримати cookies
+            page.goto("https://rozetka.com.ua/ua/", wait_until="domcontentloaded", timeout=45000)
+            for _ in range(15):
+                page.wait_for_timeout(2500)
+                if not re.search(r"зачекайте|just a moment|подождите", page.title() or "", re.I):
+                    break
+            DBG["home"] = page.title()[:60]
+        except Exception as e:
+            DBG["home"] = "помилка: " + err_text(e)[:60]
         t0 = time.time()
         for title, q in PROM_CATS:
             if time.time() - t0 > 420:
@@ -153,7 +192,7 @@ def main() -> None:
         if n:
             http_json(f"{check.SYNC_URL}/filepush?key={key}", {"name": "rozetka.json", "json": {"at": now.strftime("%d.%m %H:%M"), "cats": res}})
         http_json(f"{check.SYNC_URL}/filepush?key={key}", {"name": "rz_dbg.json", "json": {"at": now.strftime("%d.%m %H:%M"), "q": "браузер", "mode": "browser",
-                  "log": [json.dumps(t, ensure_ascii=False)[:300] for t in DBG["tries"]], "card": json.dumps((DBG["tries"] or [{}])[0].get("tile0"), ensure_ascii=False)}})
+                  "log": [f"головна: {DBG.get('home')}"] + [json.dumps(t, ensure_ascii=False)[:400] for t in DBG["tries"]], "card": json.dumps((DBG["tries"] or [{}])[0].get("tile0"), ensure_ascii=False)}})
     except Exception as e:
         print(f"Rozetka → Cloudflare: {err_text(e)[:60]}")
 
