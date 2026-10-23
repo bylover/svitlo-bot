@@ -5684,6 +5684,9 @@ def weather_text(w: dict, day, title: str) -> str:
     return "\n".join(lines)
 
 
+WX3_KB = {"inline_keyboard": [[{"text": "📅 Прогноз на 3 дні", "callback_data": "wx:3"}]]}
+
+
 def weather_for(now: datetime, lat: float = LAT, lon: float = LON, place: str | None = None) -> str | None:
     """До 18:00 — на сьогодні, після — на завтра. place — район підписника."""
     try:
@@ -6344,7 +6347,7 @@ def main() -> None:
                                         today_d, tomorrow_d, all_off, now), True, None))
         elif cmd in ("/pogoda", "/погода"):
             direct.append((cid, weather_for(now) or "Не вдалося отримати прогноз, спробуйте пізніше.",
-                           False, None))
+                           False, WX3_KB))
         elif cmd in ("/kino", "/кіно"):
             kino_req.append(cid)
         elif cmd in ("/youtube", "/ютуб"):
@@ -6551,7 +6554,7 @@ def main() -> None:
                 else:
                     nm, la, lo = DISTRICTS.get(key_[0], {}).get(key_[1], (PLACE, LAT, LON))
                     txt = weather_for(now, la, lo, nm) or wt
-                direct += [(c, txt, False, None) for c in cids]
+                direct += [(c, txt, False, WX3_KB) for c in cids]   # кнопка «📅 На 3 дні»
     st["we_sent"] = {k: v for k, v in ws.items() if v == today_key}
 
     # 6) кіно — п'ятниця 10:00; 7) YouTube — понеділок 10:00 (лише вам і дружині)
