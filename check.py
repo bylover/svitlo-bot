@@ -4715,7 +4715,9 @@ def prom_offers(q: str, pages: int = 2) -> list:
                 why_["без ціни/назви/продавця"] += 1
                 continue
             url = v.get("urlForProductCatalog") or v.get("url") or href_by_id.get(str(v.get("id"))) or (f"/ua/p{v.get('id')}-{v.get('urlText')}.html" if v.get("urlText") else f"/ua/p{v.get('id')}.html")   # точне посилання зі сторінки
-            out.append({"n": str(name)[:140], "p": price, "u": ("https://prom.ua" + url) if url.startswith("/") else url,
+            slug_ = comp.get("slug")
+            seller_u = f"https://{slug_}.prom.ua{url}" if slug_ and url.startswith("/") else ""   # сторінка товару саме в цього продавця (prom.ua/p… веде на спільну модель)
+            out.append({"n": str(name)[:140], "p": price, "u": seller_u or (("https://prom.ua" + url) if url.startswith("/") else url),
                         "s": str(comp.get("name") or "")[:60], "sid": str(comp.get("id") or ""),
                         "r": find(comp, r"positive.*percent|opinionPositivePercent|rating") or 0,
                         "rv": find(v, r"opinion.*(count|total)|reviews?Count|feedbacks?Count") or 0, "st": find(v, r"^rating$|averageRating|productRating") or 0,
@@ -4744,7 +4746,7 @@ def prom_top(st: dict, now: datetime) -> None:
             break
         if PROM_429["hit"]:
             break                                     # Prom обмежив запити — далі не ліземо
-        offers = prom_offers(q, 1)
+        offers = prom_offers(q, 2)
         clusters = []                                 # однакові позиції: ≥60% спільних слів назви
         for o in offers:
             tk = _tok(o["n"])
@@ -4766,7 +4768,7 @@ def prom_top(st: dict, now: datetime) -> None:
             if len(top) >= 5:
                 break
         top.sort(key=lambda x: (x.get("r90", False), -(x["pop"] + 20 * (x["stars"] or 0)), x["p"]))   # спершу продавці ≥95%
-        res[title] = top[:15]
+        res[title] = top[:40]   # 40 — для «🏷 Топ брендів»; у списку показуємо 15
     if PROM_429["hit"] and not any(res.values()):    # обмеження — не перезаписуємо топ порожнім, повторимо через 2 год
         st["prom_block_until"] = _time.time() + 2 * 3600; st["prom_force"] = False
         PROM_LOG.insert(0, "⏸ Prom тимчасово обмежив запити (429) — повторю через 2 год")
@@ -4786,6 +4788,20 @@ def prom_top(st: dict, now: datetime) -> None:
     mark_upd(st, "🛍 Prom.ua", bool(res))
 
 
+LAT2CYR = {"a": "а", "b": "б", "c": "к", "d": "д", "e": "е", "f": "ф", "g": "г", "h": "х", "i": "і", "j": "й", "k": "к", "l": "л", "m": "м", "n": "н", "o": "о", "p": "п",
+           "q": "к", "r": "р", "s": "с", "t": "т", "u": "у", "v": "в", "w": "в", "x": "кс", "y": "і", "z": "з"}
+
+
+def q_variants(q: str) -> list:
+    """Варіанти запиту, як на маркетплейсах: регістр, зайві символи, «Pro 2» ↔ «Pro2», латиниця → кирилиця."""
+    q0 = re.sub(r"\s+", " ", str(q)).strip()
+    low = q0.lower()
+    clean = re.sub(r"[^\w\s+\-]", " ", low)
+    joined = re.sub(r"([a-zа-яіїєґ])\s+(\d)", r"\1\2", clean)
+    cyr = "".join(LAT2CYR.get(ch, ch) for ch in clean) if re.search(r"[a-z]", clean) else ""
+    return [v for v in dict.fromkeys([q0, low, clean.strip(), joined.strip(), cyr.strip()]) if v][:4]
+
+
 def prom_cart(text: str) -> str:
     """«Усе в одного продавця»: для кожної позиції — пропозиції; продавці, в яких є все, з рейтингом ≥95%; найменша сума."""
     items = [x.strip() for x in re.split(r"[,;\n]", text) if x.strip()][:6]
@@ -4794,7 +4810,11 @@ def prom_cart(text: str) -> str:
     by_seller, cheapest = {}, {}
     for it in items:
         tk = _tok(it)
-        offers = [o for o in prom_offers(it, 2) if len(_tok(o["n"]) & tk) >= max(1, round(0.6 * len(tk)))]
+        offers = []
+        for qv in q_variants(it):                     # перебір варіантів запиту, доки щось знайдеться
+            offers = [o for o in prom_offers(qv, 2) if len(_tok(o["n"]) & tk) >= max(1, round(0.6 * len(tk)))]
+            if offers or PROM_429["hit"]:
+                break
         if offers:
             cheapest[it] = min(offers, key=lambda o: o["p"])
         for o in offers:

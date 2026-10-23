@@ -8,7 +8,7 @@ import urllib.request
 from datetime import datetime
 
 import check
-from check import PROM_CATS, TZ, err_text, http_json, _num, _tok
+from check import PROM_CATS, TZ, err_text, http_json, _num, _tok, q_variants
 
 from playwright.sync_api import sync_playwright
 
@@ -49,13 +49,21 @@ def open_page(page, url: str) -> None:
             break
 
 
-def hl_search(page, q: str, cat_rx: str = "") -> list:
+def hl_search(page, q: str, cat_rx: str = "", pages: int = 2) -> list:
     rec = {"q": q}
-    try:
-        open_page(page, "https://hotline.ua/ua/sr/?q=" + urllib.parse.quote(q))
-        cards = page.evaluate(CARDS_JS) or []
-    except Exception as e:
-        rec["err"] = err_text(e)[:100]; cards = []
+    cards = []
+    for qv in q_variants(q):                               # варіанти запиту (регістр, символи, «Pro 2»↔«Pro2», латиниця→кирилиця)
+        for pg in range(1, pages + 1):
+            try:
+                open_page(page, "https://hotline.ua/ua/sr/?q=" + urllib.parse.quote(qv) + (f"&p={pg - 1}" if pg > 1 else ""))
+                got = page.evaluate(CARDS_JS) or []
+            except Exception as e:
+                rec["err"] = err_text(e)[:100]; got = []
+            if not got:
+                break
+            cards += got
+        if cards:
+            rec["qv"] = qv; break
     out = []
     for c in cards:
         href, text = c.get("href") or "", c.get("text") or ""
@@ -87,7 +95,7 @@ def cart(page, text: str) -> str:
     by_shop, cheapest, found = {}, {}, {}
     for it in items:
         tk = _tok(it)
-        models = sorted(hl_search(page, it), key=lambda m: -len(_tok(m["n"]) & tk))
+        models = sorted(hl_search(page, it, pages=1), key=lambda m: -len(_tok(m["n"]) & tk))
         if not models or not (_tok(models[0]["n"]) & tk):
             continue
         mdl = models[0]; found[it] = mdl["n"]
@@ -139,7 +147,7 @@ def main() -> None:
             for o in offs:
                 o["pop"] = o["n_off"] * 3 + o["rv"] * 5 + o["st"] * 20
             offs.sort(key=lambda o: (-o["pop"], o["p"]))
-            res[title] = {"all": offs[:15]}
+            res[title] = {"all": offs[:40]}
         br.close()
     n = sum(len(v["all"]) for v in res.values())
     print(f"Hotline: категорій {len(res)}, з товарами {sum(1 for v in res.values() if v['all'])}, позицій {n}")
