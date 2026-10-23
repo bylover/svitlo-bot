@@ -88,17 +88,6 @@
   "https://toybenchreviews.medium.com/how-to-tell-if-a-sex-toy-review-is-actually-helpful-dbcbb447d3a9?source=rss------sex_toys-5"
  ],
  "kino_seen": [
-  "t14929",
-  "m570670",
-  "m974576",
-  "m581528",
-  "m930094",
-  "m1272837",
-  "m1008042",
-  "m4638",
-  "t95350",
-  "t100757",
-  "t15819",
   "m334541",
   "m837881",
   "m503919",
@@ -687,9 +676,20 @@
   "m22538",
   "t289560",
   "t106158",
-  "t62710"
+  "t62710",
+  "t63404",
+  "m545609",
+  "m1456349",
+  "m1124566",
+  "m333339",
+  "m447365",
+  "m933260",
+  "m203801",
+  "t62852",
+  "t72002",
+  "t62320"
  ],
- "gh_beat": "2026-10-23T09:45:43.150283+03:00",
+ "gh_beat": "2026-10-23T09:50:43.550657+03:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -718,10 +718,6 @@
   "last": 2585,
   "events": [
    [
-    "2026-10-21T09:47:40+03:00",
-    "on"
-   ],
-   [
     "2026-10-21T14:29:41+03:00",
     "off"
    ],
@@ -747,11 +743,11 @@
    ]
   ]
  },
- "fact_png": "2026-10-23 09|7|2026-10-22T18:31:28+03:00",
+ "fact_png": "2026-10-23 09|6|2026-10-22T18:31:28+03:00",
  "fact_day": {
-  "total": "6 год 23 хв",
+  "total": "6 год 4 хв",
   "list": [
-   "09:31–12:09 · 2 год 38 хв",
+   "09:50–12:09 · 2 год 18 хв",
    "14:45–18:31 · 3 год 46 хв"
   ]
  },
@@ -20118,12 +20114,42 @@
    null,
    null,
    "2026-10-23"
+  ],
+  "tt37070354": [
+   null,
+   null,
+   null,
+   "2026-10-23"
+  ],
+  "tt32093575": [
+   4.8,
+   23,
+   38,
+   "2026-10-23"
+  ],
+  "tt1398426": [
+   7.8,
+   89,
+   72,
+   "2026-10-23"
+  ],
+  "tt0369339": [
+   7.5,
+   86,
+   71,
+   "2026-10-23"
+  ],
+  "tt7414406": [
+   7.6,
+   null,
+   null,
+   "2026-10-23"
   ]
  },
  "pushed_h": {
-  "gs": "786e16e987d4",
+  "gs": "ebf8f92c917b",
   "quiz_pool.json": "5e887a1905fd",
-  "fact.png": "62a6d918aa7a",
+  "fact.png": "56ed7f63cdd5",
   "sexed.json": "4efede1d8ea5",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "d710636e77f2",
@@ -28231,6 +28257,12 @@
    {
     "id": "93c5a40e95",
     "text": "🍿 <b>ПІДБІРКА КІНО · СЕРІАЛИ · НОВІ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/582014?language=uk\">Перспективна дівчина</a></b> (2020) · ❤️ за вашим смаком\nтрилер, кримінал, драма · ⏱ 1 год 53 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>90%</b> · Ⓜ <b>72</b>\n<i>🎭 Кері Малліґан, Бо Бернем, Елісон Брі</i>\n📺 <a href=\"https://www.themoviedb.org/movie/582014-promising-young-woman/watch?locale=UA\">Apple TV Store</a>\n📝 Кессі кинула медичний коледж, живе з батьками і працює офіціанткою, проте її нічні розваги куди більш специфічні. Дівчина ловить на живця так званих хороших хлопців і витончено мстить їм за негідне поводження з дамами.\n▶️ <a href=\"https://youtu.be/9BYgrbafUW8\">Трейлер</a></blockquote>\n§KN:m582014\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/756999?language=uk\">Чорний телефон</a></b> (2022) · ❤️ за вашим смаком\nжахи, трилер · ⏱ 1 год 42 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>81%</b> · Ⓜ <b>65</b>\n<i>🎭 Мейсон Темз, Мадлен МакҐроу, Ітан Гоук</i>\n📺 <a href=\"https://www.themoviedb.org/movie/756999-the-black-phone/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Після моторошного викрадення 13-річний підліток опиняється замкнутим в звуконепроникному підвалі зі зламаним чорним телефоном. Несподівано хлопець отримує дзвінок від попередніх жертв вбивці, які будь-що прагнуть…\n▶️ <a href=\"https://youtu.be/YFr0zRG71iI\">Трейлер</a></blockquote>\n§KN:m756999\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/429200?language=uk\">Гарні часи</a></b> (2017)\nкримінал, трилер, драма · ⏱ 1 год 41 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>91%</b> · Ⓜ <b>80</b>\n<i>🎭 Роберт Паттінсон, Бенні Сафді, Buddy Duress</i>\n📺 <a href=\"https://www.themoviedb.org/movie/429200-good-time/watch?locale=UA\">Apple TV Store</a>\n📝 Після невдалого пограбування банку молодший брат головного героя потрапляє до в'язниці. Старшому доведеться вирушиту у химерну одіссею, повну насильства і хаосу: у нього є лише одна ніч, щоб спробувати обігнати час і…\n▶️ <a href=\"https://youtu.be/XaL7J0Ffd4E\">Трейлер</a></blockquote>\n§KN:m429200\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/493529?language=uk\">Підземелля і дракони: Честь злодіїв</a></b> (2023)\nпригоди, фентезі, комедія · ⏱ 2 год 14 хв\n⭐ IMDb <b>7.2</b> · Ⓜ <b>72</b>\n<i>🎭 Кріс Пайн, Мішель Родріґес, Джастіс Сміт</i>\n📺 <a href=\"https://www.themoviedb.org/movie/493529-dungeons-dragons-honor-among-thieves/watch?locale=UA\">Rakuten TV</a>\n📝 Чарівний злодій та група умілих авантюристів вирішують здійснити епічне пограбування, щоб повернути втрачену реліквію. Але все йде шкереберть, коли на шляху героїв постає неочікувана перешкода...\n▶️ <a href=\"https://youtu.be/-EBJWOUOLWI\">Трейлер</a></blockquote>\n§KN:m493529\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/299534?language=uk\">Месники: Завершення</a></b> (2019)\nпригоди, фантастика, бойовик · ⏱ 3 год 01 хв\n⭐ IMDb <b>8.4</b> · 🍅 <b>94%</b> · Ⓜ <b>78</b>\n<i>🎭 Роберт Дауні-молодший, Кріс Еванс, Марк Раффало</i>\n📺 <a href=\"https://www.themoviedb.org/movie/299534-avengers-endgame/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Після руйнівних подій \"Месники: Війна нескінченності\", всесвіт перебуває в руїнах завдяки зусиллям Божевільного Титана, Таноса. За допомогою решти союзників Месники повинні зібратися ще раз, щоб скасувати дії Таноса…\n▶️ <a href=\"https://youtu.be/7ZHb4PWOI5M\">Трейлер</a></blockquote>\n§KN:m299534\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/1323244?language=uk\">Rage of Stars</a></b> (2026)\nбойовик, фантастика, трилер · ⏱ 1 год 46 хв\n⭐ IMDb <b>4.9</b>\n<i>🎭 Andrea Tivadar, Jord Knotter, Jack McEvoy</i>\n📝 A story about a woman from the International Special Forces Unit, who has a premonition about the impending end of humanity.\n▶️ <a href=\"https://youtu.be/F5bYhuO2Rkg\">Трейлер</a></blockquote>\n§KN:m1323244\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/22538?language=uk\">Скотт Пілігрим проти всіх</a></b> (2010)\nбойовик, комедія, мелодрама · ⏱ 1 год 53 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>83%</b> · Ⓜ <b>69</b>\n<i>🎭 Майкл Сера, Мері Елізабет Вінстед, Еллен Вон</i>\n📺 <a href=\"https://www.themoviedb.org/movie/22538-scott-pilgrim-vs-the-world/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Рок-музикант Скотт Пілігрим знайшов дівчину своєї мрії. Але на його шляху стоїть складніше завдання: щоб зустрічатися з нею, Скотту доведеться перемогти її сімох злих колишніх хлопців.  Але найголовніший суперник -…\n▶️ <a href=\"https://youtu.be/5wL2I_JVzgw\">Трейлер</a></blockquote>\n§KN:m22538\n§§\n<blockquote>📺 <b>8. <a href=\"https://www.themoviedb.org/tv/289560?language=uk\">ЦРУ</a></b> (2026)\nкримінал, драма · 📺 серіал · 2 сез.\n⭐ TMDB <b>8.4</b>\n<i>🎭 Том Елліс, Nick Gehlfuss, Natalee Linez</i>\n📝 Історія про гента ФБР та співробітника ЦРУ, які працюють разом у таємному підрозділі, щоб запобігти внутрішньому тероризму в Нью-Йорку.\n▶️ <a href=\"https://youtu.be/4kOSs4ybDF0\">Трейлер</a></blockquote>\n§KN:t289560\n§§\n<blockquote>📺 <b>9. <a href=\"https://www.themoviedb.org/tv/106158?language=uk\">Закон і порядок: Організована злочинність</a></b> (2021)\nкримінал, драма · 📺 серіал · 5 сез.\n⭐ IMDb <b>7.7</b>\n<i>🎭 Крістофер Мелоні, Danielle Moné Truitt, Rick Gonzalez</i>\n📝 Елліот Стейблер повертається у поліцію Нью-Йорка, щоб боротися з організованою злочинністю після дуже болісної особистої втрати. Однак місто та поліцейське управління сильно змінилися за десять років.</blockquote>\n§KN:t106158\n§§\n<blockquote>📺 <b>10. <a href=\"https://www.themoviedb.org/tv/62710?language=uk\">Сліпа зона</a></b> (2015)\nкримінал, драма, екшн і пригоди · 📺 серіал · 5 сез.\n⭐ IMDb <b>7.3</b>\n<i>🎭 Джеймі Александер, Sullivan Stapleton, Audrey Esparza</i>\n📝 Прекрасну незнайомку виявляють голою на Таймс Сквер. Не знаючи хто вона така і як сюди потрапила, повністю покрита таємничими татуюваннями дівчина опиняється в центрі розслідування після того, як на її спині було…\n▶️ <a href=\"https://youtu.be/jfcKn6BwIC4\">Трейлер</a></blockquote>\n§KN:t62710"
+   }
+  ],
+  "ser_crime": [
+   {
+    "id": "a96f10b212",
+    "text": "🍿 <b>ПІДБІРКА КІНО · СЕРІАЛИ · КРИМІНАЛ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/545609?language=uk\">Евакуація</a></b> (2020) · ❤️ за вашим смаком\nбойовик, трилер · ⏱ 1 год 56 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>67%</b> · Ⓜ <b>56</b>\n<i>🎭 Кріс Гемсворт, Rudhraksh Jaiswal, Randeep Hooda</i>\n📺 <a href=\"https://www.themoviedb.org/movie/545609-extraction/watch?locale=UA\">Netflix</a>\n📝 Вправного найманця відправляють у Бангладеш для порятунку викраденого сина наркобарона, і його остання місія перетворюється на сповнені саморефлексії перегони зі смертю.\n▶️ <a href=\"https://youtu.be/c92pNcFdq_w\">Трейлер</a></blockquote>\n§KN:m545609\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/1456349?language=uk\">Проста випадковість</a></b> (2025) · ❤️ за вашим смаком\nдрама, трилер, кримінал · ⏱ 1 год 43 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>98%</b> · Ⓜ <b>91</b>\n<i>🎭 Vahid Mobasseri, Mariam Afshari, Ebrahim Azizi</i>\n📝 Випадково автомеханік впізнає свого тюремного ката у водії, що потрапив у аварію. Жага помсти прокидається миттєво, але єдина зачіпка – це скрип протеза. Обличчя свого мучителя чоловік ніколи не бачив. Колишній…\n▶️ <a href=\"https://youtu.be/KGVDdIblqW0\">Трейлер</a></blockquote>\n§KN:m1456349\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/1124566?language=uk\">Сентиментальна цінність</a></b> (2025)\nдрама · ⏱ 2 год 13 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>95%</b> · Ⓜ <b>86</b>\n<i>🎭 Ренате Реінсве, Стеллан Скашґорд, Інґа Ібсдоттер Ліллеос</i>\n📝 Дві дорослі доньки після смерті матері з'ясовують, що родинний будинок досі належить їхньому батькові – відомому режисеру, який покинув сім'ю багато років тому. Він знову з’являється в їхньому житті, намагаючись…\n▶️ <a href=\"https://youtu.be/CHVi-MP3mSw\">Трейлер</a></blockquote>\n§KN:m1124566\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/333339?language=uk\">Першому гравцю приготуватися</a></b> (2018)\nпригоди, бойовик, фантастика · ⏱ 2 год 20 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>71%</b> · Ⓜ <b>64</b>\n<i>🎭 Тай Шерідан, Олівія Кук, Бен Мендельсон</i>\n📺 <a href=\"https://www.themoviedb.org/movie/333339-ready-player-one/watch?locale=UA\">Apple TV, HBO Max, Apple TV Store, Rakuten TV</a>\n📝 Події фільму відбуваються у 2045 році, коли світ стоїть на межі хаосу. Люди шукають порятунку в ОАЗІ, дорогій системі віртуальної реальності, створеній геніальним та ексцентричним Джеймсом Голлідеєм. Коли Голлідей…\n▶️ <a href=\"https://youtu.be/Kyu2G5f1v5k\">Трейлер</a></blockquote>\n§KN:m333339\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/447365?language=uk\">Вартові галактики 3</a></b> (2023)\nфантастика, пригоди, бойовик · ⏱ 2 год 30 хв\n⭐ IMDb <b>7.9</b> · 🍅 <b>82%</b> · Ⓜ <b>64</b>\n<i>🎭 Кріс Пратт, Зої Салдана, Дейв Батіста</i>\n📺 <a href=\"https://www.themoviedb.org/movie/447365-guardians-of-the-galaxy-vol-3/watch?locale=UA\">Rakuten TV</a>\n📝 Пітер Квілл, усе ще оговтуючись від утрати Ґамори, має знову об’єднати команду, щоб захистити Всесвіт та одного з них. Якщо ця місія провалиться, це може стати кінцем Вартових, якими ми їх знаємо.\n▶️ <a href=\"https://youtu.be/OCjs5Cd7UWk\">Трейлер</a></blockquote>\n§KN:m447365\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/933260?language=uk\">Субстанція</a></b> (2024)\nжахи, фантастика · ⏱ 2 год 21 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>89%</b> · Ⓜ <b>78</b>\n<i>🎭 Демі Мур, Марґарет Кволлі, Денніс Квейд</i>\n📝 У минулому Елізабет Спаркс була зіркою Голлівуду, а тепер веде найпопулярніший фітнес-проєкт. Незабаром на її шоу збираються взяти нову зірку, тож героїня вирішує спробувати унікальний засіб під назвою Субстанція.…\n▶️ <a href=\"https://youtu.be/7ZdtL9Nc0MI\">Трейлер</a></blockquote>\n§KN:m933260\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/203801?language=uk\">Агенти U.N.C.L.E.</a></b> (2015)\nкомедія, бойовик, пригоди · ⏱ 1 год 56 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>68%</b> · Ⓜ <b>56</b>\n<i>🎭 Генрі Кавілл, Армі Гаммер, Алісія Вікандер</i>\n📺 <a href=\"https://www.themoviedb.org/movie/203801-the-man-from-u-n-c-l-e/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Головні герої – агенти спецслужб. Наполеон Соло — кращий співробітник ЦРУ, а Ілля Курякін — наймолодший і дуже перспективний агент КДБ. Непримиренні вороги повинні об'єднатися для виконання загального завдання. Їм…\n▶️ <a href=\"https://youtu.be/sIDRzsDw4Dw\">Трейлер</a></blockquote>\n§KN:m203801\n§§\n<blockquote>📺 <b>8. <a href=\"https://www.themoviedb.org/tv/62852?language=uk\">Мільярди</a></b> (2016)\nдрама · 📺 серіал · 7 сез.\n⭐ IMDb <b>8.3</b>\n<i>🎭 Пол Джаматті, Maggie Siff, Девід Костабайл</i>\n📝 У світі влади і великих грошей, в самому серці Нью-Йорка, йде протистояння амбітного фінансиста з Волл-стріт Боббі Аксельрода і принципового федерального прокурора Чака Родса.\n▶️ <a href=\"https://youtu.be/_raEUMLL-ZI\">Трейлер</a></blockquote>\n§KN:t62852\n§§\n<blockquote>📺 <b>9. <a href=\"https://www.themoviedb.org/tv/72002?language=uk\">Династія</a></b> (2017)\nдрама, мильна опера · 📺 серіал · 5 сез.\n⭐ IMDb <b>7.2</b>\n<i>🎭 Elizabeth Gillies, Grant Show, Daniella Alonso</i>\n📺 <a href=\"https://www.themoviedb.org/tv/72002-dynasty/watch?locale=UA\">Netflix</a>\n📝 У центрі сюжету — Керрінґтони, заможна родина, що володіє нафтовим бізнесом, і протистояння багатої спадкоємиці Феллон Керрінґтон та її мачухи, іспанки Крістал.\n▶️ <a href=\"https://youtu.be/PzBX_c-F6sk\">Трейлер</a></blockquote>\n§KN:t72002\n§§\n<blockquote>📺 <b>10. <a href=\"https://www.themoviedb.org/tv/62320?language=uk\">Ґрейс і Френкі</a></b> (2015)\nкомедія, драма · 📺 серіал · 7 сез.\n⭐ IMDb <b>8.2</b>\n<i>🎭 Джейн Фонда, Лілі Томлін, Мартін Шин</i>\n📺 <a href=\"https://www.themoviedb.org/tv/62320-grace-and-frankie/watch?locale=UA\">Netflix</a>\n📝 Ґрейс і Френкі — жінки солідного віку, багато років ворогували між собою. Ніхто і ніколи не міг уявити їх друзями, але несподівана звістка змінило все. Старі суперниці зблизилися, коли дізналися, що їхні чоловіки…\n▶️ <a href=\"https://youtu.be/CDv6PRi1SgQ\">Трейлер</a></blockquote>\n§KN:t62320"
    }
   ]
  },
