@@ -93,16 +93,6 @@
   "https://toybenchreviews.medium.com/how-to-tell-if-a-sex-toy-review-is-actually-helpful-dbcbb447d3a9?source=rss------sex_toys-5"
  ],
  "kino_seen": [
-  "t273207",
-  "t4601",
-  "t2458",
-  "m332270",
-  "m509598",
-  "m608872",
-  "m618245",
-  "m1013052",
-  "m794785",
-  "t64480",
   "t96256",
   "t101504",
   "t153459",
@@ -692,9 +682,19 @@
   "m664300",
   "m593643",
   "m254320",
-  "m73532"
+  "m73532",
+  "m501170",
+  "m530385",
+  "m1381027",
+  "m546121",
+  "m507076",
+  "m361292",
+  "m744857",
+  "m938614",
+  "m92499",
+  "m282069"
  ],
- "gh_beat": "2026-10-23T14:35:43.125578+03:00",
+ "gh_beat": "2026-10-23T14:40:42.530991+03:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1501,14 +1501,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "23.10 14:02",
-   "ts": 1792753360,
+   "at": "23.10 14:42",
+   "ts": 1792755757,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "23.10 14:02",
-   "ts": 1792753360,
+   "at": "23.10 14:42",
+   "ts": 1792755757,
    "ok": true,
    "note": ""
   },
@@ -21462,10 +21462,22 @@
    88,
    72,
    "2026-10-23"
+  ],
+  "tt35276942": [
+   6.5,
+   100,
+   null,
+   "2026-10-23"
+  ],
+  "tt23172090": [
+   6.5,
+   85,
+   73,
+   "2026-10-23"
   ]
  },
  "pushed_h": {
-  "gs": "a2cf419c3553",
+  "gs": "eb469dc084a7",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "049ef5e5d7ea",
   "sexed.json": "4efede1d8ea5",
@@ -21550,7 +21562,6 @@
   "sx/tech_shallowing.png": "0f0dd9f56c27"
  },
  "force_heavy": [
-  "пп-страви",
   "prom.ua",
   "rozetka"
  ],
@@ -30669,6 +30680,12 @@
    {
     "id": "fd1e4f3a9d",
     "text": "🍿 <b>ПІДБІРКА КІНО · КОМЕДІЯ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/595975?language=uk\">Кафе бажань</a></b> (2019)\nкомедія, драма · ⏱ 1 год 50 хв\n⭐ IMDb <b>7.4</b> · Ⓜ <b>75</b>\n<i>🎭 Daniel Auteuil, Ґійом Кане, Дорія Тільє</i>\n📝 Життя Віктора, якому вже за шістдесят, обертається з ніг на голову, коли успішний підприємець Антуан пропонує йому новітню розвагу. За допомогою театральної майстерності та історичної реконструкції його компанія…\n▶️ <a href=\"https://youtu.be/Wu7dJP24LYw\">Трейлер</a></blockquote>\n§KN:m595975\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/348657?language=uk\">Гірська жінка: На війні</a></b> (2018)\nдрама, трилер, комедія · ⏱ 1 год 41 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>97%</b> · Ⓜ <b>81</b>\n<i>🎭 Гальдоура Ґейргардсдоуттір, Jóhann Sigurðarson, Davíð Þór Jónsson</i>\n📝 Жінкам у країнах минулих століть завжди жилося дуже тяжко, їх часто утискали та взагалі не вважали за нормальних людей. Зараз же ситуація трохи змінилася — у так званої «слабкої статі» багато прав, вони в більшості…\n▶️ <a href=\"https://youtu.be/CQx6Ep04XPk\">Трейлер</a></blockquote>\n§KN:m348657\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/636565?language=uk\">Острів Троянд</a></b> (2020)\nкомедія, пригоди · ⏱ 1 год 58 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>75%</b>\n<i>🎭 Elio Germano, Матильда Де Анджеліс, Fabrizio Bentivoglio</i>\n📺 <a href=\"https://www.themoviedb.org/movie/636565-l-incredibile-storia-dell-isola-delle-rose/watch?locale=UA\">Netflix</a>\n📝 Інженер-ідеаліст будує власний острів на узбережжі Італії й проголошує його державою, привертаючи увагу всього світу, а особливо італійського уряду.\n▶️ <a href=\"https://youtu.be/qS2NtbEoIc8\">Трейлер</a></blockquote>\n§KN:m636565\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/369557?language=uk\">Сінґ Стріт</a></b> (2016)\nмелодрама, драма, музика · ⏱ 1 год 45 хв\n⭐ IMDb <b>7.9</b> · 🍅 <b>95%</b> · Ⓜ <b>79</b>\n<i>🎭 Ferdia Walsh-Peelo, Lucy Boynton, Джек Рейнор</i>\n📺 <a href=\"https://www.themoviedb.org/movie/369557-sing-street/watch?locale=UA\">Apple TV Store</a>\n📝 Ностальгічна музична драма про дорослішання. Коли економічна криза 1980-х вдаряє по родині Конора, його переводять з престижної приватної школи в державну. Підліток стикається з грубістю і невіглаством нового…\n▶️ <a href=\"https://youtu.be/TxT30uAoSHA\">Трейлер</a></blockquote>\n§KN:m369557\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/318121?language=uk\">Основні принципи добра</a></b> (2016)\nкомедія, драма · ⏱ 1 год 38 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>80%</b> · Ⓜ <b>55</b>\n<i>🎭 Пол Радд, Крейґ Робертс, Селена Ґомес</i>\n📺 <a href=\"https://www.themoviedb.org/movie/318121-the-fundamentals-of-caring/watch?locale=UA\">Netflix</a>\n📝 Вже немолодий письменник Бен, важко переживаючи розлучення з дружиною, вирішує завʼязати з творчістю й починає ходити на курси доглядальників. Після проходження тренінгів він знаходить свого першого клієнта, яким…\n▶️ <a href=\"https://youtu.be/BSXn-lIs4Y0\">Трейлер</a></blockquote>\n§KN:m318121\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/513434?language=uk\">カメラを止めるな！</a></b> (2017)\nкомедія, жахи, драма · ⏱ 1 год 36 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>100%</b> · Ⓜ <b>86</b>\n<i>🎭 Такаюкі Хамацу, 秋山ゆずき, 長屋和彰</i>\n📝 Real zombies arrive and terrorize the crew of a zombie film being shot in an abandoned warehouse, said to be the site of military experiments on humans.\n▶️ <a href=\"https://youtu.be/Du2XfUDfjN0\">Трейлер</a></blockquote>\n§KN:m513434\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Shiva-Baby-2021-10-23\">Shiva Baby</a></b> (2021)\nкомедія, драма · ⏱ 1 год 18 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>96%</b> · Ⓜ <b>79</b>\n<i>🎭 Рейчел Сеннотт, Моллі Ґордон, Поллі Дрейпер</i>\n📺 <a href=\"https://www.themoviedb.org/movie/664300-shiva-baby/watch?locale=UA\">Apple TV Store</a>\n📝 Студентка коледжу Даніель мусить замітати сліди, коли несподівано зустрічає свого цукрового татуся на шиві, де також присутні її батьки, колишня дівчина та друзі сім'ї.\n▶️ <a href=\"https://youtu.be/1ribuR9hVv4\">Трейлер</a></blockquote>\n§KN:m664300\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Menyu-2022-10-23-3\">Меню</a></b> (2022)\nкомедія, жахи · ⏱ 1 год 48 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>88%</b> · Ⓜ <b>71</b>\n<i>🎭 Аня Тейлор-Джой, Рейф Файнз, Ніколас Голт</i>\n📺 <a href=\"https://www.themoviedb.org/movie/593643-the-menu/watch?locale=UA\">Rakuten TV, Apple TV Store</a>\n📝 Молода пара разом із групою незнайомців відвідують унікальне місце — ресторан на віддаленому острові Тихого океану. Відомий і дещо схиблений на кулінарії шеф-кухар приготував розкішне дегустаційне меню. А також…\n▶️ <a href=\"https://youtu.be/C_uTkUGcHv4\">Трейлер</a></blockquote>\n§KN:m593643\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Lobster-2015-10-23-3\">Лобстер</a></b> (2015)\nкомедія, драма, мелодрама · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>87%</b> · Ⓜ <b>82</b>\n<i>🎭 Колін Фаррелл, Рейчел Вайс, Олівія Колман</i>\n📺 <a href=\"https://www.themoviedb.org/movie/254320-the-lobster/watch?locale=UA\">Apple TV Store</a>\n📝 Історія кохання, що розгортається в найближчому майбутньому, де самотніх людей арештовують і відправляють в моторошний готель. Там вони зобов’язані знайти собі пару за 45 днів. Якщо їм це не вдається, то їх…\n▶️ <a href=\"https://youtu.be/uvV4pvQuqlM\">Трейлер</a></blockquote>\n§KN:m254320\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Gavr-2011-10-23\">Гавр</a></b> (2011)\nдрама, комедія · ⏱ 1 год 34 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>99%</b> · Ⓜ <b>82</b>\n<i>🎭 André Wilms, Kati Outinen, Jean-Pierre Darroussin</i>\n📝 Відмовившись від богемної метушні, колишній письменник переїзджає в портове містечко Гавр, де займається чисткою взуття. Комусь може здатися, що він невдаха, але його життя безтурботне та щасливе. Коли його дружина…\n▶️ <a href=\"https://youtu.be/BpAFPgNyxmc\">Трейлер</a></blockquote>\n§KN:m73532"
+   }
+  ],
+  "horror": [
+   {
+    "id": "bddf2a6796",
+    "text": "🍿 <b>ПІДБІРКА КІНО · ЖАХИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Doktor-Son-2019-10-23-2\">Доктор Сон</a></b> (2019)\nжахи, фентезі · ⏱ 2 год 30 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>79%</b> · Ⓜ <b>59</b>\n<i>🎭 Юен Мак-Ґреґор, Ребекка Ферґюсон, Kyliegh Curran</i>\n📺 <a href=\"https://www.themoviedb.org/movie/501170-doctor-sleep/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Продовження культового фільму «Сяйво». Ден Торренс все ще не може забути ті кошмарні дні дитинства, які він провів в готелі «Оверлук». Подорослішавши, він все ще безуспішно бореться з цією травмою. Реальний світ для…\n▶️ <a href=\"https://youtu.be/_n9vm1ztous\">Трейлер</a></blockquote>\n§KN:m501170\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Soncestoyannya-2019-10-23-2\">Сонцестояння</a></b> (2019)\nжахи, драма, детектив · ⏱ 2 год 28 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>83%</b> · Ⓜ <b>72</b>\n<i>🎭 Флоренс Пʼю, Джек Рейнор, Вільям Джексон Гарпер</i>\n📺 <a href=\"https://www.themoviedb.org/movie/530385-midsommar/watch?locale=UA\">Apple TV Store</a>\n📝 Молода пара відправляється відпочити влітку в Швецію. Попутно вони відвідують старого приятеля в невеликому селі, де якраз проходить місцевий фестиваль. Однак незабаром з’ясовується, що за святом сонцестояння…\n▶️ <a href=\"https://youtu.be/kmT_mTpEAfw\">Трейлер</a></blockquote>\n§KN:m530385\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Na-lancyugu-2026-10-23-2\">На ланцюгу</a></b> (2026)\nтрилер, драма, детектив · ⏱ 1 год 50 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>90%</b> · Ⓜ <b>63</b>\n<i>🎭 Anson Boon, Стівен Ґрем, Андреа Райзборо</i>\n📝 19-річний Томмі — типовий молодий хуліган, який насолоджується життям, повним наркотиків, вечірок і насильства. Однієї ночі, під час чергового запою з друзями, він відокремлюється від компанії і стає жертвою…\n▶️ <a href=\"https://youtu.be/qWkPjI-Brkc\">Трейлер</a></blockquote>\n§KN:m1381027\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Tіkaj-2020-10-23\">Тікай</a></b> (2020)\nтрилер, жахи, драма · ⏱ 1 год 30 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>88%</b> · Ⓜ <b>67</b>\n<i>🎭 Сара Полсон, Kiera Allen, Pat Healy</i>\n📝 Дайан Шерман одна виховує доньку-підлітка Хлою. Дівчинка прикута до інвалідного крісла, жменями приймає пігулки і не спілкується з однолітками, адже вона знаходиться на домашньому навчанні. Згодом Хлоя починає…\n▶️ <a href=\"https://youtu.be/TWtzRzXBeIM\">Трейлер</a></blockquote>\n§KN:m546121\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Ekstaz-2018-10-23\">Екстаз</a></b> (2018)\nдрама, жахи, музика · ⏱ 1 год 37 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>68%</b> · Ⓜ <b>69</b>\n<i>🎭 Софія Бутелла, Romain Guillermic, Сухейла Якуб</i>\n📺 <a href=\"https://www.themoviedb.org/movie/507076-climax/watch?locale=UA\">Apple TV Store</a>\n📝 Народження і смерть — надзвичайний досвід. Життя — швидкоплинне задоволення.\n▶️ <a href=\"https://youtu.be/Hi69nL_VrTE\">Трейлер</a></blockquote>\n§KN:m507076\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Suspіrіya-2018-10-23\">Суспірія</a></b> (2018)\nжахи, детектив, драма · ⏱ 2 год 32 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>65%</b> · Ⓜ <b>64</b>\n<i>🎭 Дакота Джонсон, Тільда Свінтон, Мія Ґот</i>\n📺 <a href=\"https://www.themoviedb.org/movie/361292-suspiria/watch?locale=UA\">Apple TV Store</a>\n📝 Сюзі приїхала на навчання у балетну школу. Набуваючи танцювальну майстерність, вона поступово виявляє, що за дверима благопристойного закладу відбувається щось містичне... школа стала місцем для шабашу відьом.\n▶️ <a href=\"https://youtu.be/KEwT8pr_g5w\">Трейлер</a></blockquote>\n§KN:m361292\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Koli-zlo-hovayetsya-2023-10-23-2\">Коли зло ховається</a></b> (2023)\nжахи, трилер · ⏱ 1 год 39 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>96%</b> · Ⓜ <b>75</b>\n<i>🎭 Ezequiel Rodríguez, Demián Salomón, Silvina Sabater</i>\n📝 У глухому селі двоє братів знаходять зараженого демоном чоловіка, який став ідеальною оболонкою для народження зла. Вони вирішують позбутися тіла, але лише поширюють хаос.\n▶️ <a href=\"https://youtu.be/h-znWvRYJIs\">Трейлер</a></blockquote>\n§KN:m744857\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Pіznіj-vechіr-z-diyavolom-2024-10-23-2\">Пізній вечір з дияволом</a></b> (2024)\nжахи · ⏱ 1 год 33 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>97%</b> · Ⓜ <b>72</b>\n<i>🎭 Девід Дастмалчян, Лора Ґордон, Ian Bliss</i>\n📝 У 1977 році популярний телеведучий Джек Делрой веде ток-шоу «Нічні сови», яке вже давно стало надійним супутником людей по всій країні, які страждають на безсоння. Через рік після трагічної смерті його дружини…\n▶️ <a href=\"https://youtu.be/YeKYfneOH3o\">Трейлер</a></blockquote>\n§KN:m938614\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/오싹한-연애-2011-10-23\">오싹한 연애</a></b> (2011)\nжахи, комедія, фентезі · ⏱ 1 год 54 хв\n⭐ IMDb <b>6.8</b>\n<i>🎭 Сон Є Чжин, Лі Мін Кі, Пак Чхоль Мін</i>\n📝 A magician makes an assistant out of a strange girl with the ability to see ghosts, and the two achieve success with their shows, through thick and thin. However, another kind of magic might be brewing behind the…\n▶️ <a href=\"https://youtu.be/2HTxk13yP3M\">Трейлер</a></blockquote>\n§KN:m92499\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Parazit-CHastina-1-2014-10-23-2\">Паразит: Частина 1</a></b> (2014)\nфантастика, жахи, бойовик · ⏱ 1 год 49 хв\n⭐ IMDb <b>6.8</b>\n<i>🎭 Шьота Сометані, Садаво Абе, Ері Фукацу</i>\n📝 Ізумі Шін’ічі - найзвичайніший підліток, який навчається в старшій школі. Але одного разу його тіло захоплює стороння істота і встановлює над ним контроль. Життя Ізумі тепер більше нагадує кошмар з постійною…\n▶️ <a href=\"https://youtu.be/dcVuEbnq-8Y\">Трейлер</a></blockquote>\n§KN:m282069"
    }
   ]
  }
