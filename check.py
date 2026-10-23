@@ -4705,17 +4705,24 @@ def prom_top(st: dict, now: datetime) -> None:
             cl = next((c for c in clusters if len(tk & c["tk"]) >= 0.6 * max(1, min(len(tk), len(c["tk"])))), None)
             (cl["o"].append(o) if cl else clusters.append({"tk": tk, "o": [o]}))
         top = []
-        for c in clusters:
-            good = [o for o in c["o"] if (o["r"] or 0) >= PROM_RATING]
-            if not good:
-                continue
-            pop = sum(o["sold"] for o in c["o"]) + 5 * sum(o["rv"] for o in c["o"]) + 10 * len(c["o"])
-            stars = max((o["st"] for o in c["o"]), default=0)
-            best = min(good, key=lambda o: o["p"])
-            top.append({**best, "pop": pop, "stars": stars, "n_off": len(c["o"]), "pmin": min(o["p"] for o in c["o"]), "pmax": max(o["p"] for o in c["o"])})
-        top.sort(key=lambda x: (-(x["pop"] + 20 * (x["stars"] or 0)), x["p"]))
+        for thr in (PROM_RATING, 90):                     # ≥95%; якщо в категорії замало — добираємо від 90% (з позначкою)
+            for c in clusters:
+                if c.get("used"):
+                    continue
+                good = [o for o in c["o"] if (o["r"] or 0) >= thr]
+                if not good:
+                    continue
+                c["used"] = True
+                pop = sum(o["sold"] for o in c["o"]) + 5 * sum(o["rv"] for o in c["o"]) + 10 * len(c["o"])
+                stars = max((o["st"] for o in c["o"]), default=0)
+                best = min(good, key=lambda o: o["p"])
+                top.append({**best, "pop": pop, "stars": stars, "n_off": len(c["o"]), "pmin": min(o["p"] for o in c["o"]), "pmax": max(o["p"] for o in c["o"]), "r90": thr < PROM_RATING})
+            if len(top) >= 5:
+                break
+        top.sort(key=lambda x: (x.get("r90", False), -(x["pop"] + 20 * (x["stars"] or 0)), x["p"]))   # спершу продавці ≥95%
         res[title] = top[:15]
     st["prom_day"], st["prom_force"], st["prom_v"] = now.date().isoformat(), False, 5
+    st["prom_last_n"] = sum(len(v) for v in res.values())
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "prom.json", "json": {"at": now.strftime("%d.%m %H:%M"), "cats": res}})
     except Exception as e:
@@ -4746,13 +4753,16 @@ def prom_cart(text: str) -> str:
             if it not in cur["items"] or o["p"] < cur["items"][it]["p"]:
                 cur["items"][it] = o
     full = [v for v in by_seller.values() if len(v["items"]) == len(items) and (v["r"] or 0) >= PROM_RATING]
+    lowered = False
+    if not full:                                      # немає продавців ≥95% — пробуємо від 90% (з позначкою)
+        full = [v for v in by_seller.values() if len(v["items"]) == len(items) and (v["r"] or 0) >= 90]; lowered = bool(full)
     full.sort(key=lambda v: sum(o["p"] for o in v["items"].values()))
     sep = sum(o["p"] for o in cheapest.values())
     if not full:
         part = sorted([v for v in by_seller.values() if (v["r"] or 0) >= PROM_RATING], key=lambda v: (-len(v["items"]), sum(o["p"] for o in v["items"].values())))[:2]
         return ("🧺 <b>Продавця, в якого є все, не знайшов</b> (рейтинг ≥95%).\n" + ("\n".join(f"• {esc(v['s'])} ({v['r']:.0f}%) — є {len(v['items'])} з {len(items)}" for v in part) or "") +
                 (f"\n\nНайдешевше окремо: {sep:.0f} ₴" if cheapest else "") + "\n<i>Спробуйте коротші назви (бренд + модель).</i>")
-    out = [f"🧺 <b>Усе в одного продавця</b> · {len(items)} позицій\n"]
+    out = [f"🧺 <b>Усе в одного продавця</b> · {len(items)} позицій" + ("\n<i>⚠️ Продавців із ≥95% не знайшлося — показано від 90%</i>" if lowered else "") + "\n"]
     for i, v in enumerate(full[:3], 1):
         tot = sum(o["p"] for o in v["items"].values())
         out.append(f"{i}. <b>{esc(v['s'])}</b> · ⭐ {v['r']:.0f}% позитивних · <b>{tot:.0f} ₴</b>\n" +
@@ -6583,6 +6593,15 @@ def main() -> None:
         kq = build_kino(st)                            # готова підбірка «про запас» — меню віддає миттєво
         if kq:
             st["kino_q"].append({"id": hashlib.md5(kq[0].encode()).hexdigest()[:10], "text": kq[0], "markup": kq[1]})
+    for c in dict.fromkeys(str(x) for x in (worker_req.get("prom_now") or [])):    # 🧪 адмін: «Prom: оновити зараз» — без черги
+        try:
+            PROM_LOG.clear(); PROM_DBG.clear()
+            st["prom_force"] = True
+            prom_top(st, now)
+            d_ = st.get("prom_last_n", 0)
+            direct_m.append((c, f"🧪 <b>Prom оновлено</b>: позицій у топі — {d_}. {'Відкрийте 🛍 Маркети → 🛍 Prom.ua → 🏆 Топ.' if d_ else 'Порожньо — натисніть «🧪 Prom: сирі дані» й перешліть розробнику.'}\n<i>{esc('; '.join(PROM_LOG[:3]))[:500]}</i>", None))
+        except Exception as e:
+            direct_m.append((c, f"🧪 Prom: помилка {esc(err_text(e)[:100])}", None))
     for c in dict.fromkeys(str(x) for x in (worker_req.get("rz_cart") or [])):     # 🟢 Rozetka: «усе в одного продавця»
         q_ = ((ex_promq or {}).get("rz:" + c) or "").strip()
         try:
