@@ -684,18 +684,18 @@
   "t68507",
   "t82782",
   "t1424",
-  "m503919",
-  "m507089",
-  "m1248832",
-  "m931285",
-  "m1291595",
-  "m284054",
-  "m553",
-  "t68398",
-  "t129552",
-  "t60585"
+  "m1318413",
+  "m369885",
+  "m614945",
+  "m333339",
+  "m634649",
+  "m1255833",
+  "m146",
+  "t80350",
+  "t79501",
+  "t61865"
  ],
- "gh_beat": "2026-10-23T18:00:29.801877+03:00",
+ "gh_beat": "2026-10-23T18:04:06.903226+03:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -756,9 +756,9 @@
  },
  "fact_png": "2026-10-23 18|6|2026-10-23T13:24:55+03:00",
  "fact_day": {
-  "total": "3 год 23 хв",
+  "total": "3 год 19 хв",
   "list": [
-   "18:00–18:31 · 31 хв",
+   "18:04–18:31 · 27 хв",
    "10:32–13:24 · 2 год 52 хв"
   ]
  },
@@ -1498,14 +1498,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "23.10 18:03",
-   "ts": 1792767790,
+   "at": "23.10 18:07",
+   "ts": 1792768025,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "23.10 18:03",
-   "ts": 1792767790,
+   "at": "23.10 18:07",
+   "ts": 1792768025,
    "ok": true,
    "note": ""
   },
@@ -22407,29 +22407,17 @@
    null,
    "2026-10-23"
   ],
-  "tt7286456": [
-   8.3,
-   68,
-   59,
-   "2026-10-23"
-  ],
-  "tt1825683": [
-   7.3,
-   96,
-   88,
-   "2026-10-23"
-  ],
-  "tt1826940": [
-   7.8,
-   null,
-   null,
+  "tt1959563": [
+   6.9,
+   44,
+   47,
    "2026-10-23"
   ]
  },
  "pushed_h": {
-  "gs": "adc11a7eb0ef",
+  "gs": "030a79b458c3",
   "quiz_pool.json": "5e887a1905fd",
-  "fact.png": "57f737ed81cc",
+  "fact.png": "73859ae9e0e4",
   "sexed.json": "4efede1d8ea5",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "ca249c14d237",
@@ -32199,8 +32187,8 @@
   ],
   "ser_mystery": [
    {
-    "id": "15d047477f",
-    "text": "🍿 <b>ПІДБІРКА КІНО · СЕРІАЛИ · ДЕТЕКТИВИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Mayak-2019-10-23-5\">Маяк</a></b> (2019) · ❤️ за вашим смаком\nдрама, фентезі, трилер · ⏱ 1 год 49 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>90%</b> · Ⓜ <b>83</b>\n<i>🎭 Роберт Паттінсон, Віллем Дефо, Валерія Караман</i>\n📺 <a href=\"https://www.themoviedb.org/movie/503919-the-lighthouse/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Маяк оповідає про пригоди двох доглядачів маяка, коли вони стикаються з самотністю, дружбою та своїми найгіршими страхами.\n▶️ <a href=\"https://youtu.be/42_UHhpq530\">Трейлер</a></blockquote>\n§KN:m503919\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Pyat-nochej-u-Freddі-2023-10-23\">П’ять ночей у Фредді</a></b> (2023) · ❤️ за вашим смаком\nжахи, трилер · ⏱ 1 год 50 хв\n⭐ IMDb <b>5.4</b> · 🍅 <b>33%</b> · Ⓜ <b>33</b>\n<i>🎭 Джош Гатчерсон, Пайпер Рубіо, Елізабет Леіл</i>\n📺 <a href=\"https://www.themoviedb.org/movie/507089-five-nights-at-freddy-s/watch?locale=UA\">Rakuten TV</a>\n📝 Blumhouse представляє адаптацію популярної горор-серії відеоігор на великих екранах! Звичайна робота охоронця у популярній піцерії у Фредді перетворюється на справжнє жахіття з приходом ночі.\n▶️ <a href=\"https://youtu.be/K5T5mrB0a_E\">Трейлер</a></blockquote>\n§KN:m507089\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Dіgger-2026-10-23-4\">Діґґер</a></b> (2026)\nкомедія, драма · ⏱ 2 год 09 хв\n⭐ TMDB <b>7.5</b> · 🍅 <b>52%</b>\n<i>🎭 Том Круз, Різ Ахмед, Джон Ґудмен</i>\n📝 Наймогутніша людина у світі вирушає у відчайдушну місію, щоб довести, що він — рятівник людства, перш ніж катастрофа, яку він сам спричинив, знищить усе.\n▶️ <a href=\"https://youtu.be/BYXiZ6yP8hk\">Трейлер</a></blockquote>\n§KN:m1248832\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Mortal-Kombat-ІІ-2026-10-23\">Мортал Комбат ІІ</a></b> (2026)\nбойовик, фентезі, пригоди · ⏱ 1 год 56 хв\n⭐ IMDb <b>6.3</b> · 🍅 <b>64%</b> · Ⓜ <b>46</b>\n<i>🎭 Карл Урбан, Аделін Рудольф, Луді Лін</i>\n📺 <a href=\"https://www.themoviedb.org/movie/931285-mortal-kombat-ii/watch?locale=UA\">HBO Max, Rakuten TV</a>\n📝 Від студії New Line Cinema — новий вибуховий розділ культової франшизи, створеної за мотивами легендарної відеогри Mortal Kombat II. Цього разу у фанатському бойовому строю — вже з самим Джонні Кейджем — чемпіони…\n▶️ <a href=\"https://youtu.be/MYzSZ6mZhkE\">Трейлер</a></blockquote>\n§KN:m931285\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Astral-Za-mezhami-Potojbіchchya-2026-10-23\">Астрал: За межами Потойбіччя</a></b> (2026)\nжахи, трилер · ⏱ 1 год 46 хв\n⭐ IMDb <b>6.2</b> · 🍅 <b>57%</b> · Ⓜ <b>47</b>\n<i>🎭 Амелія Ів, Айленд Остін, Брендон Переа</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1291595-insidious-out-of-the-further/watch?locale=UA\">Rakuten TV</a>\n📝 Джемма — молода мати, яка виховує доньку в будинку, де виросла сама. Вона виявляє, що може подорожувати до Потойбіччя. Там вона має здатність повертати те, що там мешкає, у реальний світ.\n▶️ <a href=\"https://youtu.be/sj7qgRJs9Nw\">Трейлер</a></blockquote>\n§KN:m1291595\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/CHorna-pantera-2018-10-23\">Чорна пантера</a></b> (2018)\nбойовик, пригоди, фантастика · ⏱ 2 год 14 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>96%</b> · Ⓜ <b>88</b>\n<i>🎭 Чедвік Боузман, Майкл Б. Джордан, Люпіта Ніонґо</i>\n📺 <a href=\"https://www.themoviedb.org/movie/284054-black-panther/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Після того як у Ваканді було виявлено поклади металу, який може поглинати вібрацію, над жителями цієї країни нависла загроза. Охочі збагатитися несли руйнування та смерть. За легендою, таємничий воїн — Чорна пантера…\n▶️ <a href=\"https://youtu.be/VQf99hZFVOw\">Трейлер</a></blockquote>\n§KN:m284054\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Dogvіl-2003-10-23-3\">Доґвіль</a></b> (2003)\nкримінал, драма, трилер · ⏱ 2 год 58 хв\n⭐ IMDb <b>8.0</b> · 🍅 <b>70%</b> · Ⓜ <b>61</b>\n<i>🎭 Ніколь Кідман, Пол Беттані, Джон Герт</i>\n📺 <a href=\"https://www.themoviedb.org/movie/553-dogville/watch?locale=UA\">Apple TV Store</a>\n📝 Дія фільму відбувається в 1930-ті роки у США (часи Великої депресії). Режисер використовує надзвичайно мінімальний набір декорацій, щоб висвітлити історію Ґрейс, утікачки від бандитів, котра прибуває до маленького…\n▶️ <a href=\"https://youtu.be/J5-LqwUHTaM\">Трейлер</a></blockquote>\n§KN:m553\n§§\n<blockquote>📺 <b>8. <a href=\"https://telegra.ph/낭만닥터-김사부-2016-10-23\">낭만닥터 김사부</a></b> (2016)\nдрама · 📺 серіал · 3 сез.\n⭐ IMDb <b>8.4</b>\n<i>🎭 한석규, Лі Сон Кьон, Ан Хьо Соп</i>\n📝 An eccentric, triple board-certified virtuoso surgeon leaves a top job in Seoul and ends up at a provincial hospital, where he mentors young doctors.</blockquote>\n§KN:t68398\n§§\n<blockquote>📺 <b>9. <a href=\"https://telegra.ph/Nіchnij-agent-2023-10-23-3\">Нічний агент</a></b> (2023)\nекшн і пригоди, драма, детектив · 📺 серіал · 4 сез.\n⭐ IMDb <b>7.4</b>\n<i>🎭 Ґабріель Бассо, Fola Evans-Akingbola, Louis Herthum</i>\n📺 <a href=\"https://www.themoviedb.org/tv/129552-the-night-agent/watch?locale=UA\">Netflix</a>\n📝 Обʼєднані опівнічним дзвінком агент ФБР і спеціалістка з кібербезпеки намагаються розкрити заплутану політичну змову, яка із часом лише ускладнюється.\n▶️ <a href=\"https://youtu.be/nDxY5hSI5b0\">Трейлер</a></blockquote>\n§KN:t129552\n§§\n<blockquote>📺 <b>10. <a href=\"https://telegra.ph/Detektiv-Bosh-2015-10-23-2\">Детектив Босх</a></b> (2015)\nдетектив, драма, кримінал · 📺 серіал · 7 сез.\n⭐ IMDb <b>8.5</b>\n<i>🎭 Тітус Веллівер, Jamie Hector, Amy Aquino</i>\n📝 Гаррі Босх - головний герой однойменної історії. Свого часу він був учасником військової операції у В'єтнамі. Тепер Босх працює детективом у відділі вбивств у Лос-Анджелесі. Для нього робота - це життя, а життя - це…\n▶️ <a href=\"https://youtu.be/vuVAP_4TQEY\">Трейлер</a></blockquote>\n§KN:t60585"
+    "id": "3c313598ed",
+    "text": "🍿 <b>ПІДБІРКА КІНО · СЕРІАЛИ · ДЕТЕКТИВИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Tisk-2026-10-23-3\">Тиск</a></b> (2026) · ❤️ за вашим смаком\nтрилер, історичний, військовий · ⏱ 1 год 41 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>89%</b> · Ⓜ <b>69</b>\n<i>🎭 Ендрю Скотт, Брендан Фрейзер, Керрі Кондон</i>\n📝 У напружені 72 години перед Днем «Д» доля світу висить на волосині. Генерал Дуайт Д. Айзенгауер і капітан Джеймс Стеґґ стикаються з неможливим вибором — розпочати найнебезпечніше вторгнення в історії або ризикнути…\n▶️ <a href=\"https://youtu.be/RE5W3SaH7S4\">Трейлер</a></blockquote>\n§KN:m1318413\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/SHpiguni-soyuzniki-2016-10-23-2\">Шпигуни-союзники</a></b> (2016) · ❤️ за вашим смаком\nбойовик, драма, військовий · ⏱ 2 год 05 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>60%</b> · Ⓜ <b>60</b>\n<i>🎭 Бред Пітт, Маріон Котіяр, Джаред Гарріс</i>\n📺 <a href=\"https://www.themoviedb.org/movie/369885-allied/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 1942 рік, Марокко. В тилу нацистів офіцер британської розвідки зустрічає чарівну Маріанн, пристрасний роман з якою змінює його життя назавжди. Несподівано зі штабу надходить інформація про те, що його дружина і матір…\n▶️ <a href=\"https://youtu.be/FzSupjoGWEk\">Трейлер</a></blockquote>\n§KN:m369885\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Povіdomlennya-do-Іzabelі-2026-10-23-2\">Повідомлення до Ізабелі</a></b> (2026)\nмелодрама, комедія, драма · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>88%</b> · Ⓜ <b>62</b>\n<i>🎭 Зої Дойч, Нік Робінсон, Гаррі Шам молодший</i>\n📺 <a href=\"https://www.themoviedb.org/movie/614945-voicemails-for-isabelle/watch?locale=UA\">Netflix</a>\n📝 Надзвичайно відверті голосові повідомлення молодої жінки покійній сестрі випадково перенаправляються незнайомцю, який починає закохуватися в неї на відстані.\n▶️ <a href=\"https://youtu.be/H4aT0nVavLU\">Трейлер</a></blockquote>\n§KN:m614945\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Pershomu-gravcyu-prigotuvatisya-2018-10-23\">Першому гравцю приготуватися</a></b> (2018)\nпригоди, бойовик, фантастика · ⏱ 2 год 20 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>71%</b> · Ⓜ <b>64</b>\n<i>🎭 Тай Шерідан, Олівія Кук, Бен Мендельсон</i>\n📺 <a href=\"https://www.themoviedb.org/movie/333339-ready-player-one/watch?locale=UA\">Apple TV, HBO Max, Apple TV Store, Rakuten TV</a>\n📝 Події фільму відбуваються у 2045 році, коли світ стоїть на межі хаосу. Люди шукають порятунку в ОАЗІ, дорогій системі віртуальної реальності, створеній геніальним та ексцентричним Джеймсом Голлідеєм. Коли Голлідей…\n▶️ <a href=\"https://youtu.be/Kyu2G5f1v5k\">Трейлер</a></blockquote>\n§KN:m333339\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Lyudina-pavuk-Dodomu-shlyahu-nema-2021-10-23\">Людина-павук: Додому шляху нема</a></b> (2021)\nбойовик, пригоди, фантастика · ⏱ 2 год 28 хв\n⭐ IMDb <b>8.1</b> · 🍅 <b>93%</b> · Ⓜ <b>71</b>\n<i>🎭 Том Голланд, Зендея, Бенедикт Камбербетч</i>\n📺 <a href=\"https://www.themoviedb.org/movie/634649-spider-man-no-way-home/watch?locale=UA\">Netflix, Apple TV Store, Rakuten TV</a>\n📝 Уперше за всю кіноісторію Людини-павука улюбленого супергероя викрито. Пітер Паркер більше не в змозі поєднувати звичайне життя та супергеройські обов’язки. Щоб повернути все назад, він звертається по допомогу до…\n▶️ <a href=\"https://youtu.be/SpjOeVrhAh8\">Трейлер</a></blockquote>\n§KN:m634649\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Padіnnya-kita-2026-10-23-5\">Падіння кита</a></b> (2026)\nтрилер · ⏱ 1 год 46 хв\n⭐ TMDB <b>6.5</b>\n<i>🎭 Остін Абрамс, Джош Бролін, Елізабет Шу</i>\n📝 Після смерті батька Джей Ґардінер вирушає до узбережжя Центральної Каліфорнії, щоб виконати його останню волю. Під час занурення хлопця ковтає гігантський кашалот. Опинившись у череві тварини та маючи лише годину…\n▶️ <a href=\"https://youtu.be/djjZeuCzw8Y\">Трейлер</a></blockquote>\n§KN:m1255833\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Tigr-pіdkradayetsya-drakon-hovayetsya-2000-10-23\">Тигр підкрадається, дракон ховається</a></b> (2000)\nмелодрама, драма, бойовик · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>96%</b> · Ⓜ <b>94</b>\n<i>🎭 Чоу Юнь-Фат, Мішель Єо, Чжан Цзиї</i>\n📺 <a href=\"https://www.themoviedb.org/movie/146/watch?locale=UA\">Apple TV Store</a>\n📝 Легендарний воїн 19 століття Лі Мубай володів нефритовим мечем «Зелена доля». Він передав його своїй коханій, залученою до секретів бойового мистецтва. Але священна зброя була вкрадена. І підозріння лягло на…\n▶️ <a href=\"https://youtu.be/q-HrIQLdaNE\">Трейлер</a></blockquote>\n§KN:m146\n§§\n<blockquote>📺 <b>8. <a href=\"https://telegra.ph/Novij-Amsterdam-2018-10-23-3\">Новий Амстердам</a></b> (2018)\nдрама · 📺 серіал · 5 сез.\n⭐ IMDb <b>7.9</b>\n<i>🎭 Раян Егголд, Джанет Монтґомері, Jocko Sims</i>\n📺 <a href=\"https://www.themoviedb.org/tv/80350-new-amsterdam/watch?locale=UA\">Netflix</a>\n📝 Телесеріал розповідає про доктора Макса Ґудвіна, який стає головним лікарем найстарішої державної лікарні США «Новий Амстердам». Для забезпечення кращої медичної допомоги пацієнтам, він розв'язує війну з бюрократією,…\n▶️ <a href=\"https://youtu.be/McdFK7DIzoo\">Трейлер</a></blockquote>\n§KN:t80350\n§§\n<blockquote>📺 <b>9. <a href=\"https://telegra.ph/Fatalnij-patrul-2019-10-23\">Фатальний патруль</a></b> (2019)\nнауково фантастичний, драма · 📺 серіал · 4 сез.\n⭐ IMDb <b>7.7</b>\n<i>🎭 Diane Guerrero, Ейпріл Боулбі, Joivan Wade</i>\n📝 Після подій Титанів, побачте команду Дум — яка складається з Роботмена, Негативу, Еласті, і Крейзі Джейн, та на чолі з Доктором Найлс Колдер / Шеф — голови, який отримав місію від Кіборга, яку вони не можуть…\n▶️ <a href=\"https://youtu.be/6tTM9nbRk5A\">Трейлер</a></blockquote>\n§KN:t79501\n§§\n<blockquote>📺 <b>10. <a href=\"https://telegra.ph/When-Calls-the-Heart-2014-10-23\">When Calls the Heart</a></b> (2014)\nдрама, вестерн · 📺 серіал · 13 сез.\n⭐ IMDb <b>7.9</b>\n<i>🎭 Erin Krakow, Pascale Hutton, Jack Wagner</i>\n📝 Elizabeth Thatcher, a young school teacher from a wealthy Eastern family, migrates from the big city to teach school in a small coal mining town in the west.\n▶️ <a href=\"https://youtu.be/48P1jc5tyTw\">Трейлер</a></blockquote>\n§KN:t61865"
    }
   ]
  },
@@ -32215,9 +32203,5 @@
   "Експеримент із позою «Сяюча троянда»"
  ],
  "para_bag": [],
- "content_last": {
-  "kind": "article",
-  "src": "Cosmopolitan"
- },
  "para_sent": "2026-10-23"
 }
