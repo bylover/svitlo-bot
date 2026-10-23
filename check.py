@@ -4499,20 +4499,39 @@ def fantasy_refresh(st: dict, now: datetime) -> None:
 
 # ---------- 🛍 Prom.ua: розумний топ у категоріях і «усе в одного продавця» (сторінки каталогу; рейтинг продавця ≥95%) ----------
 PROM_FILE = Path("prom.json")
-PROM_CATS = [("🔞 Вібратори", "вібратор"), ("🔞 Вакуумні стимулятори", "вакуумний стимулятор клітора"), ("🔞 Мастурбатори", "мастурбатор"), ("🔞 Анальні іграшки", "анальна пробка"),
-             ("🔞 Ерекційні кільця", "ерекційне кільце"), ("🔞 Лубриканти", "лубрикант"), ("🔞 Презервативи", "презервативи"), ("🔞 БДСМ", "бдсм набір"),
-             ("🎧 Навушники", "бездротові навушники"), ("🔋 Павербанки", "павербанк"), ("⚡ Зарядні станції", "зарядна станція"), ("⌚ Смарт-годинники", "смарт годинник"),
-             ("🤖 Роботи-пилососи", "робот пилосос"), ("☕ Кавоварки", "кавоварка"), ("🏋️ Гантелі", "гантелі розбірні"), ("👟 Кросівки", "кросівки чоловічі")]
+PROM_CATS = [   # спільний список категорій для Prom і Hotline (назва, запит)
+    ("🔞 Вібратори", "вібратор"), ("🔞 Вакуумні стимулятори", "вакуумний стимулятор клітора"), ("🔞 Мастурбатори", "мастурбатор"), ("🔞 Анальні іграшки", "анальна пробка"),
+    ("🔞 Ерекційні кільця", "ерекційне кільце"), ("🔞 Лубриканти", "лубрикант"), ("🔞 Презервативи", "презервативи"), ("🔞 БДСМ", "бдсм набір"), ("🔞 Еротична білизна", "еротична білизна"),
+    ("📱 Смартфони", "смартфон"), ("💻 Ноутбуки", "ноутбук"), ("📟 Планшети", "планшет"), ("🖥 Монітори", "монітор"), ("📺 Телевізори", "телевізор"),
+    ("🎧 Навушники", "бездротові навушники"), ("🔊 Колонки", "портативна колонка"), ("🔋 Павербанки", "павербанк"), ("⚡ Зарядні станції", "зарядна станція"),
+    ("⌚ Смарт-годинники", "смарт годинник"), ("📶 Роутери", "wifi роутер"), ("💾 SSD", "ssd накопичувач"), ("🖱 Мишки й клавіатури", "бездротова мишка"),
+    ("🤖 Роботи-пилососи", "робот пилосос"), ("🧹 Пилососи", "пилосос"), ("☕ Кавоварки", "кавоварка"), ("🍟 Мультипечі", "мультипіч аерофритюрниця"),
+    ("🫖 Електрочайники", "електрочайник"), ("🥤 Блендери", "блендер"), ("💨 Фени й стайлери", "фен для волосся"), ("🪒 Тримери й бритви", "тример"),
+    ("🦷 Електрощітки", "електрична зубна щітка"), ("🏋️ Гантелі", "гантелі розбірні"), ("🚴 Велосипеди", "велосипед"), ("👟 Кросівки", "кросівки чоловічі"),
+    ("🧱 LEGO", "lego"), ("🚗 Відеореєстратори", "відеореєстратор"), ("🔧 Шуруповерти", "шуруповерт акумуляторний"), ("🐶 Корм для тварин", "корм для собак")]
 PROM_RATING = 95
 PROM_LOG: list = []
 PROM_DBG: dict = {}
+
+
+PROM_429 = {"hit": False}
 
 
 def prom_page(q: str, page: int = 1) -> str:
     url = "https://prom.ua/ua/search?" + urllib.parse.urlencode({"search_term": q, **({"page": page} if page > 1 else {})})
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140 Safari/537.36",
                                                "Accept-Language": "uk-UA,uk;q=0.9", "Accept": "text/html,application/xhtml+xml"})
-    return urllib.request.urlopen(req, timeout=30).read().decode("utf-8", "replace")
+    for attempt in range(2):                          # 429 — Prom обмежив запити: одна повторна спроба, далі — зупинка
+        try:
+            r_ = urllib.request.urlopen(req, timeout=30).read().decode("utf-8", "replace")
+            _time.sleep(3.5)                          # повільно, щоб не ловити обмеження
+            return r_
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and attempt == 0:
+                _time.sleep(25); continue
+            if e.code == 429:
+                PROM_429["hit"] = True
+            raise
 
 
 def _json_at(h: str, marker: str):
@@ -4677,6 +4696,9 @@ def prom_offers(q: str, pages: int = 2) -> list:
                             "st": _num((re.search(r'data-qaid="product_rating"[^>]*?(?:title|aria-label)="[^"]*?([\d.,]+)', blk) or [None, 0])[1]),
                             "sold": _num((re.search(r'(?:Купили|Продано)\D{0,15}(\d+)', blk) or [None, 0])[1])})
         why_ = {"товарів": 0, "без ціни/назви/продавця": 0, "не в наявності": 0}
+        href_by_id = {}                               # точні посилання на товари — як на сторінці Prom
+        for m_ in re.finditer(r'href="((?:https://prom\.ua)?/(?:ua/)?p(\d{6,})-[^"#?]+\.html)', h):
+            href_by_id.setdefault(m_.group(2), m_.group(1).replace("https://prom.ua", ""))
         for k, v in cache.items():
             if not isinstance(v, dict) or not (str(v.get("__typename", "")) == "Product" or str(k).startswith("Product:")):
                 continue
@@ -4692,7 +4714,7 @@ def prom_offers(q: str, pages: int = 2) -> list:
             if not name or not price or not comp:
                 why_["без ціни/назви/продавця"] += 1
                 continue
-            url = v.get("urlForProductCatalog") or v.get("url") or (f"/ua/p{v.get('id')}-{v.get('urlText')}.html" if v.get("urlText") else f"/ua/p{v.get('id')}.html")
+            url = v.get("urlForProductCatalog") or v.get("url") or href_by_id.get(str(v.get("id"))) or (f"/ua/p{v.get('id')}-{v.get('urlText')}.html" if v.get("urlText") else f"/ua/p{v.get('id')}.html")   # точне посилання зі сторінки
             out.append({"n": str(name)[:140], "p": price, "u": ("https://prom.ua" + url) if url.startswith("/") else url,
                         "s": str(comp.get("name") or "")[:60], "sid": str(comp.get("id") or ""),
                         "r": find(comp, r"positive.*percent|opinionPositivePercent|rating") or 0,
@@ -4714,11 +4736,15 @@ def prom_top(st: dict, now: datetime) -> None:
     """Раз на добу: у кожній категорії групуємо однакові товари різних продавців, беремо найпопулярніші й найдешевшу пропозицію від продавця з рейтингом ≥95%."""
     if not WORKER_MODE or st.get("prom_day") == now.date().isoformat() and not st.get("prom_force") and st.get("prom_v") == 6:
         return                                        # нова версія розбору — збираємо одразу, не чекаючи завтра
+    if _time.time() < float(st.get("prom_block_until") or 0):
+        print("Prom.ua: пауза після обмеження запитів (429)"); return
     res, t0 = {}, _time.time()
     for title, q in PROM_CATS:
-        if _time.time() - t0 > 200:
+        if _time.time() - t0 > 330:
             break
-        offers = prom_offers(q, 2)
+        if PROM_429["hit"]:
+            break                                     # Prom обмежив запити — далі не ліземо
+        offers = prom_offers(q, 1)
         clusters = []                                 # однакові позиції: ≥60% спільних слів назви
         for o in offers:
             tk = _tok(o["n"])
@@ -4741,6 +4767,10 @@ def prom_top(st: dict, now: datetime) -> None:
                 break
         top.sort(key=lambda x: (x.get("r90", False), -(x["pop"] + 20 * (x["stars"] or 0)), x["p"]))   # спершу продавці ≥95%
         res[title] = top[:15]
+    if PROM_429["hit"] and not any(res.values()):    # обмеження — не перезаписуємо топ порожнім, повторимо через 2 год
+        st["prom_block_until"] = _time.time() + 2 * 3600; st["prom_force"] = False
+        PROM_LOG.insert(0, "⏸ Prom тимчасово обмежив запити (429) — повторю через 2 год")
+        print("Prom.ua: 429 — пауза 2 год"); return
     st["prom_day"], st["prom_force"], st["prom_v"] = now.date().isoformat(), False, 6
     st["prom_last_n"] = sum(len(v) for v in res.values())
     try:
@@ -4783,7 +4813,7 @@ def prom_cart(text: str) -> str:
         return ("🧺 <b>Продавця, в якого є все, не знайшов</b> (рейтинг ≥95%).\n" + ("\n".join(f"• {esc(v['s'])} ({v['r']:.0f}%) — є {len(v['items'])} з {len(items)}" for v in part) or "") +
                 (f"\n\nНайдешевше окремо: {sep:.0f} ₴" if cheapest else "") + "\n<i>Спробуйте коротші назви (бренд + модель).</i>")
     out = [f"🧺 <b>Усе в одного продавця</b> · {len(items)} позицій" + ("\n<i>⚠️ Продавців із ≥95% не знайшлося — показано від 90%</i>" if lowered else "") + "\n"]
-    for i, v in enumerate(full[:3], 1):
+    for i, v in enumerate(full[:5 if len(items) == 1 else 3], 1):
         tot = sum(o["p"] for o in v["items"].values())
         out.append(f"{i}. <b>{esc(v['s'])}</b> · ⭐ {v['r']:.0f}% позитивних · <b>{tot:.0f} ₴</b>\n" +
                    "\n".join(f"   • <a href=\"{o['u']}\">{esc(o['n'][:60])}</a> — {o['p']:.0f} ₴" for o in v["items"].values()))
