@@ -554,7 +554,7 @@
   "t90802",
   "t39793"
  ],
- "gh_beat": "2026-10-23T03:00:41.251926+03:00",
+ "gh_beat": "2026-10-23T03:05:41.745649+03:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1526,8 +1526,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "23.10 02:06",
-   "ts": 1792710388,
+   "at": "23.10 03:06",
+   "ts": 1792713990,
    "ok": true,
    "note": ""
   },
@@ -1586,8 +1586,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "23.10 02:17",
-   "ts": 1792711054,
+   "at": "23.10 03:07",
+   "ts": 1792714078,
    "ok": true,
    "note": ""
   },
@@ -1598,14 +1598,14 @@
    "note": ""
   },
   "prom.ua": {
-   "at": "23.10 02:05",
-   "ts": 1792710346,
+   "at": "23.10 03:05",
+   "ts": 1792713949,
    "ok": true,
    "note": ""
   },
   "фантазія тижня": {
-   "at": "23.10 00:55",
-   "ts": 1792706152,
+   "at": "23.10 03:05",
+   "ts": 1792713949,
    "ok": true,
    "note": ""
   }
@@ -16409,7 +16409,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "7da2978678d8",
+  "gs": "ab8319d5949c",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "070c3325a4a4",
   "sexed.json": "4efede1d8ea5",
@@ -18913,6 +18913,313 @@
    ],
    "ov": "Події розгортаються в 1947 році на британському острові Джерсі. Війна давно закінчилася, у відокремленому від світу маєтку молода жінка Грейс сама виховує дітей в дусі власних релігійних принципів. Її донька та син страж",
    "poster": "https://image.tmdb.org/t/p/w500/qpLLCoQe0c6HnkfHsVPrT78zjKv.jpg"
+  },
+  "m1119449": {
+   "title": "Удачі, веселися, не вмирай",
+   "year": "2026",
+   "rating": 7.0,
+   "genres": [
+    "Фантастика",
+    "Бойовик",
+    "Комедія"
+   ],
+   "g": [
+    878,
+    28,
+    35
+   ],
+   "ov": "Чоловік з майбутнього приїжджає в закусочну в Лос-Анджелесі, де він повинен набрати певну групу незадоволених відвідувачів, які приєднаються до нього в одноденній подорожі по шести кварталах, щоб врятувати світ від смерт",
+   "poster": "https://image.tmdb.org/t/p/w500/cutXsmnOTV7J6jqYZQprURVQKQP.jpg"
+  },
+  "m586791": {
+   "title": "Рибка",
+   "year": "2021",
+   "rating": 7.1,
+   "genres": [
+    "Мелодрама",
+    "Фантастика",
+    "Драма"
+   ],
+   "g": [
+    10749,
+    878,
+    18
+   ],
+   "ov": "Молодята Емма і Джуд змушені боротися за свої почуття, коли Емма підхоплює незрозумілий вірус, який знищує спогади. Чи вдасться закоханим зберегти кохання попри загрозу повного забуття?",
+   "poster": "https://image.tmdb.org/t/p/w500/8AYQ7vyUI2HVLEKH7niFvJ1AdZp.jpg"
+  },
+  "m466532": {
+   "title": "Clara",
+   "year": "2018",
+   "rating": 7.4,
+   "genres": [
+    "Фантастика",
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    878,
+    18,
+    10749
+   ],
+   "ov": "An astronomer becomes obsessed with searching the cosmos for signs of life beyond Earth which leads to a shocking discovery.",
+   "poster": "https://image.tmdb.org/t/p/w500/uaWAjD4y64qkvGzgNNj9vDrjX2l.jpg"
+  },
+  "m364433": {
+   "title": "Мене звуть Джиг Робот",
+   "year": "2016",
+   "rating": 7.4,
+   "genres": [
+    "Фантастика",
+    "Бойовик",
+    "Драма"
+   ],
+   "g": [
+    878,
+    28,
+    18
+   ],
+   "ov": "Енцо, самотній і людиноненависнийї маленький шахрай, використовує надздібності отримані після падіння в річку Тібр, щоб ганятися за божевільним бандитом під назвою «Циган».",
+   "poster": "https://image.tmdb.org/t/p/w500/yBH2xA38BfJep4oa3AbBFSRDtZO.jpg"
+  },
+  "m653346": {
+   "title": "Королівство планети мавп",
+   "year": "2024",
+   "rating": 6.8,
+   "genres": [
+    "Фантастика",
+    "Пригоди",
+    "Бойовик"
+   ],
+   "g": [
+    878,
+    12,
+    28
+   ],
+   "ov": "Мавпи – домінуючий вид, який гармонійно співіснує, а люди приречені на життя в тіні. Поки новий тиранічний мавпячий вождь будує свою імперію, одна молода мавпа вирушає у виснажливу подорож. Ця мандрівка змусить поставити",
+   "poster": "https://image.tmdb.org/t/p/w500/wkWKOIrO8XlkNtN1qaZNDqvrHWM.jpg"
+  },
+  "m757860": {
+   "title": "晴雅集",
+   "year": "2020",
+   "rating": 7.2,
+   "genres": [
+    "Бойовик",
+    "Драма",
+    "Фентезі"
+   ],
+   "g": [
+    28,
+    18,
+    14,
+    9648
+   ],
+   "ov": "Every few hundred years, the most powerful demon on earth—a snake demon—awakens, and the Yin-Yang Masters are summoned to the capital. Meanwhile, the Princess of the realm has her own plans, as she conspires to claim the",
+   "poster": "https://image.tmdb.org/t/p/w500/32AyMYMWeAB7C0MYLQ60ktXwuRO.jpg"
+  },
+  "m447743": {
+   "title": "いぬやしき",
+   "year": "2018",
+   "rating": 7.7,
+   "genres": [
+    "Бойовик",
+    "Пригоди",
+    "Фантастика"
+   ],
+   "g": [
+    28,
+    12,
+    878,
+    14
+   ],
+   "ov": "A middle-aged office worker encounters aliens and is gifted with alien technology and limitless powers.",
+   "poster": "https://image.tmdb.org/t/p/w500/5w2Il7gp2drEVQClhIaGFoORy7L.jpg"
+  },
+  "m1072371": {
+   "title": "Джулс",
+   "year": "2023",
+   "rating": 6.8,
+   "genres": [
+    "Комедія",
+    "Фантастика",
+    "Драма"
+   ],
+   "g": [
+    35,
+    878,
+    18
+   ],
+   "ov": "Мілтон живе тихим рутинним життям у маленькому містечку на заході Пенсильванії, але його день перевертається з ніг на голову, коли НЛО та його інопланетний пасажир зазнають краху на його задньому дворі.",
+   "poster": "https://image.tmdb.org/t/p/w500/esbC6ZxUrRl26D0DvLNJJwY0Xdk.jpg"
+  },
+  "m701387": {
+   "title": "Буґонія",
+   "year": "2025",
+   "rating": 7.4,
+   "genres": [
+    "Фантастика",
+    "Трилер",
+    "Комедія"
+   ],
+   "g": [
+    878,
+    53,
+    35
+   ],
+   "ov": "Що буде, якщо двоє одержимих теоріями змови чоловіків,  викрадуть генеральну директорку великої компанії, адже переконані, що вона — інопланетянка, яка планує знищити Землю?",
+   "poster": "https://image.tmdb.org/t/p/w500/cBzFZLSlPkoemOBIiKH0MFUjB5u.jpg"
+  },
+  "m726139": {
+   "title": "Проект «Тиша»",
+   "year": "2024",
+   "rating": 6.8,
+   "genres": [
+    "Трилер",
+    "Бойовик",
+    "Жахи"
+   ],
+   "g": [
+    53,
+    28,
+    27,
+    878
+   ],
+   "ov": "Через туман на великому мосту відбувається аварія, і з фургона, на волю вириваються дуже злі експериментальні собачки.",
+   "poster": "https://image.tmdb.org/t/p/w500/rXuSca6qEb4xPrSRT7XRzYCFbZB.jpg"
+  },
+  "m577922": {
+   "title": "Тенет",
+   "year": "2020",
+   "rating": 7.3,
+   "genres": [
+    "Бойовик",
+    "Трилер",
+    "Фантастика"
+   ],
+   "g": [
+    28,
+    53,
+    878
+   ],
+   "ov": "Озброєний єдиним словом, Тенет, головний герой бореться за виживання усього світу. Він подорожує оповитим сутінками світом міжнародного шпигунства з єдиною місією, яка розгорнеться за межами реального часу.",
+   "poster": "https://image.tmdb.org/t/p/w500/hsGsdJnjvdXdqXOJyLiJHVecAt5.jpg"
+  },
+  "m281338": {
+   "title": "Війна за планету мавп",
+   "year": "2017",
+   "rating": 7.2,
+   "genres": [
+    "Драма",
+    "Фантастика",
+    "Військовий"
+   ],
+   "g": [
+    18,
+    878,
+    10752
+   ],
+   "ov": "Цезаря та його мавп втягнуто у смертельне протистояння з людським військом під орудою безжального Полковника.  Після того, як мавпи зазнали неймовірних втрат, Цезар долає власні темні інстинкти й розпочинає особисту війн",
+   "poster": "https://image.tmdb.org/t/p/w500/sF8IgIBNI5gkT3M8W9Cosr934Uz.jpg"
+  },
+  "m695721": {
+   "title": "Голодні ігри: Балада про співочих пташок і змій",
+   "year": "2023",
+   "rating": 6.6,
+   "genres": [
+    "Фантастика",
+    "Бойовик"
+   ],
+   "g": [
+    878,
+    28
+   ],
+   "ov": "«Голодні ігри: Балада про співочих пташок і змій» розповідає про молодого Коріолана, який є останньою надією його роду, колись гордого клану Сноу, що впав в немилість післявоєнного Капітолію. Оскільки його статки та житт",
+   "poster": "https://image.tmdb.org/t/p/w500/dSKzZLoDyzOy4i6ujTaC5FPupr8.jpg"
+  },
+  "m36243": {
+   "title": "Ґодзілла, Мотра, Кінг Гідора: Атака всіх монстрів",
+   "year": "2001",
+   "rating": 7.0,
+   "genres": [
+    "Бойовик",
+    "Пригоди",
+    "Жахи"
+   ],
+   "g": [
+    28,
+    12,
+    27,
+    14
+   ],
+   "ov": "Godzilla has become a distant memory for Japan when the destruction of a US submarine raises alarms for Admiral Tachibana. His estranged daughter Yuri investigates the legend of the guardian monsters, who must rise to pr",
+   "poster": "https://image.tmdb.org/t/p/w500/vMZsdO6ZLBUHLqTOH8YvjwOBqUv.jpg"
+  },
+  "m11297": {
+   "title": "지구를 지켜라!",
+   "year": "2003",
+   "rating": 7.1,
+   "genres": [
+    "Комедія",
+    "Фантастика",
+    "Кримінал"
+   ],
+   "g": [
+    35,
+    878,
+    80
+   ],
+   "ov": "A young man believes that his country's leaders are actually toxic reptilian aliens sent down to launch a takeover of his beloved Earth. So he decides to abduct them and force the truth out on camera in his basement that",
+   "poster": "https://image.tmdb.org/t/p/w500/iO2asIPkgzpLNnsKG9qgkfoGmrX.jpg"
+  },
+  "m226448": {
+   "title": "У твоїх очах",
+   "year": "2014",
+   "rating": 7.1,
+   "genres": [
+    "Драма",
+    "Мелодрама",
+    "Фантастика"
+   ],
+   "g": [
+    18,
+    10749,
+    878
+   ],
+   "ov": "Історія про двох людей, життя яких абсолютно відрізняються одне від одного, але вони мають потужний зв'язок між собою — можуть чути і бачити один одного на відстані.",
+   "poster": "https://image.tmdb.org/t/p/w500/4XAaMo2nBZR3eH8HU6AbPkBKEXI.jpg"
+  },
+  "m69315": {
+   "title": "Battlestar Galactica: Razor",
+   "year": "2007",
+   "rating": 7.6,
+   "genres": [
+    "Фантастика",
+    "Бойовик",
+    "Драма"
+   ],
+   "g": [
+    878,
+    28,
+    18,
+    53
+   ],
+   "ov": "The history and adventures of the Battlestar Pegasus, from shortly before the Cylon invasion to shortly after Lee Adama is made commander. The story is told through the eyes of and largely focuses on one particular membe",
+   "poster": "https://image.tmdb.org/t/p/w500/tO3EoFJj0FJjKelDW5SUtquDIy2.jpg"
+  },
+  "m624479": {
+   "title": "Супермен 2: Версія Річарда Доннера",
+   "year": "2006",
+   "rating": 7.4,
+   "genres": [
+    "Фантастика",
+    "Бойовик"
+   ],
+   "g": [
+    878,
+    28
+   ],
+   "ov": "Superman agrees to sacrifice his powers to start a relationship with Lois Lane, unaware that three Kryptonian criminals he inadvertently released are conquering Earth.",
+   "poster": "https://image.tmdb.org/t/p/w500/dkLplIwss7Jleh82NawyGyFNMgJ.jpg"
   }
  },
  "cofid_pushed": "22.10.2026",
@@ -18934,14 +19241,17 @@
   "les": "2026-10-23T02:05:43.850186+03:00",
   "ero": "2026-10-23T02:05:43.850186+03:00",
   "pov": "2026-10-23T02:15:42.345075+03:00",
-  "lat": "2026-10-23T02:15:42.345075+03:00"
+  "lat": "2026-10-23T02:15:42.345075+03:00",
+  "asi": "2026-10-23T03:05:41.873913+03:00",
+  "blo": "2026-10-23T03:05:41.873913+03:00"
  },
  "kp_at": {
   "mix": "2026-10-22T19:15:44.418674+03:00",
   "drama": "2026-10-22T21:05:43.209760+03:00",
   "thriller": "2026-10-22T22:55:42.477118+03:00",
   "comedy": "2026-10-23T01:05:42.208479+03:00",
-  "horror": "2026-10-23T02:05:43.850186+03:00"
+  "horror": "2026-10-23T02:05:43.850186+03:00",
+  "scifi": "2026-10-23T03:05:41.873913+03:00"
  },
  "ero_seen": {
   "160603556": [
