@@ -93,16 +93,6 @@
   "https://toybenchreviews.medium.com/how-to-tell-if-a-sex-toy-review-is-actually-helpful-dbcbb447d3a9?source=rss------sex_toys-5"
  ],
  "kino_seen": [
-  "t95396",
-  "t73586",
-  "t1407",
-  "m575265",
-  "m1084199",
-  "m1368337",
-  "m1263337",
-  "m1423191",
-  "m1339713",
-  "m44115",
   "t71715",
   "t83631",
   "t1950",
@@ -692,9 +682,19 @@
   "m776797",
   "m610253",
   "m11880",
-  "m46420"
+  "m46420",
+  "m1072371",
+  "m364433",
+  "m1242898",
+  "m586791",
+  "m696806",
+  "m281338",
+  "m878608",
+  "m701387",
+  "m1635",
+  "m131631"
  ],
- "gh_beat": "2026-10-23T13:05:44.297370+03:00",
+ "gh_beat": "2026-10-23T13:08:31.772949+03:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -1597,14 +1597,14 @@
    "note": ""
   },
   "🛍 Prom.ua": {
-   "at": "23.10 09:08",
-   "ts": 1792735694,
+   "at": "23.10 13:11",
+   "ts": 1792750275,
    "ok": true,
    "note": ""
   },
   "prom.ua": {
-   "at": "23.10 11:25",
-   "ts": 1792743952,
+   "at": "23.10 13:11",
+   "ts": 1792750275,
    "ok": true,
    "note": ""
   },
@@ -21026,10 +21026,100 @@
    100,
    null,
    "2026-10-23"
+  ],
+  "tt3741700": [
+   6.0,
+   42,
+   48,
+   "2026-10-23"
+  ],
+  "tt6292852": [
+   6.7,
+   89,
+   64,
+   "2026-10-23"
+  ],
+  "tt27552099": [
+   6.2,
+   null,
+   70,
+   "2026-10-23"
+  ],
+  "tt1634106": [
+   5.7,
+   31,
+   44,
+   "2026-10-23"
+  ],
+  "tt5095030": [
+   7.0,
+   87,
+   70,
+   "2026-10-23"
+  ],
+  "tt6341832": [
+   6.5,
+   90,
+   67,
+   "2026-10-23"
+  ],
+  "tt29002950": [
+   7.2,
+   91,
+   87,
+   "2026-10-23"
+  ],
+  "tt1385826": [
+   7.0,
+   71,
+   60,
+   "2026-10-23"
+  ],
+  "tt0399201": [
+   6.8,
+   null,
+   50,
+   "2026-10-23"
+  ],
+  "tt0418279": [
+   7.1,
+   57,
+   61,
+   "2026-10-23"
+  ],
+  "tt1951265": [
+   6.6,
+   70,
+   64,
+   "2026-10-23"
+  ],
+  "tt1951266": [
+   6.6,
+   70,
+   65,
+   "2026-10-23"
+  ],
+  "tt0770828": [
+   7.1,
+   57,
+   55,
+   "2026-10-23"
+  ],
+  "tt0181689": [
+   7.6,
+   89,
+   80,
+   "2026-10-23"
+  ],
+  "tt0234215": [
+   7.2,
+   74,
+   62,
+   "2026-10-23"
   ]
  },
  "pushed_h": {
-  "gs": "d1873f28a729",
+  "gs": "c8b44f8174da",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "0e2f9d23bd69",
   "sexed.json": "4efede1d8ea5",
@@ -21114,7 +21204,6 @@
   "sx/tech_shallowing.png": "0f0dd9f56c27"
  },
  "force_heavy": [
-  "prom.ua",
   "rozetka"
  ],
  "rc_need": true,
@@ -30021,7 +30110,7 @@
   "160603556": "Dracula"
  },
  "prom_day": "2026-10-23",
- "prom_force": true,
+ "prom_force": false,
  "games_v": 2,
  "kino_last": {
   "text": "🍿 <b>КІНО НА ВИХІДНІ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Nevidimij-gіst-2017-10-23\">Невидимий гість</a></b> (2017) · ❤️ за вашим смаком\nдрама, детектив, трилер · ⏱ 1 год 47 хв\n⭐ IMDb <b>8.0</b> · 🍅 <b>67%</b>\n<i>🎭 Маріо Касас, Ana Wagener, Jose Coronado</i>\n📺 <a href=\"https://www.themoviedb.org/movie/411088-contratiempo/watch?locale=UA\">Apple TV Store</a>\n📝 Молодого бізнесмена Адріана Доріа звинувачують у вбивстві коханки, і він вирішує скористатися послугами Вірджинії Гудман, кращого в країні фахівця щодо виходу з найскладніших ситуацій. Адріан утримується під домашнім…\n▶️ <a href=\"https://youtu.be/epCg2RbyF80\">Трейлер</a></blockquote>\n§KN:m411088\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Neskorimij-2022-10-23\">Нескоримий</a></b> (2022) · ❤️ за вашим смаком\nбойовик, військовий, трилер · ⏱ 1 год 31 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>94%</b> · Ⓜ <b>70</b>\n<i>🎭 Йорма Томміла, Aksel Hennie, Jack Doolan</i>\n📝 Фінляндія, 1944 рік. Колишній солдат знаходить у Лапландії золоту жилу і вирушає до міста продати золото, але на шляху йому доводиться вступити в конфлікт з оберштурмфюрером СС.\n▶️ <a href=\"https://youtu.be/d2k4QAItiSA\">Трейлер</a></blockquote>\n§KN:m840326\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Zoryanі-vіjni-Epіzod-8--Ostannі-dzhedai-2017-10-23\">Зоряні війни: Епізод 8 — Останні джедаї</a></b> (2017)\nпригоди, бойовик, фантастика · ⏱ 2 год 32 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>91%</b> · Ⓜ <b>84</b>\n<i>🎭 Марк Гемілл, Керрі Фішер, Адам Драйвер</i>\n📺 <a href=\"https://www.themoviedb.org/movie/181808-star-wars-the-last-jedi/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Баланс Сили порушено, і міжгалактичний конфлікт набирає нових обертів. На Рей, Фінна та дроїда БіБі-8 чекає жорстоке протистояння…\n▶️ <a href=\"https://youtu.be/SEGYUIDyV4o\">Трейлер</a></blockquote>\n§KN:m181808\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Superniki-2024-10-23\">Суперники</a></b> (2024)\nдрама, мелодрама · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>88%</b> · Ⓜ <b>82</b>\n<i>🎭 Зендея, Майк Файст, Джош О'Коннор</i>\n📝 Таші Дункан, колись неймовірно талановита тенісистка, стала тренеркою та силою, яка ніколи не вибачається за свою гру на корті та поза ним. Чоловік Таші – теж тенісист – лідирує за серією програшів, але вона…\n▶️ <a href=\"https://youtu.be/6UG-nqXQxXE\">Трейлер</a></blockquote>\n§KN:m937287\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/SHans-na-shchastya-2026-10-23\">Шанс на щастя</a></b> (2026)\nмелодрама, драма · ⏱ 1 год 52 хв\n⭐ TMDB <b>7.7</b>\n<i>🎭 Naomi Baker, Jay Reeves, Tamberla Perry</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1458857-doing-life/watch?locale=UA\">Netflix</a>\n📝 Самотня мати й ув’язнений чоловік установлюють неочікуваний зв’язок через щирі листи й відкривають шлях до спокути, надії та кохання попри всі перешкоди.\n▶️ <a href=\"https://youtu.be/HjRaNiTvAis\">Трейлер</a></blockquote>\n§KN:m1458857\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Vantazh-2026-10-23\">Вантаж</a></b> (2026)\nтрилер, пригоди, історичний · ⏱ 1 год 52 хв\n⭐ TMDB <b>6.7</b>\n<i>🎭 Ітан Гоук, Расселл Кроу, Julia Jones</i>\n📝 У 1933 році в Орегоні Семюеля Мерфі розлучають із донькою та відправляють до жорстокого трудового табору. Начальник табору Кленсі спокушає його достроковим звільненням, якщо він переправить золото через смертельно…\n▶️ <a href=\"https://youtu.be/7YpuMymmiJ8\">Трейлер</a></blockquote>\n§KN:m1433583\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Mіst-shpigunіv-2015-10-23\">Міст шпигунів</a></b> (2015)\nтрилер, драма · ⏱ 2 год 21 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>91%</b> · Ⓜ <b>81</b>\n<i>🎭 Том Генкс, Марк Райленс, Емі Раян</i>\n📺 <a href=\"https://www.themoviedb.org/movie/296098-bridge-of-spies/watch?locale=UA\">Apple TV Store</a>\n📝 Сюжет картини заснований на реальних подіях.  Бруклінський адвокат Джеймса Донован опиняється в епіцентрі холодної війни, коли ЦРУ відправляє його на практично неможливе завдання — домовитися про звільнення…\n▶️ <a href=\"https://youtu.be/02XjJ2800cQ\">Трейлер</a></blockquote>\n§KN:m296098\n§§\n<blockquote>📺 <b>8. <a href=\"https://telegra.ph/Slіpota-2019-10-23\">Сліпота</a></b> (2019)\nдрама, науково фантастичний, екшн і пригоди · 📺 серіал · 3 сез.\n⭐ IMDb <b>7.6</b>\n<i>🎭 Джейсон Момоа, Sylvia Hoeks, Hera Hilmar</i>\n📺 <a href=\"https://www.themoviedb.org/tv/80752-see/watch?locale=UA\">Apple TV</a>\n📝 Події розгортаються в далекому майбутньому. Через страшну катастрофу, людська раса повність втратила зір. За багато сотень років суспільство зуміло знайти нові способи виживання, взаємодії в соціумі, інженерії,…\n▶️ <a href=\"https://youtu.be/03RAKJipMeM\">Трейлер</a></blockquote>\n§KN:t80752\n§§\n<blockquote>📺 <b>9. <a href=\"https://telegra.ph/Novij-Amsterdam-2018-10-23-2\">Новий Амстердам</a></b> (2018)\nдрама · 📺 серіал · 5 сез.\n⭐ IMDb <b>7.9</b>\n<i>🎭 Раян Егголд, Джанет Монтґомері, Jocko Sims</i>\n📺 <a href=\"https://www.themoviedb.org/tv/80350-new-amsterdam/watch?locale=UA\">Netflix</a>\n📝 Телесеріал розповідає про доктора Макса Ґудвіна, який стає головним лікарем найстарішої державної лікарні США «Новий Амстердам». Для забезпечення кращої медичної допомоги пацієнтам, він розв'язує війну з бюрократією,…\n▶️ <a href=\"https://youtu.be/McdFK7DIzoo\">Трейлер</a></blockquote>\n§KN:t80350\n§§\n<blockquote>📺 <b>10. <a href=\"https://telegra.ph/Medіum-2005-10-23\">Медіум</a></b> (2005)\nкримінал, драма, детектив · 📺 серіал · 7 сез.\n⭐ IMDb <b>7.2</b>\n<i>🎭 Патриція Аркетт, Джейк Вебер, Міґель Сандовал</i>\n📝 Звичайна домогосподарка, мати трьох дітей володіє унікальним даром - бачить уві сні реальні вбивства. Жінка-медіум одночасно допомагає поліції у затриманні злочинців і намагається не зруйнувати свою сім’ю.</blockquote>\n§KN:t36",
@@ -30071,6 +30160,12 @@
    {
     "id": "f0e9bd21a9",
     "text": "🍿 <b>ПІДБІРКА КІНО · ЖАХИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Vampire-humaniste-cherche-suicidaire-consentant-2023-10-23\">Vampire humaniste cherche suicidaire consentant</a></b> (2023)\nкомедія, фентезі, жахи · ⏱ 1 год 31 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>90%</b> · Ⓜ <b>70</b>\n<i>🎭 Sara Montpetit, Félix-Antoine Bénard, Steve Laplante</i>\n📝 Sasha is a young vampire with a serious problem: she's too sensitive to kill. When her exasperated parents cut off her blood supply, Sasha's life is in jeopardy. Luckily, she meets Paul, a lonely teenager with…\n▶️ <a href=\"https://youtu.be/ksWqIui9jHo\">Трейлер</a></blockquote>\n§KN:m988402\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Ne-dihaj-2016-10-23\">Не дихай</a></b> (2016)\nжахи, трилер · ⏱ 1 год 28 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>88%</b> · Ⓜ <b>71</b>\n<i>🎭 Стівен Ленґ, Джейн Леві, Ділан Міннетт</i>\n📺 <a href=\"https://www.themoviedb.org/movie/300669-don-t-breathe/watch?locale=UA\">Rakuten TV, Apple TV Store</a>\n📝 Грабіжники пробираються в будинок самотнього сліпого старця з метою вкрасти величезну суму, яка, за чутками, захована десь всередині. Здавалося б — що може бути простіше, ніж винести гроші з дому практичного…\n▶️ <a href=\"https://youtu.be/U9zaoZ3qFaI\">Трейлер</a></blockquote>\n§KN:m300669\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Vіdma-Nova-anglіjska-kazka-2016-10-23\">Відьма: Нова англійська казка</a></b> (2016)\nжахи, фентезі, детектив · ⏱ 1 год 32 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>91%</b> · Ⓜ <b>84</b>\n<i>🎭 Аня Тейлор-Джой, Ральф Інесон, Кейт Дікі</i>\n📺 <a href=\"https://www.themoviedb.org/movie/310131-the-witch/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Нова Англія, 1630-ті роки. Вільям і Кетрін з п'ятьма дітьми живуть на самотній фермі на узліссі стародавнього лісу. Сім'я починає руйнуватися від невідомого зла, коли їх новонароджений син таємничо зникає, врожай…\n▶️ <a href=\"https://youtu.be/97OQ7MQC5Ck\">Трейлер</a></blockquote>\n§KN:m310131\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Ne-govori-zі-zlom-2024-10-23\">Не говори зі злом</a></b> (2024)\nжахи, трилер · ⏱ 1 год 50 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>83%</b> · Ⓜ <b>66</b>\n<i>🎭 Джеймс Мак-Евой, Маккензі Девіс, Скут Мак-Нейрі</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1114513-speak-no-evil/watch?locale=UA\">Rakuten TV</a>\n📝 Американська родина вирушає у розкішний заміський маєток до британської сім’ї, з якою вони подружилися під час відпустки. Проте вони навіть не підозрюють, що зовсім скоро відпочинок мрії перетвориться на справжній…\n▶️ <a href=\"https://youtu.be/hdsUz6sT9Ek\">Трейлер</a></blockquote>\n§KN:m1114513\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Klіpni-dvіchі-2024-10-23\">Кліпни двічі</a></b> (2024)\nдетектив, трилер, жахи · ⏱ 1 год 43 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>74%</b> · Ⓜ <b>66</b>\n<i>🎭 Наомі Акі, Ченнінґ Тейтум, Аліа Шокат</i>\n📝 Мільярдер у сфері технологій Слейтер Кінґ знайомиться з офіціанткою Фрідою на своєму благодійному заході. Між ними пролітає іскра, і він запрошує Фріду скласти компанію йому та його друзям у подорожі до власного…\n▶️ <a href=\"https://youtu.be/fLIy-4lKEC4\">Трейлер</a></blockquote>\n§KN:m840705\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Vulicya-strahu-CHastina-druga-1978-2021-10-23\">Вулиця страху. Частина друга: 1978</a></b> (2021)\nжахи, детектив, драма · ⏱ 1 год 49 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>88%</b> · Ⓜ <b>61</b>\n<i>🎭 Сейді Сінк, Емілі Радд, Ryan Simpkins</i>\n📺 <a href=\"https://www.themoviedb.org/movie/591274-fear-street-1978/watch?locale=UA\">Netflix</a>\n📝 У проклятому містечку Шейдісайд орудує серійний вбивця, і безтурботні літні канікули в таборі Найтвінґ перетворюються в жахливу боротьбу за виживання.\n▶️ <a href=\"https://youtu.be/H2AulFPiwWE\">Трейлер</a></blockquote>\n§KN:m591274\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Cmutok-2021-10-23\">Cмуток</a></b> (2021)\nжахи, трилер · ⏱ 1 год 40 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>88%</b> · Ⓜ <b>68</b>\n<i>🎭 朱軒洋, 雷嘉汭, Цу-Чан Ван</i>\n📝 A young couple is pushed to the limits of sanity as they attempt to be reunited amid the chaos of a pandemic outbreak. The streets erupt into violence and depravity, as those infected are driven to enact the most…\n▶️ <a href=\"https://youtu.be/q2lNlfQPTFg\">Трейлер</a></blockquote>\n§KN:m776797\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Hellovіn-ubivaye-2021-10-23\">Хелловін убиває</a></b> (2021)\nжахи · ⏱ 1 год 45 хв\n⭐ IMDb <b>5.5</b> · 🍅 <b>38%</b> · Ⓜ <b>42</b>\n<i>🎭 Джеймі Лі Кертіс, Джуді Ґрір, Andi Matichak</i>\n📺 <a href=\"https://www.themoviedb.org/movie/610253-halloween-kills/watch?locale=UA\">Netflix, Apple TV Store, Rakuten TV</a>\n📝 На Гелловін безжальний маніяк знову виходить на своє криваве полювання. Зупинити зло зможуть лише люди, пов’язані з ним спільним минулим.\n▶️ <a href=\"https://youtu.be/avAqciNcMgA\">Трейлер</a></blockquote>\n§KN:m610253\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Psi-voini-2002-10-23\">Пси-воїни</a></b> (2002)\nжахи, бойовик, трилер · ⏱ 1 год 45 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>82%</b>\n<i>🎭 Шон Пертві, Кевін Маккідд, Емма Клісбі</i>\n📺 <a href=\"https://www.themoviedb.org/movie/11880-dog-soldiers/watch?locale=UA\">Plex</a>\n📝 Підрозділ англійських солдатів з 6 чоловік під командуванням сержанта Веллса рушив на бойове завдання в дикі ліси гірської Шотландії. Але те, що почалося як звичайні військові навчання, перевтілилося в капітальний…\n▶️ <a href=\"https://youtu.be/PQ6nNs0Wl7s\">Трейлер</a></blockquote>\n§KN:m11880\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Kohanі-2010-10-23\">Кохані</a></b> (2010)\nжахи · ⏱ 1 год 24 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>98%</b> · Ⓜ <b>73</b>\n<i>🎭 Ксав'єр Семюель, Robin McLeavy, John Brumpton</i>\n📝 Брент Мітчелл відмовився йти з Лолою на випускний. Дуже даремно, бо вона за допомогою свого татуся-психопата викрадає Брента і влаштовує свій власний випускний.\n▶️ <a href=\"https://youtu.be/1jkPj0Nso30\">Трейлер</a></blockquote>\n§KN:m46420"
+   }
+  ],
+  "scifi": [
+   {
+    "id": "f2701a16b8",
+    "text": "🍿 <b>ПІДБІРКА КІНО · ФАНТАСТИКА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Dzhuls-2023-10-23-3\">Джулс</a></b> (2023)\nкомедія, фантастика, драма · ⏱ 1 год 27 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>86%</b> · Ⓜ <b>57</b>\n<i>🎭 Бен Кінґслі, Harriet Sansom Harris, Джейн Кертін</i>\n📝 Мілтон живе тихим рутинним життям у маленькому містечку на заході Пенсильванії, але його день перевертається з ніг на голову, коли НЛО та його інопланетний пасажир зазнають краху на його задньому дворі.\n▶️ <a href=\"https://youtu.be/ptlS4hmrDyE\">Трейлер</a></blockquote>\n§KN:m1072371\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Mene-zvut-Dzhig-Robot-2016-10-23-3\">Мене звуть Джиг Робот</a></b> (2016)\nфантастика, бойовик, драма · ⏱ 1 год 52 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>82%</b>\n<i>🎭 Claudio Santamaria, Luca Marinelli, Ilenia Pastorelli</i>\n📝 Енцо, самотній і людиноненависнийї маленький шахрай, використовує надздібності отримані після падіння в річку Тібр, щоб ганятися за божевільним бандитом під назвою «Циган».\n▶️ <a href=\"https://youtu.be/AY1Ws1_r_X0\">Трейлер</a></blockquote>\n§KN:m364433\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Hizhak-Dikі-zemlі-2025-10-23-2\">Хижак: Дикі землі</a></b> (2025)\nбойовик, фантастика, пригоди · ⏱ 1 год 47 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>86%</b> · Ⓜ <b>71</b>\n<i>🎭 Елль Фаннінґ, Дімітріус Шустер-Колоаматанґі, Ravi Narayan</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1242898-predator-badlands/watch?locale=UA\">Rakuten TV</a>\n📝 Дія розгортається в майбутньому на віддаленій планеті, де молодий Хижак, вигнаний зі свого клану, знаходить малоймовірного союзника в особі Тії та вирушає в підступну подорож на пошуки свого остаточного супротивника.\n▶️ <a href=\"https://youtu.be/1r_kvwIMqvs\">Трейлер</a></blockquote>\n§KN:m1242898\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Ribka-2021-10-23-3\">Рибка</a></b> (2021)\nмелодрама, фантастика, драма · ⏱ 1 год 41 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>91%</b> · Ⓜ <b>71</b>\n<i>🎭 Олівія Кук, Джек О'Коннел, Соко</i>\n📺 <a href=\"https://www.themoviedb.org/movie/586791-little-fish/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Молодята Емма і Джуд змушені боротися за свої почуття, коли Емма підхоплює незрозумілий вірус, який знищує спогади. Чи вдасться закоханим зберегти кохання попри загрозу повного забуття?\n▶️ <a href=\"https://youtu.be/knPhaXYG4YA\">Трейлер</a></blockquote>\n§KN:m586791\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Proyekt-Adam-2022-10-23\">Проєкт «Адам»</a></b> (2022)\nпригоди, фантастика, комедія · ⏱ 1 год 46 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>68%</b> · Ⓜ <b>55</b>\n<i>🎭 Раян Рейнольдс, Walker Scobell, Марк Раффало</i>\n📺 <a href=\"https://www.themoviedb.org/movie/696806-the-adam-project/watch?locale=UA\">Netflix</a>\n📝 Після аварійної посадки у 2022 році Адам Рід, пілот-винищувач, що мандрує в часі, об’єднує зусилля із 12-річним собою, щоб урятувати майбутнє.\n▶️ <a href=\"https://youtu.be/EOX9rYgU3cs\">Трейлер</a></blockquote>\n§KN:m696806\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Vіjna-za-planetu-mavp-2017-10-23-2\">Війна за планету мавп</a></b> (2017)\nдрама, фантастика, військовий · ⏱ 2 год 20 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>94%</b> · Ⓜ <b>82</b>\n<i>🎭 Енді Серкіс, Вуді Гаррельсон, Karin Konoval</i>\n📺 <a href=\"https://www.themoviedb.org/movie/281338-war-for-the-planet-of-the-apes/watch?locale=UA\">Apple TV Store</a>\n📝 Цезаря та його мавп втягнуто у смертельне протистояння з людським військом під орудою безжального Полковника.  Після того, як мавпи зазнали неймовірних втрат, Цезар долає власні темні інстинкти й розпочинає особисту…\n▶️ <a href=\"https://youtu.be/QBWQL2kVMR8\">Трейлер</a></blockquote>\n§KN:m281338\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/狂野时代-2025-10-23\">狂野时代</a></b> (2025)\nфантастика, фентезі, драма · ⏱ 2 год 39 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>91%</b> · Ⓜ <b>87</b>\n<i>🎭 易烊千玺, Шу Ці, 趙又廷</i>\n📝 In a world where humanity has lost the ability to dream in exchange for eternal life, one creature remains entranced by the fading illusions of the dreamworld. This monster, adrift in reverie, clings to visions no…\n▶️ <a href=\"https://youtu.be/ZIJezWgFUEY\">Трейлер</a></blockquote>\n§KN:m878608\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Bugonіya-2025-10-23-4\">Буґонія</a></b> (2025)\nфантастика, трилер, комедія · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>87%</b> · Ⓜ <b>72</b>\n<i>🎭 Емма Стоун, Джессі Племенс, Aidan Delbis</i>\n📺 <a href=\"https://www.themoviedb.org/movie/701387-bugonia/watch?locale=UA\">Rakuten TV</a>\n📝 Що буде, якщо двоє одержимих теоріями змови чоловіків,  викрадуть генеральну директорку великої компанії, адже переконані, що вона — інопланетянка, яка планує знищити Землю?\n▶️ <a href=\"https://youtu.be/c4ZtqVgUyZc\">Трейлер</a></blockquote>\n§KN:m701387\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Ostrіv-2005-10-23\">Острів</a></b> (2005)\nбойовик, трилер, фантастика · ⏱ 2 год 16 хв\n⭐ IMDb <b>6.8</b> · Ⓜ <b>50</b>\n<i>🎭 Юен Мак-Ґреґор, Скарлетт Йоганссон, Джимон Гонсу</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1635-the-island/watch?locale=UA\">Apple TV Store</a>\n📝 Події розгортаються в майбутньому, де все живе знищене внаслідок потужного катаклізму. Кілька тисяч людей живуть в ізольованому бункері, встають по дзвінку, харчуються згідно з результатами аналізів та займаються…\n▶️ <a href=\"https://youtu.be/pZsDzeJh4nU\">Трейлер</a></blockquote>\n§KN:m1635\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Golodni-igri-Perespivnicya-CHastina-1-2014-10-23\">Голоднi iгри: Переспiвниця. Частина 1</a></b> (2014)\nфантастика, пригоди, трилер · ⏱ 2 год 03 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>70%</b> · Ⓜ <b>64</b>\n<i>🎭 Дженніфер Лоренс, Джош Гатчерсон, Ліам Гемсворт</i>\n📺 <a href=\"https://www.themoviedb.org/movie/131631-the-hunger-games-mockingjay-part-1/watch?locale=UA\">Apple TV Store</a>\n📝 75-і Голодні ігри змінили все. Кітніс порушила правила, і непохитне до тієї пори деспотичне правління Капітолію похитнулося. У людей з'явилася надія, і її символ - Переспівниця. Тепер, щоб звільнити захопленого в…\n▶️ <a href=\"https://youtu.be/EYRX2hkcwZM\">Трейлер</a></blockquote>\n§KN:m131631"
    }
   ]
  },
