@@ -93,16 +93,6 @@
   "https://toybenchreviews.medium.com/how-to-tell-if-a-sex-toy-review-is-actually-helpful-dbcbb447d3a9?source=rss------sex_toys-5"
  ],
  "kino_seen": [
-  "m523977",
-  "m672647",
-  "m14073",
-  "m110160",
-  "t80006",
-  "t125988",
-  "t68421",
-  "t110316",
-  "t79242",
-  "t205715",
   "t79460",
   "t100883",
   "t61889",
@@ -692,9 +682,19 @@
   "m375262",
   "m1284120",
   "m2502",
-  "m82695"
+  "m82695",
+  "m388399",
+  "m491584",
+  "m399057",
+  "m522241",
+  "m552178",
+  "m393624",
+  "m799876",
+  "m619803",
+  "m445",
+  "m197950"
  ],
- "gh_beat": "2026-10-23T16:25:44.239989+03:00",
+ "gh_beat": "2026-10-23T16:30:45.577387+03:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -22123,10 +22123,28 @@
    81,
    50,
    "2026-10-23"
+  ],
+  "tt2935564": [
+   7.1,
+   77,
+   67,
+   "2026-10-23"
+  ],
+  "tt1332134": [
+   7.4,
+   94,
+   null,
+   "2026-10-23"
+  ],
+  "tt0386005": [
+   6.9,
+   63,
+   null,
+   "2026-10-23"
   ]
  },
  "pushed_h": {
-  "gs": "27e55394e1a0",
+  "gs": "8bfc4953357e",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "37ae4f90b57f",
   "sexed.json": "4efede1d8ea5",
@@ -22212,7 +22230,6 @@
  },
  "force_heavy": [
   "prom.ua",
-  "аудіокниги",
   "пп-страви",
   "кіномэтч"
  ],
@@ -31598,6 +31615,12 @@
    {
     "id": "2d8e599429",
     "text": "🍿 <b>ПІДБІРКА КІНО · ДРАМА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/310307?language=uk\">Засновник</a></b> (2016)\nдрама, історичний · ⏱ 1 год 55 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>80%</b> · Ⓜ <b>66</b>\n<i>🎭 Майкл Кітон, Нік Офферман, Джон Керролл Лінч</i>\n📺 <a href=\"https://www.themoviedb.org/movie/310307-the-founder/watch?locale=UA\">Apple TV Store</a>\n📝 Справжня історія про те, як Рей Крок, продавець з Іллінойсу, зустрів Мака і Діка Макдональдсів, які продавали гамбургери в південній Каліфорнії в 1950-х роках. Рей був вражений системою швидкого приготування цих…\n▶️ <a href=\"https://youtu.be/oprJX5BomEc\">Трейлер</a></blockquote>\n§KN:m310307\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/1289936?language=uk\">Абатство Даунтон: Величний фінал</a></b> (2025)\nдрама, мелодрама · ⏱ 2 год 03 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>91%</b> · Ⓜ <b>66</b>\n<i>🎭 Мішель Докері, Г'ю Бонневіль, Елізабет Мак-Ґоверн</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1289936-downton-abbey-the-grand-finale/watch?locale=UA\">Rakuten TV</a>\n📝 Події розгортаються на початку 1930-х років, коли родина Кроулі знову постає перед викликами часу. Зіркові актори, улюблені персонажі в історії, на яку так довго чекали. У світі, що стрімко змінюється, кожному з них…\n▶️ <a href=\"https://youtu.be/C1GZyFV8mJU\">Трейлер</a></blockquote>\n§KN:m1289936\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/426426?language=uk\">Рома</a></b> (2018)\nдрама · ⏱ 2 год 15 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>96%</b> · Ⓜ <b>96</b>\n<i>🎭 Яліца Апарисіо, Марина Де Тавіра, Diego Cortina Autrey</i>\n📺 <a href=\"https://www.themoviedb.org/movie/426426-roma/watch?locale=UA\">Netflix</a>\n📝 У центрі сюжету, що розгортається в 70-х роках в Мехіко — історія родини середнього достатку, яка якось пов’язана з бунтом студентів, відомим як «різанина в Корпусі-Крісті».\n▶️ <a href=\"https://youtu.be/6BS27ngZtxg\">Трейлер</a></blockquote>\n§KN:m426426\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/1165369?language=uk\">Де Голль: Свобода</a></b> (2026)\nісторичний, драма · ⏱ 2 год 39 хв\n⭐ IMDb <b>8.0</b>\n<i>🎭 Simon Abkarian, Niels Schneider, Тьєррі Лермітт</i>\n📝 1943–1944 роки. Щоб звільнити Францію, генерал де Голль має об’єднати розрізнені сили Опору. Водночас він намагається домогтися визнання своєї легітимності з боку союзників.\n▶️ <a href=\"https://youtu.be/J6MRNchmZkY\">Трейлер</a></blockquote>\n§KN:m1165369\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/823147?language=uk\">To Leslie</a></b> (2022)\nдрама · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>93%</b> · Ⓜ <b>84</b>\n<i>🎭 Андреа Райзборо, Марк Марон, Andre Royo</i>\n📝 A West Texas single mother wins the lottery and squanders it just as fast, leaving behind a world of heartbreak. Years later, with her charm running out and nowhere to go, she fights to rebuild her life and find…\n▶️ <a href=\"https://youtu.be/D_k63vvm3mU\">Трейлер</a></blockquote>\n§KN:m823147\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/492188?language=uk\">Шлюбна історія</a></b> (2019)\nдрама · ⏱ 2 год 17 хв\n⭐ IMDb <b>7.9</b> · 🍅 <b>95%</b> · Ⓜ <b>94</b>\n<i>🎭 Адам Драйвер, Скарлетт Йоганссон, Лора Дерн</i>\n📺 <a href=\"https://www.themoviedb.org/movie/492188-marriage-story/watch?locale=UA\">Netflix</a>\n📝 Подружжя — театральний режисер Чарлі і актриса його театру Ніколь — знаходяться в процесі розлучення. Чарлі все влаштовувало в їхньому шлюбі, але Ніколь вважає, що втратила себе, і, забравши сина, переїжджає до мами…\n▶️ <a href=\"https://youtu.be/BHi-a1n8t7M\">Трейлер</a></blockquote>\n§KN:m492188\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/375262?language=uk\">Фаворитка</a></b> (2018)\nісторичний, комедія, драма · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>93%</b> · Ⓜ <b>91</b>\n<i>🎭 Емма Стоун, Олівія Колман, Рейчел Вайс</i>\n📺 <a href=\"https://www.themoviedb.org/movie/375262-the-favourite/watch?locale=UA\">Apple TV Store</a>\n📝 Дія картини проходить за часів правління королеви Анни, останнього представника династії Стюартів.\n▶️ <a href=\"https://youtu.be/SYb-wkehT1g\">Трейлер</a></blockquote>\n§KN:m375262\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/1284120?language=uk\">Гидка сестра</a></b> (2025)\nжахи, комедія, драма · ⏱ 1 год 49 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>96%</b> · Ⓜ <b>70</b>\n<i>🎭 Леа Мюрен, Ане Даль Торп, Теа Соф'є Лок Несс</i>\n📝 У світі, де краса — не дар, а жорстокий бізнес, бал перетворюється на аукціон досконалості, а принц — на нагороду за найідеальнішу оболонку. Ельвіра, зведена сестра чарівної Попелюшки, готова на все, аби стати…\n▶️ <a href=\"https://youtu.be/yoc2CJb3c5s\">Трейлер</a></blockquote>\n§KN:m1284120\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/2502?language=uk\">Перевага Борна</a></b> (2004)\nбойовик, драма, трилер · ⏱ 1 год 48 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>81%</b> · Ⓜ <b>73</b>\n<i>🎭 Метт Деймон, Franka Potente, Браян Кокс</i>\n📺 <a href=\"https://www.themoviedb.org/movie/2502-the-bourne-supremacy/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Минуло три роки, ЦРУ знову починає переслідувати колишнього агента Джейсона Борна, який втратив пам'ять. Коли внаслідок цього гине близька людина, він змушений знову вийти на стежку війни...  Доля заносить Борна в…\n▶️ <a href=\"https://youtu.be/zsrdBGr8NIk\">Трейлер</a></blockquote>\n§KN:m2502\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/82695?language=uk\">Знедолені</a></b> (2012)\nісторичний, драма · ⏱ 2 год 38 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>70%</b> · Ⓜ <b>63</b>\n<i>🎭 Гʼю Джекман, Расселл Кроу, Аманда Сайфред</i>\n📺 <a href=\"https://www.themoviedb.org/movie/82695-les-miserables/watch?locale=UA\">Apple TV Store</a>\n📝 Дія розвивається на початку XIX сторіччя. Побіжний каторжник Жан Вальжан, засуджений до тюремного ув'язнення, змушений довгі роки ховатися від жорстокого правосуддя. Інспектор паризької поліції Жавер вважає його…\n▶️ <a href=\"https://youtu.be/kDLld9dR5gE\">Трейлер</a></blockquote>\n§KN:m82695"
+   }
+  ],
+  "thriller": [
+   {
+    "id": "f729f68de0",
+    "text": "🍿 <b>ПІДБІРКА КІНО · ТРИЛЕР</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/388399?language=uk\">День патріота</a></b> (2016)\nбойовик, кримінал, драма · ⏱ 2 год 13 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>80%</b> · Ⓜ <b>69</b>\n<i>🎭 Марк Волберґ, Джон Ґудмен, Дж. К. Сіммонс</i>\n📝 Погляд на бостонську трагедію 2013 року очима комісара поліції Еда Девіса. Два вибухи на марафонському забігу оглушили світову громадськість, але не Еда і його колег, які розгортають розшук терористів по гарячих слідах.\n▶️ <a href=\"https://youtu.be/ykwSo64RYao\">Трейлер</a></blockquote>\n§KN:m388399\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/491584?language=uk\">Спалення</a></b> (2018)\nдетектив, драма, трилер · ⏱ 2 год 28 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>95%</b> · Ⓜ <b>91</b>\n<i>🎭 Ю А Ін, Стівен Юн, 전종서</i>\n📺 <a href=\"https://www.themoviedb.org/movie/491584/watch?locale=UA\">Apple TV Store</a>\n📝 За сюжетом, син фермера Чон-су переїздить до великого міста. Він має університетський диплом з літератури, але хлопець заробляє дуже мало і лише мріє про те, щоб стати письменником. Якось Чон-су зустрічає красуню…\n▶️ <a href=\"https://youtu.be/irBLY-Ev9vo\">Трейлер</a></blockquote>\n§KN:m491584\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/399057?language=uk\">Вбивство священного оленя</a></b> (2017)\nдрама, трилер, детектив · ⏱ 2 год 01 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>79%</b> · Ⓜ <b>73</b>\n<i>🎭 Колін Фаррелл, Ніколь Кідман, Баррі Кіоґан</i>\n📝 Стівен Мерфі – звичайний кардіохірург з неймовірною харизмою. Він щасливо живе зі своєю прекрасною дружиною Анною та чудовими дітьми Кім і Бобом. Стівен прихистив також дивного підлітка на ім'я Мартін. На вигляд він…\n▶️ <a href=\"https://youtu.be/A6bjXU6io1U\">Трейлер</a></blockquote>\n§KN:m399057\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/522241?language=uk\">Код: Залізна кора</a></b> (2020)\nтрилер, історичний, драма · ⏱ 1 год 52 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>85%</b> · Ⓜ <b>65</b>\n<i>🎭 Бенедикт Камбербетч, Merab Ninidze, Рейчел Броснаген</i>\n📝 Шпигун Ґревілл Вінн та його російський інформатор намагаються покласти край Карибській кризі під час Холодної війни.\n▶️ <a href=\"https://youtu.be/Y_w9xkyK5e8\">Трейлер</a></blockquote>\n§KN:m522241\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/552178?language=uk\">Темні води</a></b> (2019)\nдрама, трилер · ⏱ 2 год 06 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>89%</b> · Ⓜ <b>73</b>\n<i>🎭 Марк Раффало, Енн Гетевей, Тімоті Френсіс «Тім» Роббінс</i>\n📺 <a href=\"https://www.themoviedb.org/movie/552178-dark-waters/watch?locale=UA\">Apple TV Store</a>\n📝 Фільм засновано на реальній історії корпоративного адвоката Роберта Білотта, що розкрив зв’язок між низкою таємничих смертей і великою кількістю захворювань у маленькому містечку та хімічною компанією DuPont, яка…\n▶️ <a href=\"https://youtu.be/RvAOuhyunhY\">Трейлер</a></blockquote>\n§KN:m552178\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/393624?language=uk\">Державні таємниці</a></b> (2019)\nтрилер, історичний, драма · ⏱ 1 год 52 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>82%</b> · Ⓜ <b>63</b>\n<i>🎭 Кіра Найтлі, Метт Сміт, Рейф Файнз</i>\n📺 <a href=\"https://www.themoviedb.org/movie/393624-official-secrets/watch?locale=UA\">Apple TV Store</a>\n📝 Головна героїня — перекладач Центру урядового зв’язку Великобританії Кетрін Ґан. У 2003 році, напередодні вторгнення Британії та США в Ірак, Кетрін отримує таємний лист, в якому уряди двох країн обговорюють питання…\n▶️ <a href=\"https://youtu.be/t64H3S7r4wo\">Трейлер</a></blockquote>\n§KN:m393624\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/799876?language=uk\">Костюм</a></b> (2022)\nкримінал, драма, трилер · ⏱ 1 год 46 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>86%</b> · Ⓜ <b>69</b>\n<i>🎭 Марк Райленс, Зої Дойч, Джонні Флінн</i>\n📺 <a href=\"https://www.themoviedb.org/movie/799876-the-outfit/watch?locale=UA\">Apple TV Store</a>\n📝 Історія про Леонарда, англійського кравця, який шив костюми на всесвітньо відомій лондонській вулиці Севіл-Ров. Але після особистої трагедії він опинився в Чикаґо, де працював у невеликому ательє у суворому районі…\n▶️ <a href=\"https://youtu.be/3UgJL23HxyU\">Трейлер</a></blockquote>\n§KN:m799876\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/619803?language=uk\">Кримінальне місто 2</a></b> (2022)\nбойовик, кримінал, трилер · ⏱ 1 год 46 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>96%</b>\n<i>🎭 Дон Лi, 손석구, Чхве Кві Хва</i>\n📺 <a href=\"https://www.themoviedb.org/movie/619803-2/watch?locale=UA\">Apple TV Store</a>\n📝 Харизматичний оперативник Ма Сок відправляється зі спецзавданням до Таїланду. Там копи повинен вичислити і зловити злочинця, який втік, та нападав на туристів. Але на місці виявляються нові обставини.\n▶️ <a href=\"https://youtu.be/imLcgyHbcsM\">Трейлер</a></blockquote>\n§KN:m619803\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/445?language=uk\">Приховане</a></b> (2005)\nдетектив, драма, трилер · ⏱ 1 год 58 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>89%</b> · Ⓜ <b>87</b>\n<i>🎭 Daniel Auteuil, Жульєт Бінош, Анні Жирардо</i>\n📝 Жорж, ведучий літературного огляду на телебаченні, одержує посилки зі знятими таємно з вулиці відеозаписами його та сім'ї, а також малозрозумілими, але тривожними малюнками. Відправник невідомий. Записи набувають…\n▶️ <a href=\"https://youtu.be/pvT_9TqIEtM\">Трейлер</a></blockquote>\n§KN:m445\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/197950?language=uk\">Французький транзит</a></b> (2014)\nтрилер, кримінал, бойовик · ⏱ 2 год 15 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>77%</b> · Ⓜ <b>67</b>\n<i>🎭 Жан Дюжарден, Жиль Лелуш, Селін Саллетт</i>\n📺 <a href=\"https://www.themoviedb.org/movie/197950-la-french/watch?locale=UA\">Apple TV Store</a>\n📝 Реальна історія злочинного синдикату «Французький зв'язковий», що лютує в 70-х роках. Підпільна організація була особливо відома міжнародним трафіком героїну. Марсель. 1975 рік. Молодий П'єр Мішель разом з дружиною і…\n▶️ <a href=\"https://youtu.be/zgFpCbyvQGg\">Трейлер</a></blockquote>\n§KN:m197950"
    }
   ]
  }
