@@ -93,16 +93,6 @@
   "https://toybenchreviews.medium.com/how-to-tell-if-a-sex-toy-review-is-actually-helpful-dbcbb447d3a9?source=rss------sex_toys-5"
  ],
  "kino_seen": [
-  "t97917",
-  "t310537",
-  "m609031",
-  "m1231828",
-  "m969492",
-  "m524047",
-  "m1330021",
-  "m1291595",
-  "m912649",
-  "m283995",
   "m255709",
   "t194766",
   "t273240",
@@ -692,9 +682,19 @@
   "m400928",
   "m1000866",
   "m19833",
-  "m49020"
+  "m49020",
+  "m538858",
+  "m393519",
+  "m983883",
+  "m398173",
+  "m1266127",
+  "m440021",
+  "m591275",
+  "m349067",
+  "m77495",
+  "m36243"
  ],
- "gh_beat": "2026-10-23T16:35:44.886727+03:00",
+ "gh_beat": "2026-10-23T16:40:44.833152+03:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1501,14 +1501,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "23.10 16:09",
-   "ts": 1792760965,
+   "at": "23.10 16:43",
+   "ts": 1792763021,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "23.10 16:09",
-   "ts": 1792760965,
+   "at": "23.10 16:43",
+   "ts": 1792763021,
    "ok": true,
    "note": ""
   },
@@ -22201,10 +22201,34 @@
    70,
    51,
    "2026-10-23"
+  ],
+  "tt5308322": [
+   6.6,
+   71,
+   58,
+   "2026-10-23"
+  ],
+  "tt15766876": [
+   4.7,
+   79,
+   null,
+   "2026-10-23"
+  ],
+  "tt4823434": [
+   6.9,
+   97,
+   76,
+   "2026-10-23"
+  ],
+  "tt28230296": [
+   5.6,
+   89,
+   66,
+   "2026-10-23"
   ]
  },
  "pushed_h": {
-  "gs": "af74ed49f5e3",
+  "gs": "d27d8f8b8667",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "37ae4f90b57f",
   "sexed.json": "4efede1d8ea5",
@@ -22289,8 +22313,7 @@
   "sx/tech_shallowing.png": "0f0dd9f56c27"
  },
  "force_heavy": [
-  "prom.ua",
-  "пп-страви"
+  "prom.ua"
  ],
  "rc_need": true,
  "games_month": "2026-10",
@@ -31686,6 +31709,12 @@
    {
     "id": "5ae8b03e34",
     "text": "🍿 <b>ПІДБІРКА КІНО · КОМЕДІЯ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/437033?language=uk\">Ток Ток</a></b> (2017)\nкомедія · ⏱ 1 год 36 хв\n⭐ IMDb <b>6.8</b>\n<i>🎭 Александра Хіменес, Paco León, Россі де Пальма</i>\n📝 Стрічка розповідає про пригоди та невдачі шістьох пацієнтів з обсесивно-компульсивним розладом, які прийшли на прийом до психіатра в один і той самий час.\n▶️ <a href=\"https://youtu.be/gnhjPLAkF4Q\">Трейлер</a></blockquote>\n§KN:m437033\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/1122099?language=uk\">Балада про острів Волліс</a></b> (2025)\nкомедія, драма, музика · ⏱ 1 год 40 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>97%</b> · Ⓜ <b>78</b>\n<i>🎭 Tom Basden, Тім Кі, Кері Малліґан</i>\n📝 Чарльз, дивний переможець лотереї, який живе самотньо на віддаленому острові, намагається втілити свої фантазії в життя, запросивши свого улюбленого співака Герба МакҐвайра виступити на особливому приватному заході.\n▶️ <a href=\"https://youtu.be/GjbVZWVWzPU\">Трейлер</a></blockquote>\n§KN:m1122099\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/334533?language=uk\">Капітан Фантастік</a></b> (2016)\nдрама, комедія · ⏱ 1 год 58 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>82%</b> · Ⓜ <b>72</b>\n<i>🎭 Віґґо Мортенсен, Джордж МакКей, Samantha Isler</i>\n📺 <a href=\"https://www.themoviedb.org/movie/334533-captain-fantastic/watch?locale=UA\">Apple TV Store</a>\n📝 Бен і Леслі Кеш живуть зі своїми дітьми в будиночку в горах штату Вашингтон. Ці діти розмовляють декількома мовами, знають квантову фізику і розбираються у філософії. Вони живуть у лісі у повній гармонії з природою,…\n▶️ <a href=\"https://youtu.be/VjzwzEsVxA0\">Трейлер</a></blockquote>\n§KN:m334533\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/986280?language=uk\">Опале листя</a></b> (2023)\nмелодрама, драма, комедія · ⏱ 1 год 21 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>97%</b> · Ⓜ <b>86</b>\n<i>🎭 Alma Pöysti, Jussi Vatanen, Janne Hyytiäinen</i>\n📝 Анса живе на околиці Гельсінкі і працює у супермаркеті. Дівчина відповідає за прострочені продукти, які негайно повинні опинятися у сміттєвому баку. Але по доброті Анса підгодовує голодуючих, а одного разу навіть…\n▶️ <a href=\"https://youtu.be/zS-0FtHVDoA\">Трейлер</a></blockquote>\n§KN:m986280\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/823754?language=uk\">Бо Бернем: Усередині</a></b> (2021)\nкомедія · ⏱ 1 год 27 хв\n⭐ IMDb <b>8.6</b> · 🍅 <b>95%</b>\n<i>🎭 Бо Бернем</i>\n📺 <a href=\"https://www.themoviedb.org/movie/823754-bo-burnham-inside/watch?locale=UA\">Netflix</a>\n📝 Музичний комедійний спешл, виготовлений Бо Бернемом самотужки у цей вельми незвичайний рік.\n▶️ <a href=\"https://youtu.be/ChgFo74WxZ8\">Трейлер</a></blockquote>\n§KN:m823754\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/437586?language=uk\">Середина 90-х</a></b> (2018)\nдрама, комедія · ⏱ 1 год 26 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>81%</b> · Ⓜ <b>66</b>\n<i>🎭 Санні Сулджик, Кетрін Вотерстон, Лукас Геджес</i>\n📝 Стіві - тринадцятирічний хлопчик у Лос-Анджелесі 1990-х років, який проводить літо, балансуючи між неспокійним домашнім життям і групою нових друзів, яких він зустрічає у скейт-крамниці на Мотор Авеню.\n▶️ <a href=\"https://youtu.be/DU5gJGSuelM\">Трейлер</a></blockquote>\n§KN:m437586\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Obdarovana-2017-10-23-2\">Обдарована</a></b> (2017)\nдрама, комедія · ⏱ 1 год 41 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>73%</b> · Ⓜ <b>60</b>\n<i>🎭 Кріс Еванс, Маккенна Ґрейс, Ліндсі Дункан</i>\n📺 <a href=\"https://www.themoviedb.org/movie/400928-gifted/watch?locale=UA\">Apple TV Store</a>\n📝 Френк Адлер — неодружений чоловік, який сам виховує свою талановиту племінницю Мері. Але раптом в їх життя повертається її бабуся, мати Френка, і подає в суд, щоб домогтися одноосібної опіки над дівчинкою.\n▶️ <a href=\"https://youtu.be/x7CAjpdRaXU\">Трейлер</a></blockquote>\n§KN:m400928\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Fanfari-2024-10-23\">Фанфари</a></b> (2024)\nкомедія, драма, музика · ⏱ 1 год 43 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>95%</b>\n<i>🎭 Бенжамен Лаверн, Pierre Lottin, Sarah Suco</i>\n📝 Тібо — відомий диригент, який раптово виявляє, що був усиновлений. Працівник їдальні та аматор-тромбоніст Джиммі — його молодший брат, про існування якого він ніколи не знав\n▶️ <a href=\"https://youtu.be/bQxj8farabE\">Трейлер</a></blockquote>\n§KN:m1000866\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/U-petlі-2009-10-23\">У петлі</a></b> (2009)\nкомедія · ⏱ 1 год 46 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>94%</b> · Ⓜ <b>83</b>\n<i>🎭 Пітер Капальді, Том Голландер, Gina McKee</i>\n📝 Чи бути  новій війні на Близькому Сході? Військова і антивоєнна фракції у вищих ешелонах британської та американської політики намагаються повернути події в свою користь і від того, чи зустрінуться потрібні люди в…\n▶️ <a href=\"https://youtu.be/NSTdPxndUzE\">Трейлер</a></blockquote>\n§KN:m19833\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Submarina-2011-10-23\">Субмарина</a></b> (2011)\nдрама, комедія, мелодрама · ⏱ 1 год 37 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>88%</b> · Ⓜ <b>76</b>\n<i>🎭 Ноа Тейлор, Патрік Консідайн, Крейґ Робертс</i>\n📝 Олівер Тейт, 15-річний школяр із Вельсу, закохується у свою однокласницю. Тепер у його житті з’являється мета — втратити незайманість до наступного дня народження. Проте в той же час його батьки опиняються на межі…\n▶️ <a href=\"https://youtu.be/6CAntLzsQ74\">Трейлер</a></blockquote>\n§KN:m49020"
+   }
+  ],
+  "horror": [
+   {
+    "id": "04ab01e608",
+    "text": "🍿 <b>ПІДБІРКА КІНО · ЖАХИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Tumbad-2018-10-23-2\">Тумбад</a></b> (2018)\nфентезі, жахи · ⏱ 1 год 53 хв\n⭐ IMDb <b>8.2</b> · 🍅 <b>87%</b>\n<i>🎭 Sohum Shah, Mohammad Samad, Harsh K.</i>\n📝 India, 1918. On the outskirts of Tumbbad, a cursed village where it always rains, Vinayak, along with his mother and his brother, care of a mysterious old woman who keeps the secret of an ancestral treasure that…\n▶️ <a href=\"https://youtu.be/ZjuhALyNgss\">Трейлер</a></blockquote>\n§KN:m538858\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Sire-2017-10-23-2\">Сире</a></b> (2017)\nжахи, драма · ⏱ 1 год 39 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>92%</b> · Ⓜ <b>81</b>\n<i>🎭 Ґеранс Марільє, Елла Рамф, Rabah Nait Oufella</i>\n📺 <a href=\"https://www.themoviedb.org/movie/393519-grave/watch?locale=UA\">Apple TV Store</a>\n📝 В одній ветеринарній школі є традиція - проводити ритуал поїдання сирого м'яса. Молода вегетаріанка, пересиливши себе, проходить це випробування і розуміє, що не може чинити опір зростаючому бажанням їсти сире м'ясо.\n▶️ <a href=\"https://youtu.be/cdDZpQGsM5U\">Трейлер</a></blockquote>\n§KN:m393519\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/SHlyub-іz-prividom-2023-10-23-2\">Шлюб із привидом</a></b> (2023)\nкомедія, бойовик, жахи · ⏱ 2 год 09 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>70%</b>\n<i>🎭 許光漢, 林柏宏, 王淨</i>\n📺 <a href=\"https://www.themoviedb.org/movie/983883/watch?locale=UA\">Netflix</a>\n📝 Поліцейський Мінхань знаходить дивний конверт, який змінює його життя: тепер він одружений із привидом, і вони повинні разом розкрити справу.\n▶️ <a href=\"https://youtu.be/BCFyt7GkOmY\">Трейлер</a></blockquote>\n§KN:m983883\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Dіm-yakij-pobuduvav-Dzhek-2018-10-23\">Дім, який побудував Джек</a></b> (2018)\nдрама, жахи, кримінал · ⏱ 2 год 32 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>59%</b> · Ⓜ <b>42</b>\n<i>🎭 Matt Dillon, Бруно Ґанц, Ума Турман</i>\n📝 США 70-х років ХХ століття. Перед нами Джек – серійний маніяк, який вважає кожне своє вбивство витвором мистецтва. Ми побачимо, як за 12 років за 5 інцидентів цей чоловік зі звичайної людини виріс у серійного вбивцю.…\n▶️ <a href=\"https://youtu.be/hZKNJvT_fc8\">Трейлер</a></blockquote>\n§KN:m398173\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Gra-v-hovanki-YA-jdu-shukati-2026-10-23\">Гра в хованки: Я йду шукати</a></b> (2026)\nжахи, комедія · ⏱ 1 год 48 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>75%</b> · Ⓜ <b>58</b>\n<i>🎭 Самара Вівінг, Кетрін Ньютон, Сара Мішель Ґеллар</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1266127-ready-or-not-here-i-come/watch?locale=UA\">Rakuten TV</a>\n📝 У новій частині напруженої горор-саги Ґрейс, яка дивом вижила після кривавого нападу родини Ле Домас, опиняється на новому рівні моторошної гри. Тепер поруч із нею — її відчужена сестра Фейт, і вижити зможе лише одна…\n▶️ <a href=\"https://youtu.be/bILmzFlZUc8\">Трейлер</a></blockquote>\n§KN:m1266127\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/SHCHaslivij-den-smertі-2017-10-23\">Щасливий день смерті</a></b> (2017)\nкомедія, жахи, детектив · ⏱ 1 год 37 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>71%</b> · Ⓜ <b>58</b>\n<i>🎭 Джессіка Рот, Ізраель Бруссар, Charles Aitken</i>\n📺 <a href=\"https://www.themoviedb.org/movie/440021-happy-death-day/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 На день народження вона отримала справжній сюрприз – смерть. Але на цьому історія не скінчилася, якась невідома сила дає дівчині другий шанс. Вона повинна пережити цей день знову і знову, щоб з’ясувати, хто і чому…\n▶️ <a href=\"https://youtu.be/xYN6bYTSBH8\">Трейлер</a></blockquote>\n§KN:m440021\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Vulicya-strahu-CHastina-tretya-1666-2021-10-23\">Вулиця страху. Частина третя: 1666</a></b> (2021)\nдетектив, жахи · ⏱ 1 год 52 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>89%</b> · Ⓜ <b>68</b>\n<i>🎭 Kiana Madeira, Benjamin Flores Jr., Olivia Scott Welch</i>\n📺 <a href=\"https://www.themoviedb.org/movie/591275-fear-street-1666/watch?locale=UA\">Netflix</a>\n📝 Опинившись у 1666 році, Діна дізнається правду про Сару Фір. Тим часом у 1994 році друзі борються за своє життя — і майбутнє Шейдісайду.\n▶️ <a href=\"https://youtu.be/2vn-07z0JmU\">Трейлер</a></blockquote>\n§KN:m591275\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Vuelven-2017-10-23\">Vuelven</a></b> (2017)\nфентезі, жахи · ⏱ 1 год 23 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>97%</b> · Ⓜ <b>76</b>\n<i>🎭 Paola Lara, Juan Ramón López, Ianis Guerrero</i>\n📝 When her mother suddenly disappears with no one to care for her, young Estrella ends up on the street and joins a gang of children, triggering a dangerous and tragic chain of events.\n▶️ <a href=\"https://youtu.be/KyoE0mSJXO8\">Трейлер</a></blockquote>\n§KN:m349067\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Spіt-mіcno-2011-10-23-4\">Спіть міцно</a></b> (2011)\nтрилер, жахи · ⏱ 1 год 41 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>91%</b> · Ⓜ <b>70</b>\n<i>🎭 Луї Тосар, Marta Etura, Альберто Сан Хуан</i>\n📝 Сезар - портьє у багатоквартирному будинку. Він не скаржиться на свою роботу, бо вона розкриває для нього багато можливостей. Він знає все про власників квартир - і може в будь-який момент цими знаннями скористатися.\n▶️ <a href=\"https://youtu.be/1sMBbvc2o_M\">Трейлер</a></blockquote>\n§KN:m77495\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Godzіlla-Motra-Kіng-Gіdora-Ataka-vsіh-monstrіv-2001-10-23-4\">Ґодзілла, Мотра, Кінг Гідора: Атака всіх монстрів</a></b> (2001)\nбойовик, пригоди, жахи · ⏱ 1 год 45 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>65%</b>\n<i>🎭 Чіхару Ніїяма, Рюдо Удзакі, Масахіро Кобаяші</i>\n📺 <a href=\"https://www.themoviedb.org/movie/36243/watch?locale=UA\">MUBI</a>\n📝 Godzilla has become a distant memory for Japan when the destruction of a US submarine raises alarms for Admiral Tachibana. His estranged daughter Yuri investigates the legend of the guardian monsters, who must rise…\n▶️ <a href=\"https://youtu.be/pbGLVLiGs0I\">Трейлер</a></blockquote>\n§KN:m36243"
    }
   ]
  }
