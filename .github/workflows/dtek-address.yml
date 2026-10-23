@@ -11,7 +11,7 @@ concurrency:
 jobs:
   addr:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
@@ -24,7 +24,8 @@ jobs:
       - name: Install browser
         run: |
           pip install -q playwright
-          python -m playwright install --with-deps chromium
+          # Chrome уже є на сервері GitHub — використовуємо його; Chromium — лише як запасний (без системних пакетів, швидко)
+          python -m playwright install chromium || true
       - name: Check address
         run: python3 dtek_address.py
         env:
