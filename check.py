@@ -4547,6 +4547,31 @@ def _json_at(h: str, marker: str):
     return None
 
 
+def _flat_cache(d, out=None, depth=0):
+    """Розгортаємо вкладений Apollo-кеш (напр. «_FAST_CACHE»): усі обʼєкти з __typename → «Тип:id»."""
+    out = {} if out is None else out
+    if depth > 12:
+        return out
+    if isinstance(d, dict):
+        t, i = d.get("__typename"), d.get("id")
+        if t and i is not None:
+            out.setdefault(f"{t}:{i}", d)
+        for k, v in d.items():
+            if isinstance(k, str) and re.match(r"^(Product|Company)[:@]", k) and isinstance(v, dict):
+                out.setdefault(k.replace("@", ":"), v)
+            if isinstance(v, (dict, list)):
+                _flat_cache(v, out, depth + 1)
+    elif isinstance(d, list):
+        for v in d:
+            _flat_cache(v, out, depth + 1)
+    elif isinstance(d, str) and len(d) > 200 and d.lstrip().startswith("{") and "__typename" in d:   # кеш, збережений рядком JSON
+        try:
+            _flat_cache(json.loads(d), out, depth + 1)
+        except Exception:
+            pass
+    return out
+
+
 def _num(v) -> float:
     try:
         return float(re.sub(r"[^\d.]", "", str(v).replace(",", ".")) or 0)
@@ -4565,6 +4590,7 @@ def prom_offers(q: str, pages: int = 2) -> list:
         blobs = []
         ap = _json_at(h, "ApolloCacheState")             # Apollo-кеш Prom (великий) — за парними дужками
         if isinstance(ap, dict):
+            ap = {**ap, **_flat_cache(ap)}               # дані можуть бути вкладені (напр. у «_FAST_CACHE»)
             blobs.append(ap)
             if pg == 1 and "apollo" not in PROM_DBG:
                 prod_ = next((v for k_, v in ap.items() if str(k_).startswith("Product") or (isinstance(v, dict) and v.get("__typename") == "Product")), None)
@@ -4624,7 +4650,7 @@ def prom_offers(q: str, pages: int = 2) -> list:
                 co = re.search(r'data-qaid="company_name"[^>]*>([^<]{2,80})<', blk) or re.search(r'data-qaid="company_link"[^>]*>\s*<a[^>]*title="([^"]{2,80})"', blk)
                 rt = re.search(r'(\d{2,3})\s*%\s*(?:позитивн|положительн)', blk)
                 pres = re.search(r'data-qaid="product_presence"[^>]*>([^<]{2,60})<', blk)
-                href = re.search(r'href="(/ua/p\d+[^"]*|https://prom\.ua/ua/p\d+[^"]*)"', blk)
+                href = re.search(r'href="([^"]*?/p\d{5,}[^"]*)"', blk)
                 if not (nm and pr and co):
                     continue
                 if (pres and re.search(r"немає|нет в|закінч|під замовл|под заказ", pres.group(1), re.I)) or 'data-qaid="disabled_buy_btn"' in blk:

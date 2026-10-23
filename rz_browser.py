@@ -29,6 +29,30 @@ TILE_JS = """() => {
 }"""
 
 
+def state_goods(state) -> list:
+    """Товари з даних сторінки Rozetka (rz-client-state): обʼєкти з назвою й ціною."""
+    out, seen = [], set()
+    def walk(d, depth=0):
+        if depth > 14:
+            return
+        if isinstance(d, dict):
+            if d.get("title") and (d.get("price") or d.get("price_pcs")) and (d.get("href") or d.get("id")) and str(d.get("id")) not in seen:
+                seen.add(str(d.get("id"))); out.append(d)
+            for v in d.values():
+                if isinstance(v, (dict, list)):
+                    walk(v, depth + 1)
+                elif isinstance(v, str) and len(v) > 300 and v.lstrip()[:1] in "{[":
+                    try:
+                        walk(json.loads(v), depth + 1)
+                    except Exception:
+                        pass
+        elif isinstance(d, list):
+            for v in d:
+                walk(v, depth + 1)
+    walk(state)
+    return out
+
+
 def launch(pw):
     try:
         return pw.chromium.launch(headless=True, channel="chrome", args=["--disable-blink-features=AutomationControlled"])
@@ -41,7 +65,10 @@ def search(page, q: str) -> list:
     rec = {"q": q}
     try:
         page.goto(url, wait_until="domcontentloaded", timeout=45000)
-        page.wait_for_timeout(4000)
+        for _ in range(12):                                # «Трохи зачекайте…» — перевірка захисту, чекаємо до ~30 с
+            page.wait_for_timeout(2500)
+            if not re.search(r"зачекайте|just a moment|подождите", page.title() or "", re.I):
+                break
         try:
             page.wait_for_selector("rz-catalog-tile, .goods-tile, [data-testid='catalog-tile']", timeout=12000)
         except Exception:
@@ -54,9 +81,25 @@ def search(page, q: str) -> list:
             rec["tile0"] = tiles[0]
         st = re.search(r'<script[^>]+id="rz-client-state"[^>]*>(.*?)</script>', html, re.S)
         rec["state"] = len(st.group(1)) if st else 0
+        if st and not tiles:                               # товари з даних сторінки
+            try:
+                raw = st.group(1).replace("&q;", '"').replace("&a;", "&").replace("&s;", "'").replace("&l;", "<").replace("&g;", ">")
+                goods = state_goods(json.loads(raw))
+            except Exception as e:
+                goods = []; rec["state_err"] = err_text(e)[:80]
+            rec["state_goods"] = len(goods)
+            if goods:
+                rec["good0"] = {k: goods[0].get(k) for k in list(goods[0])[:25]}
+            for g in goods:
+                sel = g.get("seller") or {}
+                tiles.append({"title": str(g.get("title") or ""), "price": str(g.get("price") or g.get("price_pcs") or ""),
+                              "avail": "" if str(g.get("sell_status") or "available") in ("available", "limited") else "немає",
+                              "rev": str(g.get("comments_amount") or ""), "st": str(g.get("comments_mark") or g.get("rating") or ""),
+                              "seller": str((sel.get("title") if isinstance(sel, dict) else "") or g.get("seller_title") or ("Rozetka" if str(g.get("seller_id")) == "5" else "")),
+                              "href": g.get("href") or f"https://rozetka.com.ua/ua/{g.get('id')}/p{g.get('id')}/"})
     except Exception as e:
         rec["err"] = err_text(e)[:120]; tiles = []
-    if len(DBG["tries"]) < 4:
+    if len(DBG["tries"]) < 6:
         DBG["tries"].append(rec)
     out = []
     for t in tiles:
