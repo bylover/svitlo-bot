@@ -93,16 +93,6 @@
   "https://toybenchreviews.medium.com/how-to-tell-if-a-sex-toy-review-is-actually-helpful-dbcbb447d3a9?source=rss------sex_toys-5"
  ],
  "kino_seen": [
-  "t66788",
-  "t66599",
-  "t1972",
-  "m340666",
-  "m300669",
-  "m1171145",
-  "m1114513",
-  "m1259102",
-  "m396535",
-  "m462",
   "t95480",
   "t108978",
   "t61865",
@@ -692,9 +682,19 @@
   "m1010581",
   "m302946",
   "m94329",
-  "m575"
+  "m575",
+  "m1180629",
+  "m379019",
+  "m572164",
+  "m402897",
+  "m1277988",
+  "m449176",
+  "m1139817",
+  "m912520",
+  "m508",
+  "m24804"
  ],
- "gh_beat": "2026-10-23T12:55:43.610343+03:00",
+ "gh_beat": "2026-10-23T13:00:48.696959+03:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -720,7 +720,7 @@
   "src": "yasno"
  },
  "emerg_src": {
-  "YASNO": true,
+  "YASNO": false,
   "сайт ДТЕК": false,
   "канал ЖК «Яскравий»": true
  },
@@ -757,13 +757,12 @@
    ]
   ]
  },
- "fact_png": "2026-10-23 12|7|2026-10-23T10:32:52+03:00",
+ "fact_png": "2026-10-23 13|7|2026-10-23T10:32:52+03:00",
  "fact_day": {
-  "total": "5 год 22 хв",
+  "total": "6 год 14 хв",
   "list": [
-   "12:00–12:09 · 8 хв",
    "14:45–18:31 · 3 год 46 хв",
-   "10:32–12:00 · 1 год 28 хв"
+   "10:32–13:00 · 2 год 28 хв"
   ]
  },
  "mo_sent": {
@@ -1502,14 +1501,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "23.10 12:58",
-   "ts": 1792749522,
+   "at": "23.10 13:02",
+   "ts": 1792749761,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "23.10 12:58",
-   "ts": 1792749522,
+   "at": "23.10 13:02",
+   "ts": 1792749761,
    "ok": true,
    "note": ""
   },
@@ -1586,8 +1585,8 @@
    "note": ""
   },
   "кіномэтч": {
-   "at": "23.10 12:56",
-   "ts": 1792749360,
+   "at": "23.10 13:01",
+   "ts": 1792749660,
    "ok": true,
    "note": ""
   },
@@ -20889,12 +20888,54 @@
    72,
    59,
    "2026-10-23"
+  ],
+  "tt14561712": [
+   7.3,
+   95,
+   91,
+   "2026-10-23"
+  ],
+  "tt22487338": [
+   6.8,
+   92,
+   80,
+   "2026-10-23"
+  ],
+  "tt1705786": [
+   7.3,
+   85,
+   null,
+   "2026-10-23"
+  ],
+  "tt1131729": [
+   7.3,
+   59,
+   58,
+   "2026-10-23"
+  ],
+  "tt1533117": [
+   7.3,
+   75,
+   66,
+   "2026-10-23"
+  ],
+  "tt1646974": [
+   7.1,
+   72,
+   62,
+   "2026-10-23"
+  ],
+  "tt1727388": [
+   7.4,
+   83,
+   68,
+   "2026-10-23"
   ]
  },
  "pushed_h": {
-  "gs": "82e29217ba9d",
+  "gs": "bf0edbd689ed",
   "quiz_pool.json": "5e887a1905fd",
-  "fact.png": "c32c822a119a",
+  "fact.png": "0e2f9d23bd69",
   "sexed.json": "4efede1d8ea5",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "c6265ceeca00",
@@ -20978,7 +21019,6 @@
  },
  "force_heavy": [
   "пп-страви",
-  "кіномэтч",
   "prom.ua",
   "rozetka"
  ],
@@ -29924,6 +29964,12 @@
    {
     "id": "e8fd965c61",
     "text": "🍿 <b>ПІДБІРКА КІНО · ТРИЛЕР</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Diyavol-nazavzhdi-2020-10-23\">Диявол назавжди</a></b> (2020)\nкримінал, драма, трилер · ⏱ 2 год 18 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>65%</b> · Ⓜ <b>55</b>\n<i>🎭 Том Голланд, Роберт Паттінсон, Білл Скашґорд</i>\n📺 <a href=\"https://www.themoviedb.org/movie/499932-the-devil-all-the-time/watch?locale=UA\">Netflix</a>\n📝 У Нокемстіффі, штат Огайо, та довколишніх густих лісах лиховісні персонажі — нечестивий проповідник, збочена парочка й корумпований шериф — сходяться довкола молодого Арвіна Расселла, котрий намагається боротися зі…\n▶️ <a href=\"https://youtu.be/EIzazUv2gtI\">Трейлер</a></blockquote>\n§KN:m499932\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Bojka-nezaperechnij-4-2016-10-23-2\">Бойка: незаперечний 4</a></b> (2016)\nбойовик, драма, трилер · ⏱ 1 год 27 хв\n⭐ IMDb <b>7.0</b>\n<i>🎭 Скотт Едкінс, Teodora Duhovnikova, Alon Aboutboul</i>\n📺 <a href=\"https://www.themoviedb.org/movie/348893-boyka-undisputed-iv/watch?locale=UA\">Apple TV Store</a>\n📝 Юрій Бойка - російський боксер зі складною долею. Він пройшов загартування в підпільних боях без правил, а після - став відомим в тюремних колах, перемагаючи досвідчених суперників в чемпіонаті серед ув'язнених. Що б…\n▶️ <a href=\"https://youtu.be/Lo-OXY1iXVU\">Трейлер</a></blockquote>\n§KN:m348893\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/터널-2016-10-23\">터널</a></b> (2016)\nтрилер, драма · ⏱ 2 год 06 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>100%</b> · Ⓜ <b>68</b>\n<i>🎭 Ха Чон У, Пе Ду На, О Даль Су</i>\n📝 A man is on his way home when the poorly constructed tunnel he is driving through collapses, leaving him trapped leaving himself for the unexpected whilst emergency services struggle to help.\n▶️ <a href=\"https://youtu.be/GTsY-ol1ays\">Трейлер</a></blockquote>\n§KN:m390497\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Poklik-vovka-2019-10-23\">Поклик вовка</a></b> (2019)\nтрилер, бойовик, пригоди · ⏱ 1 год 56 хв\n⭐ IMDb <b>6.9</b>\n<i>🎭 Франсуа Сівіл, Омар Сі, Матьє Кассовітц</i>\n📺 <a href=\"https://www.themoviedb.org/movie/484468-le-chant-du-loup/watch?locale=UA\">Apple TV Store</a>\n📝 Молодий підводник володіє рідкісним даром розпізнавати кожен звук, який він чує. Від його «золотого вуха» залежать долі людей, а помилка ставить під загрозу життя всього екіпажу підводного човна. Бажаючи повернути…\n▶️ <a href=\"https://youtu.be/venAjhOTImY\">Трейлер</a></blockquote>\n§KN:m484468\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Poganі-hlopcі-nazavzhdi-2020-10-23\">Погані хлопці назавжди</a></b> (2020)\nтрилер, бойовик, кримінал · ⏱ 2 год 04 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>76%</b> · Ⓜ <b>59</b>\n<i>🎭 Вілл Сміт, Мартін Лоренс, Ванесса Гадженс</i>\n📺 <a href=\"https://www.themoviedb.org/movie/38700-bad-boys-for-life/watch?locale=UA\">Apple TV Store</a>\n📝 Головними героями як і раніше будуть детективи відділу по боротьбі з незаконним обігом наркотиків Майк Лоурі та Маркус Бернетт. Маркус втомився від служби і тільки що став дідусем, тому хоче вийти на пенсію і…\n▶️ <a href=\"https://youtu.be/EQ2AwXEWUno\">Трейлер</a></blockquote>\n§KN:m38700\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Prosta-posluga-2018-10-23\">Проста послуга</a></b> (2018)\nтрилер, комедія, детектив · ⏱ 1 год 57 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>84%</b> · Ⓜ <b>67</b>\n<i>🎭 Анна Кендрік, Блейк Лайвлі, Генрі Ґолдінґ</i>\n📝 Удовиця Стефані Ворд самостійно виховує маленького сина та веде інтернет-блог для мам. Її найкраща подруга Емілі має все, чого позбавлена сама Стефані, - престижну роботу та красеня чоловіка. Та коли Емілі безслідно…\n▶️ <a href=\"https://youtu.be/BDeF9ie982g\">Трейлер</a></blockquote>\n§KN:m484247\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Moya-provina-2023-10-23\">Моя провина</a></b> (2023)\nдрама, мелодрама, трилер · ⏱ 1 год 56 хв\n⭐ IMDb <b>6.1</b> · 🍅 <b>0%</b>\n<i>🎭 Ніколь Воллес, Ґабрієль Ґевара, Marta Hazas</i>\n📝 Ноа мусить покинути своє місто, хлопця та друзів, щоб переїхати до особняка Вільяма Лейстера, епатажного та заможного чоловіка її матері Рафаели. Як горда і незалежна 17-річна дівчина, Ноа опирається життю в…\n▶️ <a href=\"https://youtu.be/xY-qRGC6Yu0\">Трейлер</a></blockquote>\n§KN:m1010581\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Auditor-2016-10-23\">Аудитор</a></b> (2016)\nкримінал, трилер, драма · ⏱ 2 год 08 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>53%</b> · Ⓜ <b>51</b>\n<i>🎭 Бен Аффлек, Анна Кендрік, Дж. К. Сіммонс</i>\n📺 <a href=\"https://www.themoviedb.org/movie/302946-the-accountant/watch?locale=UA\">Apple TV, HBO Max, Apple TV Store, Rakuten TV</a>\n📝 Це історія математичного генія Крістіана Вулффа, який перевіряє бухгалтерію небезпечних злочинних організацій світу. Коли за ним починає стежити відділ з боротьби зі злочинністю Міністерства фінансів США, Крістіан…\n▶️ <a href=\"https://youtu.be/vTKGGNnC4l8\">Трейлер</a></blockquote>\n§KN:m302946\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Rejd-Spokuta-2012-10-23\">Рейд: Спокута</a></b> (2012)\nбойовик, трилер, кримінал · ⏱ 3 год 21 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>87%</b> · Ⓜ <b>73</b>\n<i>🎭 Iko Uwais, Джо Таслім, Donny Alamsyah</i>\n📺 <a href=\"https://www.themoviedb.org/movie/94329-serbuan-maut/watch?locale=UA\">Apple TV Store</a>\n📝 Загін спецпризначення потрапив у пастку кримінального ватажка та його армії головорізів...\n▶️ <a href=\"https://youtu.be/GDYwcjhvD-Y\">Трейлер</a></blockquote>\n§KN:m94329\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Eksperiment-2001-10-23\">Експеримент</a></b> (2001)\nдрама, трилер · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>72%</b> · Ⓜ <b>59</b>\n<i>🎭 Моріц Бляйбтрой, Christian Berkel, Justus von Dohnányi</i>\n📝 У ході наукового експерименту 12 звичайних людей добровільно стають на два тижні \"в'язнями\" реальної в'язниці, тоді як 8 таких же добровольців стають наглядачами. Завдання перших — дотримуватися правил тюремного…\n▶️ <a href=\"https://youtu.be/MG_xQs9_MGQ\">Трейлер</a></blockquote>\n§KN:m575"
+   }
+  ],
+  "comedy": [
+   {
+    "id": "9bdd5a2a20",
+    "text": "🍿 <b>ПІДБІРКА КІНО · КОМЕДІЯ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/NІKAP-2024-10-23-2\">НІКАП</a></b> (2024)\nмузика, комедія, драма · ⏱ 1 год 45 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>95%</b> · Ⓜ <b>76</b>\n<i>🎭 Móglaí Bap, Mo Chara, DJ Próvaí</i>\n📝 Дрібний хуліган і наркоторговець із Західного Белфасту на ім'я Ліам разом зі своїм найкращим другом Наойзом захоплюється написанням невигадливих пісень ірландською мовою, що одного разу призводить до доленосного…\n▶️ <a href=\"https://youtu.be/1fxIR5k5tWk\">Трейлер</a></blockquote>\n§KN:m1180629\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Pobachennya-naoslіp-2017-10-23\">Побачення наосліп</a></b> (2017)\nкомедія, драма · ⏱ 1 год 51 хв\n⭐ IMDb <b>7.1</b>\n<i>🎭 Костя Ульман, Anna Maria Mühe, Якоб Маченц</i>\n📺 <a href=\"https://www.themoviedb.org/movie/379019-mein-blind-date-mit-dem-leben/watch?locale=UA\">Apple TV Store</a>\n📝 Життєстверджувальна історія про юного мрійника Салію Кахауатте. Більш за все на світі він хоче пройти стажування в найкращому готелі Мюнхена - Баэріщер Хоф. Але є одна проблемка – у нього жахливий зір. Салія не хоче,…\n▶️ <a href=\"https://youtu.be/duwihAOXU40\">Трейлер</a></blockquote>\n§KN:m379019\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/엑시트-2019-10-23\">엑시트</a></b> (2019)\nбойовик, комедія · ⏱ 1 год 43 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>83%</b>\n<i>🎭 조정석, Ім Ю На, Ко Ду Шім</i>\n📺 <a href=\"https://www.themoviedb.org/movie/572164/watch?locale=UA\">Apple TV Store</a>\n📝 At his mother's 70th birthday party, Yong-nam runs into Eui-joo, who rejected him in college. When the city is engulfed in toxic gas from a terrorist attack, the two must find a way to escape using all the techniques…\n▶️ <a href=\"https://youtu.be/Sp_Uex375YM\">Трейлер</a></blockquote>\n§KN:m572164\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Smert-Stalіna-2017-10-23\">Смерть Сталіна</a></b> (2017)\nкомедія, драма, історичний · ⏱ 1 год 47 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>94%</b> · Ⓜ <b>88</b>\n<i>🎭 Стів Бушемі, Simon Russell Beale, Джеффрі Майкл Тембор</i>\n📺 <a href=\"https://www.themoviedb.org/movie/402897-the-death-of-stalin/watch?locale=UA\">Apple TV Store</a>\n📝 Сатирична комедія Армандо Яннуччі, знята по однойменному коміксі двох французьких карикатуристів Фаб’єна Нурі і Тьєррі Робіна. Дія картини розгортається в СРСР на початку 1950-х років. Смерть Йосипа Сталіна…\n▶️ <a href=\"https://youtu.be/KSlwiOXkjTY\">Трейлер</a></blockquote>\n§KN:m402897\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Karamelo-2025-10-23\">Карамело</a></b> (2025)\nкомедія, драма · ⏱ 1 год 40 хв\n⭐ IMDb <b>7.1</b>\n<i>🎭 Rafael Vitti, Amendoim, Kelzy Ecard</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1277988-caramelo/watch?locale=UA\">Netflix</a>\n📝 Душевна драма про те, як після страшного діагнозу талановитий шеф-кухар знаходить втіху й радість у компанії собаки, що стає йому щирим другом.\n▶️ <a href=\"https://youtu.be/epiLkoJ4dAk\">Трейлер</a></blockquote>\n§KN:m1277988\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Z-lyubovyu-Sajmon-2018-10-23-2\">З любов’ю, Саймон</a></b> (2018)\nкомедія, драма, мелодрама · ⏱ 1 год 50 хв · 🔞 відвертість: помірна\n⭐ IMDb <b>7.5</b> · 🍅 <b>92%</b> · Ⓜ <b>72</b>\n<i>🎭 Нік Робінсон, Дженніфер Ґарнер, Джош Дюамель</i>\n📺 <a href=\"https://www.themoviedb.org/movie/449176-love-simon/watch?locale=UA\">Apple TV Store</a>\n📝 Старшокласник Саймон приховує від друзів свою гомосексуальність, але його листування з анонімним коханим потрапляє в чужі руки. Шкільний «клоун» Мартін загрожує викрити Саймона, якщо той не допоможе йому зав'язати…\n▶️ <a href=\"https://youtu.be/E0cbWdlQg_8\">Трейлер</a></blockquote>\n§KN:m449176\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Pan-CHornij-Poyas-2024-10-23\">Пан Чорний Пояс</a></b> (2024)\nбойовик, комедія, кримінал · ⏱ 1 год 48 хв\n⭐ IMDb <b>6.9</b>\n<i>🎭 Кім У Бін, Кім Сон Кюн, Лі Хьон Гуль</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1139817/watch?locale=UA\">Netflix</a>\n📝 Талановитий майстер єдиноборств, який завжди допомагає нужденним, об’єднується з офіцером пробації, щоб протидіяти й запобігати злочинам як офіцер бойових мистецтв.\n▶️ <a href=\"https://youtu.be/WNkGz6aKFvk\">Трейлер</a></blockquote>\n§KN:m1139817\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Kohannya-bez-zamorochok-2023-10-23\">Кохання без заморочок</a></b> (2023)\nмелодрама, комедія, драма · ⏱ 1 год 40 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>92%</b> · Ⓜ <b>80</b>\n<i>🎭 Magalie Lépine-Blondeau, Pierre-Yves Cardinal, Francis-William Rhéaume</i>\n📝 Софія — професорка філософії з інтелігентної родини. Разом із чоловіком вони відвідують культурні заходи, а на званих вечерях ведуть інтелектуальні бесіди. Однак сплять вони в різних ліжках, а метелики в животі давно…\n▶️ <a href=\"https://youtu.be/T_1yHVCPcno\">Трейлер</a></blockquote>\n§KN:m912520\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Realne-kohannya-2003-10-23\">Реальне кохання</a></b> (2003)\nкомедія, мелодрама, драма · ⏱ 2 год 15 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>65%</b> · Ⓜ <b>55</b>\n<i>🎭 Гʼю Ґрант, Алан Рікман, Емма Томпсон</i>\n📝 Фільм розповідає дев’ять реальних історій, які дивовижним чином переплітають між собою всіх героїв напередодні Різдва.\n▶️ <a href=\"https://youtu.be/gY6jmo3n4Zo\">Трейлер</a></blockquote>\n§KN:m508\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Black-Dynamite-2009-10-23\">Black Dynamite</a></b> (2009)\nкомедія, бойовик · ⏱ 1 год 25 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>83%</b> · Ⓜ <b>65</b>\n<i>🎭 Майкл Джай Вайт, Arsenio Hall, Tommy Davidson</i>\n📝 This is the story of 1970s African-American action legend Black Dynamite. The Man killed his brother, pumped heroin into local orphanages, and flooded the ghetto with adulterated malt liquor. Black Dynamite was the…\n▶️ <a href=\"https://youtu.be/96Y24a0cyCE\">Трейлер</a></blockquote>\n§KN:m24804"
    }
   ]
  },
