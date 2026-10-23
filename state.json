@@ -689,7 +689,7 @@
   "t218344",
   "t62650"
  ],
- "gh_beat": "2026-10-23T10:15:45.450088+03:00",
+ "gh_beat": "2026-10-23T10:20:42.584635+03:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1486,14 +1486,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "23.10 10:12",
-   "ts": 1792739570,
+   "at": "23.10 10:23",
+   "ts": 1792740204,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "23.10 10:12",
-   "ts": 1792739570,
+   "at": "23.10 10:23",
+   "ts": 1792740204,
    "ok": true,
    "note": ""
   },
@@ -12757,7 +12757,10 @@
   "kino": {}
  },
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
- "gem_block": {},
+ "gem_block": {
+  "gemini-flash-latest": "2026-10-24T10:05:00+03:00",
+  "gemini-3.8-flash": "2026-10-24T10:05:00+03:00"
+ },
  "omdb_cache": {
   "tt5362988": [
    7.7,
@@ -20225,7 +20228,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "9bbe3396f569",
+  "gs": "2c39983d529e",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "42843c8192c5",
   "sexed.json": "4efede1d8ea5",
