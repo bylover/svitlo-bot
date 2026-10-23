@@ -695,7 +695,7 @@
   "t79501",
   "t61865"
  ],
- "gh_beat": "2026-10-23T21:55:43.662797+03:00",
+ "gh_beat": "2026-10-23T22:00:45.590284+03:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -754,7 +754,7 @@
    ]
   ]
  },
- "fact_png": "2026-10-23 21|6|2026-10-23T13:24:55+03:00",
+ "fact_png": "2026-10-23 22|6|2026-10-23T13:24:55+03:00",
  "fact_day": {
   "total": "2 год 52 хв",
   "list": [
@@ -1504,14 +1504,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "23.10 21:58",
-   "ts": 1792781887,
+   "at": "23.10 22:02",
+   "ts": 1792782144,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "23.10 21:58",
-   "ts": 1792781887,
+   "at": "23.10 22:02",
+   "ts": 1792782144,
    "ok": true,
    "note": ""
   },
@@ -12801,7 +12801,9 @@
   "160603556": "2026-10-23",
   "396425365": "2026-10-23"
  },
- "ero_sent": {},
+ "ero_sent": {
+  "160603556": "2026-10-23"
+ },
  "pend": {
   "kino": {
    "id": "2026-10-23 08",
@@ -22679,9 +22681,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "38fc212711b4",
+  "gs": "5ce2cb03f896",
   "quiz_pool.json": "5e887a1905fd",
-  "fact.png": "ff9748eb7adc",
+  "fact.png": "fb2a1de6fac3",
   "sexed.json": "4efede1d8ea5",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "ca249c14d237",
@@ -33460,11 +33462,12 @@
  },
  "ero_seen": {
   "160603556": [
-   "“You yourself never loved; you never lov"
+   "“You yourself never loved; you never lov",
+   "Come thou, foam-born Kypris, and pour in"
   ]
  },
  "ero_book": {
-  "160603556": "Dracula"
+  "160603556": "Sappho"
  },
  "prom_day": "2026-10-23",
  "prom_force": false,
