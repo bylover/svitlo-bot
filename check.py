@@ -4559,7 +4559,7 @@ def _flat_cache(d, out=None, depth=0):
         for k, v in d.items():
             if isinstance(k, str) and re.match(r"^(Product|Company)[:@]", k) and isinstance(v, dict):
                 out.setdefault(k.replace("@", ":"), v)
-            if isinstance(v, (dict, list)):
+            if isinstance(v, (dict, list)) or (isinstance(v, str) and len(v) > 200 and v.lstrip().startswith("{") and "__typename" in v):
                 _flat_cache(v, out, depth + 1)
     elif isinstance(d, list):
         for v in d:
@@ -4668,13 +4668,13 @@ def prom_offers(q: str, pages: int = 2) -> list:
             disc = _num(find(v, r"discountedPrice|priceWithDiscount|discountPrice|salePrice") or 0)
             price = disc or _num(v.get("price") or find(v, r"^price$|priceValue"))   # ціна зі знижкою, якщо є — саме за неї продають
             pres = deref(v.get("presence")) if isinstance(v.get("presence"), dict) else v.get("presence")
-            avail_txt = json.dumps(pres, ensure_ascii=False).lower() if pres is not None else str(find(v, r"presence|avail|inStock|stock", want=str) or "").lower()
+            avail_txt = json.dumps(pres, ensure_ascii=False).lower() if pres is not None else str(find(v, r"^(presence|isAvailable|inStock|stockStatus|availability)$", want=str) or "").lower()
             if re.search(r"not_avail|unavailable|немає в наявності|нет в наличии|закінчився|\"isavailable\":\s*false|false|out_of_stock|під замовлення|под заказ|waiting", avail_txt):
                 continue                                  # 📦 лише те, що є в наявності (не «під замовлення»)
-            comp = deref(v.get("company")) or {}
+            comp = deref(v.get("company")) or cache.get(f"Company:{v.get('company_id')}") or {}   # продавець — за company_id
             if not name or not price or not comp:
                 continue
-            url = v.get("urlForProductCatalog") or v.get("url") or ""
+            url = v.get("urlForProductCatalog") or v.get("url") or (f"/ua/p{v.get('id')}-{v.get('urlText')}.html" if v.get("urlText") else f"/ua/p{v.get('id')}.html")
             out.append({"n": str(name)[:140], "p": price, "u": ("https://prom.ua" + url) if url.startswith("/") else url,
                         "s": str(comp.get("name") or "")[:60], "sid": str(comp.get("id") or ""),
                         "r": find(comp, r"positive.*percent|opinionPositivePercent|rating") or 0,
@@ -4692,7 +4692,7 @@ def _tok(s: str) -> set:
 
 def prom_top(st: dict, now: datetime) -> None:
     """Раз на добу: у кожній категорії групуємо однакові товари різних продавців, беремо найпопулярніші й найдешевшу пропозицію від продавця з рейтингом ≥95%."""
-    if not WORKER_MODE or st.get("prom_day") == now.date().isoformat() and not st.get("prom_force") and st.get("prom_v") == 4:
+    if not WORKER_MODE or st.get("prom_day") == now.date().isoformat() and not st.get("prom_force") and st.get("prom_v") == 5:
         return                                        # нова версія розбору — збираємо одразу, не чекаючи завтра
     res, t0 = {}, _time.time()
     for title, q in PROM_CATS:
@@ -4715,7 +4715,7 @@ def prom_top(st: dict, now: datetime) -> None:
             top.append({**best, "pop": pop, "stars": stars, "n_off": len(c["o"]), "pmin": min(o["p"] for o in c["o"]), "pmax": max(o["p"] for o in c["o"])})
         top.sort(key=lambda x: (-(x["pop"] + 20 * (x["stars"] or 0)), x["p"]))
         res[title] = top[:15]
-    st["prom_day"], st["prom_force"], st["prom_v"] = now.date().isoformat(), False, 4
+    st["prom_day"], st["prom_force"], st["prom_v"] = now.date().isoformat(), False, 5
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "prom.json", "json": {"at": now.strftime("%d.%m %H:%M"), "cats": res}})
     except Exception as e:
