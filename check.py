@@ -4515,6 +4515,38 @@ def prom_page(q: str, page: int = 1) -> str:
     return urllib.request.urlopen(req, timeout=30).read().decode("utf-8", "replace")
 
 
+def _json_at(h: str, marker: str):
+    """JSON-обʼєкт одразу після маркера (напр. «window.ApolloCacheState =») — за парними дужками, будь-якого розміру."""
+    i = h.find(marker)
+    if i < 0:
+        return None
+    j = h.find("{", i)
+    if j < 0:
+        return None
+    depth, ins, esc_ = 0, False, False
+    for k in range(j, min(len(h), j + 8_000_000)):
+        ch = h[k]
+        if ins:
+            if esc_:
+                esc_ = False
+            elif ch == "\\":
+                esc_ = True
+            elif ch == '"':
+                ins = False
+        elif ch == '"':
+            ins = True
+        elif ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                try:
+                    return json.loads(h[j:k + 1])
+                except Exception:
+                    return None
+    return None
+
+
 def _num(v) -> float:
     try:
         return float(re.sub(r"[^\d.]", "", str(v).replace(",", ".")) or 0)
@@ -4531,8 +4563,13 @@ def prom_offers(q: str, pages: int = 2) -> list:
         except Exception as e:
             PROM_LOG.append(f"{q}: {err_text(e)[:50]}"); break
         blobs = []
-        for m in re.finditer(r"window\.ApolloCacheState\s*=\s*(\{.*?\});\s*</script>", h, re.S):
-            blobs.append(m.group(1))
+        ap = _json_at(h, "ApolloCacheState")             # Apollo-кеш Prom (великий) — за парними дужками
+        if isinstance(ap, dict):
+            blobs.append(ap)
+            if pg == 1 and "apollo" not in PROM_DBG:
+                prod_ = next((v for k_, v in ap.items() if str(k_).startswith("Product") or (isinstance(v, dict) and v.get("__typename") == "Product")), None)
+                comp_ = next((v for k_, v in ap.items() if str(k_).startswith("Company") or (isinstance(v, dict) and v.get("__typename") == "Company")), None)
+                PROM_DBG["apollo"] = {"keys": len(ap), "sample_keys": list(ap)[:8], "product": json.dumps(prod_, ensure_ascii=False)[:700], "company": json.dumps(comp_, ensure_ascii=False)[:500]}
         for m in re.finditer(r'<script[^>]*id="__NEXT_DATA__"[^>]*>(.*?)</script>', h, re.S):
             blobs.append(m.group(1))
         for m in re.finditer(r'JSON\.parse\(\s*"((?:[^"\\]|\\.){500,})"\s*\)', h):   # екранований JSON усередині скрипта
@@ -4578,19 +4615,20 @@ def prom_offers(q: str, pages: int = 2) -> list:
                                                  'data-qaid="product_name"', 'data-qaid="company_name"', 'data-qaid="product_presence"', "itemprop=\"price\"", '"@type":"Product"')}
             i_ = max(h.find('data-qaid="product_price"'), h.find('"price"'), 0)
             PROM_DBG.update({"q": q, "len": len(h), "marks": marks, "snip": re.sub(r"\s+", " ", h[max(0, i_ - 700):i_ + 700])})
-        if not cache and 'data-qaid="product_block"' in h:   # запасний спосіб: картки товарів у HTML (data-qaid)
+        n_before = len(out)
+        if 'data-qaid="product_block"' in h and not any(isinstance(v, dict) and (v.get("__typename") == "Product" or str(k).startswith("Product:")) for k, v in cache.items()):   # запасний спосіб: картки в HTML
             for blk in h.split('data-qaid="product_block"')[1:]:
                 blk = blk[:6000]
                 nm = re.search(r'data-qaid="product_name"[^>]*?(?:title="([^"]+)"|>([^<]{3,200})<)', blk)
                 pr = re.search(r'data-qaid="product_price"[^>]*?(?:data-qaprice="([\d.,\s]+)"|>([\d\s.,]+)<)', blk)
-                co = re.search(r'data-qaid="company_name"[^>]*>([^<]{2,80})<', blk)
+                co = re.search(r'data-qaid="company_name"[^>]*>([^<]{2,80})<', blk) or re.search(r'data-qaid="company_link"[^>]*>\s*<a[^>]*title="([^"]{2,80})"', blk)
                 rt = re.search(r'(\d{2,3})\s*%\s*(?:позитивн|положительн)', blk)
                 pres = re.search(r'data-qaid="product_presence"[^>]*>([^<]{2,60})<', blk)
                 href = re.search(r'href="(/ua/p\d+[^"]*|https://prom\.ua/ua/p\d+[^"]*)"', blk)
                 if not (nm and pr and co):
                     continue
-                if pres and re.search(r"немає|нет в|закінч|під замовл|под заказ", pres.group(1), re.I):
-                    continue
+                if (pres and re.search(r"немає|нет в|закінч|під замовл|под заказ", pres.group(1), re.I)) or 'data-qaid="disabled_buy_btn"' in blk:
+                    continue                                  # не в наявності (кнопка «Купити» неактивна)
                 u_ = href.group(1) if href else ""
                 out.append({"n": html.unescape(nm.group(1) or nm.group(2)).strip()[:140], "p": _num(pr.group(1) or pr.group(2)),
                             "u": ("https://prom.ua" + u_) if u_.startswith("/") else u_, "s": html.unescape(co.group(1)).strip()[:60], "sid": html.unescape(co.group(1)).strip()[:60],
@@ -4657,7 +4695,8 @@ def prom_top(st: dict, now: datetime) -> None:
     except Exception as e:
         print(f"Prom → Cloudflare: {err_text(e)[:60]}")
     try:
-        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "prom_dbg.json", "json": {**PROM_DBG, "log": PROM_LOG[:6], "at": now.strftime("%d.%m %H:%M")}})
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "prom_dbg.json", "json": {**PROM_DBG, "log": PROM_LOG[:6], "at": now.strftime("%d.%m %H:%M"),
+                  "snip": (json.dumps(PROM_DBG.get("apollo"), ensure_ascii=False) if PROM_DBG.get("apollo") else PROM_DBG.get("snip", ""))}})
     except Exception:
         pass
     print(f"Prom.ua: категорій {len(res)}, позицій {sum(len(v) for v in res.values())} · {'; '.join(PROM_LOG[:4]) or 'ок'} · маркери: {PROM_DBG.get('marks')}")
@@ -4751,7 +4790,7 @@ def rz_offers(q: str, pages: int = 2) -> list:
 
 def rz_top(st: dict, now: datetime) -> None:
     """Раз на добу: топ у категоріях (ті самі категорії, що й Prom), окремо Rozetka / EU / інші; рейтинг за відгуками й оцінкою, ціна — найнижча."""
-    if not WORKER_MODE or st.get("rz_day") == now.date().isoformat() and not st.get("rz_force"):
+    if True:                                          # API Rozetka закритий для GitHub (403) — топ збирає браузер (rz_browser.py, workflow «Markets browser»)
         return
     res, t0 = {}, _time.time()
     for title, q in PROM_CATS:
@@ -4793,6 +4832,8 @@ def rz_cart(text: str) -> str:
     items = [x.strip() for x in re.split(r"[,;\n]", text) if x.strip()][:6]
     if not items:
         return "🧺 Напишіть товари через кому."
+    return ("🧺 <b>Rozetka: «усе в одного продавця» тимчасово недоступне</b> — сайт закрив доступ для серверів бота, зараз перевіряємо роботу через браузер. "
+            "Поки що спробуйте те саме в 🛍 Prom.ua.")
     by, cheapest = {}, {}
     for it in items:
         tk = _tok(it)
