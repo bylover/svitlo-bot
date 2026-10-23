@@ -93,16 +93,6 @@
   "https://toybenchreviews.medium.com/how-to-tell-if-a-sex-toy-review-is-actually-helpful-dbcbb447d3a9?source=rss------sex_toys-5"
  ],
  "kino_seen": [
-  "m745881",
-  "m447332",
-  "m77495",
-  "m9533",
-  "m696506",
-  "m466532",
-  "m1154538",
-  "m604079",
-  "m539892",
-  "m399579",
   "m765245",
   "m795813",
   "m36243",
@@ -692,9 +682,19 @@
   "m598",
   "t90462",
   "t200875",
-  "t4620"
+  "t4620",
+  "m762504",
+  "m840326",
+  "m313369",
+  "m383498",
+  "m426063",
+  "m1623256",
+  "m786",
+  "t111110",
+  "t119769",
+  "t1436"
  ],
- "gh_beat": "2026-10-23T16:15:45.055762+03:00",
+ "gh_beat": "2026-10-23T16:20:48.332722+03:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -22114,7 +22114,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "c195b40d00ed",
+  "gs": "842e7643be0a",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "37ae4f90b57f",
   "sexed.json": "4efede1d8ea5",
@@ -22200,7 +22200,6 @@
  },
  "force_heavy": [
   "prom.ua",
-  "здоров'я",
   "ігри PS5",
   "аудіокниги",
   "пп-страви",
@@ -31575,6 +31574,11 @@
   {
    "id": "a5e1353760",
    "text": "🍿 <b>ПІДБІРКА КІНО</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/340666?language=uk\">Нічні звірі</a></b> (2016) · ❤️ за вашим смаком\nдрама, трилер · ⏱ 1 год 56 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>74%</b> · Ⓜ <b>67</b>\n<i>🎭 Емі Адамс, Джейк Джилленгол, Майкл Шеннон</i>\n📺 <a href=\"https://www.themoviedb.org/movie/340666-nocturnal-animals/watch?locale=UA\">Netflix, Apple TV Store</a>\n📝 У Сьюзен розкішне життя в Лос-Анджелесі, прекрасний чоловік і власна галерея. Але одного разу вона отримує несподівану посилку від колишнього чоловіка - він хотів би зустрітися, але спочатку просить прочитати його…\n▶️ <a href=\"https://youtu.be/SI45fDplBpw\">Трейлер</a></blockquote>\n§KN:m340666\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/1630409?language=uk\">Колектор</a></b> (2026) · ❤️ за вашим смаком\nбойовик, трилер, кримінал · ⏱ 2 год 14 хв\n⭐ TMDB <b>7.8</b>\n<i>🎭 ณเดชน์ คูกิมิยะ, พิทยา แซ่ฉั่ว, ชัยวัฒน์ ทองแสง</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1630409/watch?locale=UA\">Netflix</a>\n📝 Колишній вибивач боргів Нум виходить із в’язниці, сповнений рішучості залишити кримінальне минуле позаду. Але доля завдає йому чергового удару: він дізнається, що смертельно хворий. Усвідомивши, що часу залишилося…\n▶️ <a href=\"https://youtu.be/U9vJ2Z4SFQI\">Трейлер</a></blockquote>\n§KN:m1630409\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/1241983?language=uk\">Потяг у снах</a></b> (2025)\nдрама, вестерн · ⏱ 1 год 42 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>93%</b> · Ⓜ <b>88</b>\n<i>🎭 Джоел Еджертон, Фелісіті Джонс, Nathaniel Arcand</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1241983-train-dreams/watch?locale=UA\">Netflix</a>\n📝 Десь у глушині чоловік веде скромне життя, сповнене коханням і втратами в часи історичних змін в Америці початку XX століття.\n▶️ <a href=\"https://youtu.be/-WGOShngjsU\">Трейлер</a></blockquote>\n§KN:m1241983\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/906126?language=uk\">Снігова спільнота</a></b> (2023)\nдрама, історичний · ⏱ 2 год 24 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>90%</b> · Ⓜ <b>72</b>\n<i>🎭 Enzo Vogrincic, Agustín Pardella, Matías Recalt</i>\n📺 <a href=\"https://www.themoviedb.org/movie/906126-la-sociedad-de-la-nieve/watch?locale=UA\">Netflix</a>\n📝 13 жовтня 1972 року рейс 571 ВПС Уругваю, зафрахтований для перевезення команди регбістів до Чилі, врізався в льодовик у самому серці Анд.\n▶️ <a href=\"https://youtu.be/Oiz-AZ-YL7E\">Трейлер</a></blockquote>\n§KN:m906126\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/666277?language=uk\">Минулі життя</a></b> (2023)\nдрама, мелодрама · ⏱ 1 год 46 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>95%</b> · Ⓜ <b>94</b>\n<i>🎭 Ґрета Лі, 태오, Джон Магаро</i>\n📝 Нора та Хе-сон були друзями дитинства, але їхній зв’язок перервався, коли дівчина переїхала до Канади з батьками. Через 20 років вони відновлюють спілкування — спочатку у соціальних мережах, а потім проводять разом…\n▶️ <a href=\"https://youtu.be/kA244xewjcI\">Трейлер</a></blockquote>\n§KN:m666277\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/1630423?language=uk\">เลือดรักนักฆ่า</a></b> (2026)\nбойовик, драма, мелодрама · ⏱ 2 год 08 хв\n⭐ TMDB <b>8.6</b>\n<i>🎭 พิมพ์ชนก ลือวิเศษไพบูลย์, ธนภพ ลีรัตนขจร, ศิวกร อดุลสุทธิกุล</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1630423/watch?locale=UA\">Netflix</a>\n📝 Hunted for her rare blood type, a caged woman vows to fight alongside the assassin she loves to protect their future when an old enemy resurfaces.</blockquote>\n§KN:m1630423\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/598?language=uk\">Місто Бога</a></b> (2002)\nдрама, кримінал · ⏱ 2 год 09 хв\n⭐ IMDb <b>8.6</b> · 🍅 <b>91%</b> · Ⓜ <b>79</b>\n<i>🎭 Alexandre Rodrigues, Leandro Firmino, Phellipe Haagensen</i>\n📝 Місто Бога - це передмістя Ріо-де-Жанейро. Діти в подібних місцях не знають страху, бо саме страшне з ними вже трапилося - вони там народилися. Навідуватися сюди не любить навіть поліція, тому тут немає законів і…\n▶️ <a href=\"https://youtu.be/dcUOO4Itgmw\">Трейлер</a></blockquote>\n§KN:m598\n§§\n<blockquote>📺 <b>8. <a href=\"https://www.themoviedb.org/tv/90462?language=uk\">Чакі</a></b> (2021)\nкримінал, комедія, детектив · 📺 серіал · 3 сез.\n⭐ IMDb <b>7.2</b>\n<i>🎭 Zackary Arthur, Björgvin Arnarson, Алівія Елін Лінд</i>\n📝 Школяр Джек Веббер купує Чакі на дворовій розпродажі, поняття не маючи про кривавий спадок ляльки. Але коли він схаменеться, буде вже пізно — маленьке чудовисько з азартом візьметься скорочувати населення…\n▶️ <a href=\"https://youtu.be/oBNH-PY730k\">Трейлер</a></blockquote>\n§KN:t90462\n§§\n<blockquote>📺 <b>9. <a href=\"https://www.themoviedb.org/tv/200875?language=uk\">Воно: Ласкаво просимо в Деррі</a></b> (2025)\nдрама, детектив · 📺 серіал · 2 сез.\n⭐ IMDb <b>7.9</b>\n<i>🎭 Тейлор Пейдж, Джован Адепо, Джеймс Ремар</i>\n📺 <a href=\"https://www.themoviedb.org/tv/200875-it-welcome-to-derry/watch?locale=UA\">HBO Max</a>\n📝 Приквел культового фільму Воно переносить глядачів у 1962 рік, коли в невеликому містечку Деррі починає прокидатися стародавнє зло, здатне харчуватися страхом та підкоряти собі людей. У центрі сюжету — група…\n▶️ <a href=\"https://youtu.be/u4JE2AyqDII\">Трейлер</a></blockquote>\n§KN:t200875\n§§\n<blockquote>📺 <b>10. <a href=\"https://www.themoviedb.org/tv/4620?language=uk\">Еврика</a></b> (2006)\nнауково фантастичний, комедія, драма · 📺 серіал · 5 сез.\n⭐ IMDb <b>7.9</b>\n<i>🎭 Colin Ferguson, Саллі Річардсон-Вітфілд, Джо Мортон</i>\n📝 Події розгортаються в містечку Еврика, яке населяють різноманітні науковці, винахідники, генії та їх винаходи. Час від часу у містечку відбуваються дивні та екстраординарні події, а «геніальні» винаходи виходять з…\n▶️ <a href=\"https://youtu.be/WiPWghJQS3o\">Трейлер</a></blockquote>\n§KN:t4620",
+   "markup": null
+  },
+  {
+   "id": "3c72d3beb5",
+   "text": "🍿 <b>ПІДБІРКА КІНО</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/762504?language=uk\">Ноу</a></b> (2022) · ❤️ за вашим смаком\nжахи, фантастика, трилер · ⏱ 2 год 10 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>83%</b> · Ⓜ <b>77</b>\n<i>🎭 Деніел Калуя, Кікі Палмер, Брендон Переа</i>\n📺 <a href=\"https://www.themoviedb.org/movie/762504-nope/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Хмара незрозумілого походження сильно псує життя власникам невеликого ранчо в Каліфорнії.\n▶️ <a href=\"https://youtu.be/FhfEP3s_IQM\">Трейлер</a></blockquote>\n§KN:m762504\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/840326?language=uk\">Нескоримий</a></b> (2022) · ❤️ за вашим смаком\nбойовик, військовий, трилер · ⏱ 1 год 31 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>94%</b> · Ⓜ <b>70</b>\n<i>🎭 Йорма Томміла, Aksel Hennie, Jack Doolan</i>\n📝 Фінляндія, 1944 рік. Колишній солдат знаходить у Лапландії золоту жилу і вирушає до міста продати золото, але на шляху йому доводиться вступити в конфлікт з оберштурмфюрером СС.\n▶️ <a href=\"https://youtu.be/d2k4QAItiSA\">Трейлер</a></blockquote>\n§KN:m840326\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/313369?language=uk\">Ла-Ла Ленд</a></b> (2016)\nкомедія, драма, мелодрама · ⏱ 2 год 08 хв\n⭐ IMDb <b>8.0</b> · 🍅 <b>91%</b> · Ⓜ <b>94</b>\n<i>🎭 Раян Ґослінґ, Емма Стоун, Джон Ледженд</i>\n📝 Лос-Анджелес - дивовижне місце, фабрика мрій і рай на землі в очах багатьох молодих людей. Саме тут двом головним героям судилося зустрітися, знайти і втратити своє щастя. Вона - молода амбітна актриса, яка мріє…\n▶️ <a href=\"https://youtu.be/FhoXyL9KX9M\">Трейлер</a></blockquote>\n§KN:m313369\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/383498?language=uk\">Дедпул 2</a></b> (2018)\nбойовик, комедія, пригоди · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>83%</b> · Ⓜ <b>66</b>\n<i>🎭 Раян Рейнольдс, Джош Бролін, Морена Баккарін</i>\n📺 <a href=\"https://www.themoviedb.org/movie/383498-deadpool-2/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Найкращий балакучий найманець повертається на екрани. Він уже помстився всім, кому хотів, за те, що з ним зробили. Тепер він просто шукає свій втрачений смак до життя, попутно лупцює різні дупи, б'ється з ніндзя,…\n▶️ <a href=\"https://youtu.be/UwndXEvHgpM\">Трейлер</a></blockquote>\n§KN:m383498\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/426063?language=uk\">Носферату</a></b> (2024)\nжахи, фентезі · ⏱ 2 год 12 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>85%</b> · Ⓜ <b>78</b>\n<i>🎭 Лілі-Роз Депп, Ніколас Голт, Білл Скашґорд</i>\n📺 <a href=\"https://www.themoviedb.org/movie/426063-nosferatu/watch?locale=UA\">Netflix, Rakuten TV</a>\n📝 Готична історія про пристрасті між переслідуваною молодою жінкою та жахливим вампіром, який захопився нею, сіючи невимовний жах на своєму шляху.\n▶️ <a href=\"https://youtu.be/gHINtD2Nrmw\">Трейлер</a></blockquote>\n§KN:m426063\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/1623256?language=uk\">Буря</a></b> (2026)\nкомедія, драма · ⏱ 1 год 41 хв\n⭐ TMDB <b>6.3</b>\n<i>🎭 Ґустаф Скашґорд, Aliette Opheim, Філіп Берґ</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1623256-stormen/watch?locale=UA\">Netflix</a>\n📝 Через бурю групі давніх приятелів доводиться затриматись у розкішному котеджі. Згодом мирне святкування дня народження перетворюється на вир зрад, образ і чистого хаосу.\n▶️ <a href=\"https://youtu.be/Zfb-62tjT_Y\">Трейлер</a></blockquote>\n§KN:m1623256\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/786?language=uk\">Майже знамениті</a></b> (2000)\nдрама, музика · ⏱ 2 год 02 хв\n⭐ IMDb <b>7.9</b> · 🍅 <b>91%</b> · Ⓜ <b>90</b>\n<i>🎭 Біллі Крудап, Френсіс Мак-Дорманд, Кейт Гадсон</i>\n📺 <a href=\"https://www.themoviedb.org/movie/786-almost-famous/watch?locale=UA\">Apple TV Store</a>\n📝 Це дотепна, зворушлива і бездоганно знята історія про те, як простий американський хлопчисько Вільям Міллер волею випадку став кореспондентом авторитетного музичного журналу «Роллінг Стоун» і відправився за завданням…\n▶️ <a href=\"https://youtu.be/4U07rtBNa2g\">Трейлер</a></blockquote>\n§KN:m786\n§§\n<blockquote>📺 <b>8. <a href=\"https://www.themoviedb.org/tv/111110?language=uk\">ONE PIECE</a></b> (2023)\nекшн і пригоди, науково фантастичний · 📺 серіал · 3 сез.\n⭐ IMDb <b>8.3</b>\n<i>🎭 Іньякі Ґодой, Емілі Радд, Маккенью</i>\n📺 <a href=\"https://www.themoviedb.org/tv/111110-one-piece/watch?locale=UA\">Netflix</a>\n📝 Кіноадаптація популярної манґи. Молодий пірат у солом’яному капелюсі Монкі Ді Луффі разом зі своєю різномасною командою вирушає в епічну подорож на пошуки скарбів.\n▶️ <a href=\"https://youtu.be/TGrxfB7bO8k\">Трейлер</a></blockquote>\n§KN:t111110\n§§\n<blockquote>📺 <b>9. <a href=\"https://www.themoviedb.org/tv/119769?language=uk\">Таксист</a></b> (2021)\nекшн і пригоди, кримінал, драма · 📺 серіал · 3 сез.\n⭐ IMDb <b>8.1</b>\n<i>🎭 이제훈, Кім Ий Сон, Пхьо Є Джін</i>\n📝 Кім До Кі, як офіцер спецназу, завжди жив чесніше за інших. Однак, коли серійний вбивця позбавляє життя його матір, він проводить дні в агонії, почуваючись ображеним і зламаним. Одного дня До Кі зустрічає Чан Сон…\n▶️ <a href=\"https://youtu.be/elatd32_J9I\">Трейлер</a></blockquote>\n§KN:t119769\n§§\n<blockquote>📺 <b>10. <a href=\"https://www.themoviedb.org/tv/1436?language=uk\">Своя правда</a></b> (2010)\nкримінал, драма · 📺 серіал · 6 сез.\n⭐ IMDb <b>8.6</b>\n<i>🎭 Тімоті Оліфант, Волтон Ґоґґінс, Nick Searcy</i>\n📝 Історія федерального маршала Рейлана Гівенса, який дотримується застарілих поглядів на правосуддя. Через його суворий моральний кодекс Гівенс швидко стає мішенню як для злочинців, так і для колег.\n▶️ <a href=\"https://youtu.be/86zzu8wz0-U\">Трейлер</a></blockquote>\n§KN:t1436",
    "markup": null
   }
  ],
