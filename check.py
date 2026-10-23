@@ -4572,6 +4572,21 @@ def _flat_cache(d, out=None, depth=0):
     return out
 
 
+def prom_available(pres, v: dict) -> bool:
+    """Наявність товару Prom: лише явні ознаки «немає» / «під замовлення» (інші прапорці на кшталт isEnding=false не враховуємо)."""
+    bad = ("not_available", "unavailable", "waiting", "order", "out_of_stock", "absent", "немає", "під замовлення", "закінчився")
+    if isinstance(pres, dict):
+        if pres.get("isAvailable") is False or pres.get("available") is False:
+            return False
+        val = str(pres.get("presence") or pres.get("value") or pres.get("type") or pres.get("title") or "").lower()
+        return not any(b in val for b in bad)
+    if isinstance(pres, str):
+        return not any(b in pres.lower() for b in bad)
+    if v.get("isAvailable") is False or v.get("inStock") is False:
+        return False
+    return True
+
+
 def _num(v) -> float:
     try:
         return float(re.sub(r"[^\d.]", "", str(v).replace(",", ".")) or 0)
@@ -4661,18 +4676,21 @@ def prom_offers(q: str, pages: int = 2) -> list:
                             "r": float(rt.group(1)) if rt else 0, "rv": _num((re.search(r'(\d+)\s*відгук', blk) or [None, 0])[1]),
                             "st": _num((re.search(r'data-qaid="product_rating"[^>]*?(?:title|aria-label)="[^"]*?([\d.,]+)', blk) or [None, 0])[1]),
                             "sold": _num((re.search(r'(?:Купили|Продано)\D{0,15}(\d+)', blk) or [None, 0])[1])})
+        why_ = {"товарів": 0, "без ціни/назви/продавця": 0, "не в наявності": 0}
         for k, v in cache.items():
             if not isinstance(v, dict) or not (str(v.get("__typename", "")) == "Product" or str(k).startswith("Product:")):
                 continue
+            why_["товарів"] += 1
             name = v.get("name") or v.get("nameForCatalog")
             disc = _num(find(v, r"discountedPrice|priceWithDiscount|discountPrice|salePrice") or 0)
             price = disc or _num(v.get("price") or find(v, r"^price$|priceValue"))   # ціна зі знижкою, якщо є — саме за неї продають
-            pres = deref(v.get("presence")) if isinstance(v.get("presence"), dict) else v.get("presence")
-            avail_txt = json.dumps(pres, ensure_ascii=False).lower() if pres is not None else str(find(v, r"^(presence|isAvailable|inStock|stockStatus|availability)$", want=str) or "").lower()
-            if re.search(r"not_avail|unavailable|немає в наявності|нет в наличии|закінчився|\"isavailable\":\s*false|false|out_of_stock|під замовлення|под заказ|waiting", avail_txt):
+            pres = deref(v.get("presence"))
+            if not prom_available(pres, v):
+                why_["не в наявності"] += 1
                 continue                                  # 📦 лише те, що є в наявності (не «під замовлення»)
             comp = deref(v.get("company")) or cache.get(f"Company:{v.get('company_id')}") or {}   # продавець — за company_id
             if not name or not price or not comp:
+                why_["без ціни/назви/продавця"] += 1
                 continue
             url = v.get("urlForProductCatalog") or v.get("url") or (f"/ua/p{v.get('id')}-{v.get('urlText')}.html" if v.get("urlText") else f"/ua/p{v.get('id')}.html")
             out.append({"n": str(name)[:140], "p": price, "u": ("https://prom.ua" + url) if url.startswith("/") else url,
@@ -4680,8 +4698,10 @@ def prom_offers(q: str, pages: int = 2) -> list:
                         "r": find(comp, r"positive.*percent|opinionPositivePercent|rating") or 0,
                         "rv": find(v, r"opinion.*(count|total)|reviews?Count|feedbacks?Count") or 0, "st": find(v, r"^rating$|averageRating|productRating") or 0,
                         "sold": find(v, r"sales|ordersCount|soldCount|bought|purchases") or 0})
+        if pg == 1 and len(PROM_LOG) < 8:
+            PROM_LOG.append(f"«{q}» розбір: {why_}")
         _time.sleep(1.0)
-    if out and len(PROM_LOG) < 5:
+    if out and len(PROM_LOG) < 8:
         PROM_LOG.append(f"«{q}»: пропозицій {len(out)}, приклад: {json.dumps(out[0], ensure_ascii=False)[:200]}")
     return out
 
@@ -4692,7 +4712,7 @@ def _tok(s: str) -> set:
 
 def prom_top(st: dict, now: datetime) -> None:
     """Раз на добу: у кожній категорії групуємо однакові товари різних продавців, беремо найпопулярніші й найдешевшу пропозицію від продавця з рейтингом ≥95%."""
-    if not WORKER_MODE or st.get("prom_day") == now.date().isoformat() and not st.get("prom_force") and st.get("prom_v") == 5:
+    if not WORKER_MODE or st.get("prom_day") == now.date().isoformat() and not st.get("prom_force") and st.get("prom_v") == 6:
         return                                        # нова версія розбору — збираємо одразу, не чекаючи завтра
     res, t0 = {}, _time.time()
     for title, q in PROM_CATS:
@@ -4721,7 +4741,7 @@ def prom_top(st: dict, now: datetime) -> None:
                 break
         top.sort(key=lambda x: (x.get("r90", False), -(x["pop"] + 20 * (x["stars"] or 0)), x["p"]))   # спершу продавці ≥95%
         res[title] = top[:15]
-    st["prom_day"], st["prom_force"], st["prom_v"] = now.date().isoformat(), False, 5
+    st["prom_day"], st["prom_force"], st["prom_v"] = now.date().isoformat(), False, 6
     st["prom_last_n"] = sum(len(v) for v in res.values())
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "prom.json", "json": {"at": now.strftime("%d.%m %H:%M"), "cats": res}})
