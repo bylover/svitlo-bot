@@ -192,7 +192,11 @@ def main() -> None:
                 if not re.search(r"зачекайте|just a moment|подождите|attention required", page.title() or "", re.I):
                     break
             hh = page.content()
-            DBG["hotline"] = {"title": page.title()[:70], "len": len(hh), "challenge": bool(re.search(r"Just a moment|cf-challenge|Attention Required|captcha", hh, re.I)),
+            card = page.evaluate("""() => {                  // перша картка товару: текст і HTML (для точного розбору)
+              const el = document.querySelector('.list-item, [data-product-id], .product-item, article');
+              return el ? { text: el.innerText.slice(0, 500), html: el.outerHTML.slice(0, 1500), cls: el.className } : null; }""")
+            marks = {k: hh.count(k) for k in ("__NUXT__", "__NUXT_DATA__", "__NEXT_DATA__", "window.__INITIAL_STATE__", "list-item__title", "data-product-id", "list-item__value-price", "price__value", "rating", "відгук")}
+            DBG["hotline"] = {"title": page.title()[:70], "len": len(hh), "real_challenge": bool(re.search(r"Just a moment|cf-challenge-running|Attention Required", hh, re.I)), "marks": marks, "card": card,
                               "products": len(re.findall(r'class="[^"]*list-item[^"]*"|data-product-id|product-item', hh)), "prices": len(re.findall(r"\d[\d\s]{2,7}\s?(?:грн|₴)", hh)),
                               "xhr": [c["u"] for c in CAUGHT][:4], "snip": re.sub(r"\s+", " ", hh[hh.find("грн") - 400:hh.find("грн") + 200] if "грн" in hh else hh[:500])[:600]}
         except Exception as e:
@@ -206,7 +210,7 @@ def main() -> None:
         if n:
             http_json(f"{check.SYNC_URL}/filepush?key={key}", {"name": "rozetka.json", "json": {"at": now.strftime("%d.%m %H:%M"), "cats": res}})
         http_json(f"{check.SYNC_URL}/filepush?key={key}", {"name": "rz_dbg.json", "json": {"at": now.strftime("%d.%m %H:%M"), "q": "браузер", "mode": "browser",
-                  "log": [f"головна: {DBG.get('home')}"] + [json.dumps(t, ensure_ascii=False)[:400] for t in DBG["tries"]] + [f"HOTLINE: {json.dumps(DBG.get('hotline'), ensure_ascii=False)[:700]}"], "card": json.dumps((DBG["tries"] or [{}])[0].get("tile0"), ensure_ascii=False)}})
+                  "log": [f"HOTLINE: {json.dumps({k: v for k, v in (DBG.get('hotline') or {}).items() if k not in ('card', 'snip')}, ensure_ascii=False)[:600]}", f"головна Rozetka: {DBG.get('home')}"], "card": json.dumps((DBG.get("hotline") or {}).get("card"), ensure_ascii=False)[:2500]}})
     except Exception as e:
         print(f"Rozetka → Cloudflare: {err_text(e)[:60]}")
 

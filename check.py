@@ -6708,7 +6708,7 @@ def main() -> None:
             MUSIC_FILE.write_text(json.dumps(mdb_, ensure_ascii=False, separators=(",", ":")), "utf-8")
         except Exception:
             pass
-        st["force_heavy"] = ["кіно, пули", "музика", "здоров'я", "ігри PS5", "аудіокниги", "пп-страви", "кіномэтч", "prom.ua", "rozetka"]
+        st["force_heavy"] = ["prom.ua", "кіно, пули", "музика", "здоров'я", "ігри PS5", "аудіокниги", "пп-страви", "кіномэтч"]   # маркети — першими
         st["prom_force"] = st["rz_force"] = True
         st["match_month"] = ""; st["ps_day"] = ""                # 🍿💞 пул Кіномэтчу й 🔥 знижки PS — теж свіжі
         st["games_force"] = st["ab_force"] = st["rc_force"] = True     # 🥗 ПП-страви — позапланове поповнення
