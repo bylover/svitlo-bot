@@ -93,16 +93,6 @@
   "https://toybenchreviews.medium.com/how-to-tell-if-a-sex-toy-review-is-actually-helpful-dbcbb447d3a9?source=rss------sex_toys-5"
  ],
  "kino_seen": [
-  "t95480",
-  "t108978",
-  "t61865",
-  "m379170",
-  "m479718",
-  "m1233413",
-  "m858024",
-  "m1148365",
-  "m497828",
-  "m82695",
   "t95396",
   "t73586",
   "t1407",
@@ -692,9 +682,19 @@
   "m1139817",
   "m912520",
   "m508",
-  "m24804"
+  "m24804",
+  "m988402",
+  "m300669",
+  "m310131",
+  "m1114513",
+  "m840705",
+  "m591274",
+  "m776797",
+  "m610253",
+  "m11880",
+  "m46420"
  ],
- "gh_beat": "2026-10-23T13:00:48.696959+03:00",
+ "gh_beat": "2026-10-23T13:05:44.297370+03:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -709,23 +709,23 @@
   "emergency": false,
   "city_emergency": false,
   "city_text": "За наказом НЕК Укренерго введені екстрені відключення електроенергії. Повідомити про аварійні ситуації",
-  "checked": "2026-10-23T12:52:55.366458+03:00",
+  "checked": "2026-10-23T13:02:56.756420+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": true
  },
  "emerg": {
-  "on": true,
-  "since": "2026-10-23T10:50:43.750221+03:00",
+  "on": false,
+  "since": "2026-10-23T13:05:44.458993+03:00",
   "src": "yasno"
  },
  "emerg_src": {
   "YASNO": false,
   "сайт ДТЕК": false,
-  "канал ЖК «Яскравий»": true
+  "канал ЖК «Яскравий»": false
  },
  "fact": {
-  "last": 2588,
+  "last": 2590,
   "events": [
    [
     "2026-10-21T14:29:41+03:00",
@@ -1501,14 +1501,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "23.10 13:02",
-   "ts": 1792749761,
+   "at": "23.10 13:08",
+   "ts": 1792750094,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "23.10 13:02",
-   "ts": 1792749761,
+   "at": "23.10 13:08",
+   "ts": 1792750094,
    "ok": true,
    "note": ""
   },
@@ -20930,10 +20930,106 @@
    83,
    68,
    "2026-10-23"
+  ],
+  "tt4263482": [
+   7.0,
+   91,
+   84,
+   "2026-10-23"
+  ],
+  "tt3811906": [
+   6.2,
+   77,
+   51,
+   "2026-10-23"
+  ],
+  "tt6566576": [
+   6.2,
+   84,
+   67,
+   "2026-10-23"
+  ],
+  "tt28443655": [
+   5.8,
+   52,
+   51,
+   "2026-10-23"
+  ],
+  "tt31184028": [
+   6.7,
+   89,
+   75,
+   "2026-10-23"
+  ],
+  "tt10665338": [
+   5.5,
+   38,
+   42,
+   "2026-10-23"
+  ],
+  "tt1316536": [
+   6.6,
+   98,
+   73,
+   "2026-10-23"
+  ],
+  "tt0280609": [
+   6.8,
+   82,
+   null,
+   "2026-10-23"
+  ],
+  "tt1077258": [
+   7.0,
+   76,
+   null,
+   "2026-10-23"
+  ],
+  "tt3892620": [
+   5.8,
+   null,
+   null,
+   "2026-10-23"
+  ],
+  "tt0448134": [
+   7.2,
+   77,
+   64,
+   "2026-10-23"
+  ],
+  "tt0995031": [
+   7.5,
+   33,
+   null,
+   "2026-10-23"
+  ],
+  "tt0304262": [
+   6.9,
+   null,
+   60,
+   "2026-10-23"
+  ],
+  "tt0756222": [
+   5.8,
+   null,
+   null,
+   "2026-10-23"
+  ],
+  "tt1842532": [
+   6.8,
+   null,
+   null,
+   "2026-10-23"
+  ],
+  "tt2378453": [
+   5.5,
+   100,
+   null,
+   "2026-10-23"
   ]
  },
  "pushed_h": {
-  "gs": "bf0edbd689ed",
+  "gs": "d1873f28a729",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "0e2f9d23bd69",
   "sexed.json": "4efede1d8ea5",
@@ -21018,7 +21114,6 @@
   "sx/tech_shallowing.png": "0f0dd9f56c27"
  },
  "force_heavy": [
-  "пп-страви",
   "prom.ua",
   "rozetka"
  ],
@@ -29970,6 +30065,12 @@
    {
     "id": "9bdd5a2a20",
     "text": "🍿 <b>ПІДБІРКА КІНО · КОМЕДІЯ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/NІKAP-2024-10-23-2\">НІКАП</a></b> (2024)\nмузика, комедія, драма · ⏱ 1 год 45 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>95%</b> · Ⓜ <b>76</b>\n<i>🎭 Móglaí Bap, Mo Chara, DJ Próvaí</i>\n📝 Дрібний хуліган і наркоторговець із Західного Белфасту на ім'я Ліам разом зі своїм найкращим другом Наойзом захоплюється написанням невигадливих пісень ірландською мовою, що одного разу призводить до доленосного…\n▶️ <a href=\"https://youtu.be/1fxIR5k5tWk\">Трейлер</a></blockquote>\n§KN:m1180629\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Pobachennya-naoslіp-2017-10-23\">Побачення наосліп</a></b> (2017)\nкомедія, драма · ⏱ 1 год 51 хв\n⭐ IMDb <b>7.1</b>\n<i>🎭 Костя Ульман, Anna Maria Mühe, Якоб Маченц</i>\n📺 <a href=\"https://www.themoviedb.org/movie/379019-mein-blind-date-mit-dem-leben/watch?locale=UA\">Apple TV Store</a>\n📝 Життєстверджувальна історія про юного мрійника Салію Кахауатте. Більш за все на світі він хоче пройти стажування в найкращому готелі Мюнхена - Баэріщер Хоф. Але є одна проблемка – у нього жахливий зір. Салія не хоче,…\n▶️ <a href=\"https://youtu.be/duwihAOXU40\">Трейлер</a></blockquote>\n§KN:m379019\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/엑시트-2019-10-23\">엑시트</a></b> (2019)\nбойовик, комедія · ⏱ 1 год 43 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>83%</b>\n<i>🎭 조정석, Ім Ю На, Ко Ду Шім</i>\n📺 <a href=\"https://www.themoviedb.org/movie/572164/watch?locale=UA\">Apple TV Store</a>\n📝 At his mother's 70th birthday party, Yong-nam runs into Eui-joo, who rejected him in college. When the city is engulfed in toxic gas from a terrorist attack, the two must find a way to escape using all the techniques…\n▶️ <a href=\"https://youtu.be/Sp_Uex375YM\">Трейлер</a></blockquote>\n§KN:m572164\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Smert-Stalіna-2017-10-23\">Смерть Сталіна</a></b> (2017)\nкомедія, драма, історичний · ⏱ 1 год 47 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>94%</b> · Ⓜ <b>88</b>\n<i>🎭 Стів Бушемі, Simon Russell Beale, Джеффрі Майкл Тембор</i>\n📺 <a href=\"https://www.themoviedb.org/movie/402897-the-death-of-stalin/watch?locale=UA\">Apple TV Store</a>\n📝 Сатирична комедія Армандо Яннуччі, знята по однойменному коміксі двох французьких карикатуристів Фаб’єна Нурі і Тьєррі Робіна. Дія картини розгортається в СРСР на початку 1950-х років. Смерть Йосипа Сталіна…\n▶️ <a href=\"https://youtu.be/KSlwiOXkjTY\">Трейлер</a></blockquote>\n§KN:m402897\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Karamelo-2025-10-23\">Карамело</a></b> (2025)\nкомедія, драма · ⏱ 1 год 40 хв\n⭐ IMDb <b>7.1</b>\n<i>🎭 Rafael Vitti, Amendoim, Kelzy Ecard</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1277988-caramelo/watch?locale=UA\">Netflix</a>\n📝 Душевна драма про те, як після страшного діагнозу талановитий шеф-кухар знаходить втіху й радість у компанії собаки, що стає йому щирим другом.\n▶️ <a href=\"https://youtu.be/epiLkoJ4dAk\">Трейлер</a></blockquote>\n§KN:m1277988\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Z-lyubovyu-Sajmon-2018-10-23-2\">З любов’ю, Саймон</a></b> (2018)\nкомедія, драма, мелодрама · ⏱ 1 год 50 хв · 🔞 відвертість: помірна\n⭐ IMDb <b>7.5</b> · 🍅 <b>92%</b> · Ⓜ <b>72</b>\n<i>🎭 Нік Робінсон, Дженніфер Ґарнер, Джош Дюамель</i>\n📺 <a href=\"https://www.themoviedb.org/movie/449176-love-simon/watch?locale=UA\">Apple TV Store</a>\n📝 Старшокласник Саймон приховує від друзів свою гомосексуальність, але його листування з анонімним коханим потрапляє в чужі руки. Шкільний «клоун» Мартін загрожує викрити Саймона, якщо той не допоможе йому зав'язати…\n▶️ <a href=\"https://youtu.be/E0cbWdlQg_8\">Трейлер</a></blockquote>\n§KN:m449176\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Pan-CHornij-Poyas-2024-10-23\">Пан Чорний Пояс</a></b> (2024)\nбойовик, комедія, кримінал · ⏱ 1 год 48 хв\n⭐ IMDb <b>6.9</b>\n<i>🎭 Кім У Бін, Кім Сон Кюн, Лі Хьон Гуль</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1139817/watch?locale=UA\">Netflix</a>\n📝 Талановитий майстер єдиноборств, який завжди допомагає нужденним, об’єднується з офіцером пробації, щоб протидіяти й запобігати злочинам як офіцер бойових мистецтв.\n▶️ <a href=\"https://youtu.be/WNkGz6aKFvk\">Трейлер</a></blockquote>\n§KN:m1139817\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Kohannya-bez-zamorochok-2023-10-23\">Кохання без заморочок</a></b> (2023)\nмелодрама, комедія, драма · ⏱ 1 год 40 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>92%</b> · Ⓜ <b>80</b>\n<i>🎭 Magalie Lépine-Blondeau, Pierre-Yves Cardinal, Francis-William Rhéaume</i>\n📝 Софія — професорка філософії з інтелігентної родини. Разом із чоловіком вони відвідують культурні заходи, а на званих вечерях ведуть інтелектуальні бесіди. Однак сплять вони в різних ліжках, а метелики в животі давно…\n▶️ <a href=\"https://youtu.be/T_1yHVCPcno\">Трейлер</a></blockquote>\n§KN:m912520\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Realne-kohannya-2003-10-23\">Реальне кохання</a></b> (2003)\nкомедія, мелодрама, драма · ⏱ 2 год 15 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>65%</b> · Ⓜ <b>55</b>\n<i>🎭 Гʼю Ґрант, Алан Рікман, Емма Томпсон</i>\n📝 Фільм розповідає дев’ять реальних історій, які дивовижним чином переплітають між собою всіх героїв напередодні Різдва.\n▶️ <a href=\"https://youtu.be/gY6jmo3n4Zo\">Трейлер</a></blockquote>\n§KN:m508\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Black-Dynamite-2009-10-23\">Black Dynamite</a></b> (2009)\nкомедія, бойовик · ⏱ 1 год 25 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>83%</b> · Ⓜ <b>65</b>\n<i>🎭 Майкл Джай Вайт, Arsenio Hall, Tommy Davidson</i>\n📝 This is the story of 1970s African-American action legend Black Dynamite. The Man killed his brother, pumped heroin into local orphanages, and flooded the ghetto with adulterated malt liquor. Black Dynamite was the…\n▶️ <a href=\"https://youtu.be/96Y24a0cyCE\">Трейлер</a></blockquote>\n§KN:m24804"
+   }
+  ],
+  "horror": [
+   {
+    "id": "f0e9bd21a9",
+    "text": "🍿 <b>ПІДБІРКА КІНО · ЖАХИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Vampire-humaniste-cherche-suicidaire-consentant-2023-10-23\">Vampire humaniste cherche suicidaire consentant</a></b> (2023)\nкомедія, фентезі, жахи · ⏱ 1 год 31 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>90%</b> · Ⓜ <b>70</b>\n<i>🎭 Sara Montpetit, Félix-Antoine Bénard, Steve Laplante</i>\n📝 Sasha is a young vampire with a serious problem: she's too sensitive to kill. When her exasperated parents cut off her blood supply, Sasha's life is in jeopardy. Luckily, she meets Paul, a lonely teenager with…\n▶️ <a href=\"https://youtu.be/ksWqIui9jHo\">Трейлер</a></blockquote>\n§KN:m988402\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Ne-dihaj-2016-10-23\">Не дихай</a></b> (2016)\nжахи, трилер · ⏱ 1 год 28 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>88%</b> · Ⓜ <b>71</b>\n<i>🎭 Стівен Ленґ, Джейн Леві, Ділан Міннетт</i>\n📺 <a href=\"https://www.themoviedb.org/movie/300669-don-t-breathe/watch?locale=UA\">Rakuten TV, Apple TV Store</a>\n📝 Грабіжники пробираються в будинок самотнього сліпого старця з метою вкрасти величезну суму, яка, за чутками, захована десь всередині. Здавалося б — що може бути простіше, ніж винести гроші з дому практичного…\n▶️ <a href=\"https://youtu.be/U9zaoZ3qFaI\">Трейлер</a></blockquote>\n§KN:m300669\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Vіdma-Nova-anglіjska-kazka-2016-10-23\">Відьма: Нова англійська казка</a></b> (2016)\nжахи, фентезі, детектив · ⏱ 1 год 32 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>91%</b> · Ⓜ <b>84</b>\n<i>🎭 Аня Тейлор-Джой, Ральф Інесон, Кейт Дікі</i>\n📺 <a href=\"https://www.themoviedb.org/movie/310131-the-witch/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Нова Англія, 1630-ті роки. Вільям і Кетрін з п'ятьма дітьми живуть на самотній фермі на узліссі стародавнього лісу. Сім'я починає руйнуватися від невідомого зла, коли їх новонароджений син таємничо зникає, врожай…\n▶️ <a href=\"https://youtu.be/97OQ7MQC5Ck\">Трейлер</a></blockquote>\n§KN:m310131\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Ne-govori-zі-zlom-2024-10-23\">Не говори зі злом</a></b> (2024)\nжахи, трилер · ⏱ 1 год 50 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>83%</b> · Ⓜ <b>66</b>\n<i>🎭 Джеймс Мак-Евой, Маккензі Девіс, Скут Мак-Нейрі</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1114513-speak-no-evil/watch?locale=UA\">Rakuten TV</a>\n📝 Американська родина вирушає у розкішний заміський маєток до британської сім’ї, з якою вони подружилися під час відпустки. Проте вони навіть не підозрюють, що зовсім скоро відпочинок мрії перетвориться на справжній…\n▶️ <a href=\"https://youtu.be/hdsUz6sT9Ek\">Трейлер</a></blockquote>\n§KN:m1114513\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Klіpni-dvіchі-2024-10-23\">Кліпни двічі</a></b> (2024)\nдетектив, трилер, жахи · ⏱ 1 год 43 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>74%</b> · Ⓜ <b>66</b>\n<i>🎭 Наомі Акі, Ченнінґ Тейтум, Аліа Шокат</i>\n📝 Мільярдер у сфері технологій Слейтер Кінґ знайомиться з офіціанткою Фрідою на своєму благодійному заході. Між ними пролітає іскра, і він запрошує Фріду скласти компанію йому та його друзям у подорожі до власного…\n▶️ <a href=\"https://youtu.be/fLIy-4lKEC4\">Трейлер</a></blockquote>\n§KN:m840705\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Vulicya-strahu-CHastina-druga-1978-2021-10-23\">Вулиця страху. Частина друга: 1978</a></b> (2021)\nжахи, детектив, драма · ⏱ 1 год 49 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>88%</b> · Ⓜ <b>61</b>\n<i>🎭 Сейді Сінк, Емілі Радд, Ryan Simpkins</i>\n📺 <a href=\"https://www.themoviedb.org/movie/591274-fear-street-1978/watch?locale=UA\">Netflix</a>\n📝 У проклятому містечку Шейдісайд орудує серійний вбивця, і безтурботні літні канікули в таборі Найтвінґ перетворюються в жахливу боротьбу за виживання.\n▶️ <a href=\"https://youtu.be/H2AulFPiwWE\">Трейлер</a></blockquote>\n§KN:m591274\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Cmutok-2021-10-23\">Cмуток</a></b> (2021)\nжахи, трилер · ⏱ 1 год 40 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>88%</b> · Ⓜ <b>68</b>\n<i>🎭 朱軒洋, 雷嘉汭, Цу-Чан Ван</i>\n📝 A young couple is pushed to the limits of sanity as they attempt to be reunited amid the chaos of a pandemic outbreak. The streets erupt into violence and depravity, as those infected are driven to enact the most…\n▶️ <a href=\"https://youtu.be/q2lNlfQPTFg\">Трейлер</a></blockquote>\n§KN:m776797\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Hellovіn-ubivaye-2021-10-23\">Хелловін убиває</a></b> (2021)\nжахи · ⏱ 1 год 45 хв\n⭐ IMDb <b>5.5</b> · 🍅 <b>38%</b> · Ⓜ <b>42</b>\n<i>🎭 Джеймі Лі Кертіс, Джуді Ґрір, Andi Matichak</i>\n📺 <a href=\"https://www.themoviedb.org/movie/610253-halloween-kills/watch?locale=UA\">Netflix, Apple TV Store, Rakuten TV</a>\n📝 На Гелловін безжальний маніяк знову виходить на своє криваве полювання. Зупинити зло зможуть лише люди, пов’язані з ним спільним минулим.\n▶️ <a href=\"https://youtu.be/avAqciNcMgA\">Трейлер</a></blockquote>\n§KN:m610253\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Psi-voini-2002-10-23\">Пси-воїни</a></b> (2002)\nжахи, бойовик, трилер · ⏱ 1 год 45 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>82%</b>\n<i>🎭 Шон Пертві, Кевін Маккідд, Емма Клісбі</i>\n📺 <a href=\"https://www.themoviedb.org/movie/11880-dog-soldiers/watch?locale=UA\">Plex</a>\n📝 Підрозділ англійських солдатів з 6 чоловік під командуванням сержанта Веллса рушив на бойове завдання в дикі ліси гірської Шотландії. Але те, що почалося як звичайні військові навчання, перевтілилося в капітальний…\n▶️ <a href=\"https://youtu.be/PQ6nNs0Wl7s\">Трейлер</a></blockquote>\n§KN:m11880\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Kohanі-2010-10-23\">Кохані</a></b> (2010)\nжахи · ⏱ 1 год 24 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>98%</b> · Ⓜ <b>73</b>\n<i>🎭 Ксав'єр Семюель, Robin McLeavy, John Brumpton</i>\n📝 Брент Мітчелл відмовився йти з Лолою на випускний. Дуже даремно, бо вона за допомогою свого татуся-психопата викрадає Брента і влаштовує свій власний випускний.\n▶️ <a href=\"https://youtu.be/1jkPj0Nso30\">Трейлер</a></blockquote>\n§KN:m46420"
    }
   ]
  },
