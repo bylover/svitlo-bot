@@ -695,7 +695,7 @@
   "t79501",
   "t61865"
  ],
- "gh_beat": "2026-10-24T10:00:40.283320+03:00",
+ "gh_beat": "2026-10-24T10:05:44.307701+03:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -709,8 +709,8 @@
   "updated": "09:47 24.10.2026",
   "emergency": false,
   "city_emergency": false,
-  "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-10-24T09:52:53.971070+03:00",
+  "city_text": "",
+  "checked": "2026-10-24T10:02:58.600202+03:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1593,14 +1593,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "24.10 10:01",
-   "ts": 1792825299,
+   "at": "24.10 10:08",
+   "ts": 1792825721,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "24.10 10:01",
-   "ts": 1792825299,
+   "at": "24.10 10:08",
+   "ts": 1792825721,
    "ok": true,
    "note": ""
   },
@@ -1677,8 +1677,8 @@
    "note": ""
   },
   "кіномэтч": {
-   "at": "24.10 09:55",
-   "ts": 1792824947,
+   "at": "24.10 10:05",
+   "ts": 1792825548,
    "ok": true,
    "note": ""
   },
@@ -12980,11 +12980,7 @@
   }
  },
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
- "gem_block": {
-  "gemini-flash-latest": "2026-10-24T10:05:00+03:00",
-  "gemini-3.8-flash": "2026-10-24T10:05:00+03:00",
-  "gemini-flash-lite-latest": "2026-10-24T10:05:00+03:00"
- },
+ "gem_block": {},
  "omdb_cache": {
   "tt5362988": [
    7.7,
@@ -23968,7 +23964,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "7f7088917b07",
+  "gs": "6b26f1bf4fcb",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "35afd247f0dd",
   "sexed.json": "4efede1d8ea5",
