@@ -695,7 +695,7 @@
   "t79501",
   "t61865"
  ],
- "gh_beat": "2026-10-24T21:55:40.695171+03:00",
+ "gh_beat": "2026-10-24T22:00:43.391823+03:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -738,7 +738,7 @@
    ]
   ]
  },
- "fact_png": "2026-10-24 21|2|2026-10-23T13:24:55+03:00",
+ "fact_png": "2026-10-24 22|2|2026-10-23T13:24:55+03:00",
  "fact_day": {
   "total": "0 хв",
   "list": []
@@ -1588,14 +1588,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "24.10 21:53",
-   "ts": 1792867995,
+   "at": "24.10 22:02",
+   "ts": 1792868548,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "24.10 21:53",
-   "ts": 1792867995,
+   "at": "24.10 22:02",
+   "ts": 1792868548,
    "ok": true,
    "note": ""
   },
@@ -12968,7 +12968,9 @@
   "160603556": "2026-10-24",
   "396425365": "2026-10-24"
  },
- "ero_sent": {},
+ "ero_sent": {
+  "160603556": "2026-10-24"
+ },
  "pend": {
   "kino": {
    "id": "2026-10-23 08",
@@ -24599,9 +24601,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "b53b2228be66",
+  "gs": "ceb8d1123ffe",
   "quiz_pool.json": "5e887a1905fd",
-  "fact.png": "3262a4fb7101",
+  "fact.png": "217acdfaf745",
   "sexed.json": "4efede1d8ea5",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "8b86490d1a1e",
@@ -39570,11 +39572,12 @@
  "ero_seen": {
   "160603556": [
    "“You yourself never loved; you never lov",
-   "Come thou, foam-born Kypris, and pour in"
+   "Come thou, foam-born Kypris, and pour in",
+   "There is an awful warmth about my heart,"
   ]
  },
  "ero_book": {
-  "160603556": "Sappho"
+  "160603556": "Letters of John Keats to Fanny Brawne"
  },
  "prom_day": "2026-10-24",
  "prom_force": false,
