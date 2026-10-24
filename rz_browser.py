@@ -14,6 +14,10 @@ from playwright.sync_api import sync_playwright
 
 ADULT_RX = r"adult|intim|seks|sex|erot|zdorov"           # для 🔞 — лише розділи для дорослих (щоб «вібратор» не став будівельним)
 DBG = {"tries": []}
+HL_ALT = {"вібратор": ["вібратор для жінок", "вибратор", "вібратор кролик"], "павербанк": ["power bank", "повербанк", "зовнішній акумулятор"],
+          "бездротова мишка": ["миша бездротова", "миша комп'ютерна", "мишка"], "шуруповерт акумуляторний": ["шуруповерт", "дриль-шуруповерт"],
+          "вакуумний стимулятор клітора": ["вакуумний стимулятор", "satisfyer"], "мастурбатор": ["мастурбатор чоловічий"], "анальна пробка": ["анальна пробка силікон"],
+          "ерекційне кільце": ["ерекційне кільце вібро"], "бдсм набір": ["бдсм"], "еротична білизна": ["еротичний комплект"]}
 CARDS_JS = """() => [...document.querySelectorAll('.list-item, .catalog-item, [class*="product-item"]')].map((el) => {
   const a = el.querySelector('a.list-item__title, a.list-item__img, a[href^="/ua/"]');
   const t = el.innerText || '';
@@ -52,7 +56,7 @@ def open_page(page, url: str) -> None:
 def hl_search(page, q: str, cat_rx: str = "", pages: int = 2) -> list:
     rec = {"q": q}
     cards = []
-    for qv in q_variants(q):                               # варіанти запиту (регістр, символи, «Pro 2»↔«Pro2», латиниця→кирилиця)
+    for qv in q_variants(q) + HL_ALT.get(q, []):          # варіанти запиту + запасні формулювання (якщо Hotline відкриває сторінку категорії)
         for pg in range(1, pages + 1):
             try:
                 open_page(page, "https://hotline.ua/ua/sr/?q=" + urllib.parse.quote(qv) + (f"&p={pg - 1}" if pg > 1 else ""))
@@ -62,11 +66,16 @@ def hl_search(page, q: str, cat_rx: str = "", pages: int = 2) -> list:
             if not got:
                 break
             cards += got
-        if cards:
+        if cards and (not cat_rx or any(re.search(cat_rx, (c.get("href") or ""), re.I) for c in cards)):
             rec["qv"] = qv; break
-    out = []
+        rec.setdefault("urls", []).append((page.url or "")[:90])
+        cards = []
+    out, seen_h = [], set()
     for c in cards:
         href, text = c.get("href") or "", c.get("text") or ""
+        if href in seen_h:
+            continue                                       # без дублів (сторінки пошуку можуть повторювати моделі)
+        seen_h.add(href)
         seg = href.strip("/").split("/")[1] if href.count("/") >= 3 else ""
         if cat_rx and seg and not re.search(cat_rx, seg, re.I):
             continue
@@ -95,24 +104,28 @@ def cart(page, text: str) -> str:
     by_shop, cheapest, found = {}, {}, {}
     for it in items:
         tk = _tok(it)
-        models = sorted(hl_search(page, it, pages=1), key=lambda m: -len(_tok(m["n"]) & tk))
-        if not models or not (_tok(models[0]["n"]) & tk):
+        models = [m for m in hl_search(page, it, pages=1) if _tok(m["n"]) & tk]
+        models.sort(key=lambda m: (-len(_tok(m["n"]) & tk), -m["n_off"]))
+        best_ov = len(_tok(models[0]["n"]) & tk) if models else 0
+        models = [m for m in models if len(_tok(m["n"]) & tk) >= max(1, best_ov - 1)][:3]   # до 3 підхожих моделей (інші версії, кольори)
+        if not models:
             continue
-        mdl = models[0]; found[it] = mdl["n"]
-        try:
-            open_page(page, mdl["u"].rstrip("/") + "/?tab=offers")
-            offs = page.evaluate(OFFERS_JS) or []
-        except Exception:
-            offs = []
-        for o in offs:
-            p = _num(re.sub(r"[^\d]", "", o["price"]))
-            if not p:
-                continue
-            cur = by_shop.setdefault(o["shop"], {})
-            if it not in cur or p < cur[it]["p"]:
-                cur[it] = {"p": p, "u": o["href"], "n": mdl["n"]}
-            if it not in cheapest or p < cheapest[it]:
-                cheapest[it] = p
+        found[it] = models[0]["n"]
+        for mdl in models:
+            try:
+                open_page(page, mdl["u"].rstrip("/") + "/?tab=offers")
+                offs = page.evaluate(OFFERS_JS) or []
+            except Exception:
+                offs = []
+            for o in offs:
+                p = _num(re.sub(r"[^\d]", "", o["price"]))
+                if not p:
+                    continue
+                cur = by_shop.setdefault(o["shop"], {})
+                if it not in cur or p < cur[it]["p"]:
+                    cur[it] = {"p": p, "u": o["href"], "n": mdl["n"]}
+                if it not in cheapest or p < cheapest[it]:
+                    cheapest[it] = p
     full = sorted([(s, v) for s, v in by_shop.items() if len(v) == len(items)], key=lambda sv: sum(x["p"] for x in sv[1].values()))
     sep = sum(cheapest.values())
     if not full:

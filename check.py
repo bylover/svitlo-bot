@@ -4740,12 +4740,18 @@ def prom_top(st: dict, now: datetime) -> None:
         return                                        # нова версія розбору — збираємо одразу, не чекаючи завтра
     if _time.time() < float(st.get("prom_block_until") or 0):
         print("Prom.ua: пауза після обмеження запитів (429)"); return
-    res, t0 = {}, _time.time()
-    for title, q in PROM_CATS:
-        if _time.time() - t0 > 330:
+    try:                                              # 🧩 збір частинами: за прохід — 6 наступних категорій, решта зберігається
+        res = json.loads(PROM_FILE.read_text("utf-8")).get("cats", {})
+    except Exception:
+        res = {}
+    res = {k: v for k, v in res.items() if k in dict(PROM_CATS)}
+    i0, t0 = int(st.get("prom_i") or 0) % len(PROM_CATS), _time.time()
+    batch = [PROM_CATS[(i0 + j) % len(PROM_CATS)] for j in range(6)]
+    done_ = 0
+    for title, q in batch:
+        if _time.time() - t0 > 300 or PROM_429["hit"]:
             break
-        if PROM_429["hit"]:
-            break                                     # Prom обмежив запити — далі не ліземо
+        done_ += 1                                     # Prom обмежив запити — далі не ліземо
         offers = prom_offers(q, 2)
         clusters = []                                 # однакові позиції: ≥60% спільних слів назви
         for o in offers:
@@ -4768,12 +4774,20 @@ def prom_top(st: dict, now: datetime) -> None:
             if len(top) >= 5:
                 break
         top.sort(key=lambda x: (x.get("r90", False), -(x["pop"] + 20 * (x["stars"] or 0)), x["p"]))   # спершу продавці ≥95%
-        res[title] = top[:40]   # 40 — для «🏷 Топ брендів»; у списку показуємо 15
-    if PROM_429["hit"] and not any(res.values()):    # обмеження — не перезаписуємо топ порожнім, повторимо через 2 год
+        if top:
+            res[title] = top[:40]   # 40 — для «🏷 Топ брендів»; у списку показуємо 15
+    st["prom_i"] = (i0 + done_) % len(PROM_CATS)
+    try:
+        PROM_FILE.write_text(json.dumps({"cats": res}, ensure_ascii=False), "utf-8")
+    except Exception:
+        pass
+    if PROM_429["hit"] and not done_:                 # обмеження — не перезаписуємо топ порожнім, повторимо через 2 год
         st["prom_block_until"] = _time.time() + 2 * 3600; st["prom_force"] = False
         PROM_LOG.insert(0, "⏸ Prom тимчасово обмежив запити (429) — повторю через 2 год")
         print("Prom.ua: 429 — пауза 2 год"); return
-    st["prom_day"], st["prom_force"], st["prom_v"] = now.date().isoformat(), False, 6
+    full_cycle = st["prom_i"] < i0 or done_ >= len(PROM_CATS)
+    st["prom_day"] = now.date().isoformat() if full_cycle else st.get("prom_day", "")   # поки не пройшли всі категорії — продовжуємо в наступних запусках
+    st["prom_force"], st["prom_v"] = False, 6
     st["prom_last_n"] = sum(len(v) for v in res.values())
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "prom.json", "json": {"at": now.strftime("%d.%m %H:%M"), "cats": res}})
@@ -4784,7 +4798,7 @@ def prom_top(st: dict, now: datetime) -> None:
                   "snip": (json.dumps(PROM_DBG.get("apollo"), ensure_ascii=False) if PROM_DBG.get("apollo") else PROM_DBG.get("snip", ""))}})
     except Exception:
         pass
-    print(f"Prom.ua: категорій {len(res)}, позицій {sum(len(v) for v in res.values())} · {'; '.join(PROM_LOG[:4]) or 'ок'} · маркери: {PROM_DBG.get('marks')}")
+    print(f"Prom.ua: зібрано категорій {len(res)} з {len(PROM_CATS)} (цей прохід: {done_}), позицій {sum(len(v) for v in res.values())} · {'; '.join(PROM_LOG[:4]) or 'ок'} · маркери: {PROM_DBG.get('marks')}")
     mark_upd(st, "🛍 Prom.ua", bool(res))
 
 
@@ -4812,7 +4826,7 @@ def prom_cart(text: str) -> str:
         tk = _tok(it)
         offers = []
         for qv in q_variants(it):                     # перебір варіантів запиту, доки щось знайдеться
-            offers = [o for o in prom_offers(qv, 2) if len(_tok(o["n"]) & tk) >= max(1, round(0.6 * len(tk)))]
+            offers = [o for o in prom_offers(qv, 2) if len(_tok(o["n"]) & tk) >= max(1, round(0.5 * len(tk)))]   # м'якше збіг — більше продавців
             if offers or PROM_429["hit"]:
                 break
         if offers:
