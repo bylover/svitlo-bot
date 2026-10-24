@@ -4,7 +4,7 @@
  "fp": {
   "2026-10-23": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 840, \"start\": 630, \"type\": \"Definite\"}, {\"end\": 1260, \"start\": 1050, \"type\": \"Definite\"}]}",
   "2026-10-24": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 660, \"start\": 450, \"type\": \"Definite\"}, {\"end\": 1200, \"start\": 990, \"type\": \"Definite\"}]}",
-  "2026-10-25": "{\"s\": \"WaitingForSchedule\", \"slots\": []}"
+  "2026-10-25": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 750, \"start\": 540, \"type\": \"Definite\"}, {\"end\": 1440, \"start\": 1320, \"type\": \"Definite\"}]}"
  },
  "reminded": [],
  "taste": {
@@ -695,7 +695,7 @@
   "t79501",
   "t61865"
  ],
- "gh_beat": "2026-10-24T20:45:43.641505+03:00",
+ "gh_beat": "2026-10-24T20:50:43.684848+03:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -755,14 +755,16 @@
   "22.10 22:25 Завтра 2026-10-23 ScheduleApplies: 10:30–14:00, 17:30–21:00",
   "23.10 00:00 Завтра 2026-10-24 WaitingForSchedule: без відключень",
   "23.10 21:10 Завтра 2026-10-24 ScheduleApplies: 07:30–11:00, 16:30–20:00",
-  "24.10 00:00 Завтра 2026-10-25 WaitingForSchedule: без відключень"
+  "24.10 00:00 Завтра 2026-10-25 WaitingForSchedule: без відключень",
+  "24.10 20:50 Завтра 2026-10-25 ScheduleApplies: 09:00–12:30, 22:00–24:00"
  ],
  "week_fp": "{\"1\": [], \"2\": [], \"3\": [], \"4\": [], \"5\": [], \"6\": [], \"7\": []}",
  "we_sent": {
   "368433217": "2026-10-24",
   "396425365": "2026-10-24",
   "936688574": "2026-10-24",
-  "8283670046": "2026-10-24"
+  "8283670046": "2026-10-24",
+  "590261825": "2026-10-24"
  },
  "tgph": "8d020e91ef2b6894855e405f8973a51da385fca8e1cfd990c9e41c2a32c2",
  "yt_try": "2026-10-22 16",
@@ -1585,14 +1587,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "24.10 20:50",
-   "ts": 1792864206,
+   "at": "24.10 20:53",
+   "ts": 1792864437,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "24.10 20:50",
-   "ts": 1792864206,
+   "at": "24.10 20:53",
+   "ts": 1792864437,
    "ok": true,
    "note": ""
   },
@@ -12980,7 +12982,8 @@
    "160603556": "2026-10-23 08",
    "368433217": "2026-10-23 08",
    "936688574": "2026-10-23 08",
-   "8283670046": "2026-10-23 08"
+   "8283670046": "2026-10-23 08",
+   "590261825": "2026-10-23 08"
   }
  },
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
@@ -24457,7 +24460,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "e3cd4f2bec81",
+  "gs": "1feb666b2cc0",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "9fa7aeebf71d",
   "sexed.json": "4efede1d8ea5",
