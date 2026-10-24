@@ -75,6 +75,7 @@ jobs:
           [ -f audiobooks.json ] && git add audiobooks.json
           [ -f match.json ] && git add match.json
           [ -f recipes.json ] && git add recipes.json
+          [ -f prom.json ] && git add prom.json
           [ -d sx ] && git add sx
           git diff --cached --quiet && exit 0
           git commit -m "state"
