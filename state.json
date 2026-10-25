@@ -707,7 +707,7 @@
   "t79501",
   "t61865"
  ],
- "gh_beat": "2026-10-25T21:55:43.348942+02:00",
+ "gh_beat": "2026-10-25T22:00:48.276652+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1566,14 +1566,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "25.10 21:52",
-   "ts": 1792957923,
+   "at": "25.10 22:03",
+   "ts": 1792958608,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "25.10 21:52",
-   "ts": 1792957923,
+   "at": "25.10 22:03",
+   "ts": 1792958608,
    "ok": true,
    "note": ""
   },
@@ -12954,7 +12954,9 @@
   "160603556": "2026-10-25",
   "396425365": "2026-10-25"
  },
- "ero_sent": {},
+ "ero_sent": {
+  "160603556": "2026-10-25"
+ },
  "pend": {},
  "got": {},
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
@@ -25451,7 +25453,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "90d992d0ffae",
+  "gs": "c152061351cd",
   "quiz_pool.json": "5e887a1905fd",
   "fact.png": "466ebdbd4951",
   "sexed.json": "4efede1d8ea5",
@@ -42721,11 +42723,12 @@
   "160603556": [
    "“You yourself never loved; you never lov",
    "Come thou, foam-born Kypris, and pour in",
-   "There is an awful warmth about my heart,"
+   "There is an awful warmth about my heart,",
+   "Miss Banks's handkerchief was found on t"
   ]
  },
  "ero_book": {
-  "160603556": "Letters of John Keats to Fanny Brawne"
+  "160603556": "Justine"
  },
  "prom_day": "2026-10-25",
  "prom_force": false,
