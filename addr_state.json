@@ -1,17 +1,17 @@
 {
- "active": false,
- "reason": "",
- "start": "",
- "end": "",
- "type": "",
+ "active": true,
+ "reason": "Аварійні ремонтні роботи",
+ "start": "12:10 26.10.2026",
+ "end": "16:15 26.10.2026",
+ "type": "2",
  "groups": [
   "GPV4.1"
  ],
- "updated": "12:20 26.10.2026",
+ "updated": "12:35 26.10.2026",
  "emergency": false,
  "city_emergency": false,
  "city_text": "",
- "checked": "2026-10-26T12:32:54.608397+02:00",
+ "checked": "2026-10-26T12:42:56.483792+02:00",
  "address": "вул. Кульженків Сім'ї, 35",
  "street_ok": "вул. Кульженків Сім’ї",
  "planned": false
