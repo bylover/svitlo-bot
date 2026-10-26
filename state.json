@@ -707,7 +707,7 @@
   "t79501",
   "t61865"
  ],
- "gh_beat": "2026-10-26T05:40:48.278773+02:00",
+ "gh_beat": "2026-10-26T05:45:43.214159+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -722,7 +722,7 @@
   "emergency": false,
   "city_emergency": false,
   "city_text": "Повідомити про аварійні ситуації",
-  "checked": "2026-10-26T05:32:56.354883+02:00",
+  "checked": "2026-10-26T05:42:55.118780+02:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1422,8 +1422,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "26.10 04:36",
-   "ts": 1792982184,
+   "at": "26.10 05:46",
+   "ts": 1792986386,
    "ok": true,
    "note": ""
   },
@@ -1482,8 +1482,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "26.10 04:46",
-   "ts": 1792982765,
+   "at": "26.10 05:46",
+   "ts": 1792986403,
    "ok": true,
    "note": ""
   },
@@ -1512,8 +1512,8 @@
    "note": ""
   },
   "rozetka": {
-   "at": "26.10 04:35",
-   "ts": 1792982145,
+   "at": "26.10 05:45",
+   "ts": 1792986348,
    "ok": true,
    "note": ""
   }
@@ -25329,7 +25329,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "84a8f2477945",
+  "gs": "985525f7d2e5",
   "quiz_pool.json": "3d85ac5d6c18",
   "fact.png": "466ebdbd4951",
   "sexed.json": "4efede1d8ea5",
@@ -42862,6 +42862,53 @@
    ],
    "ov": "Історія про складний шлюб двох агентів КДБ, які під виглядом американців заселяються в передмістя Вашингтона одразу після того, як президентом обирають Рейгана. Підставний шлюб Філліпа і Елізабет з кожним днем стає все б",
    "poster": "https://image.tmdb.org/t/p/w500/nyc9ihfv8yIhJZCBdwRzSNHBPWG.jpg"
+  },
+  "t61865": {
+   "title": "When Calls the Heart",
+   "year": "2014",
+   "rating": 7.9,
+   "genres": [
+    "Драма",
+    "Вестерн"
+   ],
+   "g": [
+    18,
+    37
+   ],
+   "ov": "Elizabeth Thatcher, a young school teacher from a wealthy Eastern family, migrates from the big city to teach school in a small coal mining town in the west.",
+   "poster": "https://image.tmdb.org/t/p/w500/3d8XxE3qDLzeewtaC4DGamI6Ofa.jpg"
+  },
+  "t39483": {
+   "title": "Особливо тяжкі злочини",
+   "year": "2012",
+   "rating": 7.8,
+   "genres": [
+    "Кримінал",
+    "Драма"
+   ],
+   "g": [
+    80,
+    18
+   ],
+   "ov": "«Особливо тяжкі злочини» є спін-оффом тривалого телесеріалу «Шукач (The Closer)» з Кірою Седжвік в головній ролі.  Серіал досліджує, як американська система правосуддя підходить до системи угод, оскільки співробітники пр",
+   "poster": "https://image.tmdb.org/t/p/w500/fZ502JXujnxVtprmigTO2jA205P.jpg"
+  },
+  "t11466": {
+   "title": "Kaamelott",
+   "year": "2005",
+   "rating": 8.7,
+   "genres": [
+    "Комедія",
+    "Драма",
+    "Науково фантастичний"
+   ],
+   "g": [
+    35,
+    18,
+    10765
+   ],
+   "ov": "Kaamelott is a French comedy medieval fantasy television series created, directed, written, scored, and edited by Alexandre Astier, who also starred as the main character. The series, which originally ran for six seasons",
+   "poster": "https://image.tmdb.org/t/p/w500/d6P4O0LzE4WFp4GnSkzauUTmC2P.jpg"
   }
  },
  "cofid_pushed": "23.10.2026",
@@ -42885,8 +42932,8 @@
   "lat": "2026-10-26T04:45:44.046105+02:00",
   "asi": "2026-10-26T04:35:42.571054+02:00",
   "blo": "2026-10-26T04:35:42.571054+02:00",
-  "rpl": "2026-10-25T23:05:44.481353+02:00",
-  "bds": "2026-10-25T23:05:44.481353+02:00"
+  "rpl": "2026-10-26T05:45:43.590286+02:00",
+  "bds": "2026-10-26T05:45:43.590286+02:00"
  },
  "ero_seen": {
   "160603556": [
@@ -43058,7 +43105,7 @@
   "now": "2026-10-26T02:15:45.250478+02:00",
   "gems": "2026-10-26T03:25:42.656407+02:00",
   "ser_best": "2026-10-26T04:35:42.571054+02:00",
-  "ser_gems": "2026-10-25T14:55:41.438263+02:00",
+  "ser_gems": "2026-10-26T05:45:43.590286+02:00",
   "ser_hot": "2026-10-25T15:05:43.851433+02:00",
   "ser_new": "2026-10-25T16:05:41.210310+02:00",
   "ser_crime": "2026-10-25T16:18:06.207128+02:00",
