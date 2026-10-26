@@ -707,7 +707,7 @@
   "t79501",
   "t61865"
  ],
- "gh_beat": "2026-10-26T21:55:43.885570+02:00",
+ "gh_beat": "2026-10-26T22:00:59.284650+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -757,7 +757,7 @@
    ]
   ]
  },
- "fact_png": "2026-10-26 21|4|2026-10-26T21:45:06+02:00",
+ "fact_png": "2026-10-26 22|4|2026-10-26T21:45:06+02:00",
  "fact_day": {
   "total": "5 год 56 хв",
   "list": [
@@ -1437,14 +1437,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "26.10 21:57",
-   "ts": 1793044671,
+   "at": "26.10 22:02",
+   "ts": 1793044947,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "26.10 21:57",
-   "ts": 1793044671,
+   "at": "26.10 22:02",
+   "ts": 1793044947,
    "ok": true,
    "note": ""
   },
@@ -13050,7 +13050,9 @@
   "160603556": "2026-10-26",
   "396425365": "2026-10-26"
  },
- "ero_sent": {},
+ "ero_sent": {
+  "160603556": "2026-10-26"
+ },
  "pend": {
   "yt": {
    "id": "2026-10-26 08",
@@ -26013,9 +26015,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "cf790691b978",
+  "gs": "c420e6aa7258",
   "quiz_pool.json": "31473d6acb2e",
-  "fact.png": "80d47464dd12",
+  "fact.png": "57831334e9e6",
   "sexed.json": "4efede1d8ea5",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "954ef9f8751d",
@@ -44695,11 +44697,12 @@
    "“You yourself never loved; you never lov",
    "Come thou, foam-born Kypris, and pour in",
    "There is an awful warmth about my heart,",
-   "Miss Banks's handkerchief was found on t"
+   "Miss Banks's handkerchief was found on t",
+   "“You look at love, and especially woman,"
   ]
  },
  "ero_book": {
-  "160603556": "Justine"
+  "160603556": "Venus in Furs"
  },
  "prom_day": "2026-10-26",
  "prom_force": false,
