@@ -707,7 +707,7 @@
   "t79501",
   "t61865"
  ],
- "gh_beat": "2026-10-26T12:55:42.763480+02:00",
+ "gh_beat": "2026-10-26T13:00:45.622826+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -745,11 +745,11 @@
    ]
   ]
  },
- "fact_png": "2026-10-26 12|1|2026-10-26T12:10:19+02:00",
+ "fact_png": "2026-10-26 13|1|2026-10-26T12:10:19+02:00",
  "fact_day": {
-  "total": "1 хв",
+  "total": "50 хв",
   "list": [
-   "12:10–12:10 · 1 хв"
+   "12:10–13:00 · 50 хв"
   ]
  },
  "mo_sent": {
@@ -1416,14 +1416,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "26.10 12:58",
-   "ts": 1793012310,
+   "at": "26.10 13:02",
+   "ts": 1793012553,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "26.10 12:58",
-   "ts": 1793012310,
+   "at": "26.10 13:02",
+   "ts": 1793012553,
    "ok": true,
    "note": ""
   },
@@ -12923,7 +12923,11 @@
    "936688574": "2026-10-26 08",
    "8283670046": "2026-10-26 08"
   },
-  "smm": {}
+  "smm": {
+   "160603556": "2026-10-26 08",
+   "368433217": "2026-10-26 08",
+   "936688574": "2026-10-26 08"
+  }
  },
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
  "gem_block": {
@@ -25827,9 +25831,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "cc19c41f0e2b",
+  "gs": "a15a638a59ac",
   "quiz_pool.json": "01a416917016",
-  "fact.png": "2be0a1f131a2",
+  "fact.png": "436907569275",
   "sexed.json": "4efede1d8ea5",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "a16edca24c7e",
