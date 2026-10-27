@@ -1736,10 +1736,16 @@ def build_smm(st: dict, now: datetime) -> str | None:
                           f'🔗 <a href="{html.escape(it["link"])}">{esc(it["source"] or "джерело")}</a></blockquote>')
             st.setdefault("smm_links", []).append(it["link"])
     except Exception:
-        print("SMM: Gemini недоступний — надсилаю заголовки без обробки")
+        first_fail = float(st.get("smm_fail_since") or 0) or _time.time()
+        st["smm_fail_since"] = first_fail
+        if _time.time() - first_fail < 20 * 3600:     # ШІ тимчасово недоступний (ліміт) — не шлемо «сирий» дайджест, повторимо в наступних запусках
+            print("SMM: Gemini недоступний — дайджест відкладено, повторю пізніше (до 20 год)")
+            return None
+        print("SMM: Gemini недоступний понад 20 год — надсилаю заголовки без обробки")
         for n_, it in enumerate(items[:8], 1):
             blocks.append(f'<blockquote>🆕 <b>{n_}.</b> <a href="{html.escape(it["link"])}">{esc(it["title"])}</a></blockquote>')
             st.setdefault("smm_links", []).append(it["link"])
+    st.pop("smm_fail_since", None)
     st["smm_links"] = st.get("smm_links", [])[-500:]
     if not blocks:
         return None
@@ -2443,6 +2449,7 @@ GURT = re.compile(r"гурт|від\s*\d+\s*шт|при\s+купівлі\s+ві�
 ONLINE = re.compile(r"онлайн|online|лише\s+в\s+застосунку|в\s+додатку", re.I)
 PROMO_SAMPLES: list = []
 ALL_PROMOS: list = []                                       # усі акції магазину — для «⭐ Обране»
+SEND_ERRS: list = []                                       # помилки надсилання (щоб відрізнити збій мережі від неправильного токена)
 VERIFY_DROP = [0]                                           # скільки «знижок» відкинуто перевіркою
 SILPO_WHY: dict = {}                                        # 🧪 назва → чому (не) в підбірці — для адмінки
 GURT_SAMPLES: list = []                                     # приклади «гуртом дешевше» для логу
@@ -4514,7 +4521,7 @@ PROM_LOG: list = []
 PROM_DBG: dict = {}
 
 
-PROM_429 = {"hit": False}
+PROM_429 = {"hit": False, "fast": False}
 
 
 def prom_page(q: str, page: int = 1) -> str:
@@ -4524,7 +4531,7 @@ def prom_page(q: str, page: int = 1) -> str:
     for attempt in range(2):                          # 429 — Prom обмежив запити: одна повторна спроба, далі — зупинка
         try:
             r_ = urllib.request.urlopen(req, timeout=30).read().decode("utf-8", "replace")
-            _time.sleep(3.5)                          # повільно, щоб не ловити обмеження
+            _time.sleep(1.2 if PROM_429["fast"] else 3.5)   # пошук «🧺» — швидше; збір топу — повільно, щоб не ловити обмеження
             return r_
         except urllib.error.HTTPError as e:
             if e.code == 429 and attempt == 0:
@@ -4734,6 +4741,22 @@ def _tok(s: str) -> set:
     return {w for w in re.findall(r"[a-zа-яіїєґ0-9]{3,}", str(s).lower()) if w not in {"для", "with", "the", "and", "або"}}
 
 
+def mk_compact(lst: list, n: int = 15) -> list:
+    """Стиснення для бота: до 20 позицій, короткі назви, лише потрібні поля (великий файл бот не встигає прийняти на безкоштовному Cloudflare)."""
+    keep = ("n", "p", "u", "s", "r", "rv", "st", "n_off", "pmin", "pmax", "pop", "r90", "grp", "stars")
+    out = []
+    for x in lst[:n]:
+        y = {k: x[k] for k in keep if k in x and x[k] not in (None, "", 0, 0.0, False)}
+        y["n"] = str(x.get("n", ""))[:90]; y["p"] = round(float(x.get("p") or 0))
+        if str(y.get("u", "")).startswith("https://hotline.ua/"):
+            y["u"] = y["u"][len("https://hotline.ua"):]   # коротше; бот додасть домен
+        for k in ("pmin", "pmax", "pop", "rv", "r"):
+            if k in y:
+                y[k] = round(float(y[k]))
+        out.append(y)
+    return out
+
+
 def prom_top(st: dict, now: datetime) -> None:
     """Раз на добу: у кожній категорії групуємо однакові товари різних продавців, беремо найпопулярніші й найдешевшу пропозицію від продавця з рейтингом ≥95%."""
     if not WORKER_MODE or st.get("prom_day") == now.date().isoformat() and not st.get("prom_force") and st.get("prom_v") == 6:
@@ -4790,7 +4813,9 @@ def prom_top(st: dict, now: datetime) -> None:
     st["prom_force"], st["prom_v"] = False, 6
     st["prom_last_n"] = sum(len(v) for v in res.values())
     try:
-        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "prom.json", "json": {"at": now.strftime("%d.%m %H:%M"), "cats": res}})
+        payload = {"at": now.strftime("%d.%m %H:%M"), "cats": {k: mk_compact(v) for k, v in res.items()}}
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=prom.json", payload)   # як є, без розбору на боці бота
+        print(f"Prom → бот: {len(json.dumps(payload, ensure_ascii=False).encode()) // 1024} КБ")
     except Exception as e:
         print(f"Prom → Cloudflare: {err_text(e)[:60]}")
     try:
@@ -6239,6 +6264,20 @@ def budget_ok(sec: int) -> bool:
     return _time.time() - RUN_T0 < sec
 
 
+
+def cart_only() -> bool:
+    """⚡ Легкий запуск лише для «🧺 Усе в одного продавця» (workflow cart.yml): без графіків, Сільпо й решти."""
+    q, chat = os.environ.get("CART_Q", "").strip(), os.environ.get("CART_CHAT", "").strip()
+    if not (q and chat):
+        return False
+    PROM_429["fast"] = True
+    try:
+        txt = prom_cart(q)
+    except Exception as e:
+        txt = f"🧺 Не вдалося перевірити Prom.ua зараз ({err_text(e)[:40]})."
+    http_json(f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage", {"chat_id": chat, "text": txt[:4000], "parse_mode": "HTML", "disable_web_page_preview": True})
+    return True
+
 def main() -> None:
     check_config()
     st = load_state()
@@ -6963,7 +7002,8 @@ def main() -> None:
     pend, got = st.setdefault("pend", {}), st.setdefault("got", {})   # тижневі розсилки — у свій час кожного (⚙️)
     for topic, text, mk, plain in topic_msgs:
         if isinstance(text, str) and isinstance(plain, str):
-            pend[topic] = {"id": now.strftime("%Y-%m-%d %H"), "t": text, "mk": mk, "p": plain, "exp": (now + timedelta(days=2)).isoformat()}
+            pend[topic] = {"id": now.strftime("%Y-%m-%d %H"), "t": text, "mk": mk, "p": plain, "exp": (now + timedelta(days=2)).isoformat(),
+                           "aud": [str(c) for c in audience(topic)]}   # лише ті, хто був підписаний на момент підбірки (новим — не надсилаємо старе)
         else:
             jobs += [(cid, text, mk) if cid in family else (cid, plain, None) for cid in audience(topic)]
     DEF_H = {"kino": 11, "yt": 11, "smm": 13, "silpo": 13}
@@ -6974,7 +7014,7 @@ def main() -> None:
             continue
         g_ = got.setdefault(topic, {})
         for cid in audience(topic):
-            if (topic == "silpo" and cid in SILPO_OWN) or g_.get(cid) == pd["id"]:
+            if (topic == "silpo" and cid in SILPO_OWN) or g_.get(cid) == pd["id"] or ("aud" in pd and str(cid) not in pd["aud"]):
                 continue
             h_ = ((PROF.get(cid) or {}).get("t") or {}).get(topic, DEF_H.get(topic, 11))
             if first_run or now.hour >= int(h_) or now.date() > datetime.fromisoformat(pd["exp"]).date() - timedelta(days=2):
@@ -7030,16 +7070,19 @@ def main() -> None:
                 removed.add(cid)
                 print(f"Підписника {cid} видалено ({e.code})")
             else:
-                print(f"Не вдалося надіслати {cid}: {err_text(e)}")
+                print(f"Не вдалося надіслати {cid}: {err_text(e)}"); SEND_ERRS.append(err_text(e))
                 failed += 1
                 failed_ids.add(cid)
         except Exception as e:
-            print(f"Не вдалося надіслати {cid}: {err_text(e)}")
+            print(f"Не вдалося надіслати {cid}: {err_text(e)}"); SEND_ERRS.append(err_text(e))
             failed += 1
             failed_ids.add(cid)
     if jobs and ok == 0 and failed:
-        sys.exit("❌ Жодне повідомлення не надіслано (див. рядки «Не вдалося надіслати» вище). "
-                 "Найчастіше: неправильний BOT_TOKEN або ви не натиснули Start у боті")
+        last_err = " ".join(str(x) for x in SEND_ERRS[-3:])
+        if re.search(r"401|Unauthorized|chat not found", last_err, re.I):   # справжня проблема налаштувань — падаємо, щоб прийшов лист
+            sys.exit("❌ Жодне повідомлення не надіслано (див. рядки «Не вдалося надіслати» вище). "
+                     "Найчастіше: неправильний BOT_TOKEN або ви не натиснули Start у боті")
+        print("⚠️ Цього разу не вдалося надіслати жодного повідомлення (тимчасовий збій мережі чи Telegram) — повторю в наступному запуску.")
 
     if json.dumps(subs, sort_keys=True) != subs_before or "subs" not in st:   # лише при зміні
         st["subs"] = enc(subs)
@@ -7070,4 +7113,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    if not cart_only():                               # ⚡ cart.yml — лише пошук «🧺», без повного запуску
+        main()

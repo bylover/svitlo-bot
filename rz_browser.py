@@ -8,7 +8,7 @@ import urllib.request
 from datetime import datetime
 
 import check
-from check import PROM_CATS, TZ, err_text, http_json, _num, _tok, q_variants
+from check import PROM_CATS, TZ, err_text, http_json, _num, _tok, q_variants, mk_compact
 
 from playwright.sync_api import sync_playwright
 
@@ -107,7 +107,7 @@ def cart(page, text: str) -> str:
         models = [m for m in hl_search(page, it, pages=1) if _tok(m["n"]) & tk]
         models.sort(key=lambda m: (-len(_tok(m["n"]) & tk), -m["n_off"]))
         best_ov = len(_tok(models[0]["n"]) & tk) if models else 0
-        models = [m for m in models if len(_tok(m["n"]) & tk) >= max(1, best_ov - 1)][:3]   # до 3 підхожих моделей (інші версії, кольори)
+        models = [m for m in models if len(_tok(m["n"]) & tk) >= max(1, best_ov - 1)][:2]   # до 2 підхожих моделей (інші версії, кольори) — швидше
         if not models:
             continue
         found[it] = models[0]["n"]
@@ -167,7 +167,9 @@ def main() -> None:
     key = urllib.parse.quote(check.SYNC_KEY)
     try:
         if n:
-            http_json(f"{check.SYNC_URL}/filepush?key={key}", {"name": "hotline.json", "json": {"at": now.strftime("%d.%m %H:%M"), "cats": res}})
+            payload = {"at": now.strftime("%d.%m %H:%M"), "cats": {k: {"all": mk_compact(v["all"])} for k, v in res.items()}}
+            http_json(f"{check.SYNC_URL}/filepush?key={key}&name=hotline.json", payload)   # як є, без розбору на боці бота
+            print(f"Hotline → бот: {len(json.dumps(payload, ensure_ascii=False).encode()) // 1024} КБ")
         http_json(f"{check.SYNC_URL}/filepush?key={key}", {"name": "rz_dbg.json", "json": {"at": now.strftime("%d.%m %H:%M"), "q": "Hotline",
                   "log": [f"категорій з товарами: {sum(1 for v in res.values() if v['all'])} з {len(res)}"] + [json.dumps(t, ensure_ascii=False)[:160] for t in DBG["tries"] if not t.get("kept")][:12]}})
     except Exception as e:
