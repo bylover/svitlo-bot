@@ -707,7 +707,7 @@
   "t79501",
   "t61865"
  ],
- "gh_beat": "2026-10-27T18:34:08.700502+02:00",
+ "gh_beat": "2026-10-27T18:37:35.163699+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1583,8 +1583,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "27.10 18:27",
-   "ts": 1793118421,
+   "at": "27.10 18:38",
+   "ts": 1793119123,
    "ok": true,
    "note": ""
   },
@@ -1673,8 +1673,8 @@
    "note": ""
   },
   "rozetka": {
-   "at": "27.10 18:25",
-   "ts": 1793118350,
+   "at": "27.10 18:37",
+   "ts": 1793119058,
    "ok": true,
    "note": ""
   },
@@ -26530,10 +26530,16 @@
    89,
    81,
    "2026-10-27"
+  ],
+  "tt6263222": [
+   8.1,
+   null,
+   null,
+   "2026-10-27"
   ]
  },
  "pushed_h": {
-  "gs": "8379413dec3b",
+  "gs": "64c8658bf465",
   "quiz_pool.json": "31473d6acb2e",
   "fact.png": "e3580e1a9a57",
   "sexed.json": "4efede1d8ea5",
@@ -46415,6 +46421,21 @@
    ],
    "ov": "Lu and Feng are a devoted couple forced to separate when Lu is arrested and sent to a labor camp as a political prisoner during the Cultural Revolution. He finally returns home only to find that his beloved wife no longe",
    "poster": "https://image.tmdb.org/t/p/w500/37RL5PYX42RBLXJ6HI38XcRZehQ.jpg"
+  },
+  "t67384": {
+   "title": "Голіаф",
+   "year": "2016",
+   "rating": 8.1,
+   "genres": [
+    "Кримінал",
+    "Драма"
+   ],
+   "g": [
+    80,
+    18
+   ],
+   "ov": "В руки опального адвоката, який ганяється за машинами швидкої допомоги в пошуках нових клієнтів, потрапляє справу, яка може принести йому спокутування або, принаймні, можливість помститися фірмі, що викинула його на вули",
+   "poster": "https://image.tmdb.org/t/p/w500/7tlILOLljpoCiUtD9lKkrTxfOYE.jpg"
   }
  },
  "cofid_pushed": "23.10.2026",
@@ -46607,7 +46628,7 @@
   "horror": "2026-10-27T16:05:45.130349+02:00",
   "scifi": "2026-10-27T17:17:10.843385+02:00",
   "romance": "2026-10-27T18:25:46.254212+02:00",
-  "series": "2026-10-27T06:25:42.964546+02:00",
+  "series": "2026-10-27T18:37:35.309807+02:00",
   "ua": "2026-10-27T06:45:42.894708+02:00",
   "now": "2026-10-27T06:55:44.084777+02:00",
   "gems": "2026-10-27T07:55:44.483556+02:00",
