@@ -106,16 +106,6 @@
   "https://medium.com/pequenos-insultos-%C3%A0-moral-conservadora/diz-que-aac38a093502?source=rss------sexuality-5"
  ],
  "kino_seen": [
-  "m509598",
-  "m519187",
-  "m332270",
-  "m608872",
-  "m618245",
-  "m1013052",
-  "t64480",
-  "t96256",
-  "t101504",
-  "t153459",
   "m1220564",
   "m1621552",
   "m1423191",
@@ -705,9 +695,19 @@
   "m8321",
   "t95350",
   "t68421",
-  "t1621"
+  "t1621",
+  "m487558",
+  "m1232449",
+  "m965150",
+  "m389015",
+  "m516486",
+  "m1208348",
+  "m1428226",
+  "m1252037",
+  "m64720",
+  "m86837"
  ],
- "gh_beat": "2026-10-27T22:35:43.922861+02:00",
+ "gh_beat": "2026-10-27T22:40:43.142555+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -26747,10 +26747,28 @@
    94,
    72,
    "2026-10-27"
+  ],
+  "tt30332656": [
+   null,
+   null,
+   null,
+   "2026-10-27"
+  ],
+  "tt3169706": [
+   7.8,
+   93,
+   79,
+   "2026-10-27"
+  ],
+  "tt0387914": [
+   7.8,
+   74,
+   66,
+   "2026-10-27"
   ]
  },
  "pushed_h": {
-  "gs": "17161b7cdd43",
+  "gs": "911c06173ba3",
   "quiz_pool.json": "31473d6acb2e",
   "fact.png": "8773c4c843a0",
   "sexed.json": "4efede1d8ea5",
@@ -26837,7 +26855,6 @@
  "force_heavy": [
   "prom.ua",
   "youtube канали",
-  "ігри PS5",
   "аудіокниги",
   "пп-страви",
   "кіномэтч"
@@ -36399,7 +36416,14 @@
    "markup": null
   }
  ],
- "kino_gq": {},
+ "kino_gq": {
+  "drama": [
+   {
+    "id": "d137582950",
+    "text": "🍿 <b>ПІДБІРКА КІНО · ДРАМА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/487558?language=uk\">Чорний куклукскланівець</a></b> (2018)\nкримінал, драма, історичний · ⏱ 2 год 15 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>95%</b> · Ⓜ <b>83</b>\n<i>🎭 Джон Девід Вашинґтон, Адам Драйвер, Тофер Ґрейс</i>\n📝 У 1979 році афроамериканский поліцейський з Колорадо на ім'я Рон Сталворт впроваджується в Ку-клукс-клан і настільки завойовує довіру нових товаришів, що йому пропонують очолити одне з відділень клану.\n▶️ <a href=\"https://youtu.be/7tgMuagdEhc\">Трейлер</a></blockquote>\n§KN:m487558\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/1232449?language=uk\">Юні серця</a></b> (2024)\nдрама, мелодрама · ⏱ 1 год 39 хв · 🔞 відвертість: помірна\n⭐ IMDb <b>7.9</b> · 🍅 <b>92%</b> · Ⓜ <b>69</b>\n<i>🎭 Lou Goossens, Marius De Saeger, Geert Van Rampelberg</i>\n📝 14-year-old Elias increasingly feels like an outsider in his village. When he meets his new neighbour of the same age, Alexander, Elias is confronted with his burgeoning sexuality.\n▶️ <a href=\"https://youtu.be/ijaLan082S8\">Трейлер</a></blockquote>\n§KN:m1232449\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/965150?language=uk\">Після сонця</a></b> (2022)\nдрама · ⏱ 1 год 41 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>96%</b> · Ⓜ <b>95</b>\n<i>🎭 Пол Мескаль, Frankie Corio, Brooklyn Toulson</i>\n📝 Софі згадує канікули біля моря, які вона провела з батьком двадцять років тому, коли їй було тринадцять.\n▶️ <a href=\"https://youtu.be/4A34B1DIGl8\">Трейлер</a></blockquote>\n§KN:m965150\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/389015?language=uk\">Я, Тоня</a></b> (2017)\nдрама, комедія · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>90%</b> · Ⓜ <b>77</b>\n<i>🎭 Марґо Роббі, Себастіан Стен, Еллісон Дженні</i>\n📝 Заради кар'єри одна з кращих фігуристок США не цуралася найбрудніших методів для перемоги над суперницями. Колишній чоловік Хардінг і охоронець спортсменки найняли людину, аби вона зламала конкурентці Тоні ногу.…\n▶️ <a href=\"https://youtu.be/xCee7jqL9Wg\">Трейлер</a></blockquote>\n§KN:m389015\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/516486?language=uk\">Грейхаунд: Битва за Атлантику</a></b> (2020)\nвійськовий, бойовик, драма · ⏱ 1 год 32 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>77%</b> · Ⓜ <b>64</b>\n<i>🎭 Том Генкс, Стівен Ґрем, Роб Морґан</i>\n📝 Історія на реальних подіях часів Другої світової війни, у якій капітан Ернест Краузе очолює міжнародний конвой із 37 кораблів, намагаючися переправити тисячі солдатів і необхідні припаси через Атлантичний океан.\n▶️ <a href=\"https://youtu.be/qEUYwF55Rws\">Трейлер</a></blockquote>\n§KN:m516486\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/1208348?language=uk\">Сім'я напрокат</a></b> (2025)\nкомедія, драма · ⏱ 1 год 50 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>87%</b> · Ⓜ <b>64</b>\n<i>🎭 Брендан Фрейзер, Такехіро Хіра, Марі Ямамото</i>\n📝 Самотній американський актор, що мешкає в Токіо, починає працювати в японській компанії, яка надає «орендовані родини», — він грає підставні ролі в житті інших людей. Згодом він знаходить неочікувані зв’язки та…\n▶️ <a href=\"https://youtu.be/dWSSjaIGdDI\">Трейлер</a></blockquote>\n§KN:m1208348\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/1428226?language=uk\">Hasta el Fin del Mundo</a></b> (2026)\nдрама · ⏱ 1 год 38 хв\n⭐ TMDB <b>8.2</b>\n<i>🎭 Mauricio Ochmann, Айслінн Дербес, Daniel Pérez Prada</i>\n📝 Manuel's life is upended when Esmeralda, his lost love from 15 years ago, calls unexpectedly. Despite being set to marry another, he rediscovers Esmeralda, and they realize their love transcends time.\n▶️ <a href=\"https://youtu.be/jP2g8G16mJA\">Трейлер</a></blockquote>\n§KN:m1428226\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/1252037?language=uk\">Der Tiger</a></b> (2025)\nвійськовий, бойовик, драма · ⏱ 1 год 57 хв\n⭐ IMDb <b>6.5</b>\n<i>🎭 Laurence Rupp, David Schütter, Себастіан Урзендовскі</i>\n📝 A German Tiger tank crew is sent on a dangerous mission to rescue the missing officer Paul von Hardenburg from a top-secret bunker behind enemy lines. As they make their way through the lethal no-man's land, they…\n▶️ <a href=\"https://youtu.be/4uZWlKGRZis\">Трейлер</a></blockquote>\n§KN:m1252037\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/64720?language=uk\">Укриття</a></b> (2011)\nтрилер, драма, жахи · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>92%</b> · Ⓜ <b>85</b>\n<i>🎭 Майкл Шеннон, Джессіка Честейн, Шей Віґем</i>\n📝 Кертіс живе в невеликому містечку штату Огайо з дружиною Самантою і шестирічною позбавленою слуху донькою Ханною. Незважаючи на всі труднощі, Кертіс і Саманта дуже кохають одне одного, і їх сім'я щаслива.  Одного дня…\n▶️ <a href=\"https://youtu.be/hUraDx3oFVg\">Трейлер</a></blockquote>\n§KN:m64720\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/86837?language=uk\">Любов</a></b> (2012)\nдрама, мелодрама · ⏱ 2 год 07 хв\n⭐ IMDb <b>7.9</b> · 🍅 <b>93%</b> · Ⓜ <b>95</b>\n<i>🎭 Жан-Луї Трентіньян, Emmanuelle Riva, Ізабель Юппер</i>\n📝 Жорж і Анна прожили разом все життя, постійно піклуючись один про одного. Зараз їм за вісімдесят. Анна занедужує і її життя починає поступово згасати: спочатку зникає пам'ять, потім відмовляється підкорятися тіло,…\n▶️ <a href=\"https://youtu.be/30VMZlfDWh4\">Трейлер</a></blockquote>\n§KN:m86837"
+   }
+  ]
+ },
  "yt_mute": [],
  "yt_fav": [],
  "ytch_week": ""
