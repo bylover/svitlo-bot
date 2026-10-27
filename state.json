@@ -106,16 +106,6 @@
   "https://medium.com/pequenos-insultos-%C3%A0-moral-conservadora/diz-que-aac38a093502?source=rss------sexuality-5"
  ],
  "kino_seen": [
-  "m83533",
-  "m693134",
-  "m1119449",
-  "m1391",
-  "t202555",
-  "t245927",
-  "t2317",
-  "m766507",
-  "m1263337",
-  "m969681",
   "m1280738",
   "m945961",
   "m545611",
@@ -705,9 +695,19 @@
   "t110180",
   "t83611",
   "t55886",
-  "t65819"
+  "t65819",
+  "m848685",
+  "m1278263",
+  "m776503",
+  "m396535",
+  "m1214931",
+  "m541671",
+  "m4538",
+  "t124101",
+  "t250923",
+  "t46880"
  ],
- "gh_beat": "2026-10-27T21:35:43.010454+02:00",
+ "gh_beat": "2026-10-27T21:40:45.126959+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -26716,10 +26716,16 @@
    91,
    86,
    "2026-10-27"
+  ],
+  "tt32178949": [
+   7.5,
+   97,
+   84,
+   "2026-10-27"
   ]
  },
  "pushed_h": {
-  "gs": "dff31169b531",
+  "gs": "5d24c2cd4502",
   "quiz_pool.json": "31473d6acb2e",
   "fact.png": "cdecfca4e997",
   "sexed.json": "4efede1d8ea5",
@@ -36417,6 +36423,12 @@
    {
     "id": "fdeaa0f0ae",
     "text": "🎬 <b>ЗАРАЗ У КІНОТЕАТРАХ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/1058424?language=uk\">Надія</a></b> (2026)\nфантастика, детектив, бойовик · ⏱ 2 год 37 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>78%</b> · Ⓜ <b>66</b>\n<i>🎭 Хван Чон Мін, Чо Ін Сон, Чон Хо Єн</i>\n📝 У віддаленому південнокорейському селі начальника поліції Бом-сока та офіцерку Сон-ае викликають розслідувати появу загадкової істоти, що чинить хаос у громаді. Але все виявляється не таким, як здається, а сприйняття…\n▶️ <a href=\"https://youtu.be/XjrrX2F_Puw\">Трейлер</a></blockquote>\n§KN:m1058424\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/1400940?language=uk\">Глиноликий</a></b> (2026)\nжахи, трилер, фантастика · ⏱ 1 год 49 хв\n⭐ TMDB <b>7.5</b>\n<i>🎭 Том Ріс Гарріс, Наомі Акі, Едді Марсан</i>\n📝 Історія розповідає про моторошне падіння чоловіка: від зірки Голлівуду до одержимого помстою монстра. Це оповідь про втрату ідентичності та людяності, руйнівне кохання і темний бік наукових амбіцій.\n▶️ <a href=\"https://youtu.be/1NIQPc5N4_g\">Трейлер</a></blockquote>\n§KN:m1400940\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/1423191?language=uk\">Resident Evil: Оселя Зла</a></b> (2026)\nжахи, фантастика, пригоди · ⏱ 1 год 35 хв\n⭐ TMDB <b>7.3</b> · 🍅 <b>96%</b>\n<i>🎭 Остін Абрамс, Пол Волтер Гаузер, Калі Реїс</i>\n📝 Кур'єр отримує завдання доставити посилку до віддаленої лікарні. Невдовзі він опиняється в самому центрі спалаху інфекції та змушений пробиватися крізь орди мутованих істот, щоб вижити.\n▶️ <a href=\"https://youtu.be/0GAZKoD5MBE\">Трейлер</a></blockquote>\n§KN:m1423191\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/1153576?language=uk\">Street Fighter: Вуличний боєць</a></b> (2026)\nбойовик, фентезі · ⏱ 2 год 00 хв\n⭐ IMDb <b>6.2</b> · Ⓜ <b>46</b>\n<i>🎭 Ендрю Коджі, Ной Сентінео, Калліна Лян</i>\n📝 Бійці вуличних боїв Рю та Кен возз’єднуються, коли Чунь-Лі залучає їх до турніру World Warrior. Зіткнувшись із прихованою змовою, вони змушені протистояти одне одному та власному минулому — або зіткнутися з повним…\n▶️ <a href=\"https://youtu.be/O3H-tHAvLIE\">Трейлер</a></blockquote>\n§KN:m1153576\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/1400837?language=uk\">Інша мама</a></b> (2026)\nжахи · ⏱ 1 год 33 хв\n⭐ TMDB <b>5.8</b>\n<i>🎭 Джессіка Честейн, Джей Дюпласс, Арабелла Олівія Кларк</i>\n📝 Фільм занурює глядача у похмурий світ дівчинки Бели, яка встановлює зв'язок зі зловісною сутністю, що оселилася в її будинку. Найстрашніше те, що ця істота має разючу схожість із її рідною матір'ю.\n▶️ <a href=\"https://youtu.be/DtAN88P0A9E\">Трейлер</a></blockquote>\n§KN:m1400837\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/1377237?language=uk\">Перевізник</a></b> (2026)\nбойовик, комедія · ⏱ 1 год 37 хв\n⭐ IMDb <b>6.6</b> · Ⓜ <b>55</b>\n<i>🎭 Алан Річсон, Овен Вілсон, Родріґо Санторо</i>\n📝 У Хенка Мелоуна, елітного кур’єра, є три години, щоб доставити печінку й урятувати семирічну дівчинку, якій потрібна термінова трансплантація. Проста задача перетворюється на смертельне випробування, коли глава…\n▶️ <a href=\"https://youtu.be/KEUyoXigWow\">Трейлер</a></blockquote>\n§KN:m1377237\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/1255833?language=uk\">Падіння кита</a></b> (2026)\nтрилер · ⏱ 1 год 46 хв\n⭐ TMDB <b>6.6</b>\n<i>🎭 Остін Абрамс, Джош Бролін, Елізабет Шу</i>\n📝 Після смерті батька Джей Ґардінер вирушає до узбережжя Центральної Каліфорнії, щоб виконати його останню волю. Під час занурення хлопця ковтає гігантський кашалот. Опинившись у череві тварини та маючи лише годину…\n▶️ <a href=\"https://youtu.be/djjZeuCzw8Y\">Трейлер</a></blockquote>\n§KN:m1255833\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/1248832?language=uk\">Діґґер</a></b> (2026)\nкомедія, драма · ⏱ 2 год 09 хв\n⭐ TMDB <b>7.5</b> · 🍅 <b>52%</b>\n<i>🎭 Том Круз, Різ Ахмед, Джон Ґудмен</i>\n📝 Наймогутніша людина у світі вирушає у відчайдушну місію, щоб довести, що він — рятівник людства, перш ніж катастрофа, яку він сам спричинив, знищить усе.\n▶️ <a href=\"https://youtu.be/BYXiZ6yP8hk\">Трейлер</a></blockquote>\n§KN:m1248832\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/1263337?language=uk\">Серце звіра</a></b> (2026)\nпригоди, трилер · ⏱ 1 год 41 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>85%</b>\n<i>🎭 Бред Пітт, Дж. К. Сіммонс, Анна Ламб</i>\n📝 Після авіакатастрофи боєць спецпідрозділу Джеймс Белмонт та його вірний пес Одін опиняються серед безкрайніх просторів Аляски. Відрізані від цивілізації та будь-якої допомоги, вони змушені покладатися лише один на…\n▶️ <a href=\"https://youtu.be/_rCjDfpay_I\">Трейлер</a></blockquote>\n§KN:m1263337\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/299534?language=uk\">Месники: Завершення</a></b> (2019)\nпригоди, фантастика, бойовик · ⏱ 3 год 01 хв\n⭐ IMDb <b>8.4</b> · 🍅 <b>94%</b> · Ⓜ <b>78</b>\n<i>🎭 Роберт Дауні-молодший, Кріс Еванс, Марк Раффало</i>\n📺 <a href=\"https://www.themoviedb.org/movie/299534-avengers-endgame/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Після руйнівних подій \"Месники: Війна нескінченності\", всесвіт перебуває в руїнах завдяки зусиллям Божевільного Титана, Таноса. За допомогою решти союзників Месники повинні зібратися ще раз, щоб скасувати дії Таноса…\n▶️ <a href=\"https://youtu.be/7ZHb4PWOI5M\">Трейлер</a></blockquote>\n§KN:m299534"
+   }
+  ],
+  "gems": [
+   {
+    "id": "35f2149c8a",
+    "text": "🍿 <b>ПІДБІРКА КІНО · НЕДООЦІНЕНІ ФІЛЬМИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://www.themoviedb.org/movie/848685?language=uk\">As bestas</a></b> (2022) · ❤️ за вашим смаком\nтрилер, драма · ⏱ 2 год 18 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>99%</b> · Ⓜ <b>85</b>\n<i>🎭 Марина Фоїс, Дені Меноше, Luis Zahera</i>\n📝 Antoine and Olga, a French couple, have been living in a small village in Galicia for a long time. They practice eco-responsible agriculture and restore abandoned houses to facilitate repopulation. Everything should…\n▶️ <a href=\"https://youtu.be/aoR5_TVASXU\">Трейлер</a></blockquote>\n§KN:m848685\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/1278263?language=uk\">Les Graines du figuier sauvage</a></b> (2024) · ❤️ за вашим смаком\nдрама, трилер, кримінал · ⏱ 2 год 47 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>97%</b> · Ⓜ <b>84</b>\n<i>🎭 سهیلا گلستانی, میثاق زارع, Mahsa Rostami</i>\n📝 Investigating judge Iman grapples with paranoia amid political unrest in Tehran. When his gun vanishes, he suspects his wife and daughters, imposing draconian measures that strain family ties as societal rules crumble.\n▶️ <a href=\"https://youtu.be/nbKLGsf1Syg\">Трейлер</a></blockquote>\n§KN:m1278263\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/776503?language=uk\">У ритмі серця</a></b> (2021)\nдрама, музика, мелодрама · ⏱ 1 год 51 хв\n⭐ IMDb <b>8.0</b> · 🍅 <b>94%</b> · Ⓜ <b>72</b>\n<i>🎭 Емілія Джонс, Марлі Матлін, Трой Коцур</i>\n📺 <a href=\"https://www.themoviedb.org/movie/776503-coda/watch?locale=UA\">Apple TV</a>\n📝 Рубі – CODA (дитина глухих батьків), вона єдина в сім’ї, хто чує. Коли Рубі відкриває в собі любов до співу, їй доводиться обирати між зобов’язаннями перед сім’єю і мріями.\n▶️ <a href=\"https://youtu.be/0pmfrE1YL4I\">Трейлер</a></blockquote>\n§KN:m776503\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/396535?language=uk\">Потяг до Пусана</a></b> (2016)\nбойовик, жахи, трилер · ⏱ 1 год 48 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>95%</b> · Ⓜ <b>73</b>\n<i>🎭 Кон Ю, 김수안, Чон Ю Мі</i>\n📺 <a href=\"https://www.themoviedb.org/movie/396535/watch?locale=UA\">Apple TV Store</a>\n📝 Людство за всю історію свого існування пережило безліч різних епідемій. Дивно, але в XXI столітті, коли наука досягла грандіозних успіхів у галузі медицини, Південну Корею охопила епідемія невідомого вірусу, який…\n▶️ <a href=\"https://youtu.be/3io68uBmIvE\">Трейлер</a></blockquote>\n§KN:m396535\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/1214931?language=uk\">Нюрнберг</a></b> (2025)\nісторичний, драма · ⏱ 2 год 29 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>72%</b> · Ⓜ <b>61</b>\n<i>🎭 Рамі Малек, Расселл Кроу, Майкл Шеннон</i>\n📝 Дуглас Келлі - психіатр часів Другої світової війни оцінює стан полонених нацистських лідерів та стає дедалі більше одержимим ідеєю розуміння зла, аналізуючи розум найближчого соратника Гітлера - Германа Герінга. Це…\n▶️ <a href=\"https://youtu.be/nnBm_tGjkA4\">Трейлер</a></blockquote>\n§KN:m1214931\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/541671?language=uk\">Балерина</a></b> (2025)\nбойовик, трилер, кримінал · ⏱ 2 год 05 хв\n⭐ IMDb <b>6.8</b> · Ⓜ <b>59</b>\n<i>🎭 Ана де Армас, Кіану Рівз, Ієн Мак-Шейн</i>\n📝 Сюжет розгортається навколо Єви, старанної учениці балетної школи, а також безжальної вбивці з кримінального угрупування Руська Рома. Виконуючи завдання від своєї Директорки, вона дізнається таємницю вбивства свого…\n▶️ <a href=\"https://youtu.be/CadHsdTBC84\">Трейлер</a></blockquote>\n§KN:m541671\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/4538?language=uk\">Поїзд до Дарджилінґа</a></b> (2007)\nпригоди, драма, комедія · ⏱ 1 год 31 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>69%</b> · Ⓜ <b>67</b>\n<i>🎭 Овен Вілсон, Едрієн Броді, Джейсон Шварцман</i>\n📺 <a href=\"https://www.themoviedb.org/movie/4538-the-darjeeling-limited/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Три придуркуваті братики, які не розмовляли один з одним цілий рік після смерті батька, опиняються в потязі, що їде через Індію. Тут вони з'явилися, послухавши заклик старшого з братів возз'єднатися в подорожі, яка…\n▶️ <a href=\"https://youtu.be/F6OEo1wKJEQ\">Трейлер</a></blockquote>\n§KN:m4538\n§§\n<blockquote>📺 <b>8. <a href=\"https://www.themoviedb.org/tv/124101?language=uk\">Хитрощі</a></b> (2021)\nкомедія, драма · 📺 серіал · 5 сез.\n⭐ IMDb <b>8.3</b>\n<i>🎭 Джин Смарт, Ганна Айнбіндер, Carl Clemons-Hopkins</i>\n📝 Дебора Венс — відомий комік і легенда Лас-Вегасу. Але час йде, її аудиторія вже не так добре реагує на її виступи, і власники казино, в якому вона проводить свої шоу, серйозно замислюються відправити старіючу актрису…\n▶️ <a href=\"https://youtu.be/pJcfoJCCJ50\">Трейлер</a></blockquote>\n§KN:t124101\n§§\n<blockquote>📺 <b>9. <a href=\"https://www.themoviedb.org/tv/250923?language=uk\">Ніхто цього не хоче</a></b> (2024)\nкомедія, драма · 📺 серіал · 3 сез.\n⭐ IMDb <b>7.7</b>\n<i>🎭 Крістен Белл, Адам Броді, Джастін Люпе</i>\n📺 <a href=\"https://www.themoviedb.org/tv/250923-nobody-wants-this/watch?locale=UA\">Netflix</a>\n📝 Агностична авторка подкасту закохується в самотнього рабина. Чи переживуть ці стосунки всі відмінності в їхніх поглядах і втручання з боку сімʼї?\n▶️ <a href=\"https://youtu.be/YaujFYwn6-M\">Трейлер</a></blockquote>\n§KN:t250923\n§§\n<blockquote>📺 <b>10. <a href=\"https://www.themoviedb.org/tv/46880?language=uk\">The Fosters</a></b> (2013)\nдрама · 📺 серіал · 5 сез.\n⭐ IMDb <b>7.9</b>\n<i>🎭 Teri Polo, Sherri Saum, Hayden Byerly</i>\n📝 Stef Foster, a dedicated police officer, and her partner Lena Adams, a school vice principal, have built a close-knit, loving family with Stef's biological son from a previous marriage, Brandon, and their adopted…\n▶️ <a href=\"https://youtu.be/ivJ6xkZmLNA\">Трейлер</a></blockquote>\n§KN:t46880"
    }
   ]
  }
