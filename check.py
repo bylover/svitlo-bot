@@ -6827,6 +6827,14 @@ def main() -> None:
         kq = build_kino(st)                            # готова підбірка «про запас» — меню віддає миттєво
         if kq:
             st["kino_q"].append({"id": hashlib.md5(kq[0].encode()).hexdigest()[:10], "text": kq[0], "markup": kq[1]})
+    for c in dict.fromkeys(str(x) for x in (worker_req.get("ytch_now") or [])):    # 🧪 адмін: «YouTube: канали зараз» — без черги
+        try:
+            st["ytch_week"] = ""
+            yt_channels(st, now)
+            direct_m.append((c, "📺 <b>Цікаві канали YouTube зібрано</b> — ▶️ YouTube → «📺 Цікаві канали за темами»." if st.get("ytch_week")
+                             else "📺 Не вдалося зібрати канали (ліміт YouTube API чи немає YT_KEY) — дивіться лог «YouTube канали».", None))
+        except Exception as e:
+            direct_m.append((c, f"📺 Помилка: {esc(err_text(e)[:100])}", None))
     for c in dict.fromkeys(str(x) for x in (worker_req.get("prom_now") or [])):    # 🧪 адмін: «Prom: оновити зараз» — без черги
         try:
             PROM_LOG.clear(); PROM_DBG.clear()
@@ -6961,7 +6969,8 @@ def main() -> None:
             MUSIC_FILE.write_text(json.dumps(mdb_, ensure_ascii=False, separators=(",", ":")), "utf-8")
         except Exception:
             pass
-        st["force_heavy"] = ["prom.ua", "кіно, пули", "музика", "здоров'я", "ігри PS5", "аудіокниги", "пп-страви", "кіномэтч"]   # маркети — першими
+        st["force_heavy"] = ["prom.ua", "youtube канали", "кіно, пули", "музика", "здоров'я", "ігри PS5", "аудіокниги", "пп-страви", "кіномэтч"]   # маркети — першими
+        st["ytch_week"] = ""                          # 📺 цікаві канали YouTube — теж заново
         st["prom_force"] = st["rz_force"] = True
         st["match_month"] = ""; st["ps_day"] = ""                # 🍿💞 пул Кіномэтчу й 🔥 знижки PS — теж свіжі
         st["games_force"] = st["ab_force"] = st["rc_force"] = True     # 🥗 ПП-страви — позапланове поповнення
