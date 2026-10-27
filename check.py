@@ -4506,15 +4506,20 @@ def fantasy_refresh(st: dict, now: datetime) -> None:
 
 # ---------- 🛍 Prom.ua: розумний топ у категоріях і «усе в одного продавця» (сторінки каталогу; рейтинг продавця ≥95%) ----------
 PROM_FILE = Path("prom.json")
-PROM_CATS = [   # спільний список категорій для Prom і Hotline (назва, запит)
-    ("🔞 Вібратори", "вібратор"), ("🔞 Вакуумні стимулятори", "вакуумний стимулятор клітора"), ("🔞 Мастурбатори", "мастурбатор"), ("🔞 Анальні іграшки", "анальна пробка"),
-    ("🔞 Ерекційні кільця", "ерекційне кільце"), ("🔞 Лубриканти", "лубрикант"), ("🔞 Презервативи", "презервативи"), ("🔞 БДСМ", "бдсм набір"), ("🔞 Еротична білизна", "еротична білизна"),
+PROM_CATS = [   # спільний список категорій для Prom і Hotline (назва, запит) — ~60 вузьких категорій
+    ("🔞 Вібратори", "вібратор"), ("🔞 Вібратори-кролики", "вібратор кролик"), ("🔞 Віброяйця", "віброяйце"), ("🔞 Вакуумні стимулятори", "вакуумний стимулятор клітора"),
+    ("🔞 Мастурбатори", "мастурбатор"), ("🔞 Анальні іграшки", "анальна пробка"), ("🔞 Ерекційні кільця", "ерекційне кільце"), ("🔞 Страпони", "страпон"),
+    ("🔞 Лубриканти", "лубрикант"), ("🔞 Масажні олії", "масажна олія інтимна"), ("🔞 Презервативи", "презервативи"), ("🔞 БДСМ", "бдсм набір"), ("🔞 Еротична білизна", "еротична білизна"),
     ("📱 Смартфони", "смартфон"), ("💻 Ноутбуки", "ноутбук"), ("📟 Планшети", "планшет"), ("🖥 Монітори", "монітор"), ("📺 Телевізори", "телевізор"),
-    ("🎧 Навушники", "бездротові навушники"), ("🔊 Колонки", "портативна колонка"), ("🔋 Павербанки", "павербанк"), ("⚡ Зарядні станції", "зарядна станція"),
-    ("⌚ Смарт-годинники", "смарт годинник"), ("📶 Роутери", "wifi роутер"), ("💾 SSD", "ssd накопичувач"), ("🖱 Мишки й клавіатури", "бездротова мишка"),
-    ("🤖 Роботи-пилососи", "робот пилосос"), ("🧹 Пилососи", "пилосос"), ("☕ Кавоварки", "кавоварка"), ("🍟 Мультипечі", "мультипіч аерофритюрниця"),
-    ("🫖 Електрочайники", "електрочайник"), ("🥤 Блендери", "блендер"), ("💨 Фени й стайлери", "фен для волосся"), ("🪒 Тримери й бритви", "тример"),
-    ("🦷 Електрощітки", "електрична зубна щітка"), ("🏋️ Гантелі", "гантелі розбірні"), ("🚴 Велосипеди", "велосипед"), ("👟 Кросівки", "кросівки чоловічі"),
+    ("🎧 Навушники TWS", "бездротові навушники tws"), ("🎧 Навушники накладні", "навушники накладні bluetooth"), ("🔊 Колонки", "портативна колонка"),
+    ("🔋 Павербанки", "павербанк"), ("⚡ Зарядні станції", "зарядна станція"), ("⚡ Генератори", "генератор інверторний"), ("🔦 Ліхтарики", "ліхтарик акумуляторний"),
+    ("⌚ Смарт-годинники", "смарт годинник"), ("⌚ Фітнес-браслети", "фітнес браслет"), ("📷 Екшн-камери", "екшн камера"), ("📶 Роутери", "wifi роутер"),
+    ("💾 SSD", "ssd накопичувач"), ("🖱 Мишки", "бездротова мишка"), ("⌨️ Клавіатури", "клавіатура бездротова"), ("🎮 Геймпади", "геймпад"),
+    ("🤖 Роботи-пилососи", "робот пилосос"), ("🧹 Пилососи", "пилосос"), ("🌡 Обігрівачі", "обігрівач"), ("💧 Зволожувачі", "зволожувач повітря"),
+    ("👕 Праски й відпарювачі", "відпарювач"), ("☕ Кавомашини", "кавомашина автоматична"), ("☕ Кавоварки ріжкові", "кавоварка ріжкова"), ("🍟 Мультипечі", "мультипіч аерофритюрниця"),
+    ("🍲 Мультиварки", "мультиварка"), ("📦 Мікрохвильовки", "мікрохвильова піч"), ("🫖 Електрочайники", "електрочайник"), ("🥤 Блендери", "блендер"), ("⚖️ Кухонні ваги", "ваги кухонні"),
+    ("💨 Фени й стайлери", "фен для волосся"), ("🪒 Тримери й бритви", "тример"), ("🦷 Електрощітки", "електрична зубна щітка"), ("💆 Масажери", "масажер"),
+    ("🏋️ Гантелі", "гантелі розбірні"), ("🚴 Велосипеди", "велосипед"), ("🛴 Електросамокати", "електросамокат"), ("👟 Кросівки", "кросівки чоловічі"), ("🎒 Рюкзаки", "рюкзак міський"),
     ("🧱 LEGO", "lego"), ("🚗 Відеореєстратори", "відеореєстратор"), ("🔧 Шуруповерти", "шуруповерт акумуляторний"), ("🐶 Корм для тварин", "корм для собак")]
 PROM_RATING = 95
 PROM_LOG: list = []
@@ -4636,7 +4641,10 @@ def prom_offers(q: str, pages: int = 2) -> list:
             if pg == 1 and "apollo" not in PROM_DBG:
                 prod_ = next((v for k_, v in ap.items() if str(k_).startswith("Product") or (isinstance(v, dict) and v.get("__typename") == "Product")), None)
                 comp_ = next((v for k_, v in ap.items() if str(k_).startswith("Company") or (isinstance(v, dict) and v.get("__typename") == "Company")), None)
-                PROM_DBG["apollo"] = {"keys": len(ap), "sample_keys": list(ap)[:8], "product": json.dumps(prod_, ensure_ascii=False)[:700], "company": json.dumps(comp_, ensure_ascii=False)[:500]}
+                PROM_DBG["apollo"] = {"keys": len(ap), "product_fields": sorted((prod_ or {}).keys())[:120],
+                                      "sold_values": {k_: v_ for k_, v_ in (prod_ or {}).items() if re.search(r"sale|order|bought|purchas|buy", str(k_), re.I)},   # 🧪 усі поля товару — знайти «кількість покупок»
+                                      "product": json.dumps(prod_, ensure_ascii=False)[:500], "company": json.dumps(comp_, ensure_ascii=False)[:300],
+                                      "sold_hint": re.findall(r'.{0,60}(?:[Кк]упили|[Пп]родано|замовлен|\d+\+\s*купил)[^<]{0,40}', h)[:3]}
         for m in re.finditer(r'<script[^>]*id="__NEXT_DATA__"[^>]*>(.*?)</script>', h, re.S):
             blobs.append(m.group(1))
         for m in re.finditer(r'JSON\.parse\(\s*"((?:[^"\\]|\\.){500,})"\s*\)', h):   # екранований JSON усередині скрипта
@@ -4701,11 +4709,11 @@ def prom_offers(q: str, pages: int = 2) -> list:
                             "u": ("https://prom.ua" + u_) if u_.startswith("/") else u_, "s": html.unescape(co.group(1)).strip()[:60], "sid": html.unescape(co.group(1)).strip()[:60],
                             "r": float(rt.group(1)) if rt else 0, "rv": _num((re.search(r'(\d+)\s*відгук', blk) or [None, 0])[1]),
                             "st": _num((re.search(r'data-qaid="product_rating"[^>]*?(?:title|aria-label)="[^"]*?([\d.,]+)', blk) or [None, 0])[1]),
-                            "sold": _num((re.search(r'(?:Купили|Продано)\D{0,15}(\d+)', blk) or [None, 0])[1])})
+                            "sold": _num((re.search(r'(\d+)\s*\+?\s*(?:купил|купили|продано)', blk, re.I) or re.search(r'(?:Купили|Продано)\D{0,15}(\d+)', blk) or [None, 0])[1])})   # «10+ купили» → 10
         why_ = {"товарів": 0, "без ціни/назви/продавця": 0, "не в наявності": 0}
         href_by_id = {}                               # точні посилання на товари — як на сторінці Prom
-        for m_ in re.finditer(r'href="((?:https://prom\.ua)?/(?:ua/)?p(\d{6,})-[^"#?]+\.html)', h):
-            href_by_id.setdefault(m_.group(2), m_.group(1).replace("https://prom.ua", ""))
+        for m_ in re.finditer(r'href="((?:https://[a-z0-9.\-]*prom\.ua)?/(?:ua/)?p(\d{6,})-[^"#?]+\.html)', h):   # точне посилання з видачі (у т. ч. love.prom.ua для 18+)
+            href_by_id.setdefault(m_.group(2), m_.group(1))
         for k, v in cache.items():
             if not isinstance(v, dict) or not (str(v.get("__typename", "")) == "Product" or str(k).startswith("Product:")):
                 continue
@@ -4722,13 +4730,14 @@ def prom_offers(q: str, pages: int = 2) -> list:
                 why_["без ціни/назви/продавця"] += 1
                 continue
             url = v.get("urlForProductCatalog") or v.get("url") or href_by_id.get(str(v.get("id"))) or (f"/ua/p{v.get('id')}-{v.get('urlText')}.html" if v.get("urlText") else f"/ua/p{v.get('id')}.html")   # точне посилання зі сторінки
-            slug_ = comp.get("slug")
-            seller_u = f"https://{slug_}.prom.ua{url}" if slug_ and url.startswith("/") else ""   # сторінка товару саме в цього продавця (prom.ua/p… веде на спільну модель)
-            out.append({"n": str(name)[:140], "p": price, "u": seller_u or (("https://prom.ua" + url) if url.startswith("/") else url),
+            exact = href_by_id.get(str(v.get("id")))
+            if exact:
+                url = exact                               # як на сторінці Prom
+            out.append({"n": str(name)[:140], "p": price, "u": ("https://prom.ua" + url) if url.startswith("/") else url,
                         "s": str(comp.get("name") or "")[:60], "sid": str(comp.get("id") or ""),
                         "r": find(comp, r"positive.*percent|opinionPositivePercent|rating") or 0,
                         "rv": find(v, r"opinion.*(count|total)|reviews?Count|feedbacks?Count") or 0, "st": find(v, r"^rating$|averageRating|productRating") or 0,
-                        "sold": find(v, r"sales|ordersCount|soldCount|bought|purchases") or 0})
+                        "sold": find(v, r"sales|ordersCount|orderCount|soldCount|bought|purchase|buyers|buyCount|ordered") or 0})
         if pg == 1 and len(PROM_LOG) < 8:
             PROM_LOG.append(f"«{q}» розбір: {why_}")
         _time.sleep(1.0)
@@ -4743,7 +4752,7 @@ def _tok(s: str) -> set:
 
 def mk_compact(lst: list, n: int = 15) -> list:
     """Стиснення для бота: до 20 позицій, короткі назви, лише потрібні поля (великий файл бот не встигає прийняти на безкоштовному Cloudflare)."""
-    keep = ("n", "p", "u", "s", "r", "rv", "st", "n_off", "pmin", "pmax", "pop", "r90", "grp", "stars")
+    keep = ("n", "p", "u", "s", "r", "rv", "st", "n_off", "pmin", "pmax", "pop", "r90", "grp", "stars", "q", "sold")
     out = []
     for x in lst[:n]:
         y = {k: x[k] for k in keep if k in x and x[k] not in (None, "", 0, 0.0, False)}
@@ -4759,7 +4768,7 @@ def mk_compact(lst: list, n: int = 15) -> list:
 
 def prom_top(st: dict, now: datetime) -> None:
     """Раз на добу: у кожній категорії групуємо однакові товари різних продавців, беремо найпопулярніші й найдешевшу пропозицію від продавця з рейтингом ≥95%."""
-    if not WORKER_MODE or st.get("prom_day") == now.date().isoformat() and not st.get("prom_force") and st.get("prom_v") == 6:
+    if not WORKER_MODE or st.get("prom_day") == now.date().isoformat() and not st.get("prom_force") and st.get("prom_v") == 7:
         return                                        # нова версія розбору — збираємо одразу, не чекаючи завтра
     if _time.time() < float(st.get("prom_block_until") or 0):
         print("Prom.ua: пауза після обмеження запитів (429)"); return
@@ -4768,6 +4777,8 @@ def prom_top(st: dict, now: datetime) -> None:
     except Exception:
         res = {}
     res = {k: v for k, v in res.items() if k in dict(PROM_CATS)}
+    if st.get("prom_v") != 7:                         # нова версія (точні посилання, «куплено», ✅) — збираємо з нуля, старі посилання не лишаємо
+        res, st["prom_i"] = {}, 0
     i0, t0 = int(st.get("prom_i") or 0) % len(PROM_CATS), _time.time()
     batch = [PROM_CATS[(i0 + j) % len(PROM_CATS)] for j in range(6)]
     done_ = 0
@@ -4793,10 +4804,13 @@ def prom_top(st: dict, now: datetime) -> None:
                 pop = sum(o["sold"] for o in c["o"]) + 5 * sum(o["rv"] for o in c["o"]) + 10 * len(c["o"])
                 stars = max((o["st"] for o in c["o"]), default=0)
                 best = min(good, key=lambda o: o["p"])
-                top.append({**best, "pop": pop, "stars": stars, "n_off": len(c["o"]), "pmin": min(o["p"] for o in c["o"]), "pmax": max(o["p"] for o in c["o"]), "r90": thr < PROM_RATING})
+                top.append({**best, "pop": pop, "stars": stars, "n_off": len(c["o"]), "pmin": min(o["p"] for o in c["o"]), "pmax": max(o["p"] for o in c["o"]), "r90": thr < PROM_RATING,
+                            "sold": sum(o["sold"] for o in c["o"]), "rv": max(o["rv"] for o in c["o"])})
             if len(top) >= 5:
                 break
-        top.sort(key=lambda x: (x.get("r90", False), -(x["pop"] + 20 * (x["stars"] or 0)), x["p"]))   # спершу продавці ≥95%
+        for x in top:                                 # ✅ перевірені покупцями: оцінка ≥4,5★ і ≥20 відгуків
+            x["q"] = bool((x.get("stars") or x.get("st") or 0) >= 4.5 and ((x.get("rv") or 0) >= 20 or (x.get("sold") or 0) >= 50))
+        top.sort(key=lambda x: (not x.get("q"), x.get("r90", False), -(x["pop"] + 20 * (x["stars"] or 0)), x["p"]))   # спершу перевірені, далі продавці ≥95%
         if top:
             res[title] = top[:40]   # 40 — для «🏷 Топ брендів»; у списку показуємо 15
     st["prom_i"] = (i0 + done_) % len(PROM_CATS)
@@ -4810,7 +4824,7 @@ def prom_top(st: dict, now: datetime) -> None:
         print("Prom.ua: 429 — пауза 2 год"); return
     full_cycle = st["prom_i"] < i0 or done_ >= len(PROM_CATS)
     st["prom_day"] = now.date().isoformat() if full_cycle else st.get("prom_day", "")   # поки не пройшли всі категорії — продовжуємо в наступних запусках
-    st["prom_force"], st["prom_v"] = False, 6
+    st["prom_force"], st["prom_v"] = False, 7
     st["prom_last_n"] = sum(len(v) for v in res.values())
     try:
         payload = {"at": now.strftime("%d.%m %H:%M"), "cats": {k: mk_compact(v) for k, v in res.items()}}

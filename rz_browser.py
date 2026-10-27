@@ -154,12 +154,13 @@ def main() -> None:
             br.close(); return
         res, t0 = {}, time.time()
         for title, q in PROM_CATS:                         # 🏆 топ у всіх категоріях (спільний список із Prom)
-            if time.time() - t0 > 900:
+            if time.time() - t0 > 960:
                 break
-            offs = hl_search(page, q, ADULT_RX if title.startswith("🔞") else "")
+            offs = hl_search(page, q, ADULT_RX if title.startswith("🔞") else "", pages=1)
             for o in offs:
                 o["pop"] = o["n_off"] * 3 + o["rv"] * 5 + o["st"] * 20
-            offs.sort(key=lambda o: (-o["pop"], o["p"]))
+                o["q"] = bool(o["st"] >= 4.5 and o["rv"] >= 20)   # ✅ перевірені покупцями
+            offs.sort(key=lambda o: (not o["q"], -o["pop"], o["p"]))
             res[title] = {"all": offs[:40]}
         br.close()
     n = sum(len(v["all"]) for v in res.values())
