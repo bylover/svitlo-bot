@@ -1,0 +1,34 @@
+name: Cart search
+on:
+  workflow_dispatch:
+    inputs:
+      q:
+        description: "Prom: список товарів"
+        required: true
+      chat:
+        description: "кому відповісти"
+        required: true
+permissions:
+  contents: read
+concurrency:
+  group: cart-${{ github.event.inputs.chat }}
+  cancel-in-progress: false
+jobs:
+  prom:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Prom — усе в одного продавця
+        run: python3 check.py
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+          GROUP: ${{ secrets.GROUP }}
+          SYNC_URL: ${{ secrets.SYNC_URL }}
+          SYNC_KEY: ${{ secrets.SYNC_KEY }}
+          CART_Q: ${{ github.event.inputs.q }}
+          CART_CHAT: ${{ github.event.inputs.chat }}
