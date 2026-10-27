@@ -172,7 +172,7 @@ SOURCES_TEXT = (
     "<blockquote>• Каталог і описи українською — TMDB; рейтинги — IMDb (глядачі), Rotten Tomatoes і Metacritic (критики, через OMDb)\n"
     "• Високі оцінки глядачів і критиків, але не надто «заїжджені»; завжди 10 позицій — якщо підходящих мало, бот поступово м'якшає пороги й розширює роки (з 2000-го, за потреби з 1990-го); без повторів, з урахуванням 👀 «бачили»\n"
     "• 🏆 1–2 фестивальні фільми — переможці й номінанти Канн, Венеції, Берлінале, Санденсу (Wikidata); 💎 прихована перлина — зі списків «Hidden Gems» Trakt\n"
-    "• 📺 Де дивитися в Україні — дані JustWatch (через TMDB): Netflix, MEGOGO, Apple TV тощо; у вікні фільму — посилання на пошук у сервісі та всі варіанти перегляду\n"
+    "• 📺 Де дивитися в Україні — дані JustWatch (через TMDB), лише Netflix, MEGOGO, Sweet.tv і Kyivstar TV (з позначкою: підписка, безкоштовно, оренда чи купівля); у вікні фільму — посилання на пошук у сервісі та всі варіанти перегляду\n"
     "• 💬 Що кажуть глядачі — ШІ коротко підсумовує відгуки TMDB: що хвалять і що критикують\n"
     "• 80% підбірки — фільми й серіали за останні 10 років; натисніть на назву — відкриється вікно з постером, кадрами, акторами й описом\n"
     "• 🔞 відвертість: помірна — є оголення або постільні сцени; 🔞🔞 висока — відверті сексуальні сцени, еротика або рейтинг NC-17 (орієнтовно за тегами TMDB і віковим рейтингом США); значок — лише якщо TMDB має такі теги, тож його відсутність не гарантує, що сцен немає\n"
@@ -773,13 +773,15 @@ def providers(d: dict) -> tuple[list[tuple[str, str]], str]:
     ua = ((d.get("watch/providers") or {}).get("results") or {}).get("UA") or {}
     title = d.get("title") or d.get("name") or ""
     names = []
+    allow = re.compile(r"netflix|megogo|sweet\.?tv|kyivstar", re.I)     # лише обрані сервіси: Netflix, MEGOGO, Sweet.tv, Kyivstar TV
     for kind_ in ("flatrate", "free", "ads", "rent", "buy"):
         for p in ua.get(kind_, []):
             n = p.get("provider_name")
-            if n and n not in [x[0] for x in names]:
+            if n and allow.search(n) and n not in [x[0].split(" ·")[0] for x in names]:
                 tmpl = PROVIDER_SEARCH.get(n)
-                names.append((n, tmpl.format(q=urllib.parse.quote(title)) if tmpl else ua.get("link", "")))
-    return names[:6], ua.get("link", "")
+                label = n + {"free": " · безкоштовно", "ads": " · безкоштовно з рекламою", "rent": " · оренда", "buy": " · купівля"}.get(kind_, " · за підпискою")
+                names.append((label, tmpl.format(q=urllib.parse.quote(title)) if tmpl else ua.get("link", "")))
+    return names[:4], ua.get("link", "")
 
 
 def review_summaries(items: list[dict]) -> None:
@@ -4750,6 +4752,37 @@ def _tok(s: str) -> set:
     return {w for w in re.findall(r"[a-zа-яіїєґ0-9]{3,}", str(s).lower()) if w not in {"для", "with", "the", "and", "або"}}
 
 
+# ---------- 🧹 Фільтр якості для топів (Prom і Hotline): без аксесуарів, б/у, копій і «дріб'язку» ----------
+QF_JUNK = re.compile(r"чохол|чехол|кабел|шнур|плівк|пленк|захисне скло|скло для|ремінц|ремешок|амбушюр|насадк[аи] для|запчаст|тримач|держател|адаптер|перехідник|переходник|"
+                     r"наклейк|кейс для|фільтр для|мішок для|щітк[аи] для робот|підставк|кронштейн|пульт для|зарядний пристрій для|блок живлення для|аккумулятор для|акумулятор для", re.I)
+QF_FAKE = re.compile(r"\bб/?в\b|вживан|б/у|уцінк|уценк|копія|копия|репліка|реплика|\b1:1\b|аналог|lux якість|люкс якість|refurb|відновлен", re.I)
+QF_MIN = {"📱 Смартфони": 3000, "💻 Ноутбуки": 10000, "📟 Планшети": 3000, "🖥 Монітори": 2500, "📺 Телевізори": 5000, "🎧 Навушники TWS": 400, "🎧 Навушники накладні": 500,
+          "🔊 Колонки": 500, "🔋 Павербанки": 400, "⚡ Зарядні станції": 5000, "⚡ Генератори": 8000, "⌚ Смарт-годинники": 800, "⌚ Фітнес-браслети": 500, "📷 Екшн-камери": 1500,
+          "📶 Роутери": 500, "💾 SSD": 700, "🎮 Геймпади": 500, "🤖 Роботи-пилососи": 4000, "🧹 Пилососи": 1500, "☕ Кавомашини": 6000, "☕ Кавоварки ріжкові": 2000,
+          "🍟 Мультипечі": 1200, "🍲 Мультиварки": 1200, "📦 Мікрохвильовки": 2000, "🚴 Велосипеди": 4000, "🛴 Електросамокати": 6000, "🔧 Шуруповерти": 1000,
+          "🚗 Відеореєстратори": 800, "🔞 Вібратори": 250, "🔞 Вібратори-кролики": 400, "🔞 Вакуумні стимулятори": 400, "🔞 Мастурбатори": 250}
+
+
+def quality_filter(items: list, title: str) -> list:
+    """Відсіюємо сміття й ставимо перевірене вище; повертаємо список із полем «qs» (оцінка якості)."""
+    prices = sorted(float(x.get("p") or 0) for x in items if x.get("p"))
+    med = prices[len(prices) // 2] if prices else 0
+    floor = max(QF_MIN.get(title, 0), 0.35 * med if len(prices) >= 8 else 0)
+    junk_ok = re.search(r"Лубрикант|Презерватив|Масажн|олі", title)        # для цих категорій «дрібні» товари — норма
+    out = []
+    for x in items:
+        n = str(x.get("n") or "")
+        if QF_FAKE.search(n) or (QF_JUNK.search(n) and not junk_ok):
+            continue
+        if float(x.get("p") or 0) < floor:
+            continue
+        stars, rv, sold = float(x.get("st") or x.get("stars") or 0), float(x.get("rv") or 0), float(x.get("sold") or 0)
+        brand = bool(re.search(r"\b[A-Z][A-Za-z0-9&\-]{1,}\b", n))
+        x["qs"] = (3 if stars >= 4.5 and (rv >= 20 or sold >= 50) else 1 if (rv or sold) else 0) + (1 if brand else 0) + (0.5 if stars >= 4.7 else 0)
+        out.append(x)
+    return out
+
+
 def mk_compact(lst: list, n: int = 15) -> list:
     """Стиснення для бота: до 20 позицій, короткі назви, лише потрібні поля (великий файл бот не встигає прийняти на безкоштовному Cloudflare)."""
     keep = ("n", "p", "u", "s", "r", "rv", "st", "n_off", "pmin", "pmax", "pop", "r90", "grp", "stars", "q", "sold")
@@ -4768,7 +4801,7 @@ def mk_compact(lst: list, n: int = 15) -> list:
 
 def prom_top(st: dict, now: datetime) -> None:
     """Раз на добу: у кожній категорії групуємо однакові товари різних продавців, беремо найпопулярніші й найдешевшу пропозицію від продавця з рейтингом ≥95%."""
-    if not WORKER_MODE or st.get("prom_day") == now.date().isoformat() and not st.get("prom_force") and st.get("prom_v") == 7:
+    if not WORKER_MODE or st.get("prom_day") == now.date().isoformat() and not st.get("prom_force") and st.get("prom_v") == 8:
         return                                        # нова версія розбору — збираємо одразу, не чекаючи завтра
     if _time.time() < float(st.get("prom_block_until") or 0):
         print("Prom.ua: пауза після обмеження запитів (429)"); return
@@ -4777,7 +4810,7 @@ def prom_top(st: dict, now: datetime) -> None:
     except Exception:
         res = {}
     res = {k: v for k, v in res.items() if k in dict(PROM_CATS)}
-    if st.get("prom_v") != 7:                         # нова версія (точні посилання, «куплено», ✅) — збираємо з нуля, старі посилання не лишаємо
+    if st.get("prom_v") != 8:                         # нова версія (точні посилання, «куплено», ✅) — збираємо з нуля, старі посилання не лишаємо
         res, st["prom_i"] = {}, 0
     i0, t0 = int(st.get("prom_i") or 0) % len(PROM_CATS), _time.time()
     batch = [PROM_CATS[(i0 + j) % len(PROM_CATS)] for j in range(6)]
@@ -4786,7 +4819,7 @@ def prom_top(st: dict, now: datetime) -> None:
         if _time.time() - t0 > 300 or PROM_429["hit"]:
             break
         done_ += 1                                     # Prom обмежив запити — далі не ліземо
-        offers = prom_offers(q, 2)
+        offers = quality_filter(prom_offers(q, 2), title)   # 🧹 без аксесуарів, б/у, копій і «дріб'язку»
         clusters = []                                 # однакові позиції: ≥60% спільних слів назви
         for o in offers:
             tk = _tok(o["n"])
@@ -4810,7 +4843,7 @@ def prom_top(st: dict, now: datetime) -> None:
                 break
         for x in top:                                 # ✅ перевірені покупцями: оцінка ≥4,5★ і ≥20 відгуків
             x["q"] = bool((x.get("stars") or x.get("st") or 0) >= 4.5 and ((x.get("rv") or 0) >= 20 or (x.get("sold") or 0) >= 50))
-        top.sort(key=lambda x: (not x.get("q"), x.get("r90", False), -(x["pop"] + 20 * (x["stars"] or 0)), x["p"]))   # спершу перевірені, далі продавці ≥95%
+        top.sort(key=lambda x: (not x.get("q"), x.get("r90", False), -x.get("qs", 0), -(x["pop"] + 20 * (x["stars"] or 0)), x["p"]))   # перевірені → продавці ≥95% → якість → популярність
         if top:
             res[title] = top[:40]   # 40 — для «🏷 Топ брендів»; у списку показуємо 15
     st["prom_i"] = (i0 + done_) % len(PROM_CATS)
@@ -4824,7 +4857,7 @@ def prom_top(st: dict, now: datetime) -> None:
         print("Prom.ua: 429 — пауза 2 год"); return
     full_cycle = st["prom_i"] < i0 or done_ >= len(PROM_CATS)
     st["prom_day"] = now.date().isoformat() if full_cycle else st.get("prom_day", "")   # поки не пройшли всі категорії — продовжуємо в наступних запусках
-    st["prom_force"], st["prom_v"] = False, 7
+    st["prom_force"], st["prom_v"] = False, 8
     st["prom_last_n"] = sum(len(v) for v in res.values())
     try:
         payload = {"at": now.strftime("%d.%m %H:%M"), "cats": {k: mk_compact(v) for k, v in res.items()}}
@@ -5653,6 +5686,59 @@ def dur_text(sec: int) -> str:
     return f"{h} год {m:02d} хв" if h else f"{m} хв"
 
 
+YT_POLIT = re.compile(r"політи|зеленськ|путін|вибор|депутат|верховн\w* рад|мобілізац|тцк|фронт|окупант|війн[аиі]|зсу\b|новин|ефір|наживо|\blive\b|стрім|"
+                      r"гордон|портников|соколова|бутусов|гончаренко|арестович|умєров|єрмак|трамп|байден|переговор|мирн\w* план|санкці", re.I)
+YT_THEMES = {"🔪 Тру-крайм": ["тру крайм українською", "true crime історії", "тру крайм истории"], "😂 Гумор": ["стендап українською", "гумор скетчі україна"],
+             "🎉 Розваги": ["розважальне шоу україна", "челендж україна"], "💞 Секс-просвіта": ["секс освіта сексолог", "сексолог советы"],
+             "🔬 Наука": ["наука українською", "научпоп наука"]}
+
+
+def yt_channels(st: dict, now: datetime) -> None:
+    """📺 Цікаві канали за темами (раз на тиждень): пошук каналів, активні, з підписниками, без політики; 3 свіжі відео."""
+    if not YT_KEY or not WORKER_MODE or st.get("ytch_week") == f"{now:%G%V}":
+        return
+    api = lambda path, **q: http_json(f"https://www.googleapis.com/youtube/v3/{path}?" + urllib.parse.urlencode({**q, "key": YT_KEY}))
+    mute = set((st.get("yt_mute") or []))
+    res = {}
+    for theme, qs in YT_THEMES.items():
+        ids = []
+        for q in qs:
+            try:
+                ids += [x["id"]["channelId"] for x in api("search", part="id", type="channel", q=q, regionCode="UA", maxResults=25).get("items", []) if x.get("id", {}).get("channelId")]
+            except Exception as e:
+                print(f"YouTube канали «{q}»: {err_text(e)[:80]}")
+        chans = []
+        for k in range(0, len(ids), 50):
+            try:
+                chans += api("channels", part="snippet,statistics,contentDetails", id=",".join(list(dict.fromkeys(ids))[k:k + 50])).get("items", [])
+            except Exception:
+                pass
+        out = []
+        for c in chans:
+            sn, stt = c.get("snippet", {}), c.get("statistics", {})
+            subs = int(stt.get("subscriberCount") or 0)
+            if c.get("id") in mute or subs < 20000 or YT_POLIT.search(sn.get("title", "") + " " + (sn.get("description") or "")[:300]):
+                continue
+            vids = []
+            try:
+                up = c["contentDetails"]["relatedPlaylists"]["uploads"]
+                vids = [{"t": x["snippet"]["title"][:80], "id": x["snippet"]["resourceId"]["videoId"], "d": x["snippet"].get("publishedAt", "")[:10]}
+                        for x in api("playlistItems", part="snippet", playlistId=up, maxResults=3).get("items", [])]
+            except Exception:
+                pass
+            if not vids or vids[0]["d"] < (now - timedelta(days=60)).strftime("%Y-%m-%d"):
+                continue                                  # неактивний канал
+            out.append({"t": sn.get("title", "")[:60], "id": c["id"], "subs": subs, "desc": (sn.get("description") or "")[:140], "v": vids})
+        out.sort(key=lambda x: -x["subs"])
+        res[theme] = out[:12]
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=yt_ch.json", {"at": now.strftime("%d.%m"), "themes": res})
+        st["ytch_week"] = f"{now:%G%V}"
+        print(f"YouTube канали: {', '.join(f'{k} {len(v)}' for k, v in res.items())}")
+    except Exception as e:
+        print(f"YouTube канали → бот: {err_text(e)[:60]}")
+
+
 def build_youtube(st: dict, now: datetime) -> str | None:
     """Український YouTube за останні 7 днів: «В тренді» в Україні + пошук за українськими словами; суворий фільтр мови."""
     if not YT_KEY:
@@ -5703,14 +5789,17 @@ def build_youtube(st: dict, now: datetime) -> str | None:
             continue                                   # повтор, старе, новини, дитяче або Shorts
         if lang.startswith("ru") or re.search(r"[ыэъё]", txt, re.I):
             continue                                   # російське — ні
+        if YT_POLIT.search(txt + " " + sn.get("channelTitle", "")) or sn.get("channelId") in set(st.get("yt_mute") or []):
+            continue                                   # політика, новини, стріми й приховані вами канали — ні
         if not (lang.startswith("uk") or UA_LETTERS.search(txt)):
             continue                                   # лише українська мова
         ids_ok.add(v.get("id"))
         good.append(v)
     print(f"YouTube: усього {len(vids)}, українських за тиждень {len(good)}")
     # популярність: перегляди + коментарі (1 коментар ≈ 100 переглядів — він показує залученість глядачів)
-    good.sort(key=lambda v: int(v["statistics"].get("viewCount", 0))
-              + 100 * int(v["statistics"].get("commentCount", 0) or 0), reverse=True)
+    fav = set(st.get("yt_fav") or [])
+    good.sort(key=lambda v: (int(v["statistics"].get("viewCount", 0)) + 100 * int(v["statistics"].get("commentCount", 0) or 0))
+              * (3 if v["snippet"].get("channelId") in fav else 1), reverse=True)   # ⭐ улюблені канали — вище
     top, per_channel = [], {}
     for v in good:
         ch = v["snippet"].get("channelId")
@@ -5718,13 +5807,20 @@ def build_youtube(st: dict, now: datetime) -> str | None:
             continue
         per_channel[ch] = per_channel.get(ch, 0) + 1
         top.append(v)
-        if len(top) == 10:
+        if len(top) == 20:                                     # 10 у повідомленні + «▶️ ще 10»
             break
     end = now + timedelta(days=1)                              # для підпису періоду (start … сьогодні)
     if not top:
         return None
     st["yt_seen"] = (st.get("yt_seen", []) + [v["id"] for v in top])[-800:]
     items = []
+    more_top, top = top[10:], top[:10]
+    try:                                               # «▶️ ще 10» і список каналів для 🚫/⭐ — у бота
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=yt_more.json",
+                  {"more": [{"t": v["snippet"]["title"][:90], "c": v["snippet"].get("channelTitle", "")[:40], "id": v["id"], "views": int(v["statistics"].get("viewCount", 0))} for v in more_top],
+                   "ch": [[v["snippet"].get("channelId"), v["snippet"].get("channelTitle", "")[:40]] for v in top + more_top]})
+    except Exception as e:
+        print(f"YouTube «ще 10» → бот: {err_text(e)[:60]}")
     for i, v in enumerate(top, 1):
         sn, stt = v["snippet"], v["statistics"]
         views, comments = int(stt.get("viewCount", 0)), int(stt.get("commentCount", 0) or 0)
@@ -5734,7 +5830,7 @@ def build_youtube(st: dict, now: datetime) -> str | None:
                      f"👁 <b>{num(views)}</b> переглядів · 💬 <b>{num(comments)}</b> коментарів\n"
                      f'🔗 <a href="https://youtu.be/{v["id"]}">Дивитися</a></blockquote>')
     label = f"{start:%d.%m}–{now:%d.%m}"
-    return f"▶️ <b>ТОП-{len(top)} УКРАЇНСЬКОГО YOUTUBE · {label}</b>\n" + "\n".join(items) + f"\n§RT:yt:{now:%G%V}"
+    return f"▶️ <b>ТОП-{len(top)} УКРАЇНСЬКОГО YOUTUBE · {label}</b>\n" + "\n".join(items) + "\n<i>Ще 10, улюблені й приховані канали, 📺 цікаві канали за темами — кнопкою «▶️ YouTube» у меню.</i>" + f"\n§RT:yt:{now:%G%V}"
 
 
 # ---------- погода (Open-Meteo, без ключа) ----------
@@ -6321,6 +6417,7 @@ def main() -> None:
                     _time.sleep(4)
             worker_req = dict(ex.get("req") or {})
             ex_promq = dict(ex.get("promq") or {})     # 🛍 Prom: списки товарів «усе в одного продавця»
+            st["yt_mute"], st["yt_fav"] = list(ex.get("yt_mute") or []), list(ex.get("yt_fav") or [])   # 🚫/⭐ канали YouTube
             worker_req["kino_used"] = ex.get("kino_used") or []
             taste_update(st, ex.get("likes") or [], ex.get("dislikes") or [])   # 👍/👎 з меню кіно
             subs = {str(k): list(v) for k, v in (ex.get("subs") or {}).items()}
@@ -6801,7 +6898,7 @@ def main() -> None:
              ("ранковий імпульс", lambda: impulse_refresh(st, now)), ("музика", lambda: music_refresh(st, now)),
              ("здоров'я", lambda: (health_refresh(st, now), kb_probe(st, now), cofid_import(st, now), cofid_translate(st, now))),
              ("ігри PS5", lambda: (games_refresh(st, now), ps_deals_refresh(st, now))), ("аудіокниги", lambda: audiobooks_refresh(st, now)),
-             ("кіномэтч", lambda: match_refresh(st, now)), ("пп-страви", lambda: recipes_refresh(st, now)), ("фантазія тижня", lambda: fantasy_refresh(st, now)), ("prom.ua", lambda: prom_top(st, now)), ("rozetka", lambda: rz_top(st, now))]
+             ("кіномэтч", lambda: match_refresh(st, now)), ("пп-страви", lambda: recipes_refresh(st, now)), ("фантазія тижня", lambda: fantasy_refresh(st, now)), ("prom.ua", lambda: prom_top(st, now)), ("youtube канали", lambda: yt_channels(st, now))]
     slot = (now.hour * 12 + now.minute // 5) % len(heavy)
     rc_turn = st.get("rc_need", True) and (now.minute // 5) % 2 == 0   # через запуск, щоб інші задачі не чекали
     forced = (st.get("force_heavy") or []) + (["пп-страви"] if rc_turn and "пп-страви" not in (st.get("force_heavy") or []) else [])

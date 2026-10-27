@@ -8,7 +8,7 @@ import urllib.request
 from datetime import datetime
 
 import check
-from check import PROM_CATS, TZ, err_text, http_json, _num, _tok, q_variants, mk_compact
+from check import PROM_CATS, TZ, err_text, http_json, _num, _tok, q_variants, mk_compact, quality_filter
 
 from playwright.sync_api import sync_playwright
 
@@ -156,11 +156,11 @@ def main() -> None:
         for title, q in PROM_CATS:                         # 🏆 топ у всіх категоріях (спільний список із Prom)
             if time.time() - t0 > 960:
                 break
-            offs = hl_search(page, q, ADULT_RX if title.startswith("🔞") else "", pages=1)
+            offs = quality_filter(hl_search(page, q, ADULT_RX if title.startswith("🔞") else "", pages=1), title)   # 🧹 без сміття
             for o in offs:
                 o["pop"] = o["n_off"] * 3 + o["rv"] * 5 + o["st"] * 20
                 o["q"] = bool(o["st"] >= 4.5 and o["rv"] >= 20)   # ✅ перевірені покупцями
-            offs.sort(key=lambda o: (not o["q"], -o["pop"], o["p"]))
+            offs.sort(key=lambda o: (not o["q"], -o.get("qs", 0), -o["pop"], o["p"]))
             res[title] = {"all": offs[:40]}
         br.close()
     n = sum(len(v["all"]) for v in res.values())
