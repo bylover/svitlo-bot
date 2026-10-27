@@ -106,16 +106,6 @@
   "https://medium.com/pequenos-insultos-%C3%A0-moral-conservadora/diz-que-aac38a093502?source=rss------sexuality-5"
  ],
  "kino_seen": [
-  "m1607127",
-  "m1368166",
-  "m398978",
-  "m530915",
-  "m466272",
-  "m359724",
-  "m1429",
-  "t71694",
-  "t106379",
-  "t46648",
   "m1393326",
   "m619730",
   "m872585",
@@ -705,9 +695,19 @@
   "m1016084",
   "m534780",
   "m153",
-  "m34070"
+  "m34070",
+  "m533991",
+  "m513434",
+  "m938614",
+  "m1194963",
+  "m1029281",
+  "m745881",
+  "m397243",
+  "m1043197",
+  "m282069",
+  "m13310"
  ],
- "gh_beat": "2026-10-27T22:50:47.023364+02:00",
+ "gh_beat": "2026-10-27T22:55:42.426520+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -718,11 +718,11 @@
   "groups": [
    "GPV4.1"
   ],
-  "updated": "22:32 27.10.2026",
+  "updated": "22:49 27.10.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-10-27T22:42:57.113005+02:00",
+  "checked": "2026-10-27T22:52:51.782928+02:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1564,14 +1564,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "27.10 22:52",
-   "ts": 1793134329,
+   "at": "27.10 22:56",
+   "ts": 1793134614,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "27.10 22:52",
-   "ts": 1793134329,
+   "at": "27.10 22:56",
+   "ts": 1793134614,
    "ok": true,
    "note": ""
   },
@@ -26771,10 +26771,22 @@
    88,
    77,
    "2026-10-27"
+  ],
+  "tt8108202": [
+   7.5,
+   75,
+   null,
+   "2026-10-27"
+  ],
+  "tt3289956": [
+   6.8,
+   86,
+   65,
+   "2026-10-27"
   ]
  },
  "pushed_h": {
-  "gs": "ca8f80f326be",
+  "gs": "2a847c8cbb0d",
   "quiz_pool.json": "31473d6acb2e",
   "fact.png": "8773c4c843a0",
   "sexed.json": "4efede1d8ea5",
@@ -26860,8 +26872,7 @@
  },
  "force_heavy": [
   "prom.ua",
-  "youtube канали",
-  "пп-страви"
+  "youtube канали"
  ],
  "rc_need": true,
  "games_month": "2026-10",
@@ -36437,6 +36448,12 @@
    {
     "id": "8886ac1359",
     "text": "🍿 <b>ПІДБІРКА КІНО · КОМЕДІЯ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Bratik-2024-10-27\">Братик</a></b> (2024)\nкомедія, драма · ⏱ 1 год 34 хв\n⭐ IMDb <b>7.3</b> · Ⓜ <b>78</b>\n<i>🎭 Izaac Wang, Джоан Чень, Shirley Chen</i>\n📝 Улітку перед старшою школою американський підліток тайванського походження долає труднощі в дружбі, коханні й сімейних стосунках і краще пізнає себе.\n▶️ <a href=\"https://youtu.be/e6gve8GtSuU\">Трейлер</a></blockquote>\n§KN:m1158915\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Buremnі-sіmnadcyat-2016-10-27\">Буремні сімнадцять</a></b> (2016)\nкомедія, драма · ⏱ 1 год 45 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>94%</b> · Ⓜ <b>77</b>\n<i>🎭 Гейлі Стайнфелд, Вуді Гаррельсон, Гейлі Лу Річардсон</i>\n📺 <a href=\"https://www.themoviedb.org/movie/376660-the-edge-of-seventeen/watch?locale=UA\">Netflix · за підпискою</a>\n📝 Для Надін життя в школі стає ще більш нестерпним, коли її краща подруга Кріста починає зустрічатися з її старшим братом.\n▶️ <a href=\"https://youtu.be/oPO5J8Ap578\">Трейлер</a></blockquote>\n§KN:m376660\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Doroga-do-NBA-2022-10-27\">Дорога до НБА</a></b> (2022)\nдрама, комедія · ⏱ 1 год 57 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>94%</b> · Ⓜ <b>68</b>\n<i>🎭 Адам Сендлер, Квін Латіфа, Juancho Hernangómez</i>\n📺 <a href=\"https://www.themoviedb.org/movie/705861-hustle/watch?locale=UA\">Netflix · за підпискою</a>\n📝 Баскетбольний менеджер-невдаха знаходить потенційну суперзірку в Іспанії та прагне довести, що разом вони за будь-яку ціну потраплять до НБА.\n▶️ <a href=\"https://youtu.be/Ag-HfXFEeco\">Трейлер</a></blockquote>\n§KN:m705861\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Dedicada-A-Mi-Ex-2019-10-27\">Dedicada A Mi Ex</a></b> (2019)\nдрама, комедія · ⏱ 1 год 34 хв\n⭐ IMDb <b>7.1</b>\n<i>🎭 Raúl Santana, Nataly Valencia, Carlos Alcántara</i>\n📝 The film tells the story of Ariel, a 21-year-old who decides to form a rock band to compete for a prize of ten thousand dollars in a musical band contest, this as a last option when trying to get money to save their…\n▶️ <a href=\"https://youtu.be/hU2DASqjvi4\">Трейлер</a></blockquote>\n§KN:m644479\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Zakusochna-2024-10-27\">Закусочна</a></b> (2024)\nкомедія, драма · ⏱ 1 год 52 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>82%</b> · Ⓜ <b>64</b>\n<i>🎭 Conor Sherry, Gabriel LaBelle, Міка Абдалла</i>\n📝 Небраска-Сіті, 1991 рік. Двоє найкращих друзів отримують можливість керувати закусочною біля басейну, що згодом стає ідеальним сценарієм для веселощів, особистих відкриттів та романтики.\n▶️ <a href=\"https://youtu.be/BdXFIKFPWoQ\">Трейлер</a></blockquote>\n§KN:m1037113\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Licarі-spravedlivostі-2020-10-27\">Лицарі справедливості</a></b> (2020)\nбойовик, комедія, драма · ⏱ 1 год 56 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>96%</b> · Ⓜ <b>81</b>\n<i>🎭 Мадс Міккельсен, Ніколай Лі Кос, Ларс Брюґманн</i>\n📝 Коли дружина Маркуса гине в залізничній катастрофі, це здається трагічною випадковістю. А якщо це ретельно сплановане вбивство? Військовий, божевільний математик і парочка ґіків об’єднуються, щоб з’ясувати, що…\n▶️ <a href=\"https://youtu.be/nee-Y-cGeZQ\">Трейлер</a></blockquote>\n§KN:m663870\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/BlekBerrі-2023-10-27\">БлекБеррі</a></b> (2023)\nкомедія, драма, історичний · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>97%</b> · Ⓜ <b>78</b>\n<i>🎭 Джей Барушель, Ґленн Говертон, Метт Джонсон</i>\n📝 Історія стрімкого злету та нищівного краху першого у світі смартфона BlackBerry.\n▶️ <a href=\"https://youtu.be/cXL_HDzBQsM\">Трейлер</a></blockquote>\n§KN:m1016084\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/अधधन-2018-10-27\">अंधाधुन</a></b> (2018)\nкримінал, детектив, трилер · ⏱ 2 год 19 хв\n⭐ IMDb <b>8.2</b> · 🍅 <b>100%</b>\n<i>🎭 Ayushmann Khurrana, Табу, Radhika Apte</i>\n📝 A series of mysterious events changes the life of a blind pianist who now must report a crime that was actually never witnessed by him.\n▶️ <a href=\"https://youtu.be/2iVYI99VGaw\">Трейлер</a></blockquote>\n§KN:m534780\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Trudnoshchі-perekladu-2003-10-27-2\">Труднощі перекладу</a></b> (2003)\nдрама, комедія, мелодрама · ⏱ 1 год 51 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>95%</b> · Ⓜ <b>91</b>\n<i>🎭 Білл Мюррей, Скарлетт Йоганссон, Джованні Рібізі</i>\n📝 Нещасна в шлюбі дружина фотографа. Нікому не потрібний актор. Дві загублені душі зустрічаються в Токіо і знаходять розраду одне в одному.\n▶️ <a href=\"https://youtu.be/1s4YQqnbnM8\">Трейлер</a></blockquote>\n§KN:m153\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Pіsnі-z-drugogo-poverhu-2000-10-27\">Пісні з другого поверху</a></b> (2000)\nдрама, комедія · ⏱ 1 год 39 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>88%</b> · Ⓜ <b>77</b>\n<i>🎭 Lars Nordh, Stefan Larsson, Bengt C.W. Carlsson</i>\n📝 Стрічка набуває актуальності в контексті роздумів про можливий Апокаліпсис, який, на думку багатьох, уже настав. У місті починають відбуватися неймовірні події: немолодий клерк божеволіє після безжального звільнення…\n▶️ <a href=\"https://youtu.be/X05M_G5mR_M\">Трейлер</a></blockquote>\n§KN:m34070"
+   }
+  ],
+  "horror": [
+   {
+    "id": "4b7a60ce07",
+    "text": "🍿 <b>ПІДБІРКА КІНО · ЖАХИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/सतर-2018-10-27\">स्त्री</a></b> (2018)\nжахи, комедія · ⏱ 2 год 08 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>75%</b>\n<i>🎭 Rajkummar Rao, श्रद्धा कपूर, Pankaj Tripathi</i>\n📝 Set in the town of Chanderi, Stree is based on the urban legend of Nale Ba that went viral in Karnataka in the 1990s, and features Shraddha Kapoor and Rajkummar Rao in pivotal roles.\n▶️ <a href=\"https://youtu.be/gzeaGcLLl_A\">Трейлер</a></blockquote>\n§KN:m533991\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/カメラを止めるな-2017-10-27\">カメラを止めるな！</a></b> (2017)\nкомедія, жахи, драма · ⏱ 1 год 36 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>100%</b> · Ⓜ <b>86</b>\n<i>🎭 Такаюкі Хамацу, 秋山ゆずき, 長屋和彰</i>\n📝 Real zombies arrive and terrorize the crew of a zombie film being shot in an abandoned warehouse, said to be the site of military experiments on humans.\n▶️ <a href=\"https://youtu.be/Du2XfUDfjN0\">Трейлер</a></blockquote>\n§KN:m513434\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Pіznіj-vechіr-z-diyavolom-2024-10-27-3\">Пізній вечір з дияволом</a></b> (2024)\nжахи · ⏱ 1 год 33 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>97%</b> · Ⓜ <b>72</b>\n<i>🎭 Девід Дастмалчян, Лора Ґордон, Ian Bliss</i>\n📝 У 1977 році популярний телеведучий Джек Делрой веде ток-шоу «Нічні сови», яке вже давно стало надійним супутником людей по всій країні, які страждають на безсоння. Через рік після трагічної смерті його дружини…\n▶️ <a href=\"https://youtu.be/YeKYfneOH3o\">Трейлер</a></blockquote>\n§KN:m938614\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/SHum-2025-10-27-2\">Шум</a></b> (2025)\nжахи, трилер · ⏱ 1 год 35 хв\n⭐ TMDB <b>6.7</b> · 🍅 <b>67%</b>\n<i>🎭 이선빈, Кім Мін Сок, 전익령</i>\n📝 Жінка з вадами слуху переслідується загадковими звуками, пов’язаними зі зникненням її сестри та появою зловісного духа. Це приводить до моторошної таємниці й веде до розкриття загадкової сутності.\n▶️ <a href=\"https://youtu.be/jEsfxmaBOv8\">Трейлер</a></blockquote>\n§KN:m1194963\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Pereslіduvach-2024-10-27\">Переслідувач</a></b> (2024)\nкримінал, трилер, жахи · ⏱ 1 год 37 хв · 🔞🔞 відвертість: висока\n⭐ IMDb <b>7.0</b> · 🍅 <b>96%</b> · Ⓜ <b>80</b>\n<i>🎭 Вілла Фіцджеральд, Кайл Ґаллнер, Madisen Beaty</i>\n📝 Усе почалося з роману. Хлопець і дівчина випадково зустрілися в барі. З кожним новим побаченням їхні стосунки ставали все більш нездоровими. Тепер він переслідує її через усе місто зі заплямованими кров’ю руками, але…\n▶️ <a href=\"https://youtu.be/ca2KxC0vORk\">Трейлер</a></blockquote>\n§KN:m1029281\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/รางทรง-2021-10-27\">ร่างทรง</a></b> (2021)\nжахи, детектив · ⏱ 2 год 11 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>83%</b>\n<i>🎭 นริลญา กุลมงคลเพชร, สวนีย์ อุทุมมา, ศิราณี ญาณกิตติกานต์</i>\n📝 A shaman's family learn that their goddess is supposedly controlling one of them. However, their lives take a frightening turn when they realise the goddess has nothing to do with the possession.\n▶️ <a href=\"https://youtu.be/wDtJ3M4arIc\">Трейлер</a></blockquote>\n§KN:m745881\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Demon-vseredinі-2016-10-27\">Демон всередині</a></b> (2016)\nжахи, детектив · ⏱ 1 год 26 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>86%</b> · Ⓜ <b>65</b>\n<i>🎭 Еміль Гірш, Браян Кокс, Офелія Ловібонд</i>\n📝 Трунар маленького містечка отримує тіло жертви таємничого вбивства - красивої і молодої Джейн Доу. Він намагається з'ясувати, хто вона і як померла, виявляючи все більш вигадливі підказки, які ведуть до жахливих…\n▶️ <a href=\"https://youtu.be/lkO6c_X6n0o\">Трейлер</a></blockquote>\n§KN:m397243\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Monstr-pіd-lіzhkom-2025-10-27\">Монстр під ліжком</a></b> (2025)\nфентезі, жахи · ⏱ 1 год 46 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>85%</b> · Ⓜ <b>73</b>\n<i>🎭 Мадс Міккельсен, Софі Слоун, Шейла Атім</i>\n📝 8-річна дівчинка просить свого сусіда, найманого вбивцю, позбутися монстра, що ховається під ліжком і, як вона думає, з’їв її батьків. Кілер береться до справи й стає на захист своєї юної замовниці, тепер він…\n▶️ <a href=\"https://youtu.be/ZFy9FDauoC0\">Трейлер</a></blockquote>\n§KN:m1043197\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Parazit-CHastina-1-2014-10-27-2\">Паразит: Частина 1</a></b> (2014)\nфантастика, жахи, бойовик · ⏱ 1 год 49 хв\n⭐ IMDb <b>6.8</b>\n<i>🎭 Шьота Сометані, Садаво Абе, Ері Фукацу</i>\n📝 Ізумі Шін’ічі - найзвичайніший підліток, який навчається в старшій школі. Але одного разу його тіло захоплює стороння істота і встановлює над ним контроль. Життя Ізумі тепер більше нагадує кошмар з постійною…\n▶️ <a href=\"https://youtu.be/dcVuEbnq-8Y\">Трейлер</a></blockquote>\n§KN:m282069\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Vpusti-mene-2008-10-27\">Впусти мене</a></b> (2008)\nжахи, драма · ⏱ 1 год 55 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>98%</b> · Ⓜ <b>82</b>\n<i>🎭 Kåre Hedebrant, Ліна Леандерссон, Per Ragnar</i>\n📝 Дванадцятирічний Оскар живе у невеликому селі недалеко від Стокгольма. Вдень він піддається глузуванням і терпляче зносить принизливі стусани і ляпаси від однокласників, зате потім Оскар мріє про помсту.  Одного разу…\n▶️ <a href=\"https://youtu.be/o2LywKbT5oM\">Трейлер</a></blockquote>\n§KN:m13310"
    }
   ]
  },
