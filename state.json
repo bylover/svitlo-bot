@@ -107,34 +107,6 @@
   "https://medium.com/@alanlevincoaching/physical-intimacy-on-the-fourth-date-should-it-be-happening-by-now-5f304de695e3?source=rss------intimacy-5"
  ],
  "kino_seen": [
-  "m842924",
-  "m674324",
-  "t276161",
-  "m395834",
-  "m1613798",
-  "m937287",
-  "m1375646",
-  "m977942",
-  "m76600",
-  "m77016",
-  "t108978",
-  "t91239",
-  "t8358",
-  "t120911",
-  "t110492",
-  "m576845",
-  "m1340206",
-  "m1317288",
-  "m575264",
-  "m1291608",
-  "m639988",
-  "t72750",
-  "t66980",
-  "m1057001",
-  "m488623",
-  "m1330021",
-  "m429200",
-  "m614917",
   "m329865",
   "m9316",
   "t87917",
@@ -706,9 +678,37 @@
   "m974931",
   "m489430",
   "m9533",
-  "m10842"
+  "m10842",
+  "m198277",
+  "m792307",
+  "m23168",
+  "t54344",
+  "t81723",
+  "t96580",
+  "m915935",
+  "m697843",
+  "m617653",
+  "m812583",
+  "t299167",
+  "t90282",
+  "t46786",
+  "m1054867",
+  "m804095",
+  "m290098",
+  "m1151031",
+  "m4347",
+  "m765245",
+  "m387426",
+  "m522402",
+  "m1154538",
+  "m1263532",
+  "m466532",
+  "m1172265",
+  "m447743",
+  "m55420",
+  "m198663"
  ],
- "gh_beat": "2026-10-28T18:20:51.052873+02:00",
+ "gh_beat": "2026-10-28T18:25:46.135738+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -719,11 +719,11 @@
   "groups": [
    "GPV4.1"
   ],
-  "updated": "18:06 28.10.2026",
+  "updated": "18:19 28.10.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-10-28T18:12:55.034883+02:00",
+  "checked": "2026-10-28T18:22:56.692905+02:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": true
@@ -1633,14 +1633,14 @@
    "note": ""
   },
   "🛍 Prom.ua": {
-   "at": "28.10 09:35",
-   "ts": 1793172925,
+   "at": "28.10 18:27",
+   "ts": 1793204858,
    "ok": true,
    "note": ""
   },
   "prom.ua": {
-   "at": "28.10 17:15",
-   "ts": 1793200550,
+   "at": "28.10 18:27",
+   "ts": 1793204858,
    "ok": true,
    "note": ""
   },
@@ -27182,10 +27182,28 @@
    81,
    43,
    "2026-10-28"
+  ],
+  "tt0338013": [
+   8.3,
+   93,
+   89,
+   "2026-10-28"
+  ],
+  "tt1798709": [
+   7.9,
+   95,
+   91,
+   "2026-10-28"
+  ],
+  "tt0259711": [
+   6.9,
+   41,
+   45,
+   "2026-10-28"
   ]
  },
  "pushed_h": {
-  "gs": "7b0bf006fdf5",
+  "gs": "1cc42ddef350",
   "quiz_pool.json": "31473d6acb2e",
   "fact.png": "ea172e7c26eb",
   "sexed.json": "4efede1d8ea5",
@@ -27270,7 +27288,6 @@
   "sx/tech_shallowing.png": "0f0dd9f56c27"
  },
  "force_heavy": [
-  "prom.ua",
   "youtube канали"
  ],
  "rc_need": true,
@@ -36874,7 +36891,7 @@
   "160603556": "Women in Love"
  },
  "prom_day": "2026-10-28",
- "prom_force": true,
+ "prom_force": false,
  "games_v": 2,
  "kino_last": {
   "text": "🍿 <b>КІНО НА ВИХІДНІ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Nevidimij-gіst-2017-10-23\">Невидимий гість</a></b> (2017) · ❤️ за вашим смаком\nдрама, детектив, трилер · ⏱ 1 год 47 хв\n⭐ IMDb <b>8.0</b> · 🍅 <b>67%</b>\n<i>🎭 Маріо Касас, Ana Wagener, Jose Coronado</i>\n📺 <a href=\"https://www.themoviedb.org/movie/411088-contratiempo/watch?locale=UA\">Apple TV Store</a>\n📝 Молодого бізнесмена Адріана Доріа звинувачують у вбивстві коханки, і він вирішує скористатися послугами Вірджинії Гудман, кращого в країні фахівця щодо виходу з найскладніших ситуацій. Адріан утримується під домашнім…\n▶️ <a href=\"https://youtu.be/epCg2RbyF80\">Трейлер</a></blockquote>\n§KN:m411088\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Neskorimij-2022-10-23\">Нескоримий</a></b> (2022) · ❤️ за вашим смаком\nбойовик, військовий, трилер · ⏱ 1 год 31 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>94%</b> · Ⓜ <b>70</b>\n<i>🎭 Йорма Томміла, Aksel Hennie, Jack Doolan</i>\n📝 Фінляндія, 1944 рік. Колишній солдат знаходить у Лапландії золоту жилу і вирушає до міста продати золото, але на шляху йому доводиться вступити в конфлікт з оберштурмфюрером СС.\n▶️ <a href=\"https://youtu.be/d2k4QAItiSA\">Трейлер</a></blockquote>\n§KN:m840326\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Zoryanі-vіjni-Epіzod-8--Ostannі-dzhedai-2017-10-23\">Зоряні війни: Епізод 8 — Останні джедаї</a></b> (2017)\nпригоди, бойовик, фантастика · ⏱ 2 год 32 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>91%</b> · Ⓜ <b>84</b>\n<i>🎭 Марк Гемілл, Керрі Фішер, Адам Драйвер</i>\n📺 <a href=\"https://www.themoviedb.org/movie/181808-star-wars-the-last-jedi/watch?locale=UA\">Apple TV Store, Rakuten TV</a>\n📝 Баланс Сили порушено, і міжгалактичний конфлікт набирає нових обертів. На Рей, Фінна та дроїда БіБі-8 чекає жорстоке протистояння…\n▶️ <a href=\"https://youtu.be/SEGYUIDyV4o\">Трейлер</a></blockquote>\n§KN:m181808\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Superniki-2024-10-23\">Суперники</a></b> (2024)\nдрама, мелодрама · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>88%</b> · Ⓜ <b>82</b>\n<i>🎭 Зендея, Майк Файст, Джош О'Коннор</i>\n📝 Таші Дункан, колись неймовірно талановита тенісистка, стала тренеркою та силою, яка ніколи не вибачається за свою гру на корті та поза ним. Чоловік Таші – теж тенісист – лідирує за серією програшів, але вона…\n▶️ <a href=\"https://youtu.be/6UG-nqXQxXE\">Трейлер</a></blockquote>\n§KN:m937287\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/SHans-na-shchastya-2026-10-23\">Шанс на щастя</a></b> (2026)\nмелодрама, драма · ⏱ 1 год 52 хв\n⭐ TMDB <b>7.7</b>\n<i>🎭 Naomi Baker, Jay Reeves, Tamberla Perry</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1458857-doing-life/watch?locale=UA\">Netflix</a>\n📝 Самотня мати й ув’язнений чоловік установлюють неочікуваний зв’язок через щирі листи й відкривають шлях до спокути, надії та кохання попри всі перешкоди.\n▶️ <a href=\"https://youtu.be/HjRaNiTvAis\">Трейлер</a></blockquote>\n§KN:m1458857\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Vantazh-2026-10-23\">Вантаж</a></b> (2026)\nтрилер, пригоди, історичний · ⏱ 1 год 52 хв\n⭐ TMDB <b>6.7</b>\n<i>🎭 Ітан Гоук, Расселл Кроу, Julia Jones</i>\n📝 У 1933 році в Орегоні Семюеля Мерфі розлучають із донькою та відправляють до жорстокого трудового табору. Начальник табору Кленсі спокушає його достроковим звільненням, якщо він переправить золото через смертельно…\n▶️ <a href=\"https://youtu.be/7YpuMymmiJ8\">Трейлер</a></blockquote>\n§KN:m1433583\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Mіst-shpigunіv-2015-10-23\">Міст шпигунів</a></b> (2015)\nтрилер, драма · ⏱ 2 год 21 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>91%</b> · Ⓜ <b>81</b>\n<i>🎭 Том Генкс, Марк Райленс, Емі Раян</i>\n📺 <a href=\"https://www.themoviedb.org/movie/296098-bridge-of-spies/watch?locale=UA\">Apple TV Store</a>\n📝 Сюжет картини заснований на реальних подіях.  Бруклінський адвокат Джеймса Донован опиняється в епіцентрі холодної війни, коли ЦРУ відправляє його на практично неможливе завдання — домовитися про звільнення…\n▶️ <a href=\"https://youtu.be/02XjJ2800cQ\">Трейлер</a></blockquote>\n§KN:m296098\n§§\n<blockquote>📺 <b>8. <a href=\"https://telegra.ph/Slіpota-2019-10-23\">Сліпота</a></b> (2019)\nдрама, науково фантастичний, екшн і пригоди · 📺 серіал · 3 сез.\n⭐ IMDb <b>7.6</b>\n<i>🎭 Джейсон Момоа, Sylvia Hoeks, Hera Hilmar</i>\n📺 <a href=\"https://www.themoviedb.org/tv/80752-see/watch?locale=UA\">Apple TV</a>\n📝 Події розгортаються в далекому майбутньому. Через страшну катастрофу, людська раса повність втратила зір. За багато сотень років суспільство зуміло знайти нові способи виживання, взаємодії в соціумі, інженерії,…\n▶️ <a href=\"https://youtu.be/03RAKJipMeM\">Трейлер</a></blockquote>\n§KN:t80752\n§§\n<blockquote>📺 <b>9. <a href=\"https://telegra.ph/Novij-Amsterdam-2018-10-23-2\">Новий Амстердам</a></b> (2018)\nдрама · 📺 серіал · 5 сез.\n⭐ IMDb <b>7.9</b>\n<i>🎭 Раян Егголд, Джанет Монтґомері, Jocko Sims</i>\n📺 <a href=\"https://www.themoviedb.org/tv/80350-new-amsterdam/watch?locale=UA\">Netflix</a>\n📝 Телесеріал розповідає про доктора Макса Ґудвіна, який стає головним лікарем найстарішої державної лікарні США «Новий Амстердам». Для забезпечення кращої медичної допомоги пацієнтам, він розв'язує війну з бюрократією,…\n▶️ <a href=\"https://youtu.be/McdFK7DIzoo\">Трейлер</a></blockquote>\n§KN:t80350\n§§\n<blockquote>📺 <b>10. <a href=\"https://telegra.ph/Medіum-2005-10-23\">Медіум</a></b> (2005)\nкримінал, драма, детектив · 📺 серіал · 7 сез.\n⭐ IMDb <b>7.2</b>\n<i>🎭 Патриція Аркетт, Джейк Вебер, Міґель Сандовал</i>\n📝 Звичайна домогосподарка, мати трьох дітей володіє унікальним даром - бачить уві сні реальні вбивства. Жінка-медіум одночасно допомагає поліції у затриманні злочинців і намагається не зруйнувати свою сім’ю.</blockquote>\n§KN:t36",
@@ -36885,7 +36902,7 @@
  "rz_force": true,
  "morning_sent": "2026-10-28T11:00:44.416362+02:00",
  "prom_v": 8,
- "prom_last_n": 1277,
+ "prom_last_n": 1263,
  "para_i": 2,
  "para_titles": [
   "Експеримент із позою «Сяюча троянда»",
@@ -36895,7 +36912,7 @@
  "para_sent": "2026-10-28",
  "fan_wk": "2026-44",
  "weather": "2026-10-27",
- "prom_i": 25,
+ "prom_i": 31,
  "yt_week": "2026-44",
  "smm_week": "2026-44",
  "yt_mute": [],
@@ -36941,6 +36958,12 @@
    {
     "id": "39452d70c9",
     "text": "🍿 <b>ПІДБІРКА КІНО · ЖАХИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Shin-Gojira-2016-10-28-2\">Shin Gojira</a></b> (2016)\nбойовик, фантастика, жахи · ⏱ 2 год 00 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>87%</b> · Ⓜ <b>66</b>\n<i>🎭 Хірокі Хасеґава, Такеноучі Ютака, Сатомі Ішіхара</i>\n📝 Загадкова аварія в тунелях під мостом-шосе Токіо Бей Аква Лайн ставить на вуха усі аварійні підрозділи мегаполісу. Шеф МНС Японії скликає всіх, щоб знайти причину аварії, і можливі варіанти вирішення проблеми, що…\n▶️ <a href=\"https://youtu.be/fQKyyhhNxGU\">Трейлер</a></blockquote>\n§KN:m315011\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Ekstaz-2018-10-28-2\">Екстаз</a></b> (2018)\nдрама, жахи, музика · ⏱ 1 год 37 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>68%</b> · Ⓜ <b>69</b>\n<i>🎭 Софія Бутелла, Romain Guillermic, Сухейла Якуб</i>\n📝 Народження і смерть — надзвичайний досвід. Життя — швидкоплинне задоволення.\n▶️ <a href=\"https://youtu.be/Hi69nL_VrTE\">Трейлер</a></blockquote>\n§KN:m507076\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Mene-vіd-sebe-verne-2022-10-28-2\">Мене від себе верне</a></b> (2022)\nкомедія, жахи · ⏱ 1 год 35 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>88%</b> · Ⓜ <b>71</b>\n<i>🎭 Крістін Куят Торп, Eirik Sæther, Fanny Vaager</i>\n📝 Сіґне і Томас перебувають у нездорових, конкурентних стосунках, які набувають порочного характеру, коли Томас раптово стає відомим як сучасний художник. У відповідь Сіґне робить відчайдушну спробу відновити свій…\n▶️ <a href=\"https://youtu.be/CCrSOTX8jKg\">Трейлер</a></blockquote>\n§KN:m788734\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Tumbad-2018-10-28\">Тумбад</a></b> (2018)\nфентезі, жахи · ⏱ 1 год 53 хв\n⭐ IMDb <b>8.2</b> · 🍅 <b>87%</b>\n<i>🎭 Sohum Shah, Mohammad Samad, Harsh K.</i>\n📝 India, 1918. On the outskirts of Tumbbad, a cursed village where it always rains, Vinayak, along with his mother and his brother, care of a mysterious old woman who keeps the secret of an ancestral treasure that…\n▶️ <a href=\"https://youtu.be/ZjuhALyNgss\">Трейлер</a></blockquote>\n§KN:m538858\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/SHlyub-іz-prividom-2023-10-28-2\">Шлюб із привидом</a></b> (2023)\nкомедія, бойовик, жахи · ⏱ 2 год 09 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>70%</b>\n<i>🎭 許光漢, 林柏宏, 王淨</i>\n📺 <a href=\"https://www.themoviedb.org/movie/983883/watch?locale=UA\">Netflix · за підпискою</a>\n📝 Поліцейський Мінхань знаходить дивний конверт, який змінює його життя: тепер він одружений із привидом, і вони повинні разом розкрити справу.\n▶️ <a href=\"https://youtu.be/BCFyt7GkOmY\">Трейлер</a></blockquote>\n§KN:m983883\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Sire-2017-10-28-2\">Сире</a></b> (2017)\nжахи, драма · ⏱ 1 год 39 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>92%</b> · Ⓜ <b>81</b>\n<i>🎭 Ґеранс Марільє, Елла Рамф, Rabah Nait Oufella</i>\n📝 В одній ветеринарній школі є традиція - проводити ритуал поїдання сирого м'яса. Молода вегетаріанка, пересиливши себе, проходить це випробування і розуміє, що не може чинити опір зростаючому бажанням їсти сире м'ясо.\n▶️ <a href=\"https://youtu.be/cdDZpQGsM5U\">Трейлер</a></blockquote>\n§KN:m393519\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Absolyutnij-vbivcya-2023-10-28\">Абсолютний вбивця</a></b> (2023)\nжахи, комедія, фантастика · ⏱ 1 год 44 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>85%</b> · Ⓜ <b>62</b>\n<i>🎭 Кірнан Шипка, Олівія Голт, Troy Leigh-Anne Johnson</i>\n📝 Якось Джеймі дізнається, що в 80-х роках її маму Пем переслідував серійний вбивця на прізвисько Sweet Sіxteen Kіller — маніяк у масці вбив багато дівчат у минулому. І коли Джеймі випадково вирушає у минуле — в 1987…\n▶️ <a href=\"https://youtu.be/5vYipYSDhtQ\">Трейлер</a></blockquote>\n§KN:m974931\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Zacіpenіlі-vіd-strahu-2018-10-28\">Заціпенілі від страху</a></b> (2018)\nжахи · ⏱ 1 год 28 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>63%</b>\n<i>🎭 Maxi Ghione, Norberto Gonzalo, Elvira Onetto</i>\n📝 Моторошні події сколихнули передмістя Буенос-Айреса. Невідома і невидима сила по-звірячому вбиває жінку на очах її чоловіка. Вночі біля ліжка його сусіда з’являється жахливий монстр. А хлопчик з будинку навпроти, що…\n▶️ <a href=\"https://youtu.be/tVTsw_Dvwc8\">Трейлер</a></blockquote>\n§KN:m489430\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/CHervonij-drakon-2002-10-28-2\">Червоний дракон</a></b> (2002)\nкримінал, трилер, жахи · ⏱ 2 год 04 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>68%</b> · Ⓜ <b>60</b>\n<i>🎭 Едвард Нортон, Ентоні Гопкінс, Рейф Файнз</i>\n📝 Події цієї стрічки розгортаються до появи Клариси Старлінґ. Ми знайомимося з людиною, яка спіймала Ганнібала Лектора, — спеціальним агентом ФБР Віллом Ґремом. Після арешту Лектора, який ледве не вартував Ґрему життя,…\n▶️ <a href=\"https://youtu.be/zLcI8OFyNUo\">Трейлер</a></blockquote>\n§KN:m9533\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/奇妙なサーカス-2005-10-28\">奇妙なサーカス</a></b> (2005)\nдетектив, жахи, драма · ⏱ 1 год 48 хв\n⭐ IMDb <b>6.9</b>\n<i>🎭 桑名里瑛, Масумі Міядзакі, Сейко Івайдо</i>\n📝 The erotic novelist Taeko is writing a morbid story of a family destroyed by incest, murder and abuse. Her assistant, Yuji, sets on a mission to uncover the reality of this story, but the reality might be too much to…\n▶️ <a href=\"https://youtu.be/728UDCNk964\">Трейлер</a></blockquote>\n§KN:m10842"
+   }
+  ],
+  "scifi": [
+   {
+    "id": "af52e6ec29",
+    "text": "🍿 <b>ПІДБІРКА КІНО · ФАНТАСТИКА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Lebedina-pіsnya-2021-10-28-2\">Лебедина пісня</a></b> (2021)\nдрама, фантастика · ⏱ 1 год 52 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>80%</b> · Ⓜ <b>66</b>\n<i>🎭 Магершала Алі, Наомі Гарріс, Аквафіна</i>\n📝 Історія про кохання, втрату та самопожертву з Магершалою Алі в головній ролі. Дізнавшись про невиліковну хворобу, Кемерон Тернер погоджується на експериментальне лікування, щоб захистити від горя свою родину.\n▶️ <a href=\"https://youtu.be/LxftqrrlSqc\">Трейлер</a></blockquote>\n§KN:m765245\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Okcha-2017-10-28\">Окча</a></b> (2017)\nпригоди, драма, фантастика · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>87%</b> · Ⓜ <b>75</b>\n<i>🎭 안서현, Тільда Свінтон, Пол Дейно</i>\n📺 <a href=\"https://www.themoviedb.org/movie/387426-okja/watch?locale=UA\">Netflix · за підпискою</a>\n📝 Протягом десяти років маленька Міджа мешкала в горах Південної Кореї разом зі своїм другом — великим і трохи сором'язливим монстром на ім'я Окча. Одного дня могутня міжнародна компанія, контрольована однією сім'єю,…\n▶️ <a href=\"https://youtu.be/8MWwXfzTcow\">Трейлер</a></blockquote>\n§KN:m387426\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Fіnch-2021-10-28\">Фінч</a></b> (2021)\nфантастика, драма, пригоди · ⏱ 1 год 55 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>74%</b> · Ⓜ <b>57</b>\n<i>🎭 Том Генкс, Калеб Лендрі Джонс, Oscar Avila</i>\n📝 Остання людина на Землі — талановитий винахідник Фінч — доживає лічені дні. Він створює високотехнологічного робота, щоб було кому подбати про його собаку. Перед творцем стоїть найважче із завдань — навчити машину…\n▶️ <a href=\"https://youtu.be/-0bYWnP3jH4\">Трейлер</a></blockquote>\n§KN:m522402\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Nirvanna-the-Band-the-Show-the-Movie-2026-10-28\">Nirvanna the Band the Show the Movie</a></b> (2026)\nкомедія, фантастика, пригоди · ⏱ 1 год 40 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>95%</b> · Ⓜ <b>80</b>\n<i>🎭 Метт Джонсон, Jay McCarrol, Ben Petrie</i>\n📝 When their plan to book a show at the Rivoli goes horribly wrong, Matt and Jay accidentally travel back to the year 2008.\n▶️ <a href=\"https://youtu.be/y2K9ccMREOI\">Трейлер</a></blockquote>\n§KN:m1154538\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Corrida-dos-Bichos-2026-10-28\">Corrida dos Bichos</a></b> (2026)\nбойовик, фантастика, трилер · ⏱ 2 год 04 хв\n⭐ TMDB <b>6.9</b>\n<i>🎭 Matheus Abreu, Родріґо Санторо, Isis Valverde</i>\n📝 In future Rio de Janeiro, a young leader of the resistance must enter a deadly parkour-inspired competition in order to save his sister's life.\n▶️ <a href=\"https://youtu.be/JVVqUrIp05U\">Трейлер</a></blockquote>\n§KN:m1263532\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Clara-2018-10-28\">Clara</a></b> (2018)\nфантастика, драма, мелодрама · ⏱ 1 год 46 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>56%</b> · Ⓜ <b>43</b>\n<i>🎭 Patrick J. Adams, Troian Bellisario, Kristen Hager</i>\n📝 An astronomer becomes obsessed with searching the cosmos for signs of life beyond Earth which leads to a shocking discovery.\n▶️ <a href=\"https://youtu.be/7eIbm4cfA8M\">Трейлер</a></blockquote>\n§KN:m466532\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Blakitna-stezhka-2025-10-28\">Блакитна стежка</a></b> (2025)\nдрама, пригоди, фантастика · ⏱ 1 год 26 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>98%</b> · Ⓜ <b>78</b>\n<i>🎭 Деніз Вейнберґ, Родріґо Санторо, Miriam Socarrás</i>\n📝 Бразилія, недалеке майбутнє. Уряд переселяє літніх людей до ізольованих колоній, щоб молоде покоління могло зосередитися на продуктивності та розвитку. Тереза, якій майже 80 років, вирішує кинути виклик системі.…\n▶️ <a href=\"https://youtu.be/LkhPnTEEqRc\">Трейлер</a></blockquote>\n§KN:m1172265\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/いぬやしき-2018-10-28\">いぬやしき</a></b> (2018)\nбойовик, пригоди, фантастика · ⏱ 2 год 07 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>100%</b>\n<i>🎭 Норітаке Кінаші, Такеру Сато, Каната Хонґо</i>\n📝 A middle-aged office worker encounters aliens and is gifted with alien technology and limitless powers.</blockquote>\n§KN:m447743\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Іnsha-Zemlya-2011-10-28\">Інша Земля</a></b> (2011)\nдрама, фантастика · ⏱ 1 год 32 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>66%</b> · Ⓜ <b>66</b>\n<i>🎭 Бріт Марлінг, William Mapother, Matthew-Lee Erlbach</i>\n📝 Науково-фантастична драма про трагічний перетин життів студентки, щойно прийнятої до астрофізичної програми Массачусетського технологічного інституту, та геніального композитора, що досяг вершини своєї професії й…\n▶️ <a href=\"https://youtu.be/EpTy1EvMqqI\">Трейлер</a></blockquote>\n§KN:m55420\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Toj-shcho-bіzhit-labіrintom-2014-10-28\">Той, що біжить лабіринтом</a></b> (2014)\nбойовик, детектив, фантастика · ⏱ 1 год 53 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>66%</b> · Ⓜ <b>57</b>\n<i>🎭 Ділан О'Браєн, Кая Скоделаріо, Томас Броді-Санґстер</i>\n📝 Головний герой – підліток Томас, який прокидається у ліфті, але не пам’ятає нічого крім свого імені. Він опиняється серед 60 підлітків, що навчилися виживати у замкненому просторі. Раз на 30 днів прибуває новий…\n▶️ <a href=\"https://youtu.be/0wJJXZ2oTXI\">Трейлер</a></blockquote>\n§KN:m198663"
    }
   ]
  },
