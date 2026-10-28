@@ -708,7 +708,7 @@
   "t89393",
   "t39793"
  ],
- "gh_beat": "2026-10-28T19:55:44.034482+02:00",
+ "gh_beat": "2026-10-28T20:00:43.950342+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -738,7 +738,7 @@
   "сайт ДТЕК": false
  },
  "fact": {
-  "last": 2624,
+  "last": 2625,
   "events": [
    [
     "2026-10-26T21:45:06+02:00",
@@ -774,13 +774,13 @@
    ]
   ]
  },
- "fact_png": "2026-10-28 19|8|2026-10-28T17:13:05+02:00",
+ "fact_png": "2026-10-28 20|8|2026-10-28T17:13:05+02:00",
  "fact_day": {
   "total": "6 год 50 хв",
   "list": [
-   "19:10–21:08 · 1 год 58 хв",
+   "20:00–21:08 · 1 год 8 хв",
    "09:41–12:35 · 2 год 54 хв",
-   "17:13–19:10 · 1 год 58 хв"
+   "17:13–20:00 · 2 год 48 хв"
   ]
  },
  "mo_sent": {
@@ -809,7 +809,13 @@
   "28.10 00:03 Завтра 2026-10-29 WaitingForSchedule: без відключень"
  ],
  "week_fp": "{\"1\": [], \"2\": [], \"3\": [], \"4\": [], \"5\": [], \"6\": [], \"7\": []}",
- "we_sent": {},
+ "we_sent": {
+  "368433217": "2026-10-28",
+  "396425365": "2026-10-28",
+  "590261825": "2026-10-28",
+  "936688574": "2026-10-28",
+  "8283670046": "2026-10-28"
+ },
  "tgph": "8d020e91ef2b6894855e405f8973a51da385fca8e1cfd990c9e41c2a32c2",
  "yt_try": "2026-10-22 16",
  "yt_seen": [
@@ -1533,14 +1539,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "28.10 19:52",
-   "ts": 1793209928,
+   "at": "28.10 20:02",
+   "ts": 1793210560,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "28.10 19:52",
-   "ts": 1793209928,
+   "at": "28.10 20:02",
+   "ts": 1793210560,
    "ok": true,
    "note": ""
   },
@@ -36947,7 +36953,7 @@
  "para_bag": [],
  "para_sent": "2026-10-28",
  "fan_wk": "2026-44",
- "weather": "2026-10-27",
+ "weather": "2026-10-28",
  "prom_i": 31,
  "yt_week": "2026-44",
  "smm_week": "2026-44",
@@ -37095,5 +37101,6 @@
   "kind": "experience",
   "src": "Medium"
  },
- "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 21.10–28.10\n<blockquote>🆕 <b>1. Instagram тестує довгі горизонтальні відео до 90 хвилин</b>\nInstagram запустив тестування відеоформату тривалістю до 90 хвилин із підтримкою горизонтальної орієнтації, кидаючи виклик YouTube та намагаючись залучити подкастерів.\n💡 Адаптуйте свої довгі інтерв'ю чи подкасти під новий формат для тестування додаткового охоплення на платформі.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxPV2tjME05bl94V2xfQS1yTWlBNWdQSUQ0M21HQm5fQl9MenFEQ3BkRFRjRngwcHc2MWdvQzVmLThXTFZDNGtEcWZFSXhUZFJTWWlySExJcS02VXZhU2h2LWlHMGpVUzMwOTlhRnZxY3JiQWVYSGZuT05CaG45QnBiSXlVLXQ0QzNmbnctc3JR0gGTAUFVX3lxTE1yVnF4TEJMdHg4VWJIOUd1VWNNay1JS1pLb21Eb0pBT0JucG5oNEgtd25aOXFId1BPclZURmMwTDZrQmdsRkx4Vm1oYWc5ZDV2RXZwbWhTRGp1OUMxNnd0bTREYmRNX252c0QwdEUxVHEwajQzWDJaNWdmLUt0TENfVWVoMUJYeF92aHVLSHNkQVV4VQ?oc=5\">РБК-Україна</a></blockquote>\n<blockquote>🎯 <b>2. Детальна статистика ефективності креативів у Meta Ads</b>\nMeta додала розширені дані про ефективність окремих рекламних креативів, що дозволяє таргетологам точніше оцінювати вклад кожного елемента.\n💡 Використовуйте нові метрики для детального аналізу візуалів перед масштабуванням рекламних кампаній.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-adds-individual-performance-data-for-ad-creative/872981/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>3. Pinterest запускає рішення для програмік-закупівель</b>\nPinterest представив новий інструмент програмік-закупівлі для медіабайєрів, спрощуючи процес розміщення реклами на платформі.\n💡 Інтегруйте програмік-можливості Pinterest у свої медійні кампанії для охоплення аудиторії з високою купівельною інтенцією.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-introduces-new-programmatic-buying-solution/872826/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>4. LinkedIn презентував хаб аналітичних даних</b>\nLinkedIn запустив новий інсайт-хаб, який надає маркетологам глибшу аналітику щодо трендів на платформі та поведінки професійної аудиторії.\n💡 Звіряйтеся з даними хабу під час побудови B2B-стратегій для створення актуального контенту.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-launches-data-insights-hub/872972/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. YouTube додає підписки на мікродрами</b>\nYouTube впроваджує новий формат монетизації та перегляду — підписки на короткі серіали (мікродрами), що набирають популярності.\n💡 Стежте за трендом мікродрам та адаптуйте короткий форматові сторітелінг під вертикальні і горизонтальні платформи.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-microdrama-subscriptions/872982/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. LinkedIn тестує спрощений інтерфейс</b>\nПлатформа почала тестування оновленого та спрощеного користувацького інтерфейсу для покращення навігації.\n💡 Враховуйте зміни в дизайні при створенні візуального контенту та оформленні бізнес-сторінок.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-tests-simplified-ui/872969/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>7. Google випустив нові інструменти Gemini для малого бізнесу</b>\nGoogle презентував оновлений набір функцій на базі штучного інтелекту Gemini, розроблений спеціально для оптимізації завдань малого бізнесу.\n💡 Використовуйте нові можливості ШІ для швидкого створення рутинного маркетингового контенту.\n🔗 <a href=\"https://blog.google/innovation-and-ai/products/gemini-app/new-tools-small-business-owners/\">The Keyword (Google)</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202644\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Зміни контролю плейсментів у Meta</b> · Jon Loomer\nMeta офіційно підтвердила поетапне скасування контролю плейсментів на рівні групи оголошень. Тепер рекламодавці не зможуть вручну видаляти окремі платформи чи розділяти мобільні та десктопні пристрої.\n💡 Переходьте на автоматизовані плейсменти та довіртеся алгоритмам Meta у розподілі бюджету між платформами.\n<a href=\"https://www.jonloomer.com/meta-placement-control-changes/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Нові формати реклами у Meta: Super Burst та First Impression</b> · Jon Loomer\nMeta представила нові рекламні інструменти, зокрема Ads Super Burst для бронювання часових вікон з категоріальною ексклюзивністю та First Impression Ads для викупу першої позиції у стрічці новин за день.\n💡 Використовуйте Ads Super Burst через Reach Planner для масштабних запусків продуктів чи подій, щоб повністю заблокувати конкурентів у своїй категорії на час кампанії.\n<a href=\"https://www.jonloomer.com/qvt/ads-super-burst-first-impression-ads-aggregated-view-time/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Стратегія для Instagram Reels</b> · Hootsuite\nInstagram Reels залишаються найефективнішим форматом для органічного охоплення завдяки пріоритетності часу перегляду, поширень та збережень. Алгоритм найбільше цінує здатність утримати увагу глядача в перші секунди.\n💡 Робіть потужний гачок у перші 1-2 секунди відео та комбінуйте тренди з вічнозеленим контентом — туторіалами та демонстраціями продукту.\n<a href=\"https://blog.hootsuite.com/instagram-reels/\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Корисні функції Instagram для маркетологів</b> · Hootsuite\nОгляд нових інструментів Instagram включає вбудований додаток для редагування відео Edits, триваліші Reels, налаштовувані сітки профілю та нові метрики утримання аудиторії.\n💡 Тестуйте функцію trial Reels та аналізуйте метрики утримання, щоб краще контролювати якість контенту та розуміти інтереси аудиторії перед масштабуванням.\n<a href=\"https://blog.hootsuite.com/instagram-features/\">джерело</a></blockquote>\n§RT:smm:202644p"
+ "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 21.10–28.10\n<blockquote>🆕 <b>1. Instagram тестує довгі горизонтальні відео до 90 хвилин</b>\nInstagram запустив тестування відеоформату тривалістю до 90 хвилин із підтримкою горизонтальної орієнтації, кидаючи виклик YouTube та намагаючись залучити подкастерів.\n💡 Адаптуйте свої довгі інтерв'ю чи подкасти під новий формат для тестування додаткового охоплення на платформі.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxPV2tjME05bl94V2xfQS1yTWlBNWdQSUQ0M21HQm5fQl9MenFEQ3BkRFRjRngwcHc2MWdvQzVmLThXTFZDNGtEcWZFSXhUZFJTWWlySExJcS02VXZhU2h2LWlHMGpVUzMwOTlhRnZxY3JiQWVYSGZuT05CaG45QnBiSXlVLXQ0QzNmbnctc3JR0gGTAUFVX3lxTE1yVnF4TEJMdHg4VWJIOUd1VWNNay1JS1pLb21Eb0pBT0JucG5oNEgtd25aOXFId1BPclZURmMwTDZrQmdsRkx4Vm1oYWc5ZDV2RXZwbWhTRGp1OUMxNnd0bTREYmRNX252c0QwdEUxVHEwajQzWDJaNWdmLUt0TENfVWVoMUJYeF92aHVLSHNkQVV4VQ?oc=5\">РБК-Україна</a></blockquote>\n<blockquote>🎯 <b>2. Детальна статистика ефективності креативів у Meta Ads</b>\nMeta додала розширені дані про ефективність окремих рекламних креативів, що дозволяє таргетологам точніше оцінювати вклад кожного елемента.\n💡 Використовуйте нові метрики для детального аналізу візуалів перед масштабуванням рекламних кампаній.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-adds-individual-performance-data-for-ad-creative/872981/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>3. Pinterest запускає рішення для програмік-закупівель</b>\nPinterest представив новий інструмент програмік-закупівлі для медіабайєрів, спрощуючи процес розміщення реклами на платформі.\n💡 Інтегруйте програмік-можливості Pinterest у свої медійні кампанії для охоплення аудиторії з високою купівельною інтенцією.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-introduces-new-programmatic-buying-solution/872826/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>4. LinkedIn презентував хаб аналітичних даних</b>\nLinkedIn запустив новий інсайт-хаб, який надає маркетологам глибшу аналітику щодо трендів на платформі та поведінки професійної аудиторії.\n💡 Звіряйтеся з даними хабу під час побудови B2B-стратегій для створення актуального контенту.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-launches-data-insights-hub/872972/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. YouTube додає підписки на мікродрами</b>\nYouTube впроваджує новий формат монетизації та перегляду — підписки на короткі серіали (мікродрами), що набирають популярності.\n💡 Стежте за трендом мікродрам та адаптуйте короткий форматові сторітелінг під вертикальні і горизонтальні платформи.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-microdrama-subscriptions/872982/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. LinkedIn тестує спрощений інтерфейс</b>\nПлатформа почала тестування оновленого та спрощеного користувацького інтерфейсу для покращення навігації.\n💡 Враховуйте зміни в дизайні при створенні візуального контенту та оформленні бізнес-сторінок.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-tests-simplified-ui/872969/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>7. Google випустив нові інструменти Gemini для малого бізнесу</b>\nGoogle презентував оновлений набір функцій на базі штучного інтелекту Gemini, розроблений спеціально для оптимізації завдань малого бізнесу.\n💡 Використовуйте нові можливості ШІ для швидкого створення рутинного маркетингового контенту.\n🔗 <a href=\"https://blog.google/innovation-and-ai/products/gemini-app/new-tools-small-business-owners/\">The Keyword (Google)</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202644\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Зміни контролю плейсментів у Meta</b> · Jon Loomer\nMeta офіційно підтвердила поетапне скасування контролю плейсментів на рівні групи оголошень. Тепер рекламодавці не зможуть вручну видаляти окремі платформи чи розділяти мобільні та десктопні пристрої.\n💡 Переходьте на автоматизовані плейсменти та довіртеся алгоритмам Meta у розподілі бюджету між платформами.\n<a href=\"https://www.jonloomer.com/meta-placement-control-changes/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Нові формати реклами у Meta: Super Burst та First Impression</b> · Jon Loomer\nMeta представила нові рекламні інструменти, зокрема Ads Super Burst для бронювання часових вікон з категоріальною ексклюзивністю та First Impression Ads для викупу першої позиції у стрічці новин за день.\n💡 Використовуйте Ads Super Burst через Reach Planner для масштабних запусків продуктів чи подій, щоб повністю заблокувати конкурентів у своїй категорії на час кампанії.\n<a href=\"https://www.jonloomer.com/qvt/ads-super-burst-first-impression-ads-aggregated-view-time/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Стратегія для Instagram Reels</b> · Hootsuite\nInstagram Reels залишаються найефективнішим форматом для органічного охоплення завдяки пріоритетності часу перегляду, поширень та збережень. Алгоритм найбільше цінує здатність утримати увагу глядача в перші секунди.\n💡 Робіть потужний гачок у перші 1-2 секунди відео та комбінуйте тренди з вічнозеленим контентом — туторіалами та демонстраціями продукту.\n<a href=\"https://blog.hootsuite.com/instagram-reels/\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Корисні функції Instagram для маркетологів</b> · Hootsuite\nОгляд нових інструментів Instagram включає вбудований додаток для редагування відео Edits, триваліші Reels, налаштовувані сітки профілю та нові метрики утримання аудиторії.\n💡 Тестуйте функцію trial Reels та аналізуйте метрики утримання, щоб краще контролювати якість контенту та розуміти інтереси аудиторії перед масштабуванням.\n<a href=\"https://blog.hootsuite.com/instagram-features/\">джерело</a></blockquote>\n§RT:smm:202644p",
+ "silpo_snap": "2026-10-28"
 }
