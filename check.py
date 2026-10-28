@@ -1682,7 +1682,7 @@ def ai_pick_index(titles: list[str], x: dict) -> int | None:
 
 
 def build_smm(st: dict, now: datetime) -> str | None:
-    seen = set(st.get("smm_links", []))
+    seen = set() if st.pop("smm_rebuild", False) else set(st.get("smm_links", []))   # перезбирання — можна взяти й новини, що вже були цього тижня
     items, titles = [], set()
     ok = []
     for src, url in SMM_NEWS_FEEDS:                   # спершу офіційні й галузеві джерела за 7 днів
@@ -4485,9 +4485,17 @@ def fantasy_refresh(st: dict, now: datetime) -> None:
         print("Фантазія тижня: ШІ не написав історію (ліміт або фільтр) — спробую пізніше"); return
     voice_id = ""
     try:                                              # 🎧 озвучка: Gemini TTS (PCM 24 кГц) → ffmpeg → OGG/Opus → Telegram (file_id для миттєвої відправки)
-        r = http_json(f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key={urllib.parse.quote(GEMINI_KEY)}",
-                      {"contents": [{"parts": [{"text": "Прочитай повільно, тихо, інтимно й чуттєво, з паузами: " + text}]}],
-                       "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": "Aoede"}}}}})
+        r = None
+        for tts_m in ("gemini-3.8-flash-tts", "gemini-3.8-flash-lite-tts"):   # актуальні моделі озвучки (жовтень 2026)
+            try:
+                r = http_json(f"https://generativelanguage.googleapis.com/v1beta/models/{tts_m}:generateContent?key={urllib.parse.quote(GEMINI_KEY)}",
+                          {"contents": [{"parts": [{"text": "Прочитай повільно, тихо, інтимно й чуттєво, з паузами: " + text}]}],
+                           "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": "Aoede"}}}}})
+                break
+            except Exception as e_:
+                print(f"Фантазія тижня (озвучка {tts_m}): {err_text(e_)[:60]}")
+        if not r:
+            raise RuntimeError("усі моделі озвучки недоступні")
         b64 = r["candidates"][0]["content"]["parts"][0]["inlineData"]["data"]
         import base64, subprocess, tempfile
         with tempfile.TemporaryDirectory() as td:
@@ -6969,6 +6977,7 @@ def main() -> None:
             MUSIC_FILE.write_text(json.dumps(mdb_, ensure_ascii=False, separators=(",", ":")), "utf-8")
         except Exception:
             pass
+        st.pop("smm_last", None); st["smm_rebuild"], st["smm_try"] = True, ""   # 📈 SMM-дайджест — перезібрати (без розсилки, лише в розділі)
         st["force_heavy"] = ["prom.ua", "youtube канали", "кіно, пули", "музика", "здоров'я", "ігри PS5", "аудіокниги", "пп-страви", "кіномэтч"]   # маркети — першими
         st["ytch_week"] = ""                          # 📺 цікаві канали YouTube — теж заново
         st["prom_force"] = st["rz_force"] = True
