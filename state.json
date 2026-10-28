@@ -707,25 +707,25 @@
   "t200875",
   "t1419"
  ],
- "gh_beat": "2026-10-28T10:00:42.838761+02:00",
+ "gh_beat": "2026-10-28T10:05:49.888436+02:00",
  "source": "dtek",
  "addr": {
-  "active": false,
-  "reason": "",
-  "start": "",
-  "end": "",
-  "type": "",
+  "active": true,
+  "reason": "Стабілізаційне відключення (Згідно графіку погодинних відключень)",
+  "start": "09:41 28.10.2026",
+  "end": "12:30 28.10.2026",
+  "type": "2",
   "groups": [
    "GPV4.1"
   ],
-  "updated": "09:31 28.10.2026",
+  "updated": "09:53 28.10.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-10-28T09:52:50.576162+02:00",
+  "checked": "2026-10-28T10:02:56.676436+02:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
-  "planned": false
+  "planned": true
  },
  "emerg": {
   "on": false,
@@ -1535,14 +1535,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "28.10 10:02",
-   "ts": 1793174521,
+   "at": "28.10 10:08",
+   "ts": 1793174902,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "28.10 10:02",
-   "ts": 1793174521,
+   "at": "28.10 10:08",
+   "ts": 1793174902,
    "ok": true,
    "note": ""
   },
@@ -1619,8 +1619,8 @@
    "note": ""
   },
   "кіномэтч": {
-   "at": "28.10 09:55",
-   "ts": 1793174151,
+   "at": "28.10 10:05",
+   "ts": 1793174754,
    "ok": true,
    "note": ""
   },
@@ -13240,10 +13240,7 @@
  "pend": {},
  "got": {},
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
- "gem_block": {
-  "gemini-flash-latest": "2026-10-28T10:05:00+02:00",
-  "gemini-3.8-flash": "2026-10-28T10:05:00+02:00"
- },
+ "gem_block": {},
  "omdb_cache": {
   "tt5362988": [
    7.7,
@@ -26969,7 +26966,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "600c740b9730",
+  "gs": "65b7188375f2",
   "quiz_pool.json": "31473d6acb2e",
   "fact.png": "242e3ce50ba9",
   "sexed.json": "4efede1d8ea5",
