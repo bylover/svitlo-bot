@@ -5058,6 +5058,49 @@ def rz_cart(text: str) -> str:
     return "\n".join(out)
 
 
+# ---------- 🗣 Живий English: щоденне автопоповнення розділів (по 20 фраз, до 200 у кожному) ----------
+LIVE_FILE = Path("en_live.json")
+LIVE_DESC = {"idiom": "common English idioms that native speakers really use at work and in daily life",
+             "phr": "useful English phrasal verbs (work and everyday life)",
+             "slang": "modern informal English, chat abbreviations and workplace acronyms (no vulgar words, no slurs)",
+             "prov": "English proverbs and sayings with their closest Ukrainian equivalent proverb"}
+
+
+def en_live_fill(st: dict, now: datetime) -> None:
+    if not WORKER_MODE or not GEMINI_KEY or st.get("live_day") == now.date().isoformat():
+        return
+    try:
+        data = json.loads(LIVE_FILE.read_text("utf-8"))
+    except Exception:
+        data = {}
+    added = 0
+    for cat, desc in LIVE_DESC.items():
+        have = data.get(cat, [])
+        if len(have) >= 200:
+            continue
+        raw = gemini(f"Give 20 {desc}. Exclude these: {'; '.join(x[0] for x in have[-150:])}. For each: the phrase, its meaning in Ukrainian (short), "
+                     "the literal-translation trap in Ukrainian if a word-by-word translation would mislead (else empty), and a short natural English example. "
+                     'Return JSON {"items":[{"en":...,"uk":...,"trap":...,"ex":...}]}', json_mode=True, relaxed=True, max_tokens=4000)
+        try:
+            items = json.loads(raw or "{}").get("items", [])
+        except Exception:
+            items = []
+        seen = {x[0].lower() for x in have}
+        for x in items:
+            en_ = str(x.get("en") or "").strip()
+            if en_ and x.get("uk") and en_.lower() not in seen and len(en_) < 70:
+                have.append([en_, str(x["uk"])[:120], str(x.get("trap") or "")[:80], str(x.get("ex") or "")[:140]]); seen.add(en_.lower()); added += 1
+        data[cat] = have[:200]
+    LIVE_FILE.write_text(json.dumps(data, ensure_ascii=False), "utf-8")
+    if added:
+        try:
+            http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=en_live.json", data)
+        except Exception as e:
+            print(f"Живий English → бот: {err_text(e)[:60]}")
+    st["live_day"] = now.date().isoformat()
+    print(f"Живий English: +{added} фраз · " + ", ".join(f"{k} {len(v)}" for k, v in data.items()))
+
+
 def recipes_refresh(st: dict, now: datetime) -> None:
     """Поступово: щомісяця +рецепти; переклад і адаптація до українських продуктів (ШІ, з позначкою); українські страви — КБЖВ за таблицею CoFID."""
     if not WORKER_MODE:
@@ -6914,7 +6957,7 @@ def main() -> None:
              ("ранковий імпульс", lambda: impulse_refresh(st, now)), ("музика", lambda: music_refresh(st, now)),
              ("здоров'я", lambda: (health_refresh(st, now), kb_probe(st, now), cofid_import(st, now), cofid_translate(st, now))),
              ("ігри PS5", lambda: (games_refresh(st, now), ps_deals_refresh(st, now))), ("аудіокниги", lambda: audiobooks_refresh(st, now)),
-             ("кіномэтч", lambda: match_refresh(st, now)), ("пп-страви", lambda: recipes_refresh(st, now)), ("фантазія тижня", lambda: fantasy_refresh(st, now)), ("prom.ua", lambda: prom_top(st, now)), ("youtube канали", lambda: yt_channels(st, now))]
+             ("кіномэтч", lambda: match_refresh(st, now)), ("пп-страви", lambda: recipes_refresh(st, now)), ("фантазія тижня", lambda: fantasy_refresh(st, now)), ("prom.ua", lambda: prom_top(st, now)), ("youtube канали", lambda: yt_channels(st, now)), ("живий english", lambda: en_live_fill(st, now))]
     slot = (now.hour * 12 + now.minute // 5) % len(heavy)
     rc_turn = st.get("rc_need", True) and (now.minute // 5) % 2 == 0   # через запуск, щоб інші задачі не чекали
     forced = (st.get("force_heavy") or []) + (["пп-страви"] if rc_turn and "пп-страви" not in (st.get("force_heavy") or []) else [])
@@ -6980,6 +7023,7 @@ def main() -> None:
         st.pop("smm_last", None); st["smm_rebuild"], st["smm_try"] = True, ""   # 📈 SMM-дайджест — перезібрати (без розсилки, лише в розділі)
         st["force_heavy"] = ["prom.ua", "youtube канали", "кіно, пули", "музика", "здоров'я", "ігри PS5", "аудіокниги", "пп-страви", "кіномэтч"]   # маркети — першими
         st["ytch_week"] = ""                          # 📺 цікаві канали YouTube — теж заново
+        st["live_day"] = ""                           # 🗣 Живий English — ще порція фраз
         st["prom_force"] = st["rz_force"] = True
         st["match_month"] = ""; st["ps_day"] = ""                # 🍿💞 пул Кіномэтчу й 🔥 знижки PS — теж свіжі
         st["games_force"] = st["ab_force"] = st["rc_force"] = True     # 🥗 ПП-страви — позапланове поповнення
