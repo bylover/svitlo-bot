@@ -107,16 +107,6 @@
   "https://medium.com/@alanlevincoaching/physical-intimacy-on-the-fourth-date-should-it-be-happening-by-now-5f304de695e3?source=rss------intimacy-5"
  ],
  "kino_seen": [
-  "m157832",
-  "m61202",
-  "m791177",
-  "m1114513",
-  "m333371",
-  "m338967",
-  "m1138194",
-  "m438799",
-  "m293670",
-  "m988402",
   "m11880",
   "m1433",
   "m364433",
@@ -706,9 +696,19 @@
   "m5236",
   "t71738",
   "t89393",
-  "t39793"
+  "t39793",
+  "m348893",
+  "m577922",
+  "m1165366",
+  "m1064213",
+  "m310131",
+  "m1594914",
+  "m3131",
+  "t115645",
+  "t80968",
+  "t2004"
  ],
- "gh_beat": "2026-10-29T23:43:57.152385+02:00",
+ "gh_beat": "2026-10-29T23:45:45.773531+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -719,11 +719,11 @@
   "groups": [
    "GPV4.1"
   ],
-  "updated": "23:17 29.10.2026",
+  "updated": "16:03 29.10.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "",
-  "checked": "2026-10-29T23:32:54.747948+02:00",
+  "checked": "2026-10-29T23:42:56.141901+02:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1573,8 +1573,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "29.10 23:40",
-   "ts": 1793310003,
+   "at": "29.10 23:46",
+   "ts": 1793310402,
    "ok": true,
    "note": ""
   },
@@ -28658,7 +28658,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "fff97501e22e",
+  "gs": "2162ebf05372",
   "quiz_pool.json": "31473d6acb2e",
   "fact.png": "87b8ed46e878",
   "sexed.json": "4efede1d8ea5",
@@ -28746,7 +28746,6 @@
  "force_heavy": [
   "prom.ua",
   "youtube канали",
-  "кіно, пули",
   "музика",
   "здоров'я",
   "ігри PS5",
@@ -44223,6 +44222,70 @@
    ],
    "ov": "У недалекому майбутньому всі люди вже стали безсмертними, тільки один старий, якого всі називають просто Ніхто, виявляється смертним. У форматі телешоу його смерть транслюється по всьому світу. На порозі останніх хвилин ",
    "poster": "https://image.tmdb.org/t/p/w500/zuZFFLvO36NG3QRVkt7QAT51wZy.jpg"
+  },
+  "m493529": {
+   "title": "Підземелля і дракони: Честь злодіїв",
+   "year": "2023",
+   "rating": 7.2,
+   "genres": [
+    "Пригоди",
+    "Фентезі",
+    "Комедія"
+   ],
+   "g": [
+    12,
+    14,
+    35
+   ],
+   "ov": "Чарівний злодій та група умілих авантюристів вирішують здійснити епічне пограбування, щоб повернути втрачену реліквію. Але все йде шкереберть, коли на шляху героїв постає неочікувана перешкода...",
+   "poster": "https://image.tmdb.org/t/p/w500/hVD5Ko9cewbSXRLh320IYgSK8wz.jpg"
+  },
+  "m661374": {
+   "title": "Ножі наголо: Скляна цибуля",
+   "year": "2022",
+   "rating": 7.1,
+   "genres": [
+    "Комедія",
+    "Кримінал",
+    "Детектив"
+   ],
+   "g": [
+    35,
+    80,
+    9648
+   ],
+   "ov": "Всесвітньо відомий детектив Бенуа Блан вирушає до Греції, щоб розкрити шари таємниці, що оточує технологічного мільярдера та його різнопланову команду друзів.",
+   "poster": "https://image.tmdb.org/t/p/w500/8gcvda9f6IBZGXarc99KbmlaNPt.jpg"
+  },
+  "m508": {
+   "title": "Реальне кохання",
+   "year": "2003",
+   "rating": 7.5,
+   "genres": [
+    "Комедія",
+    "Мелодрама",
+    "Драма"
+   ],
+   "g": [
+    35,
+    10749,
+    18
+   ],
+   "ov": "Фільм розповідає дев’ять реальних історій, які дивовижним чином переплітають між собою всіх героїв напередодні Різдва.",
+   "poster": "https://image.tmdb.org/t/p/w500/64ax8zNppSPFA7GopOf8yMfjrwL.jpg"
+  },
+  "t46880": {
+   "title": "The Fosters",
+   "year": "2013",
+   "rating": 7.9,
+   "genres": [
+    "Драма"
+   ],
+   "g": [
+    18
+   ],
+   "ov": "Stef Foster, a dedicated police officer, and her partner Lena Adams, a school vice principal, have built a close-knit, loving family with Stef's biological son from a previous marriage, Brandon, and their adopted twins, ",
+   "poster": "https://image.tmdb.org/t/p/w500/iRCmazqaUNNsgZyR6tNDl88pXp3.jpg"
   }
  },
  "cofid_pushed": "28.10.2026",
@@ -44297,5 +44360,16 @@
  "silpo_snap": "2026-10-28",
  "live_day": "",
  "silpo_week": "2026-44",
- "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 22.10–29.10\n<blockquote>🆕 <b>1. Instagram тестує відео до 90 хвилин</b>\nInstagram розпочав тестування горизонтальних та довгих відео тривалістю до 90 хвилин, кидаючи виклик YouTube.\n💡 Адаптуйте свої лонгрід-відео та подкасти під новий формат, щоб зайняти нішу на ранньому етапі тестування.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOOXVMV2djRXhpbU9hQTRpTlRObmNibURtb3hzX3NXOW9jbWp1a2tLRFNjdWVoaVFBbVlsNFBHSjBkYkt1UVpFbFRCcWZLS2g4cXl1VGNiaUJibHZmYzBCemJjWVgwZ0Nxckl4bElPUWRMemNjVnpvYS1xRzVRbXU1QzctWkh5S2NYbkFOUlp1MU45b1IwcWFtNmF2OHF0X2pPQW9lc2tja2o5ZFJhZkxMWnJDM0NSdw?oc=5\">The Hollywood Reporter</a></blockquote>\n<blockquote>🎯 <b>2. Дані ефективності для кожного креативу в Meta</b>\nMeta додала детальну індивідуальну статистику ефективності для кожного рекламного креативу.\n💡 Використовуйте ці нові дані для точкового аналізу та відключення неефективних креативів без зупинки всієї групи оголошень.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-adds-individual-performance-data-for-ad-creative/872981/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>3. Нова стрічка «For You» у Reddit</b>\nReddit офіційно представив персоналізовану стрічку «For You», яка формується на основі інтересів користувача.\n💡 Перегляньте стратегію присутності бренду на платформі з урахуванням алгоритмічної видачі в новій стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/reddit-introduces-for-you-feed/873132/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Розширення реклами в AI Mode від Google</b>\nGoogle розширив показ реклами у своєму штучному інтелекті на нові ринки.\n💡 Стежте за появою нових форматів пошукової реклами з підтримкою AI та тестуйте їх для своїх кампаній.\n🔗 <a href=\"https://blog.google/products/ads-commerce/ads-in-ai-mode-global/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>5. Гид по ресторанах усередині TikTok</b>\nTikTok додав вбудований путівник по ресторанах, що дозволяє користувачам знаходити заклади прямо в додатку.\n💡 Локальним брендам та закладам харчування варто активніше створювати геолокаційний контент у TikTok.\n🔗 <a href=\"https://www.socialmediatoday.com/news/tiktok-adds-in-app-restaurant-guide/873122/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Хаб аналітичних даних від LinkedIn</b>\nLinkedIn запустив новий інформаційний центр для надання глибшої аналітики та даних професійній аудиторії.\n💡 Використовуйте цей інструмент для дослідження ринку та планування B2B-кампаній.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-launches-data-insights-hub/872972/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>7. Спільне авторство зображень на X</b>\nСоцмережа X додала можливість ділитися авторськими правами або відмітками на репостнутих зображеннях.\n💡 Враховуйте це оновлення при поширенні візуального контенту та партнерських креативів.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-lets-users-share-credit-on-reposted-images/873100/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>8. Святковий проєкт Disney у TikTok Shop</b>\nDisney планує масштабну святкову кампанію в TikTok Shop за участю понад 20 брендів.\n💡 Готуйте товарні каталоги та інтеграції до святкових покупок через соцмережі.\n🔗 <a href=\"https://www.marketingdive.com/news/disney-plans-tiktok-shop-holiday-experience-with-over-20-brands/873072/\">Marketing Dive</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202644"
+ "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 22.10–29.10\n<blockquote>🆕 <b>1. Instagram тестує відео до 90 хвилин</b>\nInstagram розпочав тестування горизонтальних та довгих відео тривалістю до 90 хвилин, кидаючи виклик YouTube.\n💡 Адаптуйте свої лонгрід-відео та подкасти під новий формат, щоб зайняти нішу на ранньому етапі тестування.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOOXVMV2djRXhpbU9hQTRpTlRObmNibURtb3hzX3NXOW9jbWp1a2tLRFNjdWVoaVFBbVlsNFBHSjBkYkt1UVpFbFRCcWZLS2g4cXl1VGNiaUJibHZmYzBCemJjWVgwZ0Nxckl4bElPUWRMemNjVnpvYS1xRzVRbXU1QzctWkh5S2NYbkFOUlp1MU45b1IwcWFtNmF2OHF0X2pPQW9lc2tja2o5ZFJhZkxMWnJDM0NSdw?oc=5\">The Hollywood Reporter</a></blockquote>\n<blockquote>🎯 <b>2. Дані ефективності для кожного креативу в Meta</b>\nMeta додала детальну індивідуальну статистику ефективності для кожного рекламного креативу.\n💡 Використовуйте ці нові дані для точкового аналізу та відключення неефективних креативів без зупинки всієї групи оголошень.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-adds-individual-performance-data-for-ad-creative/872981/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>3. Нова стрічка «For You» у Reddit</b>\nReddit офіційно представив персоналізовану стрічку «For You», яка формується на основі інтересів користувача.\n💡 Перегляньте стратегію присутності бренду на платформі з урахуванням алгоритмічної видачі в новій стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/reddit-introduces-for-you-feed/873132/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Розширення реклами в AI Mode від Google</b>\nGoogle розширив показ реклами у своєму штучному інтелекті на нові ринки.\n💡 Стежте за появою нових форматів пошукової реклами з підтримкою AI та тестуйте їх для своїх кампаній.\n🔗 <a href=\"https://blog.google/products/ads-commerce/ads-in-ai-mode-global/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>5. Гид по ресторанах усередині TikTok</b>\nTikTok додав вбудований путівник по ресторанах, що дозволяє користувачам знаходити заклади прямо в додатку.\n💡 Локальним брендам та закладам харчування варто активніше створювати геолокаційний контент у TikTok.\n🔗 <a href=\"https://www.socialmediatoday.com/news/tiktok-adds-in-app-restaurant-guide/873122/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Хаб аналітичних даних від LinkedIn</b>\nLinkedIn запустив новий інформаційний центр для надання глибшої аналітики та даних професійній аудиторії.\n💡 Використовуйте цей інструмент для дослідження ринку та планування B2B-кампаній.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-launches-data-insights-hub/872972/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>7. Спільне авторство зображень на X</b>\nСоцмережа X додала можливість ділитися авторськими правами або відмітками на репостнутих зображеннях.\n💡 Враховуйте це оновлення при поширенні візуального контенту та партнерських креативів.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-lets-users-share-credit-on-reposted-images/873100/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>8. Святковий проєкт Disney у TikTok Shop</b>\nDisney планує масштабну святкову кампанію в TikTok Shop за участю понад 20 брендів.\n💡 Готуйте товарні каталоги та інтеграції до святкових покупок через соцмережі.\n🔗 <a href=\"https://www.marketingdive.com/news/disney-plans-tiktok-shop-holiday-experience-with-over-20-brands/873072/\">Marketing Dive</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202644",
+ "kino_q": [
+  {
+   "id": "bdfabb5cf6",
+   "text": "🍿 <b>ПІДБІРКА КІНО</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Bojka-nezaperechnij-4-2016-10-29-3\">Бойка: незаперечний 4</a></b> (2016) · ❤️ за вашим смаком\nбойовик, драма, трилер · ⏱ 1 год 27 хв\n⭐ IMDb <b>7.0</b>\n<i>🎭 Скотт Едкінс, Teodora Duhovnikova, Alon Aboutboul</i>\n📝 Юрій Бойка - російський боксер зі складною долею. Він пройшов загартування в підпільних боях без правил, а після - став відомим в тюремних колах, перемагаючи досвідчених суперників в чемпіонаті серед ув'язнених. Що б…\n▶️ <a href=\"https://youtu.be/Lo-OXY1iXVU\">Трейлер</a></blockquote>\n§KN:m348893\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Tenet-2020-10-29\">Тенет</a></b> (2020) · ❤️ за вашим смаком\nбойовик, трилер, фантастика · ⏱ 2 год 30 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>70%</b> · Ⓜ <b>69</b>\n<i>🎭 Джон Девід Вашинґтон, Роберт Паттінсон, Елізабет Дебікі</i>\n📝 Озброєний єдиним словом, Тенет, головний герой бореться за виживання усього світу. Він подорожує оповитим сутінками світом міжнародного шпигунства з єдиною місією, яка розгорнеться за межами реального часу.\n▶️ <a href=\"https://youtu.be/pctuHEeztlw\">Трейлер</a></blockquote>\n§KN:m577922\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/De-Goll-Opіr-2026-10-29-3\">Де Голль: Опір</a></b> (2026)\nісторичний, драма, військовий · ⏱ 2 год 40 хв\n⭐ IMDb <b>7.8</b>\n<i>🎭 Simon Abkarian, Simon Russell Beale, Florian Lesieur</i>\n📝 У червні 1940 року, коли французька армія зазнає краху, генерал де Голль відмовляється прийняти перемир’я. Він вирушає до Лондона, де закладає основи Руху Опору.\n▶️ <a href=\"https://youtu.be/dKUArYoZ_0U\">Трейлер</a></blockquote>\n§KN:m1165366\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Anora-2024-10-29-4\">Анора</a></b> (2024)\nдрама, комедія, мелодрама · ⏱ 2 год 19 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>93%</b> · Ⓜ <b>91</b>\n<i>🎭 Майкі Медісон, Марк Эйдельштейн, Юра Борисов</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1064213-anora/watch?locale=UA\">Netflix · за підпискою</a>\n📝 Ані — молода стриптизерка узбецько-американського походження з Брайтон-Біч, російськомовного анклаву в Нью-Йорку. Оскільки вона трохи знає російську, її бос підбирає її до російськомовних клієнтів. Після знайомства з…\n▶️ <a href=\"https://youtu.be/8m6UrWMl18M\">Трейлер</a></blockquote>\n§KN:m1064213\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Vіdma-Nova-anglіjska-kazka-2016-10-29-2\">Відьма: Нова англійська казка</a></b> (2016)\nжахи, фентезі, детектив · ⏱ 1 год 32 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>91%</b> · Ⓜ <b>84</b>\n<i>🎭 Аня Тейлор-Джой, Ральф Інесон, Кейт Дікі</i>\n📝 Нова Англія, 1630-ті роки. Вільям і Кетрін з п'ятьма дітьми живуть на самотній фермі на узліссі стародавнього лісу. Сім'я починає руйнуватися від невідомого зла, коли їх новонароджений син таємничо зникає, врожай…\n▶️ <a href=\"https://youtu.be/97OQ7MQC5Ck\">Трейлер</a></blockquote>\n§KN:m310131\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/SHCHaslivchik-2026-10-29\">Щасливчик</a></b> (2026)\nвійськовий, бойовик · ⏱ 1 год 42 хв\n⭐ TMDB <b>6.5</b> · 🍅 <b>64%</b>\n<i>🎭 Скотт Іствуд, Колін Генкс, Анджаню Елліс-Тейлор</i>\n📝 Поранений американський солдат намагається вижити в тилу ворога під час Арденнської операції у Другій світовій війні. Покладаючись на власні інстинкти, шпигунські навички та портативну рацію, він намагається уникнути…\n▶️ <a href=\"https://youtu.be/vtEnjikCXyA\">Трейлер</a></blockquote>\n§KN:m1594914\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Bandi-Nyu-Jorka-2002-10-29-2\">Банди Нью-Йорка</a></b> (2002)\nдрама, історичний, кримінал · ⏱ 2 год 48 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>72%</b> · Ⓜ <b>72</b>\n<i>🎭 Леонардо Ді Капріо, Деніел Дей-Льюїс, Камерон Діас</i>\n📝 Дія відбувається в 1863 році в Нью-Йорку, коли від рук лідера корінних американців гине ватажок ірландської банди Валлон. Його сина відправляють у виправну школу, з якої Амстердам виходить уже дорослим хлопцем.…\n▶️ <a href=\"https://youtu.be/1bjh979vVG0\">Трейлер</a></blockquote>\n§KN:m3131\n§§\n<blockquote>📺 <b>8. <a href=\"https://telegra.ph/Gênesis-2021-10-29\">Gênesis</a></b> (2021)\nмильна опера, драма · 📺 серіал · 1 сез.\n⭐ IMDb <b>8.0</b>\n<i>🎭 Juliano Laham, Ingra Lyberato, Daniela Escobar</i>\n📝 The story of the first 2,300 years of humanity and recounts events exclusively from that period. The plot begins by giving us a greater understanding of why we exist and how we turned from perfection to imperfection.…</blockquote>\n§KN:t115645\n§§\n<blockquote>📺 <b>9. <a href=\"https://telegra.ph/Narko-Meksika-2018-10-29\">Нарко: Мексика</a></b> (2018)\nдрама, кримінал · 📺 серіал · 3 сез.\n⭐ IMDb <b>8.3</b>\n<i>🎭 Скут Мак-Нейрі, José María Yázpik, Alejandro Edda</i>\n📺 <a href=\"https://www.themoviedb.org/tv/80968-narcos-mexico/watch?locale=UA\">Netflix · за підпискою</a>\n📝 Колишній поліцейський, а нині дрібний торговець маріхуаною, Мігель Анхель Фелікс Ґалардо пробиває собі шлях до керівництва злочинної організації і прагне побудувати імперію. Противником мексиканського злочинного…\n▶️ <a href=\"https://youtu.be/BoDrQ8JktVg\">Трейлер</a></blockquote>\n§KN:t80968\n§§\n<blockquote>📺 <b>10. <a href=\"https://telegra.ph/Malkolm-u-centrі-uvagi-2000-10-29-3\">Малкольм у центрі уваги</a></b> (2000)\nкомедія · 📺 серіал · 7 сез.\n⭐ IMDb <b>8.2</b>\n<i>🎭 Frankie Muniz, Джейн Качмарек, Браян Кренстон</i>\n📝 Серіал запрошує глядача до великої родини, в якій завжди багато веселощів. У ній є все: матуся-монстр, батько-лопух і четверо дітей-шибеників. Вся ця вибухонебезпечна суміш мешкає під одним дахом, де постійно…\n▶️ <a href=\"https://youtu.be/o6gPg-P5FPg\">Трейлер</a></blockquote>\n§KN:t2004",
+   "markup": null
+  }
+ ],
+ "kino_gq": {},
+ "kp_at": {
+  "mix": "2026-10-29T23:45:46.485347+02:00"
+ }
 }
