@@ -708,7 +708,7 @@
   "t89393",
   "t39793"
  ],
- "gh_beat": "2026-10-29T10:30:44.588405+02:00",
+ "gh_beat": "2026-10-29T10:35:43.295574+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -723,7 +723,7 @@
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-10-29T10:22:54.262599+02:00",
+  "checked": "2026-10-29T10:32:55.123598+02:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": true
@@ -1538,14 +1538,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "29.10 10:32",
-   "ts": 1793262760,
+   "at": "29.10 10:36",
+   "ts": 1793263002,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "29.10 10:32",
-   "ts": 1793262760,
+   "at": "29.10 10:36",
+   "ts": 1793263002,
    "ok": true,
    "note": ""
   },
@@ -1562,8 +1562,8 @@
    "note": ""
   },
   "ігри PS5": {
-   "at": "29.10 10:25",
-   "ts": 1793262347,
+   "at": "29.10 10:35",
+   "ts": 1793262946,
    "ok": true,
    "note": ""
   },
@@ -1592,8 +1592,8 @@
    "note": ""
   },
   "аудіокниги": {
-   "at": "29.10 10:25",
-   "ts": 1793262347,
+   "at": "29.10 10:35",
+   "ts": 1793262946,
    "ok": true,
    "note": ""
   },
@@ -1622,8 +1622,8 @@
    "note": ""
   },
   "кіномэтч": {
-   "at": "29.10 10:25",
-   "ts": 1793262347,
+   "at": "29.10 10:35",
+   "ts": 1793262946,
    "ok": true,
    "note": ""
   },
@@ -14032,7 +14032,10 @@
   "silpo": {}
  },
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
- "gem_block": {},
+ "gem_block": {
+  "gemini-3.8-flash": "2026-10-30T10:05:00+02:00",
+  "gemini-flash-latest": "2026-10-30T10:05:00+02:00"
+ },
  "omdb_cache": {
   "tt5362988": [
    7.7,
@@ -28076,7 +28079,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "7fd52138f1cd",
+  "gs": "156784def448",
   "quiz_pool.json": "31473d6acb2e",
   "fact.png": "e585462ff378",
   "sexed.json": "4efede1d8ea5",
