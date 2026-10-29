@@ -708,7 +708,7 @@
   "t89393",
   "t39793"
  ],
- "gh_beat": "2026-10-29T12:55:44.477896+02:00",
+ "gh_beat": "2026-10-29T13:00:46.575118+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -778,11 +778,10 @@
    ]
   ]
  },
- "fact_png": "2026-10-29 12|9|2026-10-29T10:58:02+02:00",
+ "fact_png": "2026-10-29 13|9|2026-10-29T10:58:02+02:00",
  "fact_day": {
-  "total": "6 год 4 хв",
+  "total": "5 год 29 хв",
   "list": [
-   "12:00–12:35 · 35 хв",
    "17:13–20:06 · 2 год 53 хв",
    "08:22–10:58 · 2 год 35 хв"
   ]
@@ -1539,14 +1538,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "29.10 12:57",
-   "ts": 1793271458,
+   "at": "29.10 13:03",
+   "ts": 1793271836,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "29.10 12:57",
-   "ts": 1793271458,
+   "at": "29.10 13:03",
+   "ts": 1793271836,
    "ok": true,
    "note": ""
   },
@@ -14008,10 +14007,12 @@
   }
  },
  "silpo_sent_by": {
-  "1ed43e73-051b-6842-a111-a5ad042eb496@dl": "2026-10-22",
-  "1edb6b54-d26b-681e-aa85-b5ff7ea46636": "2026-10-22"
+  "1ed43e73-051b-6842-a111-a5ad042eb496@dl": "2026-10-29",
+  "1edb6b54-d26b-681e-aa85-b5ff7ea46636": "2026-10-29"
  },
- "fav_sent": {},
+ "fav_sent": {
+  "160603556": "2026-10-29"
+ },
  "imp_sent": {
   "160603556": "2026-10-29",
   "396425365": "2026-10-29"
@@ -14033,7 +14034,12 @@
   }
  },
  "got": {
-  "silpo": {}
+  "silpo": {
+   "160603556": "2026-10-29 08",
+   "368433217": "2026-10-29 08",
+   "396425365": "2026-10-29 08",
+   "936688574": "2026-10-29 08"
+  }
  },
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
  "gem_block": {
@@ -28185,9 +28191,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "78368adaa3f0",
+  "gs": "2f8aee84fc06",
   "quiz_pool.json": "31473d6acb2e",
-  "fact.png": "5b03625af20c",
+  "fact.png": "9c04e0717bf7",
   "sexed.json": "4efede1d8ea5",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "7a24b6ae27c8",
