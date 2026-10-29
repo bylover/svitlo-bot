@@ -5598,12 +5598,19 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
                     VERIFY_DROP[0] += 1
                     continue                          # «реальна» вигода більша за заявлену — дані суперечливі, не показуємо
             rating = p_.get("guestProductRating")
-            if declared >= 50:                        # велика знижка — лише якщо підтвердилась 2 дні поспіль (навіть з історією цін)
+            votes_ = 0
+            for k_ in ("guestProductRatingCount", "ratingCount", "reviewsCount", "votesCount", "guestProductReviewsCount", "ratingsCount"):
+                try:
+                    votes_ = max(votes_, int(float(p_.get(k_) or 0)))
+                except (TypeError, ValueError):
+                    pass
+            popular_ = bool(rating) and (float(rating or 0) >= 4.0 and votes_ >= 50 or (votes_ == 0 and float(rating or 0) >= 4.3))   # відомий товар з оцінками — велика знижка правдоподібна (якщо к-сть оцінок API не дає — за самою оцінкою ≥4,3)
+            if declared >= 50 and not popular_:      # велика знижка — для малознайомих товарів лише якщо підтвердилась 2 дні поспіль
                 ck = f"{br[0]}|{p_.get('id')}"
                 seen_ = conf.get(ck)
                 conf[ck] = seen_ if seen_ and abs(seen_[1] - declared) < 6 else [now.date().isoformat(), declared]
                 if conf[ck][0] >= now.date().isoformat():
-                    SILPO_WHY[nm_] = f"знижка −{declared:.0f}% ≥50% — чекаємо підтвердження 2 дні поспіль"
+                    SILPO_WHY[nm_] = f"знижка −{declared:.0f}% ≥50% — чекаємо підтвердження 2 дні поспіль (оцінка {rating or '—'}, оцінок {votes_ or '—'}; популярні з ≥4★ показуються одразу)"
                     continue
             weight = {"direct": 1.0, "online": 0.8, "card": 0.85, "multi": 0.8, "gurt": 0.8}[kind]   # треба більше купити / картка / лише онлайн — нижче
             score = (real if real is not None else declared) * weight + ((float(rating) - 4) * 5 if rating else 0) + max(0, 30 - idx) / 6 + (8 if declared >= 20 else 0)   # від 20% — вище
