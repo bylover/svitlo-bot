@@ -2453,7 +2453,8 @@ PROMO_SAMPLES: list = []
 ALL_PROMOS: list = []                                       # усі акції магазину — для «⭐ Обране»
 SEND_ERRS: list = []                                       # помилки надсилання (щоб відрізнити збій мережі від неправильного токена)
 VERIFY_DROP = [0]                                           # скільки «знижок» відкинуто перевіркою
-SILPO_WHY: dict = {}                                        # 🧪 назва → чому (не) в підбірці — для адмінки
+SILPO_WHY: dict = {}
+SILPO_RFIELDS: list = []                                        # 🧪 назва → чому (не) в підбірці — для адмінки
 GURT_SAMPLES: list = []                                     # приклади «гуртом дешевше» для логу
 SILPO_BAD: set = set()                                      # товари, про які повідомили «ціна не збігається»
 BAD_SEEN: dict = {}                                         # товар із «⚠️» → (назва, категорія) — для перевірки по магазинах
@@ -5615,7 +5616,9 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
                     SILPO_WHY[nm_] = f"знижка −{declared:.0f}% ≥50% — чекаємо підтвердження 2 дні поспіль (оцінка {rating or '—'}, оцінок {votes_ or '—'}; популярні з ≥4★ показуються одразу)"
                     continue
             p_["_ok"] = bool(rating) and float(rating or 0) >= 4.3 and (votes_ >= 50 or (votes_ == 0 and float(rating or 0) >= 4.5))   # ✅ перевірено покупцями
-            p_["_hit"] = bool(rating) and float(rating or 0) >= 4.5 and (votes_ >= 100 or (votes_ == 0 and float(rating or 0) >= 4.7)) and max(declared, real or 0) >= 10   # ⭐ хіт
+            p_["_hit"] = bool(rating) and float(rating or 0) >= 4.5 and (votes_ >= 100 or votes_ == 0) and max(declared, real or 0) >= 10   # ⭐ хіт (якщо к-сть оцінок API не дає — за оцінкою ≥4,5)
+            if not SILPO_RFIELDS and rating:          # 🧪 які поля оцінок віддає Сільпо — у лог
+                SILPO_RFIELDS.extend(sorted(k_ for k_ in p_.keys() if re.search(r"rat|review|vote|score|opinion", str(k_), re.I))[:10])
             p_["_votes"] = votes_
             weight = {"direct": 1.0, "online": 0.8, "card": 0.85, "multi": 0.8, "gurt": 0.8}[kind]   # треба більше купити / картка / лише онлайн — нижче
             score = (real if real is not None else declared) * weight + ((float(rating) - 4) * 5 if rating else 0) + max(0, 30 - idx) / 6 + (8 if declared >= 20 else 0) + (6 if p_.get("_ok") else 0) + (6 if fav_cat and (real or 0) >= 15 else 0)   # від 20%, перевірені, і справді вигідні в улюблених категоріях — вище
@@ -5677,6 +5680,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
             + ("<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>" if weeks
                else "<i>Реальна вигода з'явиться з наступного тижня (бот ще збирає історію цін)</i>"))
     old = st.get("silpo_more") or {}                  # кнопки «➕ ще 5» різних магазинів не змішуємо
+    print(f"Сільпо: ⭐ хітів покупців {len(HITS_)} · поля оцінок: {SILPO_RFIELDS or '—'}")
     if HITS_:                                         # ⭐ окрема кнопка «Хіти покупців»: топ-10 + «ще»
         seen_h, hrows = set(), []
         for _, r_, cat_ in sorted(HITS_, key=lambda x: -x[0]):
