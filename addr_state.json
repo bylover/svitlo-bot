@@ -10,8 +10,8 @@
  "updated": "04:32 30.10.2026",
  "emergency": false,
  "city_emergency": false,
- "city_text": "Повідомити про аварійні ситуації",
- "checked": "2026-10-30T04:32:55.894767+02:00",
+ "city_text": "",
+ "checked": "2026-10-30T04:42:55.425004+02:00",
  "address": "вул. Кульженків Сім'ї, 35",
  "street_ok": "вул. Кульженків Сім’ї",
  "planned": false
