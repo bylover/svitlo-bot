@@ -708,7 +708,7 @@
   "t110316",
   "t1420"
  ],
- "gh_beat": "2026-10-30T12:10:46.781615+02:00",
+ "gh_beat": "2026-10-30T12:15:43.799955+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -719,11 +719,11 @@
   "groups": [
    "GPV4.1"
   ],
-  "updated": "11:47 30.10.2026",
+  "updated": "12:05 30.10.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Через постійні атаки і пошкодження обладнання, відсутнє електропостачання на правому березі столиці. Тут графіки не діють. Повідомити про аварійні ситуації",
-  "checked": "2026-10-30T12:02:56.344057+02:00",
+  "checked": "2026-10-30T12:12:51.409030+02:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1690,8 +1690,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "30.10 11:46",
-   "ts": 1793353591,
+   "at": "30.10 12:16",
+   "ts": 1793355401,
    "ok": true,
    "note": ""
   },
@@ -1762,8 +1762,8 @@
    "note": ""
   },
   "prom.ua": {
-   "at": "30.10 11:35",
-   "ts": 1793352945,
+   "at": "30.10 12:15",
+   "ts": 1793355346,
    "ok": true,
    "note": ""
   },
@@ -1798,14 +1798,14 @@
    "note": ""
   },
   "youtube канали": {
-   "at": "30.10 11:45",
-   "ts": 1793353549,
+   "at": "30.10 12:15",
+   "ts": 1793355346,
    "ok": true,
    "note": ""
   },
   "живий english": {
-   "at": "30.10 10:56",
-   "ts": 1793350605,
+   "at": "30.10 12:16",
+   "ts": 1793355362,
    "ok": true,
    "note": ""
   }
@@ -30157,7 +30157,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "101a15e830fe",
+  "gs": "fa28cc484c7f",
   "quiz_pool.json": "31473d6acb2e",
   "fact.png": "77f17bbbb24d",
   "sexed.json": "4efede1d8ea5",
@@ -40258,6 +40258,170 @@
    ],
    "ov": "Follows rookie police officers working in Belfast, a city in which being a frontline response cop comes with unique pressures and dangers.",
    "poster": "https://image.tmdb.org/t/p/w500/3C3c40DH8M6qdECHLlxk8o5nrC0.jpg"
+  },
+  "t2004": {
+   "title": "Малкольм у центрі уваги",
+   "year": "2000",
+   "rating": 8.2,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Серіал запрошує глядача до великої родини, в якій завжди багато веселощів. У ній є все: матуся-монстр, батько-лопух і четверо дітей-шибеників. Вся ця вибухонебезпечна суміш мешкає під одним дахом, де постійно відбуваєтьс",
+   "poster": "https://image.tmdb.org/t/p/w500/rnfxXPJe6xL6hF6L93EiZn1QYRR.jpg"
+  },
+  "t39859": {
+   "title": "Незграба",
+   "year": "2011",
+   "rating": 7.5,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Старшокласниця Дженна Гемілтон сама пересічна учениця місцевої школи. Від інших її відрізняє лише вміння потрапляти в безглузді ситуації. Так само, як і її ровесниці, Дженна хоче опинитися в центрі уваги та перестати бут",
+   "poster": "https://image.tmdb.org/t/p/w500/7PLO6PdGmfKiV3KER2Rd08Ga8kM.jpg"
+  },
+  "t17174": {
+   "title": "Привиди",
+   "year": "2019",
+   "rating": 8.4,
+   "genres": [
+    "Комедія",
+    "Науково фантастичний"
+   ],
+   "g": [
+    35,
+    10765
+   ],
+   "ov": "A cash-strapped young couple inherits a grand country house, only to find it is both falling apart and teeming with the ghosts of former inhabitants.",
+   "poster": "https://image.tmdb.org/t/p/w500/3Xz4JtqISyVCKct96O94k4Mz5sU.jpg"
+  },
+  "t49011": {
+   "title": "Мамця",
+   "year": "2013",
+   "rating": 7.4,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Крісті, мати одиначка, яка намагається влаштувати своє життя в Напа Веллі.",
+   "poster": "https://image.tmdb.org/t/p/w500/wytY2EyhDmRUSp6M3s42lN8lHsR.jpg"
+  },
+  "t4546": {
+   "title": "Вгамуй свій ентузіазм",
+   "year": "2000",
+   "rating": 8.8,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Цей комедійний серіал є унікальним у своєму роді. Ларрі Девід зважився зняти історію про самого себе. Цей хлопець каже те, що думає; він конфліктує з усім світом, тому проблеми постійно переслідують його, але Ларрі не ма",
+   "poster": "https://image.tmdb.org/t/p/w500/py843nYpZhfpze1J6gW68tCWdQc.jpg"
+  },
+  "t125935": {
+   "title": "Початкова школа \"Ебботт\"",
+   "year": "2021",
+   "rating": 8.2,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "In this workplace comedy, a group of dedicated, passionate teachers — and a slightly tone-deaf principal — are brought together in a Philadelphia public school where, despite the odds stacked against them, they are deter",
+   "poster": "https://image.tmdb.org/t/p/w500/eqc95mrb9tHQGGqtyEixTtpVwLc.jpg"
+  },
+  "t32895": {
+   "title": "Різзолі та Айлз",
+   "year": "2010",
+   "rating": 7.7,
+   "genres": [
+    "Кримінал",
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    80,
+    18,
+    9648,
+    35
+   ],
+   "ov": "В кожній серії розповідається як детектив Джейн Різзолі та лікар-прозектор Мора Айлз розкривають злочини в Бостоні",
+   "poster": "https://image.tmdb.org/t/p/w500/kuCNyr4XVQ4MZWiNjVS6DypE988.jpg"
+  },
+  "t34524": {
+   "title": "Вовченя",
+   "year": "2011",
+   "rating": 7.7,
+   "genres": [
+    "Науково фантастичний",
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    10765,
+    18,
+    35
+   ],
+   "ov": "Скотт МакКол, шістнадцятирічний підліток, одного разу вночі опиняється у лісі разом зі своїм найкращим другом Стайлзом Стілінскі, сином шерифа. Хлопці намагаються розгадати загадку, знайшовши у лісі пошматований труп дів",
+   "poster": "https://image.tmdb.org/t/p/w500/2s6JKT7NIxDMEkm3ppCUfJ9yZJ.jpg"
+  },
+  "t153312": {
+   "title": "Король Талси",
+   "year": "2022",
+   "rating": 7.9,
+   "genres": [
+    "Кримінал",
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    80,
+    18,
+    35
+   ],
+   "ov": "Історія італійського мафіозі Двайта «Генерала» Манфреді, якого, після тривалого ув’язнення, глава клану відправляє в богом забуту Талсу, штат Оклахома, щоб відновити там злочинну мережу, не надіючись на хоч якийсь позити",
+   "poster": "https://image.tmdb.org/t/p/w500/11Zu9w5heCOhzNIjQVjAnpiVa9W.jpg"
+  },
+  "t2038": {
+   "title": "Дрейк і Джош",
+   "year": "2004",
+   "rating": 7.7,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Дрейк Паркер (Дрейк Белл) та Джош Ніколс (Джош Пек) — двоє підлітків, які живуть у Сан-Дієго, Каліфорнія. Вони стають зведеними братами, коли мати Дрейка, Одрі Паркер (Ненсі Салліван), виходить заміж за батька Джоша, Вол",
+   "poster": "https://image.tmdb.org/t/p/w500/udCvGctktHvvf8w51XyTPfcmzDa.jpg"
+  },
+  "t96102": {
+   "title": "Музика лікарні",
+   "year": "2020",
+   "rating": 8.7,
+   "genres": [
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    18,
+    35
+   ],
+   "ov": "Кожен день особливий для п’ятьох лікарів і їхніх пацієнтів у госпіталі, де народження, смерть і багато іншого живуть пліч-о-пліч.",
+   "poster": "https://image.tmdb.org/t/p/w500/zy0FJYPsKkfOrZG5r5lFtTIx1up.jpg"
   }
  },
  "cofid_pushed": "30.10.2026",
@@ -40330,7 +40494,7 @@
   "src": "Medium"
  },
  "silpo_snap": "2026-10-28",
- "live_day": "",
+ "live_day": "2026-10-30",
  "silpo_week": "2026-44",
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 22.10–29.10\n<blockquote>🆕 <b>1. Instagram тестує відео до 90 хвилин</b>\nInstagram розпочав тестування горизонтальних та довгих відео тривалістю до 90 хвилин, кидаючи виклик YouTube.\n💡 Адаптуйте свої лонгрід-відео та подкасти під новий формат, щоб зайняти нішу на ранньому етапі тестування.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOOXVMV2djRXhpbU9hQTRpTlRObmNibURtb3hzX3NXOW9jbWp1a2tLRFNjdWVoaVFBbVlsNFBHSjBkYkt1UVpFbFRCcWZLS2g4cXl1VGNiaUJibHZmYzBCemJjWVgwZ0Nxckl4bElPUWRMemNjVnpvYS1xRzVRbXU1QzctWkh5S2NYbkFOUlp1MU45b1IwcWFtNmF2OHF0X2pPQW9lc2tja2o5ZFJhZkxMWnJDM0NSdw?oc=5\">The Hollywood Reporter</a></blockquote>\n<blockquote>🎯 <b>2. Дані ефективності для кожного креативу в Meta</b>\nMeta додала детальну індивідуальну статистику ефективності для кожного рекламного креативу.\n💡 Використовуйте ці нові дані для точкового аналізу та відключення неефективних креативів без зупинки всієї групи оголошень.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-adds-individual-performance-data-for-ad-creative/872981/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>3. Нова стрічка «For You» у Reddit</b>\nReddit офіційно представив персоналізовану стрічку «For You», яка формується на основі інтересів користувача.\n💡 Перегляньте стратегію присутності бренду на платформі з урахуванням алгоритмічної видачі в новій стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/reddit-introduces-for-you-feed/873132/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Розширення реклами в AI Mode від Google</b>\nGoogle розширив показ реклами у своєму штучному інтелекті на нові ринки.\n💡 Стежте за появою нових форматів пошукової реклами з підтримкою AI та тестуйте їх для своїх кампаній.\n🔗 <a href=\"https://blog.google/products/ads-commerce/ads-in-ai-mode-global/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>5. Гид по ресторанах усередині TikTok</b>\nTikTok додав вбудований путівник по ресторанах, що дозволяє користувачам знаходити заклади прямо в додатку.\n💡 Локальним брендам та закладам харчування варто активніше створювати геолокаційний контент у TikTok.\n🔗 <a href=\"https://www.socialmediatoday.com/news/tiktok-adds-in-app-restaurant-guide/873122/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Хаб аналітичних даних від LinkedIn</b>\nLinkedIn запустив новий інформаційний центр для надання глибшої аналітики та даних професійній аудиторії.\n💡 Використовуйте цей інструмент для дослідження ринку та планування B2B-кампаній.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-launches-data-insights-hub/872972/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>7. Спільне авторство зображень на X</b>\nСоцмережа X додала можливість ділитися авторськими правами або відмітками на репостнутих зображеннях.\n💡 Враховуйте це оновлення при поширенні візуального контенту та партнерських креативів.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-lets-users-share-credit-on-reposted-images/873100/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>8. Святковий проєкт Disney у TikTok Shop</b>\nDisney планує масштабну святкову кампанію в TikTok Shop за участю понад 20 брендів.\n💡 Готуйте товарні каталоги та інтеграції до святкових покупок через соцмережі.\n🔗 <a href=\"https://www.marketingdive.com/news/disney-plans-tiktok-shop-holiday-experience-with-over-20-brands/873072/\">Marketing Dive</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202644",
  "kino_q": [
@@ -40482,7 +40646,8 @@
   "ser_gems": "2026-10-30T10:56:42.092935+02:00",
   "ser_hot": "2026-10-30T11:02:28.771861+02:00",
   "ser_new": "2026-10-30T11:35:43.205488+02:00",
-  "ser_crime": "2026-10-30T11:45:45.411575+02:00"
+  "ser_crime": "2026-10-30T11:45:45.411575+02:00",
+  "ser_comedy": "2026-10-30T12:15:43.884784+02:00"
  },
  "kb_probe2": "2026-44"
 }
