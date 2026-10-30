@@ -709,7 +709,7 @@
   "t110316",
   "t1420"
  ],
- "gh_beat": "2026-10-31T01:00:45.779677+02:00",
+ "gh_beat": "2026-10-31T01:05:45.455517+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -724,7 +724,7 @@
   "emergency": false,
   "city_emergency": false,
   "city_text": "Повідомити про аварійні ситуації",
-  "checked": "2026-10-31T00:52:58.701733+02:00",
+  "checked": "2026-10-31T01:02:55.612391+02:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1725,8 +1725,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "30.10 23:46",
-   "ts": 1793396788,
+   "at": "31.10 01:06",
+   "ts": 1793401615,
    "ok": true,
    "note": ""
   },
@@ -1833,14 +1833,14 @@
    "note": ""
   },
   "youtube канали": {
-   "at": "30.10 23:35",
-   "ts": 1793396147,
+   "at": "31.10 01:05",
+   "ts": 1793401550,
    "ok": true,
    "note": ""
   },
   "живий english": {
-   "at": "30.10 23:35",
-   "ts": 1793396147,
+   "at": "31.10 01:06",
+   "ts": 1793401574,
    "ok": true,
    "note": ""
   }
@@ -30212,10 +30212,16 @@
    null,
    null,
    "2026-10-30"
+  ],
+  "tt1427389": [
+   7.1,
+   null,
+   null,
+   "2026-10-31"
   ]
  },
  "pushed_h": {
-  "gs": "77d77b34a108",
+  "gs": "c5283f7d1149",
   "quiz_pool.json": "31473d6acb2e",
   "fact.png": "65ea350dd255",
   "sexed.json": "4efede1d8ea5",
@@ -43293,6 +43299,159 @@
    ],
    "ov": "У час коли по всьому світу лютує Друга світова війна детектив Крістофер Фойл змушений вести свою маленьку війну проти вбивць, злодіїв, підпільних торговців і зрадників...",
    "poster": "https://image.tmdb.org/t/p/w500/dNqHn5UCoa2vodPv5g1nfQE89R4.jpg"
+  },
+  "t815": {
+   "title": "Піп-шоу",
+   "year": "2003",
+   "rating": 8.7,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Марк — типовий клерк, не пристосований до життя поза офісом. Він однаково боїться дітей і дівчат, незграбний і наївний. Джеремі енергійний і оптимістичний, намагається заробити гроші створенням недоладної електронної муз",
+   "poster": "https://image.tmdb.org/t/p/w500/6rdoQ0cTjsEQLIwEjhBV8U98oUm.jpg"
+  },
+  "t2282": {
+   "title": "Aquí no hay quien viva",
+   "year": "2003",
+   "rating": 8.2,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "A caustic satire of many of the 'types' found in Spanish society.",
+   "poster": "https://image.tmdb.org/t/p/w500/db9cSJfLugDSGfsW4tqMTPGupVT.jpg"
+  },
+  "t15819": {
+   "title": "Сховище 13",
+   "year": "2009",
+   "rating": 7.6,
+   "genres": [
+    "Науково фантастичний",
+    "Комедія",
+    "Екшн і Пригоди"
+   ],
+   "g": [
+    10765,
+    35,
+    10759,
+    18
+   ],
+   "ov": "Після порятунку життя президента, двох агентів Секретної служби переводять на секретний об'єкт у штаті Південна Дакота. Там зберігаються надприродні речі, які уряд США збирав протягом сторіч. Їхнє нове призначення - пове",
+   "poster": "https://image.tmdb.org/t/p/w500/2AIi7giGzw4Jt709FaL8gOe9GQu.jpg"
+  },
+  "t87428": {
+   "title": "Чому жінки вбивають",
+   "year": "2019",
+   "rating": 8.3,
+   "genres": [
+    "Комедія",
+    "Кримінал",
+    "Драма"
+   ],
+   "g": [
+    35,
+    80,
+    18
+   ],
+   "ov": "Три історії відбуваються в одному житлі, але в різні роки. Головними героїнями виступають жінки, які мають різний рід занять, але об’єднує їх одне — вони всі скоїли вбивство. Причиною даного злочину стає викриття їхніх ч",
+   "poster": "https://image.tmdb.org/t/p/w500/niSuDBTfunavOBlRNBuvzvPg5dj.jpg"
+  },
+  "t48891": {
+   "title": "Бруклін 9-9",
+   "year": "2013",
+   "rating": 8.4,
+   "genres": [
+    "Комедія",
+    "Кримінал"
+   ],
+   "g": [
+    35,
+    80
+   ],
+   "ov": "Сюжет серіалу оповідає про детектива, на долю якого в один момент випали серйозні зміни. Зовсім недавно він не виявляв до своєї роботи ніякої серйозності, але тепер, коли його штаб очолив новий керівник, детективу доведе",
+   "poster": "https://image.tmdb.org/t/p/w500/a9gmarnmzyd7Q7XkyLxvZvK3jNP.jpg"
+  },
+  "t65798": {
+   "title": "Леттеркенні",
+   "year": "2016",
+   "rating": 8.5,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "У Леттеркенні 5000 людей. Це їхні проблеми.\n\nРозповідь стежить за Вейном, старим добрим сільським хлопцем із Леттеркенні, Онтаріо, який намагається захистити свій звичний спосіб життя на фермі від світу, що постійно розв",
+   "poster": "https://image.tmdb.org/t/p/w500/zrB0Viy72GYKiLrtSs7SQVz5QWl.jpg"
+  },
+  "t1447": {
+   "title": "Ясновидець",
+   "year": "2006",
+   "rating": 8.4,
+   "genres": [
+    "Драма",
+    "Комедія",
+    "Кримінал"
+   ],
+   "g": [
+    18,
+    35,
+    80
+   ],
+   "ov": "Шон Спенсер - молодий консультант поліції в Санта-Барбарі, чия тонко розвинена спостережливість і неординарні дедуктивні здібності дозволяють йому переконати всіх у тому, що він ясновидець. Батько Шона - співробітник пол",
+   "poster": "https://image.tmdb.org/t/p/w500/fkVFAnKA0mtv3CokHdDxkZTd7sX.jpg"
+  },
+  "t4589": {
+   "title": "Затримка в розвитку",
+   "year": "2003",
+   "rating": 8.6,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Це історія багатої родини, яка втратила все, і одного сина, якому нічого не залишалося, крім як не дати цій сім'ї розвалитися. На перший погляд, Майкл Блут - єдиний нормальний в сімействі божевільних. Він змушений залиши",
+   "poster": "https://image.tmdb.org/t/p/w500/1B6AXoW2fwoCLIVFQf7PCiWU2Rs.jpg"
+  },
+  "t5522": {
+   "title": "Doña Bárbara",
+   "year": "2008",
+   "rating": 7.6,
+   "genres": [
+    "Драма",
+    "Комедія",
+    "Мильна опера"
+   ],
+   "g": [
+    18,
+    35,
+    10766
+   ],
+   "ov": "Doña Bárbara is a Spanish-language telenovela produced by the United States-based television network Telemundo, Sony Pictures Television International and RTI Colombia. Edith González and Christian Meier star in this ada",
+   "poster": "https://image.tmdb.org/t/p/w500/H8Gz2bG7p2lmbrtM6duGpkY7z8.jpg"
+  },
+  "t71915": {
+   "title": "Добрі передвісники",
+   "year": "2019",
+   "rating": 8.0,
+   "genres": [
+    "Комедія",
+    "Драма",
+    "Науково фантастичний"
+   ],
+   "g": [
+    35,
+    18,
+    10765
+   ],
+   "ov": "Азірафаель і Кроулі, з небес і пекла відповідно, полюбили Землю. Тож їх вразила жахлива звістка про те, що Землі скоро настане кінець. Армії добра і зла готуються до бою. Чотири вершники готові вирушати. Усе йде згідно з",
+   "poster": "https://image.tmdb.org/t/p/w500/vyrIaSG5agUDQ0GmlMyesF17t57.jpg"
   }
  },
  "cofid_pushed": "30.10.2026",
@@ -43366,7 +43525,7 @@
   "src": "Sex With Emily"
  },
  "silpo_snap": "2026-10-28",
- "live_day": "2026-10-30",
+ "live_day": "2026-10-31",
  "silpo_week": "2026-44",
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 22.10–29.10\n<blockquote>🆕 <b>1. Instagram тестує відео до 90 хвилин</b>\nInstagram розпочав тестування горизонтальних та довгих відео тривалістю до 90 хвилин, кидаючи виклик YouTube.\n💡 Адаптуйте свої лонгрід-відео та подкасти під новий формат, щоб зайняти нішу на ранньому етапі тестування.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOOXVMV2djRXhpbU9hQTRpTlRObmNibURtb3hzX3NXOW9jbWp1a2tLRFNjdWVoaVFBbVlsNFBHSjBkYkt1UVpFbFRCcWZLS2g4cXl1VGNiaUJibHZmYzBCemJjWVgwZ0Nxckl4bElPUWRMemNjVnpvYS1xRzVRbXU1QzctWkh5S2NYbkFOUlp1MU45b1IwcWFtNmF2OHF0X2pPQW9lc2tja2o5ZFJhZkxMWnJDM0NSdw?oc=5\">The Hollywood Reporter</a></blockquote>\n<blockquote>🎯 <b>2. Дані ефективності для кожного креативу в Meta</b>\nMeta додала детальну індивідуальну статистику ефективності для кожного рекламного креативу.\n💡 Використовуйте ці нові дані для точкового аналізу та відключення неефективних креативів без зупинки всієї групи оголошень.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-adds-individual-performance-data-for-ad-creative/872981/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>3. Нова стрічка «For You» у Reddit</b>\nReddit офіційно представив персоналізовану стрічку «For You», яка формується на основі інтересів користувача.\n💡 Перегляньте стратегію присутності бренду на платформі з урахуванням алгоритмічної видачі в новій стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/reddit-introduces-for-you-feed/873132/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Розширення реклами в AI Mode від Google</b>\nGoogle розширив показ реклами у своєму штучному інтелекті на нові ринки.\n💡 Стежте за появою нових форматів пошукової реклами з підтримкою AI та тестуйте їх для своїх кампаній.\n🔗 <a href=\"https://blog.google/products/ads-commerce/ads-in-ai-mode-global/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>5. Гид по ресторанах усередині TikTok</b>\nTikTok додав вбудований путівник по ресторанах, що дозволяє користувачам знаходити заклади прямо в додатку.\n💡 Локальним брендам та закладам харчування варто активніше створювати геолокаційний контент у TikTok.\n🔗 <a href=\"https://www.socialmediatoday.com/news/tiktok-adds-in-app-restaurant-guide/873122/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Хаб аналітичних даних від LinkedIn</b>\nLinkedIn запустив новий інформаційний центр для надання глибшої аналітики та даних професійній аудиторії.\n💡 Використовуйте цей інструмент для дослідження ринку та планування B2B-кампаній.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-launches-data-insights-hub/872972/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>7. Спільне авторство зображень на X</b>\nСоцмережа X додала можливість ділитися авторськими правами або відмітками на репостнутих зображеннях.\n💡 Враховуйте це оновлення при поширенні візуального контенту та партнерських креативів.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-lets-users-share-credit-on-reposted-images/873100/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>8. Святковий проєкт Disney у TikTok Shop</b>\nDisney планує масштабну святкову кампанію в TikTok Shop за участю понад 20 брендів.\n💡 Готуйте товарні каталоги та інтеграції до святкових покупок через соцмережі.\n🔗 <a href=\"https://www.marketingdive.com/news/disney-plans-tiktok-shop-holiday-experience-with-over-20-brands/873072/\">Marketing Dive</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202644",
  "kino_q": [
@@ -43519,7 +43678,7 @@
   "ser_hot": "2026-10-30T23:15:42.869722+02:00",
   "ser_new": "2026-10-30T23:35:44.675941+02:00",
   "ser_crime": "2026-10-30T23:45:47.210295+02:00",
-  "ser_comedy": "2026-10-30T12:15:43.884784+02:00",
+  "ser_comedy": "2026-10-31T01:05:45.574441+02:00",
   "ser_drama": "2026-10-30T12:25:45.682016+02:00",
   "ser_scifi": "2026-10-30T13:25:43.086681+02:00",
   "ser_mystery": "2026-10-30T13:35:44.522225+02:00"
