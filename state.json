@@ -709,7 +709,7 @@
   "t110316",
   "t1420"
  ],
- "gh_beat": "2026-10-30T23:40:46.605038+02:00",
+ "gh_beat": "2026-10-30T23:45:47.094114+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -720,11 +720,11 @@
   "groups": [
    "GPV4.1"
   ],
-  "updated": "23:20 30.10.2026",
+  "updated": "23:36 30.10.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Повідомити про аварійні ситуації",
-  "checked": "2026-10-30T23:32:52.208289+02:00",
+  "checked": "2026-10-30T23:42:52.671370+02:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1701,8 +1701,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "30.10 23:36",
-   "ts": 1793396187,
+   "at": "30.10 23:46",
+   "ts": 1793396788,
    "ok": true,
    "note": ""
   },
@@ -30185,10 +30185,16 @@
    null,
    null,
    "2026-10-30"
+  ],
+  "tt2187850": [
+   8.4,
+   null,
+   null,
+   "2026-10-30"
   ]
  },
  "pushed_h": {
-  "gs": "c78e118ecedc",
+  "gs": "84df1a4a2a8d",
   "quiz_pool.json": "31473d6acb2e",
   "fact.png": "2bacadb72c69",
   "sexed.json": "4efede1d8ea5",
@@ -43171,6 +43177,101 @@
    ],
    "ov": "За століття до подій «Гри престолів» Вестеросом блукали два несподівані герої... молодий, наївний, але сміливий лицар, сер Дункан Високий, та його мініатюрний зброєновець, Егг. Події відбуваються в епоху, коли рід Таргар",
    "poster": "https://image.tmdb.org/t/p/w500/bDYAjBVXblqeqjQR1M7KmW8xxKP.jpg"
+  },
+  "t44856": {
+   "title": "Вентворт",
+   "year": "2013",
+   "rating": 8.6,
+   "genres": [
+    "Драма",
+    "Кримінал"
+   ],
+   "g": [
+    18,
+    80
+   ],
+   "ov": "Бі Сміт потрапляє у в'язницю за звинуваченням у замаху на вбивство чоловіка. Сміт відправляють в Вентворт, де вона живе, поки не відбудеться суд. Почавши свою тюремну біографію в нижній частині ієрархії Вентворта, Бі вим",
+   "poster": "https://image.tmdb.org/t/p/w500/3nikr0NE3t8UMgI1Ba6hXaeEgKr.jpg"
+  },
+  "t2343": {
+   "title": "Lewis",
+   "year": "2007",
+   "rating": 8.2,
+   "genres": [
+    "Кримінал",
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    80,
+    18,
+    9648
+   ],
+   "ov": "Inspector Robert Lewis and Sergeant James Hathaway solve the tough cases that the learned inhabitants of Oxford throw at them.",
+   "poster": "https://image.tmdb.org/t/p/w500/etyCA64joFB2jGJFWZPUYczVbvf.jpg"
+  },
+  "t1438": {
+   "title": "Дроти",
+   "year": "2002",
+   "rating": 9.3,
+   "genres": [
+    "Кримінал",
+    "Драма"
+   ],
+   "g": [
+    80,
+    18
+   ],
+   "ov": "Підрозділ поліцейських в Балтіморі намагається за допомогою спеціальних засобів і заходів по прослуховуванню і прихованої відеозйомки довести до суду розслідування злочинів організованих злочинних груп, які займаються не",
+   "poster": "https://image.tmdb.org/t/p/w500/o9JJcOHl8EXOHBDqmWBs7Sl1d9J.jpg"
+  },
+  "t43348": {
+   "title": "Pablo Escobar: El Patrón del Mal",
+   "year": "2012",
+   "rating": 8.4,
+   "genres": [
+    "Кримінал",
+    "Драма"
+   ],
+   "g": [
+    80,
+    18
+   ],
+   "ov": "Pablo is a man with a natural ability for business. Early in his life, Pablo is introduced to the business of cocaine and the power it yields. A young life of crime lands Pablo in and out of jail as he builds his crimina",
+   "poster": "https://image.tmdb.org/t/p/w500/jZqm7HFuxfH9P0LFjQZ8nzrCUHP.jpg"
+  },
+  "t194764": {
+   "title": "Пінгвін",
+   "year": "2024",
+   "rating": 8.6,
+   "genres": [
+    "Драма",
+    "Кримінал"
+   ],
+   "g": [
+    18,
+    80
+   ],
+   "ov": "Після смерті мафіозі Кармайна Фальконе його найближчий помічник Освальд Кобблпот на прізвисько Пінгвін збирається зайняти місце свого боса. Однак у померлого є дочка Софія, яка не має наміру відмовлятися від спадщини. У ",
+   "poster": "https://image.tmdb.org/t/p/w500/lVaK1ISd3ZpE9OTdwKysWB7C1mi.jpg"
+  },
+  "t3163": {
+   "title": "Війна Фойла",
+   "year": "2002",
+   "rating": 8.6,
+   "genres": [
+    "Детектив",
+    "Драма",
+    "Політика та війна"
+   ],
+   "g": [
+    9648,
+    18,
+    10768,
+    80
+   ],
+   "ov": "У час коли по всьому світу лютує Друга світова війна детектив Крістофер Фойл змушений вести свою маленьку війну проти вбивць, злодіїв, підпільних торговців і зрадників...",
+   "poster": "https://image.tmdb.org/t/p/w500/dNqHn5UCoa2vodPv5g1nfQE89R4.jpg"
   }
  },
  "cofid_pushed": "30.10.2026",
@@ -43396,7 +43497,7 @@
   "ser_gems": "2026-10-30T23:05:44.997188+02:00",
   "ser_hot": "2026-10-30T23:15:42.869722+02:00",
   "ser_new": "2026-10-30T23:35:44.675941+02:00",
-  "ser_crime": "2026-10-30T11:45:45.411575+02:00",
+  "ser_crime": "2026-10-30T23:45:47.210295+02:00",
   "ser_comedy": "2026-10-30T12:15:43.884784+02:00",
   "ser_drama": "2026-10-30T12:25:45.682016+02:00",
   "ser_scifi": "2026-10-30T13:25:43.086681+02:00",
