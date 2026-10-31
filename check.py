@@ -5079,6 +5079,45 @@ def _km(a, b) -> float:
     return (dx * dx + dy * dy) ** 0.5
 
 
+SB_STATS = Path("sb_stats.json")
+
+
+def sb_stats_update(st: dict, now: datetime, pts: list) -> None:
+    """📈 Фактична статистика: щодобові суми «частка будинків без світла × хвилини» для Києва, районів і черг (історія до 100 днів)."""
+    try:
+        db = json.loads(SB_STATS.read_text("utf-8"))
+    except Exception:
+        db = {}
+    last = float(db.get("_t") or 0)
+    dt = min(15.0, (_time.time() - last) / 60) if last else 5.0   # хвилини з попереднього знімка (прогалини — не більше 15 хв)
+    db["_t"] = _time.time()
+    day = db.setdefault("days", {}).setdefault(now.strftime("%Y-%m-%d"), {})
+    groups: dict = {}
+    for p in pts:
+        keys = (["kyiv", "d:" + p["d"]] if p.get("d") else []) + (["g:" + p["g"]] if p.get("g") else [])
+        for k in keys:
+            groups.setdefault(k, [0, 0])[0 if p["on"] else 1] += 1
+    gd = db.setdefault("gd", {})                       # черга → район (де більшість її будинків)
+    cnt: dict = {}
+    for p in pts:
+        if p.get("g") and p.get("d"):
+            cnt.setdefault(p["g"], {}).setdefault(p["d"], 0); cnt[p["g"]][p["d"]] += 1
+    for g, dd in cnt.items():
+        gd[g] = max(dd, key=dd.get)
+    for k, (on, off) in groups.items():
+        if on + off < 3:
+            continue
+        v = day.setdefault(k, [0.0, 0.0])
+        v[0] = round(v[0] + dt * off / (on + off), 2); v[1] = round(v[1] + dt, 2)   # хвилини «без світла» (зважено) і покриті хвилини
+    keep = sorted(db["days"])[-100:]
+    db["days"] = {k: db["days"][k] for k in keep}
+    SB_STATS.write_text(json.dumps(db, ensure_ascii=False, separators=(",", ":")), "utf-8")
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=sb_stats.json", db)
+    except Exception as e:
+        print(f"Статистика світла → бот: {err_text(e)[:60]}")
+
+
 def sb_alerts(st: dict, now: datetime, pts: list) -> None:
     """🧠 Масові зміни поруч із людиною (радіус з профілю, типово 1 км): зникло/дали світло, «схоже на аварію»."""
     prof, subs = st.get("prof_ex") or {}, st.get("subs_ex") or {}
@@ -5093,6 +5132,21 @@ def sb_alerts(st: dict, now: datetime, pts: list) -> None:
         if not la:
             continue
         r = float(p.get("sbr") or 1.0)
+        if cid not in FAMILY:                         # 🏠 «ваш будинок»: найближча точка мапи до 300 м — світло зникло / зʼявилося
+            hd = min(((_km((x["la"], x["lo"]), (float(la), float(lo))), x) for x in pts), key=lambda t: t[0], default=(99, None))
+            if hd[1] is not None and hd[0] <= 0.3:
+                hk, hon = f'{hd[1]["la"]},{hd[1]["lo"]}', hd[1]["on"]
+                ph = (st.get("sbm_home") or {}).get(cid) or {}
+                if ph.get("k") == hk and ph.get("on") is not None and ph["on"] != hon:
+                    dur = ""
+                    try:
+                        mins = int((_time.time() - float(ph.get("t") or _time.time())) / 60)
+                        dur = f" · {'було відсутнє' if hon else 'було'} ~{mins // 60} год {mins % 60} хв" if mins >= 10 else ""
+                    except Exception:
+                        pass
+                    SB_ALERT_MSGS.append((cid, f"{'🟢 <b>Світло зʼявилося</b>' if hon else '🔴 <b>Світло зникло</b>'} у будинку поруч з вами{dur}\n🏠 {esc(re.sub(r'^.*?->\s*', '', hd[1]['n'])[:60])}\n"
+                                               "<i>За даними мапи СвітлоБотів (затримка 3–7 хв).</i>"))
+                st.setdefault("sbm_home", {})[cid] = {"k": hk, "on": hon, "t": _time.time() if ph.get("on") != hon or ph.get("k") != hk else ph.get("t", _time.time())}
         near = [x for x in pts if _km((x["la"], x["lo"]), (float(la), float(lo))) <= r]
         if len(near) < 5:
             continue
@@ -5109,6 +5163,21 @@ def sb_alerts(st: dict, now: datetime, pts: list) -> None:
             nxt[cid][1] = _time.time()
             SB_ALERT_MSGS.append((cid, msg + "\n<i>За даними мапи СвітлоБотів · оновлення ~раз на 5 хв.</i>"))
     st["sbm_near"] = nxt
+    gprev, gnow = st.get("sbm_grp") or {}, {}            # 👥 «ваша черга»: світло зникло / зʼявилось у більшості будинків черги
+    for x in pts:
+        if x.get("g"):
+            gnow.setdefault(x["g"], [0, 0])[0 if x["on"] else 1] += 1
+    gpct = {g: round(100 * a / (a + b)) for g, (a, b) in gnow.items() if a + b >= 5}
+    for g, pc in gpct.items():
+        was = gprev.get(g)
+        if was is None or abs(pc - was) < 40 or (pc > 40 and was > 40 and pc < 60 and was < 60):
+            continue
+        txt = (f"{'🟢' if pc > was else '🔴'} <b>Черга {esc(g)}: світло {'зʼявилося' if pc > was else 'зникло'}</b> у більшості будинків — зараз є у {pc}% (було {was}%)\n"
+               "<i>За даними мапи СвітлоБотів.</i>")
+        for cid, p in prof.items():
+            if str(p.get("group") or "") == g and p.get("sba", cid in FAMILY) and (cid in FAMILY or "svitlo" in (subs.get(cid) or [])):
+                SB_ALERT_MSGS.append((cid, txt))
+    st["sbm_grp"] = {**gprev, **gpct}
 
 
 SB_ALERT_MSGS: list = []
@@ -5162,6 +5231,10 @@ def sb_map(st: dict, now: datetime) -> None:
     pct = round(100 * sum(1 for p in kyiv_pts if p["on"]) / max(1, len(kyiv_pts)))
     hist = (st.get("sbm_hist") or [])[-143:] + [[now.strftime("%H:%M"), pct]]   # 📈 % зі світлом у Києві за добу
     st["sbm_hist"] = hist
+    try:
+        sb_stats_update(st, now, pts)                 # 📈 фактична статистика (доба/тиждень/місяць/3 міс)
+    except Exception as e:
+        print(f"Статистика світла: {err_text(e)[:80]}")
     try:
         sb_alerts(st, now, pts)                       # 🧠 розумні сповіщення
     except Exception as e:
@@ -7019,7 +7092,12 @@ def main() -> None:
         st["prof_ex"], st["subs_ex"] = {str(k): v for k, v in PROF.items()}, {str(k): v for k, v in (subs or {}).items()}
         FAMILY[:] = [str(x) for x in family]
         sb_map(st, now)                               # 🗺 мапа світла (раз на ~10 хв)
-        direct_m.extend((c, t, None) for c, t in SB_ALERT_MSGS)
+        one_ = {}                                     # одне повідомлення на людину за раз: будинок → черга → «масово поруч»
+        for c_, t_ in SB_ALERT_MSGS:
+            pri = 0 if "будинку поруч" in t_ else 1 if "Черга" in t_ else 2
+            if c_ not in one_ or pri < one_[c_][0]:
+                one_[c_] = (pri, t_)
+        direct_m.extend((c_, t_, None) for c_, (_, t_) in one_.items())
         st.pop("prof_ex", None); st.pop("subs_ex", None)
     except Exception as e:
         print(f"Мапа світла: {err_text(e)[:80]}")
