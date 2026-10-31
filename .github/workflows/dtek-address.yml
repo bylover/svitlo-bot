@@ -42,6 +42,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898208+github-actions[bot]@users.noreply.github.com"
           [ -f addr_state.json ] && git add addr_state.json
+          [ -f addr_subs.json ] && git add addr_subs.json
           [ -f voe_probe.json ] && git add voe_probe.json
           git diff --cached --quiet && exit 0
           git commit -m "addr"
