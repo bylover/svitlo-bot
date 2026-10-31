@@ -5079,6 +5079,81 @@ def _km(a, b) -> float:
     return (dx * dx + dy * dy) ** 0.5
 
 
+# ---------- 🌐 Інтернет і звʼязок: доступність мереж провайдерів Києва й мобільних операторів (IODA + RIPEstat), зміни → сповіщення ----------
+NET_PROV = [("Triolan", "triolan"), ("SunNet", "sunnet"), ("Київстар", "kyivstar"), ("Воля", "volia"), ("Ланет", "lanet"), ("Датагруп", "datagroup"),
+            ("Укртелеком", "ukrtelecom"), ("Vodafone", "vodafone"), ("lifecell", "lifecell")]
+NET_MSGS: list = []
+NET_ASN_KNOWN = {"triolan": "13188", "kyivstar": "15895", "volia": "25229", "datagroup": "3326", "ukrtelecom": "6849", "vodafone": "21497", "lifecell": "34058", "lanet": "39608"}
+
+
+def _asn_find(st: dict, name: str, q: str):
+    cache = st.setdefault("net_asn", {})
+    if q in cache:
+        return cache[q]
+    asn = None
+    try:
+        d = http_json("https://stat.ripe.net/data/searchcomplete/data.json?resource=" + urllib.parse.quote(q))
+        for cat in (d.get("data") or {}).get("categories") or []:
+            if str(cat.get("category", "")).upper().startswith("ASN"):
+                for s_ in cat.get("suggestions") or []:
+                    desc = str(s_.get("description") or "")
+                    if re.search(q, desc, re.I) and re.search(r"\bUA\b|Ukrain|Kyiv|Kiev", desc, re.I):
+                        asn = [str(s_.get("value") or "").upper().replace("AS", ""), desc[:60]]; break
+            if asn:
+                break
+    except Exception as e:
+        print(f"RIPEstat {q}: {err_text(e)[:60]}")
+        return None                                   # не кешуємо помилку
+    if not asn and q in NET_ASN_KNOWN:               # запасний довідник відомих мереж (якщо пошук за назвою не спрацював)
+        asn = [NET_ASN_KNOWN[q], "довідник"]
+    cache[q] = asn
+    return asn
+
+
+def _ioda_ratio(asn: str):
+    """Остання точка / медіана за 24 год для ping-slash24 і bgp (1.0 — норма)."""
+    now_ = int(_time.time())
+    d = http_json(f"https://api.ioda.inetintel.cc.gatech.edu/v2/signals/raw/asn/{asn}?from={now_ - 86400}&until={now_}")
+    series = [s_ for grp in (d.get("data") or []) for s_ in (grp if isinstance(grp, list) else [grp]) if isinstance(s_, dict)]
+    out = {}
+    for s_ in series:
+        src, vals = s_.get("datasource"), [v for v in (s_.get("values") or []) if isinstance(v, (int, float))]
+        if src in ("ping-slash24", "bgp") and len(vals) >= 6:
+            base = sorted(vals[:-3])[len(vals[:-3]) // 2] or 0
+            last = sum(vals[-3:]) / 3
+            out[src] = round(last / base, 3) if base else None
+    return out
+
+
+def net_status(st: dict, now: datetime) -> None:
+    if not WORKER_MODE or (st.get("net_at") and _time.time() - float(st.get("net_at")) < 870):
+        return                                        # раз на ~15 хв
+    st["net_at"] = _time.time()
+    prev, rows = st.get("net_prev") or {}, []
+    for name, q in NET_PROV:
+        a = _asn_find(st, name, q)
+        if not a:
+            rows.append({"n": name, "st": "?", "note": "не знайдено в реєстрі"}); continue
+        try:
+            r = _ioda_ratio(a[0])
+        except Exception as e:
+            rows.append({"n": name, "asn": a[0], "st": "?", "note": f"IODA: {err_text(e)[:40]}"}); continue
+        p_, b_ = r.get("ping-slash24"), r.get("bgp")
+        stt = "?" if p_ is None and b_ is None else "down" if (p_ is not None and p_ < 0.6) or (b_ is not None and b_ < 0.8) else "warn" if (p_ is not None and p_ < 0.85) else "ok"
+        rows.append({"n": name, "asn": a[0], "st": stt, "ping": p_, "bgp": b_})
+        was = prev.get(name)
+        if was in ("ok", "warn", "down") and stt in ("ok", "warn", "down") and was != stt and (stt == "down" or was == "down"):
+            NET_MSGS.append((name, f"{'🔴 <b>' + esc(name) + ': масовий збій мережі</b>' if stt == 'down' else '🟢 <b>' + esc(name) + ': мережа відновилась</b>'}"
+                                   f" · доступність {round((p_ or b_ or 0) * 100)}% від звичайної\n<i>Дані IODA (моніторинг мереж), оновлення ~15 хв.</i>"))
+        prev[name] = stt
+    st["net_prev"] = prev
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=net.json", {"at": now.strftime("%d.%m %H:%M"), "rows": rows})
+    except Exception as e:
+        print(f"Мережі → бот: {err_text(e)[:60]}")
+    print("Мережі: " + ", ".join(f"{r['n']} {r['st']}" + (f" (AS{r['asn']})" if r.get("asn") else "") for r in rows))
+
+
 SB_STATS = Path("sb_stats.json")
 
 
@@ -7098,6 +7173,13 @@ def main() -> None:
             if c_ not in one_ or pri < one_[c_][0]:
                 one_[c_] = (pri, t_)
         direct_m.extend((c_, t_, None) for c_, (_, t_) in one_.items())
+        net_status(st, now)                           # 🌐 мережі провайдерів (раз на ~15 хв)
+        for prov_, txt_ in NET_MSGS:                  # сповіщення тим, хто обрав цього провайдера (основні — Triolan і SunNet за замовчуванням)
+            for c_ in dict.fromkeys([str(x) for x in PROF] + FAMILY):
+                p_ = PROF.get(c_) or PROF.get(int(c_) if c_.lstrip("-").isdigit() else c_) or {}
+                isp_ = p_.get("isp") if p_.get("isp") is not None else (["Triolan", "SunNet"] if str(c_) in FAMILY else [])
+                if prov_ in isp_:
+                    direct_m.append((str(c_), txt_, None))
         st.pop("prof_ex", None); st.pop("subs_ex", None)
     except Exception as e:
         print(f"Мапа світла: {err_text(e)[:80]}")
