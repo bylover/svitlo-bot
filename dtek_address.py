@@ -128,6 +128,10 @@ def fetch_address() -> dict | None:
         except Exception as e:
             print(f"Адреси підписників: {err_text(e)}")
         try:
+            subs_address_check(page)                   # 🏠 аварії за адресами підписників (до 8 за запуск)
+        except Exception as e:
+            print(f"Аварії за адресами підписників: {err_text(e)[:80]}")
+        try:
             vp = browser.new_page()                    # 🏙 Вінниця: сайт ВОЕ за адресами підписників
             voe_requests(vp)
             vp.close()
@@ -226,14 +230,8 @@ def main() -> None:
 
     if not msgs:
         return
-    # кому: вам, дружині та підписникам із темою «Світло» (список — з Cloudflare)
+    # кому: лише вам і дружині — це ВАША адреса (підписники мають свої адреси й черги, їм ці повідомлення не стосуються)
     to = list(dict.fromkeys(CHAT_IDS + ([WIFE_ID] if WIFE_ID else [])))
-    if check.WORKER_MODE:
-        try:
-            ex = check.http_json(f"{check.SYNC_URL}/export?key={check.urllib.parse.quote(check.SYNC_KEY)}")
-            to += [c for c, on in (ex.get("subs") or {}).items() if "svitlo" in on and c not in to]
-        except Exception as e:
-            print(f"Підписники: {err_text(e)}")
     for m in msgs:
         for cid in to:
             try:
@@ -385,6 +383,66 @@ def voe_requests(page) -> None:
                 check.http_json(f"{check.SYNC_URL}/voepush?key={check.urllib.parse.quote(check.SYNC_KEY)}", {"cid": cid, "text": res})
             except Exception as e:
                 print(f"ВОЕ → Worker: {err_text(e)[:60]}")
+
+
+SUBS_STATE = Path("addr_subs.json")
+
+
+def subs_address_check(page) -> None:
+    """🏠 Аварії за адресами підписників: до 8 адрес за запуск (по колу), повідомлення лише власнику адреси."""
+    if not check.WORKER_MODE:
+        return
+    try:
+        ex = check.http_json(f"{check.SYNC_URL}/export?key={check.urllib.parse.quote(check.SYNC_KEY)}") or {}
+    except Exception as e:
+        print(f"Адреси підписників (аварії): {err_text(e)[:60]}")
+        return
+    fam = set(str(x) for x in CHAT_IDS + ([WIFE_ID] if WIFE_ID else []))
+    subs, prof = ex.get("subs") or {}, ex.get("prof") or {}
+    cands = sorted(c for c, p in prof.items() if str(c) not in fam and (p or {}).get("daddr") and not (p or {}).get("dtek_off")
+                   and "svitlo" in (subs.get(c) or []) and (p or {}).get("city", "kyiv") == "kyiv")
+    if not cands:
+        return
+    try:
+        stt = json.loads(SUBS_STATE.read_text("utf-8"))
+    except Exception:
+        stt = {}
+    i0 = int(stt.get("_i") or 0) % len(cands)
+    batch = [cands[(i0 + k) % len(cands)] for k in range(min(8, len(cands)))]
+    stt["_i"] = (i0 + len(batch)) % len(cands)
+    for cid in batch:
+        street, house = (prof[cid].get("daddr") or ["", ""])[:2]
+        try:
+            res = page.evaluate(GETHOME_JS, street)
+            houses = (json.loads(res.get("text") or "{}").get("data") or {})
+        except Exception as e:
+            print(f"Адреса підписника {cid}: {err_text(e)[:50]}")
+            continue
+        h = houses.get(house) or next((v for k, v in houses.items() if hkey(k).replace("/", "") == hkey(house).replace("/", "")), None)
+        if h is None:
+            continue
+        reason, start, end = (h.get("sub_type") or "").strip(), (h.get("start_date") or "").strip(), (h.get("end_date") or "").strip()
+        active, planned = bool(reason or start), bool(re.search(r"стабілізаційн|планов", reason, re.I))
+        prev = stt.get(cid) or {}
+        addr = f"🏠 {esc(street)}, {esc(house)}"
+        msg = ""
+        if active and not planned and (not prev.get("active") or prev.get("start") != start):
+            em = bool(re.search(r"екстрен", reason, re.I))
+            msg = (f"{'🚨' if em else '⚡'} <b>ЗА ВАШОЮ АДРЕСОЮ НЕМАЄ СВІТЛА</b>\n{addr}\n<blockquote>Причина: <b>{esc(reason)}</b>\n🕐 Початок: {esc(start)}\n"
+                   f"💡 Орієнтовне відновлення: <b>{esc(end or 'невідомо')}</b></blockquote>\n<i>Дані ДТЕК</i>")
+        elif active and not planned and prev.get("active") and end and prev.get("end") != end:
+            msg = f"🕐 <b>ОНОВЛЕНО ЧАС ВІДНОВЛЕННЯ</b>\n{addr}\n💡 Тепер орієнтовно: <b>{esc(end)}</b> (було {esc(prev.get('end') or '—')})\n<i>Дані ДТЕК</i>"
+        elif not active and prev.get("active") and not prev.get("planned"):
+            msg = (f"ℹ️ <b>ДТЕК БІЛЬШЕ НЕ ПОКАЗУЄ ВІДКЛЮЧЕННЯ ЗА ВАШОЮ АДРЕСОЮ</b>\n{addr}\nЯкщо світла досі немає — можлива нова аварія: "
+                   "перевірте ще раз через 15 хв або оформіть заявку на сайті ДТЕК.\n<i>Дані ДТЕК</i>")
+        stt[cid] = {"active": active, "start": start, "end": end, "planned": planned}
+        if msg:
+            try:
+                send(cid, msg)
+            except Exception as e:
+                print(f"Не вдалося надіслати {cid}: {err_text(e)}")
+    SUBS_STATE.write_text(json.dumps(stt, ensure_ascii=False), "utf-8")
+    print(f"Аварії за адресами підписників: перевірено {len(batch)} з {len(cands)}")
 
 
 def lookup_requests(page) -> None:

@@ -5067,6 +5067,116 @@ LIVE_DESC = {"idiom": "common English idioms that native speakers really use at 
              "prov": "English proverbs and sayings with their closest Ukrainian equivalent proverb"}
 
 
+# ---------- 🗺 Світло поруч: мапа СвітлоБотів (api.svitlobot.in.ua) + lights-monitor.com → Київ і область, зведення для бота ----------
+KYIV_DISTR = {"Голосіївський": (50.39, 30.50), "Дарницький": (50.41, 30.66), "Деснянський": (50.51, 30.61), "Дніпровський": (50.45, 30.62),
+              "Оболонський": (50.50, 30.46), "Печерський": (50.43, 30.55), "Подільський": (50.48, 30.43), "Святошинський": (50.46, 30.37),
+              "Солом'янський": (50.43, 30.44), "Шевченківський": (50.46, 30.48)}
+
+
+def _km(a, b) -> float:
+    import math
+    dy, dx = (a[0] - b[0]) * 111.2, (a[1] - b[1]) * 111.2 * math.cos(math.radians(a[0]))
+    return (dx * dx + dy * dy) ** 0.5
+
+
+def sb_alerts(st: dict, now: datetime, pts: list) -> None:
+    """🧠 Масові зміни поруч із людиною (радіус з профілю, типово 1 км): зникло/дали світло, «схоже на аварію»."""
+    prof, subs = st.get("prof_ex") or {}, st.get("subs_ex") or {}
+    prev = st.get("sbm_near") or {}
+    nxt = {}
+    for cid, p in prof.items():
+        if not p.get("sba", cid in FAMILY) or (cid not in FAMILY and "svitlo" not in (subs.get(cid) or [])):
+            continue
+        wl = p.get("wloc") or []                       # точка: «Світло поруч» → локація погоди → координати основних (секрети LAT/LON)
+        la = p.get("sbla") or (wl[1] if len(wl) > 2 else None) or (LAT if cid in FAMILY else None)
+        lo = p.get("sblo") or (wl[2] if len(wl) > 2 else None) or (LON if cid in FAMILY else None)
+        if not la:
+            continue
+        r = float(p.get("sbr") or 1.0)
+        near = [x for x in pts if _km((x["la"], x["lo"]), (float(la), float(lo))) <= r]
+        if len(near) < 5:
+            continue
+        pc = round(100 * sum(1 for x in near if x["on"]) / len(near)); nxt[cid] = [pc, (prev.get(cid) or [pc, 0])[1]]
+        was = (prev.get(cid) or [None])[0]
+        if was is None:
+            continue
+        msg = ""
+        if was - pc >= 40 and pc <= 40:
+            msg = f"⚠️ <b>Масово зникло світло поруч</b>: зараз є лише у {pc}% будинків у радіусі {r:g} км (було {was}%)."
+        elif pc - was >= 40 and pc >= 60:
+            msg = f"🔌 <b>Поруч дали світло</b>: вже у {pc}% будинків у радіусі {r:g} км (було {was}%) — у вас, імовірно, теж скоро."
+        if msg and _time.time() - float(nxt[cid][1] or 0) > 1800:   # не частіше ніж раз на 30 хв
+            nxt[cid][1] = _time.time()
+            SB_ALERT_MSGS.append((cid, msg + "\n<i>За даними мапи СвітлоБотів · оновлення ~раз на 5 хв.</i>"))
+    st["sbm_near"] = nxt
+
+
+SB_ALERT_MSGS: list = []
+FAMILY: list = []
+
+
+def sb_map(st: dict, now: datetime) -> None:
+    if not WORKER_MODE or (st.get("sbm_at") and _time.time() - float(st.get("sbm_at")) < 270):
+        return                                        # раз на ~5 хв — частіше сервер мапи не оновлюється (кеш ~5 хв)
+    st["sbm_at"] = _time.time()
+    pts, raw_n, stat = [], 0, {}
+    try:
+        req = urllib.request.Request("https://api.svitlobot.in.ua/website/getChannelsForMap", headers={"User-Agent": "svitlo-bot (Telegram)", "Referer": "https://svitlobot.in.ua/maps"})
+        txt = urllib.request.urlopen(req, timeout=30).read().decode("utf-8", "replace")
+        recs = [r.strip() for r in re.split(r";&&&;\s+(?=-?\d+;&&&;)", txt) if r.strip()]
+        raw_n = len(recs)
+        for r in recs:
+            f = [x.strip() for x in r.split(";&&&;")]
+            if len(f) < 9:
+                continue
+            try:
+                lat, lng = float(f[6]), float(f[7])
+            except ValueError:
+                continue
+            if not (49.9 <= lat <= 51.2 and 29.4 <= lng <= 31.9):   # Київ і область (з запасом)
+                continue
+            stat[f"f1={f[1]}"] = stat.get(f"f1={f[1]}", 0) + 1; stat[f"f8={f[8]}"] = stat.get(f"f8={f[8]}", 0) + 1
+            grp = next((x for x in f[8:] if re.fullmatch(r"\d{1,2}\.\d", x or "")), "")   # група (черга), якщо мапа її віддає
+            pts.append({"n": f[3][:70], "la": round(lat, 5), "lo": round(lng, 5), "on": f[1] == "1", "s": f[2][:16], "g": grp, "f": f[:11] if len(pts) < 1 else None, "src": "sb"})
+    except Exception as e:
+        print(f"Мапа СвітлоБотів: {err_text(e)[:80]}")
+    try:                                              # 2-е джерело: lights-monitor.com
+        for m in http_json("https://lights-monitor.com/api/monitors") or []:
+            la, lo = float(m.get("lat") or 0), float(m.get("lng") or 0)
+            if 49.9 <= la <= 51.2 and 29.4 <= lo <= 31.9:
+                pts.append({"n": str(m.get("address") or m.get("name") or "")[:70], "la": round(la, 5), "lo": round(lo, 5), "on": bool(m.get("is_online")), "s": str(m.get("status_since") or "")[:16], "src": "lm"})
+    except Exception as e:
+        print(f"lights-monitor: {err_text(e)[:60]}")
+    if not pts:
+        return
+    kyiv_c = (50.45, 30.52)
+    distr, obl = {}, {}
+    for p in pts:
+        if _km((p["la"], p["lo"]), kyiv_c) <= 17 and re.search(r"Ки[їє]в|Kyiv|Киев", p["n"], re.I) or _km((p["la"], p["lo"]), kyiv_c) <= 12:
+            d = min(KYIV_DISTR, key=lambda k: _km((p["la"], p["lo"]), KYIV_DISTR[k]))
+            p["d"] = d; distr.setdefault(d, [0, 0])[0 if p["on"] else 1] += 1
+        else:
+            city = re.split(r"\s*->\s*|,", p["n"])[0].strip()[:30] or "інше"
+            p["c"] = city; obl.setdefault(city, [0, 0])[0 if p["on"] else 1] += 1
+    kyiv_pts = [p for p in pts if p.get("d")]
+    pct = round(100 * sum(1 for p in kyiv_pts if p["on"]) / max(1, len(kyiv_pts)))
+    hist = (st.get("sbm_hist") or [])[-143:] + [[now.strftime("%H:%M"), pct]]   # 📈 % зі світлом у Києві за добу
+    st["sbm_hist"] = hist
+    try:
+        sb_alerts(st, now, pts)                       # 🧠 розумні сповіщення
+    except Exception as e:
+        print(f"Мапа світла (сповіщення): {err_text(e)[:80]}")
+    out = {"at": now.strftime("%d.%m %H:%M"), "n": len(pts), "raw": raw_n, "stat": stat, "hist": hist, "kpct": pct,
+           "distr": distr, "obl": dict(sorted(obl.items(), key=lambda kv: -sum(kv[1]))[:25]),
+           "pts": [[p["la"], p["lo"], 1 if p["on"] else 0, p["n"], p["s"], p.get("g", "")] for p in pts], "sample": next((p["f"] for p in pts if p.get("f")), None)}
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=sb_map.json", out)
+    except Exception as e:
+        print(f"Мапа світла → бот: {err_text(e)[:60]}")
+    on = sum(1 for p in pts if p["on"])
+    print(f"Мапа світла: точок {len(pts)} (Київ+обл.; усього на мапі {raw_n}) · зі світлом {on} ({on * 100 // max(1, len(pts))}%) · поля {stat}")
+
+
 def en_live_fill(st: dict, now: datetime) -> None:
     if not WORKER_MODE or not GEMINI_KEY or st.get("live_day") == now.date().isoformat():
         return
@@ -6905,6 +7015,14 @@ def main() -> None:
         kq = build_kino(st)                            # готова підбірка «про запас» — меню віддає миттєво
         if kq:
             st["kino_q"].append({"id": hashlib.md5(kq[0].encode()).hexdigest()[:10], "text": kq[0], "markup": kq[1]})
+    try:
+        st["prof_ex"], st["subs_ex"] = {str(k): v for k, v in PROF.items()}, {str(k): v for k, v in (subs or {}).items()}
+        FAMILY[:] = [str(x) for x in family]
+        sb_map(st, now)                               # 🗺 мапа світла (раз на ~10 хв)
+        direct_m.extend((c, t, None) for c, t in SB_ALERT_MSGS)
+        st.pop("prof_ex", None); st.pop("subs_ex", None)
+    except Exception as e:
+        print(f"Мапа світла: {err_text(e)[:80]}")
     for c in dict.fromkeys(str(x) for x in (worker_req.get("ytch_now") or [])):    # 🧪 адмін: «YouTube: канали зараз» — без черги
         try:
             st["ytch_week"] = ""
