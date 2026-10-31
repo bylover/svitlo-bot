@@ -709,7 +709,7 @@
   "t110316",
   "t1420"
  ],
- "gh_beat": "2026-10-31T07:55:41.606860+02:00",
+ "gh_beat": "2026-10-31T08:00:44.594890+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -783,11 +783,11 @@
    ]
   ]
  },
- "fact_png": "2026-10-31 07|10|2026-10-31T02:49:26+02:00",
+ "fact_png": "2026-10-31 08|10|2026-10-31T02:49:26+02:00",
  "fact_day": {
-  "total": "10 год 35 хв",
+  "total": "9 год 35 хв",
   "list": [
-   "07:00–09:41 · 2 год 41 хв",
+   "08:00–09:41 · 1 год 41 хв",
    "15:08–17:15 · 2 год 7 хв",
    "21:03–02:49 · 5 год 46 хв"
   ]
@@ -1700,14 +1700,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "31.10 07:56",
-   "ts": 1793426204,
+   "at": "31.10 08:03",
+   "ts": 1793426616,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "31.10 07:56",
-   "ts": 1793426204,
+   "at": "31.10 08:03",
+   "ts": 1793426616,
    "ok": true,
    "note": ""
   },
@@ -15743,19 +15743,6 @@
  "imp_sent": {},
  "ero_sent": {},
  "pend": {
-  "silpo": {
-   "id": "2026-10-29 08",
-   "t": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 29.10 08:00 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <a href=\"https://silpo.ua/product/nabir-servetok-kukhonnykh-30kh30-sm-5-sht-1005471-1005471\">Набір серветок кухонних 30х30 см 5 шт. 1005471</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −50%\n2. 🧊 <a href=\"https://silpo.ua/product/pelmeni-try-vedmedi-mishutka-z-m-iasom-kurchat-942418\">Пельмені Три ведмеді Мішутка з м'ясом курчат</a> — <b>89.99 ₴</b> <s>169 ₴</s> · −50%\n3. 🧀 <a href=\"https://silpo.ua/product/syr-plavlenyi-ferma-vershkovyi-35-bryket-999931\">Сир плавлений Ферма Вершковий 35% брикет</a> — <b>16.99 ₴</b> <s>32.99 ₴</s> · −49%\n4. 🛒 📦 від 2 шт — 359.00 ₴/шт <a href=\"https://silpo.ua/product/papir-tualetnyi-ruta-selecta-romashka-bilyi-3-shary-927768\">Папір туалетний Ruta Selecta ромашка білий 3 шари</a> — <b>359 ₴</b> <s>949 ₴</s> · −62%\n5. 🧊 <a href=\"https://silpo.ua/product/pelmeni-try-vedmedi-mishutka-z-indychkoiu-ta-vershkamy-942807\">Пельмені Три ведмеді Мішутка з індичкою та вершками</a> — <b>99 ₴</b> <s>189 ₴</s> · −49%\n6. 🧀 <a href=\"https://silpo.ua/product/syr-komo-gauda-45-brusok-1037335\">Сир Комо Гауда 45% брусок</a> — <b>59.99 ₴</b> <s>119 ₴</s> · −50%\n7. 🛒 <a href=\"https://silpo.ua/product/sous-ascania-barbekiu-1026120\">Соус Ascania Барбекю</a> — <b>99 ₴</b> <s>189 ₴</s> · −50%\n8. 🛒 <a href=\"https://silpo.ua/product/top-zhinochyi-siela-basic-top-chornyi-l-xl-1023169\">Топ жіночий Siela Basic Top чорний L/XL</a> — <b>184 ₴</b> <s>359 ₴</s> · −49%\n9. 🍫 <a href=\"https://silpo.ua/product/pechyvo-delitsiia-zi-smakom-apelsyna-zdobne-775639\">Печиво «Деліція» зі смаком апельсина здобне</a> — <b>24.99 ₴</b> <s>49.49 ₴</s> · −51%\n10. 🥫 <a href=\"https://silpo.ua/product/vyroby-makaronni-cantare-linguine-878323\">Вироби макаронні Cantare Linguine</a> — <b>29.99 ₴</b> <s>58.99 ₴</s> · −52%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
-   "mk": null,
-   "p": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 29.10 08:00 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <a href=\"https://silpo.ua/product/nabir-servetok-kukhonnykh-30kh30-sm-5-sht-1005471-1005471\">Набір серветок кухонних 30х30 см 5 шт. 1005471</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −50%\n2. 🧊 <a href=\"https://silpo.ua/product/pelmeni-try-vedmedi-mishutka-z-m-iasom-kurchat-942418\">Пельмені Три ведмеді Мішутка з м'ясом курчат</a> — <b>89.99 ₴</b> <s>169 ₴</s> · −50%\n3. 🧀 <a href=\"https://silpo.ua/product/syr-plavlenyi-ferma-vershkovyi-35-bryket-999931\">Сир плавлений Ферма Вершковий 35% брикет</a> — <b>16.99 ₴</b> <s>32.99 ₴</s> · −49%\n4. 🛒 📦 від 2 шт — 359.00 ₴/шт <a href=\"https://silpo.ua/product/papir-tualetnyi-ruta-selecta-romashka-bilyi-3-shary-927768\">Папір туалетний Ruta Selecta ромашка білий 3 шари</a> — <b>359 ₴</b> <s>949 ₴</s> · −62%\n5. 🧊 <a href=\"https://silpo.ua/product/pelmeni-try-vedmedi-mishutka-z-indychkoiu-ta-vershkamy-942807\">Пельмені Три ведмеді Мішутка з індичкою та вершками</a> — <b>99 ₴</b> <s>189 ₴</s> · −49%\n6. 🧀 <a href=\"https://silpo.ua/product/syr-komo-gauda-45-brusok-1037335\">Сир Комо Гауда 45% брусок</a> — <b>59.99 ₴</b> <s>119 ₴</s> · −50%\n7. 🛒 <a href=\"https://silpo.ua/product/sous-ascania-barbekiu-1026120\">Соус Ascania Барбекю</a> — <b>99 ₴</b> <s>189 ₴</s> · −50%\n8. 🛒 <a href=\"https://silpo.ua/product/top-zhinochyi-siela-basic-top-chornyi-l-xl-1023169\">Топ жіночий Siela Basic Top чорний L/XL</a> — <b>184 ₴</b> <s>359 ₴</s> · −49%\n9. 🍫 <a href=\"https://silpo.ua/product/pechyvo-delitsiia-zi-smakom-apelsyna-zdobne-775639\">Печиво «Деліція» зі смаком апельсина здобне</a> — <b>24.99 ₴</b> <s>49.49 ₴</s> · −51%\n10. 🥫 <a href=\"https://silpo.ua/product/vyroby-makaronni-cantare-linguine-878323\">Вироби макаронні Cantare Linguine</a> — <b>29.99 ₴</b> <s>58.99 ₴</s> · −52%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
-   "exp": "2026-10-31T08:00:44.314327+02:00",
-   "aud": [
-    "160603556",
-    "368433217",
-    "396425365",
-    "936688574"
-   ]
-  },
   "kino": {
    "id": "2026-10-30 08",
    "t": "🍿 <b>КІНО НА ВИХІДНІ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Povstannya-zlovіsnih-mercіv-2023-10-30\">Повстання зловісних мерців</a></b> (2023) · ❤️ за вашим смаком\nжахи, трилер · ⏱ 1 год 36 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>85%</b> · Ⓜ <b>69</b>\n<i>🎭 Лілі Салліван, Alyssa Sutherland, Морган Девіс</i>\n📝 Возз’єднання двох сестер перериває появу демонів, які втягують дівчат у боротьбу за життя.\n▶️ <a href=\"https://youtu.be/sI2JcVku4Gk\">Трейлер</a></blockquote>\n§KN:m713704\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Іlyuzіya-obmanu-2-2016-10-30\">Ілюзія обману 2</a></b> (2016) · ❤️ за вашим смаком\nкримінал, трилер · ⏱ 2 год 09 хв\n⭐ IMDb <b>6.4</b> · 🍅 <b>33%</b> · Ⓜ <b>46</b>\n<i>🎭 Джессі Айзенберґ, Марк Раффало, Вуді Гаррельсон</i>\n📝 «Чотири вершники», команда кращих ілюзіоністів світу, знову разом! Їх «магія» стала ще досконалішою, а вороги — ще небезпечніші. Цього разу їм належить врятувати свою репутацію і вивести на чисту воду жорстокого…\n▶️ <a href=\"https://youtu.be/LWdH-zrnecY\">Трейлер</a></blockquote>\n§KN:m291805\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Grabіzhnik-za-poklikannyam-2025-10-30\">Грабіжник за покликанням</a></b> (2025)\nкримінал, комедія, драма · ⏱ 2 год 06 хв\n⭐ IMDb <b>6.9</b> · 🍅 <b>87%</b> · Ⓜ <b>66</b>\n<i>🎭 Ченнінґ Тейтум, Кірстен Данст, Бен Мендельсон</i>\n📝 Джейффрі Манчестер — колишній військовий, якого ЗМІ охрестили «Грабіжником за покликанням» за серію зухвалих нічних пограбувань ресторанів McDonald’s. Після втечі із в’язниці, він знаходить нове укриття у величезному…\n▶️ <a href=\"https://youtu.be/8kjW_cQjfMI\">Трейлер</a></blockquote>\n§KN:m1242419\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Kіnec-Ouk-Strіt-2026-10-30\">Кінець Оук-Стріт</a></b> (2026)\nфантастика, детектив, трилер · ⏱ 1 год 40 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>86%</b> · Ⓜ <b>69</b>\n<i>🎭 Енн Гетевей, Юен Мак-Ґреґор, Мейсі Стелла</i>\n📝 Після загадкової космічної події вулицю Оук вириває з передмістя та переносить у невідоме місце. Родина Платтів незабаром усвідомлює, що їхнє виживання залежить від того, чи зможуть вони триматися разом. Тепер вони…\n▶️ <a href=\"https://youtu.be/TfFqOzPfGBo\">Трейлер</a></blockquote>\n§KN:m1101383\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Parshivі-vіvcі-2026-10-30\">Паршиві вівці</a></b> (2026)\nкомедія, трилер · ⏱ 1 год 40 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>84%</b> · Ⓜ <b>65</b>\n<i>🎭 Сірша Ронан, Eddie Waller, Nia Brown</i>\n📝 Учителька початкової школи, яка переживає непростий період, починає ухвалювати сумнівні рішення після того, як один із її учнів зазнає травми.\n▶️ <a href=\"https://youtu.be/4nhu80EmVQE\">Трейлер</a></blockquote>\n§KN:m1198654\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Komanda-rujnіvnikіv-2026-10-30\">Команда руйнівників</a></b> (2026)\nбойовик, комедія, кримінал · ⏱ 2 год 05 хв\n⭐ IMDb <b>6.4</b> · 🍅 <b>74%</b> · Ⓜ <b>67</b>\n<i>🎭 Дейв Батіста, Джейсон Момоа, Темуера Моррісон</i>\n📝 Зведені брати Джонні та Джеймс, які давно не спілкувалися, возз’єднуються після загадкової смерті батька. У пошуках правди приховані таємниці виходять на поверхню, відкриваючи змову, що загрожує зруйнувати їхню родину.\n▶️ <a href=\"https://youtu.be/v8R0xDczERo\">Трейлер</a></blockquote>\n§KN:m1168190\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Suinі-Todd-Demon-perukar-іz-Flіt-strіt-2007-10-30\">Суїні Тодд: Демон-перукар із Фліт-стріт</a></b> (2007)\nдрама, жахи · ⏱ 1 год 56 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>86%</b> · Ⓜ <b>83</b>\n<i>🎭 Джонні Депп, Гелена Бонем Картер, Алан Рікман</i>\n📝 Суїні Тодд відрізав клієнтам вушка, пальчики або просто перерізав їм горло. А найкращі шматочки він віддавав своїй коханці, з яких вона готувала дуже смачні пиріжки… Екранізація бродвейської постановки про…\n▶️ <a href=\"https://youtu.be/AAU7dRxGvco\">Трейлер</a></blockquote>\n§KN:m13885\n§§\n<blockquote>📺 <b>8. <a href=\"https://telegra.ph/Pochatkova-shkola-Ebbott-2021-10-30\">Початкова школа \"Ебботт\"</a></b> (2021)\nкомедія · 📺 серіал · 6 сез.\n⭐ IMDb <b>8.2</b>\n<i>🎭 Квінта Брансон, Тайлер Джеймс Вільямс, Sheryl Lee Ralph</i>\n📝 In this workplace comedy, a group of dedicated, passionate teachers — and a slightly tone-deaf principal — are brought together in a Philadelphia public school where, despite the odds stacked against them, they are…\n▶️ <a href=\"https://youtu.be/l4lP8roLz3I\">Трейлер</a></blockquote>\n§KN:t125935\n§§\n<blockquote>📺 <b>9. <a href=\"https://telegra.ph/Karatel-2017-10-30\">Каратель</a></b> (2017)\nекшн і пригоди, кримінал, драма · 📺 серіал · 2 сез.\n⭐ IMDb <b>8.4</b>\n<i>🎭 Джон Бернтал, Бен Барнс, Ембер Роуз Рева</i>\n📝 Морський піхотинець у відставці прагне покарати злочинців, відповідальних за вбивство його родини, й опиняється в епіцентрі військової змови.\n▶️ <a href=\"https://youtu.be/s4QV6OZdmWY\">Трейлер</a></blockquote>\n§KN:t67178\n§§\n<blockquote>📺 <b>10. <a href=\"https://telegra.ph/In-Treatment-2008-10-30\">In Treatment</a></b> (2008)\nдрама · 📺 серіал · 4 сез.\n⭐ IMDb <b>8.2</b>\n<i>🎭 Узо Адуба</i>\n📝 The intimate confines of psychotherapy sessions are seen from the perspective of a therapist and individual patients.</blockquote>\n§KN:t14069",
@@ -15772,12 +15759,6 @@
   }
  },
  "got": {
-  "silpo": {
-   "160603556": "2026-10-29 08",
-   "368433217": "2026-10-29 08",
-   "396425365": "2026-10-29 08",
-   "936688574": "2026-10-29 08"
-  },
   "kino": {
    "160603556": "2026-10-30 08",
    "368433217": "2026-10-30 08",
@@ -30356,9 +30337,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "fb609d411d06",
+  "gs": "8958dba2d0f3",
   "quiz_pool.json": "31473d6acb2e",
-  "fact.png": "b1765b78ecc2",
+  "fact.png": "98fbf92c0091",
   "sexed.json": "4efede1d8ea5",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "74c0dc3c4404",
@@ -44737,7 +44718,7 @@
   "ser_mystery": "2026-10-31T03:35:45.227846+02:00"
  },
  "kb_probe2": "2026-44",
- "sbm_at": 1793426145.764396,
+ "sbm_at": 1793426449.4329863,
  "sbm_hist": [
   [
    "02:30",
@@ -44998,11 +44979,15 @@
   [
    "07:55",
    64
+  ],
+  [
+   "08:00",
+   63
   ]
  ],
  "sbm_near": {
   "160603556": [
-   56,
+   44,
    0
   ],
   "936688574": [
