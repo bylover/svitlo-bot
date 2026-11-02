@@ -712,7 +712,7 @@
   "t110316",
   "t1420"
  ],
- "gh_beat": "2026-11-02T07:55:44.505247+02:00",
+ "gh_beat": "2026-11-02T08:00:41.743933+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -795,7 +795,7 @@
    ]
   ]
  },
- "fact_png": "2026-11-02 07|12|2026-11-02T07:41:32+02:00",
+ "fact_png": "2026-11-02 08|12|2026-11-02T07:41:32+02:00",
  "fact_day": {
   "total": "9 год 4 хв",
   "list": [
@@ -874,7 +874,27 @@
   "2T4a36Wpehk",
   "MDjegmO1fTM",
   "bW6Xk01i1Vc",
-  "-4TnpCNTTg0"
+  "-4TnpCNTTg0",
+  "4vtFfMfBMFo",
+  "4MqJvpqaWZA",
+  "44JhQ-xJIpc",
+  "U5HWcJdKPSw",
+  "BJsWXS9UONc",
+  "9n-g_xOrpM4",
+  "YqsX_spfkGw",
+  "wK6lFvp_myU",
+  "qo2HXcrG2QQ",
+  "PcF8NEezokY",
+  "pCxxaeXll04",
+  "yCScMARllII",
+  "rL5Vi2FWhRM",
+  "rM9vtACM7u4",
+  "fdqPSJBwSa8",
+  "Kth18PZZBmA",
+  "vyxhJN8N5kE",
+  "YRpR_SSRHrI",
+  "PedIqieCxNo",
+  "-sICwquL9pY"
  ],
  "content_day": "2026-11-02",
  "content_pool": [
@@ -1628,14 +1648,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "02.11 07:56",
-   "ts": 1793599003,
+   "at": "02.11 08:02",
+   "ts": 1793599349,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "02.11 07:56",
-   "ts": 1793599003,
+   "at": "02.11 08:02",
+   "ts": 1793599349,
    "ok": true,
    "note": ""
   },
@@ -1754,14 +1774,14 @@
    "note": ""
   },
   "▶️ YouTube": {
-   "at": "26.10 08:00",
-   "ts": 1792994452,
+   "at": "02.11 08:01",
+   "ts": 1793599262,
    "ok": true,
    "note": ""
   },
   "📈 SMM і таргет": {
-   "at": "26.10 08:02",
-   "ts": 1792994525,
+   "at": "02.11 08:02",
+   "ts": 1793599367,
    "ok": true,
    "note": ""
   },
@@ -1833,17 +1853,18 @@
   "https://www.marketingdive.com/news/disney-plans-tiktok-shop-holiday-experience-with-over-20-brands/873072/",
   "https://www.socialmediatoday.com/news/threads-tests-smaller-group-sharing-option/873271/",
   "https://blog.google/products/ads-commerce/ads-in-ai-mode-global/",
-  "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUVFpa1NIOFBWZ241QmRkMThGRVI3MG92a1JCYkxndnFIUXk1dmkyX3JJNzBuSkJtLXQ3VllVWFFSVko2dUNIcGVQU3NTVEN6X1lmUDRSNFhLbEdUT3BFVWltZ1FVTjROdnRhY2JfY0VqY1U0ajEtU0FSa25PblJMSUl4YkgwT0FUZmE3ZjQ5c1Q3QWV4WEMyN2ZXdw?oc=5"
+  "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUVFpa1NIOFBWZ241QmRkMThGRVI3MG92a1JCYkxndnFIUXk1dmkyX3JJNzBuSkJtLXQ3VllVWFFSVko2dUNIcGVQU3NTVEN6X1lmUDRSNFhLbEdUT3BFVWltZ1FVTjROdnRhY2JfY0VqY1U0ajEtU0FSa25PblJMSUl4YkgwT0FUZmE3ZjQ5c1Q3QWV4WEMyN2ZXdw?oc=5",
+  "https://news.google.com/rss/articles/CBMizAFBVV95cUxORHdtNTJEVURTTFM2SE1OQi1CV1BoRURmQjZpUkZhdHVMckJ6SXhSckhDR3M0YmlWRTBNUHJmX1ppa2dLZ19Pcms4YzYzLWtmczJfcElRMWN5d1BXeWo2VlFpMy1yckhESUdpVnU3SHIyQkQyY3dtdVhQUVRfWGl1QlViS1VDZE1HeXY2cTVSNE9DYXlmT1EwcExZblBLby1nalVoeTV6RG5jMnp1X21RRVluZ2lCeWJfX3VucnpxUEJaenNpcGVrRHhmTXo?oc=5",
+  "https://news.google.com/rss/articles/CBMiswFBVV95cUxQbWlybV9GT3hDcXBVWm1xN0RFanhlUjJIb0NnSnJYam12RUd4ZkJkellKdzU2VzhXUzR5OWlqV25qdE5Qd0d6cFdCQzFuNVJWcW1SU1hFYjU5V01VUlp0RTUyYnREdlZPWUxyUGxRcUdtcTFhbjc3am4xUk01Q05mc2NSaENaaEFwbko2a05TdDFQQmM2SnkzUHBTZnUxZ2UwQWphMjBQWmdtQ2ZmY3R5Smt3Zw?oc=5",
+  "https://www.socialmediatoday.com/news/instagram-offers-to-pay-creators-for-long-form-content/873402/",
+  "https://www.socialmediatoday.com/news/x-launches-new-bonus-program-for-video-creators/873404/",
+  "https://www.marketingdive.com/news/sociable-meta-says-its-expanded-processing-capacity-is-driving-ad-results/873191/",
+  "https://blog.google/products/ads-commerce/ads-decoded-podcast-search-data/",
+  "https://news.google.com/rss/articles/CBMitAFBVV95cUxOTmNMNDBFVk1OMWJnS282RlNGbmU5VlpGb2hwa3ZfMVZZcjZDYWFoVVAxdVBja0hwZC00Um12VExQaVpHQU1VOTJQc1dYRFRHTzRyZUhMdkkzQU1ZcWx2OGhOeFJvTHRMcUs0UHRDRlVielZjQlc5WlJjenU0S25RYjFhbGtLdnRLZHFrY0JkNmdhMXhta1R1UE1HWWh0Yi1oMmhfTEVSM2xJMHNJVHQwUnNVWjY?oc=5",
+  "https://www.socialmediatoday.com/news/reddit-looks-to-move-toward-a-logged-in-experience/873400/"
  ],
- "smm_pool_day": "2026-10-30",
+ "smm_pool_day": "2026-11-02",
  "smm_pool": [
-  {
-   "src": "Jon Loomer",
-   "title": "Restriction Period for Political Ads in the US",
-   "link": "https://www.jonloomer.com/qvt/restriction-period-political-ads/",
-   "text": "A restriction period is coming to the US . If you run ads about social issues, elections, or politics, listen up… As Meta has done since 2020 , this restriction period will block any new ads from running during the final week leading up to Election Day. This starts at 12:01 am Pacific Time on October 27th and runs through 11:59 pm on November 3rd. What Restrictions Mean That doesn’t mean that political ads won’t run during this time. But if you want to run political ads between October 27th and November 3rd, they will need to be approved and receive at least one impression before the restriction period starts. Otherwise, you’ll need to wait until the restriction period ends. And if your ads for social issues and politics do run during the restriction period, you’ll be limited on the types of edits you can make. You’ll only be able to make the following edits: Bid Budget Scheduled end date Pause or unpause your ads You won’t be able to make changes to creative, targeting, placement, or optimization. So be prepared. Get Ads Approved Now The worst thing you can do if you run political ads is wait until the last minute. Get these ads approved now so that they can run during the restriction period. Otherwise, expect review delays heading up to October 27th that could prevent your ads from running. The post Restriction Period for Political Ads in the US appeared first on Jon Loomer Digital .",
-   "date": "19.10"
-  },
   {
    "src": "Social Media Examiner",
    "title": "Getting YouTube Views Is Changing: What Marketers Need to Know",
@@ -1874,24 +1895,24 @@
   },
   {
    "src": "Social Media Examiner",
-   "title": "The Secrets of Human Behavior Applied to Social Ads",
-   "link": "https://www.socialmediaexaminer.com/the-secrets-of-human-behavior-applied-to-social-ads/",
-   "text": "Struggling to create Facebook, Instagram, or TikTok ads that people remember long enough to buy from you? Wondering how consumer psychology can tell you why your winning ads work and how to repeat that success? In this article, you’ll discover how to use behavioral science and consumer psychology to create social ads by deciding how […] The post The Secrets of Human Behavior Applied to Social Ads appeared first on Social Media Examiner .",
-   "date": "22.10"
-  },
-  {
-   "src": "Social Media Examiner",
    "title": "Task Automation Tips, AI-Build Landing Pages, and Industry News",
    "link": "https://www.socialmediaexaminer.com/task-automation-tips-ai-build-landing-pages-and-industry-news/",
    "text": "Friday is almost here! Before you unplug, here’s one last round of insights and updates. Whether you read them now or save them for later, you won’t want to miss these. In today’s edition: AI automation tips Building landing pages with AI 🗞️ Industry news from ChatGPT and Gemini Triggers and Actions: How Automation Tools […] The post Task Automation Tips, AI-Build Landing Pages, and Industry News appeared first on Social Media Examiner .",
    "date": "22.10"
   },
   {
-   "src": "Social Media Examiner",
-   "title": "Reddit Tactics, Instagram Tools, and Industry News",
-   "link": "https://www.socialmediaexaminer.com/reddit-tactics-instagram-tools-and-industry-news/",
-   "text": "Here’s a recap of the most important insights, trends, and updates you need to know about today! Catch up in minutes and go into the rest of the week prepared. In today’s edition: Where to spend your time on Reddit Instagram Reels tools to test Follow along on The Road to 3K 🗞️ Industry news […] The post Reddit Tactics, Instagram Tools, and Industry News appeared first on Social Media Examiner .",
-   "date": "20.10"
+   "src": "Hootsuite",
+   "title": "Top 10 Sprinklr competitors and alternatives for 2026",
+   "link": "https://blog.hootsuite.com/sprinklr-competitors/",
+   "text": "Key takeaways Sprinklr is a powerful enterprise platform, but its cost, complexity, and long implementation timelines push many teams to evaluate alternatives. Hootsuite Social OS is the strongest Sprinklr alternative for enterprise teams that want intelligence and execution in one governed system. The best Sprinklr competitor for your team depends on your use case: full-suite enterprise management, social listening, mid-market publishing, or CRM integration. Pricing ranges from free plans (Buffer) to six-figure enterprise contracts (Sprinklr, HubSpot), so matching your budget to the features you actually use matters more than feature count. What is Sprinklr? Sprinklr is a unified customer experience management platform that combines social media management with marketing, advertising, customer care, and research in a single system. It is built for large organizations that want to run many brands, regions, and teams from one place. The platform’s core modules cover publishing and scheduling, social listening, paid social and advertising, agent-based customer care, and analytics. Sprinklr also layers AI across those modules for things like sentiment detection, routing, and reporting. That breadth is the main reason enterprise buyers shortlist it. It is also the main reason they look elsewhere. Sprinklr does not publish standard pricing, sells through an enterprise sales process, and typically requires a modular contract plus implementation support. Teams that only need social publishing, listening, and care often end up paying for a far larger social media management platform than they use. Bonus !!! Bonus: Get a free social media strategy template to quickly and easily plan your strategy, track results, and share with your boss, teammates, and clients. Download now Why do teams look for Sprinklr alternatives in 2026? Most teams searching for Sprinklr alternatives are not unhappy with what the platform can do. They are unhappy with what it costs to get there, and according to Forrester, 81% of B2C marketing executives planned to evaluate their social suite heading into 2025. Here are the reasons that come up most often in vendor evaluations and review sites like G2 and Gartner Peer Insights. Total cost of ownership: Sprinklr pricing is modular and custom-quoted, so costs climb quickly once you add care, listening, and advertising seats on top of social publishing. Implementation time: Enterprise rollouts commonly run several months and need dedicated intern",
+   "date": "30.10"
+  },
+  {
+   "src": "Hootsuite",
+   "title": "What are the latest Hootsuite product features? [September 2026]",
+   "link": "https://blog.hootsuite.com/new-features-september-2026/",
+   "text": "Quick summary of September updates Track how AI assistants like ChatGPT and Gemini talk about your brand with Lumen’s LLM Insights Create, edit, and publish Parliament content directly from AI chat tools with Parliament MCP for Content Admins Connect WhatsApp Business App and Cloud API at the same time with WhatsApp Coexistence Find your integrated apps in one place with Hootsuite’s new Embedded Apps panel. Compare AI summaries side by side with AI Widget Insights Enhancements in Lumen Focus Wisdom on a single dashboard widget with Widget Aware answers in Lumen by Talkwalker Keep tags organized across teams with Grouped Tagging Speed up content signoffs by letting all approval tiers review posts at once in Perch Apply tag, auto-tag, and campaign filters consistently with Unified Filters for Tags and Campaigns Tag up to 50 posts at once in Perch’s Planner See exactly how your team uses Wisdom with new usage tracking in Lumen Find relevant reports faster with My Reports Compare Threads and LinkedIn profile posts in Post Performance Search 15,000 YouTube accounts in Lumen, with 30,000 coming soon Monitor any public Threads profile, not just your own Find and manage contact information faster with Nest’s redesigned Contact panel Set up an Instagram DM automation right from a Planner post Send Parliament Welcome and Digest emails in each teammate’s preferred language Filter, organize, and automatically route X conversations based on search queries in Nest Send permission requests straight to the right Admin via Ask My Admin What are the Hootsuite product updates for September 2026? Hootsuite’s September 2026 product updates include 20 new features and improvements, from tracking what AI assistants say about your brand to a redesigned Contact panel in Nest. It’s our biggest month of the year so far, and the updates touch almost every part of the social workflow. Hootsuite is an all-in-one social media management platform . Teams use it to plan, publish, engage, listen , and measure, all from one dashboard (instead of a dozen open tabs). Here’s everything we rolled out this month. (Missed last month? Catch up on August’s product updates .) Lumen: Monitor how AI represents your brand Lumen’s LLM Insights now show you how your brand appears in AI-generated answers across ChatGPT, Gemini, Perplexity, and Claude. Over 50% of consumers begin product research with an AI assistant instead of a search engine. The problem is that most brands have no idea what AI assistant",
+   "date": "30.10"
   },
   {
    "src": "Hootsuite",
@@ -1909,45 +1930,10 @@
   },
   {
    "src": "Hootsuite",
-   "title": "Social media dashboards: Templates & tools for 2026",
-   "link": "https://blog.hootsuite.com/social-media-dashboard/",
-   "text": "Key takeaways A social media dashboard consolidates performance data from every platform into one view, so you can track metrics, spot trends, and report results without switching between apps. Different dashboard types serve different goals, from awareness and engagement tracking to competitive analysis, executive reporting, and employee advocacy. Pick the template that matches your objectives. The most effective dashboards focus on KPIs tied to business objectives, not vanity metrics, which makes it easier to prove social media ROI to leadership. You can build a basic social media dashboard for free with Google Looker Studio, or use Hootsuite Social OS for pre-built templates with cross-platform analytics and AI-powered insights. What is a social media dashboard? A social media dashboard is a single interface that pulls metrics from all your social accounts into one place for tracking, analyzing, and reporting on performance. Enterprise marketing teams, agencies managing multiple clients, and growing social teams rely on them most, because the reporting burden scales with every new account and campaign. Instead of logging into Instagram, LinkedIn, Facebook, TikTok, and X separately to check results, a dashboard brings everything together. You get a single view of what’s working, what’s not, and how your social efforts connect to business goals. Most dashboards include real-time or near-real-time data, customizable visualizations (charts, graphs, tables), and the ability to filter by platform, date range, campaign, or metric. They range from free tools like Google Looker Studio to connected systems like Hootsuite Social OS that combine scheduling, publishing, and cross-platform analytics in one place. Bonus !!! Get a free social media report template to easily and effectively present your social media performance to key stakeholders. Download now What are the four types of social media dashboards? Dashboards tend to fall into four categories, and knowing which one you’re building keeps you from cramming every metric into a single view. The four types are operational, analytical, strategic, and tactical. Operational: Day-to-day monitoring of live activity, like incoming messages, mentions, and publishing status. Analytical: Deeper performance analysis across longer time ranges, used to find patterns in content, formats, and audiences. Strategic: High-level KPIs and ROI reporting for leadership, usually reviewed monthly or quarterly. Tactical: Campaign-spec",
-   "date": "23.10"
-  },
-  {
-   "src": "Hootsuite",
-   "title": "Twitter analytics in 2026: Track and improve X performance",
-   "link": "https://blog.hootsuite.com/twitter-analytics-guide/",
-   "text": "Key takeaways Twitter analytics track how people discover, engage with, and act on your X content, from impressions and engagement rate to follower growth and link clicks. Full access to the native X analytics dashboard now requires X Premium, but you can still view post-level data on mobile for free. Focus on the metrics tied to your specific goals (awareness, engagement, traffic, or conversions) rather than tracking everything. Third-party tools like Perch by Hootsuite give you deeper reporting, cross-platform comparisons, and analytics that go beyond what X offers natively. What is X (formerly Twitter) analytics? Twitter analytics is the native reporting tool that shows how your content performs on X, including impressions, engagement rate, profile visits, and follower growth over time. Until recently, this data was free to access. Now, the full Twitter analytics dashboard is only available to X Premium roughly 4.4 million paid subscribers as of early 2026 — or X verified accounts on desktop. Here’s what the full Twitter analytics dashboard looks like: Bonus: Get a free social media analytics report template that shows you the most important metrics to track for each network. Can you still get Twitter analytics for free? Yes, you can still get some Twitter analytics for free, but not the full picture. X moved its complete dashboard behind the Premium paywall, leaving free accounts with post-level data only. Here’s how the split works: Free: Post-level analytics in the X mobile app, including impressions, engagements, detail expands, profile visits, and new followers for each individual post. X Premium: The full desktop dashboard with account-level trends, historical data, engagement rate, and side-by-side metric comparisons. Third-party tools: Account-level and post-level reporting without a Premium subscription, plus cross-platform comparisons and exportable reports. If you manage X alongside other channels, a tool like Perch is the simplest way to get account-level reporting without paying for Premium. The short version: free access still exists, but it stops at the individual post. How do I check Twitter analytics? There are three ways to check your Twitter analytics: the native X analytics dashboard on desktop (Premium only), post-level analytics in the X mobile app (free), or a third-party tool like Perch by Hootsuite. Here’s how each method works. Method 1: From X (Premium required) To access the full analytics dashboard, you’ll need an X Premium ",
-   "date": "23.10"
-  },
-  {
-   "src": "Hootsuite",
    "title": "How to plan social media content in 2026: 10 steps",
    "link": "https://blog.hootsuite.com/content-planning/",
    "text": "Key takeaways Social media content planning is the process of deciding what to post, when, and why, covering ideation, creation, scheduling, and measurement in one connected workflow. A structured content plan reduces last-minute pressure and gives teams more room to respond to trends without derailing their strategy. Clear roles, approval workflows, and governance keep content on-brand and compliant, especially for teams operating across regions. Tools like Hootsuite Social OS bring planning, publishing, analytics, and AI-assisted content creation together so teams can manage everything in one place. What is social media content planning? Content planning on social media is the process of deciding what to post, when to post it, and how it supports your overall marketing goals. It goes beyond scheduling. It’s about planning your topics, formats, and campaigns in advance so your content stays consistent and relevant. A repeatable content planning process also means your team isn’t rebuilding the same workflow every month. Well-planned content planning for social media is: Created in batches to streamline content production Repurposed across channels Connected to larger marketing goals Balanced between original and curated content Organized in a content planner or calendar Bonus !!! Get ahead in 2025! Download our free social media calendar template now to plan and schedule your content like a pro — start today! Download now Why does social media content planning matter? Social media content planning matters because it makes your team more efficient, protects them from burnout, and ties daily posting to results leadership actually cares about. Creating content in batches is much more efficient than building posts one at a time. It also helps teams get more value from every piece of content. A single idea can be repurposed across formats and platforms, extending its impact without added resources. For example, one piece of content can be adapted into: A short-form video A text-based post A visual asset like an infographic This approach helps teams do more with less. Organize it all in a content calendar (like the one below) to keep everyone on the same page. Source: Hootsuite’s FREE Content Calendar Template A content plan also reduces the need to constantly react. By planning ahead, teams can account for key moments like campaigns, product launches, and holidays and events (hello, National Puppy Day!). It also reduces the risk of burnout and inconsistency, b",
    "date": "23.10"
-  },
-  {
-   "src": "Hootsuite",
-   "title": "How to measure employee advocacy success in 2026",
-   "link": "https://blog.hootsuite.com/measure-employee-advocacy-success/",
-   "text": "Key takeaways The most important employee advocacy metrics tie directly to business outcomes: reach, engagement, leads, hires, and ad spend saved. Calculating employee advocacy ROI means assigning dollar values to revenue, recruiting savings, paid media savings, and retention savings, then comparing that total against program costs. Benchmarking your results against your own historical data (and against mature programs) helps you spot what’s working and what needs fixing. Tools like Parliament in Hootsuite Social OS make it easier to track adoption, engagement, and business impact in one place. What does it mean to measure employee advocacy success? Measuring employee advocacy success means evaluating your program’s business impact through key performance indicators (KPIs). A complete measurement approach tracks: Reach and brand visibility: How far employee posts extend your brand beyond corporate channels Engagement: Whether audiences are interacting with employee-shared content Employee participation: How many employees are actively sharing, and how often Business impact: This includes leads, conversions, hires, and ad spend saved Tracking results turns fluffy numbers into evidence you can take to leadership. And with the right data, you can sharpen your strategy into a repeatable advocacy machine. Real-world example: Victoria Samways , Marketing & Brand Manager at Major Tom, used employee advocacy measurement to prove a three-figure ROI on a single campaign. The approach: Samways paired employee advocacy software with UTM tracking codes , then encouraged employees to share campaign content. The result: Advocacy landed in Major Tom’s top 5 traffic sources for the campaign, generated over $100k in pipeline, and delivered a higher-than-average win rate. “Thanks to the UTM tracking links, over the coming weeks, we saw a healthy amount of leads that we attributed back to this campaign,” Samways shares. “This resulted in over $100k in our pipeline and, as a channel, provided a higher-than-average win rate due to the referral-like context of these leads.” Download a free employee advocacy toolkit that shows you how to plan, launch, and grow a successful employee advocacy program for your organization. Download now Why is it important to measure employee advocacy success? Measurement matters because advocacy programs compete for budget, attention, and headcount like every other initiative. Without data, they almost always lose that competition. Here are three s",
-   "date": "21.10"
-  },
-  {
-   "src": "Hootsuite",
-   "title": "Social media in healthcare: A compliance guide for 2026",
-   "link": "https://blog.hootsuite.com/social-media-healthcare/",
-   "text": "Key takeaways Social media in healthcare builds patient trust, supports recruitment, raises public health awareness, and creates direct communication channels with patients, but compliance with HIPAA, FDA, and FTC regulations is non-negotiable. A documented healthcare social media policy with approval workflows protects your organization from violations that can carry fines of more than $2.1 million per violation category per year. Healthcare organizations that focus on educational, engaging content on one or two priority platforms outperform those spreading resources thin across every network. AI tools can save healthcare social teams significant time on content creation, but every post needs human review and compliance approval before publishing. What is social media in healthcare? Social media in healthcare is the use of public social platforms by healthcare organizations to communicate with patients, educate the public, recruit staff, and build their brand. That includes hospitals and health systems, private clinics and group practices, public health agencies, pharmaceutical and medical device companies, and individual clinicians posting in a professional capacity. In practice, most healthcare social media activity falls into a handful of use cases: Patient engagement: Answering common questions, sharing service updates, and staying connected between visits. Health education: Explaining conditions, procedures, and preventive care in plain language. Recruitment and employer branding: Showing what it’s like to work at your organization. Brand building: Establishing credibility and patient trust before someone becomes a patient. Crisis communication: Responding quickly to incidents, closures, or negative press. Public health outreach: Promoting screenings, vaccination campaigns, and community programs. What makes healthcare different from other industries is the regulation. Marketing teams in most sectors worry about tone and timing. Healthcare teams also have to consider protected health information, advertising law, and professional licensing rules, where a single post can trigger a federal investigation. That tension, high opportunity paired with high risk, shapes everything that follows in this guide. Bonus: Download a free social media toolkit for healthcare professionals with post ideas, templates, and more. Save time and get inspired! What are the benefits of social media in healthcare? An active social media presence can help healthcare organizati",
-   "date": "21.10"
-  },
-  {
-   "src": "Hootsuite",
-   "title": "11 employee advocacy program examples for 2026",
-   "link": "https://blog.hootsuite.com/employee-advocacy-program-examples/",
-   "text": "What is an employee advocacy program? An employee advocacy program is a structured initiative that encourages employees to share company-approved content on their personal social media accounts to extend brand reach and build trust. It’s a powerful part of any social media marketing and content strategy . Instead of relying only on your brand’s accounts to do the talking, employees post about your company on platforms like LinkedIn, X, or wherever they’re already active. Sometimes that content is promotional, like a new campaign, product launch, or company milestone. Other times it’s cultural, offering a peek into what it’s actually like to work at your company. The reason it works is simple: people trust other people more than they trust corporations. In fact, 88% of consumers say trusting a brand is an important or critical purchase criterion, on par with quality and value, according to Edelman. When your employees share authentic stories, it humanizes your brand, boosts your organic reach, and helps you connect with your target audience in ways standard corporate messaging just can’t. Successful employee advocacy programs are built on: Clear marketing goals Measurable KPIs to track performance Easy-to-share content and guidelines for employees The benefits for the company are wide-reaching: Increased brand awareness, Improved reputation, Boosted engagement, and Talent recruitment, to name a few. In short, every employee share strengthens both your internal company culture and your external trust, turning your team into your most credible marketing channel . Download a free employee advocacy toolkit that shows you how to plan, launch, and grow a successful employee advocacy program for your organization. Download now Informal advocacy vs. structured programs: what’s the difference? The difference between informal advocacy and a structured program comes down to intention. Informal advocacy: Spontaneous and personal. Genuine, but unpredictable. You can’t count on it, measure it, or repeat it. Structured programs: Intentional, consistent, and built to scale, because employees get the tools, content, and guidelines they need to share regularly. Most successful employee advocacy programs include: Curated content hubs: Where employees can access pre-approved content Training and resources: To help staff build their personal brand while staying on-message Incentives or recognition: That encourage ongoing participation Measurement and analytics: To track reach, ",
-   "date": "21.10"
   },
   {
    "src": "Buffer",
@@ -1976,6 +1962,48 @@
    "link": "https://buffer.com/resources/instagram-algorithms/",
    "text": "The good news: Instagram has transparently shared a ton about the magical, majestic Instagram algorithm. (At Buffer, we’re big believers in transparency, so hat tip to Instagram for that!) The not-so-good news: Instagram has different algorithms for all parts of the app — namely feed, stories, explore, and reels. “ Does this mean I have to optimize my Instagram content four different ways to please the algo? ” Not really. The overarching signals — such as watch time, likes, and sends — are the same everywhere. And the principles behind them are evergreen enough to survive the small updates. Follow these, and you’re (mostly) golden. But still, knowing the specifics of how each subset of the algorithm works helps reach your goals faster. Reaching new people on Instagram works a tad differently from deepening relationships with the audience you already have, for instance. Here’s how each algorithm works, the evergreen principles behind all of them, and what to do about it. Key takeaways Instagram has a different algorithm for each part of the app: Instagram ranks feed, stories, explore, and reels separately, using one system for accounts you follow and another for recommendations from accounts you don't. Three signals matter most: Watch time, likes per reach, and sends per reach are the signals Instagram Head Adam Mosseri says carry the most weight in ranking. Likes matter for followers, sends matter more for reaching new people: Likes matter slightly more for reaching your followers, while sends via DM matter slightly more for reaching non-followers. Original content wins: Instagram gives more distribution to the original creator than to reposters, and accounts that mostly repost others' content aren't recommended to non-followers. Viewers can shape what they see: Your Algorithm (in reels and explore), Favorites, and \"Not interested\" let people tell Instagram what they want more or less of. Reels for reach, carousels for engagement: Reels get 36% more reach than carousels, while carousels get 12% more engagement than reels ( based on our analysis of 4M+ Instagram posts ). ⚡ Need to plan your Instagram content? Buffer helps you grow your following and boost engagement with planning, scheduling, and insights. Get started for free → Jump to a section: How does the Instagram algorithm work? The short version What the Instagram algorithm rewards across the app How the Instagram Feed algorithm works How the Instagram Stories algorithm works How the Instagram Reels",
    "date": "23.10"
+  },
+  {
+   "src": "Buffer",
+   "title": "4 Analytics Features in Buffer  That I Can't Live Without",
+   "link": "https://buffer.com/resources/four-new-buffer-analytics-features/",
+   "text": "I don't just work at Buffer; I've been using it as a marketer for more than 12 years! Which is why I'm so excited about Buffer Insights , the new analytics suite. It tracks follower growth, engagement, and impressions across Instagram, Facebook, X, LinkedIn, TikTok, Pinterest, Threads, Substack Notes, Bluesky, YouTube, and Mastodon, lets you compare performance across date ranges, channels, and post types, and exports reports as PNG, PDF, CSV, or Markdown. I thought an, ahem , insight into how I personally use analytics in Buffer might be useful for anyone getting started with it. So these are my top four Insights features that I can't live without. 1. Claude Connector I pretty much live inside Claude these days, especially when I'm thinking about social content. I don't use it to write posts, but I do use it to plan them. I typically start each month by working on a rough content plan. Because Buffer has an MCP that connects to Claude, ChatGPT, and others , I can easily pull my social data into a conversation and get suggestions for what topics and post types have been performing best. Here's the prompt I use: Plan a month's worth of content for my LinkedIn and Threads profiles. Start by pulling my Buffer data from the past year and tell me what's resonating the most From there, Claude helps me put together a rough plan for the month. This has become the way I plan almost all of my social content, and I reckon it saves me a few hours every week. It also reduces the mental load of having to think about content all the time. ⚡ Pro tip: If you haven’t connected Buffer to Claude yet, our guide to posting on social media from Claude walks you through the setup. 2. Weekly Pulse Even though I like to plan content over a month, I still need to keep track of how things are going, and I tend to make a lot of adjustments on the fly. Social media moves lightning fast, and there are usually some trending topics or new products that I want to post about. The Weekly Pulse shows me where I'm at for the week, including how many posts I've shared, how follower growth is tracking, and how much engagement I'm getting. I'm working hard on improving my comment score as I know that replying to comments is a great way to boost post visibility . 3. Tags There are tons of ways you can use Tags in Buffer, but I primarily use them to capture results for product launches and announcements. The setup takes two steps: add a tag to each post when you schedule it, then filter by that tag",
+   "date": "22.10"
+  },
+  {
+   "src": "Medium · facebook-ads",
+   "title": "Running Diwali Ads on Instagram This Week? Check This New Meta Setting First",
+   "link": "https://medium.com/@info.jddigitalmarketing/running-diwali-ads-on-instagram-this-week-check-this-new-meta-setting-first-b83770977b90?source=rss------facebook_ads-5",
+   "text": "Diwali is on 8 November, and many small businesses will put their biggest Meta ad budget of the year into this week. Before you do, open… Continue reading on Medium »",
+   "date": "02.11"
+  },
+  {
+   "src": "Medium · facebook-ads",
+   "title": "Google Ads or Facebook Ads: Where Should Your Business Spend Its Money?",
+   "link": "https://medium.com/@leadnoxx/google-ads-or-facebook-ads-where-should-your-business-spend-its-money-6a9a7ffc1fb7?source=rss------facebook_ads-5",
+   "text": "Both platforms can bring customers to your business, but they work in very different ways. Here’s how to decide which one deserves your… Continue reading on Medium »",
+   "date": "02.11"
+  },
+  {
+   "src": "Medium · facebook-ads",
+   "title": "Facebook Ads for E-commerce: A Complete Guide to Driving More Online Revenue",
+   "link": "https://medium.com/@chayansanmo/facebook-ads-for-e-commerce-a-complete-guide-to-driving-more-online-revenue-4f01a8450b2f?source=rss------facebook_ads-5",
+   "text": "Facebook advertising has become an essential marketing channel for online stores that want to reach new customers, showcase their products… Continue reading on Medium »",
+   "date": "02.11"
+  },
+  {
+   "src": "Medium · facebook-ads",
+   "title": "The $20/Day Meta Ads Strategy: How Small Businesses Can Get More Customers",
+   "link": "https://medium.com/@ivankawright/the-20-day-meta-ads-strategy-how-small-businesses-can-get-more-customers-9280d794b434?source=rss------facebook_ads-5",
+   "text": "Same budget. Same platform. Completely different results. Here’s what separates the business owners who get customers from the ones who… Continue reading on Medium »",
+   "date": "01.11"
+  },
+  {
+   "src": "Medium · facebook-ads",
+   "title": "Meta Ads for Beginners: What to Spend",
+   "link": "https://medium.com/@khushdoshi3090/meta-ads-for-beginners-what-to-spend-9a61a6ecce18?source=rss------facebook_ads-5",
+   "text": "A safe way for small businesses to start advertising on Facebook and Instagram Continue reading on Medium »",
+   "date": "01.11"
   }
  ],
  "smm_pool_seen": [
@@ -1990,7 +2018,11 @@
   "https://www.jonloomer.com/qvt/restriction-period-political-ads/",
   "https://www.socialmediaexaminer.com/the-secrets-of-human-behavior-applied-to-social-ads/",
   "https://blog.hootsuite.com/social-media-dashboard/",
-  "https://blog.hootsuite.com/twitter-analytics-guide/"
+  "https://blog.hootsuite.com/twitter-analytics-guide/",
+  "https://www.socialmediaexaminer.com/getting-youtube-views-is-changing-what-marketers-need-to-know/",
+  "https://blog.hootsuite.com/new-features-september-2026/",
+  "https://buffer.com/resources/social-media-engagement-tools/",
+  "https://buffer.com/resources/metricool-alternatives-free-paid/"
  ],
  "smm_reddit_seen": [],
  "silpo_probe": "2026-10-22",
@@ -15720,8 +15752,38 @@
  },
  "imp_sent": {},
  "ero_sent": {},
- "pend": {},
- "got": {},
+ "pend": {
+  "yt": {
+   "id": "2026-11-02 08",
+   "t": "▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · 26.10–02.11</b>\n<blockquote>▶️ <b>1. Єва Мішалова. Ігор Комаров. Балі. Як райський острів, перетворився на пекло за одну ніч.</b>\n📺 Василь Тимошенко · ⏱ 3 год 45 хв\n👁 <b>1.3 млн</b> переглядів · 💬 <b>3 183</b> коментарів\n🔗 <a href=\"https://youtu.be/4vtFfMfBMFo\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>2. Як приміряти труси?</b>\n📺 ЯКІСНІ РОСЛИНИ, СПРАВЖНЯ ІКРА ЧЕРВОНА, ЧОРНА, ЩУКИ · ⏱ 1 хв\n👁 <b>749 тис</b> переглядів · 💬 <b>708</b> коментарів\n🔗 <a href=\"https://youtu.be/4MqJvpqaWZA\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>3. ШАХТАР - ДИНАМО. ОГЛЯД МАТЧУ. КУБОК УКРАЇНИ. 1/8 ФІНАЛУ #шахтар #динамо</b>\n📺 УПЛ ТБ · ⏱ 11 хв\n👁 <b>377 тис</b> переглядів · 💬 <b>704</b> коментарів\n🔗 <a href=\"https://youtu.be/44JhQ-xJIpc\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>4. #UkrainskaKralya #россия#УкраїнськіПісні #УкраїнськіХіти #УкраїнськаМузика #Shorts#україна</b>\n📺 UkrainskaKralya 💋 · ⏱ 1 хв\n👁 <b>313 тис</b> переглядів · 💬 <b>360</b> коментарів\n🔗 <a href=\"https://youtu.be/U5HWcJdKPSw\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>5. Як йому вдалось так швидко відгадати? | #ХтоЗверху #НовийКанал #Дантес</b>\n📺 Хто зверху? · ⏱ 1 хв\n👁 <b>271 тис</b> переглядів · 💬 <b>75</b> коментарів\n🔗 <a href=\"https://youtu.be/BJsWXS9UONc\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>6. THE HARDKISS feat. BEYOND THE BLACK - Not This Time (official video)</b>\n📺 The HARDKISS · ⏱ 3 хв\n👁 <b>222 тис</b> переглядів · 💬 <b>426</b> коментарів\n🔗 <a href=\"https://youtu.be/9n-g_xOrpM4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>7. Чому українці орали на волах і возили ними сіль? 🐂 Чумаки, ярмо та історія українського села</b>\n📺 VOXORIUM_UA · ⏱ 2 хв\n👁 <b>246 тис</b> переглядів · 💬 <b>63</b> коментарів\n🔗 <a href=\"https://youtu.be/YqsX_spfkGw\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>8. ЩО ДРАТУЄ ЛЮДИНУ З ЗАЇКАННЯМ? Несерйозна розмова №161</b>\n📺 Дмитро Тютюн · ⏱ 40 хв\n👁 <b>193 тис</b> переглядів · 💬 <b>344</b> коментарів\n🔗 <a href=\"https://youtu.be/wK6lFvp_myU\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>9. Чи здивує листопад українців ПОГОДОЮ: коли чекати похолодання, дощів і першого снігу?</b>\n📺 Ранок Вдома · ⏱ 12 хв\n👁 <b>223 тис</b> переглядів · 💬 <b>24</b> коментарів\n🔗 <a href=\"https://youtu.be/qo2HXcrG2QQ\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>10. [UA] bb team проти FURIA | PGL Masters Bucharest 2026</b>\n📺 CS2 Maincast · ⏱ 9 год 55 хв\n👁 <b>224 тис</b> переглядів · 💬 <b>0</b> коментарів\n🔗 <a href=\"https://youtu.be/PcF8NEezokY\">Дивитися</a></blockquote>\n<i>Ще 10, улюблені й приховані канали, 📺 цікаві канали за темами — кнопкою «▶️ YouTube» у меню.</i>\n§RT:yt:202645",
+   "mk": null,
+   "p": "▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · 26.10–02.11</b>\n<blockquote>▶️ <b>1. Єва Мішалова. Ігор Комаров. Балі. Як райський острів, перетворився на пекло за одну ніч.</b>\n📺 Василь Тимошенко · ⏱ 3 год 45 хв\n👁 <b>1.3 млн</b> переглядів · 💬 <b>3 183</b> коментарів\n🔗 <a href=\"https://youtu.be/4vtFfMfBMFo\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>2. Як приміряти труси?</b>\n📺 ЯКІСНІ РОСЛИНИ, СПРАВЖНЯ ІКРА ЧЕРВОНА, ЧОРНА, ЩУКИ · ⏱ 1 хв\n👁 <b>749 тис</b> переглядів · 💬 <b>708</b> коментарів\n🔗 <a href=\"https://youtu.be/4MqJvpqaWZA\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>3. ШАХТАР - ДИНАМО. ОГЛЯД МАТЧУ. КУБОК УКРАЇНИ. 1/8 ФІНАЛУ #шахтар #динамо</b>\n📺 УПЛ ТБ · ⏱ 11 хв\n👁 <b>377 тис</b> переглядів · 💬 <b>704</b> коментарів\n🔗 <a href=\"https://youtu.be/44JhQ-xJIpc\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>4. #UkrainskaKralya #россия#УкраїнськіПісні #УкраїнськіХіти #УкраїнськаМузика #Shorts#україна</b>\n📺 UkrainskaKralya 💋 · ⏱ 1 хв\n👁 <b>313 тис</b> переглядів · 💬 <b>360</b> коментарів\n🔗 <a href=\"https://youtu.be/U5HWcJdKPSw\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>5. Як йому вдалось так швидко відгадати? | #ХтоЗверху #НовийКанал #Дантес</b>\n📺 Хто зверху? · ⏱ 1 хв\n👁 <b>271 тис</b> переглядів · 💬 <b>75</b> коментарів\n🔗 <a href=\"https://youtu.be/BJsWXS9UONc\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>6. THE HARDKISS feat. BEYOND THE BLACK - Not This Time (official video)</b>\n📺 The HARDKISS · ⏱ 3 хв\n👁 <b>222 тис</b> переглядів · 💬 <b>426</b> коментарів\n🔗 <a href=\"https://youtu.be/9n-g_xOrpM4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>7. Чому українці орали на волах і возили ними сіль? 🐂 Чумаки, ярмо та історія українського села</b>\n📺 VOXORIUM_UA · ⏱ 2 хв\n👁 <b>246 тис</b> переглядів · 💬 <b>63</b> коментарів\n🔗 <a href=\"https://youtu.be/YqsX_spfkGw\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>8. ЩО ДРАТУЄ ЛЮДИНУ З ЗАЇКАННЯМ? Несерйозна розмова №161</b>\n📺 Дмитро Тютюн · ⏱ 40 хв\n👁 <b>193 тис</b> переглядів · 💬 <b>344</b> коментарів\n🔗 <a href=\"https://youtu.be/wK6lFvp_myU\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>9. Чи здивує листопад українців ПОГОДОЮ: коли чекати похолодання, дощів і першого снігу?</b>\n📺 Ранок Вдома · ⏱ 12 хв\n👁 <b>223 тис</b> переглядів · 💬 <b>24</b> коментарів\n🔗 <a href=\"https://youtu.be/qo2HXcrG2QQ\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>10. [UA] bb team проти FURIA | PGL Masters Bucharest 2026</b>\n📺 CS2 Maincast · ⏱ 9 год 55 хв\n👁 <b>224 тис</b> переглядів · 💬 <b>0</b> коментарів\n🔗 <a href=\"https://youtu.be/PcF8NEezokY\">Дивитися</a></blockquote>\n<i>Ще 10, улюблені й приховані канали, 📺 цікаві канали за темами — кнопкою «▶️ YouTube» у меню.</i>\n§RT:yt:202645",
+   "exp": "2026-11-04T08:00:42.191579+02:00",
+   "aud": [
+    "160603556",
+    "368433217",
+    "590261825",
+    "936688574",
+    "8283670046"
+   ]
+  },
+  "smm": {
+   "id": "2026-11-02 08",
+   "t": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 26.10–02.11\n<blockquote>🆕 <b>1. Instagram тестує відео до 90 хвилин</b>\nInstagram розпочав тестування горизонтальних відео завдовжки до 90 хвилин, кидаючи виклик YouTube та змінюючи фокус із виключно коротких форматів.\n💡 Адаптуйте свої довгі відеоформати під новий функціонал платформи для залучення більшого органічного охоплення.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxORHdtNTJEVURTTFM2SE1OQi1CV1BoRURmQjZpUkZhdHVMckJ6SXhSckhDR3M0YmlWRTBNUHJmX1ppa2dLZ19Pcms4YzYzLWtmczJfcElRMWN5d1BXeWo2VlFpMy1yckhESUdpVnU3SHIyQkQyY3dtdVhQUVRfWGl1QlViS1VDZE1HeXY2cTVSNE9DYXlmT1EwcExZblBLby1nalVoeTV6RG5jMnp1X21RRVluZ2lCeWJfX3VucnpxUEJaenNpcGVrRHhmTXo?oc=5\">ms.detector.media</a></blockquote>\n<blockquote>🎯 <b>2. Нова система ранжування реклами Meta на базі LLM</b>\nMeta представила нову систему ранжування рекламних оголошень на основі великих мовних моделей, а також оновлення для систем Andromeda та GEM.\n💡 Закладайте більше різноманітних креативів та текстових варіантів, щоб нова LLM-система краще оптимізувала показ реклами.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQbWlybV9GT3hDcXBVWm1xN0RFanhlUjJIb0NnSnJYam12RUd4ZkJkellKdzU2VzhXUzR5OWlqV25qdE5Qd0d6cFdCQzFuNVJWcW1SU1hFYjU5V01VUlp0RTUyYnREdlZPWUxyUGxRcUdtcTFhbjc3am4xUk01Q05mc2NSaENaaEFwbko2a05TdDFQQmM2SnkzUHBTZnUxZ2UwQWphMjBQWmdtQ2ZmY3R5Smt3Zw?oc=5\">AdExchanger</a></blockquote>\n<blockquote>🆕 <b>3. Instagram платить креаторам за довгий контент</b>\nПлатформа почала пропонувати шестизначні суми та виплати відомим авторам за створення та завантаження лонгфордових відео.\n💡 Стежте за появою цієї програми монетизації у вашому регіоні для залучення амбасадорів бренду.\n🔗 <a href=\"https://www.socialmediatoday.com/news/instagram-offers-to-pay-creators-for-long-form-content/873402/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>4. Нова бонусна програма для відеокреаторів у X</b>\nСоціальна мережа X запустила оновлену бонусну програму, спрямовану на стимулювання виробництва якісного відеоконтенту.\n💡 Використовуйте відеоформати у мережі X, якщо ваша аудиторія активно споживає там контент, аби отримувати додаткові бонуси.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-launches-new-bonus-program-for-video-creators/873404/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>5. Зростання ефективності реклами Meta завдяки обчислювальній потужності</b>\nMeta повідомила, що розширення її обчислювальних потужностей та використання штучного інтелекту безпосередньо покращують результати рекламних кампаній.\n💡 Довіртеся автоматизованим стратегіям ставок і ширшому таргетингу, адже алгоритми Meta тепер точніші в оптимізації.\n🔗 <a href=\"https://www.marketingdive.com/news/sociable-meta-says-its-expanded-processing-capacity-is-driving-ad-results/873191/\">Marketing Dive</a></blockquote>\n<blockquote>🎯 <b>6. Google закликає адаптувати рекламні стратегії до сучасного пошуку</b>\nGoogle опублікував рекомендації щодо зміни рекламних стратегій через еволюцію пошукової поведінки користувачів під впливом ШІ.\n💡 Перегляньте семантичне ядро та використовуйте ширші відповідності у контекстній рекламі для охоплення нових пошукових патернів.\n🔗 <a href=\"https://blog.google/products/ads-commerce/ads-decoded-podcast-search-data/\">The Keyword (Google)</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202645\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Зміни алгоритмів YouTube: як оптимізувати відео під AI-пошук</b> · Social Media Examiner\nСтаття розповідає про те, як змінився підрахунок переглядів на YouTube та чому зростання показників переглядів не завжди гарантує ліди чи продаж. Автори пояснюють, як адаптувати контент, щоб ваші відео успішно знаходили в пошукових системах на базі штучного інтелекту, таких як ChatGPT та Ask YouTube.\n💡 Фокусуйтеся на метриці залучених переглядів (engaged views) та оптимізуйте текстовий огляд відео за допомогою ключових слів, які розпізнають AI-асистенти.\n<a href=\"https://www.socialmediaexaminer.com/getting-youtube-views-is-changing-what-marketers-need-to-know/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Оновлення інструментів аналітики: моніторинг бренду в AI та крос-платформний постить</b> · Hootsuite\nОгляд нових функцій платформи Hootsuite за вересень охоплює розширені можливості аналізу згадок бренду через AI-асистентів на кшталт ChatGPT та Gemini. Також розібрано покращення для швидкого узгодження контенту командою та оптимізацію роботи з відкладеним постилком.\n💡 Використовуйте інструменти відстеження LLM-інсайтів, щоб перевіряти, як саме штучний інтелект презентує ваш бренд користувачам у своїх відповідях.\n<a href=\"https://blog.hootsuite.com/new-features-september-2026/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Автоматизація комунікації: чому єдиний інбокс та модерація рятують залученість</b> · Buffer\nМатеріал присвячений побудові спільнот та роботі з аудиторією через соціальні мережі. Автори наголошують, що ігнорування коментарів чи прямих повідомлень руйнує стратегію, і пояснюють, як спеціалізовані інструменти допомагають обробляти запити без ручної рутини.\n💡 Впроваджуйте єдиний інбокс (Unified inbox) для збору коментарів і DM з усіх соцмереж в одне вікно та налаштовуйте автоматичну фільтрацію спаму за допомогою правил.\n<a href=\"https://buffer.com/resources/social-media-engagement-tools/\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Аналіз конкурентів та бюджетування: як обрати правильний сервіс аналітики</b> · Buffer\nОгляд аналізує популярні платформи для SMM-аналітики, їхні приховані витрати та обмеження у безкоштовних і базових тарифах. Стаття допомагає зрозуміти, за які саме функції варто платити, а де можна зекономити при масштабуванні проєкту.\n💡 Завжди перевіряйте ліміти на AI-кредити, доступ до API та наявність конкретних соцмереж (наприклад, LinkedIn чи X) у базових тарифах перед покупкою підписки.\n<a href=\"https://buffer.com/resources/metricool-alternatives-free-paid/\">джерело</a></blockquote>\n§RT:smm:202645p",
+   "mk": null,
+   "p": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 26.10–02.11\n<blockquote>🆕 <b>1. Instagram тестує відео до 90 хвилин</b>\nInstagram розпочав тестування горизонтальних відео завдовжки до 90 хвилин, кидаючи виклик YouTube та змінюючи фокус із виключно коротких форматів.\n💡 Адаптуйте свої довгі відеоформати під новий функціонал платформи для залучення більшого органічного охоплення.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxORHdtNTJEVURTTFM2SE1OQi1CV1BoRURmQjZpUkZhdHVMckJ6SXhSckhDR3M0YmlWRTBNUHJmX1ppa2dLZ19Pcms4YzYzLWtmczJfcElRMWN5d1BXeWo2VlFpMy1yckhESUdpVnU3SHIyQkQyY3dtdVhQUVRfWGl1QlViS1VDZE1HeXY2cTVSNE9DYXlmT1EwcExZblBLby1nalVoeTV6RG5jMnp1X21RRVluZ2lCeWJfX3VucnpxUEJaenNpcGVrRHhmTXo?oc=5\">ms.detector.media</a></blockquote>\n<blockquote>🎯 <b>2. Нова система ранжування реклами Meta на базі LLM</b>\nMeta представила нову систему ранжування рекламних оголошень на основі великих мовних моделей, а також оновлення для систем Andromeda та GEM.\n💡 Закладайте більше різноманітних креативів та текстових варіантів, щоб нова LLM-система краще оптимізувала показ реклами.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQbWlybV9GT3hDcXBVWm1xN0RFanhlUjJIb0NnSnJYam12RUd4ZkJkellKdzU2VzhXUzR5OWlqV25qdE5Qd0d6cFdCQzFuNVJWcW1SU1hFYjU5V01VUlp0RTUyYnREdlZPWUxyUGxRcUdtcTFhbjc3am4xUk01Q05mc2NSaENaaEFwbko2a05TdDFQQmM2SnkzUHBTZnUxZ2UwQWphMjBQWmdtQ2ZmY3R5Smt3Zw?oc=5\">AdExchanger</a></blockquote>\n<blockquote>🆕 <b>3. Instagram платить креаторам за довгий контент</b>\nПлатформа почала пропонувати шестизначні суми та виплати відомим авторам за створення та завантаження лонгфордових відео.\n💡 Стежте за появою цієї програми монетизації у вашому регіоні для залучення амбасадорів бренду.\n🔗 <a href=\"https://www.socialmediatoday.com/news/instagram-offers-to-pay-creators-for-long-form-content/873402/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>4. Нова бонусна програма для відеокреаторів у X</b>\nСоціальна мережа X запустила оновлену бонусну програму, спрямовану на стимулювання виробництва якісного відеоконтенту.\n💡 Використовуйте відеоформати у мережі X, якщо ваша аудиторія активно споживає там контент, аби отримувати додаткові бонуси.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-launches-new-bonus-program-for-video-creators/873404/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>5. Зростання ефективності реклами Meta завдяки обчислювальній потужності</b>\nMeta повідомила, що розширення її обчислювальних потужностей та використання штучного інтелекту безпосередньо покращують результати рекламних кампаній.\n💡 Довіртеся автоматизованим стратегіям ставок і ширшому таргетингу, адже алгоритми Meta тепер точніші в оптимізації.\n🔗 <a href=\"https://www.marketingdive.com/news/sociable-meta-says-its-expanded-processing-capacity-is-driving-ad-results/873191/\">Marketing Dive</a></blockquote>\n<blockquote>🎯 <b>6. Google закликає адаптувати рекламні стратегії до сучасного пошуку</b>\nGoogle опублікував рекомендації щодо зміни рекламних стратегій через еволюцію пошукової поведінки користувачів під впливом ШІ.\n💡 Перегляньте семантичне ядро та використовуйте ширші відповідності у контекстній рекламі для охоплення нових пошукових патернів.\n🔗 <a href=\"https://blog.google/products/ads-commerce/ads-decoded-podcast-search-data/\">The Keyword (Google)</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202645\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Зміни алгоритмів YouTube: як оптимізувати відео під AI-пошук</b> · Social Media Examiner\nСтаття розповідає про те, як змінився підрахунок переглядів на YouTube та чому зростання показників переглядів не завжди гарантує ліди чи продаж. Автори пояснюють, як адаптувати контент, щоб ваші відео успішно знаходили в пошукових системах на базі штучного інтелекту, таких як ChatGPT та Ask YouTube.\n💡 Фокусуйтеся на метриці залучених переглядів (engaged views) та оптимізуйте текстовий огляд відео за допомогою ключових слів, які розпізнають AI-асистенти.\n<a href=\"https://www.socialmediaexaminer.com/getting-youtube-views-is-changing-what-marketers-need-to-know/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Оновлення інструментів аналітики: моніторинг бренду в AI та крос-платформний постить</b> · Hootsuite\nОгляд нових функцій платформи Hootsuite за вересень охоплює розширені можливості аналізу згадок бренду через AI-асистентів на кшталт ChatGPT та Gemini. Також розібрано покращення для швидкого узгодження контенту командою та оптимізацію роботи з відкладеним постилком.\n💡 Використовуйте інструменти відстеження LLM-інсайтів, щоб перевіряти, як саме штучний інтелект презентує ваш бренд користувачам у своїх відповідях.\n<a href=\"https://blog.hootsuite.com/new-features-september-2026/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Автоматизація комунікації: чому єдиний інбокс та модерація рятують залученість</b> · Buffer\nМатеріал присвячений побудові спільнот та роботі з аудиторією через соціальні мережі. Автори наголошують, що ігнорування коментарів чи прямих повідомлень руйнує стратегію, і пояснюють, як спеціалізовані інструменти допомагають обробляти запити без ручної рутини.\n💡 Впроваджуйте єдиний інбокс (Unified inbox) для збору коментарів і DM з усіх соцмереж в одне вікно та налаштовуйте автоматичну фільтрацію спаму за допомогою правил.\n<a href=\"https://buffer.com/resources/social-media-engagement-tools/\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Аналіз конкурентів та бюджетування: як обрати правильний сервіс аналітики</b> · Buffer\nОгляд аналізує популярні платформи для SMM-аналітики, їхні приховані витрати та обмеження у безкоштовних і базових тарифах. Стаття допомагає зрозуміти, за які саме функції варто платити, а де можна зекономити при масштабуванні проєкту.\n💡 Завжди перевіряйте ліміти на AI-кредити, доступ до API та наявність конкретних соцмереж (наприклад, LinkedIn чи X) у базових тарифах перед покупкою підписки.\n<a href=\"https://buffer.com/resources/metricool-alternatives-free-paid/\">джерело</a></blockquote>\n§RT:smm:202645p",
+   "exp": "2026-11-04T08:00:42.191579+02:00",
+   "aud": [
+    "160603556",
+    "368433217",
+    "936688574"
+   ]
+  }
+ },
+ "got": {
+  "yt": {},
+  "smm": {}
+ },
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
  "gem_block": {
   "gemini-3.8-flash": "2026-11-02T10:05:00+02:00",
@@ -30550,9 +30612,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "7d8bfeb09f06",
+  "gs": "86ac503707aa",
   "quiz_pool.json": "ec51ae06945f",
-  "fact.png": "7aa8dd97fa20",
+  "fact.png": "852601010eaa",
   "sexed.json": "7cc514ada917",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "de28d48558fb",
@@ -45889,7 +45951,7 @@
  },
  "cofid_pushed": "30.10.2026",
  "ab_month": "2026-11",
- "yt_last": "▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · 19.10–26.10</b>\n<blockquote>▶️ <b>1. Що насправді отримає Трамп, шантажуючи Україну? Нові переговори про переговори</b>\n📺 STERNENKO · ⏱ 13 хв\n👁 <b>799 тис</b> переглядів · 💬 <b>1 535</b> коментарів\n🔗 <a href=\"https://youtu.be/9yvrsaTEfhw\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>2. Ви це знали? #violin #jewelry #життя #психолоія #music #live #подкасттерапія #folkmusic #топ</b>\n📺 Територія здоровʼя  · ⏱ 2 хв\n👁 <b>416 тис</b> переглядів · 💬 <b>2 901</b> коментарів\n🔗 <a href=\"https://youtu.be/m4_J7zXUkj4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>3. Artem Pivovarov - Мій рід (Official Video)</b>\n📺 Artem Pivovarov · ⏱ 3 хв\n👁 <b>328 тис</b> переглядів · 💬 <b>1 827</b> коментарів\n🔗 <a href=\"https://youtu.be/7MLRy9ih97w\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>4. Трамп і КДБ: Що відомо про його зв’язки з Москвою і чому він не обовʼязково агент?</b>\n📺 Історія для дорослих · ⏱ 15 хв\n👁 <b>472 тис</b> переглядів · 💬 <b>296</b> коментарів\n🔗 <a href=\"https://youtu.be/KrbhTp7Vovg\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>5. Повітряна блокада москви та лєнінграда | Упс, а що трапилось? #158</b>\n📺 Aleksey Durnev · ⏱ 47 хв\n👁 <b>441 тис</b> переглядів · 💬 <b>559</b> коментарів\n🔗 <a href=\"https://youtu.be/U1JMFDxhS3I\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>6. Коли закінчиться війна... Вірш від Тамари Яценко</b>\n📺 Власть vs Влащенко · ⏱ 2 хв\n👁 <b>244 тис</b> переглядів · 💬 <b>1 030</b> коментарів\n🔗 <a href=\"https://youtu.be/8mWH4KOB27k\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>7. Нові перемовини: що задумав Путін | Віталій Портников @gvlua</b>\n📺 Віталій Портников · ⏱ 30 хв\n👁 <b>310 тис</b> переглядів · 💬 <b>184</b> коментарів\n🔗 <a href=\"https://youtu.be/2T4a36Wpehk\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>8. Що не так із Холостяком?</b>\n📺 Приємний Вечір · ⏱ 35 хв\n👁 <b>293 тис</b> переглядів · 💬 <b>149</b> коментарів\n🔗 <a href=\"https://youtu.be/MDjegmO1fTM\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>9. ЩО ДРАТУЄ РИТУАЛЬНУ ПРАЦІВНИЦЮ? Несерйозна розмова №160</b>\n📺 Дмитро Тютюн · ⏱ 52 хв\n👁 <b>259 тис</b> переглядів · 💬 <b>449</b> коментарів\n🔗 <a href=\"https://youtu.be/bW6Xk01i1Vc\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>10. КРИВАВИЙ МІСЯЦЬ</b>\n📺 Нікіта Кісельов - Topic · ⏱ 3 хв\n👁 <b>274 тис</b> переглядів · 💬 <b>290</b> коментарів\n🔗 <a href=\"https://youtu.be/-4TnpCNTTg0\">Дивитися</a></blockquote>\n§RT:yt:202644",
+ "yt_last": "▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · 26.10–02.11</b>\n<blockquote>▶️ <b>1. Єва Мішалова. Ігор Комаров. Балі. Як райський острів, перетворився на пекло за одну ніч.</b>\n📺 Василь Тимошенко · ⏱ 3 год 45 хв\n👁 <b>1.3 млн</b> переглядів · 💬 <b>3 183</b> коментарів\n🔗 <a href=\"https://youtu.be/4vtFfMfBMFo\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>2. Як приміряти труси?</b>\n📺 ЯКІСНІ РОСЛИНИ, СПРАВЖНЯ ІКРА ЧЕРВОНА, ЧОРНА, ЩУКИ · ⏱ 1 хв\n👁 <b>749 тис</b> переглядів · 💬 <b>708</b> коментарів\n🔗 <a href=\"https://youtu.be/4MqJvpqaWZA\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>3. ШАХТАР - ДИНАМО. ОГЛЯД МАТЧУ. КУБОК УКРАЇНИ. 1/8 ФІНАЛУ #шахтар #динамо</b>\n📺 УПЛ ТБ · ⏱ 11 хв\n👁 <b>377 тис</b> переглядів · 💬 <b>704</b> коментарів\n🔗 <a href=\"https://youtu.be/44JhQ-xJIpc\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>4. #UkrainskaKralya #россия#УкраїнськіПісні #УкраїнськіХіти #УкраїнськаМузика #Shorts#україна</b>\n📺 UkrainskaKralya 💋 · ⏱ 1 хв\n👁 <b>313 тис</b> переглядів · 💬 <b>360</b> коментарів\n🔗 <a href=\"https://youtu.be/U5HWcJdKPSw\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>5. Як йому вдалось так швидко відгадати? | #ХтоЗверху #НовийКанал #Дантес</b>\n📺 Хто зверху? · ⏱ 1 хв\n👁 <b>271 тис</b> переглядів · 💬 <b>75</b> коментарів\n🔗 <a href=\"https://youtu.be/BJsWXS9UONc\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>6. THE HARDKISS feat. BEYOND THE BLACK - Not This Time (official video)</b>\n📺 The HARDKISS · ⏱ 3 хв\n👁 <b>222 тис</b> переглядів · 💬 <b>426</b> коментарів\n🔗 <a href=\"https://youtu.be/9n-g_xOrpM4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>7. Чому українці орали на волах і возили ними сіль? 🐂 Чумаки, ярмо та історія українського села</b>\n📺 VOXORIUM_UA · ⏱ 2 хв\n👁 <b>246 тис</b> переглядів · 💬 <b>63</b> коментарів\n🔗 <a href=\"https://youtu.be/YqsX_spfkGw\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>8. ЩО ДРАТУЄ ЛЮДИНУ З ЗАЇКАННЯМ? Несерйозна розмова №161</b>\n📺 Дмитро Тютюн · ⏱ 40 хв\n👁 <b>193 тис</b> переглядів · 💬 <b>344</b> коментарів\n🔗 <a href=\"https://youtu.be/wK6lFvp_myU\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>9. Чи здивує листопад українців ПОГОДОЮ: коли чекати похолодання, дощів і першого снігу?</b>\n📺 Ранок Вдома · ⏱ 12 хв\n👁 <b>223 тис</b> переглядів · 💬 <b>24</b> коментарів\n🔗 <a href=\"https://youtu.be/qo2HXcrG2QQ\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>10. [UA] bb team проти FURIA | PGL Masters Bucharest 2026</b>\n📺 CS2 Maincast · ⏱ 9 год 55 хв\n👁 <b>224 тис</b> переглядів · 💬 <b>0</b> коментарів\n🔗 <a href=\"https://youtu.be/PcF8NEezokY\">Дивитися</a></blockquote>\n<i>Ще 10, улюблені й приховані канали, 📺 цікаві канали за темами — кнопкою «▶️ YouTube» у меню.</i>\n§RT:yt:202645",
  "match_month": "2026-11",
  "x18_at": {
   "mix": "2026-11-02T07:25:43.452579+02:00",
@@ -45948,8 +46010,8 @@
  "fan_wk": "2026-44",
  "weather": "2026-11-01",
  "prom_i": 41,
- "yt_week": "2026-44",
- "smm_week": "2026-44",
+ "yt_week": "2026-45",
+ "smm_week": "2026-45",
  "yt_mute": [],
  "yt_fav": [],
  "ytch_week": "202645",
@@ -45960,7 +46022,7 @@
  "silpo_snap": "2026-10-28",
  "live_day": "2026-11-02",
  "silpo_week": "2026-44",
- "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 22.10–29.10\n<blockquote>🆕 <b>1. Instagram тестує відео до 90 хвилин</b>\nInstagram розпочав тестування горизонтальних та довгих відео тривалістю до 90 хвилин, кидаючи виклик YouTube.\n💡 Адаптуйте свої лонгрід-відео та подкасти під новий формат, щоб зайняти нішу на ранньому етапі тестування.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOOXVMV2djRXhpbU9hQTRpTlRObmNibURtb3hzX3NXOW9jbWp1a2tLRFNjdWVoaVFBbVlsNFBHSjBkYkt1UVpFbFRCcWZLS2g4cXl1VGNiaUJibHZmYzBCemJjWVgwZ0Nxckl4bElPUWRMemNjVnpvYS1xRzVRbXU1QzctWkh5S2NYbkFOUlp1MU45b1IwcWFtNmF2OHF0X2pPQW9lc2tja2o5ZFJhZkxMWnJDM0NSdw?oc=5\">The Hollywood Reporter</a></blockquote>\n<blockquote>🎯 <b>2. Дані ефективності для кожного креативу в Meta</b>\nMeta додала детальну індивідуальну статистику ефективності для кожного рекламного креативу.\n💡 Використовуйте ці нові дані для точкового аналізу та відключення неефективних креативів без зупинки всієї групи оголошень.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-adds-individual-performance-data-for-ad-creative/872981/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>3. Нова стрічка «For You» у Reddit</b>\nReddit офіційно представив персоналізовану стрічку «For You», яка формується на основі інтересів користувача.\n💡 Перегляньте стратегію присутності бренду на платформі з урахуванням алгоритмічної видачі в новій стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/reddit-introduces-for-you-feed/873132/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Розширення реклами в AI Mode від Google</b>\nGoogle розширив показ реклами у своєму штучному інтелекті на нові ринки.\n💡 Стежте за появою нових форматів пошукової реклами з підтримкою AI та тестуйте їх для своїх кампаній.\n🔗 <a href=\"https://blog.google/products/ads-commerce/ads-in-ai-mode-global/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>5. Гид по ресторанах усередині TikTok</b>\nTikTok додав вбудований путівник по ресторанах, що дозволяє користувачам знаходити заклади прямо в додатку.\n💡 Локальним брендам та закладам харчування варто активніше створювати геолокаційний контент у TikTok.\n🔗 <a href=\"https://www.socialmediatoday.com/news/tiktok-adds-in-app-restaurant-guide/873122/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Хаб аналітичних даних від LinkedIn</b>\nLinkedIn запустив новий інформаційний центр для надання глибшої аналітики та даних професійній аудиторії.\n💡 Використовуйте цей інструмент для дослідження ринку та планування B2B-кампаній.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-launches-data-insights-hub/872972/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>7. Спільне авторство зображень на X</b>\nСоцмережа X додала можливість ділитися авторськими правами або відмітками на репостнутих зображеннях.\n💡 Враховуйте це оновлення при поширенні візуального контенту та партнерських креативів.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-lets-users-share-credit-on-reposted-images/873100/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>8. Святковий проєкт Disney у TikTok Shop</b>\nDisney планує масштабну святкову кампанію в TikTok Shop за участю понад 20 брендів.\n💡 Готуйте товарні каталоги та інтеграції до святкових покупок через соцмережі.\n🔗 <a href=\"https://www.marketingdive.com/news/disney-plans-tiktok-shop-holiday-experience-with-over-20-brands/873072/\">Marketing Dive</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202644",
+ "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 26.10–02.11\n<blockquote>🆕 <b>1. Instagram тестує відео до 90 хвилин</b>\nInstagram розпочав тестування горизонтальних відео завдовжки до 90 хвилин, кидаючи виклик YouTube та змінюючи фокус із виключно коротких форматів.\n💡 Адаптуйте свої довгі відеоформати під новий функціонал платформи для залучення більшого органічного охоплення.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxORHdtNTJEVURTTFM2SE1OQi1CV1BoRURmQjZpUkZhdHVMckJ6SXhSckhDR3M0YmlWRTBNUHJmX1ppa2dLZ19Pcms4YzYzLWtmczJfcElRMWN5d1BXeWo2VlFpMy1yckhESUdpVnU3SHIyQkQyY3dtdVhQUVRfWGl1QlViS1VDZE1HeXY2cTVSNE9DYXlmT1EwcExZblBLby1nalVoeTV6RG5jMnp1X21RRVluZ2lCeWJfX3VucnpxUEJaenNpcGVrRHhmTXo?oc=5\">ms.detector.media</a></blockquote>\n<blockquote>🎯 <b>2. Нова система ранжування реклами Meta на базі LLM</b>\nMeta представила нову систему ранжування рекламних оголошень на основі великих мовних моделей, а також оновлення для систем Andromeda та GEM.\n💡 Закладайте більше різноманітних креативів та текстових варіантів, щоб нова LLM-система краще оптимізувала показ реклами.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQbWlybV9GT3hDcXBVWm1xN0RFanhlUjJIb0NnSnJYam12RUd4ZkJkellKdzU2VzhXUzR5OWlqV25qdE5Qd0d6cFdCQzFuNVJWcW1SU1hFYjU5V01VUlp0RTUyYnREdlZPWUxyUGxRcUdtcTFhbjc3am4xUk01Q05mc2NSaENaaEFwbko2a05TdDFQQmM2SnkzUHBTZnUxZ2UwQWphMjBQWmdtQ2ZmY3R5Smt3Zw?oc=5\">AdExchanger</a></blockquote>\n<blockquote>🆕 <b>3. Instagram платить креаторам за довгий контент</b>\nПлатформа почала пропонувати шестизначні суми та виплати відомим авторам за створення та завантаження лонгфордових відео.\n💡 Стежте за появою цієї програми монетизації у вашому регіоні для залучення амбасадорів бренду.\n🔗 <a href=\"https://www.socialmediatoday.com/news/instagram-offers-to-pay-creators-for-long-form-content/873402/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>4. Нова бонусна програма для відеокреаторів у X</b>\nСоціальна мережа X запустила оновлену бонусну програму, спрямовану на стимулювання виробництва якісного відеоконтенту.\n💡 Використовуйте відеоформати у мережі X, якщо ваша аудиторія активно споживає там контент, аби отримувати додаткові бонуси.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-launches-new-bonus-program-for-video-creators/873404/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>5. Зростання ефективності реклами Meta завдяки обчислювальній потужності</b>\nMeta повідомила, що розширення її обчислювальних потужностей та використання штучного інтелекту безпосередньо покращують результати рекламних кампаній.\n💡 Довіртеся автоматизованим стратегіям ставок і ширшому таргетингу, адже алгоритми Meta тепер точніші в оптимізації.\n🔗 <a href=\"https://www.marketingdive.com/news/sociable-meta-says-its-expanded-processing-capacity-is-driving-ad-results/873191/\">Marketing Dive</a></blockquote>\n<blockquote>🎯 <b>6. Google закликає адаптувати рекламні стратегії до сучасного пошуку</b>\nGoogle опублікував рекомендації щодо зміни рекламних стратегій через еволюцію пошукової поведінки користувачів під впливом ШІ.\n💡 Перегляньте семантичне ядро та використовуйте ширші відповідності у контекстній рекламі для охоплення нових пошукових патернів.\n🔗 <a href=\"https://blog.google/products/ads-commerce/ads-decoded-podcast-search-data/\">The Keyword (Google)</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202645\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Зміни алгоритмів YouTube: як оптимізувати відео під AI-пошук</b> · Social Media Examiner\nСтаття розповідає про те, як змінився підрахунок переглядів на YouTube та чому зростання показників переглядів не завжди гарантує ліди чи продаж. Автори пояснюють, як адаптувати контент, щоб ваші відео успішно знаходили в пошукових системах на базі штучного інтелекту, таких як ChatGPT та Ask YouTube.\n💡 Фокусуйтеся на метриці залучених переглядів (engaged views) та оптимізуйте текстовий огляд відео за допомогою ключових слів, які розпізнають AI-асистенти.\n<a href=\"https://www.socialmediaexaminer.com/getting-youtube-views-is-changing-what-marketers-need-to-know/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Оновлення інструментів аналітики: моніторинг бренду в AI та крос-платформний постить</b> · Hootsuite\nОгляд нових функцій платформи Hootsuite за вересень охоплює розширені можливості аналізу згадок бренду через AI-асистентів на кшталт ChatGPT та Gemini. Також розібрано покращення для швидкого узгодження контенту командою та оптимізацію роботи з відкладеним постилком.\n💡 Використовуйте інструменти відстеження LLM-інсайтів, щоб перевіряти, як саме штучний інтелект презентує ваш бренд користувачам у своїх відповідях.\n<a href=\"https://blog.hootsuite.com/new-features-september-2026/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Автоматизація комунікації: чому єдиний інбокс та модерація рятують залученість</b> · Buffer\nМатеріал присвячений побудові спільнот та роботі з аудиторією через соціальні мережі. Автори наголошують, що ігнорування коментарів чи прямих повідомлень руйнує стратегію, і пояснюють, як спеціалізовані інструменти допомагають обробляти запити без ручної рутини.\n💡 Впроваджуйте єдиний інбокс (Unified inbox) для збору коментарів і DM з усіх соцмереж в одне вікно та налаштовуйте автоматичну фільтрацію спаму за допомогою правил.\n<a href=\"https://buffer.com/resources/social-media-engagement-tools/\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Аналіз конкурентів та бюджетування: як обрати правильний сервіс аналітики</b> · Buffer\nОгляд аналізує популярні платформи для SMM-аналітики, їхні приховані витрати та обмеження у безкоштовних і базових тарифах. Стаття допомагає зрозуміти, за які саме функції варто платити, а де можна зекономити при масштабуванні проєкту.\n💡 Завжди перевіряйте ліміти на AI-кредити, доступ до API та наявність конкретних соцмереж (наприклад, LinkedIn чи X) у базових тарифах перед покупкою підписки.\n<a href=\"https://buffer.com/resources/metricool-alternatives-free-paid/\">джерело</a></blockquote>\n§RT:smm:202645p",
  "kino_q": [
   {
    "id": "bdfabb5cf6",
@@ -46117,12 +46179,8 @@
   "ser_mystery": "2026-11-01T18:35:43.974905+02:00"
  },
  "kb_probe2": "2026-45",
- "sbm_at": 1793598948.2698689,
+ "sbm_at": 1793599246.1065273,
  "sbm_hist": [
-  [
-   "19:45",
-   41
-  ],
   [
    "19:50",
    41
@@ -46694,6 +46752,10 @@
   [
    "07:55",
    64
+  ],
+  [
+   "08:00",
+   64
   ]
  ],
  "sbm_near": {
@@ -46714,7 +46776,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1793598354.3619184,
+ "net_at": 1793599248.650519,
  "net_asn": {
   "triolan": [
    "13188",
