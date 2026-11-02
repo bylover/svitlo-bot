@@ -5154,6 +5154,121 @@ def net_status(st: dict, now: datetime) -> None:
     print("Мережі: " + ", ".join(f"{r['n']} {r['st']}" + (f" (AS{r['asn']})" if r.get("asn") else "") for r in rows))
 
 
+SB_DOC: dict = {}
+
+
+def sched_next_line(group: str, now: datetime) -> str:
+    """📅 Орієнтир за графіком ДТЕК для черги: коли наступне вимкнення або коли має зʼявитись світло."""
+    sch = ((SB_DOC.get("schedules") or {}).get(group) or {}) if group else {}
+    ivs = []
+    for iv in sch.get("intervals", []):
+        if iv.get("origin") == "fact" and iv.get("kind") == "off":
+            try:
+                a, b = datetime.fromisoformat(iv["start"]).astimezone(TZ), datetime.fromisoformat(iv["end"]).astimezone(TZ)
+                if b > now:
+                    ivs.append([a, b])
+            except Exception:
+                pass
+    if not group or not sch:
+        return ""
+    ivs.sort()
+    merged = []
+    for a, b in ivs:
+        if merged and a <= merged[-1][1]:
+            merged[-1][1] = max(merged[-1][1], b)
+        else:
+            merged.append([a, b])
+    t = lambda d: ("завтра " if d.date() > now.date() else "") + d.strftime("%H:%M")
+    cur = next((x for x in merged if x[0] <= now < x[1]), None)
+    if cur:
+        return f"📅 За графіком (черга {esc(group)}): світло має бути з <b>{t(cur[1])}</b>"
+    nx = next((x for x in merged if x[0] > now), None)
+    return f"📅 За графіком (черга {esc(group)}): наступне вимкнення <b>{t(nx[0])}–{nx[1].strftime('%H:%M') if nx[1].date() == nx[0].date() or nx[1].strftime('%H:%M') == '00:00' else t(nx[1])}</b>" if nx else f"📅 За графіком (черга {esc(group)}): відключень найближчим часом не заплановано"
+
+
+def sb_group_infer(now: datetime, pts: list) -> int:
+    """👥 Черга будинку за поведінкою: у «показові» моменти (за графіком одні черги без світла, інші — зі світлом)
+    рахуємо, з якою чергою збігається стан будинку. Достатньо збігів (≥24 моменти, ≥85%, відрив) → черга визначена."""
+    try:
+        doc = http_json(DTEK_URL)
+    except Exception as e:
+        print(f"Черги за поведінкою: графіки недоступні ({err_text(e)[:40]})"); return 0
+    SB_DOC.clear(); SB_DOC.update(doc)
+    off_now = {}
+    for g, sch in (doc.get("schedules") or {}).items():
+        off = False
+        for iv in sch.get("intervals", []):
+            if iv.get("origin") == "fact" and iv.get("kind") == "off":
+                try:
+                    if datetime.fromisoformat(iv["start"]).astimezone(TZ) <= now < datetime.fromisoformat(iv["end"]).astimezone(TZ):
+                        off = True; break
+                except Exception:
+                    pass
+        off_now[g] = off
+    groups = sorted(off_now)
+    try:
+        db = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=sb_groups.json") or {}
+    except Exception:
+        db = {}
+    if db.get("groups") != groups:
+        db = {"groups": groups, "h": {}}             # набір черг змінився — рахуємо заново
+    informative = 0 < sum(off_now.values()) < len(groups)
+    kyiv = [p for p in pts if p.get("d")]
+    if informative:
+        for p in kyiv:
+            k = f'{p["la"]},{p["lo"]}'
+            h = db["h"].setdefault(k, [0, 0, [0] * len(groups)])   # [моментів, з них без світла, збіги по чергах]
+            h[0] += 1; h[1] += 0 if p["on"] else 1
+            hoff = not p["on"]
+            for i, g in enumerate(groups):
+                if off_now[g] == hoff:
+                    h[2][i] += 1
+    found = 0
+    for p in kyiv:
+        h = db["h"].get(f'{p["la"]},{p["lo"]}')
+        if not h or p.get("g") or h[0] < 24 or h[1] < 4:
+            continue
+        order = sorted(range(len(groups)), key=lambda i: -h[2][i])
+        best, second = h[2][order[0]], (h[2][order[1]] if len(order) > 1 else 0)
+        if best / h[0] >= 0.85 and best - second >= 0.1 * h[0]:
+            p["g"] = groups[order[0]]; p["gi"] = True; found += 1
+    if informative:
+        try:
+            http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=sb_groups.json", db)
+        except Exception as e:
+            print(f"Черги за поведінкою → бот: {err_text(e)[:60]}")
+    print(f"Черги за поведінкою: {'показовий момент' if informative else 'не показовий момент'} · будинків із визначеною чергою {found} з {len(kyiv)}")
+    return found
+
+
+def sb_hist_update(pts: list) -> None:
+    """🗺 Історія будинків: останні 5 відключень (початок, кінець) — за часом зміни статусу з мапи СвітлоБота."""
+    try:
+        db = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=sb_hist.json") or {}
+    except Exception:
+        db = {}
+    db = {k: v for k, v in db.items() if isinstance(v, dict)}
+    changed = 0
+    for p in pts:
+        k = f'{p["la"]:.5f},{p["lo"]:.5f}'
+        on, since = 1 if p["on"] else 0, str(p.get("s") or "")[:16]
+        h = db.get(k)
+        if h is None:
+            db[k] = {"s": on, "t": since, "h": []}; continue
+        if h.get("s") == on:
+            continue
+        if on == 1 and h.get("s") == 0 and h.get("t"):   # світло повернулось → закриваємо відключення
+            h["h"] = ([[h["t"], since]] + (h.get("h") or []))[:5]
+        h["s"], h["t"] = on, since
+        changed += 1
+    if changed or len(db) > 0:
+        try:
+            http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=sb_hist.json", db)
+        except Exception as e:
+            print(f"Історія будинків → бот: {err_text(e)[:60]}")
+    print(f"Історія будинків: змін статусу {changed}, будинків {len(db)}")
+
+
 SB_STATS = Path("sb_stats.json")
 
 
@@ -5219,8 +5334,9 @@ def sb_alerts(st: dict, now: datetime, pts: list) -> None:
                         dur = f" · {'було відсутнє' if hon else 'було'} ~{mins // 60} год {mins % 60} хв" if mins >= 10 else ""
                     except Exception:
                         pass
+                    nl_ = sched_next_line(str(p.get("group") or ""), now)
                     SB_ALERT_MSGS.append((cid, f"{'🟢 <b>Світло зʼявилося</b>' if hon else '🔴 <b>Світло зникло</b>'} у будинку поруч з вами{dur}\n🏠 {esc(re.sub(r'^.*?->\s*', '', hd[1]['n'])[:60])}\n"
-                                               "<i>За даними мапи СвітлоБотів (затримка 3–7 хв).</i>"))
+                                               + (f"{nl_}\n" if nl_ else "") + "<i>За даними мапи СвітлоБотів (затримка 3–7 хв).</i>"))
                 st.setdefault("sbm_home", {})[cid] = {"k": hk, "on": hon, "t": _time.time() if ph.get("on") != hon or ph.get("k") != hk else ph.get("t", _time.time())}
         near = [x for x in pts if _km((x["la"], x["lo"]), (float(la), float(lo))) <= r]
         if len(near) < 5:
@@ -5236,7 +5352,8 @@ def sb_alerts(st: dict, now: datetime, pts: list) -> None:
             msg = f"🔌 <b>Поруч дали світло</b>: вже у {pc}% будинків у радіусі {r:g} км (було {was}%) — у вас, імовірно, теж скоро."
         if msg and _time.time() - float(nxt[cid][1] or 0) > 1800:   # не частіше ніж раз на 30 хв
             nxt[cid][1] = _time.time()
-            SB_ALERT_MSGS.append((cid, msg + "\n<i>За даними мапи СвітлоБотів · оновлення ~раз на 5 хв.</i>"))
+            nl_ = sched_next_line(str(p.get("group") or (GROUP if cid in FAMILY else "")), now)
+            SB_ALERT_MSGS.append((cid, msg + (f"\n{nl_}" if nl_ else "") + "\n<i>За даними мапи СвітлоБотів · оновлення ~раз на 5 хв.</i>"))
     st["sbm_near"] = nxt
     gprev, gnow = st.get("sbm_grp") or {}, {}            # 👥 «ваша черга»: світло зникло / зʼявилось у більшості будинків черги
     for x in pts:
@@ -5249,9 +5366,10 @@ def sb_alerts(st: dict, now: datetime, pts: list) -> None:
             continue
         txt = (f"{'🟢' if pc > was else '🔴'} <b>Черга {esc(g)}: світло {'зʼявилося' if pc > was else 'зникло'}</b> у більшості будинків — зараз є у {pc}% (було {was}%)\n"
                "<i>За даними мапи СвітлоБотів.</i>")
+        nl_ = sched_next_line(g, now)
         for cid, p in prof.items():
             if str(p.get("group") or "") == g and p.get("sba", cid in FAMILY) and (cid in FAMILY or "svitlo" in (subs.get(cid) or [])):
-                SB_ALERT_MSGS.append((cid, txt))
+                SB_ALERT_MSGS.append((cid, txt.replace("\n<i>За даними", (f"\n{nl_}" if nl_ else "") + "\n<i>За даними", 1)))
     st["sbm_grp"] = {**gprev, **gpct}
 
 
@@ -5281,7 +5399,7 @@ def sb_map(st: dict, now: datetime) -> None:
                 continue
             stat[f"f1={f[1]}"] = stat.get(f"f1={f[1]}", 0) + 1; stat[f"f8={f[8]}"] = stat.get(f"f8={f[8]}", 0) + 1
             grp = next((x for x in f[8:] if re.fullmatch(r"\d{1,2}\.\d", x or "")), "")   # група (черга), якщо мапа її віддає
-            pts.append({"n": f[3][:70], "la": round(lat, 5), "lo": round(lng, 5), "on": f[1] == "1", "s": f[2][:16], "g": grp, "f": f[:11] if len(pts) < 1 else None, "src": "sb"})
+            pts.append({"n": f[3][:70], "la": round(lat, 5), "lo": round(lng, 5), "on": f[1] == "1", "s": f[2][:16], "g": grp, "f": f[:14], "src": "sb"})
     except Exception as e:
         print(f"Мапа СвітлоБотів: {err_text(e)[:80]}")
     try:                                              # 2-е джерело: lights-monitor.com
@@ -5302,10 +5420,18 @@ def sb_map(st: dict, now: datetime) -> None:
         else:
             city = re.split(r"\s*->\s*|,", p["n"])[0].strip()[:30] or "інше"
             p["c"] = city; obl.setdefault(city, [0, 0])[0 if p["on"] else 1] += 1
+    try:
+        sb_group_infer(now, pts)                      # 👥 черги будинків за поведінкою (якщо мапа їх не віддає)
+    except Exception as e:
+        print(f"Черги за поведінкою: {err_text(e)[:80]}")
     kyiv_pts = [p for p in pts if p.get("d")]
     pct = round(100 * sum(1 for p in kyiv_pts if p["on"]) / max(1, len(kyiv_pts)))
     hist = (st.get("sbm_hist") or [])[-143:] + [[now.strftime("%H:%M"), pct]]   # 📈 % зі світлом у Києві за добу
     st["sbm_hist"] = hist
+    try:
+        sb_hist_update(pts)                           # 🗺 історія відключень будинків (останні 5)
+    except Exception as e:
+        print(f"Історія будинків: {err_text(e)[:80]}")
     try:
         sb_stats_update(st, now, pts)                 # 📈 фактична статистика (доба/тиждень/місяць/3 міс)
     except Exception as e:
@@ -5317,6 +5443,14 @@ def sb_map(st: dict, now: datetime) -> None:
     out = {"at": now.strftime("%d.%m %H:%M"), "n": len(pts), "raw": raw_n, "stat": stat, "hist": hist, "kpct": pct,
            "distr": distr, "obl": dict(sorted(obl.items(), key=lambda kv: -sum(kv[1]))[:25]),
            "pts": [[p["la"], p["lo"], 1 if p["on"] else 0, p["n"], p["s"], p.get("g", "")] for p in pts], "sample": next((p["f"] for p in pts if p.get("f")), None)}
+    try:                                              # 🧪 усі поля запису мапи для будинку основних — щоб побачити, чи є там черга
+        hp = (st.get("prof_ex") or {}).get(FAMILY[0] if FAMILY else "", {}) if FAMILY else {}
+        hla, hlo = float(hp.get("sbla") or LAT), float(hp.get("sblo") or LON)
+        near_ = min((p for p in pts if p.get("f")), key=lambda p: _km((p["la"], p["lo"]), (hla, hlo)))
+        out["home_raw"] = {"km": round(_km((near_["la"], near_["lo"]), (hla, hlo)), 2), "f": near_["f"]}
+        out["groups_n"] = sum(1 for p in pts if p.get("g")); out["groups_inf"] = sum(1 for p in pts if p.get("gi"))
+    except Exception:
+        pass
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=sb_map.json", out)
     except Exception as e:
