@@ -26,7 +26,7 @@ import time as _time
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import datetime, time, timedelta
+from datetime import datetime, time, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -5402,6 +5402,27 @@ def sb_map(st: dict, now: datetime) -> None:
             pts.append({"n": f[3][:70], "la": round(lat, 5), "lo": round(lng, 5), "on": f[1] == "1", "s": f[2][:16], "g": grp, "f": f[:14], "src": "sb"})
     except Exception as e:
         print(f"Мапа СвітлоБотів: {err_text(e)[:80]}")
+    try:                                              # 🕐 час зміни статусу: якщо мапа пише київський час із позначкою UTC — виправляємо (свіжі зміни «в майбутньому»)
+        ts_ = []
+        for p in pts:
+            try:
+                ts_.append(datetime.fromisoformat(str(p["s"]).replace("Z", "+00:00") if len(str(p["s"])) > 16 else str(p["s"]) + "+00:00"))
+            except Exception:
+                pass
+        ahead = (max(ts_) - datetime.now(timezone.utc)).total_seconds() / 3600 if ts_ else 0
+        shift = round(ahead) if 0.8 <= ahead <= 3.3 else 0
+        st["sbm_tshift"] = shift
+        if shift:
+            for p in pts:
+                try:
+                    d_ = datetime.fromisoformat(str(p["s"])[:16] + "+00:00") - timedelta(hours=shift)
+                    p["s"] = d_.strftime("%Y-%m-%dT%H:%M")
+                except Exception:
+                    pass
+    except Exception as e:
+        print(f"Мапа світла (час): {err_text(e)[:60]}")
+    if st.get("sbm_tshift"):
+        print(f"Мапа світла: час у даних зсунутий на {st['sbm_tshift']} год — виправлено")
     try:                                              # 2-е джерело: lights-monitor.com
         for m in http_json("https://lights-monitor.com/api/monitors") or []:
             la, lo = float(m.get("lat") or 0), float(m.get("lng") or 0)
@@ -5440,9 +5461,9 @@ def sb_map(st: dict, now: datetime) -> None:
         sb_alerts(st, now, pts)                       # 🧠 розумні сповіщення
     except Exception as e:
         print(f"Мапа світла (сповіщення): {err_text(e)[:80]}")
-    out = {"at": now.strftime("%d.%m %H:%M"), "n": len(pts), "raw": raw_n, "stat": stat, "hist": hist, "kpct": pct,
+    out = {"at": now.strftime("%d.%m %H:%M"), "n": len(pts), "raw": raw_n, "stat": stat, "hist": hist, "kpct": pct, "tshift": st.get("sbm_tshift", 0),
            "distr": distr, "obl": dict(sorted(obl.items(), key=lambda kv: -sum(kv[1]))[:25]),
-           "pts": [[p["la"], p["lo"], 1 if p["on"] else 0, p["n"], p["s"], p.get("g", "")] for p in pts], "sample": next((p["f"] for p in pts if p.get("f")), None)}
+           "pts": [[p["la"], p["lo"], 1 if p["on"] else 0, p["n"], p["s"], p.get("g", ""), 1 if p.get("gi") else 0] for p in pts], "sample": next((p["f"] for p in pts if p.get("f")), None)}
     try:                                              # 🧪 усі поля запису мапи для будинку основних — щоб побачити, чи є там черга
         hp = (st.get("prof_ex") or {}).get(FAMILY[0] if FAMILY else "", {}) if FAMILY else {}
         hla, hlo = float(hp.get("sbla") or LAT), float(hp.get("sblo") or LON)
@@ -6158,6 +6179,7 @@ def dur_text(sec: int) -> str:
 
 YT_POLIT = re.compile(r"політи|зеленськ|путін|вибор|депутат|верховн\w* рад|мобілізац|тцк|фронт|окупант|війн[аиі]|зсу\b|новин|ефір|наживо|\blive\b|стрім|"
                       r"гордон|портников|соколова|бутусов|гончаренко|арестович|умєров|єрмак|трамп|байден|переговор|мирн\w* план|санкці", re.I)
+YT_SPORT = re.compile(r"футбол|матч|упл\b|ліга чемпіонів|ліга європи|динамо|шахтар|збірна україни|бокс|усик|ломаченко|ufc|mma|баскетбол|хокей|теніс|формула.?1|голи|highlights|огляд матчу|спорт", re.I)
 YT_THEMES = {"🔪 Тру-крайм": ["тру крайм українською", "true crime історії", "тру крайм истории"], "😂 Гумор": ["стендап українською", "гумор скетчі україна"],
              "🎉 Розваги": ["розважальне шоу україна", "челендж україна"], "💞 Секс-просвіта": ["секс освіта сексолог", "сексолог советы"],
              "🔬 Наука": ["наука українською", "научпоп наука"]}
@@ -6261,6 +6283,10 @@ def build_youtube(st: dict, now: datetime) -> str | None:
             continue                                   # російське — ні
         if YT_POLIT.search(txt + " " + sn.get("channelTitle", "")) or sn.get("channelId") in set(st.get("yt_mute") or []):
             continue                                   # політика, новини, стріми й приховані вами канали — ні
+        dur_ = re.match(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", (v.get("contentDetails") or {}).get("duration") or "")
+        secs_ = (int(dur_.group(1) or 0) * 3600 + int(dur_.group(2) or 0) * 60 + int(dur_.group(3) or 0)) if dur_ else 0
+        if sn.get("categoryId") == "17" or YT_SPORT.search(txt + " " + sn.get("channelTitle", "")) or (secs_ and secs_ <= 180) or re.search(r"#shorts?\b|#reels?\b|\bshorts\b", txt, re.I):
+            continue                                   # спорт, Shorts і Reels (до 3 хв) — ні
         if not (lang.startswith("uk") or UA_LETTERS.search(txt)):
             continue                                   # лише українська мова
         ids_ok.add(v.get("id"))
@@ -6887,6 +6913,8 @@ def main() -> None:
                     _time.sleep(4)
             worker_req = dict(ex.get("req") or {})
             ex_promq = dict(ex.get("promq") or {})     # 🛍 Prom: списки товарів «усе в одного продавця»
+            if re.fullmatch(r"\d{1,2}\.\d", str(ex.get("fam_group") or "")):   # 🔄 черга основних змінилась (за адресою ДТЕК або вручну)
+                globals()["GROUP"] = str(ex["fam_group"])
             st["yt_mute"], st["yt_fav"] = list(ex.get("yt_mute") or []), list(ex.get("yt_fav") or [])   # 🚫/⭐ канали YouTube
             worker_req["kino_used"] = ex.get("kino_used") or []
             taste_update(st, ex.get("likes") or [], ex.get("dislikes") or [])   # 👍/👎 з меню кіно

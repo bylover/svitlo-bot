@@ -178,8 +178,23 @@ def house_info(data: dict) -> dict | None:
             "groups": h.get("sub_type_reason") or [], "updated": str(data.get("updateTimestamp") or "")}
 
 
+def fam_overrides() -> None:
+    """🏠 Адреса основних, змінена в боті (⚙️ → Адреса й черга), має пріоритет над секретами ADDR_STREET/ADDR_HOUSE."""
+    global STREET, HOUSE
+    if not check.WORKER_MODE or not CHAT_IDS:
+        return
+    try:
+        ex = check.http_json(f"{check.SYNC_URL}/export?key={check.urllib.parse.quote(check.SYNC_KEY)}") or {}
+        da = ((ex.get("prof") or {}).get(str(CHAT_IDS[0])) or {}).get("daddr")
+        if da and len(da) >= 2 and da[0] and da[1]:
+            STREET, HOUSE = str(da[0]), str(da[1])
+    except Exception as e:
+        print(f"Адреса основних (бот): {err_text(e)[:60]}")
+
+
 def main() -> None:
     now = datetime.now(TZ)
+    fam_overrides()
     try:
         prev = json.loads(STATE.read_text("utf-8"))
     except Exception:
@@ -196,6 +211,12 @@ def main() -> None:
         sys.exit(0)                                  # не знайшли будинок — стан не змінюємо
     active = bool(info["reason"] or info["start"])
     print(f"Власна адреса: {'НЕМАЄ світла' if active else 'ДТЕК не показує відключення'} · {info}")
+    grp_ = next((str(g)[3:] for g in (info.get("groups") or []) if str(g).startswith("GPV")), None)
+    if grp_ and check.WORKER_MODE:                    # 🔄 черга за адресою на сайті ДТЕК — бот сам перемкне графік, якщо змінилась
+        try:
+            check.http_json(f"{check.SYNC_URL}/famgroup?key={check.urllib.parse.quote(check.SYNC_KEY)}", {"group": grp_, "addr": f"{STREET}, {HOUSE}"})
+        except Exception as e:
+            print(f"Черга основних → бот: {err_text(e)[:60]}")
 
     banner = " ".join(data.get("_city") or [])
     extra_txt = json.dumps({k: v for k, v in data.items() if k not in ("data", "_street", "_city")}, ensure_ascii=False)
@@ -290,11 +311,14 @@ def match_streets(user: str, streets: list[str]) -> list[str]:
             score = 1.0
         elif skel(user) and skel(user) == skel(st_):
             score = 0.97                               # те саме, інше написання (рос./укр., помилка в голосних)
-        elif q in n or all(w in n for w in q.split()):
+        elif all(any(w == x or (len(w) >= 4 and difflib.SequenceMatcher(None, w, x).ratio() >= 0.85) for x in n.split()) for w in q.split()):
+            score = 0.98 - 0.001 * abs(len(n.split()) - len(q.split()))   # усі слова є (будь-який порядок: «Кульженків Сім'ї» = «Сім'ї Кульженків»)
+        elif q in n:
             score = 0.9 - 0.001 * len(n)               # частина назви — коротші вище
         else:
+            hit = sum(1 for w in q.split() if any(difflib.SequenceMatcher(None, w, x).ratio() >= 0.85 for x in n.split()))
             score = max(difflib.SequenceMatcher(None, q, n).ratio(),
-                        max((difflib.SequenceMatcher(None, w, x).ratio() for w in q.split() for x in n.split()), default=0) - 0.05)
+                        (max((difflib.SequenceMatcher(None, w, x).ratio() for w in q.split() for x in n.split()), default=0) - 0.05) * (0.92 if 0 < hit < len(q.split()) else 1))   # частково збіглись слова — нижче за повний збіг
         if score >= 0.72:
             scored.append((score, st_))
     scored.sort(key=lambda x: -x[0])
@@ -421,6 +445,13 @@ def subs_address_check(page) -> None:
         h = houses.get(house) or next((v for k, v in houses.items() if hkey(k).replace("/", "") == hkey(house).replace("/", "")), None)
         if h is None:
             continue
+        grp_ = next((str(g)[3:] for g in (h.get("sub_type_reason") or []) if str(g).startswith("GPV")), None)
+        if grp_ and grp_ != str(prof[cid].get("group") or ""):   # 🔄 черга підписника за адресою змінилась
+            try:
+                check.http_json(f"{check.SYNC_URL}/setgroup?key={check.urllib.parse.quote(check.SYNC_KEY)}",
+                                {"cid": cid, "group": grp_, "street": street, "house": house, "auto": True, "was": prof[cid].get("group") or ""})
+            except Exception as e:
+                print(f"Черга підписника {cid}: {err_text(e)[:50]}")
         reason, start, end = (h.get("sub_type") or "").strip(), (h.get("start_date") or "").strip(), (h.get("end_date") or "").strip()
         active, planned = bool(reason or start), bool(re.search(r"стабілізаційн|планов", reason, re.I))
         prev = stt.get(cid) or {}
