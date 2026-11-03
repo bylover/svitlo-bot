@@ -7490,6 +7490,7 @@ def main() -> None:
         st.pop("smm_last", None); st["smm_rebuild"], st["smm_try"] = True, ""   # 📈 SMM-дайджест — перезібрати (без розсилки, лише в розділі)
         st["force_heavy"] = ["prom.ua", "youtube канали", "кіно, пули", "музика", "здоров'я", "ігри PS5", "аудіокниги", "пп-страви", "кіномэтч"]   # маркети — першими
         st["ytch_week"] = ""                          # 📺 цікаві канали YouTube — теж заново
+        st["yt_seen"] = (st.get("yt_seen") or [])[:-20]; st["yt_last"], st["yt_try"] = "", ""   # ▶️ топ YouTube тижня — перезібрати (без розсилки, лише в розділі)
         st["live_day"] = ""                           # 🗣 Живий English — ще порція фраз
         st["prom_force"] = st["rz_force"] = True
         st["match_month"] = ""; st["ps_day"] = ""                # 🍿💞 пул Кіномэтчу й 🔥 знижки PS — теж свіжі
