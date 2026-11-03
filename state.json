@@ -698,24 +698,21 @@
   "m854239",
   "m1208348",
   "m817758",
-  "m580175",
-  "m310307",
-  "m1000866",
-  "m426426",
-  "m388",
-  "m786",
-  "m726759",
-  "m1160018",
-  "m416144",
-  "m379170",
-  "m663870",
-  "m1487861",
-  "m872906",
-  "m345887",
-  "m8079",
-  "m16436"
+  "m369972",
+  "m14574",
+  "m11423",
+  "m1114513",
+  "m479718",
+  "m705996",
+  "m337339",
+  "m423108",
+  "m1384216",
+  "m425274",
+  "m399402",
+  "m64720",
+  "m20342"
  ],
- "gh_beat": "2026-11-03T14:57:21.804704+02:00",
+ "gh_beat": "2026-11-03T15:01:22.500229+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -746,7 +743,7 @@
   "канал ЖК «Яскравий»": true
  },
  "fact": {
-  "last": 2720,
+  "last": 2723,
   "events": [
    [
     "2026-11-01T20:27:10+02:00",
@@ -851,12 +848,24 @@
    [
     "2026-11-03T14:57:15+02:00",
     "off"
+   ],
+   [
+    "2026-11-03T14:57:35+02:00",
+    "on"
+   ],
+   [
+    "2026-11-03T14:59:24+02:00",
+    "off"
+   ],
+   [
+    "2026-11-03T15:00:05+02:00",
+    "on"
    ]
   ]
  },
- "fact_png": "2026-11-03 14|26|2026-11-03T14:57:15+02:00",
+ "fact_png": "2026-11-03 15|29|2026-11-03T15:00:05+02:00",
  "fact_day": {
-  "total": "8 год 53 хв",
+  "total": "8 год 54 хв",
   "list": [
    "19:56–01:32 · 5 год 36 хв",
    "09:26–12:35 · 3 год 9 хв",
@@ -866,7 +875,8 @@
    "14:54–14:54 · 0 хв",
    "14:55–14:56 · 1 хв",
    "14:56–14:57 · 0 хв",
-   "14:57–14:57 · 0 хв"
+   "14:57–14:57 · 0 хв",
+   "14:59–15:00 · 1 хв"
   ]
  },
  "mo_sent": {
@@ -1774,14 +1784,14 @@
    "note": "88 шт."
   },
   "🛒 Сільпо (основна)": {
-   "at": "03.11 14:28",
-   "ts": 1793708898,
+   "at": "03.11 15:04",
+   "ts": 1793711065,
    "ok": true,
    "note": ""
   },
   "🛒 Сільпо (підписники)": {
-   "at": "03.11 14:28",
-   "ts": 1793708924,
+   "at": "03.11 15:04",
+   "ts": 1793711096,
    "ok": true,
    "note": ""
   },
@@ -1937,7 +1947,7 @@
   }
  },
  "kino_ver": 2,
- "silpo_day": "2026-11-03-am",
+ "silpo_day": "2026-11-03-pm",
  "silpo_ver": 12,
  "silpo_fb": "1f0bae3d-2073-62f4-b14c-f9715721ce18|DeliveryHome|",
  "yt_ver": 2,
@@ -2182,7 +2192,7 @@
   "name": "Сільпо (типовий магазин)",
   "store": true
  },
- "silpo_try": "2026-11-03 14",
+ "silpo_try": "2026-11-03 15",
  "silpo_conf": {
   "1f0bae3d-2073-62f4-b14c-f9715721ce18|1ed07671-a94b-63e0-b61e-dd63763181f9": [
    "2026-10-22",
@@ -6449,9 +6459,9 @@
     "15. Гриби намеко «Премія»® мариновані стерилізовані, 250г — <b>92.99 ₴</b> <s>129 ₴</s> · заявлено −28% · <b>реально −0%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/gryby-nameko-premiia-marynovani-sterylizovani-582678\">відкрити</a>",
     "16. Перець Nefeli червоний солодко-пікантний з сиром фета, 185г — <b>194 ₴</b> <s>259 ₴</s> · 🌐 лише онлайн-замовлення заявлено −25% · <b>реально −3%</b>\n🔗 <a href=\"https://silpo.ua/product/perets-nefeli-chervonyi-solodko-pikantnyi-z-syrom-feta-1009056\">відкрити</a>",
     "17. Оливки a Pero Cerignola у розсолі, 285г — <b>124 ₴</b> <s>229 ₴</s> · заявлено −46% · <b>реально −0%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/olyvky-a-pero-cerignola-u-rozsoli-949038\">відкрити</a>",
-    "18. Оливки a Pero Castelvetrano у розсолі, 285г — <b>154 ₴</b> <s>229 ₴</s> · заявлено −33% · <b>реально −0%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/olyvky-a-pero-castelvetrano-u-rozsoli-949042\">відкрити</a>",
-    "19. Гриби шиїтаке мариновані «Премія»® стерилізовані, 250г — <b>72.99 ₴</b> <s>94.99 ₴</s> · заявлено −23% · <b>реально −0%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/gryby-shyitake-marynovani-premiia-sterylizovani-582680\">відкрити</a>",
-    "20. Анчоуси Delicius Сицилійські філе в оливковій олії, 28г — <b>134 ₴</b> <s>199 ₴</s> · заявлено −33% · <b>реально −0%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/anchousy-delicius-sytsyliiski-file-v-olyvkovii-olii-946151\">відкрити</a>"
+    "18. Анчоуси Delicius Сицилійські філе в оливковій олії, 28г — <b>134 ₴</b> <s>199 ₴</s> · заявлено −33% · <b>реально −0%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/anchousy-delicius-sytsyliiski-file-v-olyvkovii-olii-946151\">відкрити</a>",
+    "19. Оливки a Pero Castelvetrano у розсолі, 285г — <b>154 ₴</b> <s>229 ₴</s> · заявлено −33% · <b>реально −0%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/olyvky-a-pero-castelvetrano-u-rozsoli-949042\">відкрити</a>",
+    "20. Гриби шиїтаке мариновані «Премія»® стерилізовані, 250г — <b>72.99 ₴</b> <s>94.99 ₴</s> · заявлено −23% · <b>реально −0%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/gryby-shyitake-marynovani-premiia-sterylizovani-582680\">відкрити</a>"
    ],
    "par": "13"
   },
@@ -6465,7 +6475,7 @@
     "4. Соус Sacla песто з руколою, 90г — <b>99 ₴</b> <s>149 ₴</s> · заявлено −34%\n🔗 <a href=\"https://silpo.ua/product/sous-sacla-pesto-z-rukoloiu-896792\">відкрити</a>",
     "5. ✅ Макаронні вироби Garofalo «Фузілі Букаті» короткі, 500г — <b>101 ₴/шт</b> <s>134 ₴</s> · 📦 від 2 шт — 101.00 ₴/шт −25% · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/makaronni-vyroby-garofalo-fuzili-bukati-korotki-315237\">відкрити</a>",
     "6. Вироби макаронні Pasta Zara Спагеті №3, 500г — <b>66.99 ₴</b> <s>89.99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −26% · <b>реально −27%</b> · ⭐ 4.9\n🔗 <a href=\"https://silpo.ua/product/vyroby-makaronni-pasta-zara-spageti-3-14640\">відкрити</a>",
-    "7. Вироби макаронні Garofalo Меззе Маніче з високим вмістом білка, 500г — <b>139 ₴</b> <s>179 ₴</s> · заявлено −22% · <b>реально −22%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/vyroby-makaronni-garofalo-mezze-maniche-z-vysokym-vmistom-bilka-1016537\">відкрити</a>",
+    "7. Вироби макаронні Garofalo Меззе Маніче з високим вмістом білка, 500г — <b>139 ₴</b> <s>179 ₴</s> · заявлено −22% · <b>реально −22%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/vyroby-makaronni-garofalo-mezze-maniche-z-vysokym-vmistom-bilka-1016537\">відкрити</a>",
     "8. Макаронні вироби Garofalo «Пенне Зіті», 500г — <b>97.99 ₴</b> <s>129 ₴</s> · заявлено −24%\n🔗 <a href=\"https://silpo.ua/product/makaronni-vyroby-garofalo-penne-ziti-315230\">відкрити</a>",
     "9. Вироби макаронні Garofalo Фузіллі без глютену, 400г — <b>149 ₴</b> <s>199 ₴</s> · 🌐 лише онлайн-замовлення заявлено −25%\n🔗 <a href=\"https://silpo.ua/product/vyroby-makaronni-garofalo-fuzilli-bez-gliutenu-1016536\">відкрити</a>",
     "10. Соус Mutti Песто із зелених томатів, 180г — <b>179 ₴</b> <s>239 ₴</s> · 🌐 лише онлайн-замовлення заявлено −25% · <b>реально −25%</b>\n🔗 <a href=\"https://silpo.ua/product/sous-mutti-pesto-iz-zelenykh-tomativ-850920\">відкрити</a>"
@@ -9699,8 +9709,8 @@
     "6. Печиво Богуславна вівсяне міні, 100г — <b>13.4 ₴</b> <s>19.9 ₴</s> · заявлено −33% · <b>реально −33%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/pechyvo-boguslavna-vivsiane-mini-950845\">відкрити</a>",
     "7. 🔥 Батончик Kit Kat в молочному шоколаді, 64г — <b>39.99 ₴</b> <s>63.99 ₴</s> · заявлено −38% · <b>реально −33%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/batonchyk-kit-kat-v-molochnomu-shokoladi-763371\">відкрити</a>",
     "8. 🔥 Рулет Полуничний, 450г — <b>109 ₴</b> <s>159 ₴</s> · заявлено −31% · <b>реально −31%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/rulet-polunychnyi-1014153\">відкрити</a>",
-    "9. 🔥 Десерт Чорнослив у Засметанні, 135г — <b>51.99 ₴</b> <s>79.99 ₴</s> · заявлено −35% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/desert-chornoslyv-u-zasmetanni-969875\">відкрити</a>",
-    "10. ✅ Шоколад молочний Milka Екстра мигдаль, фундук та шматочки кокосового печива, 130г — <b>114 ₴</b> <s>149 ₴</s> · заявлено −23% · <b>реально −23%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/shokolad-molochnyi-milka-ekstra-mygdal-funduk-ta-shmatochky-kokosovogo-pechyva-1009562\">відкрити</a>",
+    "9. ✅ Шоколад молочний Milka Екстра мигдаль, фундук та шматочки кокосового печива, 130г — <b>114 ₴</b> <s>149 ₴</s> · заявлено −23% · <b>реально −23%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/shokolad-molochnyi-milka-ekstra-mygdal-funduk-ta-shmatochky-kokosovogo-pechyva-1009562\">відкрити</a>",
+    "10. 🔥 Десерт Чорнослив у Засметанні, 135г — <b>51.99 ₴</b> <s>79.99 ₴</s> · заявлено −35% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/desert-chornoslyv-u-zasmetanni-969875\">відкрити</a>",
     "11. 🔥 ✅ Рулет карамельний, 500г — <b>74.99 ₴</b> <s>149 ₴</s> · заявлено −50% · <b>реально −24%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/rulet-karamelnyi-978652\">відкрити</a>",
     "12. Печиво «Богуславна» «Білосніжка», 100г — <b>18.4 ₴</b> <s>26.9 ₴</s> · заявлено −32% · <b>реально −32%</b> · ⭐ 3.7\n🔗 <a href=\"https://silpo.ua/product/pechyvo-boguslavna-bilosnizhka-734380\">відкрити</a>",
     "13. 🔥 ✅ Зефір чорносмородиновий упакований, 100г — <b>32.9 ₴</b> <s>49.9 ₴</s> · заявлено −34% · <b>реально −22%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/zefir-chornosmorodynovyi-upakovanyi-846820\">відкрити</a>",
@@ -9783,7 +9793,7 @@
     "1. 🔥 ✅ Тістечко Медово-горіхове, 100г — <b>29.9 ₴</b> <s>48.9 ₴</s> · заявлено −39% · <b>реально −36%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/tistechko-medovo-gorikhove-871168\">відкрити</a>",
     "2. 🔥 Рулет Темна вишня, 500г — <b>79.99 ₴</b> <s>159 ₴</s> · заявлено −50% · ⭐ 3.1\n🔗 <a href=\"https://silpo.ua/product/rulet-temna-vyshnia-978653\">відкрити</a>",
     "3. 🔥 Рулет Полуничний, 450г — <b>109 ₴</b> <s>159 ₴</s> · заявлено −31% · <b>реально −31%</b> · ⭐ 4.1\n🔗 <a href=\"https://silpo.ua/product/rulet-polunychnyi-1014153\">відкрити</a>",
-    "4. 🔥 Десерт Чорнослив у Засметанні, 135г — <b>51.99 ₴</b> <s>79.99 ₴</s> · заявлено −35% · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/desert-chornoslyv-u-zasmetanni-969875\">відкрити</a>",
+    "4. 🔥 Десерт Чорнослив у Засметанні, 135г — <b>51.99 ₴</b> <s>79.99 ₴</s> · заявлено −35% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/desert-chornoslyv-u-zasmetanni-969875\">відкрити</a>",
     "5. 🔥 ✅ Рулет карамельний, 500г — <b>74.99 ₴</b> <s>149 ₴</s> · заявлено −50% · <b>реально −24%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/rulet-karamelnyi-978652\">відкрити</a>",
     "6. 🔥 ✅ Зефір чорносмородиновий упакований, 100г — <b>32.9 ₴</b> <s>49.9 ₴</s> · заявлено −34% · <b>реально −22%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/zefir-chornosmorodynovyi-upakovanyi-846820\">відкрити</a>",
     "7. 🔥 Зефір смородиновий, 100г — <b>32.9 ₴</b> <s>49.9 ₴</s> · заявлено −34% · ⭐ 4.0\n🔗 <a href=\"https://silpo.ua/product/zefir-smorodynovyi-666072\">відкрити</a>",
@@ -12941,7 +12951,7 @@
    ]
   }
  },
- "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 03.11 14:25 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/korm-dlia-kotiv-delickcious-kremovi-lasoshchi-kurka-z-ananasom-975735\">Корм для котів Delickcious кремові ласощі курка з ананасом</a> — <b>0.19 ₴</b> <s>116.99 ₴</s> · −100%\n2. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/korm-dlia-kotiv-delickcious-kremovi-lasoshchi-tunets-z-aloe-975737\">Корм для котів Delickcious кремові ласощі тунець з алое</a> — <b>0.19 ₴</b> <s>116.99 ₴</s> · −100%\n3. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/korm-dlia-kotiv-delickcious-kremovi-lasoshchi-kurka-z-ananasom-975735\">Корм для котів Delickcious кремові ласощі курка з ананасом</a> — <b>0.19 ₴</b> <s>116.99 ₴</s> · −100%\n4. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/korm-dlia-kotiv-delickcious-kremovi-lasoshchi-tunets-z-aloe-975737\">Корм для котів Delickcious кремові ласощі тунець з алое</a> — <b>0.19 ₴</b> <s>116.99 ₴</s> · −100%\n5. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/korm-dlia-kotiv-ta-sobak-delickcious-zi-smakom-borshchu-z-ialovychynoiu-1009332\">Корм для котів та собак Delickcious зі смаком борщу з яловичиною</a> — <b>0.19 ₴</b> <s>34.49 ₴</s> · −99%\n6. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/korm-dlia-kotiv-ta-sobak-delickcious-zi-smakom-borshchu-z-ialovychynoiu-1009332\">Корм для котів та собак Delickcious зі смаком борщу з яловичиною</a> — <b>0.19 ₴</b> <s>34.49 ₴</s> · −99%\n7. 🛒 📦 від 2 шт — 359.00 ₴/шт <a href=\"https://silpo.ua/product/papir-tualetnyi-ruta-selecta-romashka-bilyi-3-shary-927768\">Папір туалетний Ruta Selecta ромашка білий 3 шари</a> — <b>359 ₴</b> <s>949 ₴</s> · −62%\n8. 🛒 <a href=\"https://silpo.ua/product/aromadyfuzor-povitriana-svizhist-1035233\">Аромадифузор Повітряна свіжість</a> — <b>154 ₴</b> <s>399 ₴</s> · −61%\n9. ☕ <a href=\"https://silpo.ua/product/chai-chornyi-sherlock-secrets-earl-grey-920152\">Чай чорний Sherlock Secrets Earl Grey</a> — <b>76.99 ₴</b> <s>164 ₴</s> · −53%\n10. 🧀 <a href=\"https://silpo.ua/product/syr-komo-gauda-45-brusok-1037335\">Сир Комо Гауда 45% брусок</a> — <b>59.99 ₴</b> <s>119 ₴</s> · −50%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
+ "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 03.11 15:01 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/korm-dlia-kotiv-delickcious-kremovi-lasoshchi-kurka-z-ananasom-975735\">Корм для котів Delickcious кремові ласощі курка з ананасом</a> — <b>0.19 ₴</b> <s>116.99 ₴</s> · −100%\n2. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/korm-dlia-kotiv-delickcious-kremovi-lasoshchi-tunets-z-aloe-975737\">Корм для котів Delickcious кремові ласощі тунець з алое</a> — <b>0.19 ₴</b> <s>116.99 ₴</s> · −100%\n3. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/korm-dlia-kotiv-delickcious-kremovi-lasoshchi-kurka-z-ananasom-975735\">Корм для котів Delickcious кремові ласощі курка з ананасом</a> — <b>0.19 ₴</b> <s>116.99 ₴</s> · −100%\n4. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/korm-dlia-kotiv-delickcious-kremovi-lasoshchi-tunets-z-aloe-975737\">Корм для котів Delickcious кремові ласощі тунець з алое</a> — <b>0.19 ₴</b> <s>116.99 ₴</s> · −100%\n5. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/korm-dlia-kotiv-ta-sobak-delickcious-zi-smakom-borshchu-z-ialovychynoiu-1009332\">Корм для котів та собак Delickcious зі смаком борщу з яловичиною</a> — <b>0.19 ₴</b> <s>34.49 ₴</s> · −99%\n6. 🛒 📦 від 3 шт — 0.19 ₴/шт <a href=\"https://silpo.ua/product/korm-dlia-kotiv-ta-sobak-delickcious-zi-smakom-borshchu-z-ialovychynoiu-1009332\">Корм для котів та собак Delickcious зі смаком борщу з яловичиною</a> — <b>0.19 ₴</b> <s>34.49 ₴</s> · −99%\n7. 🛒 📦 від 2 шт — 359.00 ₴/шт <a href=\"https://silpo.ua/product/papir-tualetnyi-ruta-selecta-romashka-bilyi-3-shary-927768\">Папір туалетний Ruta Selecta ромашка білий 3 шари</a> — <b>359 ₴</b> <s>949 ₴</s> · −62%\n8. 🛒 <a href=\"https://silpo.ua/product/aromadyfuzor-povitriana-svizhist-1035233\">Аромадифузор Повітряна свіжість</a> — <b>154 ₴</b> <s>399 ₴</s> · −61%\n9. ☕ <a href=\"https://silpo.ua/product/chai-chornyi-sherlock-secrets-earl-grey-920152\">Чай чорний Sherlock Secrets Earl Grey</a> — <b>76.99 ₴</b> <s>164 ₴</s> · −53%\n10. 🧀 <a href=\"https://silpo.ua/product/syr-komo-gauda-45-brusok-1037335\">Сир Комо Гауда 45% брусок</a> — <b>59.99 ₴</b> <s>119 ₴</s> · −50%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
  "silpo_stores": {
   "week": "2026-45",
   "v": 2,
@@ -14985,15 +14995,15 @@
  "silpo_by": {
   "1ed43e73-051b-6842-a111-a5ad042eb496@dl": {
    "week": "2026-10-29",
-   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 03.11 14:25 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, просп. Володимира Івасюка, 46 · 🚚 доставка · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🧊 <a href=\"https://silpo.ua/product/pelmeni-try-vedmedi-mishutka-z-m-iasom-kurchat-942418\">Пельмені Три ведмеді Мішутка з м'ясом курчат</a> — <b>89.99 ₴</b> <s>169 ₴</s> · −50%\n2. 🧊 <a href=\"https://silpo.ua/product/pelmeni-try-vedmedi-mishutka-z-indychkoiu-ta-vershkamy-942807\">Пельмені Три ведмеді Мішутка з індичкою та вершками</a> — <b>99 ₴</b> <s>189 ₴</s> · −49%\n3. ☕ <a href=\"https://silpo.ua/product/chai-chornyi-sherlock-secrets-earl-grey-920152\">Чай чорний Sherlock Secrets Earl Grey</a> — <b>76.99 ₴</b> <s>164 ₴</s> · −53%\n4. 🥦 <a href=\"https://silpo.ua/product/buriak-grinvil-varenyi-stolovyi-984497\">Буряк Грінвіль варений столовий</a> — <b>29.99 ₴</b> <s>64.99 ₴</s> · −46%\n5. 🥤 <a href=\"https://silpo.ua/product/voda-mineralna-aleks-poliana-kvasova-8-sylnogazovana-13605\">Вода мінеральна «Алекс» «Поляна Квасова» 8 сильногазована</a> — <b>29.99 ₴</b> <s>62.49 ₴</s> · −52%\n6. 🍞 <a href=\"https://silpo.ua/product/solomka-kbv-magic-sticks-glazur-zi-smakom-polunytsi-983748\">Соломка KBV Magic sticks глазур зі смаком полуниці</a> — <b>14.99 ₴</b> <s>31.99 ₴</s> · −56%\n7. 🍞 <a href=\"https://silpo.ua/product/solomka-kbv-magic-sticks-glazur-zi-smakom-shokoladu-983747\">Соломка KBV Magic sticks глазур зі смаком шоколаду</a> — <b>14.99 ₴</b> <s>31.99 ₴</s> · −56%\n8. ☕ <a href=\"https://silpo.ua/product/kava-melena-ambassador-crema-naturalna-smazhena-941925\">Кава мелена Ambassador Crema натуральна смажена</a> — <b>159 ₴</b> <s>344 ₴</s> · −55%\n9. 🛒 <a href=\"https://silpo.ua/product/shpynat-sytyi-dvir-svizhyi-nemytyi-992044\">Шпинат Ситий двір свіжий немитий</a> — <b>29.99 ₴</b> <s>59.9 ₴</s> · −50%\n10. 🛒 📦 від 2 шт — 169.00 ₴/шт <a href=\"https://silpo.ua/product/papir-tualetnyi-nua-3-sharovyi-979726\">Папір туалетний Nua 3-шаровий</a> — <b>169 ₴</b> <s>399 ₴</s> · −58%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s0_",
-   "built": "2026-11-03-am",
-   "at": "03.11 14:25"
+   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 03.11 15:01 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, просп. Володимира Івасюка, 46 · 🚚 доставка · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🧊 <a href=\"https://silpo.ua/product/pelmeni-try-vedmedi-mishutka-z-m-iasom-kurchat-942418\">Пельмені Три ведмеді Мішутка з м'ясом курчат</a> — <b>89.99 ₴</b> <s>169 ₴</s> · −50%\n2. 🧊 <a href=\"https://silpo.ua/product/pelmeni-try-vedmedi-mishutka-z-indychkoiu-ta-vershkamy-942807\">Пельмені Три ведмеді Мішутка з індичкою та вершками</a> — <b>99 ₴</b> <s>189 ₴</s> · −49%\n3. ☕ <a href=\"https://silpo.ua/product/chai-chornyi-sherlock-secrets-earl-grey-920152\">Чай чорний Sherlock Secrets Earl Grey</a> — <b>76.99 ₴</b> <s>164 ₴</s> · −53%\n4. 🥦 <a href=\"https://silpo.ua/product/buriak-grinvil-varenyi-stolovyi-984497\">Буряк Грінвіль варений столовий</a> — <b>29.99 ₴</b> <s>64.99 ₴</s> · −46%\n5. 🥤 <a href=\"https://silpo.ua/product/voda-mineralna-aleks-poliana-kvasova-8-sylnogazovana-13605\">Вода мінеральна «Алекс» «Поляна Квасова» 8 сильногазована</a> — <b>29.99 ₴</b> <s>62.49 ₴</s> · −52%\n6. 🍞 <a href=\"https://silpo.ua/product/solomka-kbv-magic-sticks-glazur-zi-smakom-polunytsi-983748\">Соломка KBV Magic sticks глазур зі смаком полуниці</a> — <b>14.99 ₴</b> <s>31.99 ₴</s> · −56%\n7. 🍞 <a href=\"https://silpo.ua/product/solomka-kbv-magic-sticks-glazur-zi-smakom-shokoladu-983747\">Соломка KBV Magic sticks глазур зі смаком шоколаду</a> — <b>14.99 ₴</b> <s>31.99 ₴</s> · −56%\n8. ☕ <a href=\"https://silpo.ua/product/kava-melena-ambassador-crema-naturalna-smazhena-941925\">Кава мелена Ambassador Crema натуральна смажена</a> — <b>159 ₴</b> <s>344 ₴</s> · −55%\n9. 🛒 <a href=\"https://silpo.ua/product/shpynat-sytyi-dvir-svizhyi-nemytyi-992044\">Шпинат Ситий двір свіжий немитий</a> — <b>29.99 ₴</b> <s>59.9 ₴</s> · −50%\n10. 🛒 📦 від 2 шт — 169.00 ₴/шт <a href=\"https://silpo.ua/product/papir-tualetnyi-nua-3-sharovyi-979726\">Папір туалетний Nua 3-шаровий</a> — <b>169 ₴</b> <s>399 ₴</s> · −58%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s0_",
+   "built": "2026-11-03-pm",
+   "at": "03.11 15:01"
   },
   "1f0bae3d-2073-62f4-b14c-f9715721ce18": {
    "week": "2026-10-29",
-   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 03.11 14:25 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Калнишевського, 2 · 🏪 самовивіз · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. ☕ <a href=\"https://silpo.ua/product/chai-chornyi-sherlock-secrets-earl-grey-920152\">Чай чорний Sherlock Secrets Earl Grey</a> — <b>76.99 ₴</b> <s>164 ₴</s> · −53%\n2. 🍱 <a href=\"https://silpo.ua/product/zapechena-krov-iana-kovbasa-807588\">Запечена кров'яна ковбаса</a> — <b>14.9 ₴</b> <s>33.9 ₴</s> · −54%\n3. 🍞 <a href=\"https://silpo.ua/product/solomka-kbv-magic-sticks-glazur-zi-smakom-polunytsi-983748\">Соломка KBV Magic sticks глазур зі смаком полуниці</a> — <b>14.99 ₴</b> <s>31.99 ₴</s> · −56%\n4. 🧀 <a href=\"https://silpo.ua/product/syr-bonfetto-podilskyi-portsiinyi-45-1015731\">Сир Bonfetto Подільський порційний 45%</a> — <b>29.9 ₴</b> <s>59.9 ₴</s> · −50%\n5. 🥤 <a href=\"https://silpo.ua/product/voda-mineralna-aleks-poliana-kvasova-8-sylnogazovana-13605\">Вода мінеральна «Алекс» «Поляна Квасова» 8 сильногазована</a> — <b>29.99 ₴</b> <s>62.49 ₴</s> · −52%\n6. 🛒 <a href=\"https://silpo.ua/product/nabir-servetok-kukhonnykh-30kh30-sm-5-sht-1005471-1005471\">Набір серветок кухонних 30х30 см 5 шт. 1005471</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −50%\n7. 🛒 <a href=\"https://silpo.ua/product/chasnyk-premiia-granulovanyi-320505\">Часник «Премія»® гранульований</a> — <b>16.99 ₴</b> <s>29.99 ₴</s> · −43%\n8. 🛒 <a href=\"https://silpo.ua/product/chasnyk-premiia-granulovanyi-320505\">Часник «Премія»® гранульований</a> — <b>16.99 ₴</b> <s>29.99 ₴</s> · −43%\n9. 🧀 📦 від 3 шт — 16.99 ₴/шт <a href=\"https://silpo.ua/product/syr-plavlenyi-ferma-vershkovyi-35-bryket-999931\">Сир плавлений Ферма Вершковий 35% брикет</a> — <b>16.99 ₴</b> <s>34.49 ₴</s> · −51%\n10. 🥛 <a href=\"https://silpo.ua/product/syr-kyslomolochnyi-bilo-domashnii-5-819149\">Сир кисломолочний Біло Домашній 5%</a> — <b>64.99 ₴</b> <s>99 ₴</s> · −32%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s1_",
-   "built": "2026-11-03-am",
-   "at": "03.11 14:25"
+   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 03.11 15:01 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Калнишевського, 2 · 🏪 самовивіз · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. ☕ <a href=\"https://silpo.ua/product/chai-chornyi-sherlock-secrets-earl-grey-920152\">Чай чорний Sherlock Secrets Earl Grey</a> — <b>76.99 ₴</b> <s>164 ₴</s> · −53%\n2. 🍱 <a href=\"https://silpo.ua/product/zapechena-krov-iana-kovbasa-807588\">Запечена кров'яна ковбаса</a> — <b>14.9 ₴</b> <s>33.9 ₴</s> · −54%\n3. 🍞 <a href=\"https://silpo.ua/product/solomka-kbv-magic-sticks-glazur-zi-smakom-polunytsi-983748\">Соломка KBV Magic sticks глазур зі смаком полуниці</a> — <b>14.99 ₴</b> <s>31.99 ₴</s> · −56%\n4. 🧀 <a href=\"https://silpo.ua/product/syr-bonfetto-podilskyi-portsiinyi-45-1015731\">Сир Bonfetto Подільський порційний 45%</a> — <b>29.9 ₴</b> <s>59.9 ₴</s> · −50%\n5. 🥤 <a href=\"https://silpo.ua/product/voda-mineralna-aleks-poliana-kvasova-8-sylnogazovana-13605\">Вода мінеральна «Алекс» «Поляна Квасова» 8 сильногазована</a> — <b>29.99 ₴</b> <s>62.49 ₴</s> · −52%\n6. 🛒 <a href=\"https://silpo.ua/product/nabir-servetok-kukhonnykh-30kh30-sm-5-sht-1005471-1005471\">Набір серветок кухонних 30х30 см 5 шт. 1005471</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −50%\n7. 🛒 <a href=\"https://silpo.ua/product/chasnyk-premiia-granulovanyi-320505\">Часник «Премія»® гранульований</a> — <b>16.99 ₴</b> <s>29.99 ₴</s> · −43%\n8. 🛒 <a href=\"https://silpo.ua/product/chasnyk-premiia-granulovanyi-320505\">Часник «Премія»® гранульований</a> — <b>16.99 ₴</b> <s>29.99 ₴</s> · −43%\n9. 🧀 📦 від 3 шт — 16.99 ₴/шт <a href=\"https://silpo.ua/product/syr-plavlenyi-ferma-vershkovyi-35-bryket-999931\">Сир плавлений Ферма Вершковий 35% брикет</a> — <b>16.99 ₴</b> <s>34.49 ₴</s> · −51%\n10. 🥛 <a href=\"https://silpo.ua/product/syr-kyslomolochnyi-bilo-domashnii-5-819149\">Сир кисломолочний Біло Домашній 5%</a> — <b>64.99 ₴</b> <s>99 ₴</s> · −32%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s1_",
+   "built": "2026-11-03-pm",
+   "at": "03.11 15:01"
   }
  },
  "silpo_sent_by": {
@@ -29985,17 +29995,29 @@
    null,
    "2026-11-03"
   ],
-  "tt5726086": [
-   5.7,
-   34,
-   49,
+  "tt10016180": [
+   6.3,
+   44,
+   54,
+   "2026-11-03"
+  ],
+  "tt22687790": [
+   6.5,
+   75,
+   63,
+   "2026-11-03"
+  ],
+  "tt37180686": [
+   null,
+   null,
+   null,
    "2026-11-03"
   ]
  },
  "pushed_h": {
-  "gs": "df431b3c700e",
+  "gs": "df8c2ffe4e1a",
   "quiz_pool.json": "d62dbc5542f3",
-  "fact.png": "947bfce1a7d4",
+  "fact.png": "384bb696120b",
   "sexed.json": "d1f750ea7109",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "e10228ab3f39",
@@ -30003,7 +30025,7 @@
   "silpo/1edb6b54-d26b-681e-aa85-b5ff7ea46636.json": "4b4279e7bcec",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "73d4469b99a9",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18@dl.json": "48a8eb895460",
-  "silpo/m.json": "922e45249475",
+  "silpo/m.json": "72abeaf9d8fc",
   "sx/19453874.png": "be608f6e242c",
   "sx/19454097.png": "45696a81af3b",
   "sx/19473282.png": "1ff4e0b3380c",
@@ -39709,12 +39731,8 @@
  "silpo_snap": "2026-10-28",
  "live_day": "",
  "silpo_week": "2026-44",
- "sbm_at": 1793710659.9763975,
+ "sbm_at": 1793711019.433185,
  "sbm_hist": [
-  [
-   "02:40",
-   80
-  ],
   [
    "02:45",
    81
@@ -40284,8 +40302,12 @@
    50
   ],
   [
-   "14:57",
-   34
+   "14:51",
+   39
+  ],
+  [
+   "15:01",
+   31
   ]
  ],
  "sbm_near": {
@@ -40375,8 +40397,8 @@
   ],
   "thriller": [
    {
-    "id": "fbefcd9830",
-    "text": "🍿 <b>ПІДБІРКА КІНО · ТРИЛЕР</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Tetris-2023-11-03\">Тетрис</a></b> (2023)\nтрилер, історичний, драма · ⏱ 1 год 58 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>81%</b> · Ⓜ <b>61</b>\n<i>🎭 Тарон Еджертон, Никита Ефремов, Софья Лебедева</i>\n📝 Фільм заснований на реальній історії американця — продавця відеоігор Генка Роджерса, який у 1988 році дізнався про «Тетріс». Він вирішує зробити цю гру відомою в усьому світі й потрапляє в небезпечні тенета брехні й…\n▶️ <a href=\"https://youtu.be/-BLM1naCfME\">Трейлер</a></blockquote>\n§KN:m726759\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Sutichka-2024-11-03\">Сутичка</a></b> (2024)\nбойовик, кримінал, трилер · ⏱ 1 год 45 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>90%</b> · Ⓜ <b>74</b>\n<i>🎭 Lakshya Lalwani, Raghav Juyal, तान्या मानिकतला</i>\n📝 Коли армійський коммандос дізнається, що його справжня кохана заручена проти своєї волі, він сідає на потяг, що прямує до Нью-Делі, у зухвалій спробі зірвати запланований шлюб. Але коли банда озброєних ножами злодіїв…\n▶️ <a href=\"https://youtu.be/da7lKeeS67c\">Трейлер</a></blockquote>\n§KN:m1160018\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Gotel-Mumbai-2019-11-03\">Готель Мумбаї</a></b> (2019)\nтрилер, історичний, драма · ⏱ 2 год 03 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>76%</b> · Ⓜ <b>62</b>\n<i>🎭 Дев Пател, Армі Гаммер, نازنین بنیادی</i>\n📝 Реальна історія облоги готелю «Тадж-Махал» в Мумбаї групою терористів у 2008 році. Три дні протистояння смерті, три дні боротьби за виживання.\n▶️ <a href=\"https://youtu.be/F6szJsykTQw\">Трейлер</a></blockquote>\n§KN:m416144\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/SHerlok-Bridka-narechena-2016-11-03\">Шерлок: Бридка наречена</a></b> (2016)\nкримінал, драма, детектив · ⏱ 1 год 30 хв\n⭐ IMDb <b>7.0</b>\n<i>🎭 Бенедикт Камбербетч, Мартін Фрімен, Марк Ґетісс</i>\n📝 Лондон, 1895 рік. Інспектор Лестрейд оповідає Холмсу і Ватсону про справу Емілії Ріколетті, яка у весільній сукні розстріляла перехожих з балкона, після чого застрелилася сама. Того ж вечора, містер Ріколетті також…\n▶️ <a href=\"https://youtu.be/V8LWfc29J_E\">Трейлер</a></blockquote>\n§KN:m379170\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Licarі-spravedlivostі-2020-11-03\">Лицарі справедливості</a></b> (2020)\nбойовик, комедія, драма · ⏱ 1 год 56 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>96%</b> · Ⓜ <b>81</b>\n<i>🎭 Мадс Міккельсен, Ніколай Лі Кос, Ларс Брюґманн</i>\n📝 Коли дружина Маркуса гине в залізничній катастрофі, це здається трагічною випадковістю. А якщо це ретельно сплановане вбивство? Військовий, божевільний математик і парочка ґіків об’єднуються, щоб з’ясувати, що…\n▶️ <a href=\"https://youtu.be/nee-Y-cGeZQ\">Трейлер</a></blockquote>\n§KN:m663870\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Elіzі-Tіnі-odnіyei-zhіnki-2026-11-03\">Елізі: Тіні однієї жінки</a></b> (2026)\nтрилер, кримінал, драма · ⏱ 1 год 33 хв\n⭐ TMDB <b>7.5</b>\n<i>🎭 Lorena Comparato, Henrique Kimura, Деніз Вейнберґ</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1487861-elize-sombras-de-uma-mulher/watch?locale=UA\">Netflix · за підпискою</a>\n📝 У цій розповіді про реальний злочин колишня повія дізнається про зради свого чоловіка й не може змиритися з тим, що вони вбивають її шлюб.\n▶️ <a href=\"https://youtu.be/_1z-3LknuEs\">Трейлер</a></blockquote>\n§KN:m1487861\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/जवन-2023-11-03\">जवान</a></b> (2023)\nбойовик, трилер · ⏱ 2 год 49 хв\n⭐ IMDb <b>6.9</b>\n<i>🎭 Шаг-Рух Хан, நயன்தாரா, Vijay Sethupathi</i>\n📺 <a href=\"https://www.themoviedb.org/movie/872906/watch?locale=UA\">Netflix · за підпискою</a>\n📝 An emotional journey of a prison warden, driven by a personal vendetta while keeping up to a promise made years ago, recruits inmates to commit outrageous crimes that shed light on corruption and injustice, in an…\n▶️ <a href=\"https://youtu.be/MWOlnZSnXJo\">Трейлер</a></blockquote>\n§KN:m872906\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Pravednik-2-2018-11-03\">Праведник 2</a></b> (2018)\nбойовик, трилер, кримінал · ⏱ 2 год 01 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>52%</b> · Ⓜ <b>50</b>\n<i>🎭 Дензел Вашинґтон, Педро Паскаль, Ештон Сандерс</i>\n📝 Колишній професійний агент ЦРУ знову виступить проти свавілля кримінальних угрупувань. Не бажаючи миритися з беззаконням, праведник розпочинає власну боротьбу…\n▶️ <a href=\"https://youtu.be/4Euk-BX-oCQ\">Трейлер</a></blockquote>\n§KN:m345887\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Koli-odnogo-zhittya-zamalo-2007-11-03-2\">Коли одного життя замало</a></b> (2007)\nкомедія, трилер, драма · ⏱ 2 год 49 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>81%</b>\n<i>🎭 Шаг-Рух Хан, Діпіка Падукон, अर्जुन रामपाल</i>\n📺 <a href=\"https://www.themoviedb.org/movie/8079/watch?locale=UA\">Netflix · за підпискою</a>\n📝 In the early 70s, aspiring actor Om Prakash Makhija, and a famous starlet Shantipriya, are murdered. Thirty years later, his reincarnation Om Kapoor sets out to discover the mystery of their demise.\n▶️ <a href=\"https://youtu.be/9oeGoQGt7Ao\">Трейлер</a></blockquote>\n§KN:m8079\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Pіvnіchna-stіna-2008-11-03\">Північна стіна</a></b> (2008)\nпригоди, драма, бойовик · ⏱ 2 год 06 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>84%</b> · Ⓜ <b>67</b>\n<i>🎭 Бенно Фюрманн, Флоріан Лукас, Йоганна Вокалек</i>\n📝 1936 рік. Північна стіна Айгера – остання «невирішена проблема» Альп, за рішення якої особисто Гітлер обіцяє вручити золоті медалі Берлінської олімпіади... Існує три знамениті стіни північної орієнтації – Гранд…\n▶️ <a href=\"https://youtu.be/7lkEfgPsOa0\">Трейлер</a></blockquote>\n§KN:m16436"
+    "id": "ce210a08fd",
+    "text": "🍿 <b>ПІДБІРКА КІНО · ТРИЛЕР</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Ne-govori-zі-zlom-2024-11-03-2\">Не говори зі злом</a></b> (2024)\nжахи, трилер · ⏱ 1 год 50 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>83%</b> · Ⓜ <b>66</b>\n<i>🎭 Джеймс Мак-Евой, Маккензі Девіс, Скут Мак-Нейрі</i>\n📝 Американська родина вирушає у розкішний заміський маєток до британської сім’ї, з якою вони подружилися під час відпустки. Проте вони навіть не підозрюють, що зовсім скоро відпочинок мрії перетвориться на справжній…\n▶️ <a href=\"https://youtu.be/hdsUz6sT9Ek\">Трейлер</a></blockquote>\n§KN:m1114513\n§§\n<blockquote>🎬 <b>2. <a href=\"https://www.themoviedb.org/movie/479718?language=uk\">Кримінальне місто</a></b> (2017)\nбойовик, кримінал, трилер · ⏱ 2 год 01 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>92%</b>\n<i>🎭 Дон Лi, 윤계상, Чо Че Юн</i>\n📝 У 2004 році в китайському кварталі Сеула, сумно відомому високим рівнем злочинності, з'являються три мігранта-колектора і замість того, щоб по-старому вилучати гроші у боржників, відразу вбивають главу одного зі…\n▶️ <a href=\"https://youtu.be/UbLzMUbiMmY\">Трейлер</a></blockquote>\n§KN:m479718\n§§\n<blockquote>🎬 <b>3. <a href=\"https://www.themoviedb.org/movie/705996?language=uk\">Рішення піти</a></b> (2022)\nтрилер, детектив, мелодрама · ⏱ 2 год 19 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>94%</b> · Ⓜ <b>85</b>\n<i>🎭 Тан Вей, 박해일, 이정현</i>\n📝 Біля підніжжя гір знаходять понівечене тіло альпініста. Розбитий годинник, покинуті речі та інші деталі вказують на нещасний випадок або самогубство. За таких обставин слідчі мають допитати найближчих родичів.…\n▶️ <a href=\"https://youtu.be/OJTJYipFvgM\">Трейлер</a></blockquote>\n§KN:m705996\n§§\n<blockquote>🎬 <b>4. <a href=\"https://www.themoviedb.org/movie/337339?language=uk\">Форсаж 8</a></b> (2017)\nбойовик, кримінал, трилер · ⏱ 2 год 16 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>67%</b> · Ⓜ <b>56</b>\n<i>🎭 Він Дізель, Джейсон Стейтем, Двейн Джонсон</i>\n📺 <a href=\"https://www.themoviedb.org/movie/337339-the-fate-of-the-furious/watch?locale=UA\">Netflix · за підпискою</a>\n📝 Їх кличуть нові дороги і чекають нові виклики. У команди Домініка Торето повні баки адреналіну і драйву. Вони не шкодують своїх ворогів і бюджетів продюсерів!\n▶️ <a href=\"https://youtu.be/oLbA8ye_u28\">Трейлер</a></blockquote>\n§KN:m337339\n§§\n<blockquote>🎬 <b>5. <a href=\"https://www.themoviedb.org/movie/423108?language=uk\">Закляття 3: За велінням диявола</a></b> (2021)\nжахи, детектив, трилер · ⏱ 1 год 52 хв\n⭐ IMDb <b>6.2</b> · 🍅 <b>56%</b> · Ⓜ <b>53</b>\n<i>🎭 Віра Фарміґа, Патрік Вілсон, Стерлінґ Джерінс</i>\n📝 Жахлива історія вбивства, терору та таємничого зла, яка шокувала навіть досвідчених дослідників паранормальних явищ, Еда та Лоррейн Ворренів.\n▶️ <a href=\"https://youtu.be/J6tGFBKT25o\">Трейлер</a></blockquote>\n§KN:m423108\n§§\n<blockquote>🎬 <b>6. <a href=\"https://www.themoviedb.org/movie/1384216?language=uk\">Сузір’я великого пса</a></b> (2026)\nбойовик, трилер, фантастика · ⏱ 1 год 59 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>41%</b> · Ⓜ <b>49</b>\n<i>🎭 Джейкоб Елорді, Джош Бролін, Марґарет Кволлі</i>\n📝 Гіґ - молодий пілот, який разом із військовим спеціалістом із виживання Бенґлі облаштував ефективне, але ізольоване укриття в жорстокому постапокаліптичному світі. Усе змінюється, коли загадковий радіосигнал спонукає…\n▶️ <a href=\"https://youtu.be/8OTK12Wum0I\">Трейлер</a></blockquote>\n§KN:m1384216\n§§\n<blockquote>🎬 <b>7. <a href=\"https://www.themoviedb.org/movie/425274?language=uk\">Ілюзія обману 3</a></b> (2025)\nкримінал, трилер · ⏱ 1 год 52 хв\n⭐ IMDb <b>5.9</b> · Ⓜ <b>50</b>\n<i>🎭 Джессі Айзенберґ, Домінік Сесса, Аріана Ґрінблатт</i>\n📝 Нова частина розповість про повернення команди ілюзіоністів. Чотири Вершники на чолі з Деніелом Атласом знов збираються разом. Їхня мета -  знайти трьох найталановитіших ілюзіоністів та організувати зухвале…\n▶️ <a href=\"https://youtu.be/m1fy5FCKvfs\">Трейлер</a></blockquote>\n§KN:m425274\n§§\n<blockquote>🎬 <b>8. <a href=\"https://www.themoviedb.org/movie/399402?language=uk\">Хантер-кіллер</a></b> (2018)\nбойовик, трилер · ⏱ 2 год 01 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>38%</b> · Ⓜ <b>43</b>\n<i>🎭 Джерард Батлер, Ґері Олдмен, Тобі Стівенс</i>\n📝 У наш час існує кілька наддержав, які в будь-який момент можуть почати Третю світову війну. Між США та Росією вже давно не зовсім ідеальні стосунки, але колись це може закінчитися. Десь під льодами Арктики плаває…\n▶️ <a href=\"https://youtu.be/fPyrnKlZ1CI\">Трейлер</a></blockquote>\n§KN:m399402\n§§\n<blockquote>🎬 <b>9. <a href=\"https://www.themoviedb.org/movie/64720?language=uk\">Укриття</a></b> (2011)\nтрилер, драма, жахи · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>92%</b> · Ⓜ <b>85</b>\n<i>🎭 Майкл Шеннон, Джессіка Честейн, Шей Віґем</i>\n📝 Кертіс живе в невеликому містечку штату Огайо з дружиною Самантою і шестирічною позбавленою слуху донькою Ханною. Незважаючи на всі труднощі, Кертіс і Саманта дуже кохають одне одного, і їх сім'я щаслива.  Одного дня…\n▶️ <a href=\"https://youtu.be/hUraDx3oFVg\">Трейлер</a></blockquote>\n§KN:m64720\n§§\n<blockquote>🎬 <b>10. <a href=\"https://www.themoviedb.org/movie/20342?language=uk\">不能說的秘密</a></b> (2007)\nфентезі, драма, трилер · ⏱ 1 год 41 хв\n⭐ IMDb <b>7.5</b>\n<i>🎭 Джей Чоу, 桂綸鎂, Ентоні Вонг Чау-Сан</i>\n📝 Ye Xiang Lun, a talented piano player is a new student at the prestigious Tamkang School. On his first day, he meets Lu Xiao Yu, a pretty girl playing a mysterious piece of music.\n▶️ <a href=\"https://youtu.be/DTDuOkNSJA4\">Трейлер</a></blockquote>\n§KN:m20342"
    }
   ]
  },
