@@ -712,7 +712,7 @@
   "t110316",
   "t1420"
  ],
- "gh_beat": "2026-11-03T10:40:44.414335+02:00",
+ "gh_beat": "2026-11-03T10:45:46.698697+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -723,11 +723,11 @@
   "groups": [
    "GPV3.1"
   ],
-  "updated": "10:22 03.11.2026",
+  "updated": "10:35 03.11.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "За наказом НЕК Укренерго введені екстрені відключення електроенергії. Повідомити про аварійні ситуації",
-  "checked": "2026-11-03T10:32:53.211715+02:00",
+  "checked": "2026-11-03T10:42:58.192540+02:00",
   "address": "вул. Кульженків Сім'ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1723,14 +1723,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "03.11 10:42",
-   "ts": 1793695346,
+   "at": "03.11 10:47",
+   "ts": 1793695623,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "03.11 10:42",
-   "ts": 1793695346,
+   "at": "03.11 10:47",
+   "ts": 1793695623,
    "ok": true,
    "note": ""
   },
@@ -1807,8 +1807,8 @@
    "note": ""
   },
   "кіномэтч": {
-   "at": "03.11 10:36",
-   "ts": 1793694969,
+   "at": "03.11 10:45",
+   "ts": 1793695558,
    "ok": true,
    "note": ""
   },
@@ -14954,7 +14954,8 @@
  },
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
  "gem_block": {
-  "gemini-3.8-flash": "2026-11-04T10:05:00+02:00"
+  "gemini-3.8-flash": "2026-11-04T10:05:00+02:00",
+  "gemini-flash-latest": "2026-11-04T10:05:00+02:00"
  },
  "omdb_cache": {
   "tt5362988": [
@@ -29863,7 +29864,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "88d8925fa732",
+  "gs": "0ac25fc47dcf",
   "quiz_pool.json": "d62dbc5542f3",
   "fact.png": "adfc8af7591a",
   "sexed.json": "5bb19dc68218",
@@ -47808,12 +47809,8 @@
   "ser_mystery": "2026-11-02T23:35:44.869655+02:00"
  },
  "kb_probe2": "2026-45",
- "sbm_at": 1793695247.6930962,
+ "sbm_at": 1793695551.571107,
  "sbm_hist": [
-  [
-   "22:40",
-   62
-  ],
   [
    "22:45",
    62
@@ -48385,11 +48382,15 @@
   [
    "10:40",
    52
+  ],
+  [
+   "10:45",
+   52
   ]
  ],
  "sbm_near": {
   "160603556": [
-   6,
+   17,
    0
   ]
  },
