@@ -111,16 +111,6 @@
   "https://sexwithemily.com/best-sex-ever-tour-nashville-recap/?utm_source=rss&utm_medium=rss&utm_campaign=best-sex-ever-tour-nashville-recap"
  ],
  "kino_seen": [
-  "t103516",
-  "t126116",
-  "t60622",
-  "t44006",
-  "m1013052",
-  "m293122",
-  "m655655",
-  "m913760",
-  "m511619",
-  "m807888",
   "t55886",
   "t110180",
   "t83611",
@@ -710,9 +700,19 @@
   "m193756",
   "t205715",
   "t115645",
-  "t1423"
+  "t1423",
+  "m607844",
+  "m479226",
+  "m426063",
+  "m474350",
+  "m402431",
+  "m1314481",
+  "m312221",
+  "t70796",
+  "t65494",
+  "t59186"
  ],
- "gh_beat": "2026-11-04T02:27:55.080740+02:00",
+ "gh_beat": "2026-11-04T02:30:46.753743+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -915,7 +915,7 @@
  "week_fp": "{\"1\": [], \"2\": [], \"3\": [], \"4\": [], \"5\": [], \"6\": [], \"7\": []}",
  "we_sent": {},
  "tgph": "8d020e91ef2b6894855e405f8973a51da385fca8e1cfd990c9e41c2a32c2",
- "yt_try": "",
+ "yt_try": "2026-11-04 02",
  "yt_seen": [
   "ljf4janO1sE",
   "tDic4uFXC5Q",
@@ -946,7 +946,27 @@
   "2T4a36Wpehk",
   "MDjegmO1fTM",
   "bW6Xk01i1Vc",
-  "-4TnpCNTTg0"
+  "-4TnpCNTTg0",
+  "R401S7bN0AE",
+  "9n-g_xOrpM4",
+  "wK6lFvp_myU",
+  "1CjEer1hZdY",
+  "A3r2QcM0ZOA",
+  "rM9vtACM7u4",
+  "vyxhJN8N5kE",
+  "Iod41YitKR4",
+  "oT9njHJhmdA",
+  "V6AT322yGYo",
+  "LrAOQC-d2ys",
+  "97unNIgkHc4",
+  "87PGKBD_PDo",
+  "nvBH7gHROsU",
+  "Bwk1F6-dYIs",
+  "ddmqNRyRlBg",
+  "wv99TBlahHE",
+  "pFD0s58LMDA",
+  "p4hIx0J0OZ8",
+  "Qaj2rP6wuB0"
  ],
  "content_day": "2026-11-04",
  "content_pool": [
@@ -1793,8 +1813,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "04.11 01:16",
-   "ts": 1793747791,
+   "at": "04.11 02:33",
+   "ts": 1793752425,
    "ok": true,
    "note": ""
   },
@@ -30073,7 +30093,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "992207470579",
+  "gs": "85d01a1dba1b",
   "quiz_pool.json": "d62dbc5542f3",
   "fact.png": "79e1457a18b6",
   "sexed.json": "323e3b79d836",
@@ -30189,7 +30209,6 @@
  "force_heavy": [
   "prom.ua",
   "youtube канали",
-  "кіно, пули",
   "музика",
   "здоров'я",
   "ігри PS5",
@@ -42352,11 +42371,127 @@
    ],
    "ov": "Сім'я середнього достатку, Хекі, живе у самому серці Індіани та з усіх сил намагається триматися на плаву у в'язкому болоті шалених буднів. Лише безмежне почуття гумору допогамає рухатися вперед крізь недосяжні мрії, пов",
    "poster": "https://image.tmdb.org/t/p/w500/juL6CzKc4D00TACuXCQx6mjuzvi.jpg"
+  },
+  "m1288069": {
+   "title": "Тенцинґ",
+   "year": "2026",
+   "rating": 7.7,
+   "genres": [
+    "Драма",
+    "Історичний"
+   ],
+   "g": [
+    18,
+    36
+   ],
+   "ov": "Цілеспрямований чоловік вирушає у ризиковану подорож, попри, здавалося б, непереборні перешкоди. І все, щоб утілити свою мрію й першим підкорити Еверест.",
+   "poster": "https://image.tmdb.org/t/p/w500/zMaTOmbmP8h4vb6fY6u9snWciUD.jpg"
+  },
+  "m926393": {
+   "title": "Праведник 3: Остання глава",
+   "year": "2023",
+   "rating": 6.8,
+   "genres": [
+    "Бойовик",
+    "Трилер",
+    "Кримінал"
+   ],
+   "g": [
+    28,
+    53,
+    80
+   ],
+   "ov": "Покінчивши з роботою таємного агента, Роберт Макколл продовжує відстоювати правду у повсякденному житті та захищати тих, хто цього потребує. Перебуваючи в Південній Італії він дізнається, що його друзі опинилися під впли",
+   "poster": "https://image.tmdb.org/t/p/w500/tNwQZXj09gDQu8Fz2BS0fqqsaP4.jpg"
+  },
+  "m776503": {
+   "title": "У ритмі серця",
+   "year": "2021",
+   "rating": 8.0,
+   "genres": [
+    "Драма",
+    "Музика",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    10402,
+    10749
+   ],
+   "ov": "Рубі – CODA (дитина глухих батьків), вона єдина в сім’ї, хто чує. Коли Рубі відкриває в собі любов до співу, їй доводиться обирати між зобов’язаннями перед сім’єю і мріями.",
+   "poster": "https://image.tmdb.org/t/p/w500/qzfvpzZr5vOQ42zDDaqBGDDyCIZ.jpg"
+  },
+  "m86837": {
+   "title": "Любов",
+   "year": "2012",
+   "rating": 7.9,
+   "genres": [
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    10749
+   ],
+   "ov": "Жорж і Анна прожили разом все життя, постійно піклуючись один про одного. Зараз їм за вісімдесят. Анна занедужує і її життя починає поступово згасати: спочатку зникає пам'ять, потім відмовляється підкорятися тіло, настає",
+   "poster": "https://image.tmdb.org/t/p/w500/dUKXkLH2NM5TXSy0ScVEeKelOJh.jpg"
+  },
+  "t68507": {
+   "title": "Темні матерії",
+   "year": "2019",
+   "rating": 7.7,
+   "genres": [
+    "Науково фантастичний",
+    "Драма",
+    "Екшн і Пригоди"
+   ],
+   "g": [
+    10765,
+    18,
+    10759
+   ],
+   "ov": "Ліра – сирота, що живе в паралельному всесвіті, де переплітаються наука, теологія та магія. Намагаючись знайти викраденого друга, вона викриває зловісний план, для здійснення якого й викрадають дітей. Щоб зупинити зло, в",
+   "poster": "https://image.tmdb.org/t/p/w500/fEU4YAD7Lkm8l1t41Mv0PvPO10e.jpg"
+  },
+  "t135157": {
+   "title": "Алхімія душ",
+   "year": "2022",
+   "rating": 8.7,
+   "genres": [
+    "Драма",
+    "Науково фантастичний",
+    "Екшн і Пригоди"
+   ],
+   "g": [
+    18,
+    10765,
+    10759,
+    9648
+   ],
+   "ov": "Могутня чарівниця в тілі сліпої жінки зустрічає чоловіка із впливової родини, який просить допомогти змінити його долю.",
+   "poster": "https://image.tmdb.org/t/p/w500/pGs6UA4rPUZEokDyTwAGdRvwrAD.jpg"
+  },
+  "t1450": {
+   "title": "The Closer",
+   "year": "2005",
+   "rating": 7.8,
+   "genres": [
+    "Кримінал",
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    80,
+    18,
+    9648
+   ],
+   "ov": "Deputy Police Chief Brenda Leigh Johnson transfers from Atlanta to LA to head up a special unit of the LAPD that handles sensitive, high-profile murder cases. Johnson's quirky personality and hard-nosed approach often ru",
+   "poster": "https://image.tmdb.org/t/p/w500/q6FhABXGf3TaYKoKNwzGAEzW7bt.jpg"
   }
  },
  "cofid_pushed": "03.11.2026",
  "ab_month": "2026-11",
- "yt_last": "",
+ "yt_last": "▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · 28.10–04.11</b>\n<blockquote>▶️ <b>1. ☝️СТРАШНА ЗНАХІДКА В БУДИНКУ НА БОРЩАГІВЦІ! ЦЕ ПРИХОВАЛИ ВІД УСІХ КАМЕР. У справі замішана БАНКОВА?</b>\n📺 СОЛОМКА · ⏱ 16 хв\n👁 <b>199 тис</b> переглядів · 💬 <b>1 647</b> коментарів\n🔗 <a href=\"https://youtu.be/R401S7bN0AE\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>2. THE HARDKISS feat. BEYOND THE BLACK - Not This Time (official video)</b>\n📺 The HARDKISS · ⏱ 3 хв\n👁 <b>280 тис</b> переглядів · 💬 <b>452</b> коментарів\n🔗 <a href=\"https://youtu.be/9n-g_xOrpM4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>3. ЩО ДРАТУЄ ЛЮДИНУ З ЗАЇКАННЯМ? Несерйозна розмова №161</b>\n📺 Дмитро Тютюн · ⏱ 40 хв\n👁 <b>214 тис</b> переглядів · 💬 <b>359</b> коментарів\n🔗 <a href=\"https://youtu.be/wK6lFvp_myU\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>4. Як знімали Холостяк в АНОМАЛЬНУ СПЕКУ І ГРОЗУ? – Бекстейдж із Наталкою Денисенко | Холостяк 15 сезон</b>\n📺 Холостяк / Холостячка · ⏱ 50 хв\n👁 <b>226 тис</b> переглядів · 💬 <b>180</b> коментарів\n🔗 <a href=\"https://youtu.be/1CjEer1hZdY\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>5. [UA] NAVI проти FURIA | IEM Beijing 2026</b>\n📺 CS2 Maincast · ⏱ 11 год 55 хв\n👁 <b>243 тис</b> переглядів · 💬 <b>5</b> коментарів\n🔗 <a href=\"https://youtu.be/A3r2QcM0ZOA\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>6. Христина Соловій — Прощай (Official Video)</b>\n📺 Христина Соловій · ⏱ 4 хв\n👁 <b>142 тис</b> переглядів · 💬 <b>306</b> коментарів\n🔗 <a href=\"https://youtu.be/rM9vtACM7u4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>7. НІ СЛОВА УКРАЇНСЬКОЮ, ДРУЖЕ! ВОНИ ЗРОЗУМІЛИ, ХТО Я, АЛЕ БУЛО ПІЗНО...РЕАЛІСТИЧНА  ARMA REFORGER</b>\n📺 ЛОРД · ⏱ 29 хв\n👁 <b>129 тис</b> переглядів · 💬 <b>165</b> коментарів\n🔗 <a href=\"https://youtu.be/vyxhJN8N5kE\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>8. ЛЮБИТЕЛЬ БАБУСЬ ЗНІМАЄ ВІДОСИКИ 80+ ► ЛЕБІГА ДИВИТЬСЯ «ГОВОРИТЬ УКРАЇНА»</b>\n📺 Лебіга STREAMS · ⏱ 55 хв\n👁 <b>136 тис</b> переглядів · 💬 <b>61</b> коментарів\n🔗 <a href=\"https://youtu.be/Iod41YitKR4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>9. МОЛОДІСТЬ, НЕ ЙДИ</b>\n📺 Blackwave_tune - Topic · ⏱ 4 хв\n👁 <b>84 тис</b> переглядів · 💬 <b>12</b> коментарів\n🔗 <a href=\"https://youtu.be/oT9njHJhmdA\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>10. R3phase - Туман ☁️☁️(Хіт 2026☁️)</b>\n📺 R3phase · ⏱ 3 хв\n👁 <b>77 тис</b> переглядів · 💬 <b>34</b> коментарів\n🔗 <a href=\"https://youtu.be/V6AT322yGYo\">Дивитися</a></blockquote>\n<i>Ще 10, улюблені й приховані канали, 📺 цікаві канали за темами — кнопкою «▶️ YouTube» у меню.</i>\n§RT:yt:202645",
  "match_month": "",
  "x18_at": {
   "mix": "2026-11-03T22:35:50.170759+02:00",
@@ -43020,7 +43155,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1793751352.447458,
+ "net_at": 1793752324.8758712,
  "net_asn": {
   "triolan": [
    "13188",
@@ -43072,5 +43207,16 @@
  "kc_week": "",
  "kc_force": true,
  "ytf_force": true,
- "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 28.10–04.11\n<blockquote>🆕 <b>1. Instagram запускає 90-хвилинні відео</b>\nInstagram тестує та починає впровадження нового формату довгоформатних відео тривалістю до 90 хвилин, кидаючи виклик YouTube.\n💡 Спробуйте адаптувати свій довгий відеоконтент під новий формат, щоб охопити аудиторію, яка споживає відео всередині Instagram.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNX041UTNHZ3FyWkhQRkdEWno5YUxmN015OVg1eTZ4UzBRcXJCV19ranRyc2l0MTdPWDdxVkd4eHFkV21ETDExaEtXMDc0bVpsbHk2cXVBNjBUNW1tR29nVUZjV2dXNHE3ZUctOFE3OXU1Sy1tU0pwSXg0a2JFeG1mdXdvZHpmSGxNSl9OdW1WQjRVQlpLdUN5NGxMRzhzeTF1djlzV0RQbDllZERq?oc=5\">The Village Україна</a></blockquote>\n<blockquote>🎯 <b>2. Нова рекламна архітектура Meta Andromeda</b>\nMeta представила систему Andromeda, яка використовує передовий підхід до моделювання та системного дизайну для покращення пошуку та видачі рекламних оголошень.\n💡 Закладайте більше різноманітних креативів та аудиторій, оскільки алгоритми нового покоління точніше знаходять релевантних користувачів.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPMEZ3MUhGWnBzZDB1UFlCaFVRbVRFV25lNVlfeG5zemxaaVYyZWZrc25YWS16aXlyVC13NGtXM0dsU3M2MHhmdmo1eW5yZkMwSTBvVldteDdxdk1vdEZEVlZ5ZEpxMl9Gc3pXTDR5eHhrc1lZS3VDbElORlJ3UTQwS3d0RjdWWDRFNmx4UzBIdWNQNkZIaUk0UkZzRlZheExXZVdUanRZSHRaUQ?oc=5\">Engineering at Meta Blog</a></blockquote>\n<blockquote>🎯 <b>3. Meta відклала оновлення комерційних умов</b>\nКомпанія Meta вирішила безстроково відкласти оновлення своїх нових комерційних умов та правил щодо використання даних для навчання AI.\n💡 Слідкуйте за офіційними анонсами, але поки що продовжуйте роботу за чинними правилами рекламного кабінету.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-delays-commercial-terms-update-indefinitely/873528/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>4. Оплата креаторам за довгі відео в Instagram</b>\nInstagram пропонує фінансову мотивацію та виплати авторам контенту за створення довгоформатних відеороликів на платформі.\n💡 Співпрацюйте з інфлюенсерами, які готові експериментувати з новими довгими форматами заради додаткового охоплення.\n🔗 <a href=\"https://www.socialmediatoday.com/news/instagram-offers-to-pay-creators-for-long-form-content/873402/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>5. Розширення реклами в AI Mode від Google</b>\nGoogle розширює показ рекламних оголошень у своєму штучному інтелекті (AI Mode) на нові ринки.\n💡 Перевірте налаштування ваших пошукових кампаній Google Ads, щоб переконатися в готовності до показу в нових інтерактивних режимах.\n🔗 <a href=\"https://blog.google/products/ads-commerce/ads-in-ai-mode-global/\">The Keyword (Google)</a></blockquote>\n<blockquote>🎯 <b>6. Нові інструменти безпеки бренду в TikTok</b>\nTikTok додав оновлені ресурси та функції для забезпечення безпеки брендів під час розміщення реклами.\n💡 Використовуйте нові налаштування контентної фільтрації, щоб захистити репутацію бренду від небажаного контексту.\n🔗 <a href=\"https://www.socialmediatoday.com/news/tiktok-adds-new-brand-safety-resources/873529/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>7. Бонусна програма для відеокреаторів на X</b>\nПлатформа X (колишній Twitter) запустила нову програму фінансових бонусів для заохочення авторів відеоконтенту.\n💡 Якщо ваша аудиторія є на платформі X, адаптуйте туди свої відеоматеріали задля отримання додаткового органічного охоплення.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-launches-new-bonus-program-for-video-creators/873404/\">Social Media Today</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202645\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Покращення сегментів аудиторії в Meta Ads</b> · Jon Loomer\nАвтор аналізує можливості та обмеження сегментів аудиторії в ручних кампаніях Meta, запроваджених після Advantage+. Розглядаються проблеми, які заважають повноцінно використовувати цей інструмент для аналізу того, хто саме бачить рекламу.\n💡 Використовуйте сегменти аудиторії в ручних кампаніях для детального аналізу взаємодії різних груп користувачів з вашими оголошеннями, навіть попри обмеження функціоналу від Meta.\n<a href=\"https://www.jonloomer.com/meta-audience-segments/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Соціальне SEO: як оптимізувати контент для пошуку в соцмережах</b> · Hootsuite\nМатеріал присвячений тому, як користувачі активно використовують TikTok, Instagram, YouTube та інші платформи як пошукові системи замість класичного Google. Розглядається роль ключових слів, геоміток, альтернативного тексту та сигналів залученості для ранжування.\n💡 Впроваджуйте принципи Social SEO у свої публікації: додавайте релевантні ключові слова в текст і субтитри, використовуйте геомітки та якісний alt-текст, щоб ваш бренд знаходили через внутрішній пошук платформ.\n<a href=\"https://blog.hootsuite.com/social-media-search/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Правила маркування штучного інтелекту в TikTok для органіки та реклами</b> · Hootsuite\nTikTok вимагає обов'язково маркувати контент, створений або суттєво змінений за допомогою ШІ, якщо він зображує реалістичних людей чи сценарії. Ігнорування цього правила може призвести до зниження охоплень або видалення публікації.\n💡 Завжди вмикайте мітку AI-generated для контенту з реалістичними елементами уникнуті троттлингу охоплень від алгоритмів TikTok, при цьому базову корекцію кольору чи обрізку можна не маркувати.\n<a href=\"https://blog.hootsuite.com/ai-disclosure-policy-for-tiktok/\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Налаштування GA4 для вимірювання бізнес-ефекту від соцмереж</b> · Hootsuite\nПокроковий посібник про те, як пов'язати показники соціальних мереж із реалістичними бізнес-результатами за допомогою Google Analytics 4. Акцентується увага на важливості UTM-міток для точного відстеження трафіку, лідів та покупок.\n💡 Ніколи не запускайте трафік із соцмереж без чітко прописаних UTM-параметрів, інакше GA4 не зможе коректно зв'язати конверсії та продаж із конкретними публікаціями для звіту керівництву.\n<a href=\"https://blog.hootsuite.com/google-analytics-social-media/\">джерело</a></blockquote>\n§RT:smm:202645p"
+ "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 28.10–04.11\n<blockquote>🆕 <b>1. Instagram запускає 90-хвилинні відео</b>\nInstagram тестує та починає впровадження нового формату довгоформатних відео тривалістю до 90 хвилин, кидаючи виклик YouTube.\n💡 Спробуйте адаптувати свій довгий відеоконтент під новий формат, щоб охопити аудиторію, яка споживає відео всередині Instagram.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNX041UTNHZ3FyWkhQRkdEWno5YUxmN015OVg1eTZ4UzBRcXJCV19ranRyc2l0MTdPWDdxVkd4eHFkV21ETDExaEtXMDc0bVpsbHk2cXVBNjBUNW1tR29nVUZjV2dXNHE3ZUctOFE3OXU1Sy1tU0pwSXg0a2JFeG1mdXdvZHpmSGxNSl9OdW1WQjRVQlpLdUN5NGxMRzhzeTF1djlzV0RQbDllZERq?oc=5\">The Village Україна</a></blockquote>\n<blockquote>🎯 <b>2. Нова рекламна архітектура Meta Andromeda</b>\nMeta представила систему Andromeda, яка використовує передовий підхід до моделювання та системного дизайну для покращення пошуку та видачі рекламних оголошень.\n💡 Закладайте більше різноманітних креативів та аудиторій, оскільки алгоритми нового покоління точніше знаходять релевантних користувачів.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPMEZ3MUhGWnBzZDB1UFlCaFVRbVRFV25lNVlfeG5zemxaaVYyZWZrc25YWS16aXlyVC13NGtXM0dsU3M2MHhmdmo1eW5yZkMwSTBvVldteDdxdk1vdEZEVlZ5ZEpxMl9Gc3pXTDR5eHhrc1lZS3VDbElORlJ3UTQwS3d0RjdWWDRFNmx4UzBIdWNQNkZIaUk0UkZzRlZheExXZVdUanRZSHRaUQ?oc=5\">Engineering at Meta Blog</a></blockquote>\n<blockquote>🎯 <b>3. Meta відклала оновлення комерційних умов</b>\nКомпанія Meta вирішила безстроково відкласти оновлення своїх нових комерційних умов та правил щодо використання даних для навчання AI.\n💡 Слідкуйте за офіційними анонсами, але поки що продовжуйте роботу за чинними правилами рекламного кабінету.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-delays-commercial-terms-update-indefinitely/873528/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>4. Оплата креаторам за довгі відео в Instagram</b>\nInstagram пропонує фінансову мотивацію та виплати авторам контенту за створення довгоформатних відеороликів на платформі.\n💡 Співпрацюйте з інфлюенсерами, які готові експериментувати з новими довгими форматами заради додаткового охоплення.\n🔗 <a href=\"https://www.socialmediatoday.com/news/instagram-offers-to-pay-creators-for-long-form-content/873402/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>5. Розширення реклами в AI Mode від Google</b>\nGoogle розширює показ рекламних оголошень у своєму штучному інтелекті (AI Mode) на нові ринки.\n💡 Перевірте налаштування ваших пошукових кампаній Google Ads, щоб переконатися в готовності до показу в нових інтерактивних режимах.\n🔗 <a href=\"https://blog.google/products/ads-commerce/ads-in-ai-mode-global/\">The Keyword (Google)</a></blockquote>\n<blockquote>🎯 <b>6. Нові інструменти безпеки бренду в TikTok</b>\nTikTok додав оновлені ресурси та функції для забезпечення безпеки брендів під час розміщення реклами.\n💡 Використовуйте нові налаштування контентної фільтрації, щоб захистити репутацію бренду від небажаного контексту.\n🔗 <a href=\"https://www.socialmediatoday.com/news/tiktok-adds-new-brand-safety-resources/873529/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>7. Бонусна програма для відеокреаторів на X</b>\nПлатформа X (колишній Twitter) запустила нову програму фінансових бонусів для заохочення авторів відеоконтенту.\n💡 Якщо ваша аудиторія є на платформі X, адаптуйте туди свої відеоматеріали задля отримання додаткового органічного охоплення.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-launches-new-bonus-program-for-video-creators/873404/\">Social Media Today</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202645\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Покращення сегментів аудиторії в Meta Ads</b> · Jon Loomer\nАвтор аналізує можливості та обмеження сегментів аудиторії в ручних кампаніях Meta, запроваджених після Advantage+. Розглядаються проблеми, які заважають повноцінно використовувати цей інструмент для аналізу того, хто саме бачить рекламу.\n💡 Використовуйте сегменти аудиторії в ручних кампаніях для детального аналізу взаємодії різних груп користувачів з вашими оголошеннями, навіть попри обмеження функціоналу від Meta.\n<a href=\"https://www.jonloomer.com/meta-audience-segments/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Соціальне SEO: як оптимізувати контент для пошуку в соцмережах</b> · Hootsuite\nМатеріал присвячений тому, як користувачі активно використовують TikTok, Instagram, YouTube та інші платформи як пошукові системи замість класичного Google. Розглядається роль ключових слів, геоміток, альтернативного тексту та сигналів залученості для ранжування.\n💡 Впроваджуйте принципи Social SEO у свої публікації: додавайте релевантні ключові слова в текст і субтитри, використовуйте геомітки та якісний alt-текст, щоб ваш бренд знаходили через внутрішній пошук платформ.\n<a href=\"https://blog.hootsuite.com/social-media-search/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Правила маркування штучного інтелекту в TikTok для органіки та реклами</b> · Hootsuite\nTikTok вимагає обов'язково маркувати контент, створений або суттєво змінений за допомогою ШІ, якщо він зображує реалістичних людей чи сценарії. Ігнорування цього правила може призвести до зниження охоплень або видалення публікації.\n💡 Завжди вмикайте мітку AI-generated для контенту з реалістичними елементами уникнуті троттлингу охоплень від алгоритмів TikTok, при цьому базову корекцію кольору чи обрізку можна не маркувати.\n<a href=\"https://blog.hootsuite.com/ai-disclosure-policy-for-tiktok/\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Налаштування GA4 для вимірювання бізнес-ефекту від соцмереж</b> · Hootsuite\nПокроковий посібник про те, як пов'язати показники соціальних мереж із реалістичними бізнес-результатами за допомогою Google Analytics 4. Акцентується увага на важливості UTM-міток для точного відстеження трафіку, лідів та покупок.\n💡 Ніколи не запускайте трафік із соцмереж без чітко прописаних UTM-параметрів, інакше GA4 не зможе коректно зв'язати конверсії та продаж із конкретними публікаціями для звіту керівництву.\n<a href=\"https://blog.hootsuite.com/google-analytics-social-media/\">джерело</a></blockquote>\n§RT:smm:202645p",
+ "kino_q": [
+  {
+   "id": "fd6932a0f3",
+   "text": "🍿 <b>ПІДБІРКА КІНО</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/모가디슈-2021-11-04\">모가디슈</a></b> (2021) · ❤️ за вашим смаком\nбойовик, трилер, драма · ⏱ 2 год 01 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>95%</b> · Ⓜ <b>71</b>\n<i>🎭 Кім Юн Сок, Чо Ін Сон, Хо Джун Хо</i>\n📝 Diplomats from the North and South Korean embassies in Somalia attempt a daring joint escape from Mogadishu when the outbreak of civil war leaves them stranded.\n▶️ <a href=\"https://youtu.be/uDyM8zmhQtc\">Трейлер</a></blockquote>\n§KN:m607844\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Mіsterіum-ZHurnal-64-2018-11-04\">Містеріум. Журнал 64</a></b> (2018) · ❤️ за вашим смаком\nкримінал, трилер, детектив · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.4</b>\n<i>🎭 Ніколай Лі Кос, Fares Fares, Johanne Louise Schmidt</i>\n📝 У покинутій квартирі знайдено три муміфікованих трупа. Справу передано детективу копенгагенської поліції Карлу Мірку і його помічнику Ассаду. Розслідування приводить детектива в жіночу клініку на острові, більше…\n▶️ <a href=\"https://youtu.be/jfVTL2FxsDY\">Трейлер</a></blockquote>\n§KN:m479226\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Nosferatu-2024-11-04\">Носферату</a></b> (2024)\nжахи, фентезі · ⏱ 2 год 12 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>85%</b> · Ⓜ <b>78</b>\n<i>🎭 Лілі-Роз Депп, Ніколас Голт, Білл Скашґорд</i>\n📺 <a href=\"https://www.themoviedb.org/movie/426063-nosferatu/watch?locale=UA\">Netflix · за підпискою</a>\n📝 Готична історія про пристрасті між переслідуваною молодою жінкою та жахливим вампіром, який захопився нею, сіючи невимовний жах на своєму шляху.\n▶️ <a href=\"https://youtu.be/gHINtD2Nrmw\">Трейлер</a></blockquote>\n§KN:m426063\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Vono-2-2019-11-04\">Воно 2</a></b> (2019)\nжахи, трилер, драма · ⏱ 2 год 45 хв\n⭐ IMDb <b>6.5</b> · 🍅 <b>62%</b> · Ⓜ <b>58</b>\n<i>🎭 Джессіка Честейн, Джеймс Мак-Евой, Білл Гейдер</i>\n📝 Дія фільму відбувається через 27 років після першої зустрічі головних героїв з демонічним Пеннівайзом. Вони вже виросли, і у кожного своє життя. Але несподівано їхнє спокійне існування порушує дивний телефонний…\n▶️ <a href=\"https://youtu.be/iyVfuutDa-s\">Трейлер</a></blockquote>\n§KN:m474350\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Wicked-CHarodіjka-2024-11-04\">Wicked: Чародійка</a></b> (2024)\nдрама, мелодрама, фентезі · ⏱ 2 год 40 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>88%</b> · Ⓜ <b>73</b>\n<i>🎭 Синтія Еріво, Аріана Ґранде, Мішель Єо</i>\n📺 <a href=\"https://www.themoviedb.org/movie/402431-wicked/watch?locale=UA\">Netflix · за підпискою</a>\n📝 Події розгортаються у країні Оз. Зеленошкіра дівчина Ельфаба вступає на навчання до університету Шиз. Її сусідкою по кімнаті стає тендітна Галінда. Різні за вдачею дівчата швидко знаходять спільну мову. На їхню…\n▶️ <a href=\"https://youtu.be/hsNdYfGc37A\">Трейлер</a></blockquote>\n§KN:m402431\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Diyavol-nosit-Prada-2-2026-11-04\">Диявол носить Прада 2</a></b> (2026)\nкомедія, драма · ⏱ 1 год 59 хв\n⭐ IMDb <b>6.3</b> · 🍅 <b>78%</b> · Ⓜ <b>63</b>\n<i>🎭 Енн Гетевей, Меріл Стріп, Емілі Блант</i>\n📝 Майже через двадцять років Меріл Стріп, Енн Гетевей, Емілі Блант і Стенлі Туччі повертаються на модні вулиці Нью-Йорка та до бездоганно стильних кабінетів видання «Подіум» у довгоочікуваному сиквелі культового фільму…\n▶️ <a href=\"https://youtu.be/DY8JOXAKsnk\">Трейлер</a></blockquote>\n§KN:m1314481\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Krіd-Spadok-Rokkі-Balboa-2015-11-04\">Крід: Спадок Роккі Бальбоа</a></b> (2015)\nдрама · ⏱ 2 год 13 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>95%</b> · Ⓜ <b>82</b>\n<i>🎭 Майкл Б. Джордан, Сильвестер Сталлоне, Тесса Томпсон</i>\n📝 У центрі уваги син Аполло Кріда - перший серйозного суперника Роккі Бальбоа на рингу, який пізніше став кращим другом героя. Молода людина не відчуває жодної пристрасті до боксу, втім, і його сім'я не бажає бачити…\n▶️ <a href=\"https://youtu.be/RRMY3XRgt78\">Трейлер</a></blockquote>\n§KN:m312221\n§§\n<blockquote>📺 <b>8. <a href=\"https://telegra.ph/Divovizhna-mіsіs-Mejzel-2017-11-04\">Дивовижна місіс Мейзел</a></b> (2017)\nкомедія, драма · 📺 серіал · 5 сез.\n⭐ IMDb <b>8.6</b>\n<i>🎭 Рейчел Броснаген, Алекс Борштейн, Майкл Зеґен</i>\n📝 Нью-Йорк, 1958 рік. Від домогосподарки Міріам «Мідж» Мейзел іде чоловік Джоел, заявивши, що у нього інтрижка на стороні. Мідж прямує за підтримкою до батьків, однак ті лише розчаровані доччиним вибором супутника…\n▶️ <a href=\"https://youtu.be/fOmwkTrW4OQ\">Трейлер</a></blockquote>\n§KN:t70796\n§§\n<blockquote>📺 <b>9. <a href=\"https://telegra.ph/Korona-2016-11-04\">Корона</a></b> (2016)\nдрама · 📺 серіал · 6 сез.\n⭐ IMDb <b>8.6</b>\n<i>🎭 Імельда Стонтон, Джонатан Прайс, Леслі Менвілл</i>\n📺 <a href=\"https://www.themoviedb.org/tv/65494-the-crown/watch?locale=UA\">Netflix · за підпискою</a>\n📝 Драматичний серіал за мотивами реальних подій розповідає про життя королеви Єлизавети II, а також про політичні й особисті події, які вплинули на її правління.\n▶️ <a href=\"https://youtu.be/Y6yI3JLkcT0\">Трейлер</a></blockquote>\n§KN:t65494\n§§\n<blockquote>📺 <b>10. <a href=\"https://telegra.ph/Impractical-Jokers-2011-11-04\">Impractical Jokers</a></b> (2011)\nкомедія · 📺 серіал · 13 сез.\n⭐ IMDb <b>8.5</b>\n<i>🎭 Brian Quinn, James Murray, Sal Vulcano</i>\n📝 This hidden-camera series follows four lifelong friends -- Brian \"Q\"' Quinn, James \"Murr\"' Murray, Joe Gatto and Sal Vulcano -- who take dares to an outrageous level. To find out who is best under pressure, the guys…\n▶️ <a href=\"https://youtu.be/vL0pCFEGG2U\">Трейлер</a></blockquote>\n§KN:t59186",
+   "markup": null
+  }
+ ],
+ "kino_gq": {},
+ "kp_at": {
+  "mix": "2026-11-04T02:30:46.916873+02:00"
+ }
 }
