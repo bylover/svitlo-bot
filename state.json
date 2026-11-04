@@ -110,7 +110,8 @@
   "https://medium.com/@alanlevincoaching/physical-intimacy-on-the-fourth-date-should-it-be-happening-by-now-5f304de695e3?source=rss------intimacy-5",
   "https://sexwithemily.com/best-sex-ever-tour-nashville-recap/?utm_source=rss&utm_medium=rss&utm_campaign=best-sex-ever-tour-nashville-recap",
   "https://sex.cosmopolitan.com/pleasure/a74273362/different-types-of-condoms-guide/",
-  "https://medium.com/@jepevi4852/how-to-choose-comfortable-cock-rings-for-men-from-best-sex-toys-in-pattaya-0513e3915f29?source=rss------sex_toys-5"
+  "https://medium.com/@jepevi4852/how-to-choose-comfortable-cock-rings-for-men-from-best-sex-toys-in-pattaya-0513e3915f29?source=rss------sex_toys-5",
+  "https://www.girlonthenet.com/blog/guest-blog-no-knob-november/"
  ],
  "kino_seen": [
   "m696806",
@@ -714,7 +715,7 @@
   "t127529",
   "t7225"
  ],
- "gh_beat": "2026-11-04T17:55:45.779414+02:00",
+ "gh_beat": "2026-11-04T18:00:48.161108+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -861,11 +862,11 @@
    ]
   ]
  },
- "fact_png": "2026-11-04 17|28|2026-11-04T17:47:40+02:00",
+ "fact_png": "2026-11-04 18|28|2026-11-04T17:47:40+02:00",
  "fact_day": {
-  "total": "19 год 43 хв",
+  "total": "19 год 32 хв",
   "list": [
-   "17:50–05:41 · 11 год 51 хв",
+   "18:00–05:41 · 11 год 41 хв",
    "05:48–05:54 · 6 хв",
    "05:55–05:56 · 0 хв",
    "10:02–17:47 · 7 год 46 хв"
@@ -1791,14 +1792,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "04.11 17:52",
-   "ts": 1793807572,
+   "at": "04.11 18:02",
+   "ts": 1793808155,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "04.11 17:52",
-   "ts": 1793807572,
+   "at": "04.11 18:02",
+   "ts": 1793808155,
    "ok": true,
    "note": ""
   },
@@ -30167,9 +30168,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "fef5699a361a",
+  "gs": "97c7dd8f0ba4",
   "quiz_pool.json": "d62dbc5542f3",
-  "fact.png": "b43dae7cc149",
+  "fact.png": "23f75b0e1d59",
   "sexed.json": "71867bb5f6de",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "6e571dce29b7",
@@ -43365,14 +43366,15 @@
  "morning_sent": "2026-11-04T11:00:43.803670+02:00",
  "prom_v": 8,
  "prom_last_n": 1317,
- "para_i": 3,
+ "para_i": 4,
  "para_titles": [
   "Експеримент із позою «Сяюча троянда»",
   "Секрет гармонії з вібратором для пари",
-  "Мистецтво ніжних дотиків і ритму"
+  "Мистецтво ніжних дотиків і ритму",
+  "Танець хвиль для глибшого єднання"
  ],
  "para_bag": [],
- "para_sent": "2026-10-30",
+ "para_sent": "2026-11-04",
  "fan_wk": "2026-45",
  "weather": "2026-11-03",
  "prom_i": 2,
@@ -43382,18 +43384,14 @@
  "yt_fav": [],
  "ytch_week": "202645",
  "content_last": {
-  "kind": "article",
-  "src": "Sex With Emily"
+  "kind": "experience",
+  "src": "Girl on the Net"
  },
  "silpo_snap": "2026-10-28",
  "live_day": "2026-11-04",
  "silpo_week": "2026-44",
- "sbm_at": 1793807749.4842715,
+ "sbm_at": 1793808051.0777783,
  "sbm_hist": [
-  [
-   "05:30",
-   42
-  ],
   [
    "05:35",
    40
@@ -43965,6 +43963,10 @@
   [
    "17:55",
    41
+  ],
+  [
+   "18:00",
+   42
   ]
  ],
  "sbm_near": {
