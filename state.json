@@ -714,7 +714,7 @@
   "t127529",
   "t7225"
  ],
- "gh_beat": "2026-11-04T12:10:46.993731+02:00",
+ "gh_beat": "2026-11-04T12:15:55.625612+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1829,8 +1829,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "04.11 11:16",
-   "ts": 1793783794,
+   "at": "04.11 12:16",
+   "ts": 1793787412,
    "ok": true,
    "note": ""
   },
@@ -1901,14 +1901,14 @@
    "note": ""
   },
   "prom.ua": {
-   "at": "04.11 10:57",
-   "ts": 1793782652,
+   "at": "04.11 12:16",
+   "ts": 1793787369,
    "ok": true,
    "note": ""
   },
   "фантазія тижня": {
-   "at": "04.11 09:25",
-   "ts": 1793777159,
+   "at": "04.11 12:16",
+   "ts": 1793787369,
    "ok": true,
    "note": ""
   },
@@ -1937,26 +1937,26 @@
    "note": ""
   },
   "youtube канали": {
-   "at": "04.11 09:35",
-   "ts": 1793777758,
+   "at": "04.11 12:16",
+   "ts": 1793787369,
    "ok": true,
    "note": ""
   },
   "живий english": {
-   "at": "04.11 11:06",
-   "ts": 1793783160,
+   "at": "04.11 12:16",
+   "ts": 1793787369,
    "ok": true,
    "note": ""
   },
   "кіно-категорії": {
-   "at": "04.11 11:06",
-   "ts": 1793783160,
+   "at": "04.11 12:16",
+   "ts": 1793787369,
    "ok": true,
    "note": ""
   },
   "youtube для вас": {
-   "at": "04.11 11:16",
-   "ts": 1793783773,
+   "at": "04.11 12:16",
+   "ts": 1793787369,
    "ok": true,
    "note": ""
   }
@@ -30207,10 +30207,22 @@
    null,
    null,
    "2026-11-04"
+  ],
+  "tt26767508": [
+   6.8,
+   null,
+   null,
+   "2026-11-04"
+  ],
+  "tt30368332": [
+   7.6,
+   null,
+   null,
+   "2026-11-04"
   ]
  },
  "pushed_h": {
-  "gs": "c0f0af101fae",
+  "gs": "1582c6f82149",
   "quiz_pool.json": "d62dbc5542f3",
   "fact.png": "a8c9d9bfeaef",
   "sexed.json": "c3c32307288f",
@@ -41719,6 +41731,342 @@
    ],
    "ov": "Перед смертю король піратів, у якого було все - багатство, слава і влада - заховав скарб під назвою «Ван Піс». Хлопчик на ім'я Луффі вирушає у подорож по океану в надії знайти його. У відкритому морі він знайомиться з др",
    "poster": "https://image.tmdb.org/t/p/w500/nkFxg5yzeX015iYzZLaduJt2xlw.jpg"
+  },
+  "t229480": {
+   "title": "손해 보기 싫어서",
+   "year": "2024",
+   "rating": 7.5,
+   "genres": [
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    18,
+    35
+   ],
+   "ov": "Son Hae-yeong seeks out a fake wedding with her neighbourhood convenience store employee, Kim Ji-uk, to avoid missing out on a promotion.",
+   "poster": "https://image.tmdb.org/t/p/w500/9Us60HDlGuNm52xFPA4C8xStK0F.jpg"
+  },
+  "t225647": {
+   "title": "Рекрути",
+   "year": "2025",
+   "rating": 7.8,
+   "genres": [
+    "Комедія",
+    "Драма",
+    "Політика та війна"
+   ],
+   "g": [
+    35,
+    18,
+    10768
+   ],
+   "ov": "Підліток, з якого знущалися в школі, імпульсивно вирішує вступити до морської піхоти США, і знаходить нову мету й несподіваних друзів у строкатій компанії новобранців.",
+   "poster": "https://image.tmdb.org/t/p/w500/Xb6lOVCl1vV1bFd3Ti1zdrTxSn.jpg"
+  },
+  "t307423": {
+   "title": "Doménica Montero",
+   "year": "2025",
+   "rating": 8.2,
+   "genres": [
+    "Драма",
+    "Мильна опера"
+   ],
+   "g": [
+    18,
+    10766
+   ],
+   "ov": "A respected and renowned businesswoman and philanthropist, considered one of the most sought-after brides in the country, who is left at the altar on her wedding day. Humiliated, betrayed, and turned into a target of pub",
+   "poster": "https://image.tmdb.org/t/p/w500/A02M5F5DcQ3glHrvBUSGnzTlvW1.jpg"
+  },
+  "t226529": {
+   "title": "Крамниця світла",
+   "year": "2024",
+   "rating": 7.8,
+   "genres": [
+    "Детектив",
+    "Драма"
+   ],
+   "g": [
+    9648,
+    18
+   ],
+   "ov": "У таємничій крамниці, де продають лампи, мертві можуть повернутися до світу живих, а живі можуть не вийти звідти живими.",
+   "poster": "https://image.tmdb.org/t/p/w500/uBPRZpbEbvhGrNpIqWk8nhdlRlI.jpg"
+  },
+  "t226362": {
+   "title": "Етернавт",
+   "year": "2025",
+   "rating": 7.2,
+   "genres": [
+    "Драма",
+    "Екшн і Пригоди",
+    "Науково фантастичний"
+   ],
+   "g": [
+    18,
+    10759,
+    10765
+   ],
+   "ov": "Катастрофічний токсичний снігопад убиває мільйони людей. У Буенос-Айресі Хуан Сальво й група вцілілих намагаються протистояти невидимій загрозі з іншого світу.",
+   "poster": "https://image.tmdb.org/t/p/w500/cLWIAD3hTHqnGZRgJc0q8qIImcT.jpg"
+  },
+  "t285838": {
+   "title": "Якби бажання вбивали",
+   "year": "2026",
+   "rating": 8.0,
+   "genres": [
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    18,
+    9648
+   ],
+   "ov": "Таємничий застосунок обіцяє здійснення бажань, а потім запускає відлік до смерті. Потрапивши в цю пастку, група підлітків мусить розірвати смертельний ланцюг, щоб вижити.",
+   "poster": "https://image.tmdb.org/t/p/w500/oKSt05GBc2ZZ5G2BxTqLikNml1V.jpg"
+  },
+  "t256226": {
+   "title": "친애하는 X",
+   "year": "2025",
+   "rating": 7.6,
+   "genres": [
+    "Кримінал",
+    "Драма"
+   ],
+   "g": [
+    80,
+    18
+   ],
+   "ov": "Behind a beautiful face hides a cruel nature—Baek Ah-jin, who sees through and manipulates others' hearts. After stepping on the sacrifices of many to reach the top, everything begins to change the moment she arrives the",
+   "poster": "https://image.tmdb.org/t/p/w500/9eTQfA8lC4027DrG0PBvEBVRKuM.jpg"
+  },
+  "t280945": {
+   "title": "Смачного, Ваша Величносте",
+   "year": "2025",
+   "rating": 8.0,
+   "genres": [
+    "Драма",
+    "Науково фантастичний"
+   ],
+   "g": [
+    18,
+    10765
+   ],
+   "ov": "Талановита кухарка подорожує в часі в епоху Чосон і зустрічає короля-тирана. Її сучасні страви підкорюють його, але на неї чекають королівські випробування.",
+   "poster": "https://image.tmdb.org/t/p/w500/e3lbdFphE2RrYG0v7F64OdZ7LVu.jpg"
+  },
+  "t246386": {
+   "title": "Все її вина",
+   "year": "2025",
+   "rating": 7.5,
+   "genres": [
+    "Детектив",
+    "Кримінал"
+   ],
+   "g": [
+    9648,
+    80
+   ],
+   "ov": "Марісса Ірвін приїжджає за адресою Артур-авеню, 14, щоб забрати свого сина Майло, який після школи пішов до свого нового друга. Двері їй відкриває незнайома жінка, яка нічого не знає ні про яких хлопчиків. Так починаєтьс",
+   "poster": "https://image.tmdb.org/t/p/w500/yrVRLhaqJrttwlstf1W6ghVY6Sq.jpg"
+  },
+  "t261615": {
+   "title": "Заздрісна",
+   "year": "2024",
+   "rating": 7.3,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Після жахливого розриву майже сорокалітня Вікі вирушає на пошуки нового кохання, але навіть не підозрює, до якого чудового й веселого відкриття це призведе.",
+   "poster": "https://image.tmdb.org/t/p/w500/jx9j67VSSQA8ng3cbNrQPlZWbjS.jpg"
+  },
+  "t206586": {
+   "title": "Ходячі мерці: Ті, що вижили",
+   "year": "2024",
+   "rating": 7.7,
+   "genres": [
+    "Науково фантастичний",
+    "Драма"
+   ],
+   "g": [
+    10765,
+    18
+   ],
+   "ov": "Історія кохання Ріка Граймса та Мішонн змінюється разом зі зміною світу. Їх розділяє відстань. Нестримна сила. Чи зможуть вони знайти одне одного і зрозуміти, ким вони були, в ситуації, не схожій на жодну з тих, що вони ",
+   "poster": "https://image.tmdb.org/t/p/w500/ikkrmqOiUoU3rlOzILhVFGQ1Tpn.jpg"
+  },
+  "t211358": {
+   "title": "Під мостом",
+   "year": "2024",
+   "rating": 7.2,
+   "genres": [
+    "Драма",
+    "Кримінал"
+   ],
+   "g": [
+    18,
+    80
+   ],
+   "ov": "Ріна Вірк, чотирнадцятирічна дівчинка, пішла до друзів на вечірку і не повернулася додому. У жорстокому вбивстві звинуватили сімох дівчат-підлітків і хлопця.",
+   "poster": "https://image.tmdb.org/t/p/w500/yXPlorYCz440QhlYPjgQqtXWDEv.jpg"
+  },
+  "t258025": {
+   "title": "Ґьон-у та фея",
+   "year": "2025",
+   "rating": 7.4,
+   "genres": [
+    "Науково фантастичний",
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    10765,
+    18,
+    35
+   ],
+   "ov": "Старшокласниця зустрічає загадкового хлопця, який приходить до феї разом зі своєю матір’ю. Попри миттєве захоплення, вона дізнається про його трагічну долю. Коли хлопець переходить до її класу, дівчина вирішує будь-що зм",
+   "poster": "https://image.tmdb.org/t/p/w500/g0GH6h5UERTa1UhgQOaDITipk5m.jpg"
+  },
+  "t215866": {
+   "title": "Первісна Америка",
+   "year": "2025",
+   "rating": 8.0,
+   "genres": [
+    "Вестерн",
+    "Драма",
+    "Екшн і Пригоди"
+   ],
+   "g": [
+    37,
+    18,
+    10759
+   ],
+   "ov": "Мати із сином, які тікають від минулого, знаходять нову сім’ю, поки подорожують вільними, але суворими й жорстокими землями американського Заходу.",
+   "poster": "https://image.tmdb.org/t/p/w500/59hU4NnqiWjcAp0dicR4LH4oEWA.jpg"
+  },
+  "t238084": {
+   "title": "Курок",
+   "year": "2025",
+   "rating": 7.2,
+   "genres": [
+    "Екшн і Пригоди",
+    "Драма",
+    "Кримінал"
+   ],
+   "g": [
+    10759,
+    18,
+    80
+   ],
+   "ov": "Потік нелегальної вогнепальної зброї до вільної від неї Південної Кореї змушує рішучого поліціянта об’єднати зусилля із загадковим партнером, щоб зупинити хаос у країні.",
+   "poster": "https://image.tmdb.org/t/p/w500/tcz4up8TR4oBDggRSbntpfFmKe6.jpg"
+  },
+  "t259288": {
+   "title": "선의의 경쟁",
+   "year": "2025",
+   "rating": 7.6,
+   "genres": [
+    "Детектив",
+    "Драма"
+   ],
+   "g": [
+    9648,
+    18
+   ],
+   "ov": "A high-teen mystery thriller about a close relationship between teenage girls in a harsher survival competition than entrance examinations.",
+   "poster": "https://image.tmdb.org/t/p/w500/8LuzX83fwFZqvvrq2FRFUFnEZ0g.jpg"
+  },
+  "t241259": {
+   "title": "Оленя",
+   "year": "2024",
+   "rating": 7.7,
+   "genres": [
+    "Драма"
+   ],
+   "g": [
+    18
+   ],
+   "ov": "Один прояв доброти до нещасної жінки з боку коміка-невдахи розпалює несамовиту одержимість, яка загрожує знищити їх обох.",
+   "poster": "https://image.tmdb.org/t/p/w500/yZQhLmixytYXTDpHkdGYAeEEZwd.jpg"
+  },
+  "t245079": {
+   "title": "Гіперніж",
+   "year": "2025",
+   "rating": 7.3,
+   "genres": [
+    "Драма",
+    "Кримінал"
+   ],
+   "g": [
+    18,
+    80
+   ],
+   "ov": "Seok, an eager yet genius neurosurgeon is reunited with Deokhee, the professor who ruined her life long ago. Once, the two surgeons cared for each other more than anyone else. But now with nothing but hatred toward each ",
+   "poster": "https://image.tmdb.org/t/p/w500/ingSjWyEFuqojh3rvNV41FwDIHd.jpg"
+  },
+  "t230448": {
+   "title": "Планктон",
+   "year": "2024",
+   "rating": 8.1,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Чоловік, якого переслідують невдачі, і його колишня, найнещасливіша майбутня наречена, змушені разом вирушити в останню подорож у його житті.",
+   "poster": "https://image.tmdb.org/t/p/w500/qS9teMgek3VUToD3Rc0NtSTsUWX.jpg"
+  },
+  "t224030": {
+   "title": "Гангстер-старшокласник",
+   "year": "2024",
+   "rating": 7.8,
+   "genres": [
+    "Науково фантастичний",
+    "Драма"
+   ],
+   "g": [
+    10765,
+    18
+   ],
+   "ov": "Кім Дик Паль - права рука боса банди. Через бідне дитинство він не мав можливості здобути освіту, але й досі мріє про це у свої 47 років.\n\nОдного вечора він бачить, як школяр збирається стрибнути з моста. Чоловік намагає",
+   "poster": "https://image.tmdb.org/t/p/w500/1BEfxGH3cH23CiLwqN7yE3VOqKB.jpg"
+  },
+  "t227192": {
+   "title": "Гра в піраміду",
+   "year": "2024",
+   "rating": 7.4,
+   "genres": [
+    "Драма"
+   ],
+   "g": [
+    18
+   ],
+   "ov": "Раз на місяць в школі для дівчат Пекйон проводиться голосування, де дівчата віддають свої голоси задля рейтингу популярності. В чому ж суть? Створюється жорстока система рейтингу, яка визначає всю соціальну ієрархію школ",
+   "poster": "https://image.tmdb.org/t/p/w500/weWzP5bkm01DoljZVD4Yfwfyv4E.jpg"
+  },
+  "t320315": {
+   "title": "Guardián de mi vida",
+   "year": "2026",
+   "rating": 9.5,
+   "genres": [
+    "Мильна опера",
+    "Драма"
+   ],
+   "g": [
+    10766,
+    18
+   ],
+   "ov": "Sofía Peralta-Avitia Villaseñor, a successful businesswoman and great mother, who feels lonely in her marriage to Gonzalo Balmori-Ricci Nava. At the same time, her daughter, Bárbara Balmori-Ricci Peralta-Avitia, and her ",
+   "poster": "https://image.tmdb.org/t/p/w500/ppdrvfUyukqtFkl1HY7x6qHd7st.jpg"
   }
  },
  "cofid_pushed": "04.11.2026",
@@ -41794,12 +42142,8 @@
  "silpo_snap": "2026-10-28",
  "live_day": "2026-11-04",
  "silpo_week": "2026-44",
- "sbm_at": 1793787050.9222085,
+ "sbm_at": 1793787360.2886796,
  "sbm_hist": [
-  [
-   "23:15",
-   28
-  ],
   [
    "23:20",
    27
@@ -42371,6 +42715,10 @@
   [
    "12:10",
    37
+  ],
+  [
+   "12:15",
+   37
   ]
  ],
  "sbm_near": {
@@ -42587,7 +42935,8 @@
   "gems": "2026-11-04T09:45:45.457269+02:00",
   "ser_best": "2026-11-04T09:55:44.160943+02:00",
   "ser_gems": "2026-11-04T11:05:47.210360+02:00",
-  "ser_hot": "2026-11-04T11:15:47.247835+02:00"
+  "ser_hot": "2026-11-04T11:15:47.247835+02:00",
+  "ser_new": "2026-11-04T12:15:55.805589+02:00"
  },
  "kb_probe2": "2026-45",
  "kc_cols": {
