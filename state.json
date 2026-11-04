@@ -715,7 +715,7 @@
   "t127529",
   "t7225"
  ],
- "gh_beat": "2026-11-04T19:20:53.242340+02:00",
+ "gh_beat": "2026-11-04T19:25:44.284574+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1858,8 +1858,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "04.11 18:26",
-   "ts": 1793809577,
+   "at": "04.11 19:26",
+   "ts": 1793813207,
    "ok": true,
    "note": ""
   },
@@ -1930,8 +1930,8 @@
    "note": ""
   },
   "prom.ua": {
-   "at": "04.11 17:56",
-   "ts": 1793807768,
+   "at": "04.11 19:25",
+   "ts": 1793813155,
    "ok": true,
    "note": ""
   },
@@ -1966,26 +1966,26 @@
    "note": ""
   },
   "youtube канали": {
-   "at": "04.11 18:06",
-   "ts": 1793808361,
+   "at": "04.11 19:25",
+   "ts": 1793813155,
    "ok": true,
    "note": ""
   },
   "живий english": {
-   "at": "04.11 18:06",
-   "ts": 1793808361,
+   "at": "04.11 19:25",
+   "ts": 1793813155,
    "ok": true,
    "note": ""
   },
   "кіно-категорії": {
-   "at": "04.11 18:15",
-   "ts": 1793808952,
+   "at": "04.11 19:25",
+   "ts": 1793813155,
    "ok": true,
    "note": ""
   },
   "youtube для вас": {
-   "at": "04.11 18:15",
-   "ts": 1793808952,
+   "at": "04.11 19:25",
+   "ts": 1793813155,
    "ok": true,
    "note": ""
   }
@@ -30201,10 +30201,16 @@
    null,
    null,
    "2026-11-04"
+  ],
+  "tt0930083": [
+   6.8,
+   null,
+   null,
+   "2026-11-04"
   ]
  },
  "pushed_h": {
-  "gs": "2e9d584fba49",
+  "gs": "deb9408ffd61",
   "quiz_pool.json": "d62dbc5542f3",
   "fact.png": "64334ba930d2",
   "sexed.json": "096cb7992129",
@@ -43464,6 +43470,168 @@
    ],
    "ov": "Zero is a brilliant scientist. However, 20 years ago, he was publicly humiliated when he lost Helena, the love of his life. One day, an accidental experience with one of his inventions causes him to travel back in time t",
    "poster": "https://image.tmdb.org/t/p/w500/t7jhfy4A3SVxNZusALZtRxXocAt.jpg"
+  },
+  "m310131": {
+   "title": "Відьма: Нова англійська казка",
+   "year": "2016",
+   "rating": 7.0,
+   "genres": [
+    "Жахи",
+    "Фентезі",
+    "Детектив"
+   ],
+   "g": [
+    27,
+    14,
+    9648
+   ],
+   "ov": "Нова Англія, 1630-ті роки. Вільям і Кетрін з п'ятьма дітьми живуть на самотній фермі на узліссі стародавнього лісу. Сім'я починає руйнуватися від невідомого зла, коли їх новонароджений син таємничо зникає, врожай гине, а",
+   "poster": "https://image.tmdb.org/t/p/w500/wOaw1cIdf5zhioOEOX9BvRbb9f6.jpg"
+  },
+  "m1216191": {
+   "title": "Дивакуватість",
+   "year": "2024",
+   "rating": 6.7,
+   "genres": [
+    "Жахи",
+    "Детектив"
+   ],
+   "g": [
+    27,
+    9648
+   ],
+   "ov": "Головна героїня — сліпа дівчина, яка тяжко переживає смерть своєї сестри-близнючки. Вона підробляє медіумом, і сама намагається розкрити таємницю загибелі любої сестри. У таємній кунсткамері вона зберігає дерев'яний мане",
+   "poster": "https://image.tmdb.org/t/p/w500/3Z9c1tbUhP0QruRjczPHnbx3U2D.jpg"
+  },
+  "m381288": {
+   "title": "Спліт",
+   "year": "2017",
+   "rating": 7.3,
+   "genres": [
+    "Жахи",
+    "Трилер"
+   ],
+   "g": [
+    27,
+    53
+   ],
+   "ov": "Кевін страждає від психічного розладу: у його тілі живуть понад 23 різних особистості. Одна з них змушує хлопця викрасти і утримувати в полоні трьох молодих дівчат. Демон в людській подобі терзає і грається з полонянками",
+   "poster": "https://image.tmdb.org/t/p/w500/jsV9IFoRBgxJKgzd77EDY5PnzjR.jpg"
+  },
+  "m762504": {
+   "title": "Ноу",
+   "year": "2022",
+   "rating": 6.8,
+   "genres": [
+    "Жахи",
+    "Фантастика",
+    "Трилер"
+   ],
+   "g": [
+    27,
+    878,
+    53
+   ],
+   "ov": "Хмара незрозумілого походження сильно псує життя власникам невеликого ранчо в Каліфорнії.",
+   "poster": "https://image.tmdb.org/t/p/w500/6XXaUOrCTWHODGvJ10rvofZ2FKV.jpg"
+  },
+  "m447332": {
+   "title": "Тихе місце",
+   "year": "2018",
+   "rating": 7.5,
+   "genres": [
+    "Жахи",
+    "Драма",
+    "Фантастика"
+   ],
+   "g": [
+    27,
+    18,
+    878
+   ],
+   "ov": "Життя сім’ї фермерів було повною ідилією, допоки вони не стали мішенню для потойбічного зла.  У безжальній грі з темрявою є одне правило — не видавати себе жодним звуком. Щойно тебе почують — ти загинеш.",
+   "poster": "https://image.tmdb.org/t/p/w500/eoyz979G7XAqFuafBvWBosTb0L6.jpg"
+  },
+  "m458723": {
+   "title": "Ми",
+   "year": "2019",
+   "rating": 6.8,
+   "genres": [
+    "Жахи",
+    "Трилер"
+   ],
+   "g": [
+    27,
+    53
+   ],
+   "ov": "Родина вирушає до пляжного будинку, щоб відпочити та весело провести час біля моря. Вони не підозрюють, що зовсім скоро моторошні гості-двійники перетворять їхнє життя на пекло. Шляху для втечі не існує – адже від себе н",
+   "poster": "https://image.tmdb.org/t/p/w500/7yl5A03NV4ZhK8g7aAS8VJWqCUH.jpg"
+  },
+  "m25597": {
+   "title": "헨젤과 그레텔",
+   "year": "2007",
+   "rating": 6.6,
+   "genres": [
+    "Фентезі",
+    "Драма",
+    "Жахи"
+   ],
+   "g": [
+    14,
+    18,
+    27
+   ],
+   "ov": "When Eun-soo gets lost in a country road, he meets a mysterious girl and is led to her fairytale ike house in the middle of the forest. There, Eun-soo is trapped with the girl and her siblings who never age. Eun-soo fina",
+   "poster": "https://image.tmdb.org/t/p/w500/z8cCgPp7AtittGc3gHhXSotD6Mc.jpg"
+  },
+  "m1730": {
+   "title": "Внутрішня імперія",
+   "year": "2006",
+   "rating": 6.8,
+   "genres": [
+    "Жахи",
+    "Трилер",
+    "Детектив"
+   ],
+   "g": [
+    27,
+    53,
+    9648
+   ],
+   "ov": "When actress Nikki Grace gets the lead role in a cursed film, her world becomes more and more surreal, blending realities and ideas of infidelity, reincarnation, and supernatural forces.",
+   "poster": "https://image.tmdb.org/t/p/w500/s5f0FbVAABEnJYKaApWORTxhiFC.jpg"
+  },
+  "m21506": {
+   "title": "ノロイ",
+   "year": "2005",
+   "rating": 6.8,
+   "genres": [
+    "Жахи",
+    "Детектив",
+    "Трилер"
+   ],
+   "g": [
+    27,
+    9648,
+    53
+   ],
+   "ov": "A documentary filmmaker explores seemingly unrelated paranormal incidents connected by the legend of an ancient demon.",
+   "poster": "https://image.tmdb.org/t/p/w500/7u7ajjFOCtbCDb6PEcEakve9hdH.jpg"
+  },
+  "m19908": {
+   "title": "Вітаємо у Зомбіленді",
+   "year": "2009",
+   "rating": 7.5,
+   "genres": [
+    "Комедія",
+    "Жахи"
+   ],
+   "g": [
+    35,
+    27
+   ],
+   "ov": "Після того, як в Америці відбувалась масова атака зомбі, невелика група людей вижила. Вони мігрують по всій країні, намагаючись хоч якось вижити та боротись із жахливими монстрами. В пошуках укриття вони наштовхуються на",
+   "poster": "https://image.tmdb.org/t/p/w500/u9rFLTC62CrXWPxvBgos1ofeas0.jpg"
   }
  },
  "cofid_pushed": "04.11.2026",
@@ -43540,12 +43708,8 @@
  "silpo_snap": "2026-10-28",
  "live_day": "2026-11-04",
  "silpo_week": "2026-44",
- "sbm_at": 1793812856.280113,
+ "sbm_at": 1793813147.9742734,
  "sbm_hist": [
-  [
-   "06:55",
-   36
-  ],
   [
    "07:00",
    36
@@ -44117,11 +44281,15 @@
   [
    "19:20",
    35
+  ],
+  [
+   "19:25",
+   35
   ]
  ],
  "sbm_near": {
   "160603556": [
-   44,
+   39,
    0
   ]
  },
@@ -44324,7 +44492,7 @@
   "drama": "2026-11-04T16:35:48.735493+02:00",
   "thriller": "2026-11-04T17:55:45.896145+02:00",
   "comedy": "2026-11-04T18:05:46.947617+02:00",
-  "horror": "2026-11-04T06:45:44.327933+02:00",
+  "horror": "2026-11-04T19:25:44.482974+02:00",
   "scifi": "2026-11-04T06:55:43.335708+02:00",
   "romance": "2026-11-04T07:05:45.304473+02:00",
   "series": "2026-11-04T08:15:45.929001+02:00",
