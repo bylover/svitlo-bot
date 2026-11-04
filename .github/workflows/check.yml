@@ -81,8 +81,8 @@ jobs:
           [ -d sx ] && git add sx
           git diff --cached --quiet && exit 0
           git commit -m "state"
-          for i in 1 2 3; do
+          for i in 1 2 3 4 5; do
             git pull --rebase -X theirs -q && git push -q && exit 0
             sleep 5
           done
-          echo "Не вдалося зберегти state.json"; exit 1
+          echo "::warning::Не вдалося зберегти state.json (паралельний запуск) — збережеться наступного разу"; exit 0
