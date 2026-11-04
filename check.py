@@ -7939,5 +7939,17 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    if not cart_only():                               # ⚡ cart.yml — лише пошук «🧺», без повного запуску
-        main()
+    try:
+        if not cart_only():                           # ⚡ cart.yml — лише пошук «🧺», без повного запуску
+            main()
+    except SystemExit:
+        raise                                         # справжня проблема налаштувань (токен тощо) — падаємо, щоб прийшов лист
+    except Exception as e_:                           # будь-яка інша помилка: у лог і в бота (🧪 стан), без «Run failed» на пошті
+        import traceback
+        tb_ = traceback.format_exc()
+        print(tb_)
+        try:
+            http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=gh_err.json",
+                      {"t": f"{datetime.now(TZ).strftime('%d.%m %H:%M')} {type(e_).__name__}: {str(e_)[:120]} · {tb_.strip().splitlines()[-3][:120] if len(tb_.splitlines()) > 2 else ''}"})
+        except Exception:
+            pass
