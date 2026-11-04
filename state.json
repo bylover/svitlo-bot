@@ -3,7 +3,7 @@
  "group": "4.1",
  "fp": {
   "2026-11-03": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 630, \"start\": 360, \"type\": \"Definite\"}, {\"end\": 1320, \"start\": 780, \"type\": \"Definite\"}]}",
-  "2026-11-04": "{\"s\": \"WaitingForSchedule\", \"slots\": []}",
+  "2026-11-04": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 1020, \"start\": 600, \"type\": \"Definite\"}, {\"end\": 1440, \"start\": 1230, \"type\": \"Definite\"}]}",
   "2026-11-05": "{\"s\": \"WaitingForSchedule\", \"slots\": []}"
  },
  "reminded": [],
@@ -714,7 +714,7 @@
   "t127529",
   "t7225"
  ],
- "gh_beat": "2026-11-04T10:15:43.992216+02:00",
+ "gh_beat": "2026-11-04T10:20:46.089723+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -924,7 +924,8 @@
   "02.11 22:10 Завтра 2026-11-03 ScheduleApplies: 06:00–11:00, 14:00–22:00",
   "03.11 00:00 Завтра 2026-11-04 WaitingForSchedule: без відключень",
   "03.11 14:29 Сьогодні 2026-11-03 ScheduleApplies: 06:00–10:30, 13:00–22:00",
-  "04.11 00:00 Завтра 2026-11-05 WaitingForSchedule: без відключень"
+  "04.11 00:00 Завтра 2026-11-05 WaitingForSchedule: без відключень",
+  "04.11 10:20 Сьогодні 2026-11-04 ScheduleApplies: 10:00–17:00, 20:30–24:00"
  ],
  "week_fp": "{\"1\": [], \"2\": [], \"3\": [], \"4\": [], \"5\": [], \"6\": [], \"7\": []}",
  "we_sent": {},
@@ -1797,14 +1798,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "04.11 10:17",
-   "ts": 1793780250,
+   "at": "04.11 10:23",
+   "ts": 1793780627,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "04.11 10:17",
-   "ts": 1793780250,
+   "at": "04.11 10:23",
+   "ts": 1793780627,
    "ok": true,
    "note": ""
   },
@@ -15031,7 +15032,9 @@
  "pend": {},
  "got": {},
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
- "gem_block": {},
+ "gem_block": {
+  "gemini-flash-latest": "2026-11-05T10:05:00+02:00"
+ },
  "omdb_cache": {
   "tt5362988": [
    7.7,
@@ -30203,7 +30206,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "714a9c9dca39",
+  "gs": "bcafcbeaad4d",
   "quiz_pool.json": "d62dbc5542f3",
   "fact.png": "b2e2827bf3ed",
   "sexed.json": "888bf95bd0e6",
@@ -41587,12 +41590,8 @@
  "silpo_snap": "2026-10-28",
  "live_day": "2026-11-04",
  "silpo_week": "2026-44",
- "sbm_at": 1793780146.9570348,
+ "sbm_at": 1793780450.5381842,
  "sbm_hist": [
-  [
-   "21:30",
-   32
-  ],
   [
    "21:35",
    31
@@ -42163,6 +42162,10 @@
   ],
   [
    "10:15",
+   39
+  ],
+  [
+   "10:20",
    39
   ]
  ],
