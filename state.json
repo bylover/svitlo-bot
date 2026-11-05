@@ -114,16 +114,6 @@
   "https://www.girlonthenet.com/blog/guest-blog-no-knob-november/"
  ],
  "kino_seen": [
-  "m466272",
-  "m220289",
-  "t71728",
-  "t82428",
-  "t2710",
-  "m626872",
-  "m393624",
-  "m398978",
-  "m438631",
-  "m1058424",
   "m1290418",
   "m11362",
   "t95603",
@@ -713,9 +703,19 @@
   "m1277988",
   "m1026227",
   "m74643",
-  "m348678"
+  "m348678",
+  "m513434",
+  "m477428",
+  "m1423191",
+  "m533991",
+  "m591274",
+  "m988402",
+  "m546121",
+  "m1194963",
+  "m6537",
+  "m64720"
  ],
- "gh_beat": "2026-11-05T19:25:43.858057+02:00",
+ "gh_beat": "2026-11-05T19:30:51.779530+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -741,12 +741,12 @@
   "src": "yasno"
  },
  "emerg_src": {
-  "YASNO": true,
+  "YASNO": false,
   "сайт ДТЕК": true,
-  "канал ЖК «Яскравий»": true
+  "канал ЖК «Яскравий»": false
  },
  "fact": {
-  "last": 2765,
+  "last": 2767,
   "events": [
    [
     "2026-11-04T05:41:22+02:00",
@@ -1670,14 +1670,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "05.11 19:27",
-   "ts": 1793899661,
+   "at": "05.11 19:33",
+   "ts": 1793899988,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "05.11 19:27",
-   "ts": 1793899661,
+   "at": "05.11 19:33",
+   "ts": 1793899988,
    "ok": true,
    "note": ""
   },
@@ -30681,7 +30681,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "e55f414d7388",
+  "gs": "21fa148ff765",
   "quiz_pool.json": "d62dbc5542f3",
   "fact.png": "b0f4e77005ec",
   "sexed.json": "4a4e74343464",
@@ -30797,8 +30797,7 @@
  },
  "force_heavy": [
   "prom.ua",
-  "youtube канали",
-  "пп-страви"
+  "youtube канали"
  ],
  "rc_need": true,
  "games_month": "2026-11",
@@ -40361,12 +40360,8 @@
  "silpo_snap": "2026-11-04",
  "live_day": "",
  "silpo_week": "2026-45",
- "sbm_at": 1793899379.360716,
+ "sbm_at": 1793899883.3704576,
  "sbm_hist": [
-  [
-   "07:05",
-   61
-  ],
   [
    "07:10",
    60
@@ -40938,6 +40933,10 @@
   [
    "19:22",
    43
+  ],
+  [
+   "19:30",
+   44
   ]
  ],
  "sbm_near": {
@@ -43488,6 +43487,12 @@
    {
     "id": "a85a5131e4",
     "text": "🍿 <b>ПІДБІРКА КІНО · КОМЕДІЯ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Kafe-bazhan-2019-11-05\">Кафе бажань</a></b> (2019)\nкомедія, драма · ⏱ 1 год 50 хв\n⭐ IMDb <b>7.4</b> · Ⓜ <b>75</b>\n<i>🎭 Daniel Auteuil, Ґійом Кане, Дорія Тільє</i>\n📝 Життя Віктора, якому вже за шістдесят, обертається з ніг на голову, коли успішний підприємець Антуан пропонує йому новітню розвагу. За допомогою театральної майстерності та історичної реконструкції його компанія…\n▶️ <a href=\"https://youtu.be/Wu7dJP24LYw\">Трейлер</a></blockquote>\n§KN:m595975\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/엑시트-2019-11-05\">엑시트</a></b> (2019)\nбойовик, комедія · ⏱ 1 год 43 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>83%</b>\n<i>🎭 조정석, Ім Ю На, Ко Ду Шім</i>\n📝 At his mother's 70th birthday party, Yong-nam runs into Eui-joo, who rejected him in college. When the city is engulfed in toxic gas from a terrorist attack, the two must find a way to escape using all the techniques…\n▶️ <a href=\"https://youtu.be/Sp_Uex375YM\">Трейлер</a></blockquote>\n§KN:m572164\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Peretin-chasіv-2025-11-05-2\">Перетин часів</a></b> (2025)\nісторичний, драма, комедія · ⏱ 2 год 06 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>96%</b> · Ⓜ <b>64</b>\n<i>🎭 Сюзанн Ліндон, Abraham Wapler, Венсан Макень</i>\n📝 Абсолютно не знайомі між собою тридцять дальніх родичів дізнаються, що успадкували закинутий будинок. Чотирьом з них доручено провести інвентаризацію. Новоспечені кузени вирушають далеко на північ від Парижа. І…\n▶️ <a href=\"https://youtu.be/u6ZHMongsx4\">Трейлер</a></blockquote>\n§KN:m1235304\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Afera-stolіttya-2020-11-05\">Афера століття</a></b> (2020)\nкомедія, трилер, кримінал · ⏱ 1 год 54 хв\n⭐ IMDb <b>7.1</b>\n<i>🎭 Guillermo Francella, Diego Peretti, Luis Luque</i>\n📝 У самому фешенебельному передмісті Буенос-Айреса п’ятеро грабіжників увірвалися в будівлю банку Ріо де Акассусо. Взявши в заручники всіх співробітників і відвідувачів банку, вони почали переговори з поліцією. Поки…\n▶️ <a href=\"https://youtu.be/u3rtVNSC-FU\">Трейлер</a></blockquote>\n§KN:m609242\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Shiva-Baby-2021-11-05\">Shiva Baby</a></b> (2021)\nкомедія, драма · ⏱ 1 год 18 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>96%</b> · Ⓜ <b>79</b>\n<i>🎭 Рейчел Сеннотт, Моллі Ґордон, Поллі Дрейпер</i>\n📝 Студентка коледжу Даніель мусить замітати сліди, коли несподівано зустрічає свого цукрового татуся на шиві, де також присутні її батьки, колишня дівчина та друзі сім'ї.\n▶️ <a href=\"https://youtu.be/1ribuR9hVv4\">Трейлер</a></blockquote>\n§KN:m664300\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Tok-Tok-2017-11-05\">Ток Ток</a></b> (2017)\nкомедія · ⏱ 1 год 36 хв\n⭐ IMDb <b>6.8</b>\n<i>🎭 Александра Хіменес, Paco León, Россі де Пальма</i>\n📝 Стрічка розповідає про пригоди та невдачі шістьох пацієнтів з обсесивно-компульсивним розладом, які прийшли на прийом до психіатра в один і той самий час.\n▶️ <a href=\"https://youtu.be/gnhjPLAkF4Q\">Трейлер</a></blockquote>\n§KN:m437033\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Karamelo-2025-11-05\">Карамело</a></b> (2025)\nкомедія, драма · ⏱ 1 год 40 хв\n⭐ IMDb <b>7.1</b>\n<i>🎭 Rafael Vitti, Amendoim, Kelzy Ecard</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1277988-caramelo/watch?locale=UA\">Netflix · за підпискою</a>\n📝 Душевна драма про те, як після страшного діагнозу талановитий шеф-кухар знаходить втіху й радість у компанії собаки, що стає йому щирим другом.\n▶️ <a href=\"https://youtu.be/epiLkoJ4dAk\">Трейлер</a></blockquote>\n§KN:m1277988\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/Cè-ancora-domani-2023-11-05\">C'è ancora domani</a></b> (2023)\nісторичний, комедія, драма · ⏱ 1 год 58 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>89%</b> · Ⓜ <b>59</b>\n<i>🎭 Paola Cortellesi, Valerio Mastandrea, Romana Maggiora Vergano</i>\n📝 In postwar Rome, a working-class woman dreams of a better future for herself and her daughter while facing abuse at the hands of her domineering husband. When a mysterious letter arrives, she discovers the courage to…\n▶️ <a href=\"https://youtu.be/Z5hAvdF6xQA\">Трейлер</a></blockquote>\n§KN:m1026227\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Artist-2011-11-05\">Артист</a></b> (2011)\nдрама, комедія, мелодрама · ⏱ 1 год 40 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>95%</b> · Ⓜ <b>89</b>\n<i>🎭 Жан Дюжарден, Береніс Бежо, Джон Ґудмен</i>\n📝 Голлівуд, 1927 рік. Німе кіно відходить у минуле, поступаючись місцем звуку. Але не всі готові примиритися з революцією у кіноіндустрії. Відомий актор Джордж Валентайн і чути не хоче про мікрофони на знімальному…\n▶️ <a href=\"https://youtu.be/qjCQmpNkBI4\">Трейлер</a></blockquote>\n§KN:m74643\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Lyudina-na-іmya-Uve-2015-11-05\">Людина на ім’я Уве</a></b> (2015)\nкомедія, драма · ⏱ 1 год 56 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>91%</b> · Ⓜ <b>70</b>\n<i>🎭 Rolf Lassgård, Bahar Pars, Філіп Берґ</i>\n📝 Хто ж він такий, цей самий Уве? Літній в’їдливий буркотун, дістає сусідів вічними причіпками. Він впадає в лють, побачивши покинуте не там сміття або неправильно припарковану машину. І криє на чому світ стоїть…\n▶️ <a href=\"https://youtu.be/Mls2rlu1w_g\">Трейлер</a></blockquote>\n§KN:m348678"
+   }
+  ],
+  "horror": [
+   {
+    "id": "5b8abcb14e",
+    "text": "🍿 <b>ПІДБІРКА КІНО · ЖАХИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/カメラを止めるな-2017-11-05\">カメラを止めるな！</a></b> (2017)\nкомедія, жахи, драма · ⏱ 1 год 36 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>100%</b> · Ⓜ <b>86</b>\n<i>🎭 Такаюкі Хамацу, 秋山ゆずき, 長屋和彰</i>\n📝 Real zombies arrive and terrorize the crew of a zombie film being shot in an abandoned warehouse, said to be the site of military experiments on humans.\n▶️ <a href=\"https://youtu.be/Du2XfUDfjN0\">Трейлер</a></blockquote>\n§KN:m513434\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Pofarbovane-ptashenya-2019-11-05\">Пофарбоване пташеня</a></b> (2019)\nвійськовий, драма, жахи · ⏱ 2 год 49 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>81%</b> · Ⓜ <b>72</b>\n<i>🎭 Petr Kotlár, Nina Šunevič, Алла Соколова</i>\n📝 Єврейська пара, намагаючись захистити свою дитину від геноциду, відправляє сина до родичів в сільську місцевість десь у Східній Європі. Хлопчик змушений вирушити у подорож диким і ворожим світом, який керується…\n▶️ <a href=\"https://youtu.be/1yvgwFULO4w\">Трейлер</a></blockquote>\n§KN:m477428\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Resident-Evil-Oselya-Zla-2026-11-05-5\">Resident Evil: Оселя Зла</a></b> (2026)\nжахи, фантастика, пригоди · ⏱ 1 год 34 хв\n⭐ TMDB <b>7.5</b> · 🍅 <b>96%</b>\n<i>🎭 Остін Абрамс, Пол Волтер Гаузер, Калі Реїс</i>\n📝 Кур'єр отримує завдання доставити посилку до віддаленої лікарні. Невдовзі він опиняється в самому центрі спалаху інфекції та змушений пробиватися крізь орди мутованих істот, щоб вижити.\n▶️ <a href=\"https://youtu.be/0GAZKoD5MBE\">Трейлер</a></blockquote>\n§KN:m1423191\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/सतर-2018-11-05\">स्त्री</a></b> (2018)\nжахи, комедія · ⏱ 2 год 08 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>75%</b>\n<i>🎭 Rajkummar Rao, Shraddha Kapoor, Pankaj Tripathi</i>\n📝 Set in the town of Chanderi, Stree is based on the urban legend of Nale Ba that went viral in Karnataka in the 1990s, and features Shraddha Kapoor and Rajkummar Rao in pivotal roles.\n▶️ <a href=\"https://youtu.be/gzeaGcLLl_A\">Трейлер</a></blockquote>\n§KN:m533991\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Vulicya-strahu-CHastina-druga-1978-2021-11-05\">Вулиця страху. Частина друга: 1978</a></b> (2021)\nжахи, детектив, драма · ⏱ 1 год 49 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>88%</b> · Ⓜ <b>61</b>\n<i>🎭 Сейді Сінк, Емілі Радд, Ryan Simpkins</i>\n📺 <a href=\"https://www.themoviedb.org/movie/591274-fear-street-1978/watch?locale=UA\">Netflix · за підпискою</a>\n📝 У проклятому містечку Шейдісайд орудує серійний вбивця, і безтурботні літні канікули в таборі Найтвінґ перетворюються в жахливу боротьбу за виживання.\n▶️ <a href=\"https://youtu.be/H2AulFPiwWE\">Трейлер</a></blockquote>\n§KN:m591274\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Vampire-humaniste-cherche-suicidaire-consentant-2023-11-05-2\">Vampire humaniste cherche suicidaire consentant</a></b> (2023)\nкомедія, фентезі, жахи · ⏱ 1 год 31 хв\n⭐ IMDb <b>7.0</b> · 🍅 <b>90%</b> · Ⓜ <b>70</b>\n<i>🎭 Sara Montpetit, Félix-Antoine Bénard, Steve Laplante</i>\n📝 Sasha is a young vampire with a serious problem: she's too sensitive to kill. When her exasperated parents cut off her blood supply, Sasha's life is in jeopardy. Luckily, she meets Paul, a lonely teenager with…\n▶️ <a href=\"https://youtu.be/ksWqIui9jHo\">Трейлер</a></blockquote>\n§KN:m988402\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Tіkaj-2020-11-05\">Тікай</a></b> (2020)\nтрилер, жахи, драма · ⏱ 1 год 30 хв\n⭐ IMDb <b>6.7</b> · 🍅 <b>88%</b> · Ⓜ <b>67</b>\n<i>🎭 Сара Полсон, Kiera Allen, Pat Healy</i>\n📝 Дайан Шерман одна виховує доньку-підлітка Хлою. Дівчинка прикута до інвалідного крісла, жменями приймає пігулки і не спілкується з однолітками, адже вона знаходиться на домашньому навчанні. Згодом Хлоя починає…\n▶️ <a href=\"https://youtu.be/TWtzRzXBeIM\">Трейлер</a></blockquote>\n§KN:m546121\n§§\n<blockquote>🎬 <b>8. <a href=\"https://telegra.ph/SHum-2025-11-05\">Шум</a></b> (2025)\nжахи, трилер · ⏱ 1 год 35 хв\n⭐ TMDB <b>6.7</b> · 🍅 <b>67%</b>\n<i>🎭 이선빈, Кім Мін Сок, 전익령</i>\n📝 Жінка з вадами слуху переслідується загадковими звуками, пов’язаними зі зникненням її сестри та появою зловісного духа. Це приводить до моторошної таємниці й веде до розкриття загадкової сутності.\n▶️ <a href=\"https://youtu.be/jEsfxmaBOv8\">Трейлер</a></blockquote>\n§KN:m1194963\n§§\n<blockquote>🎬 <b>9. <a href=\"https://telegra.ph/Pritulok-2007-11-05\">Притулок</a></b> (2007)\nжахи, драма, трилер · ⏱ 1 год 45 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>87%</b> · Ⓜ <b>74</b>\n<i>🎭 Belén Rueda, Fernando Cayo, Roger Príncep</i>\n📝 A woman brings her family back to her childhood home, which used to be an orphanage, intent on reopening it. Before long, her son starts to communicate with a new invisible friend.\n▶️ <a href=\"https://youtu.be/t-OlnNqnddQ\">Трейлер</a></blockquote>\n§KN:m6537\n§§\n<blockquote>🎬 <b>10. <a href=\"https://telegra.ph/Ukrittya-2011-11-05\">Укриття</a></b> (2011)\nтрилер, драма, жахи · ⏱ 2 год 00 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>92%</b> · Ⓜ <b>85</b>\n<i>🎭 Майкл Шеннон, Джессіка Честейн, Шей Віґем</i>\n📝 Кертіс живе в невеликому містечку штату Огайо з дружиною Самантою і шестирічною позбавленою слуху донькою Ханною. Незважаючи на всі труднощі, Кертіс і Саманта дуже кохають одне одного, і їх сім'я щаслива.  Одного дня…\n▶️ <a href=\"https://youtu.be/hUraDx3oFVg\">Трейлер</a></blockquote>\n§KN:m64720"
    }
   ]
  },
