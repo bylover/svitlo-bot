@@ -17,6 +17,17 @@ from pathlib import Path
 import check  # спільні функції основного бота (надсилання, підписники тощо)
 from check import TZ, CHAT_IDS, WIFE_ID, esc, send, err_text
 
+ADDR_LOG: list = []                                   # 🧪 рядки логу цього запуску — для кнопки «Адреси: перевірка й логи» в боті
+_print_ = print
+
+
+def print(*a, **k):                                   # noqa: A001 — дублюємо лог у бота
+    _print_(*a, **k)
+    try:
+        ADDR_LOG.append(" ".join(str(x) for x in a)[:400])
+    except Exception:
+        pass
+
 STREET = (os.environ.get("ADDR_STREET") or "").strip()      # з секрету ADDR_STREET
 HOUSE = (os.environ.get("ADDR_HOUSE") or "").strip()        # з секрету ADDR_HOUSE
 STATE = Path("addr_state.json")
@@ -264,10 +275,13 @@ def main() -> None:
 
 STREETS_JS = """() => {                                       // список вулиць зі сторінки ДТЕК (для автопідказки)
   const seen = new Set(), out = [];
-  const scan = (o, depth) => { if (!o || depth > 3) return;
+  const add = (s) => { if (typeof s === 'string' && s.length > 2 && !seen.has(s)) { seen.add(s); out.push(s); } };
+  const scan = (o, depth) => { if (!o || depth > 4) return;
     for (const k of Object.keys(o)) { let v; try { v = o[k]; } catch (e) { continue; }
-      if (Array.isArray(v) && v.length > 50 && typeof v[0] === 'string') { for (const s of v) if (!seen.has(s)) { seen.add(s); out.push(s); } }
-      else if (v && typeof v === 'object' && !Array.isArray(v) && depth < 2) scan(v, depth + 1); } };
+      if (Array.isArray(v) && v.length > 50) { for (const s of v) add(typeof s === 'string' ? s : (s && (s.name || s.street || s.title))); }
+      else if (v && typeof v === 'object' && !Array.isArray(v)) { const ks = Object.keys(v);
+        if (ks.length > 50 && ks.filter((x) => /вул|просп|бульв|пров|пл[.]|шосе|узвіз|набер/i.test(x)).length > 20) ks.forEach(add);   // вулиці як ключі обʼєкта
+        else if (depth < 3) scan(v, depth + 1); } } };
   scan(window.DisconSchedule || {}, 0);
   document.querySelectorAll('datalist option, #street option, [name=street] option').forEach(o => { const s = o.value || o.textContent; if (s && !seen.has(s)) { seen.add(s); out.push(s); } });
   return out;
@@ -493,6 +507,32 @@ def subs_address_check(page) -> None:
     print(f"Аварії за адресами підписників: перевірено {len(batch)} з {len(cands)}")
 
 
+OSM_TYPES = [("вулиця", "вул."), ("проспект", "просп."), ("бульвар", "бульв."), ("провулок", "пров."), ("площа", "пл."), ("набережна", "наб."), ("шосе", "шосе"), ("узвіз", "узвіз")]
+
+
+def osm_streets() -> list:
+    """Запасний список вулиць Києва з OpenStreetMap (Overpass), у вигляді як на сайті ДТЕК: «вул. …», «просп. …»."""
+    q = '[out:json][timeout:90];area["name"="Київ"]["admin_level"="4"]->.a;way(area.a)["highway"]["name"];out tags;'
+    try:
+        req = check.urllib.request.Request("https://overpass-api.de/api/interpreter", data=check.urllib.parse.urlencode({"data": q}).encode(), headers={"User-Agent": "svitlo-bot"})
+        js = json.loads(check.urllib.request.urlopen(req, timeout=120).read().decode("utf-8"))
+    except Exception as e:
+        print(f"Вулиці OSM: {err_text(e)[:60]}"); return []
+    out = set()
+    for el in js.get("elements") or []:
+        n = str((el.get("tags") or {}).get("name") or "").strip()
+        if not n or re.search(r"[a-zA-Z]", n):
+            continue
+        low = n.lower()
+        for full, short in OSM_TYPES:
+            if low.startswith(full + " "):
+                n = f"{short} {n[len(full) + 1:]}"; break
+            if low.endswith(" " + full):
+                n = f"{short} {n[: -len(full) - 1]}"; break
+        out.add(n)
+    return sorted(out)
+
+
 def lookup_requests(page) -> None:
     """Підписники ввели адресу — шукаємо їхню чергу на сайті ДТЕК і повідомляємо Worker."""
     if not check.WORKER_MODE:
@@ -512,7 +552,15 @@ def lookup_requests(page) -> None:
             check.http_json(f"{check.SYNC_URL}/filepush?key={check.urllib.parse.quote(check.SYNC_KEY)}&name=streets_kyiv.json", sorted(set(streets)))
         elif not streets:                             # 🧪 що є на сторінці, якщо список не знайшовся
             keys_ = page.evaluate("() => { const o = window.DisconSchedule || {}; return Object.keys(o).map(k => k + ':' + (Array.isArray(o[k]) ? 'arr' + o[k].length : typeof o[k])).slice(0, 30); }")
-            print(f"Адреси: список вулиць не знайдено · DisconSchedule: {keys_}")
+            print(f"Адреси: список вулиць не знайдено на сторінці ДТЕК · DisconSchedule: {keys_}")
+            have = check.http_json(f"{check.SYNC_URL}/fileget?key={check.urllib.parse.quote(check.SYNC_KEY)}&name=streets_kyiv.json") if check.WORKER_MODE else []
+            if not isinstance(have, list) or len(have) < 500:   # у боті ще немає списку — беремо з OpenStreetMap (раз, далі вже є)
+                osm = osm_streets()
+                if osm and check.WORKER_MODE:
+                    check.http_json(f"{check.SYNC_URL}/filepush?key={check.urllib.parse.quote(check.SYNC_KEY)}&name=streets_kyiv.json", osm)
+                print(f"Адреси: список вулиць з OpenStreetMap — {len(osm)}")
+            if isinstance(have, list) and len(have) >= 500:
+                streets = have                        # для зіставлення назв використовуємо вже наявний список
     except Exception as e:
         print(f"Список вулиць → Cloudflare: {err_text(e)[:60]}")
     for cid, r in list(reqs.items())[:5]:
@@ -531,7 +579,7 @@ def lookup_requests(page) -> None:
             except Exception as e:
                 print(f"setgroup: {err_text(e)}")
             continue
-        for st in (cands or addr_variants(street))[:24]:
+        for st in list(dict.fromkeys((cands or []) + (addr_variants(street) if not cands or exact else [])))[:30]:   # вулиця зі списку (OSM) теж перевіряється варіантами написання
             res = page.evaluate(GETHOME_JS, st)
             try:
                 data = json.loads(res.get("text") or "")
@@ -598,5 +646,22 @@ def voe_probe() -> None:
     p.write_text(json.dumps(found, ensure_ascii=False, indent=1), "utf-8")
 
 
+def push_log(t0: datetime) -> None:
+    if not check.WORKER_MODE:
+        return
+    try:
+        check.http_json(f"{check.SYNC_URL}/filepush?key={check.urllib.parse.quote(check.SYNC_KEY)}&name=addr_log.json",
+                        {"at": t0.strftime("%d.%m %H:%M"), "dur": int((datetime.now(TZ) - t0).total_seconds()), "lines": ADDR_LOG[-40:]})
+    except Exception as e:
+        _print_(f"Лог адрес → бот: {err_text(e)[:60]}")
+
+
 if __name__ == "__main__":
-    main()                                            # проба «Вінницяобленерго» вимкнена: сайт закритий захистом Cloudflare
+    t0_ = datetime.now(TZ)
+    try:
+        main()
+    except Exception as e_:
+        print(f"❌ Помилка запуску: {type(e_).__name__}: {err_text(e_)[:200]}")
+        raise
+    finally:
+        push_log(t0_)                                            # проба «Вінницяобленерго» вимкнена: сайт закритий захистом Cloudflare
