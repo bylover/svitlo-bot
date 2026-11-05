@@ -211,10 +211,11 @@ def main() -> None:
         sys.exit(0)                                  # не знайшли будинок — стан не змінюємо
     active = bool(info["reason"] or info["start"])
     print(f"Власна адреса: {'НЕМАЄ світла' if active else 'ДТЕК не показує відключення'} · {info}")
-    grp_ = next((str(g)[3:] for g in (info.get("groups") or []) if str(g).startswith("GPV")), None)
+    grps_ = sorted({str(g)[3:] for g in (info.get("groups") or []) if str(g).startswith("GPV")})
+    grp_ = grps_[0] if grps_ else None
     if grp_ and check.WORKER_MODE:                    # 🔄 черга за адресою на сайті ДТЕК — бот сам перемкне графік, якщо змінилась
         try:
-            check.http_json(f"{check.SYNC_URL}/famgroup?key={check.urllib.parse.quote(check.SYNC_KEY)}", {"group": grp_, "addr": f"{STREET}, {HOUSE}"})
+            check.http_json(f"{check.SYNC_URL}/famgroup?key={check.urllib.parse.quote(check.SYNC_KEY)}", {"group": grp_, "groups": grps_, "addr": f"{STREET}, {HOUSE}"})
         except Exception as e:
             print(f"Черга основних → бот: {err_text(e)[:60]}")
 
@@ -445,8 +446,15 @@ def subs_address_check(page) -> None:
         h = houses.get(house) or next((v for k, v in houses.items() if hkey(k).replace("/", "") == hkey(house).replace("/", "")), None)
         if h is None:
             continue
-        grp_ = next((str(g)[3:] for g in (h.get("sub_type_reason") or []) if str(g).startswith("GPV")), None)
-        if grp_ and grp_ != str(prof[cid].get("group") or ""):   # 🔄 черга підписника за адресою змінилась
+        grps_ = sorted({str(g)[3:] for g in (h.get("sub_type_reason") or []) if str(g).startswith("GPV")})
+        grp_ = grps_[0] if len(grps_) == 1 else None
+        cur_ = str(prof[cid].get("group") or "")
+        if len(grps_) > 1 and cur_ not in grps_ and set(grps_) != set(prof[cid].get("dgroups") or []):   # кілька ліній, вашої серед них немає — питаємо
+            try:
+                check.http_json(f"{check.SYNC_URL}/setgroup?key={check.urllib.parse.quote(check.SYNC_KEY)}", {"cid": cid, "street": street, "house": house, "groups": grps_, "auto": True})
+            except Exception as e:
+                print(f"Черга підписника {cid}: {err_text(e)[:50]}")
+        if grp_ and grp_ != cur_:                     # 🔄 черга підписника за адресою змінилась (одна лінія)
             try:
                 check.http_json(f"{check.SYNC_URL}/setgroup?key={check.urllib.parse.quote(check.SYNC_KEY)}",
                                 {"cid": cid, "group": grp_, "street": street, "house": house, "auto": True, "was": prof[cid].get("group") or ""})
@@ -529,8 +537,10 @@ def lookup_requests(page) -> None:
                 found = {"street": st, "houses": sorted(houses, key=lambda k: (re.sub(r"\D.*", "", str(k)).zfill(5), str(k)))[:60], "house": house}
                 break
             if h is not None:
-                grp = next((g[3:] for g in (h.get("sub_type_reason") or []) if str(g).startswith("GPV")), None)
-                found = {"street": st, "house": house, "group": grp}
+                grps = sorted({str(g)[3:] for g in (h.get("sub_type_reason") or []) if str(g).startswith("GPV")})
+                found = {"street": st, "house": house, "group": grps[0] if len(grps) == 1 else None, "groups": grps} if grps else {"street": st, "house": house, "group": None}
+                if len(grps) > 1:
+                    found.pop("group")                # кілька ліній (черг) у будинку — хай людина обере свою
                 break
         print(f"Адреса підписника: {street}, {re.sub(r'\d', '•', house)} → {(found or {}).get('group') or ('список будинків' if (found or {}).get('houses') else 'не знайдено')}"
               f" · кандидати зі списку ДТЕК: {cands[:3]} · спроби: {tried[:8]}")
