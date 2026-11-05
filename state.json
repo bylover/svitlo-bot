@@ -2,9 +2,9 @@
  "to_delete": [],
  "group": "4.1",
  "fp": {
-  "2026-11-04": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 1020, \"start\": 600, \"type\": \"Definite\"}, {\"end\": 1440, \"start\": 1260, \"type\": \"Definite\"}]}",
   "2026-11-05": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 150, \"start\": 0, \"type\": \"Definite\"}, {\"end\": 840, \"start\": 450, \"type\": \"Definite\"}, {\"end\": 1440, \"start\": 990, \"type\": \"Definite\"}]}",
-  "2026-11-06": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 690, \"start\": 300, \"type\": \"Definite\"}, {\"end\": 1320, \"start\": 840, \"type\": \"Definite\"}]}"
+  "2026-11-06": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 690, \"start\": 300, \"type\": \"Definite\"}, {\"end\": 1320, \"start\": 840, \"type\": \"Definite\"}]}",
+  "2026-11-07": "{\"s\": \"WaitingForSchedule\", \"slots\": []}"
  },
  "reminded": [],
  "taste": {
@@ -715,7 +715,7 @@
   "t126308",
   "t9027"
  ],
- "gh_beat": "2026-11-05T23:55:43.369556+02:00",
+ "gh_beat": "2026-11-06T00:00:51.132328+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -830,24 +830,17 @@
    ]
   ]
  },
- "fact_png": "2026-11-05 23|20|2026-11-05T17:11:51+02:00",
+ "fact_png": "2026-11-06 00|20|2026-11-05T17:11:51+02:00",
  "fact_day": {
   "total": "14 год 56 хв",
   "list": [
-   "23:00–02:13 · 3 год 12 хв",
+   "00:00–02:13 · 2 год 12 хв",
    "08:46–14:41 · 5 год 55 хв",
-   "17:11–23:00 · 5 год 49 хв"
+   "17:11–00:00 · 6 год 49 хв"
   ]
  },
- "mo_sent": {
-  "160603556": "2026-11-05",
-  "368433217": "2026-11-05",
-  "936688574": "2026-11-05",
-  "8283670046": "2026-11-05",
-  "396425365": "2026-11-05"
- },
+ "mo_sent": {},
  "log": [
-  "23.10 21:10 Завтра 2026-10-24 ScheduleApplies: 07:30–11:00, 16:30–20:00",
   "24.10 00:00 Завтра 2026-10-25 WaitingForSchedule: без відключень",
   "24.10 20:54 Завтра 2026-10-25 ScheduleApplies: 09:00–12:30, 22:00–24:00",
   "25.10 00:00 Завтра 2026-10-26 WaitingForSchedule: без відключень",
@@ -886,15 +879,11 @@
   "04.11 18:45 Сьогодні 2026-11-04 ScheduleApplies: 10:00–17:00, 21:00–24:00",
   "04.11 21:50 Завтра 2026-11-05 ScheduleApplies: 00:00–02:30, 07:30–14:00, 16:30–24:00",
   "05.11 00:00 Завтра 2026-11-06 WaitingForSchedule: без відключень",
-  "05.11 21:20 Завтра 2026-11-06 ScheduleApplies: 05:00–11:30, 14:00–22:00"
+  "05.11 21:20 Завтра 2026-11-06 ScheduleApplies: 05:00–11:30, 14:00–22:00",
+  "06.11 00:00 Завтра 2026-11-07 WaitingForSchedule: без відключень"
  ],
  "week_fp": "{\"1\": [], \"2\": [], \"3\": [], \"4\": [], \"5\": [], \"6\": [], \"7\": []}",
- "we_sent": {
-  "368433217": "2026-11-05",
-  "590261825": "2026-11-05",
-  "8283670046": "2026-11-05",
-  "160603556": "2026-11-05"
- },
+ "we_sent": {},
  "tgph": "8d020e91ef2b6894855e405f8973a51da385fca8e1cfd990c9e41c2a32c2",
  "yt_try": "2026-11-05 18",
  "yt_seen": [
@@ -949,23 +938,230 @@
   "BRZvWeuntiA",
   "uzeFnu9vU8Y"
  ],
- "content_day": "2026-11-05",
+ "content_day": "2026-11-06",
  "content_pool": [
+  {
+   "src": "Women's Health",
+   "kind": "article",
+   "title": "10 Signs You’re Falling Out of Love With Your Partner—And What to do Next, According to Relationship Experts",
+   "link": "https://www.womenshealthmag.com/relationships/a74346728/falling-out-of-love-signs/",
+   "age": 0,
+   "comments": 0,
+   "text": "Here's how to tell if you should call it quits or save your 'ship."
+  },
+  {
+   "src": "Gottman Institute",
+   "kind": "article",
+   "title": "The Loneliness of Wanting Your Partner",
+   "link": "https://www.gottman.com/blog/loneliness-wanting-your-partner/",
+   "age": 0,
+   "comments": 0,
+   "text": "Why partners can miss sex and still pull away from each other—and how to begin talking about it. The post The Loneliness of Wanting Your Partner appeared first on The Gottman Institute ."
+  },
+  {
+   "src": "Dildo or Dildon't",
+   "kind": "review",
+   "title": "How to Use a Cock Ring With a Partner Who Has a Vulva",
+   "link": "https://www.dildoordildont.com/how-to-use-a-cock-ring-with-a-partner-who-has-a-vulva/?utm_source=rss&utm_medium=rss&utm_campaign=how-to-use-a-cock-ring-with-a-partner-who-has-a-vulva",
+   "age": 0,
+   "comments": 0,
+   "text": "The ring is for both of you Read almost any cock ring guide and it’s all about the wearer: harder, longer, more sensitive. Cool. But if you’re using a vibrating ring and the person on the other end has a vulva, a cock ring can do just as much for them, sometimes more. The right ring puts vibration exactly where most vulva-owners want it, right on the clit, and it does it hands-free while you’re both busy. This guide is written for both of you. The couple, not just the person wearing it. It’ll cover which rings actually help the partner with the vulva, the positions that line everything up, and how to talk about it so the ring is a team player instead of a solo act. Pick a ring with the partner in mind Not every ring does anything for the person receiving. Here’s how the main types compare from the vulva-owner’s side. Ring type What the partner with the vulva feels Best for Plain stretchy"
+  },
+  {
+   "src": "Dildo or Dildon't",
+   "kind": "review",
+   "title": "An Ode To Abundance: A Love Letter to Ample Hotties",
+   "link": "https://www.dildoordildont.com/an-ode-to-abundance-a-love-letter-to-ample-hotties/?utm_source=rss&utm_medium=rss&utm_campaign=an-ode-to-abundance-a-love-letter-to-ample-hotties",
+   "age": 0,
+   "comments": 0,
+   "text": "Hey there, beautiful soul! Where do I even begin? You embody everything beautiful, radiant, and life-worth-living. In a world that often tries to confine beauty to narrow standards, you stand tall and proud, defying expectations and blazing your magnificent trail. Oh, how you captivate and inspire! Your curves are like gentle waves, gracefully shaping the landscape of your being. With each curve, you tell a story of resilience, of strength, of unapologetic self-love. You are a masterpiece, a living testament to the beauty of diversity. So consider this my love letter to you, and to plus size body positivity in all its glory. Take up space Sway and shimmy, strut and sashay, to fill the room with your infectious energy. Don’t shrink yourself to fit into someone else’s mold; we need you to expand, to thrive, to take up space with pride. Your confidence should be like a beacon, guiding other"
+  },
+  {
+   "src": "Girl on the Net",
+   "kind": "experience",
+   "title": "2026 Christmas cards are here! Want one? Read on…",
+   "link": "https://www.girlonthenet.com/blog/2026-christmas-cards-are-here-want-one-read-on/",
+   "age": 0,
+   "comments": 0,
+   "text": "John Lewis have released their ad, Tesco is full of chocolate advent calendars, and Russell Brand is off to jail. It must be Christmas! Time to show you all the gorgeous – and subtly smutty – card that Stuart has drawn this year, and explain how you can get one. As regular readers will know, […]"
+  },
+  {
+   "src": "Mashable",
+   "kind": "review",
+   "title": "Its cuffing season — here are the best dating apps for serious relationships",
+   "link": "https://mashable.com/roundup/best-dating-apps-for-serious-relationships",
+   "age": 0,
+   "comments": 0,
+   "text": "Finding love isn't for the weak. Dating app exhaustion is realer than ever, and while people want to branch out and meet in person, they're finding it difficult. One reason is that dating apps are a legitimate way to find a partner, not just a short-term one. Nearly 44 percent of adults say they use dating apps to find a long-term partner rather than just casual dating or hookups , according to the Pew Research Center. One in 10 partnered adults met their current partner through a dating app, and for younger adults and LGBTQ people, that number rises. SEE ALSO: The 10 best hookup apps of 2026: I swiped until my thumb hurt Dating apps aren't going away, despite fatigue. And it is possible to make them work for you if you want to find your special someone. Are dating apps worth it? Even using the \"right\" app for you may still bring moments of uncertainty and frustration (you're dating, aft"
+  },
+  {
+   "src": "Mashable",
+   "kind": "review",
+   "title": "Amazon ditches GrubHub for Uber Eats, effective immediately",
+   "link": "https://mashable.com/tech/amazon-ditches-grubhub-for-uber-eats-partnership",
+   "age": 0,
+   "comments": 0,
+   "text": "Goodbye, GrubHub. Hello, Uber Eats. That's what Amazon is saying in a Thursday announcement about its new partnership with Uber's popular food delivery service. Amazon Prime subscribers will now be able to order from their favorite restaurants directly through Amazon's website thanks to a new deal between Uber Eats and Amazon. There are additional bonuses for Amazon Prime users as well. For one, Amazon Prime subscribers won't even need an Uber Eats account in order to use the service, as the whole process will take place on Amazon's website. If you already have an Uber Eats account, that part of the partnership might not seem all that enticing. However, maybe this part will: Amazon Prime subscribers will also pay $0 on delivery fees for all orders of $25 or more as part of the partnership. Amazon and Uber will also be providing Prime members with a limited-time offer to celebrate the par"
+  },
+  {
+   "src": "Mashable",
+   "kind": "review",
+   "title": "The 10 best hookup apps of 2026: I swiped until my thumb hurt",
+   "link": "https://mashable.com/roundup/best-hookup-apps-2026",
+   "age": 0,
+   "comments": 0,
+   "text": "In the age of on-demand everything, it’s no surprise that we can get \"dates\" (and I use that term loosely) with the tap of a button. Thanks to classic hookup apps like Tinder and newcomers like Pure , finding a sexy new friend can be as straightforward as ordering a pizza. As for the quality? That’s about the same as your pizza — hit or miss, depending on the time of day, where you're located, and how hungry you are. SEE ALSO: 6 AdultFriendFinder features other hookup sites lack Fortunately, you’ve got your resident dating app expert here (though I prefer modern-day Carrie Bradshaw) to guide you to the promised land, aka the best hookup apps. I’ve spent the past four years (yes, years) testing dozens of the top dating apps for Mashable, from discreet sexting apps to dating sites for serious relationships . My goal is simple: to find the best apps for every kind of dater, including the on"
+  },
+  {
+   "src": "Medium",
+   "kind": "article",
+   "title": "Life Without Sex: How Badly It Affects Your Body In Later Years",
+   "link": "https://medium.com/illumination/life-without-sex-how-badly-it-affects-your-body-in-later-years-c1048d540d81?source=rss------sexual_health-5",
+   "age": 0,
+   "comments": 0,
+   "text": "The sexless body. Continue reading on ILLUMINATION »"
+  },
+  {
+   "src": "Medium",
+   "kind": "article",
+   "title": "The Table Cowgirl Sex Position #28 — Complete Guide",
+   "link": "https://medium.com/sage-kamasutra/the-table-cowgirl-sex-position-28-complete-guide-80a5a2983533?source=rss------sexual_health-5",
+   "age": 0,
+   "comments": 0,
+   "text": "An elevated dining table woman-on-top pose designed for responsive pelvic grinding, effortless riding rhythm, and passionate face-to-face… Continue reading on Sage Kamasutra »"
+  },
+  {
+   "src": "Medium",
+   "kind": "article",
+   "title": "Can Ayurveda Really Help With Erectile Dysfunction? Here’s What You Should Know",
+   "link": "https://medium.com/@care_15086/can-ayurveda-really-help-with-erectile-dysfunction-heres-what-you-should-know-3fabeab80121?source=rss------sexual_health-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Ashwagandha, Shilajit, and traditional Ayurvedic treatments are often recommended for men’s sexual health. But how much can they actually… Continue reading on Medium »"
+  },
+  {
+   "src": "GQ",
+   "kind": "article",
+   "title": "What to Wear to an Interview for Every Industry and Budget",
+   "link": "https://www.gq.com/story/what-to-wear-to-a-job-interview-explainer",
+   "age": 0,
+   "comments": 0,
+   "text": "Make sure your suit fits, don’t dress too sexy, and other essential advice from professionals in law, tech, finance, and marketing."
+  },
   {
    "src": "Medium",
    "kind": "experience",
-   "title": "AI Porn Isn’t Stealing Your Partner. It Might Be Rewriting Your Expectations.",
-   "link": "https://sex-and-security.medium.com/ai-porn-isnt-stealing-your-partner-it-might-be-rewriting-your-expectations-51643c35e71c?source=rss------sexuality-5",
-   "age": -1,
+   "title": "To sleep with them, or sleep on it?",
+   "link": "https://medium.com/hello-love/to-sleep-with-them-or-sleep-on-it-51cead14dd73?source=rss------sex-5",
+   "age": 0,
    "comments": 0,
-   "text": "Your partner has a real body, real feelings, real needs and, occasionally, a bloody headache. Your AI fantasy has none of those… Continue reading on Medium »"
+   "text": "when chemistry clouds the question of what we truly desire Continue reading on Hello, Love »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "Sex is How I Feel Connection",
+   "link": "https://medium.com/beloved/sex-is-how-i-feel-connection-d295dc225519?source=rss------sex-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Said every man ever Continue reading on Beloved »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "Is Anal Sex real sex ?",
+   "link": "https://tajweeez.medium.com/is-anal-sex-real-sex-a464e9fb8d7e?source=rss------sex-5",
+   "age": 0,
+   "comments": 0,
+   "text": "In biology, the word sex has a very precise and non-negotiable meaning. It is not defined by pleasure, consent, orientation, or social… Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "Soul Ties, Sexual Energy & The Spiritual Price of Giving Yourself Away",
+   "link": "https://medium.com/mystic-circle-magazine/soul-ties-sexual-energy-the-spiritual-price-of-giving-yourself-away-234b1aa67cd4?source=rss------intimacy-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Why saving yourself isn’t about shame; it’s about power, protection, and spiritual sovereignty Continue reading on Mystic Circle Magazine »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "I Don’t Always Want to Be Conscious. Sometimes I Just Want to Have Sex",
+   "link": "https://medium.com/@SensualTouchJournal/i-dont-always-want-to-be-conscious-sometimes-i-just-want-to-have-sex-3c2a28f273b0?source=rss------intimacy-5",
+   "age": 0,
+   "comments": 0,
+   "text": "On my wild nature, private desires, and the woman who doesn’t always want to be a priestess of tantra Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "I Turned My Marriage Into a Balance Sheet",
+   "link": "https://medium.com/@yetta-lee/i-turned-my-marriage-into-a-balance-sheet-40214de3c29d?source=rss------intimacy-5",
+   "age": 0,
+   "comments": 0,
+   "text": "On performing gratitude, auditing hugs, and the quiet identity collapse of being the woman who keeps the receipts Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "Why Does One Partner Have a Higher Desire Than the Other?",
+   "link": "https://medium.com/@ayazalipsychologist/why-does-one-partner-have-a-higher-desire-than-the-other-761a2430aed1?source=rss------intimacy-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Why “not tonight” feels like rejection, and what’s really going on behind it. Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "The Three Things I Mistook for Love — And the One That Required Me to Be Known",
+   "link": "https://medium.com/@sophia-linux/the-three-things-i-mistook-for-love-and-the-one-that-required-me-to-be-known-ef6ad2747d00?source=rss------intimacy-5",
+   "age": 0,
+   "comments": 0,
+   "text": "A taxonomy of mistaken intimacy: the anesthesia of comfort, the loan of desire, and the recognition that demands you finally be honest… Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "What Makes Someone Sexually Attractive Beyond Their Body?",
+   "link": "https://medium.com/write-your-world/what-makes-someone-sexually-attractive-beyond-their-body-e649a984db12?source=rss------sexuality-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Sometimes, the person who turns you on the most isn’t the one with the perfect body. It’s the one whose presence changes the way you feel. Continue reading on Write Your World »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "What Men Secretly Need From Women",
+   "link": "https://medium.com/write-your-world/what-men-secretly-need-from-women-73a3e3a5577f?source=rss------sexuality-5",
+   "age": 0,
+   "comments": 0,
+   "text": "The emotional needs men rarely express, but deeply desire in a woman. Continue reading on Write Your World »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "Do we all experience love and relationships in the same way?",
+   "link": "https://medium.com/@coach_mari.mirenda/do-we-all-experience-love-and-relationships-in-the-same-way-c66b801728c3?source=rss------relationships-5",
+   "age": 0,
+   "comments": 0,
+   "text": "NEURODIVERSITY · ATTACHMENT · MODERN DATING Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "How to Have a Happy Marriage: Expert-Backed Strategies for Lasting Love",
+   "link": "https://medium.com/@emliy993/how-to-have-a-happy-marriage-expert-backed-strategies-for-lasting-love-f024dd8025b0?source=rss------relationships-5",
+   "age": 0,
+   "comments": 0,
+   "text": "How to Build a Marriage That Actually Lasts Continue reading on Medium »"
   },
   {
    "src": "Cosmopolitan",
    "kind": "article",
    "title": "Scroll Through Joe Keery and Chase Sui Wonders’ Relationship Timeline Amid Those Dating Rumors",
    "link": "https://www.cosmopolitan.com/entertainment/celebs/a74334278/joe-keery-chase-sui-wonders-relationship-timeline/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "This might be their second time around."
   },
@@ -974,7 +1170,7 @@
    "kind": "article",
    "title": "‘Dancing With the Stars’ Grammy Night Schedule: Songs and Dance Styles Revealed as Couples Perform “Dance-Offs”",
    "link": "https://www.cosmopolitan.com/entertainment/tv/a74332903/dwts-grammy-night-songs-performances-spoilers/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "One couple has immunity!"
   },
@@ -983,7 +1179,7 @@
    "kind": "article",
    "title": "Which Couples Broke Up (and Who Got Married) on ‘Love Is Blind’ Season 11?",
    "link": "https://www.cosmopolitan.com/entertainment/tv/a74334703/love-is-blind-season-11-couples-still-together-broken-up/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "The vibes have become somewhat toxic."
   },
@@ -992,7 +1188,7 @@
    "kind": "article",
    "title": "Are ‘Love Is Blind’ Weddings Legally Binding? Everything We Know About the Wedding and Divorce Rules",
    "link": "https://www.cosmopolitan.com/entertainment/tv/a74263268/are-love-is-blind-weddings-legally-binding-everything-we-know-about-the-wedding-and-divorce-rules/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "I need to know just how “married” these couples really are...."
   },
@@ -1001,7 +1197,7 @@
    "kind": "article",
    "title": "All About Charles Leclerc and Alexandra Leclerc’s Relationship Timeline Now That They’re New Parents",
    "link": "https://www.cosmopolitan.com/entertainment/celebs/a74333415/charles-leclerc-alexandra-leclerc-relationship-timeline/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "Welcome to the world, Baby Bianca!"
   },
@@ -1010,7 +1206,7 @@
    "kind": "article",
    "title": "‘Dancing With the Stars’ Celeb and Pro Plan to Reveal Secret Relationship After the Season Ends",
    "link": "https://www.cosmopolitan.com/entertainment/tv/a74332013/dwts-celeb-and-pro-secret-relationship/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "Cuuuuute."
   },
@@ -1019,7 +1215,7 @@
    "kind": "article",
    "title": "When AI Makes Couples More Certain, But Not More Connected",
    "link": "https://www.gottman.com/blog/when-ai-makes-couples-more-certain-but-not-more-connected/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "AI can offer relationship advice, but can it build connection? Explore how relying on AI may reinforce assumptions rather than foster understanding between partners. The post When AI Makes Couples More Certain, But Not More Connected appeared first on The Gottman Institute ."
   },
@@ -1028,7 +1224,7 @@
    "kind": "article",
    "title": "A Sensitive Question in a Long Marriage: What Turns You On Now?",
    "link": "https://www.gottman.com/blog/intimacy-after-50/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "What longtime partners can learn about intimacy after 50. The post A Sensitive Question in a Long Marriage: What Turns You On Now? appeared first on The Gottman Institute ."
   },
@@ -1037,7 +1233,7 @@
    "kind": "article",
    "title": "Wake Up & Get Down: The Science of Morning Sex",
    "link": "https://sexwithemily.com/science-of-morning-sex/?utm_source=rss&utm_medium=rss&utm_campaign=science-of-morning-sex",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "Did you know your testosterone levels are up to 30% higher first thing in the morning than later in the day? Yet, a majority of couples admit they skip sex simply because they’re too exhausted by 10 PM. If your bedtime routine looks more like mindlessly binge watching TV shows together rather than ripping each other’s clothes off, you’re not broken. You’re just looking at the wrong end of the clock. It’s time we dive into the science of morning sex . The Science Behind Morning Sex and Your Hormones Why does morning sex feel so damn good? It’s Biology. Between 7:00 and 9:00 AM, our sex hormones hit their natural 24-hour peak. Testosterone surges in both penis and vulva owners, priming your libido before you even check your phone. You can thank your endocrine system for doing the seductive heavy lifting for you while you’re still half-asleep. And there’s also a huge plus to starting your d"
   },
@@ -1046,34 +1242,16 @@
    "kind": "article",
    "title": "Women’s Vaginas at 20 vs. 40",
    "link": "https://sexwithemily.com/womens-vaginas-at-20-vs-40/?utm_source=rss&utm_medium=rss&utm_campaign=womens-vaginas-at-20-vs-40",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "Have a question for me? Send it here: sexwithemily.com/ask Here’s something I wish someone had told me years ago. Young doesn’t mean sexually confident, 40s doesn’t mean sexually over, and the biggest mistake most couples make has nothing to do with technique. It’s assuming they already know what their partner wants. In this episode I’m walking through what actually happens to a woman’s body and desire across her 20s, 30s, 40s, and beyond: what changes, what stays the same, and what you can do to be a better partner at every stage. Shop Women’s Health: https://shop.sexwithemily.com/womens-health ABOUT EMILY: Emily Morse is a Doctor of Human Sexuality, author and host of the #1 rated Sex with Emily podcast. Known as a renowned sexologist, Dr. Emily has helped millions of people around the world navigate their sex lives. Her candid and often funny conversations challenge cultural taboos, m"
-  },
-  {
-   "src": "Mashable",
-   "kind": "review",
-   "title": "Apples new 18+ app limits mean little for dating apps, a lot for AI companions",
-   "link": "https://mashable.com/tech/apple-dating-apps-ai-companions-18",
-   "age": 0,
-   "comments": 0,
-   "text": "Apple wants to make sure dating apps and AI companions with \"sexual or romantic content\" are only for people over 18, with new restrictions coming Nov. 16. Though most dating platforms like Tinder , Hinge , Bumble are already strictly for users over 18, Apple's updated policy requires all apps that include dating and relationship features to have a minimum 18+ age rating in App Store Connect, Apple's command centre for developers managing iOS apps. Devs will also have to disclose whether their app enables real-time location sharing. Mandatory age rating is a rather incremental update for dating apps, which as mentioned, are usually restricted to users over 18 by the developers themselves. However, as TechCrunch rightly points out , one of the more indeterminate impacts of Apple's policy could be that on minors' use of AI companions. SEE ALSO: What would ethical age verification look like"
-  },
-  {
-   "src": "Mashable",
-   "kind": "review",
-   "title": "eharmony app reviews: Subscribers share whether it’s worth it",
-   "link": "https://mashable.com/life/eharmony-app-reviews-subscribers-share-whether-its-worth-it",
-   "age": 0,
-   "comments": 0,
-   "text": "It's incredible that eharmony has managed to stay relevant in the online dating world. The dating site launched back at the turn of the millennium and held firm by focusing on a more substantive, personality-based approach to online matchmaking. It's not perfect, of course, and different daters prefer different approaches to finding partners. While eharmony members generally appreciate the depth of its matchmaking algorithm, they sometimes complain about the cost and the number of fake profiles, particularly since artificial intelligence has become more widely available. Opens in a new window Credit: eharmony eharmony Learn More Here's what real eharmony users had to say about the site, from the best features to the worst experiences: Pro: The screening process weeds out unserious daters If you're looking for some genuine substance on dating sites, you often have to filter out all the pe"
   },
   {
    "src": "Medium",
    "kind": "article",
    "title": "Painful Sex Isn’t Something You Just Get Used To",
    "link": "https://medium.com/@drankitagahlot/painful-sex-isnt-something-you-just-get-used-to-0591ebe88143?source=rss------sexual_health-5",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "First-time soreness usually fades. Pain that doesn’t has a name, a cause, and a treatment — most often vaginismus. Continue reading on Medium »"
   },
@@ -1082,7 +1260,7 @@
    "kind": "article",
    "title": "The Man Who Believes His Body Was the Reason She Left",
    "link": "https://medium.com/@rosecoach97/the-man-who-believes-his-body-was-the-reason-she-left-ceb57ffceb15?source=rss------sexual_health-5",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "On male body insecurity, sexual shame, and the painful explanations we invent after heartbreak. Continue reading on Medium »"
   },
@@ -1091,124 +1269,25 @@
    "kind": "article",
    "title": "Sexually Transmitted Diseases (STDs): Everything You Need to Know | STD Dubai Testing Made Easy",
    "link": "https://medium.com/@qhussain333/sexually-transmitted-diseases-stds-everything-you-need-to-know-std-dubai-testing-made-easy-4b887ab3f321?source=rss------sexual_health-5",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "Sexually Transmitted Diseases (STDs) — also referred to as Sexually Transmitted Infections (STIs) — are bacterial, viral, or parasitic… Continue reading on Medium »"
   },
   {
    "src": "Medium",
    "kind": "experience",
-   "title": "I Went to a Halloween Sex Party With My Shy Husband",
-   "link": "https://medium.com/heart-affairs/i-went-to-a-halloween-sex-party-1eb8839a3a90?source=rss------sex-5",
-   "age": 0,
-   "comments": 0,
-   "text": "My shy husband ended up fucking the hottest woman in the room. Then I got my turn. Continue reading on Heart Affairs »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "The Delicacy Sex Position #26 — Complete Guide (Delikates)",
-   "link": "https://medium.com/sage-kamasutra/the-delicacy-sex-position-26-complete-guide-delikates-9f8068648802?source=rss------sex-5",
-   "age": 0,
-   "comments": 0,
-   "text": "A luxurious chair and dining table reverse cowgirl pose designed for effortless riding, deep vertical penetration, and zero muscular… Continue reading on Sage Kamasutra »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
    "title": "The Quiet Moments That Locked Him In (And What They Cost You)",
    "link": "https://medium.com/@UnaTolkien/the-quiet-moments-that-locked-him-in-and-what-they-cost-you-db7164774c61?source=rss------intimacy-5",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "I watched three marriages for years. The moment he stayed wasn’t grand—it was a Tuesday. Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "When Sexual Energy Awakens Old Emotional States",
-   "link": "https://medium.com/@SensualTouchJournal/when-sexual-energy-awakens-old-emotional-states-0e6b24cd2fb6?source=rss------intimacy-5",
-   "age": 0,
-   "comments": 0,
-   "text": "On the body’s memory, hidden desires, and a past that can speak through pleasure Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "How Often Is Enough? The Problem with Counting Sex",
-   "link": "https://medium.com/@johnmittani/how-often-is-enough-the-problem-with-counting-sex-9d68873474a8?source=rss------intimacy-5",
-   "age": 0,
-   "comments": 0,
-   "text": "The Psychology of Intimacy – 05 Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "Men Can Talk About Fucking",
-   "link": "https://medium.com/all-about-aex/men-can-talk-about-fucking-6cce66b99088?source=rss------sexuality-5",
-   "age": 0,
-   "comments": 0,
-   "text": "Women Still Have to Whisper Continue reading on All About Sex »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "The Shocking Truth About 'Equality' In Modern Marriage",
-   "link": "https://medium.com/hello-love/the-shocking-truth-about-equality-in-modern-marriage-9fd2b68ad6dd?source=rss------relationships-5",
-   "age": 0,
-   "comments": 0,
-   "text": "I’m not saying that women shouldn’t have equal rights, I’m saying that forcing men and women to want the same thing has led to both sexes… Continue reading on Hello, Love »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "Elon and Trump —Relationship Reading #1",
-   "link": "https://medium.com/@asami_81882/elon-and-trump-relationship-reading-1-37abc879530d?source=rss------relationships-5",
-   "age": 0,
-   "comments": 0,
-   "text": "It took me a while to write the first one because I had to think carefully about which relationship to focus on. I enjoy a bit of gossip… Continue reading on Medium »"
-  },
-  {
-   "src": "Cosmopolitan",
-   "kind": "article",
-   "title": "Winter Date Ideas to Heat Up Your Love Life This Season",
-   "link": "https://www.cosmopolitan.com/relationships/a74325441/date-ideas-for-winter/",
-   "age": 1,
-   "comments": 0,
-   "text": "Time to turn those dark, cold nights into hot date nights."
-  },
-  {
-   "src": "Cosmopolitan",
-   "kind": "article",
-   "title": "Presenting: Mason Thames and Mckenna Grace’s Full Relationship Timeline",
-   "link": "https://www.cosmopolitan.com/entertainment/celebs/a73438609/mason-thames-mckenna-grace-relationship-timeline/",
-   "age": 1,
-   "comments": 0,
-   "text": "Favorite costars turned lovers? It might just be these two."
-  },
-  {
-   "src": "Medium",
-   "kind": "article",
-   "title": "The Underrated Erogenous Zones That Make Sex Hotter Instantly",
-   "link": "https://medium.com/illumination/the-underrated-erogenous-zones-that-make-sex-hotter-instantly-fe405b2a8f28?source=rss------sexual_health-5",
-   "age": 1,
-   "comments": 0,
-   "text": "Skip the obvious spots for a minute. These ones get ignored, which is exactly why they work. Continue reading on ILLUMINATION »"
-  },
-  {
-   "src": "Medium",
-   "kind": "article",
-   "title": "7 Common Misconceptions About Sex in Marriage (and What’s True Instead)",
-   "link": "https://medium.com/illumination/7-common-misconceptions-about-sex-in-marriage-and-whats-true-instead-ef5eca42a767?source=rss------sexual_health-5",
-   "age": 1,
-   "comments": 0,
-   "text": "The Beliefs That Quietly Drain Desire, and What’s Actually True. Continue reading on ILLUMINATION »"
   },
   {
    "src": "The RISE to Intimacy Podcast | Sex Therapy, Couples Therapy & Relationships",
    "kind": "podcast",
    "title": "How to Initiate Sex Without Pressure or Awkwardness",
    "link": "https://www.risetointimacy.com/post/how-to-initiate-sex-without-pressure-or-awkwardness",
-   "age": 1,
+   "age": 2,
    "comments": 0,
    "text": "It’s 10:30 at night. You’ve both worked all day, handled dinner, chores, and maybe the kids, and you’re finally in bed. One of you rests a hand on the other’s thigh, and the other person starts wondering what it means. Is this affection? Are they trying to initiate sex? For someone who's already exhausted or stressed, having to figure that out can feel like one more thing to deal with at the end of a long day. Most of us were never taught how to initiate sex. We learned from movies, awkward conversations with friends, and a lot of trial and error. And what worked in the early days of a relationship, when desire came more easily, doesn't necessarily work five, ten, or twenty years later. Especially when stress has made sex something you barely have the mental space to think about. In this episode of The RISE to Intimacy Podcast, I explain why some of the most common ways we initiate sex c"
   },
@@ -1217,7 +1296,7 @@
    "kind": "podcast",
    "title": "Questions to Ask Your Partner About Sex (That You’ve Probably Never Asked)",
    "link": "https://share.transistor.fm/s/d74c5d5c",
-   "age": 1,
+   "age": 2,
    "comments": 0,
    "text": "When’s the last time you asked your partner a question about your intimate life that you didn’t already know the answer to? Most couples never ask each other the questions that matter, not because they don’t care, but because nobody ever handed them the questions. In Episode 54, Scott and Brittney share sixteen intimate questions worth asking your partner. The questions move through four rounds: warm-up, desire, vulnerability, and what’s next. Along the way, Scott and Brittney share the stories their answers spark, including a few they’ve never told on the podcast. Then they give you a simple, low-pressure way to use these questions with your own partner this week, with rules that keep it honest and safe. If you’ve been looking for questions to ask your partner about sex, intimate conversation starters for couples, or a way to talk about what you want without it getting awkward, this is "
   },
@@ -1226,7 +1305,7 @@
    "kind": "article",
    "title": "A Former College Athlete’s Battle With Depression",
    "link": "https://www.menshealth.com/health/a73488700/a-former-college-athletes-battle-with-depression/",
-   "age": 2,
+   "age": 3,
    "comments": 0,
    "text": "He spent years trying to power through his depression, cycling through several traditional oral antidepressants, before finding a medication that worked for him."
   },
@@ -1235,7 +1314,7 @@
    "kind": "article",
    "title": "They’ve Taken on Clayface, the Guardians of the Galaxy, and Star Trek. But Can They Survive Each Other?",
    "link": "https://www.menshealth.com/entertainment/a74298060/collin-kelly-jackson-lanzing-hivemind-comics-clayface-interview/",
-   "age": 2,
+   "age": 3,
    "comments": 0,
    "text": "Collin Kelly and Jackson Lanzing are some of the busiest comic book writers in the business—and their deep, complex, and long-standing friendship and working relationship is the biggest reason why."
   },
@@ -1244,7 +1323,7 @@
    "kind": "article",
    "title": "7 Best Sex Blankets for Mess-Free Fun, According to Sex Experts",
    "link": "https://www.womenshealthmag.com/sex-and-love/g42858608/best-sex-blankets/",
-   "age": 2,
+   "age": 3,
    "comments": 0,
    "text": "As they say—the wetter, the better."
   },
@@ -1253,7 +1332,7 @@
    "kind": "article",
    "title": "Hey Dr Sue — Not In A Relationship, How Do I Satisfy Myself Fully Sexually?",
    "link": "https://drsuemilstein.medium.com/hey-dr-sue-not-in-a-relationship-how-do-i-satisfy-myself-fully-sexually-16c3582fe29f?source=rss------sex_education-5",
-   "age": 2,
+   "age": 3,
    "comments": 0,
    "text": "This is a really good question. And one that I’m getting more of now that more people are choosing to stay single. Continue reading on Medium »"
   },
@@ -1262,7 +1341,7 @@
    "kind": "review",
    "title": "Are App-Controlled Sex Toys Actually Worth It?",
    "link": "https://toybenchreviews.medium.com/are-app-controlled-sex-toys-actually-worth-it-9447ee29e5b9?source=rss------sex_toys-5",
-   "age": 2,
+   "age": 3,
    "comments": 0,
    "text": "Convenience, customization, and remote control sound appealing — but do these smart features actually improve the experience? Continue reading on Medium »"
   },
@@ -1271,7 +1350,7 @@
    "kind": "podcast",
    "title": "How to Stop Small Tension From Ruining Your Sex Life #448",
    "link": "https://share.transistor.fm/s/347dc830",
-   "age": 2,
+   "age": 3,
    "comments": 0,
    "text": "Most couples don’t need fewer 'fights'. They need to get better at what happens right after them. In this episode, I’m breaking down one of the most important and underrated skills for a great relationship and sex life: repair . Repair is how you keep one bad moment from becoming a bigger story about your partner, your relationship, or yourself. I share a real example from a recent trip with Andrew where a small moment of irritation turned into tension and how we repaired it quickly instead of letting it become resentment. I also give you a few simple repair phrases you can start using immediately. Because a great relationship isn’t one where nothing ever goes wrong. It’s one where you both trust: when something does go wrong, we know how to come back together. And that trust changes your sex life. If you’re serious about building your skill of repair, fill out an application to work wit"
   },
@@ -1280,7 +1359,7 @@
    "kind": "article",
    "title": "How to Initiate Sex, According to Experts",
    "link": "https://sex.cosmopolitan.com/pleasure/a74286944/how-to-initiate-sex/",
-   "age": 4,
+   "age": 5,
    "comments": 0,
    "text": "Yes, it is possible to make the first move and still keep things hot, clear, and consensual."
   },
@@ -1289,7 +1368,7 @@
    "kind": "article",
    "title": "What’s a Blended Orgasm? (And How to Actually Have One)",
    "link": "https://sexwithemily.com/how-to-have-a-blended-orgasm/?utm_source=rss&utm_medium=rss&utm_campaign=how-to-have-a-blended-orgasm",
-   "age": 4,
+   "age": 5,
    "comments": 0,
    "text": "“Dear Emily, I keep hearing about blended orgasms, but what exactly are they? And how can I have one?” I’m so glad you asked! Because if there’s one thing I’ve learned from 20 years of talking about sex, it’s that most of us have no idea how much pleasure our bodies are capable of experiencing. A blended orgasm is when you combine two types of stimulation, usually external clitoral stimulation with internal G-spot stimulation, to experience an orgasm. And for some women, this combination can create an orgasm that feels deeper, fuller, or more intense than what they’re used to. Now, does that mean a blended orgasm is somehow better than a clitoral orgasm? Absolutely not. I never want you to feel like there’s some sexual achievement you’re missing out on. But I do want you to know what’s possible! Because the more you understand your body, the more ways you have to experience pleasure. And"
   },
@@ -1298,7 +1377,7 @@
    "kind": "article",
    "title": "Everything You Need To Know About Sex Therapy, From Sex Therapists",
    "link": "https://sex.cosmopolitan.com/pleasure/a74299396/what-is-sex-therapy/",
-   "age": 5,
+   "age": 6,
    "comments": 0,
    "text": "It’s basically like regular therapy: you’re just talking through a bunch of stuff, except this is just about what’s happening in the bedroom."
   },
@@ -1307,7 +1386,7 @@
    "kind": "article",
    "title": "What Is Sexual Self-Esteem? Here's How to Improve Yours, According to Experts",
    "link": "https://sex.cosmopolitan.com/pleasure/a74286181/sexual-self-esteem/",
-   "age": 5,
+   "age": 6,
    "comments": 0,
    "text": "Being confident in bed and feeling good about yourself sexually aren't necessarily the same thing."
   },
@@ -1316,7 +1395,7 @@
    "kind": "article",
    "title": "Yes, You Can Have Sex While on Your Period",
    "link": "https://sex.cosmopolitan.com/pleasure/a74274317/how-to-have-period-sex/",
-   "age": 5,
+   "age": 6,
    "comments": 0,
    "text": "Cramps, blood, and orgasms? Let's talk about it."
   },
@@ -1325,7 +1404,7 @@
    "kind": "article",
    "title": "How to Restart Sex After a Dry Spell Without Making It a Whole Thing",
    "link": "https://sex.cosmopolitan.com/pleasure/a74273398/sex-after-a-dry-spell/",
-   "age": 5,
+   "age": 6,
    "comments": 0,
    "text": "Expert advice for finding your way back to each other, even when making a move feels awkward."
   },
@@ -1334,7 +1413,7 @@
    "kind": "article",
    "title": "Why Your Girlfriend Wants You to Keep the Halloween Mask on in Bed",
    "link": "https://sex.cosmopolitan.com/pleasure/a74110318/halloween-mask-sex-kink/",
-   "age": 5,
+   "age": 6,
    "comments": 0,
    "text": "If you’ve ever wanted to bone Ghostface, you’re apparently not alone."
   },
@@ -1343,16 +1422,25 @@
    "kind": "article",
    "title": "A Reader’s Guide to the Many Sexy Roles of Alexander Skarsgård",
    "link": "https://www.menshealth.com/entertainment/a74285980/alexander-skarsgard-sexiest-roles-wicker/",
-   "age": 5,
+   "age": 6,
    "comments": 0,
    "text": "Hollywood initially tried to make the 50-year-old star into a traditional hunk. He got weirder—and hotter—instead."
+  },
+  {
+   "src": "Girl on the Net",
+   "kind": "experience",
+   "title": "I loved a ghost, and it saved my life",
+   "link": "https://www.girlonthenet.com/blog/i-loved-a-ghost-and-it-saved-my-life/",
+   "age": 6,
+   "comments": 3,
+   "text": "Content note: suicidal ideation, suicide planning and other extremely dark themes. Please do not read if this is likely to distress you. Check out some of the past Halloween erotica instead – in the past I’ve done a vampire, a werewolf, a succubus, a siren, a reanimated corpse and even the monster that lives under […]"
   },
   {
    "src": "Cosmopolitan",
    "kind": "article",
    "title": "This Is How Often Couples Are Having Sex Today, According to the Experts",
    "link": "https://sex.cosmopolitan.com/pleasure/a74286254/how-often-couples-have-sex/",
-   "age": 6,
+   "age": 7,
    "comments": 0,
    "text": "There’s no magic number, and it’s definitely not a one-size-fits all."
   },
@@ -1361,7 +1449,7 @@
    "kind": "article",
    "title": "Spectatoring During Sex Could Be Why You're Stuck in Your Head",
    "link": "https://sex.cosmopolitan.com/pleasure/a74263467/spectatoring-during-sex/",
-   "age": 6,
+   "age": 7,
    "comments": 0,
    "text": "If you're spending more time overthinking than enjoying, this one's for you."
   },
@@ -1370,7 +1458,7 @@
    "kind": "article",
    "title": "Pillow Talk Will Make Your Bedtime Convos a Little More Intimate",
    "link": "https://sex.cosmopolitan.com/pleasure/a74260764/what-is-pillow-talk/",
-   "age": 6,
+   "age": 7,
    "comments": 0,
    "text": "Here's how to turn those under-the-covers talks into quality time."
   },
@@ -1379,7 +1467,7 @@
    "kind": "article",
    "title": "27 Foreplay Tips That Will Make the Sex So Much Hotter",
    "link": "https://www.menshealth.com/sex-women/a19539960/foreplay-and-sex-tips/",
-   "age": 6,
+   "age": 7,
    "comments": 0,
    "text": "Because being “good in bed” is about so much more than what you do in bed."
   },
@@ -1388,7 +1476,7 @@
    "kind": "article",
    "title": "I’m a Doctor and I Won’t Touch Honey Packs. Here’s What I Do Before Sex Instead",
    "link": "https://www.menshealth.com/sex-women/a73764987/honey-packs-urologist-erections/",
-   "age": 6,
+   "age": 7,
    "comments": 0,
    "text": "Ahead, three tried-and-true strategies for better, longer-lasting erections."
   },
@@ -1397,25 +1485,16 @@
    "kind": "podcast",
    "title": "3 Ways to Create More Chemistry in Your Relationship #447",
    "link": "https://share.transistor.fm/s/b64f5a92",
-   "age": 6,
-   "comments": 0,
-   "text": "If you’ve ever wondered whether your woman is still as attracted to you as she used to be, or why your sex life doesn’t feel as exciting anymore, this episode is for you. Chemistry isn’t something you either have or you don’t. And it doesn’t have to disappear just because the honeymoon phase is over. In this episode, I break down the three things that help create chemistry in a long-term relationship. I also explain the difference between loving connection and sexual desire Apply for 1:1 coaching: https://www.stephanieganowski.com/coaching/ Ronan, my app for guided solo practice: https://apps.apple.com/us/app/ronan/id6760799274"
-  },
-  {
-   "src": "Allure",
-   "kind": "article",
-   "title": "The Top Winter Fragrance Trends of 2026 Prioritize Your Pleasure",
-   "link": "https://www.allure.com/story/winter-fragrance-trends-2026",
    "age": 7,
    "comments": 0,
-   "text": "Upscale bakery gourmands, cozy fabric-inspired notes, and light, meditative incense are the best ways to treat yourself this winter."
+   "text": "If you’ve ever wondered whether your woman is still as attracted to you as she used to be, or why your sex life doesn’t feel as exciting anymore, this episode is for you. Chemistry isn’t something you either have or you don’t. And it doesn’t have to disappear just because the honeymoon phase is over. In this episode, I break down the three things that help create chemistry in a long-term relationship. I also explain the difference between loving connection and sexual desire Apply for 1:1 coaching: https://www.stephanieganowski.com/coaching/ Ronan, my app for guided solo practice: https://apps.apple.com/us/app/ronan/id6760799274"
   },
   {
    "src": "Cosmopolitan",
    "kind": "article",
    "title": "120 Dirty Truth or Dare Questions That Are Actually Hot",
    "link": "https://sex.cosmopolitan.com/pleasure/a74251691/dirty-truth-or-dare-questions/",
-   "age": 8,
+   "age": 9,
    "comments": 0,
    "text": "Your next game night is about to get very NSFW."
   },
@@ -1424,7 +1503,7 @@
    "kind": "article",
    "title": "An Expert-Backed Guide to Foot Fetishes",
    "link": "https://sex.cosmopolitan.com/pleasure/a74233197/foot-fetish/",
-   "age": 8,
+   "age": 9,
    "comments": 0,
    "text": "Spoiler: Sex experts say being into feet is totally normal and super common."
   },
@@ -1433,7 +1512,7 @@
    "kind": "article",
    "title": "We Wrote the Kama Sutra. Why Are We Still Ashamed of Women’s Bodies?",
    "link": "https://medium.com/nudge-write/we-wrote-the-kama-sutra-why-are-we-still-ashamed-of-womens-bodies-03f29d65efcb?source=rss------sex_education-5",
-   "age": 8,
+   "age": 9,
    "comments": 0,
    "text": "On menstruation, friendship, sex education, and the silence we inherit from our elders Continue reading on Nudge »"
   },
@@ -1442,7 +1521,7 @@
    "kind": "podcast",
    "title": "Saying Yes When You Mean No Is Building Resentment",
    "link": "https://www.risetointimacy.com/post/saying-yes-when-you-mean-no-is-building-resentment",
-   "age": 8,
+   "age": 9,
    "comments": 0,
    "text": "You say yes to something your partner asks, even though you really want to say no. Maybe you're trying to avoid an argument, or you're worried they'll be disappointed or upset with you. So you tell yourself it's not a big deal and agree anyway. It feels like the easiest choice in the moment, especially when you don't know how your partner might react if you were honest. The wish that you'd said no doesn't just disappear, though. Each time you agree to something you don't really want, a little more resentment can build until one day, something small pushes you over the edge. Your partner is completely caught off guard because you've been telling them everything is fine. They've been taking your yes at face value, while you've been assuming they should have known you didn't mean it. In this episode of The RISE to Intimacy Podcast, I explain how these small, unspoken noes can quietly create"
   },
@@ -1451,7 +1530,7 @@
    "kind": "podcast",
    "title": "Awakening Desire: A Conversation with Sexologist Paula Giroday",
    "link": "https://share.transistor.fm/s/e26fb10f",
-   "age": 8,
+   "age": 9,
    "comments": 0,
    "text": "Coelle has a new series. And rather than announce it with a press release, Scott and Brittney wanted to introduce it through the conversation that matters most. In Episode 53, they sit down with Paula Giroday — certified sexologist, Somatica-certified sex and relationship coach, and the co-creator of Awakening Desire, a brand new series of guided audio experiences now available in the Coelle app. Paula brings something rare to this conversation: Scott has been working with her as his personal somatic sex coach for the past five months. This isn’t a feature interview. It’s a genuine conversation between people who have done real work together. Paula explains what somatic sex coaching actually is — why desire and confidence aren’t things you perform, they’re states you cultivate in the body — and what changes when people start working at that level. Scott shares what five months of that wo"
   },
@@ -1460,16 +1539,25 @@
    "kind": "article",
    "title": "Some Men’s Muscle Dysmorphia May Be Messing With Their Sex Lives",
    "link": "https://sex.cosmopolitan.com/pleasure/a74205971/muscle-dysmorphia-sex-life/",
-   "age": 9,
+   "age": 10,
    "comments": 0,
    "text": "Giving “size matters” a whole new meaning."
+  },
+  {
+   "src": "Girl on the Net",
+   "kind": "experience",
+   "title": "Decisions, decisions: cunt, ass or dumping ground",
+   "link": "https://www.girlonthenet.com/blog/decisions-decisions/",
+   "age": 11,
+   "comments": 1,
+   "text": "I walk in on him wanking, that’s how this fantasy starts. I’ve just got out of the shower, hair tousled and body lotioned so it’s nice and smooth with a slight slippery residue that makes everything shine. I open the door to the living room with half-formed notions of asking him to touch my tits […]"
   },
   {
    "src": "Medium",
    "kind": "article",
    "title": "We Taught Them Contraception; Nobody Taught Them Contracts",
    "link": "https://medium.com/sensual-enchantment/we-taught-them-contraception-nobody-taught-them-contracts-4541b9ab708c?source=rss------sex_education-5",
-   "age": 10,
+   "age": 11,
    "comments": 0,
    "text": "Why sex ed has to cover porn, content creation, and the freshers’ wristband economy Continue reading on Sensual: An Erotic Life »"
   },
@@ -1478,16 +1566,25 @@
    "kind": "article",
    "title": "Vanilla Sex Isn’t Supposed to Mean Boring Sex",
    "link": "https://sex.cosmopolitan.com/pleasure/a73961045/vanilla-sex-isnt-supposed-to-mean-boring-sex/",
-   "age": 12,
+   "age": 13,
    "comments": 0,
    "text": "Sex therapists explain why the sex some deem less exciting is potentially ore fulfilling than pop culture makes it seem."
+  },
+  {
+   "src": "Girl on the Net",
+   "kind": "experience",
+   "title": "Guest blog: The reset fuck",
+   "link": "https://www.girlonthenet.com/blog/reset-fuck/",
+   "age": 13,
+   "comments": 0,
+   "text": "I want what she’s having. Seriously, right now I would give (almost) anything for the type of sex LM describes in this piece. The ‘reset fuck’, which brings you back to yourself and drags you out of your own head… unngh. LM has written some gorgeous guest pieces here before, so click the links in […]"
   },
   {
    "src": "Medium",
    "kind": "article",
    "title": "New podcast alert! Going Deeper: Sex Ed Was Just The Beginning",
    "link": "https://drsuemilstein.medium.com/new-podcast-alert-going-deeper-sex-ed-was-just-the-beginning-4fef7fe00775?source=rss------sex_education-5",
-   "age": 12,
+   "age": 13,
    "comments": 0,
    "text": "I’m excited to announce that my new podcast, Going Deeper: Sex Ed Was Just The Beginning is out. Continue reading on Medium »"
   },
@@ -1496,7 +1593,7 @@
    "kind": "article",
    "title": "The 14 Best Arousal Gels for Turning Up the Sensation During Sex",
    "link": "https://sex.cosmopolitan.com/pleasure/a28761859/best-arousal-gels/",
-   "age": 13,
+   "age": 14,
    "comments": 0,
    "text": "Warming, cooling, and tingling formulas that bring a little something extra to the bedroom."
   },
@@ -1505,7 +1602,7 @@
    "kind": "article",
    "title": "The Best Sex Pillows and Wedges for Better, Ultra Comfy Boot-Knockin’",
    "link": "https://sex.cosmopolitan.com/pleasure/a22801542/best-pillows-for-sex-sharing-bed/",
-   "age": 13,
+   "age": 14,
    "comments": 0,
    "text": "Because your knees, hips, and back deserve a little support."
   },
@@ -1514,7 +1611,7 @@
    "kind": "article",
    "title": "I Tried the Viral Snail Vibrator, and I Have Some Thoughts",
    "link": "https://sex.cosmopolitan.com/pleasure/a63959255/snail-sex-toy-review/",
-   "age": 13,
+   "age": 14,
    "comments": 0,
    "text": "Putting a snail-shaped vibrator inside my vagina wasn't exactly on my bingo card, but here we are."
   },
@@ -1523,7 +1620,7 @@
    "kind": "article",
    "title": "How to Have Anal Sex: 14 Expert-Approved Tips for Beginners and Beyond",
    "link": "https://sex.cosmopolitan.com/pleasure/a74111750/how-to-have-anal-sex/",
-   "age": 13,
+   "age": 14,
    "comments": 0,
    "text": "From prepping your butt to finding the right positions, here's everything you need to know."
   },
@@ -1532,7 +1629,7 @@
    "kind": "article",
    "title": "<b><strong>We Asked People in Relationships How Reading Smut Changed Their Sex Lives</strong></b>",
    "link": "https://sex.cosmopolitan.com/pleasure/a73960289/people-in-relationships-smut-changed-sex-lives/",
-   "age": 13,
+   "age": 14,
    "comments": 0,
    "text": "From boosting their libido to introducing them to petplay and hypnokink."
   },
@@ -1541,25 +1638,16 @@
    "kind": "article",
    "title": "Is It Bad to Clean Inside My Butt to Prepare for Anal Sex?",
    "link": "https://sex.cosmopolitan.com/pleasure/a74195713/anal-douching/",
-   "age": 13,
-   "comments": 0,
-   "text": "Experts weigh in on what’s necessary."
-  },
-  {
-   "src": "Cosmopolitan",
-   "kind": "article",
-   "title": "Halloween Is the Perfect Time to Try Role Play",
-   "link": "https://sex.cosmopolitan.com/pleasure/a74184320/role-play-halloween-costumes-guide/",
    "age": 14,
    "comments": 0,
-   "text": "You already have the costume."
+   "text": "Experts weigh in on what’s necessary."
   },
   {
    "src": "Dildo or Dildon't",
    "kind": "review",
    "title": "Please Don’t Use Wicker: A Body-Safe Materials Guide",
    "link": "https://www.dildoordildont.com/please-dont-use-wicker-a-body-safe-materials-guide/?utm_source=rss&utm_medium=rss&utm_campaign=please-dont-use-wicker-a-body-safe-materials-guide",
-   "age": 14,
+   "age": 15,
    "comments": 0,
    "text": "Please Don’t Use Wicker: A Body-Safe Materials Guide Listen, I’m all for getting creative with your pleasure, but there are some things that should stay firmly in the fantasy category. And after seeing the premise of Wicker , the upcoming film starring Olivia Colman, Peter Dinklage, and Alexander Skarsgård, I feel like we need to have a little chat about what does and doesn’t belong inside your body. If you haven’t seen the trailer yet, here’s the rundown: Olivia Colman plays a lonely fisherwoman who decides she’s had enough of waiting around for the perfect husband. Instead, she pays the village basketmaker, played by Peter Dinklage, to literally weave her a man to her exact specifications. The result? Alexander Skarsgård in a full wicker suit. Yes, really. The movie arrives in limited theaters October 23 before expanding October 30, and the marketing team clearly knows exactly what the"
   },
@@ -1568,7 +1656,7 @@
    "kind": "review",
    "title": "Vaginal Red Light Therapy: What It Feels Like and What to Expect",
    "link": "https://www.lelo.com/blog/vaginal-red-light-therapy-tc/",
-   "age": 14,
+   "age": 15,
    "comments": 0,
    "text": "The world of advanced wellness is moving quickly, and red light therapy is no exception. But what about using it vaginally? Discover what vaginal red light therapy actually feels like, how it compares to alternatives, and what you can realistically expect from using it routinely. What Is Vaginal Red Light Therapy? Vaginal red light therapy uses gentle, low-level light waves to boost blood flow and support natural tissue health, while advanced devices like MONA Spectra also incorporate green, blue, and […] The post Vaginal Red Light Therapy: What It Feels Like and What to Expect appeared first on Volonté ."
   },
@@ -1577,7 +1665,7 @@
    "kind": "review",
    "title": "Which Magic Wand Should You Buy?",
    "link": "https://www.dildoordildont.com/which-magic-wand-should-you-buy/?utm_source=rss&utm_medium=rss&utm_campaign=which-magic-wand-should-you-buy",
-   "age": 15,
+   "age": 16,
    "comments": 0,
    "text": "If you’ve spent any time shopping for a vibrator, chances are you’ve come across the Magic Wand. It’s one of the most recognizable pleasure products out there, and for good reason! Known for its deep, rumbly vibrations and impressive power, the Magic Wand has earned its reputation as a fan favorite. But with several different models available, figuring out which one is right for you can feel a little overwhelming. Here’s the good news: there’s no wrong choice, but there might be a better choice for your body, budget, and how you like to play. For most people, I’d recommend the Magic Wand Rechargeable . You get that classic full-size Magic Wand power without being attached to an outlet, plus a soft silicone head. If you’re looking for serious power without spending as much, the Magic Wand Plus is a fantastic option, especially if you don’t mind a cord. Want something you can take into the"
   },
@@ -1586,7 +1674,7 @@
    "kind": "podcast",
    "title": "Waiting for Your Sex Life to Get Better Is Making It Worse #446",
    "link": "https://share.transistor.fm/s/d864fcb0",
-   "age": 15,
+   "age": 16,
    "comments": 0,
    "text": "If you know something in your sex life isn’t working, waiting usually doesn’t make it easier to address. It makes the conversation heavier. You start thinking about it more. You become more frustrated. More meaning gets attached to every initiation, rejection, good night, bad night, or stretch without sex. And eventually, something that could have been a short, honest conversation starts feeling like a massive relationship problem. If you love your partner and want a better sex life with her, you don’t need to sit in frustration or avoidance. But you do need to stop waiting. Join The 100-Man Project (ENDS OCTOBER 23TH 2026): https://stephanieganowski.typeform.com/to/TbGVfzYr When you decide to stop waiting and want someone you trust to hold you accountable: Apply for 1:1 coaching: https://www.stephanieganowski.com/coaching/"
   },
@@ -1595,7 +1683,7 @@
    "kind": "article",
    "title": "Female Orgasm Explained: What Every Woman Should Know",
    "link": "https://medium.com/smart-reads/female-orgasm-explained-what-every-woman-should-know-7067139879ae?source=rss------sex_education-5",
-   "age": 22,
+   "age": 23,
    "comments": 0,
    "text": "Discover the role of anatomy, emotional well-being, and communication in sexual health. Continue reading on Humanly Wellness »"
   },
@@ -1604,7 +1692,7 @@
    "kind": "article",
    "title": "Hey Dr Sue — Why Do I Enjoy Touching Myself So Much, But I Don’t Enjoy Sex With Another Person?",
    "link": "https://drsuemilstein.medium.com/hey-dr-sue-why-do-i-enjoy-touching-myself-so-much-but-i-dont-enjoy-sex-with-another-person-a7600341cdf7?source=rss------sex_education-5",
-   "age": 23,
+   "age": 24,
    "comments": 0,
    "text": "I get this question way more often than people might think! Continue reading on Medium »"
   },
@@ -1613,7 +1701,7 @@
    "kind": "review",
    "title": "A Soul For A Soul Part 3 – An Erotic Story",
    "link": "https://www.lelo.com/blog/a-soul-for-a-soul-part-3-an-erotic-story/",
-   "age": 24,
+   "age": 25,
    "comments": 2,
    "text": "Alex Evans was as handsome as Perle remembered. She was relieved that, in nights of loneliness, her imagination had not embellished the man whom she had met in her art gallery. Now was their second meeting. It was not an art gallery in the city but in his home. He was on his land. He was in his own environment. He sat on the edge of a large leather armchair with his elbows on his knees. Alex had Leo talking […] The post A Soul For A Soul Part 3 – An Erotic Story appeared first on Volonté ."
   },
@@ -1622,7 +1710,7 @@
    "kind": "review",
    "title": "What Science Knows About Pleasure in 2026: The Latest Orgasm Research",
    "link": "https://www.lelo.com/blog/orgasm-research/",
-   "age": 30,
+   "age": 31,
    "comments": 0,
    "text": "Science is important. Sex is important. We gathered the most recent compilation of research on the compelling and magical topic of… orgasms. Female Orgasm Gap: Translating Contemporary Scientific Understanding and Sociocultural Movement into Clinical Wisdom Journal of Psychosexual Health, August 2025 Findings The “orgasm gap,” a persistent disparity between cisgender women and men during heterosexual intercourse, reflects multiple complex physiological and sociocultural factors. Women who experience orgasm more frequently during sexual intercourse report increased levels of sexual and relational satisfaction. […] The post What Science Knows About Pleasure in 2026: The Latest Orgasm Research appeared first on Volonté ."
   },
@@ -1631,7 +1719,7 @@
    "kind": "review",
    "title": "A Sole for a Soul Part 2 – An Erotic Story",
    "link": "https://www.lelo.com/blog/a-sole-for-a-soul-part-2-an-erotic-story/",
-   "age": 37,
+   "age": 38,
    "comments": 0,
    "text": "Perle gazed at the name on the shipping paperwork she held. Just seeing the name warmed her, even etching her lips into a smile, despite the disorganized day. She didn’t realize it, until later, that the name made her mind escape, exactly like that single painting had let Alex Evans escape. Perle sat in her office chair, left leg crossed over her right, so she could see her kitten heel slingbacks. The glossy pair was inlayed with memory foam, so […] The post A Sole for a Soul Part 2 – An Erotic Story appeared first on Volonté ."
   },
@@ -1640,7 +1728,7 @@
    "kind": "review",
    "title": "How-To Guide on Giving Exceptional Thrusting Blowjobs",
    "link": "https://www.lelo.com/blog/face-thrusting-blowjobs-guide/",
-   "age": 43,
+   "age": 44,
    "comments": 0,
    "text": "Right off the bat, what is a thrusting blowjob? Well, we’ve used this term as it’s way more PG than saying face fvcking or skull fvcking, but essentially, it’s a specific style of blowjob where the receiving partner takes active control of the movement and depth instead of the giver. And while this may seem similar to deepthroating (and there are many similarities) it isn’t actually the same thing. Additionally, a thrusting blowjob has distinct differences from a regular blowjob. […] The post How-To Guide on Giving Exceptional Thrusting Blowjobs appeared first on Volonté ."
   },
@@ -1649,17 +1737,17 @@
    "kind": "review",
    "title": "Can Paralyzed People Have Sex?",
    "link": "https://www.lelo.com/blog/can-paralyzed-people-have-sex/",
-   "age": 46,
+   "age": 47,
    "comments": 0,
    "text": "Paralysis is the loss of voluntary muscle control. It is primarily caused by damage to the nervous system, the body’s command, control, and communication center that’s intricately made up of the brain, the spinal cord, and trillions of peripheral nerves. Having a stroke is the leading cause, often resulting in hemiplegia (one-sided paralysis). On the other hand, Spinal Cord Injury (SCI) resulting from trauma generally causes paraplegia (lower body palsy) or quadriplegia (paralysis of all limbs). Neurological diseases like Multiple […] The post Can Paralyzed People Have Sex? appeared first on Volonté ."
   }
  ],
  "upd": {
   "💞 Матеріали 18+ (журнали)": {
-   "at": "05.11 00:01",
-   "ts": 1793829702,
+   "at": "06.11 00:01",
+   "ts": 1793916099,
    "ok": true,
-   "note": "78 шт."
+   "note": "89 шт."
   },
   "🛒 Сільпо (основна)": {
    "at": "05.11 18:54",
@@ -1674,14 +1762,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "05.11 23:52",
-   "ts": 1793915545,
+   "at": "06.11 00:03",
+   "ts": 1793916191,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "05.11 23:52",
-   "ts": 1793915545,
+   "at": "06.11 00:03",
+   "ts": 1793916191,
    "ok": true,
    "note": ""
   },
@@ -1842,7 +1930,7 @@
  "silpo_fb": "1f0bae3d-2073-62f4-b14c-f9715721ce18|DeliveryHome|",
  "yt_ver": 2,
  "smm_ver": 4,
- "smm_try": "2026-11-05 23",
+ "smm_try": "2026-11-06 00",
  "smm_links": [
   "https://www.socialmediatoday.com/news/meta-offers-creative-ad-targeting-for-specific-audiences/833672/",
   "https://blog.google/products/ads-commerce/holiday-shopping-bidding-budgeting/",
@@ -1923,16 +2011,31 @@
   "https://blog.google/products/ads-commerce/ads-in-ai-mode-global/",
   "https://www.socialmediatoday.com/news/tiktok-adds-new-brand-safety-resources/873529/",
   "https://www.socialmediatoday.com/news/x-launches-new-bonus-program-for-video-creators/873404/",
-  "https://news.google.com/rss/articles/CBMif0FVX3lxTE5iMERwT2xyZUFFT1hpanpfX1YzUnBoSkl4OWlrNy1zVmtmUUYwWWFCWm1sWk9QWjQyN3FUaUNycTE3MF9rTW4yb1k3RWpfcXpLNFYwMzU1UmtsZmoyNjVteHU2Nl9LaFN5Z1dvM0Y0V1kzNzFXOGNjRnNZcEdXQXc?oc=5"
+  "https://news.google.com/rss/articles/CBMif0FVX3lxTE5iMERwT2xyZUFFT1hpanpfX1YzUnBoSkl4OWlrNy1zVmtmUUYwWWFCWm1sWk9QWjQyN3FUaUNycTE3MF9rTW4yb1k3RWpfcXpLNFYwMzU1UmtsZmoyNjVteHU2Nl9LaFN5Z1dvM0Y0V1kzNzFXOGNjRnNZcEdXQXc?oc=5",
+  "https://www.socialmediatoday.com/news/reddit-tests-ads-in-search-results/873676/",
+  "https://www.socialmediatoday.com/news/instagram-tries-to-entice-long-form-creators/873820/",
+  "https://www.socialmediatoday.com/news/linkedin-details-new-creator-insights-options/873675/",
+  "https://www.socialmediatoday.com/news/x-launches-updated-lead-gen-ads-globally/873666/",
+  "https://news.google.com/rss/articles/CBMimAFBVV95cUxNQjZPUlRqeS1BR1ZMTDFzNXpfSFpCZElKbkVhZ3JLRmREeDVDZWQySGVqM2NXcU1PMHlTWnZYWlNIQzlLT1dILVFleHViS3hNcDNxRGx2cldYazJhY1V6TlZNc1JPaFpsU1RyNmlzNnpNUlNJdTYtR0FNMUpKZWFEM1Nick9tZjZ2TTY0TUgyLWtKeEh5YVpOTQ?oc=5",
+  "https://news.google.com/rss/articles/CBMinAFBVV95cUxOeWNhM2QwNHlKaE0wTnpDak5KTXR1NzdJVzZ4emY0RmU5c1JURm44ZEk1SkY5LUlZQ1pSRlpJZlFlQ0plbEk1aGM0TjJaTXBZUTQ5c0l2VHA1Umg3YjFTLTE0MjdTTlQ2U0F0MGs5d2xmeDMyTVFZd2owanB2X0tCN1BSRjlJMWRFQ2tjc3BueGFUOXNrOEtJSC1TS0PSAaIBQVVfeXFMT1U0aXIwNk9uZUFGU2RvV0JLWkxkNGNzVEhnSDZYZndCQVhFeXJzR1B6bHZLQjFicWpWNHB5YXVLdC04TkFRbHdEN1RQMkRZOTBfQl9XRUMyMHVxMkhHeXZxTmZ4dDB3Y1VON1pkci10YmtqSHRUVHBITzJqbmVZbS0zS1lFOWRMcGZLRUtLVEVnS21mRDVWNjYxVFF4S2NQZ21R?oc=5",
+  "https://about.fb.com/news/2026/11/whatsapp-events-brings-people-together-beyond-the-group-chat/",
+  "https://blog.google/products-and-platforms/products/workspace/omni-1-2-flash-google-vids/"
  ],
- "smm_pool_day": "2026-11-04",
+ "smm_pool_day": "2026-11-06",
  "smm_pool": [
   {
-   "src": "Jon Loomer",
-   "title": "5 Ways Meta Could Improve Audience Segments",
-   "link": "https://www.jonloomer.com/meta-audience-segments/",
-   "text": "When Meta introduced audience segments for manual Sales campaigns in 2024 , they changed everything I knew about targeting. More than two years later, not nearly enough advertisers are getting the value out of audience segments that they should. I’m not going to use this post to highlight all of the many wonders of Audience Segments . I’ve covered this feature extensively , and I even created a free mini-course on it if you want to learn more. Today, I want to focus on the unfortunate problems with this feature. These problems don’t make audience segments any less valuable, but they prevent this amazing tool from being infinitely more useful. Some of these issues are so mind-numbingly frustrating and obvious that I’m not sure why I have to mention them. Folks within Meta, if you’re reading this, I’m begging you to make some important improvements. Let’s get to it… 1. Make Available for All Campaign Objectives It’s easy to forget that the origin of audience segments was Advantage+ Shopping Campaigns. Since we had no control over targeting with those campaigns, audience segments gave us insight into who was seeing and acting on our ads. They even allowed us to set an Existing Customer Budget Cap. When audience segments were expanded in 2024 , advertisers were able to get that same visibility into manual Sales campaigns. Meta also added the Engaged Audience segment so that you could see how your website visitors, email list, and other non-customer segments were contributing to results. This is all amazing, but my complaint from the start was that this visibility is only available for Sales campaigns. If you attempt to perform a breakdown by audience segments for any other campaign objective, you’ll be disappointed. Why can’t we use this for Leads campaigns? Why should it be limited by campaign objective at all? I complained about this in 2024 , but I also understood that the feature was created with Sales campaigns in mind. Well, it’s been more than two years. Why is this still not available? I’ve often had calls with clients who swear by remarketing, and we go through this whole conversation about audience segments. I ask them to perform a breakdown, but then I quickly realize they’re only running Leads campaigns. Audience segments are worthless in that case. I’d honestly be curious how much delivery to remarketing and new audiences changes by campaign objective. I bet it does. But until Meta further expands this feature, it will only be a guess. 2. Predefin",
-   "date": "03.11"
+   "src": "Social Media Examiner",
+   "title": "4 Ways to Create Passionate Fans for Your Business",
+   "link": "https://www.socialmediaexaminer.com/4-ways-to-create-passionate-fans-for-your-business/",
+   "text": "Wondering how to turn customers into loyal fans who stick with your business even when a cheaper competitor comes along? Want fan-building marketing tactics that work? ​In this article, you’ll discover four ways to create passionate fans for your business using in-person experiences, behind-the-scenes content, gamification, and your personal passions. Why Fans Are More Valuable […] The post 4 Ways to Create Passionate Fans for Your Business appeared first on Social Media Examiner .",
+   "date": "05.11"
+  },
+  {
+   "src": "Social Media Examiner",
+   "title": "Claude and ChatGPT Project Tips, Training AI Agents to Work Without You, and Industry News",
+   "link": "https://www.socialmediaexaminer.com/claude-and-chatgpt-project-tips-training-ai-agents-to-work-without-you-and-industry-news/",
+   "text": "Friday is almost here! Before you unplug, here’s one last round of insights and updates. Whether you read them now or save them for later, you won’t want to miss these. In today’s edition: 5 rules to give your projects Build AI workflows that run without you 🗞️ Industry news from Gemini 5 Instructions To […] The post Claude and ChatGPT Project Tips, Training AI Agents to Work Without You, and Industry News appeared first on Social Media Examiner .",
+   "date": "05.11"
   },
   {
    "src": "Social Media Examiner",
@@ -1971,24 +2074,31 @@
   },
   {
    "src": "Hootsuite",
-   "title": "Social media search engines: How to use them in 2026",
-   "link": "https://blog.hootsuite.com/social-media-search/",
-   "text": "Key takeaways A social media search engine is any social platform where people actively type queries to find information. TikTok, Instagram, LinkedIn, YouTube, Pinterest, and Reddit all function this way. Social SEO helps your brand appear in search results through keywords, location tags, alt text, and engagement signals. Each platform ranks search results differently, so tailor your approach to the two or three platforms your audience actually uses. Social listening tools reveal what people search for and say about your brand. What is a social media search engine? A social media search engine is any social platform people use to look things up by typing a query into a search box, rather than scrolling whatever the feed hands them. This is a more active method of seeking out content than simply letting the algorithms deliver what they think you want to see. More than that, it’s a new way of thinking about navigating the vast quantities of information available online. The behavior is well established. Pew Research Center found that 90% of U.S. teens use YouTube and 63% use TikTok , which makes social platforms a routine entry point for information, with one-in-five teens saying they are on TikTok and YouTube almost constantly. As Gen Alpha moves into the teen years, they arrive with the same expectations. The platforms have leaned into it. TikTok, Instagram, and YouTube have all built out AI-assisted search features: suggested queries inside comment threads, keyword search that reaches beyond hashtags, and results summarized or grouped by topic . Search is no longer a secondary feature on these apps. It is a core surface. Gens Z and Alpha want curated, easily scrollable results from brands and creators they trust. Social search far outshines traditional search engines like Google and Bing for those who want to discover, evaluate, and save information on mobile using just one thumb. On the flip side, this means brands need to think beyond the algorithms, and beyond traditional search, to reach new audiences. As social media platforms become social media search engines, marketers need to adjust how they publish and tag everything they post. Bonus !!! Download a free social SEO checklist and follow pro tips for Facebook, Instagram, TikTok, YouTube, X (Twitter), and LinkedIn to get your posts seen by more people. Download now Social media search engines vs. traditional search engines The short answer: social search rewards creators and engagement, while tradi",
-   "date": "03.11"
+   "title": "TikTok marketing: How to build a winning 2026 strategy",
+   "link": "https://blog.hootsuite.com/tiktok-marketing/",
+   "text": "Key takeaways TikTok’s largest user base is aged 25 to 34, making it a strong channel for reaching both Millennials and Gen Z with real purchase intent. A complete TikTok marketing strategy combines organic content, creator partnerships, TikTok ads, and TikTok SEO to drive discovery and conversions. Consistency matters more than virality. Posting 3-5 times per week and tracking performance helps brands build sustainable growth. Hootsuite Social OS lets teams plan, publish, monitor, and measure TikTok alongside every other social channel. What is TikTok marketing? TikTok marketing is the practice of using TikTok to promote a brand, product, or service. With an advertising reach of over 1.59 billion users , the platform has grown well beyond entertainment. Today, features like TikTok Shop and TikTok Search make it a powerful engine for product discovery and social commerce . TikTok marketing includes different tactics, such as: Influencer marketing: Working with TikTok creators to promote your brand. Organic content: Creating TikTok videos that follow platform trends, use popular audio, and feel native to the For You Page. User-generated content : Encouraging followers to create and share content featuring your products or brand. Paid content: Promoting posts or running ads through TikTok’s ad platform to reach specific audiences or scale content. Using these tactics, TikTok marketing can help businesses: Increase brand awareness Build engaged communities Sell products and services Get feedback from customers and audiences Provide customer service Boost social commerce with shopping ads Bonus: Get a free TikTok Growth Checklist from famous TikTok creator Tiffy Chen that shows you how to gain 1.6 million followers with only 3 studio lights and iMovie. What is TikTok influencer marketing? TikTok influencer marketing involves businesses partnering with creators to promote their brand. Typically, brands and influencers agree on a partnership where payment or perks are exchanged for TikTok content. For example, a kitchen brand might pay a foodie influencer to post a TikTok promoting their blender. Sometimes influencer marketing can be subtle, blending seamlessly into a creator’s video through casual product placement, like in the example below: Source: @spencer.barbosa Influencer marketing is everywhere on TikTok, from Bretman Rock promoting hair products to Emily Mariko selling her own tote bags . But don’t let its popularity fool you: finding the right creator ",
+   "date": "05.11"
   },
   {
    "src": "Hootsuite",
-   "title": "TikTok AI disclosure policy: What to label (organic + ads)",
-   "link": "https://blog.hootsuite.com/ai-disclosure-policy-for-tiktok/",
-   "text": "TikTok has labeled over 1 billion videos as AI-generated, which tells you two things: people are using a lot of AI, and TikTok is definitely paying attention. Here’s how to make sure your content is labeled the right way, from organic posts to paid ads. Key takeaways TikTok lets you use AI, but realistic-looking content needs a label. This covers videos, images, and audio. You can use AI for basic editing without disclosing it. Think color correction, cropping, or other small touch-ups. Skipping a label can cost you. TikTok may add a label for you, restrict your reach, or remove the post altogether. Put AI disclosures on autopilot with Perch . Send your content through custom approval workflows, so every post gets a second look before it hits the feed. Quick note: This guide is for general information, not legal advice. For paid or branded content, loop in your legal team and review the latest TikTok policies and FTC guidance. What is TikTok’s AI disclosure policy? TikTok lets you use AI, but requires creators to add a label when it’s used to create or significantly edit realistic-looking people or scenes. According to TikTok’s Community Guidelines , the policy covers two types of content: AI-generated content (AIGC): Any image, video, or audio made or altered by AI that depicts realistic-looking people or scenes. Significantly edited content: Media that’s been edited (with or without AI) to show someone saying or doing something they didn’t, or to make them unrecognizable. When you add a label to your TikTok video, a tag appears below your caption with text like “Creator labeled as AI-generated.” Forgetting to add an AI label may result in your post being removed or restricted by TikTok. Some content is off-limits, label or not. For example, TikTok bans AI content that could seriously mislead people about public issues or harm a real person. Meet the Suite Understand what matters, decide what to do next, and take action across every social workflow — all from one connected suite. Start your free trial Request a demo Creator toggle vs. auto labels vs. ad disclosure TikTok uses three types of AI labels. Here’s how each one works: Creator toggle: This is a label you add yourself. Add it when your post was completely generated or significantly edited by AI. Auto label: TikTok may add a label to your video automatically. It happens when you use TikTok AI effects, or when content from other tools carries Content Credentials (a type of metadata that shows how a ",
-   "date": "03.11"
+   "title": "Content moderation in 2026: A complete guide for brands",
+   "link": "https://blog.hootsuite.com/content-moderation/",
+   "text": "Key takeaways Content moderation is the process of reviewing, filtering, and responding to user-generated content on your social channels to protect your brand, your audience, and your team. The five main types of moderation (pre, post, reactive, distributed, and automated) each balance speed, scale, and human oversight differently. AI-powered moderation handles volume and speed, but human moderators are still essential for context, nuance, and sensitive conversations. A strong moderation workflow combines clear policies, the right tools, and governance frameworks to keep decisions consistent across teams, platforms, and regions. What is content moderation? Content moderation is the process of reviewing, filtering, and responding to comments, messages, and other user-generated content on your social channels. The goal is simple: make sure real people get real responses, while spam, trolls, and harmful content get filtered out. The practice has changed a lot. What used to be a queue of comments reviewed by hand is now a mix of AI-assisted filtering at the first pass and human review for anything sensitive or ambiguous. Moderation also stretches beyond your own posts, covering mentions, reviews, and conversations happening about your brand elsewhere online. Content moderation protects your brand by flagging or removing anything that could harm your reputation or your audience’s experience, making it a core part of any social media strategy . Bonus !!! Bonus: Get a free social media strategy template to quickly and easily plan your strategy, track results, and share with your boss, teammates, and clients. Download now Why is content moderation important? Content moderation keeps your brand in check. It helps you stay responsive, protect your reputation, and get ahead of issues early. Here are three reasons content moderation matters: 1. It supports customer service Customers often turn to social for support. A content moderator makes sure those messages get answered quickly, whether that means replying directly or routing them to the right team. On smaller teams, moderators may handle responses themselves. On larger teams, they help triage incoming DMs, comments, and complaints so nothing slips through the cracks. One thing to keep in mind: moderation isn’t about deleting every negative comment to make your brand look perfect, and it’s not about censorship either. The goal is to remove harmful content, not silence constructive criticism. 2. It protects your b",
+   "date": "05.11"
   },
   {
    "src": "Hootsuite",
-   "title": "How to use Google Analytics for social media (GA4 setup + reports)",
-   "link": "https://blog.hootsuite.com/google-analytics-social-media/",
-   "text": "Likes are nice, but they don’t win anyone a bigger budget. To get leadership’s attention, you need proof that social made a real business impact. Google Analytics is how you get that proof, and we’ll walk you through the setup, step by step. Key takeaways Google Analytics (GA4) tracks what people do once they land on your website. GA4 helps you prove the value of social. It shows which social posts lead to signups, downloads, purchases, and leads. UTM parameters are crucial. Without them, GA4 has to guess where visitors came from. Perch adds UTM parameters to your links as you schedule, so your team never has to memorize them. What is Google Analytics for social media? Google Analytics isn’t a social media tool, but it’s one of the best ways to connect social media to real business impact . It tracks what people do on your website after they arrive from a social platform. You can see which social networks send the most traffic, what those visitors do once they land, and whether they take any actions, like filling out a form. GA4 is free, and it’s the current version of Google Analytics. Meet the Suite Understand what matters, decide what to do next, and take action across every social workflow — all from one connected suite. Start your free trial Request a demo GA4 vs. native social analytics Native analytics (like Instagram Insights or TikTok Analytics ) are best for improving your content performance on each platform. GA4 is best for understanding what that content does for your business. Here’s how they compare: Native social analytics Google Analytics 4 What it measures Content performance on the platform Activity on your website Example metrics Reach, impressions, likes, comments, shares, saves, and link clicks Sessions, engagement rate, key events (conversions), and revenue Best for Figuring out which content resonates with your audience Figuring out which content drives traffic, leads, and sales { \"@context\": \"https://schema.org\", \"@type\": \"Table\", \"name\": \"GA4 vs. Native Social Analytics\", \"description\": \"A comparison of Google Analytics 4 and native social media analytics, including what each measures, example metrics, and their best uses for evaluating content and business performance.\", \"creator\": { \"@type\": \"Organization\", \"name\": \"Hootsuite\", \"url\": \"https://www.hootsuite.com/\" }, \"url\": \"https://blog.hootsuite.com/google-analytics-social-media/\", \"about\": [ { \"@type\": \"Thing\", \"name\": \"Native social analytics\", \"description\": \"What it measure",
-   "date": "03.11"
+   "title": "Facebook ad tools: 14 best picks for 2026",
+   "link": "https://blog.hootsuite.com/facebook-ad-tools/",
+   "text": "Key takeaways The best Facebook ad tools in 2026 pair AI-powered optimization with cross-channel reporting so you get more out of every dollar of ad spend. Meta’s Meta Advantage+ features handle much of the heavy lifting for targeting and creative, but third-party tools still fill real gaps in reporting, design, and workflow management. An all-in-one platform like Hootsuite Social OS lets you manage paid and organic content together, so you can measure true social ROI in one place. Several powerful Facebook ad tools are free, including Meta Ads Manager, Facebook Ad Library, and Canva’s basic plan. What are Facebook ad tools? Facebook ad tools are software platforms that help you create, manage, optimize, report on, or scale advertising campaigns across Facebook and the rest of Meta’s apps. Some are native to Meta, like Ads Manager and the Ad Library. Others are third-party Facebook advertising tools that connect through Meta’s API to add capabilities Ads Manager does not cover well on its own. They matter more in 2026 than they did a few years ago for a few reasons: ad delivery is increasingly automated (Meta’s end-to-end AI campaigns hit a $60 billion annual run rate in 2025), privacy rules have made measurement harder, and most teams now run campaigns across more than one network. Tools help you keep up without adding headcount. The categories covered in this article: Optimization and AI: Tools that spot opportunities to improve campaigns and automate changes. Reporting: Dashboards that pull Facebook ad data together with your other channels. Copywriting and AI content: Tools that draft and vary your ad copy. Design: Tools for creating and scaling ad creative. Scheduling and automation: Tools that control when and how campaigns run. You do not need to pay for all of this. Several free Facebook ad tools cover the fundamentals, and you only pay for the cost of your ads. Bonus: Use our free Facebook Ads budget calculato r to figure out exactly how much you need to spend to get the results you want. Let us do the math for you! How to choose the right Facebook ad tool Start by naming the problem you are actually trying to solve. Most teams buy too many overlapping tools because they shop by feature list instead of by gap. Work through these five criteria in order: Define your primary goal. Are you stuck on creative production, campaign optimization, reporting, or managing the whole workflow? One clear goal narrows the list fast. Match the tool to your budget ",
+   "date": "04.11"
+  },
+  {
+   "src": "Hootsuite",
+   "title": "Instagram AI disclosure policy: What to label + how",
+   "link": "https://blog.hootsuite.com/ai-disclosure-policy-for-instagram/",
+   "text": "Posting AI content on Instagram isn’t the problem. Hiding it is where things get messy. Here’s how the Instagram AI disclosure policy works, and how to label your content the right way. Key takeaways Realistic AI video and audio need a label. If it looks or sounds real (and isn’t), you need to disclose it. Instagram has two AI labels. “AI info” goes on individual posts. “AI-generated profile” goes on accounts that feature an AI-generated person. Skipping a label can cost you. If Instagram detects AI, it may add a label for you, restrict your reach, or apply other penalties. Make disclosure part of your workflow. With Perch , you can add AI checks to your approval flows, so the right people sign off before anything goes live. Quick note: This guide is for general information, not legal advice. For paid or branded content, loop in your legal team and review the latest Instagram policies and FTC guidance. What is Instagram’s AI disclosure policy? Instagram lets you use AI, but requires creators to label AI content that looks or sounds real, and to label profiles that feature an AI-generated person. If you don’t, Instagram may add a label itself, limit your reach, or apply other penalties. Meet the Suite Understand what matters, decide what to do next, and take action across every social workflow — all from one connected suite. Start your free trial Request a demo “AI info” label vs. “AI-generated profile” label Instagram has two AI disclosure labels: “AI info” label: Applies to individual posts, Reels, and Stories. It tells people that a specific piece of content was made or modified with AI. “AI-generated profile” label: Applies to an entire account. It tells people that the person featured on the profile is AI-generated. This label was formerly known as “AI creator.” Here’s a closer look at how they differ: AI info AI-generated profile What it labels A single post, Reel, or Story An entire account Who applies it You, when you post You, in your profile settings Where it shows up On the post, or in the post’s menu if AI was only used for edits On your profile, and next to posts that don’t already have their own AI label { \"@context\": \"https://schema.org\", \"@type\": \"Table\", \"name\": \"AI Info Label vs. AI-Generated Profile Label\", \"description\": \"A comparison of Instagram's two AI disclosure labels, explaining what each label identifies, who applies it, and where it appears on the platform.\", \"creator\": { \"@type\": \"Organization\", \"name\": \"Hootsuite\", \"url\": \"htt",
+   "date": "04.11"
   },
   {
    "src": "Hootsuite",
@@ -1998,18 +2108,32 @@
    "date": "02.11"
   },
   {
-   "src": "Hootsuite",
-   "title": "Top 10 Sprinklr competitors and alternatives for 2026",
-   "link": "https://blog.hootsuite.com/sprinklr-competitors/",
-   "text": "Key takeaways Sprinklr is a powerful enterprise platform, but its cost, complexity, and long implementation timelines push many teams to evaluate alternatives. Hootsuite Social OS is the strongest Sprinklr alternative for enterprise teams that want intelligence and execution in one governed system. The best Sprinklr competitor for your team depends on your use case: full-suite enterprise management, social listening, mid-market publishing, or CRM integration. Pricing ranges from free plans (Buffer) to six-figure enterprise contracts (Sprinklr, HubSpot), so matching your budget to the features you actually use matters more than feature count. What is Sprinklr? Sprinklr is a unified customer experience management platform that combines social media management with marketing, advertising, customer care, and research in a single system. It is built for large organizations that want to run many brands, regions, and teams from one place. The platform’s core modules cover publishing and scheduling, social listening, paid social and advertising, agent-based customer care, and analytics. Sprinklr also layers AI across those modules for things like sentiment detection, routing, and reporting. That breadth is the main reason enterprise buyers shortlist it. It is also the main reason they look elsewhere. Sprinklr does not publish standard pricing, sells through an enterprise sales process, and typically requires a modular contract plus implementation support. Teams that only need social publishing, listening, and care often end up paying for a far larger social media management platform than they use. Bonus !!! Bonus: Get a free social media strategy template to quickly and easily plan your strategy, track results, and share with your boss, teammates, and clients. Download now Why do teams look for Sprinklr alternatives in 2026? Most teams searching for Sprinklr alternatives are not unhappy with what the platform can do. They are unhappy with what it costs to get there, and according to Forrester, 81% of B2C marketing executives planned to evaluate their social suite heading into 2025. Here are the reasons that come up most often in vendor evaluations and review sites like G2 and Gartner Peer Insights. Total cost of ownership: Sprinklr pricing is modular and custom-quoted, so costs climb quickly once you add care, listening, and advertising seats on top of social publishing. Implementation time: Enterprise rollouts commonly run several months and need dedicated intern",
-   "date": "30.10"
+   "src": "Buffer",
+   "title": "20 Social Media Metrics to Track (With Formulas and Benchmarks)",
+   "link": "https://buffer.com/resources/social-media-metrics/",
+   "text": "More doesn't necessarily mean better . Think emails in your inbox, glitter on a Mother's Day card, hot sauce… That applies to social media metrics, too. It's tempting to track everything your analytics dashboard throws at you. But not all social media metrics are created equal, and the ones worth your time come down to your specific social media marketing goals — whether that's testing a new format, growing an audience, or getting more people to your website. Metrics are most helpful when they guide your next move — adjusting your content, switching up your posting schedule, or even thinking up new products. In this guide, I'll walk you through 20 social media marketing metrics, what each one tells you, how to calculate it, and how to turn the right handful into KPIs. Key takeaways Social media metrics vs. KPIs: Metrics are everything you can measure on your accounts. KPIs are the three to five metrics you tie to a specific goal and target, such as lifting LinkedIn engagement rate from 4% to 6% in a quarter. Engagement rate is the most widely used metric for judging whether content is landing. The formula is total engagements ÷ reach × 100. Typical engagement rates differ by platform. Buffer’s analysis of 52+ million posts found 2025 medians of about 6.2% on LinkedIn, 5.6% on Facebook, 5.5% on Instagram, 4.6% on TikTok, 4.0% on Pinterest, 3.6% on Threads, and 2.5% on X. Reach vs. impressions: Reach counts the unique people who saw a post. Impressions, which many platforms now report as views, count every time it was shown, including repeats. Replying to comments is linked to higher engagement on every platform Buffer studied, with up to 42% more on Threads and 30% more on LinkedIn. Posting consistently protects your growth. In Buffer’s data, accounts that skipped a week of posting grew followers more slowly than their own usual rate. Vanity metrics like follower count and likes are most useful when you turn them into a rate, such as follower growth rate or engagement rate. Click-through rate, conversion rate, and return on ad spend are the metrics that connect social media activity to revenue. Jump to a section: What are social media metrics (and how are they different from KPIs) Which social media metrics should you track? Social media engagement metrics 1. Engagement rate 2. Comments 3. Shares 4. Saves 5. Average watch time and completion rate Reach and awareness metrics 6. Reach 7. Impressions and views Audience growth metrics 8. Follower growth rate 9.",
+   "date": "05.11"
   },
   {
-   "src": "Hootsuite",
-   "title": "Social media in education: 10 tips and benefits for 2026",
-   "link": "https://blog.hootsuite.com/social-media-in-education/",
-   "text": "Key takeaways Social media in education can boost student engagement, connect learners with global resources, and strengthen institutional branding when it’s used strategically. Risks like cyberbullying, privacy violations, and mental health impacts mean schools need clear policies alongside any social media use, plus compliance with FERPA, COPPA, and CIPA. Educators can use social media in the classroom for active learning, digital literacy development, networking skills, and community building. Tracking education-specific benchmarks helps institutions set realistic goals and show what social media is actually delivering. What is social media in education? Social media in education is the use of platforms like YouTube, Instagram, TikTok, LinkedIn, Facebook, and X for teaching, learning, and institutional communication. It generally covers two distinct things, and it helps to keep them separate. The first is social media as a classroom tool: assignments, discussion prompts, livestreamed lectures, digital literacy lessons, and collaboration between students. The second is social media as an institutional channel: recruitment campaigns, campus alerts, alumni relations, and brand building. Both matter because students are already there. Nine-in-ten U.S. teens say they use YouTube, with majorities also on TikTok and Instagram. Meeting students on the platforms they use daily is usually easier than pulling them somewhere else. Bonus !!! Get a free step-by-step social media strategy guide with pro tips on how to grow your social media presence. Download now What are the benefits of social media in education? Used well, social media can make classrooms more engaged and institutions more connected. The main benefits: Student engagement: Reaching learners on platforms they already use Global access: Connecting students with experts and perspectives beyond campus Collaboration: Easier communication between students, and between students and teachers Professional development: Peer learning communities for educators How does social media increase student engagement? Social media increases student engagement by meeting learners on platforms they already use. Normally, when we discuss “engagement,” we’re referring to likes, comments, and shares on a social media post. However, “engagement” can have a double meaning when using social media in education. Student engagement is key to a successful classroom. When students are engaged, curious, and social in class, it shows ",
-   "date": "29.10"
+   "src": "Buffer",
+   "title": "The Best MCP Servers for Social Media: The 8-Tool Stack I Use Every Week As A Creator",
+   "link": "https://buffer.com/resources/best-mcp-servers/",
+   "text": "For a long time, my ideas were scattered everywhere. Some were in my Notes app. Others were screenshots on my phone that I’d never opened again, or buried in old Claude conversations. Sometimes I'd remember a good line from a voice note I recorded months ago, but have no idea where to find it. Everything was saved somewhere, just never anywhere I'd look when it was time to make something. And even with this mega-level disorganization, I had been getting by fine. I have an 80-week creation streak in my personal Buffer account, and that's not counting the content I make for Buffer's channels. Coming up with ideas has never been my problem. Finding them again is. So when MCPs started gaining traction, I went all in (though not in the way most tutorials suggested). An MCP (Model Context Protocol) lets an LLM connect directly to the tools you already use, no code required. Most guides stop at what each individual connection can do, which is plenty useful. What changed how I work is using MCPs to pull all my scattered ideas into one place, then create and publish from that same place with tools that also run on MCPs, like Buffer, Canva, and Descript. These are the 8 MCP servers I use every week to turn random ideas into finished posts without switching between a dozen tabs. Here's the stack and how each one feeds into the next. Jump to a section: The short version Key takeaways How I think about my MCP stack Buffer Notion Granola Google Workspace Elicit Sublime Canva Descript Start with one connection FAQs about MCP servers for social media The short version Buffer is the best MCP server for social media if you post to more than one platform. It's a multi-platform MCP built for people who don't write code, it's free to connect, and it covers both ends of my system: a place for capturing ideas and a place for scheduling finished posts. It’s in the top spot for a simple reason: every other tool in my stack exists either to get content into Buffer or to make the content that ends up there. Notion is home base for storing research, Granola pulls quotes out of my recorded calls, Google Workspace handles the admin, Elicit backs up my takes with research, Sublime holds everything I've saved from around the web, and Canva and Descript help turn an idea into something I can post. Key takeaways Buffer is the best multi-platform MCP server for social media. It's built in partnership with social platforms, is free to connect, and works as the place I capture ideas, schedule",
+   "date": "04.11"
+  },
+  {
+   "src": "Buffer",
+   "title": "We are Retiring Start Page: Why and What to Expect",
+   "link": "https://buffer.com/resources/retiring-start-page/",
+   "text": "As Buffer has continued to support the individuals, creators, and small and medium businesses who use us, we've had to balance being a relatively small team with making tough decisions. We've had to make one of these recently. After careful deliberation as a team, we've decided to retire Start Page. If you've built a Start Page with us, thank you. Creators, small businesses, and nonprofits have used it as a front door to their work since 2021. Many of our customers were just getting started with their online journey, and a full website can be expensive and fiddly to maintain. Start Page provided a simple, flexible page anyone could build in minutes and share across their social profiles. We don't take ending that lightly, which is why we're giving several months' notice, firm dates, and multiple options to make the transition as hassle-free as possible Here's the timeline: November 4, 2026: We've stopped allowing the creation of new Start Pages November 30, 2026: You'll have tools to move your page somewhere else. February 2, 2027: We'll begin taking down Start Pages that haven't been migrated somewhere else. I'd like to elaborate on why we're doing this, the plan moving forward, and what options we plan to have available. Why we're doing this Having one link that holds everything (also referred to as a link-in-bio tool) is still useful in today's social space. So why are we moving away from it? For us at Buffer, three things have become hard to ignore. We've focused Buffer on our core strengths outside of Start Page. Buffer is a social media toolkit: we help you plan, publish, and learn from your content, and engage with your community across the social channels you use. While Start Page lives in your bio, it sits off to the side of all that. We've wanted to work on Start Page, but it takes away from Buffer's strengths and focus. From a capabilities perspective, Start Page has fallen behind, and catching up would cost us the things you rely on. Link-in-bio and microsite tools have come a long way since 2021, and Start Page hasn't kept pace. Making it best-in-class would mean pulling several teammates away from other key, much-requested improvements to other core Buffer features. We don't think that's the right trade for most of our customers. It's challenging to run well as a small, nimble team. Hosting public pages at scale comes with real costs: infrastructure, traffic spikes when a page goes viral, and a constant effort to keep spam and malicious pages",
+   "date": "04.11"
+  },
+  {
+   "src": "Buffer",
+   "title": "Can You Schedule Instagram Stories? Yes — Here's How (Desktop and Mobile)",
+   "link": "https://buffer.com/resources/how-to-schedule-instagram-stories/",
+   "text": "Yes, you can schedule Instagram Stories — just not inside the Instagram app. Instagram's built-in scheduler doesn't cover stories, so you'll need a third-party social media scheduling tool like Buffer, or Meta's own Meta Business Suite. That's good news if stories are the first thing to slip off your to-do list. They're fleeting, often on the fly, and easy to forget when your day gets busy. If you've ever found yourself scrambling for something (anything!) to post at the last minute, scheduling takes that pressure off. It's something I wish I'd started doing sooner. In this guide, I'll walk you through both methods step by step — on desktop and on your phone — then share a few tips for getting more out of the stories you schedule. 📚 Just getting started on Instagram? Check out our Instagram 101 guide for a step-by-step walkthrough of the platform. Jump to a section: Can you schedule Instagram Stories? How to schedule a story on Instagram with Buffer (4 steps) How to schedule a story on Instagram from your phone How to schedule a story with Meta Business Suite What happens to stickers, polls, and links when you schedule a story? Buffer vs. Meta Business Suite: which should you use to schedule stories? Why schedule your Instagram Stories? Quick tips for scheduling Instagram Stories Can you schedule Instagram Stories? Yes, but not in the Instagram app itself. Instagram's built-in scheduler lets professional accounts schedule reels, photos, and carousel posts, but stories aren't included right now. To schedule an Instagram Story, you need either Meta Business Suite (Meta's free tool for Facebook and Instagram), or a third-party scheduler like Buffer, which works from both desktop and mobile. Whether your story publishes on its own depends on your account type and what's in it. More on that in the Buffer steps below. Key takeaways Instagram app: There's no native story scheduling. The in-app scheduler covers only Reels, photos, and carousel posts. Meta Business Suite: Schedules Instagram Stories for free from a desktop browser and the app. Buffer: Schedules Instagram Stories from the web app or the iOS and Android apps, including on the free plan (up to three channels). Auto-publishing: Buffer publishes stories automatically for Instagram business and creator accounts. Personal accounts get a reminder on their phone to finish the post in Instagram. Stickers, links, and music: Instagram doesn't let third-party tools add these automatically, so stories that use t",
+   "date": "04.11"
   },
   {
    "src": "Buffer",
@@ -2034,38 +2158,10 @@
   },
   {
    "src": "Medium · facebook-ads",
-   "title": "Best Meta Ads Agency in India? 7 Things to Check Before Hiring a Facebook Ads Agency in 2026",
-   "link": "https://medium.com/@ibactdigital/best-meta-ads-agency-in-india-7-things-to-check-before-hiring-a-facebook-ads-agency-in-2026-7d94f3535758?source=rss------facebook_ads-5",
-   "text": "Facebook and Instagram ads can bring an Indian business leads within days. They can also burn through a budget with nothing to show for it… Continue reading on Medium »",
-   "date": "03.11"
-  },
-  {
-   "src": "Medium · facebook-ads",
-   "title": "eeat format artickle tharanam with my key word useaakanam multiple aaayitt -digital marketing…",
-   "link": "https://medium.com/@lazinharshad60/eeat-format-artickle-tharanam-with-my-key-word-useaakanam-multiple-aaayitt-digital-marketing-8013a15d953b?source=rss------facebook_ads-5",
-   "text": "Introduction Continue reading on Medium »",
-   "date": "03.11"
-  },
-  {
-   "src": "Medium · facebook-ads",
-   "title": "What Is Meta Ads Manager? A Complete Guide to Facebook and Instagram Advertising",
-   "link": "https://medium.com/@aneesfebina63/what-is-meta-ads-manager-a-complete-guide-to-facebook-and-instagram-advertising-68517b099c0b?source=rss------facebook_ads-5",
-   "text": "Introduction Continue reading on Medium »",
-   "date": "03.11"
-  },
-  {
-   "src": "Medium · facebook-ads",
-   "title": "Five days to Diwali: what I’d check in a Meta ads account before the last push",
-   "link": "https://archanasharma25.medium.com/five-days-to-diwali-what-id-check-in-a-meta-ads-account-before-the-last-push-b428d9270c87?source=rss------facebook_ads-5",
-   "text": "The last week of a festive sale is about protecting what works, not launching something new. Continue reading on Medium »",
-   "date": "03.11"
-  },
-  {
-   "src": "Medium · facebook-ads",
-   "title": "LeadEnforce Black Friday Deal on Meta Targeting Just Got Better (+ a Little Trick)",
-   "link": "https://medium.com/@jrdn.mtchll.clrk/leadenforce-black-friday-deal-on-meta-targeting-just-got-better-a-little-trick-bdf19a86d9bf?source=rss------facebook_ads-5",
-   "text": "Get 30% off LeadEnforce for Black Friday to improve your Meta and Facebook ad targeting. Continue reading on Medium »",
-   "date": "03.11"
+   "title": "The Ad Pixels Nobody Told to Wait",
+   "link": "https://medium.com/@bannerproof.social/the-ad-pixels-nobody-told-to-wait-5adff07031ca?source=rss------facebook_ads-5",
+   "text": "In a scan of 23,367 small-business websites, more than one in four fired an advertising pixel before the visitor had said anything at all. Continue reading on Medium »",
+   "date": "05.11"
   }
  ],
  "smm_pool_seen": [
@@ -15356,9 +15452,7 @@
  "fav_sent": {
   "160603556": "2026-11-05"
  },
- "imp_sent": {
-  "396425365": "2026-11-05"
- },
+ "imp_sent": {},
  "ero_sent": {},
  "pend": {
   "silpo": {
@@ -30781,9 +30875,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "73bb05e7b8c0",
+  "gs": "90c2f34ef650",
   "quiz_pool.json": "d62dbc5542f3",
-  "fact.png": "9255a529e58f",
+  "fact.png": "b27455478d02",
   "sexed.json": "fe33e30f20db",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -41700,12 +41794,8 @@
  "silpo_snap": "2026-11-04",
  "live_day": "2026-11-05",
  "silpo_week": "2026-45",
- "sbm_at": 1793915747.0973282,
+ "sbm_at": 1793916055.9099543,
  "sbm_hist": [
-  [
-   "11:20",
-   36
-  ],
   [
    "11:25",
    37
@@ -42277,6 +42367,10 @@
   [
    "23:55",
    47
+  ],
+  [
+   "00:00",
+   47
   ]
  ],
  "sbm_near": {
@@ -42293,7 +42387,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1793915162.662671,
+ "net_at": 1793916065.5827866,
  "net_asn": {
   "triolan": [
    "13188",
@@ -44792,7 +44886,6 @@
   ]
  },
  "ytf_week": "202645",
- "smm_fail_since": 1793897651.6985226,
  "kino_q": [
   {
    "id": "1fb4b3552f",
@@ -44934,5 +45027,6 @@
   "horror": "2026-11-05T23:45:48.337528+02:00",
   "scifi": "2026-11-05T23:55:43.500424+02:00"
  },
- "kb_probe2": "2026-45"
+ "kb_probe2": "2026-45",
+ "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 30.10–06.11\n<blockquote>🎯 <b>1. Реклама в пошуку Reddit</b>\nReddit почав тестувати розміщення рекламних оголошень у результатах внутрішнього пошуку платформи.\n💡 Додайте пошуковий таргетинг Reddit до своїх медійних кампаній, поки конкуренція там ще низька.\n🔗 <a href=\"https://www.socialmediatoday.com/news/reddit-tests-ads-in-search-results/873676/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>2. Довгі відео в Instagram</b>\nInstagram тестує можливість завантаження довгих горизонтальних відео тривалістю до 90 хвилин, кидаючи виклик YouTube.\n💡 Експериментуйте з лонгрідами та подкастами у форматі відео, щоб займати нові ніші в алгоритмах рекомендацій.\n🔗 <a href=\"https://www.socialmediatoday.com/news/instagram-tries-to-entice-long-form-creators/873820/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>3. Оновлена аналітика для авторів у LinkedIn</b>\nLinkedIn представив розширені інструменти аналітики та інсайтів для контент-мейкерів і бізнес-сторінок.\n💡 Використовуйте нові показники залученості для оптимізації B2B-контенту та кращого розуміння своєї аудиторії.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-details-new-creator-insights-options/873675/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Глобальний запуск оновленої лідогенерації в X</b>\nПлатформа X (колишній Twitter) випустила оновлені рекламні формати для збору лідів по всьому світу.\n💡 Протестуйте оновлені форми лідогенерації в X для швидкого збору контактів у B2B та крипто-нішах.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-launches-updated-lead-gen-ads-globally/873666/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>5. Нові інструменти аналітики TikTok Shop</b>\nПродавці в TikTok Shop отримали доступ до 9 нових аналітичних інструментів Compass для відстеження реклами та відтоку клієнтів.\n💡 Аналізуйте дані про відтік і ефективність реклами через Compass, щоб оперативно коригувати воронку продажів у TikTok.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxNQjZPUlRqeS1BR1ZMTDFzNXpfSFpCZElKbkVhZ3JLRmREeDVDZWQySGVqM2NXcU1PMHlTWnZYWlNIQzlLT1dILVFleHViS3hNcDNxRGx2cldYazJhY1V6TlZNc1JPaFpsU1RyNmlzNnpNUlNJdTYtR0FNMUpKZWFEM1Nick9tZjZ2TTY0TUgyLWtKeEh5YVpOTQ?oc=5\">PPC Land</a></blockquote>\n<blockquote>📊 <b>6. Керування алгоритмами в Instagram</b>\nInstagram запроваджує нову функцію, яка дає користувачам більше контролю над формуванням їхньої стрічки та алгоритмів.\n💡 Створюйте максимально залучаючий контент перших секунд, оскільки користувачі активніше налаштовуватимуть свої вподобання.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxOeWNhM2QwNHlKaE0wTnpDak5KTXR1NzdJVzZ4emY0RmU5c1JURm44ZEk1SkY5LUlZQ1pSRlpJZlFlQ0plbEk1aGM0TjJaTXBZUTQ5c0l2VHA1Umg3YjFTLTE0MjdTTlQ2U0F0MGs5d2xmeDMyTVFZd2owanB2X0tCN1BSRjlJMWRFQ2tjc3BueGFUOXNrOEtJSC1TS0PSAaIBQVVfeXFMT1U0aXIwNk9uZUFGU2RvV0JLWkxkNGNzVEhnSDZYZndCQVhFeXJzR1B6bHZLQjFicWpWNHB5YXVLdC04TkFRbHdEN1RQMkRZOTBfQl9XRUMyMHVxMkhHeXZxTmZ4dDB3Y1VON1pkci10YmtqSHRUVHBITzJqbmVZbS0zS1lFOWRMcGZLRUtLVEVnS21mRDVWNjYxVFF4S2NQZ21R?oc=5\">ABC News - Breaking News, Latest News and Videos</a></blockquote>\n<blockquote>🆕 <b>7. Події у WhatsApp</b>\nMeta додала функцію створення подій (Events) у WhatsApp для координації користувачів поза груповими чатами.\n💡 Використовуйте WhatsApp Events для комунікації з клієнтами під час локальних заходів, вебінарів чи акцій.\n🔗 <a href=\"https://about.fb.com/news/2026/11/whatsapp-events-brings-people-together-beyond-the-group-chat/\">Meta Newsroom</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202645"
 }
