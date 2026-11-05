@@ -5971,7 +5971,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
     for c in cats:
         try:
             fav_cat = bool(re.search(r"Овоч|Фрукт|Ягід|Ягод|Зелен|Гриб|Солодощ|Кондитер|Шоколад|Печиво|Цукерк|Морозив|М.ясо|Ковбас|Сосиск|Птиц|Риб|Морепрод|Сир|Молоч|Кисломол|Йогурт|Готов|Кулінар|Салат|Страв|Піц|Суші", str(c.get("title") or ""), re.I))   # ❤️ солодощі, мʼясо, сир, кисломолочне, готові страви — глибше
-            prods = silpo_products(br[0], DT_, c.get("slug"), promo=True, limit=100, max_pages=10 if fav_cat else 6)
+            prods = silpo_products(br[0], DT_, c.get("slug"), promo=True, limit=100, max_pages=15 if fav_cat else 11)
         except Exception as e:
             print(f"Сільпо, {c.get('title')}: {err_text(e)}")
             continue
@@ -6009,7 +6009,8 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
             if kind in ("direct", "online", "card"):  # реальна вигода — за історією цін
                 past = [hist[w].get(str(p_.get("id"))) for w in weeks]
                 past = [x for x in past if x]
-                real = (min(past) - price) / min(past) * 100 if past else None
+                base_ = sorted(past)[len(past) // 2] if past else None   # медіана, а не мінімум: повторювані акції не «зʼїдають» реальну вигоду
+                real = (base_ - price) / base_ * 100 if base_ else None
                 if real is not None and real < 3 and declared < 20:
                     SILPO_WHY[nm_] = f"за історією цін не дешевше, ніж раніше (заявлено −{declared:.0f}%)"
                     continue                          # «акція», яка насправді не дешевша — пропускаємо (знижки від 20% — завжди беремо)
@@ -6051,7 +6052,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
         title = str(c.get("title") or c.get("name") or "")
         emo = next((e for k, e in CAT_EMOJI if k in title.lower()), "🛒")
         rows = []
-        for n_, (_, p_, price, old, declared, real, rating, week, badge, kind) in enumerate(cand[:SILPO_TOP + 100], 1):
+        for n_, (_, p_, price, old, declared, real, rating, week, badge, kind) in enumerate(cand[:SILPO_TOP + 500], 1):
             ratio = f", {esc(p_.get('displayRatio') or p_.get('ratio'))}" if (p_.get("displayRatio") or p_.get("ratio")) else ""
             real_t = f" · <b>реально −{real:.0f}%</b>" if real is not None else ""
             rate_t = f" · ⭐ {float(rating):.1f}" if rating else ""
@@ -6059,14 +6060,14 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
             rows.append(f"{n_}. {'🔥 ' if week else ''}{'✅ ' if p_.get('_ok') else ''}{esc(p_.get('title'))}{ratio} — <b>{price:g} ₴{per}</b> <s>{old:g} ₴</s> · "
                         f"{badge + ' ' if badge else ''}{'заявлено ' if kind in ('direct', 'online') else ''}−{declared:.0f}%{real_t}{rate_t}\n"
                         f'🔗 <a href="https://silpo.ua/product/{html.escape(str(p_.get("slug") or ""))}">відкрити</a>')
-        for r_, (_, p_x, *_r) in zip(rows, cand[:SILPO_TOP + 100]):      # ⭐ хіти покупців — з усіх категорій
+        for r_, (_, p_x, *_r) in zip(rows, cand[:SILPO_TOP + 500]):      # ⭐ хіти покупців — з усіх категорій
             if p_x.get("_hit"):
                 HITS_.append(((p_x.get("_votes") or 50) * float(p_x.get("guestProductRating") or 4.5) * (1.5 if re.search(r"Овоч|Фрукт|Ягід|Ягод|Зелен|Гриб|Солодощ|Кондитер|Шоколад|Печиво|Цукерк|Морозив|М.ясо|Ковбас|Сосиск|Птиц|Риб|Морепрод|Сир|Молоч|Кисломол|Йогурт|Готов|Кулінар|Салат|Страв|Піц|Суші", title, re.I) else 1), r_, title))
         ci = f"{tag}{total}"
         more[ci] = {"t": f"{emo} <b>{esc(title)}</b>", "b": f"{emo} {title[:18]}",       # кожна категорія — кнопка
                     "first": rows[:SILPO_TOP], "rows": rows[SILPO_TOP:SILPO_TOP + 10]}
         groups_: dict = {}                            # 📂 підкатегорії: свій топ-5 (+5) усередині категорії
-        for i_, c_ in enumerate(cand[:SILPO_TOP + 100]):
+        for i_, c_ in enumerate(cand[:SILPO_TOP + 500]):
             sslug, stitle = silpo_subcat(c.get("id"), c_[1].get("sectionSlug") or "")
             if sslug:
                 groups_.setdefault((sslug, stitle), []).append(i_)
