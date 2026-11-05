@@ -507,12 +507,14 @@ def subs_address_check(page) -> None:
     print(f"Аварії за адресами підписників: перевірено {len(batch)} з {len(cands)}")
 
 
-OSM_TYPES = [("вулиця", "вул."), ("проспект", "просп."), ("бульвар", "бульв."), ("провулок", "пров."), ("площа", "пл."), ("набережна", "наб."), ("шосе", "шосе"), ("узвіз", "узвіз")]
+OSM_TYPES = [("вулиця", "вул."), ("проспект", "просп."), ("бульвар", "бульв."), ("провулок", "пров."), ("площа", "пл."), ("набережна", "наб."), ("шосе", "шосе"), ("узвіз", "узвіз"),
+             ("тупик", "туп."), ("алея", "алея"), ("майдан", "майдан"), ("дорога", "дорога"), ("проїзд", "проїзд"), ("спуск", "спуск"), ("лінія", "лінія")]
 
 
 def osm_streets() -> list:
     """Запасний список вулиць Києва з OpenStreetMap (Overpass), у вигляді як на сайті ДТЕК: «вул. …», «просп. …»."""
-    q = '[out:json][timeout:90];area["name"="Київ"]["admin_level"="4"]->.a;way(area.a)["highway"]["name"];out tags;'
+    q = ('[out:json][timeout:90];area["name"="Київ"]["admin_level"="4"]->.a;'
+         'way(area.a)["highway"~"^(trunk|primary|secondary|tertiary|residential|unclassified|living_street|service|pedestrian)$"]["name"];out tags;')
     try:
         req = check.urllib.request.Request("https://overpass-api.de/api/interpreter", data=check.urllib.parse.urlencode({"data": q}).encode(), headers={"User-Agent": "svitlo-bot"})
         js = json.loads(check.urllib.request.urlopen(req, timeout=120).read().decode("utf-8"))
@@ -523,13 +525,14 @@ def osm_streets() -> list:
         n = str((el.get("tags") or {}).get("name") or "").strip()
         if not n or re.search(r"[a-zA-Z]", n):
             continue
-        low = n.lower()
+        low, typed = n.lower(), False
         for full, short in OSM_TYPES:
             if low.startswith(full + " "):
-                n = f"{short} {n[len(full) + 1:]}"; break
+                n = f"{short} {n[len(full) + 1:]}"; typed = True; break
             if low.endswith(" " + full):
-                n = f"{short} {n[: -len(full) - 1]}"; break
-        out.add(n)
+                n = f"{short} {n[: -len(full) - 1]}"; typed = True; break
+        if typed and not re.search(r"[«»\"]", n):      # лише справжні вулиці (з типом), без назв обʼєктів у лапках
+            out.add(n)
     return sorted(out)
 
 
@@ -554,7 +557,8 @@ def lookup_requests(page) -> None:
             keys_ = page.evaluate("() => { const o = window.DisconSchedule || {}; return Object.keys(o).map(k => k + ':' + (Array.isArray(o[k]) ? 'arr' + o[k].length : typeof o[k])).slice(0, 30); }")
             print(f"Адреси: список вулиць не знайдено на сторінці ДТЕК · DisconSchedule: {keys_}")
             have = check.http_json(f"{check.SYNC_URL}/fileget?key={check.urllib.parse.quote(check.SYNC_KEY)}&name=streets_kyiv.json") if check.WORKER_MODE else []
-            if not isinstance(have, list) or len(have) < 500:   # у боті ще немає списку — беремо з OpenStreetMap (раз, далі вже є)
+            junk_ = isinstance(have, list) and sum(1 for x in have[:300] if not re.match(r"(вул|просп|бульв|пров|пл|наб|шосе|узвіз|туп|алея|майдан|дорога|проїзд|спуск|лінія)\b", str(x))) > 60
+            if not isinstance(have, list) or len(have) < 500 or junk_:   # немає списку або в ньому «не вулиці» — беремо з OpenStreetMap заново
                 osm = osm_streets()
                 if osm and check.WORKER_MODE:
                     check.http_json(f"{check.SYNC_URL}/filepush?key={check.urllib.parse.quote(check.SYNC_KEY)}&name=streets_kyiv.json", osm)
