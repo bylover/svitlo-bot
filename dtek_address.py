@@ -344,7 +344,8 @@ def addr_variants(street: str) -> list[str]:
     kinds = [kind] if kind else ["вул.", "просп.", "бульв.", "пров.", "пл.", "шосе"]
     full = {"вул.": "вулиця", "просп.": "проспект", "бульв.": "бульвар", "пров.": "провулок", "пл.": "площа"}
     out = [f"{k} {name}" for k in kinds] + [f"{full[k]} {name}" for k in kinds if k in full] + [name] + [f"{name} {k}" for k in kinds[:2]]
-    return list(dict.fromkeys(v for x in out for v in (x, x.replace("'", "’"), x.replace("’", "'"))))
+    aps = ("'", "’", "ʼ", "`", "")                    # усі варіанти апострофа (на сайті ДТЕК буває українське «ʼ») і без нього
+    return list(dict.fromkeys(re.sub(r"['’ʼ`]", a, x) for x in out for a in aps))
 
 
 # ---------- 🏙 Вінниця: сайт «Вінницяобленерго» (браузер) — що показує сайт за адресою підписника ----------
@@ -498,9 +499,12 @@ def lookup_requests(page) -> None:
     except Exception:
         streets = []
     print(f"Адреси: список вулиць ДТЕК — {len(streets)}")
-    try:                                              # список вулиць — у Cloudflare (вибір вулиці за першою літерою в боті)
+    try:                                              # список вулиць — у Cloudflare заздалегідь (вибір вулиці за першою літерою); без розбору на боці бота
         if streets and check.WORKER_MODE:
-            check.http_json(f"{check.SYNC_URL}/filepush?key={check.urllib.parse.quote(check.SYNC_KEY)}", {"name": "streets_kyiv.json", "json": sorted(set(streets))})
+            check.http_json(f"{check.SYNC_URL}/filepush?key={check.urllib.parse.quote(check.SYNC_KEY)}&name=streets_kyiv.json", sorted(set(streets)))
+        elif not streets:                             # 🧪 що є на сторінці, якщо список не знайшовся
+            keys_ = page.evaluate("() => { const o = window.DisconSchedule || {}; return Object.keys(o).map(k => k + ':' + (Array.isArray(o[k]) ? 'arr' + o[k].length : typeof o[k])).slice(0, 30); }")
+            print(f"Адреси: список вулиць не знайдено · DisconSchedule: {keys_}")
     except Exception as e:
         print(f"Список вулиць → Cloudflare: {err_text(e)[:60]}")
     for cid, r in list(reqs.items())[:5]:
