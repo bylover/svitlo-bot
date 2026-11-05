@@ -342,10 +342,18 @@ def addr_variants(street: str) -> list[str]:
             rest.append(w[:1].upper() + w[1:])
     name = " ".join(rest)
     kinds = [kind] if kind else ["вул.", "просп.", "бульв.", "пров.", "пл.", "шосе"]
+    if 2 <= len(rest) <= 3:                           # інший порядок слів: на сайті ДТЕК буває «Кульженків Сімʼї» замість «Сімʼї Кульженків»
+        import itertools
+        names = [" ".join(p_) for p_ in itertools.permutations(rest)]
+        out_ = [f"{k} {n}" for n in names for k in kinds[:2]]
+        aps = ("'", "’", "ʼ", "`", "")
+        first = list(dict.fromkeys(re.sub(r"['’ʼ`]", a_, x) for a_ in aps for x in out_))   # спершу всі порядки слів зі звичайним апострофом
+    else:
+        first = []
     full = {"вул.": "вулиця", "просп.": "проспект", "бульв.": "бульвар", "пров.": "провулок", "пл.": "площа"}
     out = [f"{k} {name}" for k in kinds] + [f"{full[k]} {name}" for k in kinds if k in full] + [name] + [f"{name} {k}" for k in kinds[:2]]
     aps = ("'", "’", "ʼ", "`", "")                    # усі варіанти апострофа (на сайті ДТЕК буває українське «ʼ») і без нього
-    return list(dict.fromkeys(re.sub(r"['’ʼ`]", a, x) for x in out for a in aps))
+    return list(dict.fromkeys(first + [re.sub(r"['’ʼ`]", a, x) for x in out for a in aps]))
 
 
 # ---------- 🏙 Вінниця: сайт «Вінницяобленерго» (браузер) — що показує сайт за адресою підписника ----------
@@ -523,7 +531,7 @@ def lookup_requests(page) -> None:
             except Exception as e:
                 print(f"setgroup: {err_text(e)}")
             continue
-        for st in (cands or addr_variants(street))[:14]:
+        for st in (cands or addr_variants(street))[:24]:
             res = page.evaluate(GETHOME_JS, st)
             try:
                 data = json.loads(res.get("text") or "")
