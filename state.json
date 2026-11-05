@@ -715,7 +715,7 @@
   "t127529",
   "t7225"
  ],
- "gh_beat": "2026-11-05T08:20:44.670239+02:00",
+ "gh_beat": "2026-11-05T08:25:48.589418+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1760,8 +1760,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "05.11 08:17",
-   "ts": 1793859429,
+   "at": "05.11 08:26",
+   "ts": 1793859999,
    "ok": true,
    "note": ""
   },
@@ -1820,8 +1820,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "05.11 07:06",
-   "ts": 1793855161,
+   "at": "05.11 08:26",
+   "ts": 1793860015,
    "ok": true,
    "note": ""
   },
@@ -1886,8 +1886,8 @@
    "note": ""
   },
   "youtube для вас": {
-   "at": "05.11 08:16",
-   "ts": 1793859364,
+   "at": "05.11 08:26",
+   "ts": 1793859960,
    "ok": true,
    "note": ""
   }
@@ -30158,7 +30158,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "474a9323a0d7",
+  "gs": "bee5f0e744b3",
   "quiz_pool.json": "d62dbc5542f3",
   "fact.png": "e2a9e4c9545a",
   "sexed.json": "9fc26136b87b",
@@ -45271,6 +45271,41 @@
    ],
    "ov": "Всі журналісти жадають сенсацій! Але телерепортер-початківець Анжела Відаль з хроніки випадків — жадає особливо пристрасно. Із завидною завзятістю вона шукає унікальний матеріал, а тому виїжджає з командою рятувальників ",
    "poster": "https://image.tmdb.org/t/p/w500/3r3W06MMp1CHO4c2fIuiWLKcrhj.jpg"
+  },
+  "m27275": {
+   "title": "G.O.R.A.",
+   "year": "2004",
+   "rating": 8.0,
+   "genres": [
+    "Комедія",
+    "Пригоди",
+    "Фантастика"
+   ],
+   "g": [
+    35,
+    12,
+    878
+   ],
+   "ov": "Carpet dealer and UFO photo forger Arif is abducted by aliens and must outwit the evil commander-in-chief of G.O.R.A., the planet where he is being held.",
+   "poster": "https://image.tmdb.org/t/p/w500/bxHULJqeW1GlPWr7uvRoWQWsDIe.jpg"
+  },
+  "m36243": {
+   "title": "Ґодзілла, Мотра, Кінг Гідора: Атака всіх монстрів",
+   "year": "2001",
+   "rating": 7.0,
+   "genres": [
+    "Бойовик",
+    "Пригоди",
+    "Жахи"
+   ],
+   "g": [
+    28,
+    12,
+    27,
+    14
+   ],
+   "ov": "Godzilla has become a distant memory for Japan when the destruction of a US submarine raises alarms for Admiral Tachibana. His estranged daughter Yuri investigates the legend of the guardian monsters, who must rise to pr",
+   "poster": "https://image.tmdb.org/t/p/w500/vMZsdO6ZLBUHLqTOH8YvjwOBqUv.jpg"
   }
  },
  "cofid_pushed": "04.11.2026",
@@ -45278,7 +45313,7 @@
  "yt_last": "▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · 28.10–04.11</b>\n<blockquote>▶️ <b>1. ☝️СТРАШНА ЗНАХІДКА В БУДИНКУ НА БОРЩАГІВЦІ! ЦЕ ПРИХОВАЛИ ВІД УСІХ КАМЕР. У справі замішана БАНКОВА?</b>\n📺 СОЛОМКА · ⏱ 16 хв\n👁 <b>199 тис</b> переглядів · 💬 <b>1 647</b> коментарів\n🔗 <a href=\"https://youtu.be/R401S7bN0AE\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>2. THE HARDKISS feat. BEYOND THE BLACK - Not This Time (official video)</b>\n📺 The HARDKISS · ⏱ 3 хв\n👁 <b>280 тис</b> переглядів · 💬 <b>452</b> коментарів\n🔗 <a href=\"https://youtu.be/9n-g_xOrpM4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>3. ЩО ДРАТУЄ ЛЮДИНУ З ЗАЇКАННЯМ? Несерйозна розмова №161</b>\n📺 Дмитро Тютюн · ⏱ 40 хв\n👁 <b>214 тис</b> переглядів · 💬 <b>359</b> коментарів\n🔗 <a href=\"https://youtu.be/wK6lFvp_myU\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>4. Як знімали Холостяк в АНОМАЛЬНУ СПЕКУ І ГРОЗУ? – Бекстейдж із Наталкою Денисенко | Холостяк 15 сезон</b>\n📺 Холостяк / Холостячка · ⏱ 50 хв\n👁 <b>226 тис</b> переглядів · 💬 <b>180</b> коментарів\n🔗 <a href=\"https://youtu.be/1CjEer1hZdY\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>5. [UA] NAVI проти FURIA | IEM Beijing 2026</b>\n📺 CS2 Maincast · ⏱ 11 год 55 хв\n👁 <b>243 тис</b> переглядів · 💬 <b>5</b> коментарів\n🔗 <a href=\"https://youtu.be/A3r2QcM0ZOA\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>6. Христина Соловій — Прощай (Official Video)</b>\n📺 Христина Соловій · ⏱ 4 хв\n👁 <b>142 тис</b> переглядів · 💬 <b>306</b> коментарів\n🔗 <a href=\"https://youtu.be/rM9vtACM7u4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>7. НІ СЛОВА УКРАЇНСЬКОЮ, ДРУЖЕ! ВОНИ ЗРОЗУМІЛИ, ХТО Я, АЛЕ БУЛО ПІЗНО...РЕАЛІСТИЧНА  ARMA REFORGER</b>\n📺 ЛОРД · ⏱ 29 хв\n👁 <b>129 тис</b> переглядів · 💬 <b>165</b> коментарів\n🔗 <a href=\"https://youtu.be/vyxhJN8N5kE\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>8. ЛЮБИТЕЛЬ БАБУСЬ ЗНІМАЄ ВІДОСИКИ 80+ ► ЛЕБІГА ДИВИТЬСЯ «ГОВОРИТЬ УКРАЇНА»</b>\n📺 Лебіга STREAMS · ⏱ 55 хв\n👁 <b>136 тис</b> переглядів · 💬 <b>61</b> коментарів\n🔗 <a href=\"https://youtu.be/Iod41YitKR4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>9. МОЛОДІСТЬ, НЕ ЙДИ</b>\n📺 Blackwave_tune - Topic · ⏱ 4 хв\n👁 <b>84 тис</b> переглядів · 💬 <b>12</b> коментарів\n🔗 <a href=\"https://youtu.be/oT9njHJhmdA\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>10. R3phase - Туман ☁️☁️(Хіт 2026☁️)</b>\n📺 R3phase · ⏱ 3 хв\n👁 <b>77 тис</b> переглядів · 💬 <b>34</b> коментарів\n🔗 <a href=\"https://youtu.be/V6AT322yGYo\">Дивитися</a></blockquote>\n<i>Ще 10, улюблені й приховані канали, 📺 цікаві канали за темами — кнопкою «▶️ YouTube» у меню.</i>\n§RT:yt:202645",
  "match_month": "2026-11",
  "x18_at": {
-  "mix": "2026-11-05T01:15:49.172207+02:00",
+  "mix": "2026-11-05T08:25:48.719883+02:00",
   "new": "2026-11-05T01:25:43.752515+02:00",
   "best": "2026-11-05T02:35:46.697404+02:00",
   "women": "2026-11-05T02:35:46.697404+02:00",
@@ -45294,7 +45329,7 @@
   "lat": "2026-11-05T06:55:44.681476+02:00",
   "asi": "2026-11-05T05:45:46.030272+02:00",
   "blo": "2026-11-05T05:45:46.030272+02:00",
-  "rpl": "2026-11-05T01:15:49.172207+02:00",
+  "rpl": "2026-11-05T08:25:48.719883+02:00",
   "bds": "2026-11-05T01:25:43.752515+02:00"
  },
  "ero_seen": {
@@ -45347,12 +45382,8 @@
  "silpo_snap": "2026-11-04",
  "live_day": "2026-11-05",
  "silpo_week": "2026-45",
- "sbm_at": 1793859648.5683036,
+ "sbm_at": 1793859953.420894,
  "sbm_hist": [
-  [
-   "19:55",
-   41
-  ],
   [
    "20:06",
    41
@@ -45924,6 +45955,10 @@
   [
    "08:20",
    55
+  ],
+  [
+   "08:25",
+   55
   ]
  ],
  "sbm_near": {
@@ -46132,7 +46167,7 @@
   "thriller": "2026-11-05T06:45:47.696610+02:00",
   "comedy": "2026-11-05T06:55:44.681476+02:00",
   "horror": "2026-11-05T08:15:46.442690+02:00",
-  "scifi": "2026-11-04T19:45:53.417442+02:00",
+  "scifi": "2026-11-05T08:25:48.719883+02:00",
   "romance": "2026-11-04T20:47:19.859230+02:00",
   "series": "2026-11-04T20:55:44.692535+02:00",
   "ua": "2026-11-04T21:05:46.921849+02:00",
