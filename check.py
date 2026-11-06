@@ -1263,7 +1263,11 @@ def finish_kino(st: dict, items: list, title: str, mark_seen: bool = True) -> tu
     if mark_seen:
         st["kino_seen"] = (st.get("kino_seen", []) + [x["key"] for x in items])[-600:]
     head = f"{title}\n" + KINO_HINT + "<i>Натисніть на назву — відкриється постер, кадри й опис</i>"
-    parts = [head] + [kino_item(i, it, 220) + f"\n§KN:{it['key']}" for i, it in enumerate(items, 1)]
+    def _dir_id(it_):                                 # 🎬 режисер (або творець серіалу) — для кнопки «➕ Режисер»
+        d_ = it_.get("d") or {}
+        c_ = next((c for c in (d_.get("credits") or {}).get("crew", []) if c.get("job") == "Director"), None) or next(iter(d_.get("created_by") or []), None)
+        return f"|{c_['id']}" if c_ and c_.get("id") else ""
+    parts = [head] + [kino_item(i, it, 220) + f"\n§KN:{it['key']}{_dir_id(it)}" for i, it in enumerate(items, 1)]
     return SPLIT.join(parts), None                   # кожен фільм — окреме повідомлення з кнопками 👍 👎 👀
 
 
@@ -6353,6 +6357,141 @@ def kino_cats(st: dict, now: datetime) -> None:
         print(f"Кіно-категорії → бот: {err_text(e)[:60]}")
 
 
+# ---------- 🎬 Режисери: 🏆 Топ-50 (раз на тиждень) і 🎬 Мої режисери (фільмографія, рейтинги, сповіщення про нові фільми) ----------
+DIR_M, DIR_C = 800, 6.8                                # зважена оцінка фільму: (v/(v+m))·R + (m/(v+m))·C — мало голосів не «перестрибує» визнані фільми
+
+
+def _wr(r: float, v: int) -> float:
+    return (v / (v + DIR_M)) * r + (DIR_M / (v + DIR_M)) * DIR_C
+
+
+def dir_films(pid: int, with_tv: bool = True) -> tuple[str, list]:
+    """Фільмографія режисера (і серіали, де він автор/творець), назви українською, якщо є."""
+    p = tmdb(f"/person/{pid}", language="uk-UA", append_to_response="movie_credits,tv_credits")
+    name = p.get("name") or ""
+    films, seen = [], set()
+    for c in (p.get("movie_credits") or {}).get("crew", []):
+        if c.get("job") != "Director" or c.get("id") in seen:
+            continue
+        seen.add(c.get("id"))
+        films.append({"id": c["id"], "k": "movie", "t": (c.get("title") or c.get("original_title") or "")[:70], "y": str(c.get("release_date") or "")[:4],
+                      "d": c.get("release_date") or "", "r": round(float(c.get("vote_average") or 0), 1), "v": int(c.get("vote_count") or 0)})
+    if with_tv:
+        for c in (p.get("tv_credits") or {}).get("crew", []):
+            if c.get("job") not in ("Creator", "Showrunner") or ("tv", c.get("id")) in seen:
+                continue
+            seen.add(("tv", c.get("id")))
+            films.append({"id": c["id"], "k": "tv", "t": (c.get("name") or c.get("original_name") or "")[:70], "y": str(c.get("first_air_date") or "")[:4],
+                          "d": c.get("first_air_date") or "", "r": round(float(c.get("vote_average") or 0), 1), "v": int(c.get("vote_count") or 0)})
+    return name, films
+
+
+def dir_score(films: list, omdb_budget: list) -> dict:
+    """Середній зважений рейтинг (усі фільми за всі роки з ≥100 голосами) + IMDb/RT з OMDb (кеш 30 днів)."""
+    good = [f for f in films if f["v"] >= 100 and f["k"] == "movie"] or [f for f in films if f["v"] >= 100]
+    for f in sorted(good, key=lambda x: -x["v"])[:12]:  # IMDb/RT — для найвідоміших (економимо ліміт OMDb)
+        if omdb_budget[0] <= 0 or not OMDB_KEY:
+            break
+        try:
+            ids = tmdb(f"/{'tv' if f['k'] == 'tv' else 'movie'}/{f['id']}/external_ids")
+            imdb, rt, mc = omdb_full(ids.get("imdb_id"))
+            omdb_budget[0] -= 1
+            if imdb:
+                f["imdb"] = imdb
+            if rt is not None:
+                f["rt"] = rt
+        except Exception:
+            pass
+    if not good:
+        return {"n": len(films), "score": 0, "imdb": None, "rt": None, "star": False}
+    score = sum(_wr(f["r"], f["v"]) for f in good) / len(good)
+    im = [f["imdb"] for f in good if f.get("imdb")]
+    rts = [f["rt"] for f in good if f.get("rt") is not None]
+    imdb_avg = round(sum(im) / len(im), 1) if im else None
+    rt_avg = round(sum(rts) / len(rts)) if rts else None
+    star = len(good) >= 4 and ((imdb_avg or 0) >= 7.3 or (rt_avg or 0) >= 80 or score >= 7.3)
+    return {"n": len(films), "nq": len(good), "score": round(score, 2), "imdb": imdb_avg, "rt": rt_avg, "star": star}
+
+
+def directors_build(st: dict, now: datetime) -> None:
+    """🏆 Топ-50 режисерів і дані «Мої режисери» — раз на тиждень (пʼятниця) або на «🔄 Оновити підбірки»."""
+    if not (WORKER_MODE and TMDB_KEY):
+        return
+    wk = f"{now:%G%V}"
+    budget = [250]                                     # OMDb-запитів за запуск (кеш 30 днів)
+    if st.get("dir_week") != wk and (now.weekday() == 4 or not st.get("dir_week") or st.get("dir_force")):
+        st["dir_force"] = False
+        cand: dict = {}
+        for pg in range(1, 9):                         # кандидати: режисери найвідоміших і найкращих фільмів
+            for sort_, vmin in (("vote_average.desc", 3000), ("vote_count.desc", 500)):
+                try:
+                    res = tmdb("/discover/movie", sort_by=sort_, page=pg, **{"vote_count.gte": vmin}).get("results", [])
+                except Exception:
+                    res = []
+                for m in res[:20]:
+                    try:
+                        crew = tmdb(f"/movie/{m['id']}/credits").get("crew", [])
+                    except Exception:
+                        continue
+                    for c in crew:
+                        if c.get("job") == "Director":
+                            cand[c["id"]] = cand.get(c["id"], 0) + 1
+        top = []
+        for pid in sorted(cand, key=lambda k: -cand[k])[:120]:
+            try:
+                name, films = dir_films(pid, with_tv=False)
+                sc = dir_score(films, budget)
+            except Exception:
+                continue
+            if sc.get("nq", 0) >= 4:
+                top.append({"id": pid, "name": name, **sc, "films": sorted(films, key=lambda f: -_wr(f["r"], f["v"]))[:40]})
+        top.sort(key=lambda d: -((d["imdb"] or d["score"]) * 0.6 + (d["rt"] or d["score"] * 10) / 10 * 0.4))
+        try:
+            http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=dir_top.json", {"at": now.strftime("%d.%m"), "top": top[:50]})
+            st["dir_week"] = wk
+            print(f"🏆 Топ режисерів: кандидатів {len(cand)}, у топі {len(top[:50])}")
+        except Exception as e:
+            print(f"Топ режисерів → бот: {err_text(e)[:60]}")
+    # 🎬 Мої режисери: дані для всіх, кого стежать (щодня, лише змінені / раз на тиждень повністю) + 🔔 нові фільми
+    follow: dict = {}
+    for cid, lst in (st.get("mydir_ex") or {}).items():
+        for d in lst or []:
+            follow.setdefault(str(d.get("id")), []).append((cid, bool(d.get("n", True))))
+    if not follow:
+        return
+    if st.get("mydir_day") == now.strftime("%Y-%m-%d") and not st.get("dir_force_my"):
+        return
+    st["mydir_day"], st["dir_force_my"] = now.strftime("%Y-%m-%d"), False
+    out, seen_all = {}, st.setdefault("mydir_seen", {})
+    for pid, fl in list(follow.items())[:60]:
+        try:
+            name, films = dir_films(int(pid))
+            sc = dir_score(films, budget)
+        except Exception as e:
+            print(f"Режисер {pid}: {err_text(e)[:50]}"); continue
+        out[pid] = {"name": name, **sc, "films": films}
+        known = set(seen_all.get(pid) or [])
+        fresh = [f for f in films if f"{f['k']}{f['id']}" not in known and (not f["d"] or f["d"] >= (now - timedelta(days=120)).strftime("%Y-%m-%d"))]
+        if known and fresh:                           # 🔔 новий / анонсований фільм режисера
+            for f in fresh[:3]:
+                soon = f["d"] and f["d"] > now.strftime("%Y-%m-%d")
+                txt = (f"🎬 <b>{esc(name)}</b>: {'🔜 анонсовано' if soon or not f['d'] else '🆕 новий'} {'серіал' if f['k'] == 'tv' else 'фільм'} — "
+                       f"<a href=\"https://www.themoviedb.org/{f['k']}/{f['id']}\">{esc(f['t'])}</a>{f' ({esc(f['y'])})' if f['y'] else ''}"
+                       f"{f' · вихід {esc(f[chr(100)])}' if soon else ''}\n<i>🍿 Кіно → 🎬 Мої режисери</i>")
+                for cid, on in fl:
+                    if on:
+                        DIR_MSGS.append((cid, txt))
+        seen_all[pid] = [f"{f['k']}{f['id']}" for f in films]
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=dir_my.json", {"at": now.strftime("%d.%m %H:%M"), "d": out})
+        print(f"🎬 Мої режисери: {len(out)} режисерів, сповіщень {len(DIR_MSGS)}")
+    except Exception as e:
+        print(f"Мої режисери → бот: {err_text(e)[:60]}")
+
+
+DIR_MSGS: list = []
+
+
 # ---------- 🎯 YouTube «Для вас»: індекс цікавості (випереджає свій канал, швидкість, залученість, ваші теми, антиклікбейт) + 💎 приховані перлини ----------
 YT_CLICK = re.compile(r"шок|жесть|ви не повірите|терміново|скандал|!!!|🔥🔥|😱", re.I)
 
@@ -7123,6 +7262,7 @@ def main() -> None:
                 globals()["GROUP"] = str(ex["fam_group"])
             st["yt_mute"], st["yt_fav"] = list(ex.get("yt_mute") or []), list(ex.get("yt_fav") or [])   # 🚫/⭐ канали YouTube
             st["yt_fb"] = dict(ex.get("yt_fb") or {})   # 👍/👎 до відео «Для вас» → вага каналу
+            st["mydir_ex"] = dict(ex.get("mydir") or {})   # 🎬 мої режисери (усіх)
             worker_req["kino_used"] = ex.get("kino_used") or []
             taste_update(st, ex.get("likes") or [], ex.get("dislikes") or [])   # 👍/👎 з меню кіно
             subs = {str(k): list(v) for k, v in (ex.get("subs") or {}).items()}
@@ -7543,6 +7683,7 @@ def main() -> None:
                 one_[c_] = (pri, t_)
         direct_m.extend((c_, t_, None) for c_, (_, t_) in one_.items())
         net_status(st, now)                           # 🌐 мережі провайдерів (раз на ~15 хв)
+        direct_m.extend((c_, t_, None) for c_, t_ in DIR_MSGS); DIR_MSGS.clear()   # 🔔 нові фільми режисерів
         for prov_, txt_ in NET_MSGS:                  # сповіщення тим, хто обрав цього провайдера (основні — Triolan і SunNet за замовчуванням)
             for c_ in dict.fromkeys([str(x) for x in PROF] + FAMILY):
                 p_ = PROF.get(c_) or PROF.get(int(c_) if c_.lstrip("-").isdigit() else c_) or {}
@@ -7632,7 +7773,7 @@ def main() -> None:
              ("здоров'я", lambda: (health_refresh(st, now), kb_probe(st, now), cofid_import(st, now), cofid_translate(st, now))),
              ("ігри PS5", lambda: (games_refresh(st, now), ps_deals_refresh(st, now))), ("аудіокниги", lambda: audiobooks_refresh(st, now)),
              ("кіномэтч", lambda: match_refresh(st, now)), ("пп-страви", lambda: recipes_refresh(st, now)), ("фантазія тижня", lambda: fantasy_refresh(st, now)), ("prom.ua", lambda: prom_top(st, now)), ("youtube канали", lambda: yt_channels(st, now)), ("живий english", lambda: en_live_fill(st, now)),
-             ("кіно-категорії", lambda: kino_cats(st, now)), ("youtube для вас", lambda: yt_foryou(st, now))]
+             ("кіно-категорії", lambda: kino_cats(st, now)), ("youtube для вас", lambda: yt_foryou(st, now)), ("режисери", lambda: directors_build(st, now))]
     slot = (now.hour * 12 + now.minute // 5) % len(heavy)
     rc_turn = st.get("rc_need", True) and (now.minute // 5) % 2 == 0   # через запуск, щоб інші задачі не чекали
     forced = (st.get("force_heavy") or []) + (["пп-страви"] if rc_turn and "пп-страви" not in (st.get("force_heavy") or []) else [])
@@ -7701,6 +7842,7 @@ def main() -> None:
         st["yt_seen"] = (st.get("yt_seen") or [])[:-20]; st["yt_last"], st["yt_try"] = "", ""   # ▶️ топ YouTube тижня — перезібрати (без розсилки, лише в розділі)
         st["live_day"] = ""                           # 🗣 Живий English — ще порція фраз
         st["kc_week"], st["kc_force"], st["ytf_force"] = "", True, True   # 🍿 кіно-категорії й 🎯 YouTube «Для вас» — заново
+        st["dir_force"], st["dir_force_my"] = True, True   # 🎬 режисери — заново
         st["prom_force"] = st["rz_force"] = True
         st["match_month"] = ""; st["ps_day"] = ""                # 🍿💞 пул Кіномэтчу й 🔥 знижки PS — теж свіжі
         st["games_force"] = st["ab_force"] = st["rc_force"] = True     # 🥗 ПП-страви — позапланове поповнення
@@ -7879,12 +8021,12 @@ def main() -> None:
                     t_, k_ = split_kb(part, st.get("silpo_more") or {})
                     mk_ = re.search(r"\n§KN:(\S+)$", t_)            # кнопки під фільмом — лише вам і дружині
                     if mk_:
-                        key_ = mk_.group(1)
+                        key_, _, dir_ = mk_.group(1).partition("|")
                         t_ = t_[:mk_.start()]
                         row_ = [{"text": "👍", "callback_data": f"lk:{key_}"}, {"text": "👎", "callback_data": f"dl:{key_}"}]
                         if cid in family:
                             row_.append({"text": "👀", "callback_data": f"seen:{key_}"})
-                        k_ = {"inline_keyboard": [row_]}             # 👍/👎 — усім (статистика); 👀 — лише вам
+                        k_ = {"inline_keyboard": [row_] + ([[{"text": "🎬 Режисер → у мої", "callback_data": f"dr:add:{dir_}"}]] if dir_ else [])}   # 👍/👎 — усім; 👀 — лише вам
                     mn_ = re.search(r"\n§SN:(\w+)$", t_)              # Сільпо: кнопки категорій
                     if mn_:
                         t_ = t_[:mn_.start()]
