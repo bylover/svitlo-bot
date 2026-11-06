@@ -5411,10 +5411,12 @@ def sb_map(st: dict, now: datetime) -> None:
                 pass
         ahead = (max(ts_) - datetime.now(timezone.utc)).total_seconds() / 3600 if ts_ else 0
         if 0.8 <= ahead <= 3.3:                       # свіжі зміни «в майбутньому» → час у даних київський із позначкою UTC
-            st["sbm_tshift_k"] = round(ahead)
+            st["sbm_tshift_k"] = -1                   # «київський час» — зсув беремо поточний (зимовий +2 / літній +3)
         elif ts_ and ahead > -0.25 and ahead < 0.8 and sorted(ts_)[-1] > datetime.now(timezone.utc) - timedelta(minutes=15):
             st["sbm_tshift_k"] = 0                    # свіжа зміна збігається з UTC — поправка не потрібна
         shift = int(st.get("sbm_tshift_k") or 0)      # запамʼятована поправка (діє й тоді, коли свіжих змін немає)
+        if shift:                                     # київський час: зсув за поточним часовим поясом Києва (перехід на зимовий/літній — автоматично)
+            shift = int(datetime.now(TZ).utcoffset().total_seconds() // 3600)
         st["sbm_tshift"] = shift
         if shift:
             for p in pts:
