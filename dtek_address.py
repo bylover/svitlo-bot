@@ -223,6 +223,12 @@ def main() -> None:
     active = bool(info["reason"] or info["start"])
     print(f"Власна адреса: {'НЕМАЄ світла' if active else 'ДТЕК не показує відключення'} · {info}")
     grps_ = sorted({str(g)[3:] for g in (info.get("groups") or []) if str(g).startswith("GPV")})
+    try:
+        yg_ = yasno_groups(STREET, HOUSE)             # 🟦 YASNO — головне джерело черги
+        if yg_:
+            grps_ = yg_
+    except Exception as e:
+        print(f"YASNO (власна адреса): {err_text(e)[:60]}")
     grp_ = grps_[0] if grps_ else None
     if grp_ and check.WORKER_MODE:                    # 🔄 черга за адресою на сайті ДТЕК — бот сам перемкне графік, якщо змінилась
         try:
@@ -470,6 +476,12 @@ def subs_address_check(page) -> None:
         if h is None:
             continue
         grps_ = sorted({str(g)[3:] for g in (h.get("sub_type_reason") or []) if str(g).startswith("GPV")})
+        try:
+            yg_ = yasno_groups(street, house)          # 🟦 YASNO — головне джерело черги
+            if yg_:
+                grps_ = yg_
+        except Exception as e:
+            print(f"YASNO (адреса підписника): {err_text(e)[:60]}")
         grp_ = grps_[0] if len(grps_) == 1 else None
         cur_ = str(prof[cid].get("group") or "")
         if len(grps_) > 1 and cur_ not in grps_ and set(grps_) != set(prof[cid].get("dgroups") or []):   # кілька ліній, вашої серед них немає — питаємо
@@ -507,6 +519,67 @@ def subs_address_check(page) -> None:
     print(f"Аварії за адресами підписників: перевірено {len(batch)} з {len(cands)}")
 
 
+YASNO = "https://app.yasno.ua/api/blackout-service/public/shutdowns/addresses/v2"
+YASNO_LAST: list = []                                 # «ввод → черга» з останнього пошуку (для 🧪 перевірки адреси)
+
+
+def _yget(url: str):
+    req = check.urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 svitlo-bot", "Accept": "application/json"})
+    return json.loads(check.urllib.request.urlopen(req, timeout=20).read().decode("utf-8"))
+
+
+def yasno_groups(street: str, house: str) -> list:
+    """Черга(и) будинку за YASNO (як у «Київ Цифровий»): вулиця → будинок → черга. Нова нумерація Києва (1.1…60.1)."""
+    def items(js):
+        if isinstance(js, dict):
+            for k in ("data", "items", "results", "streets", "houses"):
+                if isinstance(js.get(k), list):
+                    return js[k]
+            return [js]
+        return js if isinstance(js, list) else []
+    def nm(x):
+        return str(x.get("name") or x.get("value") or x.get("title") or x.get("street") or x.get("house") or "") if isinstance(x, dict) else str(x)
+    tried = []
+    for q in dict.fromkeys([re.sub(r"^(вул\.?|вулиця|просп\.?|проспект|бульв\.?|пров\.?|пл\.?)\s+", "", street, flags=re.I)] + addr_variants(street)[:4]):
+        try:
+            sts = items(_yget(f"{YASNO}/streets?regionId=25&dsoId=902&query={check.urllib.parse.quote(q)}"))
+        except Exception as e:
+            tried.append(f"{q}: {err_text(e)[:30]}"); continue
+        best = match_streets(street, [nm(s) for s in sts]) if sts else []
+        st_ = next((s for s in sts if best and nm(s) == best[0]), sts[0] if len(sts) == 1 else None)
+        if not st_:
+            tried.append(f"{q}: {len(sts)} вулиць"); continue
+        sid = st_.get("id") if isinstance(st_, dict) else None
+        try:
+            hs = items(_yget(f"{YASNO}/houses?regionId=25&streetId={sid}&dsoId=902&query={check.urllib.parse.quote(house)}"))
+        except Exception as e:
+            tried.append(f"будинки: {err_text(e)[:30]}"); break
+        base_ = lambda x: re.sub(r"\s*(ввод|ввід|лінія|линия)\s*\d+\s*$", "", hkey(x), flags=re.I).replace("/", "").replace(" ", "")
+        hk = base_(house)
+        hh = [h for h in hs if base_(nm(h)) == hk]     # усі «вводи» будинку: «42/Б ввод 1», «42/Б ввод 2» — окремі записи в YASNO
+        if not hh:
+            tried.append(f"будинок {house}: {[nm(h) for h in hs[:6]]}"); break
+        grps, labels = [], []
+        for h_ in hh[:4]:
+            try:
+                g = _yget(f"{YASNO}/group?regionId=25&streetId={sid}&houseId={h_.get('id')}&dsoId=902")
+            except Exception as e:
+                tried.append(f"черга {nm(h_)}: {err_text(e)[:30]}"); continue
+            raw = json.dumps(g, ensure_ascii=False)
+            gg = sorted(set(re.findall(r"(?<![\d.])(\d{1,2}\.\d)(?![\d.])", raw)))
+            if not gg:                                 # формат {"group": 45, "subgroup": 1}
+                for x in (items(g) if not isinstance(g, dict) else [g]):
+                    if isinstance(x, dict) and x.get("group") is not None:
+                        gg.append(f"{x.get('group')}.{x.get('subgroup') or 1}")
+            grps += gg; labels.append(f"{nm(h_)} → {gg or '?'}"); YASNO_LAST.append(f"{nm(st_)}, {nm(h_)} → черга {', '.join(gg) or '?'}")
+            print(f"YASNO: {nm(st_)}, {nm(h_)} → черга {gg or '?'} · відповідь {raw[:140]}")
+        if len(labels) > 1:
+            print(f"YASNO: у будинку кілька вводів — {labels}")
+        return sorted(set(grps))
+    print(f"YASNO: не знайдено «{street}, {house}» · {tried[:4]}")
+    return []
+
+
 OSM_TYPES = [("вулиця", "вул."), ("проспект", "просп."), ("бульвар", "бульв."), ("провулок", "пров."), ("площа", "пл."), ("набережна", "наб."), ("шосе", "шосе"), ("узвіз", "узвіз"),
              ("тупик", "туп."), ("алея", "алея"), ("майдан", "майдан"), ("дорога", "дорога"), ("проїзд", "проїзд"), ("спуск", "спуск"), ("лінія", "лінія")]
 
@@ -534,6 +607,60 @@ def osm_streets() -> list:
         if typed and not re.search(r"[«»\"]", n):      # лише справжні вулиці (з типом), без назв обʼєктів у лапках
             out.add(n)
     return sorted(out)
+
+
+def address_tests(page, streets: list) -> None:
+    """🧪 Адмін: перевірка будь-якої адреси без збереження — черга (YASNO й ДТЕК), вводи, статус на сайті ДТЕК, графік YASNO."""
+    try:
+        tests = (check.http_json(f"{check.SYNC_URL}/export?key={check.urllib.parse.quote(check.SYNC_KEY)}") or {}).get("addr_test") or {}
+    except Exception:
+        return
+    for cid, r in list(tests.items())[:3]:
+        street, house = str(r.get("street") or ""), str(r.get("house") or "").lower().replace(" ", "")
+        cands = match_streets(street, streets) if streets else []
+        L, h, st_found = [f"🧪 <b>Перевірка адреси</b>: {esc(street)}, {esc(house)}"], None, None
+        for st in list(dict.fromkeys(cands[:3] + addr_variants(street)))[:30]:
+            try:
+                data = json.loads((page.evaluate(GETHOME_JS, st) or {}).get("text") or "")
+            except Exception:
+                continue
+            houses = data.get("data") or {}
+            h = next((v for k, v in houses.items() if hkey(k).replace("/", "") == hkey(house).replace("/", "")), None)
+            if h is not None:
+                st_found = st; break
+        if h is not None:
+            dg = sorted({str(g)[3:] for g in (h.get("sub_type_reason") or []) if str(g).startswith("GPV")})
+            L.append(f"\n🏢 <b>ДТЕК</b> ({esc(st_found)}): черга {', '.join(dg) or '—'}")
+            if h.get("sub_type") or h.get("start_date"):
+                L.append(f"⚡ Зараз: <b>{esc(h.get('sub_type') or 'відключення')}</b> · з {esc(h.get('start_date') or '?')} до {esc(h.get('end_date') or '?')}")
+            else:
+                L.append("💡 Зараз ДТЕК не показує відключення за адресою")
+        else:
+            L.append("\n🏢 ДТЕК: адресу не знайдено")
+        YASNO_LAST.clear()
+        try:
+            yg = yasno_groups(st_found or (cands[0] if cands else street), house)
+        except Exception as e:
+            yg = []; L.append(f"🟦 YASNO: помилка {esc(err_text(e)[:60])}")
+        if YASNO_LAST:
+            L.append("🟦 <b>YASNO</b> (як «Київ Цифровий»): " + "; ".join(esc(x) for x in YASNO_LAST))
+        elif not yg:
+            L.append("🟦 YASNO: адресу не знайдено")
+        try:                                           # графік YASNO на сьогодні й завтра для знайдених черг
+            po = _yget("https://app.yasno.ua/api/blackout-service/public/shutdowns/regions/25/dsos/902/planned-outages")
+            for g in yg[:3]:
+                gd = po.get(g) or {}
+                fmt = lambda day: ", ".join(f"{int(s['start']) // 60:02d}:{int(s['start']) % 60:02d}–{int(s['end']) // 60:02d}:{int(s['end']) % 60:02d}" for s in (day or {}).get("slots") or [] if re.search("definite", str(s.get("type")), re.I)) or ("без відключень" if re.search("NoOutages|ScheduleApplies", str((day or {}).get("status"))) else "ще немає")
+                L.append(f"📅 Черга {g}: сьогодні {fmt(gd.get('today'))} · завтра {fmt(gd.get('tomorrow'))}")
+        except Exception as e:
+            L.append(f"📅 Графік YASNO: {esc(err_text(e)[:50])}")
+        L.append("\n<i>Нічого не збережено — ваші налаштування без змін.</i>")
+        try:
+            send(str(cid), "\n".join(L))
+            check.http_json(f"{check.SYNC_URL}/atestdone?key={check.urllib.parse.quote(check.SYNC_KEY)}", {"cid": cid})
+        except Exception as e:
+            print(f"Перевірка адреси → {cid}: {err_text(e)[:60]}")
+        print(f"🧪 Перевірка адреси: {street}, {house} → ДТЕК {'знайдено' if h is not None else 'ні'} · YASNO {yg}")
 
 
 def lookup_requests(page) -> None:
@@ -567,6 +694,10 @@ def lookup_requests(page) -> None:
                 streets = have                        # для зіставлення назв використовуємо вже наявний список
     except Exception as e:
         print(f"Список вулиць → Cloudflare: {err_text(e)[:60]}")
+    try:
+        address_tests(page, streets)                  # 🧪 адмін: перевірка будь-якої адреси без збереження
+    except Exception as e:
+        print(f"🧪 Перевірка адреси: {err_text(e)[:80]}")
     for cid, r in list(reqs.items())[:5]:
         street, house = str(r.get("street") or ""), str(r.get("house") or "").lower().replace(" ", "")
         found = None
@@ -602,6 +733,14 @@ def lookup_requests(page) -> None:
                 break
             if h is not None:
                 grps = sorted({str(g)[3:] for g in (h.get("sub_type_reason") or []) if str(g).startswith("GPV")})
+                try:
+                    yg = yasno_groups(st, house)          # 🟦 YASNO (як «Київ Цифровий») — головне джерело черги
+                    if yg:
+                        if set(yg) != set(grps):
+                            print(f"Черга: ДТЕК {grps} ≠ YASNO {yg} — беремо YASNO")
+                        grps = yg
+                except Exception as e:
+                    print(f"YASNO (пошук черги): {err_text(e)[:60]}")
                 found = {"street": st, "house": house, "group": grps[0] if len(grps) == 1 else None, "groups": grps} if grps else {"street": st, "house": house, "group": None}
                 if len(grps) > 1:
                     found.pop("group")                # кілька ліній (черг) у будинку — хай людина обере свою

@@ -5962,6 +5962,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
     sections, total = [], 0
     more: dict = {}                                   # «➕ ще 5»: решта позицій кожної категорії
     HITS_: list = []                                  # ⭐ хіти покупців (оцінка ≥4,5, багато оцінок, реальна знижка від 10%)
+    TOP_IDS: set = set()                              # товари, що потрапили в топ підбірки (для «⭐ обране в топі»)
     best: list = []                                   # загальний топ тижня
     try:
         cats = silpo_categories(br[0])
@@ -6034,7 +6035,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
                     SILPO_WHY[nm_] = f"знижка −{declared:.0f}% ≥50% — чекаємо підтвердження 2 дні поспіль (оцінка {rating or '—'}, оцінок {votes_ or '—'}; популярні з ≥4★ показуються одразу)"
                     continue
             p_["_ok"] = bool(rating) and float(rating or 0) >= 4.3 and (votes_ >= 50 or (votes_ == 0 and float(rating or 0) >= 4.5))   # ✅ перевірено покупцями
-            p_["_hit"] = bool(rating) and float(rating or 0) >= 4.5 and (votes_ >= 100 or votes_ == 0) and max(declared, real or 0) >= 10   # ⭐ хіт (якщо к-сть оцінок API не дає — за оцінкою ≥4,5)
+            p_["_hit"] = bool(rating) and float(rating or 0) >= 4.4 and (votes_ >= 50 or votes_ == 0) and max(declared, real or 0) >= 10   # ⭐ хіт (якщо к-сть оцінок API не дає — за оцінкою ≥4,5)
             if not SILPO_RFIELDS and rating:          # 🧪 які поля оцінок віддає Сільпо — у лог
                 SILPO_RFIELDS.extend(sorted(k_ for k_ in p_.keys() if re.search(r"rat|review|vote|score|opinion", str(k_), re.I))[:10])
             p_["_votes"] = votes_
@@ -6063,6 +6064,7 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
         for r_, (_, p_x, *_r) in zip(rows, cand[:SILPO_TOP + 500]):      # ⭐ хіти покупців — з усіх категорій
             if p_x.get("_hit"):
                 HITS_.append(((p_x.get("_votes") or 50) * float(p_x.get("guestProductRating") or 4.5) * (1.5 if re.search(r"Овоч|Фрукт|Ягід|Ягод|Зелен|Гриб|Солодощ|Кондитер|Шоколад|Печиво|Цукерк|Морозив|М.ясо|Ковбас|Сосиск|Птиц|Риб|Морепрод|Сир|Молоч|Кисломол|Йогурт|Готов|Кулінар|Салат|Страв|Піц|Суші", title, re.I) else 1), r_, title))
+        TOP_IDS.update(str(x[1].get("id")) for x in cand[:SILPO_TOP + 10])   # топ категорії (перші 15)
         ci = f"{tag}{total}"
         more[ci] = {"t": f"{emo} <b>{esc(title)}</b>", "b": f"{emo} {title[:18]}",       # кожна категорія — кнопка
                     "first": rows[:SILPO_TOP], "rows": rows[SILPO_TOP:SILPO_TOP + 10]}
@@ -6106,8 +6108,27 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
             if key_ in seen_h:
                 continue
             seen_h.add(key_); hrows.append(re.sub(r"^\d+\.", f"{len(hrows) + 1}.", r_).replace(" — <b>", f" <i>({esc(cat_[:18])})</i> — <b>", 1))
-        more[f"{tag}98"] = {"t": "⭐ <b>Хіти покупців</b> — оцінка ≥4,5★, багато оцінок, знижка від 10%", "b": "⭐ Хіти покупців", "first": hrows[:10], "rows": hrows[10:30]}
+        more[f"{tag}98"] = {"t": "⭐ <b>Хіти покупців</b> — оцінка ≥4,4★, багато оцінок, знижка від 10%", "b": "⭐ Хіти покупців", "first": hrows[:10], "rows": hrows[10:100]}
     st["silpo_more"] = {**{k: v for k, v in old.items() if (k[:len(tag)] != tag if tag else not k[:1].isdigit())}, **more}
+    if not branch and FAVS:                           # ⭐ окреме сповіщення: товари з обраного потрапили в топ акцій (раз на тиждень на людину)
+        wk_, day_ = f"{now:%G-%V}", now.strftime("%Y-%m-%d"); sent_ = st.setdefault("fav_top_wk", {})
+        for cid_, my_ in FAVS.items():
+            rec_ = sent_.get(str(cid_)) if isinstance(sent_.get(str(cid_)), dict) else {}
+            if rec_.get("wk") != wk_:
+                rec_ = {"wk": wk_, "ids": [], "day": ""}   # новий тиждень — заново
+            if rec_.get("day") == day_ or (PROF.get(str(cid_)) or {}).get("silpo"):
+                continue                              # сьогодні вже надсилали / у людини свій магазин (інша підбірка)
+            hits_ = [it for it in ALL_PROMOS if str(it[0]) in TOP_IDS and any(fav_match(f_, it) for f_ in (my_.get("items") or []))
+                     and str(it[0]) not in set(rec_.get("ids") or [])]   # лише НОВІ в топі з обраного
+            if not hits_:
+                continue
+            hits_ = sorted({it[0]: it for it in hits_}.values(), key=lambda it: -it[6])[:12]
+            txt_ = "⭐ <b>Обране в топі акцій Сільпо</b> — нове серед найвигідніших:\n\n" + "\n".join(
+                f"• <a href=\"https://silpo.ua/product/{esc(it[8])}\">{esc(it[1])}</a> — <b>{it[4]:g} ₴</b> <s>{it[5]:g} ₴</s> {esc(it[7] or '')} −{it[6]}%" for it in hits_) + "\n\n<i>Усі акції на обране — 🛒 Сільпо → ⭐ Акції для обраного.</i>"
+            try:
+                send(str(cid_), txt_); rec_["ids"] = (rec_.get("ids") or []) + [str(it[0]) for it in hits_]; rec_["day"] = day_; sent_[str(cid_)] = rec_
+            except Exception as e:
+                print(f"Обране в топі → {cid_}: {err_text(e)[:50]}")
     if not tag and SILPO_WHY and WORKER_MODE:         # 🧪 «чому немає товару» — для основної збірки
         try:
             http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}", {"name": "silpo_why.json", "json": {"at": now.strftime("%d.%m %H:%M"), "w": dict(list(SILPO_WHY.items())[:5000])}})
