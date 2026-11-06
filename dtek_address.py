@@ -191,11 +191,12 @@ def house_info(data: dict) -> dict | None:
 
 def fam_overrides() -> None:
     """🏠 Адреса основних, змінена в боті (⚙️ → Адреса й черга), має пріоритет над секретами ADDR_STREET/ADDR_HOUSE."""
-    global STREET, HOUSE
+    global STREET, HOUSE, FAM_VVOD
     if not check.WORKER_MODE or not CHAT_IDS:
         return
     try:
         ex = check.http_json(f"{check.SYNC_URL}/export?key={check.urllib.parse.quote(check.SYNC_KEY)}") or {}
+        FAM_VVOD = str(((ex.get("prof") or {}).get(str(CHAT_IDS[0])) or {}).get("dvvod") or "")
         da = ((ex.get("prof") or {}).get(str(CHAT_IDS[0])) or {}).get("daddr")
         if da and len(da) >= 2 and da[0] and da[1]:
             STREET, HOUSE = str(da[0]), str(da[1])
@@ -227,12 +228,14 @@ def main() -> None:
         yg_ = yasno_groups(STREET, HOUSE)             # 🟦 YASNO — головне джерело черги
         if yg_:
             grps_ = yg_
+            if FAM_VVOD and YASNO_MAP.get(FAM_VVOD):   # обраний ввід — стежимо саме за його чергою
+                grps_ = YASNO_MAP[FAM_VVOD][:1]
     except Exception as e:
         print(f"YASNO (власна адреса): {err_text(e)[:60]}")
     grp_ = grps_[0] if grps_ else None
     if grp_ and check.WORKER_MODE:                    # 🔄 черга за адресою на сайті ДТЕК — бот сам перемкне графік, якщо змінилась
         try:
-            check.http_json(f"{check.SYNC_URL}/famgroup?key={check.urllib.parse.quote(check.SYNC_KEY)}", {"group": grp_, "groups": grps_, "addr": f"{STREET}, {HOUSE}"})
+            check.http_json(f"{check.SYNC_URL}/famgroup?key={check.urllib.parse.quote(check.SYNC_KEY)}", {"group": grp_, "groups": grps_, "addr": f"{STREET}, {HOUSE}" + (f" ({FAM_VVOD})" if FAM_VVOD else ""), "lines": dict(YASNO_MAP), "vvod": FAM_VVOD if FAM_VVOD and YASNO_MAP.get(FAM_VVOD) else ""})
         except Exception as e:
             print(f"Черга основних → бот: {err_text(e)[:60]}")
 
@@ -480,13 +483,16 @@ def subs_address_check(page) -> None:
             yg_ = yasno_groups(street, house)          # 🟦 YASNO — головне джерело черги
             if yg_:
                 grps_ = yg_
+                vv_ = str(prof[cid].get("dvvod") or "")
+                if vv_ and YASNO_MAP.get(vv_):        # обраний ввід — стежимо саме за його чергою
+                    grps_ = YASNO_MAP[vv_][:1]
         except Exception as e:
             print(f"YASNO (адреса підписника): {err_text(e)[:60]}")
         grp_ = grps_[0] if len(grps_) == 1 else None
         cur_ = str(prof[cid].get("group") or "")
         if len(grps_) > 1 and cur_ not in grps_ and set(grps_) != set(prof[cid].get("dgroups") or []):   # кілька ліній, вашої серед них немає — питаємо
             try:
-                check.http_json(f"{check.SYNC_URL}/setgroup?key={check.urllib.parse.quote(check.SYNC_KEY)}", {"cid": cid, "street": street, "house": house, "groups": grps_, "auto": True})
+                check.http_json(f"{check.SYNC_URL}/setgroup?key={check.urllib.parse.quote(check.SYNC_KEY)}", {"cid": cid, "street": street, "house": house, "groups": grps_, "auto": True, "lines": dict(YASNO_MAP)})
             except Exception as e:
                 print(f"Черга підписника {cid}: {err_text(e)[:50]}")
         if grp_ and grp_ != cur_:                     # 🔄 черга підписника за адресою змінилась (одна лінія)
@@ -521,6 +527,8 @@ def subs_address_check(page) -> None:
 
 YASNO = "https://app.yasno.ua/api/blackout-service/public/shutdowns/addresses/v2"
 YASNO_LAST: list = []                                 # «ввод → черга» з останнього пошуку (для 🧪 перевірки адреси)
+YASNO_MAP: dict = {}                                  # ввод (як у YASNO) → черги — з останнього пошуку
+FAM_VVOD = ""                                         # ввод основних, обраний у боті
 
 
 def _yget(url: str):
@@ -540,6 +548,7 @@ def yasno_groups(street: str, house: str) -> list:
     def nm(x):
         return str(x.get("name") or x.get("value") or x.get("title") or x.get("street") or x.get("house") or "") if isinstance(x, dict) else str(x)
     tried = []
+    YASNO_MAP.clear()
     for q in dict.fromkeys([re.sub(r"^(вул\.?|вулиця|просп\.?|проспект|бульв\.?|пров\.?|пл\.?)\s+", "", street, flags=re.I)] + addr_variants(street)[:4]):
         try:
             sts = items(_yget(f"{YASNO}/streets?regionId=25&dsoId=902&query={check.urllib.parse.quote(q)}"))
@@ -577,6 +586,7 @@ def yasno_groups(street: str, house: str) -> list:
                     if isinstance(x, dict) and x.get("group") is not None:
                         gg.append(f"{x.get('group')}.{x.get('subgroup') or 1}")
             grps += gg; labels.append(f"{nm(h_)} → {gg or '?'}"); YASNO_LAST.append(f"{nm(st_)}, {nm(h_)} → черга {', '.join(gg) or '?'}")
+            YASNO_MAP[nm(h_)] = gg
             print(f"YASNO: {nm(st_)}, {nm(h_)} → черга {gg or '?'} · відповідь {raw[:140]}")
         if len(labels) > 1:
             print(f"YASNO: у будинку кілька вводів — {labels}")
@@ -746,7 +756,7 @@ def lookup_requests(page) -> None:
                         grps = yg
                 except Exception as e:
                     print(f"YASNO (пошук черги): {err_text(e)[:60]}")
-                found = {"street": st, "house": house, "group": grps[0] if len(grps) == 1 else None, "groups": grps} if grps else {"street": st, "house": house, "group": None}
+                found = {"street": st, "house": house, "group": grps[0] if len(grps) == 1 else None, "groups": grps, "lines": dict(YASNO_MAP)} if grps else {"street": st, "house": house, "group": None}
                 if len(grps) > 1:
                     found.pop("group")                # кілька ліній (черг) у будинку — хай людина обере свою
                 break
