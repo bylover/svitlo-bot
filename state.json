@@ -716,7 +716,7 @@
   "t69158",
   "t60585"
  ],
- "gh_beat": "2026-11-07T00:55:48.622194+02:00",
+ "gh_beat": "2026-11-07T01:01:40.008740+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -803,11 +803,11 @@
    ]
   ]
  },
- "fact_png": "2026-11-07 00|13|2026-11-06T22:36:20+02:00",
+ "fact_png": "2026-11-07 01|13|2026-11-06T22:36:20+02:00",
  "fact_day": {
-  "total": "12 год 36 хв",
+  "total": "11 год 35 хв",
   "list": [
-   "00:00–04:36 · 4 год 36 хв",
+   "01:01–04:36 · 3 год 35 хв",
    "07:15–12:34 · 5 год 20 хв",
    "13:06–13:41 · 34 хв",
    "13:41–15:46 · 2 год 5 хв",
@@ -1674,8 +1674,8 @@
    "note": ""
   },
   "🎵 Музика": {
-   "at": "07.11 00:56",
-   "ts": 1794005774,
+   "at": "07.11 01:02",
+   "ts": 1794006148,
    "ok": true,
    "note": ""
   },
@@ -1806,7 +1806,7 @@
  "silpo_fb": "1f0bae3d-2073-62f4-b14c-f9715721ce18|DeliveryHome|",
  "yt_ver": 2,
  "smm_ver": 4,
- "smm_try": "2026-11-07 00",
+ "smm_try": "2026-11-07 01",
  "smm_links": [
   "https://www.socialmediatoday.com/news/meta-offers-creative-ad-targeting-for-specific-audiences/833672/",
   "https://blog.google/products/ads-commerce/holiday-shopping-bidding-budgeting/",
@@ -1910,7 +1910,14 @@
   "https://news.google.com/rss/articles/CBMimAFBVV95cUxNQjZPUlRqeS1BR1ZMTDFzNXpfSFpCZElKbkVhZ3JLRmREeDVDZWQySGVqM2NXcU1PMHlTWnZYWlNIQzlLT1dILVFleHViS3hNcDNxRGx2cldYazJhY1V6TlZNc1JPaFpsU1RyNmlzNnpNUlNJdTYtR0FNMUpKZWFEM1Nick9tZjZ2TTY0TUgyLWtKeEh5YVpOTQ?oc=5",
   "https://news.google.com/rss/articles/CBMimgFBVV95cUxOcGhWZGF1ZV9mNk94dlp6ZDY2OTVKaXk1Ql9vdllRaDBCZDFxTDRMS3dSbWhHbmQ5bC04NFB1aE92NjRXN1hidUNxeHhnbEpjTlRVUDZMX3c5dXVNNlI0eDlVbTJIM3lCSGdSbTI1Q1pFakI3R2hKQVVCZUFia3NUSUJmQ19SemdYU3h5OS00OVZTaXdpLV90dE1R?oc=5",
   "https://www.socialmediatoday.com/news/edits-launches-for-macos/873949/",
-  "https://news.google.com/rss/articles/CBMif0FVX3lxTE5iMERwT2xyZUFFT1hpanpfX1YzUnBoSkl4OWlrNy1zVmtmUUYwWWFCWm1sWk9QWjQyN3FUaUNycTE3MF9rTW4yb1k3RWpfcXpLNFYwMzU1UmtsZmoyNjVteHU2Nl9LaFN5Z1dvM0Y0V1kzNzFXOGNjRnNZcEdXQXc?oc=5"
+  "https://news.google.com/rss/articles/CBMif0FVX3lxTE5iMERwT2xyZUFFT1hpanpfX1YzUnBoSkl4OWlrNy1zVmtmUUYwWWFCWm1sWk9QWjQyN3FUaUNycTE3MF9rTW4yb1k3RWpfcXpLNFYwMzU1UmtsZmoyNjVteHU2Nl9LaFN5Z1dvM0Y0V1kzNzFXOGNjRnNZcEdXQXc?oc=5",
+  "https://news.google.com/rss/articles/CBMingFBVV95cUxPNVh4dFNGQXM3bkpwLVAyWGFSQmhmT3hnY0hGOEZ5ZVkwNFBYN294ak4zenFvYW9VRXQ5Vm9OOTMwODZJajJRVm1ocmFuaUdSTXh0RnhFcW9nOFZiVXJJT1JVQmc5SWxiQURrMVAtcWdoZWJWNFhPUGlGUXNkYk84Y2UwTThEY3ZEbFNQMDFDZWk5cklfUjZUNlc3MG9OUQ?oc=5",
+  "https://www.marketingdive.com/news/sociable-reddit-tests-ads-in-search-results/873874/",
+  "https://news.google.com/rss/articles/CBMinwFBVV95cUxQVkN1TG9BYlJfUGRBaUU2Zm1xSlQzNVB2b0gxMU5nN01MSVdVelZDeFliSjFJLXlKZ29ZVDR0QXB3WjE3TnUxcWkzSGFuMUd3QzE1N0hkUWN6WVByampveUxEcVFvbkxsb0JHU1VvX0ozUEx0VU1jVWNtVG1Dd1Z1MTl6LTdHd1RCM0dVRDc3bVpjZFgyWUFYTWx2QzYxRzg?oc=5",
+  "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+  "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQdGQ3Yk43RmR0Sk5oRTEyZUg1MGk5dWh5LWVkbUgzUGNrb1ZMTjdmVHhfdlU4dlFoeDg4SGJidGp4akMyUnFMZ2hZcTBVLXVFaHFaaFhwc1ktUFNPYm9sbHdYaU9NMmVsUWNmTXg1WmxRMGd3NjVkNjVXN1N3UldEV21haU1DcktwTXpJenNDWE1EUHhwU1ltbzBDdTNmRzBOY3hhdWtDUUc?oc=5",
+  "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOMnd2Q2VzaWoxTHBDdU5QZVlwajd0MUJockpJOFltX0JyMXZ2U2pMeE9CY0V6VkdsWS1RdkVuUXh3Z1M0X2ppb09ZcWM2WFhwQmlPWFVJdlE4dm04bi1GUl9nMm9KUkN1Y3g2clNmc2htNkZUMmp0TndNU29kZEJPQjZHNVhOVnVl?oc=5",
+  "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNOXpKcUI5VEZRdzZXZm55aGxaWFlFRnA3cEFsQ1hiejliNDAxeUlPeHh6enAyQ29mVUUyc3ZvNG1PbHFmdkxaWDBYbGFxRWNUMHZuMnNMZWhBUlBPbC1hSFV3MG9ONXVrcXctWVRkdGRLdHpIS0NSSk8xb0VkcHVuUjAtTC1POWxwV21iOHBmUXVKXzR6emNTbjl3LWN4Rld5Y1ZJQUttZklYYXZpYm1BYTE2RXBOS3dOTU9rUXlILWlkQVFiZEd2bG1UNTJIekNIM3ppRVZHR1VscVBxZUdveWVVcFB3bVFYMVNneEFFRVJiaG8?oc=5"
  ],
  "smm_pool_day": "2026-11-07",
  "smm_pool": [
@@ -2088,6 +2095,10 @@
   "https://blog.hootsuite.com/facebook-ad-tools/",
   "https://blog.hootsuite.com/ai-disclosure-policy-for-instagram/",
   "https://www.socialmediaexaminer.com/4-ways-to-create-passionate-fans-for-your-business/",
+  "https://blog.hootsuite.com/social-video-metrics/",
+  "https://blog.hootsuite.com/social-first-ai/",
+  "https://blog.hootsuite.com/content-moderation/",
+  "https://buffer.com/resources/social-media-metrics/",
   "https://blog.hootsuite.com/social-video-metrics/",
   "https://blog.hootsuite.com/social-first-ai/",
   "https://blog.hootsuite.com/content-moderation/",
@@ -29507,9 +29518,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "f57f8fea1f04",
+  "gs": "3e5a70077051",
   "quiz_pool.json": "d62dbc5542f3",
-  "fact.png": "308b5364394f",
+  "fact.png": "ace777bd6fd0",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -42757,7 +42768,7 @@
  "silpo_snap": "2026-11-04",
  "live_day": "",
  "silpo_week": "2026-45",
- "sbm_at": 1794005753.461086,
+ "sbm_at": 1794006105.2269673,
  "sbm_hist": [
   [
    "12:45",
@@ -43332,7 +43343,7 @@
    34
   ],
   [
-   "00:55",
+   "01:01",
    38
   ]
  ],
@@ -43350,7 +43361,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1794005237.3900228,
+ "net_at": 1794006115.2158597,
  "net_asn": {
   "triolan": [
    "13188",
@@ -46006,5 +46017,6 @@
   "ser_scifi": "2026-11-06T20:45:46.854366+02:00",
   "ser_mystery": "2026-11-06T20:55:46.032527+02:00"
  },
- "mydir_ex": {}
+ "mydir_ex": {},
+ "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 31.10–07.11\n<blockquote>🆕 <b>1. Instagram тестує 90-хвилинні відео</b>\nInstagram розпочав тестування нового формати довгоформатних горизонтальних відео тривалістю до 90 хвилин. Платформа прагне скласти конкуренцію YouTube у сегменті повноцінного відеоконтенту.\n💡 Готуйте контент-план під довгі формати та адаптуйте горизонтальні відео для публікації в Instagram.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxPNVh4dFNGQXM3bkpwLVAyWGFSQmhmT3hnY0hGOEZ5ZVkwNFBYN294ak4zenFvYW9VRXQ5Vm9OOTMwODZJajJRVm1ocmFuaUdSTXh0RnhFcW9nOFZiVXJJT1JVQmc5SWxiQURrMVAtcWdoZWJWNFhPUGlGUXNkYk84Y2UwTThEY3ZEbFNQMDFDZWk5cklfUjZUNlc3MG9OUQ?oc=5\">Запорізькі Вісті</a></blockquote>\n<blockquote>🎯 <b>2. Reddit тестує рекламу в результатах пошуку</b>\nПлатформа Reddit запустила тест рекламних оголошень безпосередньо у внутрішній пошуковій видачі. Це відкриває нові можливості для націлювання на високоінтенсійний пошуковий трафік.\n💡 Зверніть увагу на оптимізацію присутності бренду на Reddit та готуйте бюджети під новий пошуковий інвентар.\n🔗 <a href=\"https://www.marketingdive.com/news/sociable-reddit-tests-ads-in-search-results/873874/\">Marketing Dive</a></blockquote>\n<blockquote>🎯 <b>3. TikTok розвиває повноцінну пошукову рекламу</b>\nРеклама в пошуку TikTok еволюціонує у повноцінний інструмент контекстного таргетингу за ключовими словами. Тепер бренди можуть перехоплювати гарячий попит користувачів усередині застосунку.\n💡 Зберіть семантичне ядро за ключовими запитами вашої ніші та додайте їх до налаштувань пошукових кампаній у TikTok.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxQVkN1TG9BYlJfUGRBaUU2Zm1xSlQzNVB2b0gxMU5nN01MSVdVelZDeFliSjFJLXlKZ29ZVDR0QXB3WjE3TnUxcWkzSGFuMUd3QzE1N0hkUWN6WVByampveUxEcVFvbkxsb0JHU1VvX0ozUEx0VU1jVWNtVG1Dd1Z1MTl6LTdHd1RCM0dVRDc3bVpjZFgyWUFYTWx2QzYxRzg?oc=5\">Search Engine Journal</a></blockquote>\n<blockquote>🆕 <b>4. Google випустив оновлену модель Gemini Omni 1.2 Flash</b>\nGoogle анонсував швидшу та економічнішу модель Gemini Omni 1.2 Flash із підтримкою довших відеофрагментів. Це покращує можливості обробки мультимедіа та генерації контенту зі штучним інтелектом.\n💡 Використовуйте оновлену модель для швидкого створення рекламних креативів та аналізу великих відеомасивів.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>5. WhatsApp додав чотири нові функції для групових чатів</b>\nМесенджер WhatsApp представив оновлення, яке спрощує управління великими груповими чатами за допомогою нових інструментів модерації та організації. Це полегшить комунікацію в ком'юніті-менеджменті.\n💡 Застосовуйте нові інструменти управління для оптимізації взаємодії з клієнтами у бізнес-чатах WhatsApp.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQdGQ3Yk43RmR0Sk5oRTEyZUg1MGk5dWh5LWVkbUgzUGNrb1ZMTjdmVHhfdlU4dlFoeDg4SGJidGp4akMyUnFMZ2hZcTBVLXVFaHFaaFhwc1ktUFNPYm9sbHdYaU9NMmVsUWNmTXg1WmxRMGd3NjVkNjVXN1N3UldEV21haU1DcktwTXpJenNDWE1EUHhwU1ltbzBDdTNmRzBOY3hhdWtDUUc?oc=5\">9to5Mac</a></blockquote>\n<blockquote>👀 <b>6. Meta скасувала оновлення умов користування через критику</b>\nПід тиском суспільства та медіа Meta тимчасово відкликала суперечливі зміни до умов надання послуг. Оновлення викликало занепокоєння щодо автоматичного збору контенту та навчання AI на даних новинних сайтів.\n💡 Слідкуйте за офіційними оновленнями політик Meta щодо використання контенту користувачів у навчанні штучного інтелекту.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxOMnd2Q2VzaWoxTHBDdU5QZVlwajd0MUJockpJOFltX0JyMXZ2U2pMeE9CY0V6VkdsWS1RdkVuUXh3Z1M0X2ppb09ZcWM2WFhwQmlPWFVJdlE4dm04bi1GUl9nMm9KUkN1Y3g2clNmc2htNkZUMmp0TndNU29kZEJPQjZHNVhOVnVl?oc=5\">Nieman Lab</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202645\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Головні метрики відеоконтенту</b> · Hootsuite\nМатеріал розбирає 11 ключових показників для оцінки відео в соцмережах, зокрема середній час перегляду, рівень залученості та коефіцієнт догляду до кінця. Автор наголошує, що кожна платформа має власне визначення «перегляду», тому порівняння «сирих» цифр без контексту може ввести в оману.\n💡 Обирайте метрики під конкретну ціль (впізнаваність, утримання аудиторії чи ROI) і використовуйте уніфіковані аналітичні інструменти для кросплатформного порівняння.\n<a href=\"https://blog.hootsuite.com/social-video-metrics/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Чому соціально-орієнтований ШІ перевершує звичайні моделі</b> · Hootsuite\nСтаття пояснює різницю між загальними ШІ-інструментами та системами, створеними спеціально для соцмереж на основі реальних даних у реальному часі. Дослідження показує, що 43% SMM-фахівців витрачають понад 11 годин на тиждень на роботу зі звичайним ШІ через постійні правки.\n💡 Використовуйте спеціалізовані ШІ-інструменти, підключені до живих сигналів платформ, щоб створювати актуальний контент і ловити тренди в перші 48 годин.\n<a href=\"https://blog.hootsuite.com/social-first-ai/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Повний гід з модерації контенту для брендів</b> · Hootsuite\nУ матеріалі описано процес фільтрації, перевірки та реагування на контент від користувачів для захисту репутації бренду. Розглянуто п'ять основних типів модерації та баланс між автоматизованими алгоритмами й людським контролем.\n💡 Побудуйте робочий процес із комбінацією первинного ШІ-фільтра для швидкості та команди модераторів для роботи з делікатними контекстами та скаргами.\n<a href=\"https://blog.hootsuite.com/content-moderation/\">джерело</a></blockquote>\n<blockquote>💬 <b>4.  20 метрик соцмереж із формулами та бенчмарками</b> · Buffer\nАвтор розрізняє загальні метрики та ключові показники ефективності (KPI), пов'язані з конкретними маркетинговими цілями. Наводиться детальний розбір показників для оцінки ефективності контенту, зокрема формула розрахунку рівня залученості.\n💡 Обмежтеся 3-5 KPI, прив'язаними до конкретної цілі (наприклад, зростанняengagement rate на LinkedIn з 4% до 6%), замість того, щоб відстежувати всі доступні цифри з дашборда.\n<a href=\"https://buffer.com/resources/social-media-metrics/\">джерело</a></blockquote>\n§RT:smm:202645p"
 }
