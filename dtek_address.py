@@ -550,17 +550,22 @@ def yasno_groups(street: str, house: str) -> list:
         if not st_:
             tried.append(f"{q}: {len(sts)} вулиць"); continue
         sid = st_.get("id") if isinstance(st_, dict) else None
-        try:
-            hs = items(_yget(f"{YASNO}/houses?regionId=25&streetId={sid}&dsoId=902&query={check.urllib.parse.quote(house)}"))
-        except Exception as e:
-            tried.append(f"будинки: {err_text(e)[:30]}"); break
-        base_ = lambda x: re.sub(r"\s*(ввод|ввід|лінія|линия)\s*\d+\s*$", "", hkey(x), flags=re.I).replace("/", "").replace(" ", "")
+        hs = []
+        num_ = (re.match(r"\d+", house) or [""])[0]
+        for hq in dict.fromkeys([num_, house, ""]):   # YASNO шукає будинки за номером: «42» знайде «42/Б ввод 1», а «42б» — ні
+            try:
+                hs = items(_yget(f"{YASNO}/houses?regionId=25&streetId={sid}&dsoId=902&query={check.urllib.parse.quote(hq)}"))
+            except Exception as e:
+                tried.append(f"будинки «{hq}»: {err_text(e)[:30]}"); continue
+            if hs:
+                break
+        base_ = lambda x: re.sub(r"[()\[\],;:/\s\-]", "", re.sub(r"(ввод|ввід|вв\.?|лінія|линия|лін\.?|л\.)\s*№?\s*\d+", "", hkey(x), flags=re.I))   # «42/Б ввод 1», «42Б (ввід 2)», «42-Б л.1» → «42б»
         hk = base_(house)
         hh = [h for h in hs if base_(nm(h)) == hk]     # усі «вводи» будинку: «42/Б ввод 1», «42/Б ввод 2» — окремі записи в YASNO
         if not hh:
             tried.append(f"будинок {house}: {[nm(h) for h in hs[:6]]}"); break
         grps, labels = [], []
-        for h_ in hh[:4]:
+        for h_ in hh[:6]:
             try:
                 g = _yget(f"{YASNO}/group?regionId=25&streetId={sid}&houseId={h_.get('id')}&dsoId=902")
             except Exception as e:
