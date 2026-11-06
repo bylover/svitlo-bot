@@ -715,7 +715,7 @@
   "t86848",
   "t14929"
  ],
- "gh_beat": "2026-11-06T08:20:44.975884+02:00",
+ "gh_beat": "2026-11-06T08:25:43.099339+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -726,11 +726,11 @@
   "groups": [
    "GPV3.1"
   ],
-  "updated": "08:04 06.11.2026",
+  "updated": "08:19 06.11.2026",
   "emergency": false,
   "city_emergency": false,
-  "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-06T08:12:58.245194+02:00",
+  "city_text": "",
+  "checked": "2026-11-06T08:22:58.778210+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": true
@@ -1780,8 +1780,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "06.11 08:16",
-   "ts": 1793945800,
+   "at": "06.11 08:26",
+   "ts": 1793946394,
    "ok": true,
    "note": ""
   },
@@ -1840,8 +1840,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "06.11 08:16",
-   "ts": 1793945816,
+   "at": "06.11 08:27",
+   "ts": 1793946425,
    "ok": true,
    "note": ""
   },
@@ -1906,8 +1906,8 @@
    "note": ""
   },
   "youtube для вас": {
-   "at": "06.11 08:15",
-   "ts": 1793945756,
+   "at": "06.11 08:25",
+   "ts": 1793946353,
    "ok": true,
    "note": ""
   }
@@ -30248,7 +30248,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "f92c13763a9a",
+  "gs": "be9722a1a3a2",
   "quiz_pool.json": "d62dbc5542f3",
   "fact.png": "e20345cd0ba9",
   "sexed.json": "0362ec7e46d4",
@@ -42693,6 +42693,90 @@
    ],
    "ov": "Після смерті чоловіка його жінка з трьома дітьми переїжджає в старовинне родове гніздо. Тут вони знаходять магічні ключі, що приховують неабиякі сили й таємниці.",
    "poster": "https://image.tmdb.org/t/p/w500/rdKbEibzLMYi1t6WfoCZLP98jte.jpg"
+  },
+  "t113268": {
+   "title": "Феноменальні чутки",
+   "year": "2020",
+   "rating": 8.0,
+   "genres": [
+    "Драма",
+    "Детектив",
+    "Екшн і Пригоди"
+   ],
+   "g": [
+    18,
+    9648,
+    10759
+   ],
+   "ov": "Група людей із надздібностями полюють за демонами, які оволодівають людьми, схильними до вбивства. Проте група реагування на надприродні явища, окрім демонів, змушені стикнутися із гіршим злом — людьми, які є небезпечніш",
+   "poster": "https://image.tmdb.org/t/p/w500/xwXgYXqxLRAYfVGUaS1STEFnmzZ.jpg"
+  },
+  "t44264": {
+   "title": "Індевор",
+   "year": "2013",
+   "rating": 8.6,
+   "genres": [
+    "Кримінал",
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    80,
+    18,
+    9648
+   ],
+   "ov": "Дія серіалу відбувається в 1960-х та 1970-х роках в Оксфорді, Англія, і зосереджується на початку кар'єри Індевора Морса (Шон Еванс) після того, як він залишив Лонсдейлський коледж Оксфордського університету наприкінці т",
+   "poster": "https://image.tmdb.org/t/p/w500/suX3F5e8XN9emrb52CQSwt2mRwx.jpg"
+  },
+  "t138501": {
+   "title": "Agatha All Along",
+   "year": "2024",
+   "rating": 7.2,
+   "genres": [
+    "Науково фантастичний",
+    "Детектив"
+   ],
+   "g": [
+    10765,
+    9648
+   ],
+   "ov": "Сумнозвісна Аґата Гаркнесс опинилася без сил після того, як підозрілий підліток-гот допоміг їй звільнитися від спотвореного закляття. Її зацікавленість зростає, коли він благає її взяти його із собою на легендарну Відьом",
+   "poster": "https://image.tmdb.org/t/p/w500/KfwAljfvT8RNM9Zq1TsbCnGD9E.jpg"
+  },
+  "t3163": {
+   "title": "Війна Фойла",
+   "year": "2002",
+   "rating": 8.6,
+   "genres": [
+    "Детектив",
+    "Драма",
+    "Політика та війна"
+   ],
+   "g": [
+    9648,
+    18,
+    10768,
+    80
+   ],
+   "ov": "У час коли по всьому світу лютує Друга світова війна детектив Крістофер Фойл змушений вести свою маленьку війну проти вбивць, злодіїв, підпільних торговців і зрадників...",
+   "poster": "https://image.tmdb.org/t/p/w500/dNqHn5UCoa2vodPv5g1nfQE89R4.jpg"
+  },
+  "t5920": {
+   "title": "Менталіст",
+   "year": "2008",
+   "rating": 8.2,
+   "genres": [
+    "Кримінал",
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    80,
+    18,
+    9648
+   ],
+   "ov": "В центрі сюжету – історія детектива і незалежного консультанта з Каліфорнійського Бюро Розслідувань Патріка Джейна, який використовує свої відточені навички спостереження для розкриття тяжких злочинів. Мета життя Патріка",
+   "poster": "https://image.tmdb.org/t/p/w500/taR4BLGknPqxy87GWriNPoelSnA.jpg"
   }
  },
  "cofid_pushed": "05.11.2026",
@@ -42710,8 +42794,8 @@
   "lin": "2026-11-06T06:55:45.084769+02:00",
   "wet": "2026-11-06T08:15:44.733106+02:00",
   "out": "2026-11-06T08:15:44.733106+02:00",
-  "les": "2026-11-06T00:05:44.694276+02:00",
-  "ero": "2026-11-06T00:05:44.694276+02:00",
+  "les": "2026-11-06T08:25:43.390911+02:00",
+  "ero": "2026-11-06T08:25:43.390911+02:00",
   "pov": "2026-11-06T02:55:42.814575+02:00",
   "lat": "2026-11-06T02:55:42.814575+02:00",
   "asi": "2026-11-06T02:45:43.580301+02:00",
@@ -42769,12 +42853,8 @@
  "silpo_snap": "2026-11-04",
  "live_day": "2026-11-06",
  "silpo_week": "2026-45",
- "sbm_at": 1793946048.5834458,
+ "sbm_at": 1793946346.98787,
  "sbm_hist": [
-  [
-   "20:00",
-   44
-  ],
   [
    "20:05",
    44
@@ -43345,6 +43425,10 @@
   ],
   [
    "08:20",
+   48
+  ],
+  [
+   "08:25",
    48
   ]
  ],
@@ -46013,7 +46097,8 @@
   "ser_crime": "2026-11-06T06:45:48.046868+02:00",
   "ser_comedy": "2026-11-06T06:55:45.084769+02:00",
   "ser_drama": "2026-11-06T07:05:44.374782+02:00",
-  "ser_scifi": "2026-11-06T08:15:44.733106+02:00"
+  "ser_scifi": "2026-11-06T08:15:44.733106+02:00",
+  "ser_mystery": "2026-11-06T08:25:43.390911+02:00"
  },
  "kb_probe2": "2026-45",
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 30.10–06.11\n<blockquote>🎯 <b>1. Реклама в пошуку Reddit</b>\nReddit почав тестувати розміщення рекламних оголошень у результатах внутрішнього пошуку платформи.\n💡 Додайте пошуковий таргетинг Reddit до своїх медійних кампаній, поки конкуренція там ще низька.\n🔗 <a href=\"https://www.socialmediatoday.com/news/reddit-tests-ads-in-search-results/873676/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>2. Довгі відео в Instagram</b>\nInstagram тестує можливість завантаження довгих горизонтальних відео тривалістю до 90 хвилин, кидаючи виклик YouTube.\n💡 Експериментуйте з лонгрідами та подкастами у форматі відео, щоб займати нові ніші в алгоритмах рекомендацій.\n🔗 <a href=\"https://www.socialmediatoday.com/news/instagram-tries-to-entice-long-form-creators/873820/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>3. Оновлена аналітика для авторів у LinkedIn</b>\nLinkedIn представив розширені інструменти аналітики та інсайтів для контент-мейкерів і бізнес-сторінок.\n💡 Використовуйте нові показники залученості для оптимізації B2B-контенту та кращого розуміння своєї аудиторії.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-details-new-creator-insights-options/873675/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Глобальний запуск оновленої лідогенерації в X</b>\nПлатформа X (колишній Twitter) випустила оновлені рекламні формати для збору лідів по всьому світу.\n💡 Протестуйте оновлені форми лідогенерації в X для швидкого збору контактів у B2B та крипто-нішах.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-launches-updated-lead-gen-ads-globally/873666/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>5. Нові інструменти аналітики TikTok Shop</b>\nПродавці в TikTok Shop отримали доступ до 9 нових аналітичних інструментів Compass для відстеження реклами та відтоку клієнтів.\n💡 Аналізуйте дані про відтік і ефективність реклами через Compass, щоб оперативно коригувати воронку продажів у TikTok.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxNQjZPUlRqeS1BR1ZMTDFzNXpfSFpCZElKbkVhZ3JLRmREeDVDZWQySGVqM2NXcU1PMHlTWnZYWlNIQzlLT1dILVFleHViS3hNcDNxRGx2cldYazJhY1V6TlZNc1JPaFpsU1RyNmlzNnpNUlNJdTYtR0FNMUpKZWFEM1Nick9tZjZ2TTY0TUgyLWtKeEh5YVpOTQ?oc=5\">PPC Land</a></blockquote>\n<blockquote>📊 <b>6. Керування алгоритмами в Instagram</b>\nInstagram запроваджує нову функцію, яка дає користувачам більше контролю над формуванням їхньої стрічки та алгоритмів.\n💡 Створюйте максимально залучаючий контент перших секунд, оскільки користувачі активніше налаштовуватимуть свої вподобання.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxOeWNhM2QwNHlKaE0wTnpDak5KTXR1NzdJVzZ4emY0RmU5c1JURm44ZEk1SkY5LUlZQ1pSRlpJZlFlQ0plbEk1aGM0TjJaTXBZUTQ5c0l2VHA1Umg3YjFTLTE0MjdTTlQ2U0F0MGs5d2xmeDMyTVFZd2owanB2X0tCN1BSRjlJMWRFQ2tjc3BueGFUOXNrOEtJSC1TS0PSAaIBQVVfeXFMT1U0aXIwNk9uZUFGU2RvV0JLWkxkNGNzVEhnSDZYZndCQVhFeXJzR1B6bHZLQjFicWpWNHB5YXVLdC04TkFRbHdEN1RQMkRZOTBfQl9XRUMyMHVxMkhHeXZxTmZ4dDB3Y1VON1pkci10YmtqSHRUVHBITzJqbmVZbS0zS1lFOWRMcGZLRUtLVEVnS21mRDVWNjYxVFF4S2NQZ21R?oc=5\">ABC News - Breaking News, Latest News and Videos</a></blockquote>\n<blockquote>🆕 <b>7. Події у WhatsApp</b>\nMeta додала функцію створення подій (Events) у WhatsApp для координації користувачів поза груповими чатами.\n💡 Використовуйте WhatsApp Events для комунікації з клієнтами під час локальних заходів, вебінарів чи акцій.\n🔗 <a href=\"https://about.fb.com/news/2026/11/whatsapp-events-brings-people-together-beyond-the-group-chat/\">Meta Newsroom</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202645"
