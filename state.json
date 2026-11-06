@@ -716,7 +716,7 @@
   "t69158",
   "t60585"
  ],
- "gh_beat": "2026-11-07T00:50:46.598071+02:00",
+ "gh_beat": "2026-11-07T00:55:48.622194+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -727,11 +727,11 @@
   "groups": [
    "GPV3.1"
   ],
-  "updated": "00:35 07.11.2026",
+  "updated": "00:50 07.11.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-07T00:42:54.242658+02:00",
+  "checked": "2026-11-07T00:52:54.347904+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1650,20 +1650,20 @@
    "note": ""
   },
   "🎮 Ігри PS5": {
-   "at": "06.11 11:06",
-   "ts": 1793955993,
+   "at": "07.11 01:01",
+   "ts": 1794006073,
    "ok": true,
    "note": ""
   },
   "🔥 Знижки PS Store": {
-   "at": "07.11 00:06",
-   "ts": 1794002761,
+   "at": "07.11 01:01",
+   "ts": 1794006075,
    "ok": true,
    "note": ""
   },
   "ігри PS5": {
-   "at": "07.11 00:35",
-   "ts": 1794004559,
+   "at": "07.11 01:01",
+   "ts": 1794006075,
    "ok": true,
    "note": ""
   },
@@ -1674,14 +1674,14 @@
    "note": ""
   },
   "🎵 Музика": {
-   "at": "07.11 00:26",
-   "ts": 1794003960,
+   "at": "07.11 00:56",
+   "ts": 1794005774,
    "ok": true,
    "note": ""
   },
   "❤️ Здоровʼя": {
-   "at": "07.11 00:26",
-   "ts": 1794003960,
+   "at": "07.11 00:56",
+   "ts": 1794005779,
    "ok": true,
    "note": ""
   },
@@ -29507,7 +29507,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "25b0df9f1eac",
+  "gs": "f57f8fea1f04",
   "quiz_pool.json": "d62dbc5542f3",
   "fact.png": "308b5364394f",
   "sexed.json": "0362ec7e46d4",
@@ -29625,7 +29625,6 @@
  "force_heavy": [
   "prom.ua",
   "youtube канали",
-  "музика",
   "здоров'я",
   "ігри PS5",
   "аудіокниги",
@@ -29634,11 +29633,11 @@
  ],
  "rc_need": true,
  "games_month": "2026-11",
- "games_force": true,
- "ps_day": "",
+ "games_force": false,
+ "ps_day": "2026-11-07",
  "ab_force": true,
  "rc_force": true,
- "cofid": "",
+ "cofid": "2026-Q4",
  "km_pick": {
   "m363676": {
    "title": "Саллі",
@@ -42683,7 +42682,7 @@
    "poster": "https://image.tmdb.org/t/p/w500/neVUbUMfEhd6HHFrqtBWdbkH2jg.jpg"
   }
  },
- "cofid_pushed": "06.11.2026",
+ "cofid_pushed": "07.11.2026",
  "ab_month": "2026-11",
  "yt_last": "▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · 31.10–07.11</b>\n<blockquote>▶️ <b>1. Чому Європа Відмовилася Від Цих Продуктів?</b>\n📺 ДушаFlow · ⏱ 17 хв\n👁 <b>369 тис</b> переглядів · 💬 <b>737</b> коментарів\n🔗 <a href=\"https://youtu.be/QI4RpujtKLo\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>2. що насправді сталось з ВЛАДОЮ РОГОВЕНКО</b>\n📺 Орест Мурій · ⏱ 46 хв\n👁 <b>368 тис</b> переглядів · 💬 <b>226</b> коментарів\n🔗 <a href=\"https://youtu.be/KKdwjR7TRw0\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>3. Як знімали Холостяк в АНОМАЛЬНУ СПЕКУ І ГРОЗУ? – Бекстейдж із Наталкою Денисенко | Холостяк 15 сезон</b>\n📺 Холостяк / Холостячка · ⏱ 50 хв\n👁 <b>361 тис</b> переглядів · 💬 <b>211</b> коментарів\n🔗 <a href=\"https://youtu.be/1CjEer1hZdY\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>4. MONATIK - АнгелаМ | ПРЕМ'ЄРА</b>\n📺 MONATIK · ⏱ 3 хв\n👁 <b>226 тис</b> переглядів · 💬 <b>728</b> коментарів\n🔗 <a href=\"https://youtu.be/oKbOBLNplfE\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>5. [UA] FURIA проти bb team | IEM Beijing 2026</b>\n📺 CS2 Maincast · ⏱ 8 год 24 хв\n👁 <b>276 тис</b> переглядів · 💬 <b>1</b> коментарів\n🔗 <a href=\"https://youtu.be/IUZyQSMDKK8\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>6. ЛЮБИТЕЛЬ БАБУСЬ ЗНІМАЄ ВІДОСИКИ 80+ ► ЛЕБІГА ДИВИТЬСЯ «ГОВОРИТЬ УКРАЇНА»</b>\n📺 Лебіга STREAMS · ⏱ 55 хв\n👁 <b>176 тис</b> переглядів · 💬 <b>73</b> коментарів\n🔗 <a href=\"https://youtu.be/Iod41YitKR4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>7. Call of Duty: Modern Warfare 4 - НАЙКРАЩА ГРА СЕРІЇ | Проходження Українською | #1</b>\n📺 thetremba · ⏱ 2 год 24 хв\n👁 <b>159 тис</b> переглядів · 💬 <b>157</b> коментарів\n🔗 <a href=\"https://youtu.be/97unNIgkHc4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>8. Victoria Niro - Палачанте | Стиль, який не втомлює</b>\n📺 Victoria Niro · ⏱ 3 хв\n👁 <b>75 тис</b> переглядів · 💬 <b>324</b> коментарів\n🔗 <a href=\"https://youtu.be/eMCGN0P72ik\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>9. Падала</b>\n📺 SKYLERR - Topic · ⏱ 3 хв\n👁 <b>89 тис</b> переглядів · 💬 <b>17</b> коментарів\n🔗 <a href=\"https://youtu.be/pdfVagCY5s8\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>10. EmoTix - Не ламай | Прем’єра 2026</b>\n📺 EmoTix  · ⏱ 3 хв\n👁 <b>44 тис</b> переглядів · 💬 <b>23</b> коментарів\n🔗 <a href=\"https://youtu.be/YAvp5q2DfqE\">Дивитися</a></blockquote>\n<i>Ще 10, улюблені й приховані канали, 📺 цікаві канали за темами — кнопкою «▶️ YouTube» у меню.</i>\n§RT:yt:202645",
  "match_month": "",
@@ -42758,12 +42757,8 @@
  "silpo_snap": "2026-11-04",
  "live_day": "",
  "silpo_week": "2026-45",
- "sbm_at": 1794005231.2586687,
+ "sbm_at": 1794005753.461086,
  "sbm_hist": [
-  [
-   "12:40",
-   36
-  ],
   [
    "12:45",
    36
@@ -43335,6 +43330,10 @@
   [
    "00:47",
    34
+  ],
+  [
+   "00:55",
+   38
   ]
  ],
  "sbm_near": {
