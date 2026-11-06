@@ -715,7 +715,7 @@
   "t126308",
   "t9027"
  ],
- "gh_beat": "2026-11-06T06:50:46.073682+02:00",
+ "gh_beat": "2026-11-06T06:55:44.922422+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -726,11 +726,11 @@
   "groups": [
    "GPV3.1"
   ],
-  "updated": "06:32 06.11.2026",
+  "updated": "06:50 06.11.2026",
   "emergency": false,
   "city_emergency": false,
-  "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-06T06:42:52.497342+02:00",
+  "city_text": "",
+  "checked": "2026-11-06T06:52:53.915947+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1775,8 +1775,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "06.11 06:46",
-   "ts": 1793940403,
+   "at": "06.11 06:56",
+   "ts": 1793940995,
    "ok": true,
    "note": ""
   },
@@ -1835,8 +1835,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "06.11 06:46",
-   "ts": 1793940419,
+   "at": "06.11 06:56",
+   "ts": 1793941017,
    "ok": true,
    "note": ""
   },
@@ -1895,14 +1895,14 @@
    "note": ""
   },
   "кіно-категорії": {
-   "at": "06.11 06:46",
-   "ts": 1793940362,
+   "at": "06.11 06:55",
+   "ts": 1793940955,
    "ok": true,
    "note": ""
   },
   "youtube для вас": {
-   "at": "06.11 06:46",
-   "ts": 1793940362,
+   "at": "06.11 06:55",
+   "ts": 1793940955,
    "ok": true,
    "note": ""
   }
@@ -30858,7 +30858,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "4feaae728195",
+  "gs": "3e084aa67cf1",
   "quiz_pool.json": "d62dbc5542f3",
   "fact.png": "8d57735e7eaf",
   "sexed.json": "0362ec7e46d4",
@@ -43033,6 +43033,91 @@
    ],
    "ov": "Що можна зробити за добу? 24 години — це не так багато, але як скаже Джек Бауер, нехай цього часу завжди не вистачає, за добу він зуміє зробити неможливе. Джек Бауер працює в ЦРУ, займається справами, пов’язаними з терор",
    "poster": "https://image.tmdb.org/t/p/w500/pWSG8XlXg3nrZHypf4v2C2YryZu.jpg"
+  },
+  "t110492": {
+   "title": "Миротворець",
+   "year": "2022",
+   "rating": 8.2,
+   "genres": [
+    "Екшн і Пригоди",
+    "Науково фантастичний",
+    "Комедія"
+   ],
+   "g": [
+    10759,
+    10765,
+    35
+   ],
+   "ov": "Незламний громила, шалений патріот і просто найбільший дурень. Так вийшло, що саме в його руках опиняється національна безпека. Після місії в «Загоні самогубців» Миротворець знову заступає на службу уряду. Йому доручають",
+   "poster": "https://image.tmdb.org/t/p/w500/ld2rrvBP2a4YKDk79vCb948x9Ld.jpg"
+  },
+  "t66134": {
+   "title": "Даррелли",
+   "year": "2016",
+   "rating": 8.2,
+   "genres": [
+    "Драма",
+    "Комедія",
+    "Сімейний"
+   ],
+   "g": [
+    18,
+    35,
+    10751
+   ],
+   "ov": "Родина Даррелів, після смерті батька переселяються з Англії до Греції у пошуках кращого та дешевшого життя.",
+   "poster": "https://image.tmdb.org/t/p/w500/eoLkAPfki2bqvEniuD9bdN7Nmfk.jpg"
+  },
+  "t66573": {
+   "title": "У кращому світі",
+   "year": "2016",
+   "rating": 8.2,
+   "genres": [
+    "Науково фантастичний",
+    "Комедія"
+   ],
+   "g": [
+    10765,
+    35
+   ],
+   "ov": "Навіжена Елеонор з Нью Джерсі потрапляє туди, де їй наочно пояснюють, що все своє життя вона була вкрай поганою людиною. Головній героїні належить навчитися відрізняти хороше від поганого і допомогти їй дорости до хорошо",
+   "poster": "https://image.tmdb.org/t/p/w500/iZd6jJEzT7sszoFLd5XsYXgctfq.jpg"
+  },
+  "t3764": {
+   "title": "Hustle",
+   "year": "2004",
+   "rating": 8.2,
+   "genres": [
+    "Комедія",
+    "Кримінал",
+    "Драма"
+   ],
+   "g": [
+    35,
+    80,
+    18,
+    9648
+   ],
+   "ov": "A motley group of London con artists pull of a series of daring and intricate stings.",
+   "poster": "https://image.tmdb.org/t/p/w500/xty7kinvhVH3RzMdjNQSpJj2pEm.jpg"
+  },
+  "t95842": {
+   "title": "庆余年",
+   "year": "2019",
+   "rating": 8.2,
+   "genres": [
+    "Драма",
+    "Комедія",
+    "Науково фантастичний"
+   ],
+   "g": [
+    18,
+    35,
+    10765,
+    10768
+   ],
+   "ov": "Zhang Qing, a present-day college student in culture and history major wants to study in professor Ye's postgraduate class, so he decides to write a historical fiction to elaborate his perspective of analyzing ancient li",
+   "poster": "https://image.tmdb.org/t/p/w500/wHJvPo9CLpXwX1ncDg6uD0QJIZo.jpg"
   }
  },
  "cofid_pushed": "05.11.2026",
@@ -43046,8 +43131,8 @@
   "women": "2026-11-06T05:45:42.801387+02:00",
   "rom": "2026-11-06T06:45:48.046868+02:00",
   "cpl": "2026-11-06T06:45:48.046868+02:00",
-  "mas": "2026-11-05T19:55:46.828571+02:00",
-  "lin": "2026-11-05T19:55:46.828571+02:00",
+  "mas": "2026-11-06T06:55:45.084769+02:00",
+  "lin": "2026-11-06T06:55:45.084769+02:00",
   "wet": "2026-11-05T22:45:49.085010+02:00",
   "out": "2026-11-05T22:45:49.085010+02:00",
   "les": "2026-11-06T00:05:44.694276+02:00",
@@ -43109,12 +43194,8 @@
  "silpo_snap": "2026-11-04",
  "live_day": "2026-11-06",
  "silpo_week": "2026-45",
- "sbm_at": 1793940650.0634286,
+ "sbm_at": 1793940948.705524,
  "sbm_hist": [
-  [
-   "18:00",
-   44
-  ],
   [
    "18:05",
    45
@@ -43686,6 +43767,10 @@
   [
    "06:50",
    55
+  ],
+  [
+   "06:55",
+   57
   ]
  ],
  "sbm_near": {
@@ -46350,7 +46435,8 @@
   "ser_gems": "2026-11-06T04:15:49.322444+02:00",
   "ser_hot": "2026-11-06T05:25:46.240536+02:00",
   "ser_new": "2026-11-06T05:35:44.600914+02:00",
-  "ser_crime": "2026-11-06T06:45:48.046868+02:00"
+  "ser_crime": "2026-11-06T06:45:48.046868+02:00",
+  "ser_comedy": "2026-11-06T06:55:45.084769+02:00"
  },
  "kb_probe2": "2026-45",
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 30.10–06.11\n<blockquote>🎯 <b>1. Реклама в пошуку Reddit</b>\nReddit почав тестувати розміщення рекламних оголошень у результатах внутрішнього пошуку платформи.\n💡 Додайте пошуковий таргетинг Reddit до своїх медійних кампаній, поки конкуренція там ще низька.\n🔗 <a href=\"https://www.socialmediatoday.com/news/reddit-tests-ads-in-search-results/873676/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>2. Довгі відео в Instagram</b>\nInstagram тестує можливість завантаження довгих горизонтальних відео тривалістю до 90 хвилин, кидаючи виклик YouTube.\n💡 Експериментуйте з лонгрідами та подкастами у форматі відео, щоб займати нові ніші в алгоритмах рекомендацій.\n🔗 <a href=\"https://www.socialmediatoday.com/news/instagram-tries-to-entice-long-form-creators/873820/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>3. Оновлена аналітика для авторів у LinkedIn</b>\nLinkedIn представив розширені інструменти аналітики та інсайтів для контент-мейкерів і бізнес-сторінок.\n💡 Використовуйте нові показники залученості для оптимізації B2B-контенту та кращого розуміння своєї аудиторії.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-details-new-creator-insights-options/873675/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Глобальний запуск оновленої лідогенерації в X</b>\nПлатформа X (колишній Twitter) випустила оновлені рекламні формати для збору лідів по всьому світу.\n💡 Протестуйте оновлені форми лідогенерації в X для швидкого збору контактів у B2B та крипто-нішах.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-launches-updated-lead-gen-ads-globally/873666/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>5. Нові інструменти аналітики TikTok Shop</b>\nПродавці в TikTok Shop отримали доступ до 9 нових аналітичних інструментів Compass для відстеження реклами та відтоку клієнтів.\n💡 Аналізуйте дані про відтік і ефективність реклами через Compass, щоб оперативно коригувати воронку продажів у TikTok.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxNQjZPUlRqeS1BR1ZMTDFzNXpfSFpCZElKbkVhZ3JLRmREeDVDZWQySGVqM2NXcU1PMHlTWnZYWlNIQzlLT1dILVFleHViS3hNcDNxRGx2cldYazJhY1V6TlZNc1JPaFpsU1RyNmlzNnpNUlNJdTYtR0FNMUpKZWFEM1Nick9tZjZ2TTY0TUgyLWtKeEh5YVpOTQ?oc=5\">PPC Land</a></blockquote>\n<blockquote>📊 <b>6. Керування алгоритмами в Instagram</b>\nInstagram запроваджує нову функцію, яка дає користувачам більше контролю над формуванням їхньої стрічки та алгоритмів.\n💡 Створюйте максимально залучаючий контент перших секунд, оскільки користувачі активніше налаштовуватимуть свої вподобання.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxOeWNhM2QwNHlKaE0wTnpDak5KTXR1NzdJVzZ4emY0RmU5c1JURm44ZEk1SkY5LUlZQ1pSRlpJZlFlQ0plbEk1aGM0TjJaTXBZUTQ5c0l2VHA1Umg3YjFTLTE0MjdTTlQ2U0F0MGs5d2xmeDMyTVFZd2owanB2X0tCN1BSRjlJMWRFQ2tjc3BueGFUOXNrOEtJSC1TS0PSAaIBQVVfeXFMT1U0aXIwNk9uZUFGU2RvV0JLWkxkNGNzVEhnSDZYZndCQVhFeXJzR1B6bHZLQjFicWpWNHB5YXVLdC04TkFRbHdEN1RQMkRZOTBfQl9XRUMyMHVxMkhHeXZxTmZ4dDB3Y1VON1pkci10YmtqSHRUVHBITzJqbmVZbS0zS1lFOWRMcGZLRUtLVEVnS21mRDVWNjYxVFF4S2NQZ21R?oc=5\">ABC News - Breaking News, Latest News and Videos</a></blockquote>\n<blockquote>🆕 <b>7. Події у WhatsApp</b>\nMeta додала функцію створення подій (Events) у WhatsApp для координації користувачів поза груповими чатами.\n💡 Використовуйте WhatsApp Events для комунікації з клієнтами під час локальних заходів, вебінарів чи акцій.\n🔗 <a href=\"https://about.fb.com/news/2026/11/whatsapp-events-brings-people-together-beyond-the-group-chat/\">Meta Newsroom</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202645"
