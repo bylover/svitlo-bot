@@ -716,7 +716,7 @@
   "m980026",
   "m1100099"
  ],
- "gh_beat": "2026-11-07T10:15:44.739719+02:00",
+ "gh_beat": "2026-11-07T10:20:43.599392+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1643,14 +1643,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "07.11 10:12",
-   "ts": 1794039156,
+   "at": "07.11 10:22",
+   "ts": 1794039745,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "07.11 10:12",
-   "ts": 1794039156,
+   "at": "07.11 10:22",
+   "ts": 1794039745,
    "ok": true,
    "note": ""
   },
@@ -13127,7 +13127,9 @@
   }
  },
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
- "gem_block": {},
+ "gem_block": {
+  "gemini-flash-latest": "2026-11-08T10:05:00+02:00"
+ },
  "omdb_cache": {
   "tt5362988": [
    7.7,
@@ -29829,7 +29831,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "e16bf8e43ff1",
+  "gs": "119f08f88af6",
   "quiz_pool.json": "d62dbc5542f3",
   "fact.png": "556b2666ee37",
   "sexed.json": "0362ec7e46d4",
@@ -41139,12 +41141,8 @@
  "silpo_snap": "2026-11-04",
  "live_day": "2026-11-07",
  "silpo_week": "2026-45",
- "sbm_at": 1794039347.9156423,
+ "sbm_at": 1794039646.6910534,
  "sbm_hist": [
-  [
-   "21:00",
-   39
-  ],
   [
    "21:05",
    39
@@ -41716,11 +41714,15 @@
   [
    "10:15",
    46
+  ],
+  [
+   "10:20",
+   46
   ]
  ],
  "sbm_near": {
   "160603556": [
-   72,
+   83,
    0
   ]
  },
