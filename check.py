@@ -1242,7 +1242,9 @@ def kino_pool_refresh(st: dict, now: datetime) -> None:
         if sec in ("ser_gems", "gems"):
             score += max(0, 8 - (d.get("vote_count") or 0) / 400)    # недооцінені — менше голосів = вище
         txt_ = kino_item(0, it, 220).replace("<b>0. ", "<b>{N}. ", 1) + ("\n<i>· розширений відбір</i>" if it.get("lvl", 0) >= 2 else "")
-        out.append({"k": it["key"], "g": [g.get("id") for g in d.get("genres", []) if g.get("id")], "sc": round(score, 1), "txt": txt_})
+        dr_ = next((c for c in (d.get("credits") or {}).get("crew", []) if c.get("job") == "Director"), None) or next(iter(d.get("created_by") or []), None)
+        out.append({"k": it["key"], "g": [g.get("id") for g in d.get("genres", []) if g.get("id")], "sc": round(score, 1), "txt": txt_,
+                    **({"dr": dr_["id"]} if dr_ and dr_.get("id") else {})})   # 🎬 режисер / творець — для кнопки «у мої»
         if d.get("poster_path"):                          # 🍿💞 для Кіномэтчу — вже відібрані «не нудні»
             st.setdefault("km_pick", {})[it["key"]] = {"title": d.get("title") or d.get("name"), "year": (d.get("release_date") or d.get("first_air_date") or "")[:4],
                 "rating": round(it.get("imdb") or d.get("vote_average") or 0, 1), "genres": [g.get("name") for g in d.get("genres", [])][:3],
