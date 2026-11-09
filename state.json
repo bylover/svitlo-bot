@@ -716,7 +716,7 @@
   "m786892",
   "m531428"
  ],
- "gh_beat": "2026-11-09T11:05:43.294499+02:00",
+ "gh_beat": "2026-11-09T11:10:45.691728+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -1650,14 +1650,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "09.11 11:07",
-   "ts": 1794215243,
+   "at": "09.11 11:12",
+   "ts": 1794215543,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "09.11 11:07",
-   "ts": 1794215243,
+   "at": "09.11 11:12",
+   "ts": 1794215543,
    "ok": true,
    "note": ""
   },
@@ -30110,7 +30110,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "c14fd1ea63b7",
+  "gs": "9f59d3116fd0",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "313aa5ceee2f",
   "sexed.json": "0362ec7e46d4",
@@ -44641,12 +44641,8 @@
  "silpo_snap": "2026-11-04",
  "live_day": "2026-11-09",
  "silpo_week": "2026-45",
- "sbm_at": 1794215147.3907106,
+ "sbm_at": 1794215450.9290833,
  "sbm_hist": [
-  [
-   "23:05",
-   47
-  ],
   [
    "23:10",
    46
@@ -45218,6 +45214,10 @@
   [
    "11:05",
    41
+  ],
+  [
+   "11:10",
+   42
   ]
  ],
  "sbm_near": {
@@ -45234,7 +45234,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1794214559.9223826,
+ "net_at": 1794215461.0076675,
  "net_asn": {
   "triolan": [
    "13188",
@@ -45281,7 +45281,24 @@
   "lifecell": "ok"
  },
  "sbm_tshift": 0,
- "yt_fb": {},
+ "yt_fb": {
+  "UCzKMx2J12XtHOCZiEbUpIYw": -1,
+  "UCfCVlxInB4VuaDFLGqEQqaA": -2,
+  "UCcn5oI0NF-kCO1vO0GoPQdg": -1,
+  "UC8e827ZUNj7vDESIUV2u_sg": 0,
+  "UC3NN4_qLpiOJynbeXvYHRIw": -2,
+  "UCBYvr4SqfGQd5fTmOXVQ4Zw": -2,
+  "UCwuzITdbxPSG_9PakpsKNwQ": 1,
+  "UCEGfICV92gmM5w2t3gYfQDw": -1,
+  "UCFPYWGlj1ugfWp_hH0ipx7g": 1,
+  "UCbam_IQ84ZKNN4t59MjOaFA": 1,
+  "UC_-jlf8gEFM4b4-IMcLSHmQ": 2,
+  "UCMiWy2TJ3MckIwuzyyleRcw": -1,
+  "UCzut6TUcB1DCt7_0WKH4TZw": -1,
+  "UC1qV4yg7rJJRk_zUv8JmC7w": -1,
+  "UCSbOqpZWlSqMmuOUbU0CD_g": 1,
+  "UC8AmKDLGaWrkJqflv7ZEsPQ": 0
+ },
  "sbm_tshift_k": 0,
  "kc_week": "202645",
  "kc_force": false,
