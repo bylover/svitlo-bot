@@ -716,7 +716,7 @@
   "m786892",
   "m531428"
  ],
- "gh_beat": "2026-11-09T07:55:44.143968+02:00",
+ "gh_beat": "2026-11-09T08:00:44.755879+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -811,14 +811,14 @@
    ]
   ]
  },
- "fact_png": "2026-11-09 07|15|2026-11-09T07:00:24+02:00",
+ "fact_png": "2026-11-09 08|15|2026-11-09T07:00:24+02:00",
  "fact_day": {
-  "total": "11 год 3 хв",
+  "total": "11 год 18 хв",
   "list": [
    "09:34–13:53 · 4 год 19 хв",
    "14:14–16:32 · 2 год 17 хв",
    "21:16–00:57 · 3 год 41 хв",
-   "07:00–07:45 · 45 хв"
+   "07:00–08:00 · 1 год"
   ]
  },
  "mo_sent": {},
@@ -918,7 +918,24 @@
   "jITXWVD5FXI",
   "BRZvWeuntiA",
   "YAvp5q2DfqE",
-  "HYDF-OJyADU"
+  "HYDF-OJyADU",
+  "6tXt1lLpMUU",
+  "M0fypPaVtco",
+  "7u-S0PFUJY0",
+  "hVjGHHmGB3s",
+  "3SMQ00u5b-8",
+  "XquyfWuXwPg",
+  "5U4Lx9HnUZ4",
+  "nYyL5m9gef4",
+  "jwVEjuYJAhc",
+  "uLBu61mS-Lw",
+  "uSbRxG27uDA",
+  "I0QwOCDUu6E",
+  "7m2hXkngJaI",
+  "UeMwxWml5IE",
+  "87rjUHdhz8I",
+  "pU4AV0Q6qUk",
+  "je7NJd45-wo"
  ],
  "content_day": "2026-11-09",
  "content_pool": [
@@ -1627,14 +1644,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "09.11 07:57",
-   "ts": 1794203825,
+   "at": "09.11 08:02",
+   "ts": 1794204143,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "09.11 07:57",
-   "ts": 1794203825,
+   "at": "09.11 08:02",
+   "ts": 1794204143,
    "ok": true,
    "note": ""
   },
@@ -1753,14 +1770,14 @@
    "note": ""
   },
   "▶️ YouTube": {
-   "at": "02.11 08:01",
-   "ts": 1793599262,
+   "at": "09.11 08:01",
+   "ts": 1794204064,
    "ok": true,
    "note": ""
   },
   "📈 SMM і таргет": {
-   "at": "02.11 08:02",
-   "ts": 1793599367,
+   "at": "09.11 08:02",
+   "ts": 1794204159,
    "ok": true,
    "note": ""
   },
@@ -1928,17 +1945,18 @@
   "https://www.socialmediatoday.com/news/meta-makes-muse-agents-speak/873959/",
   "https://about.fb.com/news/2026/11/whatsapp-events-brings-people-together-beyond-the-group-chat/",
   "https://blog.google/products-and-platforms/products/workspace/omni-1-2-flash-google-vids/",
-  "https://www.socialmediatoday.com/news/meta-tiktok-and-google-push-back-on-california-law/873955/"
+  "https://www.socialmediatoday.com/news/meta-tiktok-and-google-push-back-on-california-law/873955/",
+  "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQk1KeEJpZjlvci1tZnNkNHBkb2xKa0V4Z2F1OEFaSVN2LU5SODBSX1U4NWQyTUdEUmJDczkxa0R2enJOZmdYeUJxakk5cWVhQW9NSy14d3FIdUpuM0FYbk54RVpibWp1dzFZVElmZTJOR0Jib2x2Q1p3b2kySlBFb0xWYS1NXy1mNmlEOUxCSlRuXzQ5bVhjY0FMV1NaTGVmbHZEQmdPSmc0V1N3Ylh5MXE0TzlGRTVCNHA2bkNRbmjSAdQBQVVfeXFMTVFpRjJic3lDWGFxeHRDMi1QV2RlLVdCU2N5VXpTZFBZblVkQXRTZHFuTjF1TWh6VU1Eb3o1TVB1UjNYa2JodE8zM0lTdjhoZjU3cFVnaWlrNTAyanpJVkcwWGFyVnNMVVZMcHVsaTkwNnFnMnVZSlVSM0RHSkdBQkdHR3g2b3RrRnhlV0lBNE5WRURvN3E1Ym5haTYwQWJpa0hLTzh0V2tSZHhWelVDdGRXMkpOanFYdjNqUkgybzNNd2pnaHMyYm1YSHAyVE90LVJjOFo?oc=5",
+  "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUGR1WDJFVy0xWlcxRVV5Y3pSVnpzbkM2Z0wwbUZ3N2FHTGxXV3JNZ2hNczZSZEVlaXBpUmFBVjItNExiSk8zQWFwMkprT1RGN3YxbmF0SnRrbjFiTTh4VHgwUVBTT3laRDZHcnotN05Bdi1OZkJHdjhGcmFzZi1oOUZEcDNOSHFpa2pScjc3YU1jTHJBVXFB?oc=5",
+  "https://www.socialmediatoday.com/news/meta-adds-mini-app-creation-option-to-muse/874070/",
+  "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQR3ltZDZEb1cyb1ZXckgxbWVRX19ielNIQ2YxOC1Vc0hvUFdKVmt0RFMxVjhyenNtMFNyX3FNV0RMRE5weFdXTlhOeVlNWXktZ0FjeFQxbUJYVU9ic01JVHRmZEJlalNIcjFqWXJpZVJwS05hUTl0dlRKYWpRZ0JtLTRYNlBvcDRqMVN5S1ZrNXlMQmtPV1VrSWw4X292VHFfZ0RHdmQxTFNoNWxRMWJKYlQySXpUTnNM?oc=5",
+  "https://news.google.com/rss/articles/CBMioAFBVV95cUxPUndOWnc5NFItT0pPdnNxa1d4LWFCZXJ2cnVBaDBQejdnVzlMS1J3LTYtR1ZiMVBocUhjajZyRExLa0F1SHpSbGNQSnE5Y0lBR2xiRW1oLTJhN3dva1lrSDAxZHpmTnJtRGJoekQ2UmZxQjVVRHBiNWVGN0xVREFmVjQ2NFlKWG5XdW12eUZzeEpkM0dnOEh1NHVGOGNPWC1H?oc=5",
+  "https://www.socialmediatoday.com/news/youtube-expands-custom-feeds-and-offers-new-partnership-options/874068/",
+  "https://www.marketingdive.com/news/how-marketers-can-better-optimize-for-ai-search-visibility/833013/",
+  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNRHM1R1luZjl3U0N3YTFoVlpGemN0dWI1OXNLOElWaVpkUks0QmpUMGFTczVOSVhPUnVUZ2g1TDNEcGxtLURFcGVYTF9xUk5kVnBzcnNxTUhjM25DMWYtcjJNZ2FyOENFWnlkU25HQ2lGb2JaQ21fZGZLUUlpMVR2Z0VtbXNWc0d5dzBUWTFTaVl5TWZDQk5QeXVuUXVfakQ5eXk4dlpLcFQ0b2NHNzhIUnN5SXpleVBGT2Nz?oc=5"
  ],
- "smm_pool_day": "2026-11-08",
+ "smm_pool_day": "2026-11-09",
  "smm_pool": [
-  {
-   "src": "Social Media Examiner",
-   "title": "Claude and ChatGPT Project Tips, Training AI Agents to Work Without You, and Industry News",
-   "link": "https://www.socialmediaexaminer.com/claude-and-chatgpt-project-tips-training-ai-agents-to-work-without-you-and-industry-news/",
-   "text": "Friday is almost here! Before you unplug, here’s one last round of insights and updates. Whether you read them now or save them for later, you won’t want to miss these. In today’s edition: 5 rules to give your projects Build AI workflows that run without you 🗞️ Industry news from Gemini 5 Instructions To […] The post Claude and ChatGPT Project Tips, Training AI Agents to Work Without You, and Industry News appeared first on Social Media Examiner .",
-   "date": "05.11"
-  },
   {
    "src": "Social Media Examiner",
    "title": "Persistent AI Agents: How to Get Started (and What to Watch Out For)",
@@ -1948,24 +1966,10 @@
   },
   {
    "src": "Social Media Examiner",
-   "title": "Meta Ads Testing, YouTube Analysis, and Industry News",
-   "link": "https://www.socialmediaexaminer.com/meta-ads-testing-youtube-analysis-and-industry-news/",
-   "text": "Here’s a recap of the most important insights, trends, and updates you need to know about today! Catch up in minutes and go into the rest of the week prepared. In today’s edition: Meta ads testing protocol YouTube metrics changes Follow along on The Road to 3K 🗞️ Industry news from Instagram, Meta, TikTok, and […] The post Meta Ads Testing, YouTube Analysis, and Industry News appeared first on Social Media Examiner .",
-   "date": "03.11"
-  },
-  {
-   "src": "Social Media Examiner",
    "title": "AI-Generated SOPs, Product Mentions From AI, and Industry News",
    "link": "https://www.socialmediaexaminer.com/ai-generated-sops-product-mentions-from-ai-and-industry-news/",
    "text": "Friday is almost here! Before you unplug, here’s one last round of insights and updates. Whether you read them now or save them for later, you won’t want to miss these. In today’s edition: Document and turn your SOPs into repeatable AI workflows More recommendations for your product from AI 🗞️ Industry news from Anthropic, […] The post AI-Generated SOPs, Product Mentions From AI, and Industry News appeared first on Social Media Examiner .",
    "date": "29.10"
-  },
-  {
-   "src": "Buffer",
-   "title": "The Best MCP Servers for Social Media: The 8-Tool Stack I Use Every Week As A Creator",
-   "link": "https://buffer.com/resources/best-mcp-servers/",
-   "text": "For a long time, my ideas were scattered everywhere. Some were in my Notes app. Others were screenshots on my phone that I’d never opened again, or buried in old Claude conversations. Sometimes I'd remember a good line from a voice note I recorded months ago, but have no idea where to find it. Everything was saved somewhere, just never anywhere I'd look when it was time to make something. And even with this mega-level disorganization, I had been getting by fine. I have an 80-week creation streak in my personal Buffer account, and that's not counting the content I make for Buffer's channels. Coming up with ideas has never been my problem. Finding them again is. So when MCPs started gaining traction, I went all in (though not in the way most tutorials suggested). An MCP (Model Context Protocol) lets an LLM connect directly to the tools you already use, no code required. Most guides stop at what each individual connection can do, which is plenty useful. What changed how I work is using MCPs to pull all my scattered ideas into one place, then create and publish from that same place with tools that also run on MCPs, like Buffer, Canva, and Descript. These are the 8 MCP servers I use every week to turn random ideas into finished posts without switching between a dozen tabs. Here's the stack and how each one feeds into the next. Jump to a section: The short version Key takeaways How I think about my MCP stack Buffer Notion Granola Google Workspace Elicit Sublime Canva Descript Start with one connection FAQs about MCP servers for social media The short version Buffer is the best MCP server for social media if you post to more than one platform. It's a multi-platform MCP built for people who don't write code, it's free to connect, and it covers both ends of my system: a place for capturing ideas and a place for scheduling finished posts. It’s in the top spot for a simple reason: every other tool in my stack exists either to get content into Buffer or to make the content that ends up there. Notion is home base for storing research, Granola pulls quotes out of my recorded calls, Google Workspace handles the admin, Elicit backs up my takes with research, Sublime holds everything I've saved from around the web, and Canva and Descript help turn an idea into something I can post. Key takeaways Buffer is the best multi-platform MCP server for social media. It's built in partnership with social platforms, is free to connect, and works as the place I capture ideas, schedule",
-   "date": "04.11"
   },
   {
    "src": "Buffer",
@@ -1997,73 +2001,73 @@
   },
   {
    "src": "Medium · facebook-ads",
-   "title": "What an 81-Day Kitchen Gadget Ad Is Made Of, and a 15-Second Script You Can Copy",
-   "link": "https://medium.com/@adsturbo/what-an-81-day-kitchen-gadget-ad-is-made-of-and-a-15-second-script-you-can-copy-93c6e973ddc4?source=rss------facebook_ads-5",
-   "text": "Long-running ads are public. Meta’s Ad Library shows which ads are still live and when they started, so anyone can study the ones that… Continue reading on Medium »",
+   "title": "Before You Scale Your Online Business, Build the Right Digital Advertising Infrastructure",
+   "link": "https://medium.com/@growthapiservice/before-you-scale-your-online-business-build-the-right-digital-advertising-infrastructure-b25a38415dab?source=rss------facebook_ads-5",
+   "text": "I’ve seen businesses put a lot of effort into getting more customers before checking whether their advertising setup can actually handle… Continue reading on Medium »",
+   "date": "09.11"
+  },
+  {
+   "src": "Medium · facebook-ads",
+   "title": "How to spy on your competitors’ Meta ads as a coach (and see which ones actually work)",
+   "link": "https://medium.com/@chakib_9754/how-to-spy-on-your-competitors-meta-ads-as-a-coach-and-see-which-ones-actually-work-d09321fba4a9?source=rss------facebook_ads-5",
+   "text": "If you run ads for a coaching offer, you have probably opened Meta’s Ad Library to see what your competitors are running. It shows every… Continue reading on Medium »",
+   "date": "09.11"
+  },
+  {
+   "src": "Medium · facebook-ads",
+   "title": "I Increased My Meta Ads Budget. The Leads Got More Expensive.",
+   "link": "https://medium.com/the-story-well/i-increased-my-meta-ads-budget-the-leads-got-more-expensive-5c64b30cc16f?source=rss------facebook_ads-5",
+   "text": "The most uncomfortable part of a performance report is watching the number you just tried to improve move in the wrong direction. Continue reading on The Story Well »",
+   "date": "09.11"
+  },
+  {
+   "src": "Medium · facebook-ads",
+   "title": "The Reality of Hiring a Media Buyer Off Upwork",
+   "link": "https://medium.com/@zack-allen/the-reality-of-hiring-a-media-buyer-off-upwork-06678ca1368f?source=rss------facebook_ads-5",
+   "text": "A real client call: 10 interviews, zero qualified candidates, and why the vetting has to come first. Continue reading on Medium »",
+   "date": "09.11"
+  },
+  {
+   "src": "Medium · facebook-ads",
+   "title": "If You Don’t Understand Creative Strategy, You Don’t Understand Media Buying",
+   "link": "https://medium.com/@zack-allen/if-you-dont-understand-creative-strategy-you-don-t-understand-media-buying-9bf7675afb6a?source=rss------facebook_ads-5",
+   "text": "In 2026, campaign structure is a solved problem. Creative is where the money is. Continue reading on Medium »",
+   "date": "09.11"
+  },
+  {
+   "src": "Medium · facebook-ads",
+   "title": "Country Does Not Decide a Good Media Buyer",
+   "link": "https://medium.com/@zack-allen/country-does-not-decide-a-good-media-buyer-c999e8212700?source=rss------facebook_ads-5",
+   "text": "Founders love a rule like “only hire from Brazil” or “never from the Philippines.” It’s the wrong filter. Continue reading on Medium »",
+   "date": "09.11"
+  },
+  {
+   "src": "Medium · facebook-ads",
+   "title": "What 40,000 Candidates Taught Me About Hiring a Meta Media Buyer",
+   "link": "https://medium.com/@zack-allen/what-40-000-candidates-taught-me-about-hiring-a-meta-media-buyer-5d8a1c59a4cf?source=rss------facebook_ads-5",
+   "text": "Most founders hire a button pusher, then end up babysitting them. Here’s how to vet for the media buyer who brings you the ideas. Continue reading on Medium »",
    "date": "08.11"
   },
   {
    "src": "Medium · facebook-ads",
-   "title": "Why Boosting Posts Doesn’t Bring Sales (And the 8-Part Formula Advertisers Use Instead)",
-   "link": "https://medium.com/@vellyboy667/why-boosting-posts-doesnt-bring-sales-and-the-8-part-formula-advertisers-use-instead-361d60632f7c?source=rss------facebook_ads-5",
-   "text": "When I first started advertising online, I made the mistake almost every beginner makes: I treated advertising like a button I could… Continue reading on Medium »",
+   "title": "Test Your Reels Ad Where the Price Will Actually Appear",
+   "link": "https://medium.com/@backtrue_24010/test-your-reels-ad-where-the-price-will-actually-appear-530b61c51969?source=rss------facebook_ads-5",
+   "text": "A placement review for the price, offer terms, product and logo before a vertical ad goes live. Continue reading on Medium »",
    "date": "08.11"
   },
   {
    "src": "Medium · facebook-ads",
-   "title": "How Professional Animated Ads Transform Digital Advertising Campaigns",
-   "link": "https://medium.com/@habibaehsann/how-professional-animated-ads-transform-digital-advertising-campaigns-97b6bad2e11a?source=rss------facebook_ads-5",
-   "text": "Digital advertising has become an essential part of how businesses introduce their products, communicate their services, and reach… Continue reading on Medium »",
-   "date": "07.11"
+   "title": "Creative limited is the signal to brief your next Meta ad",
+   "link": "https://medium.com/@BLVcreatives/creative-limited-is-the-signal-to-brief-your-next-meta-ad-9d480a01bb13?source=rss------facebook_ads-5",
+   "text": "Most brands treat Creative fatigue as the moment something went wrong with a Meta ad. By then, Ads Manager has already told you the ad is… Continue reading on Medium »",
+   "date": "08.11"
   },
   {
    "src": "Medium · facebook-ads",
-   "title": "How Professional Animated Ads Help Brands Stand Out in Digital Advertising",
-   "link": "https://medium.com/@modeloneusa/how-professional-animated-ads-help-brands-stand-out-in-digital-advertising-a0a732364fdc?source=rss------facebook_ads-5",
-   "text": "Digital advertising is becoming increasingly competitive. Businesses are constantly searching for better ways to communicate their… Continue reading on Medium »",
-   "date": "07.11"
-  },
-  {
-   "src": "Medium · facebook-ads",
-   "title": "Google Ads and Performance Marketing in Qatar — How Businesses Can Generate Quality Leads",
-   "link": "https://medium.com/@miorahgroup/google-ads-and-performance-marketing-in-qatar-how-businesses-can-generate-quality-leads-49689c78d748?source=rss------facebook_ads-5",
-   "text": "Introduction Continue reading on Medium »",
-   "date": "07.11"
-  },
-  {
-   "src": "Medium · facebook-ads",
-   "title": "From Clicks to Customers — How to Use Meta Ads and Website CRO",
-   "link": "https://medium.com/@basil.digitalcreator/from-clicks-to-customers-how-to-use-meta-ads-and-website-cro-c0da6a3e03a1?source=rss------facebook_ads-5",
-   "text": "Getting clicks on your Meta Ads is a great start to growing your business. However, generating traffic is only one part of a successful… Continue reading on Medium »",
-   "date": "07.11"
-  },
-  {
-   "src": "Medium · facebook-ads",
-   "title": "Lý do quảng cáo Facebook Ads bị từ chối và cách khắc phục",
-   "link": "https://medium.com/@digitalmarketingimta/l%C3%BD-do-qu%E1%BA%A3ng-c%C3%A1o-facebook-ads-b%E1%BB%8B-t%E1%BB%AB-ch%E1%BB%91i-v%C3%A0-c%C3%A1ch-kh%E1%BA%AFc-ph%E1%BB%A5c-69ee234bb8b2?source=rss------facebook_ads-5",
-   "text": "Nhiều bạn khi mới chạy Facebook Ads mà thường hay bị từ chối quảng cáo nhưng không biết lí do từ đâu. Continue reading on Medium »",
-   "date": "07.11"
-  },
-  {
-   "src": "Medium · facebook-ads",
-   "title": "Google’s Seasonality Adjustments and Data Exclusions Help Pages Disagree in Six Places",
-   "link": "https://medium.com/@adsturbo/googles-seasonality-adjustments-and-data-exclusions-help-pages-disagree-in-six-places-04f6c0e19aef?source=rss------facebook_ads-5",
-   "text": "Black Friday is Friday, November 27, 2026, which is 20 days after November 7 (derived from the calendar). If you plan to tell Google Ads… Continue reading on Medium »",
-   "date": "07.11"
-  },
-  {
-   "src": "Medium · facebook-ads",
-   "title": "From Burnout and Zero Sales to a Profitable Digital Business: How I Finally Cracked Facebook…",
-   "link": "https://medium.com/@eziolobster/from-burnout-and-zero-sales-to-a-profitable-digital-business-how-i-finally-cracked-facebook-c432052551a0?source=rss------facebook_ads-5",
-   "text": "Let’s be honest for a moment. Have you ever stared at your laptop screen at 2:00 AM, wondering why your content is getting zero reach, why… Continue reading on Medium »",
-   "date": "07.11"
-  },
-  {
-   "src": "Medium · facebook-ads",
-   "title": "Shopify Tracking in Egypt: Pixel, Conversions API and GA4 Without Losing Orders",
-   "link": "https://medium.com/@arsayedeg/shopify-tracking-in-egypt-pixel-conversions-api-and-ga4-without-losing-orders-ed58905ba3d2?source=rss------facebook_ads-5",
-   "text": "If your ad platforms do not see your sales, they cannot find more buyers like them. Weak tracking is one of the most common hidden reasons… Continue reading on Medium »",
-   "date": "06.11"
+   "title": "Banner Ad Design Agency: How Professional Advertising Creatives Help Businesses Stand Out Online",
+   "link": "https://medium.com/@habibaehsann/banner-ad-design-agency-how-professional-advertising-creatives-help-businesses-stand-out-online-e68f334fd5f9?source=rss------facebook_ads-5",
+   "text": "Digital advertising has become an essential part of how modern businesses promote products, attract customers, and build brand awareness… Continue reading on Medium »",
+   "date": "08.11"
   },
   {
    "src": "Medium · tiktok-ads",
@@ -2071,6 +2075,27 @@
    "link": "https://medium.com/@esh_39918/gmv-max-can-now-count-creator-commissions-as-cost-your-old-roi-target-will-not-carry-over-b5afbd158151?source=rss------tiktok_ads-5",
    "text": "TikTok slipped something into GMV Max that is going to quietly mess up a lot of campaign budgets, and almost nobody is talking about the… Continue reading on Medium »",
    "date": "07.11"
+  },
+  {
+   "src": "Medium · tiktok-ads",
+   "title": "Understanding Warm TikTok Accounts: Benefits, Features & What to Consider",
+   "link": "https://medium.com/@accvemi/understanding-warm-tiktok-accounts-benefits-features-what-to-consider-c341e50c3923?source=rss------tiktok_ads-5",
+   "text": "Building a presence on TikTok takes more than just creating an account. A well-prepared profile, consistent activity, and relevant content… Continue reading on Medium »",
+   "date": "07.11"
+  },
+  {
+   "src": "Medium · tiktok-ads",
+   "title": "The Complete Guide to Google CBD Ads and Selecting a Compliant Digital Marketing Partner",
+   "link": "https://medium.com/@jawad.boostad/the-complete-guide-to-google-cbd-ads-and-selecting-a-compliant-digital-marketing-partner-4beff3dbd475?source=rss------tiktok_ads-5",
+   "text": "Online search engine marketing is one of the most powerful forms of acquiring sales within the digital sphere. Customers searching for… Continue reading on Medium »",
+   "date": "06.11"
+  },
+  {
+   "src": "Medium · tiktok-ads",
+   "title": "The TikTok Shop Flywheel: Turning Creator Content Into Repeatable Growth",
+   "link": "https://yowasuphomeboy.medium.com/the-tiktok-shop-flywheel-turning-creator-content-into-repeatable-growth-d2cfdb34ca41?source=rss------tiktok_ads-5",
+   "text": "One creator video drives a burst of orders. The team celebrates, sends out more samples, and waits for the next winner. Continue reading on Medium »",
+   "date": "06.11"
   }
  ],
  "smm_pool_seen": [
@@ -2121,7 +2146,11 @@
   "https://www.socialmediaexaminer.com/claude-and-chatgpt-project-tips-training-ai-agents-to-work-without-you-and-industry-news/",
   "https://www.socialmediaexaminer.com/meta-ads-testing-youtube-analysis-and-industry-news/",
   "https://buffer.com/resources/best-mcp-servers/",
-  "https://medium.com/@adsturbo/what-an-81-day-kitchen-gadget-ad-is-made-of-and-a-15-second-script-you-can-copy-93c6e973ddc4?source=rss------facebook_ads-5"
+  "https://medium.com/@adsturbo/what-an-81-day-kitchen-gadget-ad-is-made-of-and-a-15-second-script-you-can-copy-93c6e973ddc4?source=rss------facebook_ads-5",
+  "https://buffer.com/resources/how-to-schedule-instagram-stories/",
+  "https://buffer.com/resources/trending-audio-instagram/",
+  "https://medium.com/the-story-well/i-increased-my-meta-ads-budget-the-leads-got-more-expensive-5c64b30cc16f?source=rss------facebook_ads-5",
+  "https://medium.com/@zack-allen/if-you-dont-understand-creative-strategy-you-don-t-understand-media-buying-9bf7675afb6a?source=rss------facebook_ads-5"
  ],
  "smm_reddit_seen": [],
  "silpo_probe": "2026-10-22",
@@ -13217,8 +13246,38 @@
  },
  "imp_sent": {},
  "ero_sent": {},
- "pend": {},
- "got": {},
+ "pend": {
+  "yt": {
+   "id": "2026-11-09 08",
+   "t": "▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · 02.11–09.11</b>\n<blockquote>▶️ <b>1. Країна між Росією і Китаєм.. Як виживає Казахстан ?</b>\n📺 ВОЛОШИН · ⏱ 1 год 05 хв\n👁 <b>197 тис</b> переглядів · 💬 <b>371</b> коментарів\n🔗 <a href=\"https://youtu.be/6tXt1lLpMUU\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>2. Все буде Україна! Відкриття опалювального сезону — починаються дров'яні клопоти...</b>\n📺 Леонід Бобошко · ⏱ 23 хв\n👁 <b>115 тис</b> переглядів · 💬 <b>454</b> коментарів\n🔗 <a href=\"https://youtu.be/M0fypPaVtco\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>3. Не шкода тебе</b>\n📺 Ірина Білик - Topic · ⏱ 3 хв\n👁 <b>73 тис</b> переглядів · 💬 <b>118</b> коментарів\n🔗 <a href=\"https://youtu.be/7u-S0PFUJY0\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>4. DJ BUNKER  -  ВІДЬМАК EXTENDED MIX | official audio 2026</b>\n📺 DJ BUNKER · ⏱ 4 хв\n👁 <b>42 тис</b> переглядів · 💬 <b>7</b> коментарів\n🔗 <a href=\"https://youtu.be/hVjGHHmGB3s\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>5. Я ПОКРАЩИВ ОСТРІВ У МАЙНКРАФТІ</b>\n📺 Кавун Майнкрафт · ⏱ 20 хв\n👁 <b>35 тис</b> переглядів · 💬 <b>72</b> коментарів\n🔗 <a href=\"https://youtu.be/3SMQ00u5b-8\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>6. я ВИЖИВ з ВЕРІТІ в Майнкрафт Хоррор Українською</b>\n📺 Dauross · ⏱ 48 хв\n👁 <b>33 тис</b> переглядів · 💬 <b>76</b> коментарів\n🔗 <a href=\"https://youtu.be/XquyfWuXwPg\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>7. Ой, у лузі по долині 🔥 | Українська пісня в новому рок-звучанні | Rock Cover</b>\n📺 Onoychenko Cover Music · ⏱ 4 хв\n👁 <b>34 тис</b> переглядів · 💬 <b>48</b> коментарів\n🔗 <a href=\"https://youtu.be/5U4Lx9HnUZ4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>8. Ніколи, нікому, нізащо</b>\n📺 Release - Topic · ⏱ 3 хв\n👁 <b>37 тис</b> переглядів · 💬 <b>0</b> коментарів\n🔗 <a href=\"https://youtu.be/nYyL5m9gef4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>9. Я ЗАЙШОВ У WoW Forever І ЗАЛИП! 🇺🇦 Українська спільнота, фішки та АБСОЛЮТНА НОСТАЛЬГІЯ</b>\n📺 Ghostik  · ⏱ 20 хв\n👁 <b>27 тис</b> переглядів · 💬 <b>94</b> коментарів\n🔗 <a href=\"https://youtu.be/jwVEjuYJAhc\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>10. R3phase - Киданула ⚡⚡ (Мега Хіт⚡)</b>\n📺 R3phase · ⏱ 3 хв\n👁 <b>31 тис</b> переглядів · 💬 <b>21</b> коментарів\n🔗 <a href=\"https://youtu.be/uLBu61mS-Lw\">Дивитися</a></blockquote>\n<i>Ще 10, улюблені й приховані канали, 📺 цікаві канали за темами — кнопкою «▶️ YouTube» у меню.</i>\n§RT:yt:202646",
+   "mk": null,
+   "p": "▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · 02.11–09.11</b>\n<blockquote>▶️ <b>1. Країна між Росією і Китаєм.. Як виживає Казахстан ?</b>\n📺 ВОЛОШИН · ⏱ 1 год 05 хв\n👁 <b>197 тис</b> переглядів · 💬 <b>371</b> коментарів\n🔗 <a href=\"https://youtu.be/6tXt1lLpMUU\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>2. Все буде Україна! Відкриття опалювального сезону — починаються дров'яні клопоти...</b>\n📺 Леонід Бобошко · ⏱ 23 хв\n👁 <b>115 тис</b> переглядів · 💬 <b>454</b> коментарів\n🔗 <a href=\"https://youtu.be/M0fypPaVtco\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>3. Не шкода тебе</b>\n📺 Ірина Білик - Topic · ⏱ 3 хв\n👁 <b>73 тис</b> переглядів · 💬 <b>118</b> коментарів\n🔗 <a href=\"https://youtu.be/7u-S0PFUJY0\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>4. DJ BUNKER  -  ВІДЬМАК EXTENDED MIX | official audio 2026</b>\n📺 DJ BUNKER · ⏱ 4 хв\n👁 <b>42 тис</b> переглядів · 💬 <b>7</b> коментарів\n🔗 <a href=\"https://youtu.be/hVjGHHmGB3s\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>5. Я ПОКРАЩИВ ОСТРІВ У МАЙНКРАФТІ</b>\n📺 Кавун Майнкрафт · ⏱ 20 хв\n👁 <b>35 тис</b> переглядів · 💬 <b>72</b> коментарів\n🔗 <a href=\"https://youtu.be/3SMQ00u5b-8\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>6. я ВИЖИВ з ВЕРІТІ в Майнкрафт Хоррор Українською</b>\n📺 Dauross · ⏱ 48 хв\n👁 <b>33 тис</b> переглядів · 💬 <b>76</b> коментарів\n🔗 <a href=\"https://youtu.be/XquyfWuXwPg\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>7. Ой, у лузі по долині 🔥 | Українська пісня в новому рок-звучанні | Rock Cover</b>\n📺 Onoychenko Cover Music · ⏱ 4 хв\n👁 <b>34 тис</b> переглядів · 💬 <b>48</b> коментарів\n🔗 <a href=\"https://youtu.be/5U4Lx9HnUZ4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>8. Ніколи, нікому, нізащо</b>\n📺 Release - Topic · ⏱ 3 хв\n👁 <b>37 тис</b> переглядів · 💬 <b>0</b> коментарів\n🔗 <a href=\"https://youtu.be/nYyL5m9gef4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>9. Я ЗАЙШОВ У WoW Forever І ЗАЛИП! 🇺🇦 Українська спільнота, фішки та АБСОЛЮТНА НОСТАЛЬГІЯ</b>\n📺 Ghostik  · ⏱ 20 хв\n👁 <b>27 тис</b> переглядів · 💬 <b>94</b> коментарів\n🔗 <a href=\"https://youtu.be/jwVEjuYJAhc\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>10. R3phase - Киданула ⚡⚡ (Мега Хіт⚡)</b>\n📺 R3phase · ⏱ 3 хв\n👁 <b>31 тис</b> переглядів · 💬 <b>21</b> коментарів\n🔗 <a href=\"https://youtu.be/uLBu61mS-Lw\">Дивитися</a></blockquote>\n<i>Ще 10, улюблені й приховані канали, 📺 цікаві канали за темами — кнопкою «▶️ YouTube» у меню.</i>\n§RT:yt:202646",
+   "exp": "2026-11-11T08:00:44.891920+02:00",
+   "aud": [
+    "160603556",
+    "368433217",
+    "590261825",
+    "936688574",
+    "8283670046"
+   ]
+  },
+  "smm": {
+   "id": "2026-11-09 08",
+   "t": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 02.11–09.11\n<blockquote>🆕 <b>1. Instagram тестує 90-хвилинні відео</b>\nInstagram розпочав тестування можливості завантаження відео тривалістю до 90 хвилин, намагаючись конкурувати з YouTube за довгий формат.\n💡 Спробуйте адаптувати свій лонгрід-контент або подкасти під новий формат, щоб охопити аудиторію, яка споживає глибокий відеоконтент всередині соцмережі.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQk1KeEJpZjlvci1tZnNkNHBkb2xKa0V4Z2F1OEFaSVN2LU5SODBSX1U4NWQyTUdEUmJDczkxa0R2enJOZmdYeUJxakk5cWVhQW9NSy14d3FIdUpuM0FYbk54RVpibWp1dzFZVElmZTJOR0Jib2x2Q1p3b2kySlBFb0xWYS1NXy1mNmlEOUxCSlRuXzQ5bVhjY0FMV1NaTGVmbHZEQmdPSmc0V1N3Ylh5MXE0TzlGRTVCNHA2bkNRbmjSAdQBQVVfeXFMTVFpRjJic3lDWGFxeHRDMi1QV2RlLVdCU2N5VXpTZFBZblVkQXRTZHFuTjF1TWh6VU1Eb3o1TVB1UjNYa2JodE8zM0lTdjhoZjU3cFVnaWlrNTAyanpJVkcwWGFyVnNMVVZMcHVsaTkwNnFnMnVZSlVSM0RHSkdBQkdHR3g2b3RrRnhlV0lBNE5WRURvN3E1Ym5haTYwQWJpa0hLTzh0V2tSZHhWelVDdGRXMkpOanFYdjNqUkgybzNNd2pnaHMyYm1YSHAyVE90LVJjOFo?oc=5\">104.5 WOKV</a></blockquote>\n<blockquote>🆕 <b>2. Нові формати взаємодії в TikTok</b>\nУ TikTok з'явилися голосові коментарі, інтерактивні опитування та можливість відповідати на коментарі за допомогою фотографій.\n💡 Використовуйте опитування та фотовідповіді у коментарях для підвищення рівняengagement та побудови активної комунікації з підписниками.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxOUGR1WDJFVy0xWlcxRVV5Y3pSVnpzbkM2Z0wwbUZ3N2FHTGxXV3JNZ2hNczZSZEVlaXBpUmFBVjItNExiSk8zQWFwMkprT1RGN3YxbmF0SnRrbjFiTTh4VHgwUVBTT3laRDZHcnotN05Bdi1OZkJHdjhGcmFzZi1oOUZEcDNOSHFpa2pScjc3YU1jTHJBVXFB?oc=5\">mmr.ua</a></blockquote>\n<blockquote>🆕 <b>3. Створення міні-додатків через Meta Muse</b>\nMeta додала функцію створення міні-додатків у своєму інструменті Muse, розширивши можливості генеративного контенту.\n💡 Експериментуйте з новими інструментами Meta AI для створення інтерактивних креативів та історій, що виділяються у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-adds-mini-app-creation-option-to-muse/874070/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Оновлений AI-помічник та автоматизація в Meta Ads</b>\nMeta представила вдосконалений бізнес-асистент на базі штучного інтелекту та нові інструменти для автоматизації рекламних кампаній.\n💡 Протестуйте нові AI-функції для оптимізації рекламних бюджетів та швидкого створення варіацій креативів у кабінеті.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQR3ltZDZEb1cyb1ZXckgxbWVRX19ielNIQ2YxOC1Vc0hvUFdKVmt0RFMxVjhyenNtMFNyX3FNV0RMRE5weFdXTlhOeVlNWXktZ0FjeFQxbUJYVU9ic01JVHRmZEJlalNIcjFqWXJpZVJwS05hUTl0dlRKYWpRZ0JtLTRYNlBvcDRqMVN5S1ZrNXlMQmtPV1VrSWw4X292VHFfZ0RHdmQxTFNoNWxRMWJKYlQySXpUTnNM?oc=5\">MediaPost</a></blockquote>\n<blockquote>🎯 <b>5. Оновлення Graph та Marketing API від Meta</b>\nКомпанія Meta додала нові розширені можливості до своїх рекламних та графічних API для сторонніх сервісів і розробників.\n💡 Перевірте інтеграції ваших рекламних та аналітичних систем, щоб скористатися новими точками передачі даних та звітності.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxPUndOWnc5NFItT0pPdnNxa1d4LWFCZXJ2cnVBaDBQejdnVzlMS1J3LTYtR1ZiMVBocUhjajZyRExLa0F1SHpSbGNQSnE5Y0lBR2xiRW1oLTJhN3dva1lrSDAxZHpmTnJtRGJoekQ2UmZxQjVVRHBiNWVGN0xVREFmVjQ2NFlKWG5XdW12eUZzeEpkM0dnOEh1NHVGOGNPWC1H?oc=5\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. YouTube розширює кастомні стрічки</b>\nYouTube оновлює функціонал кастомних стрічок та пропонує креаторам нові можливості партнерства й монетизації.\n💡 Проаналізуйте нові параметри таргетингу стрічок та оптимізуйте теги вашого відеоконтенту для потрапляння в персоналізовані рекомендації.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-expands-custom-feeds-and-offers-new-partnership-options/874068/\">Social Media Today</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202646\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Планування Instagram Stories через сторонні сервіси</b> · Buffer\nОскільки вбудований планувальник Instagram не підтримує сторіз, для цього доводиться використовувати сторонні інструменти на кшталт Buffer або Meta Business Suite. Автоматизація публікацій знімає стрес від хаотичного створення контенту в останню хвилину.\n💡 Використовуйте сторонні сервіси для заздалегідь підготовлених сторіз, щоб не випадати з регулярного posting-графіку в розпал робочого дня.\n<a href=\"https://buffer.com/resources/how-to-schedule-instagram-stories/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Використання трендових аудіо для каруселей та фото</b> · Buffer\nТрендсеттери радять додавати популярні треки не лише до Reels, а й до каруселей та звичайних фотографій. Це відкриває додаткові можливості для потрапляння на сторінку вивчення (Explore) та в стрічку Reels.\n💡 Додавайте трендове аудіо до фотопостів та каруселей, щоб підвищити їхні охоплення та залучити нову аудиторію через рекомендації.\n<a href=\"https://buffer.com/resources/trending-audio-instagram/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Чому зростання бюджету у Meta Ads здорожчує ліди</b> · Medium · facebook-ads\nСтаття описує типову проблему перформанс-маркетингу: різке збільшення бюджету на кампанії часто призводить до деградації результатів та зростання вартості конверсії через вигорання аудиторії.\n💡 Масштабуйте бюджети поступово (не більше ніж на 20-25% за раз) та розширюйте креативну базу, щоб алгоритми не переплачували за охоплення тієї самої групи користувачів.\n<a href=\"https://medium.com/the-story-well/i-increased-my-meta-ads-budget-the-leads-got-more-expensive-5c64b30cc16f?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Креативна стратегія важливіша за технічні налаштування</b> · Medium · facebook-ads\nУ 2026 році технічна структура рекламних кампаній у Meta стала стандартизованою і простою, тому справжній успіх медіабаїнгу тепер повністю залежить від якості креативів та роботи з ними.\n💡 Інвестуйте більше часу в розробку унікальних креативних концептів та тестування різних подач, адже саме креатив зараз є головним важелем зниження CPL.\n<a href=\"https://medium.com/@zack-allen/if-you-dont-understand-creative-strategy-you-don-t-understand-media-buying-9bf7675afb6a?source=rss------facebook_ads-5\">джерело</a></blockquote>\n§RT:smm:202646p",
+   "mk": null,
+   "p": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 02.11–09.11\n<blockquote>🆕 <b>1. Instagram тестує 90-хвилинні відео</b>\nInstagram розпочав тестування можливості завантаження відео тривалістю до 90 хвилин, намагаючись конкурувати з YouTube за довгий формат.\n💡 Спробуйте адаптувати свій лонгрід-контент або подкасти під новий формат, щоб охопити аудиторію, яка споживає глибокий відеоконтент всередині соцмережі.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQk1KeEJpZjlvci1tZnNkNHBkb2xKa0V4Z2F1OEFaSVN2LU5SODBSX1U4NWQyTUdEUmJDczkxa0R2enJOZmdYeUJxakk5cWVhQW9NSy14d3FIdUpuM0FYbk54RVpibWp1dzFZVElmZTJOR0Jib2x2Q1p3b2kySlBFb0xWYS1NXy1mNmlEOUxCSlRuXzQ5bVhjY0FMV1NaTGVmbHZEQmdPSmc0V1N3Ylh5MXE0TzlGRTVCNHA2bkNRbmjSAdQBQVVfeXFMTVFpRjJic3lDWGFxeHRDMi1QV2RlLVdCU2N5VXpTZFBZblVkQXRTZHFuTjF1TWh6VU1Eb3o1TVB1UjNYa2JodE8zM0lTdjhoZjU3cFVnaWlrNTAyanpJVkcwWGFyVnNMVVZMcHVsaTkwNnFnMnVZSlVSM0RHSkdBQkdHR3g2b3RrRnhlV0lBNE5WRURvN3E1Ym5haTYwQWJpa0hLTzh0V2tSZHhWelVDdGRXMkpOanFYdjNqUkgybzNNd2pnaHMyYm1YSHAyVE90LVJjOFo?oc=5\">104.5 WOKV</a></blockquote>\n<blockquote>🆕 <b>2. Нові формати взаємодії в TikTok</b>\nУ TikTok з'явилися голосові коментарі, інтерактивні опитування та можливість відповідати на коментарі за допомогою фотографій.\n💡 Використовуйте опитування та фотовідповіді у коментарях для підвищення рівняengagement та побудови активної комунікації з підписниками.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxOUGR1WDJFVy0xWlcxRVV5Y3pSVnpzbkM2Z0wwbUZ3N2FHTGxXV3JNZ2hNczZSZEVlaXBpUmFBVjItNExiSk8zQWFwMkprT1RGN3YxbmF0SnRrbjFiTTh4VHgwUVBTT3laRDZHcnotN05Bdi1OZkJHdjhGcmFzZi1oOUZEcDNOSHFpa2pScjc3YU1jTHJBVXFB?oc=5\">mmr.ua</a></blockquote>\n<blockquote>🆕 <b>3. Створення міні-додатків через Meta Muse</b>\nMeta додала функцію створення міні-додатків у своєму інструменті Muse, розширивши можливості генеративного контенту.\n💡 Експериментуйте з новими інструментами Meta AI для створення інтерактивних креативів та історій, що виділяються у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-adds-mini-app-creation-option-to-muse/874070/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Оновлений AI-помічник та автоматизація в Meta Ads</b>\nMeta представила вдосконалений бізнес-асистент на базі штучного інтелекту та нові інструменти для автоматизації рекламних кампаній.\n💡 Протестуйте нові AI-функції для оптимізації рекламних бюджетів та швидкого створення варіацій креативів у кабінеті.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQR3ltZDZEb1cyb1ZXckgxbWVRX19ielNIQ2YxOC1Vc0hvUFdKVmt0RFMxVjhyenNtMFNyX3FNV0RMRE5weFdXTlhOeVlNWXktZ0FjeFQxbUJYVU9ic01JVHRmZEJlalNIcjFqWXJpZVJwS05hUTl0dlRKYWpRZ0JtLTRYNlBvcDRqMVN5S1ZrNXlMQmtPV1VrSWw4X292VHFfZ0RHdmQxTFNoNWxRMWJKYlQySXpUTnNM?oc=5\">MediaPost</a></blockquote>\n<blockquote>🎯 <b>5. Оновлення Graph та Marketing API від Meta</b>\nКомпанія Meta додала нові розширені можливості до своїх рекламних та графічних API для сторонніх сервісів і розробників.\n💡 Перевірте інтеграції ваших рекламних та аналітичних систем, щоб скористатися новими точками передачі даних та звітності.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxPUndOWnc5NFItT0pPdnNxa1d4LWFCZXJ2cnVBaDBQejdnVzlMS1J3LTYtR1ZiMVBocUhjajZyRExLa0F1SHpSbGNQSnE5Y0lBR2xiRW1oLTJhN3dva1lrSDAxZHpmTnJtRGJoekQ2UmZxQjVVRHBiNWVGN0xVREFmVjQ2NFlKWG5XdW12eUZzeEpkM0dnOEh1NHVGOGNPWC1H?oc=5\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. YouTube розширює кастомні стрічки</b>\nYouTube оновлює функціонал кастомних стрічок та пропонує креаторам нові можливості партнерства й монетизації.\n💡 Проаналізуйте нові параметри таргетингу стрічок та оптимізуйте теги вашого відеоконтенту для потрапляння в персоналізовані рекомендації.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-expands-custom-feeds-and-offers-new-partnership-options/874068/\">Social Media Today</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202646\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Планування Instagram Stories через сторонні сервіси</b> · Buffer\nОскільки вбудований планувальник Instagram не підтримує сторіз, для цього доводиться використовувати сторонні інструменти на кшталт Buffer або Meta Business Suite. Автоматизація публікацій знімає стрес від хаотичного створення контенту в останню хвилину.\n💡 Використовуйте сторонні сервіси для заздалегідь підготовлених сторіз, щоб не випадати з регулярного posting-графіку в розпал робочого дня.\n<a href=\"https://buffer.com/resources/how-to-schedule-instagram-stories/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Використання трендових аудіо для каруселей та фото</b> · Buffer\nТрендсеттери радять додавати популярні треки не лише до Reels, а й до каруселей та звичайних фотографій. Це відкриває додаткові можливості для потрапляння на сторінку вивчення (Explore) та в стрічку Reels.\n💡 Додавайте трендове аудіо до фотопостів та каруселей, щоб підвищити їхні охоплення та залучити нову аудиторію через рекомендації.\n<a href=\"https://buffer.com/resources/trending-audio-instagram/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Чому зростання бюджету у Meta Ads здорожчує ліди</b> · Medium · facebook-ads\nСтаття описує типову проблему перформанс-маркетингу: різке збільшення бюджету на кампанії часто призводить до деградації результатів та зростання вартості конверсії через вигорання аудиторії.\n💡 Масштабуйте бюджети поступово (не більше ніж на 20-25% за раз) та розширюйте креативну базу, щоб алгоритми не переплачували за охоплення тієї самої групи користувачів.\n<a href=\"https://medium.com/the-story-well/i-increased-my-meta-ads-budget-the-leads-got-more-expensive-5c64b30cc16f?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Креативна стратегія важливіша за технічні налаштування</b> · Medium · facebook-ads\nУ 2026 році технічна структура рекламних кампаній у Meta стала стандартизованою і простою, тому справжній успіх медіабаїнгу тепер повністю залежить від якості креативів та роботи з ними.\n💡 Інвестуйте більше часу в розробку унікальних креативних концептів та тестування різних подач, адже саме креатив зараз є головним важелем зниження CPL.\n<a href=\"https://medium.com/@zack-allen/if-you-dont-understand-creative-strategy-you-don-t-understand-media-buying-9bf7675afb6a?source=rss------facebook_ads-5\">джерело</a></blockquote>\n§RT:smm:202646p",
+   "exp": "2026-11-11T08:00:44.891920+02:00",
+   "aud": [
+    "160603556",
+    "368433217",
+    "936688574"
+   ]
+  }
+ },
+ "got": {
+  "yt": {},
+  "smm": {}
+ },
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
  "gem_block": {
   "gemini-3.8-flash": "2026-11-09T10:05:00+02:00",
@@ -30021,9 +30080,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "8ef7d25cf6ed",
+  "gs": "b4e28a3bf67b",
   "quiz_pool.json": "80eae7ea9381",
-  "fact.png": "05b7eb2e57ed",
+  "fact.png": "91b78ccd4704",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -43755,7 +43814,7 @@
  },
  "cofid_pushed": "08.11.2026",
  "ab_month": "2026-11",
- "yt_last": "▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · 01.11–08.11</b>\n<blockquote>▶️ <b>1. Чому Європа Відмовилася Від Цих Продуктів?</b>\n📺 ДушаFlow · ⏱ 17 хв\n👁 <b>400 тис</b> переглядів · 💬 <b>768</b> коментарів\n🔗 <a href=\"https://youtu.be/QI4RpujtKLo\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>2. що насправді сталось з ВЛАДОЮ РОГОВЕНКО</b>\n📺 Орест Мурій · ⏱ 46 хв\n👁 <b>400 тис</b> переглядів · 💬 <b>237</b> коментарів\n🔗 <a href=\"https://youtu.be/KKdwjR7TRw0\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>3. Як знімали Холостяк в АНОМАЛЬНУ СПЕКУ І ГРОЗУ? – Бекстейдж із Наталкою Денисенко | Холостяк 15 сезон</b>\n📺 Холостяк / Холостячка · ⏱ 50 хв\n👁 <b>393 тис</b> переглядів · 💬 <b>224</b> коментарів\n🔗 <a href=\"https://youtu.be/1CjEer1hZdY\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>4. МЕХАНІК пояснює, як ПРАВИЛЬНО їздити на ДИЗЕЛІ, щоб не ВИРІЗАТИ сажовий фільтр</b>\n📺 Механічний · ⏱ 11 хв\n👁 <b>394 тис</b> переглядів · 💬 <b>202</b> коментарів\n🔗 <a href=\"https://youtu.be/Zq4N_db6cME\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>5. MONATIK - АнгелаМ | ПРЕМ'ЄРА</b>\n📺 MONATIK · ⏱ 3 хв\n👁 <b>300 тис</b> переглядів · 💬 <b>821</b> коментарів\n🔗 <a href=\"https://youtu.be/oKbOBLNplfE\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>6. [UA] FURIA проти bb team | IEM Beijing 2026</b>\n📺 CS2 Maincast · ⏱ 8 год 24 хв\n👁 <b>268 тис</b> переглядів · 💬 <b>1</b> коментарів\n🔗 <a href=\"https://youtu.be/IUZyQSMDKK8\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>7. Показуємо, що хотіли приховати від вас сбушники: хто такий Дука з плівок НАБУ?</b>\n📺 Мартина Богуславець · ⏱ 18 хв\n👁 <b>156 тис</b> переглядів · 💬 <b>934</b> коментарів\n🔗 <a href=\"https://youtu.be/CsW-1RyR7nY\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>8. Маєток за $500 000: як Ценов із родиною обростали майном на мільйони</b>\n📺 Мартина Богуславець · ⏱ 11 хв\n👁 <b>201 тис</b> переглядів · 💬 <b>437</b> коментарів\n🔗 <a href=\"https://youtu.be/W1RlZVfEqcw\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>9. Я прожив 100 днів на ОДНОМУ ЧАНКУ в Minecraft Hardcore</b>\n📺 Weezzy · ⏱ 1 год 41 хв\n👁 <b>103 тис</b> переглядів · 💬 <b>1 011</b> коментарів\n🔗 <a href=\"https://youtu.be/r8zGe4wHve4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>10. Call of Duty: Modern Warfare 4 - НАЙКРАЩА ГРА СЕРІЇ | Проходження Українською | #1</b>\n📺 thetremba · ⏱ 2 год 24 хв\n👁 <b>183 тис</b> переглядів · 💬 <b>163</b> коментарів\n🔗 <a href=\"https://youtu.be/97unNIgkHc4\">Дивитися</a></blockquote>\n<i>Ще 10, улюблені й приховані канали, 📺 цікаві канали за темами — кнопкою «▶️ YouTube» у меню.</i>\n§RT:yt:202645",
+ "yt_last": "▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · 02.11–09.11</b>\n<blockquote>▶️ <b>1. Країна між Росією і Китаєм.. Як виживає Казахстан ?</b>\n📺 ВОЛОШИН · ⏱ 1 год 05 хв\n👁 <b>197 тис</b> переглядів · 💬 <b>371</b> коментарів\n🔗 <a href=\"https://youtu.be/6tXt1lLpMUU\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>2. Все буде Україна! Відкриття опалювального сезону — починаються дров'яні клопоти...</b>\n📺 Леонід Бобошко · ⏱ 23 хв\n👁 <b>115 тис</b> переглядів · 💬 <b>454</b> коментарів\n🔗 <a href=\"https://youtu.be/M0fypPaVtco\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>3. Не шкода тебе</b>\n📺 Ірина Білик - Topic · ⏱ 3 хв\n👁 <b>73 тис</b> переглядів · 💬 <b>118</b> коментарів\n🔗 <a href=\"https://youtu.be/7u-S0PFUJY0\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>4. DJ BUNKER  -  ВІДЬМАК EXTENDED MIX | official audio 2026</b>\n📺 DJ BUNKER · ⏱ 4 хв\n👁 <b>42 тис</b> переглядів · 💬 <b>7</b> коментарів\n🔗 <a href=\"https://youtu.be/hVjGHHmGB3s\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>5. Я ПОКРАЩИВ ОСТРІВ У МАЙНКРАФТІ</b>\n📺 Кавун Майнкрафт · ⏱ 20 хв\n👁 <b>35 тис</b> переглядів · 💬 <b>72</b> коментарів\n🔗 <a href=\"https://youtu.be/3SMQ00u5b-8\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>6. я ВИЖИВ з ВЕРІТІ в Майнкрафт Хоррор Українською</b>\n📺 Dauross · ⏱ 48 хв\n👁 <b>33 тис</b> переглядів · 💬 <b>76</b> коментарів\n🔗 <a href=\"https://youtu.be/XquyfWuXwPg\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>7. Ой, у лузі по долині 🔥 | Українська пісня в новому рок-звучанні | Rock Cover</b>\n📺 Onoychenko Cover Music · ⏱ 4 хв\n👁 <b>34 тис</b> переглядів · 💬 <b>48</b> коментарів\n🔗 <a href=\"https://youtu.be/5U4Lx9HnUZ4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>8. Ніколи, нікому, нізащо</b>\n📺 Release - Topic · ⏱ 3 хв\n👁 <b>37 тис</b> переглядів · 💬 <b>0</b> коментарів\n🔗 <a href=\"https://youtu.be/nYyL5m9gef4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>9. Я ЗАЙШОВ У WoW Forever І ЗАЛИП! 🇺🇦 Українська спільнота, фішки та АБСОЛЮТНА НОСТАЛЬГІЯ</b>\n📺 Ghostik  · ⏱ 20 хв\n👁 <b>27 тис</b> переглядів · 💬 <b>94</b> коментарів\n🔗 <a href=\"https://youtu.be/jwVEjuYJAhc\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>10. R3phase - Киданула ⚡⚡ (Мега Хіт⚡)</b>\n📺 R3phase · ⏱ 3 хв\n👁 <b>31 тис</b> переглядів · 💬 <b>21</b> коментарів\n🔗 <a href=\"https://youtu.be/uLBu61mS-Lw\">Дивитися</a></blockquote>\n<i>Ще 10, улюблені й приховані канали, 📺 цікаві канали за темами — кнопкою «▶️ YouTube» у меню.</i>\n§RT:yt:202646",
  "match_month": "2026-11",
  "x18_at": {
   "mix": "2026-11-09T04:35:44.277756+02:00",
@@ -43816,8 +43875,8 @@
  "fan_wk": "2026-45",
  "weather": "2026-11-08",
  "prom_i": 36,
- "yt_week": "2026-45",
- "smm_week": "2026-45",
+ "yt_week": "2026-46",
+ "smm_week": "2026-46",
  "yt_mute": [],
  "yt_fav": [],
  "ytch_week": "202646",
@@ -43828,12 +43887,8 @@
  "silpo_snap": "2026-11-04",
  "live_day": "2026-11-09",
  "silpo_week": "2026-45",
- "sbm_at": 1794203747.2281973,
+ "sbm_at": 1794204049.2388363,
  "sbm_hist": [
-  [
-   "19:55",
-   50
-  ],
   [
    "20:00",
    50
@@ -44404,6 +44459,10 @@
   ],
   [
    "07:55",
+   59
+  ],
+  [
+   "08:00",
    59
   ]
  ],
@@ -46924,7 +46983,7 @@
  "mydir_ex": {},
  "dir_force": false,
  "dir_force_my": true,
- "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 31.10–07.11\n<blockquote>🆕 <b>1. TikTok запускає окремий додаток TikTok Shop</b>\nTikTok випустив окремий повноцінний застосунок для шопінгу через відео та прямі трансляції, що розширює можливості соціальної комерції.\n💡 Якщо ваша ніша передбачає продаж товарів через відео, готуйте контент для екосистеми TikTok Shop задля додаткового охоплення покупців.\n🔗 <a href=\"https://www.socialmediatoday.com/news/tiktok-launches-standalone-shopping-app/873952/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>2. Reddit тестує рекламу у результатах пошуку</b>\nПлатформа почала тестування рекламних оголошень безпосередньо у внутрішній пошуковій видачі.\n💡 Враховуйте появу нового рекламного плейсмента для просування брендів через релевантні пошукові запити користувачів на Reddit.\n🔗 <a href=\"https://www.socialmediatoday.com/news/reddit-tests-ads-in-search-results/873676/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>3. Instagram заохочує творців довгих відео</b>\nПлатформа тестує підтримку відео довжиною до 90 хвилин та пропонує виплати авторам за контент нового формату.\n💡 Спробуйте адаптувати свої вертикальні та горизонтальні відеоформати під триваліший контент в Instagram, щоб скористатися новими алгоритмами видачі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/instagram-tries-to-entice-long-form-creators/873820/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Meta оновила Marketing API та Graph API</b>\nКомпанія додала нові функціональні можливості до своїх рекламних та програмних інтерфейсів для маркетологів.\n💡 Перевірте оновлення в інструментах автоматизації та аналітики, які використовують рекламний API Meta, для оптимізації кампаній.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-adds-new-capabilities-to-graph-and-marketing-api/873951/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>5. TikTok розвиває повноцінну пошукову рекламу</b>\nРеклама в пошуку TikTok еволюціонує у повноцінний інструмент контекстного таргетингу за запитами користувачів.\n💡 Збирайте семантичне ядро та додавайте ключові слова до своїх рекламних кампаній у TikTok, орієнтуючись на пошукову поведінку аудиторії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxQVkN1TG9BYlJfUGRBaUU2Zm1xSlQzNVB2b0gxMU5nN01MSVdVelZDeFliSjFJLXlKZ29ZVDR0QXB3WjE3TnUxcWkzSGFuMUd3QzE1N0hkUWN6WVByampveUxEcVFvbkxsb0JHU1VvX0ozUEx0VU1jVWNtVG1Dd1Z1MTl6LTdHd1RCM0dVRDc3bVpjZFgyWUFYTWx2QzYxRzg?oc=5\">Search Engine Journal</a></blockquote>\n<blockquote>🎯 <b>6. Нові аналітичні інструменти Compass для продавців у TikTok</b>\nПродавці в США отримали доступ до 9 нових інструментів аналітики Compass, що охоплюють дані про рекламу та відтік клієнтів.\n💡 Використовуйте розширену аналітику для детального відстеження ефективності рекламних витрат та поведінки покупців у магазині.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxNQjZPUlRqeS1BR1ZMTDFzNXpfSFpCZElKbkVhZ3JLRmREeDVDZWQySGVqM2NXcU1PMHlTWnZYWlNIQzlLT1dILVFleHViS3hNcDNxRGx2cldYazJhY1V6TlZNc1JPaFpsU1RyNmlzNnpNUlNJdTYtR0FNMUpKZWFEM1Nick9tZjZ2TTY0TUgyLWtKeEh5YVpOTQ?oc=5\">PPC Land</a></blockquote>\n<blockquote>🆕 <b>7. Meta відклала оновлення комерційних умов</b>\nЧерез масовий спротив та занепокоєння щодо збору даних компанія на невизначений термін відклала оновлення правил використання сервісів.\n💡 Продовжуйте стежити за змінами в політиці Meta щодо конфіденційності даних, оскільки старі правила поки що залишаються чинними.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxOcGhWZGF1ZV9mNk94dlp6ZDY2OTVKaXk1Ql9vdllRaDBCZDFxTDRMS3dSbWhHbmQ5bC04NFB1aE92NjRXN1hidUNxeHhnbEpjTlRVUDZMX3c5dXVNNlI0eDlVbTJIM3lCSGdSbTI1Q1pFakI3R2hKQVVCZUFia3NUSUJmQ19SemdYU3h5OS00OVZTaXdpLV90dE1R?oc=5\">Social Media Today</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202645\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Головні метрики відеоконтенту</b> · Hootsuite\nМатеріал розбирає 11 ключових показників для оцінки відео в соцмережах, таких як утримання аудиторії, показник завершення перегляду та конверсії. Автор наголошує, що платформи по-різному рахують «перегляди», тому порівнювати сирі цифри без контексту не варто.\n💡 Обирайте метрики чітко під свою бізнес-ціль — охоплення, утримання чи ROI — і використовуйте єдиний аналітичний інструмент для кросплатформного порівняння.\n<a href=\"https://blog.hootsuite.com/social-video-metrics/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Чому соціально орієнтований ШІ перемагає загальний</b> · Hootsuite\nСтаття пояснює різницю між загальними інструментами на кшталт ChatGPT та ШІ, створеним спеціально для соцмереж. Загальні моделі часто вимагають занадто багато доопрацювань, оскільки не знають актуальних трендів у реальному часі.\n💡 Використовуйте для роботи з трендами платформи, підключені до живих соціальних сигналів, а не лише до статичних баз даних із застарілим періодом навчання.\n<a href=\"https://blog.hootsuite.com/social-first-ai/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Повний гід з модерації контенту для брендів</b> · Hootsuite\nРозглядаються п'ять основних типів модерації користувацького контенту та захисту репутації бренду. Автор пояснює, як поєднувати автоматизовані фільтри з роботою команди для швидкого реагування на спам.\n💡 Налаштуйте гібридний воркфлоу: первинну фільтрацію спаму та троллінгу доручайте ШІ, а чутливі коментарі та нюанси залишайте для людей.\n<a href=\"https://blog.hootsuite.com/content-moderation/\">джерело</a></blockquote>\n<blockquote>💬 <b>4.  20 метрик соцмереж із формулами та бенчмарками</b> · Buffer\nДетальний розбір того, чим метрики відрізняються від ключових показників ефективності (KPI). Автор пояснює, як відсіяти зайві цифри з дашбордів і зосередитися на 3-5 показниках, які реально ведуть до мети.\n💡 Вираховуйте показник залученості за формулою: загальна кількість взаємодій ÷ охоплення × 100, і прив'язуйте його до конкретної цілі кварталу, а не міряйте все підряд.\n<a href=\"https://buffer.com/resources/social-media-metrics/\">джерело</a></blockquote>\n§RT:smm:202645p",
+ "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 02.11–09.11\n<blockquote>🆕 <b>1. Instagram тестує 90-хвилинні відео</b>\nInstagram розпочав тестування можливості завантаження відео тривалістю до 90 хвилин, намагаючись конкурувати з YouTube за довгий формат.\n💡 Спробуйте адаптувати свій лонгрід-контент або подкасти під новий формат, щоб охопити аудиторію, яка споживає глибокий відеоконтент всередині соцмережі.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQk1KeEJpZjlvci1tZnNkNHBkb2xKa0V4Z2F1OEFaSVN2LU5SODBSX1U4NWQyTUdEUmJDczkxa0R2enJOZmdYeUJxakk5cWVhQW9NSy14d3FIdUpuM0FYbk54RVpibWp1dzFZVElmZTJOR0Jib2x2Q1p3b2kySlBFb0xWYS1NXy1mNmlEOUxCSlRuXzQ5bVhjY0FMV1NaTGVmbHZEQmdPSmc0V1N3Ylh5MXE0TzlGRTVCNHA2bkNRbmjSAdQBQVVfeXFMTVFpRjJic3lDWGFxeHRDMi1QV2RlLVdCU2N5VXpTZFBZblVkQXRTZHFuTjF1TWh6VU1Eb3o1TVB1UjNYa2JodE8zM0lTdjhoZjU3cFVnaWlrNTAyanpJVkcwWGFyVnNMVVZMcHVsaTkwNnFnMnVZSlVSM0RHSkdBQkdHR3g2b3RrRnhlV0lBNE5WRURvN3E1Ym5haTYwQWJpa0hLTzh0V2tSZHhWelVDdGRXMkpOanFYdjNqUkgybzNNd2pnaHMyYm1YSHAyVE90LVJjOFo?oc=5\">104.5 WOKV</a></blockquote>\n<blockquote>🆕 <b>2. Нові формати взаємодії в TikTok</b>\nУ TikTok з'явилися голосові коментарі, інтерактивні опитування та можливість відповідати на коментарі за допомогою фотографій.\n💡 Використовуйте опитування та фотовідповіді у коментарях для підвищення рівняengagement та побудови активної комунікації з підписниками.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxOUGR1WDJFVy0xWlcxRVV5Y3pSVnpzbkM2Z0wwbUZ3N2FHTGxXV3JNZ2hNczZSZEVlaXBpUmFBVjItNExiSk8zQWFwMkprT1RGN3YxbmF0SnRrbjFiTTh4VHgwUVBTT3laRDZHcnotN05Bdi1OZkJHdjhGcmFzZi1oOUZEcDNOSHFpa2pScjc3YU1jTHJBVXFB?oc=5\">mmr.ua</a></blockquote>\n<blockquote>🆕 <b>3. Створення міні-додатків через Meta Muse</b>\nMeta додала функцію створення міні-додатків у своєму інструменті Muse, розширивши можливості генеративного контенту.\n💡 Експериментуйте з новими інструментами Meta AI для створення інтерактивних креативів та історій, що виділяються у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-adds-mini-app-creation-option-to-muse/874070/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Оновлений AI-помічник та автоматизація в Meta Ads</b>\nMeta представила вдосконалений бізнес-асистент на базі штучного інтелекту та нові інструменти для автоматизації рекламних кампаній.\n💡 Протестуйте нові AI-функції для оптимізації рекламних бюджетів та швидкого створення варіацій креативів у кабінеті.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQR3ltZDZEb1cyb1ZXckgxbWVRX19ielNIQ2YxOC1Vc0hvUFdKVmt0RFMxVjhyenNtMFNyX3FNV0RMRE5weFdXTlhOeVlNWXktZ0FjeFQxbUJYVU9ic01JVHRmZEJlalNIcjFqWXJpZVJwS05hUTl0dlRKYWpRZ0JtLTRYNlBvcDRqMVN5S1ZrNXlMQmtPV1VrSWw4X292VHFfZ0RHdmQxTFNoNWxRMWJKYlQySXpUTnNM?oc=5\">MediaPost</a></blockquote>\n<blockquote>🎯 <b>5. Оновлення Graph та Marketing API від Meta</b>\nКомпанія Meta додала нові розширені можливості до своїх рекламних та графічних API для сторонніх сервісів і розробників.\n💡 Перевірте інтеграції ваших рекламних та аналітичних систем, щоб скористатися новими точками передачі даних та звітності.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxPUndOWnc5NFItT0pPdnNxa1d4LWFCZXJ2cnVBaDBQejdnVzlMS1J3LTYtR1ZiMVBocUhjajZyRExLa0F1SHpSbGNQSnE5Y0lBR2xiRW1oLTJhN3dva1lrSDAxZHpmTnJtRGJoekQ2UmZxQjVVRHBiNWVGN0xVREFmVjQ2NFlKWG5XdW12eUZzeEpkM0dnOEh1NHVGOGNPWC1H?oc=5\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. YouTube розширює кастомні стрічки</b>\nYouTube оновлює функціонал кастомних стрічок та пропонує креаторам нові можливості партнерства й монетизації.\n💡 Проаналізуйте нові параметри таргетингу стрічок та оптимізуйте теги вашого відеоконтенту для потрапляння в персоналізовані рекомендації.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-expands-custom-feeds-and-offers-new-partnership-options/874068/\">Social Media Today</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202646\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Планування Instagram Stories через сторонні сервіси</b> · Buffer\nОскільки вбудований планувальник Instagram не підтримує сторіз, для цього доводиться використовувати сторонні інструменти на кшталт Buffer або Meta Business Suite. Автоматизація публікацій знімає стрес від хаотичного створення контенту в останню хвилину.\n💡 Використовуйте сторонні сервіси для заздалегідь підготовлених сторіз, щоб не випадати з регулярного posting-графіку в розпал робочого дня.\n<a href=\"https://buffer.com/resources/how-to-schedule-instagram-stories/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Використання трендових аудіо для каруселей та фото</b> · Buffer\nТрендсеттери радять додавати популярні треки не лише до Reels, а й до каруселей та звичайних фотографій. Це відкриває додаткові можливості для потрапляння на сторінку вивчення (Explore) та в стрічку Reels.\n💡 Додавайте трендове аудіо до фотопостів та каруселей, щоб підвищити їхні охоплення та залучити нову аудиторію через рекомендації.\n<a href=\"https://buffer.com/resources/trending-audio-instagram/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Чому зростання бюджету у Meta Ads здорожчує ліди</b> · Medium · facebook-ads\nСтаття описує типову проблему перформанс-маркетингу: різке збільшення бюджету на кампанії часто призводить до деградації результатів та зростання вартості конверсії через вигорання аудиторії.\n💡 Масштабуйте бюджети поступово (не більше ніж на 20-25% за раз) та розширюйте креативну базу, щоб алгоритми не переплачували за охоплення тієї самої групи користувачів.\n<a href=\"https://medium.com/the-story-well/i-increased-my-meta-ads-budget-the-leads-got-more-expensive-5c64b30cc16f?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Креативна стратегія важливіша за технічні налаштування</b> · Medium · facebook-ads\nУ 2026 році технічна структура рекламних кампаній у Meta стала стандартизованою і простою, тому справжній успіх медіабаїнгу тепер повністю залежить від якості креативів та роботи з ними.\n💡 Інвестуйте більше часу в розробку унікальних креативних концептів та тестування різних подач, адже саме креатив зараз є головним важелем зниження CPL.\n<a href=\"https://medium.com/@zack-allen/if-you-dont-understand-creative-strategy-you-don-t-understand-media-buying-9bf7675afb6a?source=rss------facebook_ads-5\">джерело</a></blockquote>\n§RT:smm:202646p",
  "kino_q": [
   {
    "id": "dd00540795",
