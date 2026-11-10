@@ -729,7 +729,7 @@
   "t69158",
   "t1409"
  ],
- "gh_beat": "2026-11-10T23:37:06.566314+02:00",
+ "gh_beat": "2026-11-10T23:40:47.754750+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1675,14 +1675,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "10.11 23:39",
-   "ts": 1794346753,
+   "at": "10.11 23:42",
+   "ts": 1794346939,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "10.11 23:39",
-   "ts": 1794346753,
+   "at": "10.11 23:42",
+   "ts": 1794346939,
    "ok": true,
    "note": ""
   },
@@ -1705,8 +1705,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "10.11 23:36",
-   "ts": 1794346609,
+   "at": "10.11 23:43",
+   "ts": 1794347037,
    "ok": true,
    "note": ""
   },
@@ -30357,7 +30357,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "f195989f61b1",
+  "gs": "2b7dbd5512ee",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "5e262397269c",
   "sexed.json": "0362ec7e46d4",
@@ -42309,6 +42309,153 @@
    ],
    "ov": "Серіал розповідає про п'ятьох новобранців, які тільки що закінчили поліцейську академію й влаштувалися працювати в одне з відділень поліції. Вони зовсім молоді, і звичайно ж недосвідчені. Але помилок на службі не повинно",
    "poster": "https://image.tmdb.org/t/p/w500/rUINbQ8JKiQwN9g9PYJ6Nu0Iap1.jpg"
+  },
+  "t87428": {
+   "title": "Чому жінки вбивають",
+   "year": "2019",
+   "rating": 8.3,
+   "genres": [
+    "Комедія",
+    "Кримінал",
+    "Драма"
+   ],
+   "g": [
+    35,
+    80,
+    18
+   ],
+   "ov": "Три історії відбуваються в одному житлі, але в різні роки. Головними героїнями виступають жінки, які мають різний рід занять, але об’єднує їх одне — вони всі скоїли вбивство. Причиною даного злочину стає викриття їхніх ч",
+   "poster": "https://image.tmdb.org/t/p/w500/niSuDBTfunavOBlRNBuvzvPg5dj.jpg"
+  },
+  "t4775": {
+   "title": "Would I Lie to You?",
+   "year": "2007",
+   "rating": 8.3,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "A comedic panel show featuring team captains Lee Mack and David Mitchell plus two guests per side, hosted by Rob Brydon (formerly Angus Deayton). Each person must reveal embarrassing facts and outrageous lies during a se",
+   "poster": "https://image.tmdb.org/t/p/w500/cFaW1pAjZpQ90I42Nj4f27tAdS7.jpg"
+  },
+  "t154385": {
+   "title": "Сварка",
+   "year": "2023",
+   "rating": 8.0,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Дорожній конфлікт між невдатним підрядником і незадоволеною життям підприємницею призводить до протистояння, у якому проявляються їхні найтемніші пориви.",
+   "poster": "https://image.tmdb.org/t/p/w500/cfiBlV3Sv6qpfv6w2c6R3wtLKM.jpg"
+  },
+  "t1424": {
+   "title": "Помаранчевий — хіт сезону",
+   "year": "2013",
+   "rating": 8.0,
+   "genres": [
+    "Драма",
+    "Комедія",
+    "Кримінал"
+   ],
+   "g": [
+    18,
+    35,
+    80
+   ],
+   "ov": "Злочин, який вона скоїла в минулому нагадує про себе, і тепер привілейована жителька Нью-Йорка потрапляє до жіночої в’язниці, де швидко заводить друзів і ворогів.",
+   "poster": "https://image.tmdb.org/t/p/w500/rPaNHOQbYdvzEimdQVFzMe4zM1A.jpg"
+  },
+  "t17174": {
+   "title": "Привиди",
+   "year": "2019",
+   "rating": 8.4,
+   "genres": [
+    "Комедія",
+    "Науково фантастичний"
+   ],
+   "g": [
+    35,
+    10765
+   ],
+   "ov": "A cash-strapped young couple inherits a grand country house, only to find it is both falling apart and teeming with the ghosts of former inhabitants.",
+   "poster": "https://image.tmdb.org/t/p/w500/3Xz4JtqISyVCKct96O94k4Mz5sU.jpg"
+  },
+  "t3796": {
+   "title": "Хлопці з трейлерного парку",
+   "year": "2001",
+   "rating": 8.5,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Follow the booze-fueled misadventures of three longtime pals and petty serial criminals who run scams from their Nova Scotia trailer park.",
+   "poster": "https://image.tmdb.org/t/p/w500/nIcIwVTYcZnW1BDzexGfFO7KmX1.jpg"
+  },
+  "t4556": {
+   "title": "Клініка",
+   "year": "2001",
+   "rating": 8.4,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Xроніка трудових подвигів стажиста-медика Джона Доріана, який умудрився розпочати кар'єру в дуже дивній лікарні, в оточенні непередбачуваних колег і пацієнтів, в атмосфері парадоксального єднання гумористичного з трагічн",
+   "poster": "https://image.tmdb.org/t/p/w500/djjtpKRx6YjmFZBTFHfVcJG29S0.jpg"
+  },
+  "t815": {
+   "title": "Піп-шоу",
+   "year": "2003",
+   "rating": 8.7,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Марк — типовий клерк, не пристосований до життя поза офісом. Він однаково боїться дітей і дівчат, незграбний і наївний. Джеремі енергійний і оптимістичний, намагається заробити гроші створенням недоладної електронної муз",
+   "poster": "https://image.tmdb.org/t/p/w500/6rdoQ0cTjsEQLIwEjhBV8U98oUm.jpg"
+  },
+  "t43082": {
+   "title": "Кі і Піл",
+   "year": "2012",
+   "rating": 8.3,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Це скетч-шоу комедійного плану де двоє головних коміків спершу трохи спілкуються з живою аудиторію (як і на будь якому подібному шоу) та підводять нас до комедійної сценки, яка відзнята найкращим чином, аби передати атмо",
+   "poster": "https://image.tmdb.org/t/p/w500/24csSdkE6gbYBCK6ngknvsJ1Zdj.jpg"
+  },
+  "t205": {
+   "title": "\"Темнемісце\" Ґарта Маренґі",
+   "year": "2004",
+   "rating": 8.5,
+   "genres": [
+    "Комедія",
+    "Детектив",
+    "Екшн і Пригоди"
+   ],
+   "g": [
+    35,
+    9648,
+    10759,
+    10765
+   ],
+   "ov": "Серіал пародія на фільми жахів 80х років та авторів, які їх створювали. Дії відбуваються у лікарні \"Темнемісце\", де лікар Рік Небевзь доктор меднаук відчайдушно бореться з різними проявами зла...",
+   "poster": "https://image.tmdb.org/t/p/w500/4aSD7ssvpkmNqOxenPiWaLpq4vg.jpg"
   }
  },
  "cofid_pushed": "10.11.2026",
@@ -46041,7 +46188,8 @@
   "ser_gems": "2026-11-10T23:00:45.416143+02:00",
   "ser_hot": "2026-11-10T23:10:48.921319+02:00",
   "ser_new": "2026-11-10T23:20:46.879972+02:00",
-  "ser_crime": "2026-11-10T23:30:44.436316+02:00"
+  "ser_crime": "2026-11-10T23:30:44.436316+02:00",
+  "ser_comedy": "2026-11-10T23:40:48.246400+02:00"
  },
  "kb_probe2": "2026-46",
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 03.11–10.11\n<blockquote>🎯 <b>1. Meta призупинила оновлені бізнес-умови</b>\nЧерез масову критику видавців Meta поставила на паузу запуск нових умов надання послуг для бізнесу та рекламодавців, які мали набути чинності 20 листопада.\n💡 Стежте за оновленнями рекламної політики Meta, оскільки нові правила щодо обробки даних та використання сайтів ще повернуться в іншій редакції.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZUR4cTNfOGZ3TTdSTzRVQ0FRamNKRlQ5S0VNYkN2TVBmbWFkcDdCckdqazVwOXJvd2NKRjJEZWd2a0E1TWt6enVBYS1YU1U5cGJ3LVZSS2JxQ1dON21kQWs2dTVUdENsRHhiWlMwRmE2M05KU1pQczY3NW15YlczTU1GaHNOcUxX?oc=5\">Search Engine Journal</a></blockquote>\n<blockquote>🎯 <b>2. Помилка в рекламних AI-інструментах Meta</b>\nУ рекламних кампаніях Meta на базі штучного інтелекту були помічені випадки автоматичної генерації несанкціонованих знижок для користувачів.\n💡 Ретельно перевіряйте креативи та тексти, створені за допомогою генеративного AI в рекламному кабінеті, перед запуском.\n🔗 <a href=\"https://www.socialmediatoday.com/news/metas-ai-ads-included-unapproved-discounts/874067/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>3. YouTube додав розділення платного та органічного трафіку</b>\nУ статистиці YouTube з'явився детальний розподіл переглядів та охоплень на органічні та спонсоровані (платні).\n💡 Використовуйте нову аналітику для точнішого вимірювання ефективності відеокампаній та оптимізації бюджетів.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxPdXl3VEdHcV9ZRUtMQzk0VFlEYTROYXZGUk9FbFJZdFVPWVRUUHdpYUtVb29MRXpBOFIwblVXWkVpcERuR0EzV1NMbGgwT1NtbVFkczMwQW92MzZaWXFWN2JRYkJfeHp5b1ppcHl3MjNhcnJlSEVrbktBUHR4SEhlOWdPWDlJcGQtd3d1SWpMRnVNUQ?oc=5\">https://www.thekeyword.co/</a></blockquote>\n<blockquote>🆕 <b>4. Штучний інтелект Meta Muse створює танці для Reels та Stories</b>\nMeta інтегрує можливості AI-агента Muse для генерації трендових рухів та анімацій безпосередньо в інструменти створення контенту Instagram.\n💡 Експериментуйте з новими AI-анімаціями для створення інтерактивних та привабливих Stories без залучення моделей.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOSFhVTURPV0dIYmNKV0c0VWctMjZ1U3RWRWNHQkotaWFZNkI4VUVhTUVyNEZQN2VPMWs5bXVMTTI0eXEwempHdFVWS1F4em1MRW1hdjY0eDROV2RBRnlaX3AzV0VLSXc5UDZVamdSVmtvVFZvaXBjU25nSzIyZW5ubEVHOXRRZ2ZYZkpDbmxvZ2VWbHpFdzFFWk8tYjBVeXNRcVp1TVFUMUpoa3psUVVqc1lsalY0bV9nNFhOcl9UYkhRdC1KU1Ew?oc=5\">Tom's Guide</a></blockquote>\n<blockquote>📊 <b>5. Глобальний запуск AI-детектора підлітків в Instagram</b>\nMeta розгортає по всьому світу систему на основі штучного інтелекту, яка виявляє підлітків, що вказують неправдивий вік у профілях.\n💡 Враховуйте зміни в охопленнях та поведінці аудиторії, якщо ваш продукт орієнтований на межові вікові категорії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMi3gFBVV95cUxQR09ITlVfa2NsZlV5S3NYRjJGekdnamRQbXgtN3hHNGVxdFFDbFRXRUE1d3VlV05tWjUwR2pTdEZ0MXhiTjYyQ3ZEWDUzZnM4SzllVXZjaFJXTWZZcHdQOWx1QVpBXzhHQ1RqSklraDJXek1LMjlVNjVtSGZOVjVvUEJnUG1oZGZoMUpIeTlkNjVwVXZGa1MyaXB2MHhudUFBTWtBRnZBMUtkSEVWXzduMUp2OTZaTy1iam1hWk5LWTg3WWJVbzJ4aVZYX3dZc0U3SXN2RThpN2dCNG1iR3fSAeYBQVVfeXFMTUU1YTFMYW84RzFFV1lYanFZWUpkY292LXNKMzkyZWttYmlVa3EzdElmQkt0aVdlOE1aSnpBVFlXYlZ4TGhoZi1pUmctVnBiRTJNMXR1eXJrSkJXSy1xNVNZVS1aWHlqcUlNa1otbHU1YVVkUjl4WGNhcTlRODFBWjRVY0RmbTIzZmpydlBRbklVUk1ScV82Q3l0U1V6d3o2UnV5SzlFYmFjRXd2eGItcVBjSGhjSXNxRkdBU3FuV0tQSEpVbk9mRWM5azg3NEs2dTAwVzB4NURXR1huaUIwUWlzekNIMEE?oc=5\">NDTV Profit</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202646\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Вимірювання конверсій на пристроях користувачів у Meta</b> · Jon Loomer\nMeta запровадила функцію «Measure conversions on customer devices» у Events Manager, яка переносить трекінг конверсій безпосередньо на пристрій користувача. Це дозволяє зв'язувати конверсії з переглядами чи кліками реклами через передані раніше дані (наприклад, email) та анонімні характеристики пристрою.\n💡 Увімкніть цю настройку в Events Manager, щоб отримувати повнішу картину атрибуції та точніше бачити результати рекламних кампаній.\n<a href=\"https://www.jonloomer.com/qvt/measure-conversions-on-customer-devices/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Створення та редагування відео за допомогою штучного інтелекту</b> · Social Media Examiner\nСтаття описує, як налаштувати процес редагування відео за допомогою сучасних AI-інструментів без навичок професійного монтажу. Розглядається генерація моушн-дизайну, підбір музики та автоматизація рутинних завдань.\n💡 Використовуйте AI-асистентів для швидкого створення відеоконтенту для соцмереж, делегуючи їм технічну частину монтажу.\n<a href=\"https://www.socialmediaexaminer.com/how-to-edit-videos-with-ai-no-editing-skills-required/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Частка голосу (Share of Voice) як випереджальний показник ефективності</b> · Hootsuite\nМатеріал розкриває поняття Share of Voice (SoV) як показника видимості бренду порівняно з конкурентами в соцмережах, пошуку та платній рекламі. Бренди, чий SoV перевищує їхню частку ринку, зазвичай демонструють органічне зростання.\n💡 Відстежуйте SoV через платформи соціального моніторингу як ключовий індикатор майбутнього зростання продажів, а не просто як іміджову метрику.\n<a href=\"https://blog.hootsuite.com/share-of-voice/\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Огляд найкращих AI-генераторів зображень для соцмереж</b> · Buffer\nАвтор протестував дев'ять генераторів зображень для створення графіки, товарних фото та стікерів. Виявилося, що генеративний AI найефективніше заповнює прогалину там, де звичайна фотографія не працює, наприклад, у створенні унікальних ілюстрацій.\n💡 Використовуйте спеціалізовані AI-інструменти (як-от Seedream чи Ideogram) для генерації якісного тексту на зображеннях та унікального візуалу для каруселей.\n<a href=\"https://buffer.com/resources/ai-image-generator/\">джерело</a></blockquote>\n<blockquote>💬 <b>5. Стратегії для маркетингових кампаній до Black Friday та Cyber Monday</b> · Buffer\nНа основі рекордних показників онлайн-продажів попередніх років автор пропонує перевірені тактики та ідеї для виділення серед конкурентів під час сезонного розпродажу. Стаття допомагає сформувати сильну пропозицію, коли знижки вже стали стандартною вимогою ринку.\n💡 Плануйте унікальні механіки взаємодії з аудиторією заздалегідь, оскільки стандартні знижки більше не гарантують високу конверсію в період перевантаженості рекламою.\n<a href=\"https://buffer.com/resources/black-friday-marketing/\">джерело</a></blockquote>\n<blockquote>💬 <b>6. П'ять ознак того, що ваші реклавні бюджети в Meta зливаються в трубу</b> · Medium · facebook-ads\nБазуючись на багаторічному досвіді управління бюджетами, автор виділяє головні системні помилки в рекламних акаунтах Meta. У статті наведено покроковий розбір того, як виявити ці проблеми лише за 10 хвилин щоденного аудиту.\n💡 Регулярно перевіряйте акаунт на наявність дублюючих аудиторій та виснаження креативів, щоб зупинити непотрібні витрати.\n<a href=\"https://medium.com/@kajay85977/5-signs-your-meta-ads-are-leaking-money-and-how-to-catch-them-in-10-minutes-a-day-735c8aa29302?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>7. Структурування рекламних кампаній Meta для генерації якісних лідів</b> · Medium · facebook-ads\nМатеріал наголошує, що просте «бусти» дописів не працює як стратегія. Описується правильна архітектура рекламних кампаній у Facebook та Instagram для залучення реальних потенційних клієнтів.\n💡 Розділяйте кампанії за воронкою продажів та використовуйте лід-форми з додатковим запитанням для фільтрації неякісних заявок.\n<a href=\"https://medium.com/@dahouayoub97/meta-ads-au-maroc-structurer-une-campagne-facebook-et-instagram-qui-g%C3%A9n%C3%A8re-de-vrais-prospects-354cfaafe958?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>8. Алгоритм відновлення заблокованого Meta Business Manager</b> · Medium · facebook-ads\nПрактичний посібник для маркетологів та агентств, які втратили доступ до бізнес-портфоліо у Meta. Автор пропонує чітку послідовність дій, яка допоможе відновити акаунт і не нашкодити ситуації додатковими помилковими запитами.\n💡 Дотримуйтесь офіційної процедури подачі апеляції через підтримку та підготуйте документи компанії заздалегідь, уникаючи частих повторних звернень, які можуть призвести до перманентного бану.\n<a href=\"https://shildercom.medium.com/meta-business-manager-disabled-a-recovery-order-that-doesnt-make-things-worse-014f3b8e5dbd?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>9. Реклама в Meta після оновлення Andromeda: що змінилося</b> · Medium · facebook-ads\nАналіз змін у рекламному алгоритмі Meta та їхній вплив на стратегію таргетологів. Розглядаються нові підходи до оптимізації бюджетів та роботи з аудиторіями після оновлень платформи.\n💡 Зменшуйте кількість детальних налаштувань таргетингу на користь широких аудиторій та дайте алгоритму більше простору для машинного навчання.\n<a href=\"https://medium.com/@ahaamedia2026/meta-ads-after-andromeda-what-changed-and-what-to-do-next-6433286256f8?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>10. Альтернативи інструментам конкурентної розвідки для e-commerce</b> · Medium · facebook-ads\nОгляд альтернативних сервісів для аналізу ринку та конкурентів у сфері електронної комерції з акцентом на реальну вартість та приховані платежі. Автор розбирає, кому підходять платні рішення, а де можна обійтися базовими безкоштовними методами.\n💡 Порівнюйте реальну ваню підписки з функціоналом, який вам дійсно необхідний щодня, щоб не переплачувати за зайві аналітичні дашборди.\n<a href=\"https://medium.com/@rob_searchnerd/winning-hunter-alternatives-in-2026-what-each-one-really-costs-and-who-its-for-b332b2a28c94?source=rss------facebook_ads-5\">джерело</a></blockquote>\n§RT:smm:202646p",
