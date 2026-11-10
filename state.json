@@ -128,16 +128,6 @@
   "https://medium.com/@adultpassion123/how-stress-can-affect-your-sex-life-and-what-you-can-do-about-it-126d4a066776?source=rss------intimacy-5"
  ],
  "kino_seen": [
-  "m823464",
-  "m1538",
-  "t85077",
-  "t219246",
-  "t2171",
-  "m1071585",
-  "m581392",
-  "m701387",
-  "m530385",
-  "m546554",
   "m1148365",
   "m134",
   "t270476",
@@ -727,9 +717,19 @@
   "m4982",
   "t211288",
   "t97951",
-  "t46648"
+  "t46648",
+  "m370172",
+  "m1280738",
+  "m603692",
+  "m1263337",
+  "m634649",
+  "m1571955",
+  "m3131",
+  "t226637",
+  "t106379",
+  "t33907"
  ],
- "gh_beat": "2026-11-10T20:55:45.409918+02:00",
+ "gh_beat": "2026-11-10T21:00:50.179846+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -812,11 +812,10 @@
    ]
   ]
  },
- "fact_png": "2026-11-10 20|12|2026-11-10T19:14:26+02:00",
+ "fact_png": "2026-11-10 21|12|2026-11-10T19:14:26+02:00",
  "fact_day": {
-  "total": "5 год 12 хв",
+  "total": "4 год 36 хв",
   "list": [
-   "20:00–20:37 · 36 хв",
    "07:03–11:13 · 4 год 10 хв",
    "12:19–12:20 · 0 хв",
    "18:48–19:14 · 26 хв"
@@ -876,7 +875,8 @@
   "368433217": "2026-11-10",
   "590261825": "2026-11-10",
   "936688574": "2026-11-10",
-  "8283670046": "2026-11-10"
+  "8283670046": "2026-11-10",
+  "160603556": "2026-11-10"
  },
  "tgph": "8d020e91ef2b6894855e405f8973a51da385fca8e1cfd990c9e41c2a32c2",
  "yt_try": "2026-11-10 19",
@@ -1679,14 +1679,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "10.11 20:52",
-   "ts": 1794336758,
+   "at": "10.11 21:02",
+   "ts": 1794337356,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "10.11 20:52",
-   "ts": 1794336758,
+   "at": "10.11 21:02",
+   "ts": 1794337356,
    "ok": true,
    "note": ""
   },
@@ -1709,8 +1709,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "10.11 20:53",
-   "ts": 1794336808,
+   "at": "10.11 21:03",
+   "ts": 1794337397,
    "ok": true,
    "note": ""
   },
@@ -1865,7 +1865,7 @@
  "silpo_fb": "1f0bae3d-2073-62f4-b14c-f9715721ce18|DeliveryHome|",
  "yt_ver": 2,
  "smm_ver": 4,
- "smm_try": "2026-11-10 20",
+ "smm_try": "2026-11-10 21",
  "smm_links": [
   "https://www.socialmediatoday.com/news/meta-offers-creative-ad-targeting-for-specific-audiences/833672/",
   "https://blog.google/products/ads-commerce/holiday-shopping-bidding-budgeting/",
@@ -2010,7 +2010,17 @@
   "https://www.socialmediatoday.com/news/instagram-launches-visual-effects-creator-for-edits/874205/",
   "https://news.google.com/rss/articles/CBMikgFBVV95cUxQdG9PMmI2X0sxODJNbndDRWJQTVZmWWdXRTVPbWxCY2xuY2tlMmwtbFJWTXVsbzZ0YmtpOUlCREhjUkxRVGU3YkdiRWgzalhwYWEySUo5bnA2cm9SdDJ1dlhBWkU4blRiOXFtdVVpdkIxd2NTSVlLRk5ma3VzTVNSbnJNRlZFemk2eFJSc25mdzVzQQ?oc=5",
   "https://about.fb.com/news/2026/11/whatsapp-events-brings-people-together-beyond-the-group-chat/",
-  "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQk1KeEJpZjlvci1tZnNkNHBkb2xKa0V4Z2F1OEFaSVN2LU5SODBSX1U4NWQyTUdEUmJDczkxa0R2enJOZmdYeUJxakk5cWVhQW9NSy14d3FIdUpuM0FYbk54RVpibWp1dzFZVElmZTJOR0Jib2x2Q1p3b2kySlBFb0xWYS1NXy1mNmlEOUxCSlRuXzQ5bVhjY0FMV1NaTGVmbHZEQmdPSmc0V1N3Ylh5MXE0TzlGRTVCNHA2bkNRbmjSAdQBQVVfeXFMTVFpRjJic3lDWGFxeHRDMi1QV2RlLVdCU2N5VXpTZFBZblVkQXRTZHFuTjF1TWh6VU1Eb3o1TVB1UjNYa2JodE8zM0lTdjhoZjU3cFVnaWlrNTAyanpJVkcwWGFyVnNMVVZMcHVsaTkwNnFnMnVZSlVSM0RHSkdBQkdHR3g2b3RrRnhlV0lBNE5WRURvN3E1Ym5haTYwQWJpa0hLTzh0V2tSZHhWelVDdGRXMkpOanFYdjNqUkgybzNNd2pnaHMyYm1YSHAyVE90LVJjOFo?oc=5"
+  "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQk1KeEJpZjlvci1tZnNkNHBkb2xKa0V4Z2F1OEFaSVN2LU5SODBSX1U4NWQyTUdEUmJDczkxa0R2enJOZmdYeUJxakk5cWVhQW9NSy14d3FIdUpuM0FYbk54RVpibWp1dzFZVElmZTJOR0Jib2x2Q1p3b2kySlBFb0xWYS1NXy1mNmlEOUxCSlRuXzQ5bVhjY0FMV1NaTGVmbHZEQmdPSmc0V1N3Ylh5MXE0TzlGRTVCNHA2bkNRbmjSAdQBQVVfeXFMTVFpRjJic3lDWGFxeHRDMi1QV2RlLVdCU2N5VXpTZFBZblVkQXRTZHFuTjF1TWh6VU1Eb3o1TVB1UjNYa2JodE8zM0lTdjhoZjU3cFVnaWlrNTAyanpJVkcwWGFyVnNMVVZMcHVsaTkwNnFnMnVZSlVSM0RHSkdBQkdHR3g2b3RrRnhlV0lBNE5WRURvN3E1Ym5haTYwQWJpa0hLTzh0V2tSZHhWelVDdGRXMkpOanFYdjNqUkgybzNNd2pnaHMyYm1YSHAyVE90LVJjOFo?oc=5",
+  "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZUR4cTNfOGZ3TTdSTzRVQ0FRamNKRlQ5S0VNYkN2TVBmbWFkcDdCckdqazVwOXJvd2NKRjJEZWd2a0E1TWt6enVBYS1YU1U5cGJ3LVZSS2JxQ1dON21kQWs2dTVUdENsRHhiWlMwRmE2M05KU1pQczY3NW15YlczTU1GaHNOcUxX?oc=5",
+  "https://www.socialmediatoday.com/news/metas-ai-ads-included-unapproved-discounts/874067/",
+  "https://news.google.com/rss/articles/CBMikgFBVV95cUxPdXl3VEdHcV9ZRUtMQzk0VFlEYTROYXZGUk9FbFJZdFVPWVRUUHdpYUtVb29MRXpBOFIwblVXWkVpcERuR0EzV1NMbGgwT1NtbVFkczMwQW92MzZaWXFWN2JRYkJfeHp5b1ppcHl3MjNhcnJlSEVrbktBUHR4SEhlOWdPWDlJcGQtd3d1SWpMRnVNUQ?oc=5",
+  "https://news.google.com/rss/articles/CBMixwFBVV95cUxOSFhVTURPV0dIYmNKV0c0VWctMjZ1U3RWRWNHQkotaWFZNkI4VUVhTUVyNEZQN2VPMWs5bXVMTTI0eXEwempHdFVWS1F4em1MRW1hdjY0eDROV2RBRnlaX3AzV0VLSXc5UDZVamdSVmtvVFZvaXBjU25nSzIyZW5ubEVHOXRRZ2ZYZkpDbmxvZ2VWbHpFdzFFWk8tYjBVeXNRcVp1TVFUMUpoa3psUVVqc1lsalY0bV9nNFhOcl9UYkhRdC1KU1Ew?oc=5",
+  "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQR09ITlVfa2NsZlV5S3NYRjJGekdnamRQbXgtN3hHNGVxdFFDbFRXRUE1d3VlV05tWjUwR2pTdEZ0MXhiTjYyQ3ZEWDUzZnM4SzllVXZjaFJXTWZZcHdQOWx1QVpBXzhHQ1RqSklraDJXek1LMjlVNjVtSGZOVjVvUEJnUG1oZGZoMUpIeTlkNjVwVXZGa1MyaXB2MHhudUFBTWtBRnZBMUtkSEVWXzduMUp2OTZaTy1iam1hWk5LWTg3WWJVbzJ4aVZYX3dZc0U3SXN2RThpN2dCNG1iR3fSAeYBQVVfeXFMTUU1YTFMYW84RzFFV1lYanFZWUpkY292LXNKMzkyZWttYmlVa3EzdElmQkt0aVdlOE1aSnpBVFlXYlZ4TGhoZi1pUmctVnBiRTJNMXR1eXJrSkJXSy1xNVNZVS1aWHlqcUlNa1otbHU1YVVkUjl4WGNhcTlRODFBWjRVY0RmbTIzZmpydlBRbklVUk1ScV82Q3l0U1V6d3o2UnV5SzlFYmFjRXd2eGItcVBjSGhjSXNxRkdBU3FuV0tQSEpVbk9mRWM5azg3NEs2dTAwVzB4NURXR1huaUIwUWlzekNIMEE?oc=5",
+  "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQW41YWlPVGVsMDVING1PZHlzc3R2bnB3VEFKLVNmRGV5d180Q2EzS0YtZms0VG5ZN0VlbHpHalJwQUxER0Fhdk9lWDc5VEJaTEhIc3VXQm5pejUwcDVjZy1Gc3J1endTLUZxLWZubnVtSS1IYlp0UlB6UkVzZDdfci1vaEZtaE5ZNmdLaHhoZGJLanJRXzQ1Y0tTLVUzREpxYlE?oc=5",
+  "https://www.marketingdive.com/news/pricelines-ai-agent-penny-lands-in-snapchat-ads-amid-holiday-rush/874247/",
+  "https://news.google.com/rss/articles/CBMijgFBVV95cUxNR2ZmLVBKOHFYb3lMVEJBeUJncE9yY3MwMnU5RlBZV0ppS1VLMzIyVTBOZDA4ODJMMkJxMWg3NXlCUlJwTGw4RkZPbFJxbXh0Sk9VRVhFZGtjZ0c2N1M2WmY1S1NwNjJodWVqQVkzMzZ0M0RWbDg4WTRaS3ZKMjFBS2ZWNVdZMVRnYnFyR0NR?oc=5",
+  "https://news.google.com/rss/articles/CBMioAFBVV95cUxNd09FTV9UVTRxajBXSU9ETnRJYWlWNDcwcklHZHdPcHd1ZENKUzJIZHhPcG1ZZzN1SXZiNHJFZUE2TXVfcElndXRNM3l6UnZRLVFBY1otalVKZzljNzN1SllHOFBVQ0c4YjI1ekZoejJIRHVYNWlGWU5NNFFjSERzRjEyVzdES29xdWlKUG5hZG1VSWJyZEc1YVEwTWQ5U0lD?oc=5",
+  "https://www.socialmediatoday.com/news/tiktok-shares-gaming-and-app-promotional-guides-for-end-of-year-period/874069/"
  ],
  "smm_pool_day": "2026-11-10",
  "smm_pool": [
@@ -2217,7 +2227,17 @@
   "https://medium.com/@thepak0001/google-display-ads-design-how-professional-banner-creatives-support-digital-marketing-campaigns-ca83272e5aa8?source=rss------facebook_ads-5",
   "https://medium.com/@socialpeak482/e-commerce-banner-ad-design-how-to-create-professional-product-advertising-for-online-stores-5f0ad41a65cd?source=rss------facebook_ads-5",
   "https://medium.com/@kajay85977/5-signs-your-meta-ads-are-leaking-money-and-how-to-catch-them-in-10-minutes-a-day-735c8aa29302?source=rss------facebook_ads-5",
-  "https://medium.com/@dahouayoub97/meta-ads-au-maroc-structurer-une-campagne-facebook-et-instagram-qui-g%C3%A9n%C3%A8re-de-vrais-prospects-354cfaafe958?source=rss------facebook_ads-5"
+  "https://medium.com/@dahouayoub97/meta-ads-au-maroc-structurer-une-campagne-facebook-et-instagram-qui-g%C3%A9n%C3%A8re-de-vrais-prospects-354cfaafe958?source=rss------facebook_ads-5",
+  "https://www.jonloomer.com/qvt/measure-conversions-on-customer-devices/",
+  "https://www.socialmediaexaminer.com/how-to-edit-videos-with-ai-no-editing-skills-required/",
+  "https://blog.hootsuite.com/share-of-voice/",
+  "https://buffer.com/resources/ai-image-generator/",
+  "https://buffer.com/resources/black-friday-marketing/",
+  "https://medium.com/@kajay85977/5-signs-your-meta-ads-are-leaking-money-and-how-to-catch-them-in-10-minutes-a-day-735c8aa29302?source=rss------facebook_ads-5",
+  "https://medium.com/@dahouayoub97/meta-ads-au-maroc-structurer-une-campagne-facebook-et-instagram-qui-g%C3%A9n%C3%A8re-de-vrais-prospects-354cfaafe958?source=rss------facebook_ads-5",
+  "https://shildercom.medium.com/meta-business-manager-disabled-a-recovery-order-that-doesnt-make-things-worse-014f3b8e5dbd?source=rss------facebook_ads-5",
+  "https://medium.com/@ahaamedia2026/meta-ads-after-andromeda-what-changed-and-what-to-do-next-6433286256f8?source=rss------facebook_ads-5",
+  "https://medium.com/@rob_searchnerd/winning-hunter-alternatives-in-2026-what-each-one-really-costs-and-who-its-for-b332b2a28c94?source=rss------facebook_ads-5"
  ],
  "smm_reddit_seen": [],
  "silpo_probe": "2026-10-22",
@@ -30314,12 +30334,18 @@
    null,
    null,
    "2026-11-10"
+  ],
+  "tt14181714": [
+   5.8,
+   null,
+   61,
+   "2026-11-10"
   ]
  },
  "pushed_h": {
-  "gs": "f0475d1c9571",
+  "gs": "af33e015b9b5",
   "quiz_pool.json": "80eae7ea9381",
-  "fact.png": "64ee887c0720",
+  "fact.png": "848c119df38d",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -41174,6 +41200,106 @@
    ],
    "ov": "Родина знову об'єднується після того, як батько дізнається про свою смертельну хворобу. Колись давно він залишив своїх дітей-вундеркіндів самих з матір'ю, а зараз повертається, щоб надолужити втрачене.",
    "poster": "https://image.tmdb.org/t/p/w500/orXDS3CTGwSa3tprNOI4GmahHsP.jpg"
+  },
+  "m609242": {
+   "title": "Афера століття",
+   "year": "2020",
+   "rating": 7.1,
+   "genres": [
+    "Комедія",
+    "Трилер",
+    "Кримінал"
+   ],
+   "g": [
+    35,
+    53,
+    80
+   ],
+   "ov": "У самому фешенебельному передмісті Буенос-Айреса п’ятеро грабіжників увірвалися в будівлю банку Ріо де Акассусо. Взявши в заручники всіх співробітників і відвідувачів банку, вони почали переговори з поліцією. Поки сотні ",
+   "poster": "https://image.tmdb.org/t/p/w500/cKDWVrENuLPkrNox2dltFnpS7uk.jpg"
+  },
+  "m351339": {
+   "title": "Антропоїд",
+   "year": "2016",
+   "rating": 7.2,
+   "genres": [
+    "Історичний",
+    "Трилер",
+    "Військовий"
+   ],
+   "g": [
+    36,
+    53,
+    10752
+   ],
+   "ov": "Прага, 1942 рік. Рейнхард Гейдріх – начальник Головного управління імперської безпеки Третього рейху, а також третя людина нацистської Німеччини після Адольфа Гітлера й Генріха Гіммлера. На руках \"Празького м'ясника\", як",
+   "poster": "https://image.tmdb.org/t/p/w500/9tbsinKrfbsHqb9U0TzoWDSZRVH.jpg"
+  },
+  "m581528": {
+   "title": "Гангстер, коп і диявол",
+   "year": "2019",
+   "rating": 7.0,
+   "genres": [
+    "Бойовик",
+    "Кримінал",
+    "Трилер"
+   ],
+   "g": [
+    28,
+    80,
+    53
+   ],
+   "ov": "Після нападу на кримінального авторитета Джан Донг Су, його поплічники починають власне розслідування. Сам мафіозі переконаний, що на нього напали не конкуренти, а психопат. Він хоче вбити божевільного аби помститись та ",
+   "poster": "https://image.tmdb.org/t/p/w500/33wGsILALBJYIJeJ1tFkM3NoLea.jpg"
+  },
+  "m55": {
+   "title": "Сука любов",
+   "year": "2000",
+   "rating": 8.0,
+   "genres": [
+    "Драма",
+    "Трилер"
+   ],
+   "g": [
+    18,
+    53
+   ],
+   "ov": "У жахливій автомобільній аварії сплітаються долі трьох героїв: молодого хлопця, успішної моделі і старого волоцюги. Кожен з них тікає від своїх демонів, ховає свій біль, несе свій хрест - і все заради любові. Але ким вон",
+   "poster": "https://image.tmdb.org/t/p/w500/i2AG3k1FhbE31pmPYZnvadZXNWN.jpg"
+  },
+  "m51608": {
+   "title": "Людина нізвідки",
+   "year": "2010",
+   "rating": 7.7,
+   "genres": [
+    "Бойовик",
+    "Трилер",
+    "Кримінал"
+   ],
+   "g": [
+    28,
+    53,
+    80
+   ],
+   "ov": "Привіт, мене звати Со Мі. Живу з мамою, яка надає перевагу випивці та наркотикам, чим моєму вихованню. Зате у мене є красунчик сусід, мій названий дядечко. Він вчить мене не красти, та і взагалі, піклується про мене. Мам",
+   "poster": "https://image.tmdb.org/t/p/w500/y6IuiKOSNIz9sl098meu78iDmqG.jpg"
+  },
+  "m12162": {
+   "title": "Володар Бурі",
+   "year": "2008",
+   "rating": 7.5,
+   "genres": [
+    "Драма",
+    "Трилер",
+    "Військовий"
+   ],
+   "g": [
+    18,
+    53,
+    10752
+   ],
+   "ov": "Члени елітного загону по розмінуванню направлені в одне з іракських міст, де практично будь-який предмет представляє смертельну небезпеку. Джеймс - сапер-підривник, який, не дивлячись на небезпеку, відноситься до знешкод",
+   "poster": "https://image.tmdb.org/t/p/w500/ujRxEBCMolliLBhWsl8HvMCABKq.jpg"
   }
  },
  "cofid_pushed": "10.11.2026",
@@ -44757,7 +44883,6 @@
  "smmt_force": false,
  "smmt_week": "202646",
  "aro_force": true,
- "smm_fail_since": 1794332605.0220397,
  "kino_q": [
   {
    "id": "bf1ceb2818",
@@ -44847,11 +44972,19 @@
     "id": "f8da2ca839",
     "text": "🍿 <b>ПІДБІРКА КІНО · СЕРІАЛИ · НЕДООЦІНЕНІ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/Obsesіya-2026-11-10-3\">Обсесія</a></b> (2026) · ❤️ за вашим смаком\nжахи, трилер · ⏱ 1 год 49 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>93%</b> · Ⓜ <b>77</b>\n<i>🎭 Майкл Джонстон, Інде Наварретт, Купер Томлінсон</i>\n📝 Зламавши таємничу «Вербу одного бажання», аби завоювати серце коханої дівчини, безнадійний романтик отримує саме те, про що просив. Проте невдовзі він усвідомлює: деякі бажання мають занадто темну та зловісну ціну.\n▶️ <a href=\"https://youtu.be/q2A-S00w5ac\">Трейлер</a></blockquote>\n§KN:m1339713|2381985\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Pravednik-3-Ostannya-glava-2023-11-10-2\">Праведник 3: Остання глава</a></b> (2023) · ❤️ за вашим смаком\nбойовик, трилер, кримінал · ⏱ 1 год 49 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>76%</b> · Ⓜ <b>58</b>\n<i>🎭 Дензел Вашинґтон, Дакота Фаннінґ, Eugenio Mastrandrea</i>\n📝 Покінчивши з роботою таємного агента, Роберт Макколл продовжує відстоювати правду у повсякденному житті та захищати тих, хто цього потребує. Перебуваючи в Південній Італії він дізнається, що його друзі опинилися під…\n▶️ <a href=\"https://youtu.be/KfWv3D9LYC4\">Трейлер</a></blockquote>\n§KN:m926393|20907\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/De-Goll-Svoboda-2026-11-10\">Де Голль: Свобода</a></b> (2026)\nісторичний, драма, військовий · ⏱ 2 год 39 хв\n⭐ IMDb <b>8.0</b>\n<i>🎭 Simon Abkarian, Niels Schneider, Тьєррі Лермітт</i>\n📝 1943–1944 роки. Щоб звільнити Францію, генерал де Голль має об’єднати розрізнені сили Опору. Водночас він намагається домогтися визнання своєї легітимності з боку союзників.\n▶️ <a href=\"https://youtu.be/J6MRNchmZkY\">Трейлер</a></blockquote>\n§KN:m1165369|2194514\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Minulі-zhittya-2023-11-10-5\">Минулі життя</a></b> (2023)\nдрама, мелодрама · ⏱ 1 год 46 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>95%</b> · Ⓜ <b>94</b>\n<i>🎭 Ґрета Лі, 태오, Джон Магаро</i>\n📝 Нора та Хе-сон були друзями дитинства, але їхній зв’язок перервався, коли дівчина переїхала до Канади з батьками. Через 20 років вони відновлюють спілкування — спочатку у соціальних мережах, а потім проводять разом…\n▶️ <a href=\"https://youtu.be/kA244xewjcI\">Трейлер</a></blockquote>\n§KN:m666277|2518227\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Mesnik-2026-11-10-2\">Месник</a></b> (2026)\nбойовик, драма, історичний · ⏱ 2 год 08 хв\n⭐ TMDB <b>7.8</b> · 🍅 <b>55%</b> · Ⓜ <b>53</b>\n<i>🎭 Ендрю Ґарфілд, Джеймі Белл, Стівен Діллейн</i>\n📝 Під час Селянського повстання в Англії 1381 року звичайний фермер стає одним із лідерів бунту проти військ Корони, що служать 14-річному королю Річарду II.\n▶️ <a href=\"https://youtu.be/F_RajmFhKoc\">Трейлер</a></blockquote>\n§KN:m977942|25598\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Fіord-2026-11-10\">Фіорд</a></b> (2026)\nдрама · ⏱ 2 год 26 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>91%</b> · Ⓜ <b>78</b>\n<i>🎭 Себастіан Стен, Ренате Реінсве, Lisa Carlehed</i>\n📝 Історія про родину Ґеорґіу, що складається з батька-румуна та матері-норвежки, які переїжджають до рідного села матері в Норвегії. Там вони заводять дружбу із сусідньою родиною Гальберґів. Однак підозри щодо…\n▶️ <a href=\"https://youtu.be/frg59VOungA\">Трейлер</a></blockquote>\n§KN:m1401459|20657\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Gangster-2007-11-10\">Гангстер</a></b> (2007)\nдрама, кримінал · ⏱ 2 год 37 хв\n⭐ IMDb <b>7.8</b> · 🍅 <b>81%</b> · Ⓜ <b>76</b>\n<i>🎭 Дензел Вашинґтон, Расселл Кроу, Джош Бролін</i>\n📝 Френк Лукас, що колись був водієм ватажка кримінального світу Гарлема, наважується на створення свого злочинного синдикату. Спеціалізуючись на наркотиках і дотримуючись своїх особистих принципів, Лукас швидко…\n▶️ <a href=\"https://youtu.be/BV_nssS6Zkg\">Трейлер</a></blockquote>\n§KN:m4982|578\n§§\n<blockquote>📺 <b>8. <a href=\"https://telegra.ph/Slіdopit-2024-11-10-2\">Слідопит</a></b> (2024)\nдрама, кримінал · 📺 серіал · 4 сез.\n⭐ IMDb <b>7.2</b>\n<i>🎭 Джастін Гартлі, Fiona Rene, Chris Lee</i>\n📝 Вовк-одинак Колтер Шоу блукає країною як \"мисливець за винагородою\", використовуючи свої професійні навички слідопита, щоб допомогти приватним особам і правоохоронним органам розкрити всілякі таємниці, водночас…\n▶️ <a href=\"https://youtu.be/Hw6RlFyPbNM\">Трейлер</a></blockquote>\n§KN:t211288|2347594\n§§\n<blockquote>📺 <b>9. <a href=\"https://telegra.ph/Mer-Kіngstauna-2021-11-10\">Мер Кінґстауна</a></b> (2021)\nдрама, кримінал · 📺 серіал · 5 сез.\n⭐ IMDb <b>8.1</b>\n<i>🎭 Джеремі Реннер, Hugh Dillon, Tobi Bamtefa</i>\n📝 Історія про впливову родину МакЛаскі з Кінґстауна, штат Мічиган, де найприбутковішим вважається тюремний бізнес. Головні герої намагаються забезпечити порядок та справедливість у очолюваному мером Майком МаклЛаскі…\n▶️ <a href=\"https://youtu.be/VkQzvwxOp0s\">Трейлер</a></blockquote>\n§KN:t97951|1215399\n§§\n<blockquote>📺 <b>10. <a href=\"https://telegra.ph/Spravzhnіj-detektiv-2014-11-10\">Справжній детектив</a></b> (2014)\nдрама, детектив · 📺 серіал · 5 сез.\n⭐ IMDb <b>8.8</b>\n<i>🎭 Джоді Фостер, Калі Реїс, Фіона Шоу</i>\n📝 Американський детективний серіал з паралельними оповідями, в яких розслідування викриває особисті та професійні секрети всіх причетних - як в межах, так і поза законом.\n▶️ <a href=\"https://youtu.be/RmqIkN9OeKI\">Трейлер</a></blockquote>\n§KN:t46648|1281190"
    }
+  ],
+  "ser_hot": [
+   {
+    "id": "facf8d43ee",
+    "text": "🍿 <b>ПІДБІРКА КІНО · СЕРІАЛИ · ВИСТРІЛИЛИ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1. <a href=\"https://telegra.ph/007-Ne-chas-pomirati-2021-11-10-2\">007: Не час помирати</a></b> (2021) · ❤️ за вашим смаком\nбойовик, трилер, пригоди · ⏱ 2 год 43 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>83%</b> · Ⓜ <b>68</b>\n<i>🎭 Денієл Крейґ, Леа Седу, Рамі Малек</i>\n📝 Короткочасний спокій Бонда перериває нове термінове завдання, де ставки знову надто високі. Суперагент кидає виклик найвпливовішим гравцям злочинного світу, проливає світло на хитросплетені інтриги і викриває…\n▶️ <a href=\"https://youtu.be/pxKk-IF7Fw0\">Трейлер</a></blockquote>\n§KN:m370172|87257\n§§\n<blockquote>🎬 <b>2. <a href=\"https://telegra.ph/Vіn-shalenij-2026-11-10-4\">Він шалений</a></b> (2026) · ❤️ за вашим смаком\nбойовик, кримінал, трилер · ⏱ 1 год 53 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>98%</b> · Ⓜ <b>85</b>\n<i>🎭 Сє М'яо, Джо Таслім, Ян Енью</i>\n📝 Батько вступає у відчайдушну боротьбу з торговцями людьми, які викрали його доньку. Разом із напарником, який також шукає дружину, вони битимуться з кожним, щоб урятувати найдорожчих!\n▶️ <a href=\"https://youtu.be/zfEVg1Mxdx0\">Трейлер</a></blockquote>\n§KN:m1280738|1113443\n§§\n<blockquote>🎬 <b>3. <a href=\"https://telegra.ph/Dzhon-Uіk-4-2023-11-10\">Джон Уік 4</a></b> (2023)\nбойовик, трилер, кримінал · ⏱ 2 год 49 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>94%</b> · Ⓜ <b>78</b>\n<i>🎭 Кіану Рівз, Донні Єнь, Білл Скашґорд</i>\n📝 Джон Уік знаходить спосіб подолати злочинну організацію «Високий Стіл».  Проте, перш ніж здобути свободу, Уік має стикнутися з новим ворогом, який має могутніх союзників у всьому світі, та з силами, що перетворюють…\n▶️ <a href=\"https://youtu.be/1Yr5QK2u8oo\">Трейлер</a></blockquote>\n§KN:m603692|40644\n§§\n<blockquote>🎬 <b>4. <a href=\"https://telegra.ph/Serce-zvіra-2026-11-10-3\">Серце звіра</a></b> (2026)\nпригоди, трилер · ⏱ 1 год 41 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>85%</b>\n<i>🎭 Бред Пітт, Дж. К. Сіммонс, Анна Ламб</i>\n📝 Після авіакатастрофи боєць спецпідрозділу Джеймс Белмонт та його вірний пес Одін опиняються серед безкрайніх просторів Аляски. Відрізані від цивілізації та будь-якої допомоги, вони змушені покладатися лише один на…\n▶️ <a href=\"https://youtu.be/_rCjDfpay_I\">Трейлер</a></blockquote>\n§KN:m1263337|19769\n§§\n<blockquote>🎬 <b>5. <a href=\"https://telegra.ph/Lyudina-pavuk-Dodomu-shlyahu-nema-2021-11-10\">Людина-павук: Додому шляху нема</a></b> (2021)\nбойовик, пригоди, фантастика · ⏱ 2 год 28 хв\n⭐ IMDb <b>8.1</b> · 🍅 <b>93%</b> · Ⓜ <b>71</b>\n<i>🎭 Том Голланд, Зендея, Бенедикт Камбербетч</i>\n📺 <a href=\"https://www.themoviedb.org/movie/634649-spider-man-no-way-home/watch?locale=UA\">Netflix · за підпискою</a>\n📝 Уперше за всю кіноісторію Людини-павука улюбленого супергероя викрито. Пітер Паркер більше не в змозі поєднувати звичайне життя та супергеройські обов’язки. Щоб повернути все назад, він звертається по допомогу до…\n▶️ <a href=\"https://youtu.be/SpjOeVrhAh8\">Трейлер</a></blockquote>\n§KN:m634649|1293994\n§§\n<blockquote>🎬 <b>6. <a href=\"https://telegra.ph/Kurs-na-zіtknennya-2026-11-10\">Курс на зіткнення</a></b> (2026)\nтрилер, драма, кримінал · ⏱ 2 год 02 хв\n⭐ TMDB <b>6.4</b>\n<i>🎭 Лая Коста, Karra Elejalde, Luis Zahera</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1571955-colision/watch?locale=UA\">Netflix · за підпискою</a>\n📝 Іспанія, 2013 рік. Невдала втеча після пограбування банку розкриває приховану правду про кожного злочинця, а також зради й брехню, що почалися задовго до самого злочину.\n▶️ <a href=\"https://youtu.be/3DWJUzB0i7Y\">Трейлер</a></blockquote>\n§KN:m1571955|34017\n§§\n<blockquote>🎬 <b>7. <a href=\"https://telegra.ph/Bandi-Nyu-Jorka-2002-11-10\">Банди Нью-Йорка</a></b> (2002)\nдрама, історичний, кримінал · ⏱ 2 год 48 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>72%</b> · Ⓜ <b>72</b>\n<i>🎭 Леонардо Ді Капріо, Деніел Дей-Льюїс, Камерон Діас</i>\n📝 Дія відбувається в 1863 році в Нью-Йорку, коли від рук лідера корінних американців гине ватажок ірландської банди Валлон. Його сина відправляють у виправну школу, з якої Амстердам виходить уже дорослим хлопцем.…\n▶️ <a href=\"https://youtu.be/1bjh979vVG0\">Трейлер</a></blockquote>\n§KN:m3131|1032\n§§\n<blockquote>📺 <b>8. <a href=\"https://telegra.ph/Visokij-potencіal-2024-11-10-2\">Високий потенціал</a></b> (2024)\nдрама, кримінал, детектив · 📺 серіал · 3 сез.\n⭐ IMDb <b>7.6</b>\n<i>🎭 Кейтлін Олсон, Деніел Сунджата, Джуді Реєс</i>\n📝 Морган - мати-одиначка з винятковим розумом, чий нестандартний хист до розкриття злочинів призводить до незвичного і невпинного партнерства з досвідченим детективом.\n▶️ <a href=\"https://youtu.be/B5Hn1higb_8\">Трейлер</a></blockquote>\n§KN:t226637|47506\n§§\n<blockquote>📺 <b>9. <a href=\"https://telegra.ph/Folaut-2024-11-10\">Фолаут</a></b> (2024)\nекшн і пригоди, науково фантастичний, драма · 📺 серіал · 2 сез.\n⭐ IMDb <b>8.3</b>\n<i>🎭 Елла Пернелл, Аарон Мотен, Мозес Аріас</i>\n📝 У постапокаліптичному Лос-Анджелесі громадяни змушені жити в підземних бункерах, щоб захистити себе від радіації, мутантів і бандитів, які заполонили світ після ядерної катастрофи.\n▶️ <a href=\"https://youtu.be/57_atR7oLh4\">Трейлер</a></blockquote>\n§KN:t106379|1807680\n§§\n<blockquote>📺 <b>10. <a href=\"https://telegra.ph/Abatstvo-Daunton-2010-11-10-2\">Абатство Даунтон</a></b> (2010)\nдрама · 📺 серіал · 6 сез.\n⭐ IMDb <b>8.7</b>\n<i>🎭 Меґґі Сміт, Мішель Докері, Лора Кармайкл</i>\n📝 Перші серії серіалу відбуваються у 1912 році, розпочинаються з новини про смерть нащадка титулу графа Ґрентема внаслідок катастрофи на Титаніку. Сім'я очікує, що оскільки нащадків чоловічого роду в родині не…\n▶️ <a href=\"https://youtu.be/EOM3y4P8TEM\">Трейлер</a></blockquote>\n§KN:t33907|10747"
+   }
   ]
  },
  "kp_at": {
   "mix": "2026-11-10T19:47:04.738837+02:00",
-  "drama": "2026-11-10T20:50:44.216395+02:00"
+  "drama": "2026-11-10T20:50:44.216395+02:00",
+  "thriller": "2026-11-10T21:00:50.289439+02:00"
  },
- "kb_probe2": "2026-46"
+ "kb_probe2": "2026-46",
+ "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 03.11–10.11\n<blockquote>🎯 <b>1. Meta призупинила оновлені бізнес-умови</b>\nЧерез масову критику видавців Meta поставила на паузу запуск нових умов надання послуг для бізнесу та рекламодавців, які мали набути чинності 20 листопада.\n💡 Стежте за оновленнями рекламної політики Meta, оскільки нові правила щодо обробки даних та використання сайтів ще повернуться в іншій редакції.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZUR4cTNfOGZ3TTdSTzRVQ0FRamNKRlQ5S0VNYkN2TVBmbWFkcDdCckdqazVwOXJvd2NKRjJEZWd2a0E1TWt6enVBYS1YU1U5cGJ3LVZSS2JxQ1dON21kQWs2dTVUdENsRHhiWlMwRmE2M05KU1pQczY3NW15YlczTU1GaHNOcUxX?oc=5\">Search Engine Journal</a></blockquote>\n<blockquote>🎯 <b>2. Помилка в рекламних AI-інструментах Meta</b>\nУ рекламних кампаніях Meta на базі штучного інтелекту були помічені випадки автоматичної генерації несанкціонованих знижок для користувачів.\n💡 Ретельно перевіряйте креативи та тексти, створені за допомогою генеративного AI в рекламному кабінеті, перед запуском.\n🔗 <a href=\"https://www.socialmediatoday.com/news/metas-ai-ads-included-unapproved-discounts/874067/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>3. YouTube додав розділення платного та органічного трафіку</b>\nУ статистиці YouTube з'явився детальний розподіл переглядів та охоплень на органічні та спонсоровані (платні).\n💡 Використовуйте нову аналітику для точнішого вимірювання ефективності відеокампаній та оптимізації бюджетів.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxPdXl3VEdHcV9ZRUtMQzk0VFlEYTROYXZGUk9FbFJZdFVPWVRUUHdpYUtVb29MRXpBOFIwblVXWkVpcERuR0EzV1NMbGgwT1NtbVFkczMwQW92MzZaWXFWN2JRYkJfeHp5b1ppcHl3MjNhcnJlSEVrbktBUHR4SEhlOWdPWDlJcGQtd3d1SWpMRnVNUQ?oc=5\">https://www.thekeyword.co/</a></blockquote>\n<blockquote>🆕 <b>4. Штучний інтелект Meta Muse створює танці для Reels та Stories</b>\nMeta інтегрує можливості AI-агента Muse для генерації трендових рухів та анімацій безпосередньо в інструменти створення контенту Instagram.\n💡 Експериментуйте з новими AI-анімаціями для створення інтерактивних та привабливих Stories без залучення моделей.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOSFhVTURPV0dIYmNKV0c0VWctMjZ1U3RWRWNHQkotaWFZNkI4VUVhTUVyNEZQN2VPMWs5bXVMTTI0eXEwempHdFVWS1F4em1MRW1hdjY0eDROV2RBRnlaX3AzV0VLSXc5UDZVamdSVmtvVFZvaXBjU25nSzIyZW5ubEVHOXRRZ2ZYZkpDbmxvZ2VWbHpFdzFFWk8tYjBVeXNRcVp1TVFUMUpoa3psUVVqc1lsalY0bV9nNFhOcl9UYkhRdC1KU1Ew?oc=5\">Tom's Guide</a></blockquote>\n<blockquote>📊 <b>5. Глобальний запуск AI-детектора підлітків в Instagram</b>\nMeta розгортає по всьому світу систему на основі штучного інтелекту, яка виявляє підлітків, що вказують неправдивий вік у профілях.\n💡 Враховуйте зміни в охопленнях та поведінці аудиторії, якщо ваш продукт орієнтований на межові вікові категорії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMi3gFBVV95cUxQR09ITlVfa2NsZlV5S3NYRjJGekdnamRQbXgtN3hHNGVxdFFDbFRXRUE1d3VlV05tWjUwR2pTdEZ0MXhiTjYyQ3ZEWDUzZnM4SzllVXZjaFJXTWZZcHdQOWx1QVpBXzhHQ1RqSklraDJXek1LMjlVNjVtSGZOVjVvUEJnUG1oZGZoMUpIeTlkNjVwVXZGa1MyaXB2MHhudUFBTWtBRnZBMUtkSEVWXzduMUp2OTZaTy1iam1hWk5LWTg3WWJVbzJ4aVZYX3dZc0U3SXN2RThpN2dCNG1iR3fSAeYBQVVfeXFMTUU1YTFMYW84RzFFV1lYanFZWUpkY292LXNKMzkyZWttYmlVa3EzdElmQkt0aVdlOE1aSnpBVFlXYlZ4TGhoZi1pUmctVnBiRTJNMXR1eXJrSkJXSy1xNVNZVS1aWHlqcUlNa1otbHU1YVVkUjl4WGNhcTlRODFBWjRVY0RmbTIzZmpydlBRbklVUk1ScV82Q3l0U1V6d3o2UnV5SzlFYmFjRXd2eGItcVBjSGhjSXNxRkdBU3FuV0tQSEpVbk9mRWM5azg3NEs2dTAwVzB4NURXR1huaUIwUWlzekNIMEE?oc=5\">NDTV Profit</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202646\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Вимірювання конверсій на пристроях користувачів у Meta</b> · Jon Loomer\nMeta запровадила функцію «Measure conversions on customer devices» у Events Manager, яка переносить трекінг конверсій безпосередньо на пристрій користувача. Це дозволяє зв'язувати конверсії з переглядами чи кліками реклами через передані раніше дані (наприклад, email) та анонімні характеристики пристрою.\n💡 Увімкніть цю настройку в Events Manager, щоб отримувати повнішу картину атрибуції та точніше бачити результати рекламних кампаній.\n<a href=\"https://www.jonloomer.com/qvt/measure-conversions-on-customer-devices/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Створення та редагування відео за допомогою штучного інтелекту</b> · Social Media Examiner\nСтаття описує, як налаштувати процес редагування відео за допомогою сучасних AI-інструментів без навичок професійного монтажу. Розглядається генерація моушн-дизайну, підбір музики та автоматизація рутинних завдань.\n💡 Використовуйте AI-асистентів для швидкого створення відеоконтенту для соцмереж, делегуючи їм технічну частину монтажу.\n<a href=\"https://www.socialmediaexaminer.com/how-to-edit-videos-with-ai-no-editing-skills-required/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Частка голосу (Share of Voice) як випереджальний показник ефективності</b> · Hootsuite\nМатеріал розкриває поняття Share of Voice (SoV) як показника видимості бренду порівняно з конкурентами в соцмережах, пошуку та платній рекламі. Бренди, чий SoV перевищує їхню частку ринку, зазвичай демонструють органічне зростання.\n💡 Відстежуйте SoV через платформи соціального моніторингу як ключовий індикатор майбутнього зростання продажів, а не просто як іміджову метрику.\n<a href=\"https://blog.hootsuite.com/share-of-voice/\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Огляд найкращих AI-генераторів зображень для соцмереж</b> · Buffer\nАвтор протестував дев'ять генераторів зображень для створення графіки, товарних фото та стікерів. Виявилося, що генеративний AI найефективніше заповнює прогалину там, де звичайна фотографія не працює, наприклад, у створенні унікальних ілюстрацій.\n💡 Використовуйте спеціалізовані AI-інструменти (як-от Seedream чи Ideogram) для генерації якісного тексту на зображеннях та унікального візуалу для каруселей.\n<a href=\"https://buffer.com/resources/ai-image-generator/\">джерело</a></blockquote>\n<blockquote>💬 <b>5. Стратегії для маркетингових кампаній до Black Friday та Cyber Monday</b> · Buffer\nНа основі рекордних показників онлайн-продажів попередніх років автор пропонує перевірені тактики та ідеї для виділення серед конкурентів під час сезонного розпродажу. Стаття допомагає сформувати сильну пропозицію, коли знижки вже стали стандартною вимогою ринку.\n💡 Плануйте унікальні механіки взаємодії з аудиторією заздалегідь, оскільки стандартні знижки більше не гарантують високу конверсію в період перевантаженості рекламою.\n<a href=\"https://buffer.com/resources/black-friday-marketing/\">джерело</a></blockquote>\n<blockquote>💬 <b>6. П'ять ознак того, що ваші реклавні бюджети в Meta зливаються в трубу</b> · Medium · facebook-ads\nБазуючись на багаторічному досвіді управління бюджетами, автор виділяє головні системні помилки в рекламних акаунтах Meta. У статті наведено покроковий розбір того, як виявити ці проблеми лише за 10 хвилин щоденного аудиту.\n💡 Регулярно перевіряйте акаунт на наявність дублюючих аудиторій та виснаження креативів, щоб зупинити непотрібні витрати.\n<a href=\"https://medium.com/@kajay85977/5-signs-your-meta-ads-are-leaking-money-and-how-to-catch-them-in-10-minutes-a-day-735c8aa29302?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>7. Структурування рекламних кампаній Meta для генерації якісних лідів</b> · Medium · facebook-ads\nМатеріал наголошує, що просте «бусти» дописів не працює як стратегія. Описується правильна архітектура рекламних кампаній у Facebook та Instagram для залучення реальних потенційних клієнтів.\n💡 Розділяйте кампанії за воронкою продажів та використовуйте лід-форми з додатковим запитанням для фільтрації неякісних заявок.\n<a href=\"https://medium.com/@dahouayoub97/meta-ads-au-maroc-structurer-une-campagne-facebook-et-instagram-qui-g%C3%A9n%C3%A8re-de-vrais-prospects-354cfaafe958?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>8. Алгоритм відновлення заблокованого Meta Business Manager</b> · Medium · facebook-ads\nПрактичний посібник для маркетологів та агентств, які втратили доступ до бізнес-портфоліо у Meta. Автор пропонує чітку послідовність дій, яка допоможе відновити акаунт і не нашкодити ситуації додатковими помилковими запитами.\n💡 Дотримуйтесь офіційної процедури подачі апеляції через підтримку та підготуйте документи компанії заздалегідь, уникаючи частих повторних звернень, які можуть призвести до перманентного бану.\n<a href=\"https://shildercom.medium.com/meta-business-manager-disabled-a-recovery-order-that-doesnt-make-things-worse-014f3b8e5dbd?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>9. Реклама в Meta після оновлення Andromeda: що змінилося</b> · Medium · facebook-ads\nАналіз змін у рекламному алгоритмі Meta та їхній вплив на стратегію таргетологів. Розглядаються нові підходи до оптимізації бюджетів та роботи з аудиторіями після оновлень платформи.\n💡 Зменшуйте кількість детальних налаштувань таргетингу на користь широких аудиторій та дайте алгоритму більше простору для машинного навчання.\n<a href=\"https://medium.com/@ahaamedia2026/meta-ads-after-andromeda-what-changed-and-what-to-do-next-6433286256f8?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>10. Альтернативи інструментам конкурентної розвідки для e-commerce</b> · Medium · facebook-ads\nОгляд альтернативних сервісів для аналізу ринку та конкурентів у сфері електронної комерції з акцентом на реальну вартість та приховані платежі. Автор розбирає, кому підходять платні рішення, а де можна обійтися базовими безкоштовними методами.\n💡 Порівнюйте реальну ваню підписки з функціоналом, який вам дійсно необхідний щодня, щоб не переплачувати за зайві аналітичні дашборди.\n<a href=\"https://medium.com/@rob_searchnerd/winning-hunter-alternatives-in-2026-what-each-one-really-costs-and-who-its-for-b332b2a28c94?source=rss------facebook_ads-5\">джерело</a></blockquote>\n§RT:smm:202646p"
 }
