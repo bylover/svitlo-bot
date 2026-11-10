@@ -729,7 +729,7 @@
   "m786892",
   "m531428"
  ],
- "gh_beat": "2026-11-10T10:35:46.930230+02:00",
+ "gh_beat": "2026-11-10T10:40:47.140245+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -750,17 +750,17 @@
   "planned": true
  },
  "emerg": {
-  "on": false,
-  "since": "2026-11-10T10:35:47.146684+02:00",
+  "on": true,
+  "since": "2026-11-10T10:40:47.226167+02:00",
   "src": "yasno"
  },
  "emerg_src": {
-  "YASNO": false,
+  "YASNO": true,
   "сайт ДТЕК": false,
-  "канал ЖК «Яскравий»": false
+  "канал ЖК «Яскравий»": true
  },
  "fact": {
-  "last": 2849,
+  "last": 2850,
   "events": [
    [
     "2026-11-08T13:53:44+02:00",
@@ -1668,14 +1668,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "10.11 10:33",
-   "ts": 1794299615,
+   "at": "10.11 10:42",
+   "ts": 1794300170,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "10.11 10:33",
-   "ts": 1794299615,
+   "at": "10.11 10:42",
+   "ts": 1794300170,
    "ok": true,
    "note": ""
   },
@@ -13172,7 +13172,8 @@
  },
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
  "gem_block": {
-  "gemini-flash-latest": "2026-11-11T10:05:00+02:00"
+  "gemini-flash-latest": "2026-11-11T10:05:00+02:00",
+  "gemini-3.8-flash": "2026-11-11T10:05:00+02:00"
  },
  "omdb_cache": {
   "tt5362988": [
@@ -30031,7 +30032,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "b08d11f287ce",
+  "gs": "0db38695e0cd",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "488b794a8e06",
   "sexed.json": "0362ec7e46d4",
@@ -46841,12 +46842,8 @@
  "silpo_snap": "2026-11-04",
  "live_day": "2026-11-10",
  "silpo_week": "2026-45",
- "sbm_at": 1794299752.169534,
+ "sbm_at": 1794300051.8944428,
  "sbm_hist": [
-  [
-   "22:35",
-   64
-  ],
   [
    "22:40",
    65
@@ -47417,6 +47414,10 @@
   ],
   [
    "10:35",
+   32
+  ],
+  [
+   "10:40",
    32
   ]
  ],
