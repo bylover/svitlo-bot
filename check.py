@@ -1673,6 +1673,53 @@ def gnews(q: str, lang: str) -> list[dict]:
              "source": (it.findtext("source") or "").strip()} for it in root.iter("item")]
 
 
+# ---------- 📈 SMM-інструменти: тренди сітки, ШІ для SMM, бенчмарки реклами, зміни Meta — свіжі статі з перевірених джерел (з датою й посиланням) ----------
+SMM_TRUST = re.compile(r"later|buffer|hootsuite|sprout|social media today|meta|facebook|instagram|hubspot|semrush|marketing dive|adweek|search engine journal|"
+                       r"wordstream|adespresso|socialinsider|rival ?iq|dataportal|techcrunch|the verge|ain\.ua|dou|mezha|marketer\.ua|vctr", re.I)
+SMM_SECT = {"grid": ["Instagram feed grid aesthetic trends", "Instagram profile grid design tips", "Instagram content trends"],
+            "ai": ["best AI tools for social media marketing", "AI tools for Instagram content creators", "generative AI ads creative tools"],
+            "bench": ["Meta ads benchmarks CPM CPC CTR", "Facebook ads cost benchmarks", "Instagram ads benchmarks"],
+            "meta": ["Meta Ads Manager update new feature", "Instagram algorithm update", "Meta Advantage+ update"]}
+
+
+def _gnews_days(q: str, lang: str, days: int) -> list:
+    import xml.etree.ElementTree as ET
+    loc = {"uk": ("uk", "UA", "UA:uk"), "en": ("en-US", "US", "US:en")}[lang]
+    url = "https://news.google.com/rss/search?" + urllib.parse.urlencode({"q": f"{q} when:{days}d", "hl": loc[0], "gl": loc[1], "ceid": loc[2]})
+    try:
+        root = ET.fromstring(http_text(url))
+    except Exception:
+        return []
+    out = []
+    for it in root.iter("item"):
+        out.append({"t": (it.findtext("title") or "").strip()[:140], "l": it.findtext("link") or "", "s": (it.findtext("source") or "").strip()[:40],
+                    "d": (it.findtext("pubDate") or "")[5:16]})
+    return out
+
+
+def smm_tools(st: dict, now: datetime) -> None:
+    if not WORKER_MODE or (st.get("smmt_week") == f"{now:%G%V}" and not st.get("smmt_force")):
+        return
+    st["smmt_force"] = False
+    out = {"at": now.strftime("%d.%m.%Y")}
+    for k, qs in SMM_SECT.items():
+        seen, items = set(), []
+        for q in qs:
+            for lang in ("en", "uk"):
+                for x in _gnews_days(q, lang, 30 if k != "meta" else 14):
+                    key = x["t"].lower()[:60]
+                    if key in seen or not SMM_TRUST.search(x["s"] + " " + x["t"]):
+                        continue                          # лише перевірені джерела
+                    seen.add(key); items.append(x)
+        out[k] = items[:10]
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=smm_tools.json", out)
+        st["smmt_week"] = f"{now:%G%V}"
+        print("SMM-інструменти: " + ", ".join(f"{k} {len(out[k])}" for k in SMM_SECT))
+    except Exception as e:
+        print(f"SMM-інструменти → бот: {err_text(e)[:60]}")
+
+
 def ai_pick_index(titles: list[str], x: dict) -> int | None:
     """Звіряємо, що опис ШІ належить саме цьому матеріалу: за оригінальним заголовком (src_title), а не лише за номером."""
     import difflib
@@ -1706,7 +1753,7 @@ def build_smm(st: dict, now: datetime) -> str | None:
                 items.append({"title": it["title"], "link": it["link"], "source": src, "date": it.get("date", "")})
     print(f"SMM: працюють {sorted(set(ok))}, новин {len(items)}")
     for q, lang in SMM_QUERIES:                       # далі — Google News як доповнення
-        for it in gnews(q, lang)[:8]:
+        for it in gnews(q, lang)[:12]:
             key = it["title"].lower()[:60]
             if it["link"] and it["title"] and it["link"] not in seen and key not in titles:
                 titles.add(key)
@@ -1718,7 +1765,7 @@ def build_smm(st: dict, now: datetime) -> str | None:
     head = f"📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · {label}\n"
     listing = "\n".join(f"{n}. [{it.get('date') or '—'}] {it['title']} — {it['source']}" for n, it in enumerate(items))
     raw = gemini("Ти — редактор щотижневого дайджесту для SMM-спеціалістів і таргетологів. Ось новини за тиждень "
-                 "(номер. [дата] заголовок — джерело). Обери 8–10 найважливіших і найсвіжіших для практиків: нові функції "
+                 "(номер. [дата] заголовок — джерело). Обери рівно 10 найважливіших і найсвіжіших для практиків: нові функції "
                  "соцмереж, зміни в рекламних кабінетах і таргетингу, алгоритми й охоплення, тести й чутки. Найвищий "
                  "пріоритет — темам, про які пишуть кілька джерел одразу (це головні новини тижня), і офіційним "
                  "анонсам Meta та Google. Для кожної теми обери одну найкращу новину; без повторів і без загальних "
@@ -1750,7 +1797,7 @@ def build_smm(st: dict, now: datetime) -> str | None:
             print("SMM: Gemini недоступний — дайджест відкладено, повторю пізніше (до 20 год)")
             return None
         print("SMM: Gemini недоступний понад 20 год — надсилаю заголовки без обробки")
-        for n_, it in enumerate(items[:8], 1):
+        for n_, it in enumerate(items[:10], 1):
             blocks.append(f'<blockquote>🆕 <b>{n_}.</b> <a href="{html.escape(it["link"])}">{esc(it["title"])}</a></blockquote>')
             st.setdefault("smm_links", []).append(it["link"])
     st.pop("smm_fail_since", None)
@@ -1873,7 +1920,7 @@ def build_smm_practice(st: dict, now: datetime | None = None) -> str | None:
                       if ch.get("data", {}).get("is_self") and not ch["data"].get("stickied")
                       and ch["data"].get("id") not in seen and (ch["data"].get("num_comments") or 0) >= 10]
         posts.sort(key=lambda d: (d.get("score") or 0) + 3 * (d.get("num_comments") or 0), reverse=True)
-        for d in posts[:3]:
+        for d in posts[:5]:
             try:
                 tree = reddit_api(f"https://oauth.reddit.com/r/{d['subreddit']}/comments/{d['id']}?sort=top&limit=10&depth=1&raw_json=1", tok)
                 best = [c["data"].get("body", "")[:800] for c in tree[1]["data"]["children"]
@@ -1886,12 +1933,12 @@ def build_smm_practice(st: dict, now: datetime | None = None) -> str | None:
                           "text": (d.get("selftext") or "")[:1200] + "\nКоментарі: " + " | ".join(best),
                           "meta": f"👍 {num(d.get('score') or 0)} · 💬 {num(d.get('num_comments') or 0)} · "})
     collect_pool(st, "smm_pool", SMM_FEEDS, None, now)
-    cands += [dict(a, meta="") for a in st.get("smm_pool", [])[:12]]
+    cands += [dict(a, meta="") for a in st.get("smm_pool", [])[:24]]
     if not cands:
         return None
     src = [{"n": i, "source": c["src"], "title": c["title"], "text": c["text"][:1200]} for i, c in enumerate(cands)]
     raw = gemini("Ти — редактор дайджесту для SMM-спеціалістів і таргетологів. Ось свіжі матеріали тижня від практиків "
-                 "(обговорення Reddit, блоги, Medium). Обери 4 з найкориснішими практичними фішками (налаштування "
+                 "(обговорення Reddit, блоги, Medium). Обери 10 з найкориснішими практичними фішками (налаштування "
                  "реклами, креативи, охоплення, алгоритми, кейси з цифрами); без загальних порад і без повторів. Для "
                  "кожної поверни об'єкт: n, src_title (оригінальний заголовок матеріалу дослівно — для звірки), title (короткий заголовок українською), summary (2–3 речення: про що), "
                  "tip (1–2 речення: головна практична фішка). Перекладай природно, без кальок. Відповідь — лише JSON-масив.\n\n"
@@ -1907,7 +1954,7 @@ def build_smm_practice(st: dict, now: datetime | None = None) -> str | None:
     except Exception:
         return None
     blocks = []
-    for k, x in enumerate(items[:4], 1):
+    for k, x in enumerate(items[:10], 1):
         c = cands[int(x["n"])]
         blocks.append("<blockquote>" + f"💬 <b>{k}. {esc(x.get('title'))}</b> · {esc(c['src'])}\n"
                       f"{esc(x.get('summary'))}\n💡 {esc(x.get('tip'))}\n"
@@ -6213,6 +6260,14 @@ def dur_text(sec: int) -> str:
 
 YT_POLIT = re.compile(r"політи|зеленськ|путін|вибор|депутат|верховн\w* рад|мобілізац|тцк|фронт|окупант|війн[аиі]|зсу\b|новин|ефір|наживо|\blive\b|стрім|"
                       r"гордон|портников|соколова|бутусов|гончаренко|арестович|умєров|єрмак|трамп|байден|переговор|мирн\w* план|санкці", re.I)
+YT_GAMES = re.compile(r"minecraft|майнкрафт|roblox|роблокс|fortnite|фортнайт|brawl ?stars|бравл|\bgta\b|\bгта\b|\bcs ?2\b|кс ?2|counter.?strike|\bdota|\bдота|valorant|pubg|standoff|"
+                      r"летсплей|let'?s ?play|проходжен|геймплей|gameplay|\bстрім|\bstream|ігров[аиі]|геймер|gamer|\bmods?\b|скіни|speedrun", re.I)
+YT_LIKE = [(re.compile(r"стендап|стенд-ап|stand.?up|гумор|прикол|скетч|пародія|comedy|смішн", re.I), 1.2, "😂"),
+           (re.compile(r"наук|дослідж|експеримент|космос|фізик|біолог|хімі|історі[яї]|мозок|психолог|science", re.I), 1.2, "🔬"),
+           (re.compile(r"тру.?крайм|true crime|розслідув|маніяк|злочин|детектив|вбивств|загадк", re.I), 1.1, "🔪"),
+           (re.compile(r"секс|інтим|стосунк|сексолог|оргазм|лібідо|пристраст", re.I), 1.3, "💞"),
+           (re.compile(r"кліп|official (music )?video|прем.?єра пісні|трейлер|фільм|серіал|кіно", re.I), 0.8, "🎬")]
+YT_TECH = re.compile(r"огляд|iphone|samsung|pixel|гаджет|смартфон|ноутбук|unboxing|розпаков|техніка", re.I)
 YT_SPORT = re.compile(r"футбол|матч|упл\b|ліга чемпіонів|ліга європи|динамо|шахтар|збірна україни|бокс|усик|ломаченко|ufc|mma|баскетбол|хокей|теніс|формула.?1|голи|highlights|огляд матчу|спорт", re.I)
 YT_THEMES = {"🔪 Тру-крайм": ["тру крайм українською", "true crime історії", "тру крайм истории"], "😂 Гумор": ["стендап українською", "гумор скетчі україна"],
              "🎉 Розваги": ["розважальне шоу україна", "челендж україна"], "💞 Секс-просвіта": ["секс освіта сексолог", "сексолог советы"],
@@ -6278,7 +6333,7 @@ KC_COLS = {"70": ("🎞 Найкращі 70-х", {"primary_release_date.gte": "1
            "ua": ("🇺🇦 Сильне українське кіно", {"with_origin_country": "UA", "vote_count.gte": 30}),
            "pair": ("💑 Культові для вечора вдвох", {"with_genres": "10749,35", "vote_count.gte": 2000}),
            "gems": ("💎 Недооцінені перлини", {"vote_count.gte": 200, "vote_count.lte": 1500, "vote_average.gte": 7.5})}
-KC_PROV = r"netflix|megogo|sweet\.?tv|kyivstar"
+KC_PROV = r"netflix|megogo|sweet\.?tv|kyivstar|prime video|amazon prime|apple tv|takflix|youtube premium|google play"
 
 
 def _kc_item(m: dict, kind: str = "movie") -> dict:
@@ -6325,14 +6380,14 @@ def kino_cats(st: dict, now: datetime) -> None:
             pid, name = str(p["provider_id"]), p["provider_name"]
             cur = []
             for kind in ("movie", "tv"):
-                for pg in (1, 2, 3):
+                for pg in (1, 2, 3, 4, 5):
                     try:
                         cur += [_kc_item(m, kind) for m in tmdb(f"/discover/{kind}", language="uk-UA", watch_region="UA", with_watch_providers=pid, sort_by="popularity.desc", page=pg).get("results", [])]
                     except Exception:
                         break
             snap[pid] = [f'{x["k"]}{x["id"]}' for x in cur]
             new_ = [x for x in cur if f'{x["k"]}{x["id"]}' not in set(prev.get(pid) or []) and (x["r"] >= 6.5 or x["v"] >= 300)] if prev.get(pid) else []
-            out["new"][name] = new_[:12]
+            out["new"][name] = new_[:20]
         st["kc_snap"] = snap
     except Exception as e:
         print(f"Новинки на сервісах: {err_text(e)[:60]}")
@@ -6597,6 +6652,11 @@ def build_youtube(st: dict, now: datetime) -> str | None:
         token = r.get("nextPageToken")
         if not token:
             break
+    for cat_ in ("23", "24", "28", "27", "10", "1", "22"):  # + тренди за цікавими категоріями: гумор, розваги, наука й техніка, освіта, музика, кіно, блоги
+        try:
+            vids += api("videos", part="snippet,statistics,contentDetails,status", chart="mostPopular", regionCode="UA", videoCategoryId=cat_, maxResults=50).get("items", [])
+        except Exception:
+            pass
     ids: list[str] = []
     for q in ("що|як|чому|це|коли", "україна|українською|київ|наші"):
         try:
@@ -6634,6 +6694,8 @@ def build_youtube(st: dict, now: datetime) -> str | None:
         secs_ = (int(dur_.group(1) or 0) * 3600 + int(dur_.group(2) or 0) * 60 + int(dur_.group(3) or 0)) if dur_ else 0
         if sn.get("categoryId") == "17" or YT_SPORT.search(txt + " " + sn.get("channelTitle", "")) or (secs_ and secs_ <= 180) or re.search(r"#shorts?\b|#reels?\b|\bshorts\b", txt, re.I):
             continue                                   # спорт, Shorts і Reels (до 3 хв) — ні
+        if sn.get("categoryId") == "20" or YT_GAMES.search(txt + " " + sn.get("channelTitle", "") + " " + " ".join(sn.get("tags") or [])):
+            continue                                   # ігри (Minecraft, Roblox, летсплеї, стріми) — ні
         if not (lang.startswith("uk") or UA_LETTERS.search(txt)):
             continue                                   # лише українська мова
         ids_ok.add(v.get("id"))
@@ -6641,8 +6703,23 @@ def build_youtube(st: dict, now: datetime) -> str | None:
     print(f"YouTube: усього {len(vids)}, українських за тиждень {len(good)}")
     # популярність: перегляди + коментарі (1 коментар ≈ 100 переглядів — він показує залученість глядачів)
     fav = set(st.get("yt_fav") or [])
-    good.sort(key=lambda v: (int(v["statistics"].get("viewCount", 0)) + 100 * int(v["statistics"].get("commentCount", 0) or 0))
-              * (3 if v["snippet"].get("channelId") in fav else 1), reverse=True)   # ⭐ улюблені канали — вище
+    vv_ = sorted(int(v["statistics"].get("viewCount", 0)) for v in good) or [0]
+    p70 = vv_[int(len(vv_) * 0.7)] if vv_ else 0      # «вистрілило» — у верхніх 30% за переглядами
+
+    def interest(v):                                  # 🎯 індекс цікавості: охоплення + залученість + швидкість + ваші теми
+        stt_, sn_ = v["statistics"], v["snippet"]
+        views_, likes_, com_ = int(stt_.get("viewCount", 0)), int(stt_.get("likeCount", 0) or 0), int(stt_.get("commentCount", 0) or 0)
+        try:
+            hrs = max(1.0, (now - datetime.fromisoformat(sn_["publishedAt"].replace("Z", "+00:00"))).total_seconds() / 3600)
+        except Exception:
+            hrs = 72.0
+        txt_ = sn_.get("title", "") + " " + (sn_.get("description") or "")[:300] + " " + " ".join(sn_.get("tags") or [])
+        sc = math.log10(views_ + 1) + 40 * min((likes_ + 3 * com_) / max(1, views_), 0.12) + 0.5 * math.log10(views_ / hrs + 1)
+        sc += max([w for rx, w, _ in YT_LIKE if rx.search(txt_)] or [0])          # гумор, наука, тру-крайм, секс-освіта, кіно й кліпи
+        if YT_TECH.search(txt_):
+            sc += 0.6 if views_ >= p70 else -1.5       # техніка — лише якщо справді «вистрілило», інакше нижче
+        return sc * (1.3 if sn_.get("channelId") in fav else 1)   # ⭐ улюблені канали — вище
+    good.sort(key=interest, reverse=True)
     top, per_channel = [], {}
     for v in good:
         ch = v["snippet"].get("channelId")
@@ -7775,7 +7852,7 @@ def main() -> None:
              ("здоров'я", lambda: (health_refresh(st, now), kb_probe(st, now), cofid_import(st, now), cofid_translate(st, now))),
              ("ігри PS5", lambda: (games_refresh(st, now), ps_deals_refresh(st, now))), ("аудіокниги", lambda: audiobooks_refresh(st, now)),
              ("кіномэтч", lambda: match_refresh(st, now)), ("пп-страви", lambda: recipes_refresh(st, now)), ("фантазія тижня", lambda: fantasy_refresh(st, now)), ("prom.ua", lambda: prom_top(st, now)), ("youtube канали", lambda: yt_channels(st, now)), ("живий english", lambda: en_live_fill(st, now)),
-             ("кіно-категорії", lambda: kino_cats(st, now)), ("youtube для вас", lambda: yt_foryou(st, now)), ("режисери", lambda: directors_build(st, now))]
+             ("кіно-категорії", lambda: kino_cats(st, now)), ("youtube для вас", lambda: yt_foryou(st, now)), ("режисери", lambda: directors_build(st, now)), ("smm-інструменти", lambda: smm_tools(st, now))]
     slot = (now.hour * 12 + now.minute // 5) % len(heavy)
     rc_turn = st.get("rc_need", True) and (now.minute // 5) % 2 == 0   # через запуск, щоб інші задачі не чекали
     forced = (st.get("force_heavy") or []) + (["пп-страви"] if rc_turn and "пп-страви" not in (st.get("force_heavy") or []) else [])
@@ -7845,6 +7922,7 @@ def main() -> None:
         st["live_day"] = ""                           # 🗣 Живий English — ще порція фраз
         st["kc_week"], st["kc_force"], st["ytf_force"] = "", True, True   # 🍿 кіно-категорії й 🎯 YouTube «Для вас» — заново
         st["dir_force"], st["dir_force_my"] = True, True   # 🎬 режисери — заново
+        st["smmt_force"] = True                       # 📈 SMM-інструменти — заново
         st["prom_force"] = st["rz_force"] = True
         st["match_month"] = ""; st["ps_day"] = ""                # 🍿💞 пул Кіномэтчу й 🔥 знижки PS — теж свіжі
         st["games_force"] = st["ab_force"] = st["rc_force"] = True     # 🥗 ПП-страви — позапланове поповнення
