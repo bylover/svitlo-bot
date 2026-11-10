@@ -4,7 +4,7 @@
  "fp": {
   "2026-11-09": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 120, \"start\": 0, \"type\": \"Definite\"}, {\"end\": 780, \"start\": 360, \"type\": \"Definite\"}, {\"end\": 1380, \"start\": 960, \"type\": \"Definite\"}]}",
   "2026-11-10": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 660, \"start\": 210, \"type\": \"Definite\"}, {\"end\": 1230, \"start\": 750, \"type\": \"Definite\"}, {\"end\": 1440, \"start\": 1350, \"type\": \"Definite\"}]}",
-  "2026-11-11": "{\"s\": \"WaitingForSchedule\", \"slots\": []}"
+  "2026-11-11": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 210, \"start\": 0, \"type\": \"Definite\"}, {\"end\": 840, \"start\": 480, \"type\": \"Definite\"}, {\"end\": 1380, \"start\": 960, \"type\": \"Definite\"}]}"
  },
  "reminded": [],
  "taste": {
@@ -729,7 +729,7 @@
   "t69158",
   "t1409"
  ],
- "gh_beat": "2026-11-10T22:05:45.194981+02:00",
+ "gh_beat": "2026-11-10T22:10:46.986187+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -825,7 +825,6 @@
   "396425365": "2026-11-10"
  },
  "log": [
-  "29.10 20:30 Завтра 2026-10-30 ScheduleApplies: 06:00–09:30, 14:00–17:30, 22:30–24:00",
   "29.10 23:43 Завтра 2026-10-30 WaitingForSchedule: без відключень",
   "30.10 00:00 Завтра 2026-10-31 WaitingForSchedule: без відключень",
   "30.10 00:50 Сьогодні 2026-10-30 ScheduleApplies: 06:00–09:30, 14:00–17:30, 22:30–24:00",
@@ -864,7 +863,8 @@
   "09.11 00:00 Завтра 2026-11-10 WaitingForSchedule: без відключень",
   "09.11 21:20 Завтра 2026-11-10 ScheduleApplies: 03:30–11:00, 13:00–20:30, 22:30–24:00",
   "10.11 00:00 Завтра 2026-11-11 WaitingForSchedule: без відключень",
-  "10.11 10:35 Сьогодні 2026-11-10 ScheduleApplies: 03:30–11:00, 12:30–20:30, 22:30–24:00"
+  "10.11 10:35 Сьогодні 2026-11-10 ScheduleApplies: 03:30–11:00, 12:30–20:30, 22:30–24:00",
+  "10.11 22:10 Завтра 2026-11-11 ScheduleApplies: 00:00–03:30, 08:00–14:00, 16:00–23:00"
  ],
  "week_fp": "{\"1\": [], \"2\": [], \"3\": [], \"4\": [], \"5\": [], \"6\": [], \"7\": []}",
  "we_sent": {
@@ -1675,14 +1675,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "10.11 22:02",
-   "ts": 1794340942,
+   "at": "10.11 22:11",
+   "ts": 1794341511,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "10.11 22:02",
-   "ts": 1794340942,
+   "at": "10.11 22:11",
+   "ts": 1794341511,
    "ok": true,
    "note": ""
   },
@@ -1705,8 +1705,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "10.11 22:03",
-   "ts": 1794340985,
+   "at": "10.11 22:15",
+   "ts": 1794341742,
    "ok": true,
    "note": ""
   },
@@ -30345,7 +30345,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "c2fba27c7174",
+  "gs": "fb4cebc0cfe5",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "89b4877c5302",
   "sexed.json": "0362ec7e46d4",
@@ -40265,6 +40265,326 @@
    ],
    "ov": "П'ятеро друзів дитинства, що знову зібрались через 20 років, аби нарешті подолати епічний шлях пивного паломництва, випадково стають останньою надією на порятунок для усього людства.",
    "poster": "https://image.tmdb.org/t/p/w500/gRk2QgYHHoFtb1MCbtHkdw7YAj9.jpg"
+  },
+  "m912520": {
+   "title": "Кохання без заморочок",
+   "year": "2023",
+   "rating": 6.8,
+   "genres": [
+    "Мелодрама",
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    10749,
+    35,
+    18
+   ],
+   "ov": "Софія — професорка філософії з інтелігентної родини. Разом із чоловіком вони відвідують культурні заходи, а на званих вечерях ведуть інтелектуальні бесіди. Однак сплять вони в різних ліжках, а метелики в животі давно скі",
+   "poster": "https://image.tmdb.org/t/p/w500/i66DGzP6qp5pKy5O4RJjX6NO4WK.jpg"
+  },
+  "m440298": {
+   "title": "Холодна війна",
+   "year": "2018",
+   "rating": 7.5,
+   "genres": [
+    "Мелодрама",
+    "Музика",
+    "Драма"
+   ],
+   "g": [
+    10749,
+    10402,
+    18
+   ],
+   "ov": "Повоєнні роки. Співачка Зула та композитор Віктор закохуються одне в одного. На перший погляд може здатися, що вони стануть ідеальною парою. Але реалії часу вимагають від них зовсім іншого. Спливають роки. У них дуже різ",
+   "poster": "https://image.tmdb.org/t/p/w500/hE53r8IHW2dXC4d35jabu9Mc1SG.jpg"
+  },
+  "m570503": {
+   "title": "유열의 음악앨범",
+   "year": "2019",
+   "rating": 7.2,
+   "genres": [
+    "Мелодрама",
+    "Драма"
+   ],
+   "g": [
+    10749,
+    18
+   ],
+   "ov": "During the 1990s, hardworking Mi-soo and optimistic Hyun-woo meet at a bakery and fall in love while exchanging stories on a radio station, but while their paths keep crossing, the timing never seems to work out.",
+   "poster": "https://image.tmdb.org/t/p/w500/rt8yDvXSnk9CMDJeNYh9lv6kPMt.jpg"
+  },
+  "m451480": {
+   "title": "Таємний клуб Гернсі любителів книг і пирогів з картопляного лушпиння",
+   "year": "2018",
+   "rating": 7.3,
+   "genres": [
+    "Мелодрама",
+    "Драма",
+    "Історичний"
+   ],
+   "g": [
+    10749,
+    18,
+    36
+   ],
+   "ov": "Лондон у 1946 році тільки відновлювався після жахливих наслідків Другої світової війни. Джулієт ось уже який час робить усе можливе, щоб знайти натхнення для своєї нової книги. Багато тем їй здаються абсолютно невідповід",
+   "poster": "https://image.tmdb.org/t/p/w500/pdJV6HLfCY0kw5Ka2UMRwg65PgZ.jpg"
+  },
+  "m795811": {
+   "title": "偶然と想像",
+   "year": "2021",
+   "rating": 7.5,
+   "genres": [
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    10749
+   ],
+   "ov": "An unexpected love triangle, a seduction trap, and a random encounter are the three episodes, told in three movements to depict three female characters and trace the trajectories between their choices and regrets.",
+   "poster": "https://image.tmdb.org/t/p/w500/j1BDCUyliBFztah5f6GBKPupqpi.jpg"
+  },
+  "m428449": {
+   "title": "Історія примари",
+   "year": "2017",
+   "rating": 6.8,
+   "genres": [
+    "Драма",
+    "Фентезі",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    14,
+    10749
+   ],
+   "ov": "Історія про передчасно померлого чоловіка, який не пішов у світ інших, а залишився прив'язаний до свого колишнього дому до кінця віків.",
+   "poster": "https://image.tmdb.org/t/p/w500/ighJTHM0Z2SxJee9cVzYHY2bbRP.jpg"
+  },
+  "m814340": {
+   "title": "Крок у доросле життя",
+   "year": "2022",
+   "rating": 7.3,
+   "genres": [
+    "Комедія",
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    35,
+    18,
+    10749
+   ],
+   "ov": "Ендрю 22 роки, він щойно закінчив коледж і тепер застряг удома в Нью-Джерсі, не уявляючи, куди рухатися далі. Хлопець починає працювати аніматором на бар- і батміцвах, де в нього зав’язується незвичайна дружба з молодою ",
+   "poster": "https://image.tmdb.org/t/p/w500/blsnjuvQlEtNZpi9oGfTtBMcYq0.jpg"
+  },
+  "m583903": {
+   "title": "Друзі назавжди",
+   "year": "2019",
+   "rating": 7.3,
+   "genres": [
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    10749
+   ],
+   "ov": "Історія про Метта, його дружину Ніколь та їхніх двох донечок. Життя родини кардинально змінює невиліковна хвороба Ніколь. Тепер, коли Меттові стає дедалі важче бути одночасно і опікуном, і батьком, найкращий друг пари, Д",
+   "poster": "https://image.tmdb.org/t/p/w500/cj1hZ4N7G5OWjRNUgY4NzDzgbW1.jpg"
+  },
+  "m359784": {
+   "title": "Моді",
+   "year": "2016",
+   "rating": 7.6,
+   "genres": [
+    "Драма",
+    "Мелодрама",
+    "Історичний"
+   ],
+   "g": [
+    18,
+    10749,
+    36
+   ],
+   "ov": "Правдива історія неймовірного роману між скупим риботорговцем Евереттом і його економкою Моді, чиї руки скалічила хвороба. Холостяк-самітник, підкорений її силою і світлом, допомагає Моді розкритися в творчості і стати в",
+   "poster": "https://image.tmdb.org/t/p/w500/lMEk8lo2tMtMhvMAaxFrv35kkdP.jpg"
+  },
+  "m423612": {
+   "title": "Робота без авторства",
+   "year": "2018",
+   "rating": 7.7,
+   "genres": [
+    "Драма",
+    "Мелодрама",
+    "Історичний"
+   ],
+   "g": [
+    18,
+    10749,
+    36
+   ],
+   "ov": "Історія молодого студента-митця Курта, який закохується в однокурсницю Еллі. Її батько — відомий лікар професор Зеебанд прикро вражений вибором доньки і заприсягається покласти край їхнім стосункам. Вони й гадки не мають",
+   "poster": "https://image.tmdb.org/t/p/w500/j1qtaVwKB5Jzr5Vb5QXB6UuIcUc.jpg"
+  },
+  "m353577": {
+   "title": "Кохання з першого погляду",
+   "year": "2023",
+   "rating": 6.8,
+   "genres": [
+    "Мелодрама",
+    "Драма"
+   ],
+   "g": [
+    10749,
+    18
+   ],
+   "ov": "Двоє незнайомців зустрічаються в літаку до Лондона, але за іронією долі розлучаються. Возз’єднання здається неможливим, але кохання може подолати будь-які труднощі.",
+   "poster": "https://image.tmdb.org/t/p/w500/4iIZ6bngoqbHX0gjyvfPF5vpBnW.jpg"
+  },
+  "m467909": {
+   "title": "На висотах Нью-Йорка",
+   "year": "2021",
+   "rating": 7.2,
+   "genres": [
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    10749
+   ],
+   "ov": "Запах гарячої кави витає в повітрі біля станції метро «181-а вулиця», а калейдоскоп бажань єднає там гучних і дружніх жителів цього району Нью-Йорка. У цей вихор потрапляє і Уснаві, харизматичний власник невеликого магаз",
+   "poster": "https://image.tmdb.org/t/p/w500/6ikgyU0EYvJKguo64U7eBczth1C.jpg"
+  },
+  "m420622": {
+   "title": "Професор Марстон і Диво-жінки",
+   "year": "2017",
+   "rating": 7.0,
+   "genres": [
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    10749
+   ],
+   "ov": "Гарвардський учений-психолог Вільям Марстон залишив слід в історії як винахідник детектора брехні та піонер теорії фемінізму. Творець коміксів Макс Гейнс запропонував Марстону, який високо ставив роль коміксів у поп-куль",
+   "poster": "https://image.tmdb.org/t/p/w500/g3d6Dvmq4EcBJSTFVG0xdyy0Zda.jpg"
+  },
+  "m653664": {
+   "title": "Dinner in America",
+   "year": "2022",
+   "rating": 7.5,
+   "genres": [
+    "Мелодрама",
+    "Комедія"
+   ],
+   "g": [
+    10749,
+    35
+   ],
+   "ov": "An on-the-lam punk rocker and a young woman obsessed with a local band go on an unexpected and epic journey together through the decaying suburbs of the American Midwest.",
+   "poster": "https://image.tmdb.org/t/p/w500/t63UhnHaWQGcuE3pViuW3LSjBJj.jpg"
+  },
+  "m1371185": {
+   "title": "Пісня любові",
+   "year": "2025",
+   "rating": 7.3,
+   "genres": [
+    "Музика",
+    "Мелодрама",
+    "Драма"
+   ],
+   "g": [
+    10402,
+    10749,
+    18
+   ],
+   "ov": "Історія про двох музикантів, які зустрілися на життєвому роздоріжжі й вирішили створити триб’ют-бенд Ніла Даймонда. Те, що починалося як відчайдушна спроба повернути собі мрію, перетворюється на подорож, сповнену музики,",
+   "poster": "https://image.tmdb.org/t/p/w500/cr5eVA4ypxJoGaDKMSJ8maHWtlU.jpg"
+  },
+  "m719410": {
+   "title": "刻在你心底的名字",
+   "year": "2020",
+   "rating": 7.3,
+   "genres": [
+    "Мелодрама",
+    "Драма"
+   ],
+   "g": [
+    10749,
+    18
+   ],
+   "ov": "In 1987, as martial law ends in Taiwan, Jia-han and Birdy fall in love amid family pressure, homophobia and social stigma.",
+   "poster": "https://image.tmdb.org/t/p/w500/4e2y3goudTUZG4MhDpd30gUqksS.jpg"
+  },
+  "m986280": {
+   "title": "Опале листя",
+   "year": "2023",
+   "rating": 7.2,
+   "genres": [
+    "Мелодрама",
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    10749,
+    18,
+    35
+   ],
+   "ov": "Анса живе на околиці Гельсінкі і працює у супермаркеті. Дівчина відповідає за прострочені продукти, які негайно повинні опинятися у сміттєвому баку. Але по доброті Анса підгодовує голодуючих, а одного разу навіть бере пр",
+   "poster": "https://image.tmdb.org/t/p/w500/zk2H8NZJcLzXZkKj6T8BLE6mMKX.jpg"
+  },
+  "m5723": {
+   "title": "Одного разу",
+   "year": "2007",
+   "rating": 7.8,
+   "genres": [
+    "Драма",
+    "Музика",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    10402,
+    10749
+   ],
+   "ov": "Історія, що надихає, про дві споріднені душі, яким вдалося віднайти один одного посеред вулиць Дубліна. Він – вуличний музикант, якому для виконання власних пісень бракує впевненості у собі. Вона – молода мати, яка намаг",
+   "poster": "https://image.tmdb.org/t/p/w500/3JII87p1QUvrQtXaPv3s6uQNlbU.jpg"
+  },
+  "m1440": {
+   "title": "Як малі діти",
+   "year": "2006",
+   "rating": 7.5,
+   "genres": [
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    10749
+   ],
+   "ov": "Історії декількох сімей невеликого провінційного містечка, чиї життєві шляхи переплітаються на міських спортивних майданчиках, в басейнах і на звичайних вулицях найдивнішим і часом небезпечним чином.",
+   "poster": "https://image.tmdb.org/t/p/w500/aH6FjnvznS0UUEyXfnG0dVH2YUe.jpg"
+  },
+  "m363": {
+   "title": "Головою до стіни",
+   "year": "2004",
+   "rating": 7.9,
+   "genres": [
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    10749
+   ],
+   "ov": "Джагіт, турок, що живе в Німеччині, потроху скочується в прірву. Врешті він не знаходить кращого виходу, як на повній швидкості врізатися в стіну. Однак він вижив. У психіатричній лікарні він зустрічає ще одну самогубцю ",
+   "poster": "https://image.tmdb.org/t/p/w500/dL19PAoAoU3BRKPqmsG5v9bt4HR.jpg"
   }
  },
  "cofid_pushed": "10.11.2026",
@@ -40347,12 +40667,8 @@
  "silpo_snap": "2026-11-04",
  "live_day": "2026-11-10",
  "silpo_week": "2026-45",
- "sbm_at": 1794341149.008152,
+ "sbm_at": 1794341450.9915283,
  "sbm_hist": [
-  [
-   "09:15",
-   39
-  ],
   [
    "09:20",
    39
@@ -40924,6 +41240,10 @@
   [
    "22:05",
    54
+  ],
+  [
+   "22:10",
+   52
   ]
  ],
  "sbm_near": {
@@ -43987,7 +44307,8 @@
   "thriller": "2026-11-10T21:00:50.289439+02:00",
   "comedy": "2026-11-10T21:44:21.142214+02:00",
   "horror": "2026-11-10T21:50:45.539270+02:00",
-  "scifi": "2026-11-10T22:00:48.389595+02:00"
+  "scifi": "2026-11-10T22:00:48.389595+02:00",
+  "romance": "2026-11-10T22:10:47.202827+02:00"
  },
  "kb_probe2": "2026-46",
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 03.11–10.11\n<blockquote>🎯 <b>1. Meta призупинила оновлені бізнес-умови</b>\nЧерез масову критику видавців Meta поставила на паузу запуск нових умов надання послуг для бізнесу та рекламодавців, які мали набути чинності 20 листопада.\n💡 Стежте за оновленнями рекламної політики Meta, оскільки нові правила щодо обробки даних та використання сайтів ще повернуться в іншій редакції.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZUR4cTNfOGZ3TTdSTzRVQ0FRamNKRlQ5S0VNYkN2TVBmbWFkcDdCckdqazVwOXJvd2NKRjJEZWd2a0E1TWt6enVBYS1YU1U5cGJ3LVZSS2JxQ1dON21kQWs2dTVUdENsRHhiWlMwRmE2M05KU1pQczY3NW15YlczTU1GaHNOcUxX?oc=5\">Search Engine Journal</a></blockquote>\n<blockquote>🎯 <b>2. Помилка в рекламних AI-інструментах Meta</b>\nУ рекламних кампаніях Meta на базі штучного інтелекту були помічені випадки автоматичної генерації несанкціонованих знижок для користувачів.\n💡 Ретельно перевіряйте креативи та тексти, створені за допомогою генеративного AI в рекламному кабінеті, перед запуском.\n🔗 <a href=\"https://www.socialmediatoday.com/news/metas-ai-ads-included-unapproved-discounts/874067/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>3. YouTube додав розділення платного та органічного трафіку</b>\nУ статистиці YouTube з'явився детальний розподіл переглядів та охоплень на органічні та спонсоровані (платні).\n💡 Використовуйте нову аналітику для точнішого вимірювання ефективності відеокампаній та оптимізації бюджетів.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxPdXl3VEdHcV9ZRUtMQzk0VFlEYTROYXZGUk9FbFJZdFVPWVRUUHdpYUtVb29MRXpBOFIwblVXWkVpcERuR0EzV1NMbGgwT1NtbVFkczMwQW92MzZaWXFWN2JRYkJfeHp5b1ppcHl3MjNhcnJlSEVrbktBUHR4SEhlOWdPWDlJcGQtd3d1SWpMRnVNUQ?oc=5\">https://www.thekeyword.co/</a></blockquote>\n<blockquote>🆕 <b>4. Штучний інтелект Meta Muse створює танці для Reels та Stories</b>\nMeta інтегрує можливості AI-агента Muse для генерації трендових рухів та анімацій безпосередньо в інструменти створення контенту Instagram.\n💡 Експериментуйте з новими AI-анімаціями для створення інтерактивних та привабливих Stories без залучення моделей.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOSFhVTURPV0dIYmNKV0c0VWctMjZ1U3RWRWNHQkotaWFZNkI4VUVhTUVyNEZQN2VPMWs5bXVMTTI0eXEwempHdFVWS1F4em1MRW1hdjY0eDROV2RBRnlaX3AzV0VLSXc5UDZVamdSVmtvVFZvaXBjU25nSzIyZW5ubEVHOXRRZ2ZYZkpDbmxvZ2VWbHpFdzFFWk8tYjBVeXNRcVp1TVFUMUpoa3psUVVqc1lsalY0bV9nNFhOcl9UYkhRdC1KU1Ew?oc=5\">Tom's Guide</a></blockquote>\n<blockquote>📊 <b>5. Глобальний запуск AI-детектора підлітків в Instagram</b>\nMeta розгортає по всьому світу систему на основі штучного інтелекту, яка виявляє підлітків, що вказують неправдивий вік у профілях.\n💡 Враховуйте зміни в охопленнях та поведінці аудиторії, якщо ваш продукт орієнтований на межові вікові категорії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMi3gFBVV95cUxQR09ITlVfa2NsZlV5S3NYRjJGekdnamRQbXgtN3hHNGVxdFFDbFRXRUE1d3VlV05tWjUwR2pTdEZ0MXhiTjYyQ3ZEWDUzZnM4SzllVXZjaFJXTWZZcHdQOWx1QVpBXzhHQ1RqSklraDJXek1LMjlVNjVtSGZOVjVvUEJnUG1oZGZoMUpIeTlkNjVwVXZGa1MyaXB2MHhudUFBTWtBRnZBMUtkSEVWXzduMUp2OTZaTy1iam1hWk5LWTg3WWJVbzJ4aVZYX3dZc0U3SXN2RThpN2dCNG1iR3fSAeYBQVVfeXFMTUU1YTFMYW84RzFFV1lYanFZWUpkY292LXNKMzkyZWttYmlVa3EzdElmQkt0aVdlOE1aSnpBVFlXYlZ4TGhoZi1pUmctVnBiRTJNMXR1eXJrSkJXSy1xNVNZVS1aWHlqcUlNa1otbHU1YVVkUjl4WGNhcTlRODFBWjRVY0RmbTIzZmpydlBRbklVUk1ScV82Q3l0U1V6d3o2UnV5SzlFYmFjRXd2eGItcVBjSGhjSXNxRkdBU3FuV0tQSEpVbk9mRWM5azg3NEs2dTAwVzB4NURXR1huaUIwUWlzekNIMEE?oc=5\">NDTV Profit</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202646\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Вимірювання конверсій на пристроях користувачів у Meta</b> · Jon Loomer\nMeta запровадила функцію «Measure conversions on customer devices» у Events Manager, яка переносить трекінг конверсій безпосередньо на пристрій користувача. Це дозволяє зв'язувати конверсії з переглядами чи кліками реклами через передані раніше дані (наприклад, email) та анонімні характеристики пристрою.\n💡 Увімкніть цю настройку в Events Manager, щоб отримувати повнішу картину атрибуції та точніше бачити результати рекламних кампаній.\n<a href=\"https://www.jonloomer.com/qvt/measure-conversions-on-customer-devices/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Створення та редагування відео за допомогою штучного інтелекту</b> · Social Media Examiner\nСтаття описує, як налаштувати процес редагування відео за допомогою сучасних AI-інструментів без навичок професійного монтажу. Розглядається генерація моушн-дизайну, підбір музики та автоматизація рутинних завдань.\n💡 Використовуйте AI-асистентів для швидкого створення відеоконтенту для соцмереж, делегуючи їм технічну частину монтажу.\n<a href=\"https://www.socialmediaexaminer.com/how-to-edit-videos-with-ai-no-editing-skills-required/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Частка голосу (Share of Voice) як випереджальний показник ефективності</b> · Hootsuite\nМатеріал розкриває поняття Share of Voice (SoV) як показника видимості бренду порівняно з конкурентами в соцмережах, пошуку та платній рекламі. Бренди, чий SoV перевищує їхню частку ринку, зазвичай демонструють органічне зростання.\n💡 Відстежуйте SoV через платформи соціального моніторингу як ключовий індикатор майбутнього зростання продажів, а не просто як іміджову метрику.\n<a href=\"https://blog.hootsuite.com/share-of-voice/\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Огляд найкращих AI-генераторів зображень для соцмереж</b> · Buffer\nАвтор протестував дев'ять генераторів зображень для створення графіки, товарних фото та стікерів. Виявилося, що генеративний AI найефективніше заповнює прогалину там, де звичайна фотографія не працює, наприклад, у створенні унікальних ілюстрацій.\n💡 Використовуйте спеціалізовані AI-інструменти (як-от Seedream чи Ideogram) для генерації якісного тексту на зображеннях та унікального візуалу для каруселей.\n<a href=\"https://buffer.com/resources/ai-image-generator/\">джерело</a></blockquote>\n<blockquote>💬 <b>5. Стратегії для маркетингових кампаній до Black Friday та Cyber Monday</b> · Buffer\nНа основі рекордних показників онлайн-продажів попередніх років автор пропонує перевірені тактики та ідеї для виділення серед конкурентів під час сезонного розпродажу. Стаття допомагає сформувати сильну пропозицію, коли знижки вже стали стандартною вимогою ринку.\n💡 Плануйте унікальні механіки взаємодії з аудиторією заздалегідь, оскільки стандартні знижки більше не гарантують високу конверсію в період перевантаженості рекламою.\n<a href=\"https://buffer.com/resources/black-friday-marketing/\">джерело</a></blockquote>\n<blockquote>💬 <b>6. П'ять ознак того, що ваші реклавні бюджети в Meta зливаються в трубу</b> · Medium · facebook-ads\nБазуючись на багаторічному досвіді управління бюджетами, автор виділяє головні системні помилки в рекламних акаунтах Meta. У статті наведено покроковий розбір того, як виявити ці проблеми лише за 10 хвилин щоденного аудиту.\n💡 Регулярно перевіряйте акаунт на наявність дублюючих аудиторій та виснаження креативів, щоб зупинити непотрібні витрати.\n<a href=\"https://medium.com/@kajay85977/5-signs-your-meta-ads-are-leaking-money-and-how-to-catch-them-in-10-minutes-a-day-735c8aa29302?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>7. Структурування рекламних кампаній Meta для генерації якісних лідів</b> · Medium · facebook-ads\nМатеріал наголошує, що просте «бусти» дописів не працює як стратегія. Описується правильна архітектура рекламних кампаній у Facebook та Instagram для залучення реальних потенційних клієнтів.\n💡 Розділяйте кампанії за воронкою продажів та використовуйте лід-форми з додатковим запитанням для фільтрації неякісних заявок.\n<a href=\"https://medium.com/@dahouayoub97/meta-ads-au-maroc-structurer-une-campagne-facebook-et-instagram-qui-g%C3%A9n%C3%A8re-de-vrais-prospects-354cfaafe958?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>8. Алгоритм відновлення заблокованого Meta Business Manager</b> · Medium · facebook-ads\nПрактичний посібник для маркетологів та агентств, які втратили доступ до бізнес-портфоліо у Meta. Автор пропонує чітку послідовність дій, яка допоможе відновити акаунт і не нашкодити ситуації додатковими помилковими запитами.\n💡 Дотримуйтесь офіційної процедури подачі апеляції через підтримку та підготуйте документи компанії заздалегідь, уникаючи частих повторних звернень, які можуть призвести до перманентного бану.\n<a href=\"https://shildercom.medium.com/meta-business-manager-disabled-a-recovery-order-that-doesnt-make-things-worse-014f3b8e5dbd?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>9. Реклама в Meta після оновлення Andromeda: що змінилося</b> · Medium · facebook-ads\nАналіз змін у рекламному алгоритмі Meta та їхній вплив на стратегію таргетологів. Розглядаються нові підходи до оптимізації бюджетів та роботи з аудиторіями після оновлень платформи.\n💡 Зменшуйте кількість детальних налаштувань таргетингу на користь широких аудиторій та дайте алгоритму більше простору для машинного навчання.\n<a href=\"https://medium.com/@ahaamedia2026/meta-ads-after-andromeda-what-changed-and-what-to-do-next-6433286256f8?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>10. Альтернативи інструментам конкурентної розвідки для e-commerce</b> · Medium · facebook-ads\nОгляд альтернативних сервісів для аналізу ринку та конкурентів у сфері електронної комерції з акцентом на реальну вартість та приховані платежі. Автор розбирає, кому підходять платні рішення, а де можна обійтися базовими безкоштовними методами.\n💡 Порівнюйте реальну ваню підписки з функціоналом, який вам дійсно необхідний щодня, щоб не переплачувати за зайві аналітичні дашборди.\n<a href=\"https://medium.com/@rob_searchnerd/winning-hunter-alternatives-in-2026-what-each-one-really-costs-and-who-its-for-b332b2a28c94?source=rss------facebook_ads-5\">джерело</a></blockquote>\n§RT:smm:202646p"
