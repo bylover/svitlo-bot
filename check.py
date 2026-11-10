@@ -1697,28 +1697,57 @@ def _gnews_days(q: str, lang: str, days: int) -> list:
     return out
 
 
+SMM_FEEDS = [("Hootsuite", "https://blog.hootsuite.com/feed/"), ("Buffer", "https://buffer.com/resources/rss/"), ("Sprout Social", "https://sproutsocial.com/insights/feed/"),
+             ("Social Media Today", "https://www.socialmediatoday.com/feeds/news/"), ("HubSpot", "https://blog.hubspot.com/marketing/rss.xml"),
+             ("Meta Newsroom", "https://about.fb.com/news/feed/"), ("Social Media Examiner", "https://www.socialmediaexaminer.com/feed/"), ("Later", "https://later.com/blog/rss.xml")]
+SMM_KEYS = {"grid": re.compile(r"grid|feed|aesthetic|profile|carousel|visual|branding|content (ideas|trends)|instagram (design|layout)", re.I),
+            "ai": re.compile(r"\bAI\b|artificial intelligence|ChatGPT|generative|Gemini|Claude|Copilot|AI[- ]powered|AI tools?", re.I),
+            "bench": re.compile(r"benchmark|\bCPM\b|\bCPC\b|\bCTR\b|cost per|ad costs?|engagement rates?|report \d{4}|statistics|stats", re.I),
+            "meta": re.compile(r"\bMeta\b|Instagram|Facebook|Threads|Advantage\+|algorithm|Ads Manager|Reels", re.I)}
+
+
 def smm_tools(st: dict, now: datetime) -> None:
+    """Свіжі матеріали (до 60 днів) з RSS перевірених блогів; якщо мало — Google News. Раз на тиждень."""
     if not WORKER_MODE or (st.get("smmt_week") == f"{now:%G%V}" and not st.get("smmt_force")):
         return
     st["smmt_force"] = False
+    import xml.etree.ElementTree as ET
+    from email.utils import parsedate_to_datetime
+    pool = []
+    for src, url in SMM_FEEDS:
+        try:
+            root = ET.fromstring(http_text(url))
+        except Exception as e:
+            print(f"SMM RSS {src}: {err_text(e)[:50]}"); continue
+        for it in list(root.iter("item"))[:40]:
+            t, l, d = (it.findtext("title") or "").strip(), (it.findtext("link") or "").strip(), it.findtext("pubDate") or ""
+            try:
+                dt = parsedate_to_datetime(d)
+                if (datetime.now(timezone.utc) - dt).days > 60:
+                    continue
+                ds = dt.strftime("%d.%m.%Y")
+            except Exception:
+                ds = ""
+            if t and l:
+                pool.append({"t": t[:140], "l": l, "s": src, "d": ds, "x": t + " " + (it.findtext("description") or "")[:400]})
     out = {"at": now.strftime("%d.%m.%Y")}
-    for k, qs in SMM_SECT.items():
+    for k, rx in SMM_KEYS.items():
         seen, items = set(), []
-        for q in qs:
-            for lang in ("en", "uk"):
-                for x in _gnews_days(q, lang, 30 if k != "meta" else 14):
-                    key = x["t"].lower()[:60]
-                    if key in seen or not SMM_TRUST.search(x["s"] + " " + x["t"]):
-                        continue                          # лише перевірені джерела
-                    seen.add(key); items.append(x)
-        out[k] = items[:10]
+        for x in pool:
+            if rx.search(x["x"]) and x["t"].lower()[:60] not in seen:
+                seen.add(x["t"].lower()[:60]); items.append({kk: x[kk] for kk in ("t", "l", "s", "d")})
+        if len(items) < 5:                               # мало у блогах — доповнюємо з Google News (за темою)
+            for q in SMM_SECT[k]:
+                for x in _gnews_days(q, "en", 30):
+                    if x["t"].lower()[:60] not in seen and len(items) < 10:
+                        seen.add(x["t"].lower()[:60]); items.append(x)
+        out[k] = items[:12]
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=smm_tools.json", out)
         st["smmt_week"] = f"{now:%G%V}"
-        print("SMM-інструменти: " + ", ".join(f"{k} {len(out[k])}" for k in SMM_SECT))
+        print("SMM-інструменти: блогів " + str(len(pool)) + " матеріалів · " + ", ".join(f"{k} {len(out[k])}" for k in SMM_KEYS))
     except Exception as e:
         print(f"SMM-інструменти → бот: {err_text(e)[:60]}")
-
 
 def ai_pick_index(titles: list[str], x: dict) -> int | None:
     """Звіряємо, що опис ШІ належить саме цьому матеріалу: за оригінальним заголовком (src_title), а не лише за номером."""
@@ -5783,7 +5812,7 @@ def sexed_refresh(st: dict, now: datetime) -> None:
         if changed:
             SX_FILE.write_text(json.dumps(db_, ensure_ascii=False, separators=(",", ":")), "utf-8")
         return
-    todo = [q for q in SX_QUERIES if db_["done_q"].get(q[0]) != (month if not seeding else "seed")][:3]   # ≤3 тем за запуск
+    todo = [q for q in SX_QUERIES if db_["done_q"].get(q[0]) != (month if not seeding else "seed")][:6]   # ≤6 тем за запуск
     if n_survey < 40 and not todo:                    # опитувань замало — окремо шукаємо саме опитування за тими ж темами
         todo = [(t + " · опитування", q + " AND (survey[tiab] OR questionnaire[tiab] OR nationally representative[tiab] OR poll[tiab])")
                 for t, q in SX_QUERIES if db_["done_q"].get(t + " · опитування") != "seed"][:3]
@@ -5801,12 +5830,12 @@ def sexed_refresh(st: dict, now: datetime) -> None:
             elif topic.endswith("Europe PMC"):
                 arts = [dict(a, pmid=a["pid"]) for a in europepmc(SX_KW[base_t], mind)]
             else:
-                arts = pubmed(term, mind, 10)
+                arts = pubmed(term, mind, 20)
         except Exception as e:
             print(f"Секс-освіта ({topic}): {err_text(e)[:80]}")
             continue
         arts = [a for a in arts if SX_CORE.search(a["title"]) and (f"pmid:{a['pmid']}" not in known and a["pmid"] not in known) and ntitle(a["title"]) not in known_t
-                and (SX_JOURNALS.search(a["journal"]) or a.get("pre") or str(a["pmid"]).startswith("oa:")) and len(a["abstract"]) > 300][:6]
+                and (SX_JOURNALS.search(a["journal"]) or a.get("pre") or str(a["pmid"]).startswith("oa:")) and len(a["abstract"]) > 300][:10]
         if not arts:
             db_["done_q"][topic] = month if not seeding else "seed"
             continue
@@ -6285,7 +6314,7 @@ def yt_channels(st: dict, now: datetime) -> None:
         ids = []
         for q in qs:
             try:
-                ids += [x["id"]["channelId"] for x in api("search", part="id", type="channel", q=q, regionCode="UA", maxResults=25).get("items", []) if x.get("id", {}).get("channelId")]
+                ids += [x["id"]["channelId"] for x in api("search", part="id", type="channel", q=q, regionCode="UA", maxResults=50).get("items", []) if x.get("id", {}).get("channelId")]
             except Exception as e:
                 print(f"YouTube канали «{q}»: {err_text(e)[:80]}")
         chans = []
@@ -6311,7 +6340,7 @@ def yt_channels(st: dict, now: datetime) -> None:
                 continue                                  # неактивний канал
             out.append({"t": sn.get("title", "")[:60], "id": c["id"], "subs": subs, "desc": (sn.get("description") or "")[:140], "v": vids})
         out.sort(key=lambda x: -x["subs"])
-        res[theme] = out[:12]
+        res[theme] = out[:30]
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=yt_ch.json", {"at": now.strftime("%d.%m"), "themes": res})
         st["ytch_week"] = f"{now:%G%V}"
@@ -6412,6 +6441,153 @@ def kino_cats(st: dict, now: datetime) -> None:
         print(f"Кіно-категорії: настрої {sum(len(v['items']) for v in out['moods'].values())}, колекції {len(out['cols'])}, новинки {sum(len(v) for v in out['new'].values())}, серіали {len(out['series'])}")
     except Exception as e:
         print(f"Кіно-категорії → бот: {err_text(e)[:60]}")
+
+
+# ---------- 🧴 Аромат і догляд: щомісячне поповнення бази (лише преміальні бренди з білого списку, без дублів) ----------
+ARO_BRANDS = re.compile(r"\b(dior|chanel|hermès|hermes|armani|yves saint laurent|ysl|tom ford|creed|givenchy|prada|valentino|gucci|lancôme|lancome|viktor ?& ?rolf|dolce ?& ?gabbana|"
+                        r"maison francis kurkdjian|mfk|jo malone|byredo|le labo|diptyque|guerlain|burberry|montblanc|versace|calvin klein|marc jacobs|davidoff|carolina herrera|"
+                        r"paco rabanne|rabanne|jean paul gaultier|kenzo|narciso rodriguez|chloé|chloe|bvlgari|cartier|issey miyake|azzaro|boss|hugo boss|mugler|initio|parfums de marly|"
+                        r"xerjoff|amouage|maison margiela|replica|clinique|kiehl'?s|la roche-posay|vichy|cerave|avène|avene|bioderma|olaplex|kérastase|kerastase|aesop|baxter of california|"
+                        r"proraso|taylor of old bond street|gillette labs|braun|philips|l'occitane|loccitane|caudalie|sisley|shiseido|clarins|dermalogica|the ordinary|paula'?s choice)\b", re.I)
+ARO_SECT = {"m": ("f", "m", "чоловічі парфуми й туалетні води"), "w": ("f", "w", "жіночі парфуми й туалетні води"), "t": ("f", "t", "аромати для підлітків 14–18 (легкі, доречні в школі)"),
+            "d": ("d", "u", "преміальні та аптечні дезодоранти й антиперспіранти (стіки, спреї)"), "s": ("s", "m", "засоби й інструменти для гоління та після гоління"),
+            "k": ("k", "u", "догляд за обличчям, тілом і волоссям (дерматологічний і преміальний)")}
+
+
+def _aro_found(n: str, care: bool) -> str:
+    """Перевірка, що продукт реально існує: пошук (DuckDuckGo HTML) → посилання на Fragrantica / Parfumo / Notino / MAKEUP тощо, де в заголовку є бренд."""
+    brand = (ARO_BRANDS.search(n) or [n.split()[0]])[0]
+    try:
+        html = http_text("https://html.duckduckgo.com/html/?q=" + urllib.parse.quote(f'"{n}" ' + ("notino OR makeup.com.ua OR sephora" if care else "fragrantica OR parfumo")))
+    except Exception:
+        return "?"                                    # пошук недоступний — не відкидаємо (білий список брендів уже діє)
+    for m in re.finditer(r'class="result__a" href="([^"]+)"[^>]*>(.*?)</a>', html):
+        href, title = urllib.parse.unquote(m.group(1)), re.sub("<[^>]+>", "", m.group(2)).lower()
+        if re.search(r"fragrantica|parfumo|notino|makeup\.com\.ua|sephora|douglas|basenotes|lookfantastic", href) and brand.lower() in title:
+            u = re.search(r"uddg=([^&]+)", href)
+            return urllib.parse.unquote(u.group(1)) if u else href
+    return ""
+
+
+ARO_BASE_N = {"m": 14, "w": 14, "t": 9}             # скільки ароматів кожного розділу вже в базовій базі бота
+ARO_MIN = 50                                          # мінімум позицій у кожному розділі парфумів
+
+
+def aroma_monthly(st: dict, now: datetime) -> None:
+    filling = st.get("aro_fill_wk") != f"{now:%G%V}" and not st.get("aro_full")   # поки розділи парфумів < 50 — поповнюємо щотижня
+    if not WORKER_MODE or (st.get("aro_month") == f"{now:%Y-%m}" and not st.get("aro_force") and not filling):
+        return
+    st["aro_fill_wk"] = f"{now:%G%V}"
+    st["aro_force"] = False
+    try:
+        ex = http_json(f"{SYNC_URL}/export?key={urllib.parse.quote(SYNC_KEY)}") or {}
+        have = [str(x).lower() for x in (ex.get("ar_names") or [])]
+        extra = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=aroma_extra.json") or {}
+    except Exception as e:
+        print(f"Аромати: {err_text(e)[:60]}"); return
+    items, banned, added = list(extra.get("items") or []), set(ex.get("ar_ban") or []), 0
+    for sec, (cat, g, desc) in ARO_SECT.items():
+        have_sec = ARO_BASE_N.get(sec, 99) + sum(1 for it in items if str(it[0]).startswith(f"x{sec}"))
+        need = max(0, ARO_MIN - have_sec) if sec in ARO_BASE_N else 0
+        rounds, per = (min(4, -(-need // 12)), 12) if need else (1, 6)   # парфуми: добираємо до 50 (до 4 запитів по 12)
+        if not need and st.get("aro_month") == f"{now:%Y-%m}" and not st.get("aro_force"):
+            continue                                    # розділ уже повний і цього місяця оновлювався
+        for _round in range(rounds):
+            prompt = (f"Ти експерт парфумерії й догляду (Україна, {now.year}). Запропонуй до {per} найкращих позицій категорії «{desc}»: лише визнані преміальні, нішеві або дерматологічні бренди, "
+                      f"без масмаркету; пріоритет — популярні новинки останніх 10–15 років і визнана класика; лише реальні продукти, що продаються в Україні. Не повторюй: {', '.join(have[:150])}. "
+                      "Для кожної: n (бренд і назва, концентрація), y (рік, 0 якщо невідомо або для догляду), se (сезони: «літо», «зима», «весна-осінь», «весна-літо», «осінь-зима» або «усі»), "
+                      "a (вік-орієнтир, напр. «25–45»), l (стійкість за відгуками, напр. «висока (8–10 год)» або «—»), no (основні ноти або склад), tg (одне з: «🔥 бестселер», «🏛 класика», «💎 нішевий», «🆕 новинка», "
+                      "«💰 ціна/якість», «🧪 дерматологічний», «🧪 аптечний», «💎 преміум»), w (чому в списку, одне речення українською). "
+                      'Поверни JSON {"items":[{"n":"","y":0,"se":"","a":"","l":"","no":"","tg":"","w":""}]}.')
+            try:
+                js = json.loads(gemini(prompt, json_mode=True, relaxed=True, max_tokens=3000) or "{}")
+            except Exception:
+                js = {}
+            for x in (js.get("items") or [])[:per]:
+                n = str(x.get("n") or "").strip()
+                if not n or not ARO_BRANDS.search(n) or n.lower() in have or n.lower() in [str(i[3]).lower() for i in items]:
+                    continue                               # лише бренди з білого списку, без дублів
+                import hashlib
+                iid = f"x{sec}{hashlib.md5(n.lower().encode()).hexdigest()[:8]}"   # стабільний ID (між запусками)
+                if iid in banned:
+                    continue                               # прибране адміністратором — не повертаємо
+                if not _aro_found(n, cat != "f"):
+                    print(f"Аромати: «{n}» не підтверджено пошуком — пропущено"); continue   # без підтвердження на Fragrantica/Parfumo/Notino/MAKEUP — не додаємо
+                items.append([iid, g if sec != "d" else ("w" if re.search(r"femme|women|жіноч|mademoiselle|libre|miss", n, re.I) else "m" if re.search(r"homme|men|чолов|sauvage|bleu", n, re.I) else "u"),
+                              cat, n[:70], int(x.get("y") or 0), str(x.get("se") or "усі")[:20], str(x.get("a") or "")[:12], str(x.get("l") or "—")[:30],
+                              str(x.get("no") or "")[:120], str(x.get("tg") or "🆕 новинка")[:20], str(x.get("w") or "")[:160], now.strftime("%m.%Y")])
+                have.append(n.lower()); added += 1
+    st["aro_full"] = all(ARO_BASE_N[k] + sum(1 for it in items if str(it[0]).startswith(f"x{k}")) >= ARO_MIN for k in ARO_BASE_N)
+    out = {"at": now.strftime("%d.%m.%Y"), "items": items[-600:]}
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=aroma_extra.json", out)
+        st["aro_month"] = f"{now:%Y-%m}"
+        print(f"🧴 Аромати: додано {added}, у додатковій базі {len(out['items'])}")
+    except Exception as e:
+        print(f"Аромати → бот: {err_text(e)[:60]}")
+
+
+# ---------- 🏆 Аромат і догляд: «Найкращі» — бестселери й визнана класика (по 50 у розділі), раз на рік у лютому (після річних премій і рейтингів) ----------
+AROB_SECT = {"m": "чоловічі парфуми (бестселери й визнана класика всіх часів)", "w": "жіночі парфуми (бестселери й визнана класика всіх часів)",
+             "t": "аромати для підлітків 14–18 (найпопулярніші й найкраще оцінені)", "face": "догляд за обличчям (вмивання, сироватки, креми, SPF) — найкраще оцінені дерматологами й покупцями",
+             "hair": "догляд за волоссям (шампуні, кондиціонери, маски) — найкраще оцінені", "body": "догляд за тілом (гелі для душу, лосьйони, креми) — найкраще оцінені",
+             "shave": "гоління й після гоління (бритви, електробритви, піни, бальзами) — найкраще оцінені", "deo": "дезодоранти й антиперспіранти преміум і аптечні — найкраще оцінені"}
+AROB_TRUST = r"fragrantica|parfumo|allure|gq\.com|vogue|elle|harpersbazaar|esquire|byrdie|cosmopolitan|menshealth|womenshealth|fifiawards|fragrancefoundation|notino|makeup\.com\.ua|sephora|cosme"
+
+
+def aroma_best(st: dict, now: datetime) -> None:
+    """Раз на рік (з лютого: річні премії Fragrantica Community Awards, Allure Best of Beauty, GQ Grooming Awards, FiFi, підсумки медіа) — 2 розділи за запуск."""
+    if not (WORKER_MODE and GEMINI_KEY):
+        return
+    yr = str(now.year if now.month >= 2 else now.year - 1)
+    try:
+        db = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=aroma_best.json") or {}
+    except Exception:
+        db = {}
+    if db.get("year") != yr or st.pop("arob_force", False):
+        db = {"year": yr, "sect": {}, "at": ""}
+    todo = [k for k in AROB_SECT if k not in db["sect"]][:2]
+    if not todo:
+        return
+    for k in todo:
+        out, seen = [], set()
+        for part in (1, 2):
+            raw = gemini(f"Ти редактор рейтингу «найкраще з найкращого» ({yr}). Категорія: {AROB_SECT[k]}. Лише визнані бренди без масмаркету, що продаються в Україні. "
+                         f"Склади список {'перших 25' if part == 1 else 'наступних 25 (інших, не з першої частини)'} позицій за визнанням: бестселери, переможці премій "
+                         "(Fragrantica Community Awards, FiFi Awards, Allure Best of Beauty, GQ Grooming Awards) і стабільно високі оцінки спільнот і покупців. "
+                         + (f"Не повторюй: {', '.join(x[0] for x in out)[:1500]}. " if out else "") +
+                         "Для кожної: n (бренд і назва), why (чим визнано — премія/рік, рейтинг або статус, коротко українською), "
+                         "notes (ноти або склад/тип, українською), l (стійкість для парфумів або «—»), a (вік-орієнтир), se (сезон для парфумів або «усі»). "
+                         'Поверни JSON {"items":[{"n":"","why":"","notes":"","l":"","a":"","se":""}]}', json_mode=True, relaxed=True, max_tokens=6000)
+            try:
+                items = json.loads(raw or "{}").get("items", [])
+            except Exception:
+                items = []
+            for x in items:
+                n = str(x.get("n") or "").strip()
+                if not n or n.lower() in seen or len(out) >= 50:
+                    continue
+                seen.add(n.lower())
+                src = ""
+                try:                                     # джерело визнання / відгуки: пошук на авторитетних сайтах
+                    html = http_text("https://html.duckduckgo.com/html/?q=" + urllib.parse.quote(f'"{n}" ' + ("fragrantica" if k in ("m", "w", "t") else "review best")))
+                    for m in re.finditer(r'class="result__a" href="([^"]+)"', html):
+                        href = urllib.parse.unquote(m.group(1))
+                        if re.search(AROB_TRUST, href):
+                            u = re.search(r"uddg=([^&]+)", href); src = urllib.parse.unquote(u.group(1)) if u else href; break
+                except Exception:
+                    src = "?"
+                if not src:
+                    print(f"🏆 {k}: «{n}» не знайдено на авторитетних сайтах — пропущено"); continue
+                out.append([n[:70], str(x.get("why") or "")[:140], str(x.get("notes") or "")[:120], str(x.get("l") or "—")[:30],
+                            str(x.get("a") or "—")[:12], str(x.get("se") or "усі")[:20], "" if src == "?" else src[:200]])
+        db["sect"][k] = out
+        print(f"🏆 Найкращі «{k}»: {len(out)}")
+    db["at"] = now.strftime("%d.%m.%Y")
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=aroma_best.json", db)
+    except Exception as e:
+        print(f"Найкращі → бот: {err_text(e)[:60]}")
 
 
 # ---------- 🎬 Режисери: 🏆 Топ-50 (раз на тиждень) і 🎬 Мої режисери (фільмографія, рейтинги, сповіщення про нові фільми) ----------
@@ -6569,7 +6745,7 @@ def yt_foryou(st: dict, now: datetime) -> None:
     for cid_ in st.get("yt_fav") or []:
         chans.setdefault(cid_, "⭐")
     mute, fb = set(st.get("yt_mute") or []), st.get("yt_fb") or {}
-    ids = list(chans)[:90]
+    ids = list(chans)[:200]
     if not ids:
         print("YouTube «Для вас»: немає каналів (спершу 📺 цікаві канали)"); return
     meta = {}
@@ -6617,14 +6793,14 @@ def yt_foryou(st: dict, now: datetime) -> None:
             score = 2.0 * min(outlier, 10) ** 0.5 + 1.0 * min(speed, 20) ** 0.5 + 40 * min(eng, 0.15) + (1.5 if chans[cid_] == "⭐" else 0) \
                 + 1.0 * float(fb.get(cid_, 0)) - (1.5 if YT_CLICK.search(sn.get("title", "")) else 0)
             cand.append({"id": v, "t": sn["title"][:90], "c": meta[cid_]["t"][:40], "ch": cid_, "th": chans[cid_], "views": vw, "o": round(outlier, 1), "sc": round(score, 2),
-                         "gem": 10000 <= meta[cid_]["subs"] <= 200000 and outlier >= 3, "min": secs // 60})
+                         "gem": 5000 <= meta[cid_]["subs"] <= 300000 and outlier >= 2.5, "min": secs // 60})
     cand.sort(key=lambda x: -x["sc"])
     pick, per = [], {}
     for x in cand:                                        # 🌈 не більше 2 відео з каналу
         if per.get(x["ch"], 0) >= 2:
             continue
         per[x["ch"]] = per.get(x["ch"], 0) + 1; pick.append(x)
-    out = {"at": now.strftime("%d.%m %H:%M"), "items": pick[:20], "gems": [x for x in pick if x["gem"]][:10]}
+    out = {"at": now.strftime("%d.%m %H:%M"), "items": pick[:40], "gems": [x for x in pick if x["gem"]][:30]}
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=yt_foryou.json", out)
         st["ytf_week"] = f"{now:%G%V}"
@@ -7852,17 +8028,18 @@ def main() -> None:
              ("здоров'я", lambda: (health_refresh(st, now), kb_probe(st, now), cofid_import(st, now), cofid_translate(st, now))),
              ("ігри PS5", lambda: (games_refresh(st, now), ps_deals_refresh(st, now))), ("аудіокниги", lambda: audiobooks_refresh(st, now)),
              ("кіномэтч", lambda: match_refresh(st, now)), ("пп-страви", lambda: recipes_refresh(st, now)), ("фантазія тижня", lambda: fantasy_refresh(st, now)), ("prom.ua", lambda: prom_top(st, now)), ("youtube канали", lambda: yt_channels(st, now)), ("живий english", lambda: en_live_fill(st, now)),
-             ("кіно-категорії", lambda: kino_cats(st, now)), ("youtube для вас", lambda: yt_foryou(st, now)), ("режисери", lambda: directors_build(st, now)), ("smm-інструменти", lambda: smm_tools(st, now))]
+             ("кіно-категорії", lambda: kino_cats(st, now)), ("youtube для вас", lambda: yt_foryou(st, now)), ("режисери", lambda: directors_build(st, now)), ("smm-інструменти", lambda: smm_tools(st, now)), ("аромати", lambda: aroma_monthly(st, now)), ("найкращі аромати й догляд", lambda: aroma_best(st, now))]
     slot = (now.hour * 12 + now.minute // 5) % len(heavy)
     rc_turn = st.get("rc_need", True) and (now.minute // 5) % 2 == 0   # через запуск, щоб інші задачі не чекали
     forced = (st.get("force_heavy") or []) + (["пп-страви"] if rc_turn and "пп-страви" not in (st.get("force_heavy") or []) else [])
     if forced:                                        # позапланово (кнопка «🔄 Оновити підбірки») — спершу кіно й музика
         heavy = [h for h in heavy if h[0] in forced] + [h for h in heavy if h[0] not in forced]
         slot = 0
-        st["force_heavy"] = [f_ for f_ in (st.get("force_heavy") or []) if f_ != heavy[0][0]]
+        done_ = [h[0] for h in heavy[:3] if h[0] in forced]   # позапланові — до 3 за запуск (якщо встигаємо за часом)
+        st["force_heavy"] = [f_ for f_ in (st.get("force_heavy") or []) if f_ not in done_]
     for k_ in range(len(heavy)):
         name_, fn_ = heavy[(slot + k_) % len(heavy)]
-        if not budget_ok(100 if k_ == 0 else 60):     # перша задача — якщо минуло < 100 с, наступні — лише якщо дуже швидко
+        if not budget_ok(100 if k_ == 0 else (170 if forced and k_ < 3 else 60)):   # позапланові (🔄 Оновити підбірки) — до 3 за запуск
             break
         t_ = _time.time()
         try:
@@ -7873,7 +8050,7 @@ def main() -> None:
             mark_upd(st, name_, False, err_text(e)[:60])
             print(f"{name_}: {err_text(e)[:120]}")
         print(f"⏱ {name_}: {(_time.time() - t_):.0f} с")
-        if k_ == 0 and _time.time() - t_ > 20:
+        if _time.time() - t_ > 20 and not (forced and k_ < 2 and budget_ok(150)):
             break                                     # важка задача забрала час — решту в наступних запусках
     if para_due:
         pm = build_para(st, now, header="💞 <b>ПОРАДА 18+</b>")
@@ -7916,13 +8093,15 @@ def main() -> None:
         except Exception:
             pass
         st.pop("smm_last", None); st["smm_rebuild"], st["smm_try"] = True, ""   # 📈 SMM-дайджест — перезібрати (без розсилки, лише в розділі)
-        st["force_heavy"] = ["prom.ua", "youtube канали", "кіно, пули", "музика", "здоров'я", "ігри PS5", "аудіокниги", "пп-страви", "кіномэтч"]   # маркети — першими
+        st["force_heavy"] = ["smm-інструменти", "аромати", "найкращі аромати й догляд", "youtube для вас", "кіно-категорії", "режисери",
+                             "prom.ua", "youtube канали", "кіно, пули", "музика", "здоров'я", "ігри PS5", "аудіокниги", "пп-страви", "кіномэтч"]   # нові розділи — першими
         st["ytch_week"] = ""                          # 📺 цікаві канали YouTube — теж заново
         st["yt_seen"] = (st.get("yt_seen") or [])[:-20]; st["yt_last"], st["yt_try"] = "", ""   # ▶️ топ YouTube тижня — перезібрати (без розсилки, лише в розділі)
         st["live_day"] = ""                           # 🗣 Живий English — ще порція фраз
         st["kc_week"], st["kc_force"], st["ytf_force"] = "", True, True   # 🍿 кіно-категорії й 🎯 YouTube «Для вас» — заново
         st["dir_force"], st["dir_force_my"] = True, True   # 🎬 режисери — заново
         st["smmt_force"] = True                       # 📈 SMM-інструменти — заново
+        st["aro_force"] = True                        # 🧴 аромати — поповнити базу
         st["prom_force"] = st["rz_force"] = True
         st["match_month"] = ""; st["ps_day"] = ""                # 🍿💞 пул Кіномэтчу й 🔥 знижки PS — теж свіжі
         st["games_force"] = st["ab_force"] = st["rc_force"] = True     # 🥗 ПП-страви — позапланове поповнення
