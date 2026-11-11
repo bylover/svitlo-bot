@@ -729,7 +729,7 @@
   "t69158",
   "t1409"
  ],
- "gh_beat": "2026-11-11T13:17:04.156491+02:00",
+ "gh_beat": "2026-11-11T13:20:44.178523+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -30288,7 +30288,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "d3430053b6eb",
+  "gs": "26f69528800f",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "6ec8f5ff57b0",
   "sexed.json": "0362ec7e46d4",
@@ -48871,11 +48871,14 @@
   "run": 1,
   "work": 1,
   "party": 1,
-  "love": 1
+  "love": 1,
+  "chill": 1,
+  "sleep": 1,
+  "road": 1
  },
  "aro_now_seen": "1794395672203",
  "arob_fail": {
-  "m": 1
+  "m": 2
  },
  "pl_v": 2,
  "arob_full": false,
