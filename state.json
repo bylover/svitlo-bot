@@ -729,7 +729,7 @@
   "t69158",
   "t1409"
  ],
- "gh_beat": "2026-11-11T19:10:44.707334+02:00",
+ "gh_beat": "2026-11-11T19:16:19.621477+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -30368,7 +30368,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "7a8de0c4b688",
+  "gs": "6565c7fa3368",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "dc4fd73aed79",
   "sexed.json": "0362ec7e46d4",
@@ -45350,7 +45350,7 @@
  "silpo_snap": "2026-11-04",
  "live_day": "2026-11-11",
  "silpo_week": "2026-45",
- "sbm_at": 1794417048.442963,
+ "sbm_at": 1794417384.545133,
  "sbm_hist": [
   [
    "05:30",
@@ -45925,8 +45925,8 @@
    53
   ],
   [
-   "19:10",
-   54
+   "19:16",
+   55
   ]
  ],
  "sbm_near": {
@@ -45943,7 +45943,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1794417056.699334,
+ "net_at": 1794417394.0228999,
  "net_asn": {
   "triolan": [
    "13188",
@@ -48850,7 +48850,7 @@
  "dir_week": "202646",
  "smmt_force": false,
  "smmt_week": "202646",
- "aro_force": false,
+ "aro_force": true,
  "kino_q": [
   {
    "id": "bf1ceb2818",
@@ -49017,12 +49017,10 @@
   "ua90": 1,
   "uarap": 1
  },
- "aro_now_seen": "1794415899121",
- "arob_fail": {
-  "m": 1
- },
+ "aro_now_seen": "1794417077767",
+ "arob_fail": {},
  "pl_v": 3,
  "arob_full": false,
- "aro_last": 1794416005.984035,
+ "aro_last": 0,
  "aro_fill_t": 1794416005.9840615
 }
