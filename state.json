@@ -729,7 +729,7 @@
   "t69158",
   "t1409"
  ],
- "gh_beat": "2026-11-11T09:05:43.057871+02:00",
+ "gh_beat": "2026-11-11T09:10:44.968377+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -30210,7 +30210,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "24ab3b4e7bc3",
+  "gs": "a9dc2606a6ba",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "beb6aac60c07",
   "sexed.json": "0362ec7e46d4",
@@ -43012,12 +43012,8 @@
  "silpo_snap": "2026-11-04",
  "live_day": "2026-11-11",
  "silpo_week": "2026-45",
- "sbm_at": 1794380746.9178202,
+ "sbm_at": 1794381048.7696135,
  "sbm_hist": [
-  [
-   "20:05",
-   49
-  ],
   [
    "20:10",
    49
@@ -43589,11 +43585,15 @@
   [
    "09:05",
    58
+  ],
+  [
+   "09:10",
+   57
   ]
  ],
  "sbm_near": {
   "160603556": [
-   55,
+   50,
    0
   ]
  },
@@ -46512,7 +46512,7 @@
  "dir_week": "202646",
  "smmt_force": false,
  "smmt_week": "202646",
- "aro_force": false,
+ "aro_force": true,
  "kino_q": [
   {
    "id": "bf1ceb2818",
@@ -46713,11 +46713,11 @@
   "ua90": 1,
   "uarap": 1,
   "uarock": 1,
-  "wedding": 1
+  "wedding": 1,
+  "bday": 1,
+  "xmas": 1,
+  "summer": 1
  },
- "aro_now_seen": "1794377875883",
- "arob_fail": {
-  "m": 1,
-  "t": 1
- }
+ "aro_now_seen": "1794381032566",
+ "arob_fail": {}
 }
