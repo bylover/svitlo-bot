@@ -729,7 +729,7 @@
   "t69158",
   "t1409"
  ],
- "gh_beat": "2026-11-11T19:55:46.151742+02:00",
+ "gh_beat": "2026-11-11T20:00:46.233383+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -807,11 +807,10 @@
    ]
   ]
  },
- "fact_png": "2026-11-11 19|11|2026-11-11T16:58:49+02:00",
+ "fact_png": "2026-11-11 20|11|2026-11-11T16:58:49+02:00",
  "fact_day": {
-  "total": "5 год 16 хв",
+  "total": "5 год 3 хв",
   "list": [
-   "19:00–19:14 · 14 хв",
    "09:22–13:56 · 4 год 34 хв",
    "16:30–16:58 · 29 хв"
   ]
@@ -866,7 +865,12 @@
   "11.11 00:00 Завтра 2026-11-12 WaitingForSchedule: без відключень"
  ],
  "week_fp": "{\"1\": [], \"2\": [], \"3\": [], \"4\": [], \"5\": [], \"6\": [], \"7\": []}",
- "we_sent": {},
+ "we_sent": {
+  "368433217": "2026-11-11",
+  "590261825": "2026-11-11",
+  "936688574": "2026-11-11",
+  "8283670046": "2026-11-11"
+ },
  "tgph": "8d020e91ef2b6894855e405f8973a51da385fca8e1cfd990c9e41c2a32c2",
  "yt_try": "2026-11-10 19",
  "yt_seen": [
@@ -13298,14 +13302,17 @@
  "imp_sent": {
   "396425365": "2026-11-11"
  },
- "ero_sent": {},
+ "ero_sent": {
+  "936688574": "2026-11-11"
+ },
  "pend": {},
  "got": {},
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
  "gem_block": {
   "gemini-3.8-flash": "2026-11-12T10:05:00+02:00",
   "gemini-flash-latest": "2026-11-12T10:05:00+02:00",
-  "gemini-flash-lite-latest": "2026-11-12T10:05:00+02:00"
+  "gemini-flash-lite-latest": "2026-11-12T10:05:00+02:00",
+  "iDpywg:gemini-flash-latest": "2026-11-12T10:05:00+02:00"
  },
  "omdb_cache": {
   "tt5362988": [
@@ -30368,9 +30375,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "a60118a45ee2",
+  "gs": "6519825502e7",
   "quiz_pool.json": "80eae7ea9381",
-  "fact.png": "dc4fd73aed79",
+  "fact.png": "cabe4c5ec054",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -45304,12 +45311,13 @@
   ],
   "936688574": [
    "“You yourself never loved; you never lov",
-   "No—my sweet Fanny—I am wrong—I do not wi"
+   "No—my sweet Fanny—I am wrong—I do not wi",
+   "The sound of the wheels grew fainter in "
   ]
  },
  "ero_book": {
   "160603556": "Women in Love",
-  "936688574": "Letters of John Keats to Fanny Brawne"
+  "936688574": "The Art of Love"
  },
  "prom_day": "2026-11-11",
  "prom_force": false,
@@ -45336,7 +45344,7 @@
  "para_bag": [],
  "para_sent": "2026-11-11",
  "fan_wk": "2026-46",
- "weather": "2026-11-10",
+ "weather": "2026-11-11",
  "prom_i": 3,
  "yt_week": "2026-46",
  "smm_week": "2026-46",
@@ -45347,15 +45355,11 @@
   "kind": "article",
   "src": "Cosmopolitan"
  },
- "silpo_snap": "2026-11-04",
+ "silpo_snap": "2026-11-11",
  "live_day": "2026-11-11",
  "silpo_week": "2026-45",
- "sbm_at": 1794419750.2045784,
+ "sbm_at": 1794420051.2939017,
  "sbm_hist": [
-  [
-   "06:05",
-   91
-  ],
   [
    "06:10",
    89
@@ -45926,6 +45930,10 @@
   ],
   [
    "19:55",
+   57
+  ],
+  [
+   "20:00",
    57
   ]
  ],
@@ -49039,10 +49047,15 @@
   "e00": 1,
   "e10": 1,
   "e20": 1,
-  "rap": 1
+  "rap": 1,
+  "pop": 1,
+  "rock": 1,
+  "edm": 1
  },
  "aro_now_seen": "1794417077767",
- "arob_fail": {},
+ "arob_fail": {
+  "m": 1
+ },
  "pl_v": 3,
  "arob_full": false,
  "aro_last": 0,
