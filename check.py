@@ -6512,7 +6512,7 @@ def aroma_monthly(st: dict, now: datetime) -> None:
                 if iid in banned:
                     continue                               # прибране адміністратором — не повертаємо
                 if not _aro_found(n, cat != "f"):
-                    print(f"Аромати: «{n}» не підтверджено пошуком — пропущено"); continue   # без підтвердження на Fragrantica/Parfumo/Notino/MAKEUP — не додаємо
+                    print(f"Аромати: «{n}» не підтверджено пошуком — пропущено"); ARO_LOG.append(f"↷ не підтверджено: {n[:50]}"); continue   # без підтвердження на Fragrantica/Parfumo/Notino/MAKEUP — не додаємо
                 items.append([iid, g if sec != "d" else ("w" if re.search(r"femme|women|жіноч|mademoiselle|libre|miss", n, re.I) else "m" if re.search(r"homme|men|чолов|sauvage|bleu", n, re.I) else "u"),
                               cat, n[:70], int(x.get("y") or 0), str(x.get("se") or "усі")[:20], str(x.get("a") or "")[:12], str(x.get("l") or "—")[:30],
                               str(x.get("no") or "")[:120], str(x.get("tg") or "🆕 новинка")[:20], str(x.get("w") or "")[:160], now.strftime("%m.%Y")])
@@ -6523,6 +6523,7 @@ def aroma_monthly(st: dict, now: datetime) -> None:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=aroma_extra.json", out)
         st["aro_month"] = f"{now:%Y-%m}"
         print(f"🧴 Аромати: додано {added}, у додатковій базі {len(out['items'])}")
+        ARO_LOG.append(f"🧴 Аромати: додано {added}, у додатковій базі {len(out['items'])}"); aro_log_push(now)
     except Exception as e:
         print(f"Аромати → бот: {err_text(e)[:60]}")
 
@@ -6533,6 +6534,17 @@ AROB_SECT = {"m": "чоловічі парфуми (бестселери й ви
              "hair": "догляд за волоссям (шампуні, кондиціонери, маски) — найкраще оцінені", "body": "догляд за тілом (гелі для душу, лосьйони, креми) — найкраще оцінені",
              "shave": "гоління й після гоління (бритви, електробритви, піни, бальзами) — найкраще оцінені", "deo": "дезодоранти й антиперспіранти преміум і аптечні — найкраще оцінені"}
 AROB_TRUST = r"fragrantica|parfumo|allure|gq\.com|vogue|elle|harpersbazaar|esquire|byrdie|cosmopolitan|menshealth|womenshealth|fifiawards|fragrancefoundation|notino|makeup\.com\.ua|sephora|cosme"
+
+
+ARO_LOG: list = []
+
+
+def aro_log_push(now: datetime) -> None:
+    if ARO_LOG and WORKER_MODE:
+        try:
+            http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=aro_log.json", {"at": now.strftime("%d.%m %H:%M"), "lines": ARO_LOG[-25:]})
+        except Exception:
+            pass
 
 
 def aroma_best(st: dict, now: datetime) -> None:
@@ -6546,14 +6558,17 @@ def aroma_best(st: dict, now: datetime) -> None:
         db = {}
     if db.get("year") != yr or st.pop("arob_force", False):
         db = {"year": yr, "sect": {}, "at": ""}
-    todo = [k for k in AROB_SECT if k not in db["sect"]][:2]
+    fails = st.setdefault("arob_fail", {})
+    todo = [k for k in AROB_SECT if len(db["sect"].get(k) or []) < 10 and fails.get(k, 0) < 3][:2]   # порожні/малі — повторюємо (до 3 спроб)
     if not todo:
         return
     for k in todo:
         out, seen = [], set()
-        for part in (1, 2):
+        for part in (1, 2, 3, 4):                         # менші порції (по 13) — щоб відповідь ШІ не обрізалась
+            if len(out) >= 50:
+                break
             raw = gemini(f"Ти редактор рейтингу «найкраще з найкращого» ({yr}). Категорія: {AROB_SECT[k]}. Лише визнані бренди без масмаркету, що продаються в Україні. "
-                         f"Склади список {'перших 25' if part == 1 else 'наступних 25 (інших, не з першої частини)'} позицій за визнанням: бестселери, переможці премій "
+                         f"Склади список із 13 {'найкращих' if part == 1 else 'наступних (інших, ніж уже названі)'} позицій за визнанням: бестселери, переможці премій "
                          "(Fragrantica Community Awards, FiFi Awards, Allure Best of Beauty, GQ Grooming Awards) і стабільно високі оцінки спільнот і покупців. "
                          + (f"Не повторюй: {', '.join(x[0] for x in out)[:1500]}. " if out else "") +
                          "Для кожної: n (бренд і назва), why (чим визнано — премія/рік, рейтинг або статус, коротко українською), "
@@ -6581,13 +6596,141 @@ def aroma_best(st: dict, now: datetime) -> None:
                     print(f"🏆 {k}: «{n}» не знайдено на авторитетних сайтах — пропущено"); continue
                 out.append([n[:70], str(x.get("why") or "")[:140], str(x.get("notes") or "")[:120], str(x.get("l") or "—")[:30],
                             str(x.get("a") or "—")[:12], str(x.get("se") or "усі")[:20], "" if src == "?" else src[:200]])
-        db["sect"][k] = out
-        print(f"🏆 Найкращі «{k}»: {len(out)}")
+        if len(out) >= 10 or fails.get(k, 0) >= 2:
+            db["sect"][k] = out; fails.pop(k, None)
+        else:
+            fails[k] = fails.get(k, 0) + 1                # замало підтверджених — спробуємо в наступному запуску
+        ARO_LOG.append(f"🏆 Найкращі «{k}»: {len(out)} підтверджено" + ("" if len(out) >= 10 else f" — мало, повторю (спроба {fails.get(k, 0)}/3)"))
+        print(ARO_LOG[-1])
     db["at"] = now.strftime("%d.%m.%Y")
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=aroma_best.json", db)
     except Exception as e:
         print(f"Найкращі → бот: {err_text(e)[:60]}")
+    aro_log_push(now)
+
+
+# ---------- 🎧 Топ плейлистів (Deezer): ~50 категорій, рейтинг «популярність + живість + свіжість + 🔥 тренд», щотижня ----------
+PL_CATS = {   # ключ: (назва, група, пошукові фрази, ретро — не вимагаємо свіжих додавань, сезон)
+    "new": ("🆕 Новинки", "top", ["new music friday", "new releases", "new hits", "новинки"], 0, ""),
+    "sport": ("💪 Спорт", "mood", ["workout", "gym", "gym phonk", "тренування"], 0, ""), "run": ("🏃 Біг", "mood", ["running", "running music", "cardio"], 0, ""),
+    "work": ("💼 Робота й фокус", "mood", ["focus", "deep focus", "work music", "concentration"], 0, ""), "party": ("🕺 Вечірка", "mood", ["party", "party hits", "вечірка"], 0, ""),
+    "love": ("💞 Для двох", "mood", ["romantic", "love songs", "sensual", "romance"], 0, ""), "chill": ("😌 Чіл", "mood", ["chill", "chill vibes", "lounge"], 0, ""),
+    "sleep": ("🌙 Сон", "mood", ["sleep", "deep sleep", "sleep music"], 0, ""), "road": ("🚗 В дорогу", "mood", ["road trip", "driving", "car music"], 0, ""),
+    "morning": ("☕ Ранок", "mood", ["morning", "good morning", "morning coffee"], 0, ""), "yoga": ("🧘 Медитація й йога", "mood", ["meditation", "yoga", "relaxing"], 0, ""),
+    "study": ("📚 Навчання", "mood", ["lofi study", "study music", "lofi"], 0, ""), "cook": ("🍳 Готування", "mood", ["cooking", "dinner", "kitchen"], 0, ""),
+    "sad": ("🌧 Сумне", "mood", ["sad songs", "sad", "сумні пісні"], 0, ""), "dance": ("💃 Танці вдома", "mood", ["dance hits", "dance", "танці"], 0, ""),
+    "gaming": ("🎮 Для ігор", "mood", ["gaming music", "epic gaming", "synthwave"], 0, ""),
+    "e60": ("🎷 60–70-ті", "era", ["60s hits", "70s hits", "70s disco"], 1, ""), "e80": ("📼 80-ті", "era", ["80s hits", "80s", "80s pop"], 1, ""),
+    "e90": ("💿 90-ті", "era", ["90s hits", "90s", "90s dance"], 1, ""), "e00": ("📀 2000-ні", "era", ["2000s hits", "00s hits", "2000s"], 1, ""),
+    "e10": ("📱 2010-ті", "era", ["2010s hits", "2010s"], 1, ""), "e20": ("🔥 Хіти 2020-х", "era", ["2020s hits", "hits 2026", "hits 2025"], 0, ""),
+    "rap": ("🎤 Реп", "genre", ["rap", "hip hop", "rap hits"], 0, ""), "pop": ("🎶 Поп", "genre", ["pop hits", "pop"], 0, ""),
+    "rock": ("🎸 Рок", "genre", ["rock", "rock hits", "rock classics"], 0, ""), "edm": ("⚡ Електроніка", "genre", ["electronic", "edm"], 0, ""),
+    "classic": ("🎻 Класика", "genre", ["classical", "classical music"], 1, ""), "jazz": ("🎺 Джаз і блюз", "genre", ["jazz", "blues"], 1, ""),
+    "metal": ("🤘 Метал", "genre", ["metal", "heavy metal"], 0, ""), "house": ("🏠 Хаус і техно", "genre", ["house", "techno", "deep house"], 0, ""),
+    "latin": ("🌴 Латина", "genre", ["reggaeton", "latin hits"], 0, ""), "indie": ("🎹 Інді", "genre", ["indie", "alternative"], 0, ""),
+    "ost": ("🎬 Саундтреки", "genre", ["soundtrack", "movie soundtrack", "game soundtrack"], 1, ""), "kpop": ("💫 K-pop", "genre", ["kpop", "k-pop"], 0, ""),
+    "uanew": ("🆕 Нове українське", "ua", ["українська музика", "ukrainian hits", "українські хіти", "нове українське"], 0, ""),
+    "ua90": ("📼 Українське 90–2000-х", "ua", ["українські хіти 90", "українська естрада", "ukrainian 2000s"], 1, ""),
+    "uarap": ("🎤 Український реп", "ua", ["український реп", "ukrainian rap"], 0, ""), "uarock": ("🎸 Український рок", "ua", ["український рок", "ukrainian rock"], 0, ""),
+    "wedding": ("💍 Весілля", "event", ["wedding", "wedding songs", "весілля"], 1, ""), "bday": ("🎂 День народження", "event", ["birthday party", "birthday"], 1, ""),
+    "xmas": ("🎄 Новорічне", "event", ["christmas", "christmas songs", "новорічні пісні"], 1, "winter"), "summer": ("☀️ Літо й пляж", "event", ["summer hits", "beach", "summer"], 0, "summer"),
+    "kids": ("👶 Для дітей", "event", ["kids songs", "дитячі пісні", "children"], 1, ""),
+    "us": ("🇺🇸 Хіти США", "country", ["usa top", "us hits", "billboard"], 0, ""), "gb": ("🇬🇧 Британія", "country", ["uk hits", "british hits"], 0, ""),
+    "fr": ("🇫🇷 Франція", "country", ["french hits", "chanson française"], 0, ""), "it": ("🇮🇹 Італія", "country", ["italian hits", "musica italiana"], 0, ""),
+}
+PL_SPAM = re.compile(r"follow|promo|submit|free followers|spotify|playlist exchange|curator|\$|💰", re.I)
+
+
+def _dz(path: str):
+    _time.sleep(0.12)                                  # ліміт Deezer — 50 запитів за 5 с
+    return http_json("https://api.deezer.com" + path)
+
+
+def pl_rank(p: dict, retro: bool, prev: dict) -> dict | None:
+    """Одна оцінка плейлиста: популярність (log fans), живість (останнє додавання), свіжість (створення), тренд (тижневий приріст), ✅ редакція."""
+    fans, n, dur = int(p.get("fans") or 0), int(p.get("nb_tracks") or 0), int(p.get("duration") or 0)
+    title = str(p.get("title") or "")
+    if n < 25 or n > 400 or dur < 3600 or PL_SPAM.search(title) or fans < 50:
+        return None
+    tr = (p.get("tracks") or {}).get("data") or []
+    last = max((int(t.get("time_add") or 0) for t in tr), default=0)
+    days = (_time.time() - last) / 86400 if last else 999
+    if not retro and days > 180:
+        return None                                    # «мертвий» плейлист — не для сучасних категорій
+    created = str(p.get("creation_date") or "")[:10]
+    try:
+        age = (datetime.now() - datetime.fromisoformat(created)).days
+    except Exception:
+        age = 9999
+    ed = bool(re.search(r"deezer|editor", str((p.get("creator") or {}).get("name") or ""), re.I))
+    pf = prev.get(str(p["id"]))
+    trend = round((fans - pf) / pf * 100, 1) if pf and pf > 0 else None
+    live = 1.5 if days <= 30 else 1.0 if days <= 90 else 0.5 if days <= 180 else 0
+    sc = math.log10(fans + 1) + (live if not retro else 0.5) + (0.7 if age <= 365 else 0) + (0.5 if ed else 0) + (min(max(trend or 0, 0), 20) / 10)
+    arts = []
+    for t in tr[:15]:
+        a = (t.get("artist") or {}).get("name")
+        if a and a not in arts:
+            arts.append(a)
+    pv = next((t.get("preview") for t in tr if t.get("preview")), "")
+    return {"id": p["id"], "t": title[:70], "u": str((p.get("creator") or {}).get("name") or "")[:30], "ed": ed, "fans": fans, "n": n,
+            "cy": created[:4], "age": age, "days": int(days), "tr": trend, "sc": round(sc, 2), "art": arts[:4], "pv": pv, "pt": (tr[0].get("title") if tr else "")[:50]}
+
+
+def pl_build(st: dict, now: datetime) -> None:
+    """3 категорії за запуск; повне коло — раз на тиждень (≈50 категорій за ~1,5 год)."""
+    if not WORKER_MODE:
+        return
+    wk = f"{now:%G%V}"
+    done = st.setdefault("pl_done", {})
+    if done.get("_wk") != wk:
+        done.clear(); done["_wk"] = wk
+    todo = [k for k in PL_CATS if k not in done][:3]
+    if not todo:
+        return
+    try:
+        db = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=pl.json") or {}
+        hist = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=pl_hist.json") or {}
+    except Exception:
+        db, hist = {}, {}
+    db.setdefault("cats", {})
+    for k in todo:
+        title, grp, qs, retro, season = PL_CATS[k]
+        ids = []
+        for q in qs:
+            try:
+                for x in (_dz("/search/playlist?" + urllib.parse.urlencode({"q": q, "limit": 50})).get("data") or []):
+                    if x.get("id") not in ids and 25 <= int(x.get("nb_tracks") or 0) <= 400:
+                        ids.append(x["id"])
+            except Exception as e:
+                print(f"Deezer пошук «{q}»: {err_text(e)[:50]}")
+        if k == "new":
+            try:
+                ids += [x["id"] for x in (_dz("/chart/0/playlists?limit=50").get("data") or []) if x.get("id") not in ids]
+            except Exception:
+                pass
+        items = []
+        for pid in ids[:45]:
+            try:
+                p = _dz(f"/playlist/{pid}")
+            except Exception:
+                continue
+            r = pl_rank(p, bool(retro), hist)
+            if r:
+                items.append(r)
+        items.sort(key=lambda x: -x["sc"])
+        db["cats"][k] = {"t": title, "g": grp, "s": season, "at": now.strftime("%d.%m"), "items": items[:20]}
+        done[k] = 1
+        print(f"🎧 Плейлисти «{title}»: кандидатів {len(ids)}, у топі {len(items[:20])}")
+    db["at"] = now.strftime("%d.%m.%Y")
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=pl.json", db)
+        if len([k for k in PL_CATS if k in done]) == len(PL_CATS):     # коло завершено — фіксуємо підписників для тренду наступного тижня
+            http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=pl_hist.json",
+                      {str(x["id"]): x["fans"] for c in db["cats"].values() for x in c.get("items", [])})
+    except Exception as e:
+        print(f"Плейлисти → бот: {err_text(e)[:60]}")
 
 
 # ---------- 🎬 Режисери: 🏆 Топ-50 (раз на тиждень) і 🎬 Мої режисери (фільмографія, рейтинги, сповіщення про нові фільми) ----------
@@ -7518,6 +7661,10 @@ def main() -> None:
             st["yt_mute"], st["yt_fav"] = list(ex.get("yt_mute") or []), list(ex.get("yt_fav") or [])   # 🚫/⭐ канали YouTube
             st["yt_fb"] = dict(ex.get("yt_fb") or {})   # 👍/👎 до відео «Для вас» → вага каналу
             st["mydir_ex"] = dict(ex.get("mydir") or {})   # 🎬 мої режисери (усіх)
+            if ex.get("aro_now") and ex.get("aro_now") != st.get("aro_now_seen"):   # 🧪 адмін: «▶️ Добрати зараз» (аромати)
+                st["aro_now_seen"], st["aro_force"] = ex["aro_now"], True
+                st["arob_fail"] = {}
+                st["force_heavy"] = ["аромати", "найкращі аромати й догляд"] + [x for x in (st.get("force_heavy") or []) if x not in ("аромати", "найкращі аромати й догляд")]
             worker_req["kino_used"] = ex.get("kino_used") or []
             taste_update(st, ex.get("likes") or [], ex.get("dislikes") or [])   # 👍/👎 з меню кіно
             subs = {str(k): list(v) for k, v in (ex.get("subs") or {}).items()}
@@ -7938,6 +8085,11 @@ def main() -> None:
                 one_[c_] = (pri, t_)
         direct_m.extend((c_, t_, None) for c_, (_, t_) in one_.items())
         net_status(st, now)                           # 🌐 мережі провайдерів (раз на ~15 хв)
+        if budget_ok(90):
+            try:
+                pl_build(st, now)                     # 🎧 топ плейлистів Deezer (3 категорії за запуск)
+            except Exception as e_:
+                print(f"Плейлисти: {err_text(e_)[:80]}")
         direct_m.extend((c_, t_, None) for c_, t_ in DIR_MSGS); DIR_MSGS.clear()   # 🔔 нові фільми режисерів
         for prov_, txt_ in NET_MSGS:                  # сповіщення тим, хто обрав цього провайдера (основні — Triolan і SunNet за замовчуванням)
             for c_ in dict.fromkeys([str(x) for x in PROF] + FAMILY):
