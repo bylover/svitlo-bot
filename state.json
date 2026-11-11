@@ -729,7 +729,7 @@
   "t69158",
   "t1409"
  ],
- "gh_beat": "2026-11-11T14:05:45.289788+02:00",
+ "gh_beat": "2026-11-11T14:08:39.611972+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -30292,7 +30292,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "bd1925f81389",
+  "gs": "3030802b214c",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "d80455f00e70",
   "sexed.json": "0362ec7e46d4",
@@ -48905,9 +48905,12 @@
   "ost": 1,
   "kpop": 1,
   "uanew": 1,
-  "ua90": 1
+  "ua90": 1,
+  "uarap": 1,
+  "uarock": 1,
+  "wedding": 1
  },
- "aro_now_seen": "1794396952920",
+ "aro_now_seen": "1794398906086",
  "arob_fail": {},
  "pl_v": 2,
  "arob_full": false,
