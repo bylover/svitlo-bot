@@ -729,7 +729,7 @@
   "t69158",
   "t1409"
  ],
- "gh_beat": "2026-11-11T10:13:57.843396+02:00",
+ "gh_beat": "2026-11-11T10:17:24.099948+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -740,11 +740,11 @@
   "groups": [
    "GPV3.1"
   ],
-  "updated": "09:50 11.11.2026",
+  "updated": "10:03 11.11.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-11T10:02:51.733605+02:00",
+  "checked": "2026-11-11T10:12:57.766487+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": true
@@ -1761,22 +1761,22 @@
    "note": ""
   },
   "smm-інструменти": {
-   "at": "11.11 10:05",
-   "ts": 1794384346,
+   "at": "11.11 10:17",
+   "ts": 1794385070,
    "ok": true,
    "note": ""
   },
   "найкращі аромати й догляд": {
-   "at": "11.11 09:59",
-   "ts": 1794383997,
+   "at": "11.11 10:20",
+   "ts": 1794385213,
    "ok": true,
    "note": ""
   },
   "аромати": {
-   "at": "11.11 10:13",
-   "ts": 1794384821,
-   "ok": false,
-   "note": "'list' object has no attribute 'get'"
+   "at": "11.11 10:17",
+   "ts": 1794385070,
+   "ok": true,
+   "note": ""
   }
  },
  "kino_ver": 2,
@@ -13226,7 +13226,10 @@
  "pend": {},
  "got": {},
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
- "gem_block": {},
+ "gem_block": {
+  "gemini-3.8-flash": "2026-11-12T10:05:00+02:00",
+  "gemini-flash-latest": "2026-11-12T10:05:00+02:00"
+ },
  "omdb_cache": {
   "tt5362988": [
    7.7,
@@ -30216,7 +30219,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "c18501d44d2a",
+  "gs": "d2162832287a",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "332b115ef2ee",
   "sexed.json": "0362ec7e46d4",
@@ -43778,7 +43781,7 @@
  "silpo_snap": "2026-11-04",
  "live_day": "2026-11-11",
  "silpo_week": "2026-45",
- "sbm_at": 1794384841.7338383,
+ "sbm_at": 1794385048.7803524,
  "sbm_hist": [
   [
    "21:10",
@@ -44353,7 +44356,7 @@
    50
   ],
   [
-   "10:13",
+   "10:17",
    46
   ]
  ],
@@ -44371,7 +44374,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1794384103.7022252,
+ "net_at": 1794385057.9143424,
  "net_asn": {
   "triolan": [
    "13188",
@@ -47490,5 +47493,8 @@
   "it": 1
  },
  "aro_now_seen": "1794383976945",
- "arob_fail": {}
+ "arob_fail": {
+  "m": 1,
+  "t": 1
+ }
 }
