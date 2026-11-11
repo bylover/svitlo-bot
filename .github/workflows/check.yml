@@ -46,6 +46,7 @@ jobs:
           RAWG_KEY: ${{ secrets.RAWG_KEY }}
           YT_KEY: ${{ secrets.YT_KEY }}
           GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+          GEMINI_KEY_BG: ${{ secrets.GEMINI_KEY_BG }}
           GIPHY_KEY: ${{ secrets.GIPHY_KEY }}
           REDDIT_ID: ${{ secrets.REDDIT_ID }}
           REDDIT_SECRET: ${{ secrets.REDDIT_SECRET }}
