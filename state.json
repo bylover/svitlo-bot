@@ -729,7 +729,7 @@
   "t69158",
   "t1409"
  ],
- "gh_beat": "2026-11-12T01:40:44.964769+02:00",
+ "gh_beat": "2026-11-12T01:45:46.711891+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -744,7 +744,7 @@
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-12T01:32:54.421000+02:00",
+  "checked": "2026-11-12T01:42:56.136621+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1660,8 +1660,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "12.11 01:42",
-   "ts": 1794440576,
+   "at": "12.11 01:47",
+   "ts": 1794440843,
    "ok": true,
    "note": ""
   },
@@ -30476,7 +30476,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "e68ad6269b2f",
+  "gs": "ea2d2a0a7782",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "bbf532bc1feb",
   "sexed.json": "0362ec7e46d4",
@@ -46634,6 +46634,120 @@
    ],
    "ov": "A struggling student at Korea's worst high school forms a study group while protecting his classmates with his fighting skills, hoping to overcome academic challenges and secure a spot in college.",
    "poster": "https://image.tmdb.org/t/p/w500/rLrEtysTwvVZESavwufnoGIaq8j.jpg"
+  },
+  "t97890": {
+   "title": "Влада в нічному місті. Книга 2: Привид",
+   "year": "2020",
+   "rating": 7.5,
+   "genres": [
+    "Кримінал",
+    "Драма"
+   ],
+   "g": [
+    80,
+    18
+   ],
+   "ov": "Спін-оф кримінального серіалу «Влада». У центрі сюжету історія Таріка, який шукає себе і намагається позбутися гнітючого спадщини батька.",
+   "poster": "https://image.tmdb.org/t/p/w500/uN62vadbkisFvpYU5iVFgEtObJh.jpg"
+  },
+  "t8358": {
+   "title": "Теорія брехні",
+   "year": "2009",
+   "rating": 8.0,
+   "genres": [
+    "Кримінал",
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    80,
+    18,
+    9648
+   ],
+   "ov": "Провідний світовий дослідник обману, доктор Лайтман, вивчає вираз обличчя, мову тіла та тон голосу, щоб визначити, коли людина бреше і чому, що допомагає правоохоронним та урядовим органам розкривати правду. Але його нав",
+   "poster": "https://image.tmdb.org/t/p/w500/mFYk5vTkszRTiLuIy8kRnERn0GJ.jpg"
+  },
+  "t62455": {
+   "title": "Vis a vis",
+   "year": "2015",
+   "rating": 7.8,
+   "genres": [
+    "Драма",
+    "Кримінал"
+   ],
+   "g": [
+    18,
+    80
+   ],
+   "ov": "Set up to take the blame for corporate fraud, young Macarena Ferreiro is locked up in a high-security women's prison surrounded by tough, ruthless criminals in this tense, provocative Spanish thriller.",
+   "poster": "https://image.tmdb.org/t/p/w500/7mfPWKrNInkTbjVwp0EkaFYRHqD.jpg"
+  },
+  "t85021": {
+   "title": "Банди Лондона",
+   "year": "2020",
+   "rating": 8.0,
+   "genres": [
+    "Екшн і Пригоди",
+    "Драма",
+    "Кримінал"
+   ],
+   "g": [
+    10759,
+    18,
+    80
+   ],
+   "ov": "Після вбивства очільника кримінальної організації, Фінна Воллеса, раптова пустота влади внаслідок його смерті, погрожує крихкому мирному договору між заплутаною мережею банд діючих на вулицях міста. Тепер це справа сумую",
+   "poster": "https://image.tmdb.org/t/p/w500/fVgwa6wGw9ddGM5O7mqrrwB6gHK.jpg"
+  },
+  "t122194": {
+   "title": "CSI: Vegas",
+   "year": "2021",
+   "rating": 7.4,
+   "genres": [
+    "Кримінал",
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    80,
+    18,
+    9648
+   ],
+   "ov": "Facing an existential threat that could bring down the Crime Lab, a brilliant team of forensic investigators must welcome back old friends and deploy new techniques to preserve and serve justice in Sin City.",
+   "poster": "https://image.tmdb.org/t/p/w500/8DtOnaOQPiptM9umpV0Xntwv9t3.jpg"
+  },
+  "t73544": {
+   "title": "Воїн",
+   "year": "2019",
+   "rating": 8.4,
+   "genres": [
+    "Кримінал",
+    "Драма",
+    "Екшн і Пригоди"
+   ],
+   "g": [
+    80,
+    18,
+    10759,
+    37
+   ],
+   "ov": "У 1890-х роках місто Сан-Франциско потерпало від корупції і мафії. У китайському кварталі міжусобні війни досягли особливого розмаху. У цей неспокійний час в місто з Китаю прибуває молодий майстер східних єдиноборств А С",
+   "poster": "https://image.tmdb.org/t/p/w500/qwWjz8myq0jHXh0oeUwocHwfZFZ.jpg"
+  },
+  "t39483": {
+   "title": "Особливо тяжкі злочини",
+   "year": "2012",
+   "rating": 7.8,
+   "genres": [
+    "Кримінал",
+    "Драма"
+   ],
+   "g": [
+    80,
+    18
+   ],
+   "ov": "«Особливо тяжкі злочини» є спін-оффом тривалого телесеріалу «Шукач (The Closer)» з Кірою Седжвік в головній ролі.  Серіал досліджує, як американська система правосуддя підходить до системи угод, оскільки співробітники пр",
+   "poster": "https://image.tmdb.org/t/p/w500/fZ502JXujnxVtprmigTO2jA205P.jpg"
   }
  },
  "cofid_pushed": "10.11.2026",
@@ -46718,12 +46832,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-12",
  "silpo_week": "2026-45",
- "sbm_at": 1794440449.1455085,
+ "sbm_at": 1794440752.0179935,
  "sbm_hist": [
-  [
-   "11:30",
-   50
-  ],
   [
    "12:02",
    52
@@ -47295,6 +47405,10 @@
   [
    "01:40",
    81
+  ],
+  [
+   "01:45",
+   81
   ]
  ],
  "sbm_near": {
@@ -47311,7 +47425,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1794439863.845441,
+ "net_at": 1794440761.058176,
  "net_asn": {
   "triolan": [
    "13188",
@@ -50368,7 +50482,7 @@
   "ser_gems": "2026-11-12T01:00:50.965253+02:00",
   "ser_hot": "2026-11-12T01:20:46.341555+02:00",
   "ser_new": "2026-11-12T01:40:45.106193+02:00",
-  "ser_crime": "2026-11-11T12:20:44.826935+02:00",
+  "ser_crime": "2026-11-12T01:45:46.870509+02:00",
   "ser_comedy": "2026-11-11T12:30:46.672142+02:00",
   "ser_drama": "2026-11-11T12:51:54.990654+02:00",
   "ser_scifi": "2026-11-11T13:00:46.411018+02:00",
@@ -50430,9 +50544,7 @@
   "it": 1
  },
  "aro_now_seen": "1794429036308",
- "arob_fail": {
-  "m": 2
- },
+ "arob_fail": {},
  "pl_v": 3,
  "arob_full": false,
  "aro_last": 1794437786.7955236,
