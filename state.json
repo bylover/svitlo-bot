@@ -729,7 +729,7 @@
   "t69158",
   "t1409"
  ],
- "gh_beat": "2026-11-11T19:05:45.961236+02:00",
+ "gh_beat": "2026-11-11T19:10:44.707334+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -30368,7 +30368,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "9f705bc7ba53",
+  "gs": "7a8de0c4b688",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "dc4fd73aed79",
   "sexed.json": "0362ec7e46d4",
@@ -45350,12 +45350,8 @@
  "silpo_snap": "2026-11-04",
  "live_day": "2026-11-11",
  "silpo_week": "2026-45",
- "sbm_at": 1794416749.9471016,
+ "sbm_at": 1794417048.442963,
  "sbm_hist": [
-  [
-   "05:25",
-   91
-  ],
   [
    "05:30",
    91
@@ -45927,6 +45923,10 @@
   [
    "19:05",
    53
+  ],
+  [
+   "19:10",
+   54
   ]
  ],
  "sbm_near": {
@@ -45943,7 +45943,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1794415993.4500296,
+ "net_at": 1794417056.699334,
  "net_asn": {
   "triolan": [
    "13188",
@@ -49013,59 +49013,15 @@
  "aro_month": "2026-11",
  "pl_done": {
   "_wk": "202646",
-  "new": 1,
-  "sport": 1,
-  "run": 1,
-  "work": 1,
-  "party": 1,
-  "love": 1,
-  "chill": 1,
-  "sleep": 1,
-  "road": 1,
-  "morning": 1,
-  "yoga": 1,
-  "study": 1,
-  "cook": 1,
-  "sad": 1,
-  "dance": 1,
-  "gaming": 1,
-  "e60": 1,
-  "e80": 1,
-  "e90": 1,
-  "e00": 1,
-  "e10": 1,
-  "e20": 1,
-  "rap": 1,
-  "pop": 1,
-  "rock": 1,
-  "edm": 1,
-  "classic": 1,
-  "jazz": 1,
-  "metal": 1,
-  "house": 1,
-  "latin": 1,
-  "indie": 1,
-  "ost": 1,
-  "kpop": 1,
   "uanew": 1,
   "ua90": 1,
-  "uarap": 1,
-  "uarock": 1,
-  "wedding": 1,
-  "bday": 1,
-  "xmas": 1,
-  "summer": 1,
-  "kids": 1,
-  "us": 1,
-  "gb": 1,
-  "fr": 1,
-  "it": 1
+  "uarap": 1
  },
  "aro_now_seen": "1794415899121",
  "arob_fail": {
   "m": 1
  },
- "pl_v": 2,
+ "pl_v": 3,
  "arob_full": false,
  "aro_last": 1794416005.984035,
  "aro_fill_t": 1794416005.9840615
