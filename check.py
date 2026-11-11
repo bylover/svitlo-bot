@@ -79,6 +79,7 @@ OMDB_KEY = (os.environ.get("OMDB_KEY") or "").strip()
 YT_KEY = (os.environ.get("YT_KEY") or "").strip()
 KINO_WEEKDAY, YT_WEEKDAY, DIGEST_HOUR = 4, 0, 8           # пт і пн: збираємо з 8:00, надсилаємо у свій час кожного (за замовч. 11:00)
 GEMINI_KEY = (os.environ.get("GEMINI_KEY") or "").strip()  # безкоштовний ключ aistudio.google.com
+GEMINI_KEY_BG = (os.environ.get("GEMINI_KEY_BG") or "").strip()   # окремий проєкт для фонових збірок (свій денний ліміт); спершу він, потім основний
 GEMINI_MODELS = [m.strip() for m in (os.environ.get("GEMINI_MODEL") or "").split(",") if m.strip()] or \
     ["gemini-3.8-flash", "gemini-flash-latest", "gemini-flash-lite-latest"]
 GIPHY_KEY = (os.environ.get("GIPHY_KEY") or "").strip()    # безкоштовний ключ developers.giphy.com
@@ -1325,7 +1326,8 @@ GEMINI_BLOCK: dict = {}                               # {модель: до як
 
 
 def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_tokens: int = 800) -> str | None:
-    if not GEMINI_KEY:
+    keys = [k for k in dict.fromkeys([GEMINI_KEY_BG, GEMINI_KEY]) if k]
+    if not keys:
         return None
     cfg = {"temperature": 0.7 if json_mode else 1.0, "maxOutputTokens": max(max_tokens, 1500) + 2500,
            "thinkingConfig": {"thinkingLevel": "low"}}      # «думати» коротко, щоб текст не обрізався
@@ -1337,13 +1339,14 @@ def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_toke
             "HARM_CATEGORY_SEXUALLY_EXPLICIT", "HARM_CATEGORY_HARASSMENT",
             "HARM_CATEGORY_HATE_SPEECH", "HARM_CATEGORY_DANGEROUS_CONTENT")]
     blocked = GEMINI_BLOCK
-    for model in GEMINI_MODELS:
-        if blocked.get(model, "") > datetime.now(TZ).isoformat():
-            continue                                 # денний ліміт моделі вичерпано
+    for gkey, model in [(k_, m_) for k_ in keys for m_ in GEMINI_MODELS]:   # фоновий ключ → основний; у кожного — свої моделі й ліміти
+        bk = f"{gkey[-6:]}:{model}"
+        if blocked.get(bk, "") > datetime.now(TZ).isoformat():
+            continue                                 # денний ліміт моделі на цьому ключі вичерпано
         for attempt in range(3):                 # перевантаження (503/429) або модель без «думання» — ще спроба
             try:
                 r = http_json(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-                              f"?key={urllib.parse.quote(GEMINI_KEY)}", body)
+                              f"?key={urllib.parse.quote(gkey)}", body)
                 cand = (r.get("candidates") or [{}])[0]
                 parts = (cand.get("content") or {}).get("parts") or []
                 text = "".join(p_.get("text", "") for p_ in parts if not p_.get("thought")).strip()
@@ -1352,6 +1355,7 @@ def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_toke
                     if len(lines) > 2 and not re.search(r"[.!?…»)]$", lines[-1].strip()):
                         text = "\n".join(lines[:-1])
                 if text:
+                    GEM_STATE["src"] = "Gemini" + (" (фоновий ключ)" if gkey == GEMINI_KEY_BG and GEMINI_KEY_BG != GEMINI_KEY else "")
                     return text
                 print(f"Gemini {model}: порожня відповідь ({(r.get('candidates') or [{}])[0].get('finishReason')})")
                 break
@@ -1365,7 +1369,7 @@ def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_toke
                     nxt = datetime.now(TZ).replace(hour=10, minute=5, second=0, microsecond=0)
                     if nxt <= datetime.now(TZ):
                         nxt += timedelta(days=1)
-                    blocked[model] = nxt.isoformat()
+                    blocked[bk] = nxt.isoformat()
                     break
                 if e.code in (429, 500, 503) and attempt == 0:
                     _time.sleep(3)
@@ -1374,7 +1378,35 @@ def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_toke
             except Exception as e:
                 print(f"Gemini {model}: {err_text(e)[:200]}")
                 break
+    GEM_STATE["err"] = "денний ліміт Gemini" if any(v > datetime.now(TZ).isoformat() for v in blocked.values()) else "Gemini не відповів"
+    if WORKER_MODE:                                   # запасна модель (Cloudflare Workers AI через воркер)
+        try:
+            r = http_json(f"{SYNC_URL}/txt?key={urllib.parse.quote(SYNC_KEY)}",
+                          {"prompt": prompt + ("\n\nВідповідь — ЛИШЕ валідний JSON без пояснень." if json_mode else "")})
+            t_ = str((r or {}).get("text") or "").strip()
+            if t_:
+                GEM_STATE["src"] = "запасна модель"
+                return t_
+        except Exception as e:
+            print(f"Запасна модель: {err_text(e)[:120]}")
     return None
+
+
+GEM_STATE: dict = {}
+
+
+def json_loose(raw: str | None) -> dict:
+    """JSON із відповіді ШІ, навіть якщо навколо є текст або ```-блоки."""
+    if not raw:
+        return {}
+    t = re.sub(r"^```(?:json)?|```$", "", raw.strip(), flags=re.M).strip()
+    for cand in (t, t[t.find("{"): t.rfind("}") + 1] if "{" in t else ""):
+        try:
+            v = json.loads(cand)
+            return v if isinstance(v, dict) else {"items": v} if isinstance(v, list) else {}
+        except Exception:
+            continue
+    return {}
 
 
 def para_news(st: dict, now: datetime, limit: int = 3) -> list[tuple[str, str]]:
@@ -6515,7 +6547,9 @@ def aroma_monthly(st: dict, now: datetime) -> None:
                       "«💰 ціна/якість», «🧪 дерматологічний», «🧪 аптечний», «💎 преміум»), w (чому в списку, одне речення українською). "
                       'Поверни JSON {"items":[{"n":"","y":0,"se":"","a":"","l":"","no":"","tg":"","w":""}]}.')
             try:
-                js = json.loads(gemini(prompt, json_mode=True, relaxed=True, max_tokens=3000) or "{}")
+                raw_ = gemini(prompt, json_mode=True, relaxed=True, max_tokens=3000)
+                js = json_loose(raw_)
+                ARO_LOG.append(f"🤖 {sec}: ШІ ({GEM_STATE.get('src', '?') if raw_ else 'не відповів — ' + GEM_STATE.get('err', '?')}) {len(js.get('items') or [])} кандидатів")
             except Exception:
                 js = {}
             for x in (js.get("items") or [])[:per]:
@@ -6590,12 +6624,12 @@ def aroma_best(st: dict, now: datetime) -> None:
                          "Для кожної: n (бренд і назва), why (чим визнано — премія/рік, рейтинг або статус, коротко українською), "
                          "notes (ноти або склад/тип, українською), l (стійкість для парфумів або «—»), a (вік-орієнтир), se (сезон для парфумів або «усі»). "
                          'Поверни JSON {"items":[{"n":"","why":"","notes":"","l":"","a":"","se":""}]}', json_mode=True, relaxed=True, max_tokens=6000)
-            try:
-                items = json.loads(raw or "{}").get("items", [])
-            except Exception:
-                items = []
+            items = json_loose(raw).get("items", []) or []
+            if not raw:
+                ARO_LOG.append(f"🤖 «{k}»: ШІ не відповів ({GEM_STATE.get('err', '?')})"); break
+            ok_, no_, na_ = 0, 0, 0
             for x in items:
-                n = str(x.get("n") or "").strip()
+                n = str(x.get("n") or "").strip() if isinstance(x, dict) else ""
                 if not n or n.lower() in seen or len(out) >= 50:
                     continue
                 seen.add(n.lower())
@@ -6606,9 +6640,11 @@ def aroma_best(st: dict, now: datetime) -> None:
                 else:
                     src = next((h for h, _ in hits if re.search(AROB_TRUST, h)), "")
                 if not src:
-                    print(f"🏆 {k}: «{n}» не знайдено на авторитетних сайтах — пропущено"); continue
+                    no_ += 1; print(f"🏆 {k}: «{n}» не знайдено на авторитетних сайтах — пропущено"); continue
+                ok_ += 1; na_ += src == "?"
                 out.append([n[:70], str(x.get("why") or "")[:140], str(x.get("notes") or "")[:120], str(x.get("l") or "—")[:30],
                             str(x.get("a") or "—")[:12], str(x.get("se") or "усі")[:20], "" if src == "?" else src[:200]])
+            ARO_LOG.append(f"🤖 «{k}» ч.{part}: ШІ ({GEM_STATE.get('src', '?')}) {len(items)} кандидатів · ✓ {ok_} (без джерела {na_}) · ✗ {no_}")
         if len(out) >= 10 or fails.get(k, 0) >= 2:
             db["sect"][k] = out; fails.pop(k, None)
         else:
@@ -6624,7 +6660,15 @@ def aroma_best(st: dict, now: datetime) -> None:
 
 
 # ---------- 🎧 Топ плейлистів (Deezer): ~50 категорій, рейтинг «популярність + живість + свіжість + 🔥 тренд», щотижня ----------
-PL_UA_ART = ["KALUSH", "Jerry Heil", "Океан Ельзи", "Скрябін", "MONATIK", "alyona alyona", "TVORCHI", "Klavdia Petrivna", "Wellboy", "Антитіла", "Христина Соловій", "The Hardkiss", "Друга Ріка", "Бумбокс", "Max Barskih", "Go_A"]   # популярні українські виконавці — знаходять плейлисти з українською музикою, навіть без «Ukraine» в назві
+PL_UA_ART = ["KALUSH", "Калуш", "Jerry Heil", "Джері Хіл", "Океан Ельзи", "Okean Elzy", "Скрябін", "Skryabin", "MONATIK", "Монатік", "alyona alyona", "TVORCHI", "Klavdia Petrivna",
+             "Клавдія Петрівна", "Wellboy", "Антитіла", "Antytila", "Христина Соловій", "Khrystyna Soloviy", "The Hardkiss", "Друга Ріка", "Druha Rika", "Бумбокс", "Boombox",
+             "Max Barskih", "Go_A", "Tina Karol", "Тіна Кароль", "Jamala", "Джамала", "Ruslana", "Руслана", "KAZKA", "DakhaBrakha", "ДахаБраха", "Artem Pivovarov", "Артем Пивоваров",
+             "YAKTAK", "KOLA", "Nadya Dorofeeva", "Dorofeeva", "SHUM", "Skofka", "Ziferblat", "Melovin", "Kalush Orchestra", "Верка Сердючка", "Verka Serduchka", "Pianoбой", "Злата Огнєвич",
+             "Ірина Білик", "Iryna Bilyk", "Plach Yeremiji", "Плач Єремії", "Mad Heads", "Vopli Vidopliassova", "ВВ", "Jinjer", "Latexfauna", "Kola", "Positiff", "LAUD", "Barleben"]
+PL_UA_SET = {a.lower() for a in PL_UA_ART}
+PL_UA_Q = ["українська музика", "українські пісні", "українські хіти", "нове українське", "топ україна", "хіти україни", "українська попса", "укрпоп", "укр поп",
+           "ukrainian music", "ukrainian hits", "ukrainian songs", "ukrainian pop", "ukraine music", "ukraine hits", "ukr pop", "ukrpop", "ukrainska muzyka", "ukrainski pisni",
+           "ukrayinska muzyka", "ukrainski khity", "ua hits", "ua music", "music ukraine", "украинская музыка", "украинские песни", "украинские хиты", "top ukraine 2026", "хіти 2026 україна"]
 PL_FRESH = {"new", "e20", "uanew", "rap", "pop", "party", "dance", "edm", "house", "uarap", "kpop", "latin", "sport", "run", "us", "gb", "summer"}   # актуальні — ротація важлива
 PL_CATS = {   # ключ: (назва, група, пошукові фрази, ретро — не вимагаємо свіжих додавань, сезон)
     "new": ("🆕 Новинки", "top", ["new music friday", "new releases", "new hits", "новинки"], 0, ""),
@@ -6645,10 +6689,13 @@ PL_CATS = {   # ключ: (назва, група, пошукові фрази, 
     "metal": ("🤘 Метал", "genre", ["metal", "heavy metal"], 0, ""), "house": ("🏠 Хаус і техно", "genre", ["house", "techno", "deep house"], 0, ""),
     "latin": ("🌴 Латина", "genre", ["reggaeton", "latin hits"], 0, ""), "indie": ("🎹 Інді", "genre", ["indie", "alternative"], 0, ""),
     "ost": ("🎬 Саундтреки", "genre", ["soundtrack", "movie soundtrack", "game soundtrack"], 1, ""), "kpop": ("💫 K-pop", "genre", ["kpop", "k-pop"], 0, ""),
-    "uanew": ("🆕 Нове українське", "ua", ["українська музика", "ukrainian hits", "українські хіти", "нове українське", "українські пісні", "ukrainian pop", "ukraine music", "ukrainska muzyka", "топ україна"] + PL_UA_ART[:8], 0, ""),
-    "ua90": ("📼 Українське 90–2000-х", "ua", ["українські хіти 90", "українська естрада", "ukrainian 2000s", "українські пісні 2000", "старі українські пісні", "українська класика естради", "Океан Ельзи", "Скрябін", "Друга Ріка", "Бумбокс"], 1, ""),
-    "uarap": ("🎤 Український реп", "ua", ["український реп", "ukrainian rap", "укр реп", "реп українською", "ukrainian hip hop", "alyona alyona", "KALUSH", "Skofka"], 0, ""),
-    "uarock": ("🎸 Український рок", "ua", ["український рок", "ukrainian rock", "рок україна", "укр рок", "Океан Ельзи", "Антитіла", "The Hardkiss", "Жадан і Собаки"], 0, ""),
+    "uanew": ("🆕 Нове українське", "ua", PL_UA_Q + ["KALUSH", "Jerry Heil", "YAKTAK", "KOLA", "Artem Pivovarov", "Klavdia Petrivna", "Wellboy", "TVORCHI", "Nadya Dorofeeva", "SHUM", "Max Barskih", "MONATIK"], 0, ""),
+    "ua90": ("📼 Українське 90–2000-х", "ua", ["українські хіти 90", "українська естрада", "ukrainian 2000s", "ukrainian 90s", "українські пісні 2000", "старі українські пісні", "українська класика естради",
+             "ukrainski pisni 2000", "ukrainska estrada", "украинская эстрада", "украинские хиты 2000", "Океан Ельзи", "Okean Elzy", "Скрябін", "Skryabin", "Друга Ріка", "Бумбокс", "Ruslana", "Tina Karol", "Ірина Білик", "Верка Сердючка"], 1, ""),
+    "uarap": ("🎤 Український реп", "ua", ["український реп", "ukrainian rap", "укр реп", "ukr rap", "реп українською", "ukrainian hip hop", "ukrainskyi rep", "ukrainian drill", "украинский рэп",
+             "alyona alyona", "KALUSH", "Skofka", "Positiff", "Kalush Orchestra", "Wellboy", "Барлебен", "Barleben"], 0, ""),
+    "uarock": ("🎸 Український рок", "ua", ["український рок", "ukrainian rock", "рок україна", "укр рок", "ukr rock", "ukrainskyi rok", "украинский рок", "ukrainian metal", "ukrainian indie",
+             "Океан Ельзи", "Okean Elzy", "Антитіла", "Antytila", "The Hardkiss", "Жадан і Собаки", "Плач Єремії", "Vopli Vidopliassova", "Mad Heads", "Jinjer", "Latexfauna"], 1, ""),
     "wedding": ("💍 Весілля", "event", ["wedding", "wedding songs", "весілля"], 1, ""), "bday": ("🎂 День народження", "event", ["birthday party", "birthday"], 1, ""),
     "xmas": ("🎄 Новорічне", "event", ["christmas", "christmas songs", "новорічні пісні"], 1, "winter"), "summer": ("☀️ Літо й пляж", "event", ["summer hits", "beach", "summer"], 0, "summer"),
     "kids": ("👶 Для дітей", "event", ["kids songs", "дитячі пісні", "children"], 1, ""),
@@ -6675,6 +6722,10 @@ def pl_rank(p: dict, retro: bool, prev: dict, cat: str = "") -> dict | None:
     last = max(adds, default=0)
     days = (_time.time() - last) / 86400 if last else 999
     rot = round(100 * sum(1 for a in adds if a and _time.time() - a <= 90 * 86400) / max(1, len(adds)))   # 🔁 частка треків, доданих за 3 міс.
+    if ua:                                             # справді українське: ≥30% треків від українських виконавців або з українськими літерами
+        uas = sum(1 for t in tr if str((t.get("artist") or {}).get("name") or "").lower() in PL_UA_SET or re.search(r"[іїєґІЇЄҐ]", str(t.get("title") or "") + str((t.get("artist") or {}).get("name") or "")))
+        if not tr or uas / len(tr) < 0.3:
+            return None
     if not retro and days > 180:
         return None                                    # «мертвий» плейлист — не для сучасних категорій
     if cat == "new" and rot < 15:
@@ -6710,9 +6761,9 @@ def pl_build(st: dict, now: datetime) -> None:
         return
     wk = f"{now:%G%V}"
     done = st.setdefault("pl_done", {})
-    if done.get("_wk") != wk or st.get("pl_v") != 2:   # новий тиждень або нова версія рейтингу — збираємо все заново
-        done.clear(); done["_wk"] = wk; st["pl_v"] = 2
-    todo = [k for k in PL_CATS if k not in done][:3]
+    if done.get("_wk") != wk or st.get("pl_v") != 3:   # новий тиждень або нова версія рейтингу — збираємо все заново
+        done.clear(); done["_wk"] = wk; st["pl_v"] = 3
+    todo = sorted([k for k in PL_CATS if k not in done], key=lambda k: not k.startswith("ua"))[:3]   # українські — першими
     if not todo:
         return
     try:
@@ -6737,7 +6788,7 @@ def pl_build(st: dict, now: datetime) -> None:
             except Exception:
                 pass
         items = []
-        for pid in ids[:(80 if k.startswith("ua") else 45)]:
+        for pid in ids[:(140 if k.startswith("ua") else 45)]:
             try:
                 p = _dz(f"/playlist/{pid}")
             except Exception:
