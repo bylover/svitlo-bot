@@ -729,7 +729,7 @@
   "t69158",
   "t1409"
  ],
- "gh_beat": "2026-11-11T10:01:31.206391+02:00",
+ "gh_beat": "2026-11-11T10:05:43.157782+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -743,8 +743,8 @@
   "updated": "09:50 11.11.2026",
   "emergency": false,
   "city_emergency": false,
-  "city_text": "",
-  "checked": "2026-11-11T09:52:54.720256+02:00",
+  "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
+  "checked": "2026-11-11T10:02:51.733605+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": true
@@ -1749,20 +1749,20 @@
    "note": ""
   },
   "youtube для вас": {
-   "at": "11.11 09:56",
-   "ts": 1794383762,
+   "at": "11.11 10:05",
+   "ts": 1794384346,
    "ok": true,
    "note": ""
   },
   "режисери": {
-   "at": "11.11 09:56",
-   "ts": 1794383762,
+   "at": "11.11 10:05",
+   "ts": 1794384346,
    "ok": true,
    "note": ""
   },
   "smm-інструменти": {
-   "at": "11.11 09:56",
-   "ts": 1794383762,
+   "at": "11.11 10:05",
+   "ts": 1794384346,
    "ok": true,
    "note": ""
   },
@@ -1773,10 +1773,10 @@
    "note": ""
   },
   "аромати": {
-   "at": "11.11 09:59",
-   "ts": 1794383995,
-   "ok": true,
-   "note": ""
+   "at": "11.11 10:13",
+   "ts": 1794384821,
+   "ok": false,
+   "note": "'list' object has no attribute 'get'"
   }
  },
  "kino_ver": 2,
@@ -13226,11 +13226,7 @@
  "pend": {},
  "got": {},
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
- "gem_block": {
-  "gemini-flash-latest": "2026-11-11T10:05:00+02:00",
-  "gemini-3.8-flash": "2026-11-11T10:05:00+02:00",
-  "gemini-flash-lite-latest": "2026-11-11T10:05:00+02:00"
- },
+ "gem_block": {},
  "omdb_cache": {
   "tt5362988": [
    7.7,
@@ -30220,7 +30216,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "f232857ed9de",
+  "gs": "e59eefbe2c93",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "332b115ef2ee",
   "sexed.json": "0362ec7e46d4",
@@ -47282,7 +47278,7 @@
  "dir_week": "202646",
  "smmt_force": false,
  "smmt_week": "202646",
- "aro_force": true,
+ "aro_force": false,
  "kino_q": [
   {
    "id": "bf1ceb2818",
