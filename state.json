@@ -729,7 +729,7 @@
   "t69158",
   "t1409"
  ],
- "gh_beat": "2026-11-11T13:10:46.304280+02:00",
+ "gh_beat": "2026-11-11T13:14:47.987331+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -744,7 +744,7 @@
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-11T13:03:01.897602+02:00",
+  "checked": "2026-11-11T13:12:56.632114+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": true
@@ -30288,7 +30288,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "055895137979",
+  "gs": "88cfd54ebd74",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "6ec8f5ff57b0",
   "sexed.json": "0362ec7e46d4",
@@ -48703,7 +48703,7 @@
  "dir_week": "202646",
  "smmt_force": false,
  "smmt_week": "202646",
- "aro_force": false,
+ "aro_force": true,
  "kino_q": [
   {
    "id": "bf1ceb2818",
@@ -48868,9 +48868,16 @@
   "_wk": "202646",
   "new": 1,
   "sport": 1,
-  "run": 1
+  "run": 1,
+  "work": 1,
+  "party": 1,
+  "love": 1
  },
- "aro_now_seen": "1794393130346",
- "arob_fail": {},
- "pl_v": 2
+ "aro_now_seen": "1794395672203",
+ "arob_fail": {
+  "m": 1
+ },
+ "pl_v": 2,
+ "arob_full": false,
+ "aro_last": 0
 }
