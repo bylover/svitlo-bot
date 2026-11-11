@@ -729,7 +729,7 @@
   "t69158",
   "t1409"
  ],
- "gh_beat": "2026-11-11T08:00:43.993017+02:00",
+ "gh_beat": "2026-11-11T08:05:43.825380+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -744,7 +744,7 @@
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-11T07:52:50.524059+02:00",
+  "checked": "2026-11-11T08:02:54.094878+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1583,14 +1583,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "11.11 08:02",
-   "ts": 1794376942,
+   "at": "11.11 08:06",
+   "ts": 1794377217,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "11.11 08:02",
-   "ts": 1794376942,
+   "at": "11.11 08:06",
+   "ts": 1794377217,
    "ok": true,
    "note": ""
   },
@@ -1607,26 +1607,26 @@
    "note": ""
   },
   "ігри PS5": {
-   "at": "11.11 07:35",
-   "ts": 1794375357,
+   "at": "11.11 08:05",
+   "ts": 1794377159,
    "ok": true,
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "11.11 08:02",
-   "ts": 1794376942,
+   "at": "11.11 08:05",
+   "ts": 1794377157,
    "ok": true,
    "note": ""
   },
   "🎵 Музика": {
-   "at": "11.11 07:26",
-   "ts": 1794374774,
+   "at": "11.11 08:05",
+   "ts": 1794377159,
    "ok": true,
    "note": ""
   },
   "❤️ Здоровʼя": {
-   "at": "11.11 07:26",
-   "ts": 1794374774,
+   "at": "11.11 08:05",
+   "ts": 1794377159,
    "ok": true,
    "note": ""
   },
@@ -1637,26 +1637,26 @@
    "note": ""
   },
   "аудіокниги": {
-   "at": "11.11 07:35",
-   "ts": 1794375357,
+   "at": "11.11 08:05",
+   "ts": 1794377159,
    "ok": true,
    "note": ""
   },
   "🎓 Секс-освіта": {
-   "at": "11.11 07:06",
-   "ts": 1794373577,
+   "at": "11.11 08:05",
+   "ts": 1794377157,
    "ok": true,
    "note": ""
   },
   "🎯 Вікторини": {
-   "at": "11.11 07:15",
-   "ts": 1794374150,
+   "at": "11.11 08:05",
+   "ts": 1794377157,
    "ok": true,
    "note": ""
   },
   "🌅 Імпульс / 🕯 класика": {
-   "at": "11.11 07:15",
-   "ts": 1794374150,
+   "at": "11.11 08:05",
+   "ts": 1794377157,
    "ok": true,
    "note": ""
   },
@@ -1667,14 +1667,14 @@
    "note": ""
   },
   "кіномэтч": {
-   "at": "11.11 07:45",
-   "ts": 1794375958,
+   "at": "11.11 08:05",
+   "ts": 1794377159,
    "ok": true,
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "11.11 08:02",
-   "ts": 1794376942,
+   "at": "11.11 08:05",
+   "ts": 1794377157,
    "ok": true,
    "note": ""
   },
@@ -1721,50 +1721,50 @@
    "note": ""
   },
   "youtube канали": {
-   "at": "11.11 04:36",
-   "ts": 1794364564,
+   "at": "11.11 08:05",
+   "ts": 1794377157,
    "ok": true,
    "note": ""
   },
   "живий english": {
-   "at": "11.11 06:26",
-   "ts": 1794371165,
+   "at": "11.11 08:05",
+   "ts": 1794377157,
    "ok": true,
    "note": ""
   },
   "кіно-категорії": {
-   "at": "11.11 06:26",
-   "ts": 1794371165,
+   "at": "11.11 08:05",
+   "ts": 1794377157,
    "ok": true,
    "note": ""
   },
   "youtube для вас": {
-   "at": "11.11 06:35",
-   "ts": 1794371758,
+   "at": "11.11 08:05",
+   "ts": 1794377157,
    "ok": true,
    "note": ""
   },
   "режисери": {
-   "at": "11.11 06:35",
-   "ts": 1794371758,
+   "at": "11.11 08:05",
+   "ts": 1794377157,
    "ok": true,
    "note": ""
   },
   "smm-інструменти": {
-   "at": "11.11 06:45",
-   "ts": 1794372356,
+   "at": "11.11 08:05",
+   "ts": 1794377157,
    "ok": true,
    "note": ""
   },
   "найкращі аромати й догляд": {
-   "at": "11.11 06:56",
-   "ts": 1794372970,
+   "at": "11.11 08:05",
+   "ts": 1794377157,
    "ok": true,
    "note": ""
   },
   "аромати": {
-   "at": "11.11 06:45",
-   "ts": 1794372356,
+   "at": "11.11 08:05",
+   "ts": 1794377157,
    "ok": true,
    "note": ""
   }
@@ -13213,48 +13213,8 @@
  },
  "imp_sent": {},
  "ero_sent": {},
- "pend": {
-  "yt": {
-   "id": "2026-11-09 08",
-   "t": "▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · 02.11–09.11</b>\n<blockquote>▶️ <b>1. Країна між Росією і Китаєм.. Як виживає Казахстан ?</b>\n📺 ВОЛОШИН · ⏱ 1 год 05 хв\n👁 <b>197 тис</b> переглядів · 💬 <b>371</b> коментарів\n🔗 <a href=\"https://youtu.be/6tXt1lLpMUU\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>2. Все буде Україна! Відкриття опалювального сезону — починаються дров'яні клопоти...</b>\n📺 Леонід Бобошко · ⏱ 23 хв\n👁 <b>115 тис</b> переглядів · 💬 <b>454</b> коментарів\n🔗 <a href=\"https://youtu.be/M0fypPaVtco\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>3. Не шкода тебе</b>\n📺 Ірина Білик - Topic · ⏱ 3 хв\n👁 <b>73 тис</b> переглядів · 💬 <b>118</b> коментарів\n🔗 <a href=\"https://youtu.be/7u-S0PFUJY0\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>4. DJ BUNKER  -  ВІДЬМАК EXTENDED MIX | official audio 2026</b>\n📺 DJ BUNKER · ⏱ 4 хв\n👁 <b>42 тис</b> переглядів · 💬 <b>7</b> коментарів\n🔗 <a href=\"https://youtu.be/hVjGHHmGB3s\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>5. Я ПОКРАЩИВ ОСТРІВ У МАЙНКРАФТІ</b>\n📺 Кавун Майнкрафт · ⏱ 20 хв\n👁 <b>35 тис</b> переглядів · 💬 <b>72</b> коментарів\n🔗 <a href=\"https://youtu.be/3SMQ00u5b-8\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>6. я ВИЖИВ з ВЕРІТІ в Майнкрафт Хоррор Українською</b>\n📺 Dauross · ⏱ 48 хв\n👁 <b>33 тис</b> переглядів · 💬 <b>76</b> коментарів\n🔗 <a href=\"https://youtu.be/XquyfWuXwPg\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>7. Ой, у лузі по долині 🔥 | Українська пісня в новому рок-звучанні | Rock Cover</b>\n📺 Onoychenko Cover Music · ⏱ 4 хв\n👁 <b>34 тис</b> переглядів · 💬 <b>48</b> коментарів\n🔗 <a href=\"https://youtu.be/5U4Lx9HnUZ4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>8. Ніколи, нікому, нізащо</b>\n📺 Release - Topic · ⏱ 3 хв\n👁 <b>37 тис</b> переглядів · 💬 <b>0</b> коментарів\n🔗 <a href=\"https://youtu.be/nYyL5m9gef4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>9. Я ЗАЙШОВ У WoW Forever І ЗАЛИП! 🇺🇦 Українська спільнота, фішки та АБСОЛЮТНА НОСТАЛЬГІЯ</b>\n📺 Ghostik  · ⏱ 20 хв\n👁 <b>27 тис</b> переглядів · 💬 <b>94</b> коментарів\n🔗 <a href=\"https://youtu.be/jwVEjuYJAhc\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>10. R3phase - Киданула ⚡⚡ (Мега Хіт⚡)</b>\n📺 R3phase · ⏱ 3 хв\n👁 <b>31 тис</b> переглядів · 💬 <b>21</b> коментарів\n🔗 <a href=\"https://youtu.be/uLBu61mS-Lw\">Дивитися</a></blockquote>\n<i>Ще 10, улюблені й приховані канали, 📺 цікаві канали за темами — кнопкою «▶️ YouTube» у меню.</i>\n§RT:yt:202646",
-   "mk": null,
-   "p": "▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · 02.11–09.11</b>\n<blockquote>▶️ <b>1. Країна між Росією і Китаєм.. Як виживає Казахстан ?</b>\n📺 ВОЛОШИН · ⏱ 1 год 05 хв\n👁 <b>197 тис</b> переглядів · 💬 <b>371</b> коментарів\n🔗 <a href=\"https://youtu.be/6tXt1lLpMUU\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>2. Все буде Україна! Відкриття опалювального сезону — починаються дров'яні клопоти...</b>\n📺 Леонід Бобошко · ⏱ 23 хв\n👁 <b>115 тис</b> переглядів · 💬 <b>454</b> коментарів\n🔗 <a href=\"https://youtu.be/M0fypPaVtco\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>3. Не шкода тебе</b>\n📺 Ірина Білик - Topic · ⏱ 3 хв\n👁 <b>73 тис</b> переглядів · 💬 <b>118</b> коментарів\n🔗 <a href=\"https://youtu.be/7u-S0PFUJY0\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>4. DJ BUNKER  -  ВІДЬМАК EXTENDED MIX | official audio 2026</b>\n📺 DJ BUNKER · ⏱ 4 хв\n👁 <b>42 тис</b> переглядів · 💬 <b>7</b> коментарів\n🔗 <a href=\"https://youtu.be/hVjGHHmGB3s\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>5. Я ПОКРАЩИВ ОСТРІВ У МАЙНКРАФТІ</b>\n📺 Кавун Майнкрафт · ⏱ 20 хв\n👁 <b>35 тис</b> переглядів · 💬 <b>72</b> коментарів\n🔗 <a href=\"https://youtu.be/3SMQ00u5b-8\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>6. я ВИЖИВ з ВЕРІТІ в Майнкрафт Хоррор Українською</b>\n📺 Dauross · ⏱ 48 хв\n👁 <b>33 тис</b> переглядів · 💬 <b>76</b> коментарів\n🔗 <a href=\"https://youtu.be/XquyfWuXwPg\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>7. Ой, у лузі по долині 🔥 | Українська пісня в новому рок-звучанні | Rock Cover</b>\n📺 Onoychenko Cover Music · ⏱ 4 хв\n👁 <b>34 тис</b> переглядів · 💬 <b>48</b> коментарів\n🔗 <a href=\"https://youtu.be/5U4Lx9HnUZ4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>8. Ніколи, нікому, нізащо</b>\n📺 Release - Topic · ⏱ 3 хв\n👁 <b>37 тис</b> переглядів · 💬 <b>0</b> коментарів\n🔗 <a href=\"https://youtu.be/nYyL5m9gef4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>9. Я ЗАЙШОВ У WoW Forever І ЗАЛИП! 🇺🇦 Українська спільнота, фішки та АБСОЛЮТНА НОСТАЛЬГІЯ</b>\n📺 Ghostik  · ⏱ 20 хв\n👁 <b>27 тис</b> переглядів · 💬 <b>94</b> коментарів\n🔗 <a href=\"https://youtu.be/jwVEjuYJAhc\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>10. R3phase - Киданула ⚡⚡ (Мега Хіт⚡)</b>\n📺 R3phase · ⏱ 3 хв\n👁 <b>31 тис</b> переглядів · 💬 <b>21</b> коментарів\n🔗 <a href=\"https://youtu.be/uLBu61mS-Lw\">Дивитися</a></blockquote>\n<i>Ще 10, улюблені й приховані канали, 📺 цікаві канали за темами — кнопкою «▶️ YouTube» у меню.</i>\n§RT:yt:202646",
-   "exp": "2026-11-11T08:00:44.891920+02:00",
-   "aud": [
-    "160603556",
-    "368433217",
-    "590261825",
-    "936688574",
-    "8283670046"
-   ]
-  },
-  "smm": {
-   "id": "2026-11-09 08",
-   "t": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 02.11–09.11\n<blockquote>🆕 <b>1. Instagram тестує 90-хвилинні відео</b>\nInstagram розпочав тестування можливості завантаження відео тривалістю до 90 хвилин, намагаючись конкурувати з YouTube за довгий формат.\n💡 Спробуйте адаптувати свій лонгрід-контент або подкасти під новий формат, щоб охопити аудиторію, яка споживає глибокий відеоконтент всередині соцмережі.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQk1KeEJpZjlvci1tZnNkNHBkb2xKa0V4Z2F1OEFaSVN2LU5SODBSX1U4NWQyTUdEUmJDczkxa0R2enJOZmdYeUJxakk5cWVhQW9NSy14d3FIdUpuM0FYbk54RVpibWp1dzFZVElmZTJOR0Jib2x2Q1p3b2kySlBFb0xWYS1NXy1mNmlEOUxCSlRuXzQ5bVhjY0FMV1NaTGVmbHZEQmdPSmc0V1N3Ylh5MXE0TzlGRTVCNHA2bkNRbmjSAdQBQVVfeXFMTVFpRjJic3lDWGFxeHRDMi1QV2RlLVdCU2N5VXpTZFBZblVkQXRTZHFuTjF1TWh6VU1Eb3o1TVB1UjNYa2JodE8zM0lTdjhoZjU3cFVnaWlrNTAyanpJVkcwWGFyVnNMVVZMcHVsaTkwNnFnMnVZSlVSM0RHSkdBQkdHR3g2b3RrRnhlV0lBNE5WRURvN3E1Ym5haTYwQWJpa0hLTzh0V2tSZHhWelVDdGRXMkpOanFYdjNqUkgybzNNd2pnaHMyYm1YSHAyVE90LVJjOFo?oc=5\">104.5 WOKV</a></blockquote>\n<blockquote>🆕 <b>2. Нові формати взаємодії в TikTok</b>\nУ TikTok з'явилися голосові коментарі, інтерактивні опитування та можливість відповідати на коментарі за допомогою фотографій.\n💡 Використовуйте опитування та фотовідповіді у коментарях для підвищення рівняengagement та побудови активної комунікації з підписниками.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxOUGR1WDJFVy0xWlcxRVV5Y3pSVnpzbkM2Z0wwbUZ3N2FHTGxXV3JNZ2hNczZSZEVlaXBpUmFBVjItNExiSk8zQWFwMkprT1RGN3YxbmF0SnRrbjFiTTh4VHgwUVBTT3laRDZHcnotN05Bdi1OZkJHdjhGcmFzZi1oOUZEcDNOSHFpa2pScjc3YU1jTHJBVXFB?oc=5\">mmr.ua</a></blockquote>\n<blockquote>🆕 <b>3. Створення міні-додатків через Meta Muse</b>\nMeta додала функцію створення міні-додатків у своєму інструменті Muse, розширивши можливості генеративного контенту.\n💡 Експериментуйте з новими інструментами Meta AI для створення інтерактивних креативів та історій, що виділяються у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-adds-mini-app-creation-option-to-muse/874070/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Оновлений AI-помічник та автоматизація в Meta Ads</b>\nMeta представила вдосконалений бізнес-асистент на базі штучного інтелекту та нові інструменти для автоматизації рекламних кампаній.\n💡 Протестуйте нові AI-функції для оптимізації рекламних бюджетів та швидкого створення варіацій креативів у кабінеті.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQR3ltZDZEb1cyb1ZXckgxbWVRX19ielNIQ2YxOC1Vc0hvUFdKVmt0RFMxVjhyenNtMFNyX3FNV0RMRE5weFdXTlhOeVlNWXktZ0FjeFQxbUJYVU9ic01JVHRmZEJlalNIcjFqWXJpZVJwS05hUTl0dlRKYWpRZ0JtLTRYNlBvcDRqMVN5S1ZrNXlMQmtPV1VrSWw4X292VHFfZ0RHdmQxTFNoNWxRMWJKYlQySXpUTnNM?oc=5\">MediaPost</a></blockquote>\n<blockquote>🎯 <b>5. Оновлення Graph та Marketing API від Meta</b>\nКомпанія Meta додала нові розширені можливості до своїх рекламних та графічних API для сторонніх сервісів і розробників.\n💡 Перевірте інтеграції ваших рекламних та аналітичних систем, щоб скористатися новими точками передачі даних та звітності.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxPUndOWnc5NFItT0pPdnNxa1d4LWFCZXJ2cnVBaDBQejdnVzlMS1J3LTYtR1ZiMVBocUhjajZyRExLa0F1SHpSbGNQSnE5Y0lBR2xiRW1oLTJhN3dva1lrSDAxZHpmTnJtRGJoekQ2UmZxQjVVRHBiNWVGN0xVREFmVjQ2NFlKWG5XdW12eUZzeEpkM0dnOEh1NHVGOGNPWC1H?oc=5\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. YouTube розширює кастомні стрічки</b>\nYouTube оновлює функціонал кастомних стрічок та пропонує креаторам нові можливості партнерства й монетизації.\n💡 Проаналізуйте нові параметри таргетингу стрічок та оптимізуйте теги вашого відеоконтенту для потрапляння в персоналізовані рекомендації.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-expands-custom-feeds-and-offers-new-partnership-options/874068/\">Social Media Today</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202646\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Планування Instagram Stories через сторонні сервіси</b> · Buffer\nОскільки вбудований планувальник Instagram не підтримує сторіз, для цього доводиться використовувати сторонні інструменти на кшталт Buffer або Meta Business Suite. Автоматизація публікацій знімає стрес від хаотичного створення контенту в останню хвилину.\n💡 Використовуйте сторонні сервіси для заздалегідь підготовлених сторіз, щоб не випадати з регулярного posting-графіку в розпал робочого дня.\n<a href=\"https://buffer.com/resources/how-to-schedule-instagram-stories/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Використання трендових аудіо для каруселей та фото</b> · Buffer\nТрендсеттери радять додавати популярні треки не лише до Reels, а й до каруселей та звичайних фотографій. Це відкриває додаткові можливості для потрапляння на сторінку вивчення (Explore) та в стрічку Reels.\n💡 Додавайте трендове аудіо до фотопостів та каруселей, щоб підвищити їхні охоплення та залучити нову аудиторію через рекомендації.\n<a href=\"https://buffer.com/resources/trending-audio-instagram/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Чому зростання бюджету у Meta Ads здорожчує ліди</b> · Medium · facebook-ads\nСтаття описує типову проблему перформанс-маркетингу: різке збільшення бюджету на кампанії часто призводить до деградації результатів та зростання вартості конверсії через вигорання аудиторії.\n💡 Масштабуйте бюджети поступово (не більше ніж на 20-25% за раз) та розширюйте креативну базу, щоб алгоритми не переплачували за охоплення тієї самої групи користувачів.\n<a href=\"https://medium.com/the-story-well/i-increased-my-meta-ads-budget-the-leads-got-more-expensive-5c64b30cc16f?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Креативна стратегія важливіша за технічні налаштування</b> · Medium · facebook-ads\nУ 2026 році технічна структура рекламних кампаній у Meta стала стандартизованою і простою, тому справжній успіх медіабаїнгу тепер повністю залежить від якості креативів та роботи з ними.\n💡 Інвестуйте більше часу в розробку унікальних креативних концептів та тестування різних подач, адже саме креатив зараз є головним важелем зниження CPL.\n<a href=\"https://medium.com/@zack-allen/if-you-dont-understand-creative-strategy-you-don-t-understand-media-buying-9bf7675afb6a?source=rss------facebook_ads-5\">джерело</a></blockquote>\n§RT:smm:202646p",
-   "mk": null,
-   "p": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 02.11–09.11\n<blockquote>🆕 <b>1. Instagram тестує 90-хвилинні відео</b>\nInstagram розпочав тестування можливості завантаження відео тривалістю до 90 хвилин, намагаючись конкурувати з YouTube за довгий формат.\n💡 Спробуйте адаптувати свій лонгрід-контент або подкасти під новий формат, щоб охопити аудиторію, яка споживає глибокий відеоконтент всередині соцмережі.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQk1KeEJpZjlvci1tZnNkNHBkb2xKa0V4Z2F1OEFaSVN2LU5SODBSX1U4NWQyTUdEUmJDczkxa0R2enJOZmdYeUJxakk5cWVhQW9NSy14d3FIdUpuM0FYbk54RVpibWp1dzFZVElmZTJOR0Jib2x2Q1p3b2kySlBFb0xWYS1NXy1mNmlEOUxCSlRuXzQ5bVhjY0FMV1NaTGVmbHZEQmdPSmc0V1N3Ylh5MXE0TzlGRTVCNHA2bkNRbmjSAdQBQVVfeXFMTVFpRjJic3lDWGFxeHRDMi1QV2RlLVdCU2N5VXpTZFBZblVkQXRTZHFuTjF1TWh6VU1Eb3o1TVB1UjNYa2JodE8zM0lTdjhoZjU3cFVnaWlrNTAyanpJVkcwWGFyVnNMVVZMcHVsaTkwNnFnMnVZSlVSM0RHSkdBQkdHR3g2b3RrRnhlV0lBNE5WRURvN3E1Ym5haTYwQWJpa0hLTzh0V2tSZHhWelVDdGRXMkpOanFYdjNqUkgybzNNd2pnaHMyYm1YSHAyVE90LVJjOFo?oc=5\">104.5 WOKV</a></blockquote>\n<blockquote>🆕 <b>2. Нові формати взаємодії в TikTok</b>\nУ TikTok з'явилися голосові коментарі, інтерактивні опитування та можливість відповідати на коментарі за допомогою фотографій.\n💡 Використовуйте опитування та фотовідповіді у коментарях для підвищення рівняengagement та побудови активної комунікації з підписниками.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxOUGR1WDJFVy0xWlcxRVV5Y3pSVnpzbkM2Z0wwbUZ3N2FHTGxXV3JNZ2hNczZSZEVlaXBpUmFBVjItNExiSk8zQWFwMkprT1RGN3YxbmF0SnRrbjFiTTh4VHgwUVBTT3laRDZHcnotN05Bdi1OZkJHdjhGcmFzZi1oOUZEcDNOSHFpa2pScjc3YU1jTHJBVXFB?oc=5\">mmr.ua</a></blockquote>\n<blockquote>🆕 <b>3. Створення міні-додатків через Meta Muse</b>\nMeta додала функцію створення міні-додатків у своєму інструменті Muse, розширивши можливості генеративного контенту.\n💡 Експериментуйте з новими інструментами Meta AI для створення інтерактивних креативів та історій, що виділяються у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-adds-mini-app-creation-option-to-muse/874070/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Оновлений AI-помічник та автоматизація в Meta Ads</b>\nMeta представила вдосконалений бізнес-асистент на базі штучного інтелекту та нові інструменти для автоматизації рекламних кампаній.\n💡 Протестуйте нові AI-функції для оптимізації рекламних бюджетів та швидкого створення варіацій креативів у кабінеті.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQR3ltZDZEb1cyb1ZXckgxbWVRX19ielNIQ2YxOC1Vc0hvUFdKVmt0RFMxVjhyenNtMFNyX3FNV0RMRE5weFdXTlhOeVlNWXktZ0FjeFQxbUJYVU9ic01JVHRmZEJlalNIcjFqWXJpZVJwS05hUTl0dlRKYWpRZ0JtLTRYNlBvcDRqMVN5S1ZrNXlMQmtPV1VrSWw4X292VHFfZ0RHdmQxTFNoNWxRMWJKYlQySXpUTnNM?oc=5\">MediaPost</a></blockquote>\n<blockquote>🎯 <b>5. Оновлення Graph та Marketing API від Meta</b>\nКомпанія Meta додала нові розширені можливості до своїх рекламних та графічних API для сторонніх сервісів і розробників.\n💡 Перевірте інтеграції ваших рекламних та аналітичних систем, щоб скористатися новими точками передачі даних та звітності.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxPUndOWnc5NFItT0pPdnNxa1d4LWFCZXJ2cnVBaDBQejdnVzlMS1J3LTYtR1ZiMVBocUhjajZyRExLa0F1SHpSbGNQSnE5Y0lBR2xiRW1oLTJhN3dva1lrSDAxZHpmTnJtRGJoekQ2UmZxQjVVRHBiNWVGN0xVREFmVjQ2NFlKWG5XdW12eUZzeEpkM0dnOEh1NHVGOGNPWC1H?oc=5\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. YouTube розширює кастомні стрічки</b>\nYouTube оновлює функціонал кастомних стрічок та пропонує креаторам нові можливості партнерства й монетизації.\n💡 Проаналізуйте нові параметри таргетингу стрічок та оптимізуйте теги вашого відеоконтенту для потрапляння в персоналізовані рекомендації.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-expands-custom-feeds-and-offers-new-partnership-options/874068/\">Social Media Today</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202646\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Планування Instagram Stories через сторонні сервіси</b> · Buffer\nОскільки вбудований планувальник Instagram не підтримує сторіз, для цього доводиться використовувати сторонні інструменти на кшталт Buffer або Meta Business Suite. Автоматизація публікацій знімає стрес від хаотичного створення контенту в останню хвилину.\n💡 Використовуйте сторонні сервіси для заздалегідь підготовлених сторіз, щоб не випадати з регулярного posting-графіку в розпал робочого дня.\n<a href=\"https://buffer.com/resources/how-to-schedule-instagram-stories/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Використання трендових аудіо для каруселей та фото</b> · Buffer\nТрендсеттери радять додавати популярні треки не лише до Reels, а й до каруселей та звичайних фотографій. Це відкриває додаткові можливості для потрапляння на сторінку вивчення (Explore) та в стрічку Reels.\n💡 Додавайте трендове аудіо до фотопостів та каруселей, щоб підвищити їхні охоплення та залучити нову аудиторію через рекомендації.\n<a href=\"https://buffer.com/resources/trending-audio-instagram/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Чому зростання бюджету у Meta Ads здорожчує ліди</b> · Medium · facebook-ads\nСтаття описує типову проблему перформанс-маркетингу: різке збільшення бюджету на кампанії часто призводить до деградації результатів та зростання вартості конверсії через вигорання аудиторії.\n💡 Масштабуйте бюджети поступово (не більше ніж на 20-25% за раз) та розширюйте креативну базу, щоб алгоритми не переплачували за охоплення тієї самої групи користувачів.\n<a href=\"https://medium.com/the-story-well/i-increased-my-meta-ads-budget-the-leads-got-more-expensive-5c64b30cc16f?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Креативна стратегія важливіша за технічні налаштування</b> · Medium · facebook-ads\nУ 2026 році технічна структура рекламних кампаній у Meta стала стандартизованою і простою, тому справжній успіх медіабаїнгу тепер повністю залежить від якості креативів та роботи з ними.\n💡 Інвестуйте більше часу в розробку унікальних креативних концептів та тестування різних подач, адже саме креатив зараз є головним важелем зниження CPL.\n<a href=\"https://medium.com/@zack-allen/if-you-dont-understand-creative-strategy-you-don-t-understand-media-buying-9bf7675afb6a?source=rss------facebook_ads-5\">джерело</a></blockquote>\n§RT:smm:202646p",
-   "exp": "2026-11-11T08:00:44.891920+02:00",
-   "aud": [
-    "160603556",
-    "368433217",
-    "936688574"
-   ]
-  }
- },
- "got": {
-  "yt": {
-   "160603556": "2026-11-09 08",
-   "368433217": "2026-11-09 08",
-   "590261825": "2026-11-09 08",
-   "936688574": "2026-11-09 08",
-   "8283670046": "2026-11-09 08"
-  },
-  "smm": {
-   "160603556": "2026-11-09 08",
-   "368433217": "2026-11-09 08",
-   "936688574": "2026-11-09 08"
-  }
- },
+ "pend": {},
+ "got": {},
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
  "gem_block": {
   "gemini-flash-latest": "2026-11-11T10:05:00+02:00",
@@ -30250,7 +30210,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "be530706c7b9",
+  "gs": "fcef06575a0f",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "1d485431c38d",
   "sexed.json": "0362ec7e46d4",
@@ -43052,12 +43012,8 @@
  "silpo_snap": "2026-11-04",
  "live_day": "2026-11-11",
  "silpo_week": "2026-45",
- "sbm_at": 1794376847.8784544,
+ "sbm_at": 1794377147.5887344,
  "sbm_hist": [
-  [
-   "19:00",
-   38
-  ],
   [
    "19:05",
    42
@@ -43628,6 +43584,10 @@
   ],
   [
    "08:00",
+   58
+  ],
+  [
+   "08:05",
    58
   ]
  ],
