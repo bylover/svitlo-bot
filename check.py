@@ -1795,6 +1795,42 @@ def ai_pick_index(titles: list[str], x: dict) -> int | None:
     return n_ if n_ is not None and scores[n_] >= 0.35 else None   # інакше — не показуємо, щоб не було невідповідності
 
 
+def smm_chunks(head: str, blocks: list, tail: str) -> str:
+    """Ділимо на повідомлення ≤3900 символів (ліміт Telegram 4096), нічого не викидаючи."""
+    parts, cur = [], head
+    for b in blocks:
+        if len(cur) + len(b) + 1 > 3900 and cur.strip():
+            parts.append(cur.rstrip()); cur = ""
+        cur += b + "\n"
+    parts.append((cur + tail).rstrip())
+    return SPLIT.join(p_ for p_ in parts if p_)
+
+
+def smm_fill(pool: list, have: list, need: int, kind: str) -> list:
+    """Добирає до 10: якщо ШІ обрав менше — просимо ще (по кандидатах, яких ще немає), інакше — прості пункти з оригінальним заголовком."""
+    rest = [i for i in range(len(pool)) if i not in have][: max(need * 2, need)]
+    if need <= 0 or not rest:
+        return []
+    fields = "tag (new|ads|algo|rumor), title, what (1–2 речення), tip (1 речення)" if kind == "news" else "title, summary (2–3 речення), tip (1–2 речення)"
+    raw = gemini(f"Обери рівно {need} найкорисніших для SMM-спеціаліста й таргетолога з цього списку й опиши українською. Для кожного: n (номер зі списку), src_title (оригінальний заголовок), {fields}. "
+                 "Відповідь — лише JSON-масив.\n\n" + "\n".join(f"{i}. {pool[i]['title']} — {(pool[i].get('text') or '')[:300]}" for i in rest), json_mode=True, max_tokens=2500)
+    out = []
+    try:
+        titles_ = [p_["title"] for p_ in pool]
+        for x in json.loads(raw or ""):
+            ix = ai_pick_index(titles_, x)
+            if ix is not None and ix not in have and ix not in [q["n"] for q in out]:
+                x["n"] = ix; out.append(x)
+    except Exception:
+        pass
+    for i in rest:                                     # ШІ не дав достатньо — прості пункти (оригінальний заголовок)
+        if len(out) >= need:
+            break
+        if i not in [q["n"] for q in out]:
+            out.append({"n": i, "title": pool[i]["title"], "tag": "new", "what": "", "summary": "", "tip": ""})
+    return out[:need]
+
+
 def build_smm(st: dict, now: datetime) -> str | None:
     seen = set() if st.pop("smm_rebuild", False) else set(st.get("smm_links", []))   # перезбирання — можна взяти й новини, що вже були цього тижня
     items, titles = [], set()
@@ -1845,10 +1881,12 @@ def build_smm(st: dict, now: datetime) -> str | None:
                 picked.append(p_)
         if not picked:
             raise ValueError("порожній вибір")
+        if len(picked) < 10:                          # ШІ обрав менше 10 — добираємо до 10
+            picked += smm_fill(items, [q["n"] for q in picked], 10 - len(picked), "news")
         for n_, p_ in enumerate(picked[:10], 1):
             it = items[int(p_["n"])]
             blocks.append("<blockquote>" + f"{SMM_TAGS.get(p_.get('tag'), '🆕')} <b>{n_}. {esc(p_.get('title'))}</b>\n"
-                          f"{esc(p_.get('what'))}\n💡 {esc(p_.get('tip'))}\n"
+                          + (f"{esc(p_.get('what'))}\n" if p_.get("what") else "") + (f"💡 {esc(p_.get('tip'))}\n" if p_.get("tip") else "") +
                           f'🔗 <a href="{html.escape(it["link"])}">{esc(it["source"] or "джерело")}</a></blockquote>')
             st.setdefault("smm_links", []).append(it["link"])
     except Exception:
@@ -1865,10 +1903,7 @@ def build_smm(st: dict, now: datetime) -> str | None:
     st["smm_links"] = st.get("smm_links", [])[-500:]
     if not blocks:
         return None
-    text = head + "\n".join(blocks) + "\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>"
-    while len(text) > 4000 and len(blocks) > 3:
-        blocks.pop()
-        text = head + "\n".join(blocks) + "\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>"
+    text = smm_chunks(head, blocks, "\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>")   # усі 10 — за потреби кількома повідомленнями
     practice = build_smm_practice(st, now)            # друге повідомлення — фішки практиків (Reddit, блоги, Medium)
     wk = f"{now:%G%V}"                                # 👍/👎 під дайджестом — для статистики
     return text + f"\n§RT:smm:{wk}" + (SPLIT + practice + f"\n§RT:smm:{wk}p" if practice else "")
@@ -2014,11 +2049,13 @@ def build_smm_practice(st: dict, now: datetime | None = None) -> str | None:
                 items.append(x)
     except Exception:
         return None
+    if len(items) < 10:                               # ШІ обрав менше 10 — добираємо до 10
+        items += smm_fill(cands, [q["n"] for q in items], 10 - len(items), "practice")
     blocks = []
     for k, x in enumerate(items[:10], 1):
         c = cands[int(x["n"])]
         blocks.append("<blockquote>" + f"💬 <b>{k}. {esc(x.get('title'))}</b> · {esc(c['src'])}\n"
-                      f"{esc(x.get('summary'))}\n💡 {esc(x.get('tip'))}\n"
+                      + (f"{esc(x.get('summary'))}\n" if x.get("summary") else "") + (f"💡 {esc(x.get('tip'))}\n" if x.get("tip") else "") +
                       f'{c["meta"]}<a href="{html.escape(c["link"])}">джерело</a></blockquote>')
         if c.get("id"):
             st.setdefault("smm_reddit_seen", []).append(c["id"])
@@ -2026,7 +2063,7 @@ def build_smm_practice(st: dict, now: datetime | None = None) -> str | None:
             st.setdefault("smm_pool_seen", []).append(c["link"])
     st["smm_reddit_seen"] = st.get("smm_reddit_seen", [])[-300:]
     st["smm_pool_seen"] = st.get("smm_pool_seen", [])[-500:]
-    return "💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n" + "\n".join(blocks) if blocks else None
+    return smm_chunks("💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n", blocks, "") if blocks else None
 
 
 # ---------- «Досвід тижня 18+»: Medium (sex, intimacy…) і подкасти ----------
@@ -6265,6 +6302,12 @@ def build_silpo(st: dict, now: datetime, branch: str | None = None, label: str |
         except Exception as e:
             print(f"Сільпо слідопит: {err_text(e)[:80]}")
     best.sort(key=lambda x: x[0], reverse=True)       # одне повідомлення: топ-10 + кнопки категорій
+    seen_b, uniq_b = set(), []                        # той самий товар буває в кількох категоріях (напр., «Риба» й «Заморожене») — лишаємо одну позицію
+    for b_ in best:
+        key_b = str(b_[1].get("id") or b_[1].get("slug") or b_[1].get("title"))
+        if key_b not in seen_b:
+            seen_b.add(key_b); uniq_b.append(b_)
+    best = uniq_b
     if not branch:                                    # діагностика: сирі дані топ-10 (звірити з сайтом)
         for _, p_, price, old, pct, emo_ in best[:10]:
             keep = {k_: v_ for k_, v_ in p_.items() if re.search(r"price|promo|stock|avail|quant|date|unit|ratio|sale|offer|deliver", k_, re.I)}
@@ -6501,10 +6544,29 @@ def web_hits(q: str):
     try:
         html = http_text("https://www.bing.com/search?setlang=en&q=" + urllib.parse.quote(q))
         if "b_algo" in html:
-            return [(m.group(1), re.sub("<[^>]+>", "", m.group(2))) for m in re.finditer(r'<li class="b_algo".*?<h2[^>]*><a[^>]+href="([^"]+)"[^>]*>(.*?)</a>', html, re.S)]
+            out = []
+            for m in re.finditer(r'<li class="b_algo".*?<h2[^>]*>\s*<a[^>]+href="([^"]+)"[^>]*>(.*?)</a>', html, re.S):
+                out.append((_bing_url(m.group(1)), re.sub("<[^>]+>", "", m.group(2))))
+            for m in re.finditer(r'<cite[^>]*>(.*?)</cite>', html, re.S):   # видимі адреси результатів — запасне джерело домену
+                out.append(("https://" + re.sub("<[^>]+>|\s|›.*", "", m.group(1)).lstrip("https://"), ""))
+            return out
     except Exception:
         pass
     return None
+
+
+def _bing_url(href: str) -> str:
+    """Bing віддає переадресації bing.com/ck/a?…&u=a1<base64url> — дістаємо справжню адресу."""
+    import base64
+    href = href.replace("&amp;", "&")
+    m = re.search(r"[?&]u=a1([^&]+)", href)
+    if m:
+        try:
+            b = m.group(1); b += "=" * (-len(b) % 4)
+            return base64.urlsafe_b64decode(b).decode("utf-8", "ignore")
+        except Exception:
+            pass
+    return href
 
 
 def _aro_found(n: str, care: bool) -> str:
@@ -6515,7 +6577,7 @@ def _aro_found(n: str, care: bool) -> str:
     if hits is None:
         return "?"
     for href, title in hits:
-        if re.search(r"fragrantica|parfumo|notino|makeup\.com\.ua|sephora|douglas|basenotes|lookfantastic", href) and brand.lower() in (title + " " + href).lower():
+        if (re.search(AROB_TRUST, href, re.I) and (brand.lower() in (title + " " + href).lower() or not title)) or (re.search(AROB_TRUST, title, re.I) and brand.lower() in title.lower()):
             return href
     return ""
 
@@ -6582,7 +6644,8 @@ AROB_SECT = {"m": "чоловічі парфуми (бестселери й ви
              "t": "аромати для підлітків 14–18 (найпопулярніші й найкраще оцінені)", "face": "догляд за обличчям (вмивання, сироватки, креми, SPF) — найкраще оцінені дерматологами й покупцями",
              "hair": "догляд за волоссям (шампуні, кондиціонери, маски) — найкраще оцінені", "body": "догляд за тілом (гелі для душу, лосьйони, креми) — найкраще оцінені",
              "shave": "гоління й після гоління (бритви, електробритви, піни, бальзами) — найкраще оцінені", "deo": "дезодоранти й антиперспіранти преміум і аптечні — найкраще оцінені"}
-AROB_TRUST = r"fragrantica|parfumo|allure|gq\.com|vogue|elle|harpersbazaar|esquire|byrdie|cosmopolitan|menshealth|womenshealth|fifiawards|fragrancefoundation|notino|makeup\.com\.ua|sephora|cosme"
+AROB_TRUST = (r"fragrantica|parfumo|basenotes|allure|gq\.com|vogue|elle|harpersbazaar|esquire|byrdie|cosmopolitan|menshealth|womenshealth|fifiawards|fragrancefoundation|"
+              r"notino|makeup\.com\.ua|eva\.ua|rozetka|sephora|douglas|lookfantastic|boots\.com|ulta|cultbeauty|cosme|dermstore|paulaschoice")
 
 
 ARO_LOG: list = []
@@ -6638,7 +6701,8 @@ def aroma_best(st: dict, now: datetime) -> None:
                 if hits is None:
                     src = "?"                             # пошук недоступний — не відкидаємо
                 else:
-                    src = next((h for h, _ in hits if re.search(AROB_TRUST, h)), "")
+                    brand_ = (ARO_BRANDS.search(n) or [n.split()[0]])[0].lower()
+                    src = next((h for h, t_ in hits if re.search(AROB_TRUST, h, re.I) or (re.search(AROB_TRUST, t_, re.I) and brand_ in t_.lower())), "")
                 if not src:
                     no_ += 1; print(f"🏆 {k}: «{n}» не знайдено на авторитетних сайтах — пропущено"); continue
                 ok_ += 1; na_ += src == "?"
@@ -6696,9 +6760,32 @@ PL_CATS = {   # ключ: (назва, група, пошукові фрази, 
              "alyona alyona", "KALUSH", "Skofka", "Positiff", "Kalush Orchestra", "Wellboy", "Барлебен", "Barleben"], 0, ""),
     "uarock": ("🎸 Український рок", "ua", ["український рок", "ukrainian rock", "рок україна", "укр рок", "ukr rock", "ukrainskyi rok", "украинский рок", "ukrainian metal", "ukrainian indie",
              "Океан Ельзи", "Okean Elzy", "Антитіла", "Antytila", "The Hardkiss", "Жадан і Собаки", "Плач Єремії", "Vopli Vidopliassova", "Mad Heads", "Jinjer", "Latexfauna"], 1, ""),
+    "uafolk": ("🎻 Фолк і етно", "ua", ["український фолк", "ukrainian folk", "етно україна", "ethno ukraine", "народні пісні", "narodni pisni", "українські народні", "ukrainian ethno",
+               "DakhaBrakha", "Go_A", "Kozak System", "Тінь Сонця", "Онука", "ONUKA", "Христина Соловій"], 1, ""),
+    "uapatr": ("🇺🇦 Патріотичні", "ua", ["патріотичні пісні", "українські патріотичні", "військові пісні", "ukrainian patriotic", "slava ukraini", "слава україні", "пісні про україну",
+               "Kalush Orchestra", "Антитіла", "Скрябін", "Океан Ельзи"], 1, ""),
+    "ualove": ("💞 Українська лірика", "ua", ["українська лірика", "романтичні українські пісні", "українські пісні про кохання", "ukrainian love songs", "ліричні пісні",
+               "ukrainski pisni pro kohannia", "kohannia", "кохання пісні", "Христина Соловій", "Jerry Heil", "Тіна Кароль"], 1, ""),
+    "uaedm": ("⚡ Українська електроніка", "ua", ["ukrainian electronic", "українська електроніка", "ukrainian techno", "ukrainian house", "ukrainian dance", "ARTBAT", "ONUKA",
+              "Tvorchi", "Mozgi", "KOLA", "Мавка"], 0, ""),
+    "uaindie": ("🎧 Українське інді", "ua", ["ukrainian indie", "українське інді", "укр інді", "ukr indie", "ukrainian alternative", "Latexfauna", "Kurgan & Agregat",
+                "Жадан і Собаки", "Один в каное", "Odyn v kanoe", "Хейтспіч"], 0, ""),
+    "uaradio": ("📻 Хіти радіо", "ua", ["хіт fm україна", "kiss fm ukraine", "люкс фм", "radio roks", "радіо хіти україна", "українське радіо", "ukraine radio hits", "top 40 ukraine",
+                "хіт-парад україна", "hit parade ukraine"], 0, ""),
     "wedding": ("💍 Весілля", "event", ["wedding", "wedding songs", "весілля"], 1, ""), "bday": ("🎂 День народження", "event", ["birthday party", "birthday"], 1, ""),
     "xmas": ("🎄 Новорічне", "event", ["christmas", "christmas songs", "новорічні пісні"], 1, "winter"), "summer": ("☀️ Літо й пляж", "event", ["summer hits", "beach", "summer"], 0, "summer"),
     "kids": ("👶 Для дітей", "event", ["kids songs", "дитячі пісні", "children"], 1, ""),
+    # 🔥 18+: музика для настрою — пристрасть, прелюдія, близькість, після, кінк, для закоханих (вічні — без вимоги свіжих треків)
+    "x_mood": ("😈 Настрій і пристрасть", "x18", ["horny", "seductive", "sexy songs", "sensual", "sultry", "mood for love", "turn on", "spicy", "hot and sexy"], 1, ""),
+    "x_fore": ("🕯 Прелюдія", "x18", ["before sex", "foreplay", "slow jams", "make out", "seduction", "bedroom slow jams", "candle light"], 1, ""),
+    "x_sex": ("💋 Для близькості", "x18", ["sex playlist", "songs for sex", "sex music", "bedroom", "love making", "making love", "for sex"], 1, ""),
+    "x_after": ("🌙 Після", "x18", ["after sex", "pillow talk", "cuddle", "cuddling songs", "afterglow", "lazy morning in bed"], 1, ""),
+    "x_bdsm": ("⛓ BDSM і кінк", "x18", ["bdsm", "kink", "dark sensual", "fifty shades", "dominant", "submissive", "dark erotic"], 1, ""),
+    "x_lovers": ("💞 Для закоханих", "x18", ["for lovers", "lovers", "romantic night", "date night", "love songs for couples", "anniversary"], 1, ""),
+    "x_massage": ("🛁 Масаж і ванна", "x18", ["sensual massage", "massage music", "bath time", "spa sensual", "tantra"], 1, ""),
+    "x_rnb": ("🖤 Чуттєвий R&B", "x18", ["dark rnb", "sensual r&b", "trap soul", "sexy rnb", "late night rnb", "slow rnb"], 1, ""),
+    "x_strip": ("💃 Стриптиз і танець", "x18", ["striptease", "pole dance", "lap dance", "burlesque", "sexy dance"], 1, ""),
+    "x_sexy": ("🔥 Сексуальність", "x18", ["sexuality", "sexual", "erotic", "eroticism", "sensuality", "sexy vibes", "suxuality"], 1, ""),
     "us": ("🇺🇸 Хіти США", "country", ["usa top", "us hits", "billboard"], 0, ""), "gb": ("🇬🇧 Британія", "country", ["uk hits", "british hits"], 0, ""),
     "fr": ("🇫🇷 Франція", "country", ["french hits", "chanson française"], 0, ""), "it": ("🇮🇹 Італія", "country", ["italian hits", "musica italiana"], 0, ""),
 }
@@ -6724,7 +6811,7 @@ def pl_rank(p: dict, retro: bool, prev: dict, cat: str = "") -> dict | None:
     rot = round(100 * sum(1 for a in adds if a and _time.time() - a <= 90 * 86400) / max(1, len(adds)))   # 🔁 частка треків, доданих за 3 міс.
     if ua:                                             # справді українське: ≥30% треків від українських виконавців або з українськими літерами
         uas = sum(1 for t in tr if str((t.get("artist") or {}).get("name") or "").lower() in PL_UA_SET or re.search(r"[іїєґІЇЄҐ]", str(t.get("title") or "") + str((t.get("artist") or {}).get("name") or "")))
-        if not tr or uas / len(tr) < 0.3:
+        if not tr or uas / len(tr) < 0.25:
             return None
     if not retro and days > 180:
         return None                                    # «мертвий» плейлист — не для сучасних категорій
@@ -6761,9 +6848,9 @@ def pl_build(st: dict, now: datetime) -> None:
         return
     wk = f"{now:%G%V}"
     done = st.setdefault("pl_done", {})
-    if done.get("_wk") != wk or st.get("pl_v") != 3:   # новий тиждень або нова версія рейтингу — збираємо все заново
-        done.clear(); done["_wk"] = wk; st["pl_v"] = 3
-    todo = sorted([k for k in PL_CATS if k not in done], key=lambda k: not k.startswith("ua"))[:3]   # українські — першими
+    if done.get("_wk") != wk or st.get("pl_v") != 4:   # новий тиждень або нова версія рейтингу — збираємо все заново
+        done.clear(); done["_wk"] = wk; st["pl_v"] = 4
+    todo = sorted([k for k in PL_CATS if k not in done], key=lambda k: (not k.startswith("ua"), not k.startswith("x_")))[:3]   # українські й 18+ — першими
     if not todo:
         return
     try:
@@ -6777,7 +6864,7 @@ def pl_build(st: dict, now: datetime) -> None:
         ids = []
         for q in qs:
             try:
-                for x in (_dz("/search/playlist?" + urllib.parse.urlencode({"q": q, "limit": 50 if not k.startswith("ua") else 25})).get("data") or []):
+                for x in (_dz("/search/playlist?" + urllib.parse.urlencode({"q": q, "limit": 50})).get("data") or []):
                     if x.get("id") not in ids and (15 if k.startswith("ua") else 25) <= int(x.get("nb_tracks") or 0) <= 400:
                         ids.append(x["id"])
             except Exception as e:
@@ -6788,7 +6875,7 @@ def pl_build(st: dict, now: datetime) -> None:
             except Exception:
                 pass
         items = []
-        for pid in ids[:(140 if k.startswith("ua") else 45)]:
+        for pid in ids[:(180 if k.startswith("ua") else 45)]:
             try:
                 p = _dz(f"/playlist/{pid}")
             except Exception:
