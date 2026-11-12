@@ -729,7 +729,7 @@
   "t69158",
   "t1409"
  ],
- "gh_beat": "2026-11-12T02:55:47.459351+02:00",
+ "gh_beat": "2026-11-12T03:00:47.063140+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -803,7 +803,7 @@
    ]
   ]
  },
- "fact_png": "2026-11-12 02|10|2026-11-11T16:58:49+02:00",
+ "fact_png": "2026-11-12 03|10|2026-11-11T16:58:49+02:00",
  "fact_day": {
   "total": "5 год 3 хв",
   "list": [
@@ -1630,14 +1630,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "12.11 02:53",
-   "ts": 1794444786,
+   "at": "12.11 03:03",
+   "ts": 1794445386,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "12.11 02:53",
-   "ts": 1794444786,
+   "at": "12.11 03:03",
+   "ts": 1794445386,
    "ok": true,
    "note": ""
   },
@@ -1660,8 +1660,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "12.11 02:53",
-   "ts": 1794444828,
+   "at": "12.11 03:03",
+   "ts": 1794445429,
    "ok": true,
    "note": ""
   },
@@ -30476,9 +30476,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "80f0e10984f6",
+  "gs": "6a0d974ca474",
   "quiz_pool.json": "80eae7ea9381",
-  "fact.png": "9c67f6dfaf3f",
+  "fact.png": "9dd9c8ca14cb",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -46854,6 +46854,87 @@
    ],
    "ov": "Квентін Колдвотер вступає до магічного педагогічного коледжу «Brakebills», де він виявляє, що чарівний світ із його улюблених книжок дитинства реальний і створює небезпеку для людства. Тим часом, життя його подруги дитин",
    "poster": "https://image.tmdb.org/t/p/w500/jaEDLtwa1HqNQB3TbQ5VTImYWbC.jpg"
+  },
+  "t208397": {
+   "title": "Шкільні духи (2023)",
+   "year": "2023",
+   "rating": 7.6,
+   "genres": [
+    "Детектив",
+    "Драма"
+   ],
+   "g": [
+    9648,
+    18
+   ],
+   "ov": "Медді, підліток, який застряг у потойбічному світі, розслідуючи власне зникнення, вирушає на місію з розкриття злочинів, пристосовуючись до шкільного чистилища.",
+   "poster": "https://image.tmdb.org/t/p/w500/ooim5C8q3yk4vjfpYnviaAvWc19.jpg"
+  },
+  "t77947": {
+   "title": "Доктор Герроу",
+   "year": "2018",
+   "rating": 7.5,
+   "genres": [
+    "Кримінал",
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    80,
+    18,
+    9648
+   ],
+   "ov": "Він відданий науці, не визнає авторитетів і чудово знає, наскільки він гарний у своїй справі. Доктор Даніель Герроу найкращий патологоанатом у місті, а може, і у всій Австралії. Але це не характеристика його власного его",
+   "poster": "https://image.tmdb.org/t/p/w500/slqvJ15P2vNVDFW72v3g8YQVxIN.jpg"
+  },
+  "t12786": {
+   "title": "Загадки Мердока",
+   "year": "2008",
+   "rating": 8.2,
+   "genres": [
+    "Детектив",
+    "Драма"
+   ],
+   "g": [
+    9648,
+    18
+   ],
+   "ov": "Детективний серіал \"Загадки Мердока\", відзнятий за романами Морін Дженнінгс.\n\nХитромудрі злочини розплутує поліцейський Вільям Мердок. Його характеризують як людину з допитливим розумом, уважну до дрібниць і новинок техн",
+   "poster": "https://image.tmdb.org/t/p/w500/gMXlZrd9iuPUdVQg9CTVXtLwnVV.jpg"
+  },
+  "t84661": {
+   "title": "Аутсайдер",
+   "year": "2020",
+   "rating": 7.6,
+   "genres": [
+    "Драма",
+    "Детектив",
+    "Кримінал"
+   ],
+   "g": [
+    18,
+    9648,
+    80
+   ],
+   "ov": "Коли відбувається жорстоке вбивство одинадцятирічного хлопчика, то слідчі першим ділом починають підозрювати тренера місцевої бейсбольної команди Террі Мейтленда, так як багато непрямих доказів вказують на його причетніс",
+   "poster": "https://image.tmdb.org/t/p/w500/riri5gMhHA1ADWJn9Gs4Wr62SKF.jpg"
+  },
+  "t127865": {
+   "title": "Каштановий чоловічок",
+   "year": "2021",
+   "rating": 7.6,
+   "genres": [
+    "Драма",
+    "Кримінал",
+    "Детектив"
+   ],
+   "g": [
+    18,
+    80,
+    9648
+   ],
+   "ov": "Переслідувачі й убивці нишпорять вулицями данської столиці, а детективи розслідують злочини, пов’язані з моторошними дитячими іграми. На основі романів Сорена Свейструпа.",
+   "poster": "https://image.tmdb.org/t/p/w500/lq6sKBXVeF0DR4DcgOZYi2bggFq.jpg"
   }
  },
  "cofid_pushed": "10.11.2026",
@@ -46938,12 +47019,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-12",
  "silpo_week": "2026-45",
- "sbm_at": 1794444952.525412,
+ "sbm_at": 1794445251.9844017,
  "sbm_hist": [
-  [
-   "13:45",
-   45
-  ],
   [
    "13:50",
    44
@@ -47515,6 +47592,10 @@
   [
    "02:55",
    84
+  ],
+  [
+   "03:00",
+   84
   ]
  ],
  "sbm_near": {
@@ -47531,7 +47612,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1794444368.2413967,
+ "net_at": 1794445262.2219732,
  "net_asn": {
   "triolan": [
    "13188",
@@ -50592,7 +50673,7 @@
   "ser_comedy": "2026-11-12T02:00:53.728707+02:00",
   "ser_drama": "2026-11-12T02:20:45.659092+02:00",
   "ser_scifi": "2026-11-12T02:50:42.914845+02:00",
-  "ser_mystery": "2026-11-11T14:50:43.161550+02:00"
+  "ser_mystery": "2026-11-12T03:00:47.374270+02:00"
  },
  "kb_probe2": "2026-46",
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 03.11–10.11\n<blockquote>🎯 <b>1. Meta призупинила оновлені бізнес-умови</b>\nЧерез масову критику видавців Meta поставила на паузу запуск нових умов надання послуг для бізнесу та рекламодавців, які мали набути чинності 20 листопада.\n💡 Стежте за оновленнями рекламної політики Meta, оскільки нові правила щодо обробки даних та використання сайтів ще повернуться в іншій редакції.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZUR4cTNfOGZ3TTdSTzRVQ0FRamNKRlQ5S0VNYkN2TVBmbWFkcDdCckdqazVwOXJvd2NKRjJEZWd2a0E1TWt6enVBYS1YU1U5cGJ3LVZSS2JxQ1dON21kQWs2dTVUdENsRHhiWlMwRmE2M05KU1pQczY3NW15YlczTU1GaHNOcUxX?oc=5\">Search Engine Journal</a></blockquote>\n<blockquote>🎯 <b>2. Помилка в рекламних AI-інструментах Meta</b>\nУ рекламних кампаніях Meta на базі штучного інтелекту були помічені випадки автоматичної генерації несанкціонованих знижок для користувачів.\n💡 Ретельно перевіряйте креативи та тексти, створені за допомогою генеративного AI в рекламному кабінеті, перед запуском.\n🔗 <a href=\"https://www.socialmediatoday.com/news/metas-ai-ads-included-unapproved-discounts/874067/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>3. YouTube додав розділення платного та органічного трафіку</b>\nУ статистиці YouTube з'явився детальний розподіл переглядів та охоплень на органічні та спонсоровані (платні).\n💡 Використовуйте нову аналітику для точнішого вимірювання ефективності відеокампаній та оптимізації бюджетів.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxPdXl3VEdHcV9ZRUtMQzk0VFlEYTROYXZGUk9FbFJZdFVPWVRUUHdpYUtVb29MRXpBOFIwblVXWkVpcERuR0EzV1NMbGgwT1NtbVFkczMwQW92MzZaWXFWN2JRYkJfeHp5b1ppcHl3MjNhcnJlSEVrbktBUHR4SEhlOWdPWDlJcGQtd3d1SWpMRnVNUQ?oc=5\">https://www.thekeyword.co/</a></blockquote>\n<blockquote>🆕 <b>4. Штучний інтелект Meta Muse створює танці для Reels та Stories</b>\nMeta інтегрує можливості AI-агента Muse для генерації трендових рухів та анімацій безпосередньо в інструменти створення контенту Instagram.\n💡 Експериментуйте з новими AI-анімаціями для створення інтерактивних та привабливих Stories без залучення моделей.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOSFhVTURPV0dIYmNKV0c0VWctMjZ1U3RWRWNHQkotaWFZNkI4VUVhTUVyNEZQN2VPMWs5bXVMTTI0eXEwempHdFVWS1F4em1MRW1hdjY0eDROV2RBRnlaX3AzV0VLSXc5UDZVamdSVmtvVFZvaXBjU25nSzIyZW5ubEVHOXRRZ2ZYZkpDbmxvZ2VWbHpFdzFFWk8tYjBVeXNRcVp1TVFUMUpoa3psUVVqc1lsalY0bV9nNFhOcl9UYkhRdC1KU1Ew?oc=5\">Tom's Guide</a></blockquote>\n<blockquote>📊 <b>5. Глобальний запуск AI-детектора підлітків в Instagram</b>\nMeta розгортає по всьому світу систему на основі штучного інтелекту, яка виявляє підлітків, що вказують неправдивий вік у профілях.\n💡 Враховуйте зміни в охопленнях та поведінці аудиторії, якщо ваш продукт орієнтований на межові вікові категорії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMi3gFBVV95cUxQR09ITlVfa2NsZlV5S3NYRjJGekdnamRQbXgtN3hHNGVxdFFDbFRXRUE1d3VlV05tWjUwR2pTdEZ0MXhiTjYyQ3ZEWDUzZnM4SzllVXZjaFJXTWZZcHdQOWx1QVpBXzhHQ1RqSklraDJXek1LMjlVNjVtSGZOVjVvUEJnUG1oZGZoMUpIeTlkNjVwVXZGa1MyaXB2MHhudUFBTWtBRnZBMUtkSEVWXzduMUp2OTZaTy1iam1hWk5LWTg3WWJVbzJ4aVZYX3dZc0U3SXN2RThpN2dCNG1iR3fSAeYBQVVfeXFMTUU1YTFMYW84RzFFV1lYanFZWUpkY292LXNKMzkyZWttYmlVa3EzdElmQkt0aVdlOE1aSnpBVFlXYlZ4TGhoZi1pUmctVnBiRTJNMXR1eXJrSkJXSy1xNVNZVS1aWHlqcUlNa1otbHU1YVVkUjl4WGNhcTlRODFBWjRVY0RmbTIzZmpydlBRbklVUk1ScV82Q3l0U1V6d3o2UnV5SzlFYmFjRXd2eGItcVBjSGhjSXNxRkdBU3FuV0tQSEpVbk9mRWM5azg3NEs2dTAwVzB4NURXR1huaUIwUWlzekNIMEE?oc=5\">NDTV Profit</a></blockquote>\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202646\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Вимірювання конверсій на пристроях користувачів у Meta</b> · Jon Loomer\nMeta запровадила функцію «Measure conversions on customer devices» у Events Manager, яка переносить трекінг конверсій безпосередньо на пристрій користувача. Це дозволяє зв'язувати конверсії з переглядами чи кліками реклами через передані раніше дані (наприклад, email) та анонімні характеристики пристрою.\n💡 Увімкніть цю настройку в Events Manager, щоб отримувати повнішу картину атрибуції та точніше бачити результати рекламних кампаній.\n<a href=\"https://www.jonloomer.com/qvt/measure-conversions-on-customer-devices/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Створення та редагування відео за допомогою штучного інтелекту</b> · Social Media Examiner\nСтаття описує, як налаштувати процес редагування відео за допомогою сучасних AI-інструментів без навичок професійного монтажу. Розглядається генерація моушн-дизайну, підбір музики та автоматизація рутинних завдань.\n💡 Використовуйте AI-асистентів для швидкого створення відеоконтенту для соцмереж, делегуючи їм технічну частину монтажу.\n<a href=\"https://www.socialmediaexaminer.com/how-to-edit-videos-with-ai-no-editing-skills-required/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Частка голосу (Share of Voice) як випереджальний показник ефективності</b> · Hootsuite\nМатеріал розкриває поняття Share of Voice (SoV) як показника видимості бренду порівняно з конкурентами в соцмережах, пошуку та платній рекламі. Бренди, чий SoV перевищує їхню частку ринку, зазвичай демонструють органічне зростання.\n💡 Відстежуйте SoV через платформи соціального моніторингу як ключовий індикатор майбутнього зростання продажів, а не просто як іміджову метрику.\n<a href=\"https://blog.hootsuite.com/share-of-voice/\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Огляд найкращих AI-генераторів зображень для соцмереж</b> · Buffer\nАвтор протестував дев'ять генераторів зображень для створення графіки, товарних фото та стікерів. Виявилося, що генеративний AI найефективніше заповнює прогалину там, де звичайна фотографія не працює, наприклад, у створенні унікальних ілюстрацій.\n💡 Використовуйте спеціалізовані AI-інструменти (як-от Seedream чи Ideogram) для генерації якісного тексту на зображеннях та унікального візуалу для каруселей.\n<a href=\"https://buffer.com/resources/ai-image-generator/\">джерело</a></blockquote>\n<blockquote>💬 <b>5. Стратегії для маркетингових кампаній до Black Friday та Cyber Monday</b> · Buffer\nНа основі рекордних показників онлайн-продажів попередніх років автор пропонує перевірені тактики та ідеї для виділення серед конкурентів під час сезонного розпродажу. Стаття допомагає сформувати сильну пропозицію, коли знижки вже стали стандартною вимогою ринку.\n💡 Плануйте унікальні механіки взаємодії з аудиторією заздалегідь, оскільки стандартні знижки більше не гарантують високу конверсію в період перевантаженості рекламою.\n<a href=\"https://buffer.com/resources/black-friday-marketing/\">джерело</a></blockquote>\n<blockquote>💬 <b>6. П'ять ознак того, що ваші реклавні бюджети в Meta зливаються в трубу</b> · Medium · facebook-ads\nБазуючись на багаторічному досвіді управління бюджетами, автор виділяє головні системні помилки в рекламних акаунтах Meta. У статті наведено покроковий розбір того, як виявити ці проблеми лише за 10 хвилин щоденного аудиту.\n💡 Регулярно перевіряйте акаунт на наявність дублюючих аудиторій та виснаження креативів, щоб зупинити непотрібні витрати.\n<a href=\"https://medium.com/@kajay85977/5-signs-your-meta-ads-are-leaking-money-and-how-to-catch-them-in-10-minutes-a-day-735c8aa29302?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>7. Структурування рекламних кампаній Meta для генерації якісних лідів</b> · Medium · facebook-ads\nМатеріал наголошує, що просте «бусти» дописів не працює як стратегія. Описується правильна архітектура рекламних кампаній у Facebook та Instagram для залучення реальних потенційних клієнтів.\n💡 Розділяйте кампанії за воронкою продажів та використовуйте лід-форми з додатковим запитанням для фільтрації неякісних заявок.\n<a href=\"https://medium.com/@dahouayoub97/meta-ads-au-maroc-structurer-une-campagne-facebook-et-instagram-qui-g%C3%A9n%C3%A8re-de-vrais-prospects-354cfaafe958?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>8. Алгоритм відновлення заблокованого Meta Business Manager</b> · Medium · facebook-ads\nПрактичний посібник для маркетологів та агентств, які втратили доступ до бізнес-портфоліо у Meta. Автор пропонує чітку послідовність дій, яка допоможе відновити акаунт і не нашкодити ситуації додатковими помилковими запитами.\n💡 Дотримуйтесь офіційної процедури подачі апеляції через підтримку та підготуйте документи компанії заздалегідь, уникаючи частих повторних звернень, які можуть призвести до перманентного бану.\n<a href=\"https://shildercom.medium.com/meta-business-manager-disabled-a-recovery-order-that-doesnt-make-things-worse-014f3b8e5dbd?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>9. Реклама в Meta після оновлення Andromeda: що змінилося</b> · Medium · facebook-ads\nАналіз змін у рекламному алгоритмі Meta та їхній вплив на стратегію таргетологів. Розглядаються нові підходи до оптимізації бюджетів та роботи з аудиторіями після оновлень платформи.\n💡 Зменшуйте кількість детальних налаштувань таргетингу на користь широких аудиторій та дайте алгоритму більше простору для машинного навчання.\n<a href=\"https://medium.com/@ahaamedia2026/meta-ads-after-andromeda-what-changed-and-what-to-do-next-6433286256f8?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>10. Альтернативи інструментам конкурентної розвідки для e-commerce</b> · Medium · facebook-ads\nОгляд альтернативних сервісів для аналізу ринку та конкурентів у сфері електронної комерції з акцентом на реальну вартість та приховані платежі. Автор розбирає, кому підходять платні рішення, а де можна обійтися базовими безкоштовними методами.\n💡 Порівнюйте реальну ваню підписки з функціоналом, який вам дійсно необхідний щодня, щоб не переплачувати за зайві аналітичні дашборди.\n<a href=\"https://medium.com/@rob_searchnerd/winning-hunter-alternatives-in-2026-what-each-one-really-costs-and-who-its-for-b332b2a28c94?source=rss------facebook_ads-5\">джерело</a></blockquote>\n§RT:smm:202646p",
@@ -50650,7 +50731,9 @@
   "it": 1
  },
  "aro_now_seen": "1794429036308",
- "arob_fail": {},
+ "arob_fail": {
+  "m": 1
+ },
  "pl_v": 3,
  "arob_full": false,
  "aro_last": 1794444419.3603969,
