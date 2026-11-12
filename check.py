@@ -6552,7 +6552,7 @@ def web_hits(q: str):
             for m in re.finditer(r'<li class="b_algo".*?<h2[^>]*>\s*<a[^>]+href="([^"]+)"[^>]*>(.*?)</a>', html, re.S):
                 out.append((_bing_url(m.group(1)), re.sub("<[^>]+>", "", m.group(2))))
             for m in re.finditer(r'<cite[^>]*>(.*?)</cite>', html, re.S):   # видимі адреси результатів — запасне джерело домену
-                out.append(("https://" + re.sub("<[^>]+>|\s|›.*", "", m.group(1)).lstrip("https://"), ""))
+                out.append(("https://" + re.sub(r"^https?://", "", re.sub(r"<[^>]+>|\s|›.*", "", m.group(1))), ""))
             return out
     except Exception:
         pass
@@ -6586,6 +6586,11 @@ def _aro_found(n: str, care: bool) -> str:
     return ""
 
 
+ARO_BASE_N = {"m": 14, "w": 14, "t": 9, "d": 6, "s": 5, "k": 6}   # скільки позицій кожного розділу вже в базовій базі бота
+ARO_MIN = 50                                          # мінімум позицій у кожному розділі парфумів
+ARO_TARGET = {"m": 50, "w": 50, "t": 50, "d": 40, "s": 40, "k": 60}   # цілі: парфуми — 50, дезодоранти й гоління — 40, обличчя/тіло/волосся — 60
+
+
 def aroma_monthly(st: dict, now: datetime) -> None:
     filling = not st.get("aro_full") and _time.time() - float(st.get("aro_fill_t") or 0) > 1800   # поки розділи < 50 — кожні ~30 хв
     if not WORKER_MODE or (st.get("aro_month") == f"{now:%Y-%m}" and not st.get("aro_force") and not filling):
@@ -6601,7 +6606,7 @@ def aroma_monthly(st: dict, now: datetime) -> None:
     items, banned, added = list(extra.get("items") or []), set(ex.get("ar_ban") or []), 0
     for sec, (cat, g, desc) in ARO_SECT.items():
         have_sec = ARO_BASE_N.get(sec, 99) + sum(1 for it in items if str(it[0]).startswith(f"x{sec}"))
-        need = max(0, ARO_MIN - have_sec) if sec in ARO_BASE_N else 0
+        need = max(0, ARO_TARGET.get(sec, ARO_MIN) - have_sec) if sec in ARO_BASE_N else 0
         rounds, per = (min(4, -(-need // 12)), 12) if need else (1, 6)   # парфуми: добираємо до 50 (до 4 запитів по 12)
         if not need and st.get("aro_month") == f"{now:%Y-%m}" and not st.get("aro_force"):
             continue                                    # розділ уже повний і цього місяця оновлювався
@@ -6633,7 +6638,7 @@ def aroma_monthly(st: dict, now: datetime) -> None:
                               cat, n[:70], int(x.get("y") or 0), str(x.get("se") or "усі")[:20], str(x.get("a") or "")[:12], str(x.get("l") or "—")[:30],
                               str(x.get("no") or "")[:120], str(x.get("tg") or "🆕 новинка")[:20], str(x.get("w") or "")[:160], now.strftime("%m.%Y")])
                 have.append(n.lower()); added += 1
-    st["aro_full"] = all(ARO_BASE_N[k] + sum(1 for it in items if str(it[0]).startswith(f"x{k}")) >= ARO_MIN for k in ARO_BASE_N)
+    st["aro_full"] = all(ARO_BASE_N[k] + sum(1 for it in items if str(it[0]).startswith(f"x{k}")) >= ARO_TARGET.get(k, ARO_MIN) for k in ARO_BASE_N)
     out = {"at": now.strftime("%d.%m.%Y"), "items": items[-600:]}
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=aroma_extra.json", out)
@@ -6688,19 +6693,21 @@ def aroma_best(st: dict, now: datetime) -> None:
     if db.get("year") != yr or st.pop("arob_force", False):
         db = {"year": yr, "sect": {}, "at": ""}
     fails = st.setdefault("arob_fail", {})
-    st["arob_full"] = all(len(db["sect"].get(k) or []) >= 10 or fails.get(k, 0) >= 3 for k in AROB_SECT) and db.get("year") == yr
-    todo = [k for k in AROB_SECT if len(db["sect"].get(k) or []) < 10 and fails.get(k, 0) < 3][:1]   # порожні/малі — повторюємо (до 3 спроб); 1 розділ за запуск
+    st["arob_full"] = all(len(db["sect"].get(k) or []) >= 50 or fails.get(k, 0) >= 3 for k in AROB_SECT) and db.get("year") == yr
+    todo = [k for k in AROB_SECT if len(db["sect"].get(k) or []) < 50 and fails.get(k, 0) < 3][:1]   # добираємо до 50 (до 3 спроб без приросту)   # порожні/малі — повторюємо (до 3 спроб); 1 розділ за запуск
     if not todo:
         return
     for k in todo:
-        out, seen = [], set()
+        out = list(db["sect"].get(k) or [])            # уже зібране — лишаємо, добираємо решту
+        seen = {str(x[0]).lower() for x in out}
+        before = len(out)
         for part in (1, 2, 3, 4):                         # менші порції (по 13) — щоб відповідь ШІ не обрізалась
             if len(out) >= 50:
                 break
             raw = gemini(f"Ти редактор рейтингу «найкраще з найкращого» ({yr}). Категорія: {AROB_SECT[k]}. Лише визнані бренди без масмаркету, що продаються в Україні. "
                          f"Склади список із 13 {'найкращих' if part == 1 else 'наступних (інших, ніж уже названі)'} позицій за визнанням: бестселери, переможці премій "
                          "(Fragrantica Community Awards, FiFi Awards, Allure Best of Beauty, GQ Grooming Awards) і стабільно високі оцінки спільнот і покупців. "
-                         + (f"Не повторюй: {', '.join(x[0] for x in out)[:1500]}. " if out else "") +
+                         + (f"Не повторюй: {', '.join(x[0] for x in out)[:2500]}. " if out else "") +
                          "Для кожної: n (бренд і назва), why (чим визнано — премія/рік, рейтинг або статус, коротко українською), "
                          "notes (ноти або склад/тип, українською), l (стійкість для парфумів або «—»), a (вік-орієнтир), se (сезон для парфумів або «усі»). "
                          'Поверни JSON {"items":[{"n":"","why":"","notes":"","l":"","a":"","se":""}]}', json_mode=True, relaxed=True, max_tokens=6000)
@@ -6731,11 +6738,12 @@ def aroma_best(st: dict, now: datetime) -> None:
                 out.append([n[:70], str(x.get("why") or "")[:140], str(x.get("notes") or "")[:120], str(x.get("l") or "—")[:30],
                             str(x.get("a") or "—")[:12], str(x.get("se") or "усі")[:20], "" if src == "?" else src[:200]])
             ARO_LOG.append(f"🤖 «{k}» ч.{part}: ШІ ({GEM_STATE.get('src', '?')}) {len(items)} кандидатів · ✓ {ok_} (без посилання {na_}) · ✗ {no_}")
-        if len(out) >= 10 or fails.get(k, 0) >= 2:
-            db["sect"][k] = out; fails.pop(k, None)
-        else:
-            fails[k] = fails.get(k, 0) + 1                # замало підтверджених — спробуємо в наступному запуску
-        ARO_LOG.append(f"🏆 Найкращі «{k}»: {len(out)} підтверджено" + ("" if len(out) >= 10 else f" — мало, повторю (спроба {fails.get(k, 0)}/3)"))
+        db["sect"][k] = out
+        if len(out) >= 50:
+            fails.pop(k, None)
+        elif len(out) - before < 3:
+            fails[k] = fails.get(k, 0) + 1                # приросту майже немає — після 3 таких спроб зупиняємось до наступного року
+        ARO_LOG.append(f"🏆 Найкращі «{k}»: {len(out)} (+{len(out) - before})" + ("" if len(out) >= 50 else f" — доберу в наступних запусках (без приросту: {fails.get(k, 0)}/3)"))
         print(ARO_LOG[-1])
     db["at"] = now.strftime("%d.%m.%Y")
     try:
