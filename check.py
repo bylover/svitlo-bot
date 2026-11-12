@@ -6650,7 +6650,8 @@ AROB_SECT = {"m": "чоловічі парфуми (бестселери й ви
              "hair": "догляд за волоссям (шампуні, кондиціонери, маски) — найкраще оцінені", "body": "догляд за тілом (гелі для душу, лосьйони, креми) — найкраще оцінені",
              "shave": "гоління й після гоління (бритви, електробритви, піни, бальзами) — найкраще оцінені", "deo": "дезодоранти й антиперспіранти преміум і аптечні — найкраще оцінені"}
 AROB_TRUST = (r"fragrantica|parfumo|basenotes|allure|gq\.com|vogue|elle|harpersbazaar|esquire|byrdie|cosmopolitan|menshealth|womenshealth|fifiawards|fragrancefoundation|"
-              r"notino|makeup\.com\.ua|eva\.ua|rozetka|sephora|douglas|lookfantastic|boots\.com|ulta|cultbeauty|cosme|dermstore|paulaschoice")
+              r"notino|makeup\.com\.ua|eva\.ua|rozetka|sephora|douglas|lookfantastic|boots\.com|ulta|cultbeauty|cosme|dermstore|paulaschoice|"
+              r"nordstrom|macys|neimanmarcus|saksfifthavenue|harrods|selfridges|bloomingdales|libertylondon|johnlewis")
 
 
 ARO_LOG: list = []
@@ -6716,14 +6717,16 @@ def aroma_best(st: dict, now: datetime) -> None:
                     no_ += 1; continue                   # не з білого списку брендів або ШІ-самоперевірка не підтвердила
                 seen.add(n.lower())
                 src = ""
-                hits = web_hits(f'"{n}" ' + ("fragrantica" if k in ("m", "w", "t") else "review best"))   # джерело визнання: пошук на авторитетних сайтах
+                hits = web_hits(f'"{n}" ' + ("perfume fragrantica" if k in ("m", "w", "t") else "skincare review" if k in ("face", "body", "hair") else "review"))   # джерело: пошук на авторитетних сайтах
                 if ok_ + no_ == 0:
                     ARO_LOG.append("🔎 пошук: " + ("недоступний" if hits is None else f"{len(hits)} результатів · " + ", ".join(sorted({re.sub(r'^https?://(www\.)?', '', h).split('/')[0] for h, _ in hits[:6]}))[:120]))
                 if hits is None:
                     src = "?"                             # пошук недоступний — не відкидаємо
                 else:
                     brand_ = (ARO_BRANDS.search(n) or [n.split()[0]])[0].lower()
-                    src = next((h for h, t_ in hits if re.search(AROB_TRUST, h, re.I) or (re.search(AROB_TRUST, t_, re.I) and brand_ in t_.lower())), "")
+                    bdom = re.sub(r"[^a-z]", "", brand_)
+                    src = next((h for h, t_ in hits if re.search(AROB_TRUST, h, re.I) or (re.search(AROB_TRUST, t_, re.I) and brand_ in t_.lower())
+                                or (len(bdom) >= 4 and bdom in re.sub(r"[^a-z.]", "", h.split("/")[2] if h.count("/") >= 2 else h).replace(".", ""))), "")   # офіційний сайт бренду
                 ok_ += 1; na_ += src in ("", "?")              # пошук лише підтверджує (дає посилання); без нього позиція теж додається
                 out.append([n[:70], str(x.get("why") or "")[:140], str(x.get("notes") or "")[:120], str(x.get("l") or "—")[:30],
                             str(x.get("a") or "—")[:12], str(x.get("se") or "усі")[:20], "" if src == "?" else src[:200]])
@@ -8273,17 +8276,18 @@ def main() -> None:
                 pl_build(st, now)                     # 🎧 топ плейлистів Deezer (3 категорії за запуск)
             except Exception as e_:
                 print(f"Плейлисти: {err_text(e_)[:80]}")
-        if budget_ok(100) and not st.get("arob_full"):
+        aro_due = not st.get("aro_full") and _time.time() - float(st.get("aro_last") or 0) > 3300
+        if budget_ok(100) and aro_due:                # 🧴 розділи парфумів до 50 — щогодини, поки не заповнено (у цей запуск — першими)
+            st["aro_last"] = _time.time(); st["aro_force"] = True
+            try:
+                aroma_monthly(st, now)
+            except Exception as e_:
+                print(f"Аромати: {err_text(e_)[:80]}")
+        elif budget_ok(100) and not st.get("arob_full"):
             try:
                 aroma_best(st, now)                   # 🏆 «Найкращі» — поки не заповнено, щозапуску по 1 розділу
             except Exception as e_:
                 print(f"Найкращі: {err_text(e_)[:80]}")
-        if budget_ok(100) and not st.get("aro_full") and _time.time() - float(st.get("aro_last") or 0) > 3300:
-            st["aro_last"] = _time.time(); st["aro_force"] = True
-            try:
-                aroma_monthly(st, now)                # 🧴 розділи парфумів до 50 — щогодини, поки не заповнено
-            except Exception as e_:
-                print(f"Аромати: {err_text(e_)[:80]}")
         direct_m.extend((c_, t_, None) for c_, t_ in DIR_MSGS); DIR_MSGS.clear()   # 🔔 нові фільми режисерів
         for prov_, txt_ in NET_MSGS:                  # сповіщення тим, хто обрав цього провайдера (основні — Triolan і SunNet за замовчуванням)
             for c_ in dict.fromkeys([str(x) for x in PROF] + FAMILY):
