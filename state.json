@@ -729,7 +729,7 @@
   "t69158",
   "t1409"
  ],
- "gh_beat": "2026-11-12T10:05:46.501619+02:00",
+ "gh_beat": "2026-11-12T10:10:45.774695+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -12875,7 +12875,10 @@
   "silpo": {}
  },
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
- "gem_block": {},
+ "gem_block": {
+  "Nz9lkQ:gemini-3.8-flash": "2026-11-13T10:05:00+02:00",
+  "Nz9lkQ:gemini-flash-latest": "2026-11-13T10:05:00+02:00"
+ },
  "omdb_cache": {
   "tt5362988": [
    7.7,
@@ -30009,7 +30012,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "2fd563944a15",
+  "gs": "97a8437e92a9",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "041e38a45762",
   "sexed.json": "0362ec7e46d4",
@@ -46601,12 +46604,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-12",
  "silpo_week": "2026-46",
- "sbm_at": 1794470751.466951,
+ "sbm_at": 1794471049.793671,
  "sbm_hist": [
-  [
-   "21:20",
-   63
-  ],
   [
    "21:25",
    62
@@ -47177,6 +47176,10 @@
   ],
   [
    "10:05",
+   68
+  ],
+  [
+   "10:10",
    68
   ]
  ],
@@ -50314,7 +50317,7 @@
  },
  "aro_now_seen": "1794429036308",
  "arob_fail": {
-  "m": 1
+  "m": 2
  },
  "pl_v": 3,
  "arob_full": false,
