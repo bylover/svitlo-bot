@@ -6523,7 +6523,11 @@ ARO_BRANDS = re.compile(r"\b(dior|chanel|hermès|hermes|armani|yves saint lauren
                         r"maison francis kurkdjian|mfk|jo malone|byredo|le labo|diptyque|guerlain|burberry|montblanc|versace|calvin klein|marc jacobs|davidoff|carolina herrera|"
                         r"paco rabanne|rabanne|jean paul gaultier|kenzo|narciso rodriguez|chloé|chloe|bvlgari|cartier|issey miyake|azzaro|boss|hugo boss|mugler|initio|parfums de marly|"
                         r"xerjoff|amouage|maison margiela|replica|clinique|kiehl'?s|la roche-posay|vichy|cerave|avène|avene|bioderma|olaplex|kérastase|kerastase|aesop|baxter of california|"
-                        r"proraso|taylor of old bond street|gillette labs|braun|philips|l'occitane|loccitane|caudalie|sisley|shiseido|clarins|dermalogica|the ordinary|paula'?s choice)\b", re.I)
+                        r"proraso|taylor of old bond street|gillette labs|braun|philips|l'occitane|loccitane|caudalie|sisley|shiseido|clarins|dermalogica|the ordinary|paula'?s choice|"
+                        r"estée lauder|estee lauder|lancaster|nuxe|uriage|eucerin|ducray|klorane|la mer|origins|moroccanoil|redken|l'oréal professionnel|loreal professionnel|kevin murphy|"
+                        r"davines|living proof|king c\.? gillette|gillette|american crew|bulldog|kilian|frederic malle|frédéric malle|penhaligon'?s|acqua di parma|ex nihilo|nishane|"
+                        r"zadig ?& ?voltaire|lacoste|ralph lauren|dsquared2|moschino|coach|michael kors|tommy hilfiger|abercrombie|hollister|ck one|escada|nina ricci|cacharel|"
+                        r"lancôme|sol de janeiro|kayali|juliette has a gun|memo paris|maison crivelli|vilhelm|frederic|mancera|montale|tiziana terenzi|nasomatto)\b", re.I)
 ARO_SECT = {"m": ("f", "m", "чоловічі парфуми й туалетні води"), "w": ("f", "w", "жіночі парфуми й туалетні води"), "t": ("f", "t", "аромати для підлітків 14–18 (легкі, доречні в школі)"),
             "d": ("d", "u", "преміальні та аптечні дезодоранти й антиперспіранти (стіки, спреї)"), "s": ("s", "m", "засоби й інструменти для гоління та після гоління"),
             "k": ("k", "u", "догляд за обличчям, тілом і волоссям (дерматологічний і преміальний)")}
@@ -6614,6 +6618,7 @@ def aroma_monthly(st: dict, now: datetime) -> None:
                 ARO_LOG.append(f"🤖 {sec}: ШІ ({GEM_STATE.get('src', '?') if raw_ else 'не відповів — ' + GEM_STATE.get('err', '?')}) {len(js.get('items') or [])} кандидатів")
             except Exception:
                 js = {}
+            real_m = aro_selfcheck([str(x.get("n") or "").strip() for x in (js.get("items") or [])[:per] if isinstance(x, dict)])
             for x in (js.get("items") or [])[:per]:
                 n = str(x.get("n") or "").strip()
                 if not n or not ARO_BRANDS.search(n) or n.lower() in have or n.lower() in [str(i[3]).lower() for i in items]:
@@ -6622,8 +6627,8 @@ def aroma_monthly(st: dict, now: datetime) -> None:
                 iid = f"x{sec}{hashlib.md5(n.lower().encode()).hexdigest()[:8]}"   # стабільний ID (між запусками)
                 if iid in banned:
                     continue                               # прибране адміністратором — не повертаємо
-                if not _aro_found(n, cat != "f"):
-                    print(f"Аромати: «{n}» не підтверджено пошуком — пропущено"); ARO_LOG.append(f"↷ не підтверджено: {n[:50]}"); continue   # без підтвердження на Fragrantica/Parfumo/Notino/MAKEUP — не додаємо
+                if n.lower() not in real_m:
+                    ARO_LOG.append(f"↷ самоперевірка ШІ не підтвердила: {n[:50]}"); continue   # вигадане — не додаємо; пошук більше не відсіює
                 items.append([iid, g if sec != "d" else ("w" if re.search(r"femme|women|жіноч|mademoiselle|libre|miss", n, re.I) else "m" if re.search(r"homme|men|чолов|sauvage|bleu", n, re.I) else "u"),
                               cat, n[:70], int(x.get("y") or 0), str(x.get("se") or "усі")[:20], str(x.get("a") or "")[:12], str(x.get("l") or "—")[:30],
                               str(x.get("no") or "")[:120], str(x.get("tg") or "🆕 новинка")[:20], str(x.get("w") or "")[:160], now.strftime("%m.%Y")])
@@ -6659,6 +6664,17 @@ def aro_log_push(now: datetime) -> None:
             pass
 
 
+def aro_selfcheck(names: list) -> set:
+    """Самоперевірка ШІ: які з назв — реальні продукти (повертає множину підтверджених назв; якщо ШІ не відповів — усі)."""
+    if not names:
+        return set()
+    raw = gemini("Перевір список. Залиш лише реально існуючі продукти (парфуми/засоби догляду), що продаються зараз або є визнаною класикою; "
+                 "вигадані, переплутані чи неіснуючі — прибери. Поверни JSON {\"ok\": [точні назви зі списку, які існують]}.\n" + "\n".join(names),
+                 json_mode=True, relaxed=True, max_tokens=1500)
+    ok = json_loose(raw).get("ok")
+    return {str(x).strip().lower() for x in ok} if isinstance(ok, list) and ok else {n.lower() for n in names}
+
+
 def aroma_best(st: dict, now: datetime) -> None:
     """Раз на рік (з лютого: річні премії Fragrantica Community Awards, Allure Best of Beauty, GQ Grooming Awards, FiFi, підсумки медіа) — 2 розділи за запуск."""
     if not (WORKER_MODE and GEMINI_KEY):
@@ -6691,24 +6707,27 @@ def aroma_best(st: dict, now: datetime) -> None:
             if not raw:
                 ARO_LOG.append(f"🤖 «{k}»: ШІ не відповів ({GEM_STATE.get('err', '?')})"); break
             ok_, no_, na_ = 0, 0, 0
+            real_ = aro_selfcheck([str(x.get("n") or "").strip() for x in items if isinstance(x, dict)])
             for x in items:
                 n = str(x.get("n") or "").strip() if isinstance(x, dict) else ""
                 if not n or n.lower() in seen or len(out) >= 50:
                     continue
+                if not ARO_BRANDS.search(n) or n.lower() not in real_:
+                    no_ += 1; continue                   # не з білого списку брендів або ШІ-самоперевірка не підтвердила
                 seen.add(n.lower())
                 src = ""
                 hits = web_hits(f'"{n}" ' + ("fragrantica" if k in ("m", "w", "t") else "review best"))   # джерело визнання: пошук на авторитетних сайтах
+                if ok_ + no_ == 0:
+                    ARO_LOG.append("🔎 пошук: " + ("недоступний" if hits is None else f"{len(hits)} результатів · " + ", ".join(sorted({re.sub(r'^https?://(www\.)?', '', h).split('/')[0] for h, _ in hits[:6]}))[:120]))
                 if hits is None:
                     src = "?"                             # пошук недоступний — не відкидаємо
                 else:
                     brand_ = (ARO_BRANDS.search(n) or [n.split()[0]])[0].lower()
                     src = next((h for h, t_ in hits if re.search(AROB_TRUST, h, re.I) or (re.search(AROB_TRUST, t_, re.I) and brand_ in t_.lower())), "")
-                if not src:
-                    no_ += 1; print(f"🏆 {k}: «{n}» не знайдено на авторитетних сайтах — пропущено"); continue
-                ok_ += 1; na_ += src == "?"
+                ok_ += 1; na_ += src in ("", "?")              # пошук лише підтверджує (дає посилання); без нього позиція теж додається
                 out.append([n[:70], str(x.get("why") or "")[:140], str(x.get("notes") or "")[:120], str(x.get("l") or "—")[:30],
                             str(x.get("a") or "—")[:12], str(x.get("se") or "усі")[:20], "" if src == "?" else src[:200]])
-            ARO_LOG.append(f"🤖 «{k}» ч.{part}: ШІ ({GEM_STATE.get('src', '?')}) {len(items)} кандидатів · ✓ {ok_} (без джерела {na_}) · ✗ {no_}")
+            ARO_LOG.append(f"🤖 «{k}» ч.{part}: ШІ ({GEM_STATE.get('src', '?')}) {len(items)} кандидатів · ✓ {ok_} (без посилання {na_}) · ✗ {no_}")
         if len(out) >= 10 or fails.get(k, 0) >= 2:
             db["sect"][k] = out; fails.pop(k, None)
         else:
