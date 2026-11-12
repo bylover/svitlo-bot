@@ -729,7 +729,7 @@
   "t87917",
   "t4057"
  ],
- "gh_beat": "2026-11-12T20:01:29.865039+02:00",
+ "gh_beat": "2026-11-12T20:09:40.763287+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -740,11 +740,11 @@
   "groups": [
    "GPV3.1"
   ],
-  "updated": "19:34 12.11.2026",
+  "updated": "19:47 12.11.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-12T19:42:55.831209+02:00",
+  "checked": "2026-11-12T20:02:53.628065+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -30711,9 +30711,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "1fc674d79c4c",
+  "gs": "eaa627c87f71",
   "quiz_pool.json": "80eae7ea9381",
-  "fact.png": "24626f363610",
+  "fact.png": "823afb5813e9",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -41721,12 +41721,12 @@
    "“You yourself never loved; you never lov",
    "No—my sweet Fanny—I am wrong—I do not wi",
    "Salomé, Salomé, dance for me. I pray the",
-   "Quand elle reconnut le comte, elle eut u"
+   "She would sometimes gather them passiona"
   ]
  },
  "ero_book": {
   "160603556": "Women in Love",
-  "936688574": "Nana"
+  "936688574": "The Awakening"
  },
  "prom_day": "2026-11-11",
  "prom_force": false,
@@ -41767,7 +41767,7 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-12",
  "silpo_week": "2026-46",
- "sbm_at": 1794506495.5105963,
+ "sbm_at": 1794506986.412398,
  "sbm_hist": [
   [
    "05:05",
@@ -42342,8 +42342,8 @@
    63
   ],
   [
-   "20:01",
-   65
+   "20:09",
+   67
   ]
  ],
  "sbm_near": {
@@ -42360,7 +42360,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1794506502.9475243,
+ "net_at": 1794506995.2447212,
  "net_asn": {
   "triolan": [
    "13188",
@@ -45501,6 +45501,6 @@
  },
  "pl_v": 4,
  "arob_full": false,
- "aro_last": 1794506515.674983,
- "aro_fill_t": 1794506515.6749895
+ "aro_last": 1794507009.6256301,
+ "aro_fill_t": 1794507009.6256402
 }
