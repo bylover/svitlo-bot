@@ -729,7 +729,7 @@
   "t69158",
   "t1409"
  ],
- "gh_beat": "2026-11-12T10:00:46.465986+02:00",
+ "gh_beat": "2026-11-12T10:05:46.501619+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -744,7 +744,7 @@
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-12T09:52:55.795743+02:00",
+  "checked": "2026-11-12T10:02:56.022238+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -12875,17 +12875,7 @@
   "silpo": {}
  },
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
- "gem_block": {
-  "gemini-3.8-flash": "2026-11-12T10:05:00+02:00",
-  "gemini-flash-latest": "2026-11-12T10:05:00+02:00",
-  "gemini-flash-lite-latest": "2026-11-12T10:05:00+02:00",
-  "iDpywg:gemini-flash-latest": "2026-11-12T10:05:00+02:00",
-  "Nz9lkQ:gemini-flash-latest": "2026-11-12T10:05:00+02:00",
-  "Nz9lkQ:gemini-3.8-flash": "2026-11-12T10:05:00+02:00",
-  "iDpywg:gemini-3.8-flash": "2026-11-12T10:05:00+02:00",
-  "Nz9lkQ:gemini-flash-lite-latest": "2026-11-12T10:05:00+02:00",
-  "iDpywg:gemini-flash-lite-latest": "2026-11-12T10:05:00+02:00"
- },
+ "gem_block": {},
  "omdb_cache": {
   "tt5362988": [
    7.7,
@@ -30019,7 +30009,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "af5ce58317e3",
+  "gs": "2fd563944a15",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "041e38a45762",
   "sexed.json": "0362ec7e46d4",
@@ -46611,12 +46601,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-12",
  "silpo_week": "2026-46",
- "sbm_at": 1794470449.3864212,
+ "sbm_at": 1794470751.466951,
  "sbm_hist": [
-  [
-   "21:15",
-   64
-  ],
   [
    "21:20",
    63
@@ -47188,6 +47174,10 @@
   [
    "10:00",
    68
+  ],
+  [
+   "10:05",
+   68
   ]
  ],
  "sbm_near": {
@@ -47204,7 +47194,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1794469854.1412382,
+ "net_at": 1794470760.8605697,
  "net_asn": {
   "triolan": [
    "13188",
@@ -50323,7 +50313,9 @@
   "it": 1
  },
  "aro_now_seen": "1794429036308",
- "arob_fail": {},
+ "arob_fail": {
+  "m": 1
+ },
  "pl_v": 3,
  "arob_full": false,
  "aro_last": 1794469895.7985225,
