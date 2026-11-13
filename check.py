@@ -6957,6 +6957,226 @@ def pl_build(st: dict, now: datetime) -> None:
         print(f"Плейлисти → бот: {err_text(e)[:60]}")
 
 
+# ---------- 🧸 18+ · Гід по секс-іграшках: топи за видами (ШІ → білий список брендів → самоперевірка) + огляди й новинки індустрії (щотижня +10) ----------
+TOY_BRANDS = re.compile(r"\b(satisfyer|womanizer|we-?vibe|lelo|lovense|fun factory|dame|magic wand|hitachi|doxy|le wand|tenga|fleshlight|arcwave|kiiroo|lovehoney|b-?vibe|njoy|"
+                        r"hot octopuss|svakom|zalo|je joue|romp|pjur|system jo|\bjo\b|sliquid|uberlube|überlube|swiss navy|wicked|durex|exs|bijoux indiscrets|intt|shunga|orgie|"
+                        r"hot\b|ruf|tantus|vixen|blush|calexotics|cal exotics|doc johnson|pipedream|nexus|aneros|oxballs|perfect fit|bathmate|hydromax|maude|unbound|smile makers|"
+                        r"ohnut|iroha|picobong|vush|biird|puissante|mystery ?vibe|motorbunny|clone-a-willy|sportsheets|fifty shades|liberator|ohmibod|lora dicarlo|nu sensuelle|"
+                        r"evolved|adam ?& ?eve|toyjoy|dream toys|pretty love|baile|lola games|kokos|adrien lastic|control|egzo|one|skyn|play ?n ?joy|waterglide|lubrix|"
+                        r"viamax|medica group|joydivision|aquaglide|bioglide|yes\b|good clean love|astroglide|k-?y|kama sutra|exsens|plaisirs secrets|yesforlov|coco de mer|"
+                        r"unihorn|creative conceptions|kisstoy|nomi tang|tracy'?s dog|honey play ?box|inya|playboy pleasure|otouch|magic motion|love to love|xocoon|shots|vive|"
+                        r"pillow talk|bellesa|loveline|skins|rocks-?off|ann summers|bswish|maia toys|natalie'?s toy box|share satisfaction|frederick'?s|gender ?x|zolo)\b", re.I)
+TOY_SECT = {   # ключ: (назва, група, опис для ШІ, порада з безпеки)
+    "vac": ("🌬 Вакуумні стимулятори", "w", "вакуумні (безконтактні, air-pulse) кліторальні стимулятори", "Починайте з мінімальної інтенсивності; з лубрикантом на водній основі відчуття м'якші."),
+    "wand": ("🪄 Ванди (вібромасажери)", "w", "вібромасажери-ванди (wand massagers)", "Потужні — починайте через тканину або з найнижчого режиму."),
+    "vib": ("💗 Вібратори й «кролики»", "w", "класичні вібратори та «кролики» (rabbit) для подвійної стимуляції", "Обирайте медичний силікон; до силіконових іграшок — лише лубрикант на водній основі."),
+    "gspot": ("🎯 Для точки G", "w", "вібратори та стимулятори для точки G", "Вигнута форма й тиск важливіші за потужність вібрації."),
+    "tap": ("🫳 «Тапалки» (tapping)", "w", "кліторальні стимулятори з постукуванням або «язичком» (tapping / flicking / fluttering) — нова категорія 2023–2026 років, без вакууму й класичної вібрації; "
+            "беріть найсвіжіші й найкраще оцінені моделі; зразки потрібного типу: Lola Games AvoTap, Unihorn Karma, Satisfyer Tap & Climax, Kisstoy Polly — шукай саме такі й подібні",
+            "Починайте з найнижчої швидкості; крапля лубриканту на водній основі робить дотики м'якшими."),
+    "puls": ("🔁 Пульсатори (thrusting)", "w", "пульсатори й thrusting-іграшки зі зворотно-поступальним рухом замість вібрації (зокрема з підігрівом і подвійною стимуляцією)", "Використовуйте з достатньою кількістю лубриканту; починайте з найповільнішого режиму."),
+    "bullet": ("💊 Міні-вібратори й віброкулі", "w", "міні-вібратори, віброкулі, вібратори-«помади»", "Зручні для подорожей; перевіряйте клас водозахисту."),
+    "wear": ("📱 Для носіння та з додатком", "w", "вібратори для носіння (віброяйця, вібротрусики) з пультом або додатком", "Перевіряйте дальність зв'язку й безпеку додатка (паролі, приватність)."),
+    "dildo": ("🍆 Фалоімітатори", "w", "фалоімітатори (силікон, скло, сталь), зокрема реалістичні й на присосці", "Лише безпечні матеріали: медичний силікон, боросилікатне скло, нержавіюча сталь; пористі (желе, ПВХ) — оминайте."),
+    "kegel": ("🏋️ Вагінальні кульки й тренажери Кегеля", "w", "вагінальні кульки та розумні тренажери Кегеля", "Починайте з легших і більших; при болю чи після пологів — спершу порадьтеся з лікарем."),
+    "mast": ("✊ Мастурбатори", "m", "чоловічі мастурбатори (рукави, яйця, реалістичні)", "Мийте після кожного використання й повністю висушуйте; лубрикант — на водній основі."),
+    "auto": ("🤖 Автоматичні мастурбатори", "m", "автоматичні й інтерактивні чоловічі мастурбатори (з вібрацією, поштовхами, додатком)", "Дотримуйтесь інструкції з чищення — у багатьох знімний рукав."),
+    "ring": ("⭕ Ерекційні кільця", "m", "ерекційні кільця, зокрема з вібрацією", "Не носіть довше 20–30 хв; при онімінні чи болю одразу зніміть. Не для людей із проблемами судин без консультації лікаря."),
+    "prost": ("🎯 Масажери простати", "m", "масажери простати", "Лише з обмежувачем-основою, багато лубриканту, повільно; при болю — зупиніться."),
+    "pump": ("⬆️ Помпи", "m", "вакуумні та гідропомпи для чоловіків", "Не перевищуйте рекомендований тиск і час; це не медичний засіб лікування."),
+    "sleeve": ("🧤 Насадки", "m", "насадки на пеніс (подовжувачі, зі стимуляцією)", "Підбирайте розмір; використовуйте лубрикант усередині й зовні."),
+    "together": ("🤝 Компактні для спільного використання", "c", "компактні й пласкі стимулятори, які зручно використовувати ПІД ЧАС сексу з партнером: невеликі вакуумні й кліторальні стимулятори, "
+                 "вібратори-кільця, пальчикові вібратори, пласкі «лягають між тілами» моделі — саме ті, що їх радять для пар сексологи й секс-блогери (не обов'язково з категорії «для пар» у магазинах)",
+                 "Обирайте за формою й розміром: пласка й мала іграшка не заважає; тримати зручніше тій, кого стимулюють."),
+    "couple": ("👫 Вібратори для пар", "c", "вібратори для пар (для використання під час сексу)", "Обговоріть заздалегідь, що подобається обом; починайте з малої інтенсивності."),
+    "remote": ("🌍 Іграшки на відстані", "c", "іграшки з керуванням через додаток на відстані (для пар на відстані)", "Керування — лише за взаємною згодою; перевірте приватність додатка."),
+    "plug": ("🔻 Анальні пробки", "c", "анальні пробки (зокрема набори для початківців і з вібрацією)", "ЛИШЕ з розширеною основою; багато лубриканту; починайте з найменшого розміру, без поспіху."),
+    "anal": ("📿 Анальні намистини й стимулятори", "c", "анальні намистини та стимулятори", "Лише з кільцем або обмежувачем; спеціальний анальний лубрикант; не міняйте анальне на вагінальне без миття."),
+    "strap": ("🩲 Страпони", "c", "страпони й трусики-кріплення з насадками", "Підберіть зручне кріплення за розміром; лубрикант обов'язковий."),
+    "bdsm": ("⛓ BDSM для початківців", "c", "набори й аксесуари BDSM для початківців (наручники, пов'язки, флогери, стрічки)", "Спершу домовтеся про межі й стоп-слово; не залишайте зв'язаного партнера без нагляду."),
+    "game": ("🎲 Ігри й набори для пар", "c", "еротичні ігри, набори й подарункові бокси для пар", "Гарний старт, якщо ви вперше обираєте щось разом."),
+    "lubew": ("💧 Лубриканти на водній основі", "l", "лубриканти на водній основі", "Сумісні з презервативами й усіма іграшками; без гліцерину й парабенів — для чутливої шкіри."),
+    "lubes": ("✨ Силіконові лубриканти", "l", "лубриканти на силіконовій основі", "Довго ковзають і підходять для води, але НЕ для силіконових іграшок."),
+    "lubeh": ("🔀 Гібридні лубриканти", "l", "гібридні (вода + силікон) лубриканти", "Перевірте сумісність з іграшкою на невеликій ділянці."),
+    "lubewarm": ("🔥 Розігрівальні", "l", "розігрівальні (збуджувальні, з ефектом тепла) лубриканти й гелі", "Спершу тест на невеликій ділянці шкіри; не для подразненої шкіри."),
+    "lubecool": ("❄️ Охолоджувальні й з ефектом", "l", "охолоджувальні лубриканти та лубриканти з ефектом (поколювання, пролонгація відчуттів)", "Спершу тест на невеликій ділянці; уникайте при чутливості до ментолу."),
+    "lubeanal": ("🔻 Анальні лубриканти", "l", "анальні лубриканти (густі, тривалої дії)", "Обирайте густі формули; засоби з анестетиком маскують біль — користуйтеся обережно."),
+    "lubetaste": ("🍓 Смакові та їстівні", "l", "смакові та їстівні лубриканти й гелі для орального сексу", "Без цукру — щоб не порушувати мікрофлору."),
+    "liquid": ("⚡ Рідкі вібратори й збуджувальні гелі", "l", "рідкі вібратори та збуджувальні гелі для клітора", "Достатньо 1–2 крапель; спершу тест на чутливість."),
+    "prolong": ("⏱ Пролонгатори", "l", "пролонгатори (спреї, гелі, серветки) для чоловіків", "Засоби з лідокаїном/бензокаїном — за інструкцією; змийте або використовуйте презерватив, щоб не знизити чутливість партнерки."),
+    "massage": ("🕯 Масажні олії й свічки", "l", "масажні олії та масажні свічки для пар", "Олії несумісні з латексними презервативами."),
+    "clean": ("🧼 Догляд за іграшками", "l", "очищувачі, антибактеріальні засоби й чохли для зберігання іграшок", "Мийте до й після використання; зберігайте окремо, щоб матеріали не реагували між собою."),
+    "new": ("🆕 Новинки року", "top", "найпомітніші новинки секс-іграшок останнього року (усі категорії) від перевірених брендів", "Новинки дорожчі на старті — перевірте огляди перед покупкою."),
+}
+
+
+def ai_selfcheck(names: list, what: str) -> set:
+    if not names:
+        return set()
+    raw = gemini(f"Перевір список. Залиш лише реально існуючі {what}, що продаються зараз; вигадані, переплутані чи неіснуючі назви — прибери. "
+                 "Поверни JSON {\"ok\": [точні назви зі списку, які існують]}.\n" + "\n".join(names), json_mode=True, relaxed=True, max_tokens=1500)
+    ok = json_loose(raw).get("ok")
+    return {str(x).strip().lower() for x in ok} if isinstance(ok, list) and ok else {n.lower() for n in names}
+
+
+def toys_build(st: dict, now: datetime) -> None:
+    """1 розділ за запуск (не частіше ніж раз на 15 хв); кожен розділ оновлюється раз на 60 днів."""
+    if not (WORKER_MODE and GEMINI_KEY) or _time.time() - float(st.get("toys_last") or 0) < 900:
+        return
+    try:
+        db = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=toys.json") or {}
+    except Exception:
+        return
+    db.setdefault("sect", {})
+    if st.get("toys_v") != 2:                          # нова версія описів — «тапалки» й «пульсатори» зібрати заново
+        for k_ in ("tap", "puls"):
+            db["sect"].pop(k_, None)
+        st["toys_v"] = 2
+    old = (now - timedelta(days=60)).strftime("%Y-%m-%d")
+    todo = [k for k in TOY_SECT if (db["sect"].get(k) or {}).get("d", "") < old or len((db["sect"].get(k) or {}).get("items") or []) < 5]
+    todo.sort(key=lambda k: k not in ("tap", "puls", "together"))   # нові види — першими
+    if not todo:
+        return
+    st["toys_last"] = _time.time()
+    k = todo[0]
+    title, grp, desc, tip = TOY_SECT[k]
+    raw = gemini(f"Ти експерт із секс-іграшок і сексуального здоров'я (sexual wellness), складаєш споживчий рейтинг. Категорія: {desc}. "
+                 "Склади топ-15 найкращих моделей у порядку від найкращої. Критерії: оцінки й відгуки покупців на великих майданчиках (Amazon, Lovehoney, офіційні магазини брендів, "
+                 "великі українські секс-шопи), огляди авторитетних медіа (Wirecutter, Cosmopolitan, Women's Health, Men's Health, Self, Mashable, Good Housekeeping), галузеві нагороди "
+                 "(XBIZ, EAN Erotix, AVN «O» Awards, Red Dot). Лише перевірені відомі бренди з безпечними для тіла матеріалами; без ноунеймів і підробок; бажано те, що продається в Україні. "
+                 "Для кожної: n (бренд і точна назва моделі), why (чим визнано: оцінки, нагороди, огляди — коротко українською), feat (матеріал, водозахист, режими, живлення, особливості — українською), "
+                 "who (кому підійде — українською), price (₴ бюджетно / ₴₴ середньо / ₴₴₴ преміум), new (true, якщо модель 2024 року або новіша). "
+                 'Лише реальні існуючі продукти. Поверни JSON {"items":[...]}', json_mode=True, relaxed=True, max_tokens=5000)
+    items = json_loose(raw).get("items") or []
+    if not raw or not items:
+        TOY_LOG.append(f"🤖 «{k}»: ШІ не відповів ({GEM_STATE.get('err', 'порожньо')})"); toy_log_push(now); return
+    real = ai_selfcheck([str(x.get("n") or "").strip() for x in items if isinstance(x, dict)], "секс-іграшки, лубриканти чи аксесуари")
+    out, seen, bad = [], set(), 0
+    for x in items:
+        n = str(x.get("n") or "").strip() if isinstance(x, dict) else ""
+        if not n or n.lower() in seen:
+            continue
+        if not TOY_BRANDS.search(n) or n.lower() not in real:
+            bad += 1; continue                           # не з білого списку брендів або самоперевірка не підтвердила
+        seen.add(n.lower())
+        out.append([n[:70], str(x.get("why") or "")[:160], str(x.get("feat") or "")[:200], str(x.get("who") or "")[:120],
+                    (re.findall(r"₴+", str(x.get("price") or "")) or ["₴₴"])[0][:3], 1 if x.get("new") in (True, "true", 1) else 0])
+    if len(out) >= 5 or not (db["sect"].get(k) or {}).get("items"):
+        db["sect"][k] = {"t": title, "g": grp, "tip": tip, "d": now.strftime("%Y-%m-%d"), "items": out[:15]}
+    db["at"] = now.strftime("%d.%m.%Y")
+    TOY_LOG.append(f"🧸 «{k}» {title}: ШІ ({GEM_STATE.get('src', '?')}) {len(items)} → у топі {len(out)} · ✗ {bad} · готово розділів {sum(1 for v in db['sect'].values() if v.get('items'))}/{len(TOY_SECT)}")
+    print(TOY_LOG[-1])
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=toys.json", db)
+    except Exception as e:
+        print(f"Іграшки → бот: {err_text(e)[:60]}")
+    toy_log_push(now)
+
+
+TOY_LOG: list = []
+TOY_NEWS_TRUST = re.compile(r"wirecutter|new york times|nytimes|cosmopolitan|women'?s health|men'?s health|\bself\b|allure|\bgq\b|mashable|wired|the verge|engadget|techcrunch|glamour|"
+                            r"good housekeeping|healthline|refinery29|bustle|xbiz|ean|avn|sextech|kinkly|lovehoney|lelo|womanizer|we-vibe|satisfyer|lovense|forbes|guardian|independent|"
+                            r"esquire|elle|vogue|men'?s journal|insider|cnet|pcmag|verywell|medical news today|sex with emily|future of sex|sheknows|popsugar|stylist", re.I)
+TOY_NEWS_Q = ["sex toy review", "best vibrators", "best sex toys", "sex tech new launch", "sexual wellness brand launches", "new vibrator launch", "sex toy industry news",
+              "Lelo OR Womanizer OR We-Vibe OR Satisfyer OR Lovense new", "best lube", "best sex toys for couples", "best sex toys for men", "секс-іграшки огляд", "секс-іграшки новинки"]
+
+
+TOY_YT_Q = ["sex toy review", "best vibrators review", "Womanizer review", "Satisfyer review", "LELO review", "We-Vibe review", "Lovense review", "sex toys for couples review",
+            "огляд секс-іграшок", "секс-іграшки огляд сексолог", "вакуумний стимулятор огляд", "лубриканти огляд"]
+
+
+def toy_videos(have: set, now: datetime) -> list:
+    """Відеоогляди блогерів і сексологів з YouTube: свіжі (до 60 днів) з найбільшою кількістю переглядів."""
+    if not YT_KEY:
+        return []
+    after = (datetime.now(timezone.utc) - timedelta(days=60)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    ids = []
+    for q in TOY_YT_Q:
+        try:
+            r = http_json("https://www.googleapis.com/youtube/v3/search?" + urllib.parse.urlencode(
+                {"part": "id", "type": "video", "q": q, "order": "viewCount", "publishedAfter": after, "maxResults": 8, "videoDuration": "medium", "key": YT_KEY}))
+            ids += [x["id"]["videoId"] for x in r.get("items", []) if x.get("id", {}).get("videoId") and x["id"]["videoId"] not in ids]
+        except Exception as e:
+            print(f"YouTube (іграшки) «{q}»: {err_text(e)[:60]}")
+    out = []
+    for i in range(0, len(ids), 50):
+        try:
+            r = http_json("https://www.googleapis.com/youtube/v3/videos?" + urllib.parse.urlencode({"part": "snippet,statistics", "id": ",".join(ids[i:i + 50]), "key": YT_KEY}))
+        except Exception:
+            continue
+        for v in r.get("items", []):
+            sn, views = v["snippet"], int(v.get("statistics", {}).get("viewCount") or 0)
+            title = sn.get("title", "")
+            link = f"https://youtu.be/{v['id']}"
+            if views < 3000 or link in have or not re.search(r"review|огляд|best|топ|top|vs|unboxing|тест|guide|гайд|sexolog|сексолог", title, re.I) \
+               or not (TOY_BRANDS.search(title + " " + (sn.get("description") or "")[:300]) or re.search(r"sex toy|vibrator|іграш|вібратор|лубрикант|lube", title, re.I)):
+                continue
+            out.append({"t": title[:140], "sum": f"👁 {num(views)} переглядів", "tag": "відео", "o": title, "l": link, "s": "YouTube · " + sn.get("channelTitle", "")[:40],
+                        "d": sn.get("publishedAt", "")[:10], "v": views})
+    out.sort(key=lambda x: -x["v"])
+    return out[:5]
+
+
+def toy_log_push(now: datetime) -> None:
+    if TOY_LOG and WORKER_MODE:
+        try:
+            http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=toys_log.json", {"at": now.strftime("%d.%m %H:%M"), "lines": TOY_LOG[-12:]})
+        except Exception:
+            pass
+
+
+def toys_news(st: dict, now: datetime) -> None:
+    """Раз на тиждень: +10 оглядів, гайдів і новин індустрії з перевірених джерел; нові — першими, старі лишаються в кінці."""
+    wk = f"{now:%G%V}"
+    if not WORKER_MODE or (st.get("toyn_week") == wk and not st.pop("toyn_force", False)):
+        return
+    try:
+        db = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=toys_news.json") or {}
+    except Exception:
+        return
+    have = {x.get("l") for x in db.get("items") or []} | {str(x.get("o") or "").lower()[:60] for x in db.get("items") or []}
+    cands, seen = [], set()
+    for q in TOY_NEWS_Q:
+        for lang in (("uk",) if re.search("[а-яіїє]", q) else ("en",)):
+            for x in _gnews_days(q, lang, 14):
+                key = x["t"].lower()[:60]
+                if key in seen or key in have or x["l"] in have or not TOY_NEWS_TRUST.search(x["s"] + " " + x["t"]):
+                    continue
+                seen.add(key); cands.append(x)
+    if not cands:
+        TOY_LOG.append("📰 Огляди: нових матеріалів у перевірених джерелах не знайдено"); toy_log_push(now); st["toyn_week"] = wk; return
+    cands = cands[:40]
+    raw = gemini("Ти редактор рубрики про секс-іграшки та sexual wellness. Обери рівно 10 найкорисніших матеріалів для покупця: огляди, гайди з вибору, рейтинги, новинки індустрії. "
+                 "Для кожного: n (номер зі списку), title (заголовок українською), sum (1–2 речення українською, ЛИШЕ з того, що видно із заголовка; нічого не вигадуй), "
+                 "tag (одне з: огляд, гайд, рейтинг, новинка, дослідження). Поверни JSON {\"items\":[...]}.\n\n"
+                 + "\n".join(f"{i}. {c_['t']} — {c_['s']}" for i, c_ in enumerate(cands)), json_mode=True, relaxed=True, max_tokens=3000)
+    picked = []
+    for x in json_loose(raw).get("items") or []:
+        try:
+            c_ = cands[int(x.get("n"))]
+        except Exception:
+            continue
+        if c_["l"] not in [p_["l"] for p_ in picked]:
+            picked.append({"t": str(x.get("title") or c_["t"])[:140], "sum": str(x.get("sum") or "")[:260], "tag": str(x.get("tag") or "огляд")[:14], "o": c_["t"], "l": c_["l"], "s": c_["s"], "d": c_["d"], "w": wk})
+    for c_ in cands:                                     # ШІ дав менше 10 — добираємо оригінальними заголовками
+        if len(picked) >= 10:
+            break
+        if c_["l"] not in [p_["l"] for p_ in picked]:
+            picked.append({"t": c_["t"], "sum": "", "tag": "огляд", "o": c_["t"], "l": c_["l"], "s": c_["s"], "d": c_["d"], "w": wk})
+    vids = toy_videos(have, now)                       # 🎥 + до 5 відеооглядів блогерів і сексологів (свіжі, найбільше переглядів)
+    for v_ in vids:
+        v_["w"] = wk
+    db["items"] = (picked[:10] + vids + (db.get("items") or []))[:400]   # нові — вперед, старі лишаються
+    db["at"], db["wk"] = now.strftime("%d.%m.%Y"), wk
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=toys_news.json", db)
+        st["toyn_week"] = wk
+        TOY_LOG.append(f"📰 Огляди й новинки: +{len(picked[:10])} статей (кандидатів {len(cands)}) і +{len(vids)} відео, усього {len(db['items'])}"); print(TOY_LOG[-1])
+    except Exception as e:
+        print(f"Огляди іграшок → бот: {err_text(e)[:60]}")
+    toy_log_push(now)
+
+
 # ---------- 🎬 Режисери: 🏆 Топ-50 (раз на тиждень) і 🎬 Мої режисери (фільмографія, рейтинги, сповіщення про нові фільми) ----------
 DIR_M, DIR_C = 800, 6.8                                # зважена оцінка фільму: (v/(v+m))·R + (m/(v+m))·C — мало голосів не «перестрибує» визнані фільми
 
@@ -8326,6 +8546,12 @@ def main() -> None:
                 aroma_best(st, now)                   # 🏆 «Найкращі» — поки не заповнено, щозапуску по 1 розділу
             except Exception as e_:
                 print(f"Найкращі: {err_text(e_)[:80]}")
+        if budget_ok(110):
+            try:
+                toys_news(st, now)                    # 🧸 огляди й новинки іграшок — раз на тиждень +10
+                toys_build(st, now)                   # 🧸 топи іграшок — по 1 розділу раз на 15 хв, поки не зібрано
+            except Exception as e_:
+                print(f"Іграшки: {err_text(e_)[:80]}")
         direct_m.extend((c_, t_, None) for c_, t_ in DIR_MSGS); DIR_MSGS.clear()   # 🔔 нові фільми режисерів
         for prov_, txt_ in NET_MSGS:                  # сповіщення тим, хто обрав цього провайдера (основні — Triolan і SunNet за замовчуванням)
             for c_ in dict.fromkeys([str(x) for x in PROF] + FAMILY):
@@ -8490,6 +8716,7 @@ def main() -> None:
         st["dir_force"], st["dir_force_my"] = True, True   # 🎬 режисери — заново
         st["smmt_force"] = True                       # 📈 SMM-інструменти — заново
         st["aro_force"] = True                        # 🧴 аромати — поповнити базу
+        st["toyn_force"] = True                       # 🧸 огляди іграшок — зібрати зараз
         st["prom_force"] = st["rz_force"] = True
         st["match_month"] = ""; st["ps_day"] = ""                # 🍿💞 пул Кіномэтчу й 🔥 знижки PS — теж свіжі
         st["games_force"] = st["ab_force"] = st["rc_force"] = True     # 🥗 ПП-страви — позапланове поповнення
