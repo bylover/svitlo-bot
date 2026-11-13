@@ -729,7 +729,7 @@
   "t258165",
   "t60573"
  ],
- "gh_beat": "2026-11-13T11:15:45.250742+02:00",
+ "gh_beat": "2026-11-13T11:20:49.218387+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -1670,14 +1670,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "13.11 11:17",
-   "ts": 1794561427,
+   "at": "13.11 11:22",
+   "ts": 1794561742,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "13.11 11:17",
-   "ts": 1794561427,
+   "at": "13.11 11:22",
+   "ts": 1794561742,
    "ok": true,
    "note": ""
   },
@@ -1700,8 +1700,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "13.11 11:11",
-   "ts": 1794561094,
+   "at": "13.11 11:23",
+   "ts": 1794561792,
    "ok": true,
    "note": ""
   },
@@ -1760,8 +1760,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "13.11 11:11",
-   "ts": 1794561094,
+   "at": "13.11 11:23",
+   "ts": 1794561792,
    "ok": true,
    "note": ""
   },
@@ -12796,7 +12796,8 @@
  "gem_block": {
   "Nz9lkQ:gemini-flash-latest": "2026-11-14T10:05:00+02:00",
   "Nz9lkQ:gemini-3.8-flash": "2026-11-14T10:05:00+02:00",
-  "iDpywg:gemini-flash-latest": "2026-11-14T10:05:00+02:00"
+  "iDpywg:gemini-flash-latest": "2026-11-14T10:05:00+02:00",
+  "iDpywg:gemini-3.8-flash": "2026-11-14T10:05:00+02:00"
  },
  "omdb_cache": {
   "tt5362988": [
@@ -30036,10 +30037,16 @@
    80,
    null,
    "2026-11-13"
+  ],
+  "tt0445336": [
+   7.4,
+   98,
+   81,
+   "2026-11-13"
   ]
  },
  "pushed_h": {
-  "gs": "1f5723356c51",
+  "gs": "7c708e546bb0",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "03317e7464d7",
   "sexed.json": "0362ec7e46d4",
@@ -44208,6 +44215,117 @@
    ],
    "ov": "A pregnant Colombian teenager becomes a drug mule to make some desperately needed money for her family.",
    "poster": "https://image.tmdb.org/t/p/w500/ygSWLfwtvLt7BarnQGnuU0zXjOn.jpg"
+  },
+  "m1122099": {
+   "title": "Балада про острів Волліс",
+   "year": "2025",
+   "rating": 7.4,
+   "genres": [
+    "Комедія",
+    "Драма",
+    "Музика"
+   ],
+   "g": [
+    35,
+    18,
+    10402
+   ],
+   "ov": "Чарльз, дивний переможець лотереї, який живе самотньо на віддаленому острові, намагається втілити свої фантазії в життя, запросивши свого улюбленого співака Герба МакҐвайра виступити на особливому приватному заході.",
+   "poster": "https://image.tmdb.org/t/p/w500/haS6bnqDqZoi5sYcCPJWaj2yMbB.jpg"
+  },
+  "m1208348": {
+   "title": "Сім'я напрокат",
+   "year": "2025",
+   "rating": 7.5,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Самотній американський актор, що мешкає в Токіо, починає працювати в японській компанії, яка надає «орендовані родини», — він грає підставні ролі в житті інших людей. Згодом він знаходить неочікувані зв’язки та несподіва",
+   "poster": "https://image.tmdb.org/t/p/w500/rEutyvM2e0hu6Hn51aF495J1F9L.jpg"
+  },
+  "m389015": {
+   "title": "Я, Тоня",
+   "year": "2017",
+   "rating": 7.5,
+   "genres": [
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    18,
+    35
+   ],
+   "ov": "Заради кар'єри одна з кращих фігуристок США не цуралася найбрудніших методів для перемоги над суперницями. Колишній чоловік Хардінг і охоронець спортсменки найняли людину, аби вона зламала конкурентці Тоні ногу. Історія,",
+   "poster": "https://image.tmdb.org/t/p/w500/mLrycnVLWHQwpFQlC8X6wX3h511.jpg"
+  },
+  "m1056360": {
+   "title": "Американське чтиво",
+   "year": "2023",
+   "rating": 7.5,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Письменницька кар'єра Телоніуса \"Монка\" Елісона стала на паузу, бо його твори вважали недостатньо \"чорними\". Монк, письменник та вчитель англійської, пише сатиричний роман під псевдонімом, прагнучи викрити лицемірство ви",
+   "poster": "https://image.tmdb.org/t/p/w500/gzEu8bw8YiWX2bJ6HWbxyaXIKUw.jpg"
+  },
+  "m11807": {
+   "title": "Коли ми зустрілися",
+   "year": "2007",
+   "rating": 7.9,
+   "genres": [
+    "Драма",
+    "Комедія",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    35,
+    10749
+   ],
+   "ov": "Адітья - бізнесмен-невдаха. До того ж кохана виходить заміж за іншого. Йому не вистачає мужності повернутися додому, тому він сідає в перший-ліпший потяг і їде, «світ за очі». Але доля розпоряджається інакше. У поїзді ві",
+   "poster": "https://image.tmdb.org/t/p/w500/sQ7A7jyTbkK90vjd8yCRuoyL9CK.jpg"
+  },
+  "m36940": {
+   "title": "La prima cosa bella",
+   "year": "2010",
+   "rating": 7.0,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "The film tells the story of the Michelucci family, from the nineteen-seventies to the present day: the central character is the stunningly beautiful Anna, the lively, frivolous and sometimes embarrassing mother of Bruno ",
+   "poster": "https://image.tmdb.org/t/p/w500/10MQjSuqDBNiPtxxO3zBqERw0q3.jpg"
+  },
+  "m21297": {
+   "title": "Wake Up Sid",
+   "year": "2009",
+   "rating": 7.6,
+   "genres": [
+    "Комедія",
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    35,
+    18,
+    10749
+   ],
+   "ov": "Wake Up Sid! is the story of a lazy Mumbai college student who does absolutely nothing, with a turn of events will Sid realize his potential in this world and become a success in the fast-paced life of Mumbai.",
+   "poster": "https://image.tmdb.org/t/p/w500/6KM0VkAutDHNI4SkC0rIyWFttiO.jpg"
   }
  },
  "cofid_pushed": "12.11.2026",
@@ -44293,12 +44411,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-13",
  "silpo_week": "2026-46",
- "sbm_at": 1794561349.130652,
+ "sbm_at": 1794561654.2356133,
  "sbm_hist": [
-  [
-   "22:20",
-   81
-  ],
   [
    "22:25",
    82
@@ -44870,6 +44984,10 @@
   [
    "11:15",
    58
+  ],
+  [
+   "11:20",
+   56
   ]
  ],
  "sbm_near": {
@@ -47931,7 +48049,7 @@
   "mix": "2026-11-13T09:40:47.227939+02:00",
   "drama": "2026-11-13T10:40:45.303579+02:00",
   "thriller": "2026-11-13T11:01:02.204673+02:00",
-  "comedy": "2026-11-12T23:20:45.337033+02:00",
+  "comedy": "2026-11-13T11:20:49.332461+02:00",
   "horror": "2026-11-12T23:40:45.168545+02:00",
   "scifi": "2026-11-13T00:50:47.848120+02:00",
   "romance": "2026-11-13T03:10:44.604126+02:00",
