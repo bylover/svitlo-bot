@@ -732,7 +732,7 @@
   "t258165",
   "t60573"
  ],
- "gh_beat": "2026-11-13T17:25:52.289887+02:00",
+ "gh_beat": "2026-11-13T17:30:59.278744+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1665,14 +1665,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "13.11 17:22",
-   "ts": 1794583360,
+   "at": "13.11 17:32",
+   "ts": 1794583937,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "13.11 17:22",
-   "ts": 1794583360,
+   "at": "13.11 17:32",
+   "ts": 1794583937,
    "ok": true,
    "note": ""
   },
@@ -1695,8 +1695,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "13.11 17:27",
-   "ts": 1794583651,
+   "at": "13.11 17:32",
+   "ts": 1794583972,
    "ok": true,
    "note": ""
   },
@@ -1755,8 +1755,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "13.11 17:12",
-   "ts": 1794582772,
+   "at": "13.11 17:32",
+   "ts": 1794583972,
    "ok": true,
    "note": ""
   },
@@ -30054,7 +30054,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "f4150a803f72",
+  "gs": "644e7e79fb0c",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "3705e06002a2",
   "sexed.json": "0362ec7e46d4",
@@ -45527,12 +45527,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-13",
  "silpo_week": "2026-46",
- "sbm_at": 1794583557.3973763,
+ "sbm_at": 1794583864.403531,
  "sbm_hist": [
-  [
-   "04:40",
-   92
-  ],
   [
    "04:45",
    92
@@ -46103,6 +46099,10 @@
   ],
   [
    "17:25",
+   64
+  ],
+  [
+   "17:30",
    64
   ]
  ],
@@ -49181,7 +49181,7 @@
   "ser_comedy": "2026-11-13T17:00:46.329227+02:00",
   "ser_drama": "2026-11-13T17:20:48.148591+02:00",
   "ser_scifi": "2026-11-13T17:25:52.424490+02:00",
-  "ser_mystery": "2026-11-13T05:30:47.093812+02:00"
+  "ser_mystery": "2026-11-13T17:30:59.420443+02:00"
  },
  "kb_probe2": "2026-46",
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 05.11–12.11\n<blockquote>🎯 <b>1. Meta зупинила оновлення рекламних умов</b>\nMeta тимчасово призупинила запровадження нових бізнес- та рекламних умов після масової критики видавців через скандальні правила щодо використання контенту та AI.\n💡 Слідкуйте за оновленнями правил платформи, щоб вчасно адаптувати свої рекламні кампанії та юридичні аспекти роботи з клієнтами.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZUR4cTNfOGZ3TTdSTzRVQ0FRamNKRlQ5S0VNYkN2TVBmbWFkcDdCckdqazVwOXJvd2NKRjJEZWd2a0E1TWt6enVBYS1YU1U5cGJ3LVZSS2JxQ1dON21kQWs2dTVUdENsRHhiWlMwRmE2M05KU1pQczY3NW15YlczTU1GaHNOcUxX?oc=5\">Search Engine Journal</a></blockquote>\n<blockquote>🆕 <b>2. Розширені фільтри пошуку в Threads</b>\nУ соціальній мережі Threads з'явилися нові розширені фільтри для пошуку контенту, що полегшує знаходження республік та актуальних обговорень.\n💡 Використовуйте нові фільтри для моніторингу згадок бренду та пошуку трендових тем для швидкого створення контенту.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-adds-advanced-search-filters/874339/\">Social Media Today</a></blockquote>\n<blockquote>📊 <b>3. Meta опублікувала роз'яснення щодо алгоритмів стрічки</b>\nКомпанія випустила детальний гайд про те, як працюють елементи керування алгоритмом у стрічці користувачів та що впливає на покази.\n💡 Вивчіть ці принципи, щоб адаптувати стратегію публікацій під реальні фактори ранжування Meta.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-publishes-explainer-on-your-algorithm-controls/874460/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>4. Тестування функції частих переглядів у LinkedIn</b>\nLinkedIn тестує нову функцію, яка показує користувачам статистику профільних візитів та часті перегляди контенту.\n💡 Зверніть увагу на активність ваших постійних відвідувачів для налагодження прямих B2B-контактів.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-tests-frequent-viewer-feature/874463/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. TikTok тестує торгові підписки</b>\nПлатформа почала тестування функціоналу покупок за підпискою, що дозволить бренди продавати товари на регулярній основі.\n💡 Продумайте можливість введення підписок на свої товари чи послуги, якщо ви працюєте з TikTok Shop.\n🔗 <a href=\"https://www.socialmediatoday.com/news/tiktok-tests-shopping-subscriptions/874337/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Instagram переносить редагування на десктоп</b>\nInstagram інтегрує розширені інструменти редагування відео на десктопну версію, створюючи конкуренцію для CapCut.\n💡 Використовуйте десктопний редактор для зручнішого монтажу довгих відео та Reels із ПК.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxNLW5qZFZTVzlFNmt2NkktelkwYVdBemQ5el9YaE9KNGFuZnBQZU5GU3FLMWNnVWZFYlZTUTNGTmxXWE1WNEFWSzZTaWRITC1UeFBmRG92TVUwOUhpQVlDLV8zbERQMEdWZUxtVlBWdUpnUno2a2ZFNDVGMDh4NlZUaC1XTDRpUkt5a05IVlNJWQ?oc=5\">TechCrunch</a></blockquote>\n<blockquote>🆕 <b>7. AI-генерація ефектів для історій в Instagram</b>\nВ Instagram з'явилася можливість створювати власні ефекти для Stories за допомогою текстових AI-промптів.\n💡 Створіть унікальний фірмовий ефект для бренду за допомогою текстового запиту, щоб підвищити залученість в Stories.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxOQW41YWlPVGVsMDVING1PZHlzc3R2bnB3VEFKLVNmRGV5d180Q2EzS0YtZms0VG5ZN0VlbHpHalJwQUxER0Fhdk9lWDc5VEJaTEhIc3VXQm5pejUwcDVjZy1Gc3J1endTLUZxLWZubnVtSS1IYlp0UlB6UkVzZDdfci1vaEZtaE5ZNmdLaHhoZGJLanJRXzQ1Y0tTLVUzREpxYlE?oc=5\">Notebookcheck</a></blockquote>\n§§\n<blockquote>🎯 <b>8. Деталізація платних і органічних охоплень на YouTube</b>\nYouTube додав чіткий розподіл трафіку на платіжний та органічний у своїй аналітиці.\n💡 Аналізуйте це співвідношення, щоб точніше оцінювати ефективність рекламних бюджетів порівняно з органікою.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxPdXl3VEdHcV9ZRUtMQzk0VFlEYTROYXZGUk9FbFJZdFVPWVRUUHdpYUtVb29MRXpBOFIwblVXWkVpcERuR0EzV1NMbGgwT1NtbVFkczMwQW92MzZaWXFWN2JRYkJfeHp5b1ppcHl3MjNhcnJlSEVrbktBUHR4SEhlOWdPWDlJcGQtd3d1SWpMRnVNUQ?oc=5\">https://www.thekeyword.co/</a></blockquote>\n<blockquote>🆕 <b>9. Reddit тестує зведені AI огляди товарів</b>\nReddit почав тестувати функцію генерації штучним інтелектом коротких оглядів продуктів на основі обговорень користувачів.\n💡 Враховуйте специфіку формування таких оглядів при роботі з репутацією бренду (SERM) на платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/reddit-tests-ai-compiled-product-reviews/874336/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>10. Розширення захисту підліткових акаунтів від Meta</b>\nMeta поширює нові стандарти безпеки та обмеження для акаунтів підлітків на глобальному рівні.\n💡 Перевірте налаштування та таргетинг ваших кампаній, якщо ваша цільова аудиторія включає неповнолітніх.\n🔗 <a href=\"https://about.fb.com/news/2026/11/expanding-teen-account-protections-to-teens-around-the-world/\">Meta Newsroom</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202646\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Автоматичні покращення креативів у Meta Ads: що вимикати</b> · Jon Loomer\nАвтор розглядає 47 автоматичних функцій та коригувань, які Meta застосовує до рекламних креативів без схвалення маркетолога. Частину з них варто залишити увімкненими для кращої оптимізації, проте є низка налаштувань, які краще вимикати залежно від ситуації.\n💡 Не намагайтеся боротися з усіма нововведеннями — залиште базові корисні автоматичні налаштування, але регулярно перевіряйте приховані параметри та вимикайте ті, що спотворюють початковий задум дизайнера.\n<a href=\"https://www.jonloomer.com/meta-ads-creative-enhancements/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Аналіз 2,7 мільйона Reels: ідеальна тривалість для охоплень та залученості</b> · Buffer\nКоманда Buffer дослідила понад 2,7 мільйона роликів в Instagram, щоб з'ясувати вплив тривалості відео на показники. Результати спростовують міф про те, що найкраще працюють лише ультракороткі ролики.\n💡 Створюйте відео тривалістю від 90 секунд до 3 хвилин, якщо ваша мета — максимальне охоплення. Для більшого залучення аудиторії експериментуйте з роликми довше 3 хвилин.\n<a href=\"https://buffer.com/resources/instagram-reels-length/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Як вчасно виявити втому креативів у Meta Ads</b> · Medium · facebook-ads\nПрактичний посібник для SMM-спеціалістів та фрілансерів про те, як за допомогою щотижневого аналізу метрик помітити вигорання рекламної кампанії ще до того, як це зробить клієнт.\n💡 Сфокусуйтеся на відстеженні конкретних цифрових сигналів втоми аудиторії (зростання частоти показу та падіння CTR), а не покладайтеся лише на інтуїцію чи календар.\n<a href=\"https://medium.com/@royazran1/how-to-spot-creative-fatigue-in-a-clients-meta-ads-before-the-client-does-39ac5007b615?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Головна причина відхилення рекламних оголошень у Facebook</b> · Medium · facebook-ads\nРозбір типових помилок при створенні текстів для реклами, через які модерація Meta відхиляє оголошення (наприклад, прямі звернення до особистих проблем користувачів на кшталт болю в спині).\n💡 Уникайте в текстах прямих питань про персональні проблеми чи стан здоров'я користувача — перефразуйте їх у форматі демонстрації рішення або загального інтересу.\n<a href=\"https://medium.com/@gregorydigital/the-one-rule-behind-most-rejected-facebook-ads-and-how-to-write-around-it-59ba283a551d?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>5. Що робити, якщо реклама в Meta не отримує показів</b> · Medium · facebook-ads\nЧіткий алгоритм дій для таргетологів, коли запуск кампанії не генерує жодного імпрешна. Автор радить перевіряти систему налаштувань поетапно замість сліпої заміни креативів.\n💡 Перш ніж міняти креатив, перевірте статуси на рівні кампанії, групи оголошень та самого креативу (бюджети, ліміти, геотаргетинг та обмеження аудиторії).\n<a href=\"https://medium.com/@backtrue_24010/what-to-check-when-a-meta-ad-has-zero-impressions-ccd3d7e63b14?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>6. Чому алгоритми Meta ігнорують ваші тести оголошень</b> · Medium · facebook-ads\nАналіз того, як алгоритм Andromeda обробляє нові креативи та чому запуск схожих варіантів всередині однієї групи фактично зводиться до показу єдиного рекламного повідомлення.\n💡 Щоб алгоритм дійсно тестував різні креативи, а не зливав весь бюджет на один сильний варіант, структуруйте тестування з урахуванням нових реалій виділення бюджетів на рівні платформи.\n<a href=\"https://medium.com/@tdicommons/meta-isnt-ignoring-your-ad-tests-it-thinks-you-made-one-ad-a6e86b2198b7?source=rss------facebook_ads-5\">джерело</a></blockquote>\n§§\n<blockquote>💬 <b>7. Як працює бюджетування та тестування креативів у Meta</b> · Medium · facebook-ads\nРозгляд стратегій групування схожих оголошень та особливостей роботи алгоритму з бюджетом на користь єдиного успішного креативу.\n💡 Розділяйте кардинально різні концепції креативів у різні групи або використовуйте чіткі правила бюджетування, щоб платформа не віддавала весь ресурс лише одному лідеру.\n<a href=\"https://medium.com/@tdicommons/meta-isnt-ignoring-your-ad-tests-it-thinks-you-made-one-ad-ccad4e9b7096?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>8. Як визначити втому креативів у TikTok перед розпродажами</b> · Medium · tiktok-ads\nАвтор розбирає офіційну документацію TikTok щодо тригерів оновлення рекламних матеріалів у період високого попиту без прив'язки до фіксованого розкладу.\n💡 Оновлюйте креативи в TikTok на основі реальних сигналів падіння ефективності, а не за календарем, та дотримуйтеся правил розміщення нових матеріалів усередині активних кампаній.\n<a href=\"https://medium.com/@nadeer2004/tiktok-creative-fatigue-before-black-friday-read-the-signal-not-the-calendar-71c3d1daadb1?source=rss------tiktok_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>9. Масштабування бюджету в пікові періоди без шкоди для ставок</b> · Medium · tiktok-ads\nМетодологія управління бюджетами під час сезонних розпродажів на платформах Google, Meta та TikTok. Автор пояснює, як адаптувати коригування ставок та уникнути зльоту цін за клік.\n💡 Змінюйте бюджети та ставки поступово, враховуючи особливості навчання алгоритмів кожної платформи, щоб не зламати етап оптимізації перед самим піком продажів.\n<a href=\"https://medium.com/@nadeer2004/black-friday-budget-pacing-in-2026-scale-spend-without-fighting-your-bidding-a7e720ee3e73?source=rss------tiktok_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>10. Кросплатформна атрибуція: як звірити дані між Meta, Google та TikTok</b> · Medium · tiktok-ads\nОгляд змін у підрахунку конверсій на різних платформах (Meta, Google, TikTok та Shopify), які ускладнюють зведення єдиної звітності перед сезоном знижок.\n💡 Звіряйте внутрішню аналітику Shopify із даними рекламних кабінетів заздалегідь, враховуючи різні моделі атрибуції платформ, щоб уникнути хаосу в підрахунку ROI під час розпродажів.\n<a href=\"https://medium.com/@nadeer2004/cross-platform-attribution-before-black-friday-2026-reconciling-google-meta-and-tiktok-2b6b96d94ffd?source=rss------tiktok_ads-5\">джерело</a></blockquote>\n§RT:smm:202646p",
