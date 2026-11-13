@@ -532,6 +532,31 @@ def send(chat_id: str, text: str, markup: dict | None = None) -> None:
     return (r.get("result") or {}).get("message_id") if isinstance(r, dict) else None
 
 
+CHAT_GONE = re.compile(r"chat not found|bot was blocked|user is deactivated|bot can't initiate|have no rights|Forbidden", re.I)
+CONTENT_ERRS: list = []
+
+
+def send_safe(chat_id: str, text, markup: dict | None = None):
+    """Надсилання з повторами: 429 — чекаємо й повторюємо; помилка розмітки/кнопок — шлемо простим текстом без кнопок."""
+    for attempt in range(3):
+        try:
+            return send(chat_id, text, markup)
+        except urllib.error.HTTPError as e:
+            msg = err_text(e)
+            if e.code == 429 and attempt < 2:
+                m = re.search(r"retry after (\d+)", msg)
+                _time.sleep(min(int(m.group(1)) if m else 3, 30) + 1); continue
+            if e.code == 400 and not CHAT_GONE.search(msg) and re.search(r"parse entities|BUTTON|reply markup|keyboard|too long", msg, re.I):
+                plain = re.sub(r"<[^>]+>", "", str(text))
+                if re.search(r"too long", msg, re.I):
+                    plain = plain[:4000]
+                try:
+                    return send(chat_id, html.escape(plain, quote=False), None)   # простим текстом — аби дійшло
+                except Exception:
+                    pass
+            raise
+
+
 class Exp(str):
     """Повідомлення, яке бот сам видалить після expire (нагадування)."""
     expire: str = ""
@@ -1382,7 +1407,7 @@ def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_toke
     if WORKER_MODE:                                   # запасна модель (Cloudflare Workers AI через воркер)
         try:
             r = http_json(f"{SYNC_URL}/txt?key={urllib.parse.quote(SYNC_KEY)}",
-                          {"prompt": prompt + ("\n\nВідповідь — ЛИШЕ валідний JSON без пояснень." if json_mode else "")})
+                          {"prompt": prompt + ("\n\nВідповідь — ЛИШЕ валідний JSON без пояснень." if json_mode else ""), "json": json_mode, "max": min(max_tokens + 500, 3000)})
             t_ = str((r or {}).get("text") or "").strip()
             if t_:
                 GEM_STATE["src"] = "запасна модель"
@@ -6604,7 +6629,10 @@ def aroma_monthly(st: dict, now: datetime) -> None:
     except Exception as e:
         print(f"Аромати: {err_text(e)[:60]}"); return
     items, banned, added = list(extra.get("items") or []), set(ex.get("ar_ban") or []), 0
+    ai_down = False
     for sec, (cat, g, desc) in ARO_SECT.items():
+        if ai_down:
+            break
         have_sec = ARO_BASE_N.get(sec, 99) + sum(1 for it in items if str(it[0]).startswith(f"x{sec}"))
         need = max(0, ARO_TARGET.get(sec, ARO_MIN) - have_sec) if sec in ARO_BASE_N else 0
         rounds, per = (min(4, -(-need // 12)), 12) if need else (1, 6)   # парфуми: добираємо до 50 (до 4 запитів по 12)
@@ -6621,6 +6649,8 @@ def aroma_monthly(st: dict, now: datetime) -> None:
                 raw_ = gemini(prompt, json_mode=True, relaxed=True, max_tokens=3000)
                 js = json_loose(raw_)
                 ARO_LOG.append(f"🤖 {sec}: ШІ ({GEM_STATE.get('src', '?') if raw_ else 'не відповів — ' + GEM_STATE.get('err', '?')}) {len(js.get('items') or [])} кандидатів")
+                if not raw_:
+                    ai_down = True; break                 # ШІ недоступний (ліміт) — далі не витрачаємо запити, продовжимо в наступний раз
             except Exception:
                 js = {}
             real_m = aro_selfcheck([str(x.get("n") or "").strip() for x in (js.get("items") or [])[:per] if isinstance(x, dict)])
@@ -8666,7 +8696,7 @@ def main() -> None:
         if cid in removed:
             continue
         try:
-            mid = send(cid, text, mk)
+            mid = send_safe(cid, text, mk)
             ok += 1
             if getattr(text, "expire", "") and mid:
                 st.setdefault("to_delete", []).append([cid, mid, text.expire])
@@ -8681,11 +8711,17 @@ def main() -> None:
             else:
                 print(f"Не вдалося надіслати {cid}: {err_text(e)}"); SEND_ERRS.append(err_text(e))
                 failed += 1
-                failed_ids.add(cid)
+                if CHAT_GONE.search(err_text(e)):
+                    failed_ids.add(cid)                   # чат справді недоступний — попросимо натиснути Start
+                else:
+                    CONTENT_ERRS.append(f"«{re.sub('<[^>]+>', '', str(text))[:40]}»: {err_text(e)[:120]}")   # відхилено саме повідомлення
         except Exception as e:
             print(f"Не вдалося надіслати {cid}: {err_text(e)}"); SEND_ERRS.append(err_text(e))
             failed += 1
-            failed_ids.add(cid)
+            if CHAT_GONE.search(err_text(e)):
+                failed_ids.add(cid)
+            else:
+                CONTENT_ERRS.append(f"«{re.sub('<[^>]+>', '', str(text))[:40]}»: {err_text(e)[:120]}")
     if jobs and ok == 0 and failed:
         last_err = " ".join(str(x) for x in SEND_ERRS[-3:])
         if re.search(r"401|Unauthorized|chat not found", last_err, re.I):   # справжня проблема налаштувань — падаємо, щоб прийшов лист
@@ -8711,6 +8747,12 @@ def main() -> None:
     except Exception as e:
         print(f"Передача в Cloudflare: {err_text(e)[:120]}")
     # недоставлені повідомлення: раз на день попередження вам у Telegram (без червоного запуску)
+    if CONTENT_ERRS and st.get("warned_c") != today_key:   # повідомлення відхилив Telegram (розмітка, довжина, кнопки) — справжня причина, раз на день
+        try:
+            send(CHAT_IDS[0], "⚠️ Telegram відхилив повідомлення:\n" + "\n".join(esc(x) for x in dict.fromkeys(CONTENT_ERRS))[:3000])
+            st["warned_c"] = today_key
+        except Exception:
+            pass
     if failed_ids and st.get("warned") != today_key:
         who = ", ".join("дружині" if c == WIFE_ID else c for c in sorted(failed_ids))
         try:
