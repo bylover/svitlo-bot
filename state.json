@@ -729,7 +729,7 @@
   "t258165",
   "t60573"
  ],
- "gh_beat": "2026-11-13T10:45:49.446206+02:00",
+ "gh_beat": "2026-11-13T10:50:46.171323+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -12788,7 +12788,10 @@
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
  "gem_block": {
   "Nz9lkQ:gemini-flash-latest": "2026-11-14T10:05:00+02:00",
-  "Nz9lkQ:gemini-3.8-flash": "2026-11-14T10:05:00+02:00"
+  "Nz9lkQ:gemini-3.8-flash": "2026-11-14T10:05:00+02:00",
+  "Nz9lkQ:gemini-flash-lite-latest": "2026-11-14T10:05:00+02:00",
+  "iDpywg:gemini-3.8-flash": "2026-11-14T10:05:00+02:00",
+  "iDpywg:gemini-flash-latest": "2026-11-14T10:05:00+02:00"
  },
  "omdb_cache": {
   "tt5362988": [
@@ -30025,7 +30028,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "9e06b19da6c3",
+  "gs": "f5dde836be8f",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "aff0ba985820",
   "sexed.json": "0362ec7e46d4",
@@ -44164,12 +44167,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-13",
  "silpo_week": "2026-46",
- "sbm_at": 1794559553.5696836,
+ "sbm_at": 1794559849.3116598,
  "sbm_hist": [
-  [
-   "21:55",
-   78
-  ],
   [
    "22:00",
    77
@@ -44741,6 +44740,10 @@
   [
    "10:45",
    58
+  ],
+  [
+   "10:50",
+   56
   ]
  ],
  "sbm_near": {
@@ -44757,7 +44760,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1794558959.9476523,
+ "net_at": 1794559854.631224,
  "net_asn": {
   "triolan": [
    "13188",
@@ -47902,6 +47905,6 @@
  },
  "pl_v": 4,
  "arob_full": true,
- "aro_last": 1794556272.8024898,
- "aro_fill_t": 1794556272.8024986
+ "aro_last": 1794559864.851647,
+ "aro_fill_t": 1794559864.8516543
 }
