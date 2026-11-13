@@ -128,7 +128,8 @@
   "https://medium.com/@adultpassion123/how-stress-can-affect-your-sex-life-and-what-you-can-do-about-it-126d4a066776?source=rss------intimacy-5",
   "https://sex.cosmopolitan.com/pleasure/a74263467/spectatoring-during-sex/",
   "https://www.girlonthenet.com/blog/stay-in-the-game-a-chat-with-my-20-year-old-self/",
-  "https://www.womenshealthmag.com/sex-and-love/a74386684/lelo-black-friday-sale-2026/"
+  "https://www.womenshealthmag.com/sex-and-love/a74386684/lelo-black-friday-sale-2026/",
+  "https://www.risetointimacy.com/post/how-to-initiate-sex-without-pressure-or-awkwardness"
  ],
  "kino_seen": [
   "t243360",
@@ -732,7 +733,7 @@
   "t258165",
   "t60573"
  ],
- "gh_beat": "2026-11-13T17:55:46.627906+02:00",
+ "gh_beat": "2026-11-13T18:00:48.802284+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -790,11 +791,10 @@
    ]
   ]
  },
- "fact_png": "2026-11-13 17|6|2026-11-13T13:47:05+02:00",
+ "fact_png": "2026-11-13 18|6|2026-11-13T13:47:05+02:00",
  "fact_day": {
-  "total": "8 год",
+  "total": "7 год 38 хв",
   "list": [
-   "17:00–17:22 · 22 хв",
    "21:09–23:34 · 2 год 26 хв",
    "08:35–13:47 · 5 год 12 хв"
   ]
@@ -1665,14 +1665,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "13.11 17:57",
-   "ts": 1794585446,
+   "at": "13.11 18:03",
+   "ts": 1794585791,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "13.11 17:57",
-   "ts": 1794585446,
+   "at": "13.11 18:03",
+   "ts": 1794585791,
    "ok": true,
    "note": ""
   },
@@ -1695,8 +1695,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "13.11 17:52",
-   "ts": 1794585126,
+   "at": "13.11 18:03",
+   "ts": 1794585791,
    "ok": true,
    "note": ""
   },
@@ -1755,8 +1755,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "13.11 17:52",
-   "ts": 1794585126,
+   "at": "13.11 18:03",
+   "ts": 1794585791,
    "ok": true,
    "note": ""
   },
@@ -30054,9 +30054,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "027bd136cfc7",
+  "gs": "2cae9de13f57",
   "quiz_pool.json": "80eae7ea9381",
-  "fact.png": "3705e06002a2",
+  "fact.png": "09ff5a4efab0",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -45501,17 +45501,18 @@
  "morning_sent": "2026-11-13T11:01:02.204673+02:00",
  "prom_v": 8,
  "prom_last_n": 1236,
- "para_i": 6,
+ "para_i": 7,
  "para_titles": [
   "Експеримент із позою «Сяюча троянда»",
   "Секрет гармонії з вібратором для пари",
   "Мистецтво ніжних дотиків і ритму",
   "Танець хвиль для глибшого єднання",
   "Мистецтво солодкого очікування та пасивної пристрасті",
-  "Ніжні поцілунки та пестощі губами"
+  "Ніжні поцілунки та пестощі губами",
+  "Спільне відкриття нового рівня насолоди"
  ],
  "para_bag": [],
- "para_sent": "2026-11-11",
+ "para_sent": "2026-11-13",
  "fan_wk": "2026-46",
  "weather": "2026-11-12",
  "prom_i": 5,
@@ -45521,18 +45522,14 @@
  "yt_fav": [],
  "ytch_week": "202646",
  "content_last": {
-  "kind": "article",
-  "src": "Cosmopolitan"
+  "kind": "podcast",
+  "src": "The RISE to Intimacy Podcast | Sex Therapy, Couples Therapy & Relationships"
  },
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-13",
  "silpo_week": "2026-46",
- "sbm_at": 1794585351.5760262,
+ "sbm_at": 1794585652.394328,
  "sbm_hist": [
-  [
-   "05:10",
-   92
-  ],
   [
    "05:15",
    92
@@ -46103,6 +46100,10 @@
   ],
   [
    "17:55",
+   61
+  ],
+  [
+   "18:00",
    61
   ]
  ],
@@ -49270,5 +49271,5 @@
  "warned": "2026-11-13",
  "toyn_week": "202646",
  "toys_v": 2,
- "toys_last": 1794584504.2784362
+ "toys_last": 1794585661.818316
 }
