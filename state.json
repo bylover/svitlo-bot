@@ -732,7 +732,7 @@
   "t258165",
   "t60573"
  ],
- "gh_beat": "2026-11-13T16:55:48.516223+02:00",
+ "gh_beat": "2026-11-13T17:00:46.046652+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -765,10 +765,6 @@
   "last": 2884,
   "events": [
    [
-    "2026-11-11T16:58:49+02:00",
-    "on"
-   ],
-   [
     "2026-11-12T14:02:11+02:00",
     "off"
    ],
@@ -794,11 +790,11 @@
    ]
   ]
  },
- "fact_png": "2026-11-13 16|7|2026-11-13T13:47:05+02:00",
+ "fact_png": "2026-11-13 17|6|2026-11-13T13:47:05+02:00",
  "fact_day": {
-  "total": "8 год 30 хв",
+  "total": "8 год",
   "list": [
-   "16:30–17:22 · 52 хв",
+   "17:00–17:22 · 22 хв",
    "21:09–23:34 · 2 год 26 хв",
    "08:35–13:47 · 5 год 12 хв"
   ]
@@ -1669,14 +1665,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "13.11 16:51",
-   "ts": 1794581495,
+   "at": "13.11 17:02",
+   "ts": 1794582144,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "13.11 16:51",
-   "ts": 1794581495,
+   "at": "13.11 17:02",
+   "ts": 1794582144,
    "ok": true,
    "note": ""
   },
@@ -1699,8 +1695,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "13.11 16:57",
-   "ts": 1794581826,
+   "at": "13.11 17:03",
+   "ts": 1794582234,
    "ok": true,
    "note": ""
   },
@@ -30043,12 +30039,18 @@
    null,
    59,
    "2026-11-13"
+  ],
+  "tt1515193": [
+   8.1,
+   null,
+   null,
+   "2026-11-13"
   ]
  },
  "pushed_h": {
-  "gs": "dd3d192594e6",
+  "gs": "a5d6d3af8ec5",
   "quiz_pool.json": "80eae7ea9381",
-  "fact.png": "484d3031f0ea",
+  "fact.png": "3705e06002a2",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -45191,6 +45193,78 @@
    ],
    "ov": "Brazil Avenue is a dynamic, lifelike, and modern telenovela that reveals how unrelenting ambition and inflicted cruelty can change a young girl’s destiny and lead her to seek revenge.\n\n",
    "poster": "https://image.tmdb.org/t/p/w500/p8uzK1Lngu9q9dpnn4SwPKIT1H7.jpg"
+  },
+  "t2282": {
+   "title": "Aquí no hay quien viva",
+   "year": "2003",
+   "rating": 8.2,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "A caustic satire of many of the 'types' found in Spanish society.",
+   "poster": "https://image.tmdb.org/t/p/w500/db9cSJfLugDSGfsW4tqMTPGupVT.jpg"
+  },
+  "t63407": {
+   "title": "Mi corazón es tuyo",
+   "year": "2014",
+   "rating": 7.9,
+   "genres": [
+    "Мильна опера",
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    10766,
+    35,
+    18,
+    10751
+   ],
+   "ov": "Fernando Lascurain is a wealthy businessman and recent widower, attempting to raise his seven unruly children. He seeks the assistance of a new nanny. He hires and falls in love with Ana Leal, a struggling exotic dancer ",
+   "poster": "https://image.tmdb.org/t/p/w500/kMF4iYqlnsQMglOsr0C6KIVtB2X.jpg"
+  },
+  "t32406": {
+   "title": "Невиліковне Це",
+   "year": "2010",
+   "rating": 8.1,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Кейті — стримана дружина та мати, яка живе на околиці міста. Дізнавшись про те, що вона хвора на рак, жінка намагається пожвавити своє життя та віднайти надію, покращити настрій і побачити світлу сторону жахливої ситуаці",
+   "poster": "https://image.tmdb.org/t/p/w500/txMPIv8RJHGdfONiAajlXl3tw1l.jpg"
+  },
+  "t31941": {
+   "title": "Штат Блу Маунтін",
+   "year": "2010",
+   "rating": 8.3,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Серіал розповідає про життя та навчання трьох друзів першокурсників, які вступили до коледжу Мідвестерна, не завдяки своїм розумовим здібностям, а завдяки футбольним стипендіям. Три друга-спортсмена: Алекс, Семмі і Крейг",
+   "poster": "https://image.tmdb.org/t/p/w500/lPAOv8kE2AuD4jliyJ6ziKQIAGi.jpg"
+  },
+  "t68106": {
+   "title": "Kim's Convenience",
+   "year": "2016",
+   "rating": 8.2,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "The funny, heartfelt story of The Kims, a Korean-Canadian family, running a convenience store in downtown Toronto. Mr. and Mrs. Kim ('Appa' and 'Umma') immigrated to Toronto in the '80s to set up shop near Regent Park an",
+   "poster": "https://image.tmdb.org/t/p/w500/82Vue6MPuYZzlpggR65cvWdBdy.jpg"
   }
  },
  "cofid_pushed": "12.11.2026",
@@ -45276,12 +45350,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-13",
  "silpo_week": "2026-46",
- "sbm_at": 1794581753.4434805,
+ "sbm_at": 1794582050.2539313,
  "sbm_hist": [
-  [
-   "04:05",
-   92
-  ],
   [
    "04:10",
    92
@@ -45852,6 +45922,10 @@
   ],
   [
    "16:55",
+   64
+  ],
+  [
+   "17:00",
    64
   ]
  ],
@@ -48927,7 +49001,7 @@
   "ser_hot": "2026-11-13T16:30:46.927310+02:00",
   "ser_new": "2026-11-13T16:50:44.456757+02:00",
   "ser_crime": "2026-11-13T16:55:48.719459+02:00",
-  "ser_comedy": "2026-11-13T04:55:46.667375+02:00",
+  "ser_comedy": "2026-11-13T17:00:46.329227+02:00",
   "ser_drama": "2026-11-13T05:15:46.800405+02:00",
   "ser_scifi": "2026-11-13T05:20:45.012408+02:00",
   "ser_mystery": "2026-11-13T05:30:47.093812+02:00"
