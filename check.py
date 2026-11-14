@@ -281,6 +281,20 @@ COMPL_BOLD = [
 ]
 
 
+
+def claim(keys: list, ttl: int = 86400) -> set:
+    """🔒 Атомарно «забронювати» розсилки в базі бота: якщо паралельний запуск уже взяв ключ — його не буде в результаті. Бот недоступний — дозволяємо (як раніше)."""
+    keys = [str(k) for k in keys if k]
+    if not keys:
+        return set()
+    if not (SYNC_URL and SYNC_KEY):
+        return set(keys)
+    try:
+        r = http_json(f"{SYNC_URL}/claim?key={urllib.parse.quote(SYNC_KEY)}", {"keys": keys, "ttl": ttl})
+        return set((r or {}).get("got") or [])
+    except Exception:
+        return set(keys)
+
 def wife_compliment(now: datetime) -> str:
     n = now.date().toordinal()
     if now.weekday() in (2, 5):                        # середа й субота — сміливіше
@@ -3621,6 +3635,8 @@ def impulse_messages(st: dict, now: datetime, today_key: str) -> list:
                 continue
             if kind == "dark" and c not in AGE_OK:
                 continue
+            if f"{sub}:{c}:{today_key}" not in claim([f"{sub}:{c}:{today_key}"]):
+                sent[c] = today_key; continue          # 🔒 уже надіслав паралельний запуск
             if kind == "dark":                        # 🕯 щодня інша книга (випадково), без повторів уривків
                 import random as _r
                 seen_ = st.setdefault("ero_seen", {}).setdefault(c, [])
@@ -7369,9 +7385,134 @@ def _model_toks(n: str, brand: str) -> list:
     return [t for t in re.findall(r"[a-zа-яіїєґ0-9]+", rest.lower()) if len(t) >= 2 and t not in TOY_GENERIC and not re.fullmatch(r"\d+(ml|мл|g)?", t)][:3]
 
 
+def _norm_words(t: str) -> str:
+    t = re.sub(r"[^a-zа-яіїєґ0-9]+", " ", (t or "").lower())
+    return " " + re.sub(r"\b(and|the|for|with|і|та)\b", " ", t).replace("  ", " ") + " "
+
+
+def _phrase(n: str, brand: str) -> str:
+    """Уся назва моделі після бренду, як фраза: «Satisfyer Tap & Play» → «tap play» (цифри теж: «pro 2»)."""
+    return re.sub(r"\s+", " ", _norm_words(re.sub(re.escape(brand), " ", n, flags=re.I))).strip()
+
+
+def _has_phrase(text: str, ph: str) -> bool:
+    return not ph or f" {ph} " in re.sub(r"\s+", " ", _norm_words(text))
+
+
 def _has_words(text: str, toks: list) -> bool:
     t = " " + re.sub(r"[^a-zа-яіїєґ0-9]+", " ", text.lower()) + " "
     return all(f" {w} " in t for w in toks)             # лише цілими словами: «coco» ≠ «coconut»
+
+
+TOY_RETAIL = ["lovehoney.co.uk", "lovehoney.com", "adameve.com", "babeland.com"]   # великі магазини — їхні каталоги теж рахуються
+TOY_CAT_FILE = Path("sx/toy_catalog.json")
+_TOY_CAT: dict = {}
+
+
+def _toy_cat() -> dict:
+    global _TOY_CAT
+    if not _TOY_CAT:
+        try:
+            _TOY_CAT = json.loads(TOY_CAT_FILE.read_text("utf-8"))
+        except Exception:
+            _TOY_CAT = {"at": {}, "s": {}}
+    return _TOY_CAT
+
+
+def _get_raw(url: str, timeout: int = 25) -> str:
+    import gzip
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130.0 Safari/537.36", "Accept-Encoding": "gzip"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        b = r.read(25_000_000)
+    if b[:2] == b"\x1f\x8b":
+        b = gzip.decompress(b)
+    return b.decode("utf-8", "replace")
+
+
+def _toy_sitemap_slugs(dom: str) -> list:
+    """Усі сторінки товарів з карти сайту (sitemap) бренду чи магазину → нормалізовані назви з адрес."""
+    maps = []
+    for base in (f"https://www.{dom}", f"https://{dom}"):
+        try:
+            maps = re.findall(r"(?im)^sitemap:\s*(\S+)", _get_raw(f"{base}/robots.txt", 15))
+        except Exception:
+            continue
+        if maps:
+            break
+    maps = maps or [f"https://www.{dom}/sitemap.xml", f"https://{dom}/sitemap.xml", f"https://www.{dom}/sitemap_index.xml"]
+    locs, seen = [], set()
+    queue = maps[:4]
+    while queue and len(seen) < 12:
+        u = queue.pop(0)
+        if u in seen:
+            continue
+        seen.add(u)
+        try:
+            x = _get_raw(u)
+        except Exception:
+            continue
+        found = re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", x)
+        subs = [f for f in found if re.search(r"\.xml(\.gz)?(\?|$)", f)]
+        if subs:                                       # індекс карт — беремо карти товарів
+            prod = [f for f in subs if re.search(r"product|produkt|item|catalog|shop", f, re.I)] or subs
+            queue += [f for f in prod if f not in seen][:10]
+        else:
+            locs += found
+        if len(locs) > 20000:
+            break
+    out = set()
+    for u in locs:
+        path = re.sub(r"https?://[^/]+", "", u).split("?")[0].strip("/")
+        if not path or re.search(r"(^|/)(blog|news|category|categories|collections?/?$|pages?|help|faq|account|cart|search)(/|$)", path, re.I):
+            continue
+        seg = [x_ for x_ in path.split("/") if x_ and not re.fullmatch(r"[a-z]{2}(-[a-z]{2})?|[a-z]?\d{3,}(\.html?)?|\d+|p|products?|item|shop", x_, re.I)]
+        if not seg:
+            continue
+        slug = re.sub(r"\.(html?|php|aspx)$", "", seg[-1], flags=re.I)
+        slug = re.sub(r"[-_]+(p?\d{5,}|[a-f0-9]{8,})$", "", slug)
+        nw = _norm_words(urllib.parse.unquote(slug).replace("-", " ").replace("_", " "))
+        if len(nw.strip()) >= 3:
+            out.add(re.sub(r"\s+", " ", nw))
+    return sorted(out)[:15000]
+
+
+def toy_catalog_build(st: dict, now: datetime) -> None:
+    """📚 Раз на 30 днів оновлює каталог моделей з офіційних сайтів брендів і великих магазинів (sitemap) — 3 сайти за запуск."""
+    if _time.time() - float(st.get("toycat_last") or 0) < 1200:
+        return
+    st["toycat_last"] = _time.time()
+    cat = _toy_cat()
+    doms = sorted(set(TOY_DOMAINS.values()) | set(TOY_RETAIL))
+    old = (now - timedelta(days=30)).strftime("%Y-%m-%d")
+    todo = [d for d in doms if (cat["at"].get(d) or "") < old][:3]
+    if not todo:
+        return
+    for d in todo:
+        try:
+            sl = _toy_sitemap_slugs(d)
+        except Exception as e:
+            sl = []; print(f"📚 {d}: {err_text(e)[:60]}")
+        cat["at"][d] = now.strftime("%Y-%m-%d")
+        if sl:
+            cat["s"][d] = sl
+        TOY_LOG.append(f"📚 Каталог {d}: {len(sl)} сторінок товарів" if sl else f"📚 Каталог {d}: карту сайту не прочитано — для бренду лишається пошук")
+        print(TOY_LOG[-1])
+    TOY_CAT_FILE.parent.mkdir(exist_ok=True)
+    TOY_CAT_FILE.write_text(json.dumps(cat, ensure_ascii=False, separators=(",", ":")), "utf-8")
+
+
+def toy_in_catalog(n: str, brand: str, dom: str):
+    """True — модель є в каталозі сайту бренду або великого магазину (фразою поспіль); None — каталогу немає / не знайдено."""
+    cat, ph = _toy_cat(), _phrase(n, brand)
+    if not ph:
+        return None
+    pat, bn = f" {ph} ", re.sub(r"\s+", " ", _norm_words(brand)).strip()
+    if dom and any(pat in sl for sl in cat["s"].get(dom) or []):
+        return True
+    for r in TOY_RETAIL:
+        if any(pat in sl and f" {bn} " in sl for sl in cat["s"].get(r) or []):
+            return True
+    return None
 
 
 def toy_exists(n: str):
@@ -7380,10 +7521,14 @@ def toy_exists(n: str):
     if not bm:
         return False
     brand = bm.group(0).lower()
-    toks = _model_toks(n, brand)
+    toks, ph = _model_toks(n, brand), _phrase(n, brand)
+    if not ph:
+        return True                                    # назва — лише бренд: перевіряти нічим
     if not toks:
-        return True                                    # назва — лише бренд і загальні слова (напр., «pjur Original»): перевіряти нічим
+        toks = ph.split()[:3]                          # «Satisfyer Pro 2», «pjur Original» — теж перевіряємо фразою
     dom = next((d for b_, d in TOY_DOMAINS.items() if b_ in brand or brand in b_), "")
+    if toy_in_catalog(n, brand, dom):
+        return True                                    # 📚 є в каталозі офіційного сайту чи великого магазину
     bkey = re.sub(r"[^a-z0-9]", "", brand)
     hits = web_hits(f'"{n}"')
     if hits is None:
@@ -7392,13 +7537,13 @@ def toy_exists(n: str):
         host = href.split("/")[2].lower() if href.count("/") >= 2 else href.lower()
         blob = title + " " + re.sub(r"[-_/.]+", " ", href)
         brand_ok = bkey in re.sub(r"[^a-z0-9]", "", (title + host).lower())
-        if brand_ok and _has_words(blob, toks) and (TOY_TRUST.search(href) or (dom and dom in host) or (len(bkey) >= 4 and bkey in host.replace("-", "").replace(".", ""))):
+        if brand_ok and _has_words(blob, toks) and _has_phrase(blob, ph) and (TOY_TRUST.search(href) or (dom and dom in host) or (len(bkey) >= 4 and bkey in host.replace("-", "").replace(".", ""))):
             return True
     if dom:                                            # другий шанс — пошук саме по офіційному сайту бренду
         hits2 = web_hits(f"site:{dom} {' '.join(toks)}")
         if hits2:
             for href, title in hits2:
-                if dom in href.lower() and _has_words(title + " " + re.sub(r"[-_/.]+", " ", href), toks):
+                if dom in href.lower() and _has_words(title + " " + re.sub(r"[-_/.]+", " ", href), toks) and _has_phrase(title + " " + re.sub(r"[-_/.]+", " ", href), ph):
                     return True
     return False
 
@@ -7411,7 +7556,7 @@ def toys_verify(st: dict, now: datetime) -> None:
         db = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=toys.json") or {}
     except Exception:
         return
-    todo = [k for k, v in (db.get("sect") or {}).items() if v.get("items") and v.get("vf") != 4]
+    todo = [k for k, v in (db.get("sect") or {}).items() if v.get("items") and v.get("vf") != 5]   # v5: усі топи — перевірити заново суворіше
     todo.sort(key=lambda k_: (db["sect"][k_].get("g") not in ("w", "m"), k_ == "new"))   # спершу «Для неї» / «Для нього» — там знайдено чоловічі в жіночих
     if not todo:
         return
@@ -7427,29 +7572,28 @@ def toys_verify(st: dict, now: datetime) -> None:
             TOY_LOG.append(f"🎯 «{k}»: не той вид / не та стать — прибрано {len(wrong)}: {', '.join(wrong)[:150]}")
             v["d"] = ""                                  # розділ поменшав — перезібрати першим у черзі
     if not v["items"]:
-        v["vf"] = 4
+        v["vf"] = 5
         try:
             http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=toys.json", db)
         except Exception:
             pass
         toy_log_push(now); return
     res = [(x, None if x[0].lower() in TOY_BAN else toy_exists(x[0])) for x in v["items"]]
-    n_false = sum(1 for x, r in res if r is False and x[0].lower() not in TOY_BAN)
-    soft = n_false > max(2, len(res) // 2)              # пошук «не знайшов» більшість — для нової/нішевої категорії це збій пошуку, а не підробки
+    n_none = sum(1 for x, r in res if r is None and x[0].lower() not in TOY_BAN)
+    if n_none > len(res) // 2:                           # пошук недоступний — нічого не змінюємо, перевіримо пізніше
+        TOY_LOG.append(f"⏸ Перевірка «{k}»: пошук недоступний — відкладено"); toy_log_push(now); return
     for x, r in res:
         if x[0].lower() in TOY_BAN:
             gone.append(x[0]); continue
-        if r is False and not soft and x[0].lower() not in seeds_l:
-            gone.append(x[0]); continue
-        x = list(x[:6]) + [1 if r else 0]                # [6] — 1 підтверджено пошуком / 0 не перевірено (❔)
-        unk += r is not True
+        if r is not True and x[0].lower() not in seeds_l:
+            gone.append(x[0]); continue                  # не знайшлася (або не перевірилась) — прибираємо: краще менше, ніж вигадані
+        x = list(x[:6]) + [1]
         keep.append(x)
-    if soft:
-        TOY_LOG.append(f"⚠️ «{k}»: пошук не знайшов {n_false} з {len(res)} — схоже на збій пошуку, моделі лишаю з позначкою ❔")
     keep.sort(key=lambda x: -x[6])                       # неперевірені — в кінець
     v["items"] = keep
-    if unk < max(1, len(keep)) // 2:
-        v["vf"] = 4                                      # пошук працював — вид перевірено
+    v["vf"] = 5                                          # вид перевірено (суворо: модель — фразою поспіль)
+    if len(keep) < 12:
+        v["d"] = ""                                      # поменшало — добрати першим у черзі
     TOY_LOG.append(f"🔎 Перевірка «{k}»: лишилось {len(keep)}, прибрано {len(gone)}" + (f" ({', '.join(gone)[:120]})" if gone else "") + (f", без перевірки {unk}" if unk else ""))
     print(TOY_LOG[-1])
     try:
@@ -7525,13 +7669,12 @@ def toys_build(st: dict, now: datetime) -> None:
         if not TOY_BRANDS.search(n) or n.lower() not in real or n.lower() in TOY_BAN:
             bad += 1; continue                           # не з білого списку брендів, самоперевірка не підтвердила або прибрано вручну
         cand.append((x, n, toy_exists(n)))               # 🔎 модель має знайтися на сайті бренду, в магазині чи медіа
-    n_false = sum(1 for *_, e in cand if e is False)
-    soft = n_false > max(2, len(cand) // 2)              # пошук відкинув більшість — збій пошуку / нова категорія: лишаємо з ❔
-    if soft:
-        TOY_LOG.append(f"⚠️ «{k}»: пошук не знайшов {n_false} з {len(cand)} — лишаю їх з позначкою ❔")
+    n_none = sum(1 for *_, e in cand if e is None)
+    if cand and n_none > len(cand) // 2:                # пошук недоступний — не зберігаємо неперевірене, спробуємо наступного запуску
+        TOY_LOG.append(f"⏸ «{k}»: пошук недоступний ({n_none} з {len(cand)}) — збір відкладено"); toy_log_push(now); return
     db.setdefault("rej", {})
     for x, n, ex_ in cand:
-        if ex_ is False and not soft:
+        if ex_ is not True:                              # нові моделі — лише ті, що реально знайшлися (сайт бренду, магазин, медіа)
             bad += 1; TOY_LOG.append(f"↷ не знайдено в пошуку: {n[:50]}")
             db["rej"].setdefault(k, []).append(n[:60]); continue
         out.append([n[:70], str(x.get("why") or "")[:160], str(x.get("feat") or "")[:200], str(x.get("who") or "")[:120],
@@ -7554,7 +7697,7 @@ def toys_build(st: dict, now: datetime) -> None:
     prev = sec_(k)
     tries = 0 if len(out) >= 12 else (int(prev.get("tries") or 0) + 1 if len(out) <= len(old_items) else int(prev.get("tries") or 0))   # без приросту — після 4 спроб чекаємо 60 днів
     if out or not old_items:
-        db["sect"][k] = {"t": title, "g": grp, "tip": tip, "d": now.strftime("%Y-%m-%d"), "items": out[:15], "vf": 4, "fit": 1, "tries": tries}
+        db["sect"][k] = {"t": title, "g": grp, "tip": tip, "d": now.strftime("%Y-%m-%d"), "items": out[:15], "vf": 5, "fit": 1, "tries": tries}
     db["at"] = now.strftime("%d.%m.%Y")
     TOY_LOG.append(f"🧸 «{k}» {title}: ШІ ({GEM_STATE.get('src', '?')}) {len(items)} → у топі {len(out)} · ✗ {bad} · готово розділів {sum(1 for v in db['sect'].values() if v.get('items'))}/{len(TOY_SECT)}")
     print(TOY_LOG[-1])
@@ -8868,6 +9011,9 @@ def main() -> None:
     due_m = [c for c in svitlo_to if ms.get(c) != today_key and due_at(c, "mtime", MORNING_HOUR)
              and "ranok" not in ((PROF.get(c) or {}).get("off") or [])]            # ☀️ ранкове зведення можна вимкнути
     if due_m:
+        got_ = claim([f"mo:{c}:{today_key}" for c in due_m])
+        due_m = [c for c in due_m if f"mo:{c}:{today_key}" in got_]         # 🔒 паралельний запуск уже надіслав — не дублюємо
+    if due_m:
         n = now.date().toordinal()
         wife_head = (f"☀️ <b>Доброго ранку, {WIFE_NAME}!</b>\n"
                      f"{wife_compliment(now)}\n"
@@ -8999,6 +9145,12 @@ def main() -> None:
             ws[c] = today_key
     due_w = [c for c in audience("pogoda") if ws.get(c) != today_key and due_at(c, "wtime", WEATHER_HOUR)]
     if due_w:
+        got_ = claim([f"we:{c}:{today_key}" for c in due_w])
+        for c in due_w:
+            if f"we:{c}:{today_key}" not in got_:
+                ws[c] = today_key                     # 🔒 уже надіслав паралельний запуск
+        due_w = [c for c in due_w if f"we:{c}:{today_key}" in got_]
+    if due_w:
         wt = weather_for(now)
         if wt:
             st["weather"] = today_key
@@ -9025,7 +9177,7 @@ def main() -> None:
     week_key = "%d-%02d" % now.isocalendar()[:2]
     in_window = DIGEST_HOUR <= now.hour < DIGEST_HOUR + 4
     direct_m: list[tuple[str, str, dict | None]] = []
-    kino_due = now.weekday() == KINO_WEEKDAY and in_window and st.get("kino_week") != week_key
+    kino_due = now.weekday() == KINO_WEEKDAY and in_window and st.get("kino_week") != week_key and f"kino:{week_key}" in claim([f"kino:{week_key}"], 6 * 3600)
     if kino_due:                                   # щотижнева підбірка — одна для всіх
         k = build_kino(st, "🍿 <b>КІНО НА ВИХІДНІ</b>")
         if k:
@@ -9088,6 +9240,7 @@ def main() -> None:
             try:
                 TOY_BAN.update(str(x).lower() for x in (st.get("toy_ban") or []))
                 toys_news(st, now)                    # 🧸 огляди й новинки іграшок — раз на тиждень +10
+                toy_catalog_build(st, now)            # 📚 каталог моделей з офіційних сайтів (sitemap) — 3 сайти за запуск, раз на 30 днів
                 toys_verify(st, now)                  # 🔎 перевірка зібраних топів пошуком — 1 вид за запуск
                 toys_build(st, now)                   # 🧸 топи іграшок — по 1 розділу раз на 15 хв, поки не зібрано
             except Exception as e_:
@@ -9155,7 +9308,7 @@ def main() -> None:
             st["yt_last"] = y0
     if (now.weekday() == YT_WEEKDAY and in_window and st.get("yt_week") != week_key) or yt_req:
         y = None
-        if now.weekday() == YT_WEEKDAY and in_window and st.get("yt_week") != week_key:
+        if now.weekday() == YT_WEEKDAY and in_window and st.get("yt_week") != week_key and f"yt:{week_key}" in claim([f"yt:{week_key}"], 6 * 3600):
             y = build_youtube(st, now)
             if y:
                 st["yt_week"], st["yt_last"] = week_key, y
@@ -9172,7 +9325,7 @@ def main() -> None:
 
     # 8) «Для пари» — ср і пт о 18:00 (вам, дружині та підписникам, які це ввімкнули); з меню — нова порада
     para_due = (now.weekday() in PARA_DAYS and PARA_HOUR <= now.hour < PARA_HOUR + 4
-                and st.get("para_sent") != today_key)
+                and st.get("para_sent") != today_key and f"para:{today_key}" in claim([f"para:{today_key}"], 6 * 3600))
     if budget_ok(240):
         collect_content(st, now)                      # раз на день — пул свіжих матеріалів 18+ із журналів і сайтів
     # ВАЖКЕ — по одній задачі за запуск по черзі й лише якщо є час (ліміт запуску GitHub — 12 хв, ціль — до 4 хв)
@@ -9266,7 +9419,7 @@ def main() -> None:
                                      "~30–60 хв; 🛍 ТЦ — окремим процесом ~10–15 хв; 🎮 ігри, 🎧 аудіокниги, 🥗 ПП-страви — протягом кількох годин по черзі. 18+ і SMM оновлюються за своїм розкладом.", None))
     # 9) SMM і таргет — пн о 13:00 (вам, дружині та підписникам, які це ввімкнули); меню — той самий дайджест тижня
     smm_due = (now.weekday() == SMM_WEEKDAY and SMM_HOUR <= now.hour < SMM_HOUR + 4
-               and st.get("smm_week") != week_key)
+               and st.get("smm_week") != week_key and f"smm:{week_key}" in claim([f"smm:{week_key}"], 6 * 3600))
     if smm_due:
         sm = build_smm(st, now)
         if sm:
@@ -9297,7 +9450,7 @@ def main() -> None:
         silpo_snapshot(st, now)
         st["silpo_snap"] = today_key                  # навіть якщо не вдалося — не повторюємо до наступної середи
     silpo_due = (now.weekday() == SILPO_WEEKDAY and SILPO_HOUR <= now.hour < SILPO_HOUR + 4
-                 and st.get("silpo_week") != week_key)
+                 and st.get("silpo_week") != week_key and f"silpo:{week_key}" in claim([f"silpo:{week_key}"], 6 * 3600))
     if silpo_due:
         sp = build_silpo(st, now)
         if sp:
