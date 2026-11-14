@@ -733,7 +733,7 @@
   "t248830",
   "t48891"
  ],
- "gh_beat": "2026-11-14T15:00:48.196699+02:00",
+ "gh_beat": "2026-11-14T15:05:46.490822+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -744,11 +744,11 @@
   "groups": [
    "GPV3.1"
   ],
-  "updated": "14:48 14.11.2026",
+  "updated": "15:02 14.11.2026",
   "emergency": false,
   "city_emergency": false,
-  "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-14T14:52:49.584714+02:00",
+  "city_text": "",
+  "checked": "2026-11-14T15:02:50.490709+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": true
@@ -1829,38 +1829,38 @@
    "note": ""
   },
   "youtube канали": {
-   "at": "14.11 14:56",
-   "ts": 1794660967,
+   "at": "14.11 15:06",
+   "ts": 1794661583,
    "ok": true,
    "note": ""
   },
   "живий english": {
-   "at": "14.11 14:56",
-   "ts": 1794660967,
+   "at": "14.11 15:06",
+   "ts": 1794661583,
    "ok": true,
    "note": ""
   },
   "кіно-категорії": {
-   "at": "14.11 14:56",
-   "ts": 1794660967,
+   "at": "14.11 15:06",
+   "ts": 1794661583,
    "ok": true,
    "note": ""
   },
   "youtube для вас": {
-   "at": "14.11 14:56",
-   "ts": 1794660967,
+   "at": "14.11 15:06",
+   "ts": 1794661583,
    "ok": true,
    "note": ""
   },
   "режисери": {
-   "at": "14.11 14:56",
-   "ts": 1794660967,
+   "at": "14.11 15:06",
+   "ts": 1794661583,
    "ok": true,
    "note": ""
   },
   "smm-інструменти": {
-   "at": "14.11 14:56",
-   "ts": 1794660967,
+   "at": "14.11 15:06",
+   "ts": 1794661583,
    "ok": true,
    "note": ""
   },
@@ -1871,8 +1871,8 @@
    "note": ""
   },
   "аромати": {
-   "at": "14.11 14:56",
-   "ts": 1794660967,
+   "at": "14.11 15:07",
+   "ts": 1794661623,
    "ok": true,
    "note": ""
   }
@@ -30261,7 +30261,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "16be1c25379e",
+  "gs": "684b1da40e0f",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "f23105cab185",
   "sexed.json": "0362ec7e46d4",
@@ -44704,12 +44704,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-14",
  "silpo_week": "2026-46",
- "sbm_at": 1794661252.9742796,
+ "sbm_at": 1794661551.3562655,
  "sbm_hist": [
-  [
-   "02:25",
-   93
-  ],
   [
    "02:30",
    92
@@ -45280,6 +45276,10 @@
   ],
   [
    "15:00",
+   65
+  ],
+  [
+   "15:05",
    65
   ]
  ],
@@ -48279,7 +48279,7 @@
  "pl_v": 4,
  "arob_full": true,
  "aro_last": 1794659475.065405,
- "aro_fill_t": 1794659475.0654154,
+ "aro_fill_t": 1794661583.766216,
  "warned": "2026-11-13",
  "toyn_week": "202646",
  "toys_v": 3,
@@ -48444,8 +48444,8 @@
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 07.11–14.11\n<blockquote>🎯 <b>1. Новий інструмент прозорості недійсного трафіку в Google Ads</b>\nGoogle Ads запровадив новий інструмент для відстеження та аналізу недійсного трафіку, що дозволяє рекламодавцям краще контролювати показники та захищати бюджети від ботів.\n💡 Перевірте свої звіти в рекламному кабінеті Google Ads, щоб виявити аномалії та оптимізувати витрати на кампанії.\n🔗 <a href=\"https://blog.google/products/ads-commerce/invalid-traffic-overview-google-ads/\">The Keyword (Google)</a></blockquote>\n<blockquote>🎯 <b>2. Проблеми з ШІ-рекламою Meta через несанкціоновані знижки</b>\nВиявилося, що рекламні інструменти Meta на базі штучного інтелекту генерували оголошення з непідтвердженими знижками для покупців.\n💡 Уважно перевіряйте креативи та тексти, створені автоматизованими інструментами Meta, перед запуском.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxPelVhM1RvZVhkRmNNMjVTRVZuaERIcDVSZERKbEhIVXo4c1RtTFhqaUh4MEp4OTBGc1lteExQMVBBVHNEeVBFV0h3amwyVEtWd0V1VFI5VzVZWFlHcUVkcnNLSkVuOUdia25hX0hHOVFRaGcwSkNqTG5mLU8yZTE4YmV1QTdqNWhwalRPZzVTenZMTDl2WlFHRGp3?oc=5\">Marketing Dive</a></blockquote>\n<blockquote>🎯 <b>3. Meta зупинила оновлення правил щодо збору даних</b>\nКомпанія Meta тимчасово призупинила впровадження нових положень, які дозволяли б їй сканувати бізнес-сайти та дані після хвилі критики.\n💡 Слідкуйте за оновленнями політики конфіденційності Meta, щоб вчасно реагувати на зміни у використанні даних вашого сайту.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPRHRoN3V2YU1Va3RwNTFyVm1oUXp0OWlPX2Z1SFVxMWpEN1NJZEVHSndvMzBnT2F6SVZtd1lUNmd1NWl6V2l0QW5aNnNXaVN4eE1VaXNocEdBcWZMYXBKVGJqaGtkaGtyc2YtN0NXYUw2Ri1IaEgtV05SSTZYN0hhd3Fwd3pXOGdNam5FTkN3RTNBd3dSZHdQOVhoRWVEcnB6UkJoaEhKLTBiM0Z1QUE?oc=5\">MediaPost</a></blockquote>\n<blockquote>📊 <b>4. Вплив штучного інтелекту на ефективність аудиторій</b>\nНові дані показують, що надмірне покладання на ШІ при формуванні інсайтів про аудиторію може погіршувати результати рекламних кампаній.\n💡 Поєднуйте алгоритмічні рекомендації платформ із власними глибокими дослідженнями цільової аудиторії.\n🔗 <a href=\"https://www.marketingdive.com/news/ai-derived-audience-insights-hurt-results-what-the-numbers-say/874565/\">Marketing Dive</a></blockquote>\n<blockquote>🎯 <b>5. Twitch запускає нові формати інтерактивної реклами</b>\nПлатформа представила нові рекламні формати — shoppable (з можливістю покупки) та skippable (пропускані) оголошення під час трансляцій.\n💡 Якщо ви працюєте з геймінг-аудиторією, протестуйте нові можливості для інтеграції товарів безпосередньо у стріми.\n🔗 <a href=\"https://www.marketingdive.com/news/twitch-debuts-shoppable-skippable-ads-as-twitchcon-feels-growing-pains/874614/\">Marketing Dive</a></blockquote>\n<blockquote>🆕 <b>6. Тестування нової спортивної функції в Instagram</b>\nInstagram тестує спеціальний функціонал для взаємодії зі спортивним контентом та оновленнями в реальному часі всередині платформи.\n💡 Використовуйте актуальні спортивні події для створення інтерактивних Stories та опитувань, якщо ваша ніша це дозволяє.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxPMHNHUGJvdzV4dWp2eW1Rc0gzUFAyTjFrTTI2bzhHdWhUZXBNWG1vUDE3WnBBZjVDUlRwcUcteEdrZm5ub2E5bWpjRzlsM3h2Z3BjajFsVE9wc0NobFFaR1JuakJlbGFRSEgzeC1vTmxTUDZjS1pGejRzWC1iN2lJQ2tLUlJMbmxaTlAyamJWaGhLXzNOQWc?oc=5\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>7. Нові інструменти святкового шопінгу на Pinterest</b>\nPinterest випустив оновлення з інструментами для святкових покупців, полегшуючи пошук трендових товарів та ідей.\n💡 Оптимізуйте свої каталоги та пін-пости під святкові запити завчасно, щоб отримати максимальне органічне охоплення.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-adds-holiday-shopping-tools/874575/\">Social Media Today</a></blockquote>\n§§\n<blockquote>👀 <b>8. Х тестує розширені мітки прозорості ШІ</b>\nСоціальна мережа X (колишній Twitter) тестує нові позначки для контенту, створеного за допомогою штучного інтелекту, для боротьби з дезінформацією.\n💡 Маркуйте контент, створений за допомогою ШІ, щоб відповідати майбутнім вимогам платформ і зберігати довіру аудиторії.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-experiments-with-expanded-ai-transparency-labels/874461/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>9. LinkedIn запускає Connected TV рекламу у Великій Британії</b>\nПлатформа для професіоналів розширює рекламний інструментарій, запускаючи формат CTV (Connected TV) на британському ринку.\n💡 Зверніть увагу на цей тренд, якщо ваші B2B-кампанії орієнтовані на міжнародну аудиторію та передбачають омніканальний підхід.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-launches-ctv-ads-in-the-uk/874581/\">Social Media Today</a></blockquote>\n<blockquote>📊 <b>10. Кастомні рекламні алгоритми повертають бюджети медіа</b>\nВидання та медіагрупи використовують власні кастомні алгоритми таргетингу, щоб конкурувати за бюджети рекламодавців із гігантами на кшталт Meta.\n💡 Шукайте альтернативні площадки та медіапартнерства для диверсифікації своїх рекламних витрат.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxQeE9tZVlPRW9WZVRpMURNLWpoOUhCMlJyZjZ0MWtaMjlFQTdWYUhJTGR3UXh1QWlDWWp6RDdlM1AwOExaYTdUdm8wMHNJNFBOb1RpZGJNNnVkSVQ0NG5EbHlpRDJhVkRhYm5JbkRjektBMS1fenJYd3lQbzNwY25tUlM5akVYQ2x5QTlINF9OSDZFY29FSmlSTDBJc3M4NV9SaWkwdkYwZkZUdXlYZTUxVFE0dVd1Zw?oc=5\">AdExchanger</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202646\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Оновлення алгоритмів Facebook: як обійти ліміти на посилання</b> · Social Media Examiner\nMeta запроваджує жорсткіші обмеження на кількість посилань, якими можна ділитися, та активно інтегрує нові інструменти на кшталт AI-агентів Muse. Стаття розглядає практичні кроки для адаптації контент-стратегії під ці зміни.\n💡 Щоб обійти обмеження у два лінки на місяць та зберегти охоплення, використовуйте комбінацію нативних публікацій із заккликами перейти в коментарі або особисті повідомлення через чат-ботів.\n<a href=\"https://www.socialmediaexaminer.com/whats-next-for-facebook-4-changes-businesses-cant-ignore/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Крос-постинг без спаму: як адаптувати контент для різних платформ</b> · Hootsuite\nМатеріал пояснює, чому публікація ідентичного контенту на всіх платформах знижує охоплення та сприймається як спам. Надаються поради щодо адаптації формату, підписів та візуалу під специфіку кожної соцмережі.\n💡 Створюйте одне базове повідомлення, а потім змінюйте довжину тексту, хештеги та формат візуалу під алгоритми конкретної платформи замість прямого дублювання.\n<a href=\"https://blog.hootsuite.com/cross-promote-social-media/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Пошукова оптимізація в соцмережах: як зробити профіль помітним</b> · Hootsuite\nСоцмережі давно працюють як пошукові системи, де користувачі шукають інформацію через TikTok, Instagram чи YouTube. У статті розібрано, чому алгоритми цінують релевантність контенту вище за кількість підписників.\n💡 Додавайте ключові слова у назви відео, описання та текст на креативах, щоб алгоритми соцмереж частіше показували ваш контент у внутрішній пошуковій видачі.\n<a href=\"https://blog.hootsuite.com/social-media-discoverability/\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Маркетинг на Reddit: як просувати бренди у нішевих спільнотах</b> · Hootsuite\nReddit охоплює унікальну аудиторію, яка часто недоступна на інших платформах, але жорстко реагує на пряму рекламу. Успішна стратегія тут базується на нативній участі в обговореннях та таргетованій рекламі.\n💡 Ніколи не публікуйте прямі промо-пости в сабреддітах — спочатку завоюйте довіру спільноти через експертні коментарі та участь у дискусіях без продажу в лоб.\n<a href=\"https://blog.hootsuite.com/reddit-marketing/\">джерело</a></blockquote>\n<blockquote>💬 <b>5. Внутрішні гайдлайни для соцмереж: захист бренду та правила для команди</b> · Hootsuite\nПравила представлення бренду онлайн допомагають уникнути репутаційних та юридичних ризиків. Якісний документ охоплює не лише tone of voice, а й роботу з кризами, авторські права та використання штучного інтелекту.\n💡 Створіть бібліотеку заздалегідь схвалених постів для команди, щоб співробітники та амбасадори могли безпечно й швидко ділитися контентом компанії.\n<a href=\"https://blog.hootsuite.com/social-media-guidelines/\">джерело</a></blockquote>\n<blockquote>💬 <b>6. GEO-оптимізація: як потрапити в рекомендації штучного інтелекту</b> · Hootsuite\nПошук через ChatGPT, Gemini чи Perplexity змінює звичний SEO-трафік, оскільки користувачі отримують готові відповіді з посиланнями на джерела. Маркетологам потрібно адаптувати контент під цитування нейромережами.\n💡 ШІ-пошук часто посилається на обговорення з Reddit та LinkedIn — інтегруйте ці платформи у свою стратегію присутності бренду в мережі.\n<a href=\"https://blog.hootsuite.com/how-to-optimize-for-ai-search/\">джерело</a></blockquote>\n§§\n<blockquote>💬 <b>7. Модерація реклами у святковий сезон: реальні терміни на платформах</b> · Medium · facebook-ads\nGoogle, Meta та TikTok запевняють, що перевіряють рекламні оголошення приблизно за добу, проте реальні терміни під час пікових навантажень можуть відрізнятися. Будь-яка зміна креативу запускає процес наново.\n💡 Запускайте святкові кампанії та подавайте креативи на модерацію заздалегідь, адже будь-яке редагування тексту чи зображення в останній момент може надовго зупинити показ.\n<a href=\"https://medium.com/@nadeer2004/black-friday-ad-approval-time-what-google-meta-and-tiktok-actually-promise-737dc0e77207?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>8. Тестування заголовків у Meta Ads: як правильно оцінювати результати</b> · Medium · facebook-ads\nПорівняння ефективності рекламних заголовків вимагає аналізу не лише клікабельності, а й того, скільки показів отримав кожен із варіантів у межах одного креативу.\n💡 Запускайте три варіанти заголовків в одному оголошенні, а потім порівнюйте показники CTR не ізольовано, а з урахуванням обсягу витраченого бюджету та охоплення на кожен варіант.\n<a href=\"https://medium.com/@backtrue_24010/before-you-pick-a-winning-meta-ad-headline-check-what-else-changed-028cc01cd342?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>9. Дизайн банерів для КММ Google: головні правила конверсійного візуалу</b> · Medium · facebook-ads\nПрактичний гід із створення ефективних графічних банерів для контекстно-медійної мережі Google. Розглядаються помилки у візуальному оформленні, які зливають рекламний бюджет.\n💡 Робіть акцент на одному чіткому повідомленні та контрастній кнопці закляку до дії (CTA), уникаючи перевантаженості дрібним текстом на банері.\n<a href=\"https://medium.com/@habibaehsan/google-display-ads-design-why-professional-banner-creatives-matter-for-online-advertising-8bee11c7fdeb?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>10. Реклама в епоху AI-пошуку Google: чекліст для локального бізнесу</b> · Medium · facebook-ads\nОскільки користувачі все частіше вводять довгі та розмовні запити в пошуковики, налаштування локальної реклами потребує перегляду ключових слів та структури акаунта.\n💡 Додайте в рекламні кампанії більше довгих низкочастотних фраз (long-tail keywords), які імітують живий діалог із голосовим чи AI-пошуком.\n<a href=\"https://medium.com/@gilmedia_com/google-ai-mode-ads-for-a-local-service-business-what-to-check-f80412812f29?source=rss------facebook_ads-5\">джерело</a></blockquote>\n§RT:smm:202646p",
  "aro_v": 2,
  "arob_v": 2,
- "aro_sub_s": 3,
- "aro_sub_k": 2,
+ "aro_sub_s": 5,
+ "aro_sub_k": 3,
  "jobs_last": 1794659752.0315065,
- "nmt_last": 1794659763.908481
+ "nmt_last": 1794661560.1913688
 }
