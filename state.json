@@ -733,7 +733,7 @@
   "t194766",
   "t39351"
  ],
- "gh_beat": "2026-11-14T21:45:45.702603+02:00",
+ "gh_beat": "2026-11-14T21:50:44.355191+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1693,14 +1693,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "14.11 21:47",
-   "ts": 1794685631,
+   "at": "14.11 21:52",
+   "ts": 1794685946,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "14.11 21:47",
-   "ts": 1794685631,
+   "at": "14.11 21:52",
+   "ts": 1794685946,
    "ok": true,
    "note": ""
   },
@@ -1723,8 +1723,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "14.11 21:44",
-   "ts": 1794685499,
+   "at": "14.11 21:57",
+   "ts": 1794686227,
    "ok": true,
    "note": ""
   },
@@ -30326,7 +30326,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "9b051d5b1cc6",
+  "gs": "9556c6bbebff",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "0c8bd76e9ba0",
   "sexed.json": "0362ec7e46d4",
@@ -41676,6 +41676,146 @@
    ],
    "ov": "Tense drama series about the different challenges faced by the British Security Service as they work against the clock to safeguard the nation. The title is a popular colloquialism for spies, and the series follows the w",
    "poster": "https://image.tmdb.org/t/p/w500/5kODxCYihuM49oQWke6GfHdsRT6.jpg"
+  },
+  "t112888": {
+   "title": "Справжня краса",
+   "year": "2020",
+   "rating": 7.9,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "After being bullied and discriminated because of her ugly looks, a high school girl transforms herself into a gorgeous \"goddess\" and quickly rises to fame after mastering the art of makeup via online tutorial videos.",
+   "poster": "https://image.tmdb.org/t/p/w500/gaCOvKGG2qEnsijNHEAigYcQ1U3.jpg"
+  },
+  "t70573": {
+   "title": "Блиск",
+   "year": "2017",
+   "rating": 8.0,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Це історія безробітної актриси з Лос-Анджелеса на ім'я Рут, яка у відчайдушній спробі самореалізації вирішує знятися в серіалі про жінок-рестлерів, потрапивши в світ пишних зачісок, блиску і спандекса.",
+   "poster": "https://image.tmdb.org/t/p/w500/aqQlgRgUwVTfbdxe33vfDEMiCa2.jpg"
+  },
+  "t108255": {
+   "title": "Про всі створіння – великі й малі",
+   "year": "2020",
+   "rating": 8.6,
+   "genres": [
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    18,
+    35
+   ],
+   "ov": "Дія серіалу відбувається наприкінці тридцятих років у Великій Британії. Ще недосвідчений ветеринар Джеймс розпочинає свою практику в сільській місцевості під чуйним керівництвом ексцентричного доктора Зігфріда Фарнона. Н",
+   "poster": "https://image.tmdb.org/t/p/w500/vAoodWoMDEA3U3BBrG89daW69oH.jpg"
+  },
+  "t35338": {
+   "title": "La que se avecina",
+   "year": "2007",
+   "rating": 7.6,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "La que se avecina is a Spanish television comedy created by Alberto Caballero, Laura Caballero and Daniel Deorador. The TV-series focusing around the inhabitants of Mirador de Montepinar, a fictional building located on ",
+   "poster": "https://image.tmdb.org/t/p/w500/ceoJyZgsHBaenUxhobHUA6mXXf0.jpg"
+  },
+  "t56590": {
+   "title": "Шоу Еріка Андре",
+   "year": "2012",
+   "rating": 8.5,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "A comedic talk show from an alternate reality featuring unstable hosts, a variety of celebrities—both real and fake—and unusual studio action.",
+   "poster": "https://image.tmdb.org/t/p/w500/5CB6Dbpg2cIrhcKPwLuXJb15Wtr.jpg"
+  },
+  "t36994": {
+   "title": "Трудоголіки",
+   "year": "2011",
+   "rating": 8.1,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Комедія розповідає про трьох друзів, які працюють разом з 9 до 5 і живуть разом з 5 до 9. Рекомендований стиль одягу, встановлені терміни, підйом до полудня - це не ті речі, до яких звикли хлопці. Їх мізки все ще на авто",
+   "poster": "https://image.tmdb.org/t/p/w500/kXg4tFUHN7h7bNdBTeLIIKqw9UJ.jpg"
+  },
+  "t31497": {
+   "title": "Ліга",
+   "year": "2009",
+   "rating": 8.2,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Ліга - це напів-імпровізаційний сітком, що розповість про друзів з Чикаго, які намагаються поєднати сімейне життя зі своїм улюбленим заняттям, Fantasy Football - віртуальної футбольною лігою.",
+   "poster": "https://image.tmdb.org/t/p/w500/w6IAasjDdANmalOWkjKcENhirQR.jpg"
+  },
+  "t136311": {
+   "title": "Правдива терапія",
+   "year": "2023",
+   "rating": 8.2,
+   "genres": [
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    18,
+    35
+   ],
+   "ov": "Джиммі переживає втрату дружини, і йому важко водночас бути батьком, другом і психотерапевтом. Він вирішує змінити своє ставлення до людей і стати абсолютно чесним, без жодних фільтрів. Покращиться від цього ситуація чи ",
+   "poster": "https://image.tmdb.org/t/p/w500/l9QKBoa2lDxMACoePC3B9LggdEv.jpg"
+  },
+  "t39859": {
+   "title": "Незграба",
+   "year": "2011",
+   "rating": 7.5,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Старшокласниця Дженна Гемілтон сама пересічна учениця місцевої школи. Від інших її відрізняє лише вміння потрапляти в безглузді ситуації. Так само, як і її ровесниці, Дженна хоче опинитися в центрі уваги та перестати бут",
+   "poster": "https://image.tmdb.org/t/p/w500/7PLO6PdGmfKiV3KER2Rd08Ga8kM.jpg"
+  },
+  "t3796": {
+   "title": "Хлопці з трейлерного парку",
+   "year": "2001",
+   "rating": 8.5,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Follow the booze-fueled misadventures of three longtime pals and petty serial criminals who run scams from their Nova Scotia trailer park.",
+   "poster": "https://image.tmdb.org/t/p/w500/nIcIwVTYcZnW1BDzexGfFO7KmX1.jpg"
   }
  },
  "cofid_pushed": "14.11.2026",
@@ -41764,12 +41904,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-14",
  "silpo_week": "2026-46",
- "sbm_at": 1794685550.002487,
+ "sbm_at": 1794685848.2713175,
  "sbm_hist": [
-  [
-   "08:15",
-   93
-  ],
   [
    "08:20",
    93
@@ -42341,6 +42477,10 @@
   [
    "21:45",
    87
+  ],
+  [
+   "21:50",
+   88
   ]
  ],
  "sbm_near": {
@@ -42357,7 +42497,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1794684951.863289,
+ "net_at": 1794685855.8456404,
  "net_asn": {
   "triolan": [
    "13188",
@@ -45228,7 +45368,7 @@
  "warned": "2026-11-13",
  "toyn_week": "202646",
  "toys_v": 3,
- "toys_last": 1794684726.3855274,
+ "toys_last": 1794685871.7028556,
  "toy_ban": [],
  "aro_v": 2,
  "arob_v": 2,
@@ -45387,7 +45527,8 @@
   "ser_gems": "2026-11-14T21:10:45.655848+02:00",
   "ser_hot": "2026-11-14T21:20:46.749465+02:00",
   "ser_new": "2026-11-14T21:31:29.626591+02:00",
-  "ser_crime": "2026-11-14T21:40:53.057060+02:00"
+  "ser_crime": "2026-11-14T21:40:53.057060+02:00",
+  "ser_comedy": "2026-11-14T21:50:44.617847+02:00"
  },
  "yt_v": 4,
  "kb_probe2": "2026-46"
