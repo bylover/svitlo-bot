@@ -4449,8 +4449,10 @@ def match_refresh(st: dict, now: datetime) -> None:
     pool = {}
     def add(c, kind, src):
         k = f"{'m' if kind == 'movie' else 't'}{c['id']}"
-        if k in pool or not c.get("poster_path"):
+        if k in pool or not c.get("poster_path") or kino_is_anime(c):
             return
+        if 16 in (c.get("genre_ids") or []) and not kino_cartoon_ok(c, now.year):
+            return                                     # мультфільм — лише свіжий і топовий
         pool[k] = {"k": k, "kind": kind, "t": c.get("title") or c.get("name"), "y": (c.get("release_date") or c.get("first_air_date") or "")[:4],
                    "r": round(c.get("vote_average") or 0, 1), "v": c.get("vote_count") or 0, "g": [gmap.get(x, "") for x in (c.get("genre_ids") or [])][:3],
                    "gi": (c.get("genre_ids") or [])[:4], "o": (c.get("overview") or "")[:220], "p": f"https://image.tmdb.org/t/p/w500{c['poster_path']}", "src": src}
@@ -4473,6 +4475,7 @@ def match_refresh(st: dict, now: datetime) -> None:
     except Exception:
         pass
     items = sorted(pool.values(), key=lambda x: (-x["r"], -x["v"]))
+    items = kino_clean(items, now.year, len(items), key=lambda x: {"genre_ids": x.get("gi") or [], "release_date": x.get("y"), "vote_average": x.get("r")})   # мультфільмів ≤10% пулу
     kp_ = st.get("km_pick") or {}
     if len(kp_) > 600:
         st["km_pick"] = dict(list(kp_.items())[-600:])
@@ -6387,24 +6390,48 @@ def dur_text(sec: int) -> str:
     return f"{h} год {m:02d} хв" if h else f"{m} хв"
 
 
-YT_POLIT = re.compile(r"політи|зеленськ|путін|вибор|депутат|верховн\w* рад|мобілізац|тцк|фронт|окупант|війн[аиі]|зсу\b|новин|ефір|наживо|\blive\b|стрім|"
+YT_POLIT = re.compile(r"політи|зеленськ|путін|вибор|депутат|верховн\w* рад|мобілізац|тцк|фронт|окупант|війн[аиіу]|воєн|військ|армі[яїю]|зсу\b|всу\b|дрон|шахед|обстріл|ракет|ппо\b|"
+                      r"бойов|полонен|ветеран|окупац|звільнен\w* терит|контрнаступ|бригад|снаряд|рф\b|росі[яїю]|кремл|новин|ефір|наживо|\blive\b|стрім|"
                       r"гордон|портников|соколова|бутусов|гончаренко|арестович|умєров|єрмак|трамп|байден|переговор|мирн\w* план|санкці", re.I)
 YT_GAMES = re.compile(r"minecraft|майнкрафт|roblox|роблокс|fortnite|фортнайт|brawl ?stars|бравл|\bgta\b|\bгта\b|\bcs ?2\b|кс ?2|counter.?strike|\bdota|\bдота|valorant|pubg|standoff|"
                       r"летсплей|let'?s ?play|проходжен|геймплей|gameplay|\bстрім|\bstream|ігров[аиі]|геймер|gamer|\bmods?\b|скіни|speedrun", re.I)
-YT_LIKE = [(re.compile(r"стендап|стенд-ап|stand.?up|гумор|прикол|скетч|пародія|comedy|смішн", re.I), 1.2, "😂"),
-           (re.compile(r"наук|дослідж|експеримент|космос|фізик|біолог|хімі|історі[яї]|мозок|психолог|science", re.I), 1.2, "🔬"),
+YT_LIKE = [(re.compile(r"секс|інтим|стосунк|сексолог|оргазм|лібідо|пристраст|побачен|кохан|пар[аиі]\b|розлучен|зрад|ревнощ|шлюб|флірт", re.I), 1.6, "💞"),
+           (re.compile(r"психолог|психотерап|тривожн|самооцінк|вигоран|емоці|травм|стосунки з собою|ментальн|звичк|мотивац|депрес", re.I), 1.5, "🧠"),
+           (re.compile(r"стендап|стенд-ап|stand.?up|гумор|прикол|скетч|пародія|comedy|смішн|шоу|розваг|челендж|реакці|імпровіз", re.I), 1.5, "😂"),
+           (re.compile(r"огляд фільм|огляд серіал|рецензі|кінокрит|що подивитис|фільм[иі]? року|серіал[иі]? року|кіно\b|кінопрем|за лаштунками|акторк|режисер", re.I), 1.4, "🎬"),
+           (re.compile(r"життя|влог|vlog|лайфстайл|історі[яї] з життя|побут|подорож|переїзд|їжа|рецепт|ресторан|покупк|день з|мій ранок|дім|ремонт|гроші|зарплат", re.I), 1.3, "🌿"),
            (re.compile(r"тру.?крайм|true crime|розслідув|маніяк|злочин|детектив|вбивств|загадк", re.I), 1.1, "🔪"),
-           (re.compile(r"секс|інтим|стосунк|сексолог|оргазм|лібідо|пристраст", re.I), 1.3, "💞"),
-           (re.compile(r"кліп|official (music )?video|прем.?єра пісні|трейлер|фільм|серіал|кіно", re.I), 0.8, "🎬")]
+           (re.compile(r"наук|дослідж|експеримент|космос|фізик|біолог|хімі|мозок|science", re.I), 0.9, "🔬"),
+           (re.compile(r"кліп|official (music )?video|прем.?єра пісні|трейлер", re.I), 0.6, "🎵")]
 YT_TECH = re.compile(r"огляд|iphone|samsung|pixel|гаджет|смартфон|ноутбук|unboxing|розпаков|техніка", re.I)
 YT_SPORT = re.compile(r"футбол|матч|упл\b|ліга чемпіонів|ліга європи|динамо|шахтар|збірна україни|бокс|усик|ломаченко|ufc|mma|баскетбол|хокей|теніс|формула.?1|голи|highlights|огляд матчу|спорт", re.I)
-YT_THEMES = {"🔪 Тру-крайм": ["тру крайм українською", "true crime історії", "тру крайм истории"], "😂 Гумор": ["стендап українською", "гумор скетчі україна"],
-             "🎉 Розваги": ["розважальне шоу україна", "челендж україна"], "💞 Секс-просвіта": ["секс освіта сексолог", "сексолог советы"],
-             "🔬 Наука": ["наука українською", "научпоп наука"]}
+YT_THEMES = {"💞 Стосунки й секс-просвіта": ["сексолог українською", "стосунки психолог українською", "секс освіта українською", "стосунки в парі українською"],
+             "🧠 Психологія": ["психолог українською", "психологія українською ютуб", "психотерапевт українською"],
+             "😂 Гумор і розваги": ["стендап українською", "гумор скетчі українською", "розважальне шоу українською", "комедійне шоу українською"],
+             "🎬 Кіно й серіали": ["огляд фільмів українською", "огляд серіалів українською", "кіно українською ютуб"],
+             "🌿 Життя й лайфстайл": ["влог українською", "лайфстайл українською", "історії з життя українською", "подорожі українською"],
+             "🎙 Подкасти й інтерв'ю": ["подкаст українською", "розмовне шоу українською", "інтервʼю українською ютуб"],
+             "🔪 Тру-крайм": ["тру крайм українською", "кримінальні історії українською"],
+             "🔬 Наука й історія": ["наука українською", "історичні загадки українською"],
+             "🏋️ Здоровʼя й тіло": ["тренування вдома українською", "здоровʼя лікар українською", "біль у спині шиї вправи українською", "сон харчування здоровʼя українською"],
+             "👨‍👩‍👦 Підлітки й статеве виховання": ["статеве виховання підлітків українською", "як говорити з підлітком психолог", "батьки підлітків українською"]}
+YT_THEME_MIN = {"👨‍👩‍👦 Підлітки й статеве виховання": 50000}   # лише найпопулярніші канали (типово — від 10 тис. підписників)
+YT_THEME_TOP = {"👨‍👩‍👦 Підлітки й статеве виховання": 10}
+YT_RU = re.compile(r"[ыэъёЫЭЪЁ]")
+
+
+def yt_is_ua(lang: str, txt: str) -> bool:
+    """Лише українською: мова відео uk або українські літери; російське (мова ru, літери ы/э/ъ/ё) — ні."""
+    lang = (lang or "").lower()
+    if lang.startswith("ru") or YT_RU.search(txt or ""):
+        return False
+    return lang.startswith("uk") or bool(UA_LETTERS.search(txt or ""))
 
 
 def yt_channels(st: dict, now: datetime) -> None:
     """📺 Цікаві канали за темами (раз на тиждень): пошук каналів, активні, з підписниками, без політики; 3 свіжі відео."""
+    if st.get("yt_v") != 4:                            # v3: лише українською, без ігор і війни, більше стосунків, психології, розваг, кіно, життя — перезібрати
+        st["yt_v"] = 4; st["ytch_week"] = ""; st["ytf_week"] = ""; st["ytf_force"] = True
     if not YT_KEY or not WORKER_MODE or st.get("ytch_week") == f"{now:%G%V}":
         return
     api = lambda path, **q: http_json(f"https://www.googleapis.com/youtube/v3/{path}?" + urllib.parse.urlencode({**q, "key": YT_KEY}))
@@ -6427,8 +6454,11 @@ def yt_channels(st: dict, now: datetime) -> None:
         for c in chans:
             sn, stt = c.get("snippet", {}), c.get("statistics", {})
             subs = int(stt.get("subscriberCount") or 0)
-            if c.get("id") in mute or subs < 20000 or YT_POLIT.search(sn.get("title", "") + " " + (sn.get("description") or "")[:300]):
+            ctext = sn.get("title", "") + " " + (sn.get("description") or "")[:300]
+            if c.get("id") in mute or subs < YT_THEME_MIN.get(theme, 10000) or YT_POLIT.search(ctext) or YT_GAMES.search(ctext) or sn.get("country") in ("RU", "BY"):
                 continue
+            if not (yt_is_ua(sn.get("defaultLanguage") or "", ctext) or (sn.get("country") == "UA" and not YT_RU.search(ctext))):
+                continue                                  # канал не українською — ні
             vids = []
             try:
                 up = c["contentDetails"]["relatedPlaylists"]["uploads"]
@@ -6440,7 +6470,7 @@ def yt_channels(st: dict, now: datetime) -> None:
                 continue                                  # неактивний канал
             out.append({"t": sn.get("title", "")[:60], "id": c["id"], "subs": subs, "desc": (sn.get("description") or "")[:140], "v": vids})
         out.sort(key=lambda x: -x["subs"])
-        res[theme] = out[:30]
+        res[theme] = out[:YT_THEME_TOP.get(theme, 40)]                 # до 40 каналів на тему
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=yt_ch.json", {"at": now.strftime("%d.%m"), "themes": res})
         st["ytch_week"] = f"{now:%G%V}"
@@ -6465,6 +6495,38 @@ KC_COLS = {"70": ("🎞 Найкращі 70-х", {"primary_release_date.gte": "1
 KC_PROV = r"netflix|megogo|sweet\.?tv|kyivstar|prime video|amazon prime|apple tv|takflix|youtube premium|google play"
 
 
+ANIME_LANG = {"ja", "zh", "ko", "cn"}
+ANIME_CTRY = {"JP", "CN", "KR", "TW", "HK"}
+
+
+def kino_is_anime(m: dict) -> bool:
+    """Аніме й подібне (японська, китайська, корейська анімація) — не показуємо."""
+    g = m.get("genre_ids") or [x.get("id") for x in (m.get("genres") or []) if isinstance(x, dict)]
+    return 16 in g and (str(m.get("original_language") or "").lower() in ANIME_LANG or bool(set(m.get("origin_country") or []) & ANIME_CTRY))
+
+
+def kino_cartoon_ok(m: dict, now_year: int) -> bool:
+    """Мультфільм (не аніме) — лише свіжий (останні 3 роки) і з високою оцінкою глядачів."""
+    y = int(str(m.get("release_date") or m.get("first_air_date") or m.get("y") or "0")[:4] or 0)
+    return y >= now_year - 3 and float(m.get("vote_average") or m.get("r") or 0) >= 7.0
+
+
+def kino_clean(lst: list, now_year: int, n: int | None = None, key=lambda x: x) -> list:
+    """Прибирає аніме; мультфільми — лише свіжі топові й не більше ~10% добірки (порядок зберігається)."""
+    out, cart, n = [], 0, n or len(lst)
+    cap = max(1, round(n * 0.1))
+    for x in lst:
+        m = key(x)
+        if kino_is_anime(m):
+            continue
+        if 16 in (m.get("genre_ids") or m.get("g") or m.get("gi") or []):
+            if not kino_cartoon_ok(m, now_year) or cart >= cap:
+                continue
+            cart += 1
+        out.append(x)
+    return out
+
+
 def _kc_item(m: dict, kind: str = "movie") -> dict:
     return {"id": m.get("id"), "k": kind, "t": (m.get("title") or m.get("name") or "")[:70], "y": str(m.get("release_date") or m.get("first_air_date") or "")[:4],
             "r": round(float(m.get("vote_average") or 0), 1), "v": int(m.get("vote_count") or 0), "g": m.get("genre_ids") or []}
@@ -6472,6 +6534,8 @@ def _kc_item(m: dict, kind: str = "movie") -> dict:
 
 def kino_cats(st: dict, now: datetime) -> None:
     """Пули категорій — раз на тиждень (пʼятниця) або на «🔄 Оновити підбірки»; колекції — раз на місяць."""
+    if st.get("kino_v") != 2:                          # v2: без аніме, мультфільми — лише свіжі топові й ≤10% — перезібрати добірки й Кіномэтч
+        st["kino_v"] = 2; st["kc_week"] = ""; st["kc_force"] = True; st["kc_cols_m"] = ""; st["match_month"] = ""
     if not (WORKER_MODE and TMDB_KEY) or st.get("kc_week") == f"{now:%G%V}":
         return
     if now.weekday() != 4 and st.get("kc_week") and not st.get("kc_force"):
@@ -6483,7 +6547,7 @@ def kino_cats(st: dict, now: datetime) -> None:
         items = []
         for pg in (1, 2, 3):
             try:
-                for m in tmdb("/discover/movie", **base, **q, **{"vote_count.gte": 500, "vote_average.gte": minr, "page": pg}).get("results", []):
+                for m in kino_clean(tmdb("/discover/movie", **base, **q, **{"vote_count.gte": 500, "vote_average.gte": minr, "page": pg}).get("results", []), now.year, 20):
                     items.append(_kc_item(m))
             except Exception as e:
                 print(f"Під настрій {k}: {err_text(e)[:50]}"); break
@@ -6492,11 +6556,12 @@ def kino_cats(st: dict, now: datetime) -> None:
                 it["rt"] = int(tmdb(f"/movie/{it['id']}", language="uk-UA").get("runtime") or 0)
             except Exception:
                 it["rt"] = 0
-        out["moods"][k] = {"t": title, "items": sorted(items[:60], key=lambda x: -(x["r"] + (0.3 if x["y"] >= str(now.year - 3) else 0)))}
+        srt = sorted(items[:60], key=lambda x: -(x["r"] + (0.3 if x["y"] >= str(now.year - 3) else 0)))
+        out["moods"][k] = {"t": title, "items": kino_clean(srt, now.year, len(srt), key=lambda x: {"genre_ids": x["g"], "release_date": x["y"], "vote_average": x["r"]})}
     if not out["cols"]:                                  # 🏆 колекції — раз на місяць
         for k, (title, q) in KC_COLS.items():
             try:
-                res = tmdb("/discover/movie", **base, **q).get("results", [])[:20]
+                res = kino_clean(tmdb("/discover/movie", **base, **q).get("results", []) + tmdb("/discover/movie", **base, **q, page=2).get("results", []), now.year, 20)[:20]
                 out["cols"][k] = {"t": title, "items": [_kc_item(m) for m in res]}
             except Exception as e:
                 print(f"Колекція {k}: {err_text(e)[:50]}")
@@ -6511,7 +6576,7 @@ def kino_cats(st: dict, now: datetime) -> None:
             for kind in ("movie", "tv"):
                 for pg in (1, 2, 3, 4, 5):
                     try:
-                        cur += [_kc_item(m, kind) for m in tmdb(f"/discover/{kind}", language="uk-UA", watch_region="UA", with_watch_providers=pid, sort_by="popularity.desc", page=pg).get("results", [])]
+                        cur += [_kc_item(m, kind) for m in kino_clean(tmdb(f"/discover/{kind}", language="uk-UA", watch_region="UA", with_watch_providers=pid, sort_by="popularity.desc", page=pg).get("results", []), now.year, 20)]
                     except Exception:
                         break
             snap[pid] = [f'{x["k"]}{x["id"]}' for x in cur]
@@ -6525,7 +6590,7 @@ def kino_cats(st: dict, now: datetime) -> None:
         for pg in (1, 2):
             ser += tmdb("/discover/tv", language="uk-UA", sort_by="vote_average.desc", **{"vote_count.gte": 300, "vote_average.gte": 7.5, "page": pg}).get("results", [])
         good = []
-        for m in ser[:40]:
+        for m in kino_clean(ser, now.year, 20)[:40]:
             try:
                 d = tmdb(f"/tv/{m['id']}", language="uk-UA")
                 if (d.get("number_of_seasons") or 9) <= 2 and d.get("status") in ("Ended", "Canceled"):
@@ -7789,7 +7854,7 @@ def yt_foryou(st: dict, now: datetime) -> None:
     for cid_ in st.get("yt_fav") or []:
         chans.setdefault(cid_, "⭐")
     mute, fb = set(st.get("yt_mute") or []), st.get("yt_fb") or {}
-    ids = list(chans)[:200]
+    ids = list(chans)[:420]
     if not ids:
         print("YouTube «Для вас»: немає каналів (спершу 📺 цікаві канали)"); return
     meta = {}
@@ -7808,7 +7873,7 @@ def yt_foryou(st: dict, now: datetime) -> None:
     allv = [v for _, vs in vids for v in vs]
     stats = {}
     for k in range(0, len(allv), 50):
-        for v in api("videos", part="statistics,snippet,contentDetails", id=",".join(allv[k:k + 50])).get("items", []):
+        for v in api("videos", part="statistics,snippet,contentDetails,status", id=",".join(allv[k:k + 50])).get("items", []):
             stats[v["id"]] = v
     cand = []
     for cid_, vs in vids:
@@ -7823,28 +7888,33 @@ def yt_foryou(st: dict, now: datetime) -> None:
             sn, sc = x["snippet"], x.get("statistics", {})
             pub = datetime.fromisoformat(sn["publishedAt"].replace("Z", "+00:00"))
             age_h = max(1.0, (datetime.now(timezone.utc) - pub).total_seconds() / 3600)
-            if age_h > 14 * 24:
-                continue                                  # свіжість ≤14 днів
+            if age_h > 18 * 24:
+                continue                                  # свіжість ≤18 днів — перлини встигають набрати перегляди
             d_ = re.match(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", x["contentDetails"].get("duration") or "")
             secs = (int(d_.group(1) or 0) * 3600 + int(d_.group(2) or 0) * 60 + int(d_.group(3) or 0)) if d_ else 0
             txt = sn.get("title", "") + " " + (sn.get("description") or "")[:200]
             if secs < 480 or YT_POLIT.search(txt) or YT_SPORT.search(txt):
                 continue                                  # коротше 8 хв, політика, спорт — ні
+            if sn.get("categoryId") == "20" or YT_GAMES.search(txt + " " + " ".join(sn.get("tags") or [])) or (x.get("status") or {}).get("madeForKids"):
+                continue                                  # ігри й дитяче — ні
+            if not yt_is_ua(sn.get("defaultAudioLanguage") or sn.get("defaultLanguage") or "", sn.get("title", "") + " " + (sn.get("description") or "")[:300]):
+                continue                                  # лише українською
             vw, lk, cm = int(sc.get("viewCount") or 0), int(sc.get("likeCount") or 0), int(sc.get("commentCount") or 0)
             outlier = vw / med                            # 🚀 випереджає свій канал
             speed = (vw / age_h) / (med / (7 * 24))       # ⚡ швидкість відносно звичайної для каналу
             eng = (lk + 3 * cm) / max(1, vw)              # 💬 залученість
             score = 2.0 * min(outlier, 10) ** 0.5 + 1.0 * min(speed, 20) ** 0.5 + 40 * min(eng, 0.15) + (1.5 if chans[cid_] == "⭐" else 0) \
+                + max([w for rx, w, _ in YT_LIKE if rx.search(txt + " " + " ".join(sn.get("tags") or []))] or [0]) \
                 + 1.0 * float(fb.get(cid_, 0)) - (1.5 if YT_CLICK.search(sn.get("title", "")) else 0)
             cand.append({"id": v, "t": sn["title"][:90], "c": meta[cid_]["t"][:40], "ch": cid_, "th": chans[cid_], "views": vw, "o": round(outlier, 1), "sc": round(score, 2),
-                         "gem": 5000 <= meta[cid_]["subs"] <= 300000 and outlier >= 2.5, "min": secs // 60})
+                         "gem": 5000 <= meta[cid_]["subs"] <= 300000 and outlier >= 2.0, "min": secs // 60})
     cand.sort(key=lambda x: -x["sc"])
     pick, per = [], {}
     for x in cand:                                        # 🌈 не більше 2 відео з каналу
         if per.get(x["ch"], 0) >= 2:
             continue
         per[x["ch"]] = per.get(x["ch"], 0) + 1; pick.append(x)
-    out = {"at": now.strftime("%d.%m %H:%M"), "items": pick[:40], "gems": [x for x in pick if x["gem"]][:30]}
+    out = {"at": now.strftime("%d.%m %H:%M"), "items": pick[:60], "gems": [x for x in pick if x["gem"]][:40]}
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=yt_foryou.json", out)
         st["ytf_week"] = f"{now:%G%V}"
@@ -7958,6 +8028,7 @@ def build_youtube(st: dict, now: datetime) -> str | None:
     try:                                               # «▶️ ще 10» і список каналів для 🚫/⭐ — у бота
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=yt_more.json",
                   {"more": [{"t": v["snippet"]["title"][:90], "c": v["snippet"].get("channelTitle", "")[:40], "id": v["id"], "views": int(v["statistics"].get("viewCount", 0))} for v in more_top],
+                   "top": [{"t": v["snippet"]["title"][:90], "c": v["snippet"].get("channelTitle", "")[:40], "id": v["id"], "views": int(v["statistics"].get("viewCount", 0))} for v in top],
                    "ch": [[v["snippet"].get("channelId"), v["snippet"].get("channelTitle", "")[:40]] for v in top + more_top]})
     except Exception as e:
         print(f"YouTube «ще 10» → бот: {err_text(e)[:60]}")
