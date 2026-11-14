@@ -733,7 +733,7 @@
   "t194766",
   "t39351"
  ],
- "gh_beat": "2026-11-14T22:15:45.141013+02:00",
+ "gh_beat": "2026-11-14T22:20:45.169607+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1693,14 +1693,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "14.11 22:11",
-   "ts": 1794687092,
+   "at": "14.11 22:22",
+   "ts": 1794687747,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "14.11 22:11",
-   "ts": 1794687092,
+   "at": "14.11 22:22",
+   "ts": 1794687747,
    "ok": true,
    "note": ""
   },
@@ -1723,8 +1723,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "14.11 22:12",
-   "ts": 1794687130,
+   "at": "14.11 22:23",
+   "ts": 1794687790,
    "ok": true,
    "note": ""
   },
@@ -30333,7 +30333,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "020d7fdaf9de",
+  "gs": "def6c3b4cc2f",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "44770f2393e1",
   "sexed.json": "0362ec7e46d4",
@@ -42270,6 +42270,156 @@
    ],
    "ov": "Детектив Джеймс Ґордон прибуває для подальшого проходження служби до міста Ґотем. Місцевим копам він здається «зеленим» новачком, але на ділі виявляється, що його відваги та розуму достатньо навіть для того, щоб злочинни",
    "poster": "https://image.tmdb.org/t/p/w500/zLpSNnVoL2bjQdc1PcaHUPUzttP.jpg"
+  },
+  "t208397": {
+   "title": "Шкільні духи (2023)",
+   "year": "2023",
+   "rating": 7.6,
+   "genres": [
+    "Детектив",
+    "Драма"
+   ],
+   "g": [
+    9648,
+    18
+   ],
+   "ov": "Медді, підліток, який застряг у потойбічному світі, розслідуючи власне зникнення, вирушає на місію з розкриття злочинів, пристосовуючись до шкільного чистилища.",
+   "poster": "https://image.tmdb.org/t/p/w500/ooim5C8q3yk4vjfpYnviaAvWc19.jpg"
+  },
+  "t64840": {
+   "title": "시그널",
+   "year": "2016",
+   "rating": 8.4,
+   "genres": [
+    "Кримінал",
+    "Детектив",
+    "Науково фантастичний"
+   ],
+   "g": [
+    80,
+    9648,
+    10765,
+    18
+   ],
+   "ov": " Detectives from the present and a detective from the past communicate via walkie-talkie to solve a long-time unsolved case.",
+   "poster": "https://image.tmdb.org/t/p/w500/mB6FlHFK0A4DPyuGTrlM4QgEkIH.jpg"
+  },
+  "t245703": {
+   "title": "Відділ нерозкритих справ",
+   "year": "2025",
+   "rating": 8.1,
+   "genres": [
+    "Драма",
+    "Кримінал",
+    "Детектив"
+   ],
+   "g": [
+    18,
+    80,
+    9648
+   ],
+   "ov": "Зухвалий і геніальний детектив стає головою нового поліцейського відділку в Единбурзі, у якому команда ексцентричних спеціалістів розплутує старі справи.",
+   "poster": "https://image.tmdb.org/t/p/w500/z7b9xlwYX1bwYjMQBG2YvOAyfXm.jpg"
+  },
+  "t66276": {
+   "title": "Одного разу вночі",
+   "year": "2016",
+   "rating": 8.4,
+   "genres": [
+    "Кримінал",
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    80,
+    18,
+    9648
+   ],
+   "ov": "Після бурхливої ночі з незнайомкою, хлопець прокидається з її трупом у себе під боком і всі звинувачення падають на нього.",
+   "poster": "https://image.tmdb.org/t/p/w500/qVvsbrNst9l2sf1IunyeUDBvekg.jpg"
+  },
+  "t61511": {
+   "title": "Отець Браун",
+   "year": "2013",
+   "rating": 7.8,
+   "genres": [
+    "Драма",
+    "Кримінал",
+    "Детектив"
+   ],
+   "g": [
+    18,
+    80,
+    9648
+   ],
+   "ov": "Отець Браун - непримітного вигляду священик, який володіє влучним оком, здатним помічати найдрібніші хвилювання в душах людей, які приходять до нього за порадою і підтримкою.",
+   "poster": "https://image.tmdb.org/t/p/w500/p7vhDIkPVySMBGsPnAQXIiC6OsB.jpg"
+  },
+  "t122194": {
+   "title": "CSI: Vegas",
+   "year": "2021",
+   "rating": 7.4,
+   "genres": [
+    "Кримінал",
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    80,
+    18,
+    9648
+   ],
+   "ov": "Facing an existential threat that could bring down the Crime Lab, a brilliant team of forensic investigators must welcome back old friends and deploy new techniques to preserve and serve justice in Sin City.",
+   "poster": "https://image.tmdb.org/t/p/w500/8DtOnaOQPiptM9umpV0Xntwv9t3.jpg"
+  },
+  "t12961": {
+   "title": "Rubí",
+   "year": "2004",
+   "rating": 8.0,
+   "genres": [
+    "Мильна опера",
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    10766,
+    18,
+    9648
+   ],
+   "ov": "Rubí Pérez  is a very beautiful but poor woman who studies at an exclusive university thanks to the financial support from Cristina , her hard-working older sister. She is best friends with Maribel de la Fuente , a kind ",
+   "poster": "https://image.tmdb.org/t/p/w500/uUYw0HKpaxZWbKkzCIPgEwXPDr3.jpg"
+  },
+  "t70593": {
+   "title": "Королівство",
+   "year": "2019",
+   "rating": 8.3,
+   "genres": [
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    18,
+    9648
+   ],
+   "ov": "У той час, коли почали поширюватися дивні чутки про хворобу жорстокого короля, тільки принц стає єдиною надією усього народу на порятунок від зарази, яка жадає людської плоті і крові, котра поширюється усім королівством.",
+   "poster": "https://image.tmdb.org/t/p/w500/ktupsg3QEhdDFUKCuq34ja8Y8SA.jpg"
+  },
+  "t69470": {
+   "title": "Дієта з Санта-Кларіти",
+   "year": "2017",
+   "rating": 7.8,
+   "genres": [
+    "Комедія",
+    "Детектив",
+    "Кримінал"
+   ],
+   "g": [
+    35,
+    9648,
+    80
+   ],
+   "ov": "Джоель і Шейла — щаслива сімейна пара батьків зі Санта-Кларіти. Одного разу Шейла вмирає і... не вмирає. Незрозуміло, як так вийшло, але жінка цілком собі жива, а серце в неї не б'ється. Крім того, Шейла раптом починає д",
+   "poster": "https://image.tmdb.org/t/p/w500/5rBjNm2sRubaXKBnU904NInFi7P.jpg"
   }
  },
  "cofid_pushed": "14.11.2026",
@@ -42358,12 +42508,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-14",
  "silpo_week": "2026-46",
- "sbm_at": 1794687348.2737744,
+ "sbm_at": 1794687649.5326838,
  "sbm_hist": [
-  [
-   "08:35",
-   92
-  ],
   [
    "08:40",
    91
@@ -42934,6 +43080,10 @@
   ],
   [
    "22:15",
+   89
+  ],
+  [
+   "22:20",
    89
   ]
  ],
@@ -45984,7 +46134,8 @@
   "ser_crime": "2026-11-14T21:40:53.057060+02:00",
   "ser_comedy": "2026-11-14T21:57:23.615828+02:00",
   "ser_drama": "2026-11-14T22:06:20.861141+02:00",
-  "ser_scifi": "2026-11-14T22:10:44.616877+02:00"
+  "ser_scifi": "2026-11-14T22:10:44.616877+02:00",
+  "ser_mystery": "2026-11-14T22:20:45.475396+02:00"
  },
  "yt_v": 4,
  "kb_probe2": "2026-46"
