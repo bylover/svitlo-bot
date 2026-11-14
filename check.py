@@ -6552,7 +6552,13 @@ ARO_BRANDS = re.compile(r"\b(dior|chanel|hermès|hermes|armani|yves saint lauren
                         r"estée lauder|estee lauder|lancaster|nuxe|uriage|eucerin|ducray|klorane|la mer|origins|moroccanoil|redken|l'oréal professionnel|loreal professionnel|kevin murphy|"
                         r"davines|living proof|king c\.? gillette|gillette|american crew|bulldog|kilian|frederic malle|frédéric malle|penhaligon'?s|acqua di parma|ex nihilo|nishane|"
                         r"zadig ?& ?voltaire|lacoste|ralph lauren|dsquared2|moschino|coach|michael kors|tommy hilfiger|abercrombie|hollister|ck one|escada|nina ricci|cacharel|"
-                        r"lancôme|sol de janeiro|kayali|juliette has a gun|memo paris|maison crivelli|vilhelm|frederic|mancera|montale|tiziana terenzi|nasomatto)\b", re.I)
+                        r"lancôme|sol de janeiro|kayali|juliette has a gun|memo paris|maison crivelli|vilhelm|frederic|mancera|montale|tiziana terenzi|nasomatto|"
+                        r"svr|a-derma|noreva|filorga|sesderma|isdin|heliocare|medik8|drunk elephant|dr\.? jart\+?|laneige|cosrx|beauty of joseon|anua|round lab|skin1004|torriden|"
+                        r"weleda|mustela|aveda|bumble and bumble|oribe|briogeo|k18|pureology|wella professionals|schwarzkopf professional|matrix|joico|alfaparf|"
+                        r"jack black|lab series|clinique for men|geo\.? f\.? trumper|d\.? ?r\.? harris|truefitt|edwin jagger|merkur|m[uü]hle|feather|the art of shaving|"
+                        r"cremo|harry'?s|nivea men|l'oréal men expert|biotherm|lierac|embryolisse|bioderma|la roche posay|avène|elemis|rituals|the inkey list|"
+                        r"ziaja|zielinski|mixa|garnier skinactive|neutrogena|dove men|old spice|rexona clinical|vichy homme|biore|kérastase|bjorn axen|nioxin|"
+                        r"dercos|phyto|rene furterer|christophe robin|ouai|dyson|panasonic|remington|wahl|valet|epsom)\b", re.I)
 ARO_SECT = {"m": ("f", "m", "чоловічі парфуми й туалетні води"), "w": ("f", "w", "жіночі парфуми й туалетні води"), "t": ("f", "t", "аромати для підлітків 14–18 (легкі, доречні в школі)"),
             "d": ("d", "u", "преміальні та аптечні дезодоранти й антиперспіранти (стіки, спреї)"), "s": ("s", "m", "засоби й інструменти для гоління та після гоління"),
             "k": ("k", "u", "догляд за обличчям, тілом і волоссям (дерматологічний і преміальний)")}
@@ -6611,12 +6617,21 @@ def _aro_found(n: str, care: bool) -> str:
     return ""
 
 
+ARO_SUB = {   # підкатегорії по черзі — щоб ШІ не повторював ті самі бестселери
+    "s": ["бальзами й лосьйони після гоління", "креми, гелі й мила для гоління", "бритви й леза (класичні, Т-подібні, касетні преміум)", "електробритви й тримери",
+          "помазки й аксесуари для гоління", "олії для гоління й засоби від подразнення та врослого волосся", "засоби для бороди (олії, бальзами, шампуні)"],
+    "k": ["вмивання й очищення обличчя", "сироватки (вітамін C, ретинол, ніацинамід, кислоти)", "зволожувальні креми для обличчя", "сонцезахисні засоби (SPF) для обличчя",
+          "догляд навколо очей", "гелі й олії для душу", "лосьйони й креми для тіла", "шампуні", "кондиціонери й маски для волосся", "незмивний догляд і стайлінг волосся",
+          "догляд за руками й ногами", "чоловічий догляд за обличчям", "корейський догляд (K-beauty)", "аптечний догляд для чутливої та атопічної шкіри"],
+}
 ARO_BASE_N = {"m": 14, "w": 14, "t": 9, "d": 6, "s": 5, "k": 6}   # скільки позицій кожного розділу вже в базовій базі бота
 ARO_MIN = 50                                          # мінімум позицій у кожному розділі парфумів
-ARO_TARGET = {"m": 50, "w": 50, "t": 50, "d": 40, "s": 40, "k": 60}   # цілі: парфуми — 50, дезодоранти й гоління — 40, обличчя/тіло/волосся — 60
+ARO_TARGET = {"m": 50, "w": 50, "t": 50, "d": 50, "s": 50, "k": 60}   # цілі: усюди мінімум 50; обличчя/тіло/волосся — 60 (три підрозділи)
 
 
 def aroma_monthly(st: dict, now: datetime) -> None:
+    if st.get("aro_v") != 2:                           # v2: ціль 50 для дезодорантів і гоління — знову добирати
+        st["aro_full"] = False; st["aro_v"] = 2
     filling = not st.get("aro_full") and _time.time() - float(st.get("aro_fill_t") or 0) > 1800   # поки розділи < 50 — кожні ~30 хв
     if not WORKER_MODE or (st.get("aro_month") == f"{now:%Y-%m}" and not st.get("aro_force") and not filling):
         return
@@ -6639,8 +6654,12 @@ def aroma_monthly(st: dict, now: datetime) -> None:
         if not need and st.get("aro_month") == f"{now:%Y-%m}" and not st.get("aro_force"):
             continue                                    # розділ уже повний і цього місяця оновлювався
         for _round in range(rounds):
-            prompt = (f"Ти експерт парфумерії й догляду (Україна, {now.year}). Запропонуй до {per} найкращих позицій категорії «{desc}»: лише визнані преміальні, нішеві або дерматологічні бренди, "
-                      f"без масмаркету; пріоритет — популярні новинки останніх 10–15 років і визнана класика; лише реальні продукти, що продаються в Україні. Не повторюй: {', '.join(have[:150])}. "
+            sub = ARO_SUB.get(sec) or [""]
+            sub_ = sub[(int(st.get("aro_sub_" + sec) or 0) + _round) % len(sub)]
+            sec_have = [str(i[3]) for i in items if str(i[0]).startswith(f"x{sec}")]
+            prompt = (f"Ти експерт парфумерії й догляду (Україна, {now.year}). Запропонуй до {per} найкращих позицій категорії «{desc}»" + (f", зараз саме підкатегорія: {sub_}" if sub_ else "") +
+                      ": лише визнані преміальні, нішеві, професійні або дерматологічні (аптечні) бренди; пріоритет — популярні новинки останніх 10–15 років і визнана класика; "
+                      f"лише реальні продукти, що продаються в Україні; повна точна назва продукту (бренд + лінійка + засіб). Не повторюй (уже є): {'; '.join((sec_have + have)[:220])[:4000]}. "
                       "Для кожної: n (бренд і назва, концентрація), y (рік, 0 якщо невідомо або для догляду), se (сезони: «літо», «зима», «весна-осінь», «весна-літо», «осінь-зима» або «усі»), "
                       "a (вік-орієнтир, напр. «25–45»), l (стійкість за відгуками, напр. «висока (8–10 год)» або «—»), no (основні ноти або склад), tg (одне з: «🔥 бестселер», «🏛 класика», «💎 нішевий», «🆕 новинка», "
                       "«💰 ціна/якість», «🧪 дерматологічний», «🧪 аптечний», «💎 преміум»), w (чому в списку, одне речення українською). "
@@ -6654,10 +6673,15 @@ def aroma_monthly(st: dict, now: datetime) -> None:
             except Exception:
                 js = {}
             real_m = aro_selfcheck([str(x.get("n") or "").strip() for x in (js.get("items") or [])[:per] if isinstance(x, dict)])
+            c_dup, c_br = [], []
             for x in (js.get("items") or [])[:per]:
-                n = str(x.get("n") or "").strip()
-                if not n or not ARO_BRANDS.search(n) or n.lower() in have or n.lower() in [str(i[3]).lower() for i in items]:
-                    continue                               # лише бренди з білого списку, без дублів
+                n = str(x.get("n") or "").strip() if isinstance(x, dict) else ""
+                if not n:
+                    continue
+                if n.lower() in have or n.lower() in [str(i[3]).lower() for i in items]:
+                    c_dup.append(n); continue              # дубль
+                if not ARO_BRANDS.search(n):
+                    c_br.append(n); continue               # бренд не з білого списку
                 import hashlib
                 iid = f"x{sec}{hashlib.md5(n.lower().encode()).hexdigest()[:8]}"   # стабільний ID (між запусками)
                 if iid in banned:
@@ -6668,6 +6692,10 @@ def aroma_monthly(st: dict, now: datetime) -> None:
                               cat, n[:70], int(x.get("y") or 0), str(x.get("se") or "усі")[:20], str(x.get("a") or "")[:12], str(x.get("l") or "—")[:30],
                               str(x.get("no") or "")[:120], str(x.get("tg") or "🆕 новинка")[:20], str(x.get("w") or "")[:160], now.strftime("%m.%Y")])
                 have.append(n.lower()); added += 1
+            if c_dup or c_br:
+                ARO_LOG.append(f"   {sec}" + (f" · {sub_[:30]}" if sub_ else "") + f": дублі {len(c_dup)}, бренд не з білого списку {len(c_br)}" + (f" ({', '.join(c_br)[:110]})" if c_br else ""))
+        if sec in ARO_SUB:
+            st["aro_sub_" + sec] = (int(st.get("aro_sub_" + sec) or 0) + rounds) % len(ARO_SUB[sec])   # наступного разу — інші підкатегорії
     st["aro_full"] = all(ARO_BASE_N[k] + sum(1 for it in items if str(it[0]).startswith(f"x{k}")) >= ARO_TARGET.get(k, ARO_MIN) for k in ARO_BASE_N)
     out = {"at": now.strftime("%d.%m.%Y"), "items": items[-600:]}
     try:
@@ -6684,6 +6712,12 @@ AROB_SECT = {"m": "чоловічі парфуми (бестселери й ви
              "t": "аромати для підлітків 14–18 (найпопулярніші й найкраще оцінені)", "face": "догляд за обличчям (вмивання, сироватки, креми, SPF) — найкраще оцінені дерматологами й покупцями",
              "hair": "догляд за волоссям (шампуні, кондиціонери, маски) — найкраще оцінені", "body": "догляд за тілом (гелі для душу, лосьйони, креми) — найкраще оцінені",
              "shave": "гоління й після гоління (бритви, електробритви, піни, бальзами) — найкраще оцінені", "deo": "дезодоранти й антиперспіранти преміум і аптечні — найкраще оцінені"}
+AROB_SUB = {"face": ["вмивання", "сироватки", "креми", "SPF", "догляд навколо очей", "маски й пілінги", "K-beauty", "аптечний для чутливої шкіри"],
+            "hair": ["шампуні", "кондиціонери", "маски", "незмивний догляд і олії", "професійне відновлення (бондинг)", "проти випадіння й лупи", "стайлінг"],
+            "body": ["гелі й олії для душу", "лосьйони й креми", "скраби", "для дуже сухої та атопічної шкіри", "креми для рук", "парфумовані лосьйони й спреї для тіла"],
+            "shave": ["бальзами після гоління", "креми й піни", "бритви й леза", "електробритви", "засоби для бороди", "від подразнення"],
+            "deo": ["преміум-парфумовані стіки", "антиперспіранти клінічної сили", "натуральні без алюмінію", "аптечні для чутливої шкіри", "спреї"],
+            "t": ["легкі свіжі для школи", "солодкі й фруктові", "спортивні", "унісекс", "недорогі від відомих брендів", "body mist і легкі туалетні води"]}
 AROB_TRUST = (r"fragrantica|parfumo|basenotes|allure|gq\.com|vogue|elle|harpersbazaar|esquire|byrdie|cosmopolitan|menshealth|womenshealth|fifiawards|fragrancefoundation|"
               r"notino|makeup\.com\.ua|eva\.ua|rozetka|sephora|douglas|lookfantastic|boots\.com|ulta|cultbeauty|cosme|dermstore|paulaschoice|"
               r"nordstrom|macys|neimanmarcus|saksfifthavenue|harrods|selfridges|bloomingdales|libertylondon|johnlewis")
@@ -6722,6 +6756,8 @@ def aroma_best(st: dict, now: datetime) -> None:
         db = {}
     if db.get("year") != yr or st.pop("arob_force", False):
         db = {"year": yr, "sect": {}, "at": ""}
+    if st.get("arob_v") != 2:                          # v2: ширший список брендів + підкатегорії — дати розділам догляду нові спроби
+        st["arob_fail"] = {}; st["arob_v"] = 2
     fails = st.setdefault("arob_fail", {})
     st["arob_full"] = all(len(db["sect"].get(k) or []) >= 50 or fails.get(k, 0) >= 3 for k in AROB_SECT) and db.get("year") == yr
     todo = [k for k in AROB_SECT if len(db["sect"].get(k) or []) < 50 and fails.get(k, 0) < 3][:1]   # добираємо до 50 (до 3 спроб без приросту)   # порожні/малі — повторюємо (до 3 спроб); 1 розділ за запуск
@@ -6734,7 +6770,10 @@ def aroma_best(st: dict, now: datetime) -> None:
         for part in (1, 2, 3, 4):                         # менші порції (по 13) — щоб відповідь ШІ не обрізалась
             if len(out) >= 50:
                 break
-            raw = gemini(f"Ти редактор рейтингу «найкраще з найкращого» ({yr}). Категорія: {AROB_SECT[k]}. Лише визнані бренди без масмаркету, що продаються в Україні. "
+            sub = AROB_SUB.get(k) or []
+            sub_ = sub[(len(out) // 13 + part - 1) % len(sub)] if sub else ""
+            raw = gemini(f"Ти редактор рейтингу «найкраще з найкращого» ({yr}). Категорія: {AROB_SECT[k]}" + (f", зараз саме: {sub_}" if sub_ else "") +
+                         ". Лише визнані преміальні, професійні або аптечні бренди, що продаються в Україні; повна точна назва засобу. "
                          f"Склади список із 13 {'найкращих' if part == 1 else 'наступних (інших, ніж уже названі)'} позицій за визнанням: бестселери, переможці премій "
                          "(Fragrantica Community Awards, FiFi Awards, Allure Best of Beauty, GQ Grooming Awards) і стабільно високі оцінки спільнот і покупців. "
                          + (f"Не повторюй: {', '.join(x[0] for x in out)[:2500]}. " if out else "") +
@@ -6972,7 +7011,8 @@ TOY_SECT = {   # ключ: (назва, група, опис для ШІ, пор
     "vib": ("💗 Вібратори й «кролики»", "w", "класичні вібратори та «кролики» (rabbit) для подвійної стимуляції", "Обирайте медичний силікон; до силіконових іграшок — лише лубрикант на водній основі."),
     "gspot": ("🎯 Для точки G", "w", "вібратори та стимулятори для точки G", "Вигнута форма й тиск важливіші за потужність вібрації."),
     "tap": ("🫳 «Тапалки» (tapping)", "w", "кліторальні стимулятори з постукуванням або «язичком» (tapping / flicking / fluttering) — нова категорія 2023–2026 років, без вакууму й класичної вібрації; "
-            "беріть найсвіжіші й найкраще оцінені моделі; зразки потрібного типу: Lola Games AvoTap, Unihorn Karma, Satisfyer Tap & Climax, Kisstoy Polly — шукай саме такі й подібні",
+            "беріть найсвіжіші й найкраще оцінені моделі; зразки потрібного типу: Lola Games AvoTap, Unihorn Karma Lilac, Satisfyer Tap & Climax 1, Satisfyer Tap & Climax 2 — шукай саме такі й подібні. "
+            "НЕ включай вакуумні / air-pulse (Womanizer, We-Vibe Melt, Satisfyer Pro, Lelo Sona), «язички» з вібрацією без постукування й класичні вібратори",
             "Починайте з найнижчої швидкості; крапля лубриканту на водній основі робить дотики м'якшими."),
     "puls": ("🔁 Пульсатори (thrusting)", "w", "пульсатори й thrusting-іграшки зі зворотно-поступальним рухом замість вібрації (зокрема з підігрівом і подвійною стимуляцією)", "Використовуйте з достатньою кількістю лубриканту; починайте з найповільнішого режиму."),
     "bullet": ("💊 Міні-вібратори й віброкулі", "w", "міні-вібратори, віброкулі, вібратори-«помади»", "Зручні для подорожей; перевіряйте клас водозахисту."),
@@ -7008,6 +7048,68 @@ TOY_SECT = {   # ключ: (назва, група, опис для ШІ, пор
     "clean": ("🧼 Догляд за іграшками", "l", "очищувачі, антибактеріальні засоби й чохли для зберігання іграшок", "Мийте до й після використання; зберігайте окремо, щоб матеріали не реагували між собою."),
     "new": ("🆕 Новинки року", "top", "найпомітніші новинки секс-іграшок останнього року (усі категорії) від перевірених брендів", "Новинки дорожчі на старті — перевірте огляди перед покупкою."),
 }
+
+
+TOY_SEED = {   # моделі, які адміністратор назвав зразками виду: завжди в топі, без пошукових перевірок
+    "tap": ["Lola Games AvoTap", "Unihorn Karma Lilac", "Satisfyer Tap & Climax 1", "Satisfyer Tap & Climax 2"],
+}
+
+
+TOY_MALE = re.compile(r"\b(tenga|fleshlight|arcwave|kiiroo keon|masturbator|stroker|sleeve|мастурбатор|pocket pussy|egg\b(?=.*tenga)|cock ?ring|penis|prostate|простат|"
+                      r"aneros|bathmate|hydromax|handy|autoblow|calor|ion|pulse solo|hot octopuss pulse|lelo f1s|we-?vibe vector|satisfyer men|womanizer men|lovense max|lovense edge|lovense gush|"
+                      r"lovense solace|svakom sam|svakom alex|blowjob|для чоловіків|for men|male)\b", re.I)
+TOY_FEMALE = re.compile(r"\b(clitoral|clit|g-?spot|rabbit|kegel|vagin|для жінок|for women|womanizer (?!men)|satisfyer pro|satisfyer curvy|lelo sona|lelo enigma|lelo gigi|"
+                        r"lovense lush|lovense nora|we-?vibe (melt|moxie|jive|wish|rave|touch)|egg vibrator|panty|вібротрусики|віброяйце)\b", re.I)
+
+
+TOY_EN = {   # англомовні пошукові запити: звідси беремо назви моделей з оглядів як підказку для ШІ
+    "vac": ["best air pulse clitoral stimulator", "best suction vibrator review"], "wand": ["best wand vibrator review", "best wand massager"],
+    "vib": ["best rabbit vibrator review", "best vibrator for women"], "gspot": ["best g-spot vibrator review"],
+    "tap": ["best tapping vibrator", "tapping clitoral stimulator review", "tapping sex toy", "flicking tongue vibrator review", "clit tapper toy", "new tapping toy 2025", "tap vibrator Satisfyer Lola Unihorn"],
+    "puls": ["best thrusting vibrator review", "pulsator thrusting toy"], "bullet": ["best bullet vibrator review", "best lipstick vibrator"],
+    "wear": ["best wearable vibrator app", "best panty vibrator review"], "dildo": ["best silicone dildo review", "best glass dildo"],
+    "kegel": ["best kegel balls review", "smart kegel trainer"], "mast": ["best male masturbator review", "best stroker sleeve"],
+    "auto": ["best automatic male masturbator review", "best interactive stroker"], "ring": ["best vibrating cock ring review"],
+    "prost": ["best prostate massager review"], "pump": ["best penis pump review", "hydro pump review"], "sleeve": ["best penis sleeve extender review"],
+    "together": ["best sex toy to use during sex", "best hands-free couples toy small"], "couple": ["best couples vibrator review"],
+    "remote": ["best long distance sex toy app"], "plug": ["best butt plug for beginners review", "best vibrating butt plug"],
+    "anal": ["best anal beads review"], "strap": ["best strap on harness review"], "bdsm": ["best bdsm starter kit"], "game": ["best sex game for couples"],
+    "lubew": ["best water based lube review"], "lubes": ["best silicone lube review"], "lubeh": ["best hybrid lube review"], "lubewarm": ["best warming lube review"],
+    "lubecool": ["best tingling cooling lube"], "lubeanal": ["best anal lube review"], "lubetaste": ["best flavored lube review"],
+    "liquid": ["best clitoral arousal gel review", "liquid vibrator review"], "prolong": ["best delay spray review"], "massage": ["best massage candle review", "best massage oil couples"],
+    "clean": ["best sex toy cleaner review"], "new": ["best new sex toys 2026", "new sex toy launches 2026"],
+}
+
+
+def toy_web_hint(k: str) -> str:
+    """Заголовки з англомовного пошуку (огляди, магазини) — підказка ШІ, які моделі зараз обговорюють."""
+    seen, out = set(), []
+    for q in TOY_EN.get(k, [])[:4 if k == "tap" else 2]:
+        for _h, t in (web_hits(q) or [])[:10]:
+            t = re.sub(r"\s+", " ", t).strip()
+            if t and t.lower() not in seen:
+                seen.add(t.lower()); out.append(t[:110])
+    return " | ".join(out[:30])
+
+
+def toy_gender_ok(n: str, grp: str) -> bool:
+    """Груба перевірка статі: «Для неї» — без чоловічих мастурбаторів/кілець/простати, «Для нього» — без кліторальних і «кроликів»."""
+    if grp == "w":
+        return not TOY_MALE.search(n)
+    if grp == "m":
+        return not TOY_FEMALE.search(n)
+    return True
+
+
+def ai_fitcheck(names: list, desc: str) -> set:
+    """Чи належить модель саме до цього виду (напр., вакуумний We-Vibe Melt — не «тапалка»). Якщо ШІ не відповів — пропускаємо всі."""
+    if not names:
+        return set()
+    raw = gemini(f"Вид іграшок: {desc}.\nДля кожної моделі зі списку визнач, чи ЇЇ ОСНОВНИЙ принцип дії відповідає саме цьому виду. "
+                 "Моделі іншого типу (напр., вакуумна замість постукування, звичайний вібратор замість пульсатора) — прибери. "
+                 "Поверни JSON {\"ok\": [точні назви зі списку, які відповідають виду]}.\n" + "\n".join(names), json_mode=True, relaxed=True, max_tokens=1500)
+    ok = json_loose(raw).get("ok")
+    return {str(x).strip().lower() for x in ok} if isinstance(ok, list) else {n.lower() for n in names}
 
 
 def ai_selfcheck(names: list, what: str) -> set:
@@ -7080,24 +7182,45 @@ def toys_verify(st: dict, now: datetime) -> None:
         db = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=toys.json") or {}
     except Exception:
         return
-    todo = [k for k, v in (db.get("sect") or {}).items() if v.get("items") and v.get("vf") != 3]
+    todo = [k for k, v in (db.get("sect") or {}).items() if v.get("items") and v.get("vf") != 4]
+    todo.sort(key=lambda k_: (db["sect"][k_].get("g") not in ("w", "m"), k_ == "new"))   # спершу «Для неї» / «Для нього» — там знайдено чоловічі в жіночих
     if not todo:
         return
     k = todo[0]; v = db["sect"][k]
     keep, gone, unk = [], [], 0
-    for x in v["items"]:
+    seeds_l = {n.lower() for n in TOY_SEED.get(k) or []}
+    if k in TOY_SECT and not v.get("fit"):              # 🎯 чи це саме цей вид і чи та стать (нові правила v4) — один раз
+        v["fit"] = 1
+        fit = ai_fitcheck([x[0] for x in v["items"]], TOY_SECT[k][2])
+        wrong = [x[0] for x in v["items"] if x[0].lower() not in seeds_l and (x[0].lower() not in fit or not toy_gender_ok(x[0], v.get("g", "")))]
+        if wrong:
+            v["items"] = [x for x in v["items"] if x[0] not in wrong]
+            TOY_LOG.append(f"🎯 «{k}»: не той вид / не та стать — прибрано {len(wrong)}: {', '.join(wrong)[:150]}")
+            v["d"] = ""                                  # розділ поменшав — перезібрати першим у черзі
+    if not v["items"]:
+        v["vf"] = 4
+        try:
+            http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=toys.json", db)
+        except Exception:
+            pass
+        toy_log_push(now); return
+    res = [(x, None if x[0].lower() in TOY_BAN else toy_exists(x[0])) for x in v["items"]]
+    n_false = sum(1 for x, r in res if r is False and x[0].lower() not in TOY_BAN)
+    soft = n_false > max(2, len(res) // 2)              # пошук «не знайшов» більшість — для нової/нішевої категорії це збій пошуку, а не підробки
+    for x, r in res:
         if x[0].lower() in TOY_BAN:
             gone.append(x[0]); continue
-        r = toy_exists(x[0])
-        if r is False:
+        if r is False and not soft and x[0].lower() not in seeds_l:
             gone.append(x[0]); continue
-        x = list(x[:6]) + [1 if r else 0]                # [6] — 1 підтверджено пошуком / 0 не перевірено
-        unk += r is None
+        x = list(x[:6]) + [1 if r else 0]                # [6] — 1 підтверджено пошуком / 0 не перевірено (❔)
+        unk += r is not True
         keep.append(x)
+    if soft:
+        TOY_LOG.append(f"⚠️ «{k}»: пошук не знайшов {n_false} з {len(res)} — схоже на збій пошуку, моделі лишаю з позначкою ❔")
     keep.sort(key=lambda x: -x[6])                       # неперевірені — в кінець
     v["items"] = keep
     if unk < max(1, len(keep)) // 2:
-        v["vf"] = 3                                      # пошук працював — вид перевірено
+        v["vf"] = 4                                      # пошук працював — вид перевірено
     TOY_LOG.append(f"🔎 Перевірка «{k}»: лишилось {len(keep)}, прибрано {len(gone)}" + (f" ({', '.join(gone)[:120]})" if gone else "") + (f", без перевірки {unk}" if unk else ""))
     print(TOY_LOG[-1])
     try:
@@ -7119,19 +7242,33 @@ def toys_build(st: dict, now: datetime) -> None:
     except Exception:
         return
     db.setdefault("sect", {})
-    if st.get("toys_v") != 2:                          # нова версія описів — «тапалки» й «пульсатори» зібрати заново
-        for k_ in ("tap", "puls"):
-            db["sect"].pop(k_, None)
-        st["toys_v"] = 2
+    if st.get("toys_v") != 3:                          # v3: перевірка «чи це саме цей вид» + закріплені зразки — «тапалки» зібрати заново
+        for k_ in ("tap",) if st.get("toys_v") == 2 else ("tap", "puls"):
+            (db["sect"].get(k_) or {})["d"] = ""       # не видаляємо (щоб кнопка не зникала) — лише ставимо першими в чергу
+        st["toys_v"] = 3
     old = (now - timedelta(days=60)).strftime("%Y-%m-%d")
-    todo = [k for k in TOY_SECT if (db["sect"].get(k) or {}).get("d", "") < old or len((db["sect"].get(k) or {}).get("items") or []) < 5]
-    todo.sort(key=lambda k: k not in ("tap", "puls", "together"))   # нові види — першими
+    sec_ = lambda k: db["sect"].get(k) or {}
+    todo = [k for k in TOY_SECT if sec_(k).get("d", "") < old or (len(sec_(k).get("items") or []) < 12 and int(sec_(k).get("tries") or 0) < 4)]
+    todo.sort(key=lambda k: (k != "tap", len(sec_(k).get("items") or [])))   # тапалки першими, далі — найменші
+    if not todo:
+        return
     if not todo:
         return
     st["toys_last"] = _time.time()
     k = todo[0]
     title, grp, desc, tip = TOY_SECT[k]
-    raw = gemini(f"Ти експерт із секс-іграшок і сексуального здоров'я (sexual wellness), складаєш споживчий рейтинг. Категорія: {desc}. "
+    rej = (db.setdefault("rej", {}).get(k) or [])[-40:]   # моделі, які пошук уже відкинув, — не пропонувати знову
+    excl = (" Не пропонуй ці моделі (не знайшлися в продажу): " + "; ".join(rej) + ".") if rej else ""
+    seeds = TOY_SEED.get(k) or []
+    if seeds:
+        excl += " Обов'язково включи (це перевірені зразки виду): " + "; ".join(seeds) + "."
+    hint = toy_web_hint(k)
+    if hint:
+        excl += (" Ось заголовки англомовних оглядів і магазинів з пошуку (tap, tapping, flicking тощо) — візьми з них реальні моделі саме цього виду: " + hint[:2500] + ".")
+    old_n = [o[0] for o in (db["sect"].get(k) or {}).get("items") or []]
+    if old_n:
+        excl += " Уже в топі (можеш лишити, але додай ІНШІ, щоб було 15): " + "; ".join(old_n) + "."
+    raw = gemini(f"Ти експерт із секс-іграшок і сексуального здоров'я (sexual wellness), складаєш споживчий рейтинг. Категорія: {desc}.{excl} "
                  "Склади топ-15 найкращих моделей у порядку від найкращої. Критерії: оцінки й відгуки покупців на великих майданчиках (Amazon, Lovehoney, офіційні магазини брендів, "
                  "великі українські секс-шопи), огляди авторитетних медіа (Wirecutter, Cosmopolitan, Women's Health, Men's Health, Self, Mashable, Good Housekeeping), галузеві нагороди "
                  "(XBIZ, EAN Erotix, AVN «O» Awards, Red Dot). Лише перевірені відомі бренди з безпечними для тіла матеріалами; без ноунеймів і підробок; бажано те, що продається в Україні. "
@@ -7141,23 +7278,54 @@ def toys_build(st: dict, now: datetime) -> None:
     items = json_loose(raw).get("items") or []
     if not raw or not items:
         TOY_LOG.append(f"🤖 «{k}»: ШІ не відповів ({GEM_STATE.get('err', 'порожньо')})"); toy_log_push(now); return
-    real = ai_selfcheck([str(x.get("n") or "").strip() for x in items if isinstance(x, dict)], "секс-іграшки, лубриканти чи аксесуари")
-    out, seen, bad = [], set(), 0
+    seed_l = {n.lower() for n in seeds}
+    names_ = [str(x.get("n") or "").strip() for x in items if isinstance(x, dict)]
+    old_items = (db["sect"].get(k) or {}).get("items") or []
+    real = ai_selfcheck(names_, "секс-іграшки, лубриканти чи аксесуари")
+    fit = ai_fitcheck(list(dict.fromkeys(names_ + [o[0] for o in old_items])), TOY_SECT[k][2])   # 🎯 чи це саме цей вид (нові + старі)
+    out, seen, bad, cand = [], set(), 0, []
     for x in items:
         n = str(x.get("n") or "").strip() if isinstance(x, dict) else ""
         if not n or n.lower() in seen:
             continue
+        seen.add(n.lower())
+        if n.lower() in seed_l:
+            continue                                     # зразки додаємо окремо нижче
+        if n.lower() not in fit or not toy_gender_ok(n, grp):
+            bad += 1; TOY_LOG.append(f"↷ не цей вид: {n[:50]}"); continue
         if not TOY_BRANDS.search(n) or n.lower() not in real or n.lower() in TOY_BAN:
             bad += 1; continue                           # не з білого списку брендів, самоперевірка не підтвердила або прибрано вручну
-        ex_ = toy_exists(n)                              # 🔎 модель має знайтися на сайті бренду, в магазині чи медіа
-        if ex_ is False:
-            bad += 1; TOY_LOG.append(f"↷ не знайдено в пошуку: {n[:50]}"); continue
-        seen.add(n.lower())
+        cand.append((x, n, toy_exists(n)))               # 🔎 модель має знайтися на сайті бренду, в магазині чи медіа
+    n_false = sum(1 for *_, e in cand if e is False)
+    soft = n_false > max(2, len(cand) // 2)              # пошук відкинув більшість — збій пошуку / нова категорія: лишаємо з ❔
+    if soft:
+        TOY_LOG.append(f"⚠️ «{k}»: пошук не знайшов {n_false} з {len(cand)} — лишаю їх з позначкою ❔")
+    db.setdefault("rej", {})
+    for x, n, ex_ in cand:
+        if ex_ is False and not soft:
+            bad += 1; TOY_LOG.append(f"↷ не знайдено в пошуку: {n[:50]}")
+            db["rej"].setdefault(k, []).append(n[:60]); continue
         out.append([n[:70], str(x.get("why") or "")[:160], str(x.get("feat") or "")[:200], str(x.get("who") or "")[:120],
                     (re.findall(r"₴+", str(x.get("price") or "")) or ["₴₴"])[0][:3], 1 if x.get("new") in (True, "true", 1) else 0, 1 if ex_ else 0])
+    db["rej"][k] = (db["rej"].get(k) or [])[-40:]
     out.sort(key=lambda x_: -x_[6])                      # підтверджені пошуком — вище; порядок усередині зберігається
-    if len(out) >= 5 or not (db["sect"].get(k) or {}).get("items"):
-        db["sect"][k] = {"t": title, "g": grp, "tip": tip, "d": now.strftime("%Y-%m-%d"), "items": out[:15], "vf": 3}
+    by_n = {str(x.get("n") or "").strip().lower(): x for x in items if isinstance(x, dict)}
+    pinned = []
+    for n in seeds:                                      # 📌 зразки виду — завжди першими
+        x = by_n.get(n.lower()) or next((o for o in old_items if o[0].lower() == n.lower()), None)
+        if isinstance(x, list):
+            pinned.append(list(x[:6]) + [1]); continue
+        x = x or {}
+        pinned.append([n, str(x.get("why") or "зразок виду: тапінг-стимуляція (постукування), нова категорія")[:160], str(x.get("feat") or "")[:200],
+                       str(x.get("who") or "")[:120], (re.findall(r"₴+", str(x.get("price") or "")) or ["₴₴"])[0][:3], 1 if x.get("new") in (True, "true", 1) else 0, 1])
+    out = pinned + out
+    if old_items:                                        # доповнюємо наявними (лише того самого виду й статі) — розділ лише росте
+        have = {o[0].lower() for o in out}
+        out += [o for o in old_items if o[0].lower() not in have and o[0].lower() in fit and toy_gender_ok(o[0], grp)][:15 - len(out)]
+    prev = sec_(k)
+    tries = 0 if len(out) >= 12 else (int(prev.get("tries") or 0) + 1 if len(out) <= len(old_items) else int(prev.get("tries") or 0))   # без приросту — після 4 спроб чекаємо 60 днів
+    if out or not old_items:
+        db["sect"][k] = {"t": title, "g": grp, "tip": tip, "d": now.strftime("%Y-%m-%d"), "items": out[:15], "vf": 4, "fit": 1, "tries": tries}
     db["at"] = now.strftime("%d.%m.%Y")
     TOY_LOG.append(f"🧸 «{k}» {title}: ШІ ({GEM_STATE.get('src', '?')}) {len(items)} → у топі {len(out)} · ✗ {bad} · готово розділів {sum(1 for v in db['sect'].values() if v.get('items'))}/{len(TOY_SECT)}")
     print(TOY_LOG[-1])
