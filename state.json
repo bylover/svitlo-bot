@@ -733,7 +733,7 @@
   "t248830",
   "t48891"
  ],
- "gh_beat": "2026-11-14T14:05:45.585725+02:00",
+ "gh_beat": "2026-11-14T14:10:47.575944+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -1691,14 +1691,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "14.11 14:07",
-   "ts": 1794658038,
+   "at": "14.11 14:12",
+   "ts": 1794658376,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "14.11 14:07",
-   "ts": 1794658038,
+   "at": "14.11 14:12",
+   "ts": 1794658376,
    "ok": true,
    "note": ""
   },
@@ -1721,8 +1721,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "14.11 14:02",
-   "ts": 1794657743,
+   "at": "14.11 14:13",
+   "ts": 1794658416,
    "ok": true,
    "note": ""
   },
@@ -30224,10 +30224,16 @@
    89,
    76,
    "2026-11-14"
+  ],
+  "tt15740736": [
+   6.5,
+   null,
+   null,
+   "2026-11-14"
   ]
  },
  "pushed_h": {
-  "gs": "24228761cace",
+  "gs": "b54b28d82d2c",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "cd1569e0a101",
   "sexed.json": "0362ec7e46d4",
@@ -44077,6 +44083,111 @@
    ],
    "ov": "Сюжет фільму розгортається 1998 року в Макао. Саме тоді, коли влада в Макао переходила від португальських колонізаторів до уряду Китайської Народної Республіки. Острів моментально перетворився на арену лютої боротьби за ",
    "poster": "https://image.tmdb.org/t/p/w500/2civVyrwbilzNQRv2TRd3r6Fm2R.jpg"
+  },
+  "m432068": {
+   "title": "1+1=Весілля",
+   "year": "2017",
+   "rating": 6.9,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Макс, організатор заходів, повинен провести весілля в замку 17-го століття. Під його контролем все - банкет, фотограф, кухарі та офіціанти, здавалося б, що може піти не так? Але як відомо, якщо щось може трапитися - воно",
+   "poster": "https://image.tmdb.org/t/p/w500/rqLS0hg9gHRPIYjSEjOKmrxjE9v.jpg"
+  },
+  "m375262": {
+   "title": "Фаворитка",
+   "year": "2018",
+   "rating": 7.5,
+   "genres": [
+    "Історичний",
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    36,
+    35,
+    18
+   ],
+   "ov": "Дія картини проходить за часів правління королеви Анни, останнього представника династії Стюартів.",
+   "poster": "https://image.tmdb.org/t/p/w500/aAP9iXj4LFqu7BNfHtlXKAeXmf3.jpg"
+  },
+  "m455207": {
+   "title": "Шалені багатії",
+   "year": "2018",
+   "rating": 6.9,
+   "genres": [
+    "Комедія",
+    "Мелодрама"
+   ],
+   "g": [
+    35,
+    10749
+   ],
+   "ov": "Екранізація бестселлера Кевіна Квана про нечувано багату азіатську сім'ю зі старомодними принципами. Її спадкоємець Нік Янг привозить з Нью-Йорку свою кохану Рейчел, яка навіть не підозрювала про його походження. Проста ",
+   "poster": "https://image.tmdb.org/t/p/w500/8Qh8aQEXQztbHwP0xuNaPRhSLKM.jpg"
+  },
+  "m491418": {
+   "title": "Родина за хвилину",
+   "year": "2018",
+   "rating": 7.3,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Історія про подружжя, що зважилось всиновити дитину. Та не одну, а одразу трьох! Смішна і зворушлива комедія про радощі та труднощі сімейних буднів.",
+   "poster": "https://image.tmdb.org/t/p/w500/lS9BRytPM862SPke8ZTBP81M1yV.jpg"
+  },
+  "m158445": {
+   "title": "7번방의 선물",
+   "year": "2013",
+   "rating": 8.1,
+   "genres": [
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    18,
+    35
+   ],
+   "ov": "A story about a mentally ill man wrongfully imprisoned for murder and his relationship with his 6 year old daughter.",
+   "poster": "https://image.tmdb.org/t/p/w500/c9TqJPm4pZCuiEXumTayoNIrBSK.jpg"
+  },
+  "m84111": {
+   "title": "那些年，我們一起追的女孩",
+   "year": "2011",
+   "rating": 7.5,
+   "genres": [
+    "Мелодрама",
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    10749,
+    35,
+    18
+   ],
+   "ov": "A group of close friends who attend a private school all have a debilitating crush on the sunny star pupil, Shen Chia-yi. The only member of the group who claims not to is Ko Ching-teng, but he ends up loving her as well",
+   "poster": "https://image.tmdb.org/t/p/w500/8RzySj0enMBxzto3m7iIfYQSWiC.jpg"
+  },
+  "m180147": {
+   "title": "Nosotros los nobles",
+   "year": "2013",
+   "rating": 7.3,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Tells the \"riches to rags\" story of the Nobles, three upper-class twenty-somethings that appear to have no limits to their checkbooks, and no direction in their lives. Until one day, their father tries to teach them a le",
+   "poster": "https://image.tmdb.org/t/p/w500/mBI1WTduABARAPzOhi8k0Sh2F6b.jpg"
   }
  },
  "cofid_pushed": "14.11.2026",
@@ -44164,12 +44275,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-14",
  "silpo_week": "2026-46",
- "sbm_at": 1794657951.304388,
+ "sbm_at": 1794658252.4376483,
  "sbm_hist": [
-  [
-   "01:00",
-   90
-  ],
   [
    "01:05",
    90
@@ -44740,6 +44847,10 @@
   ],
   [
    "14:05",
+   64
+  ],
+  [
+   "14:10",
    64
   ]
  ],
@@ -47743,7 +47854,7 @@
  "warned": "2026-11-13",
  "toyn_week": "202646",
  "toys_v": 3,
- "toys_last": 1794657391.381482,
+ "toys_last": 1794658302.8850505,
  "toy_ban": [],
  "kino_q": [
   {
@@ -47882,7 +47993,7 @@
   "mix": "2026-11-14T12:40:50.004374+02:00",
   "drama": "2026-11-14T12:50:45.474149+02:00",
   "thriller": "2026-11-14T13:50:45.912049+02:00",
-  "comedy": "2026-11-14T02:10:44.681854+02:00",
+  "comedy": "2026-11-14T14:10:47.665968+02:00",
   "horror": "2026-11-14T02:20:47.359097+02:00",
   "scifi": "2026-11-14T02:30:52.715673+02:00",
   "romance": "2026-11-14T02:40:46.719265+02:00",
