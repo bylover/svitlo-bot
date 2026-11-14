@@ -6996,6 +6996,170 @@ def pl_build(st: dict, now: datetime) -> None:
         print(f"Плейлисти → бот: {err_text(e)[:60]}")
 
 
+# ---------- 🧑‍💻 Радар вакансій: DOU + Djinni (RSS) → дата-інженери, аналітики, BI, Oracle/PL/SQL, DWH/ETL; оцінка збігу — у боті за стеком кожного ----------
+JOB_DOU = ["https://jobs.dou.ua/vacancies/feeds/?category=Data%20Engineer", "https://jobs.dou.ua/vacancies/feeds/?category=Data%20Science",
+           "https://jobs.dou.ua/vacancies/feeds/?category=Analyst", "https://jobs.dou.ua/vacancies/feeds/?category=DBA"] + \
+          [f"https://jobs.dou.ua/vacancies/feeds/?search={urllib.parse.quote(q)}" for q in ("oracle", "pl/sql", "power bi", "informatica", "dwh", "data engineer", "data analyst", "bi developer", "etl")]
+JOB_DJ = [f"https://djinni.co/jobs/rss/?primary_keyword={urllib.parse.quote(k)}" for k in ("Data Engineer", "Data Analyst", "SQL / DBA", "Business Analyst")] + \
+         [f"https://djinni.co/jobs/rss/?keywords={urllib.parse.quote(k)}" for k in ("oracle", "power bi", "informatica", "pl/sql", "dwh")]
+JOB_SKILLS = {"oracle": r"\boracle\b", "pl/sql": r"pl\s*/\s*sql|plsql", "sql": r"\bsql\b", "t-sql": r"t-?sql|ms ?sql|sql server", "postgresql": r"postgre", "power bi": r"power\s*bi",
+              "dax": r"\bdax\b", "tableau": r"tableau", "qlik": r"\bqlik", "looker": r"\blooker\b", "informatica": r"informatica", "ssis": r"\bssis\b", "ssrs": r"\bssrs\b|report builder|paginated",
+              "etl": r"\betl\b|\belt\b", "dwh": r"\bdwh\b|data ?warehouse|сховищ", "airflow": r"airflow", "spark": r"\bspark\b|pyspark", "databricks": r"databricks", "snowflake": r"snowflake",
+              "dbt": r"\bdbt\b", "bigquery": r"bigquery", "redshift": r"redshift", "aws": r"\baws\b", "azure": r"\bazure\b", "gcp": r"\bgcp\b|google cloud", "python": r"\bpython\b",
+              "kafka": r"\bkafka\b", "excel": r"\bexcel\b", "clickhouse": r"clickhouse", "data vault": r"data ?vault", "kimball": r"kimball|star schema|зірков"}
+JOB_ROLE = re.compile(r"data ?engineer|data ?analyst|аналітик даних|bi\b|business intelligence|power ?bi|dwh|etl|oracle|pl/?sql|sql|dba|database|analytics engineer|reporting|звітн|data ?warehouse|big data|data ?architect", re.I)
+JOB_TEL = re.compile(r"kyivstar|київстар|lifecell|лайфсел|vodafone|водафон|ukrtelecom|укртелеком|datagroup|volia|воля|triolan|telecom|телеком|оператор зв|mobile operator|мобільн\w+ оператор", re.I)
+
+
+def _job_rss(url: str) -> list:
+    import xml.etree.ElementTree as ET
+    root = ET.fromstring(http_text(url))
+    out = []
+    for it in list(root.iter("item"))[:60]:
+        g = lambda t: (it.findtext(t) or "").strip()
+        out.append({"t": g("title"), "l": g("link").split("?utm")[0], "d": g("description"), "pd": g("pubDate")})
+    return out
+
+
+def jobs_build(st: dict, now: datetime) -> None:
+    """Кожні ~2 год: нові вакансії з DOU і Djinni → jobs.json (останні 21 день, до 400)."""
+    if not WORKER_MODE or _time.time() - float(st.get("jobs_last") or 0) < 7000:
+        return
+    st["jobs_last"] = _time.time()
+    try:
+        db = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=jobs.json") or {}
+    except Exception:
+        db = {}
+    items = {x["id"]: x for x in (db.get("items") or [])}
+    log, ok_src = [], {"dou": 0, "djinni": 0}
+    for src, urls in (("dou", JOB_DOU), ("djinni", JOB_DJ)):
+        for u in urls:
+            try:
+                rows = _job_rss(u); ok_src[src] += len(rows)
+            except Exception as e:
+                log.append(f"{src}: {err_text(e)[:50]}"); continue
+            for r in rows:
+                if not r["l"] or not r["t"]:
+                    continue
+                jid = src[:2] + hashlib.md5(r["l"].encode()).hexdigest()[:10]
+                if jid in items:
+                    continue
+                desc = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", r["d"]))).strip()
+                blob = (r["t"] + " " + desc).lower()
+                if not JOB_ROLE.search(r["t"]) and not (JOB_ROLE.search(desc[:600]) and re.search(r"oracle|pl/?sql|power ?bi|informatica|dwh|data ?engineer", blob)):
+                    continue
+                title, co, city = r["t"], "", ""
+                m = re.match(r"(.+?)\s+в\s+(.+?)(?:,\s*(.+))?$", r["t"])            # DOU: «Посада в Компанія, Київ, віддалено»
+                if src == "dou" and m:
+                    title, co, city = m.group(1), m.group(2), m.group(3) or ""
+                sal = (re.findall(r"\$\s?\d[\d\s]*(?:[–-]\s?\$?\s?\d[\d\s]*)?|\d[\d\s]*\s?[–-]\s?\d[\d\s]*\s?\$|до \$?\d[\d\s]*\$?", r["t"] + " " + desc[:300]) or [""])[0].strip()
+                if src == "djinni" and not co:
+                    mc = re.search(r"(?:Компанія|Company)[:\s]+([^\n.,]{2,40})", desc); co = mc.group(1).strip() if mc else ""
+                if not city:
+                    mc = re.search(r"\b(Київ|Kyiv|Львів|Lviv|Харків|Дніпро|Одеса|віддалено|remote|Remote)\b", desc[:400]); city = mc.group(1) if mc else ""
+                kw = [k for k, rx in JOB_SKILLS.items() if re.search(rx, blob)]
+                try:
+                    import email.utils
+                    ts = email.utils.parsedate_to_datetime(r["pd"]).strftime("%Y-%m-%d %H:%M") if r["pd"] else now.strftime("%Y-%m-%d %H:%M")
+                except Exception:
+                    ts = now.strftime("%Y-%m-%d %H:%M")
+                items[jid] = {"id": jid, "t": title[:110], "co": co[:50], "city": city[:40], "l": r["l"], "src": src, "sal": sal[:30], "kw": kw,
+                              "tel": 1 if JOB_TEL.search(blob) else 0, "ts": ts, "add": now.strftime("%Y-%m-%d %H:%M"), "ds": desc[:700]}
+    old = (now - timedelta(days=21)).strftime("%Y-%m-%d")
+    keep = sorted((x for x in items.values() if x["add"][:10] >= old), key=lambda x: x["add"], reverse=True)[:400]
+    new_n = sum(1 for x in keep if x["add"] == now.strftime("%Y-%m-%d %H:%M"))
+    out = {"at": now.strftime("%d.%m %H:%M"), "items": keep, "log": (log + [f"DOU {ok_src['dou']} · Djinni {ok_src['djinni']} у стрічках · нових відібрано {new_n} · у базі {len(keep)}"])[-12:]}
+    print(f"🧑‍💻 Вакансії: {out['log'][-1]}")
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=jobs.json", out)
+    except Exception as e:
+        print(f"Вакансії → бот: {err_text(e)[:60]}")
+
+
+# ---------- 🎓 НМТ: банк реальних завдань з онлайн-тестів ЗНО-ОНЛАЙН (zno.osvita.ua) — ШІ лише витягує завдання з тексту сторінки, нічого не вигадує ----------
+NMT_SUBJ = {"ukrmova": "українська мова", "mathematics": "математика", "ukraine-history": "історія України", "english": "англійська мова"}
+NMT_MAX_TESTS = 14                                     # останніх тестів на предмет
+
+
+def _nmt_text(html_: str) -> str:
+    h = re.sub(r"(?is)<(script|style|noscript)[^>]*>.*?</\1>", " ", html_)
+    h = re.sub(r"(?is)<img[^>]*>", " [зображення] ", h)
+    h = re.sub(r"(?i)<br\s*/?>|</(p|div|li|tr|h\d|table|label)>", "\n", h)
+    h = re.sub(r"(?i)</t[dh]>", " | ", h)
+    t = html.unescape(re.sub(r"<[^>]+>", " ", h))
+    t = re.sub(r"[ \t ]+", " ", t)
+    t = re.sub(r"\n\s*\n+", "\n", t)
+    i = t.find("Завдання 1 з")
+    return t[i:] if i >= 0 else t
+
+
+def nmt_build(st: dict, now: datetime) -> None:
+    """Раз на тиждень шукає нові тести; за запуск розбирає до 2 тестів (ШІ витягує завдання з однією правильною відповіддю й звіряє відповідь з рядком «Відповідь: …»)."""
+    if not (WORKER_MODE and GEMINI_KEY) or _time.time() - float(st.get("nmt_last") or 0) < 1700:
+        return
+    st["nmt_last"] = _time.time()
+    try:
+        db = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=nmt.json") or {}
+    except Exception:
+        db = {}
+    db.setdefault("subj", {}); db.setdefault("done", []); db.setdefault("queue", []); db.setdefault("log", [])
+    if not db["queue"] and db.get("disc", "") < (now - timedelta(days=7)).strftime("%Y-%m-%d"):   # пошук тестів — раз на тиждень
+        for s in NMT_SUBJ:
+            ids = set()
+            for page in (f"https://zno.osvita.ua/{s}/nmt.html", f"https://zno.osvita.ua/{s}/"):
+                try:
+                    ids |= {int(x) for x in re.findall(rf"/{re.escape(s)}/(\d{{3,5}})/", http_text(page))}
+                except Exception as e:
+                    db["log"].append(f"{s}: {err_text(e)[:40]}")
+            for i_ in sorted(ids, reverse=True)[:NMT_MAX_TESTS]:
+                u = f"https://zno.osvita.ua/{s}/{i_}/"
+                if u not in db["done"] and u not in db["queue"]:
+                    db["queue"].append(u)
+        db["disc"] = now.strftime("%Y-%m-%d")
+        db["log"].append(f"🔎 нових тестів у черзі: {len(db['queue'])}")
+    for u in db["queue"][:2]:
+        db["queue"].remove(u); db["done"].append(u)
+        s = u.split("/")[3]
+        try:
+            txt = _nmt_text(http_text(u))
+        except Exception as e:
+            db["log"].append(f"{u}: {err_text(e)[:40]}"); continue
+        ans = {int(n): a for n, a in re.findall(r"Завдання\s+(\d+)\s+з\s+\d+[\s\S]*?Відповідь:\s*([АБВГД])", txt)}
+        if "Завдання 1 з" not in txt:
+            db["log"].append(f"{u}: сторінка без завдань"); continue
+        raw = gemini(f"Нижче — текст онлайн-тесту НМТ, предмет: {NMT_SUBJ[s]}. Витягни ЛИШЕ завдання з однією правильною відповіддю (варіанти А–Д або А–Г). "
+                     "ПРОПУСТИ: завдання на відповідність, з відкритою відповіддю, і ті, що спираються на малюнок, графік, схему, карту або текст для читання, якого немає в умові ([зображення]). "
+                     "Для кожного: n (номер завдання), q (умова дослівно; формули — Юнікодом: √, ², ³, ½, π, ≤, ≥, ≠, °, ·, без LaTeX і без «\\(»), o (масив текстів варіантів без літер, у порядку А, Б, В…), "
+                     "a (літера правильної відповіді — з рядка «Відповідь: …» у тексті), ex (коротке пояснення до 300 символів, якщо воно є в тексті; інакше порожньо). Нічого не вигадуй. "
+                     'Поверни JSON {"items":[{"n":1,"q":"","o":[],"a":"","ex":""}]}\n\n' + txt[:60000], json_mode=True, relaxed=True, max_tokens=12000)
+        items = json_loose(raw).get("items") or []
+        L = "АБВГД"; good = 0
+        for x in items:
+            try:
+                n, o, a = int(x.get("n")), [str(v).strip()[:300] for v in (x.get("o") or [])], str(x.get("a") or "").strip()[:1]
+            except Exception:
+                continue
+            q = str(x.get("q") or "").strip()
+            if not q or len(o) not in (4, 5) or a not in L[:len(o)] or "\\" in q + "".join(o) or "[зображення]" in q:
+                continue
+            if n in ans and ans[n] != a:
+                continue                                   # відповідь ШІ не збіглася з відповіддю на сторінці — не беремо
+            qid = f"{s[:3]}{u.split('/')[4]}-{n}"
+            lst = db["subj"].setdefault(s, [])
+            if any(z["id"] == qid or z["q"] == q[:1500] for z in lst):
+                continue
+            lst.append({"id": qid, "q": q[:1500], "o": o, "a": L.index(a), "ex": str(x.get("ex") or "")[:300], "src": u})
+            good += 1
+        db["log"].append(f"🎓 {NMT_SUBJ[s]} · тест {u.split('/')[4]}: +{good} завдань (ШІ дав {len(items)}, відповідей на сторінці {len(ans)})")
+        print(db["log"][-1])
+    db["log"] = db["log"][-15:]
+    db["at"] = now.strftime("%d.%m.%Y")
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=nmt.json", db)
+    except Exception as e:
+        print(f"НМТ → бот: {err_text(e)[:60]}")
+
+
 # ---------- 🧸 18+ · Гід по секс-іграшках: топи за видами (ШІ → білий список брендів → самоперевірка) + огляди й новинки індустрії (щотижня +10) ----------
 TOY_BRANDS = re.compile(r"\b(satisfyer|womanizer|we-?vibe|lelo|lovense|fun factory|dame|magic wand|hitachi|doxy|le wand|tenga|fleshlight|arcwave|kiiroo|lovehoney|b-?vibe|njoy|"
                         r"hot octopuss|svakom|zalo|je joue|romp|pjur|system jo|\bjo\b|sliquid|uberlube|überlube|swiss navy|wicked|durex|exs|bijoux indiscrets|intt|shunga|orgie|"
@@ -8840,6 +9004,15 @@ def main() -> None:
                 aroma_best(st, now)                   # 🏆 «Найкращі» — поки не заповнено, щозапуску по 1 розділу
             except Exception as e_:
                 print(f"Найкращі: {err_text(e_)[:80]}")
+        if budget_ok(105):
+            try:
+                jobs_build(st, now)                   # 🧑‍💻 радар вакансій — кожні ~2 год
+            except Exception as e_:
+                print(f"Вакансії: {err_text(e_)[:80]}")
+            try:
+                nmt_build(st, now)                    # 🎓 банк завдань НМТ — до 2 тестів за ~30 хв, поки є черга
+            except Exception as e_:
+                print(f"НМТ: {err_text(e_)[:80]}")
         if budget_ok(110):
             try:
                 TOY_BAN.update(str(x).lower() for x in (st.get("toy_ban") or []))
