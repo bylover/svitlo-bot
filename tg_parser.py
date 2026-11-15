@@ -274,6 +274,17 @@ def pick_video(posts: list, q: int) -> list:
     return sorted(out, key=lambda p: -p.sc)[:q]
 
 
+def gate(posts: list, q: int, thr) -> tuple:
+    """🏅 Поріг якості відносно самого каналу (thr = [нижній квартиль, медіана, верхній квартиль] його оцінок):
+    беремо не нижче медіани; якщо так не набирається й половини квоти — помʼякшуємо до нижнього квартиля; нижче — ніколи."""
+    if not thr or not q:
+        return posts, ""
+    ok = [p for p in posts if p.sc >= thr[1]]
+    if len(ok) * 2 >= q or len(ok) >= len(posts):
+        return ok, "≥ медіани каналу"
+    return [p for p in posts if p.sc >= thr[0]], "помʼякшено до нижнього квартиля"
+
+
 def pick(posts: list, q: int, t: str) -> list:
     return pick_video(posts, q) if t == "v" else sorted(posts, key=lambda p: -p.sc)[:q]
 
@@ -397,6 +408,16 @@ async def main():
     hist = fget("vid_hist.json", {}) or {}                            # ♻️ історія (окремий файл — бот його не читає, щоб не гальмувати)
     mh = dict(hist.get("mh") or {})                                   # відбиток → id у сховищі: та сама публікація не потрапить удруге
     ban_o = list(hist.get("ban_o") or []) + ban_o
+    rb = cfg.get("rebuild") or 0
+    if rb and rb != hist.get("rb"):                                   # 🔄 «перезібрати з нуля» з адмінки: забути, що вже бачили й збирали (позначене 🚫 як реклама — памʼятаємо)
+        hist["rb"] = rb; mh.clear()
+        for g_ in gidx.values():
+            g_["seen"] = []
+        gidx_ch = True
+        for st_ in main_db["st"].values():
+            for f_ in [TYPES[t][4] for t in TYPES]:
+                st_.pop(f_, None)                                     # → перший збір знову візьме топ за 3 останні дні
+        log("🔄 перезбір з нуля: історію повторів і дат скинуто")
     alive = {x["i"] for t in TYPES for x in dbs[t]["items"]}
     dup_total = 0
 
@@ -470,6 +491,10 @@ async def main():
                         continue
                     raw.append((m, t))
                 sig = learn_sig([m for m, _t in raw], own)              # ✍️ підпис каналу — не реклама
+                for t_ in TYPES:                                         # 🏅 «типова якість» каналу для кожного типу — з усього переглянутого вікна
+                    sc_ = sorted(score(m) for m, tt in raw if tt == t_)
+                    if len(sc_) >= 15:
+                        st.setdefault("thr", {})[t_] = [round(sc_[int(len(sc_) * f_)], 3) for f_ in (0.25, 0.5, 0.75)]
                 if sig:
                     st["sig"] = sorted(sig | set(st.get("sig") or []))[:20]
                 own |= set(st.get("sig") or [])
@@ -512,11 +537,13 @@ async def main():
                 q = max(0, min(48, int(s.get(qf) or bases[t])))      # квота каналу для типу: базова (з адмінки) ± за 👍 / 👎 у боті
                 already = sum(1 for x in dbs[t]["items"] if x["k"] == k and x.get("day") == day.isoformat() and x["i"] not in kill[t])
                 q = max(0, q - already)
-                picks = pick(pool[t].get(day, []), q, t) if q else []
+                thr = (st.get("thr") or {}).get(t)
+                okp, lvl = gate(pool[t].get(day, []), q, thr)
+                picks = pick(okp, q, t) if q else []
                 if len(picks) < q and (pool[t].get(day) or t == "g"):   # бракує — добір: відео й фото — з 2 попередніх днів (якщо за день щось було); GIF — найкращі за 30 днів
                     back = range(1, (GIF_DEEP if t == "g" else 2) + 1)
-                    extra = sorted((p for n_ in back for p in pool[t].get(day - timedelta(days=n_), []) if p.id not in taken[t] and p not in picks),
-                                   key=lambda p: -p.sc)
+                    extra = sorted((p for n_ in back for p in pool[t].get(day - timedelta(days=n_), []) if p.id not in taken[t] and p not in picks and (not thr or p.sc >= thr[1])),
+                                   key=lambda p: -p.sc)                    # добір — лише не гірше медіани каналу
                     picks += extra[:q - len(picks)]
                 added = 0
                 n0 = len(picks); picks = fresh(picks); dups += n0 - len(picks)
@@ -536,7 +563,7 @@ async def main():
                     await asyncio.sleep(PAUSE)
                 st[donef] = day.isoformat()
                 if added:
-                    log(f"🍓 {st['t'][:24]} · {day:%d.%m} · {tname}: топ-{added} з {len(pool[t].get(day, []))}")
+                    log(f"🍓 {st['t'][:24]} · {day:%d.%m} · {tname}: топ-{added} з {len(pool[t].get(day, []))}{' · ' + lvl if lvl else ''}")
             if want.get(t) and not stop and not blocked and time.time() - t0 < RUN_SEC:   # 🎯 запас: найкращі за 30 днів, яких ще немає
                 cur = sum(1 for x in dbs[t]["items"] if x["k"] == k and x["i"] not in kill[t])
                 need = max(0, min(3 * share[t] - cur, tgt[t] - len(dbs[t]["items"]), 60))
