@@ -348,6 +348,9 @@ async def main():
     if not (SYNC_URL and SYNC_KEY and os.environ.get("TG_SESSION")):
         sys.exit("Немає секретів TG_SESSION / SYNC_URL / SYNC_KEY")
     cfg = fget("vid_cfg.json", {})
+    if cfg.get("pause"):                                              # ⏸ збір вимкнено адміном — навіть не підключаємось до Telegram
+        print("⏸ Збір вимкнено в боті (👑 → 🍓: джерела) — нічого не роблю"); return
+    wipe0 = cfg.get("wipe_at") or 0
     dbs = {t: fget(TYPES[t][1], {}) for t in TYPES}
     for d in dbs.values():
         d.setdefault("items", [])
@@ -631,6 +634,16 @@ async def main():
                 log(f"⚠️ очищення {tname}: {str(e)[:60]}")
             gone = {x["i"] for x in old}
             dbs[t]["items"] = [x for x in items if x["i"] not in gone]
+    if ((fget("vid_cfg.json", {}) or {}).get("wipe_at") or 0) != wipe0:   # 🗑 поки йшов збір, адмін видалив усе — не повертаємо зібране, прибираємо й нове
+        ids = [i for t in TYPES for x in dbs[t]["items"] for i in (x.get("ids") or [x["i"]])]
+        try:
+            for n in range(0, len(ids), 100):
+                await client.delete_messages(dest, ids[n:n + 100])
+        except Exception as e:
+            print(f"wipe: {e}")
+        for t in TYPES:
+            dbs[t]["items"] = []
+        log("🗑 адмін видалив усе зібране — базу очищено")
     await push(dbs)
     await client.disconnect()
 
