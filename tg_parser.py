@@ -478,18 +478,28 @@ async def main():
         try:
             if all_days or any(want.values()):
                 end = datetime.combine((all_days[-1] if all_days else yday) + timedelta(days=1), datetime.min.time(), KYIV)
-                start = datetime.combine(all_days[0] - timedelta(days=2), datetime.min.time(), KYIV) if all_days else end   # +2 дні назад — для добору
+                start = datetime.combine(all_days[0] - timedelta(days=7), datetime.min.time(), KYIV) if all_days else end   # +7 днів назад — для добору (малі канали)
                 deep = datetime.combine((min(days["g"] + days["p"]) if days["g"] + days["p"] else yday) - timedelta(days=GIF_DEEP), datetime.min.time(), KYIV)
                 since = {"v": start, "g": deep if (days["g"] or want["g"]) else start, "p": deep if want["p"] else start}   # GIF і фото — глибше, коли треба добирати
                 albums: dict = {}
                 raw = []
+                scan: dict = {}
                 async for m in client.iter_messages(ent, offset_date=end, limit=8000):
                     if m.date < min(since.values()):
                         break
                     t = kind_of(m)
-                    if not t or m.date < since[t]:
+                    if not t:                                       # 🔎 діагностика: чому пост не взято
+                        md = getattr(m, "media", None)
+                        why = "🔒" if getattr(m, "noforwards", False) else "💲" if md is not None and type(md).__name__ == "MessageMediaPaidMedia" else "📄" if md is not None else "✍️"
+                        scan[why] = scan.get(why, 0) + 1
                         continue
+                    if m.date < since[t]:
+                        continue
+                    scan[t] = scan.get(t, 0) + 1
                     raw.append((m, t))
+                st["scan"] = scan                                        # 🔎 що знайшлося в переглянутих постах: v/g/p — медіа; 🔒 захищені; 💲 платні; 📄 інші файли; ✍️ лише текст
+                if scan.get("🔒") and not any(scan.get(t_) for t_ in TYPES):
+                    log(f"🔒 {st['t'][:24]}: усі пости захищені від пересилання ({scan['🔒']}) — пропускаю")
                 sig = learn_sig([m for m, _t in raw], own)              # ✍️ підпис каналу — не реклама
                 for t_ in TYPES:                                         # 🏅 «типова якість» каналу для кожного типу — з усього переглянутого вікна
                     sc_ = sorted(score(m) for m, tt in raw if tt == t_)
@@ -540,8 +550,8 @@ async def main():
                 thr = (st.get("thr") or {}).get(t)
                 okp, lvl = gate(pool[t].get(day, []), q, thr)
                 picks = pick(okp, q, t) if q else []
-                if len(picks) < q and (pool[t].get(day) or t == "g"):   # бракує — добір: відео й фото — з 2 попередніх днів (якщо за день щось було); GIF — найкращі за 30 днів
-                    back = range(1, (GIF_DEEP if t == "g" else 2) + 1)
+                if len(picks) < q:                                   # бракує — добір: відео й фото — з 2 попередніх днів (а якщо за день нічого — з 7: малі канали публікують рідко); GIF — за 30 днів
+                    back = range(1, (GIF_DEEP if t == "g" else 2 if pool[t].get(day) else 7) + 1)
                     extra = sorted((p for n_ in back for p in pool[t].get(day - timedelta(days=n_), []) if p.id not in taken[t] and p not in picks and (not thr or p.sc >= thr[1])),
                                    key=lambda p: -p.sc)                    # добір — лише не гірше медіани каналу
                     picks += extra[:q - len(picks)]
