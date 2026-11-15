@@ -1,0 +1,27 @@
+name: TG video parser
+on:
+  schedule:
+    - cron: "12 6-10,16,20 * * *"   # 08:12–12:12 за Києвом — топ за вчора (з добором, якщо не встиг), 18:12 і 22:12 — оновлення переглядів
+  workflow_dispatch:
+concurrency:
+  group: tg-parser
+  cancel-in-progress: false
+jobs:
+  parse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Telethon
+        run: pip install -q telethon
+      - name: Collect videos
+        run: python3 -u tg_parser.py
+        env:
+          TG_API_ID: ${{ secrets.TG_API_ID }}
+          TG_API_HASH: ${{ secrets.TG_API_HASH }}
+          TG_SESSION: ${{ secrets.TG_SESSION }}
+          SYNC_URL: ${{ secrets.SYNC_URL }}
+          SYNC_KEY: ${{ secrets.SYNC_KEY }}
