@@ -2,9 +2,9 @@
  "to_delete": [],
  "group": "4.1",
  "fp": {
-  "2026-11-14": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 450, \"start\": 180, \"type\": \"Definite\"}, {\"end\": 1110, \"start\": 690, \"type\": \"Definite\"}, {\"end\": 1440, \"start\": 1290, \"type\": \"Definite\"}]}",
   "2026-11-15": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 150, \"start\": 0, \"type\": \"Definite\"}, {\"end\": 960, \"start\": 750, \"type\": \"Definite\"}, {\"end\": 1410, \"start\": 1200, \"type\": \"Definite\"}]}",
-  "2026-11-16": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 840, \"start\": 540, \"type\": \"Definite\"}, {\"end\": 1260, \"start\": 960, \"type\": \"Definite\"}]}"
+  "2026-11-16": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 840, \"start\": 540, \"type\": \"Definite\"}, {\"end\": 1260, \"start\": 960, \"type\": \"Definite\"}]}",
+  "2026-11-17": "{\"s\": \"WaitingForSchedule\", \"slots\": []}"
  },
  "reminded": [],
  "taste": {
@@ -733,7 +733,7 @@
   "t71789",
   "t1414"
  ],
- "gh_beat": "2026-11-15T23:58:31.139669+02:00",
+ "gh_beat": "2026-11-16T00:00:45.668124+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -775,20 +775,13 @@
    ]
   ]
  },
- "fact_png": "2026-11-15 23|2|2026-11-14T17:25:59+02:00",
+ "fact_png": "2026-11-16 00|2|2026-11-14T17:25:59+02:00",
  "fact_day": {
   "total": "0 хв",
   "list": []
  },
- "mo_sent": {
-  "160603556": "2026-11-15",
-  "368433217": "2026-11-15",
-  "936688574": "2026-11-15",
-  "8283670046": "2026-11-15",
-  "396425365": "2026-11-15"
- },
+ "mo_sent": {},
  "log": [
-  "01.11 00:00 Завтра 2026-11-02 WaitingForSchedule: без відключень",
   "02.11 00:00 Завтра 2026-11-03 WaitingForSchedule: без відключень",
   "02.11 06:20 Сьогодні 2026-11-02 ScheduleApplies: 00:00–05:30, 10:00–17:00, 20:30–24:00",
   "02.11 14:05 Сьогодні 2026-11-02 ScheduleApplies: 00:00–05:30, 10:00–17:00, 20:00–24:00",
@@ -827,17 +820,11 @@
   "14.11 00:00 Завтра 2026-11-15 WaitingForSchedule: без відключень",
   "14.11 20:25 Завтра 2026-11-15 ScheduleApplies: 00:00–02:30, 12:30–16:00, 20:00–23:30",
   "15.11 00:00 Завтра 2026-11-16 WaitingForSchedule: без відключень",
-  "15.11 21:05 Завтра 2026-11-16 ScheduleApplies: 09:00–14:00, 16:00–21:00"
+  "15.11 21:05 Завтра 2026-11-16 ScheduleApplies: 09:00–14:00, 16:00–21:00",
+  "16.11 00:00 Завтра 2026-11-17 WaitingForSchedule: без відключень"
  ],
  "week_fp": "{\"1\": [], \"2\": [], \"3\": [], \"4\": [], \"5\": [], \"6\": [], \"7\": []}",
- "we_sent": {
-  "368433217": "2026-11-15",
-  "396425365": "2026-11-15",
-  "590261825": "2026-11-15",
-  "936688574": "2026-11-15",
-  "8283670046": "2026-11-15",
-  "160603556": "2026-11-15"
- },
+ "we_sent": {},
  "tgph": "8d020e91ef2b6894855e405f8973a51da385fca8e1cfd990c9e41c2a32c2",
  "yt_try": "2026-11-15 00",
  "yt_seen": [
@@ -10698,7 +10685,7 @@
  },
  "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 15.11 15:00 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <code>Форма для випікання Staub 30x22 см 1022198</code> <a href=\"https://silpo.ua/product/forma-dlia-vypikannia-staub-30x22-sm-1022198-1022198\">🔗</a> — <b>299 ₴</b> <s>1099 ₴</s> · −73%\n2. 🐟 <code>Креветка королівська в панцирі 40/80 с/м</code> <a href=\"https://silpo.ua/product/krevetka-korolivska-v-pantsyri-40-80-s-m-864125\">🔗</a> — <b>29.9 ₴</b> <s>77.9 ₴</s> · −63%\n3. 🛒 <code>Валик для чищення одягу 40 листів</code> <a href=\"https://silpo.ua/product/valyk-dlia-chyshchennia-odiagu-40-lystiv-979742\">🔗</a> — <b>29.99 ₴</b> <s>82.49 ₴</s> · −64%\n4. 🛒 <code>Набір запасок для валика для чистки одягу 2 шт.</code> <a href=\"https://silpo.ua/product/nabir-zapasok-dlia-valyka-dlia-chystky-odiagu-2-sht-979743\">🔗</a> — <b>29.99 ₴</b> <s>82.49 ₴</s> · −64%\n5. 🧼 <code>Паста зубна Max Formula з м'ятним ароматом</code> <a href=\"https://silpo.ua/product/pasta-zubna-max-formula-z-m-iatnym-aromatom-736882\">🔗</a> — <b>49.99 ₴</b> <s>149 ₴</s> · −66%\n6. 🧼 <code>Паста зубна Max Formula відбілююча</code> <a href=\"https://silpo.ua/product/pasta-zubna-max-formula-vidbiliuiucha-736883\">🔗</a> — <b>49.99 ₴</b> <s>149 ₴</s> · −66%\n7. 🥛 <code>Сирок глазурований «Волошкове поле» полуниця 26%</code> <a href=\"https://silpo.ua/product/syrok-glazurovanyi-voloshkove-pole-polunytsia-26-375698\">🔗</a> — <b>11.99 ₴</b> <s>20.99 ₴</s> · −44%\n8. 🐟 <code>Креветка королівська сира дефростована 40/60</code> <a href=\"https://silpo.ua/product/krevetka-korolivska-syra-defrostovana-40-60-864122\">🔗</a> — <b>29.9 ₴</b> <s>59.9 ₴</s> · −50%\n9. 🥛 <code>Сирок глазурований «Волошкове поле» з ваніллю 26%</code> <a href=\"https://silpo.ua/product/syrok-glazurovanyi-voloshkove-pole-z-vanilliu-26-28205\">🔗</a> — <b>11.99 ₴</b> <s>20.99 ₴</s> · −44%\n10. 🧼 <code>Паста зубна Max Formula для чутливих зубів</code> <a href=\"https://silpo.ua/product/pasta-zubna-max-formula-dlia-chutlyvykh-zubiv-736884\">🔗</a> — <b>49.99 ₴</b> <s>149 ₴</s> · −66%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
  "silpo_stores": {
-  "week": "2026-46",
+  "week": "2026-47",
   "v": 2,
   "kyiv": [
    [
@@ -12754,12 +12741,8 @@
  "fav_sent": {
   "160603556": "2026-11-12"
  },
- "imp_sent": {
-  "396425365": "2026-11-15"
- },
- "ero_sent": {
-  "936688574": "2026-11-15"
- },
+ "imp_sent": {},
+ "ero_sent": {},
  "pend": {},
  "got": {},
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
@@ -30322,9 +30305,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "34f55a38ac12",
+  "gs": "72787e808ab6",
   "quiz_pool.json": "80eae7ea9381",
-  "fact.png": "a20d78c8742c",
+  "fact.png": "b37f9ff4b9ce",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -45026,12 +45009,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-15",
  "silpo_week": "2026-46",
- "sbm_at": 1794779750.202696,
+ "sbm_at": 1794780049.7391083,
  "sbm_hist": [
-  [
-   "11:55",
-   94
-  ],
   [
    "12:00",
    94
@@ -45602,6 +45581,10 @@
   ],
   [
    "23:55",
+   93
+  ],
+  [
+   "00:00",
    93
   ]
  ],
@@ -48417,70 +48400,10 @@
  "aro_full": true,
  "aro_month": "2026-11",
  "pl_done": {
-  "_wk": "202646",
+  "_wk": "202647",
   "uanew": 1,
   "ua90": 1,
-  "uarap": 1,
-  "uarock": 1,
-  "uafolk": 1,
-  "uapatr": 1,
-  "ualove": 1,
-  "uaedm": 1,
-  "uaindie": 1,
-  "uaradio": 1,
-  "x_mood": 1,
-  "x_fore": 1,
-  "x_sex": 1,
-  "x_after": 1,
-  "x_bdsm": 1,
-  "x_lovers": 1,
-  "x_massage": 1,
-  "x_rnb": 1,
-  "x_strip": 1,
-  "x_sexy": 1,
-  "new": 1,
-  "sport": 1,
-  "run": 1,
-  "work": 1,
-  "party": 1,
-  "love": 1,
-  "chill": 1,
-  "sleep": 1,
-  "road": 1,
-  "morning": 1,
-  "yoga": 1,
-  "study": 1,
-  "cook": 1,
-  "sad": 1,
-  "dance": 1,
-  "gaming": 1,
-  "e60": 1,
-  "e80": 1,
-  "e90": 1,
-  "e00": 1,
-  "e10": 1,
-  "e20": 1,
-  "rap": 1,
-  "pop": 1,
-  "rock": 1,
-  "edm": 1,
-  "classic": 1,
-  "jazz": 1,
-  "metal": 1,
-  "house": 1,
-  "latin": 1,
-  "indie": 1,
-  "ost": 1,
-  "kpop": 1,
-  "wedding": 1,
-  "bday": 1,
-  "xmas": 1,
-  "summer": 1,
-  "kids": 1,
-  "us": 1,
-  "gb": 1,
-  "fr": 1,
-  "it": 1
+  "uarap": 1
  },
  "aro_now_seen": "1794480481606",
  "arob_fail": {},
