@@ -733,7 +733,7 @@
   "t71789",
   "t1414"
  ],
- "gh_beat": "2026-11-16T00:37:50.832983+02:00",
+ "gh_beat": "2026-11-16T00:41:06.024180+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -30278,7 +30278,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "55762e3c2882",
+  "gs": "87f9f5f6315d",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "87dc4ebe40ee",
   "sexed.json": "0362ec7e46d4",
@@ -44982,12 +44982,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-15",
  "silpo_week": "2026-46",
- "sbm_at": 1794782273.8493922,
+ "sbm_at": 1794782470.8992865,
  "sbm_hist": [
-  [
-   "12:20",
-   94
-  ],
   [
    "12:25",
    94
@@ -45558,6 +45554,10 @@
   ],
   [
    "00:37",
+   80
+  ],
+  [
+   "00:41",
    80
   ]
  ],
@@ -48368,9 +48368,9 @@
  "dir_week": "202646",
  "smmt_force": false,
  "smmt_week": "202646",
- "aro_force": false,
+ "aro_force": true,
  "aro_fill_wk": "202646",
- "aro_full": true,
+ "aro_full": false,
  "aro_month": "2026-11",
  "pl_done": {
   "_wk": "202647",
@@ -48388,14 +48388,17 @@
   "x_fore": 1,
   "x_sex": 1,
   "x_after": 1,
-  "x_bdsm": 1
+  "x_bdsm": 1,
+  "x_lovers": 1,
+  "x_massage": 1,
+  "x_rnb": 1
  },
  "aro_now_seen": "1794782204633",
  "arob_fail": {},
  "pl_v": 4,
  "arob_full": false,
- "aro_last": 1794782362.8397074,
- "aro_fill_t": 1794782362.8397343,
+ "aro_last": 0,
+ "aro_fill_t": 1794695830.7760823,
  "warned": "2026-11-13",
  "toyn_week": "202647",
  "toys_v": 3,
