@@ -251,7 +251,7 @@ def learn_sig(msgs: list, own: set) -> set:
     for m in msgs:
         c.update(targets_of([m])[0] - own)
     n = len(msgs)
-    return {k for k, v in c.items() if n >= 8 and v >= max(4, 0.25 * n)}
+    return {k for k, v in c.items() if n >= 4 and v >= max(2, 0.25 * n)}   # і для малих каналів (мережі на кшталт «… x GREHOGRAM» підписують кожен пост посиланнями на «сестер»)
 
 
 class Post:
