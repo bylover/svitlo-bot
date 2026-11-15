@@ -733,7 +733,7 @@
   "t71789",
   "t1414"
  ],
- "gh_beat": "2026-11-15T11:55:50.355383+02:00",
+ "gh_beat": "2026-11-15T12:00:48.357509+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -787,11 +787,11 @@
    ]
   ]
  },
- "fact_png": "2026-11-15 11|5|2026-11-14T17:25:59+02:00",
+ "fact_png": "2026-11-15 12|5|2026-11-14T17:25:59+02:00",
  "fact_day": {
-  "total": "5 год 36 хв",
+  "total": "5 год 25 хв",
   "list": [
-   "11:49–17:25 · 5 год 36 хв"
+   "12:00–17:25 · 5 год 25 хв"
   ]
  },
  "mo_sent": {
@@ -1624,14 +1624,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "15.11 11:57",
-   "ts": 1794736637,
+   "at": "15.11 12:03",
+   "ts": 1794736981,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "15.11 11:57",
-   "ts": 1794736637,
+   "at": "15.11 12:03",
+   "ts": 1794736981,
    "ok": true,
    "note": ""
   },
@@ -1654,8 +1654,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "15.11 11:56",
-   "ts": 1794736560,
+   "at": "15.11 12:03",
+   "ts": 1794736981,
    "ok": true,
    "note": ""
   },
@@ -1714,8 +1714,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "15.11 11:56",
-   "ts": 1794736573,
+   "at": "15.11 12:03",
+   "ts": 1794736981,
    "ok": true,
    "note": ""
   },
@@ -12672,14 +12672,17 @@
  "fav_sent": {
   "160603556": "2026-11-12"
  },
- "imp_sent": {},
+ "imp_sent": {
+  "396425365": "2026-11-15"
+ },
  "ero_sent": {},
  "pend": {},
  "got": {},
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
  "gem_block": {
   "Nz9lkQ:gemini-flash-latest": "2026-11-16T10:05:00+02:00",
-  "Nz9lkQ:gemini-3.8-flash": "2026-11-16T10:05:00+02:00"
+  "Nz9lkQ:gemini-3.8-flash": "2026-11-16T10:05:00+02:00",
+  "iDpywg:gemini-flash-latest": "2026-11-16T10:05:00+02:00"
  },
  "omdb_cache": {
   "tt5362988": [
@@ -30216,9 +30219,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "ef7c55aa5ff5",
+  "gs": "fdafb314ee58",
   "quiz_pool.json": "80eae7ea9381",
-  "fact.png": "00f53c19c75b",
+  "fact.png": "db665af40bbe",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -43159,12 +43162,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-15",
  "silpo_week": "2026-46",
- "sbm_at": 1794736553.6579945,
+ "sbm_at": 1794736852.7816527,
  "sbm_hist": [
-  [
-   "22:35",
-   89
-  ],
   [
    "22:40",
    89
@@ -43736,6 +43735,10 @@
   [
    "11:55",
    94
+  ],
+  [
+   "12:00",
+   94
   ]
  ],
  "sbm_near": {
@@ -43752,7 +43755,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1794735957.440206,
+ "net_at": 1794736862.2230816,
  "net_asn": {
   "triolan": [
    "13188",
@@ -46631,7 +46634,7 @@
  "aro_sub_s": 5,
  "aro_sub_k": 4,
  "jobs_last": 1794734167.203001,
- "nmt_last": 1794735074.8147614,
+ "nmt_last": 1794736874.8352907,
  "kino_v": 2,
  "yt_v": 4,
  "toycat_last": 1794735967.378601,
