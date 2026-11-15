@@ -9,10 +9,11 @@ from datetime import datetime, timedelta, timezone
 from telethon import TelegramClient, errors
 from telethon.sessions import StringSession
 from telethon.tl.functions.messages import CheckChatInviteRequest
-from telethon.tl.types import Channel, DocumentAttributeVideo, PeerChannel
+from telethon.tl.types import Channel, DocumentAttributeVideo, MessageEntityMention, MessageEntityTextUrl, MessageEntityUrl, PeerChannel
 
 SYNC_URL, SYNC_KEY = os.environ.get("SYNC_URL", "").rstrip("/"), os.environ.get("SYNC_KEY", "")
 PER_DAY, FIRST_DAYS, PAUSE, RUN_SEC, MAX_SEC = 10, 3, 3, 10 * 60, 3 * 3600   # базово топ-10 кожного типу; перший збір — 3 останні дні; до 10 хв на запуск
+GIF_DEEP = 30                                                       # GIF трапляються рідко: якщо за день бракує — добір найкращими за 30 днів (для відео й фото — за 2)
 # тип: (назва, файл у боті, поле квоти, поле базової квоти, поле «зібрано до», ліміт записів)
 TYPES = {"v": ("відео", "vids.json", "q", "base", "done", 2000),
          "g": ("GIF", "vid_g.json", "qg", "base_g", "done_g", 1500),
@@ -102,6 +103,101 @@ def kind_of(m):
     return None
 
 
+# ---------- 🚫 Фільтр реклами ----------
+AD_MARK = re.compile(r"(#\s?реклам|\bреклама\b|на правах реклам|#ads?\b|#promo|#промо|\berid\b|sponsored|спонсор|партнерськ|партнерск|#partner|взаимопиар|взаємопіар|\bпиар\b|\bпіар\b|промокод|promo ?code)", re.I)
+AD_HARD = re.compile(r"(казино|casino|букмекер|1win|1xbet|pin-?up|\bслоты?\b|заработ|заробіт|пассивн\w* доход|пасивн\w* дохід|\bкрипт|crypto|airdrop)", re.I)
+AD_CALL = re.compile(r"(подпис|підпис|переход|перейд|жми|тисни|клик|клікай|заход|вступа|присоедин|приєдн|ссылк|посиланн|канал|\bбот\b|полн\w* видео|повн\w* відео|продолжени|продовженн|full ?video|\bfull\b|\blink\b|\bjoin\b|subscribe|👉|👇|⬇|➡|🔗)", re.I)
+AD_SHOP = re.compile(r"(промокод|promo ?code|скидк|знижк|купи|закаж|замов|доставк|магазин|прайс|\bцена\b|\bціна\b|\d+\s?(грн|₴|₽|руб|\$|usd|€))", re.I)
+AD_DOM = ("onlyfans.com", "fansly.com", "boosty.to", "patreon.com", "fanvue.com", "linktr.ee")
+
+
+def tkey(u: str) -> str:
+    """Посилання / @згадка → ключ цілі: назва каналу, +запрошення, c/<id> або домен сайту."""
+    u = (u or "").strip().lower()
+    m = re.search(r"(?:t\.me|telegram\.me|telegram\.dog)/(\+[\w-]+|joinchat/[\w-]+|c/\d+|s/\w+|\w+)", u)
+    if m:
+        k = m.group(1)
+        return "+" + k[9:] if k.startswith("joinchat/") else k[2:] if k.startswith("s/") else k
+    m = re.search(r"domain=(\w+)", u) or re.search(r"https?://(?:www\.)?([^/\s?#]+)", u)
+    if m:
+        return m.group(1)
+    return u.lstrip("@")
+
+
+def own_keys(ent, ref: str) -> set:
+    """Власні ідентифікатори джерела: підпис каналу посиланням на себе — не реклама."""
+    own = {f"c/{ent.id}"}
+    if getattr(ent, "username", None):
+        own.add(ent.username.lower())
+    for u in getattr(ent, "usernames", None) or []:
+        own.add(str(getattr(u, "username", "")).lower())
+    m = re.search(r"t\.me/(?:\+|joinchat/)([\w-]+)", ref or "")
+    if m:
+        own.add("+" + m.group(1).lower())
+    return own
+
+
+def targets_of(ms: list) -> tuple:
+    """(усі цілі посилань/згадок, цілі з кнопок-посилань)."""
+    tg_, btn = set(), set()
+    for m in ms:
+        try:
+            for e, t in (m.get_entities_text() if m.entities else []):
+                if isinstance(e, MessageEntityTextUrl):
+                    tg_.add(tkey(e.url))
+                elif isinstance(e, MessageEntityUrl):
+                    tg_.add(tkey(t))
+                elif isinstance(e, MessageEntityMention):
+                    tg_.add(t.lstrip("@").lower())
+        except Exception:
+            pass
+        for u in re.findall(r"(?:https?://|t\.me/)\S+|@\w{4,}", m.message or ""):
+            tg_.add(tkey(u))
+        for row in getattr(getattr(m, "reply_markup", None), "rows", None) or []:
+            for b in getattr(row, "buttons", []) or []:
+                u = getattr(b, "url", None) or getattr(getattr(b, "type", None), "url", None)   # старий і новий формат кнопок Telethon
+                if u:
+                    btn.add(tkey(u))
+    return {k for k in tg_ | btn if k}, btn
+
+
+def ad_reason(ms: list, own: set, mode: int, words: list, bad: set, lim: int = 300) -> str:
+    """Причина вважати пост рекламою або "" (mode: 0 — фільтр вимкнено, 1 — звичайний, 2 — суворий; lim — макс. довжина підпису, 0 — без обмеження)."""
+    if not mode:
+        return ""
+    text = "\n".join(m.message or "" for m in ms)
+    low = text.lower()
+    allt, btn = targets_of(ms)
+    ext, ebtn = allt - own, btn - own
+    if ext & bad:
+        return "посилання з чорного списку"
+    if ebtn:
+        return "кнопка-посилання"
+    if any(k.endswith(d) for k in ext for d in AD_DOM) or any(d.split(".")[0] in low for d in AD_DOM):
+        return "платний контент (OnlyFans тощо)"
+    if AD_MARK.search(low):
+        return "позначка реклами"
+    if lim and len(text.strip()) > lim:
+        return f"довгий текст ({len(text.strip())} символів)"   # під справжнім контентом підпис зазвичай короткий
+    hit = next((w for w in words if w and w in low), None)
+    if hit:
+        return f"стоп-слово «{hit}»"
+    if AD_HARD.search(low):
+        return "казино / ставки / заробіток"
+    if ext:
+        if mode >= 2:
+            return "посилання на інший канал"
+        if len(ext) >= 2:
+            return "кілька посилань на інші канали"
+        if AD_CALL.search(low) or AD_SHOP.search(low):
+            return "заклик перейти на інший канал"
+        if len(re.sub(r"(https?://\S+|t\.me/\S+|@\w+|\s|[^\w])", "", text)) < 25:
+            return "лише посилання на інший канал"
+    elif mode >= 2 and AD_SHOP.search(low):
+        return "комерційні слова"
+    return ""
+
+
 class Post:
     """Одиниця добірки: відео, GIF або пост із фото (альбом до 10 фото — один пост)."""
     def __init__(self, ms: list, t: str):
@@ -159,7 +255,7 @@ def link_of(ent, mid: int) -> str:
 def item_of(post: Post, new_ids: list, k: str, day, rank: int, ent) -> dict:
     v, r, fw, c = stats(post.m)
     x = {"i": new_ids[0], "k": k, "o": post.id, "v": v, "r": r, "f": fw, "c": c, "sc": round(post.sc, 2), "day": day.isoformat(), "rk": rank,
-         "dt": post.date.astimezone(KYIV).strftime("%Y-%m-%d %H:%M"), "l": link_of(ent, post.id)}
+         "dt": post.date.astimezone(KYIV).strftime("%Y-%m-%d %H:%M"), "at": datetime.now(KYIV).strftime("%Y-%m-%d %H:%M"), "l": link_of(ent, post.id)}   # at — коли зібрано (від нього рахується строк зберігання)
     if post.t == "v":
         x["d"] = video_of(post.m)[0]; x["t"] = (post.m.message or "")[:140]
     elif post.t == "g":
@@ -208,6 +304,14 @@ async def main():
     dbs["meta"] = main_db
     LOG.extend(main_db.get("log") or [])
     src = [s for s in cfg.get("src") or [] if s.get("on", 1) != 0]
+    ad_mode, ad_words = int(cfg.get("ad", 1) if cfg.get("ad") is not None else 1), [str(w).lower().strip() for w in cfg.get("ad_w") or [] if str(w).strip()]
+    bans = fget("vid_ban.json", {}) or {}                           # 🚫 «Це реклама» з бота (адмін): {тип: [id у сховищі]}
+    ban_ids = {t: {int(i) for i in bans.get(t) or []} for t in TYPES}
+    bad = set(main_db.get("ad_un") or [])                          # 🚫 чорний список цілей (навчається з 🚫 у боті)
+    kill = {t: set() for t in TYPES}                                # що прибрати зі сховища цього запуску (реклама)
+    ad_total = 0
+    ad_lim = int(cfg.get("ad_len") if cfg.get("ad_len") is not None else 300)
+    ban_o = list(main_db.get("ban_o") or [])
     if not cfg.get("dest") or not src:
         print("Не задано канал-сховище або джерела — налаштуйте в боті: 👑 Адмін → 🍓: джерела")
         return
@@ -227,6 +331,8 @@ async def main():
     yday = (now - timedelta(days=1)).date()
     t0, stop = time.time(), False
     bases = {t: max(3, min(40, int(cfg.get(TYPES[t][3]) or PER_DAY))) for t in TYPES}
+    tgt = {t: int(cfg.get("tgt_" + t) or 300) for t in ("g", "p")}       # 🎯 запас GIF і фото в боті (адмінка); добирається найкращими за 30 днів
+    share = {t: math.ceil(tgt[t] / max(1, len(src))) for t in tgt}
     for s in src:
         if stop or time.time() - t0 > RUN_SEC:
             break
@@ -237,6 +343,20 @@ async def main():
         except Exception as e:
             st.update(ok=0, err=str(e)[:120]); log(f"⚠️ {s.get('t') or s['ref'][:30]}: {str(e)[:80]}"); continue
         st["t"] = getattr(ent, "title", "") or s["ref"]
+        own = own_keys(ent, s["ref"])
+        mode = int(s["ad"]) if s.get("ad") is not None else ad_mode
+        ads = 0
+        try:                                                      # 🚫 позначені в боті як реклама: запамʼятати, куди вони ведуть, і прибрати
+            for t in TYPES:
+                hit = [x for x in dbs[t]["items"] if x["k"] == k and x["i"] in ban_ids[t] and x["i"] not in kill[t]]
+                if hit:
+                    for m in await client.get_messages(ent, ids=[x["o"] for x in hit]):
+                        if m:
+                            bad |= (targets_of([m])[0] - own)
+                    kill[t] |= {x["i"] for x in hit}
+                    ban_o.extend(f"{k}:{x['o']}" for x in hit)          # більше не брати цей оригінал (навіть добором)
+        except Exception as e:
+            print(f"ban {k}: {e}")
         if getattr(ent, "noforwards", False):
             if not st.get("err"):
                 log(f"⏭ {st['t'][:30]}: заборона пересилання — пропускаю")
@@ -251,25 +371,35 @@ async def main():
         all_days = sorted({d for dl in days.values() for d in dl})
         blocked = False
         pool = {t: {} for t in TYPES}                                # тип → день → [пости]
-        taken = {t: {x["o"] for x in dbs[t]["items"] if x["k"] == k} for t in TYPES}
+        taken = {t: {x["o"] for x in dbs[t]["items"] if x["k"] == k} | {int(b.split(":")[1]) for b in ban_o if b.split(":")[0] == k} for t in TYPES}
+        want = {}                                                    # 🎯 скільки GIF / фото добрати з цього джерела до запасу (частка джерела, до ×3, якщо інші не дотягують)
+        for t in tgt:
+            cur = sum(1 for x in dbs[t]["items"] if x["k"] == k and x["i"] not in kill[t])
+            want[t] = max(0, min(3 * share[t] - cur, tgt[t] - len(dbs[t]["items"]), 60))
         try:
-            if all_days:
-                end = datetime.combine(all_days[-1] + timedelta(days=1), datetime.min.time(), KYIV)
-                start = datetime.combine(all_days[0] - timedelta(days=2), datetime.min.time(), KYIV)   # +2 дні назад — для добору
+            if all_days or any(want.values()):
+                end = datetime.combine((all_days[-1] if all_days else yday) + timedelta(days=1), datetime.min.time(), KYIV)
+                start = datetime.combine(all_days[0] - timedelta(days=2), datetime.min.time(), KYIV) if all_days else end   # +2 дні назад — для добору
+                deep = datetime.combine((min(days["g"] + days["p"]) if days["g"] + days["p"] else yday) - timedelta(days=GIF_DEEP), datetime.min.time(), KYIV)
+                since = {"v": start, "g": deep if (days["g"] or want["g"]) else start, "p": deep if want["p"] else start}   # GIF і фото — глибше, коли треба добирати
                 albums: dict = {}
-                async for m in client.iter_messages(ent, offset_date=end, limit=4000):
-                    if m.date < start:
+                async for m in client.iter_messages(ent, offset_date=end, limit=8000):
+                    if m.date < min(since.values()):
                         break
                     t = kind_of(m)
-                    if not t:
+                    if not t or m.date < since[t]:
                         continue
                     if t == "p" and m.grouped_id:
                         albums.setdefault(m.grouped_id, []).append(m); continue
                     if m.id not in taken[t]:
+                        if ad_reason([m], own, mode, ad_words, bad, ad_lim):
+                            ads += 1; continue
                         pool[t].setdefault(m.date.astimezone(KYIV).date(), []).append(Post([m], t))
                 for ms in albums.values():
                     p = Post(ms, "p")
-                    if p.id not in taken["p"]:
+                    if p.id not in taken["p"] and p.date >= since["p"]:
+                        if ad_reason(p.ms, own, mode, ad_words, bad, ad_lim):
+                            ads += 1; continue
                         pool["p"].setdefault(p.date.astimezone(KYIV).date(), []).append(p)
         except Exception as e:
             st.update(ok=0, err=str(e)[:120]); log(f"⚠️ {st['t'][:30]}: {str(e)[:80]}"); continue
@@ -283,8 +413,9 @@ async def main():
                 already = sum(1 for x in dbs[t]["items"] if x["k"] == k and x.get("day") == day.isoformat())
                 q = max(0, q - already)
                 picks = pick(pool[t].get(day, []), q, t) if q else []
-                if len(picks) < q and pool[t].get(day):              # бракує — добір найкращими з двох попередніх днів (лише якщо цього типу за день щось було)
-                    extra = sorted((p for d2 in (day - timedelta(days=1), day - timedelta(days=2)) for p in pool[t].get(d2, []) if p.id not in taken[t] and p not in picks),
+                if len(picks) < q and (pool[t].get(day) or t == "g"):   # бракує — добір: відео й фото — з 2 попередніх днів (якщо за день щось було); GIF — найкращі за 30 днів
+                    back = range(1, (GIF_DEEP if t == "g" else 2) + 1)
+                    extra = sorted((p for n_ in back for p in pool[t].get(day - timedelta(days=n_), []) if p.id not in taken[t] and p not in picks),
                                    key=lambda p: -p.sc)
                     picks += extra[:q - len(picks)]
                 added = 0
@@ -304,22 +435,48 @@ async def main():
                 st[donef] = day.isoformat()
                 if added:
                     log(f"🍓 {st['t'][:24]} · {day:%d.%m} · {tname}: топ-{added} з {len(pool[t].get(day, []))}")
+            if want.get(t) and not stop and not blocked and time.time() - t0 < RUN_SEC:   # 🎯 запас: найкращі за 30 днів, яких ще немає
+                cur = sum(1 for x in dbs[t]["items"] if x["k"] == k and x["i"] not in kill[t])
+                need = max(0, min(3 * share[t] - cur, tgt[t] - len(dbs[t]["items"]), 60))
+                cands = sorted((p for dl in pool[t].values() for p in dl if p.id not in taken[t]), key=lambda p: -p.sc)[:need]
+                if cands:
+                    try:
+                        new = await forward_batch(client, dest, ent, cands)
+                        n_ = 0
+                        for p, ids in zip(cands, new):
+                            if ids:
+                                dbs[t]["items"].append(item_of(p, ids, k, p.date.astimezone(KYIV).date(), 50 + n_, ent)); taken[t].add(p.id); n_ += 1
+                        if n_:
+                            log(f"🎯 {st['t'][:24]} · {tname}: запас +{n_}")
+                        await asyncio.sleep(PAUSE)
+                    except errors.FloodWaitError as e:
+                        log(f"⏸ Telegram просить паузу {e.seconds} с — продовжу наступного запуску"); stop = True
+                    except errors.ChatForwardsRestrictedError:
+                        st.update(ok=0, err="у каналі заборонено пересилання — пропущено"); blocked = True
+                    except Exception as e:
+                        log(f"⚠️ {st['t'][:28]} · {tname}: {str(e)[:70]}"); stop = True
         for t, (_n, _f, _q, _b, _d, _c) in TYPES.items():
             st["n" if t == "v" else "n" + t] = sum(1 for x in dbs[t]["items"] if x["k"] == k)
         if not blocked:
             st.update(ok=1, err="")
-        try:                                                      # оновити лічильники постів за останні 8 днів (для «топу тижня» й «вистрілило»)
+        try:                                                      # оновити лічильники постів за останні 8 днів (для «топу тижня» й «вистрілило») + перевірити вже зібране на рекламу
             since = f"{now - timedelta(days=8):%Y-%m-%d}"
-            rec = [x for t in TYPES for x in dbs[t]["items"] if x["k"] == k and x["dt"][:10] >= since][-200:]
+            rec = [(t, x) for t in TYPES for x in dbs[t]["items"] if x["k"] == k and x["dt"][:10] >= since and x["i"] not in kill[t]][-300:]
             for n in range(0, len(rec), 100):
                 part = rec[n:n + 100]
-                for m in await client.get_messages(ent, ids=[x["o"] for x in part]):
+                for m in await client.get_messages(ent, ids=[x["o"] for _t, x in part]):
                     if m:
-                        for x in part:
+                        for t, x in part:
                             if x["o"] == m.id:
                                 x["v"], x["r"], x["f"], x["c"] = stats(m)
-        except Exception:
-            pass
+                                if ad_reason([m], own, mode, ad_words, bad, ad_lim):
+                                    kill[t].add(x["i"]); ads += 1
+        except Exception as e:
+            print(f"refresh {k}: {e}")
+        st["ads"] = ads; ad_total += ads
+        if ads:
+            log(f"🚫 {st['t'][:24]}: відсіяно рекламу — {ads}")
+    main_db["ad_un"] = sorted(bad)[-400:]; main_db["adn"] = ad_total; main_db["ban_o"] = list(dict.fromkeys(ban_o))[-3000:]
     # прибирання: прострочені (відео — cfg.keep днів, GIF і фото — cfg.keep_gp) і понад ліміт; збережені ⭐ — не чіпаємо
     live = {s["k"] for s in cfg.get("src") or []}
     keep = {int(i) for i, n in (fget("vid_keep.json", {}) or {}).items() if n}
@@ -329,7 +486,7 @@ async def main():
         days_keep = int(cfg.get("keep") or 14) if t == "v" else int(cfg.get("keep_gp") or 7)
         cut = f"{now - timedelta(days=days_keep):%Y-%m-%d %H:%M}"
         items = dbs[t]["items"]
-        old = [x for x in items if x["k"] not in live or (x["dt"] < cut and x["i"] not in keep)]
+        old = [x for x in items if x["k"] not in live or x["i"] in kill[t] or x["i"] in ban_ids[t] or (max(x["dt"], x.get("at") or "") < cut and x["i"] not in keep)]   # 🚫 реклама — навіть зі збережених
         rest = [x for x in items if x not in old]
         if len(rest) > cap:
             old += [x for x in rest if x["i"] not in keep][:len(rest) - cap]
@@ -338,7 +495,7 @@ async def main():
                 ids = [i for x in old for i in (x.get("ids") or [x["i"]])]
                 for n in range(0, len(ids), 100):
                     await client.delete_messages(dest, ids[n:n + 100])
-                log(f"🧹 {tname}: прибрано старих — {len(old)}")
+                log(f"🧹 {tname}: прибрано (старі й реклама) — {len(old)}")
             except Exception as e:
                 log(f"⚠️ очищення {tname}: {str(e)[:60]}")
             gone = {x["i"] for x in old}
