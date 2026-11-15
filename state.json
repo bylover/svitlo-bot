@@ -733,7 +733,7 @@
   "t71789",
   "t1414"
  ],
- "gh_beat": "2026-11-15T10:30:44.366146+02:00",
+ "gh_beat": "2026-11-15T10:35:49.409406+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -744,11 +744,11 @@
   "groups": [
    "GPV3.1"
   ],
-  "updated": "10:16 15.11.2026",
+  "updated": "10:32 15.11.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Повідомити про аварійні ситуації",
-  "checked": "2026-11-15T10:22:53.717203+02:00",
+  "checked": "2026-11-15T10:32:51.195703+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -12676,7 +12676,10 @@
  "pend": {},
  "got": {},
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
- "gem_block": {},
+ "gem_block": {
+  "Nz9lkQ:gemini-flash-latest": "2026-11-16T10:05:00+02:00",
+  "Nz9lkQ:gemini-3.8-flash": "2026-11-16T10:05:00+02:00"
+ },
  "omdb_cache": {
   "tt5362988": [
    7.7,
@@ -30212,7 +30215,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "20ee35eeba12",
+  "gs": "2c81443c4b7e",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "6a2d75b2ccef",
   "sexed.json": "0362ec7e46d4",
@@ -43155,12 +43158,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-15",
  "silpo_week": "2026-46",
- "sbm_at": 1794731448.1582391,
+ "sbm_at": 1794731754.1315591,
  "sbm_hist": [
-  [
-   "20:51",
-   84
-  ],
   [
    "20:57",
    85
@@ -43731,6 +43730,10 @@
   ],
   [
    "10:30",
+   94
+  ],
+  [
+   "10:35",
    94
   ]
  ],
@@ -46620,7 +46623,7 @@
  "warned": "2026-11-13",
  "toyn_week": "202646",
  "toys_v": 3,
- "toys_last": 1794730576.7144299,
+ "toys_last": 1794731766.8555286,
  "toy_ban": [],
  "aro_v": 2,
  "arob_v": 2,
