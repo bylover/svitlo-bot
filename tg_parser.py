@@ -178,8 +178,10 @@ def ad_reason(ms: list, own: set, mode: int, words: list, bad: set, lim: int = 3
         return "платний контент (OnlyFans тощо)"
     if AD_MARK.search(low):
         return "позначка реклами"
-    if lim and len(text.strip()) > lim:
-        return f"довгий текст ({len(text.strip())} символів)"   # під справжнім контентом підпис зазвичай короткий
+    plain = re.sub(r"(https?://\S+|t\.me/\S+|@\w+|#\w+|[^\w\s])", " ", text)     # без посилань, згадок, хештегів, емодзі
+    plain = re.sub(r"\s+", " ", plain).strip()
+    if lim and len(plain) > lim:
+        return f"довгий текст ({len(plain)} символів)"          # під справжнім контентом підпис зазвичай короткий
     hit = next((w for w in words if w and w in low), None)
     if hit:
         return f"стоп-слово «{hit}»"
@@ -237,6 +239,19 @@ async def gif_index(client, ent, own: set, mode: int, words: list, bad: set, lim
         med[mon] = (v[len(v) // 2] if len(v) >= 5 else gmed) or 1      # мало GIF за місяць — порівнюємо із загальною медіаною
     out = sorted(([o, round(0.7 * sc / med[mon] + 0.3 * sc / gmed, 3)] for o, sc, mon in rows), key=lambda r: -r[1])
     return out[:GIF_IDX]
+
+
+SOFT = ("довгий", "лише посилання", "заклик", "кілька посилань", "посилання на інший", "комерційні")   # евристики: уже зібране за ними НЕ видаляємо
+
+
+def learn_sig(msgs: list, own: set) -> set:
+    """✍️ Підпис каналу: посилання/згадка, що стоїть у ≥25% постів (своє запрошення, резервний канал, бот зворотного звʼязку) — це не реклама."""
+    from collections import Counter
+    c = Counter()
+    for m in msgs:
+        c.update(targets_of([m])[0] - own)
+    n = len(msgs)
+    return {k for k, v in c.items() if n >= 8 and v >= max(4, 0.25 * n)}
 
 
 class Post:
@@ -400,10 +415,12 @@ async def main():
         except Exception as e:
             st.update(ok=0, err=str(e)[:120]); log(f"⚠️ {s.get('t') or s['ref'][:30]}: {str(e)[:80]}"); continue
         st["t"] = getattr(ent, "title", "") or s["ref"]
-        own = own_keys(ent, s["ref"])
+        own = own_keys(ent, s["ref"]) | set(st.get("sig") or [])         # + вивчений підпис каналу
         mode = int(s["ad"]) if s.get("ad") is not None else ad_mode
         ads = 0
         dups = 0
+        from collections import Counter
+        adr = Counter()
         try:                                                      # 🚫 позначені в боті як реклама: запамʼятати, куди вони ведуть, і прибрати
             for t in TYPES:
                 hit = [x for x in dbs[t]["items"] if x["k"] == k and x["i"] in ban_ids[t] and x["i"] not in kill[t]]
@@ -424,7 +441,7 @@ async def main():
         for t in TYPES:
             done = st.get(TYPES[t][4]) or ""
             first = max(datetime.strptime(done, "%Y-%m-%d").date() + timedelta(days=1) if done else yday - timedelta(days=FIRST_DAYS - 1), yday - timedelta(days=6))
-            dl = [first + timedelta(days=n) for n in range((yday - first).days + 1)]
+            dl = sorted({first + timedelta(days=n) for n in range((yday - first).days + 1)} | {yday - timedelta(days=n) for n in range(3)})   # + останні 3 дні: добрати, якщо бракує
             days[t] = [d for d in dl if d < yday] if now.hour < 8 else dl
         all_days = sorted({d for dl in days.values() for d in dl})
         blocked = False
@@ -434,15 +451,6 @@ async def main():
         for t in tgt:
             cur = sum(1 for x in dbs[t]["items"] if x["k"] == k and x["i"] not in kill[t])
             want[t] = max(0, min((tgt[t] if t == "g" else 3 * share[t]) - cur, tgt[t] - len(dbs[t]["items"]), 60))
-        gi = gidx.get(k) or {}
-        if want["g"] and gi.get("at", "") < f"{now - timedelta(days=GIF_RESCAN):%Y-%m-%d}" and time.time() - t0 < RUN_SEC:   # 🎞 переглянути всю історію GIF (раз на тиждень)
-            try:
-                gi = gidx[k] = {"at": f"{now:%Y-%m-%d}", "o": await gif_index(client, ent, own, mode, ad_words, bad, ad_lim), "seen": gi.get("seen") or []}
-                gidx_ch = True
-                log(f"🎞 {st['t'][:24]}: архів GIF за весь час — {len(gi['o'])}")
-            except Exception as e:
-                print(f"gif index {k}: {e}")
-        st["gall"] = len(gi.get("o") or [])
         try:
             if all_days or any(want.values()):
                 end = datetime.combine((all_days[-1] if all_days else yday) + timedelta(days=1), datetime.min.time(), KYIV)
@@ -450,30 +458,48 @@ async def main():
                 deep = datetime.combine((min(days["g"] + days["p"]) if days["g"] + days["p"] else yday) - timedelta(days=GIF_DEEP), datetime.min.time(), KYIV)
                 since = {"v": start, "g": deep if (days["g"] or want["g"]) else start, "p": deep if want["p"] else start}   # GIF і фото — глибше, коли треба добирати
                 albums: dict = {}
+                raw = []
                 async for m in client.iter_messages(ent, offset_date=end, limit=8000):
                     if m.date < min(since.values()):
                         break
                     t = kind_of(m)
                     if not t or m.date < since[t]:
                         continue
+                    raw.append((m, t))
+                sig = learn_sig([m for m, _t in raw], own)              # ✍️ підпис каналу — не реклама
+                if sig:
+                    st["sig"] = sorted(sig | set(st.get("sig") or []))[:20]
+                own |= set(st.get("sig") or [])
+                for m, t in raw:
                     if t == "p" and m.grouped_id:
                         albums.setdefault(m.grouped_id, []).append(m); continue
                     if m.id not in taken[t]:
-                        if ad_reason([m], own, mode, ad_words, bad, ad_lim):
-                            ads += 1; continue
+                        r_ = ad_reason([m], own, mode, ad_words, bad, ad_lim)
+                        if r_:
+                            ads += 1; adr[r_.split(" (")[0]] += 1; continue
                         if any(k_ in mh for k_ in media_keys([m])):
                             dups += 1; continue
                         pool[t].setdefault(m.date.astimezone(KYIV).date(), []).append(Post([m], t))
                 for ms in albums.values():
                     p = Post(ms, "p")
                     if p.id not in taken["p"] and p.date >= since["p"]:
-                        if ad_reason(p.ms, own, mode, ad_words, bad, ad_lim):
-                            ads += 1; continue
+                        r_ = ad_reason(p.ms, own, mode, ad_words, bad, ad_lim)
+                        if r_:
+                            ads += 1; adr[r_.split(" (")[0]] += 1; continue
                         if any(k_ in mh for k_ in media_keys(p.ms)):
                             dups += 1; continue
                         pool["p"].setdefault(p.date.astimezone(KYIV).date(), []).append(p)
         except Exception as e:
             st.update(ok=0, err=str(e)[:120]); log(f"⚠️ {st['t'][:30]}: {str(e)[:80]}"); continue
+        gi = gidx.get(k) or {}
+        if want["g"] and (gi.get("v") != 2 or gi.get("at", "") < f"{now - timedelta(days=GIF_RESCAN):%Y-%m-%d}") and time.time() - t0 < RUN_SEC:   # v2 — з урахуванням підпису каналу   # 🎞 переглянути всю історію GIF (раз на тиждень)
+            try:
+                gi = gidx[k] = {"v": 2, "at": f"{now:%Y-%m-%d}", "o": await gif_index(client, ent, own, mode, ad_words, bad, ad_lim), "seen": gi.get("seen") or []}
+                gidx_ch = True
+                log(f"🎞 {st['t'][:24]}: архів GIF за весь час — {len(gi['o'])}")
+            except Exception as e:
+                print(f"gif index {k}: {e}")
+        st["gall"] = len(gi.get("o") or [])
         for t, (tname, _f, qf, _bf, donef, _cap) in TYPES.items():
             if stop or blocked:
                 break
@@ -481,7 +507,7 @@ async def main():
                 if stop or time.time() - t0 > RUN_SEC:
                     stop = True; break
                 q = max(0, min(48, int(s.get(qf) or bases[t])))      # квота каналу для типу: базова (з адмінки) ± за 👍 / 👎 у боті
-                already = sum(1 for x in dbs[t]["items"] if x["k"] == k and x.get("day") == day.isoformat())
+                already = sum(1 for x in dbs[t]["items"] if x["k"] == k and x.get("day") == day.isoformat() and x["i"] not in kill[t])
                 q = max(0, q - already)
                 picks = pick(pool[t].get(day, []), q, t) if q else []
                 if len(picks) < q and (pool[t].get(day) or t == "g"):   # бракує — добір: відео й фото — з 2 попередніх днів (якщо за день щось було); GIF — найкращі за 30 днів
@@ -559,8 +585,9 @@ async def main():
                         for t, x in part:
                             if x["o"] == m.id:
                                 x["v"], x["r"], x["f"], x["c"] = stats(m)
-                                if ad_reason([m], own, mode, ad_words, bad, ad_lim):
-                                    kill[t].add(x["i"]); ads += 1; continue
+                                r_ = ad_reason([m], own, mode, ad_words, bad, ad_lim)
+                                if r_ and not r_.startswith(SOFT):            # уже зібране видаляємо лише за явною рекламою (кнопка, позначка, чорний список…)
+                                    kill[t].add(x["i"]); ads += 1; adr[r_.split(" (")[0]] += 1; continue
                                 ks = media_keys([m]); other = {mh[k_] for k_ in ks if k_ in mh and mh[k_] != x["i"] and mh[k_] in alive}
                                 if other and min(other) < x["i"]:
                                     kill[t].add(x["i"]); dups += 1          # ♻️ повтор уже зібраного — лишаємо раніший
@@ -568,15 +595,16 @@ async def main():
                                     mh.update({k_: x["i"] for k_ in ks})
         except Exception as e:
             print(f"refresh {k}: {e}")
-        st["ads"] = ads; ad_total += ads
+        st["ads"] = ads; ad_total += ads; st["adr"] = [f"{r_}: {n_}" for r_, n_ in adr.most_common(4)]
         st["dups"] = dups; dup_total += dups
         if ads:
-            log(f"🚫 {st['t'][:24]}: відсіяно рекламу — {ads}")
+            log(f"🚫 {st['t'][:24]}: відсіяно рекламу — {ads} ({adr.most_common(1)[0][0]}…)")
         if dups:
             log(f"♻️ {st['t'][:24]}: пропущено повторів — {dups}")
     if gidx_ch:
         fpush("vid_gidx.json", gidx)
-    hist["mh"] = dict(list(mh.items())[-30000:])                       # останні 30 тис. відбитків
+    killed = {i for t in TYPES for i in kill[t]}
+    hist["mh"] = dict(list({k_: v for k_, v in mh.items() if v not in killed}.items())[-30000:])   # видалене як реклама/повтор — не «бачене»                       # останні 30 тис. відбитків
     main_db["dupn"] = dup_total
     main_db["ad_un"] = sorted(bad)[-400:]; main_db["adn"] = ad_total; hist["ban_o"] = list(dict.fromkeys(ban_o))[-3000:]
     fpush("vid_hist.json", hist)
