@@ -7249,7 +7249,7 @@ TOY_BRANDS = re.compile(r"\b(satisfyer|womanizer|we-?vibe|lelo|lovense|fun facto
                         r"evolved|adam ?& ?eve|toyjoy|dream toys|pretty love|baile|lola games|kokos|adrien lastic|control|egzo|one|skyn|play ?n ?joy|waterglide|lubrix|"
                         r"viamax|medica group|joydivision|aquaglide|bioglide|yes\b|good clean love|astroglide|k-?y|kama sutra|exsens|plaisirs secrets|yesforlov|coco de mer|"
                         r"unihorn|creative conceptions|kisstoy|nomi tang|tracy'?s dog|honey play ?box|inya|playboy pleasure|otouch|magic motion|love to love|xocoon|shots|vive|"
-                        r"pillow talk|bellesa|loveline|skins|rocks-?off|ann summers|bswish|maia toys|natalie'?s toy box|share satisfaction|frederick'?s|gender ?x|zolo)\b", re.I)
+                        r"pillow talk|bellesa|loveline|skins|rocks-?off|ann summers|bswish|maia toys|natalie'?s toy box|share satisfaction|frederick'?s|gender ?x|zolo|gun oil|pink (?:water|silicone|lube|aloe|hot|indulgence)|id (?:glide|lubricants?|millennium|pleasure|sensation)|lubido|coconu|aloe ?cadabra|foria|boy butter|elbow grease|mister b|cobeco|lubrix|waterglide)\b", re.I)
 TOY_SECT = {   # ключ: (назва, група, опис для ШІ, порада з безпеки)
     "vac": ("🌬 Вакуумні стимулятори", "w", "вакуумні (безконтактні, air-pulse) кліторальні стимулятори", "Починайте з мінімальної інтенсивності; з лубрикантом на водній основі відчуття м'якші."),
     "wand": ("🪄 Ванди (вібромасажери)", "w", "вібромасажери-ванди (wand massagers)", "Потужні — починайте через тканину або з найнижчого режиму."),
@@ -7375,7 +7375,7 @@ TOY_DOMAINS = {"fun factory": "funfactory.com", "lelo": "lelo.com", "womanizer":
                "lovense": "lovense.com", "tenga": "tenga-global.com", "fleshlight": "fleshlight.com", "dame": "dameproducts.com", "svakom": "svakom.com", "lola games": "lolagames.com",
                "unihorn": "unihorn.com", "kisstoy": "kisstoy.com", "je joue": "jejoue.com", "arcwave": "arcwave.com", "b-vibe": "bvibe.com", "pjur": "pjur.com", "system jo": "systemjo.com",
                "sliquid": "sliquid.com", "njoy": "njoytoys.com", "hot octopuss": "hotoctopuss.com", "zalo": "zalo.com", "romp": "romp.com", "doxy": "doxy.co.uk", "le wand": "lewandmassager.com",
-               "magic wand": "magicwandoriginal.com", "kiiroo": "kiiroo.com", "aneros": "aneros.com", "nomi tang": "nomitang.com", "iroha": "iroha-tenga.com", "maude": "getmaude.com"}
+               "magic wand": "magicwandoriginal.com", "kiiroo": "kiiroo.com", "aneros": "aneros.com", "nomi tang": "nomitang.com", "iroha": "iroha-tenga.com", "maude": "getmaude.com", "shunga": "shunga.com", "uberlube": "uberlube.com", "astroglide": "astroglide.com", "good clean love": "goodcleanlove.com", "swiss navy": "swissnavy.com", "wicked": "wickedsensualcare.com", "bijoux indiscrets": "bijouxindiscrets.com", "joydivision": "joydivision.de", "durex": "durex.com", "k-y": "k-y.com", "gun oil": "gunoil.com", "pink": "pinklube.com", "coconu": "coconu.com", "aloe cadabra": "aloecadabra.com", "lubido": "lubido.co.uk", "boy butter": "boybutter.com", "foria": "foriawellness.com", "orgie": "orgie.com.br", "intt": "intt.com.br", "exsens": "exsens.com"}
 TOY_GENERIC = {"the", "and", "for", "with", "vibrator", "vibe", "toy", "edition", "generation", "gen", "new", "original", "classic", "set", "kit", "series", "plus", "pro", "max",
                "mini", "lube", "lubricant", "gel", "massager", "stimulator", "clitoral", "wand", "masturbator", "ring", "plug", "dildo", "rechargeable", "silicone", "waterproof"}
 
@@ -7404,7 +7404,7 @@ def _has_words(text: str, toks: list) -> bool:
     return all(f" {w} " in t for w in toks)             # лише цілими словами: «coco» ≠ «coconut»
 
 
-TOY_RETAIL = ["lovehoney.co.uk", "lovehoney.com", "adameve.com", "babeland.com"]   # великі магазини — їхні каталоги теж рахуються
+TOY_RETAIL = ["lovehoney.co.uk", "lovehoney.com", "adameve.com", "babeland.com", "eis.de"]   # великі магазини (eis.de — багато європейських мастил: pjur, Orgie, JoyDivision, Shunga)   # великі магазини — їхні каталоги теж рахуються
 TOY_CAT_FILE = Path("sx/toy_catalog.json")
 _TOY_CAT: dict = {}
 
@@ -7501,6 +7501,83 @@ def toy_catalog_build(st: dict, now: datetime) -> None:
     TOY_CAT_FILE.write_text(json.dumps(cat, ensure_ascii=False, separators=(",", ":")), "utf-8")
 
 
+TOY_KW = {   # слова в адресах сторінок товарів (sitemap), за якими беремо кандидатів виду з каталогів
+    "vac": r"air ?pulse|suction|clitoral (stimulator|sucker|suction)|pressure ?wave|pleasure air|sucking|druckwelle|auflegevibrator|klitoris ?sauger|saugvibrator", "wand": r"\bwand", "vib": r"rabbit|\bvibrator|dual stim|rabbitvibrator|rabbit vibrator|vibrator",
+    "gspot": r"g ?spot|g punkt", "tap": r"\btap|tapping|flick|flutter|klopf", "puls": r"thrust|pulsat|pulse|pulsing|stoss|stoß", "bullet": r"bullet|lipstick|mini vib|egg vib",
+    "wear": r"wearable|panty|knicker|underwear|slip vibrator|panty", "dildo": r"dildo", "kegel": r"kegel|love ball|ben wa|pelvic|liebeskugel|beckenboden", "mast": r"masturbator|stroker|\bsleeve|\begg\b|\bcup\b|fleshlight|masturbator",
+    "auto": r"automatic|interactive|\bkeon|\blaunch|\bion\b|thrusting stroker|hands free stroker", "ring": r"cock ring|penis ring|\bring\b|penisring|cockring", "prost": r"prostate|prostata",
+    "pump": r"\bpump|penispumpe", "sleeve": r"penis sleeve|extender|extension|penishuelle|penishülle|verlaengerung", "together": r"couples?|\bsync\b|chorus|tango|nova|during sex|paarvibrator", "couple": r"couples?|for two|partner|paar",
+    "remote": r"\bapp\b|remote|long distance|bluetooth", "plug": r"\bplug|analplug|plug", "anal": r"anal bead|\bbeads|anal toy|analkette|analkugel", "strap": r"strap ?on|harness|strap on|umschnall",
+    "bdsm": r"bondage|restraint|cuff|blindfold|whip|paddle|flogger|bdsm|collar|gag|fessel|handschelle|augenbinde|peitsche|knebel", "game": r"\bgame|dice|cards|board game|spiel|wuerfel|würfel",
+    "lubew": r"water ?based|aqua|\bh2o\b|wasserbasis|wasserbasiert", "lubes": r"silicone|silikonbasis|silikon", "lubeh": r"hybrid|hybrid", "lubewarm": r"warm|waerme|wärme|waermend|wärmend", "lubecool": r"cool|tingl|\bice|mint|menthol|chill|kuehl|kühl|frische|minze",
+    "lubeanal": r"anal|backdoor|\brelax|anal", "lubetaste": r"flavo|taste|strawberry|cherry|vanilla|chocolate|watermelon|mango|banana|candy|geschmack|erdbeer|kirsch|vanille|schoko",
+    "liquid": r"arousal|stimulat\w* gel|clit\w* gel|liquid vibrator|orgasm gel|sensitiz|stimulations|erregungs", "prolong": r"delay|prolong|desensitiz|long ?last|stamina|verzoeger|verzöger|delay",
+    "massage": r"massage|massage", "clean": r"cleaner|cleansing|toy clean|sanitiz|reiniger|reinigung|toycleaner",
+}
+TOY_LUBE = re.compile(r"lube|lubric|glide|\bgel\b|liquid|serum|balm|cream|spray|oil|lotion|gleitgel|gleitmittel|massageoel|massageöl|creme")   # + німецькі назви (eis.de)
+
+
+def toy_catalog_cands(k: str, limit: int = 120) -> list:
+    """Реальні товари виду k з каталогів (офіційні сайти брендів + великі магазини): «Бренд Назва з адреси сторінки»."""
+    rx = TOY_KW.get(k)
+    if not rx:
+        return []
+    cat, out, seen = _toy_cat(), [], set()
+    brand_of_dom = {d: b for b, d in TOY_DOMAINS.items()}
+    lube = k.startswith("lube") or k in ("liquid", "prolong", "massage", "clean")
+    lube_doms = {TOY_DOMAINS.get(b) for b in ("pjur", "system jo", "sliquid", "shunga", "uberlube", "astroglide", "good clean love", "swiss navy", "wicked", "durex", "k-y", "gun oil", "pink", "coconu", "aloe cadabra", "lubido", "boy butter", "foria", "orgie", "intt", "exsens")}
+    for dom, slugs in (cat.get("s") or {}).items():
+        for sl in slugs:
+            t = re.sub(r"\s+", " ", sl).strip()
+            if not re.search(rx, t) or (lube and dom not in lube_doms and not TOY_LUBE.search(t)) or (not lube and TOY_LUBE.search(t) and k not in ("game", "bdsm")):
+                continue
+            m = TOY_BRANDS.search(t)
+            if m:
+                name = t
+            elif dom in brand_of_dom:
+                name = f"{brand_of_dom[dom]} {t}"
+            else:
+                continue                                   # магазин, а бренд не з білого списку — пропускаємо
+            name = re.sub(r"\b(\w)", lambda z: z.group(1).upper(), re.sub(r"\s+", " ", name)).strip()[:80]
+            key = re.sub(r"[^a-z0-9]", "", name.lower())
+            if len(name.split()) < 2 or key in seen:
+                continue
+            seen.add(key); out.append(name)
+            if len(out) >= limit:
+                return out
+    return out
+
+
+_EIS_CACHE: dict = {}
+
+
+def toy_eis(n: str, brand: str):
+    """🔎 Пошук на eis.de (великий європейський магазин): True — модель є серед знайдених товарів; False — пошук нічого не дав; None — сайт недоступний."""
+    ph = _phrase(n, brand)
+    if not ph:
+        return None
+    key = n.lower()
+    if key in _EIS_CACHE:
+        return _EIS_CACHE[key]
+    try:
+        h = http_text(f"https://www.eis.de/search?fss={urllib.parse.quote(n)}")
+    except Exception:
+        _EIS_CACHE[key] = None
+        return None
+    t = html.unescape(re.sub(r"(?is)<(script|style)[^>]*>.*?</\1>", " ", h))
+    t = re.sub(r"<[^>]+>", " ", t)
+    m = re.search(r"ergab\s+([\d.]+)\s+treffer", t, re.I)
+    if m and int(m.group(1).replace(".", "")) == 0:
+        _EIS_CACHE[key] = False
+        return False
+    if m:
+        t = t[m.end():]                                  # лише результати пошуку, після «… ergab N Treffer»
+    t = re.sub(r"(?is)suche nach\s*[\"„“”'‘’].{0,200}?[\"„“”'‘’]", " ", t)   # прибрати повтор запиту («Deine Suche nach "…"»), щоб не знайти саму себе
+    r = bool(re.search(re.escape(re.sub(r"\s+", " ", _norm_words(brand)).strip()), _norm_words(t))) and _has_phrase(t, ph)
+    _EIS_CACHE[key] = r if (m or r) else None             # сторінка без лічильника й без збігу — невідомо (не «ні»)
+    return _EIS_CACHE[key]
+
+
 def toy_in_catalog(n: str, brand: str, dom: str):
     """True — модель є в каталозі сайту бренду або великого магазину (фразою поспіль); None — каталогу немає / не знайдено."""
     cat, ph = _toy_cat(), _phrase(n, brand)
@@ -7529,6 +7606,8 @@ def toy_exists(n: str):
     dom = next((d for b_, d in TOY_DOMAINS.items() if b_ in brand or brand in b_), "")
     if toy_in_catalog(n, brand, dom):
         return True                                    # 📚 є в каталозі офіційного сайту чи великого магазину
+    if toy_eis(n, brand):
+        return True                                    # 🔎 знайдено пошуком на eis.de
     bkey = re.sub(r"[^a-z0-9]", "", brand)
     hits = web_hits(f'"{n}"')
     if hits is None:
@@ -7641,20 +7720,42 @@ def toys_build(st: dict, now: datetime) -> None:
     old_n = [o[0] for o in (db["sect"].get(k) or {}).get("items") or []]
     if old_n:
         excl += " Уже в топі (можеш лишити, але додай ІНШІ, щоб було 15): " + "; ".join(old_n) + "."
-    raw = gemini(f"Ти експерт із секс-іграшок і сексуального здоров'я (sexual wellness), складаєш споживчий рейтинг. Категорія: {desc}.{excl} "
+    cands = [c_ for c_ in toy_catalog_cands(k) if c_.lower() not in {r_.lower() for r_ in rej}]
+    grounded: set = set()
+    if len(cands) >= 12:                                   # 📚 є реальний асортимент — ШІ не вигадує назви, а обирає й ранжує з нього
+        raw = gemini(f"Ти експерт із секс-іграшок і сексуального здоров'я (sexual wellness), складаєш споживчий рейтинг. Категорія: {desc}. "
+                     "Нижче — РЕАЛЬНІ товари з офіційних сайтів брендів і великих магазинів (назви з адрес сторінок). Обери з них до 15 найкращих саме для цієї категорії, від найкращого; "
+                     "орієнтуйся на відомість моделі, відгуки, огляди й нагороди. Інші товари не додавай. Для кожного: id (номер зі списку), n (назва — можна охайно оформити, але без зміни моделі), "
+                     "why (чим визнано — українською), feat (особливості — українською), who (кому підійде — українською), price (₴ / ₴₴ / ₴₴₴), new (true, якщо 2024+). "
+                     'Поверни JSON {"items":[...]}\n' + "\n".join(f"{i_ + 1}. {c_}" for i_, c_ in enumerate(cands)), json_mode=True, relaxed=True, max_tokens=5000)
+        items = []
+        for x in json_loose(raw).get("items") or []:
+            try:
+                base_n = cands[int(x.get("id")) - 1]
+            except Exception:
+                continue
+            nn = str(x.get("n") or "").strip()
+            bw, nw = set(_norm_words(base_n).split()), _norm_words(nn).split()
+            x["n"] = nn if len(nw) >= 2 and set(nw) <= bw else base_n   # ШІ може лише скоротити назву (прибрати зайві слова з адреси), але не змінити модель
+            grounded.add(x["n"].lower()); items.append(x)
+        TOY_LOG.append(f"📚 «{k}»: у каталогах {len(cands)} реальних товарів → ШІ обрав {len(items)}")
+    else:
+        raw = None
+    if not grounded:
+      raw = gemini(f"Ти експерт із секс-іграшок і сексуального здоров'я (sexual wellness), складаєш споживчий рейтинг. Категорія: {desc}.{excl} "
                  "Склади топ-15 найкращих моделей у порядку від найкращої. Критерії: оцінки й відгуки покупців на великих майданчиках (Amazon, Lovehoney, офіційні магазини брендів, "
                  "великі українські секс-шопи), огляди авторитетних медіа (Wirecutter, Cosmopolitan, Women's Health, Men's Health, Self, Mashable, Good Housekeeping), галузеві нагороди "
                  "(XBIZ, EAN Erotix, AVN «O» Awards, Red Dot). Лише перевірені відомі бренди з безпечними для тіла матеріалами; без ноунеймів і підробок; бажано те, що продається в Україні. "
                  "Для кожної: n (бренд і точна назва моделі), why (чим визнано: оцінки, нагороди, огляди — коротко українською), feat (матеріал, водозахист, режими, живлення, особливості — українською), "
                  "who (кому підійде — українською), price (₴ бюджетно / ₴₴ середньо / ₴₴₴ преміум), new (true, якщо модель 2024 року або новіша). "
                  'Лише реальні існуючі продукти. Поверни JSON {"items":[...]}', json_mode=True, relaxed=True, max_tokens=5000)
-    items = json_loose(raw).get("items") or []
+      items = json_loose(raw).get("items") or []
     if not raw or not items:
         TOY_LOG.append(f"🤖 «{k}»: ШІ не відповів ({GEM_STATE.get('err', 'порожньо')})"); toy_log_push(now); return
     seed_l = {n.lower() for n in seeds}
     names_ = [str(x.get("n") or "").strip() for x in items if isinstance(x, dict)]
     old_items = (db["sect"].get(k) or {}).get("items") or []
-    real = ai_selfcheck(names_, "секс-іграшки, лубриканти чи аксесуари")
+    real = {n_.lower() for n_ in names_} if grounded else ai_selfcheck(names_, "секс-іграшки, лубриканти чи аксесуари")   # з каталогу — вже реальні
     fit = ai_fitcheck(list(dict.fromkeys(names_ + [o[0] for o in old_items])), TOY_SECT[k][2])   # 🎯 чи це саме цей вид (нові + старі)
     out, seen, bad, cand = [], set(), 0, []
     for x in items:
@@ -7668,7 +7769,7 @@ def toys_build(st: dict, now: datetime) -> None:
             bad += 1; TOY_LOG.append(f"↷ не цей вид: {n[:50]}"); continue
         if not TOY_BRANDS.search(n) or n.lower() not in real or n.lower() in TOY_BAN:
             bad += 1; continue                           # не з білого списку брендів, самоперевірка не підтвердила або прибрано вручну
-        cand.append((x, n, toy_exists(n)))               # 🔎 модель має знайтися на сайті бренду, в магазині чи медіа
+        cand.append((x, n, True if n.lower() in grounded else toy_exists(n)))   # 📚 з каталогу — підтверджено; інакше 🔎 сайт бренду, магазин чи медіа
     n_none = sum(1 for *_, e in cand if e is None)
     if cand and n_none > len(cand) // 2:                # пошук недоступний — не зберігаємо неперевірене, спробуємо наступного запуску
         TOY_LOG.append(f"⏸ «{k}»: пошук недоступний ({n_none} з {len(cand)}) — збір відкладено"); toy_log_push(now); return
