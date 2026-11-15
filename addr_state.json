@@ -7,11 +7,11 @@
  "groups": [
   "GPV3.1"
  ],
- "updated": "08:33 15.11.2026",
+ "updated": "08:46 15.11.2026",
  "emergency": false,
  "city_emergency": false,
- "city_text": "Повідомити про аварійні ситуації",
- "checked": "2026-11-15T08:42:58.873572+02:00",
+ "city_text": "",
+ "checked": "2026-11-15T08:52:54.974340+02:00",
  "address": "вул. Кульженків Сім’ї, 35",
  "street_ok": "вул. Кульженків Сім’ї",
  "planned": false
