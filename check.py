@@ -7700,14 +7700,21 @@ def toys_build(st: dict, now: datetime) -> None:
         st["toys_v"] = 3
     old = (now - timedelta(days=60)).strftime("%Y-%m-%d")
     sec_ = lambda k: db["sect"].get(k) or {}
-    todo = [k for k in TOY_SECT if sec_(k).get("d", "") < old or (len(sec_(k).get("items") or []) < 12 and int(sec_(k).get("tries") or 0) < 4)]
-    todo.sort(key=lambda k: (k != "tap", len(sec_(k).get("items") or [])))   # тапалки першими, далі — найменші
-    if not todo:
-        return
+    day1, week1 = (now - timedelta(days=1)).strftime("%Y-%m-%d"), (now - timedelta(days=7)).strftime("%Y-%m-%d")
+    def due(k):                                        # порожній — щодня (не «засинає» на 60 днів); неповний (<12) — 4 спроби поспіль, далі раз на тиждень; повний — раз на 60 днів
+        x = sec_(k); n_ = len(x.get("items") or []); d_ = x.get("d", "")
+        return d_ < old or (n_ == 0 and (int(x.get("tries") or 0) < 4 or d_ < day1)) or (n_ < 12 and (int(x.get("tries") or 0) < 4 or d_ < week1))
+    la = st.setdefault("toy_la", {})                   # коли розділ пробували востаннє (навіть невдало) — щоб один «впертий» розділ не блокував чергу
+    todo = [k for k in TOY_SECT if due(k)]
+    todo.sort(key=lambda k: (k != "tap", len(sec_(k).get("items") or []) > 0, float(la.get(k) or 0), len(sec_(k).get("items") or [])))   # тапалки, далі порожні, далі — кого давно не пробували
     if not todo:
         return
     st["toys_last"] = _time.time()
     k = todo[0]
+    la[k] = _time.time()
+    empty = [TOY_SECT[k_][0] for k_ in TOY_SECT if not sec_(k_).get("items")]
+    if empty:
+        TOY_LOG.append(f"⏳ ще без моделей: {len(empty)} — " + ", ".join(e_[:22] for e_ in empty[:8]))
     title, grp, desc, tip = TOY_SECT[k]
     rej = (db.setdefault("rej", {}).get(k) or [])[-40:]   # моделі, які пошук уже відкинув, — не пропонувати знову
     excl = (" Не пропонуй ці моделі (не знайшлися в продажу): " + "; ".join(rej) + ".") if rej else ""
@@ -7758,6 +7765,7 @@ def toys_build(st: dict, now: datetime) -> None:
     real = {n_.lower() for n_ in names_} if grounded else ai_selfcheck(names_, "секс-іграшки, лубриканти чи аксесуари")   # з каталогу — вже реальні
     fit = ai_fitcheck(list(dict.fromkeys(names_ + [o[0] for o in old_items])), TOY_SECT[k][2])   # 🎯 чи це саме цей вид (нові + старі)
     out, seen, bad, cand = [], set(), 0, []
+    why_ = {"вид": 0, "бренд/перевірка": 0, "пошук": 0}
     for x in items:
         n = str(x.get("n") or "").strip() if isinstance(x, dict) else ""
         if not n or n.lower() in seen:
@@ -7766,9 +7774,9 @@ def toys_build(st: dict, now: datetime) -> None:
         if n.lower() in seed_l:
             continue                                     # зразки додаємо окремо нижче
         if n.lower() not in fit or not toy_gender_ok(n, grp):
-            bad += 1; TOY_LOG.append(f"↷ не цей вид: {n[:50]}"); continue
+            bad += 1; why_["вид"] += 1; TOY_LOG.append(f"↷ не цей вид: {n[:50]}"); continue
         if not TOY_BRANDS.search(n) or n.lower() not in real or n.lower() in TOY_BAN:
-            bad += 1; continue                           # не з білого списку брендів, самоперевірка не підтвердила або прибрано вручну
+            bad += 1; why_["бренд/перевірка"] += 1; continue   # не з білого списку брендів, самоперевірка не підтвердила або прибрано вручну
         cand.append((x, n, True if n.lower() in grounded else toy_exists(n)))   # 📚 з каталогу — підтверджено; інакше 🔎 сайт бренду, магазин чи медіа
     n_none = sum(1 for *_, e in cand if e is None)
     if cand and n_none > len(cand) // 2:                # пошук недоступний — не зберігаємо неперевірене, спробуємо наступного запуску
@@ -7776,7 +7784,7 @@ def toys_build(st: dict, now: datetime) -> None:
     db.setdefault("rej", {})
     for x, n, ex_ in cand:
         if ex_ is not True:                              # нові моделі — лише ті, що реально знайшлися (сайт бренду, магазин, медіа)
-            bad += 1; TOY_LOG.append(f"↷ не знайдено в пошуку: {n[:50]}")
+            bad += 1; why_["пошук"] += 1; TOY_LOG.append(f"↷ не знайдено в пошуку: {n[:50]}")
             db["rej"].setdefault(k, []).append(n[:60]); continue
         out.append([n[:70], str(x.get("why") or "")[:160], str(x.get("feat") or "")[:200], str(x.get("who") or "")[:120],
                     (re.findall(r"₴+", str(x.get("price") or "")) or ["₴₴"])[0][:3], 1 if x.get("new") in (True, "true", 1) else 0, 1 if ex_ else 0])
@@ -7800,7 +7808,7 @@ def toys_build(st: dict, now: datetime) -> None:
     if out or not old_items:
         db["sect"][k] = {"t": title, "g": grp, "tip": tip, "d": now.strftime("%Y-%m-%d"), "items": out[:15], "vf": 5, "fit": 1, "tries": tries}
     db["at"] = now.strftime("%d.%m.%Y")
-    TOY_LOG.append(f"🧸 «{k}» {title}: ШІ ({GEM_STATE.get('src', '?')}) {len(items)} → у топі {len(out)} · ✗ {bad} · готово розділів {sum(1 for v in db['sect'].values() if v.get('items'))}/{len(TOY_SECT)}")
+    TOY_LOG.append(f"🧸 «{k}» {title}: ШІ ({GEM_STATE.get('src', '?')}) {len(items)} → у топі {len(out)} · ✗ {bad}{" (" + ", ".join(f"{a_} {b_}" for a_, b_ in why_.items() if b_) + ")" if bad else ""} · готово розділів {sum(1 for v in db['sect'].values() if v.get('items'))}/{len(TOY_SECT)}")
     print(TOY_LOG[-1])
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=toys.json", db)
