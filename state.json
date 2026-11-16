@@ -733,7 +733,7 @@
   "t71789",
   "t1414"
  ],
- "gh_beat": "2026-11-16T02:15:51.412740+02:00",
+ "gh_beat": "2026-11-16T02:20:53.998261+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1577,14 +1577,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "16.11 02:17",
-   "ts": 1794788264,
+   "at": "16.11 02:22",
+   "ts": 1794788558,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "16.11 02:17",
-   "ts": 1794788264,
+   "at": "16.11 02:22",
+   "ts": 1794788558,
    "ok": true,
    "note": ""
   },
@@ -1607,8 +1607,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "16.11 02:12",
-   "ts": 1794787974,
+   "at": "16.11 02:23",
+   "ts": 1794788606,
    "ok": true,
    "note": ""
   },
@@ -30281,10 +30281,22 @@
    67,
    62,
    "2026-11-16"
+  ],
+  "tt7095654": [
+   6.6,
+   83,
+   58,
+   "2026-11-16"
+  ],
+  "tt2057392": [
+   7.3,
+   95,
+   73,
+   "2026-11-16"
   ]
  },
  "pushed_h": {
-  "gs": "6aadd3bf6570",
+  "gs": "d3553c986956",
   "quiz_pool.json": "80eae7ea9381",
   "fact.png": "14b77695c365",
   "sexed.json": "0362ec7e46d4",
@@ -45119,6 +45131,121 @@
    ],
    "ov": "Тринадцятирічна Брайоні має багату уяву, пише п'єси й хоче стати письменницею. Вона знає, що син прислуги Роббі закоханий в її старшу сестру Сесілію, і та відповідає йому взаємністю. Але коли її кузина Лола стає жертвою ",
    "poster": "https://image.tmdb.org/t/p/w500/nid49SAoogqpgl1zMBauh9z1nwM.jpg"
+  },
+  "m552178": {
+   "title": "Темні води",
+   "year": "2019",
+   "rating": 7.6,
+   "genres": [
+    "Драма",
+    "Трилер"
+   ],
+   "g": [
+    18,
+    53
+   ],
+   "ov": "Фільм засновано на реальній історії корпоративного адвоката Роберта Білотта, що розкрив зв’язок між низкою таємничих смертей і великою кількістю захворювань у маленькому містечку та хімічною компанією DuPont, яка протяго",
+   "poster": "https://image.tmdb.org/t/p/w500/hc3zAQMB5waRcmzQY9dBQ5Dm1uC.jpg"
+  },
+  "m812583": {
+   "title": "Ножі наголо: Прокинься, покійнику",
+   "year": "2025",
+   "rating": 7.3,
+   "genres": [
+    "Трилер",
+    "Детектив",
+    "Комедія"
+   ],
+   "g": [
+    53,
+    9648,
+    35
+   ],
+   "ov": "Детектив Бенуа Бланк об’єднує зусилля зі старанним молодим священником, щоб розслідувати неймовірний злочин у церкві маленького містечка з темною історією.",
+   "poster": "https://image.tmdb.org/t/p/w500/SGF052h6wEZq29ifyjoFlmHo8A.jpg"
+  },
+  "m370172": {
+   "title": "007: Не час помирати",
+   "year": "2021",
+   "rating": 7.3,
+   "genres": [
+    "Бойовик",
+    "Трилер",
+    "Пригоди"
+   ],
+   "g": [
+    28,
+    53,
+    12
+   ],
+   "ov": "Короткочасний спокій Бонда перериває нове термінове завдання, де ставки знову надто високі. Суперагент кидає виклик найвпливовішим гравцям злочинного світу, проливає світло на хитросплетені інтриги і викриває підступні з",
+   "poster": "https://image.tmdb.org/t/p/w500/lQqpnWB5CcGfn0QBA860eBtpM4F.jpg"
+  },
+  "m55": {
+   "title": "Сука любов",
+   "year": "2000",
+   "rating": 8.0,
+   "genres": [
+    "Драма",
+    "Трилер"
+   ],
+   "g": [
+    18,
+    53
+   ],
+   "ov": "У жахливій автомобільній аварії сплітаються долі трьох героїв: молодого хлопця, успішної моделі і старого волоцюги. Кожен з них тікає від своїх демонів, ховає свій біль, несе свій хрест - і все заради любові. Але ким вон",
+   "poster": "https://image.tmdb.org/t/p/w500/i2AG3k1FhbE31pmPYZnvadZXNWN.jpg"
+  },
+  "m612": {
+   "title": "Мюнхен",
+   "year": "2005",
+   "rating": 7.5,
+   "genres": [
+    "Драма",
+    "Історичний",
+    "Трилер"
+   ],
+   "g": [
+    18,
+    36,
+    53
+   ],
+   "ov": "Драматична історія, присвячена наслідкам вбивства 11 ізраїльських атлетів на олімпіаді в Мюнхені в 1972 році. Картина заснована на документальних джерелах, включаючи спогади учасників тих подій.",
+   "poster": "https://image.tmdb.org/t/p/w500/gFaY1AD42O19xaa7zH9OO7afjSg.jpg"
+  },
+  "m50348": {
+   "title": "Адвокат на лінкольні",
+   "year": "2011",
+   "rating": 7.3,
+   "genres": [
+    "Кримінал",
+    "Драма",
+    "Трилер"
+   ],
+   "g": [
+    80,
+    18,
+    53
+   ],
+   "ov": "Міккі Голлер — талановитий адвокат з Лос-Анджелесу, його імідж та спосіб життя чудово доповнює його улюблена машина «Лінкольн». Чергова справа — напад багатого клієнта, Луїса Руле, на повію — спочатку здавалася легкою, т",
+   "poster": "https://image.tmdb.org/t/p/w500/cN0E0T3nTubDKFhjfUDWmaULebW.jpg"
+  },
+  "m50475": {
+   "title": "용서는 없다",
+   "year": "2010",
+   "rating": 7.4,
+   "genres": [
+    "Кримінал",
+    "Трилер",
+    "Бойовик"
+   ],
+   "g": [
+    80,
+    53,
+    28
+   ],
+   "ov": "A forensic pathologist is about to retire in order to spend some time with his daughter. However, he is forced to continue working when his daughter is kidnapped.",
+   "poster": "https://image.tmdb.org/t/p/w500/sago4xY1hAZunsJlnlg656ZMXaW.jpg"
   }
  },
  "cofid_pushed": "15.11.2026",
@@ -45208,12 +45335,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-15",
  "silpo_week": "2026-46",
- "sbm_at": 1794788156.6081784,
+ "sbm_at": 1794788459.1809058,
  "sbm_hist": [
-  [
-   "14:00",
-   94
-  ],
   [
    "14:05",
    93
@@ -45784,6 +45907,10 @@
   ],
   [
    "02:15",
+   93
+  ],
+  [
+   "02:20",
    93
   ]
  ],
@@ -48683,7 +48810,7 @@
  "nmt_last": 1794787863.9135203,
  "kino_v": 2,
  "yt_v": 4,
- "toycat_last": 1794787267.908965,
+ "toycat_last": 1794788476.265253,
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 08.11–15.11\n<blockquote>🎯 <b>1. Meta зупинила оновлення умов для рекламодавців</b>\nMeta призупинила нові правила бізнесу та реклами, які мали дозволити сканування вебсайтів компаній для навчання ШІ.\n💡 Слідкуйте за оновленнями політики конфіденційності Meta, перш ніж оновлювати посадкові сторінки для рекламних кампаній.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxPMDRzYnRWUEZHTjNELTJycVBxMHBsZWRlQnJhTGc4WEFGUkNuNmNzSkNOOXMtMmplM2NYSU93X0JvMHYybEZlOHMzVjZYQ2JhdENRd3BKY1A3NENZTVp4WE03RUxWTm1qa2pYV1BiUHN1c2wzMmh5YkpINDY3aHhoSXRYYzJHTTZpRlIxZm9GV20?oc=5\">PPC Land</a></blockquote>\n<blockquote>🎯 <b>2. Новий інструмент прозорості недійсного трафіку в Google Ads</b>\nGoogle Ads випустив інструмент для відстеження та аналізу недійсного трафіку, що підвищує прозорість витрат.\n💡 Перевірте свої рекламні звіти на наявність підозрілих кліків за допомогою нового інструменту, щоб оптимізувати бюджети.\n🔗 <a href=\"https://blog.google/products/ads-commerce/invalid-traffic-overview-google-ads/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>3. Використання контенту Instagram для навчання ШІ</b>\nКористувачі та медіа масово обговорюють автоматичне залучення публічних фото з Instagram до навчальних моделей Meta.\n💡 Перевірте налаштування конфіденційності акаунтів клієнтів і за потреби скористайтеся формою заперечення проти обробки даних.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxNTU5EUTlsMFp3WGFLQUJudmdoZWU5RFFCVTlSQXBXSXNUSE5tdlJmS1hpT3d5VC00M3FPaTlKR296M0x1cm9sWGdheThzSEVBMTlKWGFlcjN0SWhqT3I2YjZpaEdQeFBDNzlEMTM2ZHc2UDRsbDMxanZJdzVZTWRtZmJCcVZZakVVUUdVRHNOMmFHdFJUZXRacFg5elo5dFpYX1ZfQW5XRWlFbFpjSUFLM0ZOTUw3Q2VqbTZtczZCYjBBQWNJWHN3YU5HNA?oc=5\">Експерт</a></blockquote>\n<blockquote>🎯 <b>4. LinkedIn запускає рекламу на Connected TV у Великій Британії</b>\nПлатформа розширює рекламні можливості B2B-сегмента, додаючи формат Connected TV на британському ринку.\n💡 Використовуйте кросс-канальні B2B-стратегії, якщо ваша цільова аудиторія у Великій Британії дивиться стрімінгові сервіси.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-launches-ctv-ads-in-the-uk/874581/\">Social Media Today</a></blockquote>\n<blockquote>📊 <b>5. Роз'яснення Meta щодо контролю алгоритмів стрічки</b>\nКомпанія опублікувала детальний опис того, як користувачі можуть впливати на формування своєї стрічки через налаштування.\n💡 Враховуйте специфіку налаштувань рекомендацій при створенні органічного контенту, фокусуючись на залученості.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-publishes-explainer-on-your-algorithm-controls/874460/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>6. Twitch запускає інтерактивні shoppable-оголошення</b>\nПлатформа представила нові формати реклами з можливістю купівлі прямо під час стрімів та опцією пропуску.\n💡 Тестуйте прямі інтеграції товарів через стрімінгові платформи, якщо орієнтуєтеся на геймінг-аудиторію.\n🔗 <a href=\"https://www.marketingdive.com/news/twitch-debuts-shoppable-skippable-ads-as-twitchcon-feels-growing-pains/874614/\">Marketing Dive</a></blockquote>\n<blockquote>🆕 <b>7. Instagram тестує нову спортивну функцію</b>\nПлатформа випробовує спеціальний функціонал для інтеграції спортивного контенту та результатів у реальному часі.\n💡 Готуйте тематичний візуальний контент для майбутніх оновлень, якщо ваш бренд працює у ніші спорту чи лайстайлу.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxPMHNHUGJvdzV4dWp2eW1Rc0gzUFAyTjFrTTI2bzhHdWhUZXBNWG1vUDE3WnBBZjVDUlRwcUcteEdrZm5ub2E5bWpjRzlsM3h2Z3BjajFsVE9wc0NobFFaR1JuakJlbGFRSEgzeC1vTmxTUDZjS1pGejRzWC1iN2lJQ2tLUlJMbmxaTlAyamJWaGhLXzNOQWc?oc=5\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>8. Тестування функції відстеження частих глядачів у LinkedIn</b>\nLinkedIn тестує відображення користувачів, які найчастіше переглядають профіль або публікації.\n💡 Використовуйте цю функцію для виявлення теплих лідів та потенційних партнерів серед активних читачів сторінки.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-tests-frequent-viewer-feature/874463/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>9. Нові інструменти святкового шопінгу на Pinterest</b>\nPinterest додав оновлення для полегшення пошуку товарів та створення святкових колекцій перед сезоном розпродажів.\n💡 Оформіть каталоги товарів у вигляді тематичних дошок завчасно для максимального охоплення у святковий період.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-adds-holiday-shopping-tools/874575/\">Social Media Today</a></blockquote>\n<blockquote>📊 <b>10. Вплив ШІ-інсайтів на результати рекламних кампаній</b>\nАналітичні дані показують можливе зниження ефективності при надмірному покладанні на згенеровані штучним інтелектом аудиторії.\n💡 Комбінуйте алгоритмічні рекомендації платформ із власними первинними даними про клієнтів для кращого ROI.\n🔗 <a href=\"https://www.marketingdive.com/news/ai-derived-audience-insights-hurt-results-what-the-numbers-say/874565/\">Marketing Dive</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202646\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Чекліст аутентифікації рекламного акаунта Meta</b> · Medium · facebook-ads\nПрактичний посібник із 25 пунктів для перевірки налаштувань Meta Ads. Охоплює ключові аспекти: налаштування трекінгу, структуру акаунта, роботу з аудиторіями та бюджетами.\n💡 Регулярно перевіряйте коректність передачі подій через API конверсій та структуру кампаній на наявність перетину аудиторій.\n<a href=\"https://medium.com/@raza44474/meta-ads-audit-checklist-25-things-to-check-in-your-ad-account-1680d386c1c6?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Як масштабувати рекламу у Facebook без втрати ROAS</b> · Medium · facebook-ads\nМетоди рентабельного масштабування рекламних кампаній у Facebook та Instagram. Автор розбирає вертикальне та горизонтальне масштабування, правила бюджетування та контроль витрат.\n💡 Використовуйте комбінацію горизонтального масштабування та поступового збільшення бюджету не більше ніж на 20% на добу, щоб не зламати алгоритми оптимізації.\n<a href=\"https://medium.com/@raza44474/how-to-scale-facebook-ads-without-killing-roas-cda93640631c?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Чому падає ROAS у Meta Ads і як це виправити</b> · Medium · facebook-ads\nРозбір 9 найпоширеніших причин падіння рентабельності реклами. Матеріал фокусується на технічних провалах у трекінгу та проблемі вигорання креативів.\n💡 Оновлюйте креативну базу щотижня та перевіряйте збіг даних між рекламним кабінетом і внутрішньою аналітикою сайту.\n<a href=\"https://medium.com/@raza44474/why-your-meta-ads-roas-is-dropping-and-9-ways-to-fix-it-c11db993d8a2?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Налаштування Meta Conversions API на Shopify</b> · Medium · facebook-ads\nПокрокова інструкція з інтеграції API конверсій Meta для магазинів на платформі Shopify. Допомагає обійти обмеження бразерів щодо блокування файлів cookie.\n💡 Підключення через офіційний додаток Facebook &amp; Instagram забезпечує дублювання подій через сервер, що мінімізує втрату даних про покупців.\n<a href=\"https://medium.com/@raza44474/how-to-set-up-the-meta-conversions-api-on-shopify-f38fff4f8ec0?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>5. Як отримувати якісніші ліди через Facebook Lead Ads</b> · Medium · facebook-ads\nВирішення проблеми дешевих, але нецільових заявок, які не відповідають на дзвінки. Розглядаються налаштування форм та методи попередньої кваліфікації користувачів.\n💡 Додайте обов'язкове поле запитання з варіантами вибору або ускладніть форму додатковим кроком (Intent Confirmation), щоб відсіяти випадкові кліки.\n<a href=\"https://medium.com/@raza44474/how-to-get-better-quality-leads-from-facebook-lead-ads-edaeae6ad45a?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>6. Як прибрати неякісні ліди з лід-форм Meta та Google</b> · Medium · facebook-ads\nАналіз причин появи великої кількості сміттєвих заявок із невірними номерами телефонів. Автор пояснює, як за допомогою простих змін у формах відсіяти немотивовану аудиторію.\n💡 Вимикайте автозаповнення контактних даних у формі — це змушує користувачів вручну вводити актуальний номер і пошту, що різко підвищує якість бази.\n<a href=\"https://medium.com/@hndsolutions/how-to-cut-junk-leads-from-meta-and-google-lead-forms-017d5c8bf28e?source=rss------facebook_ads-5\">джерело</a></blockquote>\n§§\n<blockquote>💬 <b>7. Чекліст Meta Ads для Black Friday: перевірка трекінгу</b> · Medium · facebook-ads\nПокрокові дії для підготовки рекламних какаунтів до сезонного розпродажу. Наголошується на критичній важливості технічної готовності перед збільшенням бюджетів.\n💡 Фіксуйте та тестуйте події конверсій мінімум за три тижні до початку активностей, щоб алгоритми встигли адаптуватися до нової інтенсивності.\n<a href=\"https://medium.com/@rsroni26/black-friday-meta-ads-checklist-fix-your-tracking-before-you-raise-the-budget-275bc19b559a?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>8. HTML5 анімовані банери в сучасній digital-рекламі</b> · Medium · facebook-ads\nОгляд можливостей використання HTML5-баннерів для підвищення залученості користувачів. Альтернатива статичним зображенням та важким відеороликам.\n💡 Використовуйте легкі анімації з чітким закликом до дії на перших трьох секундах показу для покращення показників CTR у медійних мережах.\n<a href=\"https://medium.com/@socialpeak482/html5-animated-banner-ads-a-creative-approach-to-modern-digital-advertising-a3d2428d8b7c?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>9. Автоматизація у TikTok Ads: що залишити під ручним контролем</b> · Medium · tiktok-ads\nАналіз нових інструментів автоматизації від TikTok для рекламних кабінетів. Експерт радить, які алгоритмічні функції варто довірити штучному інтелекту, а які контролювати самостійно.\n💡 Довіряйте AI підбір креативів та оптимізацію показу, але стратегію бюджетування та роботу з мінус-словами залишайте під ручним управлінням.\n<a href=\"https://medium.com/@nadeer2004/tiktok-is-automating-more-of-the-ad-account-before-black-friday-keep-these-decisions-for-yourself-eac0b6011ae3?source=rss------tiktok_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>10. Індексація підписів в Instagram: інструмент утримання, а не охоплення</b> · Medium · tiktok-ads\nДослідження алгоритмів роботи пошуку в Instagram через текстові описи до публікацій. Пояснюється, чому якісний копирайт працює на глибину взаємодії з аудиторією.\n💡 Пишіть детальні ключові слова в текстах постів не для вірального охоплення, а для того, щоб утримати користувача на сторінці та покращити поведінкові фактори.\n<a href=\"https://medium.com/@moburst/instagram-caption-indexing-a-retention-play-not-reach-a008bc737070?source=rss------tiktok_ads-5\">джерело</a></blockquote>\n§RT:smm:202646p",
  "kino_q": [
   {
@@ -48821,7 +48948,7 @@
  "kp_at": {
   "mix": "2026-11-16T02:00:45.996443+02:00",
   "drama": "2026-11-16T02:10:50.684694+02:00",
-  "thriller": "2026-11-15T13:30:53.841520+02:00",
+  "thriller": "2026-11-16T02:20:54.344265+02:00",
   "comedy": "2026-11-15T13:35:48.993262+02:00",
   "horror": "2026-11-15T14:20:46.417007+02:00",
   "scifi": "2026-11-15T14:30:54.578632+02:00",
