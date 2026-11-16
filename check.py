@@ -7700,8 +7700,8 @@ def toys_build(st: dict, now: datetime) -> None:
         st["toys_v"] = 3
     old = (now - timedelta(days=60)).strftime("%Y-%m-%d")
     sec_ = lambda k: db["sect"].get(k) or {}
-    day1, week1 = (now - timedelta(days=1)).strftime("%Y-%m-%d"), (now - timedelta(days=7)).strftime("%Y-%m-%d")
-    def due(k):                                        # порожній — щодня (не «засинає» на 60 днів); неповний (<12) — 4 спроби поспіль, далі раз на тиждень; повний — раз на 60 днів
+    day1, week1 = (now - timedelta(hours=6)).strftime("%Y-%m-%d %H:%M"), (now - timedelta(days=7)).strftime("%Y-%m-%d")
+    def due(k):                                        # порожній — кожні 6 год (не «засинає» на 60 днів); неповний (<12) — 4 спроби поспіль, далі раз на тиждень; повний — раз на 60 днів
         x = sec_(k); n_ = len(x.get("items") or []); d_ = x.get("d", "")
         return d_ < old or (n_ == 0 and (int(x.get("tries") or 0) < 4 or d_ < day1)) or (n_ < 12 and (int(x.get("tries") or 0) < 4 or d_ < week1))
     la = st.setdefault("toy_la", {})                   # коли розділ пробували востаннє (навіть невдало) — щоб один «впертий» розділ не блокував чергу
@@ -7806,7 +7806,7 @@ def toys_build(st: dict, now: datetime) -> None:
     prev = sec_(k)
     tries = 0 if len(out) >= 12 else (int(prev.get("tries") or 0) + 1 if len(out) <= len(old_items) else int(prev.get("tries") or 0))   # без приросту — після 4 спроб чекаємо 60 днів
     if out or not old_items:
-        db["sect"][k] = {"t": title, "g": grp, "tip": tip, "d": now.strftime("%Y-%m-%d"), "items": out[:15], "vf": 5, "fit": 1, "tries": tries}
+        db["sect"][k] = {"t": title, "g": grp, "tip": tip, "d": now.strftime("%Y-%m-%d %H:%M"), "items": out[:15], "vf": 5, "fit": 1, "tries": tries}
     db["at"] = now.strftime("%d.%m.%Y")
     TOY_LOG.append(f"🧸 «{k}» {title}: ШІ ({GEM_STATE.get('src', '?')}) {len(items)} → у топі {len(out)} · ✗ {bad}{" (" + ", ".join(f"{a_} {b_}" for a_, b_ in why_.items() if b_) + ")" if bad else ""} · готово розділів {sum(1 for v in db['sect'].values() if v.get('items'))}/{len(TOY_SECT)}")
     print(TOY_LOG[-1])
@@ -8313,9 +8313,9 @@ PERIODS = [("🌙", "ніч", 0, 6), ("🌅", "ранок", 6, 12), ("☀️", "
 def fetch_weather(lat: float = LAT, lon: float = LON) -> dict:
     url = ("https://api.open-meteo.com/v1/forecast"
            f"?latitude={lat}&longitude={lon}&timezone=Europe%2FKyiv&wind_speed_unit=ms&forecast_days=3"
-           "&hourly=temperature_2m,precipitation_probability,weather_code,wind_speed_10m,wind_gusts_10m"
+           "&hourly=temperature_2m,apparent_temperature,precipitation_probability,precipitation,weather_code,wind_speed_10m,wind_gusts_10m,relative_humidity_2m"
            "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,"
-           "sunrise,sunset,uv_index_max")
+           "sunrise,sunset,uv_index_max,precipitation_sum")
     return http_json(url)
 
 
@@ -8350,9 +8350,37 @@ def weather_text(w: dict, day, title: str) -> str:
         return f"🌤 <b>ПОГОДА · {title.upper()}</b>\nПрогнозу ще немає"
     d = dl["time"].index(key)
     tmin, tmax = dl["temperature_2m_min"][d], dl["temperature_2m_max"][d]
+    di = [i for i, t in enumerate(h["time"]) if t.startswith(key) and 7 <= int(t[11:13]) < 22]   # денні години — для «відчувається», вологості й дощу
+    det = []
+    if di and h.get("apparent_temperature"):
+        a_ = [h["apparent_temperature"][i] for i in di if h["apparent_temperature"][i] is not None]
+        if a_:
+            det.append(f"🌡 відчувається {t_fmt(min(a_))}…{t_fmt(max(a_))}")
+    if di and h.get("relative_humidity_2m"):
+        hu = [h["relative_humidity_2m"][i] for i in di if h["relative_humidity_2m"][i] is not None]
+        if hu:
+            det.append(f"💦 вологість {round(sum(hu) / len(hu))}%")
+    psum = (dl.get("precipitation_sum") or [None] * 3)[d]
+    if psum and psum >= 0.3:
+        det.append(f"🌧 опадів {psum:.1f} мм")
+    wet = [int(h["time"][i][11:13]) for i in di if (h["precipitation_probability"][i] or 0) >= 50]
+    rain_win = ""
+    if wet:                                           # коли саме найімовірніший дощ / сніг
+        a0, b0 = wet[0], wet[0]
+        for x_ in wet[1:]:
+            if x_ == b0 + 1:
+                b0 = x_
+            else:
+                break
+        pmax = max(h["precipitation_probability"][i] or 0 for i in di)
+        rain_win = f"☔ найімовірніше {a0:02d}:00–{b0 + 1:02d}:00 (до {pmax}%)"
     lines = [f"🌤 <b>ПОГОДА {title.upper()} · {WD_SHORT[day.weekday()]} {day:%d.%m}</b>",
-             f"📍 {PLACE} · <b>{t_fmt(tmin)}…{t_fmt(tmax)}</b>",
-             "<blockquote>" + "\n".join(rows) + "</blockquote>"]
+             f"📍 {PLACE} · <b>{t_fmt(tmin)}…{t_fmt(tmax)}</b>"]
+    if det:
+        lines.append(" · ".join(det))
+    lines.append("<blockquote>" + "\n".join(rows) + "</blockquote>")
+    if rain_win:
+        lines.append(rain_win)
     tips = []
     if rainy:
         tips.append(f"☂️ <b>Візьміть парасольку</b> ({', '.join(rainy)})")
@@ -9122,6 +9150,24 @@ def main() -> None:
     if due_m:
         got_ = claim([f"mo:{c}:{today_key}" for c in due_m])
         due_m = [c for c in due_m if f"mo:{c}:{today_key}" in got_]         # 🔒 паралельний запуск уже надіслав — не дублюємо
+    wx_cache: dict = {}
+
+    def morning_wx(c: str):                           # 🌤 погода на сьогодні для ранкового зведення — у місці людини (своє місце / район / Київ)
+        p_ = PROF.get(c) or {}
+        wl = p_.get("wloc")
+        key_ = ("loc", wl[0], round(wl[1], 3), round(wl[2], 3)) if wl else ((p_.get("city") or "kyiv", p_.get("dist")) if p_.get("dist") else None)
+        if key_ not in wx_cache:
+            try:
+                if key_ is None:
+                    wx_cache[key_] = weather_for(now)
+                elif key_[0] == "loc":
+                    wx_cache[key_] = weather_for(now, key_[2], key_[3], key_[1])
+                else:
+                    nm, la, lo = DISTRICTS.get(key_[0], {}).get(key_[1], (PLACE, LAT, LON))
+                    wx_cache[key_] = weather_for(now, la, lo, nm)
+            except Exception as e:
+                print(f"Ранок, погода: {e}"); wx_cache[key_] = None
+        return wx_cache[key_]
     if due_m:
         n = now.date().toordinal()
         wife_head = (f"☀️ <b>Доброго ранку, {WIFE_NAME}!</b>\n"
@@ -9149,7 +9195,8 @@ def main() -> None:
                         per_group[g_] = None
                 txt = per_group[g_]
             if txt:
-                direct.append((c, txt, False, None))      # саме ранкове зведення (не дублюємо /grafik нижче)
+                wx_ = morning_wx(c)
+                direct.append((c, txt + ("\n\n" + wx_ if wx_ else ""), False, WX3_KB if wx_ else None))   # ранкове зведення + 🌤 погода на сьогодні
         st["morning_sent"] = now.isoformat()
     st["mo_sent"] = {k: v for k, v in ms.items() if v == today_key}
 
@@ -9558,11 +9605,22 @@ def main() -> None:
             and st.get("silpo_snap") != today_key):
         silpo_snapshot(st, now)
         st["silpo_snap"] = today_key                  # навіть якщо не вдалося — не повторюємо до наступної середи
-    silpo_due = (now.weekday() == SILPO_WEEKDAY and SILPO_HOUR <= now.hour < SILPO_HOUR + 4
-                 and st.get("silpo_week") != week_key and f"silpo:{week_key}" in claim([f"silpo:{week_key}"], 6 * 3600))
+    silpo_due = (now.weekday() == SILPO_WEEKDAY and SILPO_HOUR <= now.hour < SILPO_HOUR + 8   # вікно 08:00–16:00 (надсилається кожному у його час)
+                 and st.get("silpo_week") != week_key)
     if silpo_due:
         sp = build_silpo(st, now)
-        if sp:
+        late = now.hour >= SILPO_HOUR + 5                  # з 13:00 свіжа збірка так і не вдалась — шлемо останню вдалу підбірку цього тижня (оновлюється двічі на день)
+        if not sp and late and st.get("silpo_last") and str(st.get("silpo_day") or "").startswith(now.strftime("%Y-%m-%d")):
+            sp = st["silpo_last"]; print("Сільпо: свіжа збірка не вдалась — надсилаю сьогоднішню підбірку з меню")
+        if not sp:
+            silpo_due = False
+            print("Сільпо: підбірку зібрати не вдалося — спробую в наступному запуску")
+            mark_upd(st, "🛒 Сільпо (розсилка чт)", False)
+        elif f"silpo:{week_key}" not in claim([f"silpo:{week_key}"], 20 * 3600):   # бронюємо лише ПІСЛЯ вдалої збірки (раніше невдала спроба блокувала розсилку на 6 год)
+            silpo_due = False
+            if st.get("silpo_week") != week_key:
+                st["silpo_week"] = week_key                # інший паралельний запуск уже розсилає
+        else:
             st["silpo_week"], st["silpo_last"] = week_key, sp
             topic_msgs.append(("silpo", sp, None, sp))
             silpo_req = [c for c in silpo_req if c not in audience("silpo")]
