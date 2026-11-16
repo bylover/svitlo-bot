@@ -495,10 +495,12 @@ async def main():
         blocked = False
         pool = {t: {} for t in TYPES}                                # тип → день → [пости]
         taken = {t: {x["o"] for x in dbs[t]["items"] if x["k"] == k} | {int(b.split(":")[1]) for b in ban_o if b.split(":")[0] == k} for t in TYPES}
+        mul = lambda t_: max(0.0, min(3.0, float((s.get("mul") or {}).get(t_, 1))))   # 🎚 множники відбору з цього каналу: v/g/p/f (адмінка → ⚙️ джерела)
         want = {}                                                    # 🎯 скільки GIF / фото добрати з цього джерела до запасу (фото — частка джерела до ×3; GIF — скільки бракує, бо їх мало)
         for t in tgt:
             cur = sum(1 for x in dbs[t]["items"] if x["k"] == k and x["i"] not in kill[t])
             want[t] = max(0, min((tgt[t] if t == "g" else 3 * share[t]) - cur, tgt[t] - len(dbs[t]["items"]), 60))
+            want[t] = int(round(want[t] * mul(t)))
         try:
             if all_days or any(want.values()):
                 end = datetime.combine((all_days[-1] if all_days else yday) + timedelta(days=1), datetime.min.time(), KYIV)
@@ -564,7 +566,7 @@ async def main():
         st["gall"] = len(gi.get("o") or [])
         fi = fidx.get(k) or {}                                      # 🎬 фули: популярні довгі відео з усієї історії
         cur_f = sum(1 for x in dbs["v"]["items"] if x["k"] == k and x.get("full") and x["i"] not in kill["v"])
-        need_f = min(FULL_SRC - cur_f, FULL_TOT - sum(1 for x in dbs["v"]["items"] if x.get("full")), FULL_RUN)
+        need_f = min(int(round(FULL_SRC * mul("f"))) - cur_f, FULL_TOT - sum(1 for x in dbs["v"]["items"] if x.get("full")), int(round(FULL_RUN * max(1.0, mul("f")))))
         if need_f > 0 and not stop and not blocked and time.time() - t0 < RUN_SEC:
             if fi.get("v") != 1 or fi.get("at", "") < f"{now - timedelta(days=7):%Y-%m-%d}":
                 try:
@@ -603,6 +605,7 @@ async def main():
                 if stop or time.time() - t0 > RUN_SEC:
                     stop = True; break
                 q = max(0, min(48, int(s.get(qf) or bases[t])))      # квота каналу для типу: базова (з адмінки) ± за 👍 / 👎 у боті
+                q = int(round(q * mul(t)))                          # 🎚 ручний множник адміна для цього каналу й типу (×0 — не брати)
                 already = sum(1 for x in dbs[t]["items"] if x["k"] == k and x.get("day") == day.isoformat() and x["i"] not in kill[t] and not x.get("full"))   # фули — окремо від денного топу
                 q = max(0, q - already)
                 thr = (st.get("thr") or {}).get(t)
@@ -634,7 +637,7 @@ async def main():
                     log(f"🍓 {st['t'][:24]} · {day:%d.%m} · {tname}: топ-{added} з {len(pool[t].get(day, []))}{' · ' + lvl if lvl else ''}")
             if want.get(t) and not stop and not blocked and time.time() - t0 < RUN_SEC:   # 🎯 запас: найкращі за 30 днів, яких ще немає
                 cur = sum(1 for x in dbs[t]["items"] if x["k"] == k and x["i"] not in kill[t])
-                need = max(0, min(3 * share[t] - cur, tgt[t] - len(dbs[t]["items"]), 60))
+                need = int(round(max(0, min((tgt[t] if t == "g" else 3 * share[t]) - cur, tgt[t] - len(dbs[t]["items"]), 60)) * mul(t)))
                 if t == "g" and gi.get("o"):                         # 🎞 GIF — з архіву за весь час: найкращі відносно свого часу, яких ще не показували
                     seen = set(gi.get("seen") or [])
                     order = [o for o, _ in gi["o"] if o not in taken["g"] and o not in seen]
