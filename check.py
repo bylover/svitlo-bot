@@ -6421,7 +6421,7 @@ YT_LIKE = [(re.compile(r"секс|інтим|стосунк|сексолог|о�
            (re.compile(r"подкаст|podcast|інтерв.?ю|розмова з|у гостях|відверт", re.I), 1.4, "🎙"),
            (re.compile(r"здоров|лікар|медицин|тіло|сон\b|харчуван|гормон|серце|імунітет|біохакінг", re.I), 1.2, "🩺"),
            (re.compile(r"історі[яї] україни|документальн|як працює|пояснюємо|чому ми|факти|секрет[иі]|фінанс|гроші|кар.?єр|бізнес|інвест", re.I), 1.0, "💡")]
-YT_MUSIC = re.compile(r"кліп|official (music |lyric )?video|lyric|audio|кавер|cover|пісн|трек|прем.?єра|альбом|сингл|ft\.|feat\.|remix|ремікс|караоке|acoustic|live session", re.I)   # музика — у топі не більше 2
+YT_MUSIC = re.compile(r"\bкліп|official (music |lyric )?video|\blyric|\baudio\b|кавер|\bcover\b|\bпісн|\bтрек\b|прем.?єра (пісні|кліпу|треку|синглу)|\bальбом|\bсингл|\bft\.|\bfeat\.|remix|ремікс|караоке|acoustic|live session", re.I)   # музика — у топі не більше 2
 YT_TECH = re.compile(r"огляд|iphone|samsung|pixel|гаджет|смартфон|ноутбук|unboxing|розпаков|техніка", re.I)
 YT_SPORT = re.compile(r"футбол|матч|упл\b|ліга чемпіонів|ліга європи|динамо|шахтар|збірна україни|бокс|усик|ломаченко|ufc|mma|баскетбол|хокей|теніс|формула.?1|голи|highlights|огляд матчу|спорт", re.I)
 YT_THEMES = {"💞 Стосунки й секс-просвіта": ["сексолог українською", "стосунки психолог українською", "секс освіта українською", "стосунки в парі українською"],
@@ -6476,6 +6476,8 @@ def yt_channels(st: dict, now: datetime) -> None:
             ctext = sn.get("title", "") + " " + (sn.get("description") or "")[:300]
             if c.get("id") in mute or subs < YT_THEME_MIN.get(theme, 10000) or YT_POLIT.search(ctext) or YT_GAMES.search(ctext) or sn.get("country") in ("RU", "BY"):
                 continue
+            if YT_TVCH.search(sn.get("title", "")) or YT_TVNAME.search(sn.get("title", "")) or YT_EDUCH.search(sn.get("title", "")) or YT_AUTO.search(sn.get("title", "")):
+                continue                                  # телеканали, ЗМІ, офіційні канали телешоу, заклади освіти, авто — ні
             if not (yt_is_ua(sn.get("defaultLanguage") or "", ctext) or (sn.get("country") == "UA" and not YT_RU.search(ctext))):
                 continue                                  # канал не українською — ні
             vids = []
@@ -8154,6 +8156,8 @@ def yt_foryou(st: dict, now: datetime) -> None:
                 continue                                  # ігри й дитяче — ні
             if sn.get("categoryId") == "10" or YT_MUSIC.search(sn.get("title", "")) or re.search(r"\s-\s*Topic$", meta[cid_]["t"]):
                 continue                                  # 🎵 музика, кліпи, кавери й автоканали «- Topic» — ні (тут лише змістовне)
+            if chans[cid_] != "⭐" and yt_junk(sn.get("title", ""), sn.get("description") or "", meta[cid_]["t"], sn.get("categoryId") or ""):
+                continue                                  # телешоу, новини, лекції закладів, авто, огляди техніки — ні
             if not yt_is_ua(sn.get("defaultAudioLanguage") or sn.get("defaultLanguage") or "", sn.get("title", "") + " " + (sn.get("description") or "")[:300]):
                 continue                                  # лише українською
             vw, lk, cm = int(sc.get("viewCount") or 0), int(sc.get("likeCount") or 0), int(sc.get("commentCount") or 0)
@@ -8181,15 +8185,65 @@ def yt_foryou(st: dict, now: datetime) -> None:
         print(f"YouTube «Для вас» → бот: {err_text(e)[:60]}")
 
 
+# ---------- ▶️ Топ тижня: що НЕ беремо (телешоу, новини, лекції закладів, авто, огляди техніки) ----------
+YT_TVCH = re.compile(r"телеканал|телебачення|\b1\+1\b|\bстб\b|\bictv\b|новий канал|\bінтер\b|\bтет\b|\bнтн\b|\b2\+2\b|трк україна|україна ?24|суспільне|еспресо|\bпрямий\b|5 канал|24 канал|"
+                     r"київ ?24|\bтсн\b|\btv\b|\bтб\b|\bnews\b|новини|уніан|unian|українська правда|громадське|hromadske|радіо свобода|\bbbc\b|\bdw\b|голос америки|укрінформ|"
+                     r"цензор|обозреватель|\bрбк\b|\bnv\b|телеграф|telegraf|главком|апостроф|ліга\.?net|економічна правда|дзеркало тижня|слово і діло", re.I)
+YT_SHOWS = (r"говорить (вся )?(україна|країна)|стосується кожного|один за всіх|хата на тата|супермама|зважені та щасливі|ма[йс]тер ?шеф|холостя[кч]|танці з зірками|голос країни|"
+            r"х-?фактор|україна має талант|битва екстрасенсів|слідство ведуть|речдок|вещдок|реальна містика|агенти справедливості|сімейні мелодрами|\bжвл\b|життя відомих людей|світське життя|"
+            r"сніданок з 1|ранок з україною|зірковий шлях|від пацанки до панночки|топ-?модель по-українськи|кохання на виживання|одруження наосліп|міняю жінку|\bревізор|аферисти в мережах|"
+            r"орел і решка|ліга сміху|вечірній квартал|квартал 95|дизель шоу|шоу «?маска|ліпсінк|хто зверху|врятуйте нашу сім|наречена для тата|я соромлюсь свого тіла|детектор брехні|"
+            r"кохана,? ми вбиваємо дітей|таємний агент")
+YT_TVNAME = re.compile(YT_SHOWS, re.I)                # назва телешоу — у назві КАНАЛУ (офіційний канал шоу)
+YT_TVSHOW = re.compile(r"(" + YT_SHOWS + r").{0,80}(випуск|сезон|сері[яї]|повний|ефір|фінал|\d{2}\.\d{2}\.\d{2})|(випуск|сезон|повний ефір).{0,40}(" + YT_SHOWS + r")|ток-?шоу", re.I)   # сам випуск телешоу
+YT_BLOGREV = re.compile(r"розбір|огляд|реакці|аналіз|обговор|думк[аи] про|що не так|пояснюю|рецензі", re.I)   # розбір / реакція блогера на шоу — можна
+YT_SERIES = re.compile(r"\b\d+\s*[-–]?\s*сері[яї]\b|(всі|усі) серії|мелодрам|серіал 20\d\d|фільм 20\d\d|повний фільм|фільм повністю", re.I)   # серії серіалів і фільми цілком
+YT_EDUCH = re.compile(r"університет|інститут|національн\w+ академі|коледж|ліцей|гімназі|кафедр|факультет|\bкпі\b|\bкну\b|наукма|prometheus|всеосвіт|на урок|всеукраїнськ\w+ школ|освіторі|"
+                      r"міністерств|\bмон\b|департамент освіти|бібліотек", re.I)
+YT_EDU = re.compile(r"вебінар|семінар|конференці|круглий стіл|онлайн.?урок|урок\s*(№|\d)|\d+\s*клас\b|\bнмт\b|\bзно\b|підготовка до (нмт|зно|іспит)|захист дисертац|день відкритих дверей|"
+                    r"вступна кампанія|засідання|курс лекцій|навчальн\w+ (курс|відео|фільм)|методичн", re.I)
+YT_LECT = re.compile(r"лекці[яїю]", re.I)                # «лекція» — ні, якщо це не ваші теми (стосунки, психологія, наука простими словами…)
+YT_AUTO = re.compile(r"\bавто\b|автомоб|автоновин|автоогляд|автоблог|тест.?драйв|електромоб|електрокар|кросовер|\bседан|позашляховик|\bbmw\b|mercedes|toyota|\btesla\b|volkswagen|skoda|renault|"
+                     r"hyundai|\bkia\b|\baudi\b|nissan|mazda|\bford\b|розмитнен|автобазар|автосалон|\bшини\b|зимов\w+ гум|\bдтп\b|\bпдр\b|техогляд|мотоцикл|\bмото\b", re.I)
+YT_TECHX = re.compile(r"iphone|айфон|samsung|galaxy [szа]\d|pixel \d|xiaomi|redmi|\bpoco\b|huawei|oneplus|гаджет|смартфон|ноутбук|unboxing|розпаков|відеокарт|процесор|ryzen|\bintel\b|nvidia|"
+                      r"rtx ?\d|навушник|airpods|планшет|\bipad|macbook|apple watch|смарт.?годинник|телевізор \d|\bмонітор\b|збірка пк|ігровий пк|бенчмарк|android \d|\bios ?\d|windows 1\d|"
+                      r"огляд (телефон|смартфон|ноутбук|камер|планшет|навушник|техніки|гаджет|новинок техніки)|техноблог|повербанк|зарядн\w+ станц|ecoflow|bluetti|\bгенератор\b|інвертор", re.I)
+YT_NEWSX = re.compile(r"підсумки (дня|тижня)|головне за (день|тиждень|добу)|терміново|брифінг|звернення президента|пресконференц|спецвипуск|телемарафон|єдині новини|"
+                      r"прогноз погоди|курс (валют|долара)|гороскоп|останні події|огляд преси", re.I)
+YT_FLOORS = (50000, 30000, 20000, 10000, 5000)        # поріг переглядів: беремо найвищий, за якого набирається повний топ; нижче 5 тис. — ніколи
+
+
+def yt_junk(title: str, desc: str, channel: str, cat: str = "") -> str:
+    """Причина не брати відео в добірки YouTube ("" — підходить): телешоу, новини, лекції закладів, авто, огляди техніки."""
+    txt = f"{title} {desc[:300]}"
+    if YT_TVCH.search(channel) or YT_TVNAME.search(channel) or ((YT_SERIES.search(title) or YT_TVSHOW.search(title)) and not YT_BLOGREV.search(title)):
+        return "телешоу"
+    if cat == "25" or YT_NEWSX.search(txt):
+        return "новини"
+    if YT_EDUCH.search(channel) or YT_EDU.search(txt) or (YT_LECT.search(title) and not any(rx.search(txt) for rx, _w, _e in YT_LIKE)):
+        return "лекції"
+    if cat == "2" or YT_AUTO.search(title + " " + channel):
+        return "авто"
+    if YT_TECHX.search(title + " " + channel):
+        return "техніка"
+    return ""
+
+
 def build_youtube(st: dict, now: datetime) -> str | None:
-    """Український YouTube за останні 7 днів: «В тренді» в Україні + пошук за українськими словами; суворий фільтр мови."""
+    """▶️ Справді популярне українською за 7 днів.
+    Звідки: тренди YouTube в Україні + найпереглядуваніше за тиждень (пошук за переглядами) + свіже з ваших тематичних і ⭐ улюблених каналів.
+    Не беремо: російське, політику й новини, телешоу й серіали, лекції закладів, авто, огляди техніки, ігри, спорт, дитяче, Shorts, «- Topic».
+    Поріг переглядів — найвищий, за якого набирається повний топ (нижче 5 тис. — ніколи). Порядок — насамперед за переглядами."""
     if not YT_KEY:
         print("YT_KEY не задано — YouTube пропущено")
         return None
+    from concurrent.futures import ThreadPoolExecutor
+    from collections import Counter
     start = now - timedelta(days=7)
+    after = start.astimezone(ZoneInfo("UTC")).strftime("%Y-%m-%dT%H:%M:%SZ")
     api = lambda path, **q: http_json(f"https://www.googleapis.com/youtube/v3/{path}?" + urllib.parse.urlencode({**q, "key": YT_KEY}))
     vids, token = [], ""
-    for _ in range(4):
+    for _ in range(4):                                 # A. «У тренді» в Україні
         try:
             r = api("videos", part="snippet,statistics,contentDetails,status", chart="mostPopular", regionCode="UA",
                     maxResults=50, **({"pageToken": token} if token else {}))
@@ -8200,22 +8254,66 @@ def build_youtube(st: dict, now: datetime) -> str | None:
         token = r.get("nextPageToken")
         if not token:
             break
-    for cat_ in ("23", "24", "28", "27", "10", "1", "22"):  # + тренди за цікавими категоріями: гумор, розваги, наука й техніка, освіта, музика, кіно, блоги
+    for cat_ in ("23", "24", "28", "27", "10", "1", "22", "26"):  # + тренди за категоріями: гумор, розваги, наука, освіта, музика, кіно, блоги, «як це зробити»
         try:
             vids += api("videos", part="snippet,statistics,contentDetails,status", chart="mostPopular", regionCode="UA", videoCategoryId=cat_, maxResults=50).get("items", [])
         except Exception:
             pass
+    n_trend = len(vids)
     ids: list[str] = []
+
+    def srch(**q) -> dict:
+        return api("search", part="id", type="video", order="viewCount", regionCode="UA", relevanceLanguage="uk", maxResults=50, publishedAfter=after, **q)
+    for dur_ in ("medium", "long"):                   # B. найпереглядуваніше за тиждень українською (без запиту): 4–20 хв і 20+ хв, по 2 сторінки
+        tok_ = ""
+        for _ in range(2):
+            try:
+                r = srch(videoDuration=dur_, **({"pageToken": tok_} if tok_ else {}))
+            except Exception as e:
+                print(f"YouTube search {dur_}: {err_text(e)[:120]}")
+                break
+            ids += [x["id"]["videoId"] for x in r.get("items", []) if x.get("id", {}).get("videoId")]
+            tok_ = r.get("nextPageToken")
+            if not tok_:
+                break
     wk_ = int(now.strftime("%V"))
     th_ = list(YT_THEMES.values())
     useful_q = [th_[(wk_ + i) % len(th_)][0] for i in range(3)]   # + 3 теми з підбірок (по колу щотижня): психологія, стосунки, подкасти, здоровʼя…
-    for q in ("що|як|чому|це|коли", "україна|українською|київ|наші", *useful_q):
-        try:
-            r = api("search", part="id", type="video", order="viewCount", regionCode="UA", relevanceLanguage="uk", q=q,
-                    maxResults=50, publishedAfter=start.astimezone(ZoneInfo("UTC")).strftime("%Y-%m-%dT%H:%M:%SZ"))
+    for q in ("що|як|чому|це|коли", "україна|українською|київ|наші", "влог|реакція|розбір|історія|челендж|подкаст|інтервʼю|стендап", *useful_q):
+        try:                                           # C. пошук за українськими словами й темами
+            r = srch(q=q)
             ids += [x["id"]["videoId"] for x in r.get("items", []) if x.get("id", {}).get("videoId")]
         except Exception as e:
             print(f"YouTube search: {err_text(e)[:200]}")
+    n_search = len(set(ids))
+    curated: set = set()                               # D. свіже з ваших тематичних каналів (📺 цікаві канали) і ⭐ улюблених — блогери, психологи, сексологи, розбори
+    try:
+        ych = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=yt_ch.json") or {} if (SYNC_URL and SYNC_KEY) else {}
+    except Exception:
+        ych = {}
+    chs = [c["id"] for lst in (ych.get("themes") or {}).values() for c in lst[:20]] + list(st.get("yt_fav") or [])
+    chs = [c for c in dict.fromkeys(chs) if c not in set(st.get("yt_mute") or [])][:240]
+    ups: dict = {}
+    for k in range(0, len(chs), 50):
+        try:
+            for c in api("channels", part="contentDetails", id=",".join(chs[k:k + 50])).get("items", []):
+                ups[c["id"]] = c["contentDetails"]["relatedPlaylists"]["uploads"]
+        except Exception as e:
+            print(f"YouTube канали (топ): {err_text(e)[:100]}")
+    cut14 = (now - timedelta(days=14)).astimezone(ZoneInfo("UTC")).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    def last_uploads(pl: str) -> list:
+        try:
+            return [x["contentDetails"]["videoId"] for x in api("playlistItems", part="contentDetails", playlistId=pl, maxResults=8).get("items", [])
+                    if (x["contentDetails"].get("videoPublishedAt") or "9") >= cut14]
+        except Exception:
+            return []
+    if ups:
+        with ThreadPoolExecutor(8) as ex:              # паралельно — 200+ каналів за кілька секунд
+            cur_ids = [v for l_ in ex.map(last_uploads, list(ups.values())) for v in l_]
+        ids += cur_ids
+        curated = set(ups)
+    n_cur = len(curated)
     have = {v.get("id") for v in vids}
     need = [i for i in dict.fromkeys(ids) if i not in have]
     for k in range(0, len(need), 50):
@@ -8224,65 +8322,88 @@ def build_youtube(st: dict, now: datetime) -> str | None:
         except Exception as e:
             print(f"YouTube videos: {err_text(e)[:200]}")
     seen = set(st.get("yt_seen", []))
-    good, ids_ok = [], set()
+    fav, mute = set(st.get("yt_fav") or []), set(st.get("yt_mute") or [])
+    good, late, ids_ok, why = [], [], set(), Counter()
+    cut14_dt = now - timedelta(days=14)
     for v in vids:
         sn = v.get("snippet", {})
         lang = (sn.get("defaultAudioLanguage") or sn.get("defaultLanguage") or "").lower()
-        txt = sn.get("title", "") + " " + (sn.get("description") or "")[:300]
+        title, desc, chan = sn.get("title", ""), sn.get("description") or "", sn.get("channelTitle", "")
+        txt = title + " " + desc[:300]
         try:
             pub = datetime.fromisoformat(sn.get("publishedAt", "").replace("Z", "+00:00"))
         except Exception:
             continue
-        if (v.get("id") in ids_ok or v.get("id") in seen or pub < start or sn.get("categoryId") == "25"
-                or (v.get("status") or {}).get("madeForKids")
-                or iso_dur((v.get("contentDetails") or {}).get("duration")) <= 60):
-            continue                                   # повтор, старе, новини, дитяче або Shorts
-        if lang.startswith("ru") or re.search(r"[ыэъё]", txt, re.I):
-            continue                                   # російське — ні
-        if YT_POLIT.search(txt + " " + sn.get("channelTitle", "")) or sn.get("channelId") in set(st.get("yt_mute") or []):
-            continue                                   # політика, новини, стріми й приховані вами канали — ні
-        dur_ = re.match(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", (v.get("contentDetails") or {}).get("duration") or "")
-        secs_ = (int(dur_.group(1) or 0) * 3600 + int(dur_.group(2) or 0) * 60 + int(dur_.group(3) or 0)) if dur_ else 0
-        if sn.get("categoryId") == "17" or YT_SPORT.search(txt + " " + sn.get("channelTitle", "")) or (secs_ and secs_ <= 180) or re.search(r"#shorts?\b|#reels?\b|\bshorts\b", txt, re.I):
-            continue                                   # спорт, Shorts і Reels (до 3 хв) — ні
-        if sn.get("categoryId") == "20" or YT_GAMES.search(txt + " " + sn.get("channelTitle", "") + " " + " ".join(sn.get("tags") or [])):
-            continue                                   # ігри (Minecraft, Roblox, летсплеї, стріми) — ні
-        if not (lang.startswith("uk") or UA_LETTERS.search(txt)):
-            continue                                   # лише українська мова
-        if re.search(r"\s-\s*Topic$", sn.get("channelTitle", "")):
-            continue                                   # «… - Topic» — автоканали YouTube Music (просто трек без відео) — ні
+        if v.get("id") in ids_ok or v.get("id") in seen or pub < cut14_dt:
+            continue                                   # повтор або старе
+        secs_ = iso_dur((v.get("contentDetails") or {}).get("duration"))
+        if (v.get("status") or {}).get("madeForKids") or secs_ <= 180 or re.search(r"#shorts?\b|#reels?\b|\bshorts\b", txt, re.I):
+            why["дитяче/Shorts"] += 1; continue        # дитяче, Shorts і Reels (до 3 хв) — ні
+        if not yt_is_ua(lang, txt):
+            why["не українською"] += 1; continue      # лише українською; російське — ні
+        if sn.get("channelId") in mute:
+            why["приховані канали"] += 1; continue
+        if sn.get("categoryId") == "25" or YT_POLIT.search(txt + " " + chan):
+            why["політика/новини"] += 1; continue
+        if sn.get("categoryId") == "17" or YT_SPORT.search(txt + " " + chan):
+            why["спорт"] += 1; continue
+        if sn.get("categoryId") == "20" or YT_GAMES.search(txt + " " + chan + " " + " ".join(sn.get("tags") or [])):
+            why["ігри"] += 1; continue
+        if re.search(r"\s-\s*Topic$", chan):
+            why["музика «- Topic»"] += 1; continue    # автоканали YouTube Music (трек без відео)
+        j_ = "" if sn.get("channelId") in fav else yt_junk(title, desc, chan, sn.get("categoryId") or "")   # ⭐ улюблені канали — без цього фільтра
+        if j_:
+            why[j_] += 1; continue
         ids_ok.add(v.get("id"))
-        good.append(v)
-    print(f"YouTube: усього {len(vids)}, українських за тиждень {len(good)}")
-    # популярність: перегляди + коментарі (1 коментар ≈ 100 переглядів — він показує залученість глядачів)
-    fav = set(st.get("yt_fav") or [])
-    vv_ = sorted(int(v["statistics"].get("viewCount", 0)) for v in good) or [0]
-    p70 = vv_[int(len(vv_) * 0.7)] if vv_ else 0      # «вистрілило» — у верхніх 30% за переглядами
+        (good if pub >= start else late).append(v)
+    vw = lambda v: int(v["statistics"].get("viewCount", 0) or 0)
+    is_music = lambda v: v["snippet"].get("categoryId") == "10" or bool(YT_MUSIC.search(v["snippet"].get("title", "")))
 
-    def interest(v):                                  # 🎯 індекс цікавості: охоплення + залученість + швидкість + ваші теми
+    def capacity(pool: list) -> int:                   # скільки вийде в топ з урахуванням «не більше 2 з каналу» і «не більше 3 кліпів»
+        per, n_, m_ = Counter(), 0, 0
+        for v in pool:
+            ch = v["snippet"].get("channelId")
+            if per[ch] >= 2 or (is_music(v) and m_ >= 3):
+                continue
+            per[ch] += 1; n_ += 1; m_ += is_music(v)
+        return n_
+    floor = YT_FLOORS[-1]
+    for fl in YT_FLOORS:                               # 📊 найвищий поріг переглядів, за якого набирається повний топ (20)
+        if capacity([v for v in good if vw(v) >= fl]) >= 24:
+            floor = fl
+            break
+    pool = [v for v in good if vw(v) >= floor]
+    if capacity(pool) < 20:                            # тиждень виявився бідним — добираємо найпопулярнішим за 8–14 днів (а не слабким)
+        pool += sorted((v for v in late if vw(v) >= max(floor, 10000)), key=vw, reverse=True)[:30]
+    print(f"YouTube: тренди {n_trend} · пошук {n_search} · ваших каналів {n_cur} → українських без зайвого {len(good)} (+{len(late)} за 8–14 дн.) · поріг {floor // 1000} тис. → {len(pool)}"
+          f" · відсіяно: {', '.join(f'{k} {n}' for k, n in why.most_common(8))}")
+    vv_ = sorted(vw(v) for v in pool) or [0]
+    p70 = vv_[int(len(vv_) * 0.7)] if vv_ else 0      # «хіт» — у верхніх 30% за переглядами
+
+    def interest(v):                                  # 🎯 насамперед перегляди; далі — залученість, швидкість, ваші теми, ваші канали
         stt_, sn_ = v["statistics"], v["snippet"]
-        views_, likes_, com_ = int(stt_.get("viewCount", 0)), int(stt_.get("likeCount", 0) or 0), int(stt_.get("commentCount", 0) or 0)
+        views_, likes_, com_ = vw(v), int(stt_.get("likeCount", 0) or 0), int(stt_.get("commentCount", 0) or 0)
         try:
             hrs = max(1.0, (now - datetime.fromisoformat(sn_["publishedAt"].replace("Z", "+00:00"))).total_seconds() / 3600)
         except Exception:
             hrs = 72.0
         txt_ = sn_.get("title", "") + " " + (sn_.get("description") or "")[:300] + " " + " ".join(sn_.get("tags") or [])
-        sc = math.log10(views_ + 1) + 40 * min((likes_ + 3 * com_) / max(1, views_), 0.12) + 0.5 * math.log10(views_ / hrs + 1)
-        sc += max([w for rx, w, _ in YT_LIKE if rx.search(txt_)] or [0])          # гумор, наука, тру-крайм, секс-освіта, кіно й кліпи
-        if YT_TECH.search(txt_):
-            sc += 0.6 if views_ >= p70 else -1.5       # техніка — лише якщо справді «вистрілило», інакше нижче
-        if sn_.get("categoryId") == "10" or YT_MUSIC.search(sn_.get("title", "")):
-            sc -= 1.2 if views_ >= p70 else 3          # 🎵 музика — лише справжні хіти, і нижче за корисне
-        elif sn_.get("categoryId") in ("27", "28"):
-            sc += 0.8                                  # освіта, наука й техніка
-        return sc * (1.3 if sn_.get("channelId") in fav else 1)   # ⭐ улюблені канали — вище
-    good.sort(key=interest, reverse=True)
+        sc = math.log10(views_ + 1) + 10 * min((likes_ + 3 * com_) / max(1, views_), 0.08) + 0.35 * math.log10(views_ / hrs + 1)
+        sc += 0.35 * max([w for rx, w, _ in YT_LIKE if rx.search(txt_)] or [0])   # стосунки, психологія, гумор, кіно, подкасти, наука… — невеликий плюс (не переважує перегляди)
+        if sn_.get("channelId") in curated:
+            sc += 0.25                                 # канал із ваших тематичних підбірок
+        if is_music(v):
+            sc -= 0.6 if views_ >= p70 else 2.0        # 🎵 кліпи — лише хіти й нижче за розмовне
+        if YT_CLICK.search(sn_.get("title", "")):
+            sc -= 0.4                                  # клікбейт
+        return sc * (1.15 if sn_.get("channelId") in fav else 1)   # ⭐ улюблені канали — вище
+    good = sorted(pool, key=interest, reverse=True)
     top, per_channel, mus = [], {}, 0
     for v in good:
         ch = v["snippet"].get("channelId")
         if per_channel.get(ch, 0) >= 2:                        # не більше 2 відео з каналу
             continue
-        if v["snippet"].get("categoryId") == "10" or YT_MUSIC.search(v["snippet"].get("title", "")):
+        if is_music(v):
             if mus >= (2 if len(top) < 10 else 3):             # 🎵 у топ-10 — не більше 2 кліпів, у 20 — 3
                 continue
             mus += 1
@@ -8290,6 +8411,7 @@ def build_youtube(st: dict, now: datetime) -> str | None:
         top.append(v)
         if len(top) == 20:                                     # 10 у повідомленні + «▶️ ще 10»
             break
+    st["yt_diag"] = f"поріг {floor // 1000} тис., у топі {len(top)} з {len(pool)}"
     end = now + timedelta(days=1)                              # для підпису періоду (start … сьогодні)
     if not top:
         return None
@@ -9487,7 +9609,7 @@ def main() -> None:
             y = build_youtube(st, now)
             if y:
                 st["yt_week"], st["yt_last"] = week_key, y
-                mark_upd(st, "▶️ YouTube")
+                mark_upd(st, "▶️ YouTube", True, st.get("yt_diag") or "")
                 topic_msgs.append(("yt", y, None, y))
                 yt_req = [c for c in yt_req if c not in audience("yt")]
         elif yt_req and not st.get("yt_last"):
