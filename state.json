@@ -132,16 +132,6 @@
   "https://www.risetointimacy.com/post/how-to-initiate-sex-without-pressure-or-awkwardness"
  ],
  "kino_seen": [
-  "t64480",
-  "t97917",
-  "t96256",
-  "t153459",
-  "m491584",
-  "m1596275",
-  "m310131",
-  "m1368337",
-  "m705996",
-  "m1288069",
   "m13885",
   "t99966",
   "t92749",
@@ -731,9 +721,19 @@
   "m13855",
   "t110316",
   "t79086",
-  "t1423"
+  "t1423",
+  "m395991",
+  "m760774",
+  "m964980",
+  "m500006",
+  "m614934",
+  "m68730",
+  "m637920",
+  "m660120",
+  "m388",
+  "m49009"
  ],
- "gh_beat": "2026-11-16T12:00:44.871158+02:00",
+ "gh_beat": "2026-11-16T12:23:07.800648+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -744,11 +744,11 @@
   "groups": [
    "GPV3.1"
   ],
-  "updated": "11:49 16.11.2026",
+  "updated": "12:02 16.11.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-16T11:53:03.316769+02:00",
+  "checked": "2026-11-16T12:02:53.549793+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": true
@@ -1587,14 +1587,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "16.11 12:02",
-   "ts": 1794823330,
+   "at": "16.11 12:25",
+   "ts": 1794824759,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "16.11 12:02",
-   "ts": 1794823330,
+   "at": "16.11 12:25",
+   "ts": 1794824759,
    "ok": true,
    "note": ""
   },
@@ -29999,10 +29999,16 @@
    null,
    null,
    "2026-11-16"
+  ],
+  "tt1023114": [
+   7.3,
+   73,
+   66,
+   "2026-11-16"
   ]
  },
  "pushed_h": {
-  "gs": "f8605234746e",
+  "gs": "2acfb18d5ed9",
   "quiz_pool.json": "17c24e5946fc",
   "fact.png": "74afa6a67ee2",
   "sexed.json": "0362ec7e46d4",
@@ -30122,8 +30128,6 @@
   "smm-інструменти",
   "аромати",
   "найкращі аромати й догляд",
-  "youtube для вас",
-  "кіно-категорії",
   "режисери"
  ],
  "rc_need": true,
@@ -39789,12 +39793,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "",
  "silpo_week": "2026-46",
- "sbm_at": 1794823261.960517,
+ "sbm_at": 1794824602.5121293,
  "sbm_hist": [
-  [
-   "22:20",
-   92
-  ],
   [
    "22:25",
    93
@@ -40366,6 +40366,10 @@
   [
    "12:00",
    67
+  ],
+  [
+   "12:23",
+   68
   ]
  ],
  "sbm_near": {
@@ -40382,7 +40386,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1794822963.6403096,
+ "net_at": 1794824610.7099278,
  "net_asn": {
   "triolan": [
    "13188",
@@ -43254,17 +43258,17 @@
  "warned": "2026-11-13",
  "toyn_week": "202647",
  "toys_v": 3,
- "toys_last": 1794822560.0938447,
+ "toys_last": 1794824625.8956182,
  "toy_ban": [],
  "aro_v": 2,
  "arob_v": 2,
  "aro_sub_s": 5,
  "aro_sub_k": 4,
  "jobs_last": 1794821181.6525228,
- "nmt_last": 1794822740.927678,
+ "nmt_last": 1794824622.1798658,
  "kino_v": 2,
  "yt_v": 4,
- "toycat_last": 1794822083.174125,
+ "toycat_last": 1794824624.4785569,
  "toy_la": {
   "dildo": 1794808856.468921,
   "kegel": 1794757561.5974472,
@@ -43296,7 +43300,8 @@
   "pump": 1794819060.0123289,
   "bdsm": 1794819969.948053,
   "lubecool": 1794821203.325196,
-  "lubeanal": 1794822284.915454
+  "lubeanal": 1794822284.915454,
+  "prolong": 1794824625.8956192
  },
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 09.11–16.11\n<blockquote>🆕 <b>1. Глобальний захист підліткових акаунтів від Meta</b>\nMeta почала розгортання розширених заходів безпеки та автоматичних перевірок віку для підлітків по всьому світу.\n💡 Враховуйте вікові обмеження та зміни в охопленні молодежної аудиторії при налаштуванні таргетингу.\n🔗 <a href=\"https://about.fb.com/news/2026/11/expanding-teen-account-protections-to-teens-around-the-world/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>2. Новий інструмент прозорості недійсного трафіку в Google Ads</b>\nGoogle Ads додав функцію для відстеження недійсного трафіку, що підвищує прозорість витрат на рекламу.\n💡 Перевірте нові звіти, щоб оптимізувати бюджети та виключити неякісні майданчики з показів.\n🔗 <a href=\"https://blog.google/products/ads-commerce/invalid-traffic-overview-google-ads/\">The Keyword (Google)</a></blockquote>\n<blockquote>📊 <b>3. LinkedIn бореться зі згенерованими штучним інтелектом коментарями</b>\nПлатформа оновила алгоритми для виявлення та зниження охоплень для спам-коментарів, написаних за допомогою ШІ.\n💡 Пишіть живі, експертні коментарі від імені бренду або експерта, уникаючи шаблонів генераторів тексту.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-cracks-down-on-ai-generated-comments/874707/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>4. Оновлення додатку Edits від Meta для відео</b>\nДодаток отримав нові функції монтажу: криві швидкості (speed curves) та автоматичне балансування звуку.\n💡 Використовуйте нові інструменти для швидкого створення динамічних Reels без сторонніх редакторів.\n🔗 <a href=\"https://www.socialmediatoday.com/news/metas-edits-app-gets-speed-curves-and-auto-audio-balancing/874586/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Тестування спортивної функції в Instagram</b>\nInstagram тестує новий функціонал, орієнтований на споживання спортивного контенту та обговорення подій у реальному часі.\n💡 Слідкуйте за оновленнями, щоб інтегрувати спортивний контекст та інфоповоди у свої комунікаційні стратегії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxPMHNHUGJvdzV4dWp2eW1Rc0gzUFAyTjFrTTI2bzhHdWhUZXBNWG1vUDE3WnBBZjVDUlRwcUcteEdrZm5ub2E5bWpjRzlsM3h2Z3BjajFsVE9wc0NobFFaR1JuakJlbGFRSEgzeC1vTmxTUDZjS1pGejRzWC1iN2lJQ2tLUlJMbmxaTlAyamJWaGhLXzNOQWc?oc=5\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>6. Святкові інструменти шопінгу на Pinterest</b>\nPinterest представив новий набір функцій для e-commerce до сезону святкових розпродажів.\n💡 Запустіть товарні кампанії з новими тегами для залучення гарячої аудиторії покупців.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-adds-holiday-shopping-tools/874575/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>7. Інтерактивна реклама на Twitch із можливістю покупки</b>\nTwitch запустив нові формати реклами: інтегровані товари прямо в трансляції та можливість пропускати ролики за умови взаємодії.\n💡 Тестуйте нові формати на Twitch, якщо ваша цільова аудиторія активно дивиться стріми та геймінг-контент.\n🔗 <a href=\"https://www.marketingdive.com/news/twitch-debuts-shoppable-skippable-ads-as-twitchcon-feels-growing-pains/874614/\">Marketing Dive</a></blockquote>\n<blockquote>🎯 <b>8. Meta призупинила оновлення бізнес-умов та правил реклами</b>\nКомпанія тимчасово зупинила впровадження нових правил для рекламних кабінетів, запланованих на листопад.\n💡 Стежте за новими дедлайнами від Meta, щоб вчасно адаптувати юридичні та технічні параметри кампаній.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZUR4cTNfOGZ3TTdSTzRVQ0FRamNKRlQ5S0VNYkN2TVBmbWFkcDdCckdqazVwOXJvd2NKRjJEZWd2a0E1TWt6enVBYS1YU1U5cGJ3LVZSS2JxQ1dON21kQWs2dTVUdENsRHhiWlMwRmE2M05KU1pQczY3NW15YlczTU1GaHNOcUxX?oc=5\">Search Engine Journal</a></blockquote>\n§§\n<blockquote>📊 <b>9. Вплив ШІ-інсайтів на рекламні результати</b>\nДослідження показали, що надмірна залежність від автоматичних ШІ-інсайтів аудиторії може погіршувати ефективність кампаній.\n💡 Поєднуйте рекомендації алгоритмів із власним глибоким розумінням болів і поведінки вашої цільової аудиторії.\n🔗 <a href=\"https://www.marketingdive.com/news/ai-derived-audience-insights-hurt-results-what-the-numbers-say/874565/\">Marketing Dive</a></blockquote>\n<blockquote>🎯 <b>10. LinkedIn запускає рекламу на Connected TV у Великій Британії</b>\nБренди тепер можуть розміщувати B2B-рекламу на екранах підключених телевізорів через рекламний кабінет LinkedIn.\n💡 Використовуйте крос-канальні связки CTV та таргетованої B2B-реклами для охоплення топменеджменту.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-launches-ctv-ads-in-the-uk/874581/\">Social Media Today</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202647\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Експеримент Buffer: ШІ у процесі найму</b> · Buffer\nКоманда Buffer запустила A/B тестування використання штучного інтелекту у процесі найму, щоб впоратися з великим потоком резюме. Водночас компанія прагне зберегти високий рівень людського підходу та експертизи.\n💡 Використовуйте ШІ для первинного сортування рутинних завдань, але залишайте фінальне рішення за людьми, щоб не втратити якість та індивідуальний підхід.\n<a href=\"https://buffer.com/resources/ab-test-on-hiring/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Огляд 24 платформ для просування у 2026 році</b> · Buffer\nГайд аналізує актуальні платформи соціальних мереж, їх охоплення, формати контенту та специфіку. Експерти радять не розпорошуватися на всі мережі одразу.\n💡 Обирайте для роботи лише 2-3 платформи, які ідеально підходять вашій аудиторії та формату контенту, замість того, щоб намагатися присутності скрізь.\n<a href=\"https://buffer.com/resources/social-media-platforms/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Чому отклонюються платежі у Facebook Ads і як це вирішити</b> · Medium · facebook-ads\nМатеріал розглядає основні причини відхилення рекламних платежів у Meta, що зупиняють кампанії. Описано покрокові кроки для усунення проблем та використання віртуальних карток.\n💡 Використовуйте віртуальні картки з налаштованими лімітами та своєчасно оновлюйте платіжні дані, щоб уникнути раптових зупинок показу реклами.\n<a href=\"https://zenvcc.medium.com/why-facebook-ads-payments-get-declined-causes-troubleshooting-steps-and-virtual-card-options-36751e57ba12?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Масштабування Meta Ads та WhatsApp без блокувань</b> · Medium · facebook-ads\nАгенції та e-commerce бренди переходять на верифіковані бізнес-менеджери (FBM) та high-limit API для безпечного масштабування. Це знижує ризик блокування рекламних кабінетів.\n💡 Для стабільного масштабування використовуйте верифіковані акаунти (FBM) та підключайте офіційні бізнес-інструменти на кшталт WhatsApp Business API.\n<a href=\"https://medium.com/@badhonbarmon110/how-to-scale-meta-ads-whatsapp-marketing-without-account-restrictions-in-2026-a909963fcd1e?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>5. Що робити, якщо Meta заблокувала акаунт перед розпродажем</b> · Medium · facebook-ads\nБлокування рекламного акаунта напередодні Black Friday критичне для бізнесу. Автор пояснює, як правильно подавати апеляцію, щоб не втратити шанс на розблокування.\n💡 Не надсилайте хаотичні скарги раз за разом — підготуйте чіткий пакет документів та аргументів для єдиної успішної апеляції.\n<a href=\"https://medium.com/@businessfixkits/meta-restricted-your-ad-account-right-before-black-friday-dont-burn-your-review-39b8f51cb6f5?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>6. Чому найкраща реклама рідко буває першою</b> · Medium · facebook-ads\nПрактичний кейс генерації лідів на тепловізори із ціною за лід менше 18 євро. Автор доводить важливість постійного тестування та оптимізації креативів.\n💡 Не зупиняйтеся на першому запущеному креативі; найкращі результати приносить серія ітерацій та тестування різних кутів подачі.\n<a href=\"https://medium.com/@benni_midzic/der-flei%C3%9Figste-meta-ads-experte-in-bad-schallerbach-warum-die-beste-anzeige-selten-die-erste-ist-e3b7acaece05?source=rss------facebook_ads-5\">джерело</a></blockquote>\n§§\n<blockquote>💬 <b>7. Чи можна запускати занадто багато оголошень у Meta?</b> · Medium · facebook-ads\nХоча Meta дозволяє додавати до 50 оголошень в одну групу, довідковий центр та практика показують, що це погіршує результати. Занадто велика кількість розмиває бюджет.\n💡 Обмежуйте кількість креативів в одній групі оголошень, щоб алгоритм міг швидше зібрати достатньо даних для оптимізації.\n<a href=\"https://medium.com/@BLVcreatives/can-you-run-too-many-ads-on-meta-80c5313c536e?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>8. 5 правил для ШІ-агента із заміни стомленої реклами</b> · Medium · facebook-ads\nКейс компанії CamClo AI про те, як налаштувати штучний інтелект для автоматичного оновлення креативів, що втратили ефективність. Використовуються реальні дані про продукт.\n💡 Задайте чіткі продуктові ліміти та правила для ШІ-генерації нових креативів, базуючись на статистиці конверсій попередніх оголошень.\n<a href=\"https://medium.com/the-story-well/5-rules-we-gave-our-ai-agent-for-replacing-a-tired-ad-3ce3d3b7eb34?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>9. Стратегія генерації 5–10 лідів на день у нерухомості</b> · Medium · facebook-ads\nПрактична стратегія для забудовників та брокерів щодо налаштування таргетованої реклами для щоденного залучення покупців нерухомості.\n💡 Комбінуйте лід-форми з чітким оффером та швидкою обробкою заявки менеджером протягом перших 10 хвилин для максимальної конверсії.\n<a href=\"https://medium.com/@harpalkimberleyschool/how-to-get-5-10-real-estate-leads-daily-lead-generation-strategies-for-builders-brokers-b13b74e8627f?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>10. Терміни модерації реклами у Black Friday: Google, Meta та TikTok</b> · Medium · tiktok-ads\nАналіз реальних термінів проходження модерації рекламних кампаній на трьох ключових платформах під час святкового сезону. Жодна з платформ не гарантує миттєвий запуск.\n💡 Подавайте святкові креативи на модерацію заздалегідь (мінімум за 3–5 днів), оскільки будь-яка правка може значно затримати старт кампанії.\n<a href=\"https://medium.com/@nadeer2004/black-friday-ad-approval-time-what-google-meta-and-tiktok-actually-promise-737dc0e77207?source=rss------tiktok_ads-5\">джерело</a></blockquote>\n§RT:smm:202647p",
  "kino_q": [
@@ -43316,5 +43321,12 @@
    "markup": null
   }
  ],
- "kino_gq": {}
+ "kino_gq": {
+  "drama": [
+   {
+    "id": "bba63b72a2",
+    "text": "🍿 <b>ПІДБІРКА КІНО · ДРАМА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1.</b> <code>Вогнеборці</code> (2017) <a href=\"https://telegra.ph/Vogneborcі-2017-11-16\">🔗</a>\nдрама, історичний · ⏱ 2 год 13 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>87%</b> · Ⓜ <b>72</b>\n<i>🎭 Джош Бролін, Майлз Теллер, Джефф Бріджес</i>\n📝 Сюжет розповість про групу борців з вогнем під назвою «Granite Mountain Hotshots», що зіткнулися в Арізоні з одною з найбільш смертоносних пожеж в історії, яка забрала життя 19-ти членів команди.\n▶️ <a href=\"https://youtu.be/6vFizOwYl2k\">Трейлер</a></blockquote>\n§KN:m395991|86270\n§§\n<blockquote>🎬 <b>2.</b> <code>Одне життя</code> (2023) <a href=\"https://telegra.ph/Odne-zhittya-2023-11-16-2\">🔗</a>\nісторичний, драма · ⏱ 1 год 49 хв\n⭐ IMDb <b>7.5</b> · 🍅 <b>91%</b> · Ⓜ <b>69</b>\n<i>🎭 Ентоні Гопкінс, Джонні Флінн, Лена Улін</i>\n📝 Ніколас Вінтон відомий публіці як скромний джентльмен. Якось чоловік отримує запрошення взяти участь у телевізійному ток-шоу. Ставши учасником передачі, герой дізнається про реальні події, що відбуваються під час…\n▶️ <a href=\"https://youtu.be/R0qZJggKri0\">Трейлер</a></blockquote>\n§KN:m760774|30310\n§§\n<blockquote>🎬 <b>3.</b> <code>Ейр</code> (2023) <a href=\"https://telegra.ph/Ejr-2023-11-16\">🔗</a>\nдрама, історичний · ⏱ 1 год 52 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>93%</b> · Ⓜ <b>73</b>\n<i>🎭 Метт Деймон, Джейсон Бейтман, Бен Аффлек</i>\n📝 Фільм розповідає про легендарне партнерство між тоді ще спортсменом-початківцем Майклом Джорданом і нещодавно створеним баскетбольним підрозділом компанії Nike. Разом вони створили бренд Air Jordan, який зробив…\n▶️ <a href=\"https://youtu.be/o3qyDokDYdQ\">Трейлер</a></blockquote>\n§KN:m964980|880\n§§\n<blockquote>🎬 <b>4.</b> <code>Utøya 22. juli</code> (2018) <a href=\"https://telegra.ph/Utøya-22-juli-2018-11-16\">🔗</a>\nісторичний, драма · ⏱ 1 год 32 хв\n⭐ IMDb <b>7.2</b> · Ⓜ <b>71</b>\n<i>🎭 Andrea Berntzen, Aleksander Holmen, Brede Fristad</i>\n📝 A teenage girl fights for survival and to locate her young sister during the 2011 terrorist attack at a political summer camp on the Norwegian island of Utøya.\n▶️ <a href=\"https://youtu.be/vim3ZEm3Cd4\">Трейлер</a></blockquote>\n§KN:m500006|79322\n§§\n<blockquote>🎬 <b>5.</b> <code>Елвіс</code> (2022) <a href=\"https://telegra.ph/Elvіs-2022-11-16\">🔗</a>\nмузика, історичний, драма · ⏱ 2 год 39 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>77%</b> · Ⓜ <b>64</b>\n<i>🎭 Остін Батлер, Том Генкс, Олівія Деджонг</i>\n📝 Фільм розповість історію про життя і музику Елвіса Преслі крізь призму складних стосунків з його таємничим менеджером, полковником Томом Паркером. Стрічка занурить в історію Преслі та Паркера, які працювали разом…\n▶️ <a href=\"https://youtu.be/sCd5rzMkVRs\">Трейлер</a></blockquote>\n§KN:m614934|6201\n§§\n<blockquote>🎬 <b>6.</b> <code>Мовчання</code> (2016) <a href=\"https://telegra.ph/Movchannya-2016-11-16-2\">🔗</a>\nдрама, історичний · ⏱ 2 год 39 хв\n⭐ IMDb <b>7.2</b> · 🍅 <b>83%</b> · Ⓜ <b>79</b>\n<i>🎭 Ендрю Ґарфілд, Адам Драйвер, Ліам Нісон</i>\n📝 У XVII столітті два священика-єзуїта піддаються насильству і переслідуванням під час їх подорожі до Японії, яке має на меті знайти свого наставника і поширювати християнське Євангеліє.\n▶️ <a href=\"https://youtu.be/QK806kVHcw4\">Трейлер</a></blockquote>\n§KN:m68730|1032\n§§\n<blockquote>🎬 <b>7.</b> <code>Чудо в камері №7</code> (2019) <a href=\"https://telegra.ph/CHudo-v-kamerі-7-2019-11-16-2\">🔗</a>\nдрама · ⏱ 2 год 12 хв\n⭐ IMDb <b>8.2</b>\n<i>🎭 Арас Булут Ійнемлі, Nisa Sofiya Aksongur, İlker Aksum</i>\n📺 <a href=\"https://www.themoviedb.org/movie/637920-7-kogustaki-mucize/watch?locale=UA\">Netflix · за підпискою</a>\n📝 Мемо - дорослий чоловік з інтелектом семирічної дитини. Однак він зумів побудувати сім'ю, у нього з'явилася дочка Ова. Одного разу проходячи повз парк, Мемо бачить в озері дівчинку і намагається її врятувати, але…\n▶️ <a href=\"https://youtu.be/bDAkHkR6fwA\">Трейлер</a></blockquote>\n§KN:m637920|230767\n§§\n<blockquote>🎬 <b>8.</b> <code>Найгірша людина у світі</code> (2021) <a href=\"https://telegra.ph/Najgіrsha-lyudina-u-svіtі-2021-11-16\">🔗</a>\nдрама, мелодрама, комедія · ⏱ 2 год 08 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>96%</b> · Ⓜ <b>91</b>\n<i>🎭 Ренате Реінсве, Андерс Даніельсен Льє, Herbert Nordrum</i>\n📝 Джулі виповнюється тридцять, і її життя — суцільний екзистенційний безлад. Її таланти змарновано, а її хлопець — успішний художник-графік — наполягає на тому, що час стати більш розсудливою. На одній з вечірок вона…\n▶️ <a href=\"https://youtu.be/wnjoc84m1Ug\">Трейлер</a></blockquote>\n§KN:m660120|71609\n§§\n<blockquote>🎬 <b>9.</b> <code>Не впіймали — не злодій</code> (2006) <a href=\"https://telegra.ph/Ne-vpіjmali--ne-zlodіj-2006-11-16\">🔗</a>\nкримінал, драма, трилер · ⏱ 2 год 09 хв\n⭐ IMDb <b>7.6</b> · 🍅 <b>86%</b> · Ⓜ <b>76</b>\n<i>🎭 Дензел Вашинґтон, Клайв Овен, Джоді Фостер</i>\n📺 <a href=\"https://www.themoviedb.org/movie/388-inside-man/watch?locale=UA\">Netflix · за підпискою</a>\n📝 Посеред білого дня троє перевдягнених у малярів бандитів захоплюють великий банк в центрі Нью-Йорка. На місце події прибуває досвідчений поліцейський, проте переговори заходять у глухий кут: злочинці висувають…\n▶️ <a href=\"https://youtu.be/4G7n7O5pel0\">Трейлер</a></blockquote>\n§KN:m388|5281\n§§\n<blockquote>🎬 <b>10.</b> <code>Шлях додому</code> (2010) <a href=\"https://telegra.ph/SHlyah-dodomu-2010-11-16\">🔗</a>\nдрама, пригоди, історичний · ⏱ 2 год 13 хв\n⭐ IMDb <b>7.3</b> · 🍅 <b>73%</b> · Ⓜ <b>66</b>\n<i>🎭 Ед Гарріс, Джим Стерджес, Сірша Ронан</i>\n📝 У фільмі розповідається про втечу групи в’язнів із табору ГУЛАГу в Сибірі та їх тернистий шлях до свободи.\n▶️ <a href=\"https://youtu.be/mMRJonfmQY0\">Трейлер</a></blockquote>\n§KN:m49009|2690"
+   }
+  ]
+ }
 }
