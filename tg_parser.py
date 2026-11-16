@@ -9,11 +9,12 @@ from datetime import datetime, timedelta, timezone
 from telethon import TelegramClient, errors
 from telethon.sessions import StringSession
 from telethon.tl.functions.messages import CheckChatInviteRequest
-from telethon.tl.types import Channel, DocumentAttributeVideo, InputMessagesFilterGif, MessageEntityMention, MessageEntityTextUrl, MessageEntityUrl, PeerChannel
+from telethon.tl.types import Channel, DocumentAttributeVideo, InputMessagesFilterGif, InputMessagesFilterVideo, MessageEntityMention, MessageEntityTextUrl, MessageEntityUrl, PeerChannel
 
 SYNC_URL, SYNC_KEY = os.environ.get("SYNC_URL", "").rstrip("/"), os.environ.get("SYNC_KEY", "")
 PER_DAY, FIRST_DAYS, PAUSE, RUN_SEC, MAX_SEC = 10, 3, 3, 10 * 60, 3 * 3600   # базово топ-10 кожного типу; перший збір — 3 останні дні; до 10 хв на запуск
 GIF_ALL, GIF_IDX, GIF_RESCAN = 5000, 1500, 7                       # 🎞 архів GIF: уся історія каналу (до 5000 GIF), індекс найкращих — 1500, переглядати раз на 7 днів
+FULL_MIN, FULL_SRC, FULL_TOT, FULL_RUN, FULL_KEEP = 15 * 60, 40, 800, 15, 60   # 🎬 фули: від 15 хв; до 40 з джерела, до 800 усього; до 15 за запуск; тримаємо 60 днів
 GIF_DEEP = 30                                                       # GIF трапляються рідко: якщо за день бракує — добір найкращими за 30 днів (для відео й фото — за 2)
 # тип: (назва, файл у боті, поле квоти, поле базової квоти, поле «зібрано до», ліміт записів)
 TYPES = {"v": ("відео", "vids.json", "q", "base", "done", 2000),
@@ -254,6 +255,27 @@ def learn_sig(msgs: list, own: set) -> set:
     return {k for k, v in c.items() if n >= 4 and v >= max(2, 0.25 * n)}   # і для малих каналів (мережі на кшталт «… x GREHOGRAM» підписують кожен пост посиланнями на «сестер»)
 
 
+async def full_index(client, ent, own: set, mode: int, words: list, bad: set) -> list:
+    """🎬 Уся історія відео каналу від 15 хв (серверний фільтр — лише відео) → [[id, оцінка]] лише ПОПУЛЯРНІ:
+    оцінка відносно довгих відео того ж місяця (як в архіві GIF) — беремо не нижче медіани каналу, від найкращих."""
+    rows = []
+    async for m in client.iter_messages(ent, filter=InputMessagesFilterVideo, limit=5000):
+        d = video_of(m)
+        if not d or d[0] < FULL_MIN or getattr(m, "noforwards", False) or ad_reason([m], own, mode, words, bad, 0):   # довгий опис під фулом — норма
+            continue
+        rows.append((m.id, score(m), m.date.astimezone(KYIV).strftime("%Y-%m")))
+    if not rows:
+        return []
+    allv = sorted(r[1] for r in rows)
+    gmed = allv[len(allv) // 2] or 1
+    med = {}
+    for mon in {r[2] for r in rows}:
+        v = sorted(r[1] for r in rows if r[2] == mon)
+        med[mon] = (v[len(v) // 2] if len(v) >= 5 else gmed) or 1
+    out = [[o, round(0.7 * sc / med[mon] + 0.3 * sc / gmed, 3)] for o, sc, mon in rows]
+    return sorted([r for r in out if r[1] >= 1.0], key=lambda r: -r[1])[:300]     # лише популярні: не нижче типового для каналу
+
+
 class Post:
     """Одиниця добірки: відео, GIF або пост із фото (альбом до 10 фото — один пост)."""
     def __init__(self, ms: list, t: str):
@@ -404,6 +426,8 @@ async def main():
     tgt = {t: int(cfg.get("tgt_" + t) or 300) for t in ("g", "p")}       # 🎯 запас GIF і фото в боті (адмінка); добирається найкращими за 30 днів
     share = {t: math.ceil(tgt[t] / max(1, len(src))) for t in tgt}
     gidx = fget("vid_gidx.json", {}) or {}                              # 🎞 архіви GIF по джерелах (окремий файл — бот його не читає)
+    fidx = fget("vid_fidx.json", {}) or {}                              # 🎬 архіви фулів (від 15 хв) по джерелах
+    fidx_ch = False
     gidx_ch = False
     hist = fget("vid_hist.json", {}) or {}                            # ♻️ історія (окремий файл — бот його не читає, щоб не гальмувати)
     mh = dict(hist.get("mh") or {})                                   # відбиток → id у сховищі: та сама публікація не потрапить удруге
@@ -538,6 +562,40 @@ async def main():
             except Exception as e:
                 print(f"gif index {k}: {e}")
         st["gall"] = len(gi.get("o") or [])
+        fi = fidx.get(k) or {}                                      # 🎬 фули: популярні довгі відео з усієї історії
+        cur_f = sum(1 for x in dbs["v"]["items"] if x["k"] == k and x.get("full") and x["i"] not in kill["v"])
+        need_f = min(FULL_SRC - cur_f, FULL_TOT - sum(1 for x in dbs["v"]["items"] if x.get("full")), FULL_RUN)
+        if need_f > 0 and not stop and not blocked and time.time() - t0 < RUN_SEC:
+            if fi.get("v") != 1 or fi.get("at", "") < f"{now - timedelta(days=7):%Y-%m-%d}":
+                try:
+                    fi = fidx[k] = {"v": 1, "at": f"{now:%Y-%m-%d}", "o": await full_index(client, ent, own, mode, ad_words, bad), "seen": fi.get("seen") or []}
+                    fidx_ch = True; log(f"🎬 {st['t'][:24]}: популярних фулів за весь час — {len(fi['o'])}")
+                except Exception as e:
+                    print(f"full index {k}: {e}")
+            seen_f = set(fi.get("seen") or [])
+            order = [o for o, _ in fi.get("o") or [] if o not in taken["v"] and o not in seen_f][:need_f]
+            if order:
+                try:
+                    got = {m.id: m for m in await client.get_messages(ent, ids=order) if m and video_of(m)}
+                    cands = fresh([Post([got[o]], "v") for o in order if o in got])
+                    new = await forward_batch(client, dest, ent, cands) if cands else []
+                    n_ = 0
+                    for p, ids in zip(cands, new):
+                        if ids:
+                            x_ = item_of(p, ids, k, p.date.astimezone(KYIV).date(), 70 + n_, ent); x_["full"] = 1
+                            dbs["v"]["items"].append(x_); taken["v"].add(p.id); n_ += 1
+                            mh.update({k_: ids[0] for k_ in media_keys(p.ms)}); alive.add(ids[0])
+                    fi["seen"] = (fi.get("seen") or [])[-2999:] + order; fidx_ch = True
+                    if n_:
+                        log(f"🎬 {st['t'][:24]}: фули +{n_}")
+                    await asyncio.sleep(PAUSE)
+                except errors.FloodWaitError as e:
+                    log(f"⏸ Telegram просить паузу {e.seconds} с — продовжу наступного запуску"); stop = True
+                except errors.ChatForwardsRestrictedError:
+                    st.update(ok=0, err="у каналі заборонено пересилання — пропущено"); blocked = True
+                except Exception as e:
+                    log(f"⚠️ {st['t'][:28]} · фули: {str(e)[:70]}")
+        st["fall"] = len(fi.get("o") or [])
         for t, (tname, _f, qf, _bf, donef, _cap) in TYPES.items():
             if stop or blocked:
                 break
@@ -545,7 +603,7 @@ async def main():
                 if stop or time.time() - t0 > RUN_SEC:
                     stop = True; break
                 q = max(0, min(48, int(s.get(qf) or bases[t])))      # квота каналу для типу: базова (з адмінки) ± за 👍 / 👎 у боті
-                already = sum(1 for x in dbs[t]["items"] if x["k"] == k and x.get("day") == day.isoformat() and x["i"] not in kill[t])
+                already = sum(1 for x in dbs[t]["items"] if x["k"] == k and x.get("day") == day.isoformat() and x["i"] not in kill[t] and not x.get("full"))   # фули — окремо від денного топу
                 q = max(0, q - already)
                 thr = (st.get("thr") or {}).get(t)
                 okp, lvl = gate(pool[t].get(day, []), q, thr)
@@ -644,6 +702,8 @@ async def main():
             log(f"♻️ {st['t'][:24]}: пропущено повторів — {dups}")
     if gidx_ch:
         fpush("vid_gidx.json", gidx)
+    if fidx_ch:
+        fpush("vid_fidx.json", fidx)
     killed = {i for t in TYPES for i in kill[t]}
     hist["mh"] = dict(list({k_: v for k_, v in mh.items() if v not in killed}.items())[-30000:])   # видалене як реклама/повтор — не «бачене»                       # останні 30 тис. відбитків
     main_db["dupn"] = dup_total
@@ -657,8 +717,9 @@ async def main():
             continue
         days_keep = int(cfg.get("keep") or 14) if t == "v" else int(cfg.get("keep_gp") or 7)
         cut = f"{now - timedelta(days=days_keep):%Y-%m-%d %H:%M}"
+        cut_f = f"{now - timedelta(days=FULL_KEEP):%Y-%m-%d %H:%M}"      # 🎬 фули живуть довше
         items = dbs[t]["items"]
-        old = [x for x in items if x["k"] not in live or x["i"] in kill[t] or x["i"] in ban_ids[t] or (max(x["dt"], x.get("at") or "") < cut and x["i"] not in keep)]   # 🚫 реклама — навіть зі збережених
+        old = [x for x in items if x["k"] not in live or x["i"] in kill[t] or x["i"] in ban_ids[t] or (max(x["dt"], x.get("at") or "") < (cut_f if x.get("full") else cut) and x["i"] not in keep)]   # 🚫 реклама — навіть зі збережених
         rest = [x for x in items if x not in old]
         if len(rest) > cap:
             old += [x for x in rest if x["i"] not in keep][:len(rest) - cap]
