@@ -733,7 +733,7 @@
   "t71789",
   "t1414"
  ],
- "gh_beat": "2026-11-16T10:00:46.222997+02:00",
+ "gh_beat": "2026-11-16T10:05:44.614943+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -748,7 +748,7 @@
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-16T09:52:50.921626+02:00",
+  "checked": "2026-11-16T10:02:59.404867+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": true
@@ -12789,13 +12789,7 @@
   "smm": {}
  },
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
- "gem_block": {
-  "Nz9lkQ:gemini-flash-latest": "2026-11-16T10:05:00+02:00",
-  "Nz9lkQ:gemini-3.8-flash": "2026-11-16T10:05:00+02:00",
-  "iDpywg:gemini-flash-latest": "2026-11-16T10:05:00+02:00",
-  "iDpywg:gemini-3.8-flash": "2026-11-16T10:05:00+02:00",
-  "Nz9lkQ:gemini-flash-lite-latest": "2026-11-16T10:05:00+02:00"
- },
+ "gem_block": {},
  "omdb_cache": {
   "tt5362988": [
    7.7,
@@ -30409,7 +30403,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "cb02d333e516",
+  "gs": "c19ffce12b24",
   "quiz_pool.json": "17c24e5946fc",
   "fact.png": "cdf6a5675a01",
   "sexed.json": "0362ec7e46d4",
@@ -46260,12 +46254,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-16",
  "silpo_week": "2026-46",
- "sbm_at": 1794816051.6582265,
+ "sbm_at": 1794816348.0444334,
  "sbm_hist": [
-  [
-   "20:55",
-   91
-  ],
   [
    "21:00",
    91
@@ -46837,6 +46827,10 @@
   [
    "10:00",
    64
+  ],
+  [
+   "10:05",
+   64
   ]
  ],
  "sbm_near": {
@@ -46853,7 +46847,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1794815457.7799883,
+ "net_at": 1794816355.6386316,
  "net_asn": {
   "triolan": [
    "13188",
@@ -49725,7 +49719,7 @@
  "warned": "2026-11-13",
  "toyn_week": "202647",
  "toys_v": 3,
- "toys_last": 1794815173.243563,
+ "toys_last": 1794816367.8714094,
  "toy_ban": [],
  "aro_v": 2,
  "arob_v": 2,
@@ -49905,7 +49899,7 @@
   "liquid": 1794764765.0043147,
   "massage": 1794765671.103647,
   "vac": 1794815173.2435641,
-  "gspot": 1794794177.2827256,
+  "gspot": 1794816367.8714106,
   "wear": 1794769258.5251904,
   "mast": 1794795362.0876536,
   "auto": 1794796568.1209009,
