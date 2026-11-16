@@ -733,7 +733,7 @@
   "t71789",
   "t1414"
  ],
- "gh_beat": "2026-11-16T08:55:44.704967+02:00",
+ "gh_beat": "2026-11-16T09:00:44.827367+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -775,7 +775,7 @@
    ]
   ]
  },
- "fact_png": "2026-11-16 08|2|2026-11-14T17:25:59+02:00",
+ "fact_png": "2026-11-16 09|2|2026-11-14T17:25:59+02:00",
  "fact_day": {
   "total": "0 хв",
   "list": []
@@ -1590,14 +1590,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "16.11 08:52",
-   "ts": 1794811935,
+   "at": "16.11 09:02",
+   "ts": 1794812535,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "16.11 08:52",
-   "ts": 1794811935,
+   "at": "16.11 09:02",
+   "ts": 1794812535,
    "ok": true,
    "note": ""
   },
@@ -1620,8 +1620,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "16.11 08:52",
-   "ts": 1794811935,
+   "at": "16.11 09:02",
+   "ts": 1794812535,
    "ok": true,
    "note": ""
   },
@@ -1680,8 +1680,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "16.11 08:52",
-   "ts": 1794811935,
+   "at": "16.11 09:02",
+   "ts": 1794812535,
    "ok": true,
    "note": ""
   },
@@ -30398,9 +30398,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "c031770cdd70",
+  "gs": "c31035d4f4d8",
   "quiz_pool.json": "a846d15e93df",
-  "fact.png": "52ea370598a4",
+  "fact.png": "3d533e7a0df9",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -46249,12 +46249,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-16",
  "silpo_week": "2026-46",
- "sbm_at": 1794812148.3302531,
+ "sbm_at": 1794812447.9568193,
  "sbm_hist": [
-  [
-   "19:55",
-   91
-  ],
   [
    "20:00",
    91
@@ -46826,6 +46822,10 @@
   [
    "08:55",
    67
+  ],
+  [
+   "09:00",
+   66
   ]
  ],
  "sbm_near": {
@@ -49724,7 +49724,7 @@
  "nmt_last": 1794811557.470654,
  "kino_v": 2,
  "yt_v": 4,
- "toycat_last": 1794810974.7499003,
+ "toycat_last": 1794812454.1547449,
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 09.11–16.11\n<blockquote>🎯 <b>1. Штраф Meta в Італії за доступ до галерей</b>\nІталійський регулятор оштрафував Meta на рекордну суму через прихований доступ додатків до фотогалерей користувачів Android без належної згоди.\n💡 Перевірте налаштування доступу до медіафайлів у ваших рекламних та бізнес-акаунтах Meta, щоб мінімізувати юридичні ризики.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPMFkzY01GaUJicFJpeFhkSWVobEp0Y1JhaE83bWtxekw4VmVuNlJZdkZsVTJNaXp5V05UY19KTkh5b3FaOUdwb0M3SkVZWFY3d2dYbWI3M3BZVzRjWUozWHVzUDhocm53R1JpU3J3Ui1TdnpuWVpaRXozVTdnN2lSY2xHZk1KTmZwbm9FVTV5REtIaWRuV1RtU2JsXzNTaWhNaGk3M1RkQm1oM0U3QXdn?oc=5\">New York Post</a></blockquote>\n<blockquote>🆕 <b>2. Глобальна перевірка віку підлітків у Meta</b>\nMeta запроваджує автоматизовані інструменти перевірки віку для підлітків по всьому світу задля безпеки платформи.\n💡 Врахуйте можливі обмеження показу реклами на неповнолітню аудиторію та зміну охоплень у відповідних сегментах.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxNX0tRUE5VVXRSc1FVTWx5ZmxLcXlhZTVES000Y09pRGdXb09Rc2hlTnFUVTd3OHdINmwycDBQcUttU0dRTlhDZC1MTkQwZmRHWXUwRjd1cFF0bVhwbGNEWFpmWEVhdkVoekVRUVFlalc4Sm5GZHFFWmE5LS02Y214OHdJSTV1aW5OQmo2bTdHekNJa2pSU09mak5GQdIBoAFBVV95cUxOblI0dFFxQlhwUVFNQmdEbldLS2dldldGaDhmYm5nbXpjN1NIZGZvYk82TEFSeEJZTmlFMnVlc0tPV1U4eXF3Vm9BNlBfeng5ZjlWY2l4X0RUSEc0SUlPVDZXSVVUWkNaLUlVNDhia09BU2FtdTFQV3BWZFMtUFB1TWQyOHBSaDVkbmd5UnUzOWFTR1V2MjJDLTNMS0VReUNs?oc=5\">Al Jazeera</a></blockquote>\n<blockquote>🆕 <b>3. Тест функції «Frequent Viewer» у LinkedIn</b>\nLinkedIn тестує нову функцію, яка показує користувачам список частих відвідувачів профілю, що допомагає генерувати ліди.\n💡 Активніше ведіть свій профіль або сторінку бренду, щоб частіше потрапляти на очі потенційним клієнтам у списку частих відвідувачів.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxNbENYenVMNmZlMjlyUnNtdEl3RnhsMFVrZzlpcEpCYTBjMmpUR1lCZm5sZUhld0pDUGZnSGZvU1Q5MTF3d0pLcm5maDl0cVJUY2ktOVd4THo4QVZwYXFlV1FocmJ2Y2FoSE4wR0VDckVjc1BtUm9VOTV0dzVjT2tMYjk0U1VuWFJGaU9fcWdfQUk5OWJsN0lXTDdsZnB3M2FwMDNKajYxaXEtUQ?oc=5\">MediaPost</a></blockquote>\n<blockquote>🎯 <b>4. ШІ-пошук не відображається у звітах Google Ads</b>\nДослідження показало, що активність користувачів у пошуку на базі штучного інтелекту майже не фіксується у стандартних звітах пошукових запитів Google Ads.\n💡 Переглядайте стратегії контекстної реклами та робіть більший акцент на тематичний таргетинг, оскільки класичні звіти не дають повної картини.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxOQ21Fek5ldFhabWlWSmpzWXJCaGQ2SkhhMW84OXVyUnJMRFpCaHZBcDRmdVZkZ05VcTc5OWxLSVFfZ29XUGxSQWU0OXhHYzhHS0czcGgxdHdnZVdRODBhMVFMNzJueTNQbUxfQkZxNlFRRFM3THZCMDVJMHRMeE9GZ3pxSEhPVVd1V3dsVVFlRk5kUENzSkZRVWoxWlRjTHZuQUVhNg?oc=5\">Search Engine Land</a></blockquote>\n<blockquote>📊 <b>5. Боротьба LinkedIn зі ШІ-коментарями</b>\nLinkedIn почав жорстко боротися з масовими коментарями, згенерованими штучним інтелектом, знижуючи їхнє охоплення.\n💡 Пишіть живі, експертні коментарі вручну, щоб ваші залучення не потрапили під алгоритмічні фільтри та не зашкодили репутації профілю.\n🔗 <a href=\"https://www.socialmediatoday.com/news/linkedin-cracks-down-on-ai-generated-comments/874707/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Оновлення додатку Edits від Meta</b>\nДодаток Edits отримав нові функції: криві швидкості (speed curves) та автоматичне балансування звуку для зручнішого монтажу відео.\n💡 Використовуйте ці вбудовані інструменти для швидкого створення динамічних Reels без потреби у сторонніх редакторах.\n🔗 <a href=\"https://www.socialmediatoday.com/news/metas-edits-app-gets-speed-curves-and-auto-audio-balancing/874586/\">Social Media Today</a></blockquote>\n§§\n<blockquote>👀 <b>7. Спортивна функція в Instagram</b>\nInstagram проводить експерименти з новим функціоналом, орієнтованим на спортивний контент та обговорення матчів у реальному часі.\n💡 Стежте за анонсами та готуйте інтерактивні формати (опитування, трансляції) під спортивні події для залучення фанатів.\n🔗 <a href=\"https://www.socialmediatoday.com/news/instagram-experiments-with-new-sports-feature/874585/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Короткі відео на Twitch</b>\nПлатформа Twitch додала новий функціонал для короткометражних відео, прагнучи утримати аудиторію всередині екосистеми.\n💡 Тестуйте вертикальні ролики на Twitch для анонсів трансляцій та залучення нової геймінг-аудиторії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxPc0JCclpscjVLeWd5djU0Z2ZfMnBIUTcxaXZCaFJHd0gxNUlhMDNYRkNzdE5xSWVNVWZ6U0t0Vk1tenZINF9yZWFONG1KVC1KR2pwVjJNa1puakpXb0xLRjFYaGNXb3ZzVFU2SDcybHRwd1hreXlLc2dFMUE1RHkzZ29TeXhPdXBsY1E4amdvT0VjVlhXel9IX1lIeFNXSnJS?oc=5\">Digiday</a></blockquote>\n<blockquote>👀 <b>9. Тести додатку ринків прогнозів від Meta</b>\nMeta розпочала внутрішнє тестування окремого додатку, зосередженого на ринках прогнозів та суспільних думках.\n💡 Зважайте на тренд на інтерактивні прогнози, готуючи подібні механіки для підвищення залученості у своїх спільнотах.\n🔗 <a href=\"https://www.socialmediatoday.com/news/meta-begins-internal-tests-of-prediction-markets-app/874709/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>10. Нова функція оскарження обмежень на X</b>\nСоцмережа X запровадила нову функцію, яка йде всупереч загальному тренду на жорстке обмеження та видалення контенту.\n💡 Вивчайте правила платформи X щодо нового функціоналу для безпечного поширення музичного та відеоконтенту.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMihAFBVV95cUxOUlAzSmFGcWM4Zy1jZzVGdmRSMmlfRWVicWZLR3BvdG9jU1FudURJOTVNNVNjWnYxZE9uUXRUYTJSVm41R2Q0WHdJQlhuLVV2VjNaM0JuU1l0RXpzLUo3Ui1Eb3Vnd09hTjM3aWo2aVZVcFRoWnpKRTY4bUpDSTZIV2xDTkM?oc=5\">Music Ally</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202647\n§§\n💬 <b>ФІШКИ ВІД ПРАКТИКІВ</b> · за тиждень\n<blockquote>💬 <b>1. Експеримент Buffer: як поєднати AI та людський фактор у наймі</b> · Buffer\nКоманда Buffer стикнулася з тим, що більшість кандидатів використовують AI для написання резюме, що перевантажує рекрутерів. Вони запустили A/B тест для оптимізації процесу найму без втрати емпатії та живого спілкування.\n💡 Використовуйте AI для первинного сортування рутинних завдань, але залишайте фінальне рішення та ключові комунікації за людьми, щоб зберегти якість.\n<a href=\"https://buffer.com/resources/ab-test-on-hiring/\">джерело</a></blockquote>\n<blockquote>💬 <b>2. Стратегія присутності на соцплатформах у 2026 році</b> · Buffer\nГайд аналізує 24 соціальні платформи та допомагає обрати найперспективніші для бренду. Автори наголошують, що не обов'язково бути скрізь, щоб досягти успіху.\n💡 Фокусуйтеся лише на 2-3 платформах, які ідеально підходять вашій аудиторії та формату контенту, замість розпилення ресурсів на всі мережі.\n<a href=\"https://buffer.com/resources/social-media-platforms/\">джерело</a></blockquote>\n<blockquote>💬 <b>3. Вирішення проблем із відхиленням платежів у Facebook Ads</b> · Medium · facebook-ads\nМатеріал розглядає основні причини збоїв оплат у рекламному кабінеті Meta, які зупиняють кампанії. Описано покрокові алгоритми усунення неполадок та використання віртуальних карток.\n💡 Використовуйте перевірені віртуальні картки з підтримкою 3D Secure та заздалегідь налаштовуйте резервні способи оплати, щоб уникнути блокування кампаній через неоплачені інвойси.\n<a href=\"https://zenvcc.medium.com/why-facebook-ads-payments-get-declined-causes-troubleshooting-steps-and-virtual-card-options-36751e57ba12?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>4. Масштабування у Meta Ads та WhatsApp без ризику блокувань</b> · Medium · facebook-ads\nАгенції та e-commerce бренди переходять на верифіковані бізнес-менеджери (FBM) та високолімітні API WhatsApp для стабільного масштабування. Це дозволяє уникнути раптових обмежень від Meta.\n💡 Для масштабних рекламних кампаній використовуйте виключно верифіковані акаунти (FBM) та офіційні API, щоб захистити бізнес від блокувань під час пікових сезонів.\n<a href=\"https://medium.com/@badhonbarmon110/how-to-scale-meta-ads-whatsapp-marketing-without-account-restrictions-in-2026-a909963fcd1e?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>5. Що робити, якщо рекламний акаунт Meta заблокували перед розпродажем</b> · Medium · facebook-ads\nБлокування акаунта в розпал сезону знижок зупиняє всі продажі. Автор пояснює, чому не варто палити ліміти запитів на перевірку та як правильно подавати апеляцію.\n💡 Не надсилайте десятки однакових запитів на перевірку поспіль — це лише затягує процес. Чітко та аргументовано поясніть підтримці суть бізнесу з першої спроби.\n<a href=\"https://medium.com/@businessfixkits/meta-restricted-your-ad-account-right-before-black-friday-dont-burn-your-review-39b8f51cb6f5?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>6. Кейс: як отримати ліди на тепловізори дешежче 18 євро через Meta Ads</b> · Medium · facebook-ads\nПрактичний досвід налаштування таргетингу на складну нішу теплових насосів. Головний висновок: первинні креативи рідко стають найуспішнішими, потрібен постійний пошуковий цикл.\n💡 Не зупиняйтеся на першому вдалому креативі; тестуйте різні варіації старого контенту, адже найкращі результати часто приносять ітерації, а не початкова ідея.\n<a href=\"https://medium.com/@benni_midzic/der-flei%C3%9Figste-meta-ads-experte-in-bad-schallerbach-warum-die-beste-anzeige-selten-die-erste-ist-e3b7acaece05?source=rss------facebook_ads-5\">джерело</a></blockquote>\n§§\n<blockquote>💬 <b>7. Чому 50 оголошень в одній групі Meta Ads шкодять результату</b> · Medium · facebook-ads\nХоча інтерфейс Meta дозволяє завантажити до 50 креативів в одну групу оголошень, довідковий центр та практика показують, що це погіршує показники.\n💡 Уникайте надмірного дроблення бюджету всередині однієї групи: алгоритму не вистачає показів для оптимізації, тому обмежуйтесь 3-5 актуальними креативами на адсет.\n<a href=\"https://medium.com/@BLVcreatives/can-you-run-too-many-ads-on-meta-80c5313c536e?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>8. 5 правил для AI-агента з автоматичної заміни втомлених креативів</b> · Medium · facebook-ads\nРозбір кейсу компанії CamClo AI щодо використання штучного інтелекту для моніторингу вигорання реклами та генерації свіжих концептів на основі реальних даних про продукт.\n💡 Задайте AI чіткі правила (п'ять лімітів на основі фактів про товар), щоб він створював нові варіанти креативів без втрати позиціонування бренду.\n<a href=\"https://medium.com/the-story-well/5-rules-we-gave-our-ai-agent-for-replacing-a-tired-ad-3ce3d3b7eb34?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>9. Стратегія генерації 5–10 лідів на день у сфері нерухомості</b> · Medium · facebook-ads\nПрактичний підхід до налаштування лідогенерації для забудовників та брокерів. Описано воронки, які стабільно приносять заявки щодня.\n💡 Комбінуйте лід-форми з моментальним зв'язком у месенджерах та чіткою офферною пропозицією, оскільки швидкість реакції у нерухомості вирішує долю угоди.\n<a href=\"https://medium.com/@harpalkimberleyschool/how-to-get-5-10-real-estate-leads-daily-lead-generation-strategies-for-builders-brokers-b13b74e8627f?source=rss------facebook_ads-5\">джерело</a></blockquote>\n<blockquote>💬 <b>10. Як використовувати TikTok Ads Library для пошуку робочих ідей</b> · Medium · tiktok-ads\nІнструкція з аналізу конкурентів за допомогою офіційної бібліотеки реклами TikTok. Інструмент допомагає знайти трендові формати та успішні стратегії у своїй ніші.\n💡 Регулярно аналізуйте бібліотеку TikTok Ads конкурентів за активністю показів: якщо креатив крутиться понад 2 тижні, він приносить прибуток — адаптуйте його під свій продукт.\n<a href=\"https://medium.com/@digitalmarketingimta/tiktok-ads-library-l%C3%A0-g%C3%AC-h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-c%C3%A1ch-s%E1%BB%AD-d%E1%BB%A5ng-v%C3%A0-t%C3%ACm-%C3%BD-t%C6%B0%E1%BB%9Fng-tiktok-bee8ea89d996?source=rss------tiktok_ads-5\">джерело</a></blockquote>\n§RT:smm:202647p",
  "kino_q": [
   {
