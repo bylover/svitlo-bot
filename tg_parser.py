@@ -588,7 +588,8 @@ async def main():
                         got = {m.id: m for m in await client.get_messages(ent, ids=ids_) if m and kind_of(m) == "g"} if ids_ else {}
                     except Exception:
                         got = {}
-                    cands = [Post([got[o]], "g") for o in ids_ if o in got]
+                    today0 = datetime.combine(yday + timedelta(days=1), datetime.min.time(), KYIV)
+                    cands = [Post([got[o]], "g") for o in ids_ if o in got and got[o].date < today0]   # сьогоднішні GIF — не в запас, а в завтрашній щоденний топ
                 else:
                     cands = sorted((p for dl in pool[t].values() for p in dl if p.id not in taken[t]), key=lambda p: -p.sc)[:need]
                 n0 = len(cands); cands = fresh(cands); dups += n0 - len(cands)
