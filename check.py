@@ -6418,7 +6418,10 @@ YT_LIKE = [(re.compile(r"секс|інтим|стосунк|сексолог|о�
            (re.compile(r"життя|влог|vlog|лайфстайл|історі[яї] з життя|побут|подорож|переїзд|їжа|рецепт|ресторан|покупк|день з|мій ранок|дім|ремонт|гроші|зарплат", re.I), 1.3, "🌿"),
            (re.compile(r"тру.?крайм|true crime|розслідув|маніяк|злочин|детектив|вбивств|загадк", re.I), 1.1, "🔪"),
            (re.compile(r"наук|дослідж|експеримент|космос|фізик|біолог|хімі|мозок|science", re.I), 0.9, "🔬"),
-           (re.compile(r"кліп|official (music )?video|прем.?єра пісні|трейлер", re.I), 0.6, "🎵")]
+           (re.compile(r"подкаст|podcast|інтерв.?ю|розмова з|у гостях|відверт", re.I), 1.4, "🎙"),
+           (re.compile(r"здоров|лікар|медицин|тіло|сон\b|харчуван|гормон|серце|імунітет|біохакінг", re.I), 1.2, "🩺"),
+           (re.compile(r"історі[яї] україни|документальн|як працює|пояснюємо|чому ми|факти|секрет[иі]|фінанс|гроші|кар.?єр|бізнес|інвест", re.I), 1.0, "💡")]
+YT_MUSIC = re.compile(r"кліп|official (music |lyric )?video|lyric|audio|кавер|cover|пісн|трек|прем.?єра|альбом|сингл|ft\.|feat\.|remix|ремікс|караоке|acoustic|live session", re.I)   # музика — у топі не більше 2
 YT_TECH = re.compile(r"огляд|iphone|samsung|pixel|гаджет|смартфон|ноутбук|unboxing|розпаков|техніка", re.I)
 YT_SPORT = re.compile(r"футбол|матч|упл\b|ліга чемпіонів|ліга європи|динамо|шахтар|збірна україни|бокс|усик|ломаченко|ufc|mma|баскетбол|хокей|теніс|формула.?1|голи|highlights|огляд матчу|спорт", re.I)
 YT_THEMES = {"💞 Стосунки й секс-просвіта": ["сексолог українською", "стосунки психолог українською", "секс освіта українською", "стосунки в парі українською"],
@@ -8149,6 +8152,8 @@ def yt_foryou(st: dict, now: datetime) -> None:
                 continue                                  # коротше 8 хв, політика, спорт — ні
             if sn.get("categoryId") == "20" or YT_GAMES.search(txt + " " + " ".join(sn.get("tags") or [])) or (x.get("status") or {}).get("madeForKids"):
                 continue                                  # ігри й дитяче — ні
+            if sn.get("categoryId") == "10" or YT_MUSIC.search(sn.get("title", "")) or re.search(r"\s-\s*Topic$", meta[cid_]["t"]):
+                continue                                  # 🎵 музика, кліпи, кавери й автоканали «- Topic» — ні (тут лише змістовне)
             if not yt_is_ua(sn.get("defaultAudioLanguage") or sn.get("defaultLanguage") or "", sn.get("title", "") + " " + (sn.get("description") or "")[:300]):
                 continue                                  # лише українською
             vw, lk, cm = int(sc.get("viewCount") or 0), int(sc.get("likeCount") or 0), int(sc.get("commentCount") or 0)
@@ -8157,7 +8162,8 @@ def yt_foryou(st: dict, now: datetime) -> None:
             eng = (lk + 3 * cm) / max(1, vw)              # 💬 залученість
             score = 2.0 * min(outlier, 10) ** 0.5 + 1.0 * min(speed, 20) ** 0.5 + 40 * min(eng, 0.15) + (1.5 if chans[cid_] == "⭐" else 0) \
                 + max([w for rx, w, _ in YT_LIKE if rx.search(txt + " " + " ".join(sn.get("tags") or []))] or [0]) \
-                + 1.0 * float(fb.get(cid_, 0)) - (1.5 if YT_CLICK.search(sn.get("title", "")) else 0)
+                + 1.0 * float(fb.get(cid_, 0)) - (1.5 if YT_CLICK.search(sn.get("title", "")) else 0) \
+                + (0.8 if sn.get("categoryId") in ("27", "28") else 0)   # освіта, наука
             cand.append({"id": v, "t": sn["title"][:90], "c": meta[cid_]["t"][:40], "ch": cid_, "th": chans[cid_], "views": vw, "o": round(outlier, 1), "sc": round(score, 2),
                          "gem": 5000 <= meta[cid_]["subs"] <= 300000 and outlier >= 2.0, "min": secs // 60})
     cand.sort(key=lambda x: -x["sc"])
@@ -8200,7 +8206,10 @@ def build_youtube(st: dict, now: datetime) -> str | None:
         except Exception:
             pass
     ids: list[str] = []
-    for q in ("що|як|чому|це|коли", "україна|українською|київ|наші"):
+    wk_ = int(now.strftime("%V"))
+    th_ = list(YT_THEMES.values())
+    useful_q = [th_[(wk_ + i) % len(th_)][0] for i in range(3)]   # + 3 теми з підбірок (по колу щотижня): психологія, стосунки, подкасти, здоровʼя…
+    for q in ("що|як|чому|це|коли", "україна|українською|київ|наші", *useful_q):
         try:
             r = api("search", part="id", type="video", order="viewCount", regionCode="UA", relevanceLanguage="uk", q=q,
                     maxResults=50, publishedAfter=start.astimezone(ZoneInfo("UTC")).strftime("%Y-%m-%dT%H:%M:%SZ"))
@@ -8240,6 +8249,8 @@ def build_youtube(st: dict, now: datetime) -> str | None:
             continue                                   # ігри (Minecraft, Roblox, летсплеї, стріми) — ні
         if not (lang.startswith("uk") or UA_LETTERS.search(txt)):
             continue                                   # лише українська мова
+        if re.search(r"\s-\s*Topic$", sn.get("channelTitle", "")):
+            continue                                   # «… - Topic» — автоканали YouTube Music (просто трек без відео) — ні
         ids_ok.add(v.get("id"))
         good.append(v)
     print(f"YouTube: усього {len(vids)}, українських за тиждень {len(good)}")
@@ -8260,13 +8271,21 @@ def build_youtube(st: dict, now: datetime) -> str | None:
         sc += max([w for rx, w, _ in YT_LIKE if rx.search(txt_)] or [0])          # гумор, наука, тру-крайм, секс-освіта, кіно й кліпи
         if YT_TECH.search(txt_):
             sc += 0.6 if views_ >= p70 else -1.5       # техніка — лише якщо справді «вистрілило», інакше нижче
+        if sn_.get("categoryId") == "10" or YT_MUSIC.search(sn_.get("title", "")):
+            sc -= 1.2 if views_ >= p70 else 3          # 🎵 музика — лише справжні хіти, і нижче за корисне
+        elif sn_.get("categoryId") in ("27", "28"):
+            sc += 0.8                                  # освіта, наука й техніка
         return sc * (1.3 if sn_.get("channelId") in fav else 1)   # ⭐ улюблені канали — вище
     good.sort(key=interest, reverse=True)
-    top, per_channel = [], {}
+    top, per_channel, mus = [], {}, 0
     for v in good:
         ch = v["snippet"].get("channelId")
         if per_channel.get(ch, 0) >= 2:                        # не більше 2 відео з каналу
             continue
+        if v["snippet"].get("categoryId") == "10" or YT_MUSIC.search(v["snippet"].get("title", "")):
+            if mus >= (2 if len(top) < 10 else 3):             # 🎵 у топ-10 — не більше 2 кліпів, у 20 — 3
+                continue
+            mus += 1
         per_channel[ch] = per_channel.get(ch, 0) + 1
         top.append(v)
         if len(top) == 20:                                     # 10 у повідомленні + «▶️ ще 10»
