@@ -7713,6 +7713,11 @@ def toys_build(st: dict, now: datetime) -> None:
     todo = [k for k in TOY_SECT if due(k)]
     todo.sort(key=lambda k: (k != "tap", len(sec_(k).get("items") or []) > 0, float(la.get(k) or 0), len(sec_(k).get("items") or [])))   # тапалки, далі порожні, далі — кого давно не пробували
     if not todo:
+        if _time.time() - float(st.get("toys_idle") or 0) > 6 * 3600:   # раз на 6 год — пояснення в адмінці, чому нічого не відбувається
+            st["toys_idle"] = _time.time()
+            small = sorted(((len(sec_(k_).get("items") or []), k_) for k_ in TOY_SECT if len(sec_(k_).get("items") or []) < 12))
+            TOY_LOG.append("✅ черга порожня: усі розділи зібрані" + (f"; неповні ({len(small)}): " + ", ".join(f"{k_} {n_}" for n_, k_ in small[:8]) + " — повтор раз на тиждень / порожні — раз на 6 год" if small else ""))
+            toy_log_push(now)
         return
     st["toys_last"] = _time.time()
     k = todo[0]
@@ -9533,15 +9538,19 @@ def main() -> None:
                 nmt_build(st, now)                    # 🎓 банк завдань НМТ — до 2 тестів за ~30 хв, поки є черга
             except Exception as e_:
                 print(f"НМТ: {err_text(e_)[:80]}")
-        if budget_ok(110):
-            try:
-                TOY_BAN.update(str(x).lower() for x in (st.get("toy_ban") or []))
-                toys_news(st, now)                    # 🧸 огляди й новинки іграшок — раз на тиждень +10
-                toy_catalog_build(st, now)            # 📚 каталог моделей з офіційних сайтів (sitemap) — 3 сайти за запуск, раз на 30 днів
-                toys_verify(st, now)                  # 🔎 перевірка зібраних топів пошуком — 1 вид за запуск
-                toys_build(st, now)                   # 🧸 топи іграшок — по 1 розділу раз на 15 хв, поки не зібрано
-            except Exception as e_:
-                print(f"Іграшки: {err_text(e_)[:80]}")
+        toy_late = _time.time() - float(st.get("toys_last") or 0) > 3 * 3600   # давно не було — даємо більше часу, щоб черга не «засинала»
+        if budget_ok(110) or (toy_late and budget_ok(240)):
+            TOY_BAN.update(str(x).lower() for x in (st.get("toy_ban") or []))
+            for f_, n_ in ((toys_build, "топи"), (toys_news, "огляди"), (toy_catalog_build, "каталог"), (toys_verify, "перевірка")):   # кожен крок окремо: помилка одного не зупиняє інші
+                if not budget_ok(300):
+                    break
+                try:
+                    f_(st, now)
+                except Exception as e_:
+                    print(f"Іграшки ({n_}): {err_text(e_)[:120]}")
+                    TOY_LOG.append(f"⚠️ {n_}: {err_text(e_)[:100]}"); toy_log_push(now)
+        elif toy_late and not st.get("toy_bmsg") == now.strftime("%Y-%m-%d %H"):
+            st["toy_bmsg"] = now.strftime("%Y-%m-%d %H"); print("Іграшки: пропущено — не вистачило часу запуску")
         direct_m.extend((c_, t_, None) for c_, t_ in DIR_MSGS); DIR_MSGS.clear()   # 🔔 нові фільми режисерів
         for prov_, txt_ in NET_MSGS:                  # сповіщення тим, хто обрав цього провайдера (основні — Triolan і SunNet за замовчуванням)
             for c_ in dict.fromkeys([str(x) for x in PROF] + FAMILY):
