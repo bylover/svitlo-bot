@@ -733,7 +733,7 @@
   "t247718",
   "t62710"
  ],
- "gh_beat": "2026-11-17T11:40:48.588467+02:00",
+ "gh_beat": "2026-11-17T11:45:49.589514+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -748,7 +748,7 @@
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-17T11:32:54.434800+02:00",
+  "checked": "2026-11-17T11:42:58.535182+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -12832,7 +12832,9 @@
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
  "gem_block": {
   "Nz9lkQ:gemini-3.8-flash": "2026-11-18T10:05:00+02:00",
-  "Nz9lkQ:gemini-flash-latest": "2026-11-18T10:05:00+02:00"
+  "Nz9lkQ:gemini-flash-latest": "2026-11-18T10:05:00+02:00",
+  "iDpywg:gemini-3.8-flash": "2026-11-18T10:05:00+02:00",
+  "iDpywg:gemini-flash-latest": "2026-11-18T10:05:00+02:00"
  },
  "omdb_cache": {
   "tt5362988": [
@@ -30507,7 +30509,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "684c16f443eb",
+  "gs": "b4c3c5d2ac77",
   "quiz_pool.json": "17c24e5946fc",
   "fact.png": "f87f2d845dc4",
   "sexed.json": "0362ec7e46d4",
@@ -45767,12 +45769,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-17",
  "silpo_week": "2026-46",
- "sbm_at": 1794908453.4815679,
+ "sbm_at": 1794908754.70441,
  "sbm_hist": [
-  [
-   "23:10",
-   84
-  ],
   [
    "23:15",
    85
@@ -46344,11 +46342,15 @@
   [
    "11:40",
    74
+  ],
+  [
+   "11:45",
+   71
   ]
  ],
  "sbm_near": {
   "160603556": [
-   87,
+   78,
    0
   ]
  },
@@ -49229,7 +49231,7 @@
  "warned": "2026-11-13",
  "toyn_week": "202647",
  "toys_v": 3,
- "toys_last": 1794907567.7062244,
+ "toys_last": 1794908766.8222935,
  "toy_ban": [],
  "aro_v": 2,
  "arob_v": 2,
@@ -49245,7 +49247,7 @@
   "kegel": 1794757561.5974472,
   "sleeve": 1794872763.613045,
   "plug": 1794907567.7062252,
-  "game": 1794891671.0671365,
+  "game": 1794908766.8222947,
   "lubew": 1794761757.6405232,
   "lubeh": 1794813061.9242303,
   "lubewarm": 1794813982.2240427,
