@@ -130,7 +130,14 @@
   "https://www.girlonthenet.com/blog/stay-in-the-game-a-chat-with-my-20-year-old-self/",
   "https://www.womenshealthmag.com/sex-and-love/a74386684/lelo-black-friday-sale-2026/",
   "https://www.risetointimacy.com/post/how-to-initiate-sex-without-pressure-or-awkwardness",
-  "https://www.menshealth.com/sex-women/a74414171/male-masturbation-tips/"
+  "https://www.menshealth.com/sex-women/a74414171/male-masturbation-tips/",
+  "https://www.dildoordildont.com/which-magic-wand-should-you-buy/?utm_source=rss&utm_medium=rss&utm_campaign=which-magic-wand-should-you-buy",
+  "https://www.womenshealthmag.com/sex-and-love/a74440217/how-to-give-good-blow-job/",
+  "https://share.transistor.fm/s/4e24b5d1",
+  "https://www.allure.com/review/euthymol-purple-whitening-toothpaste-review-2026",
+  "https://medium.com/tales-untold/they-made-love-more-flexible-but-forgot-one-thing-jealousy-doesnt-follow-rules-0d846fe2f350?source=rss------relationships-5",
+  "https://www.womenshealthmag.com/sex-and-love/a19930265/best-vibrators-for-women/",
+  "https://medium.com/@jianglong4248/how-to-keep-everyday-communication-comfortable-in-a-relationship-7c2b684f32be?source=rss------sex_toys-5"
  ],
  "kino_seen": [
   "m1381071",
@@ -734,7 +741,7 @@
   "t247718",
   "t62710"
  ],
- "gh_beat": "2026-11-18T18:20:50.841323+02:00",
+ "gh_beat": "2026-11-18T18:25:45.517233+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -745,11 +752,11 @@
   "groups": [
    "GPV3.1"
   ],
-  "updated": "18:06 18.11.2026",
+  "updated": "18:21 18.11.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-18T18:12:57.059638+02:00",
+  "checked": "2026-11-18T18:22:54.826070+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1764,20 +1771,20 @@
    "note": ""
   },
   "🛍 Prom.ua": {
-   "at": "18.11 16:47",
-   "ts": 1795013261,
+   "at": "18.11 18:27",
+   "ts": 1795019271,
    "ok": true,
    "note": ""
   },
   "prom.ua": {
-   "at": "18.11 16:47",
-   "ts": 1795013261,
+   "at": "18.11 18:27",
+   "ts": 1795019271,
    "ok": true,
    "note": ""
   },
   "фантазія тижня": {
-   "at": "18.11 14:56",
-   "ts": 1795006564,
+   "at": "18.11 18:26",
+   "ts": 1795019174,
    "ok": true,
    "note": ""
   },
@@ -30723,7 +30730,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "224ec2d749f3",
+  "gs": "f35c2ff4b0be",
   "quiz_pool.json": "17c24e5946fc",
   "fact.png": "2c89e077540e",
   "sexed.json": "0362ec7e46d4",
@@ -49092,7 +49099,7 @@
   "160603556": "Women in Love",
   "936688574": "Kama Sutra"
  },
- "prom_day": "2026-11-17",
+ "prom_day": "2026-11-18",
  "prom_force": false,
  "games_v": 2,
  "kino_last": {
@@ -49104,7 +49111,7 @@
  "rz_force": true,
  "morning_sent": "2026-11-18T11:00:45.374236+02:00",
  "prom_v": 8,
- "prom_last_n": 1182,
+ "prom_last_n": 1198,
  "para_i": 8,
  "para_titles": [
   "Експеримент із позою «Сяюча троянда»",
@@ -49120,7 +49127,7 @@
  "para_sent": "2026-11-18",
  "fan_wk": "2026-47",
  "weather": "2026-11-17",
- "prom_i": 57,
+ "prom_i": 4,
  "yt_week": "2026-47",
  "smm_week": "2026-47",
  "yt_mute": [],
@@ -49133,12 +49140,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-18",
  "silpo_week": "2026-46",
- "sbm_at": 1795018855.4583433,
+ "sbm_at": 1795019148.5638826,
  "sbm_hist": [
-  [
-   "05:57",
-   93
-  ],
   [
    "06:05",
    93
@@ -49710,6 +49713,10 @@
   [
    "18:20",
    77
+  ],
+  [
+   "18:25",
+   76
   ]
  ],
  "sbm_near": {
@@ -49726,7 +49733,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1795018264.135146,
+ "net_at": 1795019160.0190806,
  "net_asn": {
   "triolan": [
    "13188",
