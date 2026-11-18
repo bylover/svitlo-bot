@@ -733,7 +733,7 @@
   "t247718",
   "t62710"
  ],
- "gh_beat": "2026-11-18T03:25:46.148304+02:00",
+ "gh_beat": "2026-11-18T03:30:47.648836+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1659,14 +1659,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "18.11 03:22",
-   "ts": 1794964959,
+   "at": "18.11 03:33",
+   "ts": 1794965590,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "18.11 03:22",
-   "ts": 1794964959,
+   "at": "18.11 03:33",
+   "ts": 1794965590,
    "ok": true,
    "note": ""
   },
@@ -1689,8 +1689,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "18.11 03:26",
-   "ts": 1794965201,
+   "at": "18.11 03:33",
+   "ts": 1794965634,
    "ok": true,
    "note": ""
   },
@@ -30708,7 +30708,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "c355ef3cb3b4",
+  "gs": "abb8dd39e33e",
   "quiz_pool.json": "17c24e5946fc",
   "fact.png": "1cd13f3d7e7a",
   "sexed.json": "0362ec7e46d4",
@@ -47646,6 +47646,102 @@
    ],
    "ov": "Цезаря та його мавп втягнуто у смертельне протистояння з людським військом під орудою безжального Полковника.  Після того, як мавпи зазнали неймовірних втрат, Цезар долає власні темні інстинкти й розпочинає особисту війн",
    "poster": "https://image.tmdb.org/t/p/w500/sF8IgIBNI5gkT3M8W9Cosr934Uz.jpg"
+  },
+  "m423612": {
+   "title": "Робота без авторства",
+   "year": "2018",
+   "rating": 7.7,
+   "genres": [
+    "Драма",
+    "Мелодрама",
+    "Історичний"
+   ],
+   "g": [
+    18,
+    10749,
+    36
+   ],
+   "ov": "Історія молодого студента-митця Курта, який закохується в однокурсницю Еллі. Її батько — відомий лікар професор Зеебанд прикро вражений вибором доньки і заприсягається покласти край їхнім стосункам. Вони й гадки не мають",
+   "poster": "https://image.tmdb.org/t/p/w500/j1qtaVwKB5Jzr5Vb5QXB6UuIcUc.jpg"
+  },
+  "m570503": {
+   "title": "유열의 음악앨범",
+   "year": "2019",
+   "rating": 7.2,
+   "genres": [
+    "Мелодрама",
+    "Драма"
+   ],
+   "g": [
+    10749,
+    18
+   ],
+   "ov": "During the 1990s, hardworking Mi-soo and optimistic Hyun-woo meet at a bakery and fall in love while exchanging stories on a radio station, but while their paths keep crossing, the timing never seems to work out.",
+   "poster": "https://image.tmdb.org/t/p/w500/rt8yDvXSnk9CMDJeNYh9lv6kPMt.jpg"
+  },
+  "m666277": {
+   "title": "Минулі життя",
+   "year": "2023",
+   "rating": 7.8,
+   "genres": [
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    10749
+   ],
+   "ov": "Нора та Хе-сон були друзями дитинства, але їхній зв’язок перервався, коли дівчина переїхала до Канади з батьками. Через 20 років вони відновлюють спілкування — спочатку у соціальних мережах, а потім проводять разом тижде",
+   "poster": "https://image.tmdb.org/t/p/w500/s4ADRgM4r3TmFRC6bKpXagcsFAC.jpg"
+  },
+  "m79464": {
+   "title": "रॉकस्टार",
+   "year": "2011",
+   "rating": 7.8,
+   "genres": [
+    "Драма",
+    "Музика",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    10402,
+    10749
+   ],
+   "ov": "College student Janardhan is a simpleton who desperately seeks inspiration for the musician inside him. Although heartbreak helps him reach his goal, it also leads him to self-destruction.",
+   "poster": "https://image.tmdb.org/t/p/w500/cJZC9riwrdATBUonkZJZD6y9g40.jpg"
+  },
+  "m254320": {
+   "title": "Лобстер",
+   "year": "2015",
+   "rating": 7.1,
+   "genres": [
+    "Комедія",
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    35,
+    18,
+    10749
+   ],
+   "ov": "Історія кохання, що розгортається в найближчому майбутньому, де самотніх людей арештовують і відправляють в моторошний готель. Там вони зобов’язані знайти собі пару за 45 днів. Якщо їм це не вдається, то їх перетворюють ",
+   "poster": "https://image.tmdb.org/t/p/w500/xvRXMldrR0Noj4R1F40mx4TFa2s.jpg"
+  },
+  "m4251": {
+   "title": "वीर-ज़ारा",
+   "year": "2004",
+   "rating": 7.8,
+   "genres": [
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    10749
+   ],
+   "ov": "Squadron Leader Veer Pratap Singh, a pilot in the Indian Air Force, rescues the stranded Zaara, a woman from Pakistan, following a bus accident, and their lives are forever bound.",
+   "poster": "https://image.tmdb.org/t/p/w500/r9MFHgWwVKYXksjgPCmtyEEiLSc.jpg"
   }
  },
  "cofid_pushed": "16.11.2026",
@@ -47737,12 +47833,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-18",
  "silpo_week": "2026-46",
- "sbm_at": 1794965149.0044599,
+ "sbm_at": 1794965451.4798872,
  "sbm_hist": [
-  [
-   "14:50",
-   61
-  ],
   [
    "14:55",
    61
@@ -48314,6 +48406,10 @@
   [
    "03:25",
    93
+  ],
+  [
+   "03:30",
+   93
   ]
  ],
  "sbm_near": {
@@ -48330,7 +48426,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1794964559.0017474,
+ "net_at": 1794965459.4793203,
  "net_asn": {
   "triolan": [
    "13188",
@@ -51199,7 +51295,7 @@
  "warned": "2026-11-13",
  "toyn_week": "202647",
  "toys_v": 3,
- "toys_last": 1794964271.5366383,
+ "toys_last": 1794965471.2870715,
  "toy_ban": [],
  "aro_v": 2,
  "arob_v": 2,
@@ -51239,7 +51335,7 @@
   "remote": 1794917474.1753583,
   "clean": 1794785847.1912072,
   "pump": 1794819060.0123289,
-  "bdsm": 1794943568.6392858,
+  "bdsm": 1794965471.2870727,
   "lubecool": 1794826336.7364495,
   "lubeanal": 1794822284.915454,
   "prolong": 1794824625.8956192
@@ -51385,7 +51481,7 @@
   "comedy": "2026-11-18T03:05:49.336322+02:00",
   "horror": "2026-11-18T03:20:50.658390+02:00",
   "scifi": "2026-11-18T03:25:46.214512+02:00",
-  "romance": "2026-11-17T15:25:49.958869+02:00",
+  "romance": "2026-11-18T03:30:47.802150+02:00",
   "series": "2026-11-17T15:35:48.916634+02:00",
   "ua": "2026-11-17T15:50:46.794761+02:00",
   "now": "2026-11-17T16:30:51.568286+02:00",
