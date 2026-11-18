@@ -7302,6 +7302,8 @@ TOY_SECT = {   # ключ: (назва, група, опис для ШІ, пор
 
 TOY_SEED = {   # моделі, які адміністратор назвав зразками виду: завжди в топі, без пошукових перевірок
     "tap": ["Lola Games AvoTap", "Unihorn Karma Lilac", "Satisfyer Tap & Climax 1", "Satisfyer Tap & Climax 2"],
+    "bdsm": ["Sportsheets Under the Bed Restraint System", "Fifty Shades of Grey Bound to You Beginner's Bondage Kit", "Sportsheets Sex & Mischief Enchanted Feather Tickler"],   # ШІ часто відмовляє на BDSM — базові відомі моделі
+    "strap": ["Fun Factory Share", "Fun Factory Share Lite", "Sportsheets Royal Harness"],
 }
 
 
@@ -7711,6 +7713,11 @@ def toys_build(st: dict, now: datetime) -> None:
         return d_ < old or (n_ == 0 and (int(x.get("tries") or 0) < 4 or d_ < day1)) or (n_ < 12 and (int(x.get("tries") or 0) < 4 or d_ < week1))
     la = st.setdefault("toy_la", {})                   # коли розділ пробували востаннє (навіть невдало) — щоб один «впертий» розділ не блокував чергу
     todo = [k for k in TOY_SECT if due(k)]
+    for k_ in ("bdsm", "strap"):                       # нові зразки: порожні розділи — зібрати одразу, не чекаючи 6 год
+        if not sec_(k_).get("items") and st.get("toy_seed2") != 1:
+            (db["sect"].setdefault(k_, {}))["tries"] = 0; (db["sect"][k_])["d"] = ""
+    if st.get("toy_seed2") != 1:
+        st["toy_seed2"] = 1; todo = [k for k in TOY_SECT if due(k)]
     todo.sort(key=lambda k: (k != "tap", len(sec_(k).get("items") or []) > 0, float(la.get(k) or 0), len(sec_(k).get("items") or [])))   # тапалки, далі порожні, далі — кого давно не пробували
     if not todo:
         if _time.time() - float(st.get("toys_idle") or 0) > 6 * 3600:   # раз на 6 год — пояснення в адмінці, чому нічого не відбувається
@@ -7767,6 +7774,8 @@ def toys_build(st: dict, now: datetime) -> None:
                  "who (кому підійде — українською), price (₴ бюджетно / ₴₴ середньо / ₴₴₴ преміум), new (true, якщо модель 2024 року або новіша). "
                  'Лише реальні існуючі продукти. Поверни JSON {"items":[...]}', json_mode=True, relaxed=True, max_tokens=5000)
       items = json_loose(raw).get("items") or []
+    if (not raw or not items) and seeds:              # ШІ відмовив, але є перевірені зразки — розділ не лишається порожнім
+        TOY_LOG.append(f"🤖 «{k}»: ШІ не дав списку ({GEM_STATE.get('err', 'порожньо')}) — беру закріплені зразки"); items = [{"n": n_} for n_ in seeds]; raw = raw or "seed"
     if not raw or not items:
         TOY_LOG.append(f"🤖 «{k}»: ШІ не відповів ({GEM_STATE.get('err', 'порожньо')})"); toy_log_push(now); return
     seed_l = {n.lower() for n in seeds}
@@ -7807,7 +7816,7 @@ def toys_build(st: dict, now: datetime) -> None:
         if isinstance(x, list):
             pinned.append(list(x[:6]) + [1]); continue
         x = x or {}
-        pinned.append([n, str(x.get("why") or "зразок виду: тапінг-стимуляція (постукування), нова категорія")[:160], str(x.get("feat") or "")[:200],
+        pinned.append([n, str(x.get("why") or ("зразок виду: тапінг-стимуляція (постукування), нова категорія" if k == "tap" else "відома перевірена модель цього виду"))[:160], str(x.get("feat") or "")[:200],
                        str(x.get("who") or "")[:120], (re.findall(r"₴+", str(x.get("price") or "")) or ["₴₴"])[0][:3], 1 if x.get("new") in (True, "true", 1) else 0, 1])
     out = pinned + out
     if old_items:                                        # доповнюємо наявними (лише того самого виду й статі) — розділ лише росте
