@@ -733,7 +733,7 @@
   "t247718",
   "t62710"
  ],
- "gh_beat": "2026-11-18T03:35:55.697400+02:00",
+ "gh_beat": "2026-11-18T03:40:45.204874+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1659,14 +1659,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "18.11 03:37",
-   "ts": 1794965856,
+   "at": "18.11 03:42",
+   "ts": 1794966175,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "18.11 03:37",
-   "ts": 1794965856,
+   "at": "18.11 03:42",
+   "ts": 1794966175,
    "ok": true,
    "note": ""
   },
@@ -1689,8 +1689,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "18.11 03:33",
-   "ts": 1794965634,
+   "at": "18.11 03:46",
+   "ts": 1794966399,
    "ok": true,
    "note": ""
   },
@@ -30708,7 +30708,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "6488ec3bd85c",
+  "gs": "14c4cad10809",
   "quiz_pool.json": "17c24e5946fc",
   "fact.png": "1cd13f3d7e7a",
   "sexed.json": "0362ec7e46d4",
@@ -47742,6 +47742,51 @@
    ],
    "ov": "Squadron Leader Veer Pratap Singh, a pilot in the Indian Air Force, rescues the stranded Zaara, a woman from Pakistan, following a bus accident, and their lives are forever bound.",
    "poster": "https://image.tmdb.org/t/p/w500/r9MFHgWwVKYXksjgPCmtyEEiLSc.jpg"
+  },
+  "t67178": {
+   "title": "Каратель",
+   "year": "2017",
+   "rating": 8.4,
+   "genres": [
+    "Екшн і Пригоди",
+    "Кримінал",
+    "Драма"
+   ],
+   "g": [
+    10759,
+    80,
+    18
+   ],
+   "ov": "Морський піхотинець у відставці прагне покарати злочинців, відповідальних за вбивство його родини, й опиняється в епіцентрі військової змови.",
+   "poster": "https://image.tmdb.org/t/p/w500/gx0pKJIuMyaFeXqx6AXsmZcgVKO.jpg"
+  },
+  "t4613": {
+   "title": "Брати по зброї",
+   "year": "2001",
+   "rating": 9.4,
+   "genres": [
+    "Драма",
+    "Політика та війна"
+   ],
+   "g": [
+    18,
+    10768
+   ],
+   "ov": "У 1942 році в Токкоа група молодих добровольців починає військову підготовку. Хлопці стануть солдатами новітніх на той момент парашутно-десантних підрозділів американської армії. Під суворим командуванням лейтенанта Собе",
+   "poster": "https://image.tmdb.org/t/p/w500/w0oF3ZB7aSSYjc6l01Q06WkiJgF.jpg"
+  },
+  "t46880": {
+   "title": "The Fosters",
+   "year": "2013",
+   "rating": 7.9,
+   "genres": [
+    "Драма"
+   ],
+   "g": [
+    18
+   ],
+   "ov": "Stef Foster, a dedicated police officer, and her partner Lena Adams, a school vice principal, have built a close-knit, loving family with Stef's biological son from a previous marriage, Brandon, and their adopted twins, ",
+   "poster": "https://image.tmdb.org/t/p/w500/iRCmazqaUNNsgZyR6tNDl88pXp3.jpg"
   }
  },
  "cofid_pushed": "16.11.2026",
@@ -47833,12 +47878,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-18",
  "silpo_week": "2026-46",
- "sbm_at": 1794965760.7947168,
+ "sbm_at": 1794966048.5932734,
  "sbm_hist": [
-  [
-   "15:00",
-   61
-  ],
   [
    "15:05",
    60
@@ -48409,6 +48450,10 @@
   ],
   [
    "03:35",
+   93
+  ],
+  [
+   "03:40",
    93
   ]
  ],
@@ -51482,7 +51527,7 @@
   "horror": "2026-11-18T03:20:50.658390+02:00",
   "scifi": "2026-11-18T03:25:46.214512+02:00",
   "romance": "2026-11-18T03:30:47.802150+02:00",
-  "series": "2026-11-17T15:35:48.916634+02:00",
+  "series": "2026-11-18T03:40:45.622258+02:00",
   "ua": "2026-11-17T15:50:46.794761+02:00",
   "now": "2026-11-17T16:30:51.568286+02:00",
   "gems": "2026-11-17T17:00:48.174701+02:00",
