@@ -733,7 +733,7 @@
   "t247718",
   "t62710"
  ],
- "gh_beat": "2026-11-18T16:35:48.988899+02:00",
+ "gh_beat": "2026-11-18T16:40:48.377741+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1667,14 +1667,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "18.11 16:38",
-   "ts": 1795012682,
+   "at": "18.11 16:43",
+   "ts": 1795012997,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "18.11 16:38",
-   "ts": 1795012682,
+   "at": "18.11 16:43",
+   "ts": 1795012997,
    "ok": true,
    "note": ""
   },
@@ -12937,7 +12937,8 @@
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
  "gem_block": {
   "Nz9lkQ:gemini-flash-latest": "2026-11-19T10:05:00+02:00",
-  "Nz9lkQ:gemini-3.8-flash": "2026-11-19T10:05:00+02:00"
+  "Nz9lkQ:gemini-3.8-flash": "2026-11-19T10:05:00+02:00",
+  "iDpywg:gemini-flash-latest": "2026-11-19T10:05:00+02:00"
  },
  "omdb_cache": {
   "tt5362988": [
@@ -30708,7 +30709,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "fd7cafe5d5e0",
+  "gs": "a1def836d382",
   "quiz_pool.json": "17c24e5946fc",
   "fact.png": "a30e8e24cdb5",
   "sexed.json": "0362ec7e46d4",
@@ -48908,12 +48909,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-18",
  "silpo_week": "2026-46",
- "sbm_at": 1795012553.8565512,
+ "sbm_at": 1795012851.5408316,
  "sbm_hist": [
-  [
-   "04:00",
-   93
-  ],
   [
    "04:05",
    93
@@ -49485,6 +49482,10 @@
   [
    "16:35",
    79
+  ],
+  [
+   "16:40",
+   80
   ]
  ],
  "sbm_near": {
@@ -49501,7 +49502,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1795011964.4599278,
+ "net_at": 1795012857.96511,
  "net_asn": {
   "triolan": [
    "13188",
