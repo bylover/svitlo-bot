@@ -733,7 +733,7 @@
   "t247718",
   "t62710"
  ],
- "gh_beat": "2026-11-18T10:35:53.236578+02:00",
+ "gh_beat": "2026-11-18T10:40:48.258201+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1660,14 +1660,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "18.11 10:38",
-   "ts": 1794991085,
+   "at": "18.11 10:42",
+   "ts": 1794991345,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "18.11 10:38",
-   "ts": 1794991085,
+   "at": "18.11 10:42",
+   "ts": 1794991345,
    "ok": true,
    "note": ""
   },
@@ -1690,8 +1690,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "18.11 10:32",
-   "ts": 1794990752,
+   "at": "18.11 10:42",
+   "ts": 1794991345,
    "ok": true,
    "note": ""
   },
@@ -1750,8 +1750,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "18.11 10:36",
-   "ts": 1794990980,
+   "at": "18.11 10:42",
+   "ts": 1794991345,
    "ok": true,
    "note": ""
   },
@@ -12922,7 +12922,9 @@
  "pend": {},
  "got": {},
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
- "gem_block": {},
+ "gem_block": {
+  "Nz9lkQ:gemini-flash-latest": "2026-11-19T10:05:00+02:00"
+ },
  "omdb_cache": {
   "tt5362988": [
    7.7,
@@ -30680,7 +30682,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "b15add61fe0e",
+  "gs": "1df2a2883175",
   "quiz_pool.json": "17c24e5946fc",
   "fact.png": "888f1eed40f7",
   "sexed.json": "0362ec7e46d4",
@@ -48242,12 +48244,8 @@
  "silpo_snap": "2026-11-11",
  "live_day": "2026-11-18",
  "silpo_week": "2026-46",
- "sbm_at": 1794990958.3606205,
+ "sbm_at": 1794991252.948086,
  "sbm_hist": [
-  [
-   "21:53",
-   92
-  ],
   [
    "21:56",
    92
@@ -48819,6 +48817,10 @@
   [
    "10:35",
    71
+  ],
+  [
+   "10:40",
+   70
   ]
  ],
  "sbm_near": {
