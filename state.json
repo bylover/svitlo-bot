@@ -741,7 +741,7 @@
   "t247718",
   "t62710"
  ],
- "gh_beat": "2026-11-19T07:03:28.069453+02:00",
+ "gh_beat": "2026-11-19T07:07:47.460361+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -752,11 +752,11 @@
   "groups": [
    "GPV3.1"
   ],
-  "updated": "06:48 19.11.2026",
+  "updated": "07:01 19.11.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-19T06:52:59.404212+02:00",
+  "checked": "2026-11-19T07:02:56.239744+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1568,26 +1568,26 @@
    "note": "73 шт."
   },
   "🛒 Сільпо (основна)": {
-   "at": "19.11 07:07",
-   "ts": 1795064827,
+   "at": "19.11 07:11",
+   "ts": 1795065082,
    "ok": true,
    "note": ""
   },
   "🛒 Сільпо (підписники)": {
-   "at": "19.11 07:07",
-   "ts": 1795064842,
+   "at": "19.11 07:11",
+   "ts": 1795065096,
    "ok": true,
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "19.11 07:05",
-   "ts": 1795064722,
+   "at": "19.11 07:10",
+   "ts": 1795065008,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "19.11 07:05",
-   "ts": 1795064722,
+   "at": "19.11 07:10",
+   "ts": 1795065008,
    "ok": true,
    "note": ""
   },
@@ -1604,8 +1604,8 @@
    "note": ""
   },
   "ігри PS5": {
-   "at": "19.11 06:36",
-   "ts": 1795062976,
+   "at": "19.11 07:08",
+   "ts": 1795064906,
    "ok": true,
    "note": ""
   },
@@ -1616,14 +1616,14 @@
    "note": ""
   },
   "🎵 Музика": {
-   "at": "19.11 06:36",
-   "ts": 1795062976,
+   "at": "19.11 07:08",
+   "ts": 1795064906,
    "ok": true,
    "note": ""
   },
   "❤️ Здоровʼя": {
-   "at": "19.11 06:36",
-   "ts": 1795062976,
+   "at": "19.11 07:08",
+   "ts": 1795064906,
    "ok": true,
    "note": ""
   },
@@ -1634,26 +1634,26 @@
    "note": ""
   },
   "аудіокниги": {
-   "at": "19.11 06:36",
-   "ts": 1795062976,
+   "at": "19.11 07:08",
+   "ts": 1795064906,
    "ok": true,
    "note": ""
   },
   "🎓 Секс-освіта": {
-   "at": "19.11 06:36",
-   "ts": 1795062975,
+   "at": "19.11 07:08",
+   "ts": 1795064905,
    "ok": true,
    "note": ""
   },
   "🎯 Вікторини": {
-   "at": "19.11 06:36",
-   "ts": 1795062975,
+   "at": "19.11 07:08",
+   "ts": 1795064905,
    "ok": true,
    "note": ""
   },
   "🌅 Імпульс / 🕯 класика": {
-   "at": "19.11 06:36",
-   "ts": 1795062975,
+   "at": "19.11 07:08",
+   "ts": 1795064905,
    "ok": true,
    "note": ""
   },
@@ -1664,14 +1664,14 @@
    "note": ""
   },
   "кіномэтч": {
-   "at": "19.11 06:36",
-   "ts": 1795062976,
+   "at": "19.11 07:08",
+   "ts": 1795064906,
    "ok": true,
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "19.11 07:05",
-   "ts": 1795064742,
+   "at": "19.11 07:08",
+   "ts": 1795064905,
    "ok": true,
    "note": ""
   },
@@ -9916,7 +9916,7 @@
    ]
   }
  },
- "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 19.11 07:03 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🥤 <code>Сік «Біола» томатний</code> <a href=\"https://silpo.ua/product/sik-biola-tomatnyi-168801\">🔗</a> — <b>42.99 ₴</b> <s>89.49 ₴</s> · −54%\n2. 🛒 <code>Заварник Eat&amp;Drink 1000 мл 954274</code> <a href=\"https://silpo.ua/product/zavarnyk-eat-drink-1000-ml-954274-954274\">🔗</a> — <b>249 ₴</b> <s>519 ₴</s> · −52%\n3. 🍫 <code>Шоколад молочний Milka екстра какао</code> <a href=\"https://silpo.ua/product/shokolad-molochnyi-milka-ekstra-kakao-1041187\">🔗</a> — <b>65.99 ₴</b> <s>123 ₴</s> · −49%\n4. 🥤 <code>Нектар «Біола» манго-апельсин</code> <a href=\"https://silpo.ua/product/nektar-biola-mango-apelsyn-214955\">🔗</a> — <b>42.99 ₴</b> <s>82.49 ₴</s> · −50%\n5. 🍿 <code>Снеки NoriGo Tempura оригінальні</code> <a href=\"https://silpo.ua/product/sneky-norigo-tempura-oryginalni-1014316\">🔗</a> — <b>64.99 ₴</b> <s>149 ₴</s> · −56%\n6. 🛒 <code>Таблетки для посудомийних машин Somat All in 1 Extra</code> <a href=\"https://silpo.ua/product/tabletky-dlia-posudomyinykh-mashyn-somat-all-in-1-extra-951241\">🔗</a> — <b>719 ₴</b> <s>1499 ₴</s> · −55%\n7. 🛒 <code>Термочашка з трубочкою 900 мл в асортименті 1005428</code> <a href=\"https://silpo.ua/product/termochashka-z-trubochkoiu-900-ml-v-asortymenti-1005428-1005428\">🔗</a> — <b>349 ₴</b> <s>799 ₴</s> · −56%\n8. 🍫 <code>Батончик Zentis марципан в чорному шоколаді</code> <a href=\"https://silpo.ua/product/batonchyk-zentis-martsypan-v-chornomu-shokoladi-673366\">🔗</a> — <b>69.99 ₴</b> <s>119 ₴</s> · −43%\n9. 🍫 <code>Шоколад молочний Світоч Blueberry cookies</code> <a href=\"https://silpo.ua/product/shokolad-molochnyi-svitoch-blueberry-cookies-935170\">🔗</a> — <b>129 ₴</b> <s>254 ₴</s> · −52%\n10. 🥩 <code>Ковбаса «Премія»® Chorizo Extra с/в</code> <a href=\"https://silpo.ua/product/kovbasa-premiia-chorizo-extra-s-v-1011233\">🔗</a> — <b>99 ₴</b> <s>189 ₴</s> · −50%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
+ "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 19.11 07:07 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🥤 <code>Сік «Біола» томатний</code> <a href=\"https://silpo.ua/product/sik-biola-tomatnyi-168801\">🔗</a> — <b>42.99 ₴</b> <s>89.49 ₴</s> · −54%\n2. 🛒 <code>Заварник Eat&amp;Drink 1000 мл 954274</code> <a href=\"https://silpo.ua/product/zavarnyk-eat-drink-1000-ml-954274-954274\">🔗</a> — <b>249 ₴</b> <s>519 ₴</s> · −52%\n3. 🍫 <code>Шоколад молочний Milka екстра какао</code> <a href=\"https://silpo.ua/product/shokolad-molochnyi-milka-ekstra-kakao-1041187\">🔗</a> — <b>65.99 ₴</b> <s>123 ₴</s> · −49%\n4. 🥤 <code>Нектар «Біола» манго-апельсин</code> <a href=\"https://silpo.ua/product/nektar-biola-mango-apelsyn-214955\">🔗</a> — <b>42.99 ₴</b> <s>82.49 ₴</s> · −50%\n5. 🍿 <code>Снеки NoriGo Tempura оригінальні</code> <a href=\"https://silpo.ua/product/sneky-norigo-tempura-oryginalni-1014316\">🔗</a> — <b>64.99 ₴</b> <s>149 ₴</s> · −56%\n6. 🛒 <code>Таблетки для посудомийних машин Somat All in 1 Extra</code> <a href=\"https://silpo.ua/product/tabletky-dlia-posudomyinykh-mashyn-somat-all-in-1-extra-951241\">🔗</a> — <b>719 ₴</b> <s>1499 ₴</s> · −55%\n7. 🛒 <code>Термочашка з трубочкою 900 мл в асортименті 1005428</code> <a href=\"https://silpo.ua/product/termochashka-z-trubochkoiu-900-ml-v-asortymenti-1005428-1005428\">🔗</a> — <b>349 ₴</b> <s>799 ₴</s> · −56%\n8. 🍫 <code>Батончик Zentis марципан в чорному шоколаді</code> <a href=\"https://silpo.ua/product/batonchyk-zentis-martsypan-v-chornomu-shokoladi-673366\">🔗</a> — <b>69.99 ₴</b> <s>119 ₴</s> · −43%\n9. 🍫 <code>Шоколад молочний Світоч Blueberry cookies</code> <a href=\"https://silpo.ua/product/shokolad-molochnyi-svitoch-blueberry-cookies-935170\">🔗</a> — <b>129 ₴</b> <s>254 ₴</s> · −52%\n10. 🥩 <code>Ковбаса «Премія»® Chorizo Extra с/в</code> <a href=\"https://silpo.ua/product/kovbasa-premiia-chorizo-extra-s-v-1011233\">🔗</a> — <b>99 ₴</b> <s>189 ₴</s> · −50%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
  "silpo_stores": {
   "week": "2026-47",
   "v": 2,
@@ -11960,9 +11960,9 @@
  "silpo_by": {
   "1f0bae3d-2073-62f4-b14c-f9715721ce18": {
    "week": "2026-11-19",
-   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 19.11 07:03 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Калнишевського, 2 · 🏪 самовивіз · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <code>Папір туалетний NUA 3-шаровий</code> <a href=\"https://silpo.ua/product/papir-tualetnyi-nua-3-sharovyi-979770\">🔗</a> — <b>529 ₴</b> <s>999 ₴</s> · −47%\n2. 🍷 <code>Пиво Heineken світле з/б</code> <a href=\"https://silpo.ua/product/pyvo-heineken-svitle-z-b-721739\">🔗</a> — <b>39.99 ₴</b> <s>69.99 ₴</s> · −45%\n3. 🧊 <code>Пельмені Laska «Маню-ням» з м'ясом індика та кролика</code> <a href=\"https://silpo.ua/product/pelmeni-laska-maniu-niam-z-m-iasom-indyka-ta-krolyka-912911\">🔗</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −51%\n4. 🍫 🌐 лише онлайн-замовлення <code>Печиво «Премія»® Савоярді</code> <a href=\"https://silpo.ua/product/pechyvo-premiia-savoiardi-526349\">🔗</a> — <b>74.99 ₴</b> <s>144 ₴</s> · −46%\n5. 🍫 🌐 лише онлайн-замовлення <code>Печиво Yarych Матусине з какао затяжне</code> <a href=\"https://silpo.ua/product/pechyvo-yarych-matusyne-z-kakao-zatiazhne-1001756\">🔗</a> — <b>19.99 ₴</b> <s>36.49 ₴</s> · −46%\n6. 🍷 <code>Пиво Corona Extra світле з/б</code> <a href=\"https://silpo.ua/product/pyvo-corona-extra-svitle-z-b-949468\">🔗</a> — <b>39.99 ₴</b> <s>78.49 ₴</s> · −50%\n7. 🛒 <code>Серветки «Рута» білі</code> <a href=\"https://silpo.ua/product/servetky-ruta-bili-68630\">🔗</a> — <b>24.99 ₴</b> <s>42.99 ₴</s> · −43%\n8. 🍞 <code>Хлібці Leksands цільнозернові житні</code> <a href=\"https://silpo.ua/product/khlibtsi-leksands-tsilnozernovi-zhytni-993978\">🔗</a> — <b>59.99 ₴</b> <s>123 ₴</s> · −39%\n9. 🧀 <code>Сир Ghidetti Рикота 11% з коров'ячого молока</code> <a href=\"https://silpo.ua/product/syr-ghidetti-rykota-11-z-korov-iachogo-moloka-809307\">🔗</a> — <b>79.99 ₴</b> <s>129 ₴</s> · −38%\n10. 🛒 <code>Кетчуп Щедро Лагідний з червоною паприкою д/п</code> <a href=\"https://silpo.ua/product/ketchup-shchedro-lagidnyi-z-chervonoiu-paprykoiu-d-p-991216\">🔗</a> — <b>29.99 ₴</b> <s>51.49 ₴</s> · −44%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s0_",
+   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 19.11 07:07 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Калнишевського, 2 · 🏪 самовивіз · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <code>Папір туалетний NUA 3-шаровий</code> <a href=\"https://silpo.ua/product/papir-tualetnyi-nua-3-sharovyi-979770\">🔗</a> — <b>529 ₴</b> <s>999 ₴</s> · −47%\n2. 🍷 <code>Пиво Heineken світле з/б</code> <a href=\"https://silpo.ua/product/pyvo-heineken-svitle-z-b-721739\">🔗</a> — <b>39.99 ₴</b> <s>69.99 ₴</s> · −45%\n3. 🧊 <code>Пельмені Laska «Маню-ням» з м'ясом індика та кролика</code> <a href=\"https://silpo.ua/product/pelmeni-laska-maniu-niam-z-m-iasom-indyka-ta-krolyka-912911\">🔗</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −51%\n4. 🍫 🌐 лише онлайн-замовлення <code>Печиво «Премія»® Савоярді</code> <a href=\"https://silpo.ua/product/pechyvo-premiia-savoiardi-526349\">🔗</a> — <b>74.99 ₴</b> <s>144 ₴</s> · −46%\n5. 🍫 🌐 лише онлайн-замовлення <code>Печиво Yarych Матусине з какао затяжне</code> <a href=\"https://silpo.ua/product/pechyvo-yarych-matusyne-z-kakao-zatiazhne-1001756\">🔗</a> — <b>19.99 ₴</b> <s>36.49 ₴</s> · −46%\n6. 🍷 <code>Пиво Corona Extra світле з/б</code> <a href=\"https://silpo.ua/product/pyvo-corona-extra-svitle-z-b-949468\">🔗</a> — <b>39.99 ₴</b> <s>78.49 ₴</s> · −50%\n7. 🛒 <code>Серветки «Рута» білі</code> <a href=\"https://silpo.ua/product/servetky-ruta-bili-68630\">🔗</a> — <b>24.99 ₴</b> <s>42.99 ₴</s> · −43%\n8. 🍞 <code>Хлібці Leksands цільнозернові житні</code> <a href=\"https://silpo.ua/product/khlibtsi-leksands-tsilnozernovi-zhytni-993978\">🔗</a> — <b>59.99 ₴</b> <s>123 ₴</s> · −39%\n9. 🧀 <code>Сир Ghidetti Рикота 11% з коров'ячого молока</code> <a href=\"https://silpo.ua/product/syr-ghidetti-rykota-11-z-korov-iachogo-moloka-809307\">🔗</a> — <b>79.99 ₴</b> <s>129 ₴</s> · −38%\n10. 🛒 <code>Кетчуп Щедро Лагідний з червоною паприкою д/п</code> <a href=\"https://silpo.ua/product/ketchup-shchedro-lagidnyi-z-chervonoiu-paprykoiu-d-p-991216\">🔗</a> — <b>29.99 ₴</b> <s>51.49 ₴</s> · −44%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s0_",
    "built": "2026-11-19-am",
-   "at": "19.11 07:03"
+   "at": "19.11 07:07"
   }
  },
  "silpo_sent_by": {
@@ -29790,9 +29790,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "1607324b1ada",
+  "gs": "9bf20cd9e1b4",
   "quiz_pool.json": "17c24e5946fc",
-  "fact.png": "86bfa67dd260",
+  "fact.png": "d2580f6df8a3",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -48879,8 +48879,8 @@
   "lin": "2026-11-19T04:30:54.492104+02:00",
   "wet": "2026-11-19T05:50:45.354288+02:00",
   "out": "2026-11-19T05:50:45.354288+02:00",
-  "les": "2026-11-19T07:03:28.217075+02:00",
-  "ero": "2026-11-19T07:03:28.217075+02:00",
+  "les": "2026-11-19T07:07:47.659146+02:00",
+  "ero": "2026-11-19T07:07:47.659146+02:00",
   "pov": "2026-11-19T01:30:50.597037+02:00",
   "lat": "2026-11-19T01:30:50.597037+02:00",
   "asi": "2026-11-19T01:10:45.893516+02:00",
@@ -48955,7 +48955,7 @@
  "silpo_snap": "2026-11-18",
  "live_day": "2026-11-19",
  "silpo_week": "2026-46",
- "sbm_at": 1795064612.556284,
+ "sbm_at": 1795064871.672894,
  "sbm_hist": [
   [
    "18:00",
@@ -49530,7 +49530,7 @@
    84
   ],
   [
-   "07:03",
+   "07:07",
    84
   ]
  ],
@@ -49548,7 +49548,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1795064623.0475788,
+ "net_at": 1795064880.8918583,
  "net_asn": {
   "triolan": [
    "13188",
