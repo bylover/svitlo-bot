@@ -741,7 +741,7 @@
   "t247718",
   "t62710"
  ],
- "gh_beat": "2026-11-19T15:40:46.142372+02:00",
+ "gh_beat": "2026-11-19T15:45:45.558745+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -752,11 +752,11 @@
   "groups": [
    "GPV3.1"
   ],
-  "updated": "15:18 19.11.2026",
+  "updated": "15:33 19.11.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-19T15:32:54.110211+02:00",
+  "checked": "2026-11-19T15:42:54.590246+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1625,8 +1625,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "19.11 15:42",
-   "ts": 1795095754,
+   "at": "19.11 15:46",
+   "ts": 1795096005,
    "ok": true,
    "note": ""
   },
@@ -30965,7 +30965,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "a97ba14da6ed",
+  "gs": "7147d740d0e2",
   "quiz_pool.json": "17c24e5946fc",
   "fact.png": "3aeab8c38ce2",
   "sexed.json": "0362ec7e46d4",
@@ -46417,7 +46417,7 @@
   "m1032863": {
    "title": "Гіпотеза кохання",
    "year": "2026",
-   "rating": 7.9,
+   "rating": 7.8,
    "genres": [
     "Мелодрама",
     "Комедія"
@@ -50374,6 +50374,72 @@
    ],
    "ov": "Zero is a brilliant scientist. However, 20 years ago, he was publicly humiliated when he lost Helena, the love of his life. One day, an accidental experience with one of his inventions causes him to travel back in time t",
    "poster": "https://image.tmdb.org/t/p/w500/t7jhfy4A3SVxNZusALZtRxXocAt.jpg"
+  },
+  "m928720": {
+   "title": "隐入尘烟",
+   "year": "2022",
+   "rating": 7.6,
+   "genres": [
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    10749
+   ],
+   "ov": "Humble, unassuming Ma and timid Cao have been cast off by their families and forced into an arranged marriage. They have to combine their strength and build a home to survive. In the face of much adversity, an unexpected",
+   "poster": "https://image.tmdb.org/t/p/w500/4wDdeLiGySFOJZTfpylq9hMTbpe.jpg"
+  },
+  "m61202": {
+   "title": "Життя не може бути нудним",
+   "year": "2011",
+   "rating": 8.2,
+   "genres": [
+    "Драма",
+    "Комедія",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    35,
+    10749
+   ],
+   "ov": "Троє молодих людей їдуть на канікули, які змінять їхнє життя. Кабір зустрічає дівчину Наташу і шість місяців потому вони заручуються. Він хоче влаштувати щось на зразок розширеного варіанту парубочої вечірки - тритижневу",
+   "poster": "https://image.tmdb.org/t/p/w500/hKO9O715wYxjkQSEv47giCYcyO8.jpg"
+  },
+  "m9675": {
+   "title": "На узбіччі",
+   "year": "2004",
+   "rating": 7.5,
+   "genres": [
+    "Комедія",
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    35,
+    18,
+    10749
+   ],
+   "ov": "Письменник-невдаха Майлз і маловідомий актор Джек вирушають у подорож виноробнями Каліфорнії. Перший - щоб пережити розлучення, другий - щоб погуляти перед майбутнім весіллям. Приятелі й гадки не мали, що на них чекає по",
+   "poster": "https://image.tmdb.org/t/p/w500/zFSQ3B6YF3jdSJFaFJtkX1YaxeQ.jpg"
+  },
+  "m15775": {
+   "title": "Якщо тільки",
+   "year": "2004",
+   "rating": 7.0,
+   "genres": [
+    "Драма",
+    "Мелодрама",
+    "Фентезі"
+   ],
+   "g": [
+    18,
+    10749,
+    14
+   ],
+   "ov": "В центрі сюжету – історія закоханої  пари, Саманти та Ієна. Він весь час зайнятий своєю роботою, їй не вистачає його уваги. Після випадкової сварки Саманта гине в автокатастрофі, а Ієн вважає себе винним  у її смерті. У ",
+   "poster": "https://image.tmdb.org/t/p/w500/7hyTpRJlco8iKYxXmOgiUSQSSqP.jpg"
   }
  },
  "cofid_pushed": "16.11.2026",
@@ -50467,12 +50533,8 @@
  "silpo_snap": "2026-11-18",
  "live_day": "2026-11-19",
  "silpo_week": "2026-47",
- "sbm_at": 1795095649.8032908,
+ "sbm_at": 1795095948.6057584,
  "sbm_hist": [
-  [
-   "02:55",
-   94
-  ],
   [
    "03:00",
    94
@@ -51044,6 +51106,10 @@
   [
    "15:40",
    81
+  ],
+  [
+   "15:45",
+   80
   ]
  ],
  "sbm_near": {
@@ -54115,7 +54181,7 @@
   "comedy": "2026-11-19T15:15:48.206741+02:00",
   "horror": "2026-11-19T15:30:59.411725+02:00",
   "scifi": "2026-11-19T15:35:46.402917+02:00",
-  "romance": "2026-11-19T03:40:48.786191+02:00",
+  "romance": "2026-11-19T15:45:45.640333+02:00",
   "series": "2026-11-19T03:50:47.198784+02:00",
   "ua": "2026-11-19T04:00:54.117938+02:00",
   "now": "2026-11-19T04:50:47.272500+02:00",
