@@ -742,7 +742,7 @@
   "t279246",
   "t7482"
  ],
- "gh_beat": "2026-11-21T07:55:45.296393+02:00",
+ "gh_beat": "2026-11-21T08:00:48.438257+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -801,11 +801,11 @@
    ]
   ]
  },
- "fact_png": "2026-11-21 07|6|2026-11-20T19:52:13+02:00",
+ "fact_png": "2026-11-21 08|6|2026-11-20T19:52:13+02:00",
  "fact_day": {
-  "total": "6 год 31 хв",
+  "total": "6 год 16 хв",
   "list": [
-   "07:45–10:22 · 2 год 36 хв",
+   "08:00–10:22 · 2 год 21 хв",
    "15:57–19:52 · 3 год 55 хв"
   ]
  },
@@ -1779,14 +1779,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "21.11 07:52",
-   "ts": 1795240322,
+   "at": "21.11 08:03",
+   "ts": 1795241008,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "21.11 07:52",
-   "ts": 1795240322,
+   "at": "21.11 08:03",
+   "ts": 1795241008,
    "ok": true,
    "note": ""
   },
@@ -13140,18 +13140,6 @@
  "imp_sent": {},
  "ero_sent": {},
  "pend": {
-  "silpo": {
-   "id": "2026-11-19 08",
-   "t": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 19.11 08:00 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <code>Сік «Біола» томатний</code> <a href=\"https://silpo.ua/product/sik-biola-tomatnyi-168801\">🔗</a> — <b>42.99 ₴</b> <s>89.49 ₴</s> · −54%\n2. 🛒 <code>Заварник Eat&amp;Drink 1000 мл 954274</code> <a href=\"https://silpo.ua/product/zavarnyk-eat-drink-1000-ml-954274-954274\">🔗</a> — <b>249 ₴</b> <s>519 ₴</s> · −52%\n3. 🍫 <code>Шоколад молочний Milka екстра какао</code> <a href=\"https://silpo.ua/product/shokolad-molochnyi-milka-ekstra-kakao-1041187\">🔗</a> — <b>65.99 ₴</b> <s>123 ₴</s> · −49%\n4. 🛒 <code>Нектар «Біола» манго-апельсин</code> <a href=\"https://silpo.ua/product/nektar-biola-mango-apelsyn-214955\">🔗</a> — <b>42.99 ₴</b> <s>82.49 ₴</s> · −50%\n5. 🍿 <code>Снеки NoriGo Tempura оригінальні</code> <a href=\"https://silpo.ua/product/sneky-norigo-tempura-oryginalni-1014316\">🔗</a> — <b>64.99 ₴</b> <s>149 ₴</s> · −56%\n6. 🛒 <code>Таблетки для посудомийних машин Somat All in 1 Extra</code> <a href=\"https://silpo.ua/product/tabletky-dlia-posudomyinykh-mashyn-somat-all-in-1-extra-951241\">🔗</a> — <b>719 ₴</b> <s>1499 ₴</s> · −55%\n7. 🛒 <code>Термочашка з трубочкою 900 мл в асортименті 1005428</code> <a href=\"https://silpo.ua/product/termochashka-z-trubochkoiu-900-ml-v-asortymenti-1005428-1005428\">🔗</a> — <b>349 ₴</b> <s>799 ₴</s> · −56%\n8. 🍫 <code>Батончик Zentis марципан в чорному шоколаді</code> <a href=\"https://silpo.ua/product/batonchyk-zentis-martsypan-v-chornomu-shokoladi-673366\">🔗</a> — <b>69.99 ₴</b> <s>119 ₴</s> · −43%\n9. 🍫 <code>Шоколад молочний Світоч Blueberry cookies</code> <a href=\"https://silpo.ua/product/shokolad-molochnyi-svitoch-blueberry-cookies-935170\">🔗</a> — <b>129 ₴</b> <s>254 ₴</s> · −52%\n10. 🥩 <code>Ковбаса «Премія»® Chorizo Extra с/в</code> <a href=\"https://silpo.ua/product/kovbasa-premiia-chorizo-extra-s-v-1011233\">🔗</a> — <b>99 ₴</b> <s>189 ₴</s> · −50%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
-   "mk": null,
-   "p": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 19.11 08:00 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🛒 <code>Сік «Біола» томатний</code> <a href=\"https://silpo.ua/product/sik-biola-tomatnyi-168801\">🔗</a> — <b>42.99 ₴</b> <s>89.49 ₴</s> · −54%\n2. 🛒 <code>Заварник Eat&amp;Drink 1000 мл 954274</code> <a href=\"https://silpo.ua/product/zavarnyk-eat-drink-1000-ml-954274-954274\">🔗</a> — <b>249 ₴</b> <s>519 ₴</s> · −52%\n3. 🍫 <code>Шоколад молочний Milka екстра какао</code> <a href=\"https://silpo.ua/product/shokolad-molochnyi-milka-ekstra-kakao-1041187\">🔗</a> — <b>65.99 ₴</b> <s>123 ₴</s> · −49%\n4. 🛒 <code>Нектар «Біола» манго-апельсин</code> <a href=\"https://silpo.ua/product/nektar-biola-mango-apelsyn-214955\">🔗</a> — <b>42.99 ₴</b> <s>82.49 ₴</s> · −50%\n5. 🍿 <code>Снеки NoriGo Tempura оригінальні</code> <a href=\"https://silpo.ua/product/sneky-norigo-tempura-oryginalni-1014316\">🔗</a> — <b>64.99 ₴</b> <s>149 ₴</s> · −56%\n6. 🛒 <code>Таблетки для посудомийних машин Somat All in 1 Extra</code> <a href=\"https://silpo.ua/product/tabletky-dlia-posudomyinykh-mashyn-somat-all-in-1-extra-951241\">🔗</a> — <b>719 ₴</b> <s>1499 ₴</s> · −55%\n7. 🛒 <code>Термочашка з трубочкою 900 мл в асортименті 1005428</code> <a href=\"https://silpo.ua/product/termochashka-z-trubochkoiu-900-ml-v-asortymenti-1005428-1005428\">🔗</a> — <b>349 ₴</b> <s>799 ₴</s> · −56%\n8. 🍫 <code>Батончик Zentis марципан в чорному шоколаді</code> <a href=\"https://silpo.ua/product/batonchyk-zentis-martsypan-v-chornomu-shokoladi-673366\">🔗</a> — <b>69.99 ₴</b> <s>119 ₴</s> · −43%\n9. 🍫 <code>Шоколад молочний Світоч Blueberry cookies</code> <a href=\"https://silpo.ua/product/shokolad-molochnyi-svitoch-blueberry-cookies-935170\">🔗</a> — <b>129 ₴</b> <s>254 ₴</s> · −52%\n10. 🥩 <code>Ковбаса «Премія»® Chorizo Extra с/в</code> <a href=\"https://silpo.ua/product/kovbasa-premiia-chorizo-extra-s-v-1011233\">🔗</a> — <b>99 ₴</b> <s>189 ₴</s> · −50%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
-   "exp": "2026-11-21T08:00:47.750370+02:00",
-   "aud": [
-    "160603556",
-    "368433217",
-    "936688574"
-   ]
-  },
   "kino": {
    "id": "2026-11-20 08",
    "t": "🍿 <b>КІНО НА ВИХІДНІ</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1.</b> <code>Полювання</code> (2020) <a href=\"https://telegra.ph/Polyuvannya-2020-11-20\">🔗</a> · ❤️ за вашим смаком\nбойовик, трилер, жахи · ⏱ 1 год 30 хв\n⭐ IMDb <b>6.6</b> · 🍅 <b>57%</b> · Ⓜ <b>50</b>\n<i>🎭 Бетті Ґілпін, Гіларі Свенк, Ітан Саплі</i>\n📝 Група схиблених багатіїв збирається в глушині для незвичного полювання… на звичайних людей. Одна з жертв відмовляється приймати жахливу реальність і змінює правила гри.\n▶️ <a href=\"https://youtu.be/ETnman0d0WM\">Трейлер</a></blockquote>\n§KN:m514847|79434\n§§\n<blockquote>🎬 <b>2.</b> <code>Щоденник зі спогадами вбивці</code> (2017) <a href=\"https://telegra.ph/SHCHodennik-zі-spogadami-vbivcі-2017-11-20\">🔗</a> · ❤️ за вашим смаком\nкримінал, детектив, трилер · ⏱ 2 год 08 хв\n⭐ IMDb <b>7.2</b>\n<i>🎭 Соль Кьон Ґу, 김남길, 김설현</i>\n📝 A former serial killer with Alzheimer's fights to protect his daughter from her mysterious boyfriend who may be a serial killer too.\n▶️ <a href=\"https://youtu.be/QAGZ9srTHDM\">Трейлер</a></blockquote>\n§KN:m432836|87894\n§§\n<blockquote>🎬 <b>3.</b> <code>Королівство планети мавп</code> (2024) <a href=\"https://telegra.ph/Korolіvstvo-planeti-mavp-2024-11-20\">🔗</a>\nфантастика, пригоди, бойовик · ⏱ 2 год 25 хв\n⭐ IMDb <b>6.8</b> · 🍅 <b>80%</b> · Ⓜ <b>66</b>\n<i>🎭 Оуен Тіг, Фрея Аллан, Кевін Дюренд</i>\n📝 Мавпи – домінуючий вид, який гармонійно співіснує, а люди приречені на життя в тіні. Поки новий тиранічний мавпячий вождь будує свою імперію, одна молода мавпа вирушає у виснажливу подорож. Ця мандрівка змусить…\n▶️ <a href=\"https://youtu.be/Ed-rbhWhzTU\">Трейлер</a></blockquote>\n§KN:m653346|1179066\n§§\n<blockquote>🎬 <b>4.</b> <code>Приятель</code> (2026) <a href=\"https://telegra.ph/Priyatel-2026-11-20\">🔗</a>\nжахи, комедія, фентезі · ⏱ 1 год 36 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>88%</b> · Ⓜ <b>67</b>\n<i>🎭 Кіґан-Майкл Кі, Delaney Quinn, Tristan Borders</i>\n📝 Діти, які не мають спогадів про інше життя, живуть разом із веселим плюшевим єдинорогом у чарівному світі дитячого телешоу. Одного дня єдиноріг починає вбивати неслухняних і провинилих дітей, а в наступних випусках…\n▶️ <a href=\"https://youtu.be/yjWnpBRWNeE\">Трейлер</a></blockquote>\n§KN:m1514026|1232064\n§§\n<blockquote>🎬 <b>5.</b> <code>Все завжди і водночас</code> (2022) <a href=\"https://telegra.ph/Vse-zavzhdi-і-vodnochas-2022-11-20\">🔗</a>\nбойовик, пригоди, фантастика · ⏱ 2 год 20 хв\n⭐ IMDb <b>7.7</b> · 🍅 <b>93%</b> · Ⓜ <b>81</b>\n<i>🎭 Мішель Єо, Стефані Сюй, Джонатан Ке Кван</i>\n📝 Немолода китайська іммігрантка захоплюється шаленою пригодою, в якій вона сама може врятувати світ, досліджуючи інші всесвіти, пов’язані з життям, яке вона могла би прожити.\n▶️ <a href=\"https://youtu.be/20fpLDORWrg\">Трейлер</a></blockquote>\n§KN:m545611|1317730\n§§\n<blockquote>🎬 <b>6.</b> <code>镖人：风起大漠</code> (2026) <a href=\"https://telegra.ph/镖人风起大漠-2026-11-20\">🔗</a>\nбойовик, пригоди · ⏱ 2 год 06 хв\n⭐ IMDb <b>6.7</b>\n<i>🎭 吴京, 謝霆鋒, 陈丽君</i>\n📝 Dao Ma, the \"second most wanted fugitive,\" is entrusted by his benefactor, the chief of Mo family clan, to take on a mysterious escort mission-escorting the \"most wanted fugitive\" to Chang'an.\n▶️ <a href=\"https://youtu.be/7jkL4-uYriY\">Трейлер</a></blockquote>\n§KN:m1305781|18899\n§§\n<blockquote>🎬 <b>7.</b> <code>Лобстер</code> (2015) <a href=\"https://telegra.ph/Lobster-2015-11-20\">🔗</a>\nкомедія, драма, мелодрама · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.1</b> · 🍅 <b>87%</b> · Ⓜ <b>82</b>\n<i>🎭 Колін Фаррелл, Рейчел Вайс, Олівія Колман</i>\n📝 Історія кохання, що розгортається в найближчому майбутньому, де самотніх людей арештовують і відправляють в моторошний готель. Там вони зобов’язані знайти собі пару за 45 днів. Якщо їм це не вдається, то їх…\n▶️ <a href=\"https://youtu.be/uvV4pvQuqlM\">Трейлер</a></blockquote>\n§KN:m254320|122423\n§§\n<blockquote>📺 <b>8.</b> <code>Спецзагін \"Левиця\"</code> (2023) <a href=\"https://telegra.ph/Speczagіn-Levicya-2023-11-20\">🔗</a>\nдрама, політика та війна · 📺 серіал · 3 сез.\n⭐ IMDb <b>7.8</b>\n<i>🎭 Зої Салдана, Лейсла Де Олівейра, Dave Annable</i>\n📝 Оперативниця ЦРУ Джо намагається збалансувати особисте та професійне життя, будучи вістрям списа у війні агентства з тероризмом.\n▶️ <a href=\"https://youtu.be/uEjcXhW7CXo\">Трейлер</a></blockquote>\n§KN:t113962|1215399\n§§\n<blockquote>📺 <b>9.</b> <code>Імператриця, що вийшла заміж вдруге</code> (2026) <a href=\"https://telegra.ph/Іmperatricya-shcho-vijshla-zamіzh-vdruge-2026-11-20-2\">🔗</a>\nдрама, науково фантастичний · 📺 серіал · 1 сез.\n⭐ TMDB <b>8.8</b>\n<i>🎭 신민아, 주지훈, 이종석</i>\n📝 Улюблена народом імператриця Нав'єр править Східною імперією разом з імператором Сов'єшу. Але коли той закохується в рабиню-втікачку й вимагає розлучення, Нав'єр погоджується за однієї умови: їй мають дозволити…\n▶️ <a href=\"https://youtu.be/aScUjuKvHSo\">Трейлер</a></blockquote>\n§KN:t279246|1475936\n§§\n<blockquote>📺 <b>10.</b> <code>Генії Помсти</code> (2008) <a href=\"https://telegra.ph/Genіi-Pomsti-2008-11-20-2\">🔗</a>\nдрама, комедія, екшн і пригоди · 📺 серіал · 5 сез.\n⭐ IMDb <b>7.9</b>\n<i>🎭 Timothy Hutton, Gina Bellman, Christian Kane</i>\n📝 Колишній слідчий страхової компанії Нейт Форд, який був обманутий радою директорів, вирішує помститись сильним світу цього і створив свою команду месників. До його групи увійшли: комп'ютерний шахрай Хардисон,…\n▶️ <a href=\"https://youtu.be/uqGZwVnyi0g\">Трейлер</a></blockquote>\n§KN:t7482|19535",
@@ -13168,11 +13156,6 @@
   }
  },
  "got": {
-  "silpo": {
-   "160603556": "2026-11-19 08",
-   "368433217": "2026-11-19 08",
-   "936688574": "2026-11-19 08"
-  },
   "kino": {
    "160603556": "2026-11-20 08",
    "368433217": "2026-11-20 08",
@@ -31089,9 +31072,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "bdee60b81bff",
+  "gs": "5e1d996a56f5",
   "quiz_pool.json": "17c24e5946fc",
-  "fact.png": "7e60b88f84ae",
+  "fact.png": "0359aa7b9a4e",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -52127,12 +52110,8 @@
  "silpo_snap": "2026-11-18",
  "live_day": "2026-11-21",
  "silpo_week": "2026-47",
- "sbm_at": 1795240549.4696383,
+ "sbm_at": 1795240853.1986754,
  "sbm_hist": [
-  [
-   "19:45",
-   67
-  ],
   [
    "19:50",
    68
@@ -52704,6 +52683,10 @@
   [
    "07:55",
    93
+  ],
+  [
+   "08:00",
+   93
   ]
  ],
  "sbm_near": {
@@ -52720,7 +52703,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1795239955.677691,
+ "net_at": 1795240862.4224784,
  "net_asn": {
   "triolan": [
    "13188",
@@ -55596,10 +55579,10 @@
  "aro_sub_s": 5,
  "aro_sub_k": 4,
  "jobs_last": 1795233953.7162368,
- "nmt_last": 1795238859.2823813,
+ "nmt_last": 1795240875.3746347,
  "kino_v": 2,
  "yt_v": 4,
- "toycat_last": 1795239362.9925423,
+ "toycat_last": 1795240879.0319936,
  "toy_la": {
   "dildo": 1794975403.769806,
   "kegel": 1794757561.5974472,
