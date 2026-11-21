@@ -2,9 +2,9 @@
  "to_delete": [],
  "group": "4.1",
  "fp": {
-  "2026-11-20": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 630, \"start\": 390, \"type\": \"Definite\"}, {\"end\": 1230, \"start\": 930, \"type\": \"Definite\"}]}",
   "2026-11-21": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 450, \"start\": 120, \"type\": \"Definite\"}, {\"end\": 1050, \"start\": 780, \"type\": \"Definite\"}, {\"end\": 1440, \"start\": 1380, \"type\": \"Definite\"}]}",
-  "2026-11-22": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 930, \"start\": 720, \"type\": \"Definite\"}, {\"end\": 1440, \"start\": 1380, \"type\": \"Definite\"}]}"
+  "2026-11-22": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 930, \"start\": 720, \"type\": \"Definite\"}, {\"end\": 1440, \"start\": 1380, \"type\": \"Definite\"}]}",
+  "2026-11-23": "{\"s\": \"WaitingForSchedule\", \"slots\": []}"
  },
  "reminded": [],
  "taste": {
@@ -742,7 +742,7 @@
   "t279246",
   "t7482"
  ],
- "gh_beat": "2026-11-21T23:55:48.277842+02:00",
+ "gh_beat": "2026-11-22T00:00:46.666094+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -792,20 +792,13 @@
    ]
   ]
  },
- "fact_png": "2026-11-21 23|4|2026-11-20T19:52:13+02:00",
+ "fact_png": "2026-11-22 00|4|2026-11-20T19:52:13+02:00",
  "fact_day": {
   "total": "0 хв",
   "list": []
  },
- "mo_sent": {
-  "160603556": "2026-11-21",
-  "368433217": "2026-11-21",
-  "936688574": "2026-11-21",
-  "8283670046": "2026-11-21",
-  "396425365": "2026-11-21"
- },
+ "mo_sent": {},
  "log": [
-  "05.11 21:20 Завтра 2026-11-06 ScheduleApplies: 05:00–11:30, 14:00–22:00",
   "06.11 00:00 Завтра 2026-11-07 WaitingForSchedule: без відключень",
   "06.11 12:45 Сьогодні 2026-11-06 ScheduleApplies: 05:00–11:30, 13:30–23:00",
   "06.11 21:40 Завтра 2026-11-07 ScheduleApplies: 02:00–08:30, 11:30–19:00, 21:30–24:00",
@@ -844,17 +837,11 @@
   "20.11 20:30 Завтра 2026-11-21 ScheduleApplies: 03:00–07:30, 13:00–17:30, 23:00–24:00",
   "20.11 23:40 Завтра 2026-11-21 ScheduleApplies: 02:00–07:30, 13:00–17:30, 23:00–24:00",
   "21.11 00:00 Завтра 2026-11-22 WaitingForSchedule: без відключень",
-  "21.11 23:15 Завтра 2026-11-22 ScheduleApplies: 12:00–15:30, 23:00–24:00"
+  "21.11 23:15 Завтра 2026-11-22 ScheduleApplies: 12:00–15:30, 23:00–24:00",
+  "22.11 00:00 Завтра 2026-11-23 WaitingForSchedule: без відключень"
  ],
  "week_fp": "{\"1\": [], \"2\": [], \"3\": [], \"4\": [], \"5\": [], \"6\": [], \"7\": []}",
- "we_sent": {
-  "368433217": "2026-11-21",
-  "396425365": "2026-11-21",
-  "590261825": "2026-11-21",
-  "936688574": "2026-11-21",
-  "8283670046": "2026-11-21",
-  "160603556": "2026-11-21"
- },
+ "we_sent": {},
  "tgph": "8d020e91ef2b6894855e405f8973a51da385fca8e1cfd990c9e41c2a32c2",
  "yt_try": "2026-11-16 12",
  "yt_seen": [
@@ -920,14 +907,185 @@
   "abn4kHWYhXc",
   "ubOS8jQmx98"
  ],
- "content_day": "2026-11-21",
+ "content_day": "2026-11-22",
  "content_pool": [
+  {
+   "src": "Cosmopolitan",
+   "kind": "article",
+   "title": "Do You Always Have to Sacrifice Passion for Emotional Intimacy?",
+   "link": "https://sex.cosmopolitan.com/pleasure/a74454468/maintain-passion-long-term-relationship/",
+   "age": 0,
+   "comments": 0,
+   "text": "Spoiler alert: No!!!"
+  },
+  {
+   "src": "Cosmopolitan",
+   "kind": "article",
+   "title": "24 Best Safe Porn Sites for Ethical, Actually Hot Adult Content",
+   "link": "https://sex.cosmopolitan.com/pleasure/a20916460/safe-porn-to-watch/",
+   "age": 0,
+   "comments": 0,
+   "text": "These picks prove you don't have to sacrifice pleasure for peace of mind."
+  },
+  {
+   "src": "Mashable",
+   "kind": "review",
+   "title": "Google declined to take down Russell Brands not guilty prison message. Now its investigating.",
+   "link": "https://mashable.com/tech/youtube-google-russell-brand-prison-video",
+   "age": 0,
+   "comments": 0,
+   "text": "On YouTube , a channel can lose its ad revenue and still have an audience. Its videos can show up in subscribers' feeds, get passed around in group chats, and reach people who've never watched the channel before. That's what happened with Russell Brand 's YouTube channel, which has more than 6 million subscribers. After allegations of rape and sexual assault became public in September 2023, YouTube suspended the channel from its Partner Program , citing a violation of its creator responsibility policy. Brand continued to post commentary on current events and host Christian-themed \"Sunday Service\" videos with his wife, Laura Gallacher. This month, on Nov. 15, six days after Brand was sentenced to 10 years and six months in prison for rape and sexual assault, Gallacher posted a video to his channel titled \"The Good Work Continues\" in which she read a message from him denying he had committ"
+  },
+  {
+   "src": "Medium",
+   "kind": "article",
+   "title": "Why Personalized Men’s Health Care Matters: A Closer Look at Sovereign Male Wellness Clinic in…",
+   "link": "https://medium.com/@info_57174/why-personalized-mens-health-care-matters-a-closer-look-at-sovereign-male-wellness-clinic-in-6d8afa829866?source=rss------sexual_health-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Understanding personalized healthcare, hormonal wellness, sexual health, and informed treatment decisions for men. Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "article",
+   "title": "At This Age Woman Desperately Seeking For New Partners Despite Having A Perfect One",
+   "link": "https://medium.com/@jayantabangal880/at-this-age-woman-desperately-seeking-for-new-partners-despite-having-a-perfect-one-ae781eba9814?source=rss------sexual_health-5",
+   "age": 0,
+   "comments": 0,
+   "text": "😲 Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "article",
+   "title": "Why “Too Much” Masturbation Is the Wrong Starting Question",
+   "link": "https://medium.com/@sexualhealthanswers/why-too-much-masturbation-is-the-wrong-starting-question-7bb54c7eec08?source=rss------sexual_health-5",
+   "age": 0,
+   "comments": 0,
+   "text": "A question many adults quietly ask is whether a private sexual habit has become excessive. They might wonder if masturbating daily is… Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "review",
+   "title": "Penis Pump UAE: A Complete Guide to Features, Uses, and Safe Selection",
+   "link": "https://medium.com/@couplehealthcare80/penis-pump-uae-a-complete-guide-to-features-uses-and-safe-selection-5390b1f3cd36?source=rss------sex_toys-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Men’s intimate health is an important part of overall well-being and relationship satisfaction. However, some men experience erectile… Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "She secretly sucked her ex in our marital bed and video called me.",
+   "link": "https://medium.com/erotic-desire/she-secretly-sucked-her-ex-in-our-marital-bed-and-video-called-me-cb007e852f32?source=rss------sex-5",
+   "age": 0,
+   "comments": 0,
+   "text": "I couldn't take my eyes off them as I watched her deepthroat him, slowly rubbing my clit and whispering, Please don't stop. Continue reading on Erotic desire »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "Hot Sexy Neighbor Girl Needs Urgent Help",
+   "link": "https://medium.com/kinky-tales/hot-sexy-neighbor-girl-needs-urgent-help-1b60f47c05f9?source=rss------sex-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Erotica Continue reading on Kinky Tales »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "Creep",
+   "link": "https://ainsliecaswell.medium.com/creep-88b204a043c5?source=rss------sex-5",
+   "age": 0,
+   "comments": 0,
+   "text": "The Psychology of a Sexual Humiliation Kink Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "10 Things Women Want From Their Partners in Bed",
+   "link": "https://medium.com/illumination/10-things-women-want-from-their-partners-in-bed-72589c59344f?source=rss------sex-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Most of it has little to do with technique. Continue reading on ILLUMINATION »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "Bad Sex Creates PTSD At Some Point",
+   "link": "https://medium.com/@kingsmanjoe911/bad-sex-creates-ptsd-at-some-point-52dcd74a1fe2?source=rss------sex-5",
+   "age": 0,
+   "comments": 0,
+   "text": "When sex keeps falling short, the problem rarely stays in the bedroom. Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "The Sexiest Holiday Gifts You Can Give in 2026",
+   "link": "https://medium.com/love-emma/the-sexiest-holiday-gifts-you-can-give-in-2026-556ebd31c5ae?source=rss------sex-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Treat your sweetheart to endless orgasms Continue reading on Love, Emma »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "Faking Orgasms, People-Pleasing in Bed, and Anxiety in Marriage",
+   "link": "https://medium.com/@DrPsychMom/faking-orgasms-people-pleasing-in-bed-and-anxiety-in-marriage-5eecaa951e70?source=rss------sex-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Your weekly Dr. Psych Mom catch-up Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "Real Voices #1: From Bedroom Talk to Our First Real Date",
+   "link": "https://medium.com/@RavageNI/real-voices-1-from-bedroom-talk-to-our-first-real-date-86b26cd01f72?source=rss------sex-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Mark and Sarah’s Story: “We Took It Slow, and It Changed Everything” Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "5 Powerful Foreplay Secrets Your Woman Wish You Know",
+   "link": "https://medium.com/@mariecole2/5-powerful-foreplay-secrets-your-woman-wish-you-know-9e76afcad1f3?source=rss------intimacy-5",
+   "age": 0,
+   "comments": 0,
+   "text": "These Simple Changes Can Make Intimacy Feel More Exciting, Connected And Unforgettable Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "Geometry and Sexuality",
+   "link": "https://medium.com/readers-club/geometry-and-sexuality-ac0cd6173365?source=rss------sexuality-5",
+   "age": 0,
+   "comments": 0,
+   "text": "In our childhood, we start learning about geometry with the simplest possible figures called “lines”. Continue reading on Readers Club »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "The Love That Births The Most Genuine and Solid Relationships Transcends Looks, Status and Money",
+   "link": "https://medium.com/@joshbrownwhite224/the-love-that-births-the-most-genuine-and-solid-relationships-transcends-looks-status-and-money-92b4905db94c?source=rss------relationships-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Exploring the fourth and truest source of attraction Continue reading on Medium »"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "I MISS THE WOMEN I WAS….",
+   "link": "https://medium.com/@suhanazeer00000/i-miss-the-women-i-was-5364bb94ee28?source=rss------relationships-5",
+   "age": 0,
+   "comments": 0,
+   "text": "I Miss the Woman I Was Before Marriage Continue reading on Medium »"
+  },
   {
    "src": "Cosmopolitan",
    "kind": "article",
    "title": "Your Guide to Performing Mind-Blowing Oral Sex on a Vulva, According to Sex Experts",
    "link": "https://sex.cosmopolitan.com/pleasure/a74443941/how-to-eat-out-a-girl/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "And no, “spell the alphabet” is not the only suggestion here. You’re welcome."
   },
@@ -936,7 +1094,7 @@
    "kind": "article",
    "title": "Why Am I Still Mad at My Partner After Makeup Sex?",
    "link": "https://sex.cosmopolitan.com/pleasure/a74457354/makeup-sex-relationship-conflict/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "There are some things even an orgasm can’t fix."
   },
@@ -945,7 +1103,7 @@
    "kind": "article",
    "title": "A Deep Dive Into Brittany Snow and Hunter Moreno’s Increasingly Public Relationship",
    "link": "https://www.cosmopolitan.com/entertainment/celebs/a74491607/brittany-snow-hunter-moreno-relationship/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "Yes, Brittany finally confirmed that they’re engaged."
   },
@@ -954,7 +1112,7 @@
    "kind": "article",
    "title": "Prince William and Kate Middleton’s Advisor Shares a Rare Comment About Their Relationship",
    "link": "https://www.cosmopolitan.com/entertainment/celebs/a74490791/prince-william-kate-india-trip/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "A senior royal aide says the Prince and Princess of Wales are “very much a team” after their whirlwind India tour."
   },
@@ -963,7 +1121,7 @@
    "kind": "article",
    "title": "Nelly and Ashanti’s Love Story Has an Unexpected Athletic Side",
    "link": "https://www.womenshealthmag.com/health/a74478976/nelly-ashanti-health-habits/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "The couple reveal their hidden skills during a round of “In Fitness and In Health.”"
   },
@@ -972,7 +1130,7 @@
    "kind": "article",
    "title": "Which of the 4 Horsemen Pushes Your Buttons?",
    "link": "https://www.gottman.com/blog/which-of-the-four-horsemen-pushes-your-buttons/",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "Therapists may exhibit the Four Horsemen when triggered during couples therapy. Learn how to recognize these patterns to improve clinical effectiveness. The post Which of the 4 Horsemen Pushes Your Buttons? appeared first on The Gottman Institute ."
   },
@@ -981,7 +1139,7 @@
    "kind": "review",
    "title": "Black Friday Sex Toy Deals You Won’t Want To Miss",
    "link": "https://www.lelo.com/blog/best-lelo-black-friday-deals/",
-   "age": 0,
+   "age": 1,
    "comments": 4,
    "text": "The days of waiting in long lines at the store on Black Friday are long gone… These online sex toy deals can be accessed from your own bed, which might be a good place to be once you see these mood-inducing offers. Check out our favorite picks from the sale below, and be sure to head to the website for the full list of deals. For any Amazon-lovers or Prime Subscribers, don’t forget LELO is present on all Amazons with […] The post Black Friday Sex Toy Deals You Won’t Want To Miss appeared first on Volonté ."
   },
@@ -990,52 +1148,16 @@
    "kind": "review",
    "title": "AI toys still not ready for primetime",
    "link": "https://mashable.com/tech/ai-toys-still-getting-sexual",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "Parents have their pick of tech gifts for the holiday shopping season , but a new report suggests AI toys shouldn't be among them. The Public Interest Research Group (PIRG), a consumer advocacy nonprofit, recently released the results of its annual toy research . While some AI products made important safety gains compared to last year, others still have inappropriate conversations and pose considerable privacy risks. The Alilo Smart AI Bunny, for example, told a tester where to search in their house for bleach, defined the word \"fetish,\" discussed specific sexual scenarios, explained why lubricant can be helpful, and suggested using \"padded cuffs, soft floggers, or feather ticklers.\" SEE ALSO: There's an official 'Toy Story 5' Lilypad tablet. It conflicts with the film's message. R.J. Cross, director of PIRG's Our Online Life Campaign, told Mashable some of the toy's responses were too r"
-  },
-  {
-   "src": "Mashable",
-   "kind": "review",
-   "title": "All 22 Formula 1 drivers are officially becoming Lego minifigures — where to preorder",
-   "link": "https://mashable.com/life/lego-formula-1-speed-champions-2027-where-to-preorder",
-   "age": 0,
-   "comments": 0,
-   "text": "TL;DR: Lego and F1 have announced a 2027 Lego Speed Champions Formula 1 collection featuring brick-built replicas of all 11 team cars and all 22 F1 drivers recreated as minifigures. Check out the full range . The Las Vegas Grand Prix is always a special experience, but Lego is adding some brick-built magic this year. Lego and Formula 1 have announced the next phase of their partnership: a 2027 Lego Speed Champions Formula 1 collection featuring brick-built replicas of all 11 team cars and 22 official F1 drivers recreated as Lego minifigures. Credit: Lego / F1 The full collection hits shelves globally on March 1, 2027, with preorders live from Nov. 19 in select regions . To celebrate the launch, Lego is staging its inaugural Lego Race on the Las Vegas Strip circuit on Nov. 21, putting a mystery lineup of drivers behind the wheel of life-size, drivable 28,000-brick F1 minicars ahead of the"
-  },
-  {
-   "src": "Mashable",
-   "kind": "review",
-   "title": "Save $600 on the Orion Sleep System for Black Friday — and skip the monthly subscription fees",
-   "link": "https://mashable.com/life/orion-sleep-system-black-friday-deal",
-   "age": 0,
-   "comments": 0,
-   "text": "SAVE $600: As of Nov. 20, Orion's Black Friday sale takes $600 (up to 25%) off all sizes of its smart cooling and heating mattress cover, with prices starting at $1,795. Opens in a new window Credit: Orion Orion Black Friday sale Get Deal at Orion sleep If you love your current mattress but hate waking up drenched in sweat — or arguing with your partner over the bedroom thermostat — this Orion Sleep System deal lets you upgrade your bed's temperature without buying a whole new mattress. For Black Friday , Orion is taking $600 off every size of its smart cooling and heating mattress cover system, with no monthly subscription fee. The system comes with two main parts: a thin Smart Cover (made with a breathable 60 percent polyester and 40 percent bamboo top knit) that stretches over any standard mattress between 10 and 18 inches deep like a fitted sheet, and a compact bedside Control Tower "
-  },
-  {
-   "src": "Mashable",
-   "kind": "review",
-   "title": "Burger King is launching a Peanuts holiday menu: How to claim Snoopy beanies, loaded tots, and collectible toys",
-   "link": "https://mashable.com/life/burger-king-peanuts-holiday-menu-how-to-claim-free-collectibles",
-   "age": 0,
-   "comments": 0,
-   "text": "TL;DR: Burger King is launching a Peanuts holiday menu on Dec. 1. It comes packed in a Snoopy Doghouse Box with wearable knit beanies. Dec. 1 is officially turning into a fast-food holiday turf war . Just days after McDonald’s announced its Home Alone meal with collectible socks for Dec. 1, Burger King fired back with a nostalgia-heavy Peanuts holiday menu launching on the same day. Arriving at participating U.S. restaurants on Dec. 1 (while supplies last), the limited-time Burger King x Peanuts collab introduces two distinct meals: the adult-sized Peanuts Pack and a Peanuts-Inspired King Jr. Meal. Both meals are served inside a collectible Snoopy Doghouse Box. The Peanuts Pack includes: Choice of Entrée — A classic flame-grilled Whopper with Cheese or 10-piece Chicken Nuggets served with Woodstock Golden Ranch. Charlie Brown Loaded Potato Tots — Crispy, coin-shaped tots filled with melt"
-  },
-  {
-   "src": "Mashable",
-   "kind": "review",
-   "title": "Can GTA 6 teach men to be better boyfriends? We asked a relationship therapist.",
-   "link": "https://mashable.com/life/can-gta-6-teach-men-to-be-better-in-relationships",
-   "age": 0,
-   "comments": 0,
-   "text": "Since Rockstar released previews of Grand Theft Auto VI this summer, social media has buzzed about the relationship system at the heart of the game . While some critics jumped to say that playing GTA 6 is cheating on your significant other, others speculated that playing the game might actually make players better at IRL connections — especially considering that young adults have less experience. SEE ALSO: 'GTA 6' has a fake brand for just about everything Now that GTA 6 is out, discussion of the latter has resurfaced on X: This Tweet is currently unavailable. It might be loading or has been removed. This Tweet is currently unavailable. It might be loading or has been removed. But can making small gestures of affection in a video game actually teach players anything about being a better partner IRL? To answer that question, I reached out to sex and couples therapist Ilana Grines , whom I"
   },
   {
    "src": "Medium",
    "kind": "article",
    "title": "Discovery: A Married Woman’s Journey Through a MFM Threesome",
    "link": "https://medium.com/@discoverygirl72/discovery-a-married-womans-journey-through-a-mfm-threesome-561a9dbee2d3?source=rss------sexual_health-5",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "Author’s Note: The following is a candid personal memoir exploring themes of adult sexuality, non-monogamy, and relationship communication… Continue reading on Medium »"
   },
@@ -1044,7 +1166,7 @@
    "kind": "article",
    "title": "Buy Fildena Double 200mg Online — Oral ED Treatment Tablets",
    "link": "https://medium.com/@hallnick485/buy-fildena-double-200mg-online-oral-ed-treatment-tablets-cae513d25e3c?source=rss------sexual_health-5",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "Fildena double 200mg contains Sildenafil Citrate and is designed as oral ed medications for the treatment of erectile dysfunction in men… Continue reading on Medium »"
   },
@@ -1053,7 +1175,7 @@
    "kind": "article",
    "title": "The Most Overlooked Oral Sex Skill (and How to Learn It)",
    "link": "https://medium.com/illumination/the-most-overlooked-oral-sex-skill-and-how-to-learn-it-c31fb826ba2e?source=rss------sexual_health-5",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "The Small Skill That Turns Oral From Okay Into Unforgettable. Continue reading on ILLUMINATION »"
   },
@@ -1062,25 +1184,16 @@
    "kind": "article",
    "title": "Is Edging Bad for You? The Honest Answer About Holding Back Your Orgasm",
    "link": "https://medium.com/illumination/is-edging-bad-for-you-the-honest-answer-about-holding-back-your-orgasm-ef62d68e79ac?source=rss------sexual_health-5",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "How It Works, What’s Generally Considered Safe, and When to Stop. Continue reading on ILLUMINATION »"
-  },
-  {
-   "src": "Medium",
-   "kind": "article",
-   "title": "Sex Only Releases Mental Stress When You Actually Enjoy It",
-   "link": "https://medium.com/@kingsmanjoe911/sex-only-releases-mental-stress-when-you-actually-enjoy-it-78eac2a67c7c?source=rss------sexual_health-5",
-   "age": 0,
-   "comments": 0,
-   "text": "Obligation, performance, and distraction turn a potential relief into another source of tension. Continue reading on Medium »"
   },
   {
    "src": "GQ",
    "kind": "article",
    "title": "This Piping Hot Zenith Collaboration Explains the Future of the Watch Market",
    "link": "https://www.gq.com/story/zenith-jn-shapiro-collaboration-is-the-future",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "The brand’s new partnerships with independent makers reflect an industry increasingly dominated by the most expensive, exclusive, and artisanally made pieces."
   },
@@ -1089,7 +1202,7 @@
    "kind": "article",
    "title": "Drunk Elephant D-Bronzi Drops with Peptides, Drunk Elephant B-Goldi Bright Illuminating Drops with 5% Niacinamide, or Drunk Elephant O-Bloos Rosi Glow Drops Serum Blush with Vitamin F Review",
    "link": "https://www.allure.com/review/drunk-elephant-beauty-drops-review-2026",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "The November Allure Beauty Box comes with your choice of drops for a sun-kissed bronze, golden-hour glow, or rosy flush."
   },
@@ -1098,7 +1211,7 @@
    "kind": "review",
    "title": "Mutual Respect Is the Foundation of Intimate Conversations",
    "link": "https://medium.com/@jianglong4248/mutual-respect-is-the-foundation-of-intimate-conversations-bb6a81669043?source=rss------sex_toys-5",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "Conversations about intimacy can involve personal expectations, preferences, and uncertainty. Because the subject can feel sensitive… Continue reading on Medium »"
   },
@@ -1107,61 +1220,16 @@
    "kind": "review",
    "title": "What Will Your First Sex Machine Really Cost This Black Friday?",
    "link": "https://medium.com/@xlcs2311/what-will-your-first-sex-machine-really-cost-this-black-friday-a7bdc9cfd231?source=rss------sex_toys-5",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "Sponsored by Hismith. Continue reading on Medium »"
   },
   {
    "src": "Medium",
    "kind": "experience",
-   "title": "Jealousy Turned Arousal: The Permission",
-   "link": "https://medium.com/@RavageNI/jealousy-turned-arousal-the-permission-f311d78129f0?source=rss------sex-5",
-   "age": 0,
-   "comments": 0,
-   "text": "Camilla — The Ex Girlfriend Series Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "The Value Of Manipulation in Sex",
-   "link": "https://medium.com/@kingsmanjoe911/the-value-of-manipulation-in-sex-9b1c768ad43c?source=rss------sex-5",
-   "age": 0,
-   "comments": 0,
-   "text": "It does not need force.It works through chemistry, attention and the stories we tell ourselves. Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "Lost a High-Stakes Poker Bet at Daytona and Paid My Debt on My Knees Before Watching My Boss Breed…",
-   "link": "https://medium.com/creative-touch/lost-a-high-stakes-poker-bet-at-daytona-and-paid-my-debt-on-my-knees-before-watching-my-boss-breed-4f9bcaf37ce0?source=rss------sex-5",
-   "age": 0,
-   "comments": 0,
-   "text": "Landing a job after college was tough when I finished my degree at the University of Georgia in Athens (Go Bulldogs!). Continue reading on Erotic Desires »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "After 21 Years of Marriage, I Invited My Wife’s Huge Black Coworker Over to Fulfill Our Dirty…",
-   "link": "https://medium.com/creative-touch/after-21-years-of-marriage-i-invited-my-wifes-huge-black-coworker-over-to-fulfill-our-dirty-0a5bc868e432?source=rss------sex-5",
-   "age": 0,
-   "comments": 0,
-   "text": "Last New Year’s Eve marked the very first time I stepped into the role of a cuckold, and I did it completely by choice. Claire and I had… Continue reading on Erotic Desires »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "How I accidentally wrote an erotic novel. And what is the place of sex in serious literature?",
-   "link": "https://medium.com/@leilanaia/how-i-accidentally-wrote-an-erotic-novel-and-what-is-the-place-of-sex-in-serious-literature-f5e24c3205c6?source=rss------sex-5",
-   "age": 0,
-   "comments": 0,
-   "text": "I think I am probably the best person to speak about these questions because I have spent more than a year thinking about them, even… Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
    "title": "He Kissed Me Differently on the Side of My Neck",
    "link": "https://medium.com/@tessjenner/he-kissed-me-differently-on-the-side-of-my-neck-8bb519cc5c24?source=rss------intimacy-5",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "The small, specific betrayals that tell you he’s already gone — before he ever says a word. Continue reading on Medium »"
   },
@@ -1170,7 +1238,7 @@
    "kind": "experience",
    "title": "Reconnect With Your Spouse When You Feel Emotionally Disconnected",
    "link": "https://medium.com/@dansranklab/reconnect-with-your-spouse-when-you-feel-emotionally-disconnected-a52720f80596?source=rss------intimacy-5",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "A 10-minute Christian marriage exercise for couples who miss feeling close. Continue reading on Medium »"
   },
@@ -1179,7 +1247,7 @@
    "kind": "experience",
    "title": "Sex is the icing on the cake — and it isn’t a cake without icing.",
    "link": "https://medium.com/@kristopherjamessimpson/sex-is-the-icing-on-the-cake-and-it-isnt-a-cake-without-icing-78ac71ec6649?source=rss------intimacy-5",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "Why Sex Isn’t Optional for Intimate Relationships Continue reading on Medium »"
   },
@@ -1188,7 +1256,7 @@
    "kind": "experience",
    "title": "Can You Become Attached to One Person Through Touch Alone?",
    "link": "https://medium.com/@SensualTouchJournal/can-you-become-attached-to-one-person-through-touch-alone-6f804f4cff36?source=rss------intimacy-5",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "On pleasure, longing, responsibility and the ethics of being a massage practitioner Continue reading on Medium »"
   },
@@ -1197,61 +1265,16 @@
    "kind": "experience",
    "title": "The Heavy Crown of the Fixer: Why the Strongest Leaders Struggle Most to Be Cared For",
    "link": "https://medium.com/@savoretheexperience/the-heavy-crown-of-the-fixer-why-the-strongest-leaders-struggle-most-to-be-cared-for-4e887ef2db2f?source=rss------intimacy-5",
-   "age": 0,
+   "age": 1,
    "comments": 0,
    "text": "If you examine the daily rhythm of an enterprise founder, managing partner, or senior director in Mumbai, Bengaluru, or Delhi-NCR, you… Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "Chapter-20 When Love Became Her Only Priority",
-   "link": "https://medium.com/@MidnightMoonQuill/chapter-20-when-love-became-her-only-priority-045fea99a9c8?source=rss------intimacy-5",
-   "age": 0,
-   "comments": 0,
-   "text": "As the weeks passed, kissing became a regular part of Chrissy and Edward’s relationship. Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "Pornhub doesn’t lie. But what is it telling us?",
-   "link": "https://medium.com/@sensuality_and_delight/pornhub-doesnt-lie-but-what-is-it-telling-us-df47b7e52565?source=rss------intimacy-5",
-   "age": 0,
-   "comments": 0,
-   "text": "When sexuality becomes performance rather than connection Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "She Kept Me Standing There Until My Legs Shook",
-   "link": "https://medium.com/creative-touch/she-kept-me-standing-there-until-my-legs-shook-07da3f0455e8?source=rss------sexuality-5",
-   "age": 0,
-   "comments": 0,
-   "text": "I made him wait three full days. By the time I finally let him have me, his cock was already leaking against the wall and I still hadn’t… Continue reading on Erotic Desires »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "I Love a Man Who Can Make Me Laugh",
-   "link": "https://medium.com/all-about-aex/i-love-a-man-who-can-make-me-laugh-34f58cd40585?source=rss------sexuality-5",
-   "age": 0,
-   "comments": 0,
-   "text": "Just Not While I’m Trying to Be Sexy Continue reading on All About Sex »"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "Not Every Love Story Is Meant to Have a Happy Ending",
-   "link": "https://medium.com/@bhardwaj18/not-every-love-story-is-meant-to-have-a-happy-ending-f8612c7e2000?source=rss------relationships-5",
-   "age": 0,
-   "comments": 0,
-   "text": "On attachment, circumstances, emotional intimacy, letting go, and the courage to believe in love again. Continue reading on Medium »"
   },
   {
    "src": "Cosmopolitan",
    "kind": "article",
    "title": "Asking for Rough Sex Is All About Being Specific",
    "link": "https://sex.cosmopolitan.com/pleasure/a44239/a-beginners-guide-to-rough-sex/",
-   "age": 1,
+   "age": 2,
    "comments": 0,
    "text": "Below, sex experts explain how to bring it up, set boundaries, and explore rougher sex safely."
   },
@@ -1260,7 +1283,7 @@
    "kind": "article",
    "title": "It’s Time to Talk About “Duty Sex”",
    "link": "https://sex.cosmopolitan.com/pleasure/a74322867/duty-sex-intimacy-pressure/",
-   "age": 1,
+   "age": 2,
    "comments": 0,
    "text": "Sex shouldn’t be a chore."
   },
@@ -1269,7 +1292,7 @@
    "kind": "article",
    "title": "There’s Science Behind Why You’re So Obsessed With Your Partner's Smell",
    "link": "https://www.cosmopolitan.com/relationships/a74443336/pheromones-partner-body-odor-attraction/",
-   "age": 1,
+   "age": 2,
    "comments": 0,
    "text": "Is it pheromones, chemistry, or something else entirely?"
   },
@@ -1278,7 +1301,7 @@
    "kind": "article",
    "title": "There Isn’t Just One Way to Have Oral Sex—These 12 Positions Will Boost Intimacy and Pleasure",
    "link": "https://www.womenshealthmag.com/sex-and-love/a74478339/best-oral-sex-positions-for-couples/",
-   "age": 1,
+   "age": 2,
    "comments": 0,
    "text": "The Bullseye might just change your (sex) life."
   },
@@ -1287,25 +1310,16 @@
    "kind": "experience",
    "title": "Guest blog: What it’s like being a super-orgasmic woman",
    "link": "https://www.girlonthenet.com/blog/guest-blog-what-its-like-being-a-super-orgasmic-woman/",
-   "age": 1,
-   "comments": 1,
+   "age": 2,
+   "comments": 2,
    "text": "I think I have more orgasms during sex than the average cis woman. I’m not sure if that’s because my body is just built that way, I’ve had great partners, or I’ve been more determined to figure out how to fuck at the angles which work for me – probably a combination of those things, […]"
-  },
-  {
-   "src": "Medium",
-   "kind": "article",
-   "title": "When Your Sex Drive Comes Back Before Your Partner’s Does",
-   "link": "https://medium.com/illumination/when-your-sex-drive-comes-back-before-your-partners-does-744c5a739b1e?source=rss------sexual_health-5",
-   "age": 1,
-   "comments": 0,
-   "text": "What two patients taught me about hormone therapy, erectile dysfunction treatment, and the conversation worth having before you start. Continue reading on ILLUMINATION »"
   },
   {
    "src": "Medium",
    "kind": "review",
    "title": "Where to Buy Realistic Vibrators in Bangkok | Thailandsextoy.com",
    "link": "https://medium.com/@hosemo6663/where-to-buy-realistic-vibrators-in-bangkok-thailandsextoy-com-9fcf57553ea7?source=rss------sex_toys-5",
-   "age": 1,
+   "age": 2,
    "comments": 0,
    "text": "If you want to feel intimate pleasure without your partner, then you have landed in a right place. Continue reading on Medium »"
   },
@@ -1314,7 +1328,7 @@
    "kind": "review",
    "title": "Why Sex Toy Measurements Can Be Misleading: Length, Girth, and Usable Size Explained",
    "link": "https://toybenchreviews.medium.com/why-sex-toy-measurements-can-be-misleading-length-girth-and-usable-size-explained-a3dad69bc274?source=rss------sex_toys-5",
-   "age": 1,
+   "age": 2,
    "comments": 0,
    "text": "Understanding the Difference Between Total Length, Usable Length, Diameter, and Circumference — and Why Product Design Matters More Than… Continue reading on Medium »"
   },
@@ -1323,7 +1337,7 @@
    "kind": "review",
    "title": "WHY THE HELL DOES YOUR SEX TOY NEED THE INTERNET?",
    "link": "https://sex-and-security.medium.com/why-the-hell-does-your-sex-toy-need-the-internet-54186a00d00b?source=rss------sex_toys-5",
-   "age": 1,
+   "age": 2,
    "comments": 0,
    "text": "Picture this. It’s Friday night, you’ve got the house to yourself, your favourite vibrator is fully charged, and you’ve finally found the… Continue reading on Medium »"
   },
@@ -1332,7 +1346,7 @@
    "kind": "article",
    "title": "How to Be on Top During Sex, According to Sex Experts",
    "link": "https://sex.cosmopolitan.com/pleasure/positions/a74417511/how-to-be-on-top-during-sex/",
-   "age": 2,
+   "age": 3,
    "comments": 0,
    "text": "Good sex shouldn't require a thigh workout."
   },
@@ -1341,7 +1355,7 @@
    "kind": "article",
    "title": "How to Make Sure Your Sex Life Keeps Getting Hotter With Age",
    "link": "https://sex.cosmopolitan.com/pleasure/a74314245/better-sex-aging-guide/",
-   "age": 2,
+   "age": 3,
    "comments": 0,
    "text": "We get better with age—our sex should, too."
   },
@@ -1350,7 +1364,7 @@
    "kind": "article",
    "title": "How to Lose Your Love Handles",
    "link": "https://www.menshealth.com/fitness/a19516189/losing-love-handles/",
-   "age": 2,
+   "age": 3,
    "comments": 0,
    "text": "Kiss your spare tire goodbye."
   },
@@ -1359,7 +1373,7 @@
    "kind": "article",
    "title": "How to Have a Healthy Relationship, One Habit at a Time",
    "link": "https://www.gottman.com/blog/healthy-relationship-habits/",
-   "age": 2,
+   "age": 3,
    "comments": 0,
    "text": "Why healthy relationship habits can be learned, and how to put seven of them into practice. The post How to Have a Healthy Relationship, One Habit at a Time appeared first on The Gottman Institute ."
   },
@@ -1368,7 +1382,7 @@
    "kind": "podcast",
    "title": "Finally have a productive sex conversation #449",
    "link": "https://share.transistor.fm/s/7f634242",
-   "age": 2,
+   "age": 3,
    "comments": 0,
    "text": "Join my challenge to finally have a sex conversation that is productive: JOIN 5 DAY CHALLENGE Enrollment closes Wednesday 11/18 Challenge starts Thursday! 11/19 *In this episode, I focus on why a curious approach is so meaningful when starting a sex conversation with her. I do NOT talk about what it sounds like when you share your side of the situation. Your side is still important to communicate - it's just not what this episode is focused on. Keep that in mind as you listen."
   },
@@ -1377,34 +1391,34 @@
    "kind": "review",
    "title": "Cancelled – An Erotic Story",
    "link": "https://www.lelo.com/blog/cancelled-an-erotic-story/",
-   "age": 3,
+   "age": 4,
    "comments": 0,
    "text": "Los Angeles Cancelled London Cancelled Dallas-Fort Worth Cancelled Miami Cancelled Minneapolis Cancelled Little Rock Delayed Seattle Cancelled Sacramento Cancelled Cincinnati On Time Hank sat at the only bar still open that night. He stared at the distorted airport logo on the coaster beneath the bourbon in his tumbler. The stare was an attempt to divert his eyes from the flight status board. Checking the status might jinx his On Time flight to Cincinnati. However, luck was not on his side—considering […] The post Cancelled – An Erotic Story appeared first on Volonté ."
-  },
-  {
-   "src": "Do You Feel That? | A Couples Intimacy & Sex Podcast",
-   "kind": "podcast",
-   "title": "Why Your Sex Life Keeps Going Back to Normal (And How to Build One That Doesn’t)",
-   "link": "https://share.transistor.fm/s/999dc8be",
-   "age": 3,
-   "comments": 0,
-   "text": "You try something new. It’s great for a week. Then your sex life drifts back to where it was. If that sounds familiar, the problem isn’t that you picked the wrong thing. It’s that you tried to fix a structural problem with an event. In Episode 56, Scott and Brittney explain why novelty fades and how to build what actually lasts: an erotic ecosystem. It’s a set of five mutually reinforcing components that keeps your erotic life generative instead of needing periodic rescue: a daily somatic practice, an ongoing conversation, a steady diet of inputs, protected conditions, and a regular shared practice. They cover why you build it around your core desire, how the five parts feed each other, what it isn’t (it’s not a big time commitment, it’s not about having more sex, and it’s not exotic), and the order to build it in. If you want to keep your sex life alive long term, stop chasing the next "
   },
   {
    "src": "The RISE to Intimacy Podcast | Sex Therapy, Couples Therapy & Relationships",
    "kind": "podcast",
    "title": "What's Normal in Your Sex Life? | Quickie Questions",
    "link": "https://www.risetointimacy.com/post/what-s-normal-in-your-sex-life-quickie-questions",
-   "age": 3,
+   "age": 4,
    "comments": 0,
    "text": "What's normal when it comes to sex? It's easy to start questioning your relationship when your sex life looks different from what you expected or what you hear other people are experiencing. You might wonder whether you're asking too much of your partner, whether your sexual needs are compatible, or whether something needs to change. These questions can be difficult to talk about, especially when you're worried about hurting your partner or being judged for what you want. Sex and relationships come with a lot of questions that people aren't always comfortable asking out loud. That's why I'm starting a new monthly series called Quickie Questions, where we'll take questions from listeners, social media, and Reddit and talk through them from a sex and couples therapy perspective. Some of these situations are complicated, and there isn't always one right answer. My hope is that these convers"
+  },
+  {
+   "src": "Do You Feel That? | A Couples Intimacy & Sex Podcast",
+   "kind": "podcast",
+   "title": "Why Your Sex Life Keeps Going Back to Normal (And How to Build One That Doesn’t)",
+   "link": "https://share.transistor.fm/s/999dc8be",
+   "age": 4,
+   "comments": 0,
+   "text": "You try something new. It’s great for a week. Then your sex life drifts back to where it was. If that sounds familiar, the problem isn’t that you picked the wrong thing. It’s that you tried to fix a structural problem with an event. In Episode 56, Scott and Brittney explain why novelty fades and how to build what actually lasts: an erotic ecosystem. It’s a set of five mutually reinforcing components that keeps your erotic life generative instead of needing periodic rescue: a daily somatic practice, an ongoing conversation, a steady diet of inputs, protected conditions, and a regular shared practice. They cover why you build it around your core desire, how the five parts feed each other, what it isn’t (it’s not a big time commitment, it’s not about having more sex, and it’s not exotic), and the order to build it in. If you want to keep your sex life alive long term, stop chasing the next "
   },
   {
    "src": "Cosmopolitan",
    "kind": "article",
    "title": "10 Different Types of Sex You Should Know About (and Definitely Explore)",
    "link": "https://sex.cosmopolitan.com/pleasure/a38898372/different-types-of-sex/",
-   "age": 4,
+   "age": 5,
    "comments": 0,
    "text": "Because there's a whole lot more to sex than penetration."
   },
@@ -1413,7 +1427,7 @@
    "kind": "article",
    "title": "What Is Outercourse? Everything to Know About Sex Without Penetration",
    "link": "https://sex.cosmopolitan.com/pleasure/a32981167/outercourse/",
-   "age": 4,
+   "age": 5,
    "comments": 0,
    "text": "Because penetration isn't the only way to have really good sex (or really good orgasms)."
   },
@@ -1422,7 +1436,7 @@
    "kind": "article",
    "title": "Lelo Gigi 3 Review: My Honest Thoughts After Testing the G-Spot Vibrator",
    "link": "https://www.womenshealthmag.com/sex-and-love/a74443510/lelo-gigi-3-g-spot-vibrator-review-2026/",
-   "age": 4,
+   "age": 5,
    "comments": 0,
    "text": "\"The app-exclusive modes DEFINITELY performed as advertised, leading me to one of my longest and most unique orgasms yet.\""
   },
@@ -1431,7 +1445,7 @@
    "kind": "review",
    "title": "The Artist’s Way Review: Creative Block, Body Shame & a Better Workbook",
    "link": "https://www.dildoordildont.com/artists-way-creative-block-workbook/?utm_source=rss&utm_medium=rss&utm_campaign=artists-way-creative-block-workbook",
-   "age": 4,
+   "age": 5,
    "comments": 0,
    "text": "I Loved The Artist’s Way. I Also Had Some Problems With It. So I Made My Own Workbook. Let’s be honest. Being creatively stuck sucks. I’m not talking about a lazy Sunday where you don’t feel like writing. I mean the kind of stuck where you open a blank page and your brain just… leaves. Where you used to have ideas in the shower, on the bus, at 3am, and now you’ve got nothing but a to-do list and a vague sense that the fun part of you packed a bag and moved out without leaving a forwarding address. If you’re there right now, I get it. I’ve been there more times than I can count. What Creatively Stuck Actually Feels Like For me, it doesn’t show up as “I have writer’s block.” It shows up sideways. It looks like scrolling for an hour and calling it research. Buying a new notebook instead of writing in the five I already own. Telling myself I’ll start that project “when things calm down,” kno"
   },
@@ -1440,7 +1454,7 @@
    "kind": "article",
    "title": "Hey Dr Sue — Why Do I Want To Eat My Own Cum?!",
    "link": "https://drsuemilstein.medium.com/hey-dr-sue-why-do-i-want-to-eat-my-own-cum-ce97b7bb00c4?source=rss------sex_education-5",
-   "age": 4,
+   "age": 5,
    "comments": 0,
    "text": "There are a couple reasons why you may want to do this. Continue reading on Medium »"
   },
@@ -1449,25 +1463,16 @@
    "kind": "review",
    "title": "Remote Control Vibrators Explained: The Complete Guide for Couples and Long-Distance Play",
    "link": "https://endlesspleasureuk.medium.com/remote-control-vibrators-explained-the-complete-guide-for-couples-and-long-distance-play-f3c29fbfede5?source=rss------sex_toys-5",
-   "age": 4,
-   "comments": 0,
-   "text": "What remote vibrators are, the different types, how they work, and what to look for when buying your first one. Continue reading on Medium »"
-  },
-  {
-   "src": "Medium",
-   "kind": "review",
-   "title": "YOUR SEX TOY HAS BLUETOOTH. WHO ELSE IS GETTING TURNED ON?",
-   "link": "https://sex-and-security.medium.com/your-sex-toy-has-bluetooth-who-else-is-getting-turned-on-12c86dc93c32?source=rss------sex_toys-5",
    "age": 5,
    "comments": 0,
-   "text": "Picture this. You’re in bed after a long week, doing something perfectly normal and perfectly private. Your vibrator is doing exactly what… Continue reading on Medium »"
+   "text": "What remote vibrators are, the different types, how they work, and what to look for when buying your first one. Continue reading on Medium »"
   },
   {
    "src": "Women's Health",
    "kind": "article",
    "title": "5 Best Butt Plugs of 2026, Tested and Reviewed",
    "link": "https://www.womenshealthmag.com/sex-and-love/g19872129/best-butt-plugs/",
-   "age": 6,
+   "age": 7,
    "comments": 0,
    "text": "Here's exactly how to find your perfect fit."
   },
@@ -1476,7 +1481,7 @@
    "kind": "article",
    "title": "This Just In: People Are Collecting Cum",
    "link": "https://sex.cosmopolitan.com/pleasure/a74348611/people-are-collecting-cum/",
-   "age": 7,
+   "age": 8,
    "comments": 0,
    "text": "Time to get into the details on the cumdumping kink."
   },
@@ -1485,7 +1490,7 @@
    "kind": "article",
    "title": "9 Bedroom Makeover Tips for More Sex",
    "link": "https://sex.cosmopolitan.com/pleasure/a74348577/bedroom-makeover-tips-for-more-sex/",
-   "age": 7,
+   "age": 8,
    "comments": 0,
    "text": "And we’re starting with things you already have."
   },
@@ -1494,7 +1499,7 @@
    "kind": "article",
    "title": "The Healing Power of a Post-Divorce ‘Hoe Phase’",
    "link": "https://www.womenshealthmag.com/sex-and-love/a74399431/casual-sex-after-divorce-essay/",
-   "age": 7,
+   "age": 8,
    "comments": 0,
    "text": "Many women use celibacy to process and move on from a breakup, but what if casual sex is the antidote they need instead?"
   },
@@ -1503,7 +1508,7 @@
    "kind": "article",
    "title": "Should We Be Worried About How Much Sex Married People Are Having?",
    "link": "https://sex.cosmopolitan.com/pleasure/a74346859/married-couples-sexless-marriage/",
-   "age": 8,
+   "age": 9,
    "comments": 0,
    "text": "Does saying “I do” mean saying “I don’t” to sex?"
   },
@@ -1512,7 +1517,7 @@
    "kind": "article",
    "title": "Your Black Friday Pleasure Guide by LELO",
    "link": "https://sexwithemily.com/lelo-black-friday-pleasure-guide/?utm_source=rss&utm_medium=rss&utm_campaign=lelo-black-friday-pleasure-guide",
-   "age": 8,
+   "age": 9,
    "comments": 0,
    "text": "Put pleasure at the top of the wish list with LELO’s hottest Black Friday deals. Whether you’re treating yourself to a little solo upgrade, surprising someone special, or looking for something new to explore together, there’s no better time to invest in your pleasure. And here’s the sexy part: LELO is offering up to 40% OFF its luxury pleasure toys. But because we believe more pleasure is always a good thing, use code EMILY20 at checkout for an additional 20% OFF on top of existing sale prices. Here are seven pleasure essentials from LELO that are worth adding to your cart. 1. MONA Spectra — When Self-Care Meets Self-Pleasure Red light therapy for your face? You’ve heard of it. But what abou t red light therapy for your intimate wellness? Meet MONA Spectra, LELO’s innovative G -spot vibrator that combines powerful vibrations with red LED light technology. Designed to bring together pleas"
   },
@@ -1521,7 +1526,7 @@
    "kind": "experience",
    "title": "Guest blog: Slippery when wet – my first liquid orgy",
    "link": "https://www.girlonthenet.com/blog/guest-blog-slippery-when-wet-my-first-liquid-orgy/",
-   "age": 8,
+   "age": 9,
    "comments": 0,
    "text": "Ever fancied being lubed up with warm oil and sliding around with a crowd of similarly oily strangers? You will almost certainly enjoy this week’s guest blog! I’m delighted to welcome PJA Woode this week – he’s a fellow sex writer who contributes fabulous erotic fiction to the porn site FrolicMe, but today he’s here […]"
   },
@@ -1530,7 +1535,7 @@
    "kind": "article",
    "title": "Can ‘Spermaxxing’ Make Cum Taste Better?",
    "link": "https://sex.cosmopolitan.com/pleasure/a74275054/can-spermaxxing-make-cum-taste-better/",
-   "age": 9,
+   "age": 10,
    "comments": 0,
    "text": "How to pull the good out of this trend."
   },
@@ -1539,7 +1544,7 @@
    "kind": "article",
    "title": "Can Men Have Multiple Orgasms?",
    "link": "https://sex.cosmopolitan.com/pleasure/a74317442/can-men-have-multiple-orgasms/",
-   "age": 9,
+   "age": 10,
    "comments": 0,
    "text": "Oh! Oh! Oh!"
   },
@@ -1548,7 +1553,7 @@
    "kind": "article",
    "title": "10 Best Oral Sex Toys of 2026, According to Sex Experts",
    "link": "https://www.womenshealthmag.com/sex-and-love/g22186370/best-oral-sex-toys/",
-   "age": 9,
+   "age": 10,
    "comments": 0,
    "text": "“I have never orgasmed so quickly from a toy.”"
   },
@@ -1557,7 +1562,7 @@
    "kind": "review",
    "title": "Stop Ignoring Your Vibrator Patterns: Why Those Pulses, Waves, and Rhythms Deserve a Chance",
    "link": "https://www.dildoordildont.com/stop-ignoring-your-vibrator-patterns-why-those-pulses-waves-and-rhythms-deserve-a-chance/?utm_source=rss&utm_medium=rss&utm_campaign=stop-ignoring-your-vibrator-patterns-why-those-pulses-waves-and-rhythms-deserve-a-chance",
-   "age": 9,
+   "age": 10,
    "comments": 0,
    "text": "Let’s be honest. How many of you have a vibrator with 10 different settings but only ever use two of them? Maybe three if you’re feeling adventurous? You turn your vibrator on, cycle through the settings until you find your favorite steady vibration, and never give those other patterns a second thought. The pulsing? Skip. The waves? Pass. That one pattern that sounds like your vibrator is trying to send a message in Morse code? Absolutely not. I get it. When you know what works for your body, why mess with a good thing? But as someone who has spent years testing sex toys and educating people about pleasure, I’m here to tell you that those neglected vibrator patterns might be worth another chance. Not because you need them to have better orgasms or because steady vibrations are somehow inferior. They’re not. But because exploring different sensations can teach you more about your body, in"
   },
@@ -1566,7 +1571,7 @@
    "kind": "article",
    "title": "Couples Vibrating Rings: Fit, Modes & Shared-Use Care Before You Buy (18+)",
    "link": "https://medium.com/@a286027019/couples-vibrating-rings-fit-modes-shared-use-care-before-you-buy-18-1f9748f70158?source=rss------sex_education-5",
-   "age": 10,
+   "age": 11,
    "comments": 0,
    "text": "For adults 18+. General wellness and buying education only, not medical advice and not a performance promise. Continue reading on Medium »"
   },
@@ -1575,7 +1580,7 @@
    "kind": "article",
    "title": "Everyone Is Capable of Having Multiple Orgasms. Sex Experts Explain How",
    "link": "https://www.womenshealthmag.com/sex-and-love/a74358465/multiple-orgasms-how-to/",
-   "age": 11,
+   "age": 12,
    "comments": 0,
    "text": "Plus, they share the health benefits of an extended climax."
   },
@@ -1584,63 +1589,9 @@
    "kind": "article",
    "title": "Hey Dr Sue — Any Tips On How To Last Longer When Receiving Oral?",
    "link": "https://drsuemilstein.medium.com/hey-dr-sue-any-tips-on-how-to-last-longer-when-receiving-oral-b4a6b93dad17?source=rss------sex_education-5",
-   "age": 11,
+   "age": 12,
    "comments": 0,
    "text": "Sounds like this is a great match between what you want and what your girlfriend likes! Continue reading on Medium »"
-  },
-  {
-   "src": "Cosmopolitan",
-   "kind": "article",
-   "title": "What It’s Really Like Being the Third in a Threesome",
-   "link": "https://sex.cosmopolitan.com/pleasure/a74324487/threesome-third-advice/",
-   "age": 14,
-   "comments": 0,
-   "text": "“It kinda takes all of the pressure off of me.”"
-  },
-  {
-   "src": "Cosmopolitan",
-   "kind": "article",
-   "title": "How Reading Queer Smut Helps Me Feel Queer in My Straight-Passing Relationship",
-   "link": "https://sex.cosmopolitan.com/pleasure/a73960853/reading-queer-smut-helps-me-feel-queer/",
-   "age": 14,
-   "comments": 0,
-   "text": "Six queer smut readers on the identity-affirming joy of queer smut."
-  },
-  {
-   "src": "Cosmopolitan",
-   "kind": "article",
-   "title": "Yeah, I’ll Try the Red-Light Therapy Vibrator",
-   "link": "https://sex.cosmopolitan.com/pleasure/a74349450/lelo-mona-spectra-review/",
-   "age": 14,
-   "comments": 0,
-   "text": "What the hell, sure."
-  },
-  {
-   "src": "Dildo or Dildon't",
-   "kind": "review",
-   "title": "How to Use a Cock Ring With a Partner Who Has a Vulva",
-   "link": "https://www.dildoordildont.com/how-to-use-a-cock-ring-with-a-partner-who-has-a-vulva/?utm_source=rss&utm_medium=rss&utm_campaign=how-to-use-a-cock-ring-with-a-partner-who-has-a-vulva",
-   "age": 15,
-   "comments": 0,
-   "text": "The ring is for both of you Read almost any cock ring guide and it’s all about the wearer: harder, longer, more sensitive. Cool. But if you’re using a vibrating ring and the person on the other end has a vulva, a cock ring can do just as much for them, sometimes more. The right ring puts vibration exactly where most vulva-owners want it, right on the clit, and it does it hands-free while you’re both busy. This guide is written for both of you. The couple, not just the person wearing it. It’ll cover which rings actually help the partner with the vulva, the positions that line everything up, and how to talk about it so the ring is a team player instead of a solo act. Pick a ring with the partner in mind Not every ring does anything for the person receiving. Here’s how the main types compare from the vulva-owner’s side. Ring type What the partner with the vulva feels Best for Plain stretchy"
-  },
-  {
-   "src": "Dildo or Dildon't",
-   "kind": "review",
-   "title": "An Ode To Abundance: A Love Letter to Ample Hotties",
-   "link": "https://www.dildoordildont.com/an-ode-to-abundance-a-love-letter-to-ample-hotties/?utm_source=rss&utm_medium=rss&utm_campaign=an-ode-to-abundance-a-love-letter-to-ample-hotties",
-   "age": 15,
-   "comments": 0,
-   "text": "Hey there, beautiful soul! Where do I even begin? You embody everything beautiful, radiant, and life-worth-living. In a world that often tries to confine beauty to narrow standards, you stand tall and proud, defying expectations and blazing your magnificent trail. Oh, how you captivate and inspire! Your curves are like gentle waves, gracefully shaping the landscape of your being. With each curve, you tell a story of resilience, of strength, of unapologetic self-love. You are a masterpiece, a living testament to the beauty of diversity. So consider this my love letter to you, and to plus size body positivity in all its glory. Take up space Sway and shimmy, strut and sashay, to fill the room with your infectious energy. Don’t shrink yourself to fit into someone else’s mold; we need you to expand, to thrive, to take up space with pride. Your confidence should be like a beacon, guiding other"
-  },
-  {
-   "src": "Girl on the Net",
-   "kind": "experience",
-   "title": "2026 Christmas cards are here! Want one? Read on…",
-   "link": "https://www.girlonthenet.com/blog/2026-christmas-cards-are-here-want-one-read-on/",
-   "age": 15,
-   "comments": 2,
-   "text": "John Lewis have released their ad, Tesco is full of chocolate advent calendars, and Russell Brand is off to jail. It must be Christmas! Time to show you all the gorgeous – and subtly smutty – card that Stuart has drawn this year, and explain how you can get one. As regular readers will know, […]"
   },
   {
    "src": "Healthline",
@@ -1652,11 +1603,38 @@
    "text": "Researchers say that an “oral food challenge” could help avoid unnecessary treatment for peanut allergies. Lauri Patterson/E+/Getty Images Over a third of infants with suspected peanut allergies did not react to peanut in an oral food challenge, according to a new study. The researchers say a history of a reaction or a positive test may not be enough to diagnose peanut allergy. They suggest that an oral food challenge can help avoid unnecessary treatment and food restrictions. However, it should be done under medical supervision to ensure safety. Peanut allergies have been on the rise in recent decades. According to statistics provided by Food Allergy Research & Education (FARE) , an estimated 6.2 million children and adults in the United States are allergic to peanuts. However, new research published in the November 2026 issue of The Journal of Allergy and Clinical Immunology suggests t"
   },
   {
+   "src": "Dildo or Dildon't",
+   "kind": "review",
+   "title": "How to Use a Cock Ring With a Partner Who Has a Vulva",
+   "link": "https://www.dildoordildont.com/how-to-use-a-cock-ring-with-a-partner-who-has-a-vulva/?utm_source=rss&utm_medium=rss&utm_campaign=how-to-use-a-cock-ring-with-a-partner-who-has-a-vulva",
+   "age": 16,
+   "comments": 0,
+   "text": "The ring is for both of you Read almost any cock ring guide and it’s all about the wearer: harder, longer, more sensitive. Cool. But if you’re using a vibrating ring and the person on the other end has a vulva, a cock ring can do just as much for them, sometimes more. The right ring puts vibration exactly where most vulva-owners want it, right on the clit, and it does it hands-free while you’re both busy. This guide is written for both of you. The couple, not just the person wearing it. It’ll cover which rings actually help the partner with the vulva, the positions that line everything up, and how to talk about it so the ring is a team player instead of a solo act. Pick a ring with the partner in mind Not every ring does anything for the person receiving. Here’s how the main types compare from the vulva-owner’s side. Ring type What the partner with the vulva feels Best for Plain stretchy"
+  },
+  {
+   "src": "Dildo or Dildon't",
+   "kind": "review",
+   "title": "An Ode To Abundance: A Love Letter to Ample Hotties",
+   "link": "https://www.dildoordildont.com/an-ode-to-abundance-a-love-letter-to-ample-hotties/?utm_source=rss&utm_medium=rss&utm_campaign=an-ode-to-abundance-a-love-letter-to-ample-hotties",
+   "age": 16,
+   "comments": 0,
+   "text": "Hey there, beautiful soul! Where do I even begin? You embody everything beautiful, radiant, and life-worth-living. In a world that often tries to confine beauty to narrow standards, you stand tall and proud, defying expectations and blazing your magnificent trail. Oh, how you captivate and inspire! Your curves are like gentle waves, gracefully shaping the landscape of your being. With each curve, you tell a story of resilience, of strength, of unapologetic self-love. You are a masterpiece, a living testament to the beauty of diversity. So consider this my love letter to you, and to plus size body positivity in all its glory. Take up space Sway and shimmy, strut and sashay, to fill the room with your infectious energy. Don’t shrink yourself to fit into someone else’s mold; we need you to expand, to thrive, to take up space with pride. Your confidence should be like a beacon, guiding other"
+  },
+  {
+   "src": "Girl on the Net",
+   "kind": "experience",
+   "title": "2026 Christmas cards are here! Want one? Read on…",
+   "link": "https://www.girlonthenet.com/blog/2026-christmas-cards-are-here-want-one-read-on/",
+   "age": 16,
+   "comments": 2,
+   "text": "John Lewis have released their ad, Tesco is full of chocolate advent calendars, and Russell Brand is off to jail. It must be Christmas! Time to show you all the gorgeous – and subtly smutty – card that Stuart has drawn this year, and explain how you can get one. As regular readers will know, […]"
+  },
+  {
    "src": "Sex With Emily",
    "kind": "article",
    "title": "Wake Up & Get Down: The Science of Morning Sex",
    "link": "https://sexwithemily.com/science-of-morning-sex/?utm_source=rss&utm_medium=rss&utm_campaign=science-of-morning-sex",
-   "age": 16,
+   "age": 17,
    "comments": 0,
    "text": "Did you know your testosterone levels are up to 30% higher first thing in the morning than later in the day? Yet, a majority of couples admit they skip sex simply because they’re too exhausted by 10 PM. If your bedtime routine looks more like mindlessly binge watching TV shows together rather than ripping each other’s clothes off, you’re not broken. You’re just looking at the wrong end of the clock. It’s time we dive into the science of morning sex . The Science Behind Morning Sex and Your Hormones Why does morning sex feel so damn good? It’s Biology. Between 7:00 and 9:00 AM, our sex hormones hit their natural 24-hour peak. Testosterone surges in both penis and vulva owners, priming your libido before you even check your phone. You can thank your endocrine system for doing the seductive heavy lifting for you while you’re still half-asleep. And there’s also a huge plus to starting your d"
   },
@@ -1665,7 +1643,7 @@
    "kind": "article",
    "title": "Women’s Vaginas at 20 vs. 40",
    "link": "https://sexwithemily.com/womens-vaginas-at-20-vs-40/?utm_source=rss&utm_medium=rss&utm_campaign=womens-vaginas-at-20-vs-40",
-   "age": 16,
+   "age": 17,
    "comments": 0,
    "text": "Have a question for me? Send it here: sexwithemily.com/ask Here’s something I wish someone had told me years ago. Young doesn’t mean sexually confident, 40s doesn’t mean sexually over, and the biggest mistake most couples make has nothing to do with technique. It’s assuming they already know what their partner wants. In this episode I’m walking through what actually happens to a woman’s body and desire across her 20s, 30s, 40s, and beyond: what changes, what stays the same, and what you can do to be a better partner at every stage. Shop Women’s Health: https://shop.sexwithemily.com/womens-health ABOUT EMILY: Emily Morse is a Doctor of Human Sexuality, author and host of the #1 rated Sex with Emily podcast. Known as a renowned sexologist, Dr. Emily has helped millions of people around the world navigate their sex lives. Her candid and often funny conversations challenge cultural taboos, m"
   },
@@ -1674,7 +1652,7 @@
    "kind": "podcast",
    "title": "Questions to Ask Your Partner About Sex (That You’ve Probably Never Asked)",
    "link": "https://share.transistor.fm/s/d74c5d5c",
-   "age": 17,
+   "age": 18,
    "comments": 0,
    "text": "When’s the last time you asked your partner a question about your intimate life that you didn’t already know the answer to? Most couples never ask each other the questions that matter, not because they don’t care, but because nobody ever handed them the questions. In Episode 54, Scott and Brittney share sixteen intimate questions worth asking your partner. The questions move through four rounds: warm-up, desire, vulnerability, and what’s next. Along the way, Scott and Brittney share the stories their answers spark, including a few they’ve never told on the podcast. Then they give you a simple, low-pressure way to use these questions with your own partner this week, with rules that keep it honest and safe. If you’ve been looking for questions to ask your partner about sex, intimate conversation starters for couples, or a way to talk about what you want without it getting awkward, this is "
   },
@@ -1683,7 +1661,7 @@
    "kind": "article",
    "title": "Hey Dr Sue — Not In A Relationship, How Do I Satisfy Myself Fully Sexually?",
    "link": "https://drsuemilstein.medium.com/hey-dr-sue-not-in-a-relationship-how-do-i-satisfy-myself-fully-sexually-16c3582fe29f?source=rss------sex_education-5",
-   "age": 18,
+   "age": 19,
    "comments": 0,
    "text": "This is a really good question. And one that I’m getting more of now that more people are choosing to stay single. Continue reading on Medium »"
   },
@@ -1692,7 +1670,7 @@
    "kind": "podcast",
    "title": "How to Stop Small Tension From Ruining Your Sex Life #448",
    "link": "https://share.transistor.fm/s/347dc830",
-   "age": 18,
+   "age": 19,
    "comments": 0,
    "text": "Most couples don’t need fewer 'fights'. They need to get better at what happens right after them. In this episode, I’m breaking down one of the most important and underrated skills for a great relationship and sex life: repair . Repair is how you keep one bad moment from becoming a bigger story about your partner, your relationship, or yourself. I share a real example from a recent trip with Andrew where a small moment of irritation turned into tension and how we repaired it quickly instead of letting it become resentment. I also give you a few simple repair phrases you can start using immediately. Because a great relationship isn’t one where nothing ever goes wrong. It’s one where you both trust: when something does go wrong, we know how to come back together. And that trust changes your sex life. If you’re serious about building your skill of repair, fill out an application to work wit"
   },
@@ -1701,7 +1679,7 @@
    "kind": "article",
    "title": "We Wrote the Kama Sutra. Why Are We Still Ashamed of Women’s Bodies?",
    "link": "https://medium.com/nudge-write/we-wrote-the-kama-sutra-why-are-we-still-ashamed-of-womens-bodies-03f29d65efcb?source=rss------sex_education-5",
-   "age": 24,
+   "age": 25,
    "comments": 0,
    "text": "On menstruation, friendship, sex education, and the silence we inherit from our elders Continue reading on Nudge »"
   },
@@ -1710,7 +1688,7 @@
    "kind": "experience",
    "title": "Decisions, decisions: cunt, ass or dumping ground",
    "link": "https://www.girlonthenet.com/blog/decisions-decisions/",
-   "age": 26,
+   "age": 27,
    "comments": 1,
    "text": "I walk in on him wanking, that’s how this fantasy starts. I’ve just got out of the shower, hair tousled and body lotioned so it’s nice and smooth with a slight slippery residue that makes everything shine. I open the door to the living room with half-formed notions of asking him to touch my tits […]"
   },
@@ -1719,7 +1697,7 @@
    "kind": "experience",
    "title": "Guest blog: The reset fuck",
    "link": "https://www.girlonthenet.com/blog/reset-fuck/",
-   "age": 28,
+   "age": 29,
    "comments": 0,
    "text": "I want what she’s having. Seriously, right now I would give (almost) anything for the type of sex LM describes in this piece. The ‘reset fuck’, which brings you back to yourself and drags you out of your own head… unngh. LM has written some gorgeous guest pieces here before, so click the links in […]"
   },
@@ -1728,7 +1706,7 @@
    "kind": "review",
    "title": "Please Don’t Use Wicker: A Body-Safe Materials Guide",
    "link": "https://www.dildoordildont.com/please-dont-use-wicker-a-body-safe-materials-guide/?utm_source=rss&utm_medium=rss&utm_campaign=please-dont-use-wicker-a-body-safe-materials-guide",
-   "age": 30,
+   "age": 31,
    "comments": 0,
    "text": "Please Don’t Use Wicker: A Body-Safe Materials Guide Listen, I’m all for getting creative with your pleasure, but there are some things that should stay firmly in the fantasy category. And after seeing the premise of Wicker , the upcoming film starring Olivia Colman, Peter Dinklage, and Alexander Skarsgård, I feel like we need to have a little chat about what does and doesn’t belong inside your body. If you haven’t seen the trailer yet, here’s the rundown: Olivia Colman plays a lonely fisherwoman who decides she’s had enough of waiting around for the perfect husband. Instead, she pays the village basketmaker, played by Peter Dinklage, to literally weave her a man to her exact specifications. The result? Alexander Skarsgård in a full wicker suit. Yes, really. The movie arrives in limited theaters October 23 before expanding October 30, and the marketing team clearly knows exactly what the"
   },
@@ -1737,7 +1715,7 @@
    "kind": "review",
    "title": "Vaginal Red Light Therapy: What It Feels Like and What to Expect",
    "link": "https://www.lelo.com/blog/vaginal-red-light-therapy-tc/",
-   "age": 30,
+   "age": 31,
    "comments": 0,
    "text": "The world of advanced wellness is moving quickly, and red light therapy is no exception. But what about using it vaginally? Discover what vaginal red light therapy actually feels like, how it compares to alternatives, and what you can realistically expect from using it routinely. What Is Vaginal Red Light Therapy? Vaginal red light therapy uses gentle, low-level light waves to boost blood flow and support natural tissue health, while advanced devices like MONA Spectra also incorporate green, blue, and […] The post Vaginal Red Light Therapy: What It Feels Like and What to Expect appeared first on Volonté ."
   },
@@ -1746,7 +1724,7 @@
    "kind": "review",
    "title": "A Soul For A Soul Part 3 – An Erotic Story",
    "link": "https://www.lelo.com/blog/a-soul-for-a-soul-part-3-an-erotic-story/",
-   "age": 40,
+   "age": 41,
    "comments": 2,
    "text": "Alex Evans was as handsome as Perle remembered. She was relieved that, in nights of loneliness, her imagination had not embellished the man whom she had met in her art gallery. Now was their second meeting. It was not an art gallery in the city but in his home. He was on his land. He was in his own environment. He sat on the edge of a large leather armchair with his elbows on his knees. Alex had Leo talking […] The post A Soul For A Soul Part 3 – An Erotic Story appeared first on Volonté ."
   },
@@ -1755,17 +1733,17 @@
    "kind": "review",
    "title": "A Sole for a Soul Part 2 – An Erotic Story",
    "link": "https://www.lelo.com/blog/a-sole-for-a-soul-part-2-an-erotic-story/",
-   "age": 53,
+   "age": 54,
    "comments": 0,
    "text": "Perle gazed at the name on the shipping paperwork she held. Just seeing the name warmed her, even etching her lips into a smile, despite the disorganized day. She didn’t realize it, until later, that the name made her mind escape, exactly like that single painting had let Alex Evans escape. Perle sat in her office chair, left leg crossed over her right, so she could see her kitten heel slingbacks. The glossy pair was inlayed with memory foam, so […] The post A Sole for a Soul Part 2 – An Erotic Story appeared first on Volonté ."
   }
  ],
  "upd": {
   "💞 Матеріали 18+ (журнали)": {
-   "at": "21.11 00:01",
-   "ts": 1795212089,
+   "at": "22.11 00:01",
+   "ts": 1795298480,
    "ok": true,
-   "note": "93 шт."
+   "note": "92 шт."
   },
   "🛒 Сільпо (основна)": {
    "at": "21.11 15:04",
@@ -1780,14 +1758,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "21.11 23:58",
-   "ts": 1795298291,
+   "at": "22.11 00:02",
+   "ts": 1795298565,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "21.11 23:58",
-   "ts": 1795298291,
+   "at": "22.11 00:02",
+   "ts": 1795298565,
    "ok": true,
    "note": ""
   },
@@ -1810,8 +1788,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "21.11 23:56",
-   "ts": 1795298180,
+   "at": "22.11 00:02",
+   "ts": 1795298565,
    "ok": true,
    "note": ""
   },
@@ -1870,8 +1848,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "21.11 23:56",
-   "ts": 1795298180,
+   "at": "22.11 00:02",
+   "ts": 1795298565,
    "ok": true,
    "note": ""
   },
@@ -13198,12 +13176,8 @@
  "fav_sent": {
   "160603556": "2026-11-19"
  },
- "imp_sent": {
-  "396425365": "2026-11-21"
- },
- "ero_sent": {
-  "936688574": "2026-11-21"
- },
+ "imp_sent": {},
+ "ero_sent": {},
  "pend": {
   "kino": {
    "id": "2026-11-20 08",
@@ -13236,5250 +13210,6 @@
   "iDpywg:gemini-3.8-flash": "2026-11-22T10:05:00+02:00"
  },
  "omdb_cache": {
-  "tt5362988": [
-   7.7,
-   87,
-   73,
-   "2026-10-22"
-  ],
-  "tt21103218": [
-   6.8,
-   87,
-   64,
-   "2026-10-22"
-  ],
-  "tt37042085": [
-   null,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4846232": [
-   7.3,
-   91,
-   80,
-   "2026-10-22"
-  ],
-  "tt10855768": [
-   7.1,
-   88,
-   66,
-   "2026-10-22"
-  ],
-  "tt19864802": [
-   6.6,
-   66,
-   57,
-   "2026-10-22"
-  ],
-  "tt5715874": [
-   7.0,
-   79,
-   73,
-   "2026-10-22"
-  ],
-  "tt14810692": [
-   7.0,
-   95,
-   71,
-   "2026-10-22"
-  ],
-  "tt4761112": [
-   7.5,
-   75,
-   53,
-   "2026-10-22"
-  ],
-  "tt12477480": [
-   7.2,
-   94,
-   85,
-   "2026-10-22"
-  ],
-  "tt7144666": [
-   6.9,
-   81,
-   65,
-   "2026-10-22"
-  ],
-  "tt15325794": [
-   6.4,
-   80,
-   62,
-   "2026-10-22"
-  ],
-  "tt1502397": [
-   6.5,
-   76,
-   59,
-   "2026-10-22"
-  ],
-  "tt0870154": [
-   6.5,
-   62,
-   50,
-   "2026-10-22"
-  ],
-  "tt17526714": [
-   7.2,
-   89,
-   78,
-   "2026-10-22"
-  ],
-  "tt27714581": [
-   7.7,
-   95,
-   86,
-   "2026-10-22"
-  ],
-  "tt6791350": [
-   7.9,
-   82,
-   64,
-   "2026-10-22"
-  ],
-  "tt11909878": [
-   6.0,
-   65,
-   56,
-   "2026-10-22"
-  ],
-  "tt5727208": [
-   7.4,
-   91,
-   93,
-   "2026-10-22"
-  ],
-  "tt15047880": [
-   6.4,
-   79,
-   74,
-   "2026-10-22"
-  ],
-  "tt10375624": [
-   7.3,
-   88,
-   62,
-   "2026-10-22"
-  ],
-  "tt15239678": [
-   8.4,
-   92,
-   79,
-   "2026-10-22"
-  ],
-  "tt31192372": [
-   5.7,
-   53,
-   53,
-   "2026-10-22"
-  ],
-  "tt28498219": [
-   null,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt30825738": [
-   6.7,
-   61,
-   53,
-   "2026-10-22"
-  ],
-  "tt27543632": [
-   6.7,
-   74,
-   65,
-   "2026-10-22"
-  ],
-  "tt0381681": [
-   8.1,
-   95,
-   91,
-   "2026-10-22"
-  ],
-  "tt0307901": [
-   7.6,
-   79,
-   69,
-   "2026-10-22"
-  ],
-  "tt0277434": [
-   7.2,
-   63,
-   65,
-   "2026-10-22"
-  ],
-  "tt0964517": [
-   7.8,
-   91,
-   79,
-   "2026-10-22"
-  ],
-  "tt1675192": [
-   7.3,
-   92,
-   85,
-   "2026-10-22"
-  ],
-  "tt3153634": [
-   8.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0472043": [
-   7.9,
-   65,
-   68,
-   "2026-10-22"
-  ],
-  "tt7772588": [
-   8.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7053188": [
-   7.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt5555260": [
-   8.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt18923754": [
-   8.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt5622316": [
-   9.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt19244304": [
-   7.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt14490706": [
-   6.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt8103070": [
-   7.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt13875494": [
-   7.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7335184": [
-   7.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2249007": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt3609352": [
-   8.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0264235": [
-   8.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1199099": [
-   7.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0972534": [
-   6.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1480684": [
-   8.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0496424": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7737786": [
-   6.4,
-   78,
-   64,
-   "2026-10-22"
-  ],
-  "tt7888964": [
-   7.4,
-   83,
-   64,
-   "2026-10-22"
-  ],
-  "tt2140479": [
-   7.3,
-   53,
-   51,
-   "2026-10-22"
-  ],
-  "tt11866324": [
-   7.1,
-   94,
-   71,
-   "2026-10-22"
-  ],
-  "tt32654916": [
-   null,
-   39,
-   null,
-   "2026-10-22"
-  ],
-  "tt29516222": [
-   5.4,
-   69,
-   53,
-   "2026-10-22"
-  ],
-  "tt31050594": [
-   6.2,
-   null,
-   34,
-   "2026-10-22"
-  ],
-  "tt9620292": [
-   7.5,
-   90,
-   72,
-   "2026-10-22"
-  ],
-  "tt20215234": [
-   7.4,
-   93,
-   79,
-   "2026-10-22"
-  ],
-  "tt11389872": [
-   6.8,
-   80,
-   66,
-   "2026-10-22"
-  ],
-  "tt16431870": [
-   6.3,
-   27,
-   39,
-   "2026-10-22"
-  ],
-  "tt9619824": [
-   6.7,
-   92,
-   73,
-   "2026-10-22"
-  ],
-  "tt2906216": [
-   7.2,
-   null,
-   72,
-   "2026-10-22"
-  ],
-  "tt5083738": [
-   7.5,
-   93,
-   91,
-   "2026-10-22"
-  ],
-  "tt12593682": [
-   7.3,
-   53,
-   49,
-   "2026-10-22"
-  ],
-  "tt5606664": [
-   7.3,
-   79,
-   59,
-   "2026-10-22"
-  ],
-  "tt14173636": [
-   7.5,
-   96,
-   82,
-   "2026-10-22"
-  ],
-  "tt33088452": [
-   6.0,
-   29,
-   33,
-   "2026-10-22"
-  ],
-  "tt4500922": [
-   6.3,
-   43,
-   50,
-   "2026-10-22"
-  ],
-  "tt31195136": [
-   6.3,
-   77,
-   63,
-   "2026-10-22"
-  ],
-  "tt6710474": [
-   7.7,
-   93,
-   81,
-   "2026-10-22"
-  ],
-  "tt24950660": [
-   6.9,
-   76,
-   58,
-   "2026-10-22"
-  ],
-  "tt28510079": [
-   5.3,
-   20,
-   null,
-   "2026-10-22"
-  ],
-  "tt10208198": [
-   7.0,
-   97,
-   65,
-   "2026-10-22"
-  ],
-  "tt1638355": [
-   7.2,
-   68,
-   56,
-   "2026-10-22"
-  ],
-  "tt1065073": [
-   7.9,
-   97,
-   100,
-   "2026-10-22"
-  ],
-  "tt2361509": [
-   7.1,
-   59,
-   51,
-   "2026-10-22"
-  ],
-  "tt0328107": [
-   7.7,
-   39,
-   47,
-   "2026-10-22"
-  ],
-  "tt0425112": [
-   7.8,
-   91,
-   81,
-   "2026-10-22"
-  ],
-  "tt0281358": [
-   7.3,
-   30,
-   35,
-   "2026-10-22"
-  ],
-  "tt0181875": [
-   7.9,
-   91,
-   90,
-   "2026-10-22"
-  ],
-  "tt1837492": [
-   7.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt16358384": [
-   7.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt9813792": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7235466": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt5057054": [
-   8.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt14452776": [
-   8.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt9253284": [
-   8.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt6128300": [
-   7.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt17220216": [
-   7.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0279600": [
-   7.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0979432": [
-   8.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0414766": [
-   7.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1219024": [
-   8.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt3904068": [
-   6.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7458762": [
-   6.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt13778486": [
-   4.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt5886440": [
-   6.7,
-   49,
-   63,
-   "2026-10-22"
-  ],
-  "tt28259207": [
-   7.4,
-   90,
-   74,
-   "2026-10-22"
-  ],
-  "tt13316722": [
-   6.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt27534328": [
-   6.9,
-   94,
-   null,
-   "2026-10-22"
-  ],
-  "tt10404944": [
-   6.9,
-   60,
-   null,
-   "2026-10-22"
-  ],
-  "tt15354916": [
-   6.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt5797184": [
-   6.8,
-   73,
-   56,
-   "2026-10-22"
-  ],
-  "tt11655202": [
-   7.5,
-   96,
-   81,
-   "2026-10-22"
-  ],
-  "tt11083552": [
-   7.1,
-   68,
-   57,
-   "2026-10-22"
-  ],
-  "tt21064584": [
-   7.5,
-   89,
-   73,
-   "2026-10-22"
-  ],
-  "tt27534307": [
-   6.8,
-   83,
-   66,
-   "2026-10-22"
-  ],
-  "tt26342662": [
-   6.0,
-   57,
-   54,
-   "2026-10-22"
-  ],
-  "tt1312221": [
-   7.4,
-   85,
-   78,
-   "2026-10-22"
-  ],
-  "tt1302006": [
-   7.8,
-   95,
-   94,
-   "2026-10-22"
-  ],
-  "tt8332922": [
-   7.2,
-   91,
-   71,
-   "2026-10-22"
-  ],
-  "tt7069210": [
-   6.2,
-   56,
-   53,
-   "2026-10-22"
-  ],
-  "tt4589218": [
-   5.4,
-   33,
-   33,
-   "2026-10-22"
-  ],
-  "tt4540710": [
-   7.5,
-   76,
-   64,
-   "2026-10-22"
-  ],
-  "tt1051906": [
-   7.1,
-   null,
-   72,
-   "2026-10-22"
-  ],
-  "tt5090568": [
-   6.0,
-   51,
-   42,
-   "2026-10-22"
-  ],
-  "tt0359950": [
-   7.3,
-   52,
-   54,
-   "2026-10-22"
-  ],
-  "tt0467406": [
-   7.4,
-   93,
-   81,
-   "2026-10-22"
-  ],
-  "tt0166924": [
-   7.9,
-   83,
-   87,
-   "2026-10-22"
-  ],
-  "tt0825232": [
-   7.3,
-   40,
-   42,
-   "2026-10-22"
-  ],
-  "tt3076658": [
-   7.6,
-   95,
-   82,
-   "2026-10-22"
-  ],
-  "tt0838221": [
-   7.2,
-   69,
-   67,
-   "2026-10-22"
-  ],
-  "tt14449470": [
-   6.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt23112594": [
-   null,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt26545992": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt8962124": [
-   6.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt31589662": [
-   7.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt19231492": [
-   7.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt17543592": [
-   7.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt5722298": [
-   7.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt9288030": [
-   8.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1936532": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1888075": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1567432": [
-   7.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4179452": [
-   8.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0436992": [
-   8.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1094229": [
-   8.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0377260": [
-   8.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt32642706": [
-   6.7,
-   77,
-   63,
-   "2026-10-22"
-  ],
-  "tt12300742": [
-   7.4,
-   87,
-   72,
-   "2026-10-22"
-  ],
-  "tt8036976": [
-   6.7,
-   92,
-   75,
-   "2026-10-22"
-  ],
-  "tt32141377": [
-   7.2,
-   91,
-   81,
-   "2026-10-22"
-  ],
-  "tt4513678": [
-   7.0,
-   63,
-   45,
-   "2026-10-22"
-  ],
-  "tt10638522": [
-   7.1,
-   null,
-   76,
-   "2026-10-22"
-  ],
-  "tt14905854": [
-   7.8,
-   86,
-   84,
-   "2026-10-22"
-  ],
-  "tt10172266": [
-   7.0,
-   75,
-   62,
-   "2026-10-22"
-  ],
-  "tt4975722": [
-   7.4,
-   98,
-   99,
-   "2026-10-22"
-  ],
-  "tt33311244": [
-   5.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt32434379": [
-   6.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt8772262": [
-   7.1,
-   83,
-   72,
-   "2026-10-22"
-  ],
-  "tt7798634": [
-   6.9,
-   89,
-   64,
-   "2026-10-22"
-  ],
-  "tt0245844": [
-   7.7,
-   74,
-   61,
-   "2026-10-22"
-  ],
-  "tt0257044": [
-   7.6,
-   82,
-   72,
-   "2026-10-22"
-  ],
-  "tt0380510": [
-   6.6,
-   30,
-   42,
-   "2026-10-22"
-  ],
-  "tt1748122": [
-   7.7,
-   93,
-   84,
-   "2026-10-22"
-  ],
-  "tt0217505": [
-   7.5,
-   72,
-   72,
-   "2026-10-22"
-  ],
-  "tt36849871": [
-   6.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt10293938": [
-   7.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt9054904": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt14186672": [
-   8.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt9111220": [
-   7.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7018644": [
-   6.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt11192306": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt9742936": [
-   6.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1519931": [
-   7.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1836037": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1796960": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1132290": [
-   7.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0275140": [
-   7.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2712516": [
-   6.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4034228": [
-   7.8,
-   96,
-   96,
-   "2026-10-22"
-  ],
-  "tt5537002": [
-   7.5,
-   93,
-   89,
-   "2026-10-22"
-  ],
-  "tt3281548": [
-   7.7,
-   95,
-   91,
-   "2026-10-22"
-  ],
-  "tt33612209": [
-   6.3,
-   78,
-   63,
-   "2026-10-22"
-  ],
-  "tt31450459": [
-   null,
-   52,
-   null,
-   "2026-10-22"
-  ],
-  "tt9243946": [
-   7.3,
-   92,
-   72,
-   "2026-10-22"
-  ],
-  "tt7984734": [
-   7.3,
-   90,
-   83,
-   "2026-10-22"
-  ],
-  "tt11198810": [
-   7.3,
-   88,
-   74,
-   "2026-10-22"
-  ],
-  "tt16311594": [
-   7.6,
-   82,
-   68,
-   "2026-10-22"
-  ],
-  "tt4003440": [
-   6.8,
-   59,
-   42,
-   "2026-10-22"
-  ],
-  "tt5311542": [
-   7.7,
-   77,
-   68,
-   "2026-10-22"
-  ],
-  "tt27847051": [
-   7.2,
-   98,
-   91,
-   "2026-10-22"
-  ],
-  "tt21909764": [
-   6.1,
-   0,
-   null,
-   "2026-10-22"
-  ],
-  "tt6285944": [
-   7.3,
-   78,
-   59,
-   "2026-10-22"
-  ],
-  "tt28553375": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt11378946": [
-   7.4,
-   38,
-   39,
-   "2026-10-22"
-  ],
-  "tt3553976": [
-   7.8,
-   82,
-   72,
-   "2026-10-22"
-  ],
-  "tt31049299": [
-   null,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt15574124": [
-   6.5,
-   90,
-   59,
-   "2026-10-22"
-  ],
-  "tt8178634": [
-   7.8,
-   96,
-   83,
-   "2026-10-22"
-  ],
-  "tt7322224": [
-   7.2,
-   71,
-   63,
-   "2026-10-22"
-  ],
-  "tt39749979": [
-   null,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt14034966": [
-   7.5,
-   99,
-   86,
-   "2026-10-22"
-  ],
-  "tt38235625": [
-   4.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4495098": [
-   7.1,
-   null,
-   48,
-   "2026-10-22"
-  ],
-  "tt0320661": [
-   7.3,
-   39,
-   63,
-   "2026-10-22"
-  ],
-  "tt0168629": [
-   7.9,
-   69,
-   63,
-   "2026-10-22"
-  ],
-  "tt0452623": [
-   7.6,
-   94,
-   72,
-   "2026-10-22"
-  ],
-  "tt2278871": [
-   7.6,
-   88,
-   90,
-   "2026-10-22"
-  ],
-  "tt0765429": [
-   7.8,
-   81,
-   76,
-   "2026-10-22"
-  ],
-  "tt0898367": [
-   7.2,
-   74,
-   64,
-   "2026-10-22"
-  ],
-  "tt0450259": [
-   8.0,
-   64,
-   64,
-   "2026-10-22"
-  ],
-  "tt0314331": [
-   7.5,
-   65,
-   55,
-   "2026-10-22"
-  ],
-  "tt0251160": [
-   7.1,
-   26,
-   30,
-   "2026-10-22"
-  ],
-  "tt1809398": [
-   7.2,
-   52,
-   59,
-   "2026-10-22"
-  ],
-  "tt31434030": [
-   6.2,
-   54,
-   44,
-   "2026-10-22"
-  ],
-  "tt27503384": [
-   7.9,
-   96,
-   80,
-   "2026-10-22"
-  ],
-  "tt9466114": [
-   6.3,
-   80,
-   67,
-   "2026-10-22"
-  ],
-  "tt14230458": [
-   7.7,
-   92,
-   88,
-   "2026-10-22"
-  ],
-  "tt9764362": [
-   7.1,
-   88,
-   71,
-   "2026-10-22"
-  ],
-  "tt15314262": [
-   6.3,
-   71,
-   53,
-   "2026-10-22"
-  ],
-  "tt34610311": [
-   7.0,
-   82,
-   null,
-   "2026-10-22"
-  ],
-  "tt32612507": [
-   6.1,
-   45,
-   47,
-   "2026-10-22"
-  ],
-  "tt31193180": [
-   7.5,
-   97,
-   84,
-   "2026-10-22"
-  ],
-  "tt11858890": [
-   6.7,
-   67,
-   63,
-   "2026-10-22"
-  ],
-  "tt11138512": [
-   7.0,
-   90,
-   82,
-   "2026-10-22"
-  ],
-  "tt31170389": [
-   6.3,
-   70,
-   54,
-   "2026-10-22"
-  ],
-  "tt31514146": [
-   8.3,
-   96,
-   70,
-   "2026-10-22"
-  ],
-  "tt18412256": [
-   7.1,
-   80,
-   64,
-   "2026-10-22"
-  ],
-  "tt5950044": [
-   7.0,
-   83,
-   68,
-   "2026-10-22"
-  ],
-  "tt8367814": [
-   7.8,
-   75,
-   51,
-   "2026-10-22"
-  ],
-  "tt0427340": [
-   6.4,
-   null,
-   52,
-   "2026-10-22"
-  ],
-  "tt32430579": [
-   6.8,
-   88,
-   68,
-   "2026-10-22"
-  ],
-  "tt17490712": [
-   6.3,
-   64,
-   46,
-   "2026-10-22"
-  ],
-  "tt33046197": [
-   6.4,
-   74,
-   67,
-   "2026-10-22"
-  ],
-  "tt0976051": [
-   7.6,
-   63,
-   58,
-   "2026-10-22"
-  ],
-  "tt1091191": [
-   7.5,
-   75,
-   60,
-   "2026-10-22"
-  ],
-  "tt0783233": [
-   7.8,
-   83,
-   85,
-   "2026-10-22"
-  ],
-  "tt0335266": [
-   7.7,
-   95,
-   91,
-   "2026-10-22"
-  ],
-  "tt0914798": [
-   7.7,
-   65,
-   55,
-   "2026-10-22"
-  ],
-  "tt1327773": [
-   7.2,
-   72,
-   65,
-   "2026-10-22"
-  ],
-  "tt0245712": [
-   8.0,
-   93,
-   83,
-   "2026-10-22"
-  ],
-  "tt0290673": [
-   7.3,
-   60,
-   51,
-   "2026-10-22"
-  ],
-  "tt0373074": [
-   7.7,
-   90,
-   78,
-   "2026-10-22"
-  ],
-  "tt0293508": [
-   7.2,
-   32,
-   40,
-   "2026-10-22"
-  ],
-  "tt21105088": [
-   5.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt12327578": [
-   8.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt13062500": [
-   7.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt6483832": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1043813": [
-   7.4,
-   50,
-   null,
-   "2026-10-22"
-  ],
-  "tt11691774": [
-   8.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt5834204": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt11379026": [
-   7.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt8690918": [
-   8.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt20234568": [
-   8.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt18335752": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt11743610": [
-   7.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt6474378": [
-   7.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt40197357": [
-   8.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4270492": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt6473344": [
-   7.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1615919": [
-   8.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1843230": [
-   7.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0813715": [
-   7.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt3230854": [
-   8.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2777882": [
-   6.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0381798": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2467372": [
-   8.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7395114": [
-   7.1,
-   65,
-   55,
-   "2026-10-22"
-  ],
-  "tt4172430": [
-   7.3,
-   52,
-   48,
-   "2026-10-22"
-  ],
-  "tt30024043": [
-   6.5,
-   94,
-   65,
-   "2026-10-22"
-  ],
-  "tt8368512": [
-   7.2,
-   85,
-   65,
-   "2026-10-22"
-  ],
-  "tt8075192": [
-   7.9,
-   99,
-   93,
-   "2026-10-22"
-  ],
-  "tt15006566": [
-   7.5,
-   99,
-   85,
-   "2026-10-22"
-  ],
-  "tt3344680": [
-   7.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt27811040": [
-   6.6,
-   91,
-   null,
-   "2026-10-22"
-  ],
-  "tt8116428": [
-   7.1,
-   44,
-   null,
-   "2026-10-22"
-  ],
-  "tt32547691": [
-   7.3,
-   89,
-   69,
-   "2026-10-22"
-  ],
-  "tt5431890": [
-   7.3,
-   82,
-   63,
-   "2026-10-22"
-  ],
-  "tt3845232": [
-   8.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4873118": [
-   7.5,
-   82,
-   63,
-   "2026-10-22"
-  ],
-  "tt34381258": [
-   6.8,
-   90,
-   63,
-   "2026-10-22"
-  ],
-  "tt28349451": [
-   6.5,
-   91,
-   73,
-   "2026-10-22"
-  ],
-  "tt15789472": [
-   6.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt32537226": [
-   5.8,
-   53,
-   null,
-   "2026-10-22"
-  ],
-  "tt7468056": [
-   7.2,
-   92,
-   null,
-   "2026-10-22"
-  ],
-  "tt20316748": [
-   6.9,
-   90,
-   77,
-   "2026-10-22"
-  ],
-  "tt4190530": [
-   7.2,
-   67,
-   59,
-   "2026-10-22"
-  ],
-  "tt0315733": [
-   7.6,
-   80,
-   70,
-   "2026-10-22"
-  ],
-  "tt0310775": [
-   7.5,
-   53,
-   59,
-   "2026-10-22"
-  ],
-  "tt1190539": [
-   7.8,
-   82,
-   64,
-   "2026-10-22"
-  ],
-  "tt0408306": [
-   7.5,
-   79,
-   74,
-   "2026-10-22"
-  ],
-  "tt0309698": [
-   7.3,
-   64,
-   64,
-   "2026-10-22"
-  ],
-  "tt1568346": [
-   7.8,
-   86,
-   71,
-   "2026-10-22"
-  ],
-  "tt2866360": [
-   7.1,
-   89,
-   65,
-   "2026-10-22"
-  ],
-  "tt0440963": [
-   8.0,
-   92,
-   85,
-   "2026-10-22"
-  ],
-  "tt1535109": [
-   7.8,
-   93,
-   82,
-   "2026-10-22"
-  ],
-  "tt1855199": [
-   7.6,
-   85,
-   68,
-   "2026-10-22"
-  ],
-  "tt33978029": [
-   6.5,
-   75,
-   58,
-   "2026-10-22"
-  ],
-  "tt8718158": [
-   6.2,
-   68,
-   null,
-   "2026-10-22"
-  ],
-  "tt3799232": [
-   5.9,
-   17,
-   null,
-   "2026-10-22"
-  ],
-  "tt7014006": [
-   7.3,
-   99,
-   85,
-   "2026-10-22"
-  ],
-  "tt1987680": [
-   7.1,
-   null,
-   46,
-   "2026-10-22"
-  ],
-  "tt27817389": [
-   7.1,
-   90,
-   75,
-   "2026-10-22"
-  ],
-  "tt5692390": [
-   5.8,
-   0,
-   null,
-   "2026-10-22"
-  ],
-  "tt14599938": [
-   6.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4560008": [
-   6.9,
-   61,
-   51,
-   "2026-10-22"
-  ],
-  "tt9214832": [
-   6.7,
-   86,
-   71,
-   "2026-10-22"
-  ],
-  "tt28607951": [
-   7.4,
-   93,
-   91,
-   "2026-10-22"
-  ],
-  "tt32588798": [
-   null,
-   37,
-   null,
-   "2026-10-22"
-  ],
-  "tt9225192": [
-   6.6,
-   80,
-   null,
-   "2026-10-22"
-  ],
-  "tt15153532": [
-   6.3,
-   null,
-   54,
-   "2026-10-22"
-  ],
-  "tt15430628": [
-   6.3,
-   66,
-   50,
-   "2026-10-22"
-  ],
-  "tt10948718": [
-   7.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt14376344": [
-   7.3,
-   85,
-   69,
-   "2026-10-22"
-  ],
-  "tt24216998": [
-   7.0,
-   90,
-   70,
-   "2026-10-22"
-  ],
-  "tt30327451": [
-   7.4,
-   95,
-   null,
-   "2026-10-22"
-  ],
-  "tt14544192": [
-   8.6,
-   95,
-   null,
-   "2026-10-22"
-  ],
-  "tt7242142": [
-   7.4,
-   94,
-   75,
-   "2026-10-22"
-  ],
-  "tt27391124": [
-   6.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt5164432": [
-   7.5,
-   92,
-   72,
-   "2026-10-22"
-  ],
-  "tt0263757": [
-   6.3,
-   14,
-   33,
-   "2026-10-22"
-  ],
-  "tt2258337": [
-   7.7,
-   100,
-   null,
-   "2026-10-22"
-  ],
-  "tt0340377": [
-   7.6,
-   94,
-   81,
-   "2026-10-22"
-  ],
-  "tt0203166": [
-   7.4,
-   90,
-   84,
-   "2026-10-22"
-  ],
-  "tt2980648": [
-   7.3,
-   69,
-   55,
-   "2026-10-22"
-  ],
-  "tt1187043": [
-   8.4,
-   94,
-   67,
-   "2026-10-22"
-  ],
-  "tt2140373": [
-   7.5,
-   79,
-   65,
-   "2026-10-22"
-  ],
-  "tt0272338": [
-   7.3,
-   79,
-   78,
-   "2026-10-22"
-  ],
-  "tt2170593": [
-   7.2,
-   78,
-   64,
-   "2026-10-22"
-  ],
-  "tt0375063": [
-   7.5,
-   97,
-   94,
-   "2026-10-22"
-  ],
-  "tt22742964": [
-   7.0,
-   70,
-   null,
-   "2026-10-22"
-  ],
-  "tt14895216": [
-   6.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt11727052": [
-   5.7,
-   89,
-   null,
-   "2026-10-22"
-  ],
-  "tt10521814": [
-   6.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7914416": [
-   7.6,
-   100,
-   86,
-   "2026-10-22"
-  ],
-  "tt3296156": [
-   6.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt8239946": [
-   8.2,
-   87,
-   null,
-   "2026-10-22"
-  ],
-  "tt4954522": [
-   6.9,
-   92,
-   81,
-   "2026-10-22"
-  ],
-  "tt4823992": [
-   5.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt3662308": [
-   6.0,
-   86,
-   null,
-   "2026-10-22"
-  ],
-  "tt10362566": [
-   5.3,
-   67,
-   41,
-   "2026-10-22"
-  ],
-  "tt3775202": [
-   6.7,
-   91,
-   null,
-   "2026-10-22"
-  ],
-  "tt1895315": [
-   7.0,
-   45,
-   45,
-   "2026-10-22"
-  ],
-  "tt29609422": [
-   5.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt26470109": [
-   6.7,
-   96,
-   78,
-   "2026-10-22"
-  ],
-  "tt6079516": [
-   6.8,
-   73,
-   65,
-   "2026-10-22"
-  ],
-  "tt14253846": [
-   6.7,
-   83,
-   78,
-   "2026-10-22"
-  ],
-  "tt13375076": [
-   6.1,
-   50,
-   45,
-   "2026-10-22"
-  ],
-  "tt15474916": [
-   6.5,
-   79,
-   68,
-   "2026-10-22"
-  ],
-  "tt37287335": [
-   7.8,
-   93,
-   77,
-   "2026-10-22"
-  ],
-  "tt13345606": [
-   6.5,
-   85,
-   69,
-   "2026-10-22"
-  ],
-  "tt5215952": [
-   7.4,
-   99,
-   81,
-   "2026-10-22"
-  ],
-  "tt11804152": [
-   5.9,
-   90,
-   66,
-   "2026-10-22"
-  ],
-  "tt7670212": [
-   6.7,
-   54,
-   38,
-   "2026-10-22"
-  ],
-  "tt1764551": [
-   4.8,
-   9,
-   26,
-   "2026-10-22"
-  ],
-  "tt11668530": [
-   4.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1667354": [
-   7.3,
-   81,
-   72,
-   "2026-10-22"
-  ],
-  "tt33763941": [
-   5.5,
-   45,
-   52,
-   "2026-10-22"
-  ],
-  "tt1772264": [
-   6.8,
-   52,
-   52,
-   "2026-10-22"
-  ],
-  "tt1512685": [
-   6.7,
-   90,
-   null,
-   "2026-10-22"
-  ],
-  "tt1020530": [
-   6.7,
-   74,
-   65,
-   "2026-10-22"
-  ],
-  "tt0384537": [
-   6.5,
-   34,
-   31,
-   "2026-10-22"
-  ],
-  "tt3395184": [
-   6.7,
-   85,
-   70,
-   "2026-10-22"
-  ],
-  "tt0363547": [
-   7.2,
-   77,
-   59,
-   "2026-10-22"
-  ],
-  "tt0279112": [
-   7.0,
-   65,
-   null,
-   "2026-10-22"
-  ],
-  "tt2975578": [
-   6.4,
-   58,
-   50,
-   "2026-10-22"
-  ],
-  "tt0884328": [
-   7.1,
-   74,
-   58,
-   "2026-10-22"
-  ],
-  "tt0395584": [
-   6.7,
-   54,
-   54,
-   "2026-10-22"
-  ],
-  "tt3922818": [
-   6.4,
-   17,
-   33,
-   "2026-10-22"
-  ],
-  "tt1536537": [
-   6.8,
-   62,
-   47,
-   "2026-10-22"
-  ],
-  "tt7375466": [
-   5.6,
-   88,
-   null,
-   "2026-10-22"
-  ],
-  "tt10737918": [
-   6.3,
-   94,
-   84,
-   "2026-10-22"
-  ],
-  "tt6499752": [
-   7.5,
-   88,
-   67,
-   "2026-10-22"
-  ],
-  "tt15552142": [
-   6.8,
-   78,
-   55,
-   "2026-10-22"
-  ],
-  "tt15296186": [
-   5.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1341338": [
-   7.0,
-   null,
-   66,
-   "2026-10-22"
-  ],
-  "tt13539646": [
-   6.7,
-   83,
-   56,
-   "2026-10-22"
-  ],
-  "tt10530176": [
-   7.1,
-   46,
-   null,
-   "2026-10-22"
-  ],
-  "tt9777666": [
-   6.6,
-   51,
-   45,
-   "2026-10-22"
-  ],
-  "tt13721828": [
-   6.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt3420504": [
-   6.9,
-   74,
-   57,
-   "2026-10-22"
-  ],
-  "tt3967856": [
-   7.3,
-   87,
-   75,
-   "2026-10-22"
-  ],
-  "tt12838766": [
-   6.5,
-   70,
-   64,
-   "2026-10-22"
-  ],
-  "tt14539740": [
-   6.0,
-   54,
-   47,
-   "2026-10-22"
-  ],
-  "tt23289160": [
-   7.6,
-   99,
-   81,
-   "2026-10-22"
-  ],
-  "tt10620868": [
-   6.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt3345472": [
-   6.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0366526": [
-   6.4,
-   80,
-   null,
-   "2026-10-22"
-  ],
-  "tt0314111": [
-   6.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt3853452": [
-   6.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0929629": [
-   7.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2779318": [
-   9.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2027178": [
-   7.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0991178": [
-   7.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2351310": [
-   6.6,
-   33,
-   40,
-   "2026-10-22"
-  ],
-  "tt0354668": [
-   7.1,
-   89,
-   70,
-   "2026-10-22"
-  ],
-  "tt11316854": [
-   5.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1893273": [
-   6.7,
-   56,
-   57,
-   "2026-10-22"
-  ],
-  "tt9779516": [
-   6.5,
-   50,
-   41,
-   "2026-10-22"
-  ],
-  "tt9411972": [
-   7.2,
-   34,
-   43,
-   "2026-10-22"
-  ],
-  "tt4061620": [
-   7.1,
-   57,
-   49,
-   "2026-10-22"
-  ],
-  "tt3721954": [
-   7.6,
-   90,
-   65,
-   "2026-10-22"
-  ],
-  "tt12929990": [
-   5.7,
-   65,
-   46,
-   "2026-10-22"
-  ],
-  "tt11991748": [
-   7.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1235187": [
-   6.6,
-   43,
-   44,
-   "2026-10-22"
-  ],
-  "tt8522006": [
-   6.6,
-   82,
-   69,
-   "2026-10-22"
-  ],
-  "tt13654226": [
-   6.7,
-   62,
-   57,
-   "2026-10-22"
-  ],
-  "tt8092252": [
-   7.7,
-   80,
-   null,
-   "2026-10-22"
-  ],
-  "tt3344694": [
-   6.7,
-   34,
-   37,
-   "2026-10-22"
-  ],
-  "tt8652728": [
-   7.5,
-   84,
-   80,
-   "2026-10-22"
-  ],
-  "tt31888477": [
-   7.3,
-   91,
-   66,
-   "2026-10-22"
-  ],
-  "tt15340724": [
-   7.4,
-   86,
-   null,
-   "2026-10-22"
-  ],
-  "tt35979013": [
-   null,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt34621892": [
-   6.9,
-   80,
-   null,
-   "2026-10-22"
-  ],
-  "tt9285882": [
-   6.3,
-   93,
-   69,
-   "2026-10-22"
-  ],
-  "tt26596953": [
-   7.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt3451230": [
-   6.3,
-   75,
-   48,
-   "2026-10-22"
-  ],
-  "tt13238346": [
-   7.8,
-   95,
-   94,
-   "2026-10-22"
-  ],
-  "tt0322420": [
-   7.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0212712": [
-   7.4,
-   87,
-   78,
-   "2026-10-22"
-  ],
-  "tt1276419": [
-   7.5,
-   90,
-   73,
-   "2026-10-22"
-  ],
-  "tt1702014": [
-   7.9,
-   93,
-   71,
-   "2026-10-22"
-  ],
-  "tt1606389": [
-   6.8,
-   30,
-   43,
-   "2026-10-22"
-  ],
-  "tt1967545": [
-   6.9,
-   34,
-   52,
-   "2026-10-22"
-  ],
-  "tt0198021": [
-   6.7,
-   34,
-   30,
-   "2026-10-22"
-  ],
-  "tt2935476": [
-   7.1,
-   84,
-   71,
-   "2026-10-22"
-  ],
-  "tt1403981": [
-   7.1,
-   26,
-   40,
-   "2026-10-22"
-  ],
-  "tt0320193": [
-   7.8,
-   90,
-   79,
-   "2026-10-22"
-  ],
-  "tt11311302": [
-   7.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt11188682": [
-   6.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt9055008": [
-   7.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt11041332": [
-   7.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt27444205": [
-   7.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt26471411": [
-   9.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt33332385": [
-   8.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2934286": [
-   7.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt5788792": [
-   8.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt10590066": [
-   8.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2261227": [
-   7.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt5607976": [
-   7.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt8080122": [
-   8.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt12439466": [
-   7.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt8421350": [
-   7.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt5673782": [
-   8.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt5676412": [
-   6.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt8388390": [
-   7.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4488724": [
-   6.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0185906": [
-   9.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0247082": [
-   7.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1489428": [
-   8.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0460627": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4565380": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2243973": [
-   8.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0160904": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2261391": [
-   8.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1586680": [
-   8.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt32200215": [
-   null,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt8009354": [
-   5.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt8282042": [
-   6.6,
-   88,
-   78,
-   "2026-10-22"
-  ],
-  "tt3781118": [
-   6.6,
-   78,
-   null,
-   "2026-10-22"
-  ],
-  "tt1745787": [
-   6.9,
-   87,
-   78,
-   "2026-10-22"
-  ],
-  "tt4084744": [
-   7.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt3037582": [
-   7.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt6828390": [
-   6.9,
-   86,
-   68,
-   "2026-10-22"
-  ],
-  "tt2258239": [
-   6.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt10749786": [
-   6.9,
-   97,
-   85,
-   "2026-10-22"
-  ],
-  "tt7876510": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt9455468": [
-   7.4,
-   94,
-   82,
-   "2026-10-22"
-  ],
-  "tt21833376": [
-   7.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt19783734": [
-   null,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt11402054": [
-   6.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4653492": [
-   6.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7691572": [
-   7.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt8205656": [
-   6.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt19465630": [
-   6.4,
-   72,
-   54,
-   "2026-10-22"
-  ],
-  "tt19783714": [
-   7.9,
-   83,
-   null,
-   "2026-10-22"
-  ],
-  "tt11680986": [
-   null,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt16315948": [
-   6.9,
-   98,
-   74,
-   "2026-10-22"
-  ],
-  "tt2934916": [
-   7.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt38036256": [
-   7.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt3326054": [
-   7.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7224628": [
-   6.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt11755114": [
-   7.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt11632488": [
-   8.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt6235122": [
-   7.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt10091828": [
-   7.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt15229966": [
-   7.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt12115998": [
-   8.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt27369017": [
-   6.9,
-   78,
-   66,
-   "2026-10-22"
-  ],
-  "tt27419420": [
-   6.2,
-   null,
-   46,
-   "2026-10-22"
-  ],
-  "tt36586020": [
-   null,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt28535715": [
-   null,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt34890576": [
-   null,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt35538033": [
-   null,
-   96,
-   null,
-   "2026-10-22"
-  ],
-  "tt31349844": [
-   6.6,
-   null,
-   55,
-   "2026-10-22"
-  ],
-  "tt37510326": [
-   null,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt33214716": [
-   null,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7181546": [
-   6.8,
-   null,
-   59,
-   "2026-10-22"
-  ],
-  "tt31227572": [
-   7.2,
-   86,
-   71,
-   "2026-10-22"
-  ],
-  "tt39390497": [
-   6.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2382320": [
-   7.3,
-   83,
-   68,
-   "2026-10-22"
-  ],
-  "tt10366206": [
-   7.6,
-   94,
-   78,
-   "2026-10-22"
-  ],
-  "tt17024450": [
-   6.8,
-   76,
-   58,
-   "2026-10-22"
-  ],
-  "tt10640346": [
-   7.1,
-   57,
-   61,
-   "2026-10-22"
-  ],
-  "tt20969586": [
-   7.1,
-   88,
-   68,
-   "2026-10-22"
-  ],
-  "tt2106476": [
-   8.3,
-   92,
-   77,
-   "2026-10-22"
-  ],
-  "tt1038988": [
-   7.4,
-   90,
-   71,
-   "2026-10-22"
-  ],
-  "tt0358273": [
-   7.8,
-   83,
-   72,
-   "2026-10-22"
-  ],
-  "tt0408236": [
-   7.3,
-   86,
-   83,
-   "2026-10-22"
-  ],
-  "tt0299977": [
-   7.9,
-   null,
-   85,
-   "2026-10-22"
-  ],
-  "tt0449467": [
-   7.4,
-   68,
-   69,
-   "2026-10-22"
-  ],
-  "tt0498380": [
-   7.8,
-   91,
-   89,
-   "2026-10-22"
-  ],
-  "tt12677870": [
-   7.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt17491088": [
-   8.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7942794": [
-   6.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt13406094": [
-   8.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt5875444": [
-   8.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7587890": [
-   8.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt8416494": [
-   7.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1837642": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1196946": [
-   8.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0407362": [
-   8.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2632424": [
-   8.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt3526078": [
-   8.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt3743822": [
-   6.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4160708": [
-   7.1,
-   88,
-   71,
-   "2026-10-22"
-  ],
-  "tt34471850": [
-   5.2,
-   null,
-   41,
-   "2026-10-22"
-  ],
-  "tt4550098": [
-   7.4,
-   74,
-   67,
-   "2026-10-22"
-  ],
-  "tt35222590": [
-   6.5,
-   91,
-   71,
-   "2026-10-22"
-  ],
-  "tt7405458": [
-   7.5,
-   70,
-   51,
-   "2026-10-22"
-  ],
-  "tt5700672": [
-   7.6,
-   95,
-   73,
-   "2026-10-22"
-  ],
-  "tt28014327": [
-   6.9,
-   83,
-   60,
-   "2026-10-22"
-  ],
-  "tt0195685": [
-   7.5,
-   87,
-   73,
-   "2026-10-22"
-  ],
-  "tt1655441": [
-   7.2,
-   54,
-   51,
-   "2026-10-22"
-  ],
-  "tt1798684": [
-   7.3,
-   59,
-   57,
-   "2026-10-22"
-  ],
-  "tt12637874": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt14688458": [
-   8.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt6439752": [
-   8.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt6294706": [
-   7.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4236770": [
-   8.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0412253": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2149175": [
-   8.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2654620": [
-   7.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1983079": [
-   8.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2874692": [
-   7.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt8633478": [
-   6.7,
-   88,
-   67,
-   "2026-10-22"
-  ],
-  "tt5461944": [
-   7.6,
-   76,
-   62,
-   "2026-10-22"
-  ],
-  "tt12758060": [
-   7.4,
-   81,
-   61,
-   "2026-10-22"
-  ],
-  "tt7068946": [
-   6.6,
-   75,
-   58,
-   "2026-10-22"
-  ],
-  "tt36983905": [
-   null,
-   55,
-   53,
-   "2026-10-22"
-  ],
-  "tt27165187": [
-   6.5,
-   86,
-   69,
-   "2026-10-22"
-  ],
-  "tt7526136": [
-   7.5,
-   85,
-   null,
-   "2026-10-22"
-  ],
-  "tt3464902": [
-   7.1,
-   87,
-   82,
-   "2026-10-22"
-  ],
-  "tt1979320": [
-   8.1,
-   88,
-   74,
-   "2026-10-22"
-  ],
-  "tt0249462": [
-   7.7,
-   85,
-   74,
-   "2026-10-22"
-  ],
-  "tt6019206": [
-   8.7,
-   100,
-   95,
-   "2026-10-22"
-  ],
-  "tt1707386": [
-   7.5,
-   70,
-   63,
-   "2026-10-22"
-  ],
-  "tt5853176": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7491982": [
-   7.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt11280740": [
-   8.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt10329042": [
-   7.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7462410": [
-   7.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt3749900": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1378167": [
-   6.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1595859": [
-   7.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1442437": [
-   8.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0452046": [
-   8.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt36073210": [
-   5.6,
-   36,
-   null,
-   "2026-10-22"
-  ],
-  "tt33311069": [
-   7.2,
-   98,
-   85,
-   "2026-10-22"
-  ],
-  "tt26584495": [
-   6.9,
-   93,
-   70,
-   "2026-10-22"
-  ],
-  "tt9603208": [
-   7.1,
-   80,
-   67,
-   "2026-10-22"
-  ],
-  "tt9000310": [
-   null,
-   100,
-   null,
-   "2026-10-22"
-  ],
-  "tt32338669": [
-   5.7,
-   50,
-   52,
-   "2026-10-22"
-  ],
-  "tt33764258": [
-   8.4,
-   94,
-   88,
-   "2026-10-22"
-  ],
-  "tt15940132": [
-   6.3,
-   66,
-   54,
-   "2026-10-22"
-  ],
-  "tt27681354": [
-   6.3,
-   51,
-   53,
-   "2026-10-22"
-  ],
-  "tt0293429": [
-   6.1,
-   55,
-   44,
-   "2026-10-22"
-  ],
-  "tt1981677": [
-   7.1,
-   81,
-   66,
-   "2026-10-22"
-  ],
-  "tt1872194": [
-   7.4,
-   49,
-   48,
-   "2026-10-22"
-  ],
-  "tt1542344": [
-   7.5,
-   93,
-   82,
-   "2026-10-22"
-  ],
-  "tt0449059": [
-   7.8,
-   91,
-   80,
-   "2026-10-22"
-  ],
-  "tt0187393": [
-   7.2,
-   61,
-   63,
-   "2026-10-22"
-  ],
-  "tt31510819": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7949218": [
-   7.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7908628": [
-   8.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0318883": [
-   7.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1091909": [
-   8.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt3322312": [
-   8.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0412175": [
-   7.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt33057137": [
-   5.7,
-   67,
-   null,
-   "2026-10-22"
-  ],
-  "tt9071322": [
-   7.6,
-   89,
-   73,
-   "2026-10-22"
-  ],
-  "tt7668870": [
-   7.6,
-   92,
-   71,
-   "2026-10-22"
-  ],
-  "tt22207786": [
-   7.1,
-   96,
-   80,
-   "2026-10-22"
-  ],
-  "tt15838850": [
-   7.0,
-   96,
-   null,
-   "2026-10-22"
-  ],
-  "tt16300962": [
-   6.9,
-   96,
-   75,
-   "2026-10-22"
-  ],
-  "tt13269536": [
-   6.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7282468": [
-   7.4,
-   95,
-   91,
-   "2026-10-22"
-  ],
-  "tt4857264": [
-   8.0,
-   67,
-   null,
-   "2026-10-22"
-  ],
-  "tt31844586": [
-   6.7,
-   93,
-   76,
-   "2026-10-22"
-  ],
-  "tt22526100": [
-   null,
-   74,
-   67,
-   "2026-10-22"
-  ],
-  "tt1517451": [
-   7.6,
-   90,
-   88,
-   "2026-10-22"
-  ],
-  "tt6966692": [
-   8.2,
-   77,
-   69,
-   "2026-10-22"
-  ],
-  "tt26047818": [
-   6.1,
-   53,
-   52,
-   "2026-10-22"
-  ],
-  "tt3783958": [
-   8.0,
-   91,
-   94,
-   "2026-10-22"
-  ],
-  "tt14536120": [
-   7.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2119532": [
-   8.1,
-   84,
-   71,
-   "2026-10-22"
-  ],
-  "tt4425200": [
-   7.4,
-   89,
-   75,
-   "2026-10-22"
-  ],
-  "tt0181865": [
-   7.5,
-   93,
-   86,
-   "2026-10-22"
-  ],
-  "tt0238380": [
-   7.3,
-   40,
-   33,
-   "2026-10-22"
-  ],
-  "tt0372183": [
-   7.7,
-   81,
-   73,
-   "2026-10-22"
-  ],
-  "tt0266308": [
-   7.5,
-   90,
-   81,
-   "2026-10-22"
-  ],
-  "tt0338751": [
-   7.5,
-   86,
-   77,
-   "2026-10-22"
-  ],
-  "tt10986410": [
-   8.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt23148340": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt10795658": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt5071412": [
-   8.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt13918776": [
-   7.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0840196": [
-   8.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2741602": [
-   7.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2647544": [
-   7.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1693592": [
-   8.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0934814": [
-   8.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt32357218": [
-   6.1,
-   64,
-   50,
-   "2026-10-22"
-  ],
-  "tt34206385": [
-   8.7,
-   86,
-   75,
-   "2026-10-22"
-  ],
-  "tt28996126": [
-   6.3,
-   76,
-   59,
-   "2026-10-22"
-  ],
-  "tt28015403": [
-   7.0,
-   89,
-   71,
-   "2026-10-22"
-  ],
-  "tt38672588": [
-   null,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt14107334": [
-   6.3,
-   61,
-   56,
-   "2026-10-22"
-  ],
-  "tt0805564": [
-   7.3,
-   81,
-   70,
-   "2026-10-22"
-  ],
-  "tt0368909": [
-   7.2,
-   85,
-   69,
-   "2026-10-22"
-  ],
-  "tt0272020": [
-   7.0,
-   52,
-   43,
-   "2026-10-22"
-  ],
-  "tt0379786": [
-   7.8,
-   82,
-   74,
-   "2026-10-22"
-  ],
-  "tt31938062": [
-   8.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt13111078": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4474344": [
-   7.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0397442": [
-   7.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0362359": [
-   7.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0460690": [
-   8.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt17009710": [
-   7.6,
-   96,
-   86,
-   "2026-10-22"
-  ],
-  "tt9738784": [
-   7.4,
-   80,
-   53,
-   "2026-10-22"
-  ],
-  "tt32649961": [
-   6.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4244994": [
-   7.3,
-   85,
-   67,
-   "2026-10-22"
-  ],
-  "tt26581740": [
-   7.4,
-   93,
-   81,
-   "2026-10-22"
-  ],
-  "tt1478839": [
-   7.6,
-   44,
-   43,
-   "2026-10-22"
-  ],
-  "tt12037194": [
-   7.4,
-   90,
-   79,
-   "2026-10-22"
-  ],
-  "tt0325710": [
-   7.8,
-   65,
-   55,
-   "2026-10-22"
-  ],
-  "tt0118694": [
-   8.0,
-   92,
-   87,
-   "2026-10-22"
-  ],
-  "tt0210945": [
-   7.8,
-   72,
-   48,
-   "2026-10-22"
-  ],
-  "tt0353969": [
-   8.1,
-   null,
-   82,
-   "2026-10-22"
-  ],
-  "tt0212720": [
-   7.2,
-   76,
-   65,
-   "2026-10-22"
-  ],
-  "tt1605783": [
-   7.6,
-   93,
-   81,
-   "2026-10-22"
-  ],
-  "tt3569230": [
-   6.9,
-   60,
-   55,
-   "2026-10-22"
-  ],
-  "tt0215750": [
-   7.5,
-   53,
-   53,
-   "2026-10-22"
-  ],
-  "tt1132620": [
-   7.8,
-   85,
-   76,
-   "2026-10-22"
-  ],
-  "tt10323338": [
-   7.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt13833978": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt14016500": [
-   7.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt16098700": [
-   7.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4378376": [
-   8.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7660850": [
-   8.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt14403178": [
-   8.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt27497448": [
-   8.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4687880": [
-   8.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0312172": [
-   8.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1759761": [
-   8.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1830617": [
-   7.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2396135": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt37281055": [
-   7.1,
-   88,
-   67,
-   "2026-10-22"
-  ],
-  "tt3065204": [
-   7.3,
-   80,
-   65,
-   "2026-10-22"
-  ],
-  "tt6320628": [
-   7.3,
-   91,
-   69,
-   "2026-10-22"
-  ],
-  "tt6723592": [
-   7.3,
-   70,
-   69,
-   "2026-10-22"
-  ],
-  "tt0405094": [
-   8.4,
-   92,
-   89,
-   "2026-10-22"
-  ],
-  "tt11540908": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt3514324": [
-   7.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0411008": [
-   8.3,
-   80,
-   null,
-   "2026-10-22"
-  ],
-  "tt0804503": [
-   8.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0472954": [
-   8.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt10341034": [
-   7.2,
-   72,
-   null,
-   "2026-10-22"
-  ],
-  "tt2398149": [
-   7.2,
-   78,
-   60,
-   "2026-10-22"
-  ],
-  "tt29319990": [
-   7.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt5910280": [
-   6.8,
-   100,
-   68,
-   "2026-10-22"
-  ],
-  "tt8847712": [
-   7.1,
-   75,
-   75,
-   "2026-10-22"
-  ],
-  "tt11563598": [
-   7.3,
-   81,
-   70,
-   "2026-10-22"
-  ],
-  "tt4919268": [
-   6.5,
-   65,
-   54,
-   "2026-10-22"
-  ],
-  "tt0327056": [
-   7.9,
-   89,
-   84,
-   "2026-10-22"
-  ],
-  "tt0460791": [
-   7.8,
-   64,
-   64,
-   "2026-10-22"
-  ],
-  "tt0814314": [
-   7.6,
-   26,
-   36,
-   "2026-10-22"
-  ],
-  "tt20859920": [
-   8.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt24640580": [
-   8.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0244365": [
-   7.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0286486": [
-   8.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0810788": [
-   8.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2372162": [
-   8.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0904208": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0368479": [
-   7.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0288937": [
-   7.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt34564059": [
-   4.1,
-   11,
-   28,
-   "2026-10-22"
-  ],
-  "tt10731256": [
-   6.3,
-   38,
-   48,
-   "2026-10-22"
-  ],
-  "tt11561116": [
-   null,
-   46,
-   null,
-   "2026-10-22"
-  ],
-  "tt5433140": [
-   5.7,
-   56,
-   56,
-   "2026-10-22"
-  ],
-  "tt13452544": [
-   4.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt11851548": [
-   5.9,
-   69,
-   54,
-   "2026-10-22"
-  ],
-  "tt6189022": [
-   6.4,
-   38,
-   45,
-   "2026-10-22"
-  ],
-  "tt17663992": [
-   6.4,
-   77,
-   61,
-   "2026-10-22"
-  ],
-  "tt35309713": [
-   5.7,
-   14,
-   null,
-   "2026-10-22"
-  ],
-  "tt4881806": [
-   6.2,
-   47,
-   51,
-   "2026-10-22"
-  ],
-  "tt9114286": [
-   6.6,
-   84,
-   67,
-   "2026-10-22"
-  ],
-  "tt10676052": [
-   6.8,
-   null,
-   65,
-   "2026-10-22"
-  ],
-  "tt0268126": [
-   7.6,
-   90,
-   83,
-   "2026-10-22"
-  ],
-  "tt1041829": [
-   6.8,
-   45,
-   48,
-   "2026-10-22"
-  ],
-  "tt0230600": [
-   7.6,
-   85,
-   74,
-   "2026-10-22"
-  ],
-  "tt0829482": [
-   7.6,
-   88,
-   76,
-   "2026-10-22"
-  ],
-  "tt6111130": [
-   7.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt11737520": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt24053860": [
-   8.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2788432": [
-   8.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4254242": [
-   7.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2375692": [
-   8.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt3566726": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1179933": [
-   7.2,
-   91,
-   76,
-   "2026-10-22"
-  ],
-  "tt15791034": [
-   7.0,
-   92,
-   78,
-   "2026-10-22"
-  ],
-  "tt13433802": [
-   6.2,
-   86,
-   68,
-   "2026-10-22"
-  ],
-  "tt5052448": [
-   7.8,
-   98,
-   85,
-   "2026-10-22"
-  ],
-  "tt7040874": [
-   6.7,
-   84,
-   67,
-   "2026-10-22"
-  ],
-  "tt8385148": [
-   6.1,
-   25,
-   32,
-   "2026-10-22"
-  ],
-  "tt3758172": [
-   6.7,
-   60,
-   48,
-   "2026-10-22"
-  ],
-  "tt26678938": [
-   5.8,
-   59,
-   51,
-   "2026-10-22"
-  ],
-  "tt1684562": [
-   6.8,
-   81,
-   73,
-   "2026-10-22"
-  ],
-  "tt11245972": [
-   6.3,
-   76,
-   60,
-   "2026-10-22"
-  ],
-  "tt34378301": [
-   null,
-   39,
-   40,
-   "2026-10-22"
-  ],
-  "tt6443346": [
-   6.1,
-   39,
-   41,
-   "2026-10-22"
-  ],
-  "tt1262426": [
-   7.3,
-   88,
-   73,
-   "2026-10-22"
-  ],
-  "tt22084616": [
-   8.0,
-   90,
-   66,
-   "2026-10-22"
-  ],
-  "tt9376612": [
-   7.3,
-   92,
-   71,
-   "2026-10-22"
-  ],
-  "tt10545296": [
-   6.6,
-   64,
-   54,
-   "2026-10-22"
-  ],
-  "tt9150192": [
-   5.7,
-   46,
-   52,
-   "2026-10-22"
-  ],
-  "tt1029234": [
-   7.0,
-   66,
-   null,
-   "2026-10-22"
-  ],
-  "tt0308644": [
-   7.6,
-   83,
-   67,
-   "2026-10-22"
-  ],
-  "tt1648216": [
-   6.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0340855": [
-   7.3,
-   81,
-   74,
-   "2026-10-22"
-  ],
-  "tt5348176": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt7942796": [
-   6.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt13210838": [
-   8.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt13759970": [
-   8.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1734537": [
-   7.9,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0410975": [
-   7.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1439629": [
-   8.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0835434": [
-   8.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2356777": [
-   8.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt6908274": [
-   7.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt26160190": [
-   6.5,
-   45,
-   null,
-   "2026-10-22"
-  ],
-  "tt34385135": [
-   6.5,
-   82,
-   57,
-   "2026-10-22"
-  ],
-  "tt1757678": [
-   7.2,
-   66,
-   61,
-   "2026-10-22"
-  ],
-  "tt12042730": [
-   8.2,
-   95,
-   77,
-   "2026-10-22"
-  ],
-  "tt0298203": [
-   7.2,
-   76,
-   77,
-   "2026-10-22"
-  ],
-  "tt0223897": [
-   7.2,
-   39,
-   40,
-   "2026-10-22"
-  ],
-  "tt18332852": [
-   8.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt5574490": [
-   8.2,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt22091076": [
-   7.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2357547": [
-   7.8,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0914387": [
-   8.1,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1551632": [
-   7.7,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt39749953": [
-   null,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1877830": [
-   7.8,
-   85,
-   72,
-   "2026-10-22"
-  ],
-  "tt3110958": [
-   6.4,
-   33,
-   46,
-   "2026-10-22"
-  ],
-  "tt4357198": [
-   6.5,
-   45,
-   49,
-   "2026-10-22"
-  ],
-  "tt1493274": [
-   6.8,
-   85,
-   65,
-   "2026-10-22"
-  ],
-  "tt1485796": [
-   7.5,
-   56,
-   48,
-   "2026-10-22"
-  ],
-  "tt1270797": [
-   6.6,
-   31,
-   35,
-   "2026-10-22"
-  ],
-  "tt27911000": [
-   6.2,
-   78,
-   62,
-   "2026-10-22"
-  ],
-  "tt2283362": [
-   6.9,
-   76,
-   58,
-   "2026-10-22"
-  ],
-  "tt8579674": [
-   8.2,
-   88,
-   78,
-   "2026-10-22"
-  ],
-  "tt1677720": [
-   7.4,
-   71,
-   64,
-   "2026-10-22"
-  ],
-  "tt32393988": [
-   6.2,
-   57,
-   47,
-   "2026-10-22"
-  ],
-  "tt38190257": [
-   null,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt9419884": [
-   6.8,
-   73,
-   60,
-   "2026-10-22"
-  ],
-  "tt1197624": [
-   7.4,
-   26,
-   34,
-   "2026-10-22"
-  ],
-  "tt0457939": [
-   7.0,
-   51,
-   52,
-   "2026-10-22"
-  ],
-  "tt0388795": [
-   7.7,
-   88,
-   87,
-   "2026-10-22"
-  ],
-  "tt0878804": [
-   7.6,
-   65,
-   53,
-   "2026-10-22"
-  ],
-  "tt0139654": [
-   7.8,
-   74,
-   71,
-   "2026-10-22"
-  ],
-  "tt0317248": [
-   8.6,
-   91,
-   79,
-   "2026-10-22"
-  ],
-  "tt0804484": [
-   7.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt8740790": [
-   7.5,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt5675620": [
-   8.4,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt1442462": [
-   8.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0386676": [
-   9.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt4655480": [
-   7.6,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt2481498": [
-   6.7,
-   54,
-   52,
-   "2026-10-22"
-  ],
-  "tt1213641": [
-   7.3,
-   87,
-   84,
-   "2026-10-22"
-  ],
-  "tt4627382": [
-   6.9,
-   87,
-   66,
-   "2026-10-22"
-  ],
-  "tt10720352": [
-   7.0,
-   71,
-   54,
-   "2026-10-22"
-  ],
-  "tt14039582": [
-   7.5,
-   97,
-   91,
-   "2026-10-22"
-  ],
-  "tt12530246": [
-   6.3,
-   45,
-   53,
-   "2026-10-22"
-  ],
-  "tt1016150": [
-   7.8,
-   90,
-   76,
-   "2026-10-22"
-  ],
-  "tt3829920": [
-   7.6,
-   87,
-   72,
-   "2026-10-22"
-  ],
-  "tt1186830": [
-   7.1,
-   55,
-   55,
-   "2026-10-22"
-  ],
-  "tt0363163": [
-   8.2,
-   90,
-   82,
-   "2026-10-22"
-  ],
-  "tt0375679": [
-   7.7,
-   73,
-   66,
-   "2026-10-22"
-  ],
-  "tt3316960": [
-   7.5,
-   85,
-   72,
-   "2026-10-22"
-  ],
-  "tt27706593": [
-   7.3,
-   89,
-   74,
-   "2026-10-22"
-  ],
-  "tt7740496": [
-   7.0,
-   80,
-   70,
-   "2026-10-22"
-  ],
-  "tt11127680": [
-   7.5,
-   99,
-   73,
-   "2026-10-22"
-  ],
-  "tt8850222": [
-   5.5,
-   55,
-   51,
-   "2026-10-22"
-  ],
-  "tt29603959": [
-   6.5,
-   81,
-   58,
-   "2026-10-22"
-  ],
-  "tt27489557": [
-   6.5,
-   83,
-   62,
-   "2026-10-22"
-  ],
-  "tt29644189": [
-   6.0,
-   72,
-   61,
-   "2026-10-22"
-  ],
-  "tt23736044": [
-   7.8,
-   97,
-   79,
-   "2026-10-22"
-  ],
-  "tt21285562": [
-   6.5,
-   41,
-   49,
-   "2026-10-22"
-  ],
-  "tt6933238": [
-   6.2,
-   24,
-   46,
-   "2026-10-22"
-  ],
-  "tt3758814": [
-   5.7,
-   42,
-   42,
-   "2026-10-22"
-  ],
-  "tt1964624": [
-   7.3,
-   88,
-   72,
-   "2026-10-22"
-  ],
-  "tt0361862": [
-   7.6,
-   77,
-   61,
-   "2026-10-22"
-  ],
-  "tt1024943": [
-   6.8,
-   81,
-   null,
-   "2026-10-22"
-  ],
-  "tt1772250": [
-   7.3,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0808357": [
-   7.5,
-   73,
-   61,
-   "2026-10-22"
-  ],
-  "tt0389557": [
-   7.7,
-   77,
-   71,
-   "2026-10-22"
-  ],
-  "tt21434318": [
-   5.6,
-   42,
-   39,
-   "2026-10-22"
-  ],
-  "tt4859168": [
-   6.9,
-   55,
-   44,
-   "2026-10-22"
-  ],
-  "tt3544112": [
-   7.9,
-   95,
-   79,
-   "2026-10-22"
-  ],
-  "tt5613484": [
-   7.4,
-   81,
-   66,
-   "2026-10-22"
-  ],
-  "tt8009428": [
-   7.3,
-   94,
-   68,
-   "2026-10-22"
-  ],
-  "tt5151570": [
-   7.1,
-   94,
-   70,
-   "2026-10-22"
-  ],
-  "tt12444440": [
-   7.0,
-   62,
-   null,
-   "2026-10-22"
-  ],
-  "tt30319503": [
-   7.3,
-   null,
-   78,
-   "2026-10-22"
-  ],
-  "tt31050020": [
-   7.1,
-   57,
-   null,
-   "2026-10-22"
-  ],
-  "tt10676012": [
-   6.3,
-   79,
-   65,
-   "2026-10-22"
-  ],
-  "tt2452386": [
-   7.3,
-   80,
-   55,
-   "2026-10-22"
-  ],
-  "tt10287954": [
-   7.0,
-   75,
-   null,
-   "2026-10-22"
-  ],
-  "tt3521126": [
-   7.3,
-   90,
-   76,
-   "2026-10-22"
-  ],
-  "tt8637428": [
-   7.5,
-   97,
-   89,
-   "2026-10-22"
-  ],
-  "tt7279188": [
-   7.4,
-   97,
-   81,
-   "2026-10-22"
-  ],
-  "tt4364194": [
-   7.6,
-   95,
-   70,
-   "2026-10-22"
-  ],
-  "tt11252248": [
-   6.5,
-   77,
-   61,
-   "2026-10-22"
-  ],
-  "tt9541602": [
-   7.1,
-   83,
-   null,
-   "2026-10-22"
-  ],
-  "tt6878820": [
-   6.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt6788942": [
-   7.6,
-   100,
-   null,
-   "2026-10-22"
-  ],
-  "tt9172422": [
-   7.4,
-   null,
-   75,
-   "2026-10-22"
-  ],
-  "tt3824648": [
-   6.9,
-   86,
-   64,
-   "2026-10-22"
-  ],
-  "tt3354222": [
-   6.3,
-   57,
-   null,
-   "2026-10-22"
-  ],
-  "tt0758752": [
-   6.7,
-   49,
-   55,
-   "2026-10-22"
-  ],
-  "tt1810683": [
-   7.3,
-   27,
-   30,
-   "2026-10-22"
-  ],
-  "tt2409302": [
-   7.1,
-   83,
-   68,
-   "2026-10-22"
-  ],
-  "tt3485166": [
-   6.5,
-   57,
-   null,
-   "2026-10-22"
-  ],
-  "tt0364517": [
-   7.5,
-   45,
-   45,
-   "2026-10-22"
-  ],
-  "tt2011971": [
-   7.5,
-   98,
-   82,
-   "2026-10-22"
-  ],
-  "tt2378281": [
-   7.5,
-   63,
-   55,
-   "2026-10-22"
-  ],
-  "tt29344903": [
-   7.0,
-   96,
-   70,
-   "2026-10-22"
-  ],
-  "tt8359848": [
-   6.9,
-   68,
-   69,
-   "2026-10-22"
-  ],
-  "tt14966898": [
-   7.0,
-   97,
-   72,
-   "2026-10-22"
-  ],
-  "tt21807222": [
-   6.6,
-   81,
-   60,
-   "2026-10-22"
-  ],
-  "tt8119752": [
-   6.5,
-   92,
-   null,
-   "2026-10-22"
-  ],
-  "tt35050712": [
-   5.9,
-   74,
-   62,
-   "2026-10-22"
-  ],
-  "tt4262980": [
-   6.9,
-   87,
-   66,
-   "2026-10-22"
-  ],
-  "tt9701940": [
-   6.7,
-   88,
-   61,
-   "2026-10-22"
-  ],
-  "tt9701942": [
-   6.6,
-   89,
-   68,
-   "2026-10-22"
-  ],
-  "tt18816518": [
-   7.1,
-   88,
-   71,
-   "2026-10-22"
-  ],
-  "tt27802490": [
-   6.9,
-   93,
-   80,
-   "2026-10-22"
-  ],
-  "tt6195094": [
-   6.4,
-   52,
-   44,
-   "2026-10-22"
-  ],
-  "tt0256009": [
-   7.3,
-   93,
-   78,
-   "2026-10-22"
-  ],
-  "tt0440803": [
-   7.0,
-   null,
-   null,
-   "2026-10-22"
-  ],
-  "tt0235198": [
-   7.1,
-   81,
-   70,
-   "2026-10-22"
-  ],
-  "tt1139797": [
-   7.8,
-   98,
-   82,
-   "2026-10-22"
-  ],
-  "tt0365376": [
-   7.1,
-   86,
-   65,
-   "2026-10-22"
-  ],
-  "tt1588170": [
-   7.8,
-   83,
-   67,
-   "2026-10-22"
-  ],
-  "tt1189073": [
-   7.6,
-   81,
-   70,
-   "2026-10-22"
-  ],
-  "tt0464141": [
-   7.4,
-   87,
-   74,
-   "2026-10-22"
-  ],
-  "tt0289043": [
-   7.5,
-   87,
-   73,
-   "2026-10-22"
-  ],
-  "tt8760708": [
-   6.3,
-   93,
-   72,
-   "2026-10-22"
-  ],
-  "tt26657236": [
-   6.7,
-   86,
-   76,
-   "2026-10-22"
-  ],
-  "tt8851148": [
-   6.0,
-   64,
-   null,
-   "2026-10-22"
-  ],
-  "tt9362930": [
-   5.9,
-   78,
-   61,
-   "2026-10-22"
-  ],
-  "tt5688932": [
-   6.9,
-   93,
-   78,
-   "2026-10-22"
-  ],
-  "tt1856101": [
-   8.0,
-   88,
-   81,
-   "2026-10-22"
-  ],
-  "tt7605074": [
-   5.9,
-   70,
-   57,
-   "2026-10-22"
-  ],
-  "tt5500218": [
-   5.7,
-   37,
-   45,
-   "2026-10-22"
-  ],
-  "tt16606592": [
-   6.7,
-   83,
-   69,
-   "2026-10-22"
-  ],
-  "tt14509110": [
-   6.2,
-   82,
-   60,
-   "2026-10-22"
-  ],
-  "tt16366836": [
-   6.0,
-   40,
-   41,
-   "2026-10-22"
-  ],
-  "tt4530422": [
-   6.6,
-   82,
-   60,
-   "2026-10-22"
-  ],
-  "tt35340614": [
-   7.0,
-   98,
-   78,
-   "2026-10-22"
-  ],
-  "tt15428940": [
-   6.8,
-   86,
-   57,
-   "2026-10-22"
-  ],
   "tt14846026": [
    6.9,
    94,
@@ -31154,9 +25884,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "7d4ba89627d1",
+  "gs": "6209cf2e960c",
   "quiz_pool.json": "17c24e5946fc",
-  "fact.png": "234949182f6e",
+  "fact.png": "d571003f25f8",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -52485,12 +47215,8 @@
  "silpo_snap": "2026-11-18",
  "live_day": "2026-11-21",
  "silpo_week": "2026-47",
- "sbm_at": 1795298152.6744761,
+ "sbm_at": 1795298450.9095387,
  "sbm_hist": [
-  [
-   "11:45",
-   82
-  ],
   [
    "11:50",
    82
@@ -53061,6 +47787,10 @@
   ],
   [
    "23:55",
+   93
+  ],
+  [
+   "00:00",
    93
   ]
  ],
