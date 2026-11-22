@@ -742,7 +742,7 @@
   "t279246",
   "t7482"
  ],
- "gh_beat": "2026-11-22T15:00:47.434102+02:00",
+ "gh_beat": "2026-11-22T15:06:04.132492+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -753,11 +753,11 @@
   "groups": [
    "GPV3.1"
   ],
-  "updated": "14:47 22.11.2026",
+  "updated": "15:01 22.11.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-22T14:52:49.973188+02:00",
+  "checked": "2026-11-22T15:02:53.682947+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1744,26 +1744,26 @@
    "note": "92 шт."
   },
   "🛒 Сільпо (основна)": {
-   "at": "22.11 15:05",
-   "ts": 1795352721,
+   "at": "22.11 15:09",
+   "ts": 1795352954,
    "ok": true,
    "note": ""
   },
   "🛒 Сільпо (підписники)": {
-   "at": "22.11 15:05",
-   "ts": 1795352737,
+   "at": "22.11 15:09",
+   "ts": 1795352969,
    "ok": true,
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "22.11 15:03",
-   "ts": 1795352582,
+   "at": "22.11 15:07",
+   "ts": 1795352863,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "22.11 15:03",
-   "ts": 1795352582,
+   "at": "22.11 15:07",
+   "ts": 1795352863,
    "ok": true,
    "note": ""
   },
@@ -1780,26 +1780,26 @@
    "note": ""
   },
   "ігри PS5": {
-   "at": "22.11 14:35",
-   "ts": 1795350956,
+   "at": "22.11 15:06",
+   "ts": 1795352807,
    "ok": true,
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "22.11 15:03",
-   "ts": 1795352582,
+   "at": "22.11 15:06",
+   "ts": 1795352794,
    "ok": true,
    "note": ""
   },
   "🎵 Музика": {
-   "at": "22.11 14:26",
-   "ts": 1795350372,
+   "at": "22.11 15:06",
+   "ts": 1795352807,
    "ok": true,
    "note": ""
   },
   "❤️ Здоровʼя": {
-   "at": "22.11 14:26",
-   "ts": 1795350372,
+   "at": "22.11 15:06",
+   "ts": 1795352807,
    "ok": true,
    "note": ""
   },
@@ -1810,26 +1810,26 @@
    "note": ""
   },
   "аудіокниги": {
-   "at": "22.11 14:35",
-   "ts": 1795350956,
+   "at": "22.11 15:06",
+   "ts": 1795352807,
    "ok": true,
    "note": ""
   },
   "🎓 Секс-освіта": {
-   "at": "22.11 14:06",
-   "ts": 1795349181,
+   "at": "22.11 15:06",
+   "ts": 1795352805,
    "ok": true,
    "note": ""
   },
   "🎯 Вікторини": {
-   "at": "22.11 14:16",
-   "ts": 1795349773,
+   "at": "22.11 15:06",
+   "ts": 1795352805,
    "ok": true,
    "note": ""
   },
   "🌅 Імпульс / 🕯 класика": {
-   "at": "22.11 14:16",
-   "ts": 1795349773,
+   "at": "22.11 15:06",
+   "ts": 1795352805,
    "ok": true,
    "note": ""
   },
@@ -1840,14 +1840,14 @@
    "note": ""
   },
   "кіномэтч": {
-   "at": "22.11 14:46",
-   "ts": 1795351578,
+   "at": "22.11 15:06",
+   "ts": 1795352807,
    "ok": true,
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "22.11 15:03",
-   "ts": 1795352633,
+   "at": "22.11 15:06",
+   "ts": 1795352805,
    "ok": true,
    "note": ""
   },
@@ -1894,50 +1894,50 @@
    "note": ""
   },
   "youtube канали": {
-   "at": "22.11 11:36",
-   "ts": 1795340162,
+   "at": "22.11 15:06",
+   "ts": 1795352793,
    "ok": true,
    "note": ""
   },
   "живий english": {
-   "at": "22.11 13:26",
-   "ts": 1795346771,
+   "at": "22.11 15:06",
+   "ts": 1795352793,
    "ok": true,
    "note": ""
   },
   "кіно-категорії": {
-   "at": "22.11 13:26",
-   "ts": 1795346771,
+   "at": "22.11 15:06",
+   "ts": 1795352793,
    "ok": true,
    "note": ""
   },
   "youtube для вас": {
-   "at": "22.11 13:35",
-   "ts": 1795347355,
+   "at": "22.11 15:06",
+   "ts": 1795352793,
    "ok": true,
    "note": ""
   },
   "режисери": {
-   "at": "22.11 13:35",
-   "ts": 1795347355,
+   "at": "22.11 15:06",
+   "ts": 1795352793,
    "ok": true,
    "note": ""
   },
   "smm-інструменти": {
-   "at": "22.11 13:49",
-   "ts": 1795348157,
+   "at": "22.11 15:06",
+   "ts": 1795352793,
    "ok": true,
    "note": ""
   },
   "найкращі аромати й догляд": {
-   "at": "22.11 13:56",
-   "ts": 1795348560,
+   "at": "22.11 15:06",
+   "ts": 1795352794,
    "ok": true,
    "note": ""
   },
   "аромати": {
-   "at": "22.11 13:49",
-   "ts": 1795348157,
+   "at": "22.11 15:06",
+   "ts": 1795352793,
    "ok": true,
    "note": ""
   }
@@ -7823,25 +7823,24 @@
    "t": "🥤 <b>Напої › Енергетичні напої</b>",
    "b": "Енергетичні напої",
    "first": [
-    "1. <code>Напій енергетичний Hell Focus безалкогольний газований з/б</code>, 0,25л — <b>34.99 ₴</b> <s>49.99 ₴</s> · заявлено −30% · <b>реально −31%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-hell-focus-bezalkogolnyi-gazovanyi-z-b-786378\">відкрити</a>",
-    "2. ✅ <code>Напій енергетичний Monster Energy Ultra Paradise безалкогольний</code>, 0,5л — <b>84.49 ₴</b> <s>109 ₴</s> · 🌐 лише онлайн-замовлення заявлено −22% · <b>реально −25%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-monster-energy-ultra-paradise-bezalkogolnyi-896056\">відкрити</a>",
-    "3. ✅ <code>Енергетичний напій Red Bull без цукру безалкогольний</code>, 0,25л — <b>54.79 ₴/шт</b> <s>68.49 ₴</s> · 📦 від 3 шт — 54.79 ₴/шт −20% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/energetychnyi-napii-red-bull-bez-tsukru-bezalkogolnyi-310713\">відкрити</a>",
-    "4. ✅ <code>Енергетичний напій Red Bull безалкогольний</code>, 0,25л — <b>54.79 ₴/шт</b> <s>68.49 ₴</s> · 📦 від 3 шт — 54.79 ₴/шт −20% · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/energetychnyi-napii-red-bull-bezalkogolnyi-229392\">відкрити</a>",
-    "5. ✅ <code>Енергетичний напій Red Bull зі смаком білого персика безалкогольний з/б</code>, 0,25л — <b>54.79 ₴/шт</b> <s>68.49 ₴</s> · 📦 від 3 шт — 54.79 ₴/шт −20% · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/energetychnyi-napii-red-bull-zi-smakom-bilogo-persyka-bezalkogolnyi-z-b-1015952\">відкрити</a>",
-    "6. <code>Напій енергетичний соковий Energia by Borjomi Оригінальний з/б</code>, 0,24л — <b>64.99 ₴</b> <s>81.99 ₴</s> · заявлено −21% · <b>реально −22%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-sokovyi-energia-by-borjomi-oryginalnyi-z-b-1022277\">відкрити</a>",
-    "7. <code>Напій енергетичний соковий Energia by Borjomi Цитрусовий мікс з/б</code>, 0,24л — <b>64.99 ₴</b> <s>81.99 ₴</s> · заявлено −21% · <b>реально −22%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-sokovyi-energia-by-borjomi-tsytrusovyi-miks-z-b-1022278\">відкрити</a>",
-    "8. <code>Енергетичний напій Red Bull безалкогольний середньогазований з/б</code>, 4*0,25л — <b>195 ₴</b> <s>244 ₴</s> · 🌐 лише онлайн-замовлення заявлено −20% · <b>реально −20%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/energetychnyi-napii-red-bull-bezalkogolnyi-serednogazovanyi-z-b-344935\">відкрити</a>",
-    "9. <code>Напій енергетичний Monster Energy Pipeline Punch безалкогольний з/б</code>, 0,5л — <b>74.99 ₴</b> <s>99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −24% · <b>реально −20%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-monster-energy-pipeline-punch-bezalkogolnyi-z-b-895481\">відкрити</a>",
-    "10. <code>Напій енергетичний соковий Energia by Borjomi зі смаком Вишні з/б</code>, 0,24л — <b>64.99 ₴</b> <s>81.99 ₴</s> · заявлено −21% · <b>реально −22%</b> · ⭐ 3.2\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-sokovyi-energia-by-borjomi-zi-smakom-vyshni-z-b-1022280\">відкрити</a>"
+    "1. ✅ <code>Напій енергетичний Monster Energy Ultra Paradise безалкогольний</code>, 0,5л — <b>84.49 ₴</b> <s>109 ₴</s> · 🌐 лише онлайн-замовлення заявлено −22% · <b>реально −25%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-monster-energy-ultra-paradise-bezalkogolnyi-896056\">відкрити</a>",
+    "2. ✅ <code>Енергетичний напій Red Bull без цукру безалкогольний</code>, 0,25л — <b>54.79 ₴/шт</b> <s>68.49 ₴</s> · 📦 від 3 шт — 54.79 ₴/шт −20% · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/energetychnyi-napii-red-bull-bez-tsukru-bezalkogolnyi-310713\">відкрити</a>",
+    "3. ✅ <code>Енергетичний напій Red Bull безалкогольний</code>, 0,25л — <b>54.79 ₴/шт</b> <s>68.49 ₴</s> · 📦 від 3 шт — 54.79 ₴/шт −20% · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/energetychnyi-napii-red-bull-bezalkogolnyi-229392\">відкрити</a>",
+    "4. ✅ <code>Енергетичний напій Red Bull зі смаком білого персика безалкогольний з/б</code>, 0,25л — <b>54.79 ₴/шт</b> <s>68.49 ₴</s> · 📦 від 3 шт — 54.79 ₴/шт −20% · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/energetychnyi-napii-red-bull-zi-smakom-bilogo-persyka-bezalkogolnyi-z-b-1015952\">відкрити</a>",
+    "5. <code>Напій енергетичний соковий Energia by Borjomi Оригінальний з/б</code>, 0,24л — <b>64.99 ₴</b> <s>81.99 ₴</s> · заявлено −21% · <b>реально −22%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-sokovyi-energia-by-borjomi-oryginalnyi-z-b-1022277\">відкрити</a>",
+    "6. <code>Напій енергетичний соковий Energia by Borjomi Цитрусовий мікс з/б</code>, 0,24л — <b>64.99 ₴</b> <s>81.99 ₴</s> · заявлено −21% · <b>реально −22%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-sokovyi-energia-by-borjomi-tsytrusovyi-miks-z-b-1022278\">відкрити</a>",
+    "7. <code>Енергетичний напій Red Bull безалкогольний середньогазований з/б</code>, 4*0,25л — <b>195 ₴</b> <s>244 ₴</s> · 🌐 лише онлайн-замовлення заявлено −20% · <b>реально −20%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/energetychnyi-napii-red-bull-bezalkogolnyi-serednogazovanyi-z-b-344935\">відкрити</a>",
+    "8. <code>Напій енергетичний Monster Energy Pipeline Punch безалкогольний з/б</code>, 0,5л — <b>74.99 ₴</b> <s>99 ₴</s> · 🌐 лише онлайн-замовлення заявлено −24% · <b>реально −20%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-monster-energy-pipeline-punch-bezalkogolnyi-z-b-895481\">відкрити</a>",
+    "9. <code>Напій енергетичний соковий Energia by Borjomi зі смаком Вишні з/б</code>, 0,24л — <b>64.99 ₴</b> <s>81.99 ₴</s> · заявлено −21% · <b>реально −22%</b> · ⭐ 3.2\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-sokovyi-energia-by-borjomi-zi-smakom-vyshni-z-b-1022280\">відкрити</a>",
+    "10. <code>Енергетичний напій Red Bull зі смаком тропічних фруктів безалкогольний</code>, 0,25л — <b>54.79 ₴/шт</b> <s>68.49 ₴</s> · 📦 від 3 шт — 54.79 ₴/шт −20% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/energetychnyi-napii-red-bull-zi-smakom-tropichnykh-fruktiv-bezalkogolnyi-608317\">відкрити</a>"
    ],
    "rows": [
-    "11. <code>Енергетичний напій Red Bull зі смаком тропічних фруктів безалкогольний</code>, 0,25л — <b>54.79 ₴/шт</b> <s>68.49 ₴</s> · 📦 від 3 шт — 54.79 ₴/шт −20% · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/energetychnyi-napii-red-bull-zi-smakom-tropichnykh-fruktiv-bezalkogolnyi-608317\">відкрити</a>",
-    "12. <code>Енергетичний напій Red Bull зі смаком кавуна безалкогольний</code>, 0,25л — <b>54.79 ₴/шт</b> <s>68.49 ₴</s> · 📦 від 3 шт — 54.79 ₴/шт −20% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/energetychnyi-napii-red-bull-zi-smakom-kavuna-bezalkogolnyi-817030\">відкрити</a>",
-    "13. <code>Напій енергетичний Monster Energy Mean Bean з/б</code>, 0,443л — <b>179 ₴</b> <s>299 ₴</s> · 🌐 лише онлайн-замовлення заявлено −40% · <b>реально −22%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-monster-energy-mean-bean-z-b-928914\">відкрити</a>",
-    "14. <code>Напій енергетичний соковий Energia by Borjomi Яблуко-Фейхоа з/б</code>, 0,24л — <b>64.99 ₴</b> <s>81.99 ₴</s> · заявлено −21% · <b>реально −22%</b> · ⭐ 2.8\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-sokovyi-energia-by-borjomi-yabluko-feikhoa-z-b-1022279\">відкрити</a>",
-    "15. <code>Напій енергетичний Monster Energy Loca Moca з/б</code>, 0,443л — <b>179 ₴</b> <s>299 ₴</s> · 🌐 лише онлайн-замовлення заявлено −40% · <b>реально −0%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-monster-energy-loca-moca-z-b-928915\">відкрити</a>",
-    "16. <code>Напій енергетичний Monster Energy Salted Caramel безалкогольний з/б</code>, 0,443л — <b>189 ₴</b> <s>299 ₴</s> · 🌐 лише онлайн-замовлення заявлено −37% · <b>реально −0%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-monster-energy-salted-caramel-bezalkogolnyi-z-b-928916\">відкрити</a>",
-    "17. <code>Напій енергетичний Monster Reserve Orange Dreamsicle безалкогольний газований з/б</code>, 0,473л — <b>249 ₴</b> <s>334 ₴</s> · 🌐 лише онлайн-замовлення заявлено −25% · <b>реально −0%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-monster-reserve-orange-dreamsicle-bezalkogolnyi-gazovanyi-z-b-951527\">відкрити</a>"
+    "11. <code>Енергетичний напій Red Bull зі смаком кавуна безалкогольний</code>, 0,25л — <b>54.79 ₴/шт</b> <s>68.49 ₴</s> · 📦 від 3 шт — 54.79 ₴/шт −20% · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/energetychnyi-napii-red-bull-zi-smakom-kavuna-bezalkogolnyi-817030\">відкрити</a>",
+    "12. <code>Напій енергетичний Monster Energy Mean Bean з/б</code>, 0,443л — <b>179 ₴</b> <s>299 ₴</s> · 🌐 лише онлайн-замовлення заявлено −40% · <b>реально −22%</b> · ⭐ 3.8\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-monster-energy-mean-bean-z-b-928914\">відкрити</a>",
+    "13. <code>Напій енергетичний соковий Energia by Borjomi Яблуко-Фейхоа з/б</code>, 0,24л — <b>64.99 ₴</b> <s>81.99 ₴</s> · заявлено −21% · <b>реально −22%</b> · ⭐ 2.8\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-sokovyi-energia-by-borjomi-yabluko-feikhoa-z-b-1022279\">відкрити</a>",
+    "14. <code>Напій енергетичний Monster Energy Loca Moca з/б</code>, 0,443л — <b>179 ₴</b> <s>299 ₴</s> · 🌐 лише онлайн-замовлення заявлено −40% · <b>реально −0%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-monster-energy-loca-moca-z-b-928915\">відкрити</a>",
+    "15. <code>Напій енергетичний Monster Energy Salted Caramel безалкогольний з/б</code>, 0,443л — <b>189 ₴</b> <s>299 ₴</s> · 🌐 лише онлайн-замовлення заявлено −37% · <b>реально −0%</b> · ⭐ 4.3\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-monster-energy-salted-caramel-bezalkogolnyi-z-b-928916\">відкрити</a>",
+    "16. <code>Напій енергетичний Monster Reserve Orange Dreamsicle безалкогольний газований з/б</code>, 0,473л — <b>249 ₴</b> <s>334 ₴</s> · 🌐 лише онлайн-замовлення заявлено −25% · <b>реально −0%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/napii-energetychnyi-monster-reserve-orange-dreamsicle-bezalkogolnyi-gazovanyi-z-b-951527\">відкрити</a>"
    ],
    "par": "18"
   },
@@ -11015,7 +11014,7 @@
    ]
   }
  },
- "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.11 15:00 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» негазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-negazovana-16649\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n2. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» слабогазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-slabogazovana-39465\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n3. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» сильногазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-sylnogazovana-36629\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n4. ☕ 🌐 лише онлайн-замовлення <code>Чай білий Baiya</code> <a href=\"https://silpo.ua/product/chai-bilyi-baiya-987438\">🔗</a> — <b>41.4 ₴</b> <s>229.9 ₴</s> · −82%\n5. 🛒 <code>Парфум-кондиціонер для білизни Silan Діамантова орхідея</code> <a href=\"https://silpo.ua/product/parfum-kondytsioner-dlia-bilyzny-silan-diamantova-orkhideia-1000489\">🔗</a> — <b>119 ₴</b> <s>274 ₴</s> · −60%\n6. 🧀 <code>Крем-сир Premialle Легкий 35%</code> <a href=\"https://silpo.ua/product/krem-syr-premialle-legkyi-35-1040647\">🔗</a> — <b>49.99 ₴</b> <s>109 ₴</s> · −54%\n7. 🛒 <code>Парфум-кондиціонер для білизни Silan Блакитний жасмин</code> <a href=\"https://silpo.ua/product/parfum-kondytsioner-dlia-bilyzny-silan-blakytnyi-zhasmyn-1000491\">🔗</a> — <b>119 ₴</b> <s>289 ₴</s> · −60%\n8. 🛒 🌐 лише онлайн-замовлення <code>Капсули для прання Persil Universal</code> <a href=\"https://silpo.ua/product/kapsuly-dlia-prannia-persil-universal-946254\">🔗</a> — <b>379 ₴</b> <s>1099 ₴</s> · −66%\n9. 🥩 <code>Сосиски «М'ясна Гільдія» з вершками і філе індички в/ґ</code> <a href=\"https://silpo.ua/product/sosysky-m-iasna-gildiia-z-vershkamy-i-file-indychky-v-g-724299\">🔗</a> — <b>69.99 ₴</b> <s>144 ₴</s> · −53%\n10. 🛒 <code>Заварник Eat&amp;Drink 1000 мл 954274</code> <a href=\"https://silpo.ua/product/zavarnyk-eat-drink-1000-ml-954274-954274\">🔗</a> — <b>249 ₴</b> <s>519 ₴</s> · −52%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
+ "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.11 15:06 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» негазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-negazovana-16649\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n2. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» слабогазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-slabogazovana-39465\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n3. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» сильногазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-sylnogazovana-36629\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n4. ☕ 🌐 лише онлайн-замовлення <code>Чай білий Baiya</code> <a href=\"https://silpo.ua/product/chai-bilyi-baiya-987438\">🔗</a> — <b>41.4 ₴</b> <s>229.9 ₴</s> · −82%\n5. 🛒 <code>Парфум-кондиціонер для білизни Silan Діамантова орхідея</code> <a href=\"https://silpo.ua/product/parfum-kondytsioner-dlia-bilyzny-silan-diamantova-orkhideia-1000489\">🔗</a> — <b>119 ₴</b> <s>274 ₴</s> · −60%\n6. 🧀 <code>Крем-сир Premialle Легкий 35%</code> <a href=\"https://silpo.ua/product/krem-syr-premialle-legkyi-35-1040647\">🔗</a> — <b>49.99 ₴</b> <s>109 ₴</s> · −54%\n7. 🛒 <code>Парфум-кондиціонер для білизни Silan Блакитний жасмин</code> <a href=\"https://silpo.ua/product/parfum-kondytsioner-dlia-bilyzny-silan-blakytnyi-zhasmyn-1000491\">🔗</a> — <b>119 ₴</b> <s>289 ₴</s> · −60%\n8. 🛒 🌐 лише онлайн-замовлення <code>Капсули для прання Persil Universal</code> <a href=\"https://silpo.ua/product/kapsuly-dlia-prannia-persil-universal-946254\">🔗</a> — <b>379 ₴</b> <s>1099 ₴</s> · −66%\n9. 🥩 <code>Сосиски «М'ясна Гільдія» з вершками і філе індички в/ґ</code> <a href=\"https://silpo.ua/product/sosysky-m-iasna-gildiia-z-vershkamy-i-file-indychky-v-g-724299\">🔗</a> — <b>69.99 ₴</b> <s>144 ₴</s> · −53%\n10. 🛒 <code>Заварник Eat&amp;Drink 1000 мл 954274</code> <a href=\"https://silpo.ua/product/zavarnyk-eat-drink-1000-ml-954274-954274\">🔗</a> — <b>249 ₴</b> <s>519 ₴</s> · −52%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
  "silpo_stores": {
   "week": "2026-47",
   "v": 2,
@@ -13059,9 +13058,9 @@
  "silpo_by": {
   "1f0bae3d-2073-62f4-b14c-f9715721ce18": {
    "week": "2026-11-19",
-   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.11 15:00 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Калнишевського, 2 · 🏪 самовивіз · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» негазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-negazovana-16649\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n2. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» слабогазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-slabogazovana-39465\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n3. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» сильногазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-sylnogazovana-36629\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n4. 🥩 <code>Сосиски «М'ясна Гільдія» з вершками і філе індички в/ґ</code> <a href=\"https://silpo.ua/product/sosysky-m-iasna-gildiia-z-vershkamy-i-file-indychky-v-g-724299\">🔗</a> — <b>69.99 ₴</b> <s>144 ₴</s> · −53%\n5. 🧊 <code>Пельмені Laska «Маню-ням» з м'ясом індика та кролика</code> <a href=\"https://silpo.ua/product/pelmeni-laska-maniu-niam-z-m-iasom-indyka-ta-krolyka-912911\">🔗</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −51%\n6. 🐟 <code>Форель «Премія»® слабосолона шматок на шкірі</code> <a href=\"https://silpo.ua/product/forel-premiia-slabosolona-shmatok-na-shkiri-365807\">🔗</a> — <b>199 ₴</b> <s>414 ₴</s> · −50%\n7. 🐟 <code>Сьомга «Премія»® слабосолона шматок на шкірі</code> <a href=\"https://silpo.ua/product/somga-premiia-slabosolona-shmatok-na-shkiri-365811\">🔗</a> — <b>199 ₴</b> <s>414 ₴</s> · −50%\n8. 🛒 <code>Папір туалетний NUA 3-шаровий</code> <a href=\"https://silpo.ua/product/papir-tualetnyi-nua-3-sharovyi-979770\">🔗</a> — <b>529 ₴</b> <s>999 ₴</s> · −47%\n9. 🍷 <code>Пиво Heineken світле з/б</code> <a href=\"https://silpo.ua/product/pyvo-heineken-svitle-z-b-721739\">🔗</a> — <b>39.99 ₴</b> <s>69.99 ₴</s> · −45%\n10. 🍫 <code>Тістечко «Заварне»</code> <a href=\"https://silpo.ua/product/tistechko-zavarne-237826\">🔗</a> — <b>17.9 ₴</b> <s>36.9 ₴</s> · −51%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s0_",
+   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.11 15:06 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Калнишевського, 2 · 🏪 самовивіз · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» негазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-negazovana-16649\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n2. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» слабогазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-slabogazovana-39465\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n3. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» сильногазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-sylnogazovana-36629\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n4. 🥩 <code>Сосиски «М'ясна Гільдія» з вершками і філе індички в/ґ</code> <a href=\"https://silpo.ua/product/sosysky-m-iasna-gildiia-z-vershkamy-i-file-indychky-v-g-724299\">🔗</a> — <b>69.99 ₴</b> <s>144 ₴</s> · −53%\n5. 🧊 <code>Пельмені Laska «Маню-ням» з м'ясом індика та кролика</code> <a href=\"https://silpo.ua/product/pelmeni-laska-maniu-niam-z-m-iasom-indyka-ta-krolyka-912911\">🔗</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −51%\n6. 🐟 <code>Форель «Премія»® слабосолона шматок на шкірі</code> <a href=\"https://silpo.ua/product/forel-premiia-slabosolona-shmatok-na-shkiri-365807\">🔗</a> — <b>199 ₴</b> <s>414 ₴</s> · −50%\n7. 🐟 <code>Сьомга «Премія»® слабосолона шматок на шкірі</code> <a href=\"https://silpo.ua/product/somga-premiia-slabosolona-shmatok-na-shkiri-365811\">🔗</a> — <b>199 ₴</b> <s>414 ₴</s> · −50%\n8. 🛒 <code>Папір туалетний NUA 3-шаровий</code> <a href=\"https://silpo.ua/product/papir-tualetnyi-nua-3-sharovyi-979770\">🔗</a> — <b>529 ₴</b> <s>999 ₴</s> · −47%\n9. 🍷 <code>Пиво Heineken світле з/б</code> <a href=\"https://silpo.ua/product/pyvo-heineken-svitle-z-b-721739\">🔗</a> — <b>39.99 ₴</b> <s>69.99 ₴</s> · −45%\n10. 🍫 <code>Тістечко «Заварне»</code> <a href=\"https://silpo.ua/product/tistechko-zavarne-237826\">🔗</a> — <b>17.9 ₴</b> <s>36.9 ₴</s> · −51%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s0_",
    "built": "2026-11-22-pm",
-   "at": "22.11 15:00"
+   "at": "22.11 15:06"
   }
  },
  "silpo_sent_by": {
@@ -28748,9 +28747,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "b37c4aedad1f",
+  "gs": "454bdc0c994f",
   "quiz_pool.json": "17c24e5946fc",
-  "fact.png": "e81d4bfb1179",
+  "fact.png": "48dd88c6945e",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -28758,7 +28757,7 @@
   "silpo/1edb6b54-d26b-681e-aa85-b5ff7ea46636.json": "4b4279e7bcec",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18.json": "7ad14cafe997",
   "silpo/1f0bae3d-2073-62f4-b14c-f9715721ce18@dl.json": "48a8eb895460",
-  "silpo/m.json": "8c41c0613cb0",
+  "silpo/m.json": "d6b8e15e8f38",
   "sx/19453874.png": "be608f6e242c",
   "sx/19454097.png": "45696a81af3b",
   "sx/19473282.png": "1ff4e0b3380c",
@@ -50390,7 +50389,7 @@
  "yt_last": "▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · 09.11–16.11</b>\n<blockquote>▶️ <b>1. Єгор Буркін. Перше велике інтерв'ю. Хімпром. НАБУ. Операція Карфаген.</b>\n📺 Василь Тимошенко · ⏱ 2 год 29 хв\n👁 <b>1.6 млн</b> переглядів · 💬 <b>7 896</b> коментарів\n🔗 <a href=\"https://youtu.be/-G8KplCFEjc\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>2. Книга яка викликає бажання кричати | Читаємо \"Чарівність жіночності\"</b>\n📺 смішно не буде  · ⏱ 1 год 23 хв\n👁 <b>163 тис</b> переглядів · 💬 <b>779</b> коментарів\n🔗 <a href=\"https://youtu.be/PjoL1EziXSo\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>3. Чому жінки не знайомляться на вулиці? | СІМЕЙНА ТЕРАПІЯ | Та Сама Маріна, Головчук, Бережко, Пінчук</b>\n📺 Бродячий Стендап · ⏱ 53 хв\n👁 <b>181 тис</b> переглядів · 💬 <b>270</b> коментарів\n🔗 <a href=\"https://youtu.be/kDwj_E1YA5k\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>4. Що приховує найстрашніша в'язниця планети?</b>\n📺 VCHORA · ⏱ 23 хв\n👁 <b>335 тис</b> переглядів · 💬 <b>142</b> коментарів\n🔗 <a href=\"https://youtu.be/dFmaIrbcupw\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>5. РОЗГОНИ ПРО НАЙДЕШЕВШУ П*ВІЮ | Бережко, Пінчук, Свиридюк, Маслов, Михайлюк</b>\n📺 Бродячий Стендап · ⏱ 1 год 03 хв\n👁 <b>200 тис</b> переглядів · 💬 <b>275</b> коментарів\n🔗 <a href=\"https://youtu.be/8oWYvWga6Q4\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>6. Шобла тижня епізод 69. Знімкують пілоти 414 ОБр СБС «Птахи Мадяра»</b>\n📺 МАДЯР · ⏱ 3 хв\n👁 <b>207 тис</b> переглядів · 💬 <b>490</b> коментарів\n🔗 <a href=\"https://youtu.be/bb8TL2RsOcQ\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>7. МАЙЖЕ ІНТЕЛЕКТУАЛЬНЕ ШОУ #79  – ПІНЧУК, КОЛОМІЄЦЬ, КОРОТКОВ, КАЧУРА, ЗАГАЙКЕВИЧ | ПІДПІЛЬНИЙ СТЕНДАП</b>\n📺 Підпільний Стендап · ⏱ 1 год 10 хв\n👁 <b>56 тис</b> переглядів · 💬 <b>173</b> коментарів\n🔗 <a href=\"https://youtu.be/NrZG-Hkp34o\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>8. ОБНУЛЯТЬ корпорацію УКРАЇНА‼️Гривня по 162 🤯⁉️ПЕРВОРОТ ‼️ІРИНА КЛЕВЕР</b>\n📺 Костильов Онлайн · ⏱ 52 хв\n👁 <b>174 тис</b> переглядів · 💬 <b>431</b> коментарів\n🔗 <a href=\"https://youtu.be/Y9VaVVELp0o\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>9. Сафарі в Україні, ночівля в палаці за 600 грн, храм, де знімали Вій. Це ЧЕРНІГІВЩИНА</b>\n📺 Узол і Манько · ⏱ 1 год 11 хв\n👁 <b>127 тис</b> переглядів · 💬 <b>232</b> коментарів\n🔗 <a href=\"https://youtu.be/TJKn4rzgKW0\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>10. Улюблена категорія в п0рн0 - трансжири | ШОУ БУЛІНГ #5 | Колесник, Маслов, Бережко</b>\n📺 Андрій Бережко · ⏱ 49 хв\n👁 <b>122 тис</b> переглядів · 💬 <b>216</b> коментарів\n🔗 <a href=\"https://youtu.be/JJYLKTYXuMs\">Дивитися</a></blockquote>\n<i>Ще 10, улюблені й приховані канали, 📺 цікаві канали за темами — кнопкою «▶️ YouTube» у меню.</i>\n§RT:yt:202647",
  "match_month": "2026-11",
  "x18_at": {
-  "mix": "2026-11-22T15:00:47.475659+02:00",
+  "mix": "2026-11-22T15:06:04.259693+02:00",
   "new": "2026-11-22T09:40:45.603380+02:00",
   "best": "2026-11-22T10:05:49.168282+02:00",
   "women": "2026-11-22T10:05:49.168282+02:00",
@@ -50406,7 +50405,7 @@
   "lat": "2026-11-22T14:50:47.246802+02:00",
   "asi": "2026-11-22T14:40:47.549637+02:00",
   "blo": "2026-11-22T14:40:47.549637+02:00",
-  "rpl": "2026-11-22T15:00:47.475659+02:00",
+  "rpl": "2026-11-22T15:06:04.259693+02:00",
   "bds": "2026-11-22T09:40:45.603380+02:00"
  },
  "ero_seen": {
@@ -50480,7 +50479,7 @@
  "silpo_snap": "2026-11-18",
  "live_day": "2026-11-22",
  "silpo_week": "2026-47",
- "sbm_at": 1795352452.4321885,
+ "sbm_at": 1795352769.2737062,
  "sbm_hist": [
   [
    "02:50",
@@ -51055,7 +51054,7 @@
    93
   ],
   [
-   "15:00",
+   "15:06",
    93
   ]
  ],
@@ -51073,7 +51072,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1795352462.5711963,
+ "net_at": 1795352777.6663277,
  "net_asn": {
   "triolan": [
    "13188",
@@ -53952,7 +53951,7 @@
  "nmt_last": 1795351573.0354393,
  "kino_v": 2,
  "yt_v": 4,
- "toycat_last": 1795352478.5523891,
+ "toycat_last": 1795352791.956635,
  "toy_la": {
   "dildo": 1794975403.769806,
   "kegel": 1794757561.5974472,
