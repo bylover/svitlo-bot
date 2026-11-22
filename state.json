@@ -742,7 +742,7 @@
   "t279246",
   "t7482"
  ],
- "gh_beat": "2026-11-22T10:25:44.033246+02:00",
+ "gh_beat": "2026-11-22T10:30:46.165137+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1755,14 +1755,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "22.11 10:27",
-   "ts": 1795336078,
+   "at": "22.11 10:32",
+   "ts": 1795336340,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "22.11 10:27",
-   "ts": 1795336078,
+   "at": "22.11 10:32",
+   "ts": 1795336340,
    "ok": true,
    "note": ""
   },
@@ -1785,8 +1785,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "22.11 10:26",
-   "ts": 1795335961,
+   "at": "22.11 10:32",
+   "ts": 1795336340,
    "ok": true,
    "note": ""
   },
@@ -1845,8 +1845,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "22.11 10:26",
-   "ts": 1795335961,
+   "at": "22.11 10:32",
+   "ts": 1795336340,
    "ok": true,
    "note": ""
   },
@@ -13091,7 +13091,9 @@
  "pend": {},
  "got": {},
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
- "gem_block": {},
+ "gem_block": {
+  "Nz9lkQ:gemini-flash-latest": "2026-11-23T10:05:00+02:00"
+ },
  "omdb_cache": {
   "tt14846026": [
    6.9,
@@ -28473,7 +28475,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "de32cdc0b7f7",
+  "gs": "f57d9d74777b",
   "quiz_pool.json": "17c24e5946fc",
   "fact.png": "2635be1c9c03",
   "sexed.json": "0362ec7e46d4",
@@ -50092,12 +50094,8 @@
  "silpo_snap": "2026-11-18",
  "live_day": "2026-11-22",
  "silpo_week": "2026-47",
- "sbm_at": 1795335948.2968502,
+ "sbm_at": 1795336250.0429227,
  "sbm_hist": [
-  [
-   "22:10",
-   92
-  ],
   [
    "22:15",
    93
@@ -50669,6 +50667,10 @@
   [
    "10:25",
    93
+  ],
+  [
+   "10:30",
+   93
   ]
  ],
  "sbm_near": {
@@ -50685,7 +50687,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1795335352.6075413,
+ "net_at": 1795336258.2245615,
  "net_asn": {
   "triolan": [
    "13188",
