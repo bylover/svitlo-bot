@@ -742,7 +742,7 @@
   "t279246",
   "t7482"
  ],
- "gh_beat": "2026-11-23T00:37:23.027662+02:00",
+ "gh_beat": "2026-11-23T00:40:45.854435+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -24543,7 +24543,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "7ceea617912a",
+  "gs": "87334b2daa51",
   "quiz_pool.json": "17c24e5946fc",
   "fact.png": "2c5f984797a3",
   "sexed.json": "0362ec7e46d4",
@@ -50029,7 +50029,10 @@
   "uaindie": 1,
   "uaradio": 1,
   "x_mood": 1,
-  "x_fore": 1
+  "x_fore": 1,
+  "x_sex": 1,
+  "x_after": 1,
+  "x_bdsm": 1
  },
  "aro_now_seen": "1794821583626",
  "arob_fail": {},
@@ -50046,8 +50049,8 @@
  "arob_v": 2,
  "aro_sub_s": 5,
  "aro_sub_k": 4,
- "jobs_last": 1795377962.647018,
- "nmt_last": 1795383962.8167,
+ "jobs_last": 1795387331.954659,
+ "nmt_last": 1795387345.4616668,
  "kino_v": 2,
  "yt_v": 4,
  "toycat_last": 1795387197.4580593,
