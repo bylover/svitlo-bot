@@ -742,7 +742,7 @@
   "t279246",
   "t7482"
  ],
- "gh_beat": "2026-11-22T07:00:52.476828+02:00",
+ "gh_beat": "2026-11-22T07:09:54.086302+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -753,11 +753,11 @@
   "groups": [
    "GPV3.1"
   ],
-  "updated": "06:48 22.11.2026",
+  "updated": "07:01 22.11.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-22T06:53:02.478256+02:00",
+  "checked": "2026-11-22T07:02:55.689864+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -1746,26 +1746,26 @@
    "note": "92 шт."
   },
   "🛒 Сільпо (основна)": {
-   "at": "22.11 07:09",
-   "ts": 1795324145,
+   "at": "22.11 07:12",
+   "ts": 1795324358,
    "ok": true,
    "note": ""
   },
   "🛒 Сільпо (підписники)": {
-   "at": "22.11 07:09",
-   "ts": 1795324162,
+   "at": "22.11 07:12",
+   "ts": 1795324373,
    "ok": true,
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "22.11 07:02",
-   "ts": 1795323766,
+   "at": "22.11 07:11",
+   "ts": 1795324283,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "22.11 07:02",
-   "ts": 1795323766,
+   "at": "22.11 07:11",
+   "ts": 1795324283,
    "ok": true,
    "note": ""
   },
@@ -1782,8 +1782,8 @@
    "note": ""
   },
   "ігри PS5": {
-   "at": "22.11 06:45",
-   "ts": 1795322759,
+   "at": "22.11 07:10",
+   "ts": 1795324214,
    "ok": true,
    "note": ""
   },
@@ -1794,14 +1794,14 @@
    "note": ""
   },
   "🎵 Музика": {
-   "at": "22.11 06:45",
-   "ts": 1795322759,
+   "at": "22.11 07:10",
+   "ts": 1795324214,
    "ok": true,
    "note": ""
   },
   "❤️ Здоровʼя": {
-   "at": "22.11 06:45",
-   "ts": 1795322759,
+   "at": "22.11 07:10",
+   "ts": 1795324214,
    "ok": true,
    "note": ""
   },
@@ -1812,26 +1812,26 @@
    "note": ""
   },
   "аудіокниги": {
-   "at": "22.11 06:45",
-   "ts": 1795322759,
+   "at": "22.11 07:10",
+   "ts": 1795324214,
    "ok": true,
    "note": ""
   },
   "🎓 Секс-освіта": {
-   "at": "22.11 06:45",
-   "ts": 1795322757,
+   "at": "22.11 07:10",
+   "ts": 1795324212,
    "ok": true,
    "note": ""
   },
   "🎯 Вікторини": {
-   "at": "22.11 06:45",
-   "ts": 1795322757,
+   "at": "22.11 07:10",
+   "ts": 1795324212,
    "ok": true,
    "note": ""
   },
   "🌅 Імпульс / 🕯 класика": {
-   "at": "22.11 06:45",
-   "ts": 1795322757,
+   "at": "22.11 07:10",
+   "ts": 1795324212,
    "ok": true,
    "note": ""
   },
@@ -1842,14 +1842,14 @@
    "note": ""
   },
   "кіномэтч": {
-   "at": "22.11 06:45",
-   "ts": 1795322759,
+   "at": "22.11 07:10",
+   "ts": 1795324214,
    "ok": true,
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "22.11 06:52",
-   "ts": 1795323154,
+   "at": "22.11 07:10",
+   "ts": 1795324212,
    "ok": true,
    "note": ""
   },
@@ -11031,7 +11031,7 @@
    ]
   }
  },
- "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.11 07:00 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» негазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-negazovana-16649\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n2. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» слабогазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-slabogazovana-39465\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n3. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» сильногазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-sylnogazovana-36629\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n4. ☕ 🌐 лише онлайн-замовлення <code>Чай білий Baiya</code> <a href=\"https://silpo.ua/product/chai-bilyi-baiya-987438\">🔗</a> — <b>41.4 ₴</b> <s>229.9 ₴</s> · −82%\n5. 🛒 <code>Парфум-кондиціонер для білизни Silan Діамантова орхідея</code> <a href=\"https://silpo.ua/product/parfum-kondytsioner-dlia-bilyzny-silan-diamantova-orkhideia-1000489\">🔗</a> — <b>119 ₴</b> <s>274 ₴</s> · −60%\n6. 🧀 <code>Крем-сир Premialle Легкий 35%</code> <a href=\"https://silpo.ua/product/krem-syr-premialle-legkyi-35-1040647\">🔗</a> — <b>49.99 ₴</b> <s>109 ₴</s> · −54%\n7. 🛒 <code>Парфум-кондиціонер для білизни Silan Блакитний жасмин</code> <a href=\"https://silpo.ua/product/parfum-kondytsioner-dlia-bilyzny-silan-blakytnyi-zhasmyn-1000491\">🔗</a> — <b>119 ₴</b> <s>289 ₴</s> · −60%\n8. 🍫 <code>Цукерки Zozole Raibow з фруктовим смаком желейні</code> <a href=\"https://silpo.ua/product/tsukerky-zozole-raibow-z-fruktovym-smakom-zheleini-960824\">🔗</a> — <b>24.99 ₴</b> <s>51.49 ₴</s> · −54%\n9. 🛒 🌐 лише онлайн-замовлення <code>Капсули для прання Persil Universal</code> <a href=\"https://silpo.ua/product/kapsuly-dlia-prannia-persil-universal-946254\">🔗</a> — <b>379 ₴</b> <s>1099 ₴</s> · −66%\n10. 🥩 <code>Сосиски «М'ясна Гільдія» з вершками і філе індички в/ґ</code> <a href=\"https://silpo.ua/product/sosysky-m-iasna-gildiia-z-vershkamy-i-file-indychky-v-g-724299\">🔗</a> — <b>69.99 ₴</b> <s>144 ₴</s> · −53%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
+ "silpo_last": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.11 07:09 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» негазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-negazovana-16649\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n2. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» слабогазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-slabogazovana-39465\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n3. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» сильногазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-sylnogazovana-36629\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n4. ☕ 🌐 лише онлайн-замовлення <code>Чай білий Baiya</code> <a href=\"https://silpo.ua/product/chai-bilyi-baiya-987438\">🔗</a> — <b>41.4 ₴</b> <s>229.9 ₴</s> · −82%\n5. 🛒 <code>Парфум-кондиціонер для білизни Silan Діамантова орхідея</code> <a href=\"https://silpo.ua/product/parfum-kondytsioner-dlia-bilyzny-silan-diamantova-orkhideia-1000489\">🔗</a> — <b>119 ₴</b> <s>274 ₴</s> · −60%\n6. 🧀 <code>Крем-сир Premialle Легкий 35%</code> <a href=\"https://silpo.ua/product/krem-syr-premialle-legkyi-35-1040647\">🔗</a> — <b>49.99 ₴</b> <s>109 ₴</s> · −54%\n7. 🛒 <code>Парфум-кондиціонер для білизни Silan Блакитний жасмин</code> <a href=\"https://silpo.ua/product/parfum-kondytsioner-dlia-bilyzny-silan-blakytnyi-zhasmyn-1000491\">🔗</a> — <b>119 ₴</b> <s>289 ₴</s> · −60%\n8. 🍫 <code>Цукерки Zozole Raibow з фруктовим смаком желейні</code> <a href=\"https://silpo.ua/product/tsukerky-zozole-raibow-z-fruktovym-smakom-zheleini-960824\">🔗</a> — <b>24.99 ₴</b> <s>51.49 ₴</s> · −54%\n9. 🛒 🌐 лише онлайн-замовлення <code>Капсули для прання Persil Universal</code> <a href=\"https://silpo.ua/product/kapsuly-dlia-prannia-persil-universal-946254\">🔗</a> — <b>379 ₴</b> <s>1099 ₴</s> · −66%\n10. 🥩 <code>Сосиски «М'ясна Гільдія» з вершками і філе індички в/ґ</code> <a href=\"https://silpo.ua/product/sosysky-m-iasna-gildiia-z-vershkamy-i-file-indychky-v-g-724299\">🔗</a> — <b>69.99 ₴</b> <s>144 ₴</s> · −53%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:m",
  "silpo_stores": {
   "week": "2026-47",
   "v": 2,
@@ -13075,9 +13075,9 @@
  "silpo_by": {
   "1f0bae3d-2073-62f4-b14c-f9715721ce18": {
    "week": "2026-11-19",
-   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.11 07:00 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Калнишевського, 2 · 🏪 самовивіз · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» негазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-negazovana-16649\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n2. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» слабогазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-slabogazovana-39465\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n3. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» сильногазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-sylnogazovana-36629\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n4. 🥩 <code>Сосиски «М'ясна Гільдія» з вершками і філе індички в/ґ</code> <a href=\"https://silpo.ua/product/sosysky-m-iasna-gildiia-z-vershkamy-i-file-indychky-v-g-724299\">🔗</a> — <b>69.99 ₴</b> <s>144 ₴</s> · −53%\n5. 🧊 <code>Пельмені Laska «Маню-ням» з м'ясом індика та кролика</code> <a href=\"https://silpo.ua/product/pelmeni-laska-maniu-niam-z-m-iasom-indyka-ta-krolyka-912911\">🔗</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −51%\n6. 🐟 <code>Форель «Премія»® слабосолона шматок на шкірі</code> <a href=\"https://silpo.ua/product/forel-premiia-slabosolona-shmatok-na-shkiri-365807\">🔗</a> — <b>199 ₴</b> <s>414 ₴</s> · −50%\n7. 🐟 <code>Сьомга «Премія»® слабосолона шматок на шкірі</code> <a href=\"https://silpo.ua/product/somga-premiia-slabosolona-shmatok-na-shkiri-365811\">🔗</a> — <b>199 ₴</b> <s>414 ₴</s> · −50%\n8. 🛒 <code>Папір туалетний NUA 3-шаровий</code> <a href=\"https://silpo.ua/product/papir-tualetnyi-nua-3-sharovyi-979770\">🔗</a> — <b>529 ₴</b> <s>999 ₴</s> · −47%\n9. 🍷 <code>Пиво Heineken світле з/б</code> <a href=\"https://silpo.ua/product/pyvo-heineken-svitle-z-b-721739\">🔗</a> — <b>39.99 ₴</b> <s>69.99 ₴</s> · −45%\n10. 🍫 <code>Тістечко «Заварне»</code> <a href=\"https://silpo.ua/product/tistechko-zavarne-237826\">🔗</a> — <b>17.9 ₴</b> <s>36.9 ₴</s> · −51%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s0_",
+   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 22.11 07:09 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Калнишевського, 2 · 🏪 самовивіз · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» негазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-negazovana-16649\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n2. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» слабогазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-slabogazovana-39465\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n3. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» сильногазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-sylnogazovana-36629\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n4. 🥩 <code>Сосиски «М'ясна Гільдія» з вершками і філе індички в/ґ</code> <a href=\"https://silpo.ua/product/sosysky-m-iasna-gildiia-z-vershkamy-i-file-indychky-v-g-724299\">🔗</a> — <b>69.99 ₴</b> <s>144 ₴</s> · −53%\n5. 🧊 <code>Пельмені Laska «Маню-ням» з м'ясом індика та кролика</code> <a href=\"https://silpo.ua/product/pelmeni-laska-maniu-niam-z-m-iasom-indyka-ta-krolyka-912911\">🔗</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −51%\n6. 🐟 <code>Форель «Премія»® слабосолона шматок на шкірі</code> <a href=\"https://silpo.ua/product/forel-premiia-slabosolona-shmatok-na-shkiri-365807\">🔗</a> — <b>199 ₴</b> <s>414 ₴</s> · −50%\n7. 🐟 <code>Сьомга «Премія»® слабосолона шматок на шкірі</code> <a href=\"https://silpo.ua/product/somga-premiia-slabosolona-shmatok-na-shkiri-365811\">🔗</a> — <b>199 ₴</b> <s>414 ₴</s> · −50%\n8. 🛒 <code>Папір туалетний NUA 3-шаровий</code> <a href=\"https://silpo.ua/product/papir-tualetnyi-nua-3-sharovyi-979770\">🔗</a> — <b>529 ₴</b> <s>999 ₴</s> · −47%\n9. 🍷 <code>Пиво Heineken світле з/б</code> <a href=\"https://silpo.ua/product/pyvo-heineken-svitle-z-b-721739\">🔗</a> — <b>39.99 ₴</b> <s>69.99 ₴</s> · −45%\n10. 🍫 <code>Тістечко «Заварне»</code> <a href=\"https://silpo.ua/product/tistechko-zavarne-237826\">🔗</a> — <b>17.9 ₴</b> <s>36.9 ₴</s> · −51%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s0_",
    "built": "2026-11-22-am",
-   "at": "22.11 07:00"
+   "at": "22.11 07:09"
   }
  },
  "silpo_sent_by": {
@@ -28419,9 +28419,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "09fa6538a011",
+  "gs": "89a8ced3bfba",
   "quiz_pool.json": "17c24e5946fc",
-  "fact.png": "03ecda7a136b",
+  "fact.png": "57152d81ca9d",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -50038,7 +50038,7 @@
  "silpo_snap": "2026-11-18",
  "live_day": "2026-11-22",
  "silpo_week": "2026-47",
- "sbm_at": 1795323657.5890071,
+ "sbm_at": 1795324199.7791858,
  "sbm_hist": [
   [
    "18:45",
@@ -50613,7 +50613,7 @@
    93
   ],
   [
-   "07:00",
+   "07:09",
    93
   ]
  ],
@@ -53507,10 +53507,10 @@
  "aro_sub_s": 5,
  "aro_sub_k": 4,
  "jobs_last": 1795320360.8355527,
- "nmt_last": 1795322155.6706915,
+ "nmt_last": 1795324208.7021759,
  "kino_v": 2,
  "yt_v": 4,
- "toycat_last": 1795322476.1345172,
+ "toycat_last": 1795324212.0657885,
  "toy_la": {
   "dildo": 1794975403.769806,
   "kegel": 1794757561.5974472,
