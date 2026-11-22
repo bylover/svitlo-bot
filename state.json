@@ -742,7 +742,7 @@
   "t279246",
   "t7482"
  ],
- "gh_beat": "2026-11-22T13:15:47.735719+02:00",
+ "gh_beat": "2026-11-22T13:20:45.687084+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1756,14 +1756,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "22.11 13:12",
-   "ts": 1795345968,
+   "at": "22.11 13:22",
+   "ts": 1795346562,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "22.11 13:12",
-   "ts": 1795345968,
+   "at": "22.11 13:22",
+   "ts": 1795346562,
    "ok": true,
    "note": ""
   },
@@ -1786,8 +1786,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "22.11 13:12",
-   "ts": 1795345968,
+   "at": "22.11 13:22",
+   "ts": 1795346562,
    "ok": true,
    "note": ""
   },
@@ -1846,8 +1846,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "22.11 13:12",
-   "ts": 1795345968,
+   "at": "22.11 13:22",
+   "ts": 1795346562,
    "ok": true,
    "note": ""
   },
@@ -13096,7 +13096,8 @@
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
  "gem_block": {
   "Nz9lkQ:gemini-flash-latest": "2026-11-23T10:05:00+02:00",
-  "Nz9lkQ:gemini-3.8-flash": "2026-11-23T10:05:00+02:00"
+  "Nz9lkQ:gemini-3.8-flash": "2026-11-23T10:05:00+02:00",
+  "iDpywg:gemini-3.8-flash": "2026-11-23T10:05:00+02:00"
  },
  "omdb_cache": {
   "tt14846026": [
@@ -28479,7 +28480,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "1548aa365a61",
+  "gs": "439ee8b467de",
   "quiz_pool.json": "17c24e5946fc",
   "fact.png": "281adf057e1e",
   "sexed.json": "0362ec7e46d4",
@@ -50098,12 +50099,8 @@
  "silpo_snap": "2026-11-18",
  "live_day": "2026-11-22",
  "silpo_week": "2026-47",
- "sbm_at": 1795346152.373531,
+ "sbm_at": 1795346449.4872808,
  "sbm_hist": [
-  [
-   "01:00",
-   93
-  ],
   [
    "01:05",
    93
@@ -50675,6 +50672,10 @@
   [
    "13:15",
    92
+  ],
+  [
+   "13:20",
+   91
   ]
  ],
  "sbm_near": {
