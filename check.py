@@ -7088,11 +7088,54 @@ JOB_DOU = ["https://jobs.dou.ua/vacancies/feeds/?category=Data%20Engineer", "htt
           [f"https://jobs.dou.ua/vacancies/feeds/?search={urllib.parse.quote(q)}" for q in ("oracle", "pl/sql", "power bi", "informatica", "dwh", "data engineer", "data analyst", "bi developer", "etl")]
 JOB_DJ = [f"https://djinni.co/jobs/rss/?primary_keyword={urllib.parse.quote(k)}" for k in ("Data Engineer", "Data Analyst", "SQL / DBA", "Business Analyst")] + \
          [f"https://djinni.co/jobs/rss/?keywords={urllib.parse.quote(k)}" for k in ("oracle", "power bi", "informatica", "pl/sql", "dwh")]
+JOB_DIRS = {   # напрям: (категорії DOU, пошук DOU, пошук Djinni, фільтр назви для пошукових стрічок) — збираємо лише ті, що хтось обрав
+    "py": (["Python"], [], ["python"], r"python|django|fastapi|flask|back ?end"),
+    "java": (["Java"], [], ["java"], r"\bjava\b|spring|kotlin|back ?end"),
+    "front": (["Front End"], [], ["react", "angular", "vue"], r"front|react|angular|vue|javascript|typescript|\bjs\b|web"),
+    "node": (["Node.js"], [], ["node.js"], r"node|back ?end|full ?stack|javascript|typescript"),
+    "net": ([".NET"], [], [".net"], r"\.net|c#|asp"),
+    "php": (["PHP"], [], ["php"], r"php|laravel|symfony|wordpress|magento"),
+    "go": (["Golang"], [], ["golang"], r"\bgo\b|golang"),
+    "cpp": (["C++"], [], ["c++"], r"c\+\+|embedded|firmware"),
+    "mob": (["iOS/macOS", "Android", "Flutter"], [], ["ios", "android", "flutter"], r"ios|android|swift|kotlin|flutter|mobile|react native"),
+    "qa": (["QA"], [], ["qa"], r"\bqa\b|\baqa\b|test|sdet|quality|тестув"),
+    "ops": (["DevOps", "Sysadmin"], [], ["devops"], r"devops|\bsre\b|sysadmin|system admin|cloud|platform|infrastructure|kubernetes|адміністратор"),
+    "ml": (["Data Science"], ["machine learning"], ["machine learning"], r"data scien|machine learning|\bml\b|\bai\b|llm|computer vision|\bnlp\b|deep learning"),
+    "sec": (["Security"], [], ["security"], r"security|pentest|\bsoc\b|secops|кібер|безпек"),
+    "design": (["Design"], [], ["ui/ux"], r"design|дизайн|\bux\b|\bui\b|figma"),
+    "pm": (["Project Manager", "Product Manager"], [], ["project manager", "product manager"], r"project|product|manager|owner|scrum|delivery|менеджер"),
+    "ba": (["Analyst"], ["business analyst"], ["business analyst"], r"business analyst|бізнес[- ]аналіт|system analyst|системн\w* аналіт"),
+    "mkt": (["Marketing"], [], ["marketing"], r"market|маркет|\bseo\b|\bsmm\b|\bppc\b|content|контент|growth|brand|бренд"),
+    "sales": (["Sales"], [], ["sales"], r"sales|продаж|account|business development|\bbdm?\b|lead gen"),
+    "hr": (["HR"], [], ["recruiter"], r"\bhr\b|recruit|рекрут|talent|people|персонал"),
+    "sup": (["Support"], [], ["support"], r"support|підтримк|customer|helpdesk|service desk"),
+    "game": ([], ["unity", "gamedev"], ["unity", "unreal"], r"unity|unreal|game|ігор|гейм"),
+}
+JOB_LVL = (("j", r"\bjunior|\bjr\b|trainee|intern|стаж|початків|молодш"), ("l", r"\blead\b|\bhead\b|principal|architect|\bcto\b|director|керівник|тімлід|тім-лід"),
+           ("s", r"senior|\bsr\b|старш|провідн"))
+def job_lvl(t: str) -> str:
+    return next((k for k, rx in JOB_LVL if re.search(rx, t, re.I)), "m")
+def job_h(s_: str) -> str:   # djb2 — однаково з воркером (назва файла для власного ключового слова)
+    h = 5381
+    for ch in s_.strip().lower():
+        h = (h * 33 + ord(ch)) & 0xFFFFFFFF
+    return format(h, "08x")
 JOB_SKILLS = {"oracle": r"\boracle\b", "pl/sql": r"pl\s*/\s*sql|plsql", "sql": r"\bsql\b", "t-sql": r"t-?sql|ms ?sql|sql server", "postgresql": r"postgre", "power bi": r"power\s*bi",
               "dax": r"\bdax\b", "tableau": r"tableau", "qlik": r"\bqlik", "looker": r"\blooker\b", "informatica": r"informatica", "ssis": r"\bssis\b", "ssrs": r"\bssrs\b|report builder|paginated",
               "etl": r"\betl\b|\belt\b", "dwh": r"\bdwh\b|data ?warehouse|сховищ", "airflow": r"airflow", "spark": r"\bspark\b|pyspark", "databricks": r"databricks", "snowflake": r"snowflake",
               "dbt": r"\bdbt\b", "bigquery": r"bigquery", "redshift": r"redshift", "aws": r"\baws\b", "azure": r"\bazure\b", "gcp": r"\bgcp\b|google cloud", "python": r"\bpython\b",
-              "kafka": r"\bkafka\b", "excel": r"\bexcel\b", "clickhouse": r"clickhouse", "data vault": r"data ?vault", "kimball": r"kimball|star schema|зірков"}
+              "kafka": r"\bkafka\b", "excel": r"\bexcel\b", "clickhouse": r"clickhouse", "data vault": r"data ?vault", "kimball": r"kimball|star schema|зірков",
+              "java": r"\bjava\b", "kotlin": r"kotlin", "spring": r"\bspring\b", "javascript": r"javascript|\bjs\b", "typescript": r"typescript", "react": r"\breact\b(?! native)",
+              "angular": r"angular", "vue": r"\bvue", "node.js": r"node\.?js", "next.js": r"next\.?js", ".net": r"\.net\b|asp\.net", "c#": r"c#", "php": r"\bphp\b", "laravel": r"laravel",
+              "symfony": r"symfony", "wordpress": r"wordpress", "golang": r"golang|\bgo\b(?: developer|lang|\))", "c++": r"c\+\+", "rust": r"\brust\b", "ruby": r"\bruby\b|rails", "swift": r"\bswift\b",
+              "android": r"android", "ios": r"\bios\b", "flutter": r"flutter|\bdart\b", "react native": r"react native", "docker": r"docker", "kubernetes": r"kubernetes|\bk8s\b",
+              "terraform": r"terraform", "ansible": r"ansible", "linux": r"linux", "ci/cd": r"ci/cd|jenkins|gitlab ci|github actions", "selenium": r"selenium", "cypress": r"cypress",
+              "playwright": r"playwright", "postman": r"postman", "api testing": r"api test|rest assured", "manual testing": r"manual (?:qa|test)|ручн\w* тест", "jira": r"\bjira\b",
+              "pytorch": r"pytorch", "tensorflow": r"tensorflow|keras", "llm": r"\bllm|\bgpt|langchain|\brag\b", "nlp": r"\bnlp\b", "computer vision": r"computer vision|opencv",
+              "pandas": r"pandas", "django": r"django", "fastapi": r"fastapi", "flask": r"\bflask\b", "mongodb": r"mongo", "redis": r"\bredis\b", "mysql": r"mysql", "graphql": r"graphql",
+              "microservices": r"microservice|мікросерв", "figma": r"figma", "ui/ux": r"\bux\b|\bui\b|ui/ux", "photoshop": r"photoshop|adobe", "seo": r"\bseo\b", "ppc": r"\bppc\b|google ads|facebook ads|meta ads",
+              "smm": r"\bsmm\b|social media", "crm": r"\bcrm\b|salesforce|hubspot", "b2b": r"\bb2b\b", "scrum": r"scrum|agile|kanban", "unity": r"\bunity\b", "unreal": r"unreal",
+              "english": r"upper[- ]intermediate|advanced english|fluent english|англійськ"}
 JOB_ROLE = re.compile(r"data ?engineer|data ?analyst|аналітик даних|bi\b|business intelligence|power ?bi|dwh|etl|oracle|pl/?sql|sql|dba|database|analytics engineer|reporting|звітн|data ?warehouse|big data|data ?architect", re.I)
 JOB_TEL = re.compile(r"kyivstar|київстар|lifecell|лайфсел|vodafone|водафон|ukrtelecom|укртелеком|datagroup|volia|воля|triolan|telecom|телеком|оператор зв|mobile operator|мобільн\w+ оператор", re.I)
 
@@ -7107,9 +7150,78 @@ def _job_rss(url: str) -> list:
     return out
 
 
+def jobs_dirs_build(st: dict, now: datetime, need: dict) -> None:
+    """Напрями, які обрали користувачі (ІТ-ролі з DOU і Djinni) + їхні власні ключові слова → jobs_d_<напрям>.json."""
+    plan = [(k, JOB_DIRS[k]) for k in (need.get("dirs") or []) if k in JOB_DIRS]
+    plan += [("k" + job_h(w), ([], [w], [w], re.escape(w.lower()).replace("\\ ", r"[\s\-]*"))) for w in (need.get("kw") or [])[:25] if str(w).strip()]
+    for k, (cats, dsearch, djk, rx) in plan:
+        if not budget_ok(150):
+            print("🧑‍💻 Вакансії: напрями — решта наступного запуску"); break
+        try:
+            db = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=jobs_d_{k}.json") or {}
+        except Exception:
+            db = {}
+        items, n_new, bad = {x["id"]: x for x in (db.get("items") or [])}, 0, 0
+        feeds = [("dou", f"https://jobs.dou.ua/vacancies/feeds/?category={urllib.parse.quote(c_)}", False) for c_ in cats] + \
+                [("dou", f"https://jobs.dou.ua/vacancies/feeds/?search={urllib.parse.quote(q)}", True) for q in dsearch] + \
+                [("djinni", f"https://djinni.co/jobs/rss/?keywords={urllib.parse.quote(q)}", True) for q in djk]
+        for src, u, flt in feeds:
+            try:
+                rows = _job_rss(u)
+            except Exception as e:
+                bad += 1; continue
+            for r in rows:
+                if not r["l"] or not r["t"]:
+                    continue
+                jid = src[:2] + hashlib.md5(r["l"].encode()).hexdigest()[:10]
+                if jid in items:
+                    continue
+                if flt and not re.search(rx, r["t"] + (" " + r["d"][:1500] if k.startswith("k") else ""), re.I):   # пошук — посада в назві (своє слово — і в описі)
+                    continue
+                x = job_item(src, r, now, jid); x["dir"] = k; items[jid] = x; n_new += 1
+        old = (now - timedelta(days=21)).strftime("%Y-%m-%d")
+        keep = sorted((x for x in items.values() if x["add"][:10] >= old), key=lambda x: x["add"], reverse=True)[:200]
+        try:
+            http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=jobs_d_{k}.json", {"at": now.strftime("%d.%m %H:%M"), "items": keep})
+        except Exception as e:
+            print(f"Вакансії {k} → бот: {err_text(e)[:60]}")
+        print(f"🧑‍💻 Вакансії «{k}»: нових {n_new}, у базі {len(keep)}{f', стрічок з помилкою {bad}' if bad else ''}")
+    st["jobs_nv"] = need.get("v")
+
+
+def job_item(src: str, r: dict, now: datetime, jid: str) -> dict:
+    desc = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", r["d"]))).strip()
+    blob = (r["t"] + " " + desc).lower()
+    title, co, city = r["t"], "", ""
+    m = re.match(r"(.+?)\s+в\s+(.+?)(?:,\s*(.+))?$", r["t"])            # DOU: «Посада в Компанія, Київ, віддалено»
+    if src == "dou" and m:
+        title, co, city = m.group(1), m.group(2), m.group(3) or ""
+    sal = (re.findall(r"\$\s?\d[\d\s]*(?:[–-]\s?\$?\s?\d[\d\s]*)?|\d[\d\s]*\s?[–-]\s?\d[\d\s]*\s?\$|до \$?\d[\d\s]*\$?", r["t"] + " " + desc[:300]) or [""])[0].strip()
+    if src == "djinni" and not co:
+        mc = re.search(r"(?:Компанія|Company)[:\s]+([^\n.,]{2,40})", desc); co = mc.group(1).strip() if mc else ""
+    if not city:
+        mc = re.search(r"\b(Київ|Kyiv|Львів|Lviv|Харків|Дніпро|Одеса|віддалено|remote|Remote)\b", desc[:400]); city = mc.group(1) if mc else ""
+    try:
+        import email.utils
+        ts = email.utils.parsedate_to_datetime(r["pd"]).strftime("%Y-%m-%d %H:%M") if r["pd"] else now.strftime("%Y-%m-%d %H:%M")
+    except Exception:
+        ts = now.strftime("%Y-%m-%d %H:%M")
+    return {"id": jid, "t": title[:110], "co": co[:50], "city": city[:40], "l": r["l"], "src": src, "sal": sal[:30], "kw": [k for k, rx in JOB_SKILLS.items() if re.search(rx, blob)],
+            "tel": 1 if JOB_TEL.search(blob) else 0, "lv": job_lvl(title), "ts": ts, "add": now.strftime("%Y-%m-%d %H:%M"), "ds": desc[:1000]}
+
+
 def jobs_build(st: dict, now: datetime) -> None:
-    """Кожні ~2 год: нові вакансії з DOU і Djinni → jobs.json (останні 21 день, до 400)."""
-    if not WORKER_MODE or _time.time() - float(st.get("jobs_last") or 0) < 7000:
+    """Кожні ~2 год: нові вакансії з DOU і Djinni → jobs.json (дата-напрям) + jobs_d_<напрям>.json (напрями користувачів)."""
+    if not WORKER_MODE:
+        return
+    try:
+        need = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=jobs_need.json") or {}
+    except Exception:
+        need = {}
+    fresh_need = need.get("v") and need.get("v") != st.get("jobs_nv")      # хтось щойно обрав новий напрям — збираємо одразу
+    if _time.time() - float(st.get("jobs_last") or 0) < 7000:
+        if fresh_need:
+            jobs_dirs_build(st, now, need)
         return
     st["jobs_last"] = _time.time()
     try:
@@ -7134,23 +7246,7 @@ def jobs_build(st: dict, now: datetime) -> None:
                 blob = (r["t"] + " " + desc).lower()
                 if not JOB_ROLE.search(r["t"]) and not (JOB_ROLE.search(desc[:600]) and re.search(r"oracle|pl/?sql|power ?bi|informatica|dwh|data ?engineer", blob)):
                     continue
-                title, co, city = r["t"], "", ""
-                m = re.match(r"(.+?)\s+в\s+(.+?)(?:,\s*(.+))?$", r["t"])            # DOU: «Посада в Компанія, Київ, віддалено»
-                if src == "dou" and m:
-                    title, co, city = m.group(1), m.group(2), m.group(3) or ""
-                sal = (re.findall(r"\$\s?\d[\d\s]*(?:[–-]\s?\$?\s?\d[\d\s]*)?|\d[\d\s]*\s?[–-]\s?\d[\d\s]*\s?\$|до \$?\d[\d\s]*\$?", r["t"] + " " + desc[:300]) or [""])[0].strip()
-                if src == "djinni" and not co:
-                    mc = re.search(r"(?:Компанія|Company)[:\s]+([^\n.,]{2,40})", desc); co = mc.group(1).strip() if mc else ""
-                if not city:
-                    mc = re.search(r"\b(Київ|Kyiv|Львів|Lviv|Харків|Дніпро|Одеса|віддалено|remote|Remote)\b", desc[:400]); city = mc.group(1) if mc else ""
-                kw = [k for k, rx in JOB_SKILLS.items() if re.search(rx, blob)]
-                try:
-                    import email.utils
-                    ts = email.utils.parsedate_to_datetime(r["pd"]).strftime("%Y-%m-%d %H:%M") if r["pd"] else now.strftime("%Y-%m-%d %H:%M")
-                except Exception:
-                    ts = now.strftime("%Y-%m-%d %H:%M")
-                items[jid] = {"id": jid, "t": title[:110], "co": co[:50], "city": city[:40], "l": r["l"], "src": src, "sal": sal[:30], "kw": kw,
-                              "tel": 1 if JOB_TEL.search(blob) else 0, "ts": ts, "add": now.strftime("%Y-%m-%d %H:%M"), "ds": desc[:700]}
+                x_ = job_item(src, r, now, jid); x_["dir"] = "data"; items[jid] = x_
     old = (now - timedelta(days=21)).strftime("%Y-%m-%d")
     keep = sorted((x for x in items.values() if x["add"][:10] >= old), key=lambda x: x["add"], reverse=True)[:400]
     new_n = sum(1 for x in keep if x["add"] == now.strftime("%Y-%m-%d %H:%M"))
@@ -7160,6 +7256,7 @@ def jobs_build(st: dict, now: datetime) -> None:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=jobs.json", out)
     except Exception as e:
         print(f"Вакансії → бот: {err_text(e)[:60]}")
+    jobs_dirs_build(st, now, need)
 
 
 # ---------- 🎓 НМТ: банк реальних завдань з онлайн-тестів ЗНО-ОНЛАЙН (zno.osvita.ua) — ШІ лише витягує завдання з тексту сторінки, нічого не вигадує ----------
@@ -9294,7 +9391,11 @@ def main() -> None:
 
     # 2) ранкове зведення — у свій час кожного (за замовчуванням 10:00; змінити — ⚙️ → 🕒)
     def due_at(c: str, key: str, default: int) -> bool:
-        h = (PROF.get(c) or {}).get(key, default)
+        p_ = PROF.get(c) or {}
+        h = p_.get(key, default)
+        days_ = (p_.get("dd") or {}).get(key)                    # 📅 дні тижня з ⚙️ (0 = пн … 6 = нд); не задано — щодня
+        if days_ and now.weekday() not in days_:
+            return False
         return h != "off" and int(h) <= now.hour < int(h) + 3
     ms = st.setdefault("mo_sent", {})
     if first_run:
@@ -9639,8 +9740,15 @@ def main() -> None:
                                                       else "▶️ Не вдалося зібрати підбірку, спробуйте пізніше."), None))
 
     # 8) «Для пари» — ср і пт о 18:00 (вам, дружині та підписникам, які це ввімкнули); з меню — нова порада
-    para_due = (now.weekday() in PARA_DAYS and PARA_HOUR <= now.hour < PARA_HOUR + 4
-                and st.get("para_sent") != today_key and f"para:{today_key}" in claim([f"para:{today_key}"], 6 * 3600))
+    st["pa_got"] = {k: v for k, v in (st.get("pa_got") or {}).items() if v == today_key}
+    pa_got = st["pa_got"]                  # 💞 кожен — у свої дні й годину з ⚙️ (за замовчуванням ср і пт о 18:00)
+    def _pa_due(c):
+        p_ = PROF.get(c) or {}
+        h_ = int((p_.get("t") or {}).get("para", PARA_HOUR)); d_ = (p_.get("dd") or {}).get("para") or list(PARA_DAYS)
+        return pa_got.get(c) != today_key and now.weekday() in d_ and h_ <= now.hour < h_ + 4
+    pa_cand = [c for c in audience("para") if _pa_due(c)]
+    pa_to = [c for c in pa_cand if f"pa:{c}:{today_key}" in claim([f"pa:{c}:{today_key}" for c in pa_cand], 6 * 3600)] if pa_cand else []
+    para_due = bool(pa_to)
     if budget_ok(240):
         collect_content(st, now)                      # раз на день — пул свіжих матеріалів 18+ із журналів і сайтів
     # ВАЖКЕ — по одній задачі за запуск по черзі й лише якщо є час (ліміт запуску GitHub — 12 хв, ціль — до 4 хв)
@@ -9677,11 +9785,13 @@ def main() -> None:
     if para_due:
         pm = build_para(st, now, header="💞 <b>ПОРАДА 18+</b>")
         rk = rate_kb("p18", hashlib.md5(str(pm)[:80].encode()).hexdigest()[:8])
-        direct += [(c, pm, False, rk) for c in audience("para")]           # 👍/👎 під порадою — для статистики
+        direct += [(c, pm, False, rk) for c in pa_to]                      # 👍/👎 під порадою — для статистики
         extra = build_content(st) or build_reddit(st)  # друге — один свіжий матеріал (стаття, огляд, досвід…)
         if extra:
             rk2 = rate_kb("p18", hashlib.md5(str(extra)[:80].encode()).hexdigest()[:8])
-            direct += [(c, extra, False, rk2) for c in audience("para")]
+            direct += [(c, extra, False, rk2) for c in pa_to]
+        for c in pa_to:
+            pa_got[c] = today_key
         st["para_sent"] = today_key
     if para_req:
         pm = build_para(st, now, with_news=False)
@@ -9887,11 +9997,12 @@ def main() -> None:
     pend, got = st.setdefault("pend", {}), st.setdefault("got", {})   # тижневі розсилки — у свій час кожного (⚙️)
     for topic, text, mk, plain in topic_msgs:
         if isinstance(text, str) and isinstance(plain, str):
-            pend[topic] = {"id": now.strftime("%Y-%m-%d %H"), "t": text, "mk": mk, "p": plain, "exp": (now + timedelta(days=2)).isoformat(),
+            pend[topic] = {"id": now.strftime("%Y-%m-%d %H"), "t": text, "mk": mk, "p": plain, "exp": (now + timedelta(days=7, hours=-1)).isoformat(),   # тиждень — до наступного випуску
                            "aud": [str(c) for c in audience(topic)]}   # лише ті, хто був підписаний на момент підбірки (новим — не надсилаємо старе)
         else:
             jobs += [(cid, text, mk) if cid in family else (cid, plain, None) for cid in audience(topic)]
     DEF_H = {"kino": 11, "yt": 11, "smm": 13, "silpo": 13}
+    DEF_D = {"kino": [KINO_WEEKDAY], "yt": [0], "smm": [SMM_WEEKDAY], "silpo": [SILPO_WEEKDAY]}   # день виходу; у ⚙️ кожен обирає свої дні
     for topic, pd in list(pend.items()):
         if datetime.fromisoformat(pd["exp"]) < now:
             del pend[topic]
@@ -9901,8 +10012,10 @@ def main() -> None:
         for cid in audience(topic):
             if (topic == "silpo" and cid in SILPO_OWN) or g_.get(cid) == pd["id"] or ("aud" in pd and str(cid) not in pd["aud"]):
                 continue
-            h_ = ((PROF.get(cid) or {}).get("t") or {}).get(topic, DEF_H.get(topic, 11))
-            if first_run or now.hour >= int(h_) or now.date() > datetime.fromisoformat(pd["exp"]).date() - timedelta(days=2):
+            p_ = PROF.get(cid) or {}
+            h_ = (p_.get("t") or {}).get(topic, DEF_H.get(topic, 11))
+            days_ = (p_.get("dd") or {}).get(topic) or DEF_D.get(topic) or list(range(7))
+            if first_run or (now.weekday() in days_ and now.hour >= int(h_)):
                 g_[cid] = pd["id"]
                 if not first_run:
                     jobs.append((cid, pd["t"], pd["mk"]) if cid in family else (cid, pd["p"], None))
