@@ -742,7 +742,7 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-24T22:00:47.744141+02:00",
+ "gh_beat": "2026-11-24T22:05:51.931971+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -757,7 +757,7 @@
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-24T21:53:13.095962+02:00",
+  "checked": "2026-11-24T22:02:59.282591+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -2020,8 +2020,8 @@
    "note": ""
   },
   "youtube канали": {
-   "at": "24.11 15:05",
-   "ts": 1795525556,
+   "at": "24.11 22:07",
+   "ts": 1795550844,
    "ok": true,
    "note": ""
   },
@@ -2309,23 +2309,47 @@
   "https://www.socialmediatoday.com/news/snapchat-enables-lens-creation-via-third-party-ai-tools/875139/",
   "https://www.socialmediatoday.com/news/instagram-adds-stories-editing/875261/",
   "https://www.socialmediatoday.com/news/snapchat-adds-more-creator-partnership-opportunities/875141/",
-  "https://www.socialmediatoday.com/news/tiktok-releases-2026-music-impact-report/875144/"
+  "https://www.socialmediatoday.com/news/tiktok-releases-2026-music-impact-report/875144/",
+  "https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5",
+  "https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/",
+  "https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/",
+  "https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/",
+  "https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/",
+  "https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5",
+  "https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/",
+  "https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/",
+  "https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/",
+  "https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5"
  ],
- "smm_pool_day": "2026-11-23",
+ "smm_pool_day": "2026-11-24",
  "smm_pool": [
   {
    "src": "Jon Loomer",
-   "title": "Meta Ads Promotions and Email Sign-up Offers: What They Do and How to Turn Them Off",
-   "link": "https://www.jonloomer.com/meta-ads-promotions-email-sign-up-offers/",
-   "text": "Meta may highlight a promo code on your ads that you never planned to offer. It could be a code you created months ago, one Meta found in your ad copy, or one it crawled from your website. You may see this during ad creation in a section called “Highlight your promotions” (I’m seeing it above Advantage+ creative enhancements). Promo codes in Meta ads aren’t new, but this application of them is. Not all advertisers have it yet. There are two related features here. One highlights promo codes before and after people tap your ad. The other offers a promo code in exchange for an email address. Both can be powerful if used intentionally. The problem is that at least one of them may be on without an advertiser knowing, and I’ll get to those risks at the end. Let’s take a closer look… Highlight Your Promotions Let’s start with the feature that can show promo codes on your ads automatically. Here’s an example from Meta. When using the in-app browser, the highlighted promo code will be applied automatically at checkout. Otherwise, Meta will surface a promo code that can be copied and applied later. Set Up You will need to use a campaign with a Sales objective where the destination is either Website or Website and App, and the performance goal is to either maximize the number or value of conversions. If using the Website conversion location, the conversion event used must be one of the following: Add payment info Add to wishlist Add to cart Purchase Initiate checkout Start trial Subscribe Browser add-ons must be off. In the “Highlight your promotions” section of ad creation, the Promotions dropdown allows Meta to automatically choose a promotion to show people. As you can see above, the dropdown is set to “Show optimized promotions when available.” The first time I saw this feature, that was the setting. You can switch an individual ad to a specific promotion you’ve created, but there’s no option for no promotion at all. So unless you turn this off at the account level (more on that below), Meta will either choose a promo code for you or show the one you selected. Here’s how Meta describes it: When you optimize your promotions automatically, we’ll pick the promotion most likely to get people to convert, without offering discounts to more people than needed. That’s a really interesting element that’s easy to miss. Meta won’t always highlight the code, and it will depend on the likelihood of a conversion. This could allow you to maximize revenue. Potential sources of t",
-   "date": "18.11"
+   "title": "Custom Attribution Setup in Events Manager",
+   "link": "https://www.jonloomer.com/qvt/custom-attribution-setup/",
+   "text": "You can now set up custom attribution… Meta announced custom attribution recently as a way to provide different options for how conversions are reported. If you use a third-party analytics partner, in particular, this could prove useful. How to Set It Up Within the Settings tab of Events Manager, you may see a new section for “Custom attribution source.” Click “Add New” and you’ll have two options: Connect your own analytics tool Connect a partner platform If you’re already using Adobe Analytics, Northbeam, DV Rockerbox, or Triple Whale, the integration is easy. Otherwise, you’ll need to set up a custom attribution source . When you select an attribution model in the ad set, Custom Attribution is an option. Once you’ve completed the custom attribution source integration or setup, this option will be selectable. Should You Set Up Custom Attribution? Most advertisers screaming for custom attribution come from a place where the assumption is that Meta steals credit for conversions. This is usually based in a misunderstanding of how attribution works , as well as an unwillingness to understand their conversion results . It’s a shiny object, but I’d reserve this for very limited situations. You need to actually get the volume of results that have helped you determine that custom attribution is useful for you. And I doubt it’s worth the effort to set this up if you don’t have the partner integration option. It’s not something I’m using, but just know the option is there. The post Custom Attribution Setup in Events Manager appeared first on Jon Loomer Digital .",
+   "date": "23.11"
   },
   {
    "src": "Jon Loomer",
-   "title": "Meta Simplifies Video Custom Audiences",
-   "link": "https://www.jonloomer.com/qvt/video-custom-audiences/",
-   "text": "Why did Meta do this? Meta made some strange and unexpected changes to video custom audiences. Let’s take a closer look… The Change When you create a video custom audience, you now have three options… All Video Viewers: People who watched at least 3 seconds of your video. Engaged Video Viewers: People who watched a meaningful portion of your video. Highly Engaged Video Viewers: People who watched most or all of your video. Previously, there were seven options: 3 seconds 10 seconds 15 seconds 25% of the video 50% of the video 75% of the video 95% of the video There isn’t any new functionality with this change. If anything, it’s far less clear what each selection means. What is a “meaningful portion”? And how is that different from “most” of your video? I assume this will be clarified eventually in Meta’s documentation, but for now it’s a mystery. Unfortunately, this update doesn’t even add something that’s been needed for years. You still have to select individual videos that the custom audience applies to. There isn’t an option to create an audience of all video views. Why Now? So, why is Meta doing this now? Is anyone using video custom audiences these days? These are some of the lowest-quality custom audiences you can create. It’s far too easy to get a long view of a video by accident with auto-play on. And there are ad placements ( Audience Network Rewarded Video ) that force or incentivize longer views. In other words, a view of your video does not necessarily suggest intent. I would not advise separate remarketing of these audiences , and Meta will remarket to these people automatically if they’re a strong prospect anyway. Simplifying is a good thing, but I’m not sure why this was a priority. It seems like there are far more important things Meta should be worrying about right now. The post Meta Simplifies Video Custom Audiences appeared first on Jon Loomer Digital .",
-   "date": "16.11"
+   "title": "First Impression Ads",
+   "link": "https://www.jonloomer.com/qvt/first-impression-ads/",
+   "text": "This could end badly… A few weeks ago, Meta announced the test of a feature in the US called First Impression Ads . This allows advertisers to book the first ad people see in their feeds. Understand that this isn’t some new ad unit that will look any different or a new placement. It’s not new inventory at all. And that could be a problem. Why I’m Concerned This is simply giving advertisers the option to reserve the first ad spot in the feed that was otherwise available to everyone. I worry about the impact this may have. Presumably, this first impression is effective, and it would surely cost more. If it’s not any more effective, then there wouldn’t be a reason to reserve it. If it truly is more effective, it will be in high demand. So let’s assume that the biggest brands then eat up that first impression slot. That removes it from distribution for the rest of advertisers with small and medium-sized budgets. And if that first impression is then rarely available for these other brands, what will it do to results? They’d get worse, right? It all depends on how much results depend on that first impression slot now, and how available that slot becomes when this feature rolls out (assuming it moves beyond a test). Will It Move Beyond a Test? First Impression Ads could be an example of Meta profiting from demand for a select few, while hurting the product for the rest. Or maybe I’m missing something, but it seems like a terrible idea. Stay tuned while we wait to see what happens with this initial test. The post First Impression Ads appeared first on Jon Loomer Digital .",
+   "date": "23.11"
+  },
+  {
+   "src": "Social Media Examiner",
+   "title": "How to Build an AI Chief of Staff With Grok Bot",
+   "link": "https://www.socialmediaexaminer.com/how-to-build-an-ai-chief-of-staff-with-grok-bot/",
+   "text": "Wondering how to use AI agents to handle your email, follow-ups, and other tasks that eat up your workday? Want to know how to set up Grok Bot as an AI chief of staff that runs a team of AI bots for you? ​In this article, you’ll discover how to set up Grok Bot, build […] The post How to Build an AI Chief of Staff With Grok Bot appeared first on Social Media Examiner .",
+   "date": "24.11"
+  },
+  {
+   "src": "Social Media Examiner",
+   "title": "Meta Ads Cost Optimization, Short-Form Video Production, and Industry News",
+   "link": "https://www.socialmediaexaminer.com/meta-ads-cost-optimization-short-form-video-production-and-industry-news/",
+   "text": "New Social Media Marketing World speaker: Elizabeth Marberry joins Shannon McKinstrie, Brock Johnson, and Michelle Gifford to help marketers and creators grow on Instagram. See the Instagram speakers. Here’s a recap of the most important insights, trends, and updates you need to know about today! Catch up in minutes and go into the rest of […] The post Meta Ads Cost Optimization, Short-Form Video Production, and Industry News appeared first on Social Media Examiner .",
+   "date": "24.11"
   },
   {
    "src": "Social Media Examiner",
@@ -2356,18 +2380,25 @@
    "date": "17.11"
   },
   {
-   "src": "Social Media Examiner",
-   "title": "AI Output Fixes, Persistent AI Agents, and Industry News",
-   "link": "https://www.socialmediaexaminer.com/ai-output-fixes-persistent-ai-agents-and-industry-news/",
-   "text": "Friday is almost here! Before you unplug, here’s one last round of insights and updates. Whether you read them now or save them for later, you won’t want to miss these. A quick note from Mike: AI Business World is half off at $497 through tomorrow at 11:59 PM Pacific. Prefer to learn from home? […] The post AI Output Fixes, Persistent AI Agents, and Industry News appeared first on Social Media Examiner .",
-   "date": "12.11"
+   "src": "Hootsuite",
+   "title": "48 LinkedIn statistics for 2026 to shape your strategy",
+   "link": "https://blog.hootsuite.com/linkedin-statistics/",
+   "text": "Key takeaways LinkedIn is still the world’s professional network. It has more than 1.4 billion members across 200 countries and regions, and Gen Z is its fastest-growing demographic . Decision-makers are on LinkedIn. The platform is home to 10 million C-level executives and 63 million decision makers. LinkedIn ads outperformed Google Search and Meta on return. B2B benchmarks show 121% ROAS for LinkedIn ads. Video is LinkedIn’s fastest-growing format. Video views rose 36% , and paid video ads grew 25% year-over-year . LinkedIn company and revenue statistics Before getting into audience data, it helps to know how big LinkedIn is as a business. Here’s where LinkedIn marketing sits inside Microsoft’s portfolio, and where the revenue comes from. 1. LinkedIn made $17.8 billion in 2025 LinkedIn generated $17.8 billion in 2025 (specifically $17.812 billion), up from $16.372 billion in 2024. That means LinkedIn revenue grew by about $1.4 billion year-over-year, before reaching $19.8 billion in fiscal 2026 . That revenue comes from three main business lines: Membership subscriptions: Premium and Sales Navigator plans Advertising sales: LinkedIn Marketing Solutions Recruitment solutions: LinkedIn Talent Solutions 2. LinkedIn’s revenue grew 12% year-over-year in Q3 2026 Microsoft’s latest quarterly earnings report says LinkedIn revenue increased 12% year-over-year in Q3 2026. 3. LinkedIn Premium surpassed $2 billion in annual revenue Subscriptions are becoming a bigger part of the story. LinkedIn Premium passed $2 billion in annual revenue for the first time in Q2 2025, a sign that members are paying for better visibility and reach. 4. Daniel Shapero became LinkedIn CEO in April 2026 LinkedIn named Dan Shapero as its new CEO in April 2026 . Shapero previously served as LinkedIn’s Chief Operating Officer and has been with the company since 2008. 5. LinkedIn turned 23 years old in 2026 LinkedIn officially launched on May 5, 2003, just nine months before Facebook launched at Harvard. It was founded by Reid Hoffman . Microsoft acquired LinkedIn in 2016. Ryan Roslansky led the company through its most recent growth period before Shapero stepped into the CEO role. 6. LinkedIn users are more satisfied than the average social media user LinkedIn earned a customer satisfaction score of 77 out of 100 in the American Customer Satisfaction Index for 2025, beating the overall social media average of 74. It also scored higher than Instagram, Reddit, Snapchat, Facebook, and X. Sourc",
+   "date": "24.11"
   },
   {
    "src": "Hootsuite",
-   "title": "Social media customer service: 2026 best practices",
-   "link": "https://blog.hootsuite.com/social-media-customer-service/",
-   "text": "Key takeaways Customers expect replies within an hour on social media, and brands that respond quickly build significantly more trust and loyalty. A unified social inbox paired with AI chatbots can reduce message volume and free teams to handle complex issues. The strongest social media customer service strategies combine social listening, cross-platform inbox management, clear team ownership, and measurable KPIs like CSAT and response time. Real brand examples show that proactive, personalized social support drives repeat purchases and brand advocacy. What is social media customer service? Social media customer service is offering support or service to your customers through social networks, such as Facebook, Facebook Messenger, Instagram, TikTok, WhatsApp, X, LinkedIn, or any other platform. It includes answering customer support questions in public social media post comments and discussing issues via private message, and 75.1% of consumers want to message businesses the way they message friends and family. It works in two directions. Reactive social media customer support means replying to the questions, complaints, and mentions that come to you. Proactive social media customer care means monitoring conversations and reaching out first, before a frustrated customer escalates. Today, social media customer service also encompasses AI-powered service: Chatbot interactions that answer FAQs instantly, automated replies , and responses prompted by social listening . In practice, modern social media customer support blurs the line between marketing and support, since the same public reply can resolve an issue and showcase your brand to everyone watching. In short: Social media customer service is the practice of resolving customer issues on social platforms, both reactively and proactively, using a mix of human agents and AI. Bonus: Get a free, easy-to-use Customer Service Report Template that helps you track and calculate your monthly customer service efforts all in one place. Why is social media customer service important? Social media customer care matters because customers increasingly expect fast, public-facing support, and brands that deliver it build stronger trust, loyalty, and brand perception . It also pays off directly: companies applying generative AI to customer-related initiatives can expect to achieve 25% higher revenue after five years compared to companies that focus only on productivity. The upside shows up in a few consistent ways: Speed: Re",
-   "date": "19.11"
+   "title": "Organic vs paid social media: Everything you need to know",
+   "link": "https://blog.hootsuite.com/organic-vs-paid-social-media/",
+   "text": "Key takeaways Organic social media builds trust and community without ad spend. The tradeoff is that reach is limited by platform algorithms. Paid social media scales reach fast and drives measurable results. It also requires ongoing budget and constant optimization. The strongest strategies combine both. Use organic to find what resonates, then use paid to scale it. Measuring organic and paid side by side gives you the full picture. When the two are reported separately, it’s almost impossible to tell what’s actually driving results. What is organic social media? Organic social media is the free content a person or brand posts on social platforms to connect with an audience. It includes content like Reels, Stories, TikToks, community replies, LinkedIn updates, and YouTube videos — any content you share without paying to promote it. Organic social media activities include: Sharing non-boosted content to your social media feeds Encouraging your team to share company content on their own feeds ( employee advocacy ) Engaging with your audience by responding to comments and DMs Sharing user-generated content (UGC) that your community has organically shared with their own followers Bonus !!! Download a free guide to social advertising and learn the 5 steps to building effective campaigns. No tricks or boring tips—just simple, easy-to-follow instructions that really work. Download now Who sees organic social media content? When you post organic content, it’s typically shown to: A percentage of your followers (your “organic reach”) People who visit your social media profile Your followers’ followers (if they share your content) People following relevant hashtags People who see your content by platform algorithms (i.e., “suggested content”) What is organic social media used for? Organic social media is used to grow and engage an audience without paying to promote content, and it’s the foundation of any social media strategy . In practice, organic content can: Generate awareness and conversation around your products or services Show off your brand personality and voice Build relationships with informative, entertaining, or inspiring content Engage leads at every stage of the buying journey Support customers with customer service The common thread: organic isn’t about the hard sell, it’s about showing up in ways people actually want to engage with. Examples of organic content First, we have an Instagram post where Asian Fusion restaurant CO shares a photo of a dinner",
+   "date": "23.11"
+  },
+  {
+   "src": "Hootsuite",
+   "title": "How to build a content approval workflow in 2026",
+   "link": "https://blog.hootsuite.com/social-media-approval-workflow/",
+   "text": "Key takeaways What is a content approval workflow? It’s the step-by-step system for reviewing, editing, and approving content before it goes live, covering stages from drafting through final sign-off. Why do approval workflows fail? The most common reasons are scattered feedback, unclear ownership, and post-approval changes that bypass the process. Enterprise teams should match their workflow type (linear, tiered, parallel, conditional, or hybrid) to their team size, compliance requirements, and publishing volume. Building an effective workflow requires defined roles, centralized tools, compliance checkpoints, and a way to measure whether the process is actually working. What is content approval? Content approval is the process of reviewing and signing off on a piece of content before it gets published or distributed. It brings structure to the creative process so that posts, pages, and campaigns don’t slip through with typos, broken links, or off-brand messaging . The content approval workflow usually starts with a draft (written by a content creator or strategist), moves through internal reviews, and ends with final sign-off. In some cases, there may also be feedback loops, legal review, or design tweaks along the way. Most approval workflows follow these core stages: Ideate: Brainstorm content topics , campaigns, and messaging angles. Draft: Write copy, select visuals, and add links or hashtags. Review: An editor, peer, or manager checks for quality, accuracy, and brand alignment. Revise: The creator incorporates feedback and updates the draft. Approve: A final approver (or approval chain) signs off on the content. Publish/schedule: The approved post goes live or is queued for publishing. In short, a content approval process gives every piece of content a clear path from idea to publish, with the right people reviewing at the right time. Bonus: Download our bundle of free customizable social media workflow templates and set up a clear approval process for your team in minutes. How does content approval work for social media? Social media approval follows the same six stages, but the pace is different. You’re often reviewing dozens of short pieces a week rather than a handful of long ones, which means the process has to be fast enough to keep up with your publishing schedule without becoming a rubber stamp. Social also adds a few wrinkles that other content types don’t have. Reviewers need to see platform-specific formatting (character limits, image crop",
+   "date": "23.11"
   },
   {
    "src": "Hootsuite",
@@ -2385,73 +2416,52 @@
   },
   {
    "src": "Hootsuite",
-   "title": "How to advertise on Facebook in 2026: A complete guide",
-   "link": "https://blog.hootsuite.com/facebook-advertising/",
-   "text": "Key takeaways Facebook advertising lets businesses target an audience of 3.48 billion daily active people with formats ranging from image and video ads to AI-optimized Advantage+ campaigns. The typical cost per click for Facebook ads in 2026 ranges from $0.50 to $2.00, though costs vary significantly by industry and objective. Setting up a Facebook ad campaign in Meta Ads Manager takes 8 steps, from choosing an objective to monitoring performance. Targeting options include demographics, interests, behaviors, custom audiences, lookalike audiences, and Meta’s AI-powered Advantage+ audience for lower costs. What is Facebook advertising? Facebook advertising is the practice of running paid promotions across Meta’s family of apps, including Facebook, Instagram, Messenger, and the Audience Network, to reach specific audiences with text, image, and video creative. It gives businesses a way to put their message in front of the right people at scale, with precise targeting and measurable results. Meta’s ad audience is one of the largest in digital marketing. Meta’s own reporting shows an average of 3.48 billion daily active people across its apps in June 2025, which gives advertisers an unmatched pool of potential customers. Facebook ads run through an auction system. When you set up a campaign, you tell Meta your objective, audience, and budget. Meta then decides which ads to show each person based on a mix of your bid, the estimated action rate, and ad quality. You don’t pay more than you need to win the auction, and Facebook’s algorithm works to deliver your ad to the people most likely to act on it. What has changed most over the past two years is how much of that work Meta’s AI now handles. With 98.7% of Meta’s app revenue coming from advertising , the company has invested heavily in Advantage+ campaigns, automated audience discovery, and AI creative tools that shift the advertiser’s job away from manual setup and toward feeding the system good creative, clean conversion data, and clear goals. In short, Facebook advertising combines massive reach with granular control, making it a core channel in any paid social strategy . Bonus: Get the Facebook advertising cheat sheet for 2022. The free resource includes key audience insights, recommended ad types, and tips for success. How much does Facebook advertising cost in 2026? Facebook advertising costs vary widely, but the typical cost per click in 2026 falls between $0.50 and $2.00, depending on your industry, audi",
-   "date": "18.11"
-  },
-  {
-   "src": "Hootsuite",
-   "title": "How the TikTok algorithm works in 2026",
-   "link": "https://blog.hootsuite.com/tiktok-algorithm/",
-   "text": "Key takeaways The TikTok algorithm recommends content based on three signal types: user interactions, video information, and account settings, with watch time and completion rate carrying the most weight. Hooking viewers in the first 3 seconds is critical, because early watch time is the strongest ranking signal. TikTok SEO matters as much as hashtags now. The algorithm analyzes captions, voiceovers, and on-screen text to categorize your content and surface it in search. Consistent posting, community alignment, and tracking analytics are what separate sustained growth from one-off viral moments. What is the TikTok algorithm in 2026? The TikTok algorithm is the technology that decides what TikTok videos to recommend to each user. It studies what you watch and how you interact, and then suggests videos you’re most likely to enjoy. No two TikTok users will see the same combination of TikTok videos on their For You Page . This feed is unique and highly personalized. The type of content you see on your FYP will evolve over time, as the algorithm catches on to changes in your interests and viewing preferences. According to TikTok’s official documentation : “We use recommender systems to offer you a personalized experience. These systems suggest content based on your preferences as expressed through interactions on TikTok, such as following an account or liking a post.” In short: the For You feed is a personalized recommendation engine, and your job as a marketer is to give it clear signals about who your content is for. Bonus: Get a free TikTok Growth Checklist from famous TikTok creator Tiffy Chen that shows you how to gain 1.6 million followers with only 3 studio lights and iMovie. How does the TikTok algorithm work in 2026? The TikTok algorithm looks at three main signals when ranking content. Of these, engagement signals like watch time and completion rate carry the most weight, and TikTok continuously refines how it weighs the rest. User interactions: What you watch, like, share, comment on, or skip. Video information: Captions, hashtags, sounds, effects, and views. User information: Language, country, device type, and settings. Signal type Examples Weight in algorithm User interactions Likes, shares, comments, watch time, completion rate, “Not Interested” clicks High – most important Video information Captions, hashtags, sounds, effects, trending topics Medium User information Device type, language, country, account settings, time zone Low – less impact { ",
-   "date": "17.11"
-  },
-  {
-   "src": "Hootsuite",
-   "title": "How to make short-form videos that stand out in 2026",
-   "link": "https://blog.hootsuite.com/short-form-video/",
-   "text": "Key takeaways Short-form video defined: Video content typically under 60 seconds, built for vertical, mobile-first platforms like TikTok, Instagram Reels, YouTube Shorts, and Snapchat Spotlight. Why it matters for marketing: Most consumers prefer short video when learning about a product, and platform algorithms surface it to people who do not already follow you. How to stand out: Strong hooks in the first two seconds, platform-native vertical formatting, accessible captions, trend awareness, and consistent posting. How to measure it: Track completion rate, engagement rate, shares, and click-throughs rather than view counts alone. Tools that help: Hootsuite Social OS lets teams plan, publish, and measure short-form video across every channel from one calendar. What is short-form video? Short-form video is video content typically under 60 seconds, created for vertical, mobile-first platforms. Short videos are intended to be quick, easily digestible content for viewers scrolling through social media feeds or other outlets. The definition has shifted as platforms raised their limits. TikTok now accepts uploads far longer than a minute, and YouTube Shorts allows up to three minutes. But the practical sweet spot has not moved much: the videos that get watched all the way through are still short. Common examples of short-form videos include TikTok videos, Instagram Stories and Reels, YouTube Shorts , and Snapchat Spotlight and Stories. Bonus: Claim your pack of free animated Instagram Reels templates created by Hootsuite’s professional designers. Easily customize them in Canva, and take your Reels game to the next level today. Short-form vs. long-form video Long-form video usually runs longer than two minutes and is built for depth: tutorials, interviews, documentaries, product walkthroughs. Short-form video is built for attention: it earns a view from someone who was not looking for you. Here is how the two formats compare. Dimension Short-form video Long-form video Typical length Under 60 seconds 2 minutes and up Best platforms TikTok, Instagram Reels, YouTube Shorts, Snapchat Spotlight YouTube, LinkedIn, owned channels, webinars Production effort Low. A smartphone and a good idea Higher. Scripting, editing, often multiple takes Best use case Awareness, discovery, trend participation, product teasers Education, demos, thought leadership, search-driven content Engagement pattern High volume of quick views, strong share potential Fewer views, longer watch time, ",
-   "date": "16.11"
-  },
-  {
-   "src": "Hootsuite",
    "title": "7 best Buffer alternatives in 2026 (compared by size and price)",
    "link": "https://blog.hootsuite.com/buffer-alternatives/",
    "text": "Outgrowing Buffer isn’t a bad problem to have. It means your social strategy is getting bigger than what your current setup can handle. If that’s you, we’ve rounded up 7 Buffer alternatives that can keep up. Key takeaways Buffer is a simple, budget-friendly scheduler built for solo creators and small teams. Buffer’s biggest gaps show up as you grow. Its limited reporting, basic inbox, and lack of social listening can become sticking points as teams grow. The right alternative depends on your team size. Budget tools work for solo creators, while growing teams get more from an all-in-one platform like Hootsuite. What are the best Buffer alternatives? The best Buffer alternatives in 2026 include Hootsuite, Publer, Metricool, Later, Agorapulse, Sprout Social, and Sprinklr. Each offers a different mix of features and pricing. Here’s how they stack up, at a glance: Tool Best for Starting price Key strength Key limitation Hootsuite Growing teams that need an all-in-one platform $99/user/month Scheduling, social listening, and AI in every plan Deep listening sits on the Enterprise plan Publer Solo creators on a budget Free plan; paid plans from $5/month Lower per-account cost Analytics are only available on higher-tier plans Metricool Creators and small agencies who live in analytics Free plan; paid plans from $20/month Organic and paid social analytics Collaboration features require higher-tier plans Later Instagram- and TikTok-first brands Free plan; paid plans from $25/month Visual planner Starter plan is limited to 30 posts per profile per month Agorapulse Growing teams managing customer engagement $79/user/month Strong inbox and moderation Extra users and social profiles cost more Sprout Social Mid-sized teams that need advanced reporting $79/seat/month Detailed analytics and competitive insights Advanced reporting requires higher-tier plans Sprinklr Global enterprises Custom pricing Unified customer experience across 30+ channels Complex setup and no public pricing Meet the Suite Understand what matters, decide what to do next, and take action across every social workflow — all from one connected suite. Start your free trial Request a demo { \"@context\": \"https://schema.org\", \"@type\": \"Table\", \"name\": \"Best Buffer Alternatives in 2026\", \"description\": \"A comparison of seven Buffer alternatives for social media management in 2026, including Hootsuite, Publer, Metricool, Later, Agorapulse, Sprout Social, and Sprinklr. Compares starting prices, ideal users, key ",
    "date": "16.11"
   },
   {
-   "src": "Hootsuite",
-   "title": "Corporate reputation management: A guide for modern teams",
-   "link": "https://blog.hootsuite.com/corporate-reputation-management/",
-   "text": "What’s better than a company telling everyone how great it is? Having customers and employees say it for you. Here’s how to earn that kind of reputation, and how to keep it when things get a little bumpy. Key takeaways Your reputation impacts your whole business. It helps you win customers, attract talent, keep employees, and earn investor confidence. Corporate reputation management is an always-on job. It should run in the background every day, not just when something goes wrong. You can’t manage what you don’t measure. Keep an eye on sentiment, share of voice, and online reviews to see how your reputation is changing. In a crisis, assess first, then act. Not every issue needs a public statement. When it does, own it, keep people updated, and follow through on any promises. Keep your finger on the pulse with Hootsuite. Use Lumen to spot changes in public sentiment and Nest to manage customer conversations from one inbox. What is corporate reputation management? Corporate reputation management is the ongoing process of monitoring, protecting, and improving how people perceive your company. It covers what customers, employees, investors, and job seekers believe about you, and why. The key word is ongoing . Reputation isn’t something you fix once and then put on the back burner. It’s shaped by every post, policy, and customer interaction (online and off), so managing it means paying attention all the time. In practice, that looks like: Tracking what people say about your company across social, news, and review sites Responding to complaints and concerns with tact Amplifying positive stories Spotting shifts in sentiment before they turn into headlines It’s also a team sport. Marketing, social, customer support, and leadership all influence your company’s reputation, whether they think of it that way or not. Meet the Suite Understand what matters, decide what to do next, and take action across every social workflow — all from one connected suite. Start your free trial Request a demo Corporate reputation management vs. PR vs. crisis communications vs. online reputation management Think of corporate reputation management as the umbrella . PR, crisis communications , and online reputation management all contribute to it, but they each have a different focus: PR focuses on building relationships and earning positive media attention Crisis communications steps in when a specific event threatens trust Online reputation management keeps tabs on how your company appea",
-   "date": "16.11"
-  },
-  {
    "src": "Buffer",
-   "title": "Twitter (X) Analytics: How to Find Them + Free Options",
-   "link": "https://buffer.com/resources/twitter-analytics/",
-   "text": "Social platforms change fast — but all the other major players have nothing on X. While it’s unlikely to ever be Twitter again, I have a feeling the essence of the old platform is coming back. I can see my old contacts resurfacing, more tweets posts on the topics I care about in my feed, and just a general sense of potential. If you’re (like me) back hanging out on the platform, you’re probably wondering: Which of my posts are actually doing well here? The little bar chart under each post gives you impressions, engagements, profile visits, and link clicks. It’s useful, but it’s only a snapshot. The real insight comes from spotting patterns across posts — which formats get seen, which topics get replies, and what you posted right before your follower count jumped. That's what Twitter analytics is for, and in this guide I’ll show you where to find each number on a free X account, on Premium, and in Buffer Insights, and how to read them. ✨ Using Buffer for X? You can schedule posts and check how each one performed in the same place with Buffer's Twitter scheduling and analytics tools — free plan included. Key takeaways Free X accounts get per-post analytics only: impressions, engagements, profile visits, link clicks, and detail expands, via the bar chart icon below each post. X Premium unlocks the full analytics dashboard at x.com/i/account_analytics , with account trends, follower growth, and audience demographics. Buffer Insights shows your X analytics, including impressions, engagement rate, and follower growth, on the free plan. Impressions, engagement rate, and follower growth are the three core metrics to track on X. Text posts earn the highest median engagement rate on X (3.56%), and the median X engagement rate was about 2.8%, according to Buffer’s data. Replying to comments is linked to about 8% more engagement on X, and Buffer’s analysis of 8.7 million posts found the best time to post is 9 a.m. on Tuesdays. Buffer Insights shows X next to your other channels and exports a branded PDF you can share. Jump to a section: What is Twitter (X) analytics? How to check your Twitter (X) analytics How to check your Twitter (X) analytics for free (on desktop and mobile) How to see your X analytics using X Premium How to see your X analytics for free on Buffer How to use Twitter (X) analytics in your social media strategy 1. Use impressions to understand what's getting your content seen 2. Use engagement rate to find which posts drive the most engagement 3. Eva",
-   "date": "19.11"
-  },
-  {
-   "src": "Buffer",
-   "title": "11 Trending Songs on TikTok in November 2026 (+ How to Use Them)",
-   "link": "https://buffer.com/resources/trending-songs-tiktok/",
-   "text": "I don’t know about you, but my earworms are pretty much exclusively trending songs from TikTok at this point. (Even the non-music sounds from TikTok tend to get stuck in my head, but I digress…) The catchiness of these tunes is incredibly powerful for creators and brands on the social media platform to tap into, because not only do users remember the song; chances are, videos that featured the track will probably stick in their minds, too. Beyond memorability, of course, is the algorithmic effect of being right on the cusp of a trending TikTok song. And who would say no to a little boost for the content they worked so hard on? In this post, I’ll share the most viral songs and sounds on TikTok in November 2026 — and how to use them to boost your content. Jump to a section: Why trending songs matter on TikTok How to find trending songs on TikTok 11 trending TikTok songs and sounds in November 2026 Trending songs on TikTok in October 2026 Why trending TikTok sounds matter Since you’re here, I probably don’t need to tell you that using a hot sound on TikTok can increase your chances of landing on the For You page, especially if you’re early to the trend. TikTok’s algorithm often prioritizes familiarity and repeatability, so when a song is on the rise, jumping on it can give your post more visibility. For example, if I’m scrolling through my FYP and watch a video with a particular audio, the TikTok algorithm will likely test the waters with another video that uses the same sound a couple of videos later. The algorithm wants to understand exactly why I lingered on the first video. Was it the music? If yes, boy, does the FYP have more where that came from. The right TikTok sounds or songs can instantly set the tone, spark emotion, or cue a punchline for your audience, particularly if the sound, like many of the ones below, has been used in a specific way. The songs or sounds that become so viral they turn into a moment in internet culture are the really special ones. All that said: you don't need to spend hours scrolling to find the best audio for your next post. Here are the most popular TikTok songs and audio right now, updated in 2026. We’ll keep this list regularly updated, so do be sure to bookmark this page and come back if you need more inspiration! ⚡ Found a TikTok song or trend you love and want to come back to later? Save it in Buffer's Create space and easily turn it into a video to schedule when you're ready. Here's how → How to find trending songs on",
-   "date": "18.11"
-  },
-  {
-   "src": "Buffer",
-   "title": "How to Schedule TikTok Posts on Desktop and Mobile (Free Guide)",
-   "link": "https://buffer.com/resources/how-to-schedule-tiktok-posts/",
-   "text": "Staying consistent on TikTok sounds simple enough. But between coming up with ideas, filming, editing, and writing captions, posting at a good time is usually the step that slips. So, can you schedule TikTok posts? Yes, both in TikTok itself and with a tool like Buffer. TikTok's own scheduler has a few limitations worth knowing before you start, though! In this guide, I'll walk through how to schedule TikTok posts on desktop and mobile, how to schedule photo posts, what to do when the schedule option doesn't show up, and how I'd choose between TikTok's scheduler and Buffer. Key takeaways You can schedule TikTok videos natively from 15 minutes to 30 days ahead via TikTok Studio on desktop or the TikTok Studio mobile app. Once a post is scheduled in TikTok, you can't edit it. You can only delete it and upload it again. Buffer lets you schedule TikTok posts, edit posts until the moment they go live, schedule photo posts, and crosspost the same video to Instagram Reels and YouTube Shorts. To use a trending sound, schedule with Buffer's Notify Me option and add the sound in TikTok when your reminder comes through. Jump to a section: Can you schedule posts on TikTok? How to schedule TikTok posts on desktop How to schedule TikToks on desktop with TikTok Studio How to schedule TikTok videos on desktop with Buffer How to schedule TikTok posts on mobile How to schedule TikTok photo posts TikTok's scheduler vs Buffer Why can't I schedule posts on TikTok? How to edit, delete, or check a scheduled TikTok A few habits that make scheduled TikToks work better FAQ about scheduling TikTok posts Can you schedule posts on TikTok? Yes. On desktop, TikTok lets you schedule a video from 15 minutes to 30 days ahead, and the TikTok Studio app on mobile has a schedule option too. Once a post is scheduled on TikTok, you can't edit it (only delete it). Here are TikTok's scheduling rules in one place: .et-wrap { overflow-x:auto; margin:32px 0; border:1px solid #E5E5E5; border-radius:8px; } .et-wrap .et-table { display:table !important; width:100% !important; min-width:640px; border-collapse:collapse !important; margin:0 !important; font-size:15px; line-height:1.45; white-space:normal !important; word-break:normal !important; } .et-wrap .et-table th, .et-wrap .et-table td { border:none !important; border-bottom:1px solid #E5E5E5 !important; padding:12px 14px !important; text-align:left; vertical-align:top; } .et-wrap .et-table thead th { background:#F5F5F5; font-size:13px; font-weight:",
-   "date": "17.11"
-  },
-  {
-   "src": "Medium · facebook-ads",
-   "title": "Why One Deep Video Viewer Beats a Crowd of Quick Ones",
-   "link": "https://medium.com/@irfanamansoor79/why-one-deep-video-viewer-beats-a-crowd-of-quick-ones-4df96e14077a?source=rss------facebook_ads-5",
-   "text": "What the 25% and 75% audiences in Meta Ads are really telling you Continue reading on Medium »",
+   "title": "Social Listening: What It Is and How to Do It in 5 Steps",
+   "link": "https://buffer.com/resources/social-listening/",
+   "text": "Have you ever had that eerie feeling of entering a room and just knowing people have been talking about you? That happens to your brand every day. People share product recommendations in Instagram Stories, leave feedback in TikTok comments, and (sadly) most of those posts never tag you. So your notifications only show a small part of what people are saying about your brand. That’s where social listening comes in — it shows you what people say about you, your competitors, and your industry when you’re not looking. In this guide, I'll break down what social listening is, how it differs from social monitoring, and how to build your own social listening strategy. Key takeaways Social listening is tracking and analyzing online conversations about your brand, competitors, and industry, including posts that don't tag you, and using what you find to shape your strategy. Social media monitoring tracks what people say to you (tags, mentions, DMs). Social listening looks at what they say about you and why. The main benefits of social listening are deeper audience insight, faster reputation management, earlier trend spotting, better product decisions, and sharper competitive positioning. A workable social listening strategy has five steps: set goals, mine your own comments, pick your keywords, choose tools, and turn the data into decisions. Start with monitoring your own comments and DMs. Add listening once you're keeping up with those. Jump to a section: What is social listening? Social listening vs. social media monitoring The top 5 benefits of social listening How to build a social listening strategy in 5 steps 3 social listening examples Social listening FAQ What is social listening? Social listening (or social media listening) is tracking and analyzing the unfiltered opinions people share about your brand, products, competitors, and industry on social media, including the posts that don’t tag you. Think of it as being a fly on the wall. What you learn shapes: The content you create The product changes you make How you market and position your brand The key word is analyzing . Replying to a post that tags you is monitoring. Listening goes a step further — it’s noticing the pattern across hundreds of posts and doing something about it. Say you sell running shoes. Over a few weeks, you notice dozens of TikTok posts and comments from runners saying your shoes fit half a size small. None of them tag you or comment on your posts. Replying to one of them because you saw",
    "date": "23.11"
   },
   {
    "src": "Medium · facebook-ads",
-   "title": "I Made $11,420 Selling AI UGC Ads Last Month. Here’s How I Got 37 Clients.",
-   "link": "https://medium.com/@ivankawright/i-made-11-420-selling-ai-ugc-ads-last-month-heres-how-i-got-37-clients-b9cc8619bc03?source=rss------facebook_ads-5",
-   "text": "No audience. No camera. No experience. Just one free sample ad at a time. Continue reading on Medium »",
-   "date": "22.11"
+   "title": "Your Ads Bring Clicks, But Why Aren’t They Generating Sales?",
+   "link": "https://jahirulislamdm.medium.com/your-ads-bring-clicks-but-why-arent-they-generating-sales-0f63dbd0962f?source=rss------facebook_ads-5",
+   "text": "Getting traffic is only the beginning. Here’s how the five link sales chain helps eCommerce businesses turn advertising clicks into… Continue reading on Medium »",
+   "date": "24.11"
+  },
+  {
+   "src": "Medium · facebook-ads",
+   "title": "Before You Double the Budget, Ask Your Customer Service Team",
+   "link": "https://medium.com/@iqbalmaulanacom/before-you-double-the-budget-ask-your-customer-service-team-7b046788b2b3?source=rss------facebook_ads-5",
+   "text": "More Click-to-WhatsApp chats only turn into more sales if someone answers them quickly and well. Here is how to check your team before you… Continue reading on Medium »",
+   "date": "24.11"
+  },
+  {
+   "src": "Medium · facebook-ads",
+   "title": "I Let AI Watch $12,000 of My Ad Spend for 7 Days. Here’s What It Caught.",
+   "link": "https://medium.com/@kajay85977/i-let-ai-watch-12-000-of-my-ad-spend-for-7-days-heres-what-it-caught-eccedea1221d?source=rss------facebook_ads-5",
+   "text": "After 11+ years of running Meta and Google ads, I wanted to know one thing: is AI actually better than me at spotting wasted money? Continue reading on Medium »",
+   "date": "24.11"
+  },
+  {
+   "src": "Medium · facebook-ads",
+   "title": "Miami HTML5 Banner Design: Creating Advertising Visuals That Communicate Clearly",
+   "link": "https://medium.com/@habibaehsan/miami-html5-banner-design-creating-advertising-visuals-that-communicate-clearly-ea6081649cec?source=rss------facebook_ads-5",
+   "text": "Digital marketing is constantly evolving, but creative advertising remains an important part of presenting a brand, product, or service… Continue reading on Medium »",
+   "date": "24.11"
+  },
+  {
+   "src": "Medium · facebook-ads",
+   "title": "Andromeda Meta Ads 2027: o que mudou e como fazer criativos que o sistema entende (com checklist)",
+   "link": "https://medium.com/@carlosawitte/andromeda-meta-ads-2027-o-que-mudou-e-como-fazer-criativos-que-o-sistema-entende-com-checklist-782badb29681?source=rss------facebook_ads-5",
+   "text": "Andromeda Meta Ads: o que é e como funciona Continue reading on Medium »",
+   "date": "24.11"
   }
  ],
  "smm_pool_seen": [
@@ -27937,9 +27947,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "5cf2d95e8acc",
+  "gs": "d7279f1927c5",
   "quiz_pool.json": "c89ccd86b451",
-  "fact.png": "4ebccf394e1c",
+  "fact.png": "0da08946b47c",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -38136,7 +38146,7 @@
  "smm_week": "2026-48",
  "yt_mute": [],
  "yt_fav": [],
- "ytch_week": "",
+ "ytch_week": "202648",
  "content_last": {
   "kind": "experience",
   "src": "Girl on the Net"
@@ -38144,7 +38154,7 @@
  "silpo_snap": "2026-11-18",
  "live_day": "",
  "silpo_week": "2026-47",
- "sbm_at": 1795550451.9868374,
+ "sbm_at": 1795550756.5415683,
  "sbm_hist": [
   [
    "09:40",
@@ -38719,7 +38729,7 @@
    69
   ],
   [
-   "22:00",
+   "22:05",
    69
   ]
  ],
@@ -38737,7 +38747,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1795549862.8010156,
+ "net_at": 1795550766.6822085,
  "net_asn": {
   "triolan": [
    "13188",
@@ -41650,7 +41660,7 @@
  "aro_sub_s": 5,
  "aro_sub_k": 4,
  "jobs_last": 1795548731.6627429,
- "nmt_last": 1795548766.6214333,
+ "nmt_last": 1795550782.4913166,
  "kino_v": 2,
  "yt_v": 4,
  "toycat_last": 1795550155.1703339,
@@ -41695,7 +41705,6 @@
  "toy_bmsg": "2026-11-23 00",
  "pa_got": {},
  "jobs_nv": 1795429854566,
- "smm_fail_since": 1795530230.2344017,
  "kino_q": [
   {
    "id": "8dea208b8c",
@@ -41880,7 +41889,7 @@
   "UC2s-Imn7AJsZt2LaHyAStlg": "2026-11-24"
  },
  "kp_at": {
-  "mix": "2026-11-24T21:50:48.781788+02:00",
-  "drama": "2026-11-24T22:00:47.956889+02:00"
- }
+  "mix": "2026-11-24T21:50:48.781788+02:00"
+ },
+ "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 17.11–24.11\n<blockquote>🆕 <b>1. Редагування Stories в Instagram</b>\nInstagram додав можливість редагувати вже опубліковані Stories протягом 15 хвилин після їх створення.\n💡 Використовуйте цей час, щоб швидко виправити випадкові друкарські помилки або додати забутий стікер без видалення історії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5\">Прямий</a></blockquote>\n<blockquote>🆕 <b>2. Запуск AI-агента Muse від Meta</b>\nMeta розширює географію запуску свого персонального AI-агента Muse, який інтегрується в екосистему платформи.\n💡 Слідкуйте за розгортанням інструменту для оптимізації рутинних SMM-завдань та роботи з контентом.\n🔗 <a href=\"https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>3. Партнерство Pinterest і Microsoft Ads</b>\nPinterest оголосив про офіційне партнерство з Microsoft Ads для розширення рекламних можливостей.\n💡 Очікуйте нових крос-платформних рекламних інструментів та розширення аудиторії для кампаній у Pinterest.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Метрики спільного перегляду на YouTube CTV</b>\nYouTube додав підрахунок спільного перегляду (co-view counts) до аналітики Connected TV.\n💡 Враховуйте показники перегляду на великих екранах кількома глядачами при оцінці охоплення відеореклами.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Оновлення для відео в X (Twitter)</b>\nПлатформа X додала нові параметри мініатюр та налаштування підписів для відеоконтенту.\n💡 Використовуйте кастомні мініатюри, щоб підвищити клікабельність (CTR) ваших відео у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Виявлення діпфейків у TikTok</b>\nTikTok впроваджує нові технології для автоматичного виявлення та маркування штучно створеного контенту й діпфейків.\n💡 Зважайте на суворішу модерацію AI-контенту при створенні креативів для платформи.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5\">UA.NEWS</a></blockquote>\n<blockquote>👀 <b>7. Анонс додатка Threads для iPad</b>\nКоманда Threads анонсувала швидкий вихід окремого додатку для планшетів iPad.\n💡 Готуйте контент-стратегію з урахуванням майбутнього зростання аудиторії планшетів на цій платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Спрощення батьківського контролю в Pinterest</b>\nPinterest оновив і спростив налаштування батьківського контролю для безпечнішого користування платформою.\n💡 Пам'ятайте про вікові обмеження та безпеку бренду при налаштуванні таргетингу на молодшу аудиторію.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>9. Контроль нарізки файлів у Gemini API</b>\nGoogle додав нові функції керування нарізкою файлів (file slicing) до свого API Gemini для розробників.\n💡 Використовуйте оновлення для ефективнішої обробки великих масивів даних та документів через штучний інтелект.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>10. Інтеграція Instagram з Apple Music</b>\nInstagram додав функцію збереження аудіотреків із публікацій безпосередньо в плейлисти Apple Music.\n💡 Використовуйте популярну музику в Reels, щоб користувачі могли не лише взаємодіяти з відео, а й зберігати треки.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5\">Ukr.net</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202648"
 }
