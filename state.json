@@ -742,7 +742,7 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-25T01:15:47.672021+02:00",
+ "gh_beat": "2026-11-25T01:20:48.612208+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1761,14 +1761,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "25.11 01:13",
-   "ts": 1795561986,
+   "at": "25.11 01:22",
+   "ts": 1795562562,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "25.11 01:13",
-   "ts": 1795561986,
+   "at": "25.11 01:22",
+   "ts": 1795562562,
    "ok": true,
    "note": ""
   },
@@ -1791,8 +1791,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "25.11 01:13",
-   "ts": 1795562024,
+   "at": "25.11 01:24",
+   "ts": 1795562688,
    "ok": true,
    "note": ""
   },
@@ -27462,7 +27462,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "b4669ba1fb5c",
+  "gs": "8a2c25d62bed",
   "quiz_pool.json": "c89ccd86b451",
   "fact.png": "24aa4c5f946f",
   "sexed.json": "0362ec7e46d4",
@@ -40940,6 +40940,126 @@
    ],
    "ov": "У час коли по всьому світу лютує Друга світова війна детектив Крістофер Фойл змушений вести свою маленьку війну проти вбивць, злодіїв, підпільних торговців і зрадників...",
    "poster": "https://image.tmdb.org/t/p/w500/dNqHn5UCoa2vodPv5g1nfQE89R4.jpg"
+  },
+  "t4586": {
+   "title": "Дівчата Гілмор",
+   "year": "2000",
+   "rating": 8.2,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Ласкаво просимо до Старс Холлоу! Маленьке мальовниче містечко знаходиться неподалік від Гарварду. З населенням всього в дев'ять тисяч осіб, одним готелем, маленькими магазинчиками, кількома ресторанами, середньою школою,",
+   "poster": "https://image.tmdb.org/t/p/w500/8y9GYgmzb5xqSJ6aUg2Omkc97nW.jpg"
+  },
+  "t49011": {
+   "title": "Мамця",
+   "year": "2013",
+   "rating": 7.4,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Крісті, мати одиначка, яка намагається влаштувати своє життя в Напа Веллі.",
+   "poster": "https://image.tmdb.org/t/p/w500/wytY2EyhDmRUSp6M3s42lN8lHsR.jpg"
+  },
+  "t1420": {
+   "title": "Новенька",
+   "year": "2011",
+   "rating": 7.8,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Хлопець Джесіки зрадив її з іншою у день їх річниці. Тепер їй терміново потрібно знайти нове житло, на що грошей у неї зовсім небагато.Удача посміхається вчительці молодших класів, яка залишилася без даху над головою і п",
+   "poster": "https://image.tmdb.org/t/p/w500/9oCQRLKc81pxr1lEyUqmHIVLDRy.jpg"
+  },
+  "t4620": {
+   "title": "Еврика",
+   "year": "2006",
+   "rating": 7.9,
+   "genres": [
+    "Науково фантастичний",
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    10765,
+    35,
+    18
+   ],
+   "ov": "Події розгортаються в містечку Еврика, яке населяють різноманітні науковці, винахідники, генії та їх винаходи. Час від часу у містечку відбуваються дивні та екстраординарні події, а «геніальні» винаходи виходять з під ко",
+   "poster": "https://image.tmdb.org/t/p/w500/tvgSMhXJ0HYZOlBuWIEMXvvHh9h.jpg"
+  },
+  "t4589": {
+   "title": "Затримка в розвитку",
+   "year": "2003",
+   "rating": 8.6,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Це історія багатої родини, яка втратила все, і одного сина, якому нічого не залишалося, крім як не дати цій сім'ї розвалитися. На перший погляд, Майкл Блут - єдиний нормальний в сімействі божевільних. Він змушений залиши",
+   "poster": "https://image.tmdb.org/t/p/w500/1B6AXoW2fwoCLIVFQf7PCiWU2Rs.jpg"
+  },
+  "t1940": {
+   "title": "Антураж",
+   "year": "2004",
+   "rating": 8.4,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Отримавши свій перший солідний гонорар, гарненький актор з Квінса разом з друзями дитинства Еріком, Черепахою та Драмою починає нове життя в маєтку на голлівудських пагорбах. Гучні вечірки, розкішні тачки та сексапільні ",
+   "poster": "https://image.tmdb.org/t/p/w500/pDueLVvdrR2jSMrQ2pFXI9ff5zB.jpg"
+  },
+  "t124101": {
+   "title": "Хитрощі",
+   "year": "2021",
+   "rating": 8.3,
+   "genres": [
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    35,
+    18
+   ],
+   "ov": "Дебора Венс — відомий комік і легенда Лас-Вегасу. Але час йде, її аудиторія вже не так добре реагує на її виступи, і власники казино, в якому вона проводить свої шоу, серйозно замислюються відправити старіючу актрису на ",
+   "poster": "https://image.tmdb.org/t/p/w500/8nbM48kGAXtqY67OQM6ZpyJr6gd.jpg"
+  },
+  "t34524": {
+   "title": "Вовченя",
+   "year": "2011",
+   "rating": 7.7,
+   "genres": [
+    "Науково фантастичний",
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    10765,
+    18,
+    35
+   ],
+   "ov": "Скотт МакКол, шістнадцятирічний підліток, одного разу вночі опиняється у лісі разом зі своїм найкращим другом Стайлзом Стілінскі, сином шерифа. Хлопці намагаються розгадати загадку, знайшовши у лісі пошматований труп дів",
+   "poster": "https://image.tmdb.org/t/p/w500/2s6JKT7NIxDMEkm3ppCUfJ9yZJ.jpg"
   }
  },
  "cofid_pushed": "24.11.2026",
@@ -41040,12 +41160,8 @@
  "silpo_snap": "2026-11-18",
  "live_day": "2026-11-25",
  "silpo_week": "2026-47",
- "sbm_at": 1795562152.2406428,
+ "sbm_at": 1795562453.921854,
  "sbm_hist": [
-  [
-   "12:40",
-   53
-  ],
   [
    "12:45",
    53
@@ -41616,6 +41732,10 @@
   ],
   [
    "01:15",
+   93
+  ],
+  [
+   "01:20",
    93
   ]
  ],
@@ -44789,7 +44909,8 @@
   "ser_gems": "2026-11-25T00:40:46.103980+02:00",
   "ser_hot": "2026-11-25T00:50:45.195135+02:00",
   "ser_new": "2026-11-25T01:00:45.735038+02:00",
-  "ser_crime": "2026-11-25T01:10:47.581403+02:00"
+  "ser_crime": "2026-11-25T01:10:47.581403+02:00",
+  "ser_comedy": "2026-11-25T01:20:48.744330+02:00"
  },
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 17.11–24.11\n<blockquote>🆕 <b>1. Редагування Stories в Instagram</b>\nInstagram додав можливість редагувати вже опубліковані Stories протягом 15 хвилин після їх створення.\n💡 Використовуйте цей час, щоб швидко виправити випадкові друкарські помилки або додати забутий стікер без видалення історії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5\">Прямий</a></blockquote>\n<blockquote>🆕 <b>2. Запуск AI-агента Muse від Meta</b>\nMeta розширює географію запуску свого персонального AI-агента Muse, який інтегрується в екосистему платформи.\n💡 Слідкуйте за розгортанням інструменту для оптимізації рутинних SMM-завдань та роботи з контентом.\n🔗 <a href=\"https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>3. Партнерство Pinterest і Microsoft Ads</b>\nPinterest оголосив про офіційне партнерство з Microsoft Ads для розширення рекламних можливостей.\n💡 Очікуйте нових крос-платформних рекламних інструментів та розширення аудиторії для кампаній у Pinterest.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Метрики спільного перегляду на YouTube CTV</b>\nYouTube додав підрахунок спільного перегляду (co-view counts) до аналітики Connected TV.\n💡 Враховуйте показники перегляду на великих екранах кількома глядачами при оцінці охоплення відеореклами.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Оновлення для відео в X (Twitter)</b>\nПлатформа X додала нові параметри мініатюр та налаштування підписів для відеоконтенту.\n💡 Використовуйте кастомні мініатюри, щоб підвищити клікабельність (CTR) ваших відео у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Виявлення діпфейків у TikTok</b>\nTikTok впроваджує нові технології для автоматичного виявлення та маркування штучно створеного контенту й діпфейків.\n💡 Зважайте на суворішу модерацію AI-контенту при створенні креативів для платформи.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5\">UA.NEWS</a></blockquote>\n<blockquote>👀 <b>7. Анонс додатка Threads для iPad</b>\nКоманда Threads анонсувала швидкий вихід окремого додатку для планшетів iPad.\n💡 Готуйте контент-стратегію з урахуванням майбутнього зростання аудиторії планшетів на цій платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Спрощення батьківського контролю в Pinterest</b>\nPinterest оновив і спростив налаштування батьківського контролю для безпечнішого користування платформою.\n💡 Пам'ятайте про вікові обмеження та безпеку бренду при налаштуванні таргетингу на молодшу аудиторію.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>9. Контроль нарізки файлів у Gemini API</b>\nGoogle додав нові функції керування нарізкою файлів (file slicing) до свого API Gemini для розробників.\n💡 Використовуйте оновлення для ефективнішої обробки великих масивів даних та документів через штучний інтелект.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>10. Інтеграція Instagram з Apple Music</b>\nInstagram додав функцію збереження аудіотреків із публікацій безпосередньо в плейлисти Apple Music.\n💡 Використовуйте популярну музику в Reels, щоб користувачі могли не лише взаємодіяти з відео, а й зберігати треки.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5\">Ukr.net</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202648",
  "kb_probe2": "2026-48"
