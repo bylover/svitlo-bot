@@ -141,11 +141,6 @@
   "https://www.girlonthenet.com/blog/give-hotness-for-christmas-2026-gift-guide-sexy-ideas/"
  ],
  "kino_seen": [
-  "m499028",
-  "m1081676",
-  "m660000",
-  "m428099",
-  "m440298",
   "m1235304",
   "m18320",
   "m103332",
@@ -740,9 +735,14 @@
   "m77016",
   "t108545",
   "t68398",
-  "t18347"
+  "t18347",
+  "t54344",
+  "t81723",
+  "t96580",
+  "m915935",
+  "m697843"
  ],
- "gh_beat": "2026-11-24T18:05:58.992754+02:00",
+ "gh_beat": "2026-11-24T18:10:53.967655+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -27899,7 +27899,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "926467b5f11e",
+  "gs": "b9a1a000b2aa",
   "quiz_pool.json": "c89ccd86b451",
   "fact.png": "920735135e1b",
   "sexed.json": "0362ec7e46d4",
@@ -54273,7 +54273,10 @@
   "uapop": 1,
   "uachill": 1,
   "uaparty": 1,
-  "x_mood": 1
+  "x_mood": 1,
+  "x_fore": 1,
+  "x_sex": 1,
+  "x_after": 1
  },
  "aro_now_seen": "1794821583626",
  "arob_fail": {},
