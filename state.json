@@ -742,7 +742,7 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-24T22:05:51.931971+02:00",
+ "gh_beat": "2026-11-24T22:10:45.768924+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1882,14 +1882,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "24.11 22:03",
-   "ts": 1795550589,
+   "at": "24.11 22:12",
+   "ts": 1795551130,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "24.11 22:03",
-   "ts": 1795550589,
+   "at": "24.11 22:12",
+   "ts": 1795551130,
    "ok": true,
    "note": ""
   },
@@ -1912,8 +1912,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "24.11 22:04",
-   "ts": 1795550674,
+   "at": "24.11 22:12",
+   "ts": 1795551175,
    "ok": true,
    "note": ""
   },
@@ -1972,8 +1972,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "24.11 16:12",
-   "ts": 1795529563,
+   "at": "24.11 22:13",
+   "ts": 1795551220,
    "ok": true,
    "note": ""
   },
@@ -27944,10 +27944,22 @@
    null,
    42,
    "2026-11-24"
+  ],
+  "tt0317248": [
+   8.6,
+   null,
+   79,
+   "2026-11-24"
+  ],
+  "tt0181865": [
+   7.5,
+   null,
+   86,
+   "2026-11-24"
   ]
  },
  "pushed_h": {
-  "gs": "d7279f1927c5",
+  "gs": "8eca018a30d1",
   "quiz_pool.json": "c89ccd86b451",
   "fact.png": "0da08946b47c",
   "sexed.json": "0362ec7e46d4",
@@ -38054,6 +38066,212 @@
    ],
    "ov": "Члени елітного загону по розмінуванню направлені в одне з іракських міст, де практично будь-який предмет представляє смертельну небезпеку. Джеймс - сапер-підривник, який, не дивлячись на небезпеку, відноситься до знешкод",
    "poster": "https://image.tmdb.org/t/p/w500/ujRxEBCMolliLBhWsl8HvMCABKq.jpg"
+  },
+  "m530385": {
+   "title": "Сонцестояння",
+   "year": "2019",
+   "rating": 7.1,
+   "genres": [
+    "Жахи",
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    27,
+    18,
+    9648
+   ],
+   "ov": "Молода пара відправляється відпочити влітку в Швецію. Попутно вони відвідують старого приятеля в невеликому селі, де якраз проходить місцевий фестиваль. Однак незабаром з’ясовується, що за святом сонцестояння Мідсоммар х",
+   "poster": "https://image.tmdb.org/t/p/w500/A68EGr4WVlQdZcXAfyqFzzWP0Ua.jpg"
+  },
+  "m1103621": {
+   "title": "Як заробити мільйон до того, як бабуся помре",
+   "year": "2024",
+   "rating": 7.9,
+   "genres": [
+    "Драма"
+   ],
+   "g": [
+    18
+   ],
+   "ov": "M, a university dropout low on money and luck, volunteers to take care of his terminally ill grandmother, in the hope of pocketing an inheritance.",
+   "poster": "https://image.tmdb.org/t/p/w500/ciBi4QmK13W8TlCd2hcgucqgb0.jpg"
+  },
+  "m660120": {
+   "title": "Найгірша людина у світі",
+   "year": "2021",
+   "rating": 7.7,
+   "genres": [
+    "Драма",
+    "Мелодрама",
+    "Комедія"
+   ],
+   "g": [
+    18,
+    10749,
+    35
+   ],
+   "ov": "Джулі виповнюється тридцять, і її життя — суцільний екзистенційний безлад. Її таланти змарновано, а її хлопець — успішний художник-графік — наполягає на тому, що час стати більш розсудливою. На одній з вечірок вона зустр",
+   "poster": "https://image.tmdb.org/t/p/w500/jW89lWVR06s1lzOnofEpb2FPJWy.jpg"
+  },
+  "m1419406": {
+   "title": "Полювання на тінь",
+   "year": "2025",
+   "rating": 7.0,
+   "genres": [
+    "Бойовик",
+    "Кримінал",
+    "Драма"
+   ],
+   "g": [
+    28,
+    80,
+    18,
+    53
+   ],
+   "ov": "Поліція Макао залучає до роботи експерта з розшуку, який вийшов на пенсію, щоб допомогти зловити небезпечну групу професійних злодіїв.",
+   "poster": "https://image.tmdb.org/t/p/w500/7YWbAj1ulWLpCl7j5mYSPONyNLI.jpg"
+  },
+  "m49046": {
+   "title": "На Західному фронті без змін",
+   "year": "2022",
+   "rating": 7.8,
+   "genres": [
+    "Військовий",
+    "Драма"
+   ],
+   "g": [
+    10752,
+    18
+   ],
+   "ov": "Пауль і його товариші на власній шкурі відчувають, як початкова ейфорія війни перетворюється на відчай і страх, коли їм доводиться боротися за власні життя та життя одне одного в траншеях.",
+   "poster": "https://image.tmdb.org/t/p/w500/dCzGwVsIHY4zmY0eX3myixpOnp4.jpg"
+  },
+  "m637649": {
+   "title": "Гнів людський",
+   "year": "2021",
+   "rating": 7.1,
+   "genres": [
+    "Трилер",
+    "Кримінал",
+    "Драма"
+   ],
+   "g": [
+    53,
+    80,
+    18
+   ],
+   "ov": "Гілл — загадковий і холодний на вигляд британський джентльмен, але всередині нього палає жага правосуддя. Переслідуючи свої мотиви, він має намір знайти замовника серії багатомільйонних пограбувань, що приголомшили Лос-А",
+   "poster": "https://image.tmdb.org/t/p/w500/2rrU5UFxglvnOOIwYBk8HqgAIMW.jpg"
+  },
+  "m950028": {
+   "title": "Сусіди зверху",
+   "year": "2026",
+   "rating": 7.5,
+   "genres": [
+    "Комедія",
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    35,
+    18,
+    10749
+   ],
+   "ov": "Шлюб Джо й Анджели тримається на волосині. Але після того, як вони запрошують на вечерю своїх таємничих сусідів із поверху вище, вечір набуває зовсім непередбачуваного повороту.",
+   "poster": "https://image.tmdb.org/t/p/w500/c06FltlMVH4zAKUUUHqmEoD05zj.jpg"
+  },
+  "m901563": {
+   "title": "Close",
+   "year": "2022",
+   "rating": 7.8,
+   "genres": [
+    "Драма"
+   ],
+   "g": [
+    18
+   ],
+   "ov": "Two 13-year-old boys spend an idyllic summer together, but their connection is put to the test when they become the subject of speculation at school.",
+   "poster": "https://image.tmdb.org/t/p/w500/h9AAQbozDUc0hYJspmYZfAeCfM2.jpg"
+  },
+  "m1284120": {
+   "title": "Гидка сестра",
+   "year": "2025",
+   "rating": 7.0,
+   "genres": [
+    "Жахи",
+    "Комедія",
+    "Драма"
+   ],
+   "g": [
+    27,
+    35,
+    18
+   ],
+   "ov": "У світі, де краса — не дар, а жорстокий бізнес, бал перетворюється на аукціон досконалості, а принц — на нагороду за найідеальнішу оболонку. Ельвіра, зведена сестра чарівної Попелюшки, готова на все, аби стати королевою ",
+   "poster": "https://image.tmdb.org/t/p/w500/iMlDT2RvSwJt3tdVdDqqOkWHrC9.jpg"
+  },
+  "m331482": {
+   "title": "Маленькі жінки",
+   "year": "2019",
+   "rating": 7.7,
+   "genres": [
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    10749
+   ],
+   "ov": "Фільм розповідає про життя чотирьох сестер Марч, які дорослішають, розплутують сімейні проблеми і вчаться будувати стосунки на тлі Громадянської війни в США.",
+   "poster": "https://image.tmdb.org/t/p/w500/sik1pUjbJv4b7yIpupA9kHZm2iM.jpg"
+  },
+  "m46738": {
+   "title": "Пожежі",
+   "year": "2010",
+   "rating": 8.3,
+   "genres": [
+    "Драма",
+    "Військовий",
+    "Детектив"
+   ],
+   "g": [
+    18,
+    10752,
+    9648
+   ],
+   "ov": "Наваль Марван заповіла своїм дітям, близнюкам Жані та Сімону, після її смерті віднайти їхніх батька і брата, про яких вони ніколи нічого не чули. Для того, щоб розгадати сімейні таємниці, їм потрібно вирушити на Середній",
+   "poster": "https://image.tmdb.org/t/p/w500/c1CvPhjfZa4CsqSA1NNuq8xg2K0.jpg"
+  },
+  "m20453": {
+   "title": "Три ідіоти",
+   "year": "2009",
+   "rating": 8.4,
+   "genres": [
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    18,
+    35
+   ],
+   "ov": "В центрі сюжету – трійка друзів, які навчаються на інженерному факультеті кращого інституту Індії. У кожного з них є свої недоліки і страхи, які вони намагаються перебороти. Одного разу один з них зникає і двом приятелям",
+   "poster": "https://image.tmdb.org/t/p/w500/bztG9z6GBL4qt6yoHTNwm2XTus4.jpg"
+  },
+  "m1791": {
+   "title": "Піаністка",
+   "year": "2001",
+   "rating": 7.5,
+   "genres": [
+    "Драма",
+    "Мелодрама"
+   ],
+   "g": [
+    18,
+    10749
+   ],
+   "ov": "Головна героїня Еріка — професорка Віденської консерваторії.  Вона вчить молодь чудової музики Шуберта, натомість сама – страшно далека від гармонії небесних сфер. Позбавлена навіть натяку на особисте життя, вона по-дитя",
+   "poster": "https://image.tmdb.org/t/p/w500/cQ6v5qj4CP0MudMHc2lMZZvf6Ak.jpg"
   }
  },
  "cofid_pushed": "16.11.2026",
@@ -38073,8 +38291,8 @@
   "out": "2026-11-24T15:30:50.675820+02:00",
   "les": "2026-11-24T16:00:47.212604+02:00",
   "ero": "2026-11-24T16:00:47.212604+02:00",
-  "pov": "2026-11-24T10:15:53.574885+02:00",
-  "lat": "2026-11-24T10:15:53.574885+02:00",
+  "pov": "2026-11-24T22:10:45.937559+02:00",
+  "lat": "2026-11-24T22:10:45.937559+02:00",
   "asi": "2026-11-24T16:10:46.551106+02:00",
   "blo": "2026-11-24T16:10:46.551106+02:00",
   "rpl": "2026-11-24T10:50:47.140389+02:00",
@@ -38154,12 +38372,8 @@
  "silpo_snap": "2026-11-18",
  "live_day": "",
  "silpo_week": "2026-47",
- "sbm_at": 1795550756.5415683,
+ "sbm_at": 1795551049.5878615,
  "sbm_hist": [
-  [
-   "09:40",
-   72
-  ],
   [
    "09:45",
    69
@@ -38730,6 +38944,10 @@
   ],
   [
    "22:05",
+   69
+  ],
+  [
+   "22:10",
    69
   ]
  ],
@@ -41889,7 +42107,8 @@
   "UC2s-Imn7AJsZt2LaHyAStlg": "2026-11-24"
  },
  "kp_at": {
-  "mix": "2026-11-24T21:50:48.781788+02:00"
+  "mix": "2026-11-24T21:50:48.781788+02:00",
+  "drama": "2026-11-24T22:10:45.937559+02:00"
  },
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 17.11–24.11\n<blockquote>🆕 <b>1. Редагування Stories в Instagram</b>\nInstagram додав можливість редагувати вже опубліковані Stories протягом 15 хвилин після їх створення.\n💡 Використовуйте цей час, щоб швидко виправити випадкові друкарські помилки або додати забутий стікер без видалення історії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5\">Прямий</a></blockquote>\n<blockquote>🆕 <b>2. Запуск AI-агента Muse від Meta</b>\nMeta розширює географію запуску свого персонального AI-агента Muse, який інтегрується в екосистему платформи.\n💡 Слідкуйте за розгортанням інструменту для оптимізації рутинних SMM-завдань та роботи з контентом.\n🔗 <a href=\"https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>3. Партнерство Pinterest і Microsoft Ads</b>\nPinterest оголосив про офіційне партнерство з Microsoft Ads для розширення рекламних можливостей.\n💡 Очікуйте нових крос-платформних рекламних інструментів та розширення аудиторії для кампаній у Pinterest.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Метрики спільного перегляду на YouTube CTV</b>\nYouTube додав підрахунок спільного перегляду (co-view counts) до аналітики Connected TV.\n💡 Враховуйте показники перегляду на великих екранах кількома глядачами при оцінці охоплення відеореклами.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Оновлення для відео в X (Twitter)</b>\nПлатформа X додала нові параметри мініатюр та налаштування підписів для відеоконтенту.\n💡 Використовуйте кастомні мініатюри, щоб підвищити клікабельність (CTR) ваших відео у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Виявлення діпфейків у TikTok</b>\nTikTok впроваджує нові технології для автоматичного виявлення та маркування штучно створеного контенту й діпфейків.\n💡 Зважайте на суворішу модерацію AI-контенту при створенні креативів для платформи.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5\">UA.NEWS</a></blockquote>\n<blockquote>👀 <b>7. Анонс додатка Threads для iPad</b>\nКоманда Threads анонсувала швидкий вихід окремого додатку для планшетів iPad.\n💡 Готуйте контент-стратегію з урахуванням майбутнього зростання аудиторії планшетів на цій платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Спрощення батьківського контролю в Pinterest</b>\nPinterest оновив і спростив налаштування батьківського контролю для безпечнішого користування платформою.\n💡 Пам'ятайте про вікові обмеження та безпеку бренду при налаштуванні таргетингу на молодшу аудиторію.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>9. Контроль нарізки файлів у Gemini API</b>\nGoogle додав нові функції керування нарізкою файлів (file slicing) до свого API Gemini для розробників.\n💡 Використовуйте оновлення для ефективнішої обробки великих масивів даних та документів через штучний інтелект.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>10. Інтеграція Instagram з Apple Music</b>\nInstagram додав функцію збереження аудіотреків із публікацій безпосередньо в плейлисти Apple Music.\n💡 Використовуйте популярну музику в Reels, щоб користувачі могли не лише взаємодіяти з відео, а й зберігати треки.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5\">Ukr.net</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202648"
 }
