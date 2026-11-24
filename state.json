@@ -742,7 +742,7 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-25T00:35:45.202544+02:00",
+ "gh_beat": "2026-11-25T00:40:45.860375+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1761,14 +1761,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "25.11 00:36",
-   "ts": 1795559807,
+   "at": "25.11 00:42",
+   "ts": 1795560123,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "25.11 00:36",
-   "ts": 1795559807,
+   "at": "25.11 00:42",
+   "ts": 1795560123,
    "ok": true,
    "note": ""
   },
@@ -1791,8 +1791,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "25.11 00:22",
-   "ts": 1795558951,
+   "at": "25.11 00:42",
+   "ts": 1795560165,
    "ok": true,
    "note": ""
   },
@@ -1851,8 +1851,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "25.11 00:22",
-   "ts": 1795558960,
+   "at": "25.11 00:43",
+   "ts": 1795560183,
    "ok": true,
    "note": ""
   },
@@ -27189,10 +27189,22 @@
    null,
    69,
    "2026-11-24"
+  ],
+  "tt3281796": [
+   8.1,
+   null,
+   null,
+   "2026-11-25"
+  ],
+  "tt0487831": [
+   8.5,
+   null,
+   null,
+   "2026-11-25"
   ]
  },
  "pushed_h": {
-  "gs": "d630b2be4049",
+  "gs": "d47f01090b25",
   "quiz_pool.json": "c89ccd86b451",
   "fact.png": "ab672a315e85",
   "sexed.json": "0362ec7e46d4",
@@ -39853,6 +39865,190 @@
    ],
    "ov": "Вони не розплутують низки загадкових доказів. Вони не проводять час у криміналістичних лабораторіях. Вони рідко використовують пістолети. Адже їхня головна зброя - розум. Члени елітного підрозділу ФБР навчились мислити, ",
    "poster": "https://image.tmdb.org/t/p/w500/hdGsPySzgMG3TnFsso3k0QIoTUz.jpg"
+  },
+  "t203857": {
+   "title": "Дипломатка",
+   "year": "2023",
+   "rating": 8.0,
+   "genres": [
+    "Драма",
+    "Політика та війна"
+   ],
+   "g": [
+    18,
+    10768
+   ],
+   "ov": "У розпал міжнародної кризи американська дипломатка намагається впоратися з престижною роботою посла у Великій Британії та напруженим шлюбом із відомим політиком.",
+   "poster": "https://image.tmdb.org/t/p/w500/qKixnSTJWo5Jrj6lWnOV0aJw8DP.jpg"
+  },
+  "t259909": {
+   "title": "Декстер: Воскресіння",
+   "year": "2025",
+   "rating": 9.0,
+   "genres": [
+    "Кримінал",
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    80,
+    18,
+    9648
+   ],
+   "ov": "Після того як він пережив постріл від свого сина Гаррісона, Декстер прокидається з коми й дізнається, що той зник. У пошуках примирення він вирушає до Нью-Йорка, але поява Батісти повертає привиди минулого. Батько й син ",
+   "poster": "https://image.tmdb.org/t/p/w500/9AnIXpMp1OsP253eLvYlgIJ3uUR.jpg"
+  },
+  "t54650": {
+   "title": "Влада в нічному місті",
+   "year": "2014",
+   "rating": 8.1,
+   "genres": [
+    "Кримінал",
+    "Драма"
+   ],
+   "g": [
+    80,
+    18
+   ],
+   "ov": "Успішний власник нічного клубу, який потай торгує наркотиками, хоче вести чесний бізнес, але кримінальні зв’язки й розслідування поліції заважають його планам.",
+   "poster": "https://image.tmdb.org/t/p/w500/91B7JMSpcugAO69BhCqsO1ZS29L.jpg"
+  },
+  "t87940": {
+   "title": "Хадсон і Рекс",
+   "year": "2019",
+   "rating": 7.4,
+   "genres": [
+    "Драма",
+    "Кримінал"
+   ],
+   "g": [
+    18,
+    80
+   ],
+   "ov": "Детектив Чарлі Хадсон працює в парі з ідеальним напарником, своєю професійно навченою службовою німецькою вівчаркою на ім'я Рекс.",
+   "poster": "https://image.tmdb.org/t/p/w500/zpGV3X7ZmgNty3meMoVcwOEiXOJ.jpg"
+  },
+  "t125935": {
+   "title": "Початкова школа \"Ебботт\"",
+   "year": "2021",
+   "rating": 8.2,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "In this workplace comedy, a group of dedicated, passionate teachers — and a slightly tone-deaf principal — are brought together in a Philadelphia public school where, despite the odds stacked against them, they are deter",
+   "poster": "https://image.tmdb.org/t/p/w500/eqc95mrb9tHQGGqtyEixTtpVwLc.jpg"
+  },
+  "t4046": {
+   "title": "Spooks",
+   "year": "2002",
+   "rating": 8.3,
+   "genres": [
+    "Драма",
+    "Екшн і Пригоди",
+    "Кримінал"
+   ],
+   "g": [
+    18,
+    10759,
+    80
+   ],
+   "ov": "Tense drama series about the different challenges faced by the British Security Service as they work against the clock to safeguard the nation. The title is a popular colloquialism for spies, and the series follows the w",
+   "poster": "https://image.tmdb.org/t/p/w500/5kODxCYihuM49oQWke6GfHdsRT6.jpg"
+  },
+  "t85077": {
+   "title": "Обраний",
+   "year": "2019",
+   "rating": 9.1,
+   "genres": [
+    "Екшн і Пригоди",
+    "Сімейний",
+    "Драма"
+   ],
+   "g": [
+    10759,
+    10751,
+    18
+   ],
+   "ov": "Сюжет бере початок із знайомства та кількох перепертій в які потрапляє Ісус після з найомства з рибалками Саймоном та Андрієм. Ці люди насправді зустрічались з Ісусом раніше, але лише на короткий час. Іван Хреститель поз",
+   "poster": "https://image.tmdb.org/t/p/w500/nr0r7YTn1l84KLG1iCSO5ofHTvO.jpg"
+  },
+  "t1972": {
+   "title": "Зоряний крейсер \"Галактика\"",
+   "year": "2004",
+   "rating": 8.7,
+   "genres": [
+    "Науково фантастичний",
+    "Екшн і Пригоди",
+    "Драма"
+   ],
+   "g": [
+    10765,
+    10759,
+    18
+   ],
+   "ov": "У  далекому майбутньому у далеких просторах галактики, лідери дванадцяти людських колоній об'єднуються для захисту від масштабного вторгнення біомеханічної цивілізації Сайлонів. Їх мета - знищити расу людей. Винищивши ус",
+   "poster": "https://image.tmdb.org/t/p/w500/99PJSbcO2LeM10uOGWeFihNp77j.jpg"
+  },
+  "t2490": {
+   "title": "Айтішники",
+   "year": "2006",
+   "rating": 8.5,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Дія відбувається в офісах „Рейнхолм Індастріз“ — вигаданій  британській корпорації, розташованій в центрі Лондону. Сюжет  розвивається навколо витівок команди технічної підтримки, що складається  з 3 чоловік і працює в б",
+   "poster": "https://image.tmdb.org/t/p/w500/xC2mwwN0BLBMb1sF9IboKpmBRZg.jpg"
+  },
+  "t1432": {
+   "title": "Вероніка Марс",
+   "year": "2004",
+   "rating": 8.3,
+   "genres": [
+    "Детектив",
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    9648,
+    18,
+    35
+   ],
+   "ov": "Затягуючий, пригодницький серіал про Вероніку Марс - ученицю старшої школи, доньку приватного детектива, колишнього шерифа прибережного міста Нептуна, яка підробляє у свого батька в детективному агентстві. У її школі вча",
+   "poster": "https://image.tmdb.org/t/p/w500/vOdJETEueGgUqJR4UvwTdUoJhvO.jpg"
+  },
+  "t62649": {
+   "title": "Супермаркет",
+   "year": "2015",
+   "rating": 7.8,
+   "genres": [
+    "Комедія"
+   ],
+   "g": [
+    35
+   ],
+   "ov": "Серіал про великий різношерстий колектив працівників гіпермаркету, які на своєму робочому місці переживають безліч пригод, незважаючи на те, що територія їх проживання обмежується стінами магазину.",
+   "poster": "https://image.tmdb.org/t/p/w500/tbFz1fWpQWKAu62yMvo2VhYUfmm.jpg"
+  },
+  "t66025": {
+   "title": "За законами вовків",
+   "year": "2016",
+   "rating": 8.2,
+   "genres": [
+    "Кримінал",
+    "Драма"
+   ],
+   "g": [
+    80,
+    18
+   ],
+   "ov": "Після смерті матері 17-річний Джошуа Коді переїжджає до своєї рідні у пляжне містечко в Південній Каліфорнії. Сімейною справою керує бабуся Джошуа - Джанін Коді. Головний її помічник - старший з братів Коді, Поуп. Інші с",
+   "poster": "https://image.tmdb.org/t/p/w500/q1QMArFsIdXWcKjSkhrw4HRtMF.jpg"
   }
  },
  "cofid_pushed": "24.11.2026",
@@ -39870,8 +40066,8 @@
   "lin": "2026-11-25T00:10:46.628982+02:00",
   "wet": "2026-11-25T00:20:50.482568+02:00",
   "out": "2026-11-25T00:20:50.482568+02:00",
-  "les": "2026-11-24T16:00:47.212604+02:00",
-  "ero": "2026-11-24T16:00:47.212604+02:00",
+  "les": "2026-11-25T00:40:46.103980+02:00",
+  "ero": "2026-11-25T00:40:46.103980+02:00",
   "pov": "2026-11-24T22:10:45.937559+02:00",
   "lat": "2026-11-24T22:10:45.937559+02:00",
   "asi": "2026-11-24T16:10:46.551106+02:00",
@@ -39953,12 +40149,8 @@
  "silpo_snap": "2026-11-18",
  "live_day": "2026-11-24",
  "silpo_week": "2026-47",
- "sbm_at": 1795559748.4387782,
+ "sbm_at": 1795560049.6717951,
  "sbm_hist": [
-  [
-   "12:00",
-   58
-  ],
   [
    "12:05",
    58
@@ -40530,6 +40722,10 @@
   [
    "00:35",
    92
+  ],
+  [
+   "00:40",
+   93
   ]
  ],
  "sbm_near": {
@@ -43461,7 +43657,7 @@
  "nmt_last": 1795558583.4181015,
  "kino_v": 2,
  "yt_v": 4,
- "toycat_last": 1795558664.6627512,
+ "toycat_last": 1795560056.997183,
  "toy_la": {
   "dildo": 1794975403.769806,
   "kegel": 1794757561.5974472,
@@ -43698,7 +43894,8 @@
   "ua": "2026-11-24T23:40:47.988844+02:00",
   "now": "2026-11-24T23:50:46.131445+02:00",
   "gems": "2026-11-25T00:10:46.628982+02:00",
-  "ser_best": "2026-11-25T00:20:50.482568+02:00"
+  "ser_best": "2026-11-25T00:20:50.482568+02:00",
+  "ser_gems": "2026-11-25T00:40:46.103980+02:00"
  },
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 17.11–24.11\n<blockquote>🆕 <b>1. Редагування Stories в Instagram</b>\nInstagram додав можливість редагувати вже опубліковані Stories протягом 15 хвилин після їх створення.\n💡 Використовуйте цей час, щоб швидко виправити випадкові друкарські помилки або додати забутий стікер без видалення історії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5\">Прямий</a></blockquote>\n<blockquote>🆕 <b>2. Запуск AI-агента Muse від Meta</b>\nMeta розширює географію запуску свого персонального AI-агента Muse, який інтегрується в екосистему платформи.\n💡 Слідкуйте за розгортанням інструменту для оптимізації рутинних SMM-завдань та роботи з контентом.\n🔗 <a href=\"https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>3. Партнерство Pinterest і Microsoft Ads</b>\nPinterest оголосив про офіційне партнерство з Microsoft Ads для розширення рекламних можливостей.\n💡 Очікуйте нових крос-платформних рекламних інструментів та розширення аудиторії для кампаній у Pinterest.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Метрики спільного перегляду на YouTube CTV</b>\nYouTube додав підрахунок спільного перегляду (co-view counts) до аналітики Connected TV.\n💡 Враховуйте показники перегляду на великих екранах кількома глядачами при оцінці охоплення відеореклами.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Оновлення для відео в X (Twitter)</b>\nПлатформа X додала нові параметри мініатюр та налаштування підписів для відеоконтенту.\n💡 Використовуйте кастомні мініатюри, щоб підвищити клікабельність (CTR) ваших відео у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Виявлення діпфейків у TikTok</b>\nTikTok впроваджує нові технології для автоматичного виявлення та маркування штучно створеного контенту й діпфейків.\n💡 Зважайте на суворішу модерацію AI-контенту при створенні креативів для платформи.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5\">UA.NEWS</a></blockquote>\n<blockquote>👀 <b>7. Анонс додатка Threads для iPad</b>\nКоманда Threads анонсувала швидкий вихід окремого додатку для планшетів iPad.\n💡 Готуйте контент-стратегію з урахуванням майбутнього зростання аудиторії планшетів на цій платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Спрощення батьківського контролю в Pinterest</b>\nPinterest оновив і спростив налаштування батьківського контролю для безпечнішого користування платформою.\n💡 Пам'ятайте про вікові обмеження та безпеку бренду при налаштуванні таргетингу на молодшу аудиторію.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>9. Контроль нарізки файлів у Gemini API</b>\nGoogle додав нові функції керування нарізкою файлів (file slicing) до свого API Gemini для розробників.\n💡 Використовуйте оновлення для ефективнішої обробки великих масивів даних та документів через штучний інтелект.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>10. Інтеграція Instagram з Apple Music</b>\nInstagram додав функцію збереження аудіотреків із публікацій безпосередньо в плейлисти Apple Music.\n💡 Використовуйте популярну музику в Reels, щоб користувачі могли не лише взаємодіяти з відео, а й зберігати треки.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5\">Ukr.net</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202648",
  "kb_probe2": "2026-48"
