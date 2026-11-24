@@ -742,7 +742,7 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-24T18:55:47.759350+02:00",
+ "gh_beat": "2026-11-24T19:00:55.961021+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -808,11 +808,11 @@
    ]
   ]
  },
- "fact_png": "2026-11-24 18|8|2026-11-24T16:22:28+02:00",
+ "fact_png": "2026-11-24 19|8|2026-11-24T16:22:28+02:00",
  "fact_day": {
-  "total": "6 год 44 хв",
+  "total": "5 год 44 хв",
   "list": [
-   "18:00–20:33 · 2 год 33 хв",
+   "19:00–20:33 · 1 год 32 хв",
    "07:20–09:04 · 1 год 44 хв",
    "13:55–16:22 · 2 год 27 хв"
   ]
@@ -2068,7 +2068,7 @@
  "silpo_fb": "1f0bae3d-2073-62f4-b14c-f9715721ce18|DeliveryHome|",
  "yt_ver": 2,
  "smm_ver": 4,
- "smm_try": "2026-11-24 18",
+ "smm_try": "2026-11-24 19",
  "smm_links": [
   "https://www.socialmediatoday.com/news/meta-offers-creative-ad-targeting-for-specific-audiences/833672/",
   "https://blog.google/products/ads-commerce/holiday-shopping-bidding-budgeting/",
@@ -27899,9 +27899,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "a29f30b5ae97",
+  "gs": "5b68cc0a2455",
   "quiz_pool.json": "c89ccd86b451",
-  "fact.png": "920735135e1b",
+  "fact.png": "8483c342fb17",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -50871,12 +50871,8 @@
  "silpo_snap": "2026-11-18",
  "live_day": "",
  "silpo_week": "2026-47",
- "sbm_at": 1795539350.9771361,
+ "sbm_at": 1795539661.2694216,
  "sbm_hist": [
-  [
-   "06:25",
-   93
-  ],
   [
    "06:30",
    93
@@ -51447,6 +51443,10 @@
   ],
   [
    "18:55",
+   67
+  ],
+  [
+   "19:00",
    67
   ]
  ],
@@ -54294,7 +54294,9 @@
   "road": 1,
   "morning": 1,
   "yoga": 1,
-  "study": 1
+  "study": 1,
+  "cook": 1,
+  "sad": 1
  },
  "aro_now_seen": "1794821583626",
  "arob_fail": {},
