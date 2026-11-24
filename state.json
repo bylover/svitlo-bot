@@ -742,7 +742,7 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-24T22:49:49.366451+02:00",
+ "gh_beat": "2026-11-24T22:55:11.380656+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1882,14 +1882,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "24.11 22:44",
-   "ts": 1795553077,
+   "at": "24.11 22:56",
+   "ts": 1795553819,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "24.11 22:44",
-   "ts": 1795553077,
+   "at": "24.11 22:56",
+   "ts": 1795553819,
    "ok": true,
    "note": ""
   },
@@ -1906,8 +1906,8 @@
    "note": ""
   },
   "ігри PS5": {
-   "at": "24.11 21:37",
-   "ts": 1795549035,
+   "at": "24.11 22:55",
+   "ts": 1795553737,
    "ok": true,
    "note": ""
   },
@@ -1918,44 +1918,44 @@
    "note": ""
   },
   "🎵 Музика": {
-   "at": "24.11 16:06",
-   "ts": 1795529166,
+   "at": "24.11 22:55",
+   "ts": 1795553733,
    "ok": true,
    "note": ""
   },
   "❤️ Здоровʼя": {
-   "at": "24.11 16:06",
-   "ts": 1795529166,
+   "at": "24.11 22:55",
+   "ts": 1795553737,
    "ok": true,
    "note": ""
   },
   "🎧 Аудіокниги": {
-   "at": "16.11 12:56",
-   "ts": 1794826602,
+   "at": "24.11 22:55",
+   "ts": 1795553738,
    "ok": true,
    "note": ""
   },
   "аудіокниги": {
-   "at": "24.11 16:06",
-   "ts": 1795529166,
+   "at": "24.11 22:55",
+   "ts": 1795553738,
    "ok": true,
    "note": ""
   },
   "🎓 Секс-освіта": {
-   "at": "24.11 15:56",
-   "ts": 1795528581,
+   "at": "24.11 22:55",
+   "ts": 1795553727,
    "ok": true,
    "note": ""
   },
   "🎯 Вікторини": {
-   "at": "24.11 15:56",
-   "ts": 1795528581,
+   "at": "24.11 22:55",
+   "ts": 1795553727,
    "ok": true,
    "note": ""
   },
   "🌅 Імпульс / 🕯 класика": {
-   "at": "24.11 16:06",
-   "ts": 1795529164,
+   "at": "24.11 22:55",
+   "ts": 1795553727,
    "ok": true,
    "note": ""
   },
@@ -1966,8 +1966,8 @@
    "note": ""
   },
   "кіномэтч": {
-   "at": "24.11 21:46",
-   "ts": 1795549564,
+   "at": "24.11 22:55",
+   "ts": 1795553738,
    "ok": true,
    "note": ""
   },
@@ -28067,7 +28067,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "efd643ed027a",
+  "gs": "a2634f5df3ce",
   "quiz_pool.json": "c89ccd86b451",
   "fact.png": "0da08946b47c",
   "sexed.json": "0362ec7e46d4",
@@ -28188,9 +28188,9 @@
  "games_month": "2026-11",
  "games_force": false,
  "ps_day": "2026-11-24",
- "ab_force": true,
+ "ab_force": false,
  "rc_force": true,
- "cofid": "",
+ "cofid": "2026-Q4",
  "km_pick": {
   "m13885": {
    "title": "Суїні Тодд: Демон-перукар із Фліт-стріт",
@@ -39114,7 +39114,7 @@
    "poster": "https://image.tmdb.org/t/p/w500/eDTb3t8gwLmqxVkUm13oNR0cUie.jpg"
   }
  },
- "cofid_pushed": "16.11.2026",
+ "cofid_pushed": "24.11.2026",
  "ab_month": "2026-11",
  "yt_last": "▶️ <b>ТОП-10 УКРАЇНСЬКОГО YOUTUBE · 17.11–24.11</b>\n<blockquote>▶️ <b>1. Божевілля з Тредс: заборона абортів, випрошування подарунків та емоційно-недоступні чоловіки</b>\n📺 смішно не буде  · ⏱ 57 хв\n👁 <b>92 тис</b> переглядів · 💬 <b>508</b> коментарів\n🔗 <a href=\"https://youtu.be/M3kBqlXHYdA\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>2. ВЛОГ: мої покупки і мастхеви для новонароджених </b>\n📺 КАТРЯ · ⏱ 57 хв\n👁 <b>214 тис</b> переглядів · 💬 <b>488</b> коментарів\n🔗 <a href=\"https://youtu.be/Hohs1gRA59g\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>3. Кримський міст — 3D-реконструкція: сім етапів операції СБУ</b>\n📺 Година Ч · ⏱ 11 хв\n👁 <b>1.5 млн</b> переглядів · 💬 <b>655</b> коментарів\n🔗 <a href=\"https://youtu.be/nC1RjBvNDm0\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>4. «ТИ ПОСТАВИЛА СПІРАЛЬ,ЩОБ ДОГОДИТИ ЧОЛОВІКУ?»|MamaRika,Галицька Діва,Раміна про непрохані коментарі</b>\n📺 RAMINA · ⏱ 1 год 22 хв\n👁 <b>291 тис</b> переглядів · 💬 <b>306</b> коментарів\n🔗 <a href=\"https://youtu.be/uAC5KZwGjcY\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>5. міні ВЛОГ. МАЛА ХВОРІЄ</b>\n📺 💋 ELENA_KISS 💋 · ⏱ 14 хв\n👁 <b>51 тис</b> переглядів · 💬 <b>370</b> коментарів\n🔗 <a href=\"https://youtu.be/5AUrdJful6o\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>6. ПЛАСТИЧНА ХІРУРГІЯ &amp; ТРАНСПЛАНТОЛОГІЯ x МЕДИЧНІ ІСТОРІЇ 2.8 </b>\n📺 Стендап Славіка  · ⏱ 1 год 24 хв\n👁 <b>188 тис</b> переглядів · 💬 <b>470</b> коментарів\n🔗 <a href=\"https://youtu.be/hfff7hxJfVY\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>7. РОЗГОНИ ПРО ПІДРОБЛЕНІ ДОКУМЕНТИ | Та Сама Маріна, Бережко, Пінчук, Сафаров, Михайлюк</b>\n📺 Бродячий Стендап · ⏱ 1 год 12 хв\n👁 <b>132 тис</b> переглядів · 💬 <b>171</b> коментарів\n🔗 <a href=\"https://youtu.be/UGbqgRy16dk\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>8. З жінками жити важче | СІМЕЙНА ТЕРАПІЯ | Пінчук, Скорик, Маслов, Білоцерковець</b>\n📺 Бродячий Стендап · ⏱ 1 год 03 хв\n👁 <b>164 тис</b> переглядів · 💬 <b>573</b> коментарів\n🔗 <a href=\"https://youtu.be/YvWb9U_e9yI\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>9. ВОЛОДАР ПЕРСНІВ: ПОВЕРНЕННЯ КОРОЛЯ – ОСТАПЕНКО, ЛІПКО, ЗУХВАЛА, ШАТАЙЛО, КОЛОМІЄЦЬ</b>\n📺 Підпільний Стендап · ⏱ 2 год 18 хв\n👁 <b>83 тис</b> переглядів · 💬 <b>239</b> коментарів\n🔗 <a href=\"https://youtu.be/HM6xHkLCz0s\">Дивитися</a></blockquote>\n<blockquote>▶️ <b>10. НОВЕ ШОУ! У МОЄМУ ВІЦІ: ЄФРОСИНІНА, ГАЛИЦЬКА ДІВА. Випуск #1: КОНДРАТЕНКО, ГАТУН</b>\n📺 Маша Єфросиніна · ⏱ 1 год 04 хв\n👁 <b>179 тис</b> переглядів · 💬 <b>263</b> коментарів\n🔗 <a href=\"https://youtu.be/WPOVnu_tdG0\">Дивитися</a></blockquote>\n<i>Ще 10, улюблені й приховані канали, 📺 цікаві канали за темами — кнопкою «▶️ YouTube» у меню.</i>\n§RT:yt:202648",
  "match_month": "2026-11",
@@ -39212,12 +39212,8 @@
  "silpo_snap": "2026-11-18",
  "live_day": "",
  "silpo_week": "2026-47",
- "sbm_at": 1795553392.5531428,
+ "sbm_at": 1795553715.1459002,
  "sbm_hist": [
-  [
-   "10:15",
-   67
-  ],
   [
    "10:20",
    67
@@ -39791,8 +39787,8 @@
    75
   ],
   [
-   "22:49",
-   75
+   "22:55",
+   76
   ]
  ],
  "sbm_near": {
@@ -42956,5 +42952,6 @@
   "comedy": "2026-11-24T22:35:51.606293+02:00",
   "horror": "2026-11-24T22:49:49.468578+02:00"
  },
- "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 17.11–24.11\n<blockquote>🆕 <b>1. Редагування Stories в Instagram</b>\nInstagram додав можливість редагувати вже опубліковані Stories протягом 15 хвилин після їх створення.\n💡 Використовуйте цей час, щоб швидко виправити випадкові друкарські помилки або додати забутий стікер без видалення історії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5\">Прямий</a></blockquote>\n<blockquote>🆕 <b>2. Запуск AI-агента Muse від Meta</b>\nMeta розширює географію запуску свого персонального AI-агента Muse, який інтегрується в екосистему платформи.\n💡 Слідкуйте за розгортанням інструменту для оптимізації рутинних SMM-завдань та роботи з контентом.\n🔗 <a href=\"https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>3. Партнерство Pinterest і Microsoft Ads</b>\nPinterest оголосив про офіційне партнерство з Microsoft Ads для розширення рекламних можливостей.\n💡 Очікуйте нових крос-платформних рекламних інструментів та розширення аудиторії для кампаній у Pinterest.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Метрики спільного перегляду на YouTube CTV</b>\nYouTube додав підрахунок спільного перегляду (co-view counts) до аналітики Connected TV.\n💡 Враховуйте показники перегляду на великих екранах кількома глядачами при оцінці охоплення відеореклами.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Оновлення для відео в X (Twitter)</b>\nПлатформа X додала нові параметри мініатюр та налаштування підписів для відеоконтенту.\n💡 Використовуйте кастомні мініатюри, щоб підвищити клікабельність (CTR) ваших відео у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Виявлення діпфейків у TikTok</b>\nTikTok впроваджує нові технології для автоматичного виявлення та маркування штучно створеного контенту й діпфейків.\n💡 Зважайте на суворішу модерацію AI-контенту при створенні креативів для платформи.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5\">UA.NEWS</a></blockquote>\n<blockquote>👀 <b>7. Анонс додатка Threads для iPad</b>\nКоманда Threads анонсувала швидкий вихід окремого додатку для планшетів iPad.\n💡 Готуйте контент-стратегію з урахуванням майбутнього зростання аудиторії планшетів на цій платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Спрощення батьківського контролю в Pinterest</b>\nPinterest оновив і спростив налаштування батьківського контролю для безпечнішого користування платформою.\n💡 Пам'ятайте про вікові обмеження та безпеку бренду при налаштуванні таргетингу на молодшу аудиторію.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>9. Контроль нарізки файлів у Gemini API</b>\nGoogle додав нові функції керування нарізкою файлів (file slicing) до свого API Gemini для розробників.\n💡 Використовуйте оновлення для ефективнішої обробки великих масивів даних та документів через штучний інтелект.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>10. Інтеграція Instagram з Apple Music</b>\nInstagram додав функцію збереження аудіотреків із публікацій безпосередньо в плейлисти Apple Music.\n💡 Використовуйте популярну музику в Reels, щоб користувачі могли не лише взаємодіяти з відео, а й зберігати треки.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5\">Ukr.net</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202648"
+ "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 17.11–24.11\n<blockquote>🆕 <b>1. Редагування Stories в Instagram</b>\nInstagram додав можливість редагувати вже опубліковані Stories протягом 15 хвилин після їх створення.\n💡 Використовуйте цей час, щоб швидко виправити випадкові друкарські помилки або додати забутий стікер без видалення історії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5\">Прямий</a></blockquote>\n<blockquote>🆕 <b>2. Запуск AI-агента Muse від Meta</b>\nMeta розширює географію запуску свого персонального AI-агента Muse, який інтегрується в екосистему платформи.\n💡 Слідкуйте за розгортанням інструменту для оптимізації рутинних SMM-завдань та роботи з контентом.\n🔗 <a href=\"https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>3. Партнерство Pinterest і Microsoft Ads</b>\nPinterest оголосив про офіційне партнерство з Microsoft Ads для розширення рекламних можливостей.\n💡 Очікуйте нових крос-платформних рекламних інструментів та розширення аудиторії для кампаній у Pinterest.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Метрики спільного перегляду на YouTube CTV</b>\nYouTube додав підрахунок спільного перегляду (co-view counts) до аналітики Connected TV.\n💡 Враховуйте показники перегляду на великих екранах кількома глядачами при оцінці охоплення відеореклами.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Оновлення для відео в X (Twitter)</b>\nПлатформа X додала нові параметри мініатюр та налаштування підписів для відеоконтенту.\n💡 Використовуйте кастомні мініатюри, щоб підвищити клікабельність (CTR) ваших відео у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Виявлення діпфейків у TikTok</b>\nTikTok впроваджує нові технології для автоматичного виявлення та маркування штучно створеного контенту й діпфейків.\n💡 Зважайте на суворішу модерацію AI-контенту при створенні креативів для платформи.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5\">UA.NEWS</a></blockquote>\n<blockquote>👀 <b>7. Анонс додатка Threads для iPad</b>\nКоманда Threads анонсувала швидкий вихід окремого додатку для планшетів iPad.\n💡 Готуйте контент-стратегію з урахуванням майбутнього зростання аудиторії планшетів на цій платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Спрощення батьківського контролю в Pinterest</b>\nPinterest оновив і спростив налаштування батьківського контролю для безпечнішого користування платформою.\n💡 Пам'ятайте про вікові обмеження та безпеку бренду при налаштуванні таргетингу на молодшу аудиторію.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>9. Контроль нарізки файлів у Gemini API</b>\nGoogle додав нові функції керування нарізкою файлів (file slicing) до свого API Gemini для розробників.\n💡 Використовуйте оновлення для ефективнішої обробки великих масивів даних та документів через штучний інтелект.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>10. Інтеграція Instagram з Apple Music</b>\nInstagram додав функцію збереження аудіотреків із публікацій безпосередньо в плейлисти Apple Music.\n💡 Використовуйте популярну музику в Reels, щоб користувачі могли не лише взаємодіяти з відео, а й зберігати треки.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5\">Ukr.net</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202648",
+ "kb_probe2": "2026-48"
 }
