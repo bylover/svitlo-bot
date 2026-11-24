@@ -10,6 +10,7 @@ ADDR_STREET і ADDR_HOUSE — лише із секретів GitHub (адрес�
 import json
 import os
 import re
+import time as _time_
 import sys
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -379,67 +380,156 @@ def addr_variants(street: str) -> list[str]:
     return list(dict.fromkeys(first + [re.sub(r"['’ʼ`]", a, x) for x in out for a in aps]))
 
 
-# ---------- 🏙 Вінниця: сайт «Вінницяобленерго» (браузер) — що показує сайт за адресою підписника ----------
-VOE_URL = "https://www.voe.com.ua/disconnection/detailed"
+# ---------- 🏙 Вінниця: новий сайт «Вінницяобленерго» disconnection.voe.com.ua — черга й погодинний графік за адресою ----------
+VOE_URL = "https://disconnection.voe.com.ua/"
+VOE_PARSE_JS = r"""() => {
+  const leaf = (re) => [...document.querySelectorAll('body *')].filter(e => e.childElementCount === 0 && re.test((e.textContent || '').trim()));
+  const bg = (el) => { const q = [el]; while (q.length) { const e = q.shift(); const c = getComputedStyle(e).backgroundColor;
+      if (c && c !== 'rgba(0, 0, 0, 0)' && c !== 'transparent') return c; q.push(...e.children); } return ''; };
+  const legend = {};
+  for (const [k, lab] of [[0, 'Світло є'], [1, 'Заплановано'], [2, 'Застосовано'], [3, 'Завершено']]) {
+    const el = leaf(new RegExp('^' + lab + '$'))[0]; if (!el) continue;
+    let p = el.parentElement, c = '';
+    for (let i = 0; i < 3 && p && !c; i++, p = p.parentElement) c = [...p.querySelectorAll('*')].filter(x => x !== el && !x.contains(el)).map(bg).find(Boolean) || '';
+    legend[k] = c;
+  }
+  const rows = [];
+  for (const lab of leaf(/^(Пн|Вт|Ср|Чт|Пт|Сб|Нд)\s+\d{2}\.\d{2}$/)) {
+    let row = lab; while (row && row.children.length < 24) row = row.parentElement;
+    if (!row) continue;
+    const cells = [...row.children].filter(c => !c.contains(lab)).slice(-24);
+    rows.push({ d: lab.textContent.trim(), c: cells.map(bg) });
+  }
+  const txt = document.body.innerText || '';
+  const q = (txt.match(/Черга\s+(\d+(?:\.\d+)?)/) || [])[1] || '';
+  const msg = ((txt.split(/Черга\s+\d+(?:\.\d+)?/)[1] || '').split(/Часові\s+проміжки/)[0] || '').replace(/\s+/g, ' ').trim().slice(0, 300);
+  return { legend, rows, q, msg };
+}"""
 
 
-def voe_lookup(page, street: str, house: str) -> str | None:
-    """Відкриваємо сторінку ВОЕ, вводимо вулицю й будинок (із підказок сайту) і читаємо блок із результатом."""
+def _rgb(c: str) -> tuple:
+    m = re.findall(r"[\d.]+", c or "")
+    return tuple(float(x) for x in m[:3]) if len(m) >= 3 else (255.0, 255.0, 255.0)
+
+
+def voe_classify(color: str, legend: dict) -> int:
+    """0 — світло є, 1 — заплановано, 2 — застосовано, 3 — завершено: найближчий колір легенди сайту."""
+    c = _rgb(color)
+    if not color or min(c) >= 235:                    # прозоро/білий — світло є
+        return 0
+    best, bd = 0, 1e9
+    for k, lc in (legend or {}).items():
+        if not lc:
+            continue
+        d = sum((a - b) ** 2 for a, b in zip(c, _rgb(lc)))
+        if d < bd:
+            best, bd = int(k), d
+    if bd == 1e9:                                     # легенди немає — за відтінком: світло-жовте — план, насичене — застосовано
+        return 1 if c[1] > 150 else 2
+    return best
+
+
+def voe_text(res: dict) -> str:
+    """Текст для бота: черга, повідомлення сайту і години без світла по днях."""
+    names = {1: "заплановано", 2: "застосовано", 3: "завершено"}
+    out = [f"🏙 Черга <b>{res.get('q') or '—'}</b> (Вінницяобленерго)"]
+    if res.get("msg"):
+        out.append(("🟢 " if re.search(r"не знайдено|відсутн\w* відключ", res["msg"], re.I) else "🔴 ") + esc(res["msg"][:200]))
+    for r in res.get("rows") or []:
+        st = [voe_classify(c, res.get("legend")) for c in r.get("c") or []]
+        ivs, i = [], 0
+        while i < len(st):
+            if st[i]:
+                j = i
+                while j + 1 < len(st) and st[j + 1]:
+                    j += 1
+                kinds = {st[k] for k in range(i, j + 1)}
+                ivs.append(f"{i:02d}–{j + 1:02d}" + ("" if kinds == {1} else " (" + ", ".join(names[k] for k in sorted(kinds)) + ")"))
+                i = j + 1
+            else:
+                i += 1
+        out.append(f"📅 {esc(r.get('d'))}: " + (", ".join(ivs) + " — без світла" if ivs else "без відключень"))
+    return "\n".join(out)
+
+
+def voe_lookup(page, street: str, house: str) -> dict | None:
+    """Відкриваємо сайт ВОЕ, вводимо місто, вулицю й будинок (обираючи з підказок сайту) → черга й графік."""
+    import difflib
     page.goto(VOE_URL, wait_until="domcontentloaded", timeout=45000)
-    page.wait_for_timeout(2500)
-    inputs = [i for i in page.query_selector_all("input[type=text], input:not([type])") if i.is_visible()]
-    print(f"ВОЕ: полів введення {len(inputs)} · заголовок «{page.title()[:50]}»")
-    if len(inputs) < 2:
+    page.wait_for_timeout(3000)
+    inputs = [i for i in page.query_selector_all("input[type=text], input[type=search], input:not([type])") if i.is_visible()]
+    print(f"ВОЕ: полів {len(inputs)} · «{page.title()[:50]}»")
+    if len(inputs) < 3:
+        print("ВОЕ: фрагмент сторінки: " + re.sub(r"\s+", " ", page.inner_text("body"))[:300])
         return None
-    vals = (["Вінниця", street, house] if len(inputs) >= 3 else [street, house])
-    for inp, val in zip(inputs[-len(vals):], vals):
-        typed = val
-        if val == street:                             # вулиця: вводимо початок найдовшого слова — підказки сайту знайдуть і рос./укр. написання
-            w_ = max(re.findall(r"[а-яіїєґa-z']+", norm_street(val)) or [val], key=len)
-            typed = w_[:4]
-        inp.click(); inp.fill(""); inp.type(typed, delay=60)
-        page.wait_for_timeout(1500)
-        sug = [x for x in page.query_selector_all("ul li, .ui-menu-item, .autocomplete-suggestion, [role=option]") if x.is_visible()]
-        if sug:
-            import difflib
-            best = max(sug, key=lambda x: (1 if skel(x.inner_text() or "") == skel(val) else 0,
-                                           difflib.SequenceMatcher(None, skel(val), skel(x.inner_text() or "")).ratio()))
-            best.click(); page.wait_for_timeout(1500)
+
+    def pick(inp, typed: str, want: str, label: str) -> bool:
+        inp.click(); inp.fill(""); inp.type(typed, delay=70)
+        page.wait_for_timeout(1800)
+        sug = [x for x in page.query_selector_all("[role=option], ul li, .autocomplete-suggestion, .suggestion, .dropdown-item, .option") if x.is_visible() and (x.inner_text() or "").strip()]
+        if not sug:
+            print(f"ВОЕ: немає підказок для «{label}»"); return False
+        best = max(sug, key=lambda x: (1 if skel(x.inner_text()) == skel(want) else 0, difflib.SequenceMatcher(None, skel(want), skel(x.inner_text())).ratio()))
+        print(f"ВОЕ: {label} → «{best.inner_text().strip()[:60]}»")
+        best.click(); page.wait_for_timeout(1500)
+        return True
+    if not pick(inputs[0], "Вінниця", "м.Вінниця Вінницька Область", "місто"):
+        return None
+    w_ = max(re.findall(r"[а-яіїєґa-z']+", norm_street(street)) or [street], key=len)
+    if not pick(inputs[1], w_[:5], street, "вулиця"):
+        return None
+    inputs = [i for i in page.query_selector_all("input[type=text], input[type=search], input:not([type])") if i.is_visible()]
+    hin = inputs[2]
+    hin.click(); hin.fill(""); hin.type(house, delay=70); page.wait_for_timeout(1800)
+    hs = [x for x in page.query_selector_all("[role=option], ul li, .autocomplete-suggestion, .suggestion, .dropdown-item, .option") if x.is_visible() and (x.inner_text() or "").strip()]
+    hb = [x for x in hs if hkey(x.inner_text().strip()) == hkey(house)] or hs[:1]
+    if hb:
+        hb[0].click(); page.wait_for_timeout(1200)
     for b in page.query_selector_all("button, input[type=submit]"):
-        if b.is_visible() and re.search(r"показ|пошук|знайти|перевір", (b.inner_text() or b.get_attribute("value") or ""), re.I):
+        if b.is_visible() and re.search(r"перевір|показ|пошук|знайти", (b.inner_text() or b.get_attribute("value") or ""), re.I):
             b.click(); break
-    page.wait_for_timeout(4000)
-    txt = page.inner_text("body")
-    m = re.search(r"(За вашою адресою[\s\S]{0,700}?)(?:Часові проміжки|Графік|$)", txt)
-    sched = re.findall(r"(\d{2}-\d{2})\s*\n?\s*(Світла немає|Можливе|Світло є|відключ\w*)", txt)
-    if not m and not sched:
-        frag = re.sub(r"\s+", " ", txt)[:300]
-        print(f"ВОЕ: результат не знайдено · фрагмент: {frag}")
+    try:
+        page.wait_for_selector("text=/Черга\\s+\\d/", timeout=15000)
+    except Exception:
+        pass
+    page.wait_for_timeout(1500)
+    res = page.evaluate(VOE_PARSE_JS)
+    print(f"ВОЕ: черга {res.get('q') or '—'} · рядків графіка {len(res.get('rows') or [])} · легенда {len([v for v in (res.get('legend') or {}).values() if v])}/4")
+    if not res.get("q") and not res.get("rows"):
+        print("ВОЕ: результат не знайдено · " + re.sub(r"\s+", " ", page.inner_text("body"))[:300])
         return None
-    out = re.sub(r"\n{2,}", "\n", (m.group(1) if m else "")).strip()
-    return out[:900]
+    return res
 
 
 def voe_requests(page) -> None:
-    """Вимкнено: сайт ВОЕ закритий для серверів (Cloudflare 403) — для Вінниці світло не показуємо."""
-    if True:
-        return
+    """Адреси підписників із Вінниці → черга й графік із сайту ВОЕ → бот (до 8 адрес за запуск, по колу)."""
     try:
         ex = check.http_json(f"{check.SYNC_URL}/export?key={check.urllib.parse.quote(check.SYNC_KEY)}") or {}
     except Exception as e:
         print(f"ВОЕ: експорт — {err_text(e)[:60]}"); return
-    addrs = ex.get("voe") or {}
-    for cid, a in list(addrs.items())[:6]:
+    addrs = list((ex.get("voe") or {}).items())
+    if not addrs:
+        return
+    stp = Path("voe_state.json")
+    try:
+        vs = json.loads(stp.read_text("utf-8"))
+    except Exception:
+        vs = {}
+    addrs.sort(key=lambda kv: vs.get(kv[0], 0))       # спершу ті, кого давно не перевіряли (нові — першими)
+    for cid, a in addrs[:8]:
         try:
             res = voe_lookup(page, a.get("street", ""), a.get("house", ""))
         except Exception as e:
             print(f"ВОЕ ({a.get('street', '')}, ••): {err_text(e)[:80]}"); continue
-        print(f"ВОЕ ({a.get('street', '')}, ••): {'є результат' if res else 'немає'}")
-        if res is not None:
-            try:
-                check.http_json(f"{check.SYNC_URL}/voepush?key={check.urllib.parse.quote(check.SYNC_KEY)}", {"cid": cid, "text": res})
-            except Exception as e:
-                print(f"ВОЕ → Worker: {err_text(e)[:60]}")
+        vs[cid] = int(_time_.time())
+        if not res:
+            continue
+        try:
+            check.http_json(f"{check.SYNC_URL}/voepush?key={check.urllib.parse.quote(check.SYNC_KEY)}",
+                            {"cid": cid, "text": voe_text(res), "q": res.get("q") or ""})
+        except Exception as e:
+            print(f"ВОЕ → Worker: {err_text(e)[:60]}")
+    stp.write_text(json.dumps(vs), "utf-8")
 
 
 SUBS_STATE = Path("addr_subs.json")

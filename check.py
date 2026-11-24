@@ -37,6 +37,33 @@ SOURCE = (os.environ.get("SOURCE") or "dtek").strip().lower()
 # Якщо задані SYNC_URL і SYNC_KEY — GitHub бере підписників з Worker і не обробляє команди сам.
 SYNC_URL = (os.environ.get("SYNC_URL") or "").strip().rstrip("/")
 SYNC_KEY = (os.environ.get("SYNC_KEY") or "").strip()
+
+# 🧪 Логи для адміна в боті (👑 Адмін → 🧪 Логи): рядки print() по темах — після запуску надсилаються в бот
+import builtins as _bi_
+DIAG_RX = {"pl": re.compile(r"^\W*(Плейлист|Deezer)"), "yt": re.compile(r"^\W*(YouTube|YT_)"),
+           "jobs": re.compile(r"^\W*(Вакансі|DOU|Djinni)"), "err": re.compile(r"Traceback|Error|❌|Помилка")}
+DIAG: dict = {}
+_diag_print_ = _bi_.print
+def _diag_tee_(*a, **k):
+    _diag_print_(*a, **k)
+    try:
+        s = " ".join(str(x) for x in a)[:400]
+        for t_, rx_ in DIAG_RX.items():
+            if rx_.search(s):
+                DIAG.setdefault(t_, []).append(s)
+    except Exception:
+        pass
+_bi_.print = _diag_tee_
+def diag_push() -> None:
+    """Надсилає в бот лише теми, що мали рядки в цьому запуску (решта лишаються з попереднього)."""
+    if not (SYNC_URL and SYNC_KEY):
+        return
+    at_ = datetime.now(ZoneInfo("Europe/Kyiv")).strftime("%d.%m %H:%M")
+    for t_, ls_ in DIAG.items():
+        try:
+            http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=diag_{t_}.json", {"at": at_, "lines": ls_[-40:]})
+        except Exception as e:
+            _diag_print_(f"Логи → бот ({t_}): {str(e)[:60]}")
 WORKER_MODE = bool(SYNC_URL and SYNC_KEY)
 REQ_KINO = (os.environ.get("REQ_KINO") or "").strip()     # Worker просить зібрати кіно для цього чату
 REQ_YT = (os.environ.get("REQ_YT") or "").strip()
@@ -144,7 +171,7 @@ HELP_TEXT = ("ℹ️ <b>ЯК КОРИСТУВАТИСЯ БОТОМ</b>\n\n"
              "• 👍/👎 під кіно, YouTube, SMM і матеріалами 18+ — ваша оцінка: у кіно вона впливає на підбірки (у основних отримувачів), решту бачить лише адміністратор у статистиці\n"
              "• Змінити — ⚙️ Налаштування → «🏙 Змінити місто, чергу чи район»\n"
              "• Пункти меню з позначкою «тест» — нові: графік вашої черги, погода вашого району й акції вашого Сільпо\n"
-             "• Вінниця: графіки «Вінницяобленерго» бот не отримує (їхній сайт закритий від програм) — кнопка веде на їхній сайт; погода й Сільпо працюють</blockquote>\n"
+             "• Вінниця: черга й графік — із сайту «Вінницяобленерго» за адресою (💡 Світло → 🏠 Вказати адресу), перевірка кожні ~30 хв.\n"
              "<b>Важливо</b>\n<blockquote>"
              "• Графік — за даними сайту ДТЕК. «За графіком» не означає, що світло фактично є чи немає\n"
              f"• Сповіщення про світло — лише для групи {GROUP}. Якщо у вас інша група, вимкніть «💡 Світло» в /settings\n"
@@ -162,7 +189,7 @@ SOURCES_TEXT = (
     "• 📌 Панель стану — графік вашої черги, екстрені, погода (Open-Meteo), основним — ще й факт світла; оновлення кожні 10 хв\n"
     "• Нагадування — за ~30 хв до відключення й до увімкнення за графіком (під час екстрених не надсилаються), саме видаляється після події\n"
     "• Черга за адресою (підписники, Київ) — пошук на сайті ДТЕК тим самим браузером\n"
-    "• Вінниця — сайт «Вінницяобленерго» закритий захистом від програм, тому графіків Вінниці в боті немає\n"
+    "• Вінниця — черга й графік із сайту «Вінницяобленерго» (disconnection.voe.com.ua) за адресою\n"
     "• «За графіком» — це план ДТЕК, а не факт наявності світла\n"
     "• Масові сповіщення (екстрені, нагадування, зміни графіка) основним надходять одразу, підписникам — чергою по ~25 на хвилину (при 100–150 користувачах — до 5 хв)</blockquote>\n"
     "🌤 <b>Погода</b>\n"
@@ -5563,7 +5590,7 @@ def sb_alerts(st: dict, now: datetime, pts: list) -> None:
                "<i>За даними мапи СвітлоБотів.</i>")
         nl_ = sched_next_line(g, now)
         for cid, p in prof.items():
-            if str(p.get("group") or "") == g and p.get("sba", cid in FAMILY) and (cid in FAMILY or "svitlo" in (subs.get(cid) or [])):
+            if str(p.get("group") or "") == g and p.get("city") != "vin" and p.get("sba", cid in FAMILY) and (cid in FAMILY or "svitlo" in (subs.get(cid) or [])):
                 SB_ALERT_MSGS.append((cid, txt.replace("\n<i>За даними", (f"\n{nl_}" if nl_ else "") + "\n<i>За даними", 1)))
     st["sbm_grp"] = {**gprev, **gpct}
 
@@ -6409,6 +6436,22 @@ def dur_text(sec: int) -> str:
 YT_POLIT = re.compile(r"політи|зеленськ|путін|вибор|депутат|верховн\w* рад|мобілізац|тцк|фронт|окупант|війн[аиіу]|воєн|військ|армі[яїю]|зсу\b|всу\b|дрон|шахед|обстріл|ракет|ппо\b|"
                       r"бойов|полонен|ветеран|окупац|звільнен\w* терит|контрнаступ|бригад|снаряд|рф\b|росі[яїю]|кремл|новин|ефір|наживо|\blive\b|стрім|"
                       r"гордон|портников|соколова|бутусов|гончаренко|арестович|умєров|єрмак|трамп|байден|переговор|мирн\w* план|санкці", re.I)
+YT_POLCH = re.compile(   # 🚫 політичні й воєнні блогери, ЗМІ та новинні проєкти — за назвою каналу (у будь-яких добірках YouTube)
+    r"стерненко|sternenko|гордон|gordon|портников|portnikov|бутусов|butusov|соколова|sokolova|арестович|arestovych|гончаренко|honcharenko|жданов|zhdanov|світан|svitan|"
+    r"мусієнко|селезньов|березовець|berezovets|пономаренко|фейгін|feygin|шабунін|shabunin|притул|prytula|мосейчук|барчук|дроздов|drozdov|бігус|bihus|слідство|slidstvo|"
+    r"skhemy|українська правда|ukrainska pravda|еспресо|espreso|прямий|pryamiy|5 канал|5 kanal|24 канал|kanal 24|новини\.?live|суспільне|suspilne|телеграф|telegraf|"
+    r"обозреватель|obozrevatel|\bnv\b|новое время|апостроф|apostrophe|\bunian\b|уніан|цензор|censor|hromadske|громадське|radio svoboda|радіо свобода|настоящее время|"
+    r"\bdw\b|bbc|голос америки|voa|ukraine now|бабель|babel|телемарафон|єдині новини|фронтов|воєнн\w* оглядач|oboronka|militarnyi|defense express|"
+    r"рустем умєров|зеленськ|zelensky|порошенк|poroshenko|тимошенко|tymoshenko|кличко|klitschko|арахамія|безугла|bezuhla|гончарук|разумков|медведчук|шарій|sharij|"
+    r"стрілков|гіркін|дубінськ|бужанськ|ze!?team|слуга народу|європейська солідарність|батьківщина", re.I)
+YT_COMPIL = re.compile(r"компіляц|compilation|нарізк|збірк[аи] (мемів|приколів|відео)|best moments|кращі моменти|топ-?\s?\d+ (моментів|фейлів|приколів)", re.I)
+
+
+def yt_pol(txt: str, chan: str, chid: str = "", st: dict | None = None) -> bool:
+    """Політика/новини/війна: за текстом відео, за назвою каналу або канал уже позначено (часто публікує політику)."""
+    return bool(YT_POLIT.search(txt + " " + chan) or YT_POLCH.search(chan) or (st and chid and chid in (st.get("yt_polch") or {})))
+
+
 YT_GAMES = re.compile(r"minecraft|майнкрафт|roblox|роблокс|fortnite|фортнайт|brawl ?stars|бравл|\bgta\b|\bгта\b|\bcs ?2\b|кс ?2|counter.?strike|\bdota|\bдота|valorant|pubg|standoff|"
                       r"летсплей|let'?s ?play|проходжен|геймплей|gameplay|\bстрім|\bstream|ігров[аиі]|геймер|gamer|\bmods?\b|скіни|speedrun", re.I)
 YT_LIKE = [(re.compile(r"секс|інтим|стосунк|сексолог|оргазм|лібідо|пристраст|побачен|кохан|пар[аиі]\b|розлучен|зрад|ревнощ|шлюб|флірт", re.I), 1.6, "💞"),
@@ -6474,7 +6517,7 @@ def yt_channels(st: dict, now: datetime) -> None:
             sn, stt = c.get("snippet", {}), c.get("statistics", {})
             subs = int(stt.get("subscriberCount") or 0)
             ctext = sn.get("title", "") + " " + (sn.get("description") or "")[:300]
-            if c.get("id") in mute or subs < YT_THEME_MIN.get(theme, 10000) or YT_POLIT.search(ctext) or YT_GAMES.search(ctext) or sn.get("country") in ("RU", "BY"):
+            if c.get("id") in mute or subs < YT_THEME_MIN.get(theme, 10000) or yt_pol(ctext, sn.get("title", ""), c.get("id", ""), st) or YT_GAMES.search(ctext) or sn.get("country") in ("RU", "BY"):
                 continue
             if YT_TVCH.search(sn.get("title", "")) or YT_TVNAME.search(sn.get("title", "")) or YT_EDUCH.search(sn.get("title", "")) or YT_AUTO.search(sn.get("title", "")):
                 continue                                  # телеканали, ЗМІ, офіційні канали телешоу, заклади освіти, авто — ні
@@ -6972,6 +7015,47 @@ PL_CATS = {   # ключ: (назва, група, пошукові фрази, 
     "x_strip": ("💃 Стриптиз і танець", "x18", ["striptease", "pole dance", "lap dance", "burlesque", "sexy dance"], 1, ""),
     "x_sexy": ("🔥 Сексуальність", "x18", ["sexuality", "sexual", "erotic", "eroticism", "sensuality", "sexy vibes", "suxuality"], 1, ""),
     "us": ("🇺🇸 Хіти США", "country", ["usa top", "us hits", "billboard"], 0, ""), "gb": ("🇬🇧 Британія", "country", ["uk hits", "british hits"], 0, ""),
+    # ➕ нові: настрої й заняття
+    "code": ("💻 Для кодингу", "mood", ["coding music", "programming", "music for coding", "deep focus coding", "lofi coding", "developer playlist"], 1, ""),
+    "read": ("📖 Читання", "mood", ["reading music", "music for reading", "book ambient", "reading lofi", "library vibes"], 1, ""),
+    "rain": ("🌧 Дощ і затишок", "mood", ["rainy day", "cozy", "rainy mood", "autumn cozy", "cozy evening", "затишок"], 1, ""),
+    "happy": ("😊 Гарний настрій", "mood", ["feel good", "happy songs", "good vibes", "happy hits", "позитив", "good mood"], 0, ""),
+    "motiv": ("🚀 Мотивація", "mood", ["motivation", "motivational songs", "beast mode", "workout motivation", "мотивація"], 0, ""),
+    "night": ("🌃 Нічне місто", "mood", ["night drive", "late night", "midnight city", "night vibes", "nocturnal"], 1, ""),
+    "walk": ("🚶 Прогулянка", "mood", ["walking", "city walk", "walk songs", "sunday walk", "walking playlist"], 1, ""),
+    "clean": ("🧹 Прибирання", "mood", ["cleaning music", "cleaning songs", "house cleaning", "chores playlist"], 1, ""),
+    # ➕ піджанри
+    "lofi": ("🎧 Lo-fi", "genre", ["lofi", "lofi hip hop", "chillhop", "lo-fi beats", "lofi chill"], 1, ""),
+    "phonk": ("🚘 Phonk", "genre", ["phonk", "drift phonk", "brazilian phonk", "gym phonk", "Kordhell", "INTERWORLD"], 0, ""),
+    "synth": ("🌆 Synthwave", "genre", ["synthwave", "retrowave", "outrun", "darksynth", "The Midnight", "FM-84"], 1, ""),
+    "deep": ("🌊 Deep і melodic house", "genre", ["deep house", "melodic house", "melodic techno", "afro house", "Anyma", "ARTBAT"], 0, ""),
+    "dnb": ("🥁 Drum & bass", "genre", ["drum and bass", "dnb", "liquid dnb", "jungle", "Sub Focus", "Wilkinson"], 0, ""),
+    "trance": ("🌀 Транс", "genre", ["trance", "uplifting trance", "progressive trance", "psytrance", "Armin van Buuren"], 1, ""),
+    "ifolk": ("🍂 Інді-фолк", "genre", ["indie folk", "folk pop", "acoustic indie", "Bon Iver", "Hozier", "Noah Kahan"], 1, ""),
+    "acoustic": ("🪕 Акустика", "genre", ["acoustic", "acoustic covers", "unplugged", "acoustic chill", "акустика"], 1, ""),
+    "rnb": ("💜 R&B", "genre", ["rnb", "r&b hits", "rnb 2020s", "rnb classics", "SZA", "The Weeknd"], 0, ""),
+    "neosoul": ("🌿 Neo-soul і соул", "genre", ["neo soul", "soul", "nu soul", "Erykah Badu", "D'Angelo", "Jordan Rakei"], 1, ""),
+    "jazzhop": ("☕ Jazz-hop", "genre", ["jazz hop", "jazzhop", "nujabes", "jazzy beats", "jazz lofi"], 1, ""),
+    "alt": ("🎙 Альтернатива", "genre", ["alternative rock", "alt rock", "alternative", "Arctic Monkeys", "Muse", "Radiohead"], 1, ""),
+    "punk": ("⚡ Панк і поп-панк", "genre", ["pop punk", "punk rock", "emo", "Blink-182", "Green Day", "Paramore"], 1, ""),
+    "mcore": ("🔥 Металкор", "genre", ["metalcore", "post hardcore", "deathcore", "Bring Me The Horizon", "Architects", "Jinjer"], 1, ""),
+    "ambient": ("🌌 Ембієнт", "genre", ["ambient", "dark ambient", "space ambient", "drone", "Brian Eno"], 1, ""),
+    "piano": ("🎹 Фортепіано й неокласика", "genre", ["piano", "peaceful piano", "neoclassical", "Ludovico Einaudi", "Ólafur Arnalds", "Max Richter"], 1, ""),
+    "epic": ("🎺 Епічна й кінематографічна", "genre", ["epic music", "cinematic", "epic orchestral", "trailer music", "Hans Zimmer", "Two Steps From Hell"], 1, ""),
+    "reggae": ("🟢 Реґі", "genre", ["reggae", "roots reggae", "dub", "Bob Marley", "reggae chill"], 1, ""),
+    "cntry": ("🤠 Кантрі", "genre", ["country", "country hits", "modern country", "Morgan Wallen", "Zach Bryan"], 0, ""),
+    "afro": ("🌍 Afrobeats і амапіано", "genre", ["afrobeats", "amapiano", "afropop", "Burna Boy", "Rema", "Tyla"], 0, ""),
+    "disco": ("🪩 Диско й ню-диско", "era", ["disco", "nu disco", "disco classics", "italo disco", "funk disco"], 1, ""),
+    # ➕ українське
+    "uapop": ("🎶 Український поп", "ua", ["український поп", "ukrainian pop", "укр поп", "ukr pop", "українські поп хіти", "Jerry Heil", "Klavdia Petrivna", "KOLA", "YAKTAK", "Тіна Кароль", "MONATIK", "Артем Пивоваров"], 0, ""),
+    "uachill": ("😌 Українське спокійне", "ua", ["українська акустика", "спокійні українські пісні", "ukrainian acoustic", "ukrainian chill", "укр чіл", "Один в каное", "Христина Соловій", "Мелані", "Krechet"], 1, ""),
+    "uaparty": ("🕺 Українська вечірка", "ua", ["українська вечірка", "укр дискотека", "ukrainian party", "українські танцювальні", "весела українська музика", "Wellboy", "Michelle Andrade", "Ірина Білик"], 0, ""),
+    # ➕ країни
+    "pl": ("🇵🇱 Польща", "country", ["polskie hity", "polish hits", "polski rap", "polska muzyka", "Dawid Podsiadło", "Sanah"], 0, ""),
+    "de": ("🇩🇪 Німеччина", "country", ["deutsche hits", "deutschrap", "deutsch pop", "german hits", "Apache 207"], 0, ""),
+    "es": ("🇪🇸 Іспанія", "country", ["éxitos españa", "spanish hits", "pop español", "musica española", "Aitana", "Quevedo"], 0, ""),
+    "tr": ("🇹🇷 Туреччина", "country", ["türkçe pop", "turkish hits", "türkçe hit", "turkish pop", "Tarkan"], 0, ""),
+    "jp": ("🇯🇵 Японія", "country", ["j-pop", "city pop", "anime songs", "japanese hits", "YOASOBI", "Fujii Kaze"], 1, ""),
     "fr": ("🇫🇷 Франція", "country", ["french hits", "chanson française"], 0, ""), "it": ("🇮🇹 Італія", "country", ["italian hits", "musica italiana"], 0, ""),
 }
 PL_SPAM = re.compile(r"follow|promo|submit|free followers|spotify|playlist exchange|curator|\$|💰", re.I)
@@ -6982,60 +7066,101 @@ def _dz(path: str):
     return http_json("https://api.deezer.com" + path)
 
 
+PL_ED = re.compile(r"deezer|editor|редакц", re.I)
+
+
 def pl_rank(p: dict, retro: bool, prev: dict, cat: str = "") -> dict | None:
-    """Одна оцінка плейлиста: популярність (log fans), живість (останнє додавання), свіжість (створення), тренд (тижневий приріст), ✅ редакція."""
-    fans, n, dur = int(p.get("fans") or 0), int(p.get("nb_tracks") or 0), int(p.get("duration") or 0)
-    title = str(p.get("title") or "")
-    ua = cat.startswith("ua")
-    if n < (15 if ua else 25) or n > 400 or dur < (2400 if ua else 3600) or PL_SPAM.search(title) or fans < (10 if ua else 50):
+    """Оцінка плейлиста «як у найкращих сервісах»: популярність (згладжена, з поправкою на вік) + живість і ротація + розмір + різноманіття виконавців +
+    «золота середина» популярності треків (хіти й перлини разом) + тренд тижня. Без бонусу редакції Deezer — пріоритет плейлистам слухачів."""
+    if not isinstance(p, dict) or p.get("error") or not p.get("id"):
         return None
-    tr = (p.get("tracks") or {}).get("data") or []
+    fans, n, dur = int(p.get("fans") or 0), int(p.get("nb_tracks") or 0), int(p.get("duration") or 0)
+    title, desc = str(p.get("title") or ""), str(p.get("description") or "")
+    ua = cat.startswith("ua")
+    if n < (25 if ua else 40) or n > 3000 or dur < (3600 if ua else 7200) or PL_SPAM.search(title) or PL_SPAM.search(desc[:200]) or fans < (10 if ua else 30):
+        return None
+    tr = [t for t in ((p.get("tracks") or {}).get("data") or []) if isinstance(t, dict)]
+    if len(tr) < 15:
+        return None
     adds = [int(t.get("time_add") or 0) for t in tr]
     last = max(adds, default=0)
     days = (_time.time() - last) / 86400 if last else 999
     rot = round(100 * sum(1 for a in adds if a and _time.time() - a <= 90 * 86400) / max(1, len(adds)))   # 🔁 частка треків, доданих за 3 міс.
-    if ua:                                             # справді українське: ≥30% треків від українських виконавців або з українськими літерами
-        uas = sum(1 for t in tr if str((t.get("artist") or {}).get("name") or "").lower() in PL_UA_SET or re.search(r"[іїєґІЇЄҐ]", str(t.get("title") or "") + str((t.get("artist") or {}).get("name") or "")))
-        if not tr or uas / len(tr) < 0.25:
+    an = [str((t.get("artist") or {}).get("name") or "") for t in tr]
+    if ua:                                             # справді українське: ≥25% треків від українських виконавців або з українськими літерами
+        uas = sum(1 for t, a in zip(tr, an) if a.lower() in PL_UA_SET or re.search(r"[іїєґІЇЄҐ]", str(t.get("title") or "") + a))
+        if uas / len(tr) < 0.25:
             return None
     if not retro and days > 180:
         return None                                    # «мертвий» плейлист — не для сучасних категорій
     if cat == "new" and rot < 15:
-        return None                                    # «Новинки» — лише з реально свіжим вмістом
+        return None
+    cnt: dict = {}
+    for a in an:
+        cnt[a] = cnt.get(a, 0) + 1
+    uniq, top = len(cnt), max(cnt.values()) / len(tr)
+    if top > 0.5 and len(tr) >= 20:
+        return None                                    # один виконавець — фан- чи промо-плейлист лейбла
+    div = uniq / len(tr)                               # різноманіття: 1.0 — усі різні
+    ranks = sorted(int(t.get("rank") or 0) for t in tr)
+    med = ranks[len(ranks) // 2] if ranks else 0
+    hits = sum(1 for r in ranks if r >= 700000) / len(ranks) if ranks else 0
     created = str(p.get("creation_date") or "")[:10]
     try:
         age = (datetime.now() - datetime.fromisoformat(created)).days
     except Exception:
         age = 9999
-    ed = bool(re.search(r"deezer|editor", str((p.get("creator") or {}).get("name") or ""), re.I))
+    ed = bool(PL_ED.search(str((p.get("creator") or {}).get("name") or "")))
     pf = prev.get(str(p["id"]))
     trend = round((fans - pf) / pf * 100, 1) if pf and pf > 0 else None
-    live = 1.5 if days <= 30 else 1.0 if days <= 90 else 0.5 if days <= 180 else 0
-    fpy = fans / max(age / 365, 0.5) if age < 9999 else fans / 5   # 📈 підписники на рік — нові сильні плейлисти не тонуть під старими
-    pop = 0.6 * math.log10(fans + 1) + 0.4 * math.log10(fpy + 1)
+    live = 1.2 if days <= 30 else 0.8 if days <= 90 else 0.4 if days <= 180 else 0
+    fpy = fans / max(age / 365, 0.5) if age < 9999 else fans / 5   # 📈 підписники на рік
+    pop = 0.55 * math.log10(fans + 50) + 0.45 * math.log10(fpy + 50)   # +50 — згладжування: 3 підписники не «стрибають» над 30
+    size = 0.35 if 60 <= n <= 250 else 0.15 if n <= 500 else -0.2 if n <= 1000 else -0.5   # 🎵 найкраще — 60–250 треків (2,5–15 год)
+    mix = 0.4 if 0.15 <= hits <= 0.75 else 0 if hits < 0.15 and med >= 200000 else -0.35   # 💎 хіти + перлини; лише чарт — клон, лише невідоме — підозріло
+    dv = 0.5 * min(1.0, div / 0.7) - (0.3 if top > 0.25 else 0)
     if retro:                                          # «вічні» категорії: дата й ротація не важливі
-        sc = pop + 0.5 + (0.5 if ed else 0)
+        sc = pop + 0.4 + size + mix + dv
     else:
-        sc = pop + live + (min(rot, 50) / 50 * (1.2 if cat in PL_FRESH else 0.5)) + (0.3 if age <= 365 else 0) + (0.5 if ed else 0) + (min(max(trend or 0, 0), 20) / 10)
+        sc = pop + live + (min(rot, 50) / 50 * (1.2 if cat in PL_FRESH else 0.5)) + (0.3 if age <= 365 else 0) + size + mix + dv + (min(max(trend or 0, 0), 20) / 10)
     arts = []
-    for t in tr[:15]:
-        a = (t.get("artist") or {}).get("name")
+    for a in an[:30]:
         if a and a not in arts:
             arts.append(a)
     pv = next((t.get("preview") for t in tr if t.get("preview")), "")
-    return {"id": p["id"], "t": title[:70], "u": str((p.get("creator") or {}).get("name") or "")[:30], "ed": ed, "fans": fans, "n": n,
-            "cy": created[:4], "age": age, "days": int(days), "rot": rot, "tr": trend, "sc": round(sc, 2), "art": arts[:4], "pv": pv, "pt": (tr[0].get("title") if tr else "")[:50]}
+    return {"id": p["id"], "t": title[:70], "u": str((p.get("creator") or {}).get("name") or "")[:30], "ed": ed, "fans": fans, "n": n, "h": round(dur / 3600, 1),
+            "cy": created[:4], "age": age, "days": int(days), "rot": rot, "tr": trend, "sc": round(sc, 2), "art": arts[:5], "na": uniq if len(tr) >= n else round(div * n),
+            "pv": pv, "pt": (tr[0].get("title") if tr else "")[:50], "_ids": {t.get("id") for t in tr[:150]}}
+
+
+def pl_pick(items: list, k: str) -> list:
+    """Фінальний топ: без клонів (≥60% спільних треків), ≤2 від одного автора, ≤3 офіційних (редакція Deezer) — решта від слухачів."""
+    items.sort(key=lambda x: -x["sc"])
+    out, by_u, n_ed = [], {}, 0
+    for x in items:
+        if any(len(x["_ids"] & y["_ids"]) / max(1, min(len(x["_ids"]), len(y["_ids"]))) >= 0.6 for y in out):
+            continue
+        u = x["u"].lower()
+        if by_u.get(u, 0) >= 2 or (x["ed"] and n_ed >= 3):
+            continue
+        by_u[u] = by_u.get(u, 0) + 1; n_ed += 1 if x["ed"] else 0
+        out.append(x)
+        if len(out) >= 25:
+            break
+    for x in out:
+        x.pop("_ids", None)
+    return out
 
 
 def pl_build(st: dict, now: datetime) -> None:
-    """3 категорії за запуск; повне коло — раз на тиждень (≈50 категорій за ~1,5 год)."""
+    """До 4 категорій за запуск (поки є час); повне коло (~100 категорій) — раз на тиждень, за кілька годин."""
     if not WORKER_MODE:
         return
     wk = f"{now:%G%V}"
     done = st.setdefault("pl_done", {})
-    if done.get("_wk") != wk or st.get("pl_v") != 4:   # новий тиждень або нова версія рейтингу — збираємо все заново
-        done.clear(); done["_wk"] = wk; st["pl_v"] = 4
-    todo = sorted([k for k in PL_CATS if k not in done], key=lambda k: (not k.startswith("ua"), not k.startswith("x_")))[:3]   # українські й 18+ — першими
+    if done.get("_wk") != wk or st.get("pl_v") != 5:   # новий тиждень або нова версія рейтингу — збираємо все заново
+        done.clear(); done["_wk"] = wk; st["pl_v"] = 5
+    todo = sorted([k for k in PL_CATS if k not in done], key=lambda k: (not k.startswith("ua"), not k.startswith("x_")))[:4]   # українські й 18+ — першими
     if not todo:
         return
     try:
@@ -7044,35 +7169,48 @@ def pl_build(st: dict, now: datetime) -> None:
     except Exception:
         db, hist = {}, {}
     db.setdefault("cats", {})
+    from concurrent.futures import ThreadPoolExecutor
+
+    def _get(pid):
+        _time.sleep(0.4)                               # 4 потоки × 0.4 с ≈ 10 запитів/с — у межах ліміту Deezer (50 за 5 с)
+        try:
+            return http_json(f"https://api.deezer.com/playlist/{pid}")
+        except Exception:
+            return None
     for k in todo:
+        if not budget_ok(100):
+            break
         title, grp, qs, retro, season = PL_CATS[k]
-        ids = []
-        for q in qs:
-            try:
-                for x in (_dz("/search/playlist?" + urllib.parse.urlencode({"q": q, "limit": 50})).get("data") or []):
-                    if x.get("id") not in ids and (15 if k.startswith("ua") else 25) <= int(x.get("nb_tracks") or 0) <= 400:
-                        ids.append(x["id"])
-            except Exception as e:
-                print(f"Deezer пошук «{q}»: {err_text(e)[:50]}")
+        ids, by_user = [], {}
+        mn = 25 if k.startswith("ua") else 40
+        for qi, q in enumerate(qs):
+            for idx in ((0, 50) if qi < 2 else (0,)):  # перші 2 фрази — дві сторінки (до 100 результатів)
+                try:
+                    for x in (_dz("/search/playlist?" + urllib.parse.urlencode({"q": q, "limit": 50, "index": idx})).get("data") or []):
+                        u_ = str(((x.get("user") or {}).get("id")) or "")
+                        if x.get("id") in ids or not (mn <= int(x.get("nb_tracks") or 0) <= 3000) or PL_SPAM.search(str(x.get("title") or "")) or by_user.get(u_, 0) >= 4:
+                            continue
+                        by_user[u_] = by_user.get(u_, 0) + 1; ids.append(x["id"])
+                except Exception as e:
+                    print(f"Deezer пошук «{q}»: {err_text(e)[:50]}")
         if k == "new":
             try:
                 ids += [x["id"] for x in (_dz("/chart/0/playlists?limit=50").get("data") or []) if x.get("id") not in ids]
             except Exception:
                 pass
         items = []
-        for pid in ids[:(180 if k.startswith("ua") else 45)]:
-            try:
-                p = _dz(f"/playlist/{pid}")
-            except Exception:
-                continue
-            r = pl_rank(p, bool(retro), hist, k)
-            if r:
-                items.append(r)
-        items.sort(key=lambda x: -x["sc"])
-        db["cats"][k] = {"t": title, "g": grp, "s": season, "at": now.strftime("%d.%m"), "items": items[:20]}
+        with ThreadPoolExecutor(4) as ex_:
+            for p in ex_.map(_get, ids[:(200 if k.startswith("ua") else 150)]):
+                r = pl_rank(p, bool(retro), hist, k) if p else None
+                if r:
+                    items.append(r)
+        top = pl_pick(items, k)
+        db["cats"][k] = {"t": title, "g": grp, "s": season, "at": now.strftime("%d.%m"), "items": top}
         done[k] = 1
-        print(f"🎧 Плейлисти «{title}»: кандидатів {len(ids)}, у топі {len(items[:20])}")
-    db["at"] = now.strftime("%d.%m.%Y")
+        print(f"🎧 Плейлисти «{title}»: кандидатів {len(ids)}, пройшли якість {len(items)}, у топі {len(top)} (від слухачів {sum(1 for x in top if not x['ed'])})")
+    db["at"] = now.strftime("%d.%m.%Y"); db["n"] = len(PL_CATS)
+    for k_ in [k_ for k_ in db["cats"] if k_ not in PL_CATS]:
+        del db["cats"][k_]
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=pl.json", db)
         if len([k for k in PL_CATS if k in done]) == len(PL_CATS):     # коло завершено — фіксуємо підписників для тренду наступного тижня
@@ -8261,7 +8399,7 @@ def yt_foryou(st: dict, now: datetime) -> None:
             d_ = re.match(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", x["contentDetails"].get("duration") or "")
             secs = (int(d_.group(1) or 0) * 3600 + int(d_.group(2) or 0) * 60 + int(d_.group(3) or 0)) if d_ else 0
             txt = sn.get("title", "") + " " + (sn.get("description") or "")[:200]
-            if secs < 480 or YT_POLIT.search(txt) or YT_SPORT.search(txt):
+            if secs < 480 or yt_pol(txt, sn.get("channelTitle", ""), sn.get("channelId", ""), st) or YT_SPORT.search(txt):
                 continue                                  # коротше 8 хв, політика, спорт — ні
             if sn.get("categoryId") == "20" or YT_GAMES.search(txt + " " + " ".join(sn.get("tags") or [])) or (x.get("status") or {}).get("madeForKids"):
                 continue                                  # ігри й дитяче — ні
@@ -8365,12 +8503,14 @@ def build_youtube(st: dict, now: datetime) -> str | None:
         token = r.get("nextPageToken")
         if not token:
             break
-    for cat_ in ("23", "24", "28", "27", "10", "1", "22", "26"):  # + тренди за категоріями: гумор, розваги, наука, освіта, музика, кіно, блоги, «як це зробити»
+    trend_ids = {v.get("id") for v in vids}                 # 🔥 офіційні тренди YouTube в Україні — головний сигнал
+    for cat_ in ("23", "24", "28", "27", "10", "1", "22", "26", "19", "15"):  # + тренди за категоріями: гумор, розваги, наука, освіта, музика, кіно, блоги, «як це зробити»
         try:
             vids += api("videos", part="snippet,statistics,contentDetails,status", chart="mostPopular", regionCode="UA", videoCategoryId=cat_, maxResults=50).get("items", [])
         except Exception:
             pass
     n_trend = len(vids)
+    trend_ids |= {v.get("id") for v in vids}
     ids: list[str] = []
 
     def srch(**q) -> dict:
@@ -8435,6 +8575,18 @@ def build_youtube(st: dict, now: datetime) -> str | None:
     seen = set(st.get("yt_seen", []))
     fav, mute = set(st.get("yt_fav") or []), set(st.get("yt_mute") or [])
     good, late, ids_ok, why = [], [], set(), Counter()
+    polc, allc = Counter(), Counter()                  # 🚫 канал, що часто публікує політику/війну (≥2 відео і ≥30%), — прибираємо повністю й запам'ятовуємо на півроку
+    for v in vids:
+        sn = v.get("snippet", {})
+        allc[sn.get("channelId")] += 1
+        if sn.get("categoryId") == "25" or yt_pol(sn.get("title", "") + " " + (sn.get("description") or "")[:300], sn.get("channelTitle", "")):
+            polc[sn.get("channelId")] += 1
+    pch = st.setdefault("yt_polch", {})
+    for ch_, n_ in polc.items():
+        if ch_ and n_ >= 2 and n_ / max(1, allc[ch_]) >= 0.3 and ch_ not in fav:
+            pch[ch_] = now.strftime("%Y-%m-%d")
+    lim_ = (now - timedelta(days=180)).strftime("%Y-%m-%d")
+    st["yt_polch"] = {k: d for k, d in pch.items() if d >= lim_}
     cut14_dt = now - timedelta(days=14)
     for v in vids:
         sn = v.get("snippet", {})
@@ -8454,7 +8606,7 @@ def build_youtube(st: dict, now: datetime) -> str | None:
             why["не українською"] += 1; continue      # лише українською; російське — ні
         if sn.get("channelId") in mute:
             why["приховані канали"] += 1; continue
-        if sn.get("categoryId") == "25" or YT_POLIT.search(txt + " " + chan):
+        if sn.get("categoryId") == "25" or (sn.get("channelId") not in fav and yt_pol(txt, chan, sn.get("channelId", ""), st)):
             why["політика/новини"] += 1; continue
         if sn.get("categoryId") == "17" or YT_SPORT.search(txt + " " + chan):
             why["спорт"] += 1; continue
@@ -8507,6 +8659,14 @@ def build_youtube(st: dict, now: datetime) -> str | None:
             sc -= 0.6 if views_ >= p70 else 2.0        # 🎵 кліпи — лише хіти й нижче за розмовне
         if YT_CLICK.search(sn_.get("title", "")):
             sc -= 0.4                                  # клікбейт
+        if v.get("id") in trend_ids:
+            sc += 0.4                                  # 🔥 є в офіційних трендах YouTube Україна
+        if views_ >= 50000 and likes_ / max(1, views_) < 0.004:
+            sc -= 0.5                                  # мало вподобань на багато переглядів — реклама чи накрутка
+        if "commentCount" not in stt_:
+            sc -= 0.2                                  # коментарі вимкнено
+        if YT_COMPIL.search(sn_.get("title", "")):
+            sc -= 0.3                                  # нарізки й компіляції чужого
         return sc * (1.15 if sn_.get("channelId") in fav else 1)   # ⭐ улюблені канали — вище
     good = sorted(pool, key=interest, reverse=True)
     top, per_channel, mus = [], {}, 0
@@ -9324,7 +9484,7 @@ def main() -> None:
             else:
                 new_sub = cid not in subs
                 on = subs.setdefault(cid, list(DEFAULT_TOPICS))
-                if cmd == "/start":                      # одразу показуємо чинний графік
+                if cmd == "/start" and False:            # чужий (основний) графік підписникам не показуємо
                     direct.append((cid, summary(f"📋 <b>Чинний графік</b> · група {GROUP}",
                                                 today_d, tomorrow_d, all_off, now), True, None))
                 head = ("✅ <b>Ви підписані!</b> Меню — кнопка зліва від поля вводу, інструкція — /help\n\n"
@@ -9340,9 +9500,11 @@ def main() -> None:
                            else "👋 Ви відписалися від усіх сповіщень. Повернутися — /start", False, None))
         elif cmd in ("/grafik", "/графік"):
             direct.append((cid, summary(f"📋 <b>Поточний графік</b> · група {GROUP}",
-                                        today_d, tomorrow_d, all_off, now), True, None))
+                                        today_d, tomorrow_d, all_off, now) if primary
+                           else "💡 Графік за вашою адресою — у меню «💡 Світло».", primary, None))
         elif cmd in ("/pogoda", "/погода"):
-            direct.append((cid, weather_for(now) or "Не вдалося отримати прогноз, спробуйте пізніше.",
+            _pc = (PROF.get(cid) or {}).get("city")
+            direct.append((cid, (weather_for(now) if primary else weather_for(now, *((49.233, 28.468, "Вінниця") if _pc == "vin" else (50.4501, 30.5234, "Київ")))) or "Не вдалося отримати прогноз, спробуйте пізніше.",
                            False, WX3_KB))
         elif cmd in ("/kino", "/кіно"):
             kino_req.append(cid)
@@ -9375,6 +9537,8 @@ def main() -> None:
 
     def sub_group(c: str) -> str:                     # черга підписника: з профілю, інакше — основна
         p_ = PROF.get(c) or {}
+        if p_.get("city") == "vin":                   # Вінниця — графіка ДТЕК немає (свій сайт ВОЕ в 💡 Світло)
+            return ""
         if not p_.get("done"):
             return GROUP
         return p_.get("group") or "" if p_.get("city") == "kyiv" else ""
@@ -9390,6 +9554,10 @@ def main() -> None:
         fam_msgs.append(summary(f"{head} · група {GROUP}", today_d, tomorrow_d, all_off, now))
 
     # 2) ранкове зведення — у свій час кожного (за замовчуванням 10:00; змінити — ⚙️ → 🕒)
+    def wx_default(c: str, p_: dict):                 # без району: основним — їхня адреса (секрети), підписникам — центр їхнього міста (не чужа адреса)
+        if c in family:
+            return None
+        return ("loc", "Вінниця", 49.233, 28.468) if p_.get("city") == "vin" else ("loc", "Київ", 50.4501, 30.5234)
     def due_at(c: str, key: str, default: int) -> bool:
         p_ = PROF.get(c) or {}
         h = p_.get(key, default)
@@ -9411,7 +9579,7 @@ def main() -> None:
     def morning_wx(c: str):                           # 🌤 погода на сьогодні для ранкового зведення — у місці людини (своє місце / район / Київ)
         p_ = PROF.get(c) or {}
         wl = p_.get("wloc")
-        key_ = ("loc", wl[0], round(wl[1], 3), round(wl[2], 3)) if wl else ((p_.get("city") or "kyiv", p_.get("dist")) if p_.get("dist") else None)
+        key_ = ("loc", wl[0], round(wl[1], 3), round(wl[2], 3)) if wl else ((p_.get("city") or "kyiv", p_.get("dist")) if p_.get("dist") else wx_default(c, p_))
         if key_ not in wx_cache:
             try:
                 if key_ is None:
@@ -9438,6 +9606,9 @@ def main() -> None:
                 txt = wife_text if (WIFE_ID and c == WIFE_ID) else common
                 if c not in family and addr_line():
                     txt = txt.replace(addr_line(), "")       # адреса — лише ваша
+            elif not sub_group(c):                    # Вінниця / без черги — лише привітання і погода, без чужого графіка
+                txt = "☀️ <b>Доброго ранку!</b>" + ("\n💡 Графік Вінницяобленерго за вашою адресою — у меню «💡 Світло»"
+                                                   if (PROF.get(c) or {}).get("city") == "vin" else "")
             else:
                 g_ = sub_group(c)
                 if g_ not in per_group:
@@ -9572,7 +9743,7 @@ def main() -> None:
                 p_ = PROF.get(c) or {}
                 wl = p_.get("wloc")                                        # 📍 своє місце для погоди (і для основних)
                 key_ = ("loc", wl[0], round(wl[1], 3), round(wl[2], 3)) if wl else \
-                    ((p_.get("city") or "kyiv", p_.get("dist")) if p_.get("dist") else None)
+                    ((p_.get("city") or "kyiv", p_.get("dist")) if p_.get("dist") else wx_default(c, p_))
                 by_d.setdefault(key_, []).append(c)
             for key_, cids in by_d.items():
                 if key_ is None:
@@ -9992,7 +10163,7 @@ def main() -> None:
     except Exception as e:
         print(f"Імпульс: {err_text(e)[:100]}")
     jobs += direct_m
-    change_to = [] if worker_alive else svitlo_to      # працює Worker — зміни вже надіслав він
+    change_to = [] if worker_alive else [c for c in svitlo_main if c in family or sub_group(c) == GROUP]     # працює Worker — зміни вже надіслав він
     jobs += [(cid, text, None) for text in change_msgs for cid in change_to]
     pend, got = st.setdefault("pend", {}), st.setdefault("got", {})   # тижневі розсилки — у свій час кожного (⚙️)
     for topic, text, mk, plain in topic_msgs:
@@ -10123,6 +10294,8 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    import atexit
+    atexit.register(diag_push)                        # 🧪 логи по темах — в бот (і при помилці теж)
     try:
         if not cart_only():                           # ⚡ cart.yml — лише пошук «🧺», без повного запуску
             main()
