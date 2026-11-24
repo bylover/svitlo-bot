@@ -742,7 +742,7 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-24T19:55:48.817033+02:00",
+ "gh_beat": "2026-11-24T20:00:49.793996+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -808,11 +808,11 @@
    ]
   ]
  },
- "fact_png": "2026-11-24 19|8|2026-11-24T16:22:28+02:00",
+ "fact_png": "2026-11-24 20|8|2026-11-24T16:22:28+02:00",
  "fact_day": {
-  "total": "5 год 44 хв",
+  "total": "4 год 44 хв",
   "list": [
-   "19:00–20:33 · 1 год 32 хв",
+   "20:00–20:33 · 33 хв",
    "07:20–09:04 · 1 год 44 хв",
    "13:55–16:22 · 2 год 27 хв"
   ]
@@ -867,7 +867,13 @@
   "24.11 00:00 Завтра 2026-11-25 WaitingForSchedule: без відключень"
  ],
  "week_fp": "{\"1\": [], \"2\": [], \"3\": [], \"4\": [], \"5\": [], \"6\": [], \"7\": []}",
- "we_sent": {},
+ "we_sent": {
+  "368433217": "2026-11-24",
+  "396425365": "2026-11-24",
+  "590261825": "2026-11-24",
+  "936688574": "2026-11-24",
+  "8283670046": "2026-11-24"
+ },
  "tgph": "8d020e91ef2b6894855e405f8973a51da385fca8e1cfd990c9e41c2a32c2",
  "yt_try": "2026-11-24 16",
  "yt_seen": [
@@ -2068,7 +2074,7 @@
  "silpo_fb": "1f0bae3d-2073-62f4-b14c-f9715721ce18|DeliveryHome|",
  "yt_ver": 2,
  "smm_ver": 4,
- "smm_try": "2026-11-24 19",
+ "smm_try": "2026-11-24 20",
  "smm_links": [
   "https://www.socialmediatoday.com/news/meta-offers-creative-ad-targeting-for-specific-audiences/833672/",
   "https://blog.google/products/ads-commerce/holiday-shopping-bidding-budgeting/",
@@ -13356,7 +13362,9 @@
  "imp_sent": {
   "396425365": "2026-11-24"
  },
- "ero_sent": {},
+ "ero_sent": {
+  "936688574": "2026-11-24"
+ },
  "pend": {
   "yt": {
    "id": "2026-11-23 08",
@@ -27899,9 +27907,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "7ace94657f5f",
+  "gs": "29f8da936ee0",
   "quiz_pool.json": "c89ccd86b451",
-  "fact.png": "8483c342fb17",
+  "fact.png": "157f2a58ff6c",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -50822,12 +50830,13 @@
    "There was a boat waitin' fer him under t",
    "“Pussum, why do you do that?” he cried i",
    "The old man motioned me in with his righ",
-   "Quand elle reconnut le comte, elle eut u"
+   "Quand elle reconnut le comte, elle eut u",
+   "As I raised the blind, and the morning s"
   ]
  },
  "ero_book": {
   "160603556": "Women in Love",
-  "936688574": "Nana"
+  "936688574": "Dracula"
  },
  "prom_day": "2026-11-23",
  "prom_force": true,
@@ -50857,7 +50866,7 @@
  "para_bag": [],
  "para_sent": "2026-11-20",
  "fan_wk": "2026-48",
- "weather": "2026-11-23",
+ "weather": "2026-11-24",
  "prom_i": 51,
  "yt_week": "2026-48",
  "smm_week": "2026-48",
@@ -50871,12 +50880,8 @@
  "silpo_snap": "2026-11-18",
  "live_day": "",
  "silpo_week": "2026-47",
- "sbm_at": 1795542953.212483,
+ "sbm_at": 1795543257.112249,
  "sbm_hist": [
-  [
-   "07:25",
-   83
-  ],
   [
    "07:37",
    76
@@ -51448,6 +51453,10 @@
   [
    "19:55",
    62
+  ],
+  [
+   "20:00",
+   64
   ]
  ],
  "sbm_near": {
@@ -54317,7 +54326,9 @@
   "indie": 1,
   "ost": 1,
   "kpop": 1,
-  "wedding": 1
+  "wedding": 1,
+  "bday": 1,
+  "xmas": 1
  },
  "aro_now_seen": "1794821583626",
  "arob_fail": {},
