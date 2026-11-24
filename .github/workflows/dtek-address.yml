@@ -6,10 +6,29 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: dtek-address
+  group: dtek-address-${{ github.event_name == 'schedule' && 'cron' || 'bot' }}   # розклад і запуски бота — окремі черги: не скасовують одне одного
   cancel-in-progress: false
 jobs:
+  guard:                                    # запуск за розкладом — лише запасний: якщо бот запускав перевірку за останні 15 хв, тихо пропускаємо
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions:
+      actions: read
+    outputs:
+      skip: ${{ steps.g.outputs.skip }}
+    steps:
+      - id: g
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then echo "skip=0" >> "$GITHUB_OUTPUT"; exit 0; fi
+          n=$(gh run list -R "$GITHUB_REPOSITORY" --workflow "dtek-address.yml" --limit 20 --json event,createdAt,status \
+              --jq '[.[] | select(.event=="workflow_dispatch") | select((now - (.createdAt|fromdateiso8601)) < 900)] | length' 2>/dev/null || echo 0)
+          echo "Запусків від бота за 15 хв: $n"
+          if [ "${n:-0}" -gt 0 ]; then echo "skip=1" >> "$GITHUB_OUTPUT"; else echo "skip=0" >> "$GITHUB_OUTPUT"; fi
   addr:
+    needs: guard
+    if: needs.guard.outputs.skip != '1'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -44,6 +63,7 @@ jobs:
           [ -f addr_state.json ] && git add addr_state.json
           [ -f addr_subs.json ] && git add addr_subs.json
           [ -f voe_probe.json ] && git add voe_probe.json
+          [ -f voe_state.json ] && git add voe_state.json
           git diff --cached --quiet && exit 0
           git commit -m "addr"
           for i in 1 2 3; do
