@@ -742,7 +742,7 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-25T00:05:45.040277+02:00",
+ "gh_beat": "2026-11-25T00:10:46.592567+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1761,14 +1761,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "25.11 00:07",
-   "ts": 1795558042,
+   "at": "25.11 00:11",
+   "ts": 1795558308,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "25.11 00:07",
-   "ts": 1795558042,
+   "at": "25.11 00:11",
+   "ts": 1795558308,
    "ok": true,
    "note": ""
   },
@@ -1791,8 +1791,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "24.11 23:53",
-   "ts": 1795557194,
+   "at": "25.11 00:12",
+   "ts": 1795558347,
    "ok": true,
    "note": ""
   },
@@ -1851,8 +1851,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "25.11 00:06",
-   "ts": 1795557964,
+   "at": "25.11 00:12",
+   "ts": 1795558367,
    "ok": true,
    "note": ""
   },
@@ -27192,7 +27192,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "ce4b22c1092e",
+  "gs": "e57835d57bcd",
   "quiz_pool.json": "c89ccd86b451",
   "fact.png": "ab672a315e85",
   "sexed.json": "0362ec7e46d4",
@@ -39498,6 +39498,87 @@
    ],
    "ov": "Легенда на великих екранах. Ексклюзивний концертний фільм із Джорджем Майклом, знятий у 1988 році під час масштабного Faith Tour у Palais Omnisports de Paris-Bercy. Відреставровані 35-міліметрові плівки відкривають раніш",
    "poster": "https://image.tmdb.org/t/p/w500/ljlmEFINSWawI7KpIFbPyZIWVzM.jpg"
+  },
+  "m1613798": {
+   "title": "Помста",
+   "year": "2026",
+   "rating": 7.5,
+   "genres": [
+    "Бойовик",
+    "Трилер"
+   ],
+   "g": [
+    28,
+    53
+   ],
+   "ov": "Колишній спецназівець трагічно втратив свою кохану дружину. Чоловік більше за все на світі прагне відшукати винних у загибелі своєї жінки. За збігом обставин отримує унікальний дарунок долі, коли стає справжнім мільйонер",
+   "poster": "https://image.tmdb.org/t/p/w500/ggJGx8fwwy21gEIXYusIlHcUn8z.jpg"
+  },
+  "m838209": {
+   "title": "Ексгумація",
+   "year": "2024",
+   "rating": 6.9,
+   "genres": [
+    "Детектив",
+    "Жахи",
+    "Трилер"
+   ],
+   "g": [
+    9648,
+    27,
+    53
+   ],
+   "ov": "Заможна сім’я, що живе в Лос-Анджелесі, викликає дует молодих шаманів - Хва Рим та Бон Кіля, аби врятувати новонароджене дитя від містичної недуги. Коли вони прибувають, Хва Рим відчуває, що темна тінь їхнього предка пер",
+   "poster": "https://image.tmdb.org/t/p/w500/nxTknt6QTxSsyArLkJ9m5R2V2F4.jpg"
+  },
+  "m639988": {
+   "title": "Жодного вибору",
+   "year": "2025",
+   "rating": 7.5,
+   "genres": [
+    "Комедія",
+    "Кримінал",
+    "Трилер"
+   ],
+   "g": [
+    35,
+    80,
+    53
+   ],
+   "ov": "Ман Су раптово звільняють зі стабільної роботи. Після кількох років безробіття, відчайдушно намагаючись зберегти власний будинок та забезпечити сім’ю, чоловік розробляє унікальний план, щоб отримати нову роботу: “просто”",
+   "poster": "https://image.tmdb.org/t/p/w500/pFBitZY1k2JtdyNDqoO9Z3PYw2u.jpg"
+  },
+  "m1329016": {
+   "title": "Тоні",
+   "year": "2026",
+   "rating": 7.6,
+   "genres": [
+    "Драма",
+    "Комедія"
+   ],
+   "g": [
+    18,
+    35
+   ],
+   "ov": "Стрічка заснована на біографії відомого шеф-повара, письменника та мандрівного журналіста Ентоні Бурдена та охоплює події одного літа, коли він знайшов своє покликання та своє кохання. Юний Тоні Бурден не отримує письмен",
+   "poster": "https://image.tmdb.org/t/p/w500/9UF0M468fMBq6G8P2xH3ZNEyYUv.jpg"
+  },
+  "m1165366": {
+   "title": "Де Голль: Опір",
+   "year": "2026",
+   "rating": 7.8,
+   "genres": [
+    "Історичний",
+    "Драма",
+    "Військовий"
+   ],
+   "g": [
+    36,
+    18,
+    10752
+   ],
+   "ov": "У червні 1940 року, коли французька армія зазнає краху, генерал де Голль відмовляється прийняти перемир’я. Він вирушає до Лондона, де закладає основи Руху Опору.",
+   "poster": "https://image.tmdb.org/t/p/w500/nwgEAaNjsnzTa1QFDE8kDS5VsDr.jpg"
   }
  },
  "cofid_pushed": "24.11.2026",
@@ -39511,8 +39592,8 @@
   "women": "2026-11-24T23:40:47.988844+02:00",
   "rom": "2026-11-25T00:05:45.145003+02:00",
   "cpl": "2026-11-25T00:05:45.145003+02:00",
-  "mas": "2026-11-24T15:20:48.108904+02:00",
-  "lin": "2026-11-24T15:20:48.108904+02:00",
+  "mas": "2026-11-25T00:10:46.628982+02:00",
+  "lin": "2026-11-25T00:10:46.628982+02:00",
   "wet": "2026-11-24T15:30:50.675820+02:00",
   "out": "2026-11-24T15:30:50.675820+02:00",
   "les": "2026-11-24T16:00:47.212604+02:00",
@@ -39598,12 +39679,8 @@
  "silpo_snap": "2026-11-18",
  "live_day": "2026-11-24",
  "silpo_week": "2026-47",
- "sbm_at": 1795557948.3044138,
+ "sbm_at": 1795558249.490789,
  "sbm_hist": [
-  [
-   "11:30",
-   65
-  ],
   [
    "11:35",
    64
@@ -40174,6 +40251,10 @@
   ],
   [
    "00:05",
+   91
+  ],
+  [
+   "00:10",
    91
   ]
  ],
@@ -43341,7 +43422,8 @@
   "romance": "2026-11-24T23:10:45.052241+02:00",
   "series": "2026-11-24T23:20:44.721720+02:00",
   "ua": "2026-11-24T23:40:47.988844+02:00",
-  "now": "2026-11-24T23:50:46.131445+02:00"
+  "now": "2026-11-24T23:50:46.131445+02:00",
+  "gems": "2026-11-25T00:10:46.628982+02:00"
  },
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 17.11–24.11\n<blockquote>🆕 <b>1. Редагування Stories в Instagram</b>\nInstagram додав можливість редагувати вже опубліковані Stories протягом 15 хвилин після їх створення.\n💡 Використовуйте цей час, щоб швидко виправити випадкові друкарські помилки або додати забутий стікер без видалення історії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5\">Прямий</a></blockquote>\n<blockquote>🆕 <b>2. Запуск AI-агента Muse від Meta</b>\nMeta розширює географію запуску свого персонального AI-агента Muse, який інтегрується в екосистему платформи.\n💡 Слідкуйте за розгортанням інструменту для оптимізації рутинних SMM-завдань та роботи з контентом.\n🔗 <a href=\"https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>3. Партнерство Pinterest і Microsoft Ads</b>\nPinterest оголосив про офіційне партнерство з Microsoft Ads для розширення рекламних можливостей.\n💡 Очікуйте нових крос-платформних рекламних інструментів та розширення аудиторії для кампаній у Pinterest.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Метрики спільного перегляду на YouTube CTV</b>\nYouTube додав підрахунок спільного перегляду (co-view counts) до аналітики Connected TV.\n💡 Враховуйте показники перегляду на великих екранах кількома глядачами при оцінці охоплення відеореклами.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Оновлення для відео в X (Twitter)</b>\nПлатформа X додала нові параметри мініатюр та налаштування підписів для відеоконтенту.\n💡 Використовуйте кастомні мініатюри, щоб підвищити клікабельність (CTR) ваших відео у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Виявлення діпфейків у TikTok</b>\nTikTok впроваджує нові технології для автоматичного виявлення та маркування штучно створеного контенту й діпфейків.\n💡 Зважайте на суворішу модерацію AI-контенту при створенні креативів для платформи.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5\">UA.NEWS</a></blockquote>\n<blockquote>👀 <b>7. Анонс додатка Threads для iPad</b>\nКоманда Threads анонсувала швидкий вихід окремого додатку для планшетів iPad.\n💡 Готуйте контент-стратегію з урахуванням майбутнього зростання аудиторії планшетів на цій платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Спрощення батьківського контролю в Pinterest</b>\nPinterest оновив і спростив налаштування батьківського контролю для безпечнішого користування платформою.\n💡 Пам'ятайте про вікові обмеження та безпеку бренду при налаштуванні таргетингу на молодшу аудиторію.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>9. Контроль нарізки файлів у Gemini API</b>\nGoogle додав нові функції керування нарізкою файлів (file slicing) до свого API Gemini для розробників.\n💡 Використовуйте оновлення для ефективнішої обробки великих масивів даних та документів через штучний інтелект.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>10. Інтеграція Instagram з Apple Music</b>\nInstagram додав функцію збереження аудіотреків із публікацій безпосередньо в плейлисти Apple Music.\n💡 Використовуйте популярну музику в Reels, щоб користувачі могли не лише взаємодіяти з відео, а й зберігати треки.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5\">Ukr.net</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202648",
  "kb_probe2": "2026-48"
