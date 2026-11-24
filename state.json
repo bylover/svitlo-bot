@@ -141,17 +141,6 @@
   "https://www.girlonthenet.com/blog/give-hotness-for-christmas-2026-gift-guide-sexy-ideas/"
  ],
  "kino_seen": [
-  "m20453",
-  "t208569",
-  "t68398",
-  "t1432",
-  "m768362",
-  "m799876",
-  "m1148365",
-  "m493529",
-  "m1263337",
-  "m546554",
-  "m843",
   "t69158",
   "t219246",
   "t2317",
@@ -740,9 +729,20 @@
   "m146",
   "t90802",
   "t225634",
-  "t4604"
+  "t4604",
+  "m411088",
+  "m906126",
+  "m363676",
+  "m606856",
+  "m965150",
+  "m1466115",
+  "m517814",
+  "m1103621",
+  "m1355666",
+  "m322",
+  "m2757"
  ],
- "gh_beat": "2026-11-24T16:35:53.349778+02:00",
+ "gh_beat": "2026-11-24T16:40:47.285933+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -27386,10 +27386,40 @@
    null,
    null,
    "2026-11-24"
+  ],
+  "tt7599146": [
+   7.6,
+   null,
+   36,
+   "2026-11-24"
+  ],
+  "tt0245712": [
+   8.0,
+   null,
+   83,
+   "2026-11-24"
+  ],
+  "tt0375679": [
+   7.7,
+   null,
+   66,
+   "2026-11-24"
+  ],
+  "tt1065073": [
+   7.9,
+   null,
+   100,
+   "2026-11-24"
+  ],
+  "tt1458175": [
+   7.3,
+   null,
+   52,
+   "2026-11-24"
   ]
  },
  "pushed_h": {
-  "gs": "ef8aa294342c",
+  "gs": "ec61ee2bf1e9",
   "quiz_pool.json": "c89ccd86b451",
   "fact.png": "6e88daa6f540",
   "sexed.json": "0362ec7e46d4",
@@ -27509,8 +27539,6 @@
   "smm-інструменти",
   "аромати",
   "найкращі аромати й догляд",
-  "youtube для вас",
-  "кіно-категорії",
   "режисери"
  ],
  "rc_need": true,
@@ -50368,12 +50396,8 @@
  "silpo_snap": "2026-11-18",
  "live_day": "",
  "silpo_week": "2026-47",
- "sbm_at": 1795530759.3713152,
+ "sbm_at": 1795531293.1716492,
  "sbm_hist": [
-  [
-   "04:00",
-   93
-  ],
   [
    "04:05",
    93
@@ -50945,11 +50969,15 @@
   [
    "16:30",
    67
+  ],
+  [
+   "16:40",
+   68
   ]
  ],
  "sbm_near": {
   "160603556": [
-   63,
+   70,
    0
   ]
  },
@@ -53761,7 +53789,8 @@
   "ua90": 1,
   "uarap": 1,
   "uarock": 1,
-  "uafolk": 1
+  "uafolk": 1,
+  "uapatr": 1
  },
  "aro_now_seen": "1794821583626",
  "arob_fail": {},
@@ -53842,7 +53871,14 @@
    "markup": null
   }
  ],
- "kino_gq": {},
+ "kino_gq": {
+  "drama": [
+   {
+    "id": "b857562e4c",
+    "text": "🍿 <b>ПІДБІРКА КІНО · ДРАМА</b>\n<i>👍/👎 — подобається чи ні (бот запам'ятає ваш смак), 👀 — вже бачили, більше не запропоную</i>\n<i>Натисніть на назву — відкриється постер, кадри й опис</i>\n§§\n<blockquote>🎬 <b>1.</b> <code>Снігова спільнота</code> (2023) <a href=\"https://telegra.ph/Snіgova-spіlnota-2023-11-24\">🔗</a>\nдрама, історичний · ⏱ 2 год 24 хв\n⭐ IMDb <b>7.8</b> · Ⓜ <b>72</b>\n<i>🎭 Enzo Vogrincic, Agustín Pardella, Matías Recalt</i>\n📺 <a href=\"https://www.themoviedb.org/movie/906126-la-sociedad-de-la-nieve/watch?locale=UA\">Netflix · за підпискою</a>\n📝 13 жовтня 1972 року рейс 571 ВПС Уругваю, зафрахтований для перевезення команди регбістів до Чилі, врізався в льодовик у самому серці Анд.\n▶️ <a href=\"https://youtu.be/Oiz-AZ-YL7E\">Трейлер</a></blockquote>\n§KN:m906126|51894\n§§\n<blockquote>🎬 <b>2.</b> <code>Саллі</code> (2016) <a href=\"https://telegra.ph/Sallі-2016-11-24\">🔗</a>\nдрама, історичний · ⏱ 1 год 36 хв\n⭐ IMDb <b>7.4</b> · 🍅 <b>85%</b> · Ⓜ <b>74</b>\n<i>🎭 Том Генкс, Аарон Екгарт, Анна Ґанн</i>\n📝 15 січня 2009 року світ став свідком однієї з найуспішніших екстрених посадок в історії авіації. Капітан Чеслі \"Саллі\" Саленберг вміло посадив літак рейсу 1549 USA Airways на поверхню річки Гудзон, врятувавши життя…\n▶️ <a href=\"https://youtu.be/lib6hw-H_jI\">Трейлер</a></blockquote>\n§KN:m363676|190\n§§\n<blockquote>🎬 <b>3.</b> <code>Тоґо</code> (2019) <a href=\"https://telegra.ph/Togo-2019-11-24\">🔗</a>\nпригоди, історичний, драма · ⏱ 1 год 53 хв\n⭐ IMDb <b>7.9</b> · 🍅 <b>93%</b> · Ⓜ <b>69</b>\n<i>🎭 Віллем Дефо, Джуліанн Ніколсон, Christopher Heyerdahl</i>\n📝 Історія про собаку Того, лідера упряжки Леонардо Сеппали. Під час Гонки Милосердя 1925 року або Гонка з доставки сироватки до Нома вони здолали найбільшу та найскладнішу дистанцію серед всіх хто брав в ній участь.…\n▶️ <a href=\"https://youtu.be/HMfyueM-ZBQ\">Трейлер</a></blockquote>\n§KN:m606856|21673\n§§\n<blockquote>🎬 <b>4.</b> <code>Після сонця</code> (2022) <a href=\"https://telegra.ph/Pіslya-soncya-2022-11-24\">🔗</a>\nдрама · ⏱ 1 год 41 хв\n⭐ IMDb <b>7.6</b> · Ⓜ <b>95</b>\n<i>🎭 Пол Мескаль, Frankie Corio, Brooklyn Toulson</i>\n📝 Софі згадує канікули біля моря, які вона провела з батьком двадцять років тому, коли їй було тринадцять.\n▶️ <a href=\"https://youtu.be/4A34B1DIGl8\">Трейлер</a></blockquote>\n§KN:m965150|1904110\n§§\n<blockquote>🎬 <b>5.</b> <code>Навіть якщо це кохання зникне вночі</code> (2025) <a href=\"https://telegra.ph/Navіt-yakshcho-ce-kohannya-znikne-vnochі-2025-11-24\">🔗</a>\nмелодрама, драма · ⏱ 1 год 46 хв\n⭐ IMDb <b>7.5</b>\n<i>🎭 추영우, 신시아, 조유정</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1466115-oneul-bam-segyeeseo-i-salangi-salajinda-haedo/watch?locale=UA\">Netflix · за підпискою</a>\n📝 Дівчина щоранку прокидається, забувши все, що було вчора. Вона починає зустрічатися з сором’язливим однокласником. Чи зростатиме їхнє кохання з кожним новим початком?\n▶️ <a href=\"https://youtu.be/rjAs9Ks-3V0\">Трейлер</a></blockquote>\n§KN:m1466115|3510464\n§§\n<blockquote>🎬 <b>6.</b> <code>Капернаум</code> (2018) <a href=\"https://telegra.ph/Kapernaum-2018-11-24-2\">🔗</a>\nдрама · ⏱ 2 год 06 хв\n⭐ IMDb <b>8.4</b> · Ⓜ <b>75</b>\n<i>🎭 Zain Al Rafeea, Yordanos Shifera, Boluwatife Treasure Bankole</i>\n📝 Історія юного Зейна — хлопчика, що живе в бідній бейрутської сім'ї. Незважаючи на юний вік, він поводиться як абсолютно доросла людина: працює, стежить за молодшими братами і сестрами, допомагає своїй улюбленій…\n▶️ <a href=\"https://youtu.be/maf0AbL3uEw\">Трейлер</a></blockquote>\n§KN:m517814|53431\n§§\n<blockquote>🎬 <b>7.</b> <code>Як заробити мільйон до того, як бабуся помре</code> (2024) <a href=\"https://telegra.ph/YAk-zarobiti-mіljon-do-togo-yak-babusya-pomre-2024-11-24\">🔗</a>\nдрама · ⏱ 2 год 06 хв\n⭐ IMDb <b>7.9</b> · 🍅 <b>98%</b> · Ⓜ <b>74</b>\n<i>🎭 พุฒิพงศ์ อัสสรัตนกุล, อุษา เสมคำ, สัญญา คุณากร</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1103621-hlanma/watch?locale=UA\">Netflix · за підпискою</a>\n📝 M, a university dropout low on money and luck, volunteers to take care of his terminally ill grandmother, in the hope of pocketing an inheritance.\n▶️ <a href=\"https://youtu.be/HrVX_nHNIUA\">Трейлер</a></blockquote>\n§KN:m1103621|2730142\n§§\n<blockquote>🎬 <b>8.</b> <code>Розплутане кохання</code> (2025) <a href=\"https://telegra.ph/Rozplutane-kohannya-2025-11-24-2\">🔗</a>\nмелодрама, драма, комедія · ⏱ 1 год 59 хв\n⭐ IMDb <b>7.1</b>\n<i>🎭 신은수, 공명, Ча У Мін</i>\n📺 <a href=\"https://www.themoviedb.org/movie/1355666-gobaegui-yeogsa/watch?locale=UA\">Netflix · за підпискою</a>\n📝 У цій історії про кохання й кучері закохана підлітка прагне підкорити шкільного серцеїда з допомогою винахідливого нового учня.\n▶️ <a href=\"https://youtu.be/0HwDE0HXbqc\">Трейлер</a></blockquote>\n§KN:m1355666|2648790\n§§\n<blockquote>🎬 <b>9.</b> <code>Таємнича річка</code> (2003) <a href=\"https://telegra.ph/Tayemnicha-rіchka-2003-11-24\">🔗</a>\nтрилер, драма, детектив · ⏱ 2 год 18 хв\n⭐ IMDb <b>7.9</b> · 🍅 <b>89%</b> · Ⓜ <b>84</b>\n<i>🎭 Шон Пенн, Тімоті Френсіс «Тім» Роббінс, Кевін Бейкон</i>\n📝 Джиммі, Шон, Дейв. Три друга дитинства. Джиммі найсміливіший і зухвалий, Шон більш м'який, а ось Дейвід був тишко. Одного дня, граючись на вулиці, до них під'їхала машина. У ній сиділи двоє, один вийшов, під виглядом…\n▶️ <a href=\"https://youtu.be/W7NktJhrRYQ\">Трейлер</a></blockquote>\n§KN:m322|190\n§§\n<blockquote>🎬 <b>10.</b> <code>Адаптація.</code> (2002) <a href=\"https://telegra.ph/Adaptacіya-2002-11-24\">🔗</a>\nкомедія, кримінал, драма · ⏱ 1 год 55 хв\n⭐ IMDb <b>7.6</b> · Ⓜ <b>83</b>\n<i>🎭 Ніколас Кейдж, Меріл Стріп, Кріс Купер</i>\n📝 Після прочитання книги знаменитої письменниці Сьюзан Орлінз «Викрадач орхідей», що оповідає про садівника – любителя, що займається клонуванням рідкісних порід орхідей, відомий сценарист Чарлі Кауфман вирішує…\n▶️ <a href=\"https://youtu.be/pK5jYt9QNIY\">Трейлер</a></blockquote>\n§KN:m2757|5953"
+   }
+  ]
+ },
  "yt_polch": {
   "UCthfjHehYgSyhf8ONjzJMUw": "2026-11-24",
   "UCfCVlxInB4VuaDFLGqEQqaA": "2026-11-24",
