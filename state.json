@@ -744,7 +744,7 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-25T21:55:44.896632+02:00",
+ "gh_beat": "2026-11-25T22:00:46.661446+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -802,7 +802,7 @@
    ]
   ]
  },
- "fact_png": "2026-11-25 21|6|2026-11-25T16:58:14+02:00",
+ "fact_png": "2026-11-25 22|6|2026-11-25T16:58:14+02:00",
  "fact_day": {
   "total": "4 год 4 хв",
   "list": [
@@ -1767,14 +1767,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "25.11 21:56",
-   "ts": 1795636619,
+   "at": "25.11 22:02",
+   "ts": 1795636965,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "25.11 21:56",
-   "ts": 1795636619,
+   "at": "25.11 22:02",
+   "ts": 1795636965,
    "ok": true,
    "note": ""
   },
@@ -1797,8 +1797,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "25.11 21:56",
-   "ts": 1795636562,
+   "at": "25.11 22:04",
+   "ts": 1795637060,
    "ok": true,
    "note": ""
   },
@@ -28033,12 +28033,18 @@
    null,
    null,
    "2026-11-25"
+  ],
+  "tt2303077": [
+   8.4,
+   null,
+   null,
+   "2026-11-25"
   ]
  },
  "pushed_h": {
-  "gs": "dcd354ff6d10",
+  "gs": "da60ff753b11",
   "quiz_pool.json": "c89ccd86b451",
-  "fact.png": "11599fd63da8",
+  "fact.png": "58fecc103e9c",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -44726,6 +44732,38 @@
    ],
    "ov": "У поліції існує спеціальна команда кримінальних розслідувань, в якій  працюють різноманітні особистості. Лі Хьон (Со Ін Ґук) – чудовий  кримінальний профайлер з науковим ступенем у кримінальній психології,  але у нього н",
    "poster": "https://image.tmdb.org/t/p/w500/6LnvlfevdppZNYg0VptRb7N8fwe.jpg"
+  },
+  "m615457": {
+   "title": "Ніхто",
+   "year": "2021",
+   "rating": 7.4,
+   "genres": [
+    "Бойовик",
+    "Трилер"
+   ],
+   "g": [
+    28,
+    53
+   ],
+   "ov": "Непримітний чоловік живе звичайним життям, поки одного разу, рятуючи жінку від нападу бандитів, не відправляє одного з хуліганів в лікарню. Лише пізніше він дізнається, що це був брат впливового ґанґстера, який тепер жад",
+   "poster": "https://image.tmdb.org/t/p/w500/aHt7LWd2cG4uS9EFtHeXgkCnzfp.jpg"
+  },
+  "t50825": {
+   "title": "Сонна лощина",
+   "year": "2013",
+   "rating": 7.3,
+   "genres": [
+    "Драма",
+    "Детектив",
+    "Науково фантастичний"
+   ],
+   "g": [
+    18,
+    9648,
+    10765
+   ],
+   "ov": "Після смерті Ікабода Крейна в одній з битв у війні за незалежність на стороні сил генерала Джорджа Вашингтона, Ікабод встає з небуття в містечку Сонна лощина. Одночасно з ним повстає з мертвих вершник без голови, голову ",
+   "poster": "https://image.tmdb.org/t/p/w500/f9e5oXWopdx6xAFWubWMuut0KAZ.jpg"
   }
  },
  "cofid_pushed": "24.11.2026",
@@ -44828,12 +44866,8 @@
  "silpo_snap": "2026-11-25",
  "live_day": "2026-11-25",
  "silpo_week": "2026-47",
- "sbm_at": 1795636549.8165565,
+ "sbm_at": 1795636849.7343998,
  "sbm_hist": [
-  [
-   "09:05",
-   67
-  ],
   [
    "09:10",
    69
@@ -45405,6 +45439,10 @@
   [
    "21:55",
    80
+  ],
+  [
+   "22:00",
+   82
   ]
  ],
  "sbm_near": {
@@ -45421,7 +45459,7 @@
   }
  },
  "sbm_grp": {},
- "net_at": 1795635956.7424664,
+ "net_at": 1795636854.9443963,
  "net_asn": {
   "triolan": [
    "13188",
@@ -48564,7 +48602,7 @@
   "UC2s-Imn7AJsZt2LaHyAStlg": "2026-11-24"
  },
  "kp_at": {
-  "mix": "2026-11-25T09:55:46.376443+02:00",
+  "mix": "2026-11-25T22:00:46.756959+02:00",
   "drama": "2026-11-25T10:10:54.381744+02:00",
   "thriller": "2026-11-25T10:40:46.049082+02:00",
   "comedy": "2026-11-25T10:50:46.893742+02:00",
@@ -48586,5 +48624,6 @@
   "ser_mystery": "2026-11-25T13:57:05.138779+02:00"
  },
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 17.11–24.11\n<blockquote>🆕 <b>1. Редагування Stories в Instagram</b>\nInstagram додав можливість редагувати вже опубліковані Stories протягом 15 хвилин після їх створення.\n💡 Використовуйте цей час, щоб швидко виправити випадкові друкарські помилки або додати забутий стікер без видалення історії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5\">Прямий</a></blockquote>\n<blockquote>🆕 <b>2. Запуск AI-агента Muse від Meta</b>\nMeta розширює географію запуску свого персонального AI-агента Muse, який інтегрується в екосистему платформи.\n💡 Слідкуйте за розгортанням інструменту для оптимізації рутинних SMM-завдань та роботи з контентом.\n🔗 <a href=\"https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>3. Партнерство Pinterest і Microsoft Ads</b>\nPinterest оголосив про офіційне партнерство з Microsoft Ads для розширення рекламних можливостей.\n💡 Очікуйте нових крос-платформних рекламних інструментів та розширення аудиторії для кампаній у Pinterest.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Метрики спільного перегляду на YouTube CTV</b>\nYouTube додав підрахунок спільного перегляду (co-view counts) до аналітики Connected TV.\n💡 Враховуйте показники перегляду на великих екранах кількома глядачами при оцінці охоплення відеореклами.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Оновлення для відео в X (Twitter)</b>\nПлатформа X додала нові параметри мініатюр та налаштування підписів для відеоконтенту.\n💡 Використовуйте кастомні мініатюри, щоб підвищити клікабельність (CTR) ваших відео у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Виявлення діпфейків у TikTok</b>\nTikTok впроваджує нові технології для автоматичного виявлення та маркування штучно створеного контенту й діпфейків.\n💡 Зважайте на суворішу модерацію AI-контенту при створенні креативів для платформи.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5\">UA.NEWS</a></blockquote>\n<blockquote>👀 <b>7. Анонс додатка Threads для iPad</b>\nКоманда Threads анонсувала швидкий вихід окремого додатку для планшетів iPad.\n💡 Готуйте контент-стратегію з урахуванням майбутнього зростання аудиторії планшетів на цій платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Спрощення батьківського контролю в Pinterest</b>\nPinterest оновив і спростив налаштування батьківського контролю для безпечнішого користування платформою.\n💡 Пам'ятайте про вікові обмеження та безпеку бренду при налаштуванні таргетингу на молодшу аудиторію.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>9. Контроль нарізки файлів у Gemini API</b>\nGoogle додав нові функції керування нарізкою файлів (file slicing) до свого API Gemini для розробників.\n💡 Використовуйте оновлення для ефективнішої обробки великих масивів даних та документів через штучний інтелект.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>10. Інтеграція Instagram з Apple Music</b>\nInstagram додав функцію збереження аудіотреків із публікацій безпосередньо в плейлисти Apple Music.\n💡 Використовуйте популярну музику в Reels, щоб користувачі могли не лише взаємодіяти з відео, а й зберігати треки.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5\">Ukr.net</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202648",
- "kb_probe2": "2026-48"
+ "kb_probe2": "2026-48",
+ "fest_fail": 1795637025.467811
 }
