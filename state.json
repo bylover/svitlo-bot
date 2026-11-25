@@ -742,7 +742,7 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-25T13:45:46.605749+02:00",
+ "gh_beat": "2026-11-25T13:50:46.542344+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -1763,14 +1763,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "25.11 13:42",
-   "ts": 1795606960,
+   "at": "25.11 13:52",
+   "ts": 1795607527,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "25.11 13:42",
-   "ts": 1795606960,
+   "at": "25.11 13:52",
+   "ts": 1795607527,
    "ok": true,
    "note": ""
   },
@@ -1793,8 +1793,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "25.11 13:50",
-   "ts": 1795607405,
+   "at": "25.11 13:56",
+   "ts": 1795607807,
    "ok": true,
    "note": ""
   },
@@ -27925,10 +27925,22 @@
    null,
    null,
    "2026-11-25"
+  ],
+  "tt8068860": [
+   7.4,
+   null,
+   null,
+   "2026-11-25"
+  ],
+  "tt6763664": [
+   8.5,
+   null,
+   null,
+   "2026-11-25"
   ]
  },
  "pushed_h": {
-  "gs": "d08b0c367488",
+  "gs": "9893d5857706",
   "quiz_pool.json": "c89ccd86b451",
   "fact.png": "0dfedd2bf961",
   "sexed.json": "0362ec7e46d4",
@@ -44536,6 +44548,122 @@
    ],
    "ov": "Останні тридцять  років Еш старанно уникав усього, що пов'язане зі спогадами про  зловісних мерців, але коли чергова навала істот з потойбіччя загрожує  знищити все населення планети, Еш стає єдиним шансом людства на  по",
    "poster": "https://image.tmdb.org/t/p/w500/kB8Xh71EtQ81wtH7rl1ThKydkEn.jpg"
+  },
+  "t65294": {
+   "title": "Низка злощасних подій",
+   "year": "2017",
+   "rating": 7.7,
+   "genres": [
+    "Екшн і Пригоди",
+    "Сімейний",
+    "Комедія"
+   ],
+   "g": [
+    10759,
+    10751,
+    35,
+    9648
+   ],
+   "ov": "Все починається із сумної події: за загадкових обставин згорає будинок Бодлерів, у пожежі гинуть батьки Вайолет, Клауса і Санні. Діти змушені покладатися лише на себе та на свою кмітливість, коли з’ясовується, що признач",
+   "poster": "https://image.tmdb.org/t/p/w500/7i6MekRbBtef889v6XYvngzrhSz.jpg"
+  },
+  "t93166": {
+   "title": "Захоплення",
+   "year": "2019",
+   "rating": 8.0,
+   "genres": [
+    "Кримінал",
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    80,
+    18,
+    9648
+   ],
+   "ov": "Коли вирок солдату Шону Емері за вбивство в Афганістані скасовують через недостовірні відеодокази, він повертається до життя як вільна людина зі своєю маленькою дочкою. Але коли з'являються компрометуючі записи з камер в",
+   "poster": "https://image.tmdb.org/t/p/w500/6keUrgntgKt299a39UJCDYldb8b.jpg"
+  },
+  "t66276": {
+   "title": "Одного разу вночі",
+   "year": "2016",
+   "rating": 8.4,
+   "genres": [
+    "Кримінал",
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    80,
+    18,
+    9648
+   ],
+   "ov": "Після бурхливої ночі з незнайомкою, хлопець прокидається з її трупом у себе під боком і всі звинувачення падають на нього.",
+   "poster": "https://image.tmdb.org/t/p/w500/qVvsbrNst9l2sf1IunyeUDBvekg.jpg"
+  },
+  "t62933": {
+   "title": "Я тебе пам'ятаю",
+   "year": "2015",
+   "rating": 7.6,
+   "genres": [
+    "Детектив",
+    "Драма"
+   ],
+   "g": [
+    9648,
+    18
+   ],
+   "ov": "У поліції існує спеціальна команда кримінальних розслідувань, в якій  працюють різноманітні особистості. Лі Хьон (Со Ін Ґук) – чудовий  кримінальний профайлер з науковим ступенем у кримінальній психології,  але у нього н",
+   "poster": "https://image.tmdb.org/t/p/w500/6LnvlfevdppZNYg0VptRb7N8fwe.jpg"
+  },
+  "t117378": {
+   "title": "Миша",
+   "year": "2021",
+   "rating": 8.6,
+   "genres": [
+    "Кримінал",
+    "Детектив"
+   ],
+   "g": [
+    80,
+    9648
+   ],
+   "ov": "Безжальні серійні вбивства психопата поринули всю країну в страх і хаос. Чесний і праведний поліцейський-новачок та досвідчений детектив з трагічним минулим стикаються з убивцею. Після зустрічі з психопатом їхнє життя по",
+   "poster": "https://image.tmdb.org/t/p/w500/ephFQyEZ24DN5cBFqv8ePq18ssf.jpg"
+  },
+  "t126485": {
+   "title": "В русі",
+   "year": "2023",
+   "rating": 8.4,
+   "genres": [
+    "Детектив",
+    "Драма",
+    "Екшн і Пригоди"
+   ],
+   "g": [
+    9648,
+    18,
+    10759
+   ],
+   "ov": "Троє старшокласників мають суперздібності, які передалися їм від батьків, а ті, у свою чергу, намагаються захистити дітей від людей з підступними планами.",
+   "poster": "https://image.tmdb.org/t/p/w500/b9MhD5syJ7TbYSeje4wB4oyTzc7.jpg"
+  },
+  "t69470": {
+   "title": "Дієта з Санта-Кларіти",
+   "year": "2017",
+   "rating": 7.8,
+   "genres": [
+    "Комедія",
+    "Детектив",
+    "Кримінал"
+   ],
+   "g": [
+    35,
+    9648,
+    80
+   ],
+   "ov": "Джоель і Шейла — щаслива сімейна пара батьків зі Санта-Кларіти. Одного разу Шейла вмирає і... не вмирає. Незрозуміло, як так вийшло, але жінка цілком собі жива, а серце в неї не б'ється. Крім того, Шейла раптом починає д",
+   "poster": "https://image.tmdb.org/t/p/w500/5rBjNm2sRubaXKBnU904NInFi7P.jpg"
   }
  },
  "cofid_pushed": "24.11.2026",
@@ -44636,12 +44764,8 @@
  "silpo_snap": "2026-11-18",
  "live_day": "2026-11-25",
  "silpo_week": "2026-47",
- "sbm_at": 1795607149.3564143,
+ "sbm_at": 1795607449.447945,
  "sbm_hist": [
-  [
-   "01:20",
-   93
-  ],
   [
    "01:31",
    93
@@ -45212,6 +45336,10 @@
   ],
   [
    "13:45",
+   56
+  ],
+  [
+   "13:50",
    56
   ]
  ],
@@ -48389,7 +48517,7 @@
   "ser_comedy": "2026-11-25T13:25:47.919472+02:00",
   "ser_drama": "2026-11-25T13:30:52.376528+02:00",
   "ser_scifi": "2026-11-25T13:45:46.665186+02:00",
-  "ser_mystery": "2026-11-25T01:45:45.326318+02:00"
+  "ser_mystery": "2026-11-25T13:50:46.587714+02:00"
  },
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 17.11–24.11\n<blockquote>🆕 <b>1. Редагування Stories в Instagram</b>\nInstagram додав можливість редагувати вже опубліковані Stories протягом 15 хвилин після їх створення.\n💡 Використовуйте цей час, щоб швидко виправити випадкові друкарські помилки або додати забутий стікер без видалення історії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5\">Прямий</a></blockquote>\n<blockquote>🆕 <b>2. Запуск AI-агента Muse від Meta</b>\nMeta розширює географію запуску свого персонального AI-агента Muse, який інтегрується в екосистему платформи.\n💡 Слідкуйте за розгортанням інструменту для оптимізації рутинних SMM-завдань та роботи з контентом.\n🔗 <a href=\"https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>3. Партнерство Pinterest і Microsoft Ads</b>\nPinterest оголосив про офіційне партнерство з Microsoft Ads для розширення рекламних можливостей.\n💡 Очікуйте нових крос-платформних рекламних інструментів та розширення аудиторії для кампаній у Pinterest.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Метрики спільного перегляду на YouTube CTV</b>\nYouTube додав підрахунок спільного перегляду (co-view counts) до аналітики Connected TV.\n💡 Враховуйте показники перегляду на великих екранах кількома глядачами при оцінці охоплення відеореклами.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Оновлення для відео в X (Twitter)</b>\nПлатформа X додала нові параметри мініатюр та налаштування підписів для відеоконтенту.\n💡 Використовуйте кастомні мініатюри, щоб підвищити клікабельність (CTR) ваших відео у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Виявлення діпфейків у TikTok</b>\nTikTok впроваджує нові технології для автоматичного виявлення та маркування штучно створеного контенту й діпфейків.\n💡 Зважайте на суворішу модерацію AI-контенту при створенні креативів для платформи.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5\">UA.NEWS</a></blockquote>\n<blockquote>👀 <b>7. Анонс додатка Threads для iPad</b>\nКоманда Threads анонсувала швидкий вихід окремого додатку для планшетів iPad.\n💡 Готуйте контент-стратегію з урахуванням майбутнього зростання аудиторії планшетів на цій платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Спрощення батьківського контролю в Pinterest</b>\nPinterest оновив і спростив налаштування батьківського контролю для безпечнішого користування платформою.\n💡 Пам'ятайте про вікові обмеження та безпеку бренду при налаштуванні таргетингу на молодшу аудиторію.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>9. Контроль нарізки файлів у Gemini API</b>\nGoogle додав нові функції керування нарізкою файлів (file slicing) до свого API Gemini для розробників.\n💡 Використовуйте оновлення для ефективнішої обробки великих масивів даних та документів через штучний інтелект.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>10. Інтеграція Instagram з Apple Music</b>\nInstagram додав функцію збереження аудіотреків із публікацій безпосередньо в плейлисти Apple Music.\n💡 Використовуйте популярну музику в Reels, щоб користувачі могли не лише взаємодіяти з відео, а й зберігати треки.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5\">Ukr.net</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202648",
  "kb_probe2": "2026-48"
