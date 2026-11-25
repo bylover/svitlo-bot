@@ -744,7 +744,7 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-25T19:55:47.947486+02:00",
+ "gh_beat": "2026-11-25T20:00:48.518950+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -806,7 +806,7 @@
    ]
   ]
  },
- "fact_png": "2026-11-25 19|7|2026-11-25T16:58:14+02:00",
+ "fact_png": "2026-11-25 20|7|2026-11-25T16:58:14+02:00",
  "fact_day": {
   "total": "4 год 4 хв",
   "list": [
@@ -1764,14 +1764,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "25.11 19:58",
-   "ts": 1795629509,
+   "at": "25.11 20:02",
+   "ts": 1795629764,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "25.11 19:58",
-   "ts": 1795629509,
+   "at": "25.11 20:02",
+   "ts": 1795629764,
    "ok": true,
    "note": ""
   },
@@ -1794,8 +1794,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "25.11 19:52",
-   "ts": 1795629171,
+   "at": "25.11 20:02",
+   "ts": 1795629764,
    "ok": true,
    "note": ""
   },
@@ -1854,8 +1854,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "25.11 19:52",
-   "ts": 1795629171,
+   "at": "25.11 20:02",
+   "ts": 1795629764,
    "ok": true,
    "note": ""
   },
@@ -13228,7 +13228,9 @@
  "imp_sent": {
   "396425365": "2026-11-25"
  },
- "ero_sent": {},
+ "ero_sent": {
+  "936688574": "2026-11-25"
+ },
  "pend": {},
  "got": {},
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
@@ -28031,9 +28033,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "6e4a15375df5",
+  "gs": "dc93f7e6689d",
   "quiz_pool.json": "c89ccd86b451",
-  "fact.png": "fa3783146b58",
+  "fact.png": "95cb33e81b2a",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -44772,12 +44774,13 @@
    "“Pussum, why do you do that?” he cried i",
    "The old man motioned me in with his righ",
    "Quand elle reconnut le comte, elle eut u",
-   "As I raised the blind, and the morning s"
+   "As I raised the blind, and the morning s",
+   "And I saw it was filled with graves, And"
   ]
  },
  "ero_book": {
   "160603556": "Women in Love",
-  "936688574": "Dracula"
+  "936688574": "Song of Songs"
  },
  "prom_day": "2026-11-25",
  "prom_force": false,
@@ -44819,15 +44822,11 @@
   "kind": "review",
   "src": "Dildo or Dildon't"
  },
- "silpo_snap": "2026-11-18",
+ "silpo_snap": "2026-11-25",
  "live_day": "2026-11-25",
  "silpo_week": "2026-47",
- "sbm_at": 1795629352.3833976,
+ "sbm_at": 1795629684.9839947,
  "sbm_hist": [
-  [
-   "07:20",
-   93
-  ],
   [
    "07:25",
    93
@@ -45398,6 +45397,10 @@
   ],
   [
    "19:55",
+   66
+  ],
+  [
+   "20:00",
    66
   ]
  ],
