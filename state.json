@@ -3,7 +3,7 @@
  "group": "4.1",
  "fp": {
   "2026-11-24": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 540, \"start\": 270, \"type\": \"Definite\"}, {\"end\": 1020, \"start\": 750, \"type\": \"Definite\"}, {\"end\": 1440, \"start\": 1380, \"type\": \"Definite\"}]}",
-  "2026-11-25": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 1020, \"start\": 750, \"type\": \"Definite\"}]}",
+  "2026-11-25": "{\"s\": \"ScheduleApplies\", \"slots\": [{\"end\": 1110, \"start\": 840, \"type\": \"Definite\"}]}",
   "2026-11-26": "{\"s\": \"WaitingForSchedule\", \"slots\": []}"
  },
  "reminded": [],
@@ -742,7 +742,7 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-25T06:15:44.575121+02:00",
+ "gh_beat": "2026-11-25T06:20:44.509105+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -818,7 +818,6 @@
  },
  "mo_sent": {},
  "log": [
-  "08.11 01:00 Сьогодні 2026-11-08 ScheduleApplies: 00:00–05:00, 08:30–16:00, 18:30–24:00",
   "08.11 10:50 Сьогодні 2026-11-08 ScheduleApplies: 00:00–05:00, 08:30–17:00, 18:30–24:00",
   "08.11 23:25 Завтра 2026-11-09 ScheduleApplies: 00:00–02:00, 06:00–13:00, 16:00–23:00",
   "09.11 00:00 Завтра 2026-11-10 WaitingForSchedule: без відключень",
@@ -857,7 +856,8 @@
   "23.11 23:55 Завтра 2026-11-24 ScheduleApplies: 04:30–09:00, 12:30–17:00, 23:00–24:00",
   "24.11 00:00 Завтра 2026-11-25 WaitingForSchedule: без відключень",
   "24.11 21:00 Завтра 2026-11-25 ScheduleApplies: 12:30–17:00",
-  "25.11 00:00 Завтра 2026-11-26 WaitingForSchedule: без відключень"
+  "25.11 00:00 Завтра 2026-11-26 WaitingForSchedule: без відключень",
+  "25.11 06:20 Сьогодні 2026-11-25 ScheduleApplies: 14:00–18:30"
  ],
  "week_fp": "{\"1\": [], \"2\": [], \"3\": [], \"4\": [], \"5\": [], \"6\": [], \"7\": []}",
  "we_sent": {},
@@ -1761,14 +1761,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "25.11 06:12",
-   "ts": 1795579941,
+   "at": "25.11 06:22",
+   "ts": 1795580534,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "25.11 06:12",
-   "ts": 1795579941,
+   "at": "25.11 06:22",
+   "ts": 1795580534,
    "ok": true,
    "note": ""
   },
@@ -1791,8 +1791,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "25.11 06:12",
-   "ts": 1795579941,
+   "at": "25.11 06:22",
+   "ts": 1795580534,
    "ok": true,
    "note": ""
   },
@@ -1851,8 +1851,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "25.11 06:12",
-   "ts": 1795579950,
+   "at": "25.11 06:22",
+   "ts": 1795580564,
    "ok": true,
    "note": ""
   },
@@ -13231,14 +13231,7 @@
    ]
   ]
  },
- "silpo_by": {
-  "1f0bae3d-2073-62f4-b14c-f9715721ce18": {
-   "week": "2026-11-19",
-   "text": "🛒 <b>АКЦІЇ СІЛЬПО</b> · актуально на 24.11 16:20 (оновлюється двічі на день)\n<i>🚚 Ціни — для доставки (як на сайті Сільпо). 🌐 «лише онлайн-замовлення» — ціна тільки при замовленні на сайті чи в застосунку. Великі знижки (від 50%) показуємо лише після підтвердження 2 дні поспіль.</i>\n<i>Сільпо, вул. Калнишевського, 2 · 🏪 самовивіз · 🔥 — «Ціна тижня»</i>\n<i>Реальна вигода — порівняно з мінімальною ціною за останні тижні</i>\n🔥 <b>Топ-10 найвигідніших тижня</b>\n<blockquote>1. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» негазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-negazovana-16649\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n2. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» слабогазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-slabogazovana-39465\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n3. 🥤 📦 від 6 шт — 0.19 ₴/шт <code>Вода мінеральна «Моршинська» сильногазована</code> <a href=\"https://silpo.ua/product/voda-mineralna-morshynska-sylnogazovana-36629\">🔗</a> — <b>0.19 ₴</b> <s>31.49 ₴</s> · −99%\n4. 🧊 <code>Пельмені Laska «Маню-ням» з м'ясом індика та кролика</code> <a href=\"https://silpo.ua/product/pelmeni-laska-maniu-niam-z-m-iasom-indyka-ta-krolyka-912911\">🔗</a> — <b>69.99 ₴</b> <s>139 ₴</s> · −51%\n5. 🥩 <code>Сосиски «М'ясна Гільдія» з вершками і філе індички в/ґ</code> <a href=\"https://silpo.ua/product/sosysky-m-iasna-gildiia-z-vershkamy-i-file-indychky-v-g-724299\">🔗</a> — <b>69.99 ₴</b> <s>144 ₴</s> · −53%\n6. 🐟 <code>Форель «Премія»® слабосолона шматок на шкірі</code> <a href=\"https://silpo.ua/product/forel-premiia-slabosolona-shmatok-na-shkiri-365807\">🔗</a> — <b>199 ₴</b> <s>414 ₴</s> · −50%\n7. 🐟 <code>Сьомга «Премія»® слабосолона шматок на шкірі</code> <a href=\"https://silpo.ua/product/somga-premiia-slabosolona-shmatok-na-shkiri-365811\">🔗</a> — <b>199 ₴</b> <s>414 ₴</s> · −50%\n8. 🛒 <code>Папір туалетний NUA 3-шаровий</code> <a href=\"https://silpo.ua/product/papir-tualetnyi-nua-3-sharovyi-979770\">🔗</a> — <b>529 ₴</b> <s>999 ₴</s> · −47%\n9. 🍷 <code>Пиво Heineken світле з/б</code> <a href=\"https://silpo.ua/product/pyvo-heineken-svitle-z-b-721739\">🔗</a> — <b>39.99 ₴</b> <s>69.99 ₴</s> · −45%\n10. 🍫 <code>Тістечко «Заварне»</code> <a href=\"https://silpo.ua/product/tistechko-zavarne-237826\">🔗</a> — <b>17.9 ₴</b> <s>36.9 ₴</s> · −51%</blockquote>\n👇 <i>Оберіть категорію — покажу топ-5, далі «➕ ще 5»</i>\n§SN:s0_",
-   "built": "2026-11-24-pm",
-   "at": "24.11 16:20"
-  }
- },
+ "silpo_by": {},
  "silpo_sent_by": {
   "1ed43e73-051b-6842-a111-a5ad042eb496@dl": "2026-11-05",
   "1edb6b54-d26b-681e-aa85-b5ff7ea46636": "2026-10-29",
@@ -27654,7 +27647,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "ce490c468e76",
+  "gs": "d18e233ad878",
   "quiz_pool.json": "c89ccd86b451",
   "fact.png": "8f2e37aca565",
   "sexed.json": "0362ec7e46d4",
@@ -42023,8 +42016,8 @@
   "women": "2026-11-25T05:50:53.855547+02:00",
   "rom": "2026-11-25T06:10:47.269791+02:00",
   "cpl": "2026-11-25T06:10:47.269791+02:00",
-  "mas": "2026-11-25T00:10:46.628982+02:00",
-  "lin": "2026-11-25T00:10:46.628982+02:00",
+  "mas": "2026-11-25T06:20:44.647846+02:00",
+  "lin": "2026-11-25T06:20:44.647846+02:00",
   "wet": "2026-11-25T00:20:50.482568+02:00",
   "out": "2026-11-25T00:20:50.482568+02:00",
   "les": "2026-11-25T00:40:46.103980+02:00",
@@ -42110,12 +42103,8 @@
  "silpo_snap": "2026-11-18",
  "live_day": "2026-11-25",
  "silpo_week": "2026-47",
- "sbm_at": 1795580148.190531,
+ "sbm_at": 1795580449.3976126,
  "sbm_hist": [
-  [
-   "17:40",
-   66
-  ],
   [
    "17:50",
    66
@@ -42687,14 +42676,13 @@
   [
    "06:15",
    93
+  ],
+  [
+   "06:20",
+   93
   ]
  ],
- "sbm_near": {
-  "160603556": [
-   81,
-   0
-  ]
- },
+ "sbm_near": {},
  "sbm_home": {
   "936688574": {
    "k": "50.52128,30.50864",
@@ -42750,24 +42738,7 @@
   "lifecell": "ok"
  },
  "sbm_tshift": 0,
- "yt_fb": {
-  "UCzKMx2J12XtHOCZiEbUpIYw": -1,
-  "UCfCVlxInB4VuaDFLGqEQqaA": -2,
-  "UCcn5oI0NF-kCO1vO0GoPQdg": -1,
-  "UC8e827ZUNj7vDESIUV2u_sg": 0,
-  "UC3NN4_qLpiOJynbeXvYHRIw": -2,
-  "UCBYvr4SqfGQd5fTmOXVQ4Zw": -2,
-  "UCwuzITdbxPSG_9PakpsKNwQ": 1,
-  "UCEGfICV92gmM5w2t3gYfQDw": -1,
-  "UCFPYWGlj1ugfWp_hH0ipx7g": 2,
-  "UCbam_IQ84ZKNN4t59MjOaFA": 1,
-  "UC_-jlf8gEFM4b4-IMcLSHmQ": 2,
-  "UCMiWy2TJ3MckIwuzyyleRcw": -1,
-  "UCzut6TUcB1DCt7_0WKH4TZw": -1,
-  "UC1qV4yg7rJJRk_zUv8JmC7w": -1,
-  "UCSbOqpZWlSqMmuOUbU0CD_g": 1,
-  "UC8AmKDLGaWrkJqflv7ZEsPQ": 0
- },
+ "yt_fb": {},
  "sbm_tshift_k": 0,
  "kc_week": "202648",
  "kc_force": false,
@@ -45866,5 +45837,7 @@
   "ser_mystery": "2026-11-25T01:45:45.326318+02:00"
  },
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 17.11–24.11\n<blockquote>🆕 <b>1. Редагування Stories в Instagram</b>\nInstagram додав можливість редагувати вже опубліковані Stories протягом 15 хвилин після їх створення.\n💡 Використовуйте цей час, щоб швидко виправити випадкові друкарські помилки або додати забутий стікер без видалення історії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5\">Прямий</a></blockquote>\n<blockquote>🆕 <b>2. Запуск AI-агента Muse від Meta</b>\nMeta розширює географію запуску свого персонального AI-агента Muse, який інтегрується в екосистему платформи.\n💡 Слідкуйте за розгортанням інструменту для оптимізації рутинних SMM-завдань та роботи з контентом.\n🔗 <a href=\"https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>3. Партнерство Pinterest і Microsoft Ads</b>\nPinterest оголосив про офіційне партнерство з Microsoft Ads для розширення рекламних можливостей.\n💡 Очікуйте нових крос-платформних рекламних інструментів та розширення аудиторії для кампаній у Pinterest.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Метрики спільного перегляду на YouTube CTV</b>\nYouTube додав підрахунок спільного перегляду (co-view counts) до аналітики Connected TV.\n💡 Враховуйте показники перегляду на великих екранах кількома глядачами при оцінці охоплення відеореклами.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Оновлення для відео в X (Twitter)</b>\nПлатформа X додала нові параметри мініатюр та налаштування підписів для відеоконтенту.\n💡 Використовуйте кастомні мініатюри, щоб підвищити клікабельність (CTR) ваших відео у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Виявлення діпфейків у TikTok</b>\nTikTok впроваджує нові технології для автоматичного виявлення та маркування штучно створеного контенту й діпфейків.\n💡 Зважайте на суворішу модерацію AI-контенту при створенні креативів для платформи.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5\">UA.NEWS</a></blockquote>\n<blockquote>👀 <b>7. Анонс додатка Threads для iPad</b>\nКоманда Threads анонсувала швидкий вихід окремого додатку для планшетів iPad.\n💡 Готуйте контент-стратегію з урахуванням майбутнього зростання аудиторії планшетів на цій платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Спрощення батьківського контролю в Pinterest</b>\nPinterest оновив і спростив налаштування батьківського контролю для безпечнішого користування платформою.\n💡 Пам'ятайте про вікові обмеження та безпеку бренду при налаштуванні таргетингу на молодшу аудиторію.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>9. Контроль нарізки файлів у Gemini API</b>\nGoogle додав нові функції керування нарізкою файлів (file slicing) до свого API Gemini для розробників.\n💡 Використовуйте оновлення для ефективнішої обробки великих масивів даних та документів через штучний інтелект.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>10. Інтеграція Instagram з Apple Music</b>\nInstagram додав функцію збереження аудіотреків із публікацій безпосередньо в плейлисти Apple Music.\n💡 Використовуйте популярну музику в Reels, щоб користувачі могли не лише взаємодіяти з відео, а й зберігати треки.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5\">Ukr.net</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202648",
- "kb_probe2": "2026-48"
+ "kb_probe2": "2026-48",
+ "cf_down_since": "2026-11-25T06:20:44.509129+02:00",
+ "cf_fails": 1
 }
