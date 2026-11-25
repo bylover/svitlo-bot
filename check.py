@@ -171,7 +171,7 @@ HELP_TEXT = ("ℹ️ <b>ЯК КОРИСТУВАТИСЯ БОТОМ</b>\n\n"
              "• 👍/👎 під кіно, YouTube, SMM і матеріалами 18+ — ваша оцінка: у кіно вона впливає на підбірки (у основних отримувачів), решту бачить лише адміністратор у статистиці\n"
              "• Змінити — ⚙️ Налаштування → «🏙 Змінити місто, чергу чи район»\n"
              "• Пункти меню з позначкою «тест» — нові: графік вашої черги, погода вашого району й акції вашого Сільпо\n"
-             "• Вінниця: черга й графік — із сайту «Вінницяобленерго» за адресою (💡 Світло → 🏠 Вказати адресу), перевірка кожні ~30 хв.\n"
+             "• Вінниця: розділу «💡 Світло» немає (графіки — лише по Києву)\n"
              "<b>Важливо</b>\n<blockquote>"
              "• Графік — за даними сайту ДТЕК. «За графіком» не означає, що світло фактично є чи немає\n"
              f"• Сповіщення про світло — лише для групи {GROUP}. Якщо у вас інша група, вимкніть «💡 Світло» в /settings\n"
@@ -189,7 +189,7 @@ SOURCES_TEXT = (
     "• 📌 Панель стану — графік вашої черги, екстрені, погода (Open-Meteo), основним — ще й факт світла; оновлення кожні 10 хв\n"
     "• Нагадування — за ~30 хв до відключення й до увімкнення за графіком (під час екстрених не надсилаються), саме видаляється після події\n"
     "• Черга за адресою (підписники, Київ) — пошук на сайті ДТЕК тим самим браузером\n"
-    "• Вінниця — черга й графік із сайту «Вінницяобленерго» (disconnection.voe.com.ua) за адресою\n"
+    "• Вінниця — розділу «Світло» немає (графіки лише по Києву)\n"
     "• «За графіком» — це план ДТЕК, а не факт наявності світла\n"
     "• Масові сповіщення (екстрені, нагадування, зміни графіка) основним надходять одразу, підписникам — чергою по ~25 на хвилину (при 100–150 користувачах — до 5 хв)</blockquote>\n"
     "🌤 <b>Погода</b>\n"
@@ -737,6 +737,8 @@ def wd_festivals(st: dict, now: datetime) -> list[dict]:
     wk = f"{now:%G-%V}"
     if (st.get("fest_pool") or {}).get("week") == wk:
         return st["fest_pool"]["items"]
+    if _time.time() - float(st.get("fest_fail") or 0) < 6 * 3600:   # Wikidata відповів 429 — не смикаємо 6 год, лишаємо минулий пул
+        return (st.get("fest_pool") or {}).get("items", [])
     q = ("SELECT ?tmdb (SAMPLE(?al) AS ?award) (MAX(?won) AS ?win) WHERE { "
          "{ ?film wdt:P166 ?a . BIND(1 AS ?won) } UNION { ?film wdt:P1411 ?a . BIND(0 AS ?won) } "
          "?a rdfs:label ?al . FILTER(LANG(?al) = \"en\") "
@@ -757,7 +759,8 @@ def wd_festivals(st: dict, now: datetime) -> list[dict]:
             items.append({"tmdb": b["tmdb"]["value"], "badge": f"{'🏆' if win else '🎞'} {fest}{'' if win else ' (номінант)'}"})
         print(f"Wikidata: фестивальних фільмів {len(items)}")
     except Exception as e:
-        print(f"Wikidata: {err_text(e)[:120]}")
+        st["fest_fail"] = _time.time()
+        print(f"Wikidata: {('ліміт запитів (429) — повтор через 6 год, поки минулий пул' if '429' in str(e) else err_text(e)[:120])}")
         return (st.get("fest_pool") or {}).get("items", [])
     random.shuffle(items)
     st["fest_pool"] = {"week": wk, "items": items[:300]}
@@ -7292,7 +7295,9 @@ def jobs_dirs_build(st: dict, now: datetime, need: dict) -> None:
     """Напрями, які обрали користувачі (ІТ-ролі з DOU і Djinni) + їхні власні ключові слова → jobs_d_<напрям>.json."""
     plan = [(k, JOB_DIRS[k]) for k in (need.get("dirs") or []) if k in JOB_DIRS]
     plan += [("k" + job_h(w), ([], [w], [w], re.escape(w.lower()).replace("\\ ", r"[\s\-]*"))) for w in (need.get("kw") or [])[:25] if str(w).strip()]
+    lbl = {"k" + job_h(w): f"слово «{str(w).strip()[:30]}»" for w in (need.get("kw") or [])[:25] if str(w).strip()}
     for k, (cats, dsearch, djk, rx) in plan:
+        seen_ = 0
         if not budget_ok(150):
             print("🧑‍💻 Вакансії: напрями — решта наступного запуску"); break
         try:
@@ -7308,6 +7313,7 @@ def jobs_dirs_build(st: dict, now: datetime, need: dict) -> None:
                 rows = _job_rss(u)
             except Exception as e:
                 bad += 1; continue
+            seen_ += len(rows)
             for r in rows:
                 if not r["l"] or not r["t"]:
                     continue
@@ -7323,7 +7329,7 @@ def jobs_dirs_build(st: dict, now: datetime, need: dict) -> None:
             http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=jobs_d_{k}.json", {"at": now.strftime("%d.%m %H:%M"), "items": keep})
         except Exception as e:
             print(f"Вакансії {k} → бот: {err_text(e)[:60]}")
-        print(f"🧑‍💻 Вакансії «{k}»: нових {n_new}, у базі {len(keep)}{f', стрічок з помилкою {bad}' if bad else ''}")
+        print(f"🧑‍💻 Вакансії {lbl.get(k, '«' + k + '»')}: у стрічках {seen_}, нових {n_new}, у базі {len(keep)}{f', стрічок з помилкою {bad}' if bad else ''}")
     st["jobs_nv"] = need.get("v")
 
 
@@ -9607,8 +9613,7 @@ def main() -> None:
                 if c not in family and addr_line():
                     txt = txt.replace(addr_line(), "")       # адреса — лише ваша
             elif not sub_group(c):                    # Вінниця / без черги — лише привітання і погода, без чужого графіка
-                txt = "☀️ <b>Доброго ранку!</b>" + ("\n💡 Графік Вінницяобленерго за вашою адресою — у меню «💡 Світло»"
-                                                   if (PROF.get(c) or {}).get("city") == "vin" else "")
+                txt = "☀️ <b>Доброго ранку!</b>"
             else:
                 g_ = sub_group(c)
                 if g_ not in per_group:

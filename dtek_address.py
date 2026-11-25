@@ -503,6 +503,8 @@ def voe_lookup(page, street: str, house: str) -> dict | None:
 
 def voe_requests(page) -> None:
     """Адреси підписників із Вінниці → черга й графік із сайту ВОЕ → бот (до 8 адрес за запуск, по колу)."""
+    return                                            # ⛔ сайт ВОЕ блокує GitHub (403 Cloudflare) — вимкнено, щоб не витрачати хвилини
+
     try:
         ex = check.http_json(f"{check.SYNC_URL}/export?key={check.urllib.parse.quote(check.SYNC_KEY)}") or {}
     except Exception as e:
