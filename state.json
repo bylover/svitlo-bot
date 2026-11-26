@@ -744,7 +744,7 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-26T14:25:47.700436+02:00",
+ "gh_beat": "2026-11-26T14:30:45.840833+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1748,14 +1748,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "26.11 14:22",
-   "ts": 1795695777,
+   "at": "26.11 14:32",
+   "ts": 1795696320,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "26.11 14:22",
-   "ts": 1795695777,
+   "at": "26.11 14:32",
+   "ts": 1795696320,
    "ok": true,
    "note": ""
   },
@@ -1778,8 +1778,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "26.11 14:22",
-   "ts": 1795695777,
+   "at": "26.11 14:32",
+   "ts": 1795696369,
    "ok": true,
    "note": ""
   },
@@ -1838,8 +1838,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "26.11 14:23",
-   "ts": 1795695788,
+   "at": "26.11 14:33",
+   "ts": 1795696392,
    "ok": true,
    "note": ""
   },
@@ -27562,10 +27562,22 @@
    null,
    null,
    "2026-11-26"
+  ],
+  "tt0478942": [
+   8.3,
+   null,
+   null,
+   "2026-11-26"
+  ],
+  "tt6611916": [
+   8.3,
+   null,
+   null,
+   "2026-11-26"
   ]
  },
  "pushed_h": {
-  "gs": "5c4e72ad5056",
+  "gs": "c38426e67e50",
   "quiz_pool.json": "c89ccd86b451",
   "fact.png": "468acaad6fa3",
   "sexed.json": "0362ec7e46d4",
@@ -46675,6 +46687,90 @@
    ],
    "ov": "Героїня дорами володіє надприродними здібностями. У своїх снах вона бачить майбутнє інших людей. Але не просто майбутнє, а трагічні випадки, що відбуваються з цими людьми. Головний герой, будучи прокурором, намагається з",
    "poster": "https://image.tmdb.org/t/p/w500/vtyzRkxPl3Y6bC5DgUDZ1sLb8Fs.jpg"
+  },
+  "t2973": {
+   "title": "Життя на Марсі",
+   "year": "2006",
+   "rating": 8.3,
+   "genres": [
+    "Кримінал",
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    80,
+    18,
+    9648,
+    10765
+   ],
+   "ov": "Серіал розповідає історію манчестерського поліцейського Сема Тайлера. Після того, як його збила машина у 2006 році, він приходить до тями у 1973, де виявляє себе інспектором свого власного відділення тільки нижчого рангу",
+   "poster": "https://image.tmdb.org/t/p/w500/eoZzXx2DW8XeaIS8iYs0ePxH3DG.jpg"
+  },
+  "t63639": {
+   "title": "Простір",
+   "year": "2015",
+   "rating": 8.5,
+   "genres": [
+    "Драма",
+    "Детектив",
+    "Науково фантастичний"
+   ],
+   "g": [
+    18,
+    9648,
+    10765
+   ],
+   "ov": "XXIII століття. Людство колонізувало Сонячну систему. Землею править ООН. Колонія на Марсі тепер незалежна і має власну армію. Внутрішні планети залежать від ресурсів поясу астероїдів. Астероїдяни живуть і працюють у кос",
+   "poster": "https://image.tmdb.org/t/p/w500/oX8wtO2Ar17L04bX4lLS3kIORfJ.jpg"
+  },
+  "t129552": {
+   "title": "Нічний агент",
+   "year": "2023",
+   "rating": 7.4,
+   "genres": [
+    "Екшн і Пригоди",
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    10759,
+    18,
+    9648
+   ],
+   "ov": "Обʼєднані опівнічним дзвінком агент ФБР і спеціалістка з кібербезпеки намагаються розкрити заплутану політичну змову, яка із часом лише ускладнюється.",
+   "poster": "https://image.tmdb.org/t/p/w500/7uJJBFPThEfU2v0m09ylkXVI35P.jpg"
+  },
+  "t69470": {
+   "title": "Дієта з Санта-Кларіти",
+   "year": "2017",
+   "rating": 7.8,
+   "genres": [
+    "Комедія",
+    "Детектив",
+    "Кримінал"
+   ],
+   "g": [
+    35,
+    9648,
+    80
+   ],
+   "ov": "Джоель і Шейла — щаслива сімейна пара батьків зі Санта-Кларіти. Одного разу Шейла вмирає і... не вмирає. Незрозуміло, як так вийшло, але жінка цілком собі жива, а серце в неї не б'ється. Крім того, Шейла раптом починає д",
+   "poster": "https://image.tmdb.org/t/p/w500/5rBjNm2sRubaXKBnU904NInFi7P.jpg"
+  },
+  "t70593": {
+   "title": "Королівство",
+   "year": "2019",
+   "rating": 8.3,
+   "genres": [
+    "Драма",
+    "Детектив"
+   ],
+   "g": [
+    18,
+    9648
+   ],
+   "ov": "У той час, коли почали поширюватися дивні чутки про хворобу жорстокого короля, тільки принц стає єдиною надією усього народу на порятунок від зарази, яка жадає людської плоті і крові, котра поширюється усім королівством.",
+   "poster": "https://image.tmdb.org/t/p/w500/ktupsg3QEhdDFUKCuq34ja8Y8SA.jpg"
   }
  },
  "cofid_pushed": "24.11.2026",
@@ -46692,8 +46788,8 @@
   "lin": "2026-11-26T14:05:46.491938+02:00",
   "wet": "2026-11-26T14:20:47.039670+02:00",
   "out": "2026-11-26T14:20:47.039670+02:00",
-  "les": "2026-11-26T08:05:44.738970+02:00",
-  "ero": "2026-11-26T08:05:44.738970+02:00",
+  "les": "2026-11-26T14:30:46.060410+02:00",
+  "ero": "2026-11-26T14:30:46.060410+02:00",
   "pov": "2026-11-26T10:40:46.375862+02:00",
   "lat": "2026-11-26T10:40:46.375862+02:00",
   "asi": "2026-11-26T08:45:51.746445+02:00",
@@ -46777,12 +46873,8 @@
  "silpo_snap": "2026-11-25",
  "live_day": "2026-11-26",
  "silpo_week": "2026-48",
- "sbm_at": 1795695953.045041,
+ "sbm_at": 1795696249.670565,
  "sbm_hist": [
-  [
-   "02:00",
-   93
-  ],
   [
    "02:05",
    93
@@ -47353,6 +47445,10 @@
   ],
   [
    "14:25",
+   61
+  ],
+  [
+   "14:30",
    61
   ]
  ],
@@ -50530,7 +50626,7 @@
   "ser_comedy": "2026-11-26T13:50:33.338777+02:00",
   "ser_drama": "2026-11-26T13:56:54.096427+02:00",
   "ser_scifi": "2026-11-26T14:00:47.085635+02:00",
-  "ser_mystery": "2026-11-26T02:20:48.061914+02:00"
+  "ser_mystery": "2026-11-26T14:30:46.060410+02:00"
  },
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 17.11–24.11\n<blockquote>🆕 <b>1. Редагування Stories в Instagram</b>\nInstagram додав можливість редагувати вже опубліковані Stories протягом 15 хвилин після їх створення.\n💡 Використовуйте цей час, щоб швидко виправити випадкові друкарські помилки або додати забутий стікер без видалення історії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5\">Прямий</a></blockquote>\n<blockquote>🆕 <b>2. Запуск AI-агента Muse від Meta</b>\nMeta розширює географію запуску свого персонального AI-агента Muse, який інтегрується в екосистему платформи.\n💡 Слідкуйте за розгортанням інструменту для оптимізації рутинних SMM-завдань та роботи з контентом.\n🔗 <a href=\"https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>3. Партнерство Pinterest і Microsoft Ads</b>\nPinterest оголосив про офіційне партнерство з Microsoft Ads для розширення рекламних можливостей.\n💡 Очікуйте нових крос-платформних рекламних інструментів та розширення аудиторії для кампаній у Pinterest.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Метрики спільного перегляду на YouTube CTV</b>\nYouTube додав підрахунок спільного перегляду (co-view counts) до аналітики Connected TV.\n💡 Враховуйте показники перегляду на великих екранах кількома глядачами при оцінці охоплення відеореклами.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Оновлення для відео в X (Twitter)</b>\nПлатформа X додала нові параметри мініатюр та налаштування підписів для відеоконтенту.\n💡 Використовуйте кастомні мініатюри, щоб підвищити клікабельність (CTR) ваших відео у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Виявлення діпфейків у TikTok</b>\nTikTok впроваджує нові технології для автоматичного виявлення та маркування штучно створеного контенту й діпфейків.\n💡 Зважайте на суворішу модерацію AI-контенту при створенні креативів для платформи.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5\">UA.NEWS</a></blockquote>\n<blockquote>👀 <b>7. Анонс додатка Threads для iPad</b>\nКоманда Threads анонсувала швидкий вихід окремого додатку для планшетів iPad.\n💡 Готуйте контент-стратегію з урахуванням майбутнього зростання аудиторії планшетів на цій платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Спрощення батьківського контролю в Pinterest</b>\nPinterest оновив і спростив налаштування батьківського контролю для безпечнішого користування платформою.\n💡 Пам'ятайте про вікові обмеження та безпеку бренду при налаштуванні таргетингу на молодшу аудиторію.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>9. Контроль нарізки файлів у Gemini API</b>\nGoogle додав нові функції керування нарізкою файлів (file slicing) до свого API Gemini для розробників.\n💡 Використовуйте оновлення для ефективнішої обробки великих масивів даних та документів через штучний інтелект.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>10. Інтеграція Instagram з Apple Music</b>\nInstagram додав функцію збереження аудіотреків із публікацій безпосередньо в плейлисти Apple Music.\n💡 Використовуйте популярну музику в Reels, щоб користувачі могли не лише взаємодіяти з відео, а й зберігати треки.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5\">Ukr.net</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202648",
  "kb_probe2": "2026-48",
