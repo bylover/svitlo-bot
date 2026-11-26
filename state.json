@@ -746,7 +746,7 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-26T23:35:48.126196+02:00",
+ "gh_beat": "2026-11-26T23:40:58.048723+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -1998,14 +1998,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "26.11 23:37",
-   "ts": 1795729060,
+   "at": "26.11 23:42",
+   "ts": 1795729340,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "26.11 23:37",
-   "ts": 1795729060,
+   "at": "26.11 23:42",
+   "ts": 1795729340,
    "ok": true,
    "note": ""
   },
@@ -2028,8 +2028,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "26.11 23:23",
-   "ts": 1795728187,
+   "at": "26.11 23:43",
+   "ts": 1795729406,
    "ok": true,
    "note": ""
   },
@@ -2190,8 +2190,8 @@
    "note": "208 постів"
   },
   "🔥 Тренди Google": {
-   "at": "26.11 20:36",
-   "ts": 1795718167,
+   "at": "26.11 23:41",
+   "ts": 1795729269,
    "ok": true,
    "note": "10 у RSS"
   }
@@ -28820,10 +28820,64 @@
    null,
    51,
    "2026-11-26"
+  ],
+  "tt22042346": [
+   5.1,
+   null,
+   52,
+   "2026-11-26"
+  ],
+  "tt5342650": [
+   5.3,
+   null,
+   null,
+   "2026-11-26"
+  ],
+  "tt31254554": [
+   6.2,
+   null,
+   null,
+   "2026-11-26"
+  ],
+  "tt32768323": [
+   6.6,
+   null,
+   62,
+   "2026-11-26"
+  ],
+  "tt4731148": [
+   5.6,
+   null,
+   null,
+   "2026-11-26"
+  ],
+  "tt16118262": [
+   4.2,
+   null,
+   null,
+   "2026-11-26"
+  ],
+  "tt13087796": [
+   7.1,
+   null,
+   78,
+   "2026-11-26"
+  ],
+  "tt3480822": [
+   6.6,
+   null,
+   68,
+   "2026-11-26"
+  ],
+  "tt6292852": [
+   6.7,
+   null,
+   64,
+   "2026-11-26"
   ]
  },
  "pushed_h": {
-  "gs": "bb2924a693c3",
+  "gs": "9375c2f98fba",
   "quiz_pool.json": "c89ccd86b451",
   "fact.png": "0b5d8ab415e2",
   "sexed.json": "0362ec7e46d4",
@@ -48284,6 +48338,72 @@
    ],
    "ov": "Бабурао — землевласник в Індії, який дуже недалекоглядний і завжди має фінансові проблеми. У нього є орендар на ім'я Раджа, який не платить орендну плату кілька місяців. У нього також є інший орендар на ім’я Шям, який пр",
    "poster": "https://image.tmdb.org/t/p/w500/wqHD539R6lcUm7h7pPNdCIMqoTg.jpg"
+  },
+  "m693134": {
+   "title": "Дюна: Частина друга",
+   "year": "2024",
+   "rating": 8.4,
+   "genres": [
+    "Фантастика",
+    "Пригоди"
+   ],
+   "g": [
+    878,
+    12
+   ],
+   "ov": "«Дюна: Частина друга» розкаже про міфічну подорож Пола Атріда та фременів на шляху помсти заколотникам, які знищили його родину. Між коханням усього свого життя та долею відомого всесвіту він обирає боротьбу проти жахлив",
+   "poster": "https://image.tmdb.org/t/p/w500/nYTnWYIZEtNImDs7N8gsq5xTYMx.jpg"
+  },
+  "m950396": {
+   "title": "Ущелина",
+   "year": "2025",
+   "rating": 6.7,
+   "genres": [
+    "Мелодрама",
+    "Фантастика",
+    "Трилер"
+   ],
+   "g": [
+    10749,
+    878,
+    53
+   ],
+   "ov": "Двох висококваліфікованих оперативників призначають нести варту з обох боків загадкової ущелини, і між ними виникає симпатія на відстані. З дна ущелини показується зло, і їм доводиться об’єднати зусилля, щоб вижити серед",
+   "poster": "https://image.tmdb.org/t/p/w500/hIiapyCB7FPTjq3Kar2Bcp2Iu7p.jpg"
+  },
+  "m695721": {
+   "title": "Голодні ігри: Балада про співочих пташок і змій",
+   "year": "2023",
+   "rating": 6.6,
+   "genres": [
+    "Фантастика",
+    "Бойовик",
+    "Пригоди"
+   ],
+   "g": [
+    878,
+    28,
+    12
+   ],
+   "ov": "«Голодні ігри: Балада про співочих пташок і змій» розповідає про молодого Коріолана, який є останньою надією його роду, колись гордого клану Сноу, що впав в немилість післявоєнного Капітолію. Оскільки його статки та житт",
+   "poster": "https://image.tmdb.org/t/p/w500/dSKzZLoDyzOy4i6ujTaC5FPupr8.jpg"
+  },
+  "m644": {
+   "title": "Штучний розум",
+   "year": "2001",
+   "rating": 7.2,
+   "genres": [
+    "Драма",
+    "Фантастика",
+    "Пригоди"
+   ],
+   "g": [
+    18,
+    878,
+    12
+   ],
+   "ov": "У майбутньому світі глобального потепління, що вирвався з-під контролю, і досягнень науки, що лякають, смертні живуть пліч-о-пліч з дивними й складними роботами. Але коли просунутий прототип робота-дитини на ім’я Дейвід ",
+   "poster": "https://image.tmdb.org/t/p/w500/fIBfrjLjUlPRkJfYdgvEZmOrABE.jpg"
   }
  },
  "cofid_pushed": "24.11.2026",
@@ -48387,12 +48507,8 @@
  "silpo_snap": "2026-11-25",
  "live_day": "2026-11-26",
  "silpo_week": "2026-48",
- "sbm_at": 1795728951.572765,
+ "sbm_at": 1795729260.6735857,
  "sbm_hist": [
-  [
-   "11:00",
-   58
-  ],
   [
    "11:05",
    58
@@ -48964,6 +49080,10 @@
   [
    "23:35",
    81
+  ],
+  [
+   "23:40",
+   82
   ]
  ],
  "sbm_near": {
@@ -52126,7 +52246,7 @@
   "thriller": "2026-11-26T22:51:00.658915+02:00",
   "comedy": "2026-11-26T23:10:56.975591+02:00",
   "horror": "2026-11-26T23:20:49.689282+02:00",
-  "scifi": "2026-11-26T11:30:45.169746+02:00",
+  "scifi": "2026-11-26T23:40:58.139587+02:00",
   "romance": "2026-11-26T11:35:47.908614+02:00",
   "series": "2026-11-26T11:45:47.285479+02:00",
   "ua": "2026-11-26T11:50:57.811654+02:00",
@@ -52145,7 +52265,7 @@
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 17.11–24.11\n<blockquote>🆕 <b>1. Редагування Stories в Instagram</b>\nInstagram додав можливість редагувати вже опубліковані Stories протягом 15 хвилин після їх створення.\n💡 Використовуйте цей час, щоб швидко виправити випадкові друкарські помилки або додати забутий стікер без видалення історії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5\">Прямий</a></blockquote>\n<blockquote>🆕 <b>2. Запуск AI-агента Muse від Meta</b>\nMeta розширює географію запуску свого персонального AI-агента Muse, який інтегрується в екосистему платформи.\n💡 Слідкуйте за розгортанням інструменту для оптимізації рутинних SMM-завдань та роботи з контентом.\n🔗 <a href=\"https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>3. Партнерство Pinterest і Microsoft Ads</b>\nPinterest оголосив про офіційне партнерство з Microsoft Ads для розширення рекламних можливостей.\n💡 Очікуйте нових крос-платформних рекламних інструментів та розширення аудиторії для кампаній у Pinterest.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Метрики спільного перегляду на YouTube CTV</b>\nYouTube додав підрахунок спільного перегляду (co-view counts) до аналітики Connected TV.\n💡 Враховуйте показники перегляду на великих екранах кількома глядачами при оцінці охоплення відеореклами.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Оновлення для відео в X (Twitter)</b>\nПлатформа X додала нові параметри мініатюр та налаштування підписів для відеоконтенту.\n💡 Використовуйте кастомні мініатюри, щоб підвищити клікабельність (CTR) ваших відео у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Виявлення діпфейків у TikTok</b>\nTikTok впроваджує нові технології для автоматичного виявлення та маркування штучно створеного контенту й діпфейків.\n💡 Зважайте на суворішу модерацію AI-контенту при створенні креативів для платформи.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5\">UA.NEWS</a></blockquote>\n<blockquote>👀 <b>7. Анонс додатка Threads для iPad</b>\nКоманда Threads анонсувала швидкий вихід окремого додатку для планшетів iPad.\n💡 Готуйте контент-стратегію з урахуванням майбутнього зростання аудиторії планшетів на цій платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Спрощення батьківського контролю в Pinterest</b>\nPinterest оновив і спростив налаштування батьківського контролю для безпечнішого користування платформою.\n💡 Пам'ятайте про вікові обмеження та безпеку бренду при налаштуванні таргетингу на молодшу аудиторію.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>9. Контроль нарізки файлів у Gemini API</b>\nGoogle додав нові функції керування нарізкою файлів (file slicing) до свого API Gemini для розробників.\n💡 Використовуйте оновлення для ефективнішої обробки великих масивів даних та документів через штучний інтелект.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>10. Інтеграція Instagram з Apple Music</b>\nInstagram додав функцію збереження аудіотреків із публікацій безпосередньо в плейлисти Apple Music.\n💡 Використовуйте популярну музику в Reels, щоб користувачі могли не лише взаємодіяти з відео, а й зберігати треки.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5\">Ukr.net</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202648",
  "kb_probe2": "2026-48",
  "fest_fail": 1795723633.0943446,
- "gtr_at": 1795718165.3689654,
+ "gtr_at": 1795729267.9220288,
  "gq_at": 1795707211.2217238,
  "ideas_at": {
   "wife": 1795188882.9780123,
