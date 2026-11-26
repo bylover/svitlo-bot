@@ -7317,10 +7317,34 @@ def _job_rss(url: str) -> list:
     return out
 
 
+JOB_KW_SYN = [["teamlead", "team lead", "team-lead", "тимлид", "тімлід", "тимлід"], ["techlead", "tech lead", "tech-lead", "техлид", "техлід"],
+              ["frontend", "front-end", "front end", "фронтенд"], ["backend", "back-end", "back end", "бекенд", "бэкенд"],
+              ["fullstack", "full-stack", "full stack", "фулстек"], ["devops", "dev ops", "девопс"], ["qa", "тестувальник", "тестировщик"],
+              ["power bi", "powerbi", "павер бі"], ["data engineer", "дата інженер", "дата инженер"], ["support", "підтримка", "поддержка", "саппорт"],
+              ["lead", "teamlead", "techlead", "лід", "лид"]]
+
+
+def job_kw_vars(w: str) -> list[str]:
+    """Своє слово → варіанти написання (разом / з пробілом / дефісом / укр. / рос.) — для пошуку й перевірки."""
+    n = re.sub(r"\s+", " ", str(w).lower().strip())
+    g = next((x for x in JOB_KW_SYN if n in x or n.replace("-", " ") in x or n.replace(" ", "") in x), None)
+    return list(dict.fromkeys([n] + (g or [])))
+
+
+def job_kw_rx(w: str) -> str:
+    """Ціле слово/фраза: «team lead» = «teamlead» = «team-lead»; «lead» не ловить «leader»/«leading»."""
+    parts = []
+    for v in job_kw_vars(w):
+        e = re.escape(v).replace("\\ ", " ").replace("\\-", "-")
+        e = re.sub(r"[ \-]+", r"[\\s\\-]*", e)
+        parts.append(e)
+    return r"(?<![a-zа-яіїєґ0-9])(?:" + "|".join(parts) + r")(?![a-zа-яіїєґ0-9])"
+
+
 def jobs_dirs_build(st: dict, now: datetime, need: dict) -> None:
     """Напрями, які обрали користувачі (ІТ-ролі з DOU і Djinni) + їхні власні ключові слова → jobs_d_<напрям>.json."""
     plan = [(k, JOB_DIRS[k]) for k in (need.get("dirs") or []) if k in JOB_DIRS]
-    plan += [("k" + job_h(w), ([], [w], [w], re.escape(w.lower()).replace("\\ ", r"[\s\-]*"))) for w in (need.get("kw") or [])[:25] if str(w).strip()]
+    plan += [("k" + job_h(w), ([], job_kw_vars(w)[:2], job_kw_vars(w)[:2], job_kw_rx(w))) for w in (need.get("kw") or [])[:25] if str(w).strip()]
     lbl = {"k" + job_h(w): f"слово «{str(w).strip()[:30]}»" for w in (need.get("kw") or [])[:25] if str(w).strip()}
     for k, (cats, dsearch, djk, rx) in plan:
         seen_ = 0
