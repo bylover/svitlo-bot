@@ -2185,30 +2185,17 @@ CONTENT_FEEDS = [
     ("Women's Health", "https://www.womenshealthmag.com/rss/all.xml/", "article", 14, True),
     ("Gottman Institute", "https://www.gottman.com/blog/feed/", "article", 30, True),
     ("Sex With Emily", "https://sexwithemily.com/feed/", "article", 30, False),
-    ("Kinkly", "https://www.kinkly.com/feed", "article", 30, False),
-    ("Lovehoney", "https://www.lovehoney.co.uk/blog/feed/", "review", 45, False),
-    ("Lovehoney", "https://www.lovehoney.com/blog/feed/", "review", 45, False),
-    ("WhatToy", "https://www.whattoy.co.uk/feed/", "review", 45, False),
-    ("WhatToy", "https://whattoy.co.uk/feed/", "review", 45, False),
     ("Dildo or Dildon't", "https://www.dildoordildont.com/feed/", "review", 60, False),
     ("Hey Epiphora", "https://heyepiphora.com/feed/", "review", 60, False),
-    ("Bedbible", "https://bedbible.com/feed/", "review", 45, False),
     ("Girl on the Net", "https://www.girlonthenet.com/feed/", "experience", 45, False),
     ("LELO", "https://www.lelo.com/blog/feed/", "review", 60, False),
     ("Good Vibrations", "https://www.goodvibes.com/blog/feed/", "review", 60, False),
-    ("Autostraddle", "https://www.autostraddle.com/category/sex-and-dating/feed/", "article", 30, False),
-    ("Glamour", "https://www.glamour.com/feed/tag/sex/latest/rss", "article", 21, False),
     ("Self", "https://www.self.com/feed/rss", "article", 21, True),
     ("Mashable", "https://mashable.com/feeds/rss/all", "review", 21, True),
     ("Refinery29", "https://www.refinery29.com/en-us/sex/rss.xml", "article", 21, False),
     ("Medium", "https://medium.com/feed/tag/sex-tips", "experience", 30, True),
     ("Medium", "https://medium.com/feed/tag/sex-education", "article", 30, True),
     ("Medium", "https://medium.com/feed/tag/sexual-health", "article", 30, True),
-    ("Dame", "https://www.dame.com/blogs/the-dame-blog.atom", "review", 90, False),
-    ("We-Vibe", "https://www.we-vibe.com/blog/feed", "review", 90, False),
-    ("Lovense", "https://www.lovense.com/blog/feed", "review", 90, False),
-    ("Smile Makers", "https://smilemakerscollection.com/blogs/news.atom", "review", 90, False),
-    ("Unbound", "https://unboundbabes.com/blogs/unbound.atom", "review", 90, False),
     ("GQ", "https://www.gq.com/feed/rss", "article", 21, True),
     ("Allure", "https://www.allure.com/feed/rss", "article", 21, True),
     ("Healthline", "https://www.healthline.com/rss/health-news", "article", 30, True),
@@ -2217,13 +2204,15 @@ CONTENT_FEEDS = [
     ("Medium", "https://medium.com/feed/tag/intimacy", "experience", 21, True),
     ("Medium", "https://medium.com/feed/tag/sexuality", "experience", 21, True),
     ("Medium", "https://medium.com/feed/tag/relationships", "experience", 21, True),
-    ("Marie Claire", "https://www.marieclaire.com/rss/all.xml/", "article", 14, True),
     ("Elle", "https://www.elle.com/rss/all.xml/", "article", 14, True),
     ("Esquire", "https://www.esquire.com/rss/all.xml/", "article", 14, True),
     ("Prevention", "https://www.prevention.com/rss/all.xml/", "article", 21, True),
     ("Bustle", "https://www.bustle.com/rss", "article", 14, True),
     ("Medium", "https://medium.com/feed/tag/sexual-wellness", "article", 30, True),
     ("Medium", "https://medium.com/feed/tag/love-and-sex", "experience", 21, True),
+    ("Glamour", "https://www.glamour.com/feed/rss", "article", 14, True),
+    ("Harper's Bazaar", "https://www.harpersbazaar.com/rss/all.xml/", "article", 14, True),
+    ("Oprah Daily", "https://www.oprahdaily.com/rss/all.xml/", "article", 14, True),
 ]
 KIND_HEAD = {"tip": "💞 <b>ПОРАДА 18+</b>", "technique": "🔥 <b>ТЕХНІКА 18+</b>", "article": "📖 <b>СТАТТЯ 18+</b>",
              "review": "🧸 <b>ОГЛЯД 18+</b>", "experience": "💬 <b>ДОСВІД 18+</b>", "podcast": "🎙 <b>ПОДКАСТ 18+</b>",
@@ -2244,13 +2233,19 @@ def collect_content(st: dict, now: datetime) -> None:
     seen = set(st.get("content_seen", [])) | set(st.get("art_seen", [])) | set(st.get("exp_pool_seen", []))
     feeds = list(CONTENT_FEEDS) + [(n, u, "podcast", 21, True) for n, u in podcast_feeds(
         ["Sex Unwrapped", "sex relationships", "couples intimacy"])]
-    pool, titles, ok = [], set(), []
+    pool, titles, ok, bad_ = [], set(), [], []
     for src, url, kind, days, filt in feeds:
         try:
-            root = ET.fromstring(http_text(url))
+            raw_x = http_text(url)
+            try:
+                root = ET.fromstring(raw_x)
+            except ET.ParseError:                     # «кривий» XML (керівні символи, голі &) — чистимо й пробуємо ще раз
+                raw_x = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", "", raw_x)
+                raw_x = re.sub(r"&(?!#?\w+;)", "&amp;", raw_x)
+                root = ET.fromstring(raw_x)
             ok.append(src)
         except Exception as e:
-            print(f"Поради 18+: {src} {url} → {str(e)[:60]}")
+            bad_.append(f"{src} ({str(e)[:25]})")
             continue
         A = "{http://www.w3.org/2005/Atom}"
         entries = list(root.iter("item"))[:60] or list(root.iter(A + "entry"))[:60]   # RSS або Atom
@@ -2301,6 +2296,8 @@ def collect_content(st: dict, now: datetime) -> None:
     mark_upd(st, "💞 Матеріали 18+ (журнали)", bool(pool), f"{len(pool)} шт.")
     print(f"Поради 18+: джерел працює {len(set(ok))} з {len({f[0] for f in feeds})}, щойно знайдено {n_new}, у пулі {len(st['content_pool'])} "
           f"(за 3 дні {sum(a['age'] <= 3 for a in pool)}, за тиждень {sum(a['age'] <= 7 for a in pool)})")
+    if bad_:
+        print(f"Поради 18+: не відповіли {len(bad_)}: {'; '.join(bad_)[:600]}")
     print(f"Поради 18+: працюють {sorted(set(ok))}, у пулі {len(st['content_pool'])} "
           f"(статті {sum(a['kind'] == 'article' for a in pool)}, огляди {sum(a['kind'] == 'review' for a in pool)}, "
           f"досвід {sum(a['kind'] in ('experience', 'podcast') for a in pool)})")
@@ -7441,6 +7438,26 @@ GTR_CATS = {"sport": "⚽ Спорт", "show": "🎬 Кіно, серіали й
             "edu": "🎓 Освіта й робота", "shop": "🛍 Покупки й бренди", "people": "👤 Люди й зірки", "holiday": "🎉 Свята й дати", "other": "🔎 Інше"}
 
 
+GTR_RULES = [   # запасна класифікація без ШІ (коли ліміт Gemini) — пізніше ШІ уточнить
+    ("sport", r"футбол|матч|динамо|шахтар|ліга|ліги|лига|uefa|fifa|збірн|сборн|чемпіонат|чемпионат|теніс|бокс|усик|nba|nhl|f1|формул|олімп|олимп| vs |\bfc\b|real madrid|barcelona|арсенал|челсі|челси|ліверпуль|ливерпуль|man utd|манчестер|баварі|бавари|ювентус|psg|збірна"),
+    ("weather", r"погод|прогноз|сніг|снег|мороз|дощ|дожд|шторм|землетрус|землетряс|гроз"),
+    ("energy", r"світл|свет|відключ|отключ|графік|график|дтек|yasno|укренерго|газ|тариф|комунал|метро|укрзалізн|укрзализн|поїзд|поезд"),
+    ("money", r"курс|долар|доллар|євро|евро|біткоїн|биткоин|bitcoin|пенсі|пенси|зарплат|податк|налог|ціни|цены|ціна|цена|банк|приват|монобанк|єпідтримк|выплат|виплат"),
+    ("holiday", r"свят|праздн|різдв|рождеств|новий рік|новый год|великдень|пасх|день \w+|black friday|чорна п|черная п"),
+    ("show", r"серіал|сериал|фільм|фильм|netflix|кіно|кино|шоу|холостяк|голос країни|маскшоу|оскар|премʼєр|премьер|сезон"),
+    ("music", r"пісн|песн|концерт|альбом|кліп|клип|євробачен|евровиден|співак|певец|співачк|певиц"),
+    ("tech", r"iphone|samsung|apple|android|ios|google|chatgpt|gpt|ai\b|штучн|gta|playstation|xbox|steam|гра\b|игра|windows|telegram|instagram|tiktok|youtube|starlink"),
+    ("health", r"грип|грипп|covid|ковід|вірус|вирус|хвороб|болезн|лікар|врач|вакцин|симптом"),
+    ("edu", r"нмт|зно|вступ|школ|універс|универс|канікул|каникул|ваканс|робот|работ"),
+    ("news", r"атак|обстріл|обстрел|ракет|дрон|шахед|тривог|тревог|вибух|взрыв|зеленськ|зеленск|трамп|путін|путин|переговор|мобілізац|мобилизац|тцк|закон|рада|уряд|санкц"),
+]
+
+
+def gtr_rule(q: str, news: list) -> str:
+    t = (q + " " + " ".join(n[0] for n in (news or [])[:2])).lower()
+    return next((k for k, rx in GTR_RULES if re.search(rx, t)), "other")
+
+
 def gtr_traffic(s: str) -> int:
     m = re.search(r"([\d\s.,]+)\s*([KkКкMmМм]|тис|млн)?", str(s or ""))
     if not m:
@@ -7491,8 +7508,11 @@ def gtr_build(st: dict, now: datetime) -> None:
                 e["n"] = news
     cut = (now - timedelta(days=60)).strftime("%Y-%m-%dT%H:%M")
     items = {k: v for k, v in items.items() if (v.get("l") or "") >= cut}
-    todo = [k for k, v in items.items() if not v.get("c")][:60]   # сфера життя — ШІ, пачкою
-    if todo:
+    todo = [k for k, v in items.items() if not v.get("c") or v.get("cr")][:60]   # сфера життя — ШІ, пачкою (і уточнення «запасних»)
+    for k in todo:                                    # одразу — запасна сфера за ключовими словами, щоб не було «без сфери»
+        if not items[k].get("c"):
+            items[k]["c"], items[k]["cr"] = gtr_rule(items[k]["q"], items[k].get("n")), 1
+    if todo and not gemini_out():
         lst = "\n".join(f"{i + 1}. {items[k]['q']} — {(items[k].get('n') or [['']])[0][0]}" for i, k in enumerate(todo))
         raw = gemini("Розклади пошукові запити з трендів Google (Україна) за сферами життя. Коди: " + ", ".join(f"{k} ({v})" for k, v in GTR_CATS.items()) +
                      ".\nЗапит може бути українською чи російською; поруч — заголовок новини для контексту.\n" + lst +
@@ -7500,12 +7520,12 @@ def gtr_build(st: dict, now: datetime) -> None:
         cs = (json_loose(raw) or {}).get("c") or []
         for i, k in enumerate(todo):
             if i < len(cs) and cs[i] in GTR_CATS:
-                items[k]["c"] = cs[i]
+                items[k]["c"] = cs[i]; items[k].pop("cr", None)
     out = {"at": now.strftime("%d.%m.%Y %H:%M"), "cats": GTR_CATS, "items": items}
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=gtrends.json", out)
         wk = (now - timedelta(days=7)).strftime("%Y-%m-%dT%H:%M")
-        print(f"🔥 Тренди Google: у RSS {got}, нових {n_new} · за тиждень {sum(1 for v in items.values() if (v.get('l') or '') >= wk)} · в архіві {len(items)} · без сфери {sum(1 for v in items.values() if not v.get('c'))}")
+        print(f"🔥 Тренди Google: у RSS {got}, нових {n_new} · за тиждень {sum(1 for v in items.values() if (v.get('l') or '') >= wk)} · в архіві {len(items)} · сфера від ШІ {sum(1 for v in items.values() if v.get('c') and not v.get('cr'))}, за словами {sum(1 for v in items.values() if v.get('cr'))}")
     except Exception as e:
         print(f"🔥 Тренди Google → бот: {err_text(e)[:80]}")
 
@@ -7672,6 +7692,29 @@ def rz_hits(st: dict, text: str) -> list[str]:
     return list(dict.fromkeys(found))[:30]
 
 
+def gemini_out() -> bool:
+    """Денний ліміт Gemini вичерпано на всіх ключах і моделях (скидається ~10:00 за Києвом)."""
+    keys = [k for k in dict.fromkeys([GEMINI_KEY_BG, GEMINI_KEY]) if k]
+    nw = datetime.now(TZ).isoformat()
+    return bool(keys) and all(GEMINI_BLOCK.get(f"{k[-6:]}:{m}", "") > nw for k in keys for m in GEMINI_MODELS)
+
+
+def json_items(raw: str | None) -> list:
+    """Масив items із відповіді ШІ; якщо JSON обрізаний — рятуємо всі цілі об'єкти {...}."""
+    its = (json_loose(raw) or {}).get("items") if raw else None
+    if isinstance(its, list) and its:
+        return its
+    out = []
+    for m_ in re.finditer(r"\{[^{}]*\}", raw or ""):
+        try:
+            o = json.loads(m_.group(0))
+            if isinstance(o, dict) and o.get("t"):
+                out.append(o)
+        except ValueError:
+            pass
+    return out
+
+
 def idea_key(t_: str) -> str:
     return re.sub(r"[^a-zа-яіїєґ0-9]+", "", str(t_).lower())[:40]
 
@@ -7684,6 +7727,11 @@ def ideas_build(st: dict, now: datetime) -> None:
     pools = [("g", k) for k in IDEA_GIFT] + [("s", k) for k in IDEA_SHOP]
     due = [p for p in pools if _time.time() - float(done.get(p[1]) or 0) > IDEA_DAYS * 86400]
     if not due:
+        return
+    if gemini_out():                                  # ліміт Gemini на сьогодні вичерпано — не палимо запасну модель, чекаємо скидання
+        if not st.get("ideas_lim_note") == now.strftime("%Y-%m-%d"):
+            st["ideas_lim_note"] = now.strftime("%Y-%m-%d")
+            print("✨ Ідеї: денний ліміт Gemini — продовжу після ~10:00 (списки не чіпаю)")
         return
     kind, k = min(due, key=lambda p: float(done.get(p[1]) or 0))
     st["ideas_t"] = _time.time()
@@ -7722,7 +7770,7 @@ def ideas_build(st: dict, now: datetime) -> None:
               "Для категорій покупок oc — порожній масив.")
     GEM_STATE.pop("gr", None)
     raw = gemini(prompt, max_tokens=3500, search=True)
-    items = (json_loose(raw) or {}).get("items") or []
+    items = json_items(raw)
     new_ = []
     for x in items:
         if not isinstance(x, dict) or not str(x.get("t") or "").strip():
@@ -7736,7 +7784,7 @@ def ideas_build(st: dict, now: datetime) -> None:
                      "tag": x.get("tag") if x.get("tag") in ("hot", "classic", "orig") else "classic",
                      "q": str(x.get("q") or x["t"]).strip()[:60], "src": str(x.get("src") or "").strip()[:50], "g": bool(x.get("g")) and bool(gq)})
     if len(new_) < 8:
-        done[k] = _time.time() - (IDEA_DAYS - 1) * 86400   # невдача — повтор приблизно за добу, старе лишається
+        done[k] = _time.time() - IDEA_DAYS * 86400 + (3 * 3600 if not gemini_out() else 0)   # невдача — повтор за ~3 год (або після скидання ліміту), старе лишається
         print(f"✨ Ідеї «{name}»: ШІ дав {len(new_)} ідей ({GEM_STATE.get('err') or 'порожня/некоректна відповідь'}) — лишаю минулий список")
         return
     ver = int(old.get("v") or 0) + 1
