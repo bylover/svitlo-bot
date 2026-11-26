@@ -744,7 +744,7 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-26T13:56:54.021443+02:00",
+ "gh_beat": "2026-11-26T14:00:46.829796+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -798,11 +798,11 @@
    ]
   ]
  },
- "fact_png": "2026-11-26 13|5|2026-11-26T13:46:33+02:00",
+ "fact_png": "2026-11-26 14|5|2026-11-26T13:46:33+02:00",
  "fact_day": {
-  "total": "6 год 56 хв",
+  "total": "6 год 52 хв",
   "list": [
-   "13:56–16:58 · 3 год 1 хв",
+   "14:00–16:58 · 2 год 57 хв",
    "09:51–13:46 · 3 год 55 хв"
   ]
  },
@@ -1748,14 +1748,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "26.11 13:55",
-   "ts": 1795694155,
+   "at": "26.11 14:02",
+   "ts": 1795694552,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "26.11 13:55",
-   "ts": 1795694155,
+   "at": "26.11 14:02",
+   "ts": 1795694552,
    "ok": true,
    "note": ""
   },
@@ -1778,8 +1778,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "26.11 13:57",
-   "ts": 1795694271,
+   "at": "26.11 14:03",
+   "ts": 1795694601,
    "ok": true,
    "note": ""
   },
@@ -27550,12 +27550,24 @@
    null,
    null,
    "2026-11-26"
+  ],
+  "tt9900092": [
+   7.3,
+   null,
+   null,
+   "2026-11-26"
+  ],
+  "tt6256484": [
+   8.3,
+   null,
+   null,
+   "2026-11-26"
   ]
  },
  "pushed_h": {
-  "gs": "6e27d667f57a",
+  "gs": "45f26d145303",
   "quiz_pool.json": "c89ccd86b451",
-  "fact.png": "3ac15fe9a705",
+  "fact.png": "468acaad6fa3",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -31698,7 +31710,7 @@
     10765
    ],
    "ov": "Через сотні років, останні люди що вижили, знайшли спосіб відправляти свідомість окремих особистостей в 21-е століття. Ці мандрівники в часі живуть життям звичайних людей і намагаються врятувати людство від жахливого май",
-   "poster": "https://image.tmdb.org/t/p/w500/aUVeyeyTrQrSFuUkqLCT8FtV7pp.jpg"
+   "poster": "https://image.tmdb.org/t/p/w500/fRfPSv5xGZmnKGnzQfJ70SKCrUU.jpg"
   },
   "t103768": {
    "title": "Ласун",
@@ -46614,6 +46626,55 @@
    ],
    "ov": "За сюжетом, дев'ятирічний Шелдон Купер настільки талановитий та геніальний, що навчається разом зі старшокласниками. Однак, незважаючи на свій розум і фотографічну пам'ять, він поняття не має, як комунікувати з оточуючим",
    "poster": "https://image.tmdb.org/t/p/w500/xIwendPBR8b7qOA6U7IBKxYz0kl.jpg"
+  },
+  "t64230": {
+   "title": "Проповідник",
+   "year": "2016",
+   "rating": 7.9,
+   "genres": [
+    "Науково фантастичний",
+    "Детектив",
+    "Драма"
+   ],
+   "g": [
+    10765,
+    9648,
+    18
+   ],
+   "ov": "Священик Джессі Кастер з волі випадку став носієм всередині свого єства дивної істоти на ім'я Генезис. Це дитя ангела і демона є одночасно чистим ідеалом і квінтесенцією світла, але також згустком абсолютного зла. Генези",
+   "poster": "https://image.tmdb.org/t/p/w500/oM2EDFYzKFPUXIe2GYUptc04Z5U.jpg"
+  },
+  "t185": {
+   "title": "Карнавал",
+   "year": "2003",
+   "rating": 8.4,
+   "genres": [
+    "Науково фантастичний",
+    "Детектив",
+    "Драма"
+   ],
+   "g": [
+    10765,
+    9648,
+    18
+   ],
+   "ov": "«Карнавал» — американський телесеріал, дія якого відбувається у Сполучених Штатах під час Великої депресії та Пилової чаші. Відстежуючи життя двох різних груп людей, його головна історія зображує битву між добром і злом ",
+   "poster": "https://image.tmdb.org/t/p/w500/c5woUwXYxE6W7z5saxEaAqe8GAU.jpg"
+  },
+  "t70649": {
+   "title": "Поки вона спить",
+   "year": "2017",
+   "rating": 8.3,
+   "genres": [
+    "Науково фантастичний",
+    "Драма"
+   ],
+   "g": [
+    10765,
+    18
+   ],
+   "ov": "Героїня дорами володіє надприродними здібностями. У своїх снах вона бачить майбутнє інших людей. Але не просто майбутнє, а трагічні випадки, що відбуваються з цими людьми. Головний герой, будучи прокурором, намагається з",
+   "poster": "https://image.tmdb.org/t/p/w500/vtyzRkxPl3Y6bC5DgUDZ1sLb8Fs.jpg"
   }
  },
  "cofid_pushed": "24.11.2026",
@@ -50224,7 +50285,7 @@
  "nmt_last": 1795693857.554834,
  "kino_v": 2,
  "yt_v": 4,
- "toycat_last": 1795693149.652918,
+ "toycat_last": 1795694452.3428743,
  "toy_la": {
   "dildo": 1795672280.3113723,
   "kegel": 1794757561.5974472,
@@ -50468,7 +50529,7 @@
   "ser_crime": "2026-11-26T13:38:26.801673+02:00",
   "ser_comedy": "2026-11-26T13:50:33.338777+02:00",
   "ser_drama": "2026-11-26T13:56:54.096427+02:00",
-  "ser_scifi": "2026-11-26T02:00:45.567207+02:00",
+  "ser_scifi": "2026-11-26T14:00:47.085635+02:00",
   "ser_mystery": "2026-11-26T02:20:48.061914+02:00"
  },
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 17.11–24.11\n<blockquote>🆕 <b>1. Редагування Stories в Instagram</b>\nInstagram додав можливість редагувати вже опубліковані Stories протягом 15 хвилин після їх створення.\n💡 Використовуйте цей час, щоб швидко виправити випадкові друкарські помилки або додати забутий стікер без видалення історії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5\">Прямий</a></blockquote>\n<blockquote>🆕 <b>2. Запуск AI-агента Muse від Meta</b>\nMeta розширює географію запуску свого персонального AI-агента Muse, який інтегрується в екосистему платформи.\n💡 Слідкуйте за розгортанням інструменту для оптимізації рутинних SMM-завдань та роботи з контентом.\n🔗 <a href=\"https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>3. Партнерство Pinterest і Microsoft Ads</b>\nPinterest оголосив про офіційне партнерство з Microsoft Ads для розширення рекламних можливостей.\n💡 Очікуйте нових крос-платформних рекламних інструментів та розширення аудиторії для кампаній у Pinterest.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Метрики спільного перегляду на YouTube CTV</b>\nYouTube додав підрахунок спільного перегляду (co-view counts) до аналітики Connected TV.\n💡 Враховуйте показники перегляду на великих екранах кількома глядачами при оцінці охоплення відеореклами.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Оновлення для відео в X (Twitter)</b>\nПлатформа X додала нові параметри мініатюр та налаштування підписів для відеоконтенту.\n💡 Використовуйте кастомні мініатюри, щоб підвищити клікабельність (CTR) ваших відео у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Виявлення діпфейків у TikTok</b>\nTikTok впроваджує нові технології для автоматичного виявлення та маркування штучно створеного контенту й діпфейків.\n💡 Зважайте на суворішу модерацію AI-контенту при створенні креативів для платформи.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5\">UA.NEWS</a></blockquote>\n<blockquote>👀 <b>7. Анонс додатка Threads для iPad</b>\nКоманда Threads анонсувала швидкий вихід окремого додатку для планшетів iPad.\n💡 Готуйте контент-стратегію з урахуванням майбутнього зростання аудиторії планшетів на цій платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Спрощення батьківського контролю в Pinterest</b>\nPinterest оновив і спростив налаштування батьківського контролю для безпечнішого користування платформою.\n💡 Пам'ятайте про вікові обмеження та безпеку бренду при налаштуванні таргетингу на молодшу аудиторію.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>9. Контроль нарізки файлів у Gemini API</b>\nGoogle додав нові функції керування нарізкою файлів (file slicing) до свого API Gemini для розробників.\n💡 Використовуйте оновлення для ефективнішої обробки великих масивів даних та документів через штучний інтелект.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>10. Інтеграція Instagram з Apple Music</b>\nInstagram додав функцію збереження аудіотреків із публікацій безпосередньо в плейлисти Apple Music.\n💡 Використовуйте популярну музику в Reels, щоб користувачі могли не лише взаємодіяти з відео, а й зберігати треки.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5\">Ukr.net</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202648",
