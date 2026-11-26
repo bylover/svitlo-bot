@@ -41,7 +41,7 @@ SYNC_KEY = (os.environ.get("SYNC_KEY") or "").strip()
 # 🧪 Логи для адміна в боті (👑 Адмін → 🧪 Логи): рядки print() по темах — після запуску надсилаються в бот
 import builtins as _bi_
 DIAG_RX = {"pl": re.compile(r"^\W*(Плейлист|Deezer)"), "yt": re.compile(r"^\W*(YouTube|YT_)"),
-           "jobs": re.compile(r"^\W*(Вакансі|DOU|Djinni)"), "err": re.compile(r"Traceback|Error|❌|Помилка")}
+           "jobs": re.compile(r"^\W*(Вакансі|DOU|Djinni)"), "map": re.compile(r"^\W*(Мапа|Статистика світла)"), "ideas": re.compile(r"^\W*Ідеї"), "gtr": re.compile(r"^\W*Тренди Google"), "err": re.compile(r"Traceback|Error|❌|Помилка")}
 DIAG: dict = {}
 _diag_print_ = _bi_.print
 def _diag_tee_(*a, **k):
@@ -1394,7 +1394,7 @@ PARA_FALLBACK = [
 GEMINI_BLOCK: dict = {}                               # {модель: до якого часу не використовувати}
 
 
-def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_tokens: int = 800) -> str | None:
+def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_tokens: int = 800, search: bool = False) -> str | None:
     keys = [k for k in dict.fromkeys([GEMINI_KEY_BG, GEMINI_KEY]) if k]
     if not keys:
         return None
@@ -1403,6 +1403,9 @@ def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_toke
     if json_mode:
         cfg["responseMimeType"] = "application/json"
     body = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": cfg}
+    if search:                                   # 🔎 пошук Google (свіжі тренди); з JSON-режимом не сумісний — JSON просимо в тексті
+        body["tools"] = [{"google_search": {}}]
+        cfg.pop("responseMimeType", None)
     if relaxed:                                  # відверті, але не порнографічні обговорення не блокувати
         body["safetySettings"] = [{"category": c, "threshold": "BLOCK_ONLY_HIGH"} for c in (
             "HARM_CATEGORY_SEXUALLY_EXPLICIT", "HARM_CATEGORY_HARASSMENT",
@@ -1424,6 +1427,7 @@ def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_toke
                     if len(lines) > 2 and not re.search(r"[.!?…»)]$", lines[-1].strip()):
                         text = "\n".join(lines[:-1])
                 if text:
+                    GEM_STATE["gr"] = len(((cand.get("groundingMetadata") or {}).get("groundingChunks")) or [])   # скільки джерел знайшов пошук
                     GEM_STATE["src"] = "Gemini" + (" (фоновий ключ)" if gkey == GEMINI_KEY_BG and GEMINI_KEY_BG != GEMINI_KEY else "")
                     return text
                 print(f"Gemini {model}: порожня відповідь ({(r.get('candidates') or [{}])[0].get('finishReason')})")
@@ -1431,6 +1435,9 @@ def gemini(prompt: str, json_mode: bool = False, relaxed: bool = False, max_toke
             except urllib.error.HTTPError as e:
                 msg = err_text(e)
                 print(f"Gemini {model}: {msg[:200]}")
+                if e.code == 400 and "tools" in body and re.search(r"tool|search|ground", msg, re.I):
+                    body.pop("tools")                 # модель/ключ без пошуку Google — повторюємо без нього
+                    continue
                 if e.code == 400 and "think" in msg.lower() and "thinkingConfig" in cfg:
                     cfg.pop("thinkingConfig")         # модель без «думання» — повторюємо без параметра
                     continue
@@ -5625,6 +5632,8 @@ def sb_map(st: dict, now: datetime) -> None:
             stat[f"f1={f[1]}"] = stat.get(f"f1={f[1]}", 0) + 1; stat[f"f8={f[8]}"] = stat.get(f"f8={f[8]}", 0) + 1
             grp = next((x for x in f[8:] if re.fullmatch(r"\d{1,2}\.\d", x or "")), "")   # група (черга), якщо мапа її віддає
             pts.append({"n": f[3][:70], "la": round(lat, 5), "lo": round(lng, 5), "on": f[1] == "1", "s": f[2][:16], "g": grp, "f": f[:14], "src": "sb"})
+        print(f"Мапа СвітлоБотів: записів {raw_n}, у Києві й області {len(pts)}"
+              + (f" · ⚠️ мало! початок відповіді: {txt[:220]!r}" if len(pts) < 30 else ""))
     except Exception as e:
         print(f"Мапа СвітлоБотів: {err_text(e)[:80]}")
     try:                                              # 🕐 час зміни статусу: якщо мапа пише київський час із позначкою UTC — виправляємо (свіжі зміни «в майбутньому»)
@@ -7352,6 +7361,363 @@ def job_item(src: str, r: dict, now: datetime, jid: str) -> dict:
         ts = now.strftime("%Y-%m-%d %H:%M")
     return {"id": jid, "t": title[:110], "co": co[:50], "city": city[:40], "l": r["l"], "src": src, "sal": sal[:30], "kw": [k for k, rx in JOB_SKILLS.items() if re.search(rx, blob)],
             "tel": 1 if JOB_TEL.search(blob) else 0, "lv": job_lvl(title), "ts": ts, "add": now.strftime("%Y-%m-%d %H:%M"), "ds": desc[:1000]}
+
+
+# ---------- ✨ Ідеї: подарунки (кому) і покупки (категорії) — тренди з пошуку Google через Gemini; свіже — першим, історія — в архіві ----------
+IDEA_GIFT = {   # ключ: (назва в меню, кому — для запиту)
+    "wife": ("👩 Дружині / коханій", "дружині або коханій дівчині (25–45 років)"),
+    "husb": ("👨 Чоловікові / коханому", "чоловікові або коханому хлопцю (25–45 років)"),
+    "mom": ("👵 Мамі / бабусі", "мамі або бабусі (50–75 років)"),
+    "dad": ("👴 Татові / дідусеві", "татові або дідусеві (50–75 років)"),
+    "k03": ("👶 Малюку 0–3", "дитині 0–3 років (і батькам малюка)"),
+    "k47": ("🧸 Дитині 4–7", "дитині 4–7 років"),
+    "k812": ("🧒 Дитині 8–12", "дитині 8–12 років"),
+    "teen": ("🧑 Підлітку 13–17", "підлітку 13–17 років (і хлопцям, і дівчатам)"),
+    "gf": ("👭 Подрузі", "подрузі (20–45 років)"),
+    "fr": ("🤝 Другу", "другу (20–45 років)"),
+    "col": ("💼 Колезі / керівнику", "колезі або керівнику (нейтрально, без надто особистого)"),
+    "any": ("🎁 Кому завгодно", "будь-кому — універсальні подарунки, що підходять більшості"),
+}
+IDEA_SHOP = {
+    "home": ("🏠 Дім і затишок", "дім, затишок, декор, зберігання, текстиль"),
+    "tech": ("🔌 Техніка й гаджети", "побутова техніка, гаджети, аксесуари для смартфона й ПК, розумний дім"),
+    "kit": ("🍳 Кухня", "кухонне приладдя, посуд, дрібна кухонна техніка"),
+    "chem": ("🧴 Побутова хімія й прибирання", "побутова хімія, засоби й приладдя для прибирання, прання, догляду за домом"),
+    "care": ("💆 Догляд і здоровʼя", "догляд за собою, косметика, гігієна, товари для здоровʼя й сну"),
+    "kids": ("🧸 Для дітей", "дитячі товари, іграшки, розвиваючі ігри, речі для батьків"),
+    "sport": ("⚽ Спорт і відпочинок", "спорт удома й на вулиці, туризм, пікнік, хобі"),
+    "car": ("🚗 Авто й подорожі", "аксесуари для авто, подорожей, валізи, органайзери"),
+    "souv": ("🎁 Сувеніри й дрібниці", "недорогі сувеніри, дрібні приємні подарунки, українські бренди й хендмейд"),
+    "blk": ("🔋 Блекаут: світло й енергія", "павербанки, зарядні станції, ліхтарі, LED-стрічки, газові плитки, термоси — те, що рятує при відключеннях"),
+}
+IDEA_OCC = "ny (Новий рік і Різдво), bd (день народження), val (14 лютого), w8 (8 березня), def (День захисників), ann (річниця/весілля), hw (новосілля), sch (1 вересня/випускний), any (без приводу)"
+IDEA_DAYS = 7                                         # кожен список — оновлення раз на тиждень
+
+
+# ---------- 🔥 Тренди Google по Україні: «Зараз у тренді» (RSS Google Trends) кожні ~3 год → тиждень, сфери життя (ШІ), архів 60 днів ----------
+GTR_CATS = {"sport": "⚽ Спорт", "show": "🎬 Кіно, серіали й шоу", "music": "🎵 Музика", "news": "🗞 Події й новини", "money": "💰 Гроші, ціни й курси",
+            "energy": "⚡ Світло, комуналка, транспорт", "tech": "📱 Технології й ігри", "weather": "🌤 Погода й природа", "health": "🏥 Здоровʼя",
+            "edu": "🎓 Освіта й робота", "shop": "🛍 Покупки й бренди", "people": "👤 Люди й зірки", "holiday": "🎉 Свята й дати", "other": "🔎 Інше"}
+
+
+def gtr_traffic(s: str) -> int:
+    m = re.search(r"([\d\s.,]+)\s*([KkКкMmМм]|тис|млн)?", str(s or ""))
+    if not m:
+        return 0
+    n = float(re.sub(r"[\s,]", "", m.group(1)).rstrip(".") or 0)
+    u = (m.group(2) or "").lower()
+    return int(n * (1000 if u in ("k", "к", "тис") else 1_000_000 if u in ("m", "м", "млн") else 1))
+
+
+def gtr_build(st: dict, now: datetime) -> None:
+    if not (SYNC_URL and SYNC_KEY) or _time.time() - float(st.get("gtr_at") or 0) < 3 * 3600:
+        return
+    st["gtr_at"] = _time.time()
+    import xml.etree.ElementTree as ET
+    try:
+        req = urllib.request.Request("https://trends.google.com/trending/rss?geo=UA", headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"})
+        root = ET.fromstring(urllib.request.urlopen(req, timeout=25).read())
+    except Exception as e:
+        print(f"🔥 Тренди Google: RSS недоступний ({err_text(e)[:80]})")
+        return
+    ns = {"ht": "https://trends.google.com/trending/rss"}
+    try:
+        old = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=gtrends.json") or {}
+    except Exception:
+        old = {}
+    items = old.get("items") if isinstance(old.get("items"), dict) else {}
+    ts, n_new, got = now.strftime("%Y-%m-%dT%H:%M"), 0, 0
+    for it in root.iter("item"):
+        q = (it.findtext("title") or "").strip()
+        if not q:
+            continue
+        got += 1
+        kk = idea_key(q) or q.lower()[:40]
+        tr = gtr_traffic(it.findtext("ht:approx_traffic", default="", namespaces=ns))
+        news = []
+        for ni in it.findall("ht:news_item", ns)[:2]:
+            t_, u_ = (ni.findtext("ht:news_item_title", default="", namespaces=ns) or "").strip(), (ni.findtext("ht:news_item_url", default="", namespaces=ns) or "").strip()
+            src_ = (ni.findtext("ht:news_item_source", default="", namespaces=ns) or "").strip()
+            if t_ and u_.startswith("http"):
+                news.append([html.unescape(t_)[:140], u_[:300], src_[:40]])
+        e = items.get(kk)
+        if e is None:
+            n_new += 1
+            items[kk] = e = {"q": q[:80], "tr": tr, "f": ts, "l": ts, "n": news, "c": ""}
+        else:
+            e["tr"] = max(int(e.get("tr") or 0), tr); e["l"] = ts
+            if news:
+                e["n"] = news
+    cut = (now - timedelta(days=60)).strftime("%Y-%m-%dT%H:%M")
+    items = {k: v for k, v in items.items() if (v.get("l") or "") >= cut}
+    todo = [k for k, v in items.items() if not v.get("c")][:60]   # сфера життя — ШІ, пачкою
+    if todo:
+        lst = "\n".join(f"{i + 1}. {items[k]['q']} — {(items[k].get('n') or [['']])[0][0]}" for i, k in enumerate(todo))
+        raw = gemini("Розклади пошукові запити з трендів Google (Україна) за сферами життя. Коди: " + ", ".join(f"{k} ({v})" for k, v in GTR_CATS.items()) +
+                     ".\nЗапит може бути українською чи російською; поруч — заголовок новини для контексту.\n" + lst +
+                     '\n\nВідповідь — лише JSON: {"c":["sport","news",...]} — рівно по одному коду на кожен рядок, у тому ж порядку.', json_mode=True, max_tokens=900)
+        cs = (json_loose(raw) or {}).get("c") or []
+        for i, k in enumerate(todo):
+            if i < len(cs) and cs[i] in GTR_CATS:
+                items[k]["c"] = cs[i]
+    out = {"at": now.strftime("%d.%m.%Y %H:%M"), "cats": GTR_CATS, "items": items}
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=gtrends.json", out)
+        wk = (now - timedelta(days=7)).strftime("%Y-%m-%dT%H:%M")
+        print(f"🔥 Тренди Google: у RSS {got}, нових {n_new} · за тиждень {sum(1 for v in items.values() if (v.get('l') or '') >= wk)} · в архіві {len(items)} · без сфери {sum(1 for v in items.values() if not v.get('c'))}")
+    except Exception as e:
+        print(f"🔥 Тренди Google → бот: {err_text(e)[:80]}")
+
+
+# ---------- 📈 Що шукають у Google (подарунки): підказки пошуку Google = реальні популярні запити; 🚀 ріст — Google Trends (якщо пускає) ----------
+GQ_SEEDS = {
+    "wife": ["подарунок дружині", "що подарувати дружині", "подарок жене", "что подарить жене", "подарунок дівчині", "подарок девушке"],
+    "husb": ["подарунок чоловіку", "що подарувати чоловіку", "подарок мужу", "что подарить мужу", "подарунок хлопцю", "подарок парню"],
+    "mom": ["подарунок мамі", "що подарувати мамі", "подарок маме", "что подарить маме", "подарунок бабусі", "подарок бабушке"],
+    "dad": ["подарунок татові", "що подарувати тату", "подарок папе", "что подарить папе", "подарунок дідусю", "подарок дедушке"],
+    "k03": ["подарунок дитині 1 рік", "подарунок дитині 2 роки", "подарок ребенку 1 год", "подарок ребенку 2 года", "подарунок малюку"],
+    "k47": ["подарунок дитині 5 років", "подарунок хлопчику 6 років", "подарунок дівчинці 5 років", "подарок ребенку 5 лет", "подарок мальчику 6 лет", "подарок девочке 7 лет"],
+    "k812": ["подарунок дитині 10 років", "подарунок хлопчику 10 років", "подарунок дівчинці 11 років", "подарок мальчику 10 лет", "подарок девочке 12 лет"],
+    "teen": ["подарунок підлітку", "подарунок дівчинці 14 років", "подарунок хлопцю 16 років", "подарок подростку", "подарок девочке 15 лет", "подарок парню 16 лет"],
+    "gf": ["подарунок подрузі", "що подарувати подрузі", "подарок подруге", "что подарить подруге"],
+    "fr": ["подарунок другу", "що подарувати другу", "подарок другу", "что подарить другу"],
+    "col": ["подарунок колезі", "подарунок керівнику", "подарок коллеге", "подарок начальнику", "корпоративні подарунки"],
+    "any": ["що подарувати", "подарунок на новий рік", "подарок на новый год", "оригінальний подарунок", "недорогий подарунок", "подарунок до 500 грн"],
+}
+GQ_OCC = [("12-31", 45, ["на новий рік", "на новый год"]), ("02-14", 30, ["на 14 лютого", "на 14 февраля"]), ("03-08", 30, ["на 8 березня", "на 8 марта"]),
+          ("10-01", 25, ["на день захисників", "на день защитников"]), ("09-01", 25, ["на 1 вересня", "на 1 сентября"])]
+GQ_JUNK = re.compile(r"\b(порн|секс|xxx|казино|ставк|скачать|скачати|смотреть онлайн|дивитись онлайн|фильм|фільм|песн|пісн|стих|вірш|картинк|открытк|листівк|прикол)", re.I)
+
+
+def gq_suggest(q: str) -> list[str]:
+    url = "https://suggestqueries.google.com/complete/search?client=firefox&hl=uk&gl=ua&ie=utf-8&oe=utf-8&q=" + urllib.parse.quote(q)
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"})
+    with urllib.request.urlopen(req, timeout=15) as r:
+        d = json.loads(r.read().decode("utf-8", "replace"))
+    return [str(s) for s in (d[1] if isinstance(d, list) and len(d) > 1 else [])][:10]
+
+
+def gq_trends(words: list[str]) -> dict:
+    """Google Trends (неофіційно): ріст запиту за 3 міс. — {запит: множник}. Якщо Google не пускає — {}."""
+    import http.cookiejar
+    jar = http.cookiejar.CookieJar()
+    op = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
+    op.addheaders = [("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36"), ("Accept-Language", "uk,en;q=0.8")]
+    op.open("https://trends.google.com/trends/?geo=UA", timeout=20).read()
+    req_ = {"comparisonItem": [{"keyword": w, "geo": "UA", "time": "today 3-m"} for w in words[:5]], "category": 0, "property": ""}
+    raw = op.open("https://trends.google.com/trends/api/explore?hl=uk&tz=-120&req=" + urllib.parse.quote(json.dumps(req_, ensure_ascii=False)), timeout=20).read().decode("utf-8", "replace")
+    wd = json.loads(raw[raw.index("{"):])
+    w_ = next(x for x in wd.get("widgets", []) if x.get("id") == "TIMESERIES")
+    raw = op.open("https://trends.google.com/trends/api/widgetdata/multiline?hl=uk&tz=-120&req=" + urllib.parse.quote(json.dumps(w_["request"], ensure_ascii=False))
+                  + "&token=" + urllib.parse.quote(w_["token"]), timeout=20).read().decode("utf-8", "replace")
+    tl = json.loads(raw[raw.index("{"):]).get("default", {}).get("timelineData", [])
+    out = {}
+    for i, w in enumerate(words[:5]):
+        v = [int((p.get("value") or [0] * 5)[i]) for p in tl if len(p.get("value") or []) > i]
+        if len(v) >= 8:
+            a, b = sum(v[:len(v) // 2]) / (len(v) // 2), sum(v[-14:]) / len(v[-14:])
+            out[w] = round(b / a, 2) if a > 0 else (9.9 if b > 0 else 1.0)
+    return out
+
+
+def gq_build(st: dict, now: datetime) -> None:
+    """Раз на 2 доби: популярні запити про подарунки з підказок Google по кожному «кому»; свіже — першим, зниклі — в архів."""
+    if not (SYNC_URL and SYNC_KEY) or _time.time() - float(st.get("gq_at") or 0) < 2 * 86400:
+        return
+    st["gq_at"] = _time.time()
+    md = now.strftime("%m-%d")
+    occ = []
+    for d_, win, sfx in GQ_OCC:                       # найближче свято (у межах вікна) — додаємо «на новий рік» тощо
+        dd = (datetime.strptime(f"{now.year}-{d_}", "%Y-%m-%d") - datetime(now.year, now.month, now.day)).days
+        if dd < 0:
+            dd += 365
+        if dd <= win:
+            occ = sfx
+            break
+    try:
+        old = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=ideas_gq.json") or {}
+    except Exception:
+        old = {}
+    og = old.get("g") if isinstance(old.get("g"), dict) else {}
+    day, ver, req_n, bad, groups = now.strftime("%Y-%m-%d"), int(old.get("v") or 0) + 1, 0, 0, {}
+    for k, seeds in GQ_SEEDS.items():
+        sc = {}
+        qs = seeds + [f"{s} {o}" for s in seeds[:3] for o in occ[:1]] + [f"{s} {o}" for s in seeds[2:4] for o in occ[1:2]]
+        for s in qs:
+            try:
+                sug = gq_suggest(s); req_n += 1
+            except Exception:
+                bad += 1; continue
+            finally:
+                _time.sleep(0.2)
+            base = s.lower().strip()
+            for i, x in enumerate(sug):
+                xl = x.lower().strip()
+                if xl == base or GQ_JUNK.search(xl) or len(xl) < 8:
+                    continue
+                kk = idea_key(xl)
+                e = sc.setdefault(kk, {"q": x.strip()[:80], "n": 0})
+                e["n"] += 10 - i                       # вище в підказках — популярніше
+        top = sorted(sc.values(), key=lambda e: -e["n"])[:15]
+        prev = {idea_key(e["q"]): e for e in (og.get(k) or [])}
+        fresh = []
+        for e in top:
+            kk = idea_key(e["q"]); o = prev.pop(kk, None)
+            fresh.append({"q": e["q"], "n": e["n"], "v": ver, "a": (o or {}).get("a") or day, "s": day, "new": o is None and bool(og)})
+        arch = sorted(prev.values(), key=lambda e: e.get("s") or "", reverse=True)[:40]
+        for e in arch:
+            e["new"] = False
+        groups[k] = fresh + arch
+    if req_n == 0:
+        st["gq_at"] = _time.time() - 2 * 86400 + 6 * 3600   # Google не відповів — повтор за 6 год
+        print(f"📈 Ідеї · Google-запити: підказки недоступні (помилок {bad}) — лишаю минулі")
+        return
+    tr_n, tr_note = 0, ""
+    if _time.time() - float(st.get("gq_tr_off") or 0) > 3 * 86400:   # Google Trends — найкращий запит кожної групи, по 5 за раз
+        tops = [(k, g[0]["q"]) for k, g in groups.items() if g and g[0].get("v") == ver]
+        try:
+            for i in range(0, len(tops), 5):
+                part = tops[i:i + 5]
+                res = gq_trends([q for _, q in part]); tr_n += len(res)
+                for k, q in part:
+                    if q in res:
+                        groups[k][0]["tr"] = res[q]
+                _time.sleep(2)
+        except Exception as e:
+            st["gq_tr_off"] = _time.time()
+            tr_note = f" · Trends: {err_text(e)[:60]} (пауза 3 дні)"
+    out = {"v": ver, "at": now.strftime("%d.%m.%Y"), "occ": occ[:1], "g": groups}
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=ideas_gq.json", out)
+        nf = sum(1 for g in groups.values() for e in g if e.get("v") == ver)
+        print(f"📈 Ідеї · Google-запити: запитів {req_n} (помилок {bad}) · свіжих {nf} · 🆕 {sum(1 for g in groups.values() for e in g if e.get('new'))}"
+              f" · Trends: {tr_n} оцінок{tr_note}")
+    except Exception as e:
+        print(f"📈 Ідеї · Google-запити → бот: {err_text(e)[:80]}")
+
+
+# ---------- 🛒 Хіти Rozetka (сортування «за популярністю») — додаткове джерело для ✨ Ідей; якщо блокує — пауза 7 днів ----------
+RZ_Q = {"home": "товари для дому", "tech": "гаджети", "kit": "кухонне приладдя", "chem": "побутова хімія", "care": "догляд за обличчям",
+        "kids": "іграшки", "sport": "товари для спорту", "car": "автотовари", "souv": "сувеніри", "blk": "зарядна станція"}
+
+
+def rz_hits(st: dict, text: str) -> list[str]:
+    if _time.time() - float(st.get("rz_off") or 0) < 7 * 86400:
+        return []
+    found, last = [], ""
+    def walk(o):
+        if isinstance(o, dict):
+            t_ = o.get("title") or o.get("name")
+            if isinstance(t_, str) and len(t_) > 10 and ("price" in o or "sell_status" in o):
+                pr = o.get("price")
+                found.append(f"{t_.strip()[:90]}{f' — {pr} грн' if isinstance(pr, (int, float, str)) and str(pr).strip() else ''}")
+            for v in o.values():
+                walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v)
+    for url in (f"https://search.rozetka.com.ua/ua/search/api/v6/?front-type=xl&country=UA&lang=ua&sort=popularity&text={urllib.parse.quote(text)}",
+                f"https://search.rozetka.com.ua/search/api/v4/?front-type=xl&country=UA&lang=ua&sort=popularity&text={urllib.parse.quote(text)}"):
+        try:
+            walk(http_json(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124", "Accept": "application/json"}))
+            if found:
+                break
+            last = "порожня відповідь"
+        except Exception as e:
+            last = err_text(e)[:60]
+    if not found:
+        st["rz_off"] = _time.time()
+        print(f"🛒 Ідеї · Rozetka недоступна ({last}) — пауза 7 днів, ідеї без неї")
+    return list(dict.fromkeys(found))[:30]
+
+
+def idea_key(t_: str) -> str:
+    return re.sub(r"[^a-zа-яіїєґ0-9]+", "", str(t_).lower())[:40]
+
+
+def ideas_build(st: dict, now: datetime) -> None:
+    """1 список за запуск (не частіше ніж раз на 20 хв): найстаріший із тих, що старші за тиждень."""
+    if not (SYNC_URL and SYNC_KEY) or _time.time() - float(st.get("ideas_t") or 0) < 1200:
+        return
+    done = st.setdefault("ideas_at", {})
+    pools = [("g", k) for k in IDEA_GIFT] + [("s", k) for k in IDEA_SHOP]
+    due = [p for p in pools if _time.time() - float(done.get(p[1]) or 0) > IDEA_DAYS * 86400]
+    if not due:
+        return
+    kind, k = min(due, key=lambda p: float(done.get(p[1]) or 0))
+    st["ideas_t"] = _time.time()
+    name, who = (IDEA_GIFT if kind == "g" else IDEA_SHOP)[k]
+    try:
+        old = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=ideas_{k}.json") or {}
+    except Exception:
+        old = {}
+    old = old if isinstance(old, dict) and isinstance(old.get("items"), list) else {"items": []}
+    prev = [x["t"] for x in old["items"][:40]]
+    rz = rz_hits(st, (GQ_SEEDS.get(k) or ["подарунок"])[0] if kind == "g" else RZ_Q.get(k, name))
+    gq = []
+    if kind == "g":
+        try:
+            gq = [e["q"] for e in ((http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=ideas_gq.json") or {}).get("g") or {}).get(k, []) if e.get("s")][:20]
+        except Exception:
+            gq = []
+    month = ["січень", "лютий", "березень", "квітень", "травень", "червень", "липень", "серпень", "вересень", "жовтень", "листопад", "грудень"][now.month - 1]
+    if kind == "g":
+        task = (f"Склади 25 актуальних ідей ПОДАРУНКІВ {who}. Орієнтуйся на те, що зараз реально купують і дарують: "
+                f"бестселери й «хіти продажів» Rozetka, Prom, Epicentr, Comfy, Allo; Amazon Best Sellers і Movers & Shakers; тренди Etsy, TikTok/Instagram («made me buy it»); "
+                f"свіжі статті «що подарувати {now.year}». Врахуй сезон ({month}) і найближчі свята. Поле oc — для яких приводів доречно (коди: {IDEA_OCC}).")
+    else:
+        task = (f"Склади 25 корисних ТРЕНДОВИХ покупок у категорії «{who}». Орієнтуйся на бестселери й рейтинги покупців Rozetka, Prom, Epicentr, Comfy, Allo, "
+                f"Amazon Best Sellers / Movers & Shakers, огляди «найкорисніші покупки {now.year}», TikTok-тренди. Лише те, що реально корисне в побуті, без маркетингового сміття. Сезон: {month}.")
+    prompt = (task + "\n\nПравила: усе можна купити в Україні; ціни — реалістичні, у гривнях; жодних російських брендів чи товарів; не вигадуй конкретні моделі, яких може не існувати — "
+              "краще тип товару з уточненням (напр. «Зарядна станція 300–500 Вт з LiFePO4»). Мінімум 10 ідей мають бути НОВИМИ порівняно з минулим списком "
+              "(решта можуть повторюватися, якщо досі в топі). Перші — найпопулярніші зараз.\n"
+              f"Минулий список: {'; '.join(prev)[:1500] or 'немає'}\n"
+              + (f"ФАКТИЧНІ хіти Rozetka зараз (сортування за популярністю) — спирайся на них насамперед: {'; '.join(rz)[:1800]}\n" if rz else "")
+              + (f"РЕАЛЬНІ популярні запити в Google (Україна): {'; '.join(gq)[:900]}. Ідеї, що відповідають цим запитам, познач \"g\": true.\n" if gq else "")
+              + "\n"
+              'Відповідь — лише JSON: {"items":[{"t":"назва українською, до 60 симв.","w":"чому варто / чому в тренді — до 140 симв.",'
+              '"p":"800–1500","b":1,"oc":["bd","ny"],"tag":"hot|classic|orig","q":"пошуковий запит для інтернет-магазину, 2–5 слів","src":"де видно тренд: напр. «Rozetka топ», «Amazon Movers», «TikTok»"}]}\n'
+              "b — бюджет: 1 до 500 грн, 2 — 500–1500, 3 — 1500–5000, 4 — понад 5000. tag: hot — хіт/тренд зараз, classic — перевірена класика, orig — оригінальне. "
+              "Для категорій покупок oc — порожній масив.")
+    GEM_STATE.pop("gr", None)
+    raw = gemini(prompt, max_tokens=3500, search=True)
+    items = (json_loose(raw) or {}).get("items") or []
+    new_ = []
+    for x in items:
+        if not isinstance(x, dict) or not str(x.get("t") or "").strip():
+            continue
+        try:
+            b_ = max(1, min(4, int(x.get("b") or 2)))
+        except (TypeError, ValueError):
+            b_ = 2
+        new_.append({"t": str(x["t"]).strip()[:70], "w": str(x.get("w") or "").strip()[:180], "p": str(x.get("p") or "").strip()[:20], "b": b_,
+                     "oc": [o for o in (x.get("oc") or []) if o in ("ny", "bd", "val", "w8", "def", "ann", "hw", "sch", "any")][:6] if kind == "g" else [],
+                     "tag": x.get("tag") if x.get("tag") in ("hot", "classic", "orig") else "classic",
+                     "q": str(x.get("q") or x["t"]).strip()[:60], "src": str(x.get("src") or "").strip()[:50], "g": bool(x.get("g")) and bool(gq)})
+    if len(new_) < 8:
+        done[k] = _time.time() - (IDEA_DAYS - 1) * 86400   # невдача — повтор приблизно за добу, старе лишається
+        print(f"✨ Ідеї «{name}»: ШІ дав {len(new_)} ідей ({GEM_STATE.get('err') or 'порожня/некоректна відповідь'}) — лишаю минулий список")
+        return
+    ver = int(old.get("v") or 0) + 1
+    day = now.strftime("%Y-%m-%d")
+    by = {idea_key(x["t"]): x for x in old["items"]}
+    fresh, n_new = [], 0
+    for i, x in enumerate(new_):
+        kk = idea_key(x["t"])
+        if not kk or any(idea_key(f["t"]) == kk for f in fresh):
+            continue
+        o = by.pop(kk, None)
+        n_new += o is None
+        fresh.append({**x, "id": job_h(kk)[:7], "a": (o or {}).get("a") or day, "s": day, "v": ver, "r": i})
+    arch = sorted(by.values(), key=lambda x: x.get("s") or "", reverse=True)
+    out = {"k": k, "kind": kind, "name": name, "v": ver, "at": now.strftime("%d.%m.%Y"), "gr": GEM_STATE.get("gr", 0),
+           "items": (fresh + arch)[:220]}
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=ideas_{k}.json", out)
+        done[k] = _time.time()
+        print(f"✨ Ідеї «{name}»: свіжих {len(fresh)} (нових {n_new}), в архіві {len(arch)} · джерел пошуку {GEM_STATE.get('gr', 0)} · хітів Rozetka {len(rz)} · Google-запитів {len(gq)} · {GEM_STATE.get('src', '')}")
+    except Exception as e:
+        print(f"✨ Ідеї «{name}» → бот: {err_text(e)[:80]}")
 
 
 def jobs_build(st: dict, now: datetime) -> None:
@@ -9803,6 +10169,21 @@ def main() -> None:
                 pl_build(st, now)                     # 🎧 топ плейлистів Deezer (3 категорії за запуск)
             except Exception as e_:
                 print(f"Плейлисти: {err_text(e_)[:80]}")
+        if budget_ok(110):
+            try:
+                gtr_build(st, now)             # 🔥 тренди Google по Україні — кожні ~3 год
+            except Exception as e_:
+                print(f"🔥 Тренди Google: {err_text(e_)[:80]}")
+        if budget_ok(110):
+            try:
+                gq_build(st, now)              # 📈 що шукають у Google (подарунки) — раз на 2 доби
+            except Exception as e_:
+                print(f"📈 Ідеї · Google-запити: {err_text(e_)[:80]}")
+        if budget_ok(110):
+            try:
+                ideas_build(st, now)           # ✨ ідеї подарунків і покупок — 1 список за запуск, кожен раз на тиждень
+            except Exception as e_:
+                print(f"✨ Ідеї: {err_text(e_)[:80]}")
         aro_due = not st.get("aro_full") and _time.time() - float(st.get("aro_last") or 0) > 3300
         if budget_ok(100) and aro_due:                # 🧴 розділи парфумів до 50 — щогодини, поки не заповнено (у цей запуск — першими)
             st["aro_last"] = _time.time(); st["aro_force"] = True
