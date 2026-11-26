@@ -746,14 +746,14 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-26T22:00:53.161570+02:00",
+ "gh_beat": "2026-11-26T22:05:53.378439+02:00",
  "source": "dtek",
  "addr": {
-  "active": true,
-  "reason": "Стабілізаційне відключення (Згідно графіку погодинних відключень)",
-  "start": "18:50 26.11.2026",
-  "end": "22:00 26.11.2026",
-  "type": "2",
+  "active": false,
+  "reason": "",
+  "start": "",
+  "end": "",
+  "type": "",
   "groups": [
    "GPV3.1"
   ],
@@ -761,10 +761,10 @@
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-26T21:53:01.948088+02:00",
+  "checked": "2026-11-26T22:02:55.430150+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
-  "planned": true
+  "planned": false
  },
  "emerg": {
   "on": false,
@@ -2024,8 +2024,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "26.11 21:56",
-   "ts": 1795722975,
+   "at": "26.11 22:08",
+   "ts": 1795723692,
    "ok": true,
    "note": ""
   },
@@ -2132,50 +2132,50 @@
    "note": ""
   },
   "youtube канали": {
-   "at": "26.11 21:56",
-   "ts": 1795722974,
+   "at": "26.11 22:06",
+   "ts": 1795723571,
    "ok": true,
    "note": ""
   },
   "живий english": {
-   "at": "26.11 21:56",
-   "ts": 1795722974,
+   "at": "26.11 22:06",
+   "ts": 1795723571,
    "ok": true,
    "note": ""
   },
   "кіно-категорії": {
-   "at": "26.11 21:56",
-   "ts": 1795722974,
+   "at": "26.11 22:06",
+   "ts": 1795723571,
    "ok": true,
    "note": ""
   },
   "youtube для вас": {
-   "at": "26.11 21:56",
-   "ts": 1795722974,
+   "at": "26.11 22:06",
+   "ts": 1795723571,
    "ok": true,
    "note": ""
   },
   "режисери": {
-   "at": "26.11 21:56",
-   "ts": 1795722974,
+   "at": "26.11 22:06",
+   "ts": 1795723571,
    "ok": true,
    "note": ""
   },
   "smm-інструменти": {
-   "at": "26.11 21:56",
-   "ts": 1795722974,
+   "at": "26.11 22:06",
+   "ts": 1795723571,
    "ok": true,
    "note": ""
   },
   "найкращі аромати й догляд": {
-   "at": "26.11 21:56",
-   "ts": 1795722975,
+   "at": "26.11 22:06",
+   "ts": 1795723572,
    "ok": true,
    "note": ""
   },
   "аромати": {
-   "at": "26.11 21:56",
-   "ts": 1795722974,
+   "at": "26.11 22:06",
+   "ts": 1795723571,
    "ok": true,
    "note": ""
   },
@@ -28714,10 +28714,34 @@
    null,
    null,
    "2026-11-26"
+  ],
+  "tt0765010": [
+   7.1,
+   null,
+   58,
+   "2026-11-26"
+  ],
+  "tt1305806": [
+   8.2,
+   null,
+   80,
+   "2026-11-26"
+  ],
+  "tt4934214": [
+   9.0,
+   null,
+   null,
+   "2026-11-26"
+  ],
+  "tt0497152": [
+   5.8,
+   null,
+   null,
+   "2026-11-26"
   ]
  },
  "pushed_h": {
-  "gs": "cbf388e433ab",
+  "gs": "406785ebb32a",
   "quiz_pool.json": "c89ccd86b451",
   "fact.png": "9211170482a2",
   "sexed.json": "0362ec7e46d4",
@@ -47911,6 +47935,36 @@
    ],
    "ov": "У той час, коли почали поширюватися дивні чутки про хворобу жорстокого короля, тільки принц стає єдиною надією усього народу на порятунок від зарази, яка жадає людської плоті і крові, котра поширюється усім королівством.",
    "poster": "https://image.tmdb.org/t/p/w500/ktupsg3QEhdDFUKCuq34ja8Y8SA.jpg"
+  },
+  "m1523145": {
+   "title": "Твоє серце буде розбито",
+   "year": "2026",
+   "rating": 7.8,
+   "genres": [
+    "Мелодрама"
+   ],
+   "g": [
+    10749
+   ],
+   "ov": "Старшокласниця Поліна Туманова приходить вчитися у нову школу. Нова учениця зазнає цькування з боку Лики Малиновської та її подружок. На допомогу Поліні приходить байкер Діма Барсов на прізвисько «Барс». Він заступається",
+   "poster": "https://image.tmdb.org/t/p/w500/31miaaC7Pj2zYgJ7oBr0MqOp76e.jpg"
+  },
+  "m7445": {
+   "title": "Брати",
+   "year": "2009",
+   "rating": 7.1,
+   "genres": [
+    "Драма",
+    "Трилер",
+    "Військовий"
+   ],
+   "g": [
+    18,
+    53,
+    10752
+   ],
+   "ov": "Капітана Сема Кегілла вважають мертвим. Проте він усе ж повертається з військової місії та усвідомлює, що життя його родини за цей час кардинально змінилося.",
+   "poster": "https://image.tmdb.org/t/p/w500/38WspSTSO5SnVqVNLYNB4WZ227s.jpg"
   }
  },
  "cofid_pushed": "24.11.2026",
@@ -48014,12 +48068,8 @@
  "silpo_snap": "2026-11-25",
  "live_day": "2026-11-26",
  "silpo_week": "2026-48",
- "sbm_at": 1795723256.5958407,
+ "sbm_at": 1795723558.4155226,
  "sbm_hist": [
-  [
-   "09:25",
-   58
-  ],
   [
    "09:30",
    62
@@ -48591,6 +48641,10 @@
   [
    "22:00",
    73
+  ],
+  [
+   "22:05",
+   74
   ]
  ],
  "sbm_near": {
@@ -51748,7 +51802,7 @@
   "UC2s-Imn7AJsZt2LaHyAStlg": "2026-11-24"
  },
  "kp_at": {
-  "mix": "2026-11-26T10:05:45.479903+02:00",
+  "mix": "2026-11-26T22:05:53.488698+02:00",
   "drama": "2026-11-26T10:25:49.751770+02:00",
   "thriller": "2026-11-26T10:50:45.388535+02:00",
   "comedy": "2026-11-26T11:00:47.134303+02:00",
@@ -51771,7 +51825,7 @@
  },
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 17.11–24.11\n<blockquote>🆕 <b>1. Редагування Stories в Instagram</b>\nInstagram додав можливість редагувати вже опубліковані Stories протягом 15 хвилин після їх створення.\n💡 Використовуйте цей час, щоб швидко виправити випадкові друкарські помилки або додати забутий стікер без видалення історії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5\">Прямий</a></blockquote>\n<blockquote>🆕 <b>2. Запуск AI-агента Muse від Meta</b>\nMeta розширює географію запуску свого персонального AI-агента Muse, який інтегрується в екосистему платформи.\n💡 Слідкуйте за розгортанням інструменту для оптимізації рутинних SMM-завдань та роботи з контентом.\n🔗 <a href=\"https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>3. Партнерство Pinterest і Microsoft Ads</b>\nPinterest оголосив про офіційне партнерство з Microsoft Ads для розширення рекламних можливостей.\n💡 Очікуйте нових крос-платформних рекламних інструментів та розширення аудиторії для кампаній у Pinterest.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Метрики спільного перегляду на YouTube CTV</b>\nYouTube додав підрахунок спільного перегляду (co-view counts) до аналітики Connected TV.\n💡 Враховуйте показники перегляду на великих екранах кількома глядачами при оцінці охоплення відеореклами.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Оновлення для відео в X (Twitter)</b>\nПлатформа X додала нові параметри мініатюр та налаштування підписів для відеоконтенту.\n💡 Використовуйте кастомні мініатюри, щоб підвищити клікабельність (CTR) ваших відео у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Виявлення діпфейків у TikTok</b>\nTikTok впроваджує нові технології для автоматичного виявлення та маркування штучно створеного контенту й діпфейків.\n💡 Зважайте на суворішу модерацію AI-контенту при створенні креативів для платформи.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5\">UA.NEWS</a></blockquote>\n<blockquote>👀 <b>7. Анонс додатка Threads для iPad</b>\nКоманда Threads анонсувала швидкий вихід окремого додатку для планшетів iPad.\n💡 Готуйте контент-стратегію з урахуванням майбутнього зростання аудиторії планшетів на цій платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Спрощення батьківського контролю в Pinterest</b>\nPinterest оновив і спростив налаштування батьківського контролю для безпечнішого користування платформою.\n💡 Пам'ятайте про вікові обмеження та безпеку бренду при налаштуванні таргетингу на молодшу аудиторію.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>9. Контроль нарізки файлів у Gemini API</b>\nGoogle додав нові функції керування нарізкою файлів (file slicing) до свого API Gemini для розробників.\n💡 Використовуйте оновлення для ефективнішої обробки великих масивів даних та документів через штучний інтелект.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>10. Інтеграція Instagram з Apple Music</b>\nInstagram додав функцію збереження аудіотреків із публікацій безпосередньо в плейлисти Apple Music.\n💡 Використовуйте популярну музику в Reels, щоб користувачі могли не лише взаємодіяти з відео, а й зберігати треки.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5\">Ukr.net</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202648",
  "kb_probe2": "2026-48",
- "fest_fail": 1795680437.155359,
+ "fest_fail": 1795723633.0943446,
  "gtr_at": 1795718165.3689654,
  "gq_at": 1795707211.2217238,
  "ideas_at": {
