@@ -41,7 +41,7 @@ SYNC_KEY = (os.environ.get("SYNC_KEY") or "").strip()
 # 🧪 Логи для адміна в боті (👑 Адмін → 🧪 Логи): рядки print() по темах — після запуску надсилаються в бот
 import builtins as _bi_
 DIAG_RX = {"pl": re.compile(r"^\W*(Плейлист|Deezer)"), "yt": re.compile(r"^\W*(YouTube|YT_)"),
-           "jobs": re.compile(r"^\W*(Вакансі|DOU|Djinni)"), "map": re.compile(r"^\W*(Мапа|Статистика світла)"), "ideas": re.compile(r"^\W*Ідеї"), "p18": re.compile(r"^\W*Поради 18\+"), "gtr": re.compile(r"^\W*(Тренди Google|Threads)"), "err": re.compile(r"Traceback|Error|❌|Помилка")}
+           "jobs": re.compile(r"^\W*(Вакансі|DOU|Djinni)"), "map": re.compile(r"^\W*(Мапа|Статистика світла)"), "ideas": re.compile(r"^\W*(Ідеї|Розміри)"), "p18": re.compile(r"^\W*Поради 18\+"), "gtr": re.compile(r"^\W*(Тренди Google|Threads)"), "err": re.compile(r"Traceback|Error|❌|Помилка")}
 DIAG: dict = {}
 _diag_print_ = _bi_.print
 def _diag_tee_(*a, **k):
@@ -7568,6 +7568,66 @@ def gtr_build(st: dict, now: datetime) -> None:
         print(f"🔥 Тренди Google → бот: {err_text(e)[:80]}")
 
 
+# ---------- 📏 Офіційні таблиці розмірів брендів: ШІ з пошуком Google зчитує сторінку бренду → діапазони в см; 1 бренд за запуск, кожен раз на місяць ----------
+SZ_BRANDS = {"Zara": ("zara.com", "c"), "H&M": ("hm.com", "c"), "Mango": ("mango.com", "c"), "Reserved": ("reserved.com", "c"), "Uniqlo": ("uniqlo.com", "c"),
+             "LC Waikiki": ("lcwaikiki.com", "c"), "Bershka": ("bershka.com", "c"), "Pull&Bear": ("pullandbear.com", "c"), "Nike": ("nike.com", "cs"), "Adidas": ("adidas.com", "cs"),
+             "Puma": ("puma.com", "cs"), "New Balance": ("newbalance.com", "cs"), "Under Armour": ("underarmour.com", "cs"), "Reebok": ("reebok.com", "cs"), "Asics": ("asics.com", "cs"),
+             "Levi's": ("levi.com", "c"), "Tommy Hilfiger": ("tommy.com", "c"), "Calvin Klein": ("calvinklein.com", "c"), "Lacoste": ("lacoste.com", "c"), "Massimo Dutti": ("massimodutti.com", "c"),
+             "COS": ("cos.com", "c"), "Hugo Boss": ("hugoboss.com", "c"), "Ecco": ("ecco.com", "s"), "Skechers": ("skechers.com", "s"), "Converse": ("converse.com", "s"),
+             "Vans": ("vans.com", "s"), "Timberland": ("timberland.com", "s"), "Dr. Martens": ("drmartens.com", "s")}   # c — одяг, s — взуття
+SZ_RANGE = {"top": (60, 160), "bot": (55, 160), "shoe": (15, 34)}
+
+
+def sizes_build(st: dict, now: datetime) -> None:
+    if not (SYNC_URL and SYNC_KEY) or gemini_out() or _time.time() - float(st.get("szb_t") or 0) < 1500:
+        return
+    done = st.setdefault("szb_at", {})
+    due = [b for b in SZ_BRANDS if _time.time() - float(done.get(b) or 0) > 30 * 86400]
+    if not due:
+        return
+    b = min(due, key=lambda x: float(done.get(x) or 0)); dom, kind = SZ_BRANDS[b]
+    st["szb_t"] = _time.time()
+    keys = ([f"{g}_{k}" for g in ("m", "f") for k in ("top", "bot")] if "c" in kind else []) + (["m_shoe", "f_shoe"] if "s" in kind else [])
+    prompt = (f"Знайди ОФІЦІЙНУ таблицю розмірів бренду {b} (сайт {dom}) і перенеси її в сантиметрах. Потрібні таблиці: {', '.join(keys)}. "
+              "Позначення: m_ — чоловіче, f_ — жіноче; top — верх (діапазон обхвату грудей, см), bot — низ (чоловіче: обхват талії, см; жіноче: обхват стегон, см), "
+              "shoe — взуття (довжина стопи, см). Для кожного рядка: s — розмір як на бирці бренду (напр. M, 40, W32, 42.5), eu — EU-розмір (якщо є), min і max — межі діапазону в см "
+              "(якщо в таблиці одне число — min = це число, max = наступне). Лише дані з офіційної таблиці бренду, нічого не вигадуй; якщо таблиці немає — порожній масив.\n"
+              'Відповідь — лише JSON: {"url": "адреса сторінки таблиці на ' + dom + '", ' + ", ".join(f'"{k}": [{{"s": "M", "eu": "48", "min": 96, "max": 104}}]' for k in keys) + "}")
+    GEM_STATE.pop("gr", None)
+    j = json_loose(gemini(prompt, max_tokens=3000, search=True)) or {}
+    out_b, n = {}, 0
+    for k in keys:
+        lo, hi = SZ_RANGE[k.split("_")[1]]
+        rows = []
+        for x in j.get(k) or []:
+            try:
+                mn, mx = float(x.get("min")), float(x.get("max"))
+            except (TypeError, ValueError):
+                continue
+            if lo <= mn < mx <= hi and mx - mn <= 20 and str(x.get("s") or "").strip():
+                rows.append({"s": str(x["s"]).strip()[:10], "eu": str(x.get("eu") or "").strip()[:8], "min": mn, "max": mx})
+        rows.sort(key=lambda x: x["min"])
+        if len(rows) >= 3 and all(rows[i]["min"] <= rows[i + 1]["min"] for i in range(len(rows) - 1)):
+            out_b[k] = rows; n += 1
+    if not n:
+        done[b] = _time.time() - 30 * 86400 + 3 * 86400   # не вийшло — повтор за 3 дні, у боті лишається стандарт
+        print(f"📏 Розміри «{b}»: офіційну таблицю не зчитано ({GEM_STATE.get('err') or 'немає даних'}) — повтор за 3 дні")
+        return
+    try:
+        old = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=sizes_brands.json") or {}
+    except Exception:
+        old = {}
+    allb = old.get("b") if isinstance(old.get("b"), dict) else {}
+    u = str(j.get("url") or "")
+    allb[b] = {**out_b, "url": u if dom in u else "", "at": now.strftime("%d.%m.%Y")}
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=sizes_brands.json", {"at": now.strftime("%d.%m.%Y %H:%M"), "b": allb})
+        done[b] = _time.time(); mark_upd(st, "📏 Розміри брендів", True, b)
+        print(f"📏 Розміри «{b}»: таблиць {n} з {len(keys)} ({', '.join(out_b)}) · джерел пошуку {GEM_STATE.get('gr', 0)} · брендів готово {len(allb)} з {len(SZ_BRANDS)}")
+    except Exception as e:
+        print(f"📏 Розміри → бот: {err_text(e)[:80]}")
+
+
 # ---------- 🧵 Про що говорять у Threads (укр. і рос. пости): раз на тиждень топ за темами (Apify), метрики, 🚀 швидкість, 💬 гарячі обговорення, архів 8 тижнів ----------
 THR_ACTOR = "futurizerush~threads-search-scraper"      # без логіну Threads; ~$4 за 1000 постів
 THR_CATS = {   # ключ: (назва, [слова: укр. + рос.]) — Threads шукає без прив'язки до країни: рос. слово приносить і рос.-мовні пости
@@ -9698,7 +9758,7 @@ def dec(s: str | None) -> list:
 
 GS_KEYS = ["upd", "silpo_last", "silpo_more", "silpo_stores", "yt_last", "smm_last", "fact", "fact_day", "fact_png", "emerg", "addr",
            "gh_beat", "kino_q", "kino_gq", "silpo_by", "kino_last",
-           "content_pool", "content_seen", "exp_pool", "exp_pool_seen", "para_articles", "kino_seen", "art_seen", "reddit_seen", "push"]   # матеріали 18+ з журналів тощо
+           "content_pool", "content_seen", "exp_pool", "exp_pool_seen", "para_articles", "kino_seen", "art_seen", "reddit_seen", "push", "gem_block", "thr_spend"]   # матеріали 18+ з журналів тощо
 
 
 def mark_upd(st: dict, name: str, ok: bool = True, note: str = "") -> None:
@@ -10428,6 +10488,7 @@ def main() -> None:
             try:
                 gtr_build(st, now)             # 🔥 тренди Google по Україні — кожні ~3 год
                 thr_build(st, now)             # 🧵 Threads UA (Apify) — раз на тиждень
+                sizes_build(st, now)           # 📏 офіційні таблиці розмірів брендів — 1 бренд за запуск, раз на місяць
             except Exception as e_:
                 print(f"🔥 Тренди Google: {err_text(e_)[:80]}")
         if budget_ok(110):
