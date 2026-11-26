@@ -41,7 +41,7 @@ SYNC_KEY = (os.environ.get("SYNC_KEY") or "").strip()
 # 🧪 Логи для адміна в боті (👑 Адмін → 🧪 Логи): рядки print() по темах — після запуску надсилаються в бот
 import builtins as _bi_
 DIAG_RX = {"pl": re.compile(r"^\W*(Плейлист|Deezer)"), "yt": re.compile(r"^\W*(YouTube|YT_)"),
-           "jobs": re.compile(r"^\W*(Вакансі|DOU|Djinni)"), "map": re.compile(r"^\W*(Мапа|Статистика світла)"), "ideas": re.compile(r"^\W*Ідеї"), "gtr": re.compile(r"^\W*Тренди Google"), "err": re.compile(r"Traceback|Error|❌|Помилка")}
+           "jobs": re.compile(r"^\W*(Вакансі|DOU|Djinni)"), "map": re.compile(r"^\W*(Мапа|Статистика світла)"), "ideas": re.compile(r"^\W*Ідеї"), "p18": re.compile(r"^\W*Поради 18\+"), "gtr": re.compile(r"^\W*Тренди Google"), "err": re.compile(r"Traceback|Error|❌|Помилка")}
 DIAG: dict = {}
 _diag_print_ = _bi_.print
 def _diag_tee_(*a, **k):
@@ -2217,6 +2217,13 @@ CONTENT_FEEDS = [
     ("Medium", "https://medium.com/feed/tag/intimacy", "experience", 21, True),
     ("Medium", "https://medium.com/feed/tag/sexuality", "experience", 21, True),
     ("Medium", "https://medium.com/feed/tag/relationships", "experience", 21, True),
+    ("Marie Claire", "https://www.marieclaire.com/rss/all.xml/", "article", 14, True),
+    ("Elle", "https://www.elle.com/rss/all.xml/", "article", 14, True),
+    ("Esquire", "https://www.esquire.com/rss/all.xml/", "article", 14, True),
+    ("Prevention", "https://www.prevention.com/rss/all.xml/", "article", 21, True),
+    ("Bustle", "https://www.bustle.com/rss", "article", 14, True),
+    ("Medium", "https://medium.com/feed/tag/sexual-wellness", "article", 30, True),
+    ("Medium", "https://medium.com/feed/tag/love-and-sex", "experience", 21, True),
 ]
 KIND_HEAD = {"tip": "💞 <b>ПОРАДА 18+</b>", "technique": "🔥 <b>ТЕХНІКА 18+</b>", "article": "📖 <b>СТАТТЯ 18+</b>",
              "review": "🧸 <b>ОГЛЯД 18+</b>", "experience": "💬 <b>ДОСВІД 18+</b>", "podcast": "🎙 <b>ПОДКАСТ 18+</b>",
@@ -2228,12 +2235,12 @@ def norm_title(t: str) -> str:
 
 
 def collect_content(st: dict, now: datetime) -> None:
-    """Раз на день: свіжі матеріали з усіх джерел → пул st["content_pool"] (без повторів і дублікатів)."""
+    """Кожні ~6 год: свіжі матеріали з усіх джерел → пул st["content_pool"] (до 200, без повторів; ще не показані старі — лишаються)."""
     import xml.etree.ElementTree as ET
     from email.utils import parsedate_to_datetime
-    if st.get("content_day") == now.date().isoformat():
+    if _time.time() - float(st.get("content_at") or 0) < 6 * 3600:
         return
-    st["content_day"] = now.date().isoformat()
+    st["content_at"] = _time.time()
     seen = set(st.get("content_seen", [])) | set(st.get("art_seen", [])) | set(st.get("exp_pool_seen", []))
     feeds = list(CONTENT_FEEDS) + [(n, u, "podcast", 21, True) for n, u in podcast_feeds(
         ["Sex Unwrapped", "sex relationships", "couples intimacy"])]
@@ -2262,7 +2269,8 @@ def collect_content(st: dict, now: datetime) -> None:
                         or (filt and not ARTICLE_WORDS.search(title + " " + text[:400]))):
                     continue
                 titles.add(nt)
-                pool.append({"src": src, "kind": kind, "title": title, "link": link, "age": age, "comments": 0, "text": text[:900]})
+                pool.append({"src": src, "kind": kind, "title": title, "link": link, "age": age, "comments": 0, "text": text[:900],
+                             "d": (now - timedelta(days=age)).strftime("%Y-%m-%d")})
                 continue
             title, link = (it.findtext("title") or "").strip(), (it.findtext("link") or "").strip()
             body = (it.findtext("{http://purl.org/rss/1.0/modules/content/}encoded") or it.findtext("description")
@@ -2280,10 +2288,19 @@ def collect_content(st: dict, now: datetime) -> None:
             com = it.findtext("{http://purl.org/rss/1.0/modules/slash/}comments") or "0"
             titles.add(nt)
             pool.append({"src": src.replace("🎙 ", ""), "kind": kind, "title": title, "link": link, "age": age,
-                         "comments": int(com) if str(com).isdigit() else 0, "text": text[:900]})
+                         "comments": int(com) if str(com).isdigit() else 0, "text": text[:900], "d": (now - timedelta(days=age)).strftime("%Y-%m-%d")})
+    n_new = len(pool)
+    links = {a["link"] for a in pool}
+    for a in st.get("content_pool") or []:            # ще не показані з минулих зборів — лишаються, поки свіжі (≤ 45 днів)
+        if a.get("d") and a["link"] not in links and a["link"] not in seen and norm_title(a["title"]) not in titles:
+            a_age = (now.date() - datetime.strptime(a["d"], "%Y-%m-%d").date()).days
+            if a_age <= 45:
+                pool.append({**a, "age": a_age}); links.add(a["link"]); titles.add(norm_title(a["title"]))
     pool.sort(key=lambda a: a["age"])
-    st["content_pool"] = pool[:120]
+    st["content_pool"] = pool[:200]
     mark_upd(st, "💞 Матеріали 18+ (журнали)", bool(pool), f"{len(pool)} шт.")
+    print(f"Поради 18+: джерел працює {len(set(ok))} з {len({f[0] for f in feeds})}, щойно знайдено {n_new}, у пулі {len(st['content_pool'])} "
+          f"(за 3 дні {sum(a['age'] <= 3 for a in pool)}, за тиждень {sum(a['age'] <= 7 for a in pool)})")
     print(f"Поради 18+: працюють {sorted(set(ok))}, у пулі {len(st['content_pool'])} "
           f"(статті {sum(a['kind'] == 'article' for a in pool)}, огляди {sum(a['kind'] == 'review' for a in pool)}, "
           f"досвід {sum(a['kind'] in ('experience', 'podcast') for a in pool)})")
@@ -2307,7 +2324,7 @@ def pick_content(pool: list, seen: set, last: dict) -> dict | None:
     if not cands:
         return None
     pref = [a for a in cands if a["kind"] != last.get("kind") and a["src"] != last.get("src")] or cands
-    weights = [(1 + min(a.get("comments", 0), 60) / 10) * (1.5 if a["age"] <= 7 else 1.0) * topic_weight(a) for a in pref]
+    weights = [(1 + min(a.get("comments", 0), 60) / 10) * (3.0 if a["age"] <= 3 else 2.0 if a["age"] <= 7 else 1.2 if a["age"] <= 14 else 0.7) * topic_weight(a) for a in pref]
     return random.choices(pref, weights=weights, k=1)[0]
 
 
@@ -7586,7 +7603,7 @@ def gq_build(st: dict, now: datetime) -> None:
         except Exception as e:
             st["gq_tr_off"] = _time.time()
             tr_note = f" · Trends: {err_text(e)[:60]} (пауза 3 дні)"
-    out = {"v": ver, "at": now.strftime("%d.%m.%Y"), "occ": occ[:1], "g": groups}
+    out = {"v": ver, "at": now.strftime("%d.%m.%Y %H:%M"), "occ": occ[:1], "g": groups}
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=ideas_gq.json", out)
         nf = sum(1 for g in groups.values() for e in g if e.get("v") == ver)
@@ -7710,7 +7727,7 @@ def ideas_build(st: dict, now: datetime) -> None:
         n_new += o is None
         fresh.append({**x, "id": job_h(kk)[:7], "a": (o or {}).get("a") or day, "s": day, "v": ver, "r": i})
     arch = sorted(by.values(), key=lambda x: x.get("s") or "", reverse=True)
-    out = {"k": k, "kind": kind, "name": name, "v": ver, "at": now.strftime("%d.%m.%Y"), "gr": GEM_STATE.get("gr", 0),
+    out = {"k": k, "kind": kind, "name": name, "v": ver, "at": now.strftime("%d.%m.%Y %H:%M"), "gr": GEM_STATE.get("gr", 0),
            "items": (fresh + arch)[:220]}
     try:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=ideas_{k}.json", out)
