@@ -41,7 +41,7 @@ SYNC_KEY = (os.environ.get("SYNC_KEY") or "").strip()
 # 🧪 Логи для адміна в боті (👑 Адмін → 🧪 Логи): рядки print() по темах — після запуску надсилаються в бот
 import builtins as _bi_
 DIAG_RX = {"pl": re.compile(r"^\W*(Плейлист|Deezer)"), "yt": re.compile(r"^\W*(YouTube|YT_)"),
-           "jobs": re.compile(r"^\W*(Вакансі|DOU|Djinni)"), "map": re.compile(r"^\W*(Мапа|Статистика світла)"), "ideas": re.compile(r"^\W*(Ідеї|Розміри)"), "p18": re.compile(r"^\W*Поради 18\+"), "gtr": re.compile(r"^\W*(Тренди Google|Threads)"), "err": re.compile(r"Traceback|Error|❌|Помилка")}
+           "jobs": re.compile(r"^\W*(Вакансі|DOU|Djinni)"), "map": re.compile(r"^\W*(Мапа|Статистика світла)"), "ideas": re.compile(r"^\W*(Ідеї|Розміри)"), "p18": re.compile(r"^\W*Поради 18\+"), "gtr": re.compile(r"^\W*(Тренди Google|Threads|Радар)"), "err": re.compile(r"Traceback|Error|❌|Помилка")}
 DIAG: dict = {}
 _diag_print_ = _bi_.print
 def _diag_tee_(*a, **k):
@@ -7638,14 +7638,88 @@ THR_CATS = {   # ключ: (назва, [слова: укр. + рос.]) — Thr
     "money": ("💰 Гроші й робота", ["зарплата", "работодатель"]), "life": ("🏠 Побут і сусіди", ["сусіди", "соседи"]),
     "sex": ("🔞 Секс та інтим", ["секс", "інтим", "член", "оргазм", "лібідо", "сексолог", "мастурбація"]),
 }
-THR_18 = {"sex"}                                       # показуємо лише тим, хто підтвердив 18+
-THR_EVERY, THR_POSTS, THR_MONTH_USD = 7 * 86400, 10, 4.8   # раз на тиждень · 10 топ-постів на слово · стеля витрат на місяць
+THR_18 = {"sex"}
+THR_DEF = {   # що саме належить до теми — для ШІ-класифікатора
+    "scan": "скандали, плітки, хайп, драми й конфлікти довкола людей, зірок, брендів",
+    "blog": "блогери й інфлюенсери, соцмережі, контент, підписники, тренди TikTok/Instagram/YouTube",
+    "rel": "романтичні стосунки й шлюб: побачення, кохання, сварки пари, ревнощі, зради, розлучення (НЕ секс як такий)",
+    "fam": "свекрухи, тещі, невістки, родичі, конфлікти з ріднею, сімейні традиції",
+    "kids": "діти, вагітність, декрет, виховання, садок і школа, материнство й батьківство",
+    "doc": "лікарі, медицина, здоровʼя, хвороби, аналізи, лікарні, стоматологи",
+    "beau": "краса й догляд: косметологи, манікюр, макіяж, шкіра, волосся, процедури",
+    "kino": "фільми, серіали, кіно, стрімінги, актори, прем'єри",
+    "money": "гроші, зарплати, робота, роботодавці, співбесіди, кредити, ціни, податки",
+    "life": "побут: сусіди, ремонт, квартира, оренда, комуналка, домашні справи",
+    "sex": "секс та інтим: близькість, бажання, оргазм, лібідо, техніки, сексуальне здоровʼя, тіло, відверті зізнання (тут — саме сексуальна тема)",
+}
+THR_RX = {k: re.compile(v, re.I) for k, v in {
+    "scan": r"скандал|плітк|сплетн|хайп|драм[аиу]|срач|розбірк|разборк|викрив|разоблач",
+    "blog": r"блогер|інфлюенс|инфлюенс|тікток|тикток|tiktok|інстаграм|инстаграм|instagram|ютуб|youtube|підписник|подписчик|рілс|reels|сторіс|сторис",
+    "rel": r"стосунк|отношен|хлопц|парн[яюеі]|бойфренд|кохан|любов|побачен|свидан|ревн|зрад|измен|розлуч|развод|шлюб|брак\b|весілл|свадьб|чоловік|муж\b|мужа|дружин|жена\b|жену",
+    "fam": r"свекр|теща|тещ|невістк|невестк|зят[ья]|родич|родственн|рідн[яі]|сват",
+    "kids": r"дитин|дитя|ребен|ребён|діт[иейям]|детей|дети|виховн|воспит|садочк|садик|школ|декрет|вагітн|беремен|немовл|младен|малюк|малыш",
+    "doc": r"лікар|врач|лікарн|больниц|аналіз|анализ|діагноз|диагноз|здоров|хвороб|болезн|таблетк|стоматолог|гінеколог|гинеколог|терапевт|педіатр|педиатр",
+    "beau": r"косметолог|манікюр|маникюр|макіяж|макияж|шкір[аиу]|кож[аиу]\b|волосс|волос|брів|бров|вій|ресниц|ботокс|філер|филлер|догляд|уход за",
+    "kino": r"серіал|сериал|фільм|фильм|кіно|кино|netflix|нетфлікс|нетфликс|megogo|мегого|прем.?єр|премьер|актор|актер|актрис|режисер|режиссер",
+    "money": r"зарплат|роботодав|работодат|співбесід|собеседов|ваканс|звільн|уволь|кредит|податк|налог|гроші|деньги|долар|доллар|офіс|офис|начальник|бос\b",
+    "life": r"сусід|сосед|ремонт|квартир|оренд|аренд|комуналк|коммунал|прибиран|уборк|побут|быт\b|під.?їзд|подъезд|ОСББ|осбб",
+    "sex": r"секс|інтим|интим|оргазм|лібідо|либидо|мастурб|збуджен|возбужд|прелюд|ерот|эрот|презерв|сексолог|кунілінг|куннилинг|мінет|минет|в ліжку|в постели|член(?!\w*\s+(?:партії|партии|сім|сем|команд|клуб|журі|жюри|ради|делегац|комісі|комисс|кабмін|кабмин|уряд|правит))",
+}.items()}
+THR_JUNK = re.compile(r"(промокод|розіграш|розыгрыш|giveaway|знижка \d|скидка \d|подписывайтесь|підписуйтесь|ставк[аи] на|казино|casino|переходь|переходи по ссылке|ссылка в профиле|посилання в профілі|заробіток|заработок онлайн|onlyfans|онліфанс)", re.I)
+
+
+def thr_classify(posts: list) -> dict:
+    """{url: тема | "none"} — ШІ визначає тему за змістом (не за словом пошуку); без ШІ — за ключовими словами в тексті."""
+    out = {}
+    if not gemini_out():
+        for i in range(0, len(posts), 60):
+            part = posts[i:i + 60]
+            lst = "\n".join(f"{j}. {p['t'][:280].replace(chr(10), ' ')}" for j, p in enumerate(part))
+            raw = gemini("Ти — модератор стрічки «Про що говорять в Україні». Для кожного поста Threads визнач ОДНУ тему за ЗМІСТОМ (не за окремим словом). Теми:\n" +
+                         "\n".join(f"{k} — {v}" for k, v in THR_DEF.items()) +
+                         "\nnone — реклама, розіграші, спам, політика й війна, беззмістовне або не підходить жодна тема.\n"
+                         "Секс — лише коли пост справді про сексуальне; стосунки без сексу — rel. Слово «член партії/сімʼї» — не секс.\n\n" + lst +
+                         '\n\nВідповідь — лише JSON: {"c": ["rel", "none", ...]} — рівно по одному коду на кожен пост, у тому ж порядку.',
+                         json_mode=True, relaxed=True, max_tokens=1200)
+            cs = (json_loose(raw) or {}).get("c") or []
+            for j, p in enumerate(part):
+                if j < len(cs) and (cs[j] in THR_DEF or cs[j] == "none"):
+                    out[p["u"]] = cs[j]
+    for p in posts:                                   # запасний шлях: тема з тексту поста (слово пошуку має підтверджуватись змістом)
+        if p["u"] in out:
+            continue
+        hits = [k for k, rx in THR_RX.items() if rx.search(p["t"])]
+        out[p["u"]] = p["k"] if p["k"] in hits else ("sex" if "sex" in hits else hits[0]) if hits else "none"
+    return out                                       # показуємо лише тим, хто підтвердив 18+
+THR_EVERY, THR_POSTS, THR_MONTH_USD = 14 * 86400, 10, 4.8   # Threads UA — раз на 2 тижні (бюджет ділимо з 🎯 Радаром болів)   # раз на тиждень · 10 топ-постів на слово · стеля витрат на місяць
 
 
 def thr_build(st: dict, now: datetime) -> None:
     if not (APIFY_TOKEN and SYNC_URL and SYNC_KEY):
         return
     tok = urllib.parse.quote(APIFY_TOKEN)
+    if st.get("thr_cls_v") != 1 and not st.get("thr_runs") and not gemini_out():   # 🎯 разово: перерозкласти вже зібраний тиждень за змістом (без нового збору й без витрат Apify)
+        try:
+            old = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=threads_ua.json") or {}
+            cur = old.get("cur") or {}
+            flat = [{**p, "k": p.get("k") or k} for k, cc in (cur.get("cats") or {}).items() for p in cc.get("p") or []]
+            if flat:
+                cls = thr_classify(flat)
+                newc = {k: [] for k in THR_CATS}
+                for p in flat:
+                    kk = cls.get(p["u"], "none")
+                    if kk in newc:
+                        p["k"] = kk; newc[kk].append(p)
+                for k in newc:
+                    newc[k].sort(key=lambda x: (x.get("old", 0), -x.get("rank", x.get("s", 0)))); newc[k] = newc[k][:20]
+                cur["cats"] = {k: {"p": v, "s": ((cur.get("cats") or {}).get(k) or {}).get("s", "") if len(v) else ""} for k, v in newc.items()}
+                old["cur"], old["names"] = cur, {k: v[0] for k, v in THR_CATS.items()}
+                http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=threads_ua.json", old)
+                print(f"🧵 Threads: перерозкладено за змістом {len(flat)} постів · відсіяно {sum(1 for p in flat if cls.get(p['u']) == 'none')} · " +
+                      ", ".join(f"{THR_CATS[k][0].split(' ', 1)[1]} {len(v)}" for k, v in newc.items()) + (" (ключові слова — ліміт Gemini)" if gemini_out() else " (ШІ)"))
+            st["thr_cls_v"] = 1
+        except Exception as e:
+            print(f"🧵 Threads: перерозкладання — {err_text(e)[:80]}")
     mon = now.strftime("%Y-%m")
     spend = st.get("thr_spend") if (st.get("thr_spend") or {}).get("m") == mon else {"m": mon, "usd": 0.0}
     runs = st.get("thr_runs") or []
@@ -7720,10 +7794,22 @@ def thr_build(st: dict, now: datetime) -> None:
         eng = lk + 3 * (rp + qt) + 2 * rc + vw / 100     # залученість: лайки, репости й цитати, коментарі, перегляди
         vel = eng / max(age_h, 3)                       # 🚀 швидкість набору (за годину)
         hot = rc >= 20 and rc >= 0.3 * (lk + 1)         # 💬 гаряче обговорення: багато коментарів відносно лайків
-        cats[k].append({"u": u, "a": str(it.get("username") or "")[:40], "t": str(it.get("text_content"))[:500], "d": dt,
+        if THR_JUNK.search(str(it.get("text_content"))):
+            continue                                   # реклама, розіграші, казино тощо
+        cats[k].append({"k": k, "u": u, "a": str(it.get("username") or "")[:40], "t": str(it.get("text_content"))[:500], "d": dt,
                         "l": lk, "r": rp, "c": rc, "q": qt, "v": vw, "f": n_(it.get("followers_count")),
                         "s": round(eng), "vel": round(vel, 1), "hot": int(hot), "old": int(age_h > 7 * 24),
                         "rank": round(eng * (1 + 24 / (age_h + 24)) * (1.3 if hot else 1))})
+    flat = [x for v in cats.values() for x in v]
+    cls = thr_classify(flat)                           # 🎯 тема за змістом поста (ШІ або ключові слова), а не за словом пошуку
+    n_moved = sum(1 for x in flat if cls.get(x["u"]) not in (x["k"], "none"))
+    n_drop = sum(1 for x in flat if cls.get(x["u"]) == "none")
+    cats = {k: [] for k in THR_CATS}
+    for x in flat:
+        kk = cls.get(x["u"], "none")
+        if kk in cats:
+            x["k"] = kk
+            cats[kk].append(x)
     for k, v in cats.items():
         if v:
             vs = sorted(x["vel"] for x in v); med = vs[len(vs) // 2] or 0.1
@@ -7750,9 +7836,156 @@ def thr_build(st: dict, now: datetime) -> None:
         http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=threads_ua.json", out)
         mark_upd(st, "🧵 Threads UA", True, f"{total} постів")
         print(f"🧵 Threads: постів {total} (від Apify {len(items)}) · 🚀 {sum(x['boom'] for v in cats.values() for x in v)} · 💬 гарячих {sum(x['hot'] for v in cats.values() for x in v)} · "
-              f"старших за тиждень {sum(x['old'] for v in cats.values() for x in v)} · " + ", ".join(f"{THR_CATS[k][0].split(' ', 1)[1]} {len(v)}" for k, v in cats.items()) + f" · підсумки ШІ {len(sums)}")
+              f"старших за тиждень {sum(x['old'] for v in cats.values() for x in v)} · перенесено в іншу тему {n_moved}, відсіяно {n_drop} · " + ", ".join(f"{THR_CATS[k][0].split(' ', 1)[1]} {len(v)}" for k, v in cats.items()) + f" · підсумки ШІ {len(sums)}")
     except Exception as e:
         print(f"🧵 Threads → бот: {err_text(e)[:80]}")
+
+
+# ---------- 🎯 Радар болів бʼюті-ніші (для SMM/таргетолога): Threads (Apify) + Reddit → ШІ-кластери болів, хуки, сценарії Reels; щотижня, архів 8 тижнів ----------
+RAD_KW_SETS = [   # два набори по 15 фраз — чергуються щотижня: охоплення 30 фраз за ціною 15
+    ["салон красоты клиенты", "мастер маникюра", "косметолог клиенты", "бровист", "наращивание ресниц", "парикмахер клиенты", "массажист клиенты",
+     "реклама салона", "таргетолог", "пустые окна", "владелец салона", "администратор салона", "поднять цены мастер", "клієнти салон", "майстер манікюру"],
+    ["клиенты не возвращаются", "запись клиентов", "инстаграм мастера", "рилсы для мастера", "демпинг мастеров", "аренда кресла", "мастера уходят",
+     "выгорание мастер", "отзывы клиентов салон", "лешмейкер", "визажист клиенты", "косметологія клієнти", "запис клієнтів", "реклама для майстра", "бʼюті бізнес"]]
+RAD_KW = RAD_KW_SETS[0]
+RAD_SUBS = ["salons", "Esthetics", "Nails", "hairstylist", "lashextensions", "Microblading", "massage", "smallbusiness"]
+RAD_NICHE = {"nails": "💅 Манікюр", "cosm": "💆 Косметологія", "hair": "✂️ Перукарі", "brows": "👁 Брови й вії", "massage": "🤲 Масаж", "owner": "🏢 Власники салонів", "all": "💄 Уся бʼюті"}
+RAD_EVERY = 7 * 86400
+
+
+def rad_build(st: dict, now: datetime) -> None:
+    if not (APIFY_TOKEN and SYNC_URL and SYNC_KEY):
+        return
+    tok = urllib.parse.quote(APIFY_TOKEN)
+    mon = now.strftime("%Y-%m")
+    spend = st.get("thr_spend") if (st.get("thr_spend") or {}).get("m") == mon else {"m": mon, "usd": 0.0}
+    runs = st.get("rad_runs") or []
+    if not runs:
+        if _time.time() - float(st.get("rad_at") or 0) < RAD_EVERY:
+            return
+        kws = RAD_KW_SETS[int(st.get("rad_set") or 0) % len(RAD_KW_SETS)]
+        est = len(kws) * 10 * 0.004
+        if spend["usd"] + est > THR_MONTH_USD:
+            if st.get("rad_note") != mon:
+                st["rad_note"] = mon; print(f"🎯 Радар: стеля ${THR_MONTH_USD}/міс — наступний збір у новому місяці")
+            return
+        try:
+            r = http_json(f"https://api.apify.com/v2/acts/{THR_ACTOR}/runs?token={tok}&maxTotalChargeUsd={est * 1.15:.2f}",
+                          {"keywords": kws[:20], "search_filter": "top", "max_posts": 10})
+            d = (r or {}).get("data") or {}
+            st["rad_runs"], st["rad_at"] = [{"id": d.get("id"), "ds": d.get("defaultDatasetId"), "t": _time.time()}], _time.time()
+            spend["usd"] = round(spend["usd"] + est, 2); st["thr_spend"] = spend
+            st["rad_set"] = int(st.get("rad_set") or 0) + 1
+            print(f"🎯 Радар болів: запущено збір (набір {(st['rad_set'] - 1) % len(RAD_KW_SETS) + 1} з {len(RAD_KW_SETS)}) — {len(kws)} фраз × 10 постів, ≈${est:.2f} (за місяць ≈${spend['usd']:.2f} з $5)")
+        except Exception as e:
+            st["rad_at"] = _time.time() - RAD_EVERY + 6 * 3600
+            print(f"🎯 Радар: не вдалося запустити Apify ({err_text(e)[:100]})")
+        return
+    run = runs[0]
+    try:
+        stt = ((http_json(f"https://api.apify.com/v2/actor-runs/{run['id']}?token={tok}") or {}).get("data") or {}).get("status")
+    except Exception as e:
+        print(f"🎯 Радар: статус недоступний ({err_text(e)[:60]})"); return
+    if stt in ("READY", "RUNNING") and _time.time() - float(run.get("t") or 0) < 3 * 3600:
+        return
+    if gemini_out():                                   # без ШІ кластери не зробити — дані в Apify зберігаються, заберемо після скидання ліміту
+        if st.get("rad_wait") != now.strftime("%Y-%m-%d"):
+            st["rad_wait"] = now.strftime("%Y-%m-%d"); print("🎯 Радар: дані зібрано, чекаю ліміт Gemini (~10:00) для аналізу")
+        return
+    st.pop("rad_runs", None)
+    try:
+        items = http_json(f"https://api.apify.com/v2/datasets/{run['ds']}/items?token={tok}&clean=true&format=json") or []
+    except Exception as e:
+        print(f"🎯 Радар: дані недоступні ({err_text(e)[:60]})"); return
+    nowu = datetime.now(timezone.utc)
+
+    def n_(x):
+        try:
+            return int(float(x or 0))
+        except (TypeError, ValueError):
+            return 0
+    posts, seen = [], set()
+    for it in items if isinstance(items, list) else []:
+        u, t = str(it.get("post_url") or ""), str(it.get("text_content") or "").strip()
+        if not u or not t or u in seen or THR_JUNK.search(t):
+            continue
+        seen.add(u)
+        try:
+            ca = datetime.fromisoformat(str(it.get("created_at")).replace("Z", "+00:00")); ca = ca if ca.tzinfo else ca.replace(tzinfo=timezone.utc)
+            age_h = max(1.0, (nowu - ca).total_seconds() / 3600)
+        except Exception:
+            age_h = 24 * 30.0
+        lk, rp, rc, qt = n_(it.get("like_count")), n_(it.get("repost_count")), n_(it.get("reply_count")), n_(it.get("quote_count"))
+        eng = lk + 3 * (rp + qt) + 2 * rc
+        posts.append({"src": "threads", "u": u, "a": str(it.get("username") or "")[:40], "t": t[:400], "l": lk, "c": rc, "r": rp + qt, "s": eng,
+                      "vel": round(eng / max(age_h, 3), 1), "ua": int(bool(re.search(r"[іїєґ]", t.lower()))), "old": int(age_h > 14 * 24)})
+    n_th, rd_note = len(posts), ""
+    try:                                               # Reddit: англомовні болі США/Європи (якщо пускає)
+        rtok = reddit_token() if REDDIT_ID else None
+        for sub in RAD_SUBS:
+            url = f"https://oauth.reddit.com/r/{sub}/top?t=week&limit=15&raw_json=1" if rtok else f"https://www.reddit.com/r/{sub}/top.json?t=week&limit=15&raw_json=1"
+            lst = reddit_api(url, rtok) if rtok else http_json(url, headers={"User-Agent": "Mozilla/5.0 (beauty-radar)"})
+            for ch in ((lst or {}).get("data") or {}).get("children", []):
+                d = ch.get("data") or {}
+                t = (str(d.get("title") or "") + ". " + str(d.get("selftext") or ""))[:400]
+                if d.get("stickied") or THR_JUNK.search(t):
+                    continue
+                posts.append({"src": "reddit", "u": "https://www.reddit.com" + str(d.get("permalink") or ""), "a": "r/" + sub, "t": t, "l": n_(d.get("ups")), "c": n_(d.get("num_comments")),
+                              "r": 0, "s": n_(d.get("ups")) + 2 * n_(d.get("num_comments")), "vel": 0, "ua": 0, "old": 0})
+            _time.sleep(1)
+    except Exception as e:
+        rd_note = f" · Reddit недоступний ({err_text(e)[:40]})"
+    if len(posts) < 10:
+        print(f"🎯 Радар: замало постів ({len(posts)}){rd_note} — повтор за 6 год"); st["rad_at"] = _time.time() - RAD_EVERY + 6 * 3600; return
+    n_rd = sum(p["src"] == "reddit" for p in posts)
+    posts.sort(key=lambda p: -p["s"])
+    posts = posts[:160]
+    lst = "\n".join(f"{i}. [{p['src']}] {p['t'][:230].replace(chr(10), ' ')}" for i, p in enumerate(posts))
+    raw = gemini("Ти — стратег контенту для таргетолога, який продає рекламу салонам краси й бʼюті-майстрам (Україна, діаспора в США і Європі). "
+                 "Ось найпопулярніші за тиждень пости з Threads і Reddit (рос./укр./англ.). Виділи до 10 КЛАСТЕРІВ БОЛЕЙ, що зараз найбільше хвилюють власників салонів і майстрів "
+                 "(клієнти й запис, реклама й таргет, ціни, персонал, контент і охоплення, конкуренція, вигорання тощо). Реклама курсів, спам і пости не про бʼюті-бізнес — ігноруй.\n"
+                 "Для кожного кластера українською: title — коротка назва болю; niche — nails|cosm|hair|brows|massage|owner|all; ids — номери постів; "
+                 "quotes — 2–3 короткі цитати-перекази того, що пишуть люди; hooks — 3 хуки для перших 2 секунд Reels; script — сценарій Reels 20–30 с у 4–5 кроках "
+                 "(біль → помилка → рішення → кейс/доказ → заклик); carousel — ідея каруселі (5–7 слайдів одним рядком); sell — як через цю тему продати послуги таргетолога (1 речення).\n\n"
+                 + lst + '\n\nВідповідь — лише JSON: {"clusters":[{"title":"","niche":"","ids":[],"quotes":[],"hooks":[],"script":[],"carousel":"","sell":""}]}',
+                 json_mode=True, relaxed=True, max_tokens=7000)
+    cls = (json_loose(raw) or {}).get("clusters") or []
+    out_c = []
+    for c in cls:
+        ids = [i for i in (c.get("ids") or []) if isinstance(i, int) and 0 <= i < len(posts)]
+        if not ids or not str(c.get("title") or "").strip():
+            continue
+        ps = sorted((posts[i] for i in ids), key=lambda p: -p["s"])
+        out_c.append({"t": str(c["title"])[:80], "n": c.get("niche") if c.get("niche") in RAD_NICHE else "all", "cnt": len(ps),
+                      "l": sum(p["l"] for p in ps), "c": sum(p["c"] for p in ps), "ua": sum(p["ua"] for p in ps), "rd": sum(p["src"] == "reddit" for p in ps),
+                      "boom": int(any(p["vel"] >= 50 for p in ps)), "hot": int(sum(p["c"] for p in ps) >= 0.3 * (sum(p["l"] for p in ps) + 1) and sum(p["c"] for p in ps) >= 50),
+                      "top": [{k: p[k] for k in ("u", "a", "t", "l", "c", "src")} for p in ps[:5]],
+                      "q": [str(x)[:200] for x in (c.get("quotes") or [])][:3], "h": [str(x)[:160] for x in (c.get("hooks") or [])][:3],
+                      "sc": [str(x)[:220] for x in (c.get("script") or [])][:6], "car": str(c.get("carousel") or "")[:400], "sell": str(c.get("sell") or "")[:250],
+                      "score": sum(p["s"] for p in ps)})
+    if not out_c:
+        print(f"🎯 Радар: ШІ не виділив кластерів ({GEM_STATE.get('err') or 'порожня відповідь'}) — повтор за 6 год"); st["rad_at"] = _time.time() - RAD_EVERY + 6 * 3600; return
+    out_c.sort(key=lambda c: -c["score"])
+    try:
+        old = http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=beauty_radar.json") or {}
+    except Exception:
+        old = {}
+    prev_t = {idea_key(c["t"]) for c in ((old.get("cur") or {}).get("cl") or [])}
+    for c in out_c:
+        c["new"] = int(bool(prev_t) and idea_key(c["t"]) not in prev_t)
+    wk = {"at": now.strftime("%d.%m.%Y %H:%M"), "from": (now - timedelta(days=7)).strftime("%d.%m"), "to": now.strftime("%d.%m"), "cl": out_c}
+    hist = ([old["cur"]] if isinstance(old.get("cur"), dict) else []) + (old.get("hist") or [])
+    try:
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=beauty_radar.json", {"names": RAD_NICHE, "cur": wk, "hist": hist[:8]})
+        mark_upd(st, "🎯 Радар болів бʼюті", True, f"{len(out_c)} болів")
+        top_ = "\n".join(f"{i + 1}. {'🚀 ' if c['boom'] else ''}{'💬🔥 ' if c['hot'] else ''}<b>{html.escape(c['t'])}</b> · {RAD_NICHE.get(c['n'], '').split(' ')[0]} {c['cnt']} постів"
+                          + (f"\n   🎬 <i>{html.escape(c['h'][0])}</i>" if c.get("h") else "") for i, c in enumerate(out_c[:5]))
+        txt_ = (f"🎯 <b>Радар болів бʼюті</b> · {wk['from']}–{wk['to']}\nЩо цього тижня найбільше хвилює салони й майстрів:\n\n{top_}\n\n"
+                "Сценарії Reels, карусель і як продати таргет — у картці кожного болю.")
+        st["radar_msg"] = [txt_ + "\n👇", txt_ + "\n📈 SMM і таргет → 🎯 Радар болів: бʼюті"]
+        print(f"🎯 Радар болів: кластерів {len(out_c)} · постів Threads {n_th}, Reddit {n_rd}{rd_note} · " + "; ".join(c["t"] for c in out_c[:5]))
+    except Exception as e:
+        print(f"🎯 Радар → бот: {err_text(e)[:80]}")
 
 
 # ---------- 📈 Що шукають у Google (подарунки): підказки пошуку Google = реальні популярні запити; 🚀 ріст — Google Trends (якщо пускає) ----------
@@ -10487,10 +10720,22 @@ def main() -> None:
         if budget_ok(110):
             try:
                 gtr_build(st, now)             # 🔥 тренди Google по Україні — кожні ~3 год
-                thr_build(st, now)             # 🧵 Threads UA (Apify) — раз на тиждень
+                thr_build(st, now)             # 🧵 Threads UA (Apify) — раз на 2 тижні
+            except Exception as e_:
+                print(f"🔥 Тренди Google / 🧵 Threads: {err_text(e_)[:80]}")
+        if budget_ok(110):
+            try:
+                rad_build(st, now)             # 🎯 Радар болів бʼюті (Apify + Reddit + ШІ) — щотижня
+                rm_ = st.pop("radar_msg", None)
+                if rm_:                                # 📬 розсилка — у свій день і час кожного (⚙️; основним — пн 13:00)
+                    topic_msgs.append(("radar", rm_[0], {"inline_keyboard": [[{"text": "🎯 Відкрити радар", "callback_data": "rad:h:0:"}]]}, rm_[1]))
+            except Exception as e_:
+                print(f"🎯 Радар: {err_text(e_)[:80]}")
+        if budget_ok(110):
+            try:
                 sizes_build(st, now)           # 📏 офіційні таблиці розмірів брендів — 1 бренд за запуск, раз на місяць
             except Exception as e_:
-                print(f"🔥 Тренди Google: {err_text(e_)[:80]}")
+                print(f"📏 Розміри: {err_text(e_)[:80]}")
         if budget_ok(110):
             try:
                 gq_build(st, now)              # 📈 що шукають у Google (подарунки) — раз на 2 доби
@@ -10688,6 +10933,11 @@ def main() -> None:
         st.pop("smm_last", None)
         st.pop("smm_pool", None)
         st["smm_ver"] = 4
+    if worker_req.get("rad"):                         # 👑 «🎯 Зібрати Радар зараз»
+        if not st.get("rad_runs"):
+            st["rad_at"] = 0
+        for c in worker_req["rad"]:
+            direct_m.append((str(c), "🎯 Радар болів: запускаю збір у цьому проході (аналіз ШІ — коли є ліміт Gemini)", None))
     if worker_req.get("thr"):                         # 👑 «🧵 Зібрати Threads зараз» — поза тижневим розкладом
         if not st.get("thr_runs"):
             st["thr_at"] = 0
@@ -10880,8 +11130,8 @@ def main() -> None:
                            "aud": [str(c) for c in audience(topic)]}   # лише ті, хто був підписаний на момент підбірки (новим — не надсилаємо старе)
         else:
             jobs += [(cid, text, mk) if cid in family else (cid, plain, None) for cid in audience(topic)]
-    DEF_H = {"kino": 11, "yt": 11, "smm": 13, "silpo": 13}
-    DEF_D = {"kino": [KINO_WEEKDAY], "yt": [0], "smm": [SMM_WEEKDAY], "silpo": [SILPO_WEEKDAY]}   # день виходу; у ⚙️ кожен обирає свої дні
+    DEF_H = {"kino": 11, "yt": 11, "smm": 13, "silpo": 13, "radar": 13}
+    DEF_D = {"kino": [KINO_WEEKDAY], "yt": [0], "smm": [SMM_WEEKDAY], "silpo": [SILPO_WEEKDAY], "radar": [0]}   # день виходу; у ⚙️ кожен обирає свої дні
     for topic, pd in list(pend.items()):
         if datetime.fromisoformat(pd["exp"]) < now:
             del pend[topic]
