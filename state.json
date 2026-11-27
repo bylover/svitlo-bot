@@ -760,7 +760,7 @@
   "m1054867",
   "m290098"
  ],
- "gh_beat": "2026-11-27T11:50:51.968875+02:00",
+ "gh_beat": "2026-11-27T11:55:49.627827+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -771,11 +771,11 @@
   "groups": [
    "GPV3.1"
   ],
-  "updated": "11:35 27.11.2026",
+  "updated": "11:47 27.11.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-27T11:42:57.942900+02:00",
+  "checked": "2026-11-27T11:53:04.623735+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": false
@@ -974,13 +974,33 @@
  "content_day": "2026-11-26",
  "content_pool": [
   {
-   "src": "Cosmopolitan",
-   "kind": "article",
-   "title": "50 Percent of People In Relationships Would Take a Trip Together to Solve Their Problems",
-   "link": "https://www.cosmopolitan.com/relationships/a74468771/relationship-trip-conflict-resolution/",
+   "src": "Mashable",
+   "kind": "review",
+   "title": "25 Black Friday deals under $25 thatll help save you some cash",
+   "link": "https://mashable.com/tech/black-friday-best-deals-under-25-2026",
    "age": 0,
    "comments": 0,
-   "text": "Should you book a trip just to argue?",
+   "text": "The best early Black Friday deals under $25: best Amazon device deal Amazon Fire TV Stick 4K $19.99 (save $40) Get Deal best apple deal Apple AirTag (2nd gen) $18 (save $11) Get Deal best toy deal Play-Doh Blooms Wildflower Petite Flower Bouquet $17.99 (save $7) Get Deal best home deal Blink Mini 2K+ $15.99 (save $34) Get Deal Working with a smaller budget this holiday season? You don't need to spend hundreds of dollars to pick up a great gift for White Elephant or treat yourself to something awesome. Believe it or not, you can grab plenty of deals for less than $25 during Black Friday sales. There are already lots of inexpensive items available, so there's no need to wait until Black Friday proper to start shopping. To point you in the right direction, we've rounded up some of our favorite deals we've spotted so far. We'll be keeping an eye on all the best deals throughout Black Friday ",
+   "d": "2026-11-27"
+  },
+  {
+   "src": "Medium",
+   "kind": "article",
+   "title": "What Makes Two People Feel in Sync During Sex?",
+   "link": "https://medium.com/@chloeshchung/what-makes-two-people-feel-in-sync-during-sex-855ee5918b8d?source=rss------sex_education-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Wave one hand in the air and you won’t hear a clap. It takes another hand meeting yours to make that sound. I think emotions work much the… Continue reading on Medium »",
+   "d": "2026-11-27"
+  },
+  {
+   "src": "Medium",
+   "kind": "article",
+   "title": "What Medical School Never Taught Me About Sex",
+   "link": "https://medium.com/@chloeshchung/what-medical-school-never-taught-me-about-sex-c854715e69cd?source=rss------sex_education-5",
+   "age": 0,
+   "comments": 0,
+   "text": "The truth is, doctors don’t know much about sexology either. Continue reading on Medium »",
    "d": "2026-11-27"
   },
   {
@@ -1034,33 +1054,53 @@
    "d": "2026-11-27"
   },
   {
-   "src": "Medium",
-   "kind": "review",
-   "title": "Vibrating Rings and Couple Toys for a Stronger, Closer Bedroom Connection",
-   "link": "https://medium.com/@imkinkysextoys/vibrating-rings-and-couple-toys-for-a-stronger-closer-bedroom-connection-750d1a7136dd?source=rss------sex_toys-5",
+   "src": "Allure",
+   "kind": "article",
+   "title": "9 Best Electric Toothbrushes & Oral Care Gadgets 2026: Shop Our Favorites",
+   "link": "https://www.allure.com/story/best-electric-toothbrushes-oral-care",
    "age": 0,
    "comments": 0,
-   "text": "In the world of intimate wellness, couple toys have become one of the most loved categories among adults who want more closeness, fun, and… Continue reading on Medium »",
+   "text": "Give your analog the boot.",
    "d": "2026-11-27"
   },
   {
    "src": "Medium",
    "kind": "experience",
-   "title": "I Found My Wife’s Secret Erotic Journal and Hired Four Hung Strangers to Fuck Her on Her Fortieth…",
-   "link": "https://medium.com/creative-touch/i-found-my-wifes-secret-erotic-journal-and-hired-four-hung-strangers-to-fuck-her-on-her-fortieth-3f5d5cc13cd1?source=rss------sex-5",
+   "title": "Mental Health & Relationships",
+   "link": "https://medium.com/write-your-world/mental-health-relationships-513baa774ff3?source=rss------sex-5",
    "age": 0,
    "comments": 0,
-   "text": "Life has been pretty good for me, Mark, over the twenty years I have been happily married to my wife, Claire. At forty-one years old, I… Continue reading on Erotic Desires »",
+   "text": "How Stress and Mental Health Influence Intimacy Continue reading on Write Your World »",
    "d": "2026-11-27"
   },
   {
    "src": "Medium",
    "kind": "experience",
-   "title": "The Oral Sex Surprises Nobody Warns Men About — Especially After 60",
-   "link": "https://medium.com/@fazlerabi28/the-oral-sex-surprises-nobody-warns-men-about-especially-after-60-4f0dec8cce38?source=rss------sex-5",
+   "title": "Confessions of a Man in a Dead Bedroom #3",
+   "link": "https://medium.com/@rosecoach97/confessions-of-a-man-in-a-dead-bedroom-3-31a219b11eb8?source=rss------sex-5",
    "age": 0,
    "comments": 0,
-   "text": "After years without intimacy, many older men discover that the experience is not simply about technique. It can involve unexpected… Continue reading on Medium »",
+   "text": "I Wanted to Ask About Tonight Continue reading on Medium »",
+   "d": "2026-11-27"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "How to Choose Safe and Quality Sex Toys in Goa — Adultpassion.in",
+   "link": "https://medium.com/@adp.india25/how-to-choose-safe-and-quality-sex-toys-in-goa-adultpassion-in-7a32a0aba86f?source=rss------intimacy-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Choosing sex toys in Goa is about more than picking what looks appealing. Product quality and personal comfort directly affect your safety… Continue reading on Medium »",
+   "d": "2026-11-27"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "Why Indian Men Struggle to Talk About Sex — And What It Costs Them",
+   "link": "https://medium.com/@aarohiroy6363/why-indian-men-struggle-to-talk-about-sex-and-what-it-costs-them-ed8886504def?source=rss------intimacy-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Last month my group chat argued for two hours about a run-out. Nine men, screenshots, slow-motion replays, genuine moral outrage. Then… Continue reading on Medium »",
    "d": "2026-11-27"
   },
   {
@@ -1106,6 +1146,96 @@
   {
    "src": "Medium",
    "kind": "experience",
+   "title": "Fuck Me Like You Still Want Me.",
+   "link": "https://medium.com/all-about-aex/fuck-me-like-you-still-want-me-777a122a589a?source=rss------sexuality-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Being loved is beautiful. Being unwanted by someone who loves you is fucking brutal. Continue reading on All About Sex »",
+   "d": "2026-11-27"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "“Men Don’t Need Women Anymore?” The Forgotten Igbo Wisdom About Love, Power, and Partnership",
+   "link": "https://medium.com/@okemmadueric/men-dont-need-women-anymore-the-forgotten-igbo-wisdom-about-love-power-and-partnership-f5f912fa0fdb?source=rss------relationships-5",
+   "age": 0,
+   "comments": 0,
+   "text": "When love becomes a marketplace, everyone learns to negotiate, but few remember how to build a home. Continue reading on Medium »",
+   "d": "2026-11-27"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "How do people find hookups in Ireland in 2026?",
+   "link": "https://medium.com/@samueloluka310/how-do-people-find-hookups-in-ireland-in-2026-3d48c482a191?source=rss------relationships-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Search for hookups in Ireland and Google shows you camping sites with electric hook-ups, a domain name for sale and a couple of dating… Continue reading on Medium »",
+   "d": "2026-11-27"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "Thoughts on Marriage & Relationship",
+   "link": "https://medium.com/@astrologylover/thoughts-on-marriage-relationship-ded9a305ca1a?source=rss------relationships-5",
+   "age": 0,
+   "comments": 0,
+   "text": "One of the areas that I consult actively is relationships and marriages. Continue reading on Medium »",
+   "d": "2026-11-27"
+  },
+  {
+   "src": "Bustle",
+   "kind": "article",
+   "title": "Score Up To 70% Off Sizzling Intimates & Cozy Loungewear From Savage X Fenty",
+   "link": "https://www.bustle.com/shopping/savage-x-fenty-holiday-sale",
+   "age": 0,
+   "comments": 0,
+   "text": "With the temperature plunging (and, depending where you are, climbing then plunging, again), the temptation to hole up indoors until spring is stronger than ever right now. But, honestly, what better time for Savage X Fenty to bless us with its holiday sale, where New Rewards Members have a chance to score up to 70% off on some of the most sizzling hot offerings from the iconic brand (in addition to unlocking access to other year-round exclusive perks). Savage X Fenty Holiday Sale Ahead, you’ll find some of our current favorite pieces from the sale, ranging from lacy balconette bras that leave just enough to the imagination to buttery soft briefs in festive prints and cozy two-piece PJ sets that’ll have you wanting to spend the day in bed (alone or with company). And of course, true to the brand’s vision, everything is designed and sized for all different bodies, which is probably the se",
+   "d": "2026-11-27"
+  },
+  {
+   "src": "Bustle",
+   "kind": "article",
+   "title": "Why I Miss The Chaos Of 2000s Black Friday. Sort Of.",
+   "link": "https://www.bustle.com/style/2000s-mall-black-friday-nostalgia",
+   "age": 0,
+   "comments": 0,
+   "text": "Nick David / Getty Images There’s a particularly poignant line in Taylor Swift’s catalog that scratches my brain every time I hear it. It’s off her Evermore track “Coney Island,” where she likens a failed relationship to “the mall before the internet,” calling it “the one place to be.” It’s one of those lines I’ll always restart the song for. The lyric evokes such vivid memories. While some people conjure up an ex when they hear it, I picture the mall itself. Because I miss it. Like, genuinely, embarrassingly, more than I miss some people I’ve dated. My longing for the mall becomes even stronger during the holidays. When red cup season returns and TikTok-certified gift guides hit the FYP, I’m reminded of what we lost: clipping and circling newspaper inserts for deals, lining up before dawn for the latest, hottest thing, and arguing with your cousins over who gets it if there’s only one l",
+   "d": "2026-11-27"
+  },
+  {
+   "src": "Sex and Psychology",
+   "kind": "article",
+   "title": "After the Orgasm: The Science of Affection, Gratitude, and Connection",
+   "link": "https://www.sexandpsychology.com/blog/2026/11/26/after-the-orgasm-the-science-of-affection-gratitude-and-connection/",
+   "age": 0,
+   "comments": 0,
+   "text": "When we talk about sex, much of the conversation revolves around what happens before and during it: building anticipation, exploring pleasure, and, of course, reaching orgasm. But there’s another part of the sexual experience that often gets overlooked: what happens afterward. While orgasm is often treated as the grand finale, the moments that follow can be just as meaningful. From cuddling and affectionate gestures to expressions of gratitude and emotional reassurance, what happens after sex may play an important role in how we connect with our partners. In fact, research suggests that the benefits of sex can extend well beyond the physical experience itself, potentially contributing to broader feelings of satisfaction in a relationship. So, what makes those moments after sex so important? Let’s explore what science has to say about affection, gratitude, and the connections we build bey",
+   "d": "2026-11-27"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "I Found My Wife’s Secret Erotic Journal and Hired Four Hung Strangers to Fuck Her on Her Fortieth…",
+   "link": "https://medium.com/creative-touch/i-found-my-wifes-secret-erotic-journal-and-hired-four-hung-strangers-to-fuck-her-on-her-fortieth-3f5d5cc13cd1?source=rss------sex-5",
+   "age": 0,
+   "comments": 0,
+   "text": "Life has been pretty good for me, Mark, over the twenty years I have been happily married to my wife, Claire. At forty-one years old, I… Continue reading on Erotic Desires »",
+   "d": "2026-11-27"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
+   "title": "The Oral Sex Surprises Nobody Warns Men About — Especially After 60",
+   "link": "https://medium.com/@fazlerabi28/the-oral-sex-surprises-nobody-warns-men-about-especially-after-60-4f0dec8cce38?source=rss------sex-5",
+   "age": 0,
+   "comments": 0,
+   "text": "After years without intimacy, many older men discover that the experience is not simply about technique. It can involve unexpected… Continue reading on Medium »",
+   "d": "2026-11-27"
+  },
+  {
+   "src": "Medium",
+   "kind": "experience",
    "title": "She Locked Us in the Steam and Sat All the Way Down",
    "link": "https://medium.com/creative-touch/she-locked-us-in-the-steam-and-sat-all-the-way-down-41eab25f7db6?source=rss------sexuality-5",
    "age": 0,
@@ -1144,46 +1274,6 @@
    "d": "2026-11-27"
   },
   {
-   "src": "Bustle",
-   "kind": "article",
-   "title": "Score Up To 70% Off Sizzling Intimates & Cozy Loungewear From Savage X Fenty",
-   "link": "https://www.bustle.com/shopping/savage-x-fenty-holiday-sale",
-   "age": 0,
-   "comments": 0,
-   "text": "With the temperature plunging (and, depending where you are, climbing then plunging, again), the temptation to hole up indoors until spring is stronger than ever right now. But, honestly, what better time for Savage X Fenty to bless us with its holiday sale, where New Rewards Members have a chance to score up to 70% off on some of the most sizzling hot offerings from the iconic brand (in addition to unlocking access to other year-round exclusive perks). Savage X Fenty Holiday Sale Ahead, you’ll find some of our current favorite pieces from the sale, ranging from lacy balconette bras that leave just enough to the imagination to buttery soft briefs in festive prints and cozy two-piece PJ sets that’ll have you wanting to spend the day in bed (alone or with company). And of course, true to the brand’s vision, everything is designed and sized for all different bodies, which is probably the se",
-   "d": "2026-11-27"
-  },
-  {
-   "src": "Bustle",
-   "kind": "article",
-   "title": "Under The Radar Black Friday Deals You Don't Want To Miss",
-   "link": "https://www.bustle.com/shopping/under-the-radar-black-friday-deals-you-dont-want-to-miss",
-   "age": 0,
-   "comments": 0,
-   "text": "Black Friday is practically its own micro-season now, which means there are already some excellent under-the-radar deals you'll want to know about. Whether you're buying a gift for yourself—like one of Lelo's award-winning sex toys—or are looking to make a big home upgrade with new bedding or a sleep-tracking alarm clock, this is the best time of year to make a big purchase. Our team of shopping experts is constantly on the lookout for the deepest discounts and most exciting scores of the sale, so check back often to see what new steals we've found for you. A Bra That Makes You Look Like The Season’s Most-Anticipated Gift Adore Me Signature Bow Unlined Cupless Bra Adore Me - Who doesn’t want to be unwrapped like a present on Christmas morning (or better yet, Christmas Eve?). This bra from Adore Me has an unlined, cupless design that makes it both sexy and comfortable, and the bow tie fro",
-   "d": "2026-11-27"
-  },
-  {
-   "src": "Bustle",
-   "kind": "article",
-   "title": "Why I Miss The Chaos Of 2000s Black Friday. Sort Of.",
-   "link": "https://www.bustle.com/style/2000s-mall-black-friday-nostalgia",
-   "age": 0,
-   "comments": 0,
-   "text": "Nick David / Getty Images There’s a particularly poignant line in Taylor Swift’s catalog that scratches my brain every time I hear it. It’s off her Evermore track “Coney Island,” where she likens a failed relationship to “the mall before the internet,” calling it “the one place to be.” It’s one of those lines I’ll always restart the song for. The lyric evokes such vivid memories. While some people conjure up an ex when they hear it, I picture the mall itself. Because I miss it. Like, genuinely, embarrassingly, more than I miss some people I’ve dated. My longing for the mall becomes even stronger during the holidays. When red cup season returns and TikTok-certified gift guides hit the FYP, I’m reminded of what we lost: clipping and circling newspaper inserts for deals, lining up before dawn for the latest, hottest thing, and arguing with your cousins over who gets it if there’s only one l",
-   "d": "2026-11-27"
-  },
-  {
-   "src": "Sex and Psychology",
-   "kind": "article",
-   "title": "After the Orgasm: The Science of Affection, Gratitude, and Connection",
-   "link": "https://www.sexandpsychology.com/blog/2026/11/26/after-the-orgasm-the-science-of-affection-gratitude-and-connection/",
-   "age": 0,
-   "comments": 0,
-   "text": "When we talk about sex, much of the conversation revolves around what happens before and during it: building anticipation, exploring pleasure, and, of course, reaching orgasm. But there’s another part of the sexual experience that often gets overlooked: what happens afterward. While orgasm is often treated as the grand finale, the moments that follow can be just as meaningful. From cuddling and affectionate gestures to expressions of gratitude and emotional reassurance, what happens after sex may play an important role in how we connect with our partners. In fact, research suggests that the benefits of sex can extend well beyond the physical experience itself, potentially contributing to broader feelings of satisfaction in a relationship. So, what makes those moments after sex so important? Let’s explore what science has to say about affection, gratitude, and the connections we build bey",
-   "d": "2026-11-27"
-  },
-  {
    "src": "Cosmopolitan",
    "kind": "article",
    "title": "Your Sexual Boundaries Aren't Up for Debate, Even in BDSM",
@@ -1216,16 +1306,6 @@
   {
    "src": "Cosmopolitan",
    "kind": "article",
-   "title": "Couples Need to Stop Being So Weird About GTA 6",
-   "link": "https://www.cosmopolitan.com/relationships/a74506703/gta-6-couples-discourse/",
-   "age": 1,
-   "comments": 0,
-   "text": "Just play the game!",
-   "d": "2026-11-26"
-  },
-  {
-   "src": "Cosmopolitan",
-   "kind": "article",
    "title": "Julianne Hough Wears Revenge Dress on ‘DWTS’ Amid Breaking Up With Boyfriend One Day After Relationship Was Revealed",
    "link": "https://www.cosmopolitan.com/entertainment/celebs/a74530316/julianne-hough-revenge-dress-dwts-breakup/",
    "age": 1,
@@ -1244,16 +1324,6 @@
    "d": "2026-11-26"
   },
   {
-   "src": "Men's Health",
-   "kind": "article",
-   "title": "The 7 Best Sex Toys for Men, According to Real Guys and Sex Experts",
-   "link": "https://www.menshealth.com/sex-women/g63743022/best-sex-toys-for-men/",
-   "age": 1,
-   "comments": 0,
-   "text": "Our top choice feels even better than a BJ.",
-   "d": "2026-11-26"
-  },
-  {
    "src": "Hey Epiphora",
    "kind": "review",
    "title": "Best sex toy deals for Black Friday + Cyber Monday! (2026)",
@@ -1261,6 +1331,16 @@
    "age": 1,
    "comments": 0,
    "text": "GOBBLE GOBBLE, peeps. This is it: my annual list of the best sex toy deals for Black Friday and Cyber Monday! If you've been waiting to buy the vibrator, dildo, or butt plug of your dreams, I suggest getting it now. Discounts like these don't happen on such a grand, sweeping scale at any other time of the year. Best of all? You can stay in your pajamas! In fact, I ENCOURAGE IT! To keep you abreast , I even have a detailed list of the lowest prices on my all-time favorite toys . How to buy a toy for someone else (or yourself) Need guidance? Check out my freshly-updated sex toy gift-giving guide, now with new toys and new pearls of wisdom, such as if it looks like something you'd see in an ad on Pornhub, avoid it. Read the guide → Table o' contents Click to jump to the corresponding section. SheVibe -- up to 25% off everything Peepshow Toys -- up to 30% off my faves + up to 25% off everyth",
+   "d": "2026-11-26"
+  },
+  {
+   "src": "Medium",
+   "kind": "review",
+   "title": "Vibrating Rings and Couple Toys for a Stronger, Closer Bedroom Connection",
+   "link": "https://medium.com/@imkinkysextoys/vibrating-rings-and-couple-toys-for-a-stronger-closer-bedroom-connection-750d1a7136dd?source=rss------sex_toys-5",
+   "age": 1,
+   "comments": 0,
+   "text": "In the world of intimate wellness, couple toys have become one of the most loved categories among adults who want more closeness, fun, and… Continue reading on Medium »",
    "d": "2026-11-26"
   },
   {
@@ -1304,16 +1384,6 @@
    "d": "2026-11-26"
   },
   {
-   "src": "Elle",
-   "kind": "article",
-   "title": "A Complete Timeline of Justin and Hailey Bieber’s Relationship",
-   "link": "https://www.elle.com/culture/celebrities/a41591571/justin-bieber-hailey-bieber-relationship-timeline/",
-   "age": 1,
-   "comments": 0,
-   "text": "The singer and supermodel-turned-skin care mogul are one of Hollywood’s leading power couples.",
-   "d": "2026-11-26"
-  },
-  {
    "src": "Bustle",
    "kind": "article",
    "title": "The Art Of Shopping Black Friday For Freakishly Good Gifts",
@@ -1321,16 +1391,6 @@
    "age": 1,
    "comments": 0,
    "text": "Westend61 / Getty Images Shopping for your loved ones can easily be the most stressful part of the holiday season. Maybe you’re stumped on what to get your longtime BFF , a new partner, or your well-intentioned mom who insists that she doesn’t need anything when you ask her to drop some hints before the Black Friday deals roll out. Suddenly, those same old candles or tired coffee mugs start looking dangerously tempting. The problem? Generic or impersonal gifts are a guaranteed shortcut to closet clutter, and even a splurge-worthy trend doesn’t guarantee your recipient will actually love it. To help you level up your holiday shopping ahead of Cyber Week, we tapped the pros who’ve cracked the code on thoughtful presents — from a marketing manager raised by two generations of elite gift-givers to a celebrity concierge who shops for A-listers — to share their secrets for pulling off unforget",
-   "d": "2026-11-26"
-  },
-  {
-   "src": "Medium",
-   "kind": "article",
-   "title": "Why Men Often Ignore Their Sexual Wellness Until Problems Increase",
-   "link": "https://medium.com/@yajatjaiswal/why-men-often-ignore-their-sexual-wellness-until-problems-increase-1ab023b4a9d3?source=rss------sexual_wellness-5",
-   "age": 1,
-   "comments": 0,
-   "text": "Sexual wellness is an important part of a man’s overall health, yet many men hesitate to give it the attention it deserves. In India… Continue reading on Medium »",
    "d": "2026-11-26"
   },
   {
@@ -1344,16 +1404,6 @@
    "d": "2026-11-26"
   },
   {
-   "src": "Harper's Bazaar",
-   "kind": "article",
-   "title": "Katy Perry and Justin Trudeau Give Their Couple Style the Cozy Airport Treatment",
-   "link": "https://www.harpersbazaar.com/celebrity/latest/a74531229/katy-perry-justin-trudeau-couple-style-venice-airport-photos/",
-   "age": 1,
-   "comments": 0,
-   "text": "It’s a runway, after all",
-   "d": "2026-11-26"
-  },
-  {
    "src": "Medium",
    "kind": "experience",
    "title": "Single Women Seeking Just Sex Are Still Getting Burned",
@@ -1361,16 +1411,6 @@
    "age": 1,
    "comments": 0,
    "text": "Are We Looking in the Wrong Haystack? Continue reading on Medium »",
-   "d": "2026-11-26"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
-   "title": "Most Women Don’t Orgasm From Penetration Alone. Here’s What the Research Actually Says Helps",
-   "link": "https://medium.com/@rohabkhan7592/most-women-dont-orgasm-from-penetration-alone-here-s-what-the-research-actually-says-helps-78d4c26d98b8?source=rss------sex-5",
-   "age": 1,
-   "comments": 0,
-   "text": "One shift in angle, one old tradition from Central Africa, and a survey that gave four common techniques names. Continue reading on Medium »",
    "d": "2026-11-26"
   },
   {
@@ -1462,16 +1502,6 @@
    "comments": 0,
    "text": "It was during a late-night stroll through Boston that my husband Liam confessed his desire to be cuckolded for the very first time. Continue reading on Medium »",
    "d": "2026-11-26"
-  },
-  {
-   "src": "Cosmopolitan",
-   "kind": "article",
-   "title": "16 Best Sex Toys for Women, Tested and Reviewed for the Hottest Sex of Your Life",
-   "link": "https://sex.cosmopolitan.com/pleasure/advice/g3800/sex-toys/",
-   "age": 2,
-   "comments": 0,
-   "text": "Meet our all-time favorite vibrators, dildos, rabbits, and more.",
-   "d": "2026-11-25"
   },
   {
    "src": "Men's Health",
@@ -1596,16 +1626,6 @@
   {
    "src": "Medium",
    "kind": "experience",
-   "title": "Sleeping Naked Changed My Love Life and My Health.",
-   "link": "https://medium.com/@dremmablake/sleeping-naked-changed-my-love-life-and-my-health-337c54a73d97?source=rss------intimacy-5",
-   "age": 2,
-   "comments": 0,
-   "text": "and it will yours too… Continue reading on Medium »",
-   "d": "2026-11-25"
-  },
-  {
-   "src": "Medium",
-   "kind": "experience",
    "title": "How Marriage Made Me a Better Man",
    "link": "https://roselandj.medium.com/how-marriage-made-me-a-better-man-49b37cd8ba17?source=rss------intimacy-5",
    "age": 2,
@@ -1664,26 +1684,6 @@
    "d": "2026-11-24"
   },
   {
-   "src": "Bustle",
-   "kind": "article",
-   "title": "A Tarot Reading For The Week Of November 23 - 29, 2026",
-   "link": "https://www.bustle.com/life/tarot-reading-week-november-23-29-2026",
-   "age": 3,
-   "comments": 0,
-   "text": "Milky Way/Moment/Getty Images 2026 has been a challenging year for many people — and astrologically speaking, the past month alone has been a very rocky road. Venus retrograde turned relationships inside out and had everyone reevaluating what’s meaningful to them, while Mercury retrograde threw a wrench in schedules and projects, turning everything into an obstacle course. Everyone’s fighting their own unique battle, whether you can see it from the outside or not. But this week, you may finally hit a turning point that allows you to begin a new journey toward healing. There’s a full moon hitting on Tuesday, Nov. 24, and this marks the midpoint of the current lunar cycle. This lunation is particularly intellectually illuminating, with the potential to spark revelations that help things click into place. Whether you’ve been dealing with intense struggles or just wading through the inconven",
-   "d": "2026-11-24"
-  },
-  {
-   "src": "Bustle",
-   "kind": "article",
-   "title": "A Horoscope For The Week Of November 23 - 29, 2026",
-   "link": "https://www.bustle.com/life/horoscope-week-november-23-29-2026",
-   "age": 3,
-   "comments": 0,
-   "text": "It’s a festive and eventful week, both in the stars and here on Earth. Sagittarius season began over the weekend, and having the sun in this free-spirited fire sign is lightening up the vibes in a big way, bringing a sense of spontaneity and a desire to celebrate the good times. Monday brings some beautiful connections between lover Venus and the destiny-shaping North Node, and then with the confident sun and dreamy Neptune — all of which can boost creativity and imagination, while sprinkling a star-crossed magic over relationships. Tuesday’s full Beaver Moon in Gemini injects everything with a dose of the unexpected, disrupting usual thoughts and conversations with some unpredictability. Express your truth, even if it shakes up the status quo. Go-getter Mars also zooms into attentive Virgo on Wednesday, giving everyone a more sustained attention span — especially when it comes to things",
-   "d": "2026-11-24"
-  },
-  {
    "src": "Glamour",
    "kind": "article",
    "title": "Gifts Under $100: Stylish Holiday Picks",
@@ -1731,6 +1731,26 @@
    "age": 4,
    "comments": 0,
    "text": "Let me start by saying that this is incredibly common. Continue reading on Medium »",
+   "d": "2026-11-23"
+  },
+  {
+   "src": "Bustle",
+   "kind": "article",
+   "title": "A Tarot Reading For The Week Of November 23 - 29, 2026",
+   "link": "https://www.bustle.com/life/tarot-reading-week-november-23-29-2026",
+   "age": 4,
+   "comments": 0,
+   "text": "Milky Way/Moment/Getty Images 2026 has been a challenging year for many people — and astrologically speaking, the past month alone has been a very rocky road. Venus retrograde turned relationships inside out and had everyone reevaluating what’s meaningful to them, while Mercury retrograde threw a wrench in schedules and projects, turning everything into an obstacle course. Everyone’s fighting their own unique battle, whether you can see it from the outside or not. But this week, you may finally hit a turning point that allows you to begin a new journey toward healing. There’s a full moon hitting on Tuesday, Nov. 24, and this marks the midpoint of the current lunar cycle. This lunation is particularly intellectually illuminating, with the potential to spark revelations that help things click into place. Whether you’ve been dealing with intense struggles or just wading through the inconven",
+   "d": "2026-11-23"
+  },
+  {
+   "src": "Bustle",
+   "kind": "article",
+   "title": "A Horoscope For The Week Of November 23 - 29, 2026",
+   "link": "https://www.bustle.com/life/horoscope-week-november-23-29-2026",
+   "age": 4,
+   "comments": 0,
+   "text": "It’s a festive and eventful week, both in the stars and here on Earth. Sagittarius season began over the weekend, and having the sun in this free-spirited fire sign is lightening up the vibes in a big way, bringing a sense of spontaneity and a desire to celebrate the good times. Monday brings some beautiful connections between lover Venus and the destiny-shaping North Node, and then with the confident sun and dreamy Neptune — all of which can boost creativity and imagination, while sprinkling a star-crossed magic over relationships. Tuesday’s full Beaver Moon in Gemini injects everything with a dose of the unexpected, disrupting usual thoughts and conversations with some unpredictability. Express your truth, even if it shakes up the status quo. Go-getter Mars also zooms into attentive Virgo on Wednesday, giving everyone a more sustained attention span — especially when it comes to things",
    "d": "2026-11-23"
   },
   {
@@ -1795,16 +1815,6 @@
   },
   {
    "src": "Medium",
-   "kind": "article",
-   "title": "The Psychology of Human Sexuality",
-   "link": "https://humansexuality.medium.com/the-psychology-of-human-sexuality-5315904d1bcb?source=rss------sex_education-5",
-   "age": 5,
-   "comments": 0,
-   "text": "By Don Lucas and Jennifer Fox Continue reading on Medium »",
-   "d": "2026-11-22"
-  },
-  {
-   "src": "Medium",
    "kind": "experience",
    "title": "Bad Sex Creates PTSD At Some Point",
    "link": "https://medium.com/@kingsmanjoe911/bad-sex-creates-ptsd-at-some-point-52dcd74a1fe2?source=rss------love_and_sex-5",
@@ -1854,16 +1864,6 @@
    "d": "2026-11-21"
   },
   {
-   "src": "LELO",
-   "kind": "review",
-   "title": "Black Friday Sex Toy Deals You Won’t Want To Miss",
-   "link": "https://www.lelo.com/blog/best-lelo-black-friday-deals/",
-   "age": 6,
-   "comments": 4,
-   "text": "The days of waiting in long lines at the store on Black Friday are long gone… These online sex toy deals can be accessed from your own bed, which might be a good place to be once you see these mood-inducing offers. Check out our favorite picks from the sale below, and be sure to head to the website for the full list of deals. For any Amazon-lovers or Prime Subscribers, don’t forget LELO is present on all Amazons with […] The post Black Friday Sex Toy Deals You Won’t Want To Miss appeared first on Volonté .",
-   "d": "2026-11-21"
-  },
-  {
    "src": "Prevention",
    "kind": "article",
    "title": "Is Your Midlife Orgasm Just Meh? A Sexual Health Expert Shares the Secret to Getting It Back",
@@ -1894,16 +1894,6 @@
    "d": "2026-11-21"
   },
   {
-   "src": "Cosmopolitan",
-   "kind": "article",
-   "title": "It’s Time to Talk About “Duty Sex”",
-   "link": "https://sex.cosmopolitan.com/pleasure/a74322867/duty-sex-intimacy-pressure/",
-   "age": 7,
-   "comments": 0,
-   "text": "Sex shouldn’t be a chore.",
-   "d": "2026-11-20"
-  },
-  {
    "src": "Girl on the Net",
    "kind": "experience",
    "title": "Guest blog: What it’s like being a super-orgasmic woman",
@@ -1911,6 +1901,16 @@
    "age": 7,
    "comments": 4,
    "text": "I think I have more orgasms during sex than the average cis woman. I’m not sure if that’s because my body is just built that way, I’ve had great partners, or I’ve been more determined to figure out how to fuck at the angles which work for me – probably a combination of those things, […]",
+   "d": "2026-11-20"
+  },
+  {
+   "src": "LELO",
+   "kind": "review",
+   "title": "Black Friday Sex Toy Deals You Won’t Want To Miss",
+   "link": "https://www.lelo.com/blog/best-lelo-black-friday-deals/",
+   "age": 7,
+   "comments": 4,
+   "text": "The days of waiting in long lines at the store on Black Friday are long gone… These online sex toy deals can be accessed from your own bed, which might be a good place to be once you see these mood-inducing offers. Check out our favorite picks from the sale below, and be sure to head to the website for the full list of deals. For any Amazon-lovers or Prime Subscribers, don’t forget LELO is present on all Amazons with […] The post Black Friday Sex Toy Deals You Won’t Want To Miss appeared first on Volonté .",
    "d": "2026-11-20"
   },
   {
@@ -1954,16 +1954,6 @@
    "d": "2026-11-19"
   },
   {
-   "src": "Gottman Institute",
-   "kind": "article",
-   "title": "How to Have a Healthy Relationship, One Habit at a Time",
-   "link": "https://www.gottman.com/blog/healthy-relationship-habits/",
-   "age": 8,
-   "comments": 0,
-   "text": "Why healthy relationship habits can be learned, and how to put seven of them into practice. The post How to Have a Healthy Relationship, One Habit at a Time appeared first on The Gottman Institute .",
-   "d": "2026-11-19"
-  },
-  {
    "src": "What I Love About Sex",
    "kind": "podcast",
    "title": "Finally have a productive sex conversation #449",
@@ -1972,6 +1962,16 @@
    "comments": 0,
    "text": "Join my challenge to finally have a sex conversation that is productive: JOIN 5 DAY CHALLENGE Enrollment closes Wednesday 11/18 Challenge starts Thursday! 11/19 *In this episode, I focus on why a curious approach is so meaningful when starting a sex conversation with her. I do NOT talk about what it sounds like when you share your side of the situation. Your side is still important to communicate - it's just not what this episode is focused on. Keep that in mind as you listen.",
    "d": "2026-11-19"
+  },
+  {
+   "src": "Gottman Institute",
+   "kind": "article",
+   "title": "How to Have a Healthy Relationship, One Habit at a Time",
+   "link": "https://www.gottman.com/blog/healthy-relationship-habits/",
+   "age": 9,
+   "comments": 0,
+   "text": "Why healthy relationship habits can be learned, and how to put seven of them into practice. The post How to Have a Healthy Relationship, One Habit at a Time appeared first on The Gottman Institute .",
+   "d": "2026-11-18"
   },
   {
    "src": "Наукове дослідження",
@@ -2074,16 +2074,6 @@
    "d": "2026-11-17"
   },
   {
-   "src": "Medium",
-   "kind": "article",
-   "title": "Hey Dr Sue — Why Do I Want To Eat My Own Cum?!",
-   "link": "https://drsuemilstein.medium.com/hey-dr-sue-why-do-i-want-to-eat-my-own-cum-ce97b7bb00c4?source=rss------sex_education-5",
-   "age": 11,
-   "comments": 0,
-   "text": "There are a couple reasons why you may want to do this. Continue reading on Medium »",
-   "d": "2026-11-16"
-  },
-  {
    "src": "Наукове дослідження",
    "kind": "science",
    "title": "Child Sexual Abuse, Sexual Function, and Sexual Distress in Couples Coping with Sexual Interest/Arousal Disorder: A Dyadic Longitudinal Study.",
@@ -2091,6 +2081,16 @@
    "age": 11,
    "comments": 0,
    "text": "Sexual interest/arousal disorder (SIAD), characterized by low sexual desire and high sexual distress, is the most common sexual dysfunction among women. Although current theoretical models support interpersonal conceptualizations of sexual desire, distal interpersonal factors that may underlie the sexual well-being of couples coping with SIAD, such as child sexual abuse (CSA), have not been thoroughly documented. Yet, difficulties with sexual desire and arousal are among the most frequently reported sexual dysfunctions among CSA survivors. Using a one-year longitudinal design among couples with SIAD, this study examined the associations between both partners' CSA and their sexual function and distress. Individuals with SIAD (N = 263; M age = 34.16) and their partners (N = 263; M age = 35.71) completed validated questionnaires at baseline, 6 months, and 12 months. Dyadic latent growth curve analyses were conducted within a structural equation model. Results showed that greater CSA among individuals with SIAD was associated with their own higher initial levels of sexual distress. Moreover, higher levels of non-SIAD partners' CSA were unexpectedly associated with lower initial levels of sexual function difficulties for individuals with SIAD. However, non-SIAD partners' CSA predicted greater increases in sexual function difficulties over time for individuals with SIAD. No other sig",
+   "d": "2026-11-16"
+  },
+  {
+   "src": "Medium",
+   "kind": "article",
+   "title": "Hey Dr Sue — Why Do I Want To Eat My Own Cum?!",
+   "link": "https://drsuemilstein.medium.com/hey-dr-sue-why-do-i-want-to-eat-my-own-cum-ce97b7bb00c4?source=rss------sex_education-5",
+   "age": 11,
+   "comments": 0,
+   "text": "There are a couple reasons why you may want to do this. Continue reading on Medium »",
    "d": "2026-11-16"
   },
   {
@@ -2134,16 +2134,6 @@
    "d": "2026-11-14"
   },
   {
-   "src": "Cosmopolitan",
-   "kind": "article",
-   "title": "Should We Be Worried About How Much Sex Married People Are Having?",
-   "link": "https://sex.cosmopolitan.com/pleasure/a74346859/married-couples-sexless-marriage/",
-   "age": 14,
-   "comments": 0,
-   "text": "Does saying “I do” mean saying “I don’t” to sex?",
-   "d": "2026-11-13"
-  },
-  {
    "src": "Sex With Emily",
    "kind": "article",
    "title": "Your Black Friday Pleasure Guide by LELO",
@@ -2161,16 +2151,6 @@
    "age": 14,
    "comments": 0,
    "text": "Ever fancied being lubed up with warm oil and sliding around with a crowd of similarly oily strangers? You will almost certainly enjoy this week’s guest blog! I’m delighted to welcome PJA Woode this week – he’s a fellow sex writer who contributes fabulous erotic fiction to the porn site FrolicMe, but today he’s here […]",
-   "d": "2026-11-13"
-  },
-  {
-   "src": "Sex and Psychology",
-   "kind": "article",
-   "title": "The Psychology Of Performance Anxiety",
-   "link": "https://www.sexandpsychology.com/blog/2026/11/12/the-psychology-of-performance-anxiety/",
-   "age": 14,
-   "comments": 0,
-   "text": "** This post is sponsored by Rugiet** In the bedroom, performance anxiety is a classic problem people face. One bad night in bed creates worries about the next time. And when it comes time to “perform” again, all of that anxiety can make it harder to get or maintain an erection. This is one reason why erectile dysfunction (ED) is so common and isn’t always a purely physical issue. [1] In this post, we’re going to consider how the relationship between the brain and body influences erectile dysfunction. We’ll discuss how performance anxiety may become a self-fulfilling prophecy, why ED is surprisingly common in younger men, and what some modern treatment options might look like for people who are struggling. The Anxiety-Erection Feedback Loop The arousal response, which is largely supported by our parasympathetic nervous system, is what leads to many of the physical changes we experience d",
    "d": "2026-11-13"
   },
   {
@@ -2304,16 +2284,6 @@
    "d": "2026-11-06"
   },
   {
-   "src": "Sex With Emily",
-   "kind": "article",
-   "title": "Wake Up & Get Down: The Science of Morning Sex",
-   "link": "https://sexwithemily.com/science-of-morning-sex/?utm_source=rss&utm_medium=rss&utm_campaign=science-of-morning-sex",
-   "age": 22,
-   "comments": 0,
-   "text": "Did you know your testosterone levels are up to 30% higher first thing in the morning than later in the day? Yet, a majority of couples admit they skip sex simply because they’re too exhausted by 10 PM. If your bedtime routine looks more like mindlessly binge watching TV shows together rather than ripping each other’s clothes off, you’re not broken. You’re just looking at the wrong end of the clock. It’s time we dive into the science of morning sex . The Science Behind Morning Sex and Your Hormones Why does morning sex feel so damn good? It’s Biology. Between 7:00 and 9:00 AM, our sex hormones hit their natural 24-hour peak. Testosterone surges in both penis and vulva owners, priming your libido before you even check your phone. You can thank your endocrine system for doing the seductive heavy lifting for you while you’re still half-asleep. And there’s also a huge plus to starting your d",
-   "d": "2026-11-05"
-  },
-  {
    "src": "Наукове дослідження",
    "kind": "science",
    "title": "A Review of Current Management Strategies for Hypoactive Sexual Desire Disorder in Postmenopausal Patients.",
@@ -2342,6 +2312,16 @@
    "comments": 0,
    "text": "Background: Eczema may affect not only dermatological health but also sexual well-being, treatment-related behaviors, and interpersonal relationships. Examining sexual function alongside medication-related factors and perceived spousal support may provide a broader understanding of women's experiences of eczema. Methods: This cross-sectional study aimed to evaluate sexual dysfunction, medication adherence, and perceived spousal support and to examine the relationships among these factors in women with eczema. The study included 218 women diagnosed with eczema who were regularly followed in the dermatology unit of a private hospital in İzmir, Turkey. Data were collected using a personal information form, the Modified Morisky Adherence Scale (MMAS), the Spousal Support Scale (SS), and the Arizona Sexual Experiences Scale (ASEX). Descriptive statistics, Pearson correlations, Spearman sensitivity analyses, and three-step hierarchical multiple linear regression were performed. Results: All participants were using antihistamines, and 71.6% reported using them twice daily. According to the ASEX cutoff score, 59.2% of participants screened positive for potential sexual dysfunction, while 56.9% reported not receiving spousal support. The mean ASEX score was 16.19 ± 8.94, and the mean MMAS score was 2.53 ± 2.21. ASEX scores were moderately and positively correlated with MMAS scores (r = ",
    "d": "2026-11-05"
+  },
+  {
+   "src": "Sex With Emily",
+   "kind": "article",
+   "title": "Wake Up & Get Down: The Science of Morning Sex",
+   "link": "https://sexwithemily.com/science-of-morning-sex/?utm_source=rss&utm_medium=rss&utm_campaign=science-of-morning-sex",
+   "age": 23,
+   "comments": 0,
+   "text": "Did you know your testosterone levels are up to 30% higher first thing in the morning than later in the day? Yet, a majority of couples admit they skip sex simply because they’re too exhausted by 10 PM. If your bedtime routine looks more like mindlessly binge watching TV shows together rather than ripping each other’s clothes off, you’re not broken. You’re just looking at the wrong end of the clock. It’s time we dive into the science of morning sex . The Science Behind Morning Sex and Your Hormones Why does morning sex feel so damn good? It’s Biology. Between 7:00 and 9:00 AM, our sex hormones hit their natural 24-hour peak. Testosterone surges in both penis and vulva owners, priming your libido before you even check your phone. You can thank your endocrine system for doing the seductive heavy lifting for you while you’re still half-asleep. And there’s also a huge plus to starting your d",
+   "d": "2026-11-04"
   },
   {
    "src": "Sex With Emily",
@@ -2534,16 +2514,6 @@
    "d": "2026-10-22"
   },
   {
-   "src": "LELO",
-   "kind": "review",
-   "title": "Vaginal Red Light Therapy: What It Feels Like and What to Expect",
-   "link": "https://www.lelo.com/blog/vaginal-red-light-therapy-tc/",
-   "age": 36,
-   "comments": 0,
-   "text": "The world of advanced wellness is moving quickly, and red light therapy is no exception. But what about using it vaginally? Discover what vaginal red light therapy actually feels like, how it compares to alternatives, and what you can realistically expect from using it routinely. What Is Vaginal Red Light Therapy? Vaginal red light therapy uses gentle, low-level light waves to boost blood flow and support natural tissue health, while advanced devices like MONA Spectra also incorporate green, blue, and […] The post Vaginal Red Light Therapy: What It Feels Like and What to Expect appeared first on Volonté .",
-   "d": "2026-10-22"
-  },
-  {
    "src": "Наукове дослідження",
    "kind": "science",
    "title": "Post-COVID syndrome's impact on sex life - results from a cross-sectional study.",
@@ -2562,6 +2532,16 @@
    "comments": 0,
    "text": "Objective To examine whether vaginal natural orifice transluminal endoscopic surgery (vNOTES) and total laparoscopic hysterectomy (TLH) differ in postoperative sexual health, patient-reported recovery measures, and perioperative outcomes. Materials and methods Sexually active women treated with vNOTES or TLH for benign gynaecological indications between January 2023 and January 2026 were included in this ambispective cohort. Clinical and operative information was retrieved retrospectively, while patient-reported postoperative data were obtained prospectively a minimum of six months after surgery. Sexual function was measured with the Female Sexual Function Index (FSFI). Additional outcomes included dyspareunia, time to resumption of sexual intercourse, return to work, postoperative satisfaction, and willingness to undergo the same procedure again. Selected outcomes were further examined using multivariable regression models incorporating clinically relevant confounding variables. Results The analysis comprised 159 women, of whom 105 underwent TLH and 54 underwent vNOTES. Compared with TLH, vNOTES was associated with a shorter operative duration [160 (60) vs. 198 (90) minutes, p Conclusion vNOTES and TLH showed comparable postoperative sexual function and dyspareunia outcomes. vNOTES was associated with an earlier return to sexual intercourse, greater postoperative satisfaction,",
    "d": "2026-10-22"
+  },
+  {
+   "src": "LELO",
+   "kind": "review",
+   "title": "Vaginal Red Light Therapy: What It Feels Like and What to Expect",
+   "link": "https://www.lelo.com/blog/vaginal-red-light-therapy-tc/",
+   "age": 37,
+   "comments": 0,
+   "text": "The world of advanced wellness is moving quickly, and red light therapy is no exception. But what about using it vaginally? Discover what vaginal red light therapy actually feels like, how it compares to alternatives, and what you can realistically expect from using it routinely. What Is Vaginal Red Light Therapy? Vaginal red light therapy uses gentle, low-level light waves to boost blood flow and support natural tissue health, while advanced devices like MONA Spectra also incorporate green, blue, and […] The post Vaginal Red Light Therapy: What It Feels Like and What to Expect appeared first on Volonté .",
+   "d": "2026-10-21"
   },
   {
    "src": "Наукове дослідження",
@@ -2796,10 +2776,10 @@
  ],
  "upd": {
   "💞 Матеріали 18+ (журнали)": {
-   "at": "27.11 05:51",
-   "ts": 1795751505,
+   "at": "27.11 11:56",
+   "ts": 1795773391,
    "ok": true,
-   "note": "182 шт."
+   "note": "180 шт."
   },
   "🛒 Сільпо (основна)": {
    "at": "27.11 07:12",
@@ -2844,8 +2824,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "27.11 11:47",
-   "ts": 1795772836,
+   "at": "27.11 11:56",
+   "ts": 1795773391,
    "ok": true,
    "note": ""
   },
@@ -2904,8 +2884,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "27.11 10:52",
-   "ts": 1795769549,
+   "at": "27.11 11:56",
+   "ts": 1795773405,
    "ok": true,
    "note": ""
   },
@@ -2976,26 +2956,26 @@
    "note": ""
   },
   "режисери": {
-   "at": "27.11 11:46",
-   "ts": 1795772765,
+   "at": "27.11 11:56",
+   "ts": 1795773391,
    "ok": true,
    "note": ""
   },
   "smm-інструменти": {
-   "at": "27.11 11:46",
-   "ts": 1795772765,
+   "at": "27.11 11:56",
+   "ts": 1795773391,
    "ok": true,
    "note": ""
   },
   "найкращі аромати й догляд": {
-   "at": "27.11 11:46",
-   "ts": 1795772766,
+   "at": "27.11 11:56",
+   "ts": 1795773391,
    "ok": true,
    "note": ""
   },
   "аромати": {
-   "at": "27.11 11:46",
-   "ts": 1795772765,
+   "at": "27.11 11:56",
+   "ts": 1795773391,
    "ok": true,
    "note": ""
   },
@@ -29240,7 +29220,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "06591c67b90d",
+  "gs": "c2c45f228cee",
   "quiz_pool.json": "c89ccd86b451",
   "fact.png": "3b9ef23dd713",
   "sexed.json": "0362ec7e46d4",
@@ -49449,8 +49429,8 @@
   "out": "2026-11-27T08:50:52.885379+02:00",
   "les": "2026-11-27T09:50:53.427871+02:00",
   "ero": "2026-11-27T09:50:53.427871+02:00",
-  "pov": "2026-11-27T05:20:55.027015+02:00",
-  "lat": "2026-11-27T05:20:55.027015+02:00",
+  "pov": "2026-11-27T11:55:49.843789+02:00",
+  "lat": "2026-11-27T11:55:49.843789+02:00",
   "asi": "2026-11-27T10:35:53.293863+02:00",
   "blo": "2026-11-27T10:35:53.293863+02:00",
   "rpl": "2026-11-27T06:50:55.139628+02:00",
@@ -49533,12 +49513,8 @@
  "silpo_snap": "2026-11-25",
  "live_day": "2026-11-27",
  "silpo_week": "2026-48",
- "sbm_at": 1795773056.6334136,
+ "sbm_at": 1795773353.4374273,
  "sbm_hist": [
-  [
-   "23:30",
-   81
-  ],
   [
    "23:35",
    81
@@ -50109,6 +50085,10 @@
   ],
   [
    "11:50",
+   65
+  ],
+  [
+   "11:55",
    65
   ]
  ],
@@ -53038,7 +53018,7 @@
  "aro_sub_s": 5,
  "aro_sub_k": 4,
  "jobs_last": 1795772186.2526395,
- "nmt_last": 1795771418.0052016,
+ "nmt_last": 1795773362.0788567,
  "kino_v": 2,
  "yt_v": 4,
  "toycat_last": 1795772232.8857682,
@@ -53301,7 +53281,7 @@
  },
  "ideas_t": 1795711563.9027188,
  "rz_off": 1795707251.81522,
- "content_at": 1795751476.9713838,
+ "content_at": 1795773367.029589,
  "ideas_lim_note": "2026-11-27",
  "thr_at": 1795714610.657497,
  "thr_spend": {
@@ -53313,14 +53293,14 @@
  "rad_wait": "2026-11-27",
  "bj": {
   "🗺 Мапа світла": {
-   "t": "27.11 11:51",
-   "ts": 1795773064,
+   "t": "27.11 11:56",
+   "ts": 1795773361,
    "ok": true,
-   "d": 8.3,
+   "d": 7.9,
    "l": [
     "Черги за поведінкою: показовий момент · будинків із визначеною чергою 0 з 2029",
-    "Історія будинків: змін статусу 28, будинків 2510",
-    "Мапа світла: точок 2503 (Київ+обл.; усього на мапі 2930) · зі світлом 1576 (62%) · поля {'f1=0': 1, 'f8=0': 1717, 'f1=2': 797, 'f1=1': 1570, 'f1=3': 129, 'f8=1': 704, 'f8=2': 76}"
+    "Історія будинків: змін статусу 33, будинків 2510",
+    "Мапа світла: точок 2503 (Київ+обл.; усього на мапі 2930) · зі світлом 1583 (63%) · поля {'f1=0': 1, 'f8=0': 1717, 'f1=2': 790, 'f1=1': 1577, 'f1=3': 129, 'f8=1': 704, 'f8=2': 76}"
    ]
   },
   "🥗 ПП-страви": {
@@ -53373,14 +53353,14 @@
   },
   "🔥 Фільми 18+": {
    "never": 1,
-   "t": "27.11 10:36",
-   "ts": 1795768586,
+   "t": "27.11 11:56",
+   "ts": 1795773405,
    "ok": true,
-   "d": 17.2,
+   "d": 13.8,
    "l": [
     "StashDB приклад полів: ['id', 'title', 'release_date', 'details', 'duration', 'urls', 'images', 'studio', 'performers', 'tags', '_date']",
-    "Фільми 18+: розділ asi — 6 кандидатів",
-    "Фільми 18+: розділ blo — 30 кандидатів"
+    "Фільми 18+: розділ pov — 14 кандидатів",
+    "Фільми 18+: розділ lat — 21 кандидатів"
    ]
   },
   "▶️ YouTube тижня": {
@@ -53415,7 +53395,16 @@
    "never": 1
   },
   "💞 Матеріали 18+": {
-   "never": 1
+   "never": 1,
+   "t": "27.11 11:56",
+   "ts": 1795773391,
+   "ok": true,
+   "d": 24.1,
+   "l": [
+    "Поради 18+: джерел працює 31 з 42, щойно знайдено 153, у пулі 180 (за 3 дні 73, за тиждень 96)",
+    "Поради 18+: не відповіли 12: Good Vibrations (mismatched tag: line 9, c); Love and Lust (HTTP Error 403: Forbidden); The Intimacy Lab (HTTP Error 403: Forbidden); More Than Sex (HTTP Error 403: Forbidden); Erin Alexander",
+    "Поради 18+: працюють ['Allure', 'Bustle', 'Cosmopolitan', \"Dildo or Dildon't\", 'Elle', 'Esquire', 'Europe PMC (51)', 'GQ', 'Girl on the Net', 'Glamour', 'Gottman Institute', \"Harper's Bazaar\", 'Healthline', 'Hey Epiphora"
+   ]
   },
   "🎓 Секс-освіта": {
    "never": 1
