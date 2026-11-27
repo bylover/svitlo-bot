@@ -746,14 +746,14 @@
   "m1054867",
   "m290098"
  ],
- "gh_beat": "2026-11-27T10:00:50.368253+02:00",
+ "gh_beat": "2026-11-27T10:05:50.911629+02:00",
  "source": "dtek",
  "addr": {
-  "active": true,
-  "reason": "Стабілізаційне відключення (Згідно графіку погодинних відключень)",
-  "start": "06:28 27.11.2026",
-  "end": "10:00 27.11.2026",
-  "type": "2",
+  "active": false,
+  "reason": "",
+  "start": "",
+  "end": "",
+  "type": "",
   "groups": [
    "GPV3.1"
   ],
@@ -761,10 +761,10 @@
   "emergency": false,
   "city_emergency": false,
   "city_text": "",
-  "checked": "2026-11-27T09:52:59.987381+02:00",
+  "checked": "2026-11-27T10:02:59.537786+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
-  "planned": true
+  "planned": false
  },
  "emerg": {
   "on": false,
@@ -776,7 +776,7 @@
   "сайт ДТЕК": false
  },
  "fact": {
-  "last": 2970,
+  "last": 2971,
   "events": [
    [
     "2026-11-25T12:53:57+02:00",
@@ -805,16 +805,20 @@
    [
     "2026-11-27T06:29:57+02:00",
     "off"
+   ],
+   [
+    "2026-11-27T10:02:46+02:00",
+    "on"
    ]
   ]
  },
- "fact_png": "2026-11-27 10|7|2026-11-27T06:29:57+02:00",
+ "fact_png": "2026-11-27 10|8|2026-11-27T10:02:46+02:00",
  "fact_day": {
-  "total": "10 год 32 хв",
+  "total": "10 год 29 хв",
   "list": [
-   "10:00–13:46 · 3 год 46 хв",
+   "10:05–13:46 · 3 год 41 хв",
    "18:51–22:07 · 3 год 15 хв",
-   "06:29–10:00 · 3 год 31 хв"
+   "06:29–10:02 · 3 год 33 хв"
   ]
  },
  "mo_sent": {
@@ -14393,14 +14397,7 @@
   "kino": {}
  },
  "subs": "iIja4nHufWu7m7s8iWBH5/nde81WrjQxl3xI+4YkXgowwmdQTz4ecF5Asb6X+ZmTwjjnsktRoz/OP53BRxHgFuAyp9aJs9ZVpHlVPZ4v3sdfCeOLPcUY6Ff6R4wwAWY7Em+ILVlvIP9aBLnWQZRuUhJPk7ngU7huCRT2FvztPo4a5MWkOzK8xe+P6oEwrxIu601ChyFX84K7O8hRcnKgpYE1GxSo3JUYpwQl1tU=",
- "gem_block": {
-  "Nz9lkQ:gemini-flash-latest": "2026-11-27T10:05:00+02:00",
-  "Nz9lkQ:gemini-3.8-flash": "2026-11-27T10:05:00+02:00",
-  "Nz9lkQ:gemini-flash-lite-latest": "2026-11-27T10:05:00+02:00",
-  "iDpywg:gemini-3.8-flash": "2026-11-27T10:05:00+02:00",
-  "iDpywg:gemini-flash-latest": "2026-11-27T10:05:00+02:00",
-  "iDpywg:gemini-flash-lite-latest": "2026-11-27T10:05:00+02:00"
- },
+ "gem_block": {},
  "omdb_cache": {
   "tt19035928": [
    null,
@@ -29074,9 +29071,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "df6447f226f7",
+  "gs": "98ba16d888ef",
   "quiz_pool.json": "c89ccd86b451",
-  "fact.png": "db29d5de1b0c",
+  "fact.png": "b84b772f83c7",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -49121,12 +49118,8 @@
  "silpo_snap": "2026-11-25",
  "live_day": "2026-11-27",
  "silpo_week": "2026-48",
- "sbm_at": 1795766456.395811,
+ "sbm_at": 1795766755.4431393,
  "sbm_hist": [
-  [
-   "21:45",
-   67
-  ],
   [
    "21:50",
    68
@@ -49698,11 +49691,15 @@
   [
    "10:00",
    67
+  ],
+  [
+   "10:05",
+   67
   ]
  ],
  "sbm_near": {
   "160603556": [
-   56,
+   70,
    0
   ]
  },
@@ -52908,14 +52905,14 @@
  "rad_wait": "2026-11-27",
  "bj": {
   "🗺 Мапа світла": {
-   "t": "27.11 10:01",
-   "ts": 1795766464,
+   "t": "27.11 10:06",
+   "ts": 1795766766,
    "ok": true,
-   "d": 8.4,
+   "d": 10.8,
    "l": [
     "Черги за поведінкою: показовий момент · будинків із визначеною чергою 0 з 2029",
-    "Історія будинків: змін статусу 52, будинків 2510",
-    "Мапа світла: точок 2503 (Київ+обл.; усього на мапі 2930) · зі світлом 1632 (65%) · поля {'f1=0': 1, 'f8=0': 1717, 'f1=1': 1629, 'f1=3': 128, 'f8=1': 704, 'f1=2': 739, 'f8=2': 76}"
+    "Історія будинків: змін статусу 45, будинків 2510",
+    "Мапа світла: точок 2503 (Київ+обл.; усього на мапі 2930) · зі світлом 1625 (64%) · поля {'f1=0': 1, 'f8=0': 1717, 'f1=1': 1622, 'f1=3': 128, 'f8=1': 704, 'f1=2': 746, 'f8=2': 76}"
    ]
   },
   "🥗 ПП-страви": {
@@ -53041,7 +53038,16 @@
    ]
   },
   "🧵 Threads UA": {
-   "never": 1
+   "never": 1,
+   "t": "27.11 10:08",
+   "ts": 1795766922,
+   "ok": true,
+   "d": 155.9,
+   "l": [
+    "Gemini gemini-flash-latest: 503 {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILAB",
+    "Gemini gemini-flash-latest: 503 {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILAB",
+    "🧵 Threads: перерозкладено за змістом 208 постів · відсіяно 30 · Скандали й плітки 14, Блогери 10, Стосунки й зради 20, Свекрухи й родина 13, Діти й виховання 17, Лікарі й здоровʼя 18, Бʼюті 19, Кіно й серіали 18, Гроші й"
+   ]
   },
   "📈 Запити Google (подарунки)": {
    "never": 1
@@ -53111,5 +53117,6 @@
   "📈 SMM: фішки практиків": {
    "never": 1
   }
- }
+ },
+ "thr_cls_v": 1
 }
