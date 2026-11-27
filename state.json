@@ -760,7 +760,7 @@
   "m1054867",
   "m290098"
  ],
- "gh_beat": "2026-11-27T11:55:49.627827+02:00",
+ "gh_beat": "2026-11-27T12:00:55.137552+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -826,11 +826,11 @@
    ]
   ]
  },
- "fact_png": "2026-11-27 11|8|2026-11-27T10:02:46+02:00",
+ "fact_png": "2026-11-27 12|8|2026-11-27T10:02:46+02:00",
  "fact_day": {
-  "total": "9 год 34 хв",
+  "total": "8 год 34 хв",
   "list": [
-   "11:00–13:46 · 2 год 46 хв",
+   "12:00–13:46 · 1 год 46 хв",
    "18:51–22:07 · 3 год 15 хв",
    "06:29–10:02 · 3 год 33 хв"
   ]
@@ -2794,14 +2794,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "27.11 11:42",
-   "ts": 1795772575,
+   "at": "27.11 12:03",
+   "ts": 1795773815,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "27.11 11:42",
-   "ts": 1795772575,
+   "at": "27.11 12:03",
+   "ts": 1795773815,
    "ok": true,
    "note": ""
   },
@@ -2986,8 +2986,8 @@
    "note": "208 постів"
   },
   "🔥 Тренди Google": {
-   "at": "27.11 09:01",
-   "ts": 1795762861,
+   "at": "27.11 12:01",
+   "ts": 1795773669,
    "ok": true,
    "note": "10 у RSS"
   },
@@ -14359,7 +14359,9 @@
  "fav_sent": {
   "160603556": "2026-11-26"
  },
- "imp_sent": {},
+ "imp_sent": {
+  "396425365": "2026-11-27"
+ },
  "ero_sent": {},
  "pend": {
   "silpo": {
@@ -29220,9 +29222,9 @@
   ]
  },
  "pushed_h": {
-  "gs": "c2c45f228cee",
+  "gs": "8838af334000",
   "quiz_pool.json": "c89ccd86b451",
-  "fact.png": "3b9ef23dd713",
+  "fact.png": "19580113c74c",
   "sexed.json": "0362ec7e46d4",
   "health.json": "1fcc7ac32962",
   "silpo/1ed43e73-051b-6842-a111-a5ad042eb496@dl.json": "36054c4df575",
@@ -49513,12 +49515,8 @@
  "silpo_snap": "2026-11-25",
  "live_day": "2026-11-27",
  "silpo_week": "2026-48",
- "sbm_at": 1795773353.4374273,
+ "sbm_at": 1795773659.9260325,
  "sbm_hist": [
-  [
-   "23:35",
-   81
-  ],
   [
    "23:40",
    82
@@ -50089,6 +50087,10 @@
   ],
   [
    "11:55",
+   65
+  ],
+  [
+   "12:00",
    65
   ]
  ],
@@ -53021,7 +53023,7 @@
  "nmt_last": 1795773362.0788567,
  "kino_v": 2,
  "yt_v": 4,
- "toycat_last": 1795772232.8857682,
+ "toycat_last": 1795773671.5019436,
  "toy_la": {
   "dildo": 1795672280.3113723,
   "kegel": 1794757561.5974472,
@@ -53271,7 +53273,7 @@
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 17.11–24.11\n<blockquote>🆕 <b>1. Редагування Stories в Instagram</b>\nInstagram додав можливість редагувати вже опубліковані Stories протягом 15 хвилин після їх створення.\n💡 Використовуйте цей час, щоб швидко виправити випадкові друкарські помилки або додати забутий стікер без видалення історії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5\">Прямий</a></blockquote>\n<blockquote>🆕 <b>2. Запуск AI-агента Muse від Meta</b>\nMeta розширює географію запуску свого персонального AI-агента Muse, який інтегрується в екосистему платформи.\n💡 Слідкуйте за розгортанням інструменту для оптимізації рутинних SMM-завдань та роботи з контентом.\n🔗 <a href=\"https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>3. Партнерство Pinterest і Microsoft Ads</b>\nPinterest оголосив про офіційне партнерство з Microsoft Ads для розширення рекламних можливостей.\n💡 Очікуйте нових крос-платформних рекламних інструментів та розширення аудиторії для кампаній у Pinterest.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Метрики спільного перегляду на YouTube CTV</b>\nYouTube додав підрахунок спільного перегляду (co-view counts) до аналітики Connected TV.\n💡 Враховуйте показники перегляду на великих екранах кількома глядачами при оцінці охоплення відеореклами.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Оновлення для відео в X (Twitter)</b>\nПлатформа X додала нові параметри мініатюр та налаштування підписів для відеоконтенту.\n💡 Використовуйте кастомні мініатюри, щоб підвищити клікабельність (CTR) ваших відео у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Виявлення діпфейків у TikTok</b>\nTikTok впроваджує нові технології для автоматичного виявлення та маркування штучно створеного контенту й діпфейків.\n💡 Зважайте на суворішу модерацію AI-контенту при створенні креативів для платформи.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5\">UA.NEWS</a></blockquote>\n<blockquote>👀 <b>7. Анонс додатка Threads для iPad</b>\nКоманда Threads анонсувала швидкий вихід окремого додатку для планшетів iPad.\n💡 Готуйте контент-стратегію з урахуванням майбутнього зростання аудиторії планшетів на цій платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Спрощення батьківського контролю в Pinterest</b>\nPinterest оновив і спростив налаштування батьківського контролю для безпечнішого користування платформою.\n💡 Пам'ятайте про вікові обмеження та безпеку бренду при налаштуванні таргетингу на молодшу аудиторію.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>9. Контроль нарізки файлів у Gemini API</b>\nGoogle додав нові функції керування нарізкою файлів (file slicing) до свого API Gemini для розробників.\n💡 Використовуйте оновлення для ефективнішої обробки великих масивів даних та документів через штучний інтелект.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>10. Інтеграція Instagram з Apple Music</b>\nInstagram додав функцію збереження аудіотреків із публікацій безпосередньо в плейлисти Apple Music.\n💡 Використовуйте популярну музику в Reels, щоб користувачі могли не лише взаємодіяти з відео, а й зберігати треки.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5\">Ukr.net</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202648",
  "kb_probe2": "2026-48",
  "fest_fail": 1795759259.0396037,
- "gtr_at": 1795762859.5535572,
+ "gtr_at": 1795773667.5996616,
  "gq_at": 1795707211.2217238,
  "ideas_at": {
   "wife": 1795188882.9780123,
@@ -53293,21 +53295,21 @@
  "rad_wait": "2026-11-27",
  "bj": {
   "🗺 Мапа світла": {
-   "t": "27.11 11:56",
-   "ts": 1795773361,
+   "t": "27.11 12:01",
+   "ts": 1795773667,
    "ok": true,
-   "d": 7.9,
+   "d": 7.7,
    "l": [
     "Черги за поведінкою: показовий момент · будинків із визначеною чергою 0 з 2029",
-    "Історія будинків: змін статусу 33, будинків 2510",
-    "Мапа світла: точок 2503 (Київ+обл.; усього на мапі 2930) · зі світлом 1583 (63%) · поля {'f1=0': 1, 'f8=0': 1717, 'f1=2': 790, 'f1=1': 1577, 'f1=3': 129, 'f8=1': 704, 'f8=2': 76}"
+    "Історія будинків: змін статусу 37, будинків 2510",
+    "Мапа світла: точок 2503 (Київ+обл.; усього на мапі 2930) · зі світлом 1594 (63%) · поля {'f1=0': 1, 'f8=0': 1717, 'f1=2': 779, 'f1=1': 1588, 'f1=3': 128, 'f8=1': 704, 'f8=2': 76, 'f1=4': 1}"
    ]
   },
   "🥗 ПП-страви": {
-   "t": "27.11 11:42",
-   "ts": 1795772575,
+   "t": "27.11 12:03",
+   "ts": 1795773815,
    "ok": true,
-   "d": 111.2,
+   "d": 143.6,
    "l": [
     "ПП-страви (РФ): посилань 29, нових рецептів 0",
     "Запасна модель: The read operation timed out",
@@ -53442,12 +53444,12 @@
   },
   "🔎 Тренди Google": {
    "never": 1,
-   "t": "27.11 09:01",
-   "ts": 1795762861,
+   "t": "27.11 12:01",
+   "ts": 1795773669,
    "ok": true,
-   "d": 1.5,
+   "d": 1.8,
    "l": [
-    "🔥 Тренди Google: у RSS 10, нових 10 · за тиждень 49 · в архіві 49 · сфера від ШІ 0, за словами 49"
+    "🔥 Тренди Google: у RSS 10, нових 10 · за тиждень 59 · в архіві 59 · сфера від ШІ 0, за словами 59"
    ]
   },
   "🧵 Threads UA": {
