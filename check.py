@@ -43,11 +43,13 @@ import builtins as _bi_
 DIAG_RX = {"pl": re.compile(r"^\W*(Плейлист|Deezer)"), "yt": re.compile(r"^\W*(YouTube|YT_)"),
            "jobs": re.compile(r"^\W*(Вакансі|DOU|Djinni)"), "map": re.compile(r"^\W*(Мапа|Статистика світла)"), "ideas": re.compile(r"^\W*(Ідеї|Розміри)"), "p18": re.compile(r"^\W*Поради 18\+"), "gtr": re.compile(r"^\W*(Тренди Google|Threads|Радар)"), "err": re.compile(r"Traceback|Error|❌|Помилка")}
 DIAG: dict = {}
+ALL_LOG: list = []                                    # усі рядки цього запуску — для 📋 Журналу збірок
 _diag_print_ = _bi_.print
 def _diag_tee_(*a, **k):
     _diag_print_(*a, **k)
     try:
         s = " ".join(str(x) for x in a)[:400]
+        ALL_LOG.append(s)
         for t_, rx_ in DIAG_RX.items():
             if rx_.search(s):
                 DIAG.setdefault(t_, []).append(s)
@@ -9991,7 +9993,7 @@ def dec(s: str | None) -> list:
 
 GS_KEYS = ["upd", "silpo_last", "silpo_more", "silpo_stores", "yt_last", "smm_last", "fact", "fact_day", "fact_png", "emerg", "addr",
            "gh_beat", "kino_q", "kino_gq", "silpo_by", "kino_last",
-           "content_pool", "content_seen", "exp_pool", "exp_pool_seen", "para_articles", "kino_seen", "art_seen", "reddit_seen", "push", "gem_block", "thr_spend"]   # матеріали 18+ з журналів тощо
+           "content_pool", "content_seen", "exp_pool", "exp_pool_seen", "para_articles", "kino_seen", "art_seen", "reddit_seen", "push", "gem_block", "thr_spend", "bj"]   # матеріали 18+ з журналів тощо
 
 
 def mark_upd(st: dict, name: str, ok: bool = True, note: str = "") -> None:
@@ -11230,6 +11232,7 @@ def main() -> None:
         st.pop(k_, None)
     STATE_FILE.write_text(json.dumps(st, ensure_ascii=False, indent=1), "utf-8")
     try:
+        bj_save(st)                                   # 📋 журнал збірок → у бот (👑 → 📋 Журнал збірок)
         push_to_worker(st)                            # репозиторій приватний — Cloudflare отримує дані від нас
         STATE_FILE.write_text(json.dumps(st, ensure_ascii=False, indent=1), "utf-8")
     except Exception as e:
@@ -11251,8 +11254,65 @@ def main() -> None:
             print(f"Попередження: {e}")
 
 
+
+# ---------- 📋 Журнал збірок: кожна підбірка автоматично — коли пробували, чи вдалось, що робила (останні рядки логу), помилка ----------
+BJ_NAMES = {   # функція → назва в журналі (порядок = порядок у журналі)
+    "sb_map": "🗺 Мапа світла", "net_status": "🌐 Мережі провайдерів", "build_silpo": "🛒 Сільпо", "build_kino": "🍿 Кіно: підбірка й розсилка", "kino_pool_refresh": "🍿 Кіно: пули",
+    "kino_cats": "🍿 Кіно: категорії", "match_refresh": "🍿💞 Кіномэтч", "directors_build": "🎬 Режисери", "x18_refresh": "🔥 Фільми 18+", "build_youtube": "▶️ YouTube тижня",
+    "yt_foryou": "▶️ YouTube для вас", "yt_channels": "▶️ YouTube: канали", "music_refresh": "🎵 Музика", "pl_build": "🎧 Плейлисти Deezer", "audiobooks_refresh": "🎧 Аудіокниги",
+    "games_refresh": "🎮 Ігри PS5", "ps_deals_refresh": "🔥 Знижки PS Store", "collect_content": "💞 Матеріали 18+", "sexed_refresh": "🎓 Секс-освіта", "fantasy_refresh": "🔥 Фантазія тижня",
+    "toys_build": "🧸 Іграшки 18+", "quiz_refresh": "🎯 Вікторини", "impulse_refresh": "🌅 Імпульс / 🕯 класика", "health_refresh": "❤️ Здоровʼя", "recipes_refresh": "🥗 ПП-страви",
+    "build_smm": "📈 SMM: підбірка тижня", "smm_tools": "📈 SMM-інструменти", "rad_build": "🎯 Радар болів бʼюті", "gtr_build": "🔎 Тренди Google", "thr_build": "🧵 Threads UA",
+    "gq_build": "📈 Запити Google (подарунки)", "ideas_build": "✨ Подарунки й покупки", "sizes_build": "📏 Розміри брендів", "aroma_monthly": "🧴 Аромати: розділи",
+    "aroma_best": "🏆 Аромати: найкращі", "prom_top": "🛍 Prom.ua", "jobs_build": "🧑‍💻 Вакансії", "nmt_build": "🎓 НМТ", "en_live_fill": "🇬🇧 English",
+}
+BJ: dict = {}
+
+
+def _bj_wrap(fname: str, label: str, fn):
+    def run(*a, **k):
+        i0, t0, err, ok = len(ALL_LOG), _time.time(), "", True
+        try:
+            return fn(*a, **k)
+        except Exception as e:
+            ok, err = False, err_text(e)[:140]
+            raise
+        finally:
+            try:
+                lines = [x for x in ALL_LOG[i0:] if x.strip() and not x.startswith("⏱")]
+                if lines or err:                       # лише коли була робота або помилка (холості запуски не пишемо — менше записів у базу)
+                    rec = BJ.setdefault(label, {})
+                    rec.update({"t": datetime.now(TZ).strftime("%d.%m %H:%M"), "ts": int(_time.time()), "ok": ok, "d": round(_time.time() - t0, 1),
+                                "l": [x[:220] for x in lines[-3:]] or [f"❌ {err}"]})
+                    if err:
+                        rec["e"], rec["et"] = err, rec["t"]
+            except Exception:
+                pass
+    run.__name__ = fname
+    return run
+
+
+def bj_install() -> None:
+    g = globals()
+    for fname, label in BJ_NAMES.items():
+        if callable(g.get(fname)) and not getattr(g[fname], "_bj", False):
+            g[fname] = _bj_wrap(fname, label, g[fname]); g[fname]._bj = True
+
+
+def bj_save(st: dict) -> None:
+    """Зливаємо журнал цього запуску зі збереженим (ok/помилка — останнє; «що робила» — остання робота)."""
+    j = st.setdefault("bj", {})
+    for k, v in BJ.items():
+        j[k] = {**j.get(k, {}), **v}
+    for k in list(j):                                   # прибираємо назви, яких більше немає
+        if k not in BJ_NAMES.values():
+            j.pop(k, None)
+    for k in BJ_NAMES.values():                         # ще жодного разу не працювали — теж показуємо
+        j.setdefault(k, {"never": 1})
+
 if __name__ == "__main__":
     import atexit
+    bj_install()                                      # 📋 журнал збірок — обгортаємо всі підбірки
     atexit.register(diag_push)                        # 🧪 логи по темах — в бот (і при помилці теж)
     try:
         if not cart_only():                           # ⚡ cart.yml — лише пошук «🧺», без повного запуску
