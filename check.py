@@ -7844,12 +7844,28 @@ def thr_build(st: dict, now: datetime) -> None:
 
 
 # ---------- 🎯 Радар болів бʼюті-ніші (для SMM/таргетолога): Threads (Apify) + Reddit → ШІ-кластери болів, хуки, сценарії Reels; щотижня, архів 8 тижнів ----------
-RAD_KW_SETS = [   # два набори по 15 фраз — чергуються щотижня: охоплення 30 фраз за ціною 15
-    ["салон красоты клиенты", "мастер маникюра", "косметолог клиенты", "бровист", "наращивание ресниц", "парикмахер клиенты", "массажист клиенты",
-     "реклама салона", "таргетолог", "пустые окна", "владелец салона", "администратор салона", "поднять цены мастер", "клієнти салон", "майстер манікюру"],
-    ["клиенты не возвращаются", "запись клиентов", "инстаграм мастера", "рилсы для мастера", "демпинг мастеров", "аренда кресла", "мастера уходят",
-     "выгорание мастер", "отзывы клиентов салон", "лешмейкер", "визажист клиенты", "косметологія клієнти", "запис клієнтів", "реклама для майстра", "бʼюті бізнес"]]
+RAD_KW_SETS = [   # два набори по 15 фраз (рос. + укр.) — чергуються щотижня: охоплення 30 фраз за ціною 15
+    ["салон красоты клиенты", "салон краси клієнти", "мастер маникюра клиенты", "майстер манікюру клієнти", "косметолог клиенты", "косметолог клієнти",
+     "нет записи мастер", "немає записів", "пустые окна", "реклама салона красоты", "таргетолог салон", "владелец салона красоты", "власниця салону",
+     "поднять цены мастер", "підняти ціни майстер"],
+    ["клиенты не возвращаются", "клієнти не повертаються", "бровист клиенты", "лешмейкер клиенты", "парикмахер клиенты", "перукар клієнти",
+     "массажист клиенты", "мастера уходят", "аренда кресла", "выгорание мастер", "инстаграм мастера", "рилсы для мастера", "демпинг мастеров",
+     "отзывы клиентов салон", "бʼюті бізнес"]]
 RAD_KW = RAD_KW_SETS[0]
+RAD_REDDIT = False                                      # лише рос./укр. дописи (Reddit англомовний — вимкнено)
+RAD_NRX = {"nails": r"маник|манік|ногт|нігт|гель.?лак|педик", "cosm": r"косметол|чистк|ботокс|филлер|філер|пилинг|пілінг|кож[аеиу]\b|шкір|акне",
+           "hair": r"парикмах|перукар|стрижк|окрашив|фарбув|волос|барбер", "brows": r"бров|брів|ресниц|вій\b|вії|лешмейк|ламинир|ламінув",
+           "massage": r"массаж|масаж", "owner": r"салон|администрат|адміністрат|владел|власни|аренд|оренд|найм|персонал"}
+
+
+def rad_niche(t: str) -> str:
+    return next((k for k, rx in RAD_NRX.items() if re.search(rx, t, re.I)), "all")
+
+
+def rad_cyr(t: str) -> bool:
+    """Рос./укр. текст: кирилиці більше за третину літер."""
+    letters = re.findall(r"[a-zа-яіїєґё]", t.lower())
+    return bool(letters) and sum(1 for x in letters if x >= "а" or x in "іїєґё") / len(letters) > 0.33
 RAD_SUBS = ["salons", "Esthetics", "Nails", "hairstylist", "lashextensions", "Microblading", "massage", "smallbusiness"]
 RAD_NICHE = {"nails": "💅 Манікюр", "cosm": "💆 Косметологія", "hair": "✂️ Перукарі", "brows": "👁 Брови й вії", "massage": "🤲 Масаж", "owner": "🏢 Власники салонів", "all": "💄 Уся бʼюті"}
 RAD_EVERY = 7 * 86400
@@ -7919,12 +7935,15 @@ def rad_build(st: dict, now: datetime) -> None:
             age_h = 24 * 30.0
         lk, rp, rc, qt = n_(it.get("like_count")), n_(it.get("repost_count")), n_(it.get("reply_count")), n_(it.get("quote_count"))
         eng = lk + 3 * (rp + qt) + 2 * rc
+        if not rad_cyr(t):
+            continue                                   # лише рос./укр. дописи
         posts.append({"src": "threads", "u": u, "a": str(it.get("username") or "")[:40], "t": t[:400], "l": lk, "c": rc, "r": rp + qt, "s": eng,
-                      "vel": round(eng / max(age_h, 3), 1), "ua": int(bool(re.search(r"[іїєґ]", t.lower()))), "old": int(age_h > 14 * 24)})
+                      "vel": round(eng / max(age_h, 3), 1), "ua": int(bool(re.search(r"[іїєґ]", t.lower()))), "old": int(age_h > 14 * 24),
+                      "cd": (nowu - timedelta(hours=age_h)).strftime("%Y-%m-%d"), "v": n_(it.get("view_count"))})
     n_th, rd_note = len(posts), ""
     try:                                               # Reddit: англомовні болі США/Європи (якщо пускає)
         rtok = reddit_token() if REDDIT_ID else None
-        for sub in RAD_SUBS:
+        for sub in (RAD_SUBS if RAD_REDDIT else []):
             url = f"https://oauth.reddit.com/r/{sub}/top?t=week&limit=15&raw_json=1" if rtok else f"https://www.reddit.com/r/{sub}/top.json?t=week&limit=15&raw_json=1"
             lst = reddit_api(url, rtok) if rtok else http_json(url, headers={"User-Agent": "Mozilla/5.0 (beauty-radar)"})
             for ch in ((lst or {}).get("data") or {}).get("children", []):
@@ -7937,6 +7956,26 @@ def rad_build(st: dict, now: datetime) -> None:
             _time.sleep(1)
     except Exception as e:
         rd_note = f" · Reddit недоступний ({err_text(e)[:40]})"
+    hof, n_arch = {}, 0
+    try:                                               # 🏆 мега-хіти: накопичуємо всі дописи (до пів року) → топ за 1 / 3 / 6 міс
+        arch = (http_json(f"{SYNC_URL}/fileget?key={urllib.parse.quote(SYNC_KEY)}&name=beauty_arch.json") or {}).get("p") or {}
+        for p in posts:
+            if p["src"] != "threads":
+                continue
+            o = arch.get(p["u"]) or {}
+            arch[p["u"]] = {"a": p["a"], "t": p["t"][:300], "cd": p.get("cd") or o.get("cd", ""), "l": max(p["l"], o.get("l", 0)), "c": max(p["c"], o.get("c", 0)),
+                            "r": max(p["r"], o.get("r", 0)), "v": max(p.get("v", 0), o.get("v", 0)), "n": rad_niche(p["t"]), "ua": p["ua"]}
+        cut = (now - timedelta(days=185)).strftime("%Y-%m-%d")
+        arch = {u: x for u, x in arch.items() if x.get("cd", "") >= cut}
+        arch = dict(sorted(arch.items(), key=lambda kv: -(kv[1]["l"] + 2 * kv[1]["c"] + 3 * kv[1]["r"]))[:900])
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=beauty_arch.json", {"p": arch})
+        n_arch = len(arch)
+        for key, days in (("m1", 31), ("m3", 92), ("m6", 183)):
+            d0 = (now - timedelta(days=days)).strftime("%Y-%m-%d")
+            top = sorted(((u, x) for u, x in arch.items() if x.get("cd", "") >= d0), key=lambda kv: -(kv[1]["l"] + 2 * kv[1]["c"] + 3 * kv[1]["r"]))[:20]
+            hof[key] = [{"u": u, **x} for u, x in top]
+    except Exception as e:
+        rd_note += f" · архів хітів: {err_text(e)[:40]}"
     if len(posts) < 10:
         print(f"🎯 Радар: замало постів ({len(posts)}){rd_note} — повтор за 6 год"); st["rad_at"] = _time.time() - RAD_EVERY + 6 * 3600; return
     n_rd = sum(p["src"] == "reddit" for p in posts)
@@ -7978,14 +8017,15 @@ def rad_build(st: dict, now: datetime) -> None:
     wk = {"at": now.strftime("%d.%m.%Y %H:%M"), "from": (now - timedelta(days=7)).strftime("%d.%m"), "to": now.strftime("%d.%m"), "cl": out_c}
     hist = ([old["cur"]] if isinstance(old.get("cur"), dict) else []) + (old.get("hist") or [])
     try:
-        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=beauty_radar.json", {"names": RAD_NICHE, "cur": wk, "hist": hist[:8]})
+        http_json(f"{SYNC_URL}/filepush?key={urllib.parse.quote(SYNC_KEY)}&name=beauty_radar.json",
+                  {"names": RAD_NICHE, "cur": wk, "hist": hist[:8], "hof": {**hof, "at": now.strftime("%d.%m.%Y %H:%M"), "n": n_arch} if hof else old.get("hof")})
         mark_upd(st, "🎯 Радар болів бʼюті", True, f"{len(out_c)} болів")
         top_ = "\n".join(f"{i + 1}. {'🚀 ' if c['boom'] else ''}{'💬🔥 ' if c['hot'] else ''}<b>{html.escape(c['t'])}</b> · {RAD_NICHE.get(c['n'], '').split(' ')[0]} {c['cnt']} постів"
                           + (f"\n   🎬 <i>{html.escape(c['h'][0])}</i>" if c.get("h") else "") for i, c in enumerate(out_c[:5]))
         txt_ = (f"🎯 <b>Радар болів бʼюті</b> · {wk['from']}–{wk['to']}\nЩо цього тижня найбільше хвилює салони й майстрів:\n\n{top_}\n\n"
                 "Сценарії Reels, карусель і як продати таргет — у картці кожного болю.")
         st["radar_msg"] = [txt_ + "\n👇", txt_ + "\n📈 SMM і таргет → 🎯 Радар болів: бʼюті"]
-        print(f"🎯 Радар болів: кластерів {len(out_c)} · постів Threads {n_th}, Reddit {n_rd}{rd_note} · " + "; ".join(c["t"] for c in out_c[:5]))
+        print(f"🎯 Радар болів: кластерів {len(out_c)} · дописів рос./укр. {n_th} · у базі хітів {n_arch} (за пів року){rd_note} · " + "; ".join(c["t"] for c in out_c[:5]))
     except Exception as e:
         print(f"🎯 Радар → бот: {err_text(e)[:80]}")
 
