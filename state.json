@@ -746,7 +746,7 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-27T07:13:11.439083+02:00",
+ "gh_beat": "2026-11-27T07:15:51.918337+02:00",
  "source": "dtek",
  "addr": {
   "active": true,
@@ -757,11 +757,11 @@
   "groups": [
    "GPV3.1"
   ],
-  "updated": "06:48 27.11.2026",
+  "updated": "07:04 27.11.2026",
   "emergency": false,
   "city_emergency": false,
   "city_text": "Будь ласка, розумно споживайте електроенергію — це допоможе зменшити навантаження на мережу та уникнути екстрених відключень. Повідомити про аварійні ситуації",
-  "checked": "2026-11-27T07:02:57.515542+02:00",
+  "checked": "2026-11-27T07:13:02.839529+02:00",
   "address": "вул. Кульженків Сім’ї, 35",
   "street_ok": "вул. Кульженків Сім’ї",
   "planned": true
@@ -2790,14 +2790,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "27.11 07:15",
-   "ts": 1795756512,
+   "at": "27.11 07:17",
+   "ts": 1795756644,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "27.11 07:15",
-   "ts": 1795756512,
+   "at": "27.11 07:17",
+   "ts": 1795756644,
    "ok": true,
    "note": ""
   },
@@ -2814,8 +2814,8 @@
    "note": ""
   },
   "ігри PS5": {
-   "at": "27.11 06:56",
-   "ts": 1795755378,
+   "at": "27.11 07:16",
+   "ts": 1795756561,
    "ok": true,
    "note": ""
   },
@@ -2826,14 +2826,14 @@
    "note": ""
   },
   "🎵 Музика": {
-   "at": "27.11 06:56",
-   "ts": 1795755378,
+   "at": "27.11 07:16",
+   "ts": 1795756561,
    "ok": true,
    "note": ""
   },
   "❤️ Здоровʼя": {
-   "at": "27.11 06:56",
-   "ts": 1795755378,
+   "at": "27.11 07:16",
+   "ts": 1795756561,
    "ok": true,
    "note": ""
   },
@@ -2844,8 +2844,8 @@
    "note": ""
   },
   "аудіокниги": {
-   "at": "27.11 06:56",
-   "ts": 1795755378,
+   "at": "27.11 07:16",
+   "ts": 1795756561,
    "ok": true,
    "note": ""
   },
@@ -2856,14 +2856,14 @@
    "note": ""
   },
   "🎯 Вікторини": {
-   "at": "27.11 06:56",
-   "ts": 1795755376,
+   "at": "27.11 07:15",
+   "ts": 1795756559,
    "ok": true,
    "note": ""
   },
   "🌅 Імпульс / 🕯 класика": {
-   "at": "27.11 06:56",
-   "ts": 1795755376,
+   "at": "27.11 07:15",
+   "ts": 1795756559,
    "ok": true,
    "note": ""
   },
@@ -2874,8 +2874,8 @@
    "note": ""
   },
   "кіномэтч": {
-   "at": "27.11 06:56",
-   "ts": 1795755378,
+   "at": "27.11 07:16",
+   "ts": 1795756561,
    "ok": true,
    "note": ""
   },
@@ -6945,15 +6945,6 @@
    "par": "2"
   },
   "2x7": {
-   "t": "🥩 <b>М'ясо › Сало</b>",
-   "b": "Сало",
-   "first": [
-    "1. <code>Свиняче сало бутербродне</code>, 100г — <b>9.99 ₴</b> <s>19.22 ₴</s> · заявлено −48% · <b>реально −0%</b> · ⭐ 4.2\n🔗 <a href=\"https://silpo.ua/product/svyniache-salo-buterbrodne-71641\">відкрити</a>"
-   ],
-   "rows": [],
-   "par": "2"
-  },
-  "2x7": {
    "t": "🥩 <b>М'ясо › Яловичина та телятина</b>",
    "b": "Яловичина та телятина",
    "first": [
@@ -9737,29 +9728,6 @@
     "11. <code>Плед Biltex Grid Comfort шерпа набивний 180х200</code>, шт — <b>699 ₴</b> <s>899 ₴</s> · заявлено −22% · <b>реально −0%</b>\n🔗 <a href=\"https://silpo.ua/product/pled-biltex-grid-comfort-sherpa-nabyvnyi-180-200-1050431\">відкрити</a>",
     "12. <code>Плед Daisy Candy Cane шерпа набивний 180х200</code>, шт — <b>699 ₴</b> <s>899 ₴</s> · заявлено −22% · <b>реально −0%</b>\n🔗 <a href=\"https://silpo.ua/product/pled-daisy-candy-cane-sherpa-nabyvnyi-180-200-1050432\">відкрити</a>",
     "13. <code>Набір вафельних серветок Daisy 40х40 см</code>, 3шт — <b>199 ₴</b> <s>299 ₴</s> · заявлено −33% · <b>реально −0%</b>\n🔗 <a href=\"https://silpo.ua/product/nabir-vafelnykh-servetok-daisy-40kh40-sm-1048844\">відкрити</a>"
-   ],
-   "par": "23"
-  },
-  "23x7": {
-   "t": "🛒 <b>Для дому › Паперові вироби</b>",
-   "b": "Паперові вироби",
-   "first": [
-    "1. 🔥 <code>Папір туалетний Ruta Pure White</code>, 4шт — <b>99 ₴</b> <s>159 ₴</s> · заявлено −38% · <b>реально −31%</b> · ⭐ 5.0\n🔗 <a href=\"https://silpo.ua/product/papir-tualetnyi-ruta-pure-white-660557\">відкрити</a>",
-    "2. 🔥 <code>Папір туалетний Ruta Dream Touch 4-шаровий</code>, 8шт — <b>264 ₴</b> <s>384 ₴</s> · заявлено −31% · <b>реально −32%</b>\n🔗 <a href=\"https://silpo.ua/product/papir-tualetnyi-ruta-dream-touch-4-sharovyi-986757\">відкрити</a>",
-    "3. 🔥 <code>Папір туалетний «Премія»® білий 3-шаровий</code>, 32шт — <b>479 ₴</b> <s>949 ₴</s> · заявлено −50% · <b>реально −24%</b> · ⭐ 4.7\n🔗 <a href=\"https://silpo.ua/product/papir-tualetnyi-premiia-bilyi-3-sharovyi-1032120\">відкрити</a>",
-    "4. <code>Папір туалетний Zewа Deluxe Delicate Care білий 3-шаровий</code>, 8шт — <b>229 ₴</b> <s>399 ₴</s> · 🌐 лише онлайн-замовлення заявлено −43% · <b>реально −8%</b> · ⭐ 4.6\n🔗 <a href=\"https://silpo.ua/product/papir-tualetnyi-zewa-deluxe-delicate-care-bilyi-3-sharovyi-865942\">відкрити</a>",
-    "5. <code>Рушник паперовий Ruta Ultra Absorb XL 3-шаровий 640 аркушів</code>, шт — <b>299 ₴</b> <s>369 ₴</s> · 🌐 лише онлайн-замовлення заявлено −19% · <b>реально −16%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/rushnyk-paperovyi-ruta-ultra-absorb-xl-3-sharovyi-640-arkushiv-1011735\">відкрити</a>",
-    "6. <code>Папір туалетний Zewa Deluxe White ромашка 3-шаровий</code>, 8шт — <b>284 ₴</b> <s>364 ₴</s> · заявлено −22% · <b>реально −0%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/papir-tualetnyi-zewa-deluxe-white-romashka-3-sharovyi-865941\">відкрити</a>",
-    "7. <code>Папір туалетний Selpak Super Soft 3-шаровий</code>, 8шт — <b>299 ₴</b> <s>429 ₴</s> · 🌐 лише онлайн-замовлення заявлено −30% · <b>реально −0%</b> · ⭐ 4.5\n🔗 <a href=\"https://silpo.ua/product/papir-tualetnyi-selpak-super-soft-3-sharovyi-71508\">відкрити</a>",
-    "8. <code>Рушник кухонний Selpak</code>, 2шт/уп — <b>129 ₴</b> <s>199 ₴</s> · 🌐 лише онлайн-замовлення заявлено −35% · <b>реально −0%</b> · ⭐ 3.9\n🔗 <a href=\"https://silpo.ua/product/rushnyk-kukhonnyi-selpak-71465\">відкрити</a>",
-    "9. 🔥 <code>Папір туалетний Zewa Deluxe «Жасмин»</code>, 8шт — <b>254 ₴</b> <s>384 ₴</s> · заявлено −34% · <b>реально −-2%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/papir-tualetnyi-zewa-deluxe-zhasmyn-586273\">відкрити</a>",
-    "10. <code>Серветки Zewa Plus білі 1-шарові</code>, 100шт — <b>78.99 ₴</b> <s>99 ₴</s> · заявлено −20% · <b>реально −0%</b> · ⭐ 4.4\n🔗 <a href=\"https://silpo.ua/product/servetky-zewa-plus-bili-1-sharovi-792508\">відкрити</a>"
-   ],
-   "rows": [
-    "11. 🔥 <code>Папір туалетний Zewa Deluxe персик 3-шаровий</code>, 8шт — <b>254 ₴</b> <s>364 ₴</s> · заявлено −30% · <b>реально −-2%</b> · ⭐ 4.8\n🔗 <a href=\"https://silpo.ua/product/papir-tualetnyi-zewa-deluxe-persyk-3-sharovyi-865940\">відкрити</a>",
-    "12. <code>Папір туалетний Ruta Pure White Deluxe манго білий 3-шаровий</code>, 8шт — <b>219 ₴</b> <s>349 ₴</s> · 🌐 лише онлайн-замовлення заявлено −37% · <b>реально −0%</b>\n🔗 <a href=\"https://silpo.ua/product/papir-tualetnyi-ruta-pure-white-deluxe-mango-bilyi-3-sharovyi-950177\">відкрити</a>",
-    "13. <code>Рушник паперовий Ruta Jambo XL 2шари</code>, шт — <b>249 ₴</b> <s>369 ₴</s> · 🌐 лише онлайн-замовлення заявлено −33% · <b>реально −0%</b>\n🔗 <a href=\"https://silpo.ua/product/rushnyk-paperovyi-ruta-jambo-xl-2shary-1015880\">відкрити</a>",
-    "14. <code>Папір туалетний Zewa Deluxe Delicate Care 3-шаровий</code>, 24шт — <b>784 ₴</b> <s>1099 ₴</s> · заявлено −29% · <b>реально −0%</b>\n🔗 <a href=\"https://silpo.ua/product/papir-tualetnyi-zewa-deluxe-delicate-care-3-sharovyi-983808\">відкрити</a>"
    ],
    "par": "23"
   },
@@ -29056,7 +29024,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "54c1fd2d5329",
+  "gs": "38d27910850e",
   "quiz_pool.json": "c89ccd86b451",
   "fact.png": "43c303b31f90",
   "sexed.json": "0362ec7e46d4",
