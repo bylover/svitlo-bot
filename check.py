@@ -11264,9 +11264,11 @@ BJ_NAMES = {   # функція → назва в журналі (порядок
     "toys_build": "🧸 Іграшки 18+", "quiz_refresh": "🎯 Вікторини", "impulse_refresh": "🌅 Імпульс / 🕯 класика", "health_refresh": "❤️ Здоровʼя", "recipes_refresh": "🥗 ПП-страви",
     "build_smm": "📈 SMM: підбірка тижня", "smm_tools": "📈 SMM-інструменти", "rad_build": "🎯 Радар болів бʼюті", "gtr_build": "🔎 Тренди Google", "thr_build": "🧵 Threads UA",
     "gq_build": "📈 Запити Google (подарунки)", "ideas_build": "✨ Подарунки й покупки", "sizes_build": "📏 Розміри брендів", "aroma_monthly": "🧴 Аромати: розділи",
-    "aroma_best": "🏆 Аромати: найкращі", "prom_top": "🛍 Prom.ua", "jobs_build": "🧑‍💻 Вакансії", "nmt_build": "🎓 НМТ", "en_live_fill": "🇬🇧 English",
+    "aroma_best": "🏆 Аромати: найкращі", "prom_top": "🛍 Prom.ua", "jobs_build": "🧑‍💻 Вакансії", "jobs_dirs_build": "🧑‍💻 Вакансії: напрями й слова", "nmt_build": "🎓 НМТ",
+    "en_live_fill": "🇬🇧 English", "tc_refresh": "🛍 Знижки в ТЦ", "toy_catalog_build": "🧸 Каталог іграшок", "build_now_playing": "🎬 Зараз у кіно", "build_smm_practice": "📈 SMM: фішки практиків",
 }
 BJ: dict = {}
+BJ_ALL: dict = {}
 
 
 def _bj_wrap(fname: str, label: str, fn):
@@ -11292,11 +11294,19 @@ def _bj_wrap(fname: str, label: str, fn):
     return run
 
 
+BJ_SKIP = {"build_para", "build_content", "build_reddit", "build_rss", "build_kino_text", "build_article", "build_experience"}   # допоміжні — не окремі підбірки
+
+
 def bj_install() -> None:
+    """Обгортає всі підбірки: з BJ_NAMES — з гарною назвою; нові функції *_build / *_refresh / build_* — автоматично (назва = імʼя функції)."""
+    import types
     g = globals()
-    for fname, label in BJ_NAMES.items():
+    auto = {n: f"🧩 {n}" for n, f in list(g.items()) if isinstance(f, types.FunctionType) and n not in BJ_NAMES and n not in BJ_SKIP
+            and re.search(r"(_build|_refresh)$|^build_", n) and f.__module__ == __name__}
+    for fname, label in {**BJ_NAMES, **auto}.items():
         if callable(g.get(fname)) and not getattr(g[fname], "_bj", False):
             g[fname] = _bj_wrap(fname, label, g[fname]); g[fname]._bj = True
+    BJ_ALL.update({**BJ_NAMES, **auto})
 
 
 def bj_save(st: dict) -> None:
@@ -11305,9 +11315,9 @@ def bj_save(st: dict) -> None:
     for k, v in BJ.items():
         j[k] = {**j.get(k, {}), **v}
     for k in list(j):                                   # прибираємо назви, яких більше немає
-        if k not in BJ_NAMES.values():
+        if k not in (BJ_ALL or BJ_NAMES).values():
             j.pop(k, None)
-    for k in BJ_NAMES.values():                         # ще жодного разу не працювали — теж показуємо
+    for k in (BJ_ALL or BJ_NAMES).values():             # ще жодного разу не працювали — теж показуємо
         j.setdefault(k, {"never": 1})
 
 if __name__ == "__main__":
