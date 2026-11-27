@@ -746,7 +746,7 @@
   "m915935",
   "m697843"
  ],
- "gh_beat": "2026-11-27T02:45:51.013596+02:00",
+ "gh_beat": "2026-11-27T02:50:50.363297+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -2675,14 +2675,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "27.11 02:42",
-   "ts": 1795740166,
+   "at": "27.11 02:52",
+   "ts": 1795740730,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "27.11 02:42",
-   "ts": 1795740166,
+   "at": "27.11 02:52",
+   "ts": 1795740730,
    "ok": true,
    "note": ""
   },
@@ -2705,8 +2705,8 @@
    "note": ""
   },
   "🍿 Кіно (пули)": {
-   "at": "27.11 02:43",
-   "ts": 1795740232,
+   "at": "27.11 02:52",
+   "ts": 1795740778,
    "ok": true,
    "note": ""
   },
@@ -2765,8 +2765,8 @@
    "note": ""
   },
   "🔥 Фільми 18+": {
-   "at": "27.11 02:23",
-   "ts": 1795739033,
+   "at": "27.11 02:53",
+   "ts": 1795740791,
    "ok": true,
    "note": ""
   },
@@ -2867,8 +2867,8 @@
    "note": "208 постів"
   },
   "🔥 Тренди Google": {
-   "at": "26.11 23:41",
-   "ts": 1795729269,
+   "at": "27.11 02:51",
+   "ts": 1795740660,
    "ok": true,
    "note": "10 у RSS"
   }
@@ -29034,7 +29034,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "4d9e462f88ee",
+  "gs": "c0e0ce83e4b9",
   "quiz_pool.json": "c89ccd86b451",
   "fact.png": "63afa6c20ec8",
   "sexed.json": "0362ec7e46d4",
@@ -48876,6 +48876,40 @@
    ],
    "ov": "An offbeat account of King Arthur's quest for the Grail, where virtually every journey, battle or adventure is stopped dead in its tracks by the Knights of the Round Table's most worldly traits: cowardice, greed, idiocy ",
    "poster": "https://image.tmdb.org/t/p/w500/oy6ZhZd8zGjrJrPjCBCIc4bk5Qz.jpg"
+  },
+  "t35016": {
+   "title": "House of Anubis",
+   "year": "2011",
+   "rating": 7.3,
+   "genres": [
+    "Сімейний",
+    "Детектив",
+    "Науково фантастичний"
+   ],
+   "g": [
+    10751,
+    9648,
+    10765
+   ],
+   "ov": "Strange things are happening at an English boarding school called House of Anubis. Popular student Joy goes missing, the school's cranky caretaker has a creepy stuffed crow and the school's attic may be haunted. When rec",
+   "poster": "https://image.tmdb.org/t/p/w500/pPscd9KcpHyYeedABN37KO8s2GJ.jpg"
+  },
+  "t14853": {
+   "title": "Клон",
+   "year": "2001",
+   "rating": 8.1,
+   "genres": [
+    "Мильна опера",
+    "Драма",
+    "Науково фантастичний"
+   ],
+   "g": [
+    10766,
+    18,
+    10765
+   ],
+   "ov": "Human cloning. The Islamic world. Two young people, two different cultures, two different beliefs. An impossible love story that not even time could erase. During a trip to Morocco, Lucas has a forbidden romance with Jad",
+   "poster": "https://image.tmdb.org/t/p/w500/4UiovpqPnttTdVrUzbjFIKlXjnc.jpg"
   }
  },
  "cofid_pushed": "24.11.2026",
@@ -48891,8 +48925,8 @@
   "cpl": "2026-11-27T02:10:53.933300+02:00",
   "mas": "2026-11-27T02:20:50.562279+02:00",
   "lin": "2026-11-27T02:20:50.562279+02:00",
-  "wet": "2026-11-26T20:20:49.842926+02:00",
-  "out": "2026-11-26T20:20:49.842926+02:00",
+  "wet": "2026-11-27T02:50:50.423818+02:00",
+  "out": "2026-11-27T02:50:50.423818+02:00",
   "les": "2026-11-26T20:35:51.641320+02:00",
   "ero": "2026-11-26T20:35:51.641320+02:00",
   "pov": "2026-11-26T23:10:56.975591+02:00",
@@ -48979,12 +49013,8 @@
  "silpo_snap": "2026-11-25",
  "live_day": "2026-11-27",
  "silpo_week": "2026-48",
- "sbm_at": 1795740354.276973,
+ "sbm_at": 1795740653.2135353,
  "sbm_hist": [
-  [
-   "14:35",
-   61
-  ],
   [
    "14:40",
    59
@@ -49555,6 +49585,10 @@
   ],
   [
    "02:45",
+   93
+  ],
+  [
+   "02:50",
    93
   ]
  ],
@@ -52484,7 +52518,7 @@
  "aro_sub_s": 5,
  "aro_sub_k": 4,
  "jobs_last": 1795736175.3567297,
- "nmt_last": 1795738861.9879944,
+ "nmt_last": 1795740661.5499964,
  "kino_v": 2,
  "yt_v": 4,
  "toycat_last": 1795739593.191246,
@@ -52731,13 +52765,13 @@
   "ser_crime": "2026-11-27T02:10:53.933300+02:00",
   "ser_comedy": "2026-11-27T02:20:50.562279+02:00",
   "ser_drama": "2026-11-27T02:40:52.975352+02:00",
-  "ser_scifi": "2026-11-26T14:00:47.085635+02:00",
+  "ser_scifi": "2026-11-27T02:50:50.423818+02:00",
   "ser_mystery": "2026-11-26T14:30:46.060410+02:00"
  },
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 17.11–24.11\n<blockquote>🆕 <b>1. Редагування Stories в Instagram</b>\nInstagram додав можливість редагувати вже опубліковані Stories протягом 15 хвилин після їх створення.\n💡 Використовуйте цей час, щоб швидко виправити випадкові друкарські помилки або додати забутий стікер без видалення історії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5\">Прямий</a></blockquote>\n<blockquote>🆕 <b>2. Запуск AI-агента Muse від Meta</b>\nMeta розширює географію запуску свого персонального AI-агента Muse, який інтегрується в екосистему платформи.\n💡 Слідкуйте за розгортанням інструменту для оптимізації рутинних SMM-завдань та роботи з контентом.\n🔗 <a href=\"https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>3. Партнерство Pinterest і Microsoft Ads</b>\nPinterest оголосив про офіційне партнерство з Microsoft Ads для розширення рекламних можливостей.\n💡 Очікуйте нових крос-платформних рекламних інструментів та розширення аудиторії для кампаній у Pinterest.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Метрики спільного перегляду на YouTube CTV</b>\nYouTube додав підрахунок спільного перегляду (co-view counts) до аналітики Connected TV.\n💡 Враховуйте показники перегляду на великих екранах кількома глядачами при оцінці охоплення відеореклами.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Оновлення для відео в X (Twitter)</b>\nПлатформа X додала нові параметри мініатюр та налаштування підписів для відеоконтенту.\n💡 Використовуйте кастомні мініатюри, щоб підвищити клікабельність (CTR) ваших відео у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Виявлення діпфейків у TikTok</b>\nTikTok впроваджує нові технології для автоматичного виявлення та маркування штучно створеного контенту й діпфейків.\n💡 Зважайте на суворішу модерацію AI-контенту при створенні креативів для платформи.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5\">UA.NEWS</a></blockquote>\n<blockquote>👀 <b>7. Анонс додатка Threads для iPad</b>\nКоманда Threads анонсувала швидкий вихід окремого додатку для планшетів iPad.\n💡 Готуйте контент-стратегію з урахуванням майбутнього зростання аудиторії планшетів на цій платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Спрощення батьківського контролю в Pinterest</b>\nPinterest оновив і спростив налаштування батьківського контролю для безпечнішого користування платформою.\n💡 Пам'ятайте про вікові обмеження та безпеку бренду при налаштуванні таргетингу на молодшу аудиторію.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>9. Контроль нарізки файлів у Gemini API</b>\nGoogle додав нові функції керування нарізкою файлів (file slicing) до свого API Gemini для розробників.\n💡 Використовуйте оновлення для ефективнішої обробки великих масивів даних та документів через штучний інтелект.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>10. Інтеграція Instagram з Apple Music</b>\nInstagram додав функцію збереження аудіотреків із публікацій безпосередньо в плейлисти Apple Music.\n💡 Використовуйте популярну музику в Reels, щоб користувачі могли не лише взаємодіяти з відео, а й зберігати треки.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5\">Ukr.net</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202648",
  "kb_probe2": "2026-48",
  "fest_fail": 1795723633.0943446,
- "gtr_at": 1795729267.9220288,
+ "gtr_at": 1795740659.8089762,
  "gq_at": 1795707211.2217238,
  "ideas_at": {
   "wife": 1795188882.9780123,
