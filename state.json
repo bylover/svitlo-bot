@@ -761,7 +761,7 @@
   "m1054867",
   "m290098"
  ],
- "gh_beat": "2026-11-28T03:37:55.030389+02:00",
+ "gh_beat": "2026-11-28T03:42:36.083198+02:00",
  "source": "dtek",
  "addr": {
   "active": false,
@@ -2988,14 +2988,14 @@
    "note": ""
   },
   "🥗 ПП-страви": {
-   "at": "28.11 03:22",
-   "ts": 1795828964,
+   "at": "28.11 03:45",
+   "ts": 1795830320,
    "ok": true,
    "note": ""
   },
   "пп-страви": {
-   "at": "28.11 03:22",
-   "ts": 1795828964,
+   "at": "28.11 03:45",
+   "ts": 1795830320,
    "ok": true,
    "note": ""
   },
@@ -3180,8 +3180,8 @@
    "note": "208 постів"
   },
   "🔥 Тренди Google": {
-   "at": "28.11 00:36",
-   "ts": 1795818960,
+   "at": "28.11 03:42",
+   "ts": 1795830170,
    "ok": true,
    "note": "10 у RSS"
   },
@@ -29323,7 +29323,7 @@
   ]
  },
  "pushed_h": {
-  "gs": "4d2f07529ff9",
+  "gs": "7d710dbc6666",
   "quiz_pool.json": "c89ccd86b451",
   "fact.png": "357b62466c09",
   "sexed.json": "0362ec7e46d4",
@@ -50386,12 +50386,8 @@
  "silpo_snap": "2026-11-25",
  "live_day": "2026-11-28",
  "silpo_week": "2026-48",
- "sbm_at": 1795829878.6752799,
+ "sbm_at": 1795830161.0175233,
  "sbm_hist": [
-  [
-   "15:30",
-   57
-  ],
   [
    "15:35",
    58
@@ -50962,6 +50958,10 @@
   ],
   [
    "03:37",
+   93
+  ],
+  [
+   "03:42",
    93
   ]
  ],
@@ -53890,11 +53890,11 @@
  "arob_v": 2,
  "aro_sub_s": 5,
  "aro_sub_k": 4,
- "jobs_last": 1795822864.61425,
- "nmt_last": 1795827959.1505501,
+ "jobs_last": 1795830171.5800314,
+ "nmt_last": 1795830213.6554904,
  "kino_v": 2,
  "yt_v": 4,
- "toycat_last": 1795828262.4276233,
+ "toycat_last": 1795830217.5688832,
  "toy_la": {
   "dildo": 1795672280.3113723,
   "kegel": 1794757561.5974472,
@@ -54144,7 +54144,7 @@
  "smm_last": "📈 <b>SMM І ТАРГЕТ · ДАЙДЖЕСТ ЗА ТИЖДЕНЬ</b> · 17.11–24.11\n<blockquote>🆕 <b>1. Редагування Stories в Instagram</b>\nInstagram додав можливість редагувати вже опубліковані Stories протягом 15 хвилин після їх створення.\n💡 Використовуйте цей час, щоб швидко виправити випадкові друкарські помилки або додати забутий стікер без видалення історії.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOa21DZEdoeWZSZE1uVVZoY0VPREt5Mkw2S1d0cXZQS0tleGI0cVhWM2x3cG1GSC1scWRyZGFtRVBYaGFFbHFsdWI0ZlFTc0hvV3BWWkdPem96QWpQVUVHTVRSQm1WOFU0R0FxcXZ4UkROMm9mQmRRSVJSU09COXNDRnFFNFd3UFMwd2NRX2JRRHlyamFFM0VselNnMzVUdGdLdUJ3?oc=5\">Прямий</a></blockquote>\n<blockquote>🆕 <b>2. Запуск AI-агента Muse від Meta</b>\nMeta розширює географію запуску свого персонального AI-агента Muse, який інтегрується в екосистему платформи.\n💡 Слідкуйте за розгортанням інструменту для оптимізації рутинних SMM-завдань та роботи з контентом.\n🔗 <a href=\"https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/\">Meta Newsroom</a></blockquote>\n<blockquote>🎯 <b>3. Партнерство Pinterest і Microsoft Ads</b>\nPinterest оголосив про офіційне партнерство з Microsoft Ads для розширення рекламних можливостей.\n💡 Очікуйте нових крос-платформних рекламних інструментів та розширення аудиторії для кампаній у Pinterest.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-announces-partnership-with-microsoft-ads/875553/\">Social Media Today</a></blockquote>\n<blockquote>🎯 <b>4. Метрики спільного перегляду на YouTube CTV</b>\nYouTube додав підрахунок спільного перегляду (co-view counts) до аналітики Connected TV.\n💡 Враховуйте показники перегляду на великих екранах кількома глядачами при оцінці охоплення відеореклами.\n🔗 <a href=\"https://www.socialmediatoday.com/news/youtube-adds-co-view-counts-to-ctv-metrics/875425/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>5. Оновлення для відео в X (Twitter)</b>\nПлатформа X додала нові параметри мініатюр та налаштування підписів для відеоконтенту.\n💡 Використовуйте кастомні мініатюри, щоб підвищити клікабельність (CTR) ваших відео у стрічці.\n🔗 <a href=\"https://www.socialmediatoday.com/news/x-adds-new-video-thumbnail-and-caption-options/875428/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>6. Виявлення діпфейків у TikTok</b>\nTikTok впроваджує нові технології для автоматичного виявлення та маркування штучно створеного контенту й діпфейків.\n💡 Зважайте на суворішу модерацію AI-контенту при створенні креативів для платформи.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGZ5UndxLVl5VTZLb3JfM1N0c3Vhdk93WjZ2ZGRVY1BzS3l0QkQ1aEpsMUx2TGRoR18wWlEyQ3hkVmo0b19zSFlyNnJVRmFndjFQb1liSGhON1RETVVVM3lMbXVHemtld1hKLUNOSFV1ZG1NS3pyenBBUjNoV0YtanhzSDluSDRmeF9DWVZLbktSRDg?oc=5\">UA.NEWS</a></blockquote>\n<blockquote>👀 <b>7. Анонс додатка Threads для iPad</b>\nКоманда Threads анонсувала швидкий вихід окремого додатку для планшетів iPad.\n💡 Готуйте контент-стратегію з урахуванням майбутнього зростання аудиторії планшетів на цій платформі.\n🔗 <a href=\"https://www.socialmediatoday.com/news/threads-teases-coming-ipad-app/875561/\">Social Media Today</a></blockquote>\n<blockquote>🆕 <b>8. Спрощення батьківського контролю в Pinterest</b>\nPinterest оновив і спростив налаштування батьківського контролю для безпечнішого користування платформою.\n💡 Пам'ятайте про вікові обмеження та безпеку бренду при налаштуванні таргетингу на молодшу аудиторію.\n🔗 <a href=\"https://www.socialmediatoday.com/news/pinterest-simplifies-parental-controls/875554/\">Social Media Today</a></blockquote>\n§§\n<blockquote>🆕 <b>9. Контроль нарізки файлів у Gemini API</b>\nGoogle додав нові функції керування нарізкою файлів (file slicing) до свого API Gemini для розробників.\n💡 Використовуйте оновлення для ефективнішої обробки великих масивів даних та документів через штучний інтелект.\n🔗 <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/\">The Keyword (Google)</a></blockquote>\n<blockquote>🆕 <b>10. Інтеграція Instagram з Apple Music</b>\nInstagram додав функцію збереження аудіотреків із публікацій безпосередньо в плейлисти Apple Music.\n💡 Використовуйте популярну музику в Reels, щоб користувачі могли не лише взаємодіяти з відео, а й зберігати треки.\n🔗 <a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1sZFE5cDI5WHJYS2lzTnZXTHVYMTdQWUp6NFkzSzBYRy1hdEFQTm1La3laSk1hYjN1RVJ6bV9uZ01IOUcyNDJTMGIwcW91MmRMV2N1Y1dPaEF1OWxwMkI4OUdTOEhlMmY0Rk4tTw?oc=5\">Ukr.net</a></blockquote>\n\n<i>🆕 нова функція · 🎯 реклама · 📊 алгоритми · 👀 тести й чутки</i>\n§RT:smm:202648",
  "kb_probe2": "2026-48",
  "fest_fail": 1795811033.1565921,
- "gtr_at": 1795818959.1519656,
+ "gtr_at": 1795830168.2448072,
  "gq_at": 1795707211.2217238,
  "ideas_at": {
   "wife": 1795188882.9780123,
@@ -54166,24 +54166,24 @@
  "rad_wait": "2026-11-28",
  "bj": {
   "🗺 Мапа світла": {
-   "t": "28.11 03:38",
-   "ts": 1795829885,
+   "t": "28.11 03:42",
+   "ts": 1795830168,
    "ok": true,
-   "d": 7.1,
+   "d": 7.2,
    "l": [
     "Черги за поведінкою: не показовий момент · будинків із визначеною чергою 0 з 2041",
-    "Історія будинків: змін статусу 20, будинків 2550",
-    "Мапа світла: точок 2518 (Київ+обл.; усього на мапі 2963) · зі світлом 2338 (92%) · поля {'f1=0': 1, 'f8=0': 1731, 'f1=1': 2333, 'f1=3': 128, 'f8=1': 706, 'f8=2': 76, 'f1=2': 51}"
+    "Історія будинків: змін статусу 22, будинків 2550",
+    "Мапа світла: точок 2518 (Київ+обл.; усього на мапі 2963) · зі світлом 2342 (93%) · поля {'f1=0': 1, 'f8=0': 1731, 'f1=1': 2337, 'f1=3': 128, 'f8=1': 706, 'f8=2': 76, 'f1=2': 47}"
    ]
   },
   "🥗 ПП-страви": {
-   "t": "28.11 03:22",
-   "ts": 1795828964,
+   "t": "28.11 03:45",
+   "ts": 1795830320,
    "ok": true,
-   "d": 105.1,
+   "d": 102.3,
    "l": [
     "ПП-страви (РФ): посилань 29, нових рецептів 0",
-    "ПП-страви (переклад): Expecting value: line 1 column 1 (char 0)",
+    "ПП-страви: прибрано з неправдоподібним КБЖВ — 1: ['Куркума латте']",
     "ПП-страви: усього 258 (🌍 108, 🇺🇦 150, 🇷🇺 0), нових за запуск 1"
    ]
   },
@@ -54332,12 +54332,12 @@
   },
   "🔎 Тренди Google": {
    "never": 1,
-   "t": "28.11 00:36",
-   "ts": 1795818960,
+   "t": "28.11 03:42",
+   "ts": 1795830170,
    "ok": true,
-   "d": 1.7,
+   "d": 2.5,
    "l": [
-    "🔥 Тренди Google: у RSS 10, нових 4 · за тиждень 93 · в архіві 93 · сфера від ШІ 0, за словами 60"
+    "🔥 Тренди Google: у RSS 10, нових 1 · за тиждень 94 · в архіві 94 · сфера від ШІ 0, за словами 60"
    ]
   },
   "🧵 Threads UA": {
@@ -54396,24 +54396,24 @@
   },
   "🧑‍💻 Вакансії": {
    "never": 1,
-   "t": "28.11 01:41",
-   "ts": 1795822905,
+   "t": "28.11 03:43",
+   "ts": 1795830213,
    "ok": true,
-   "d": 41.8,
+   "d": 42.7,
    "l": [
-    "🧑‍💻 Вакансії слово «support»: у стрічках 170, нових 1, у базі 200",
+    "🧑‍💻 Вакансії слово «support»: у стрічках 170, нових 0, у базі 200",
     "🧑‍💻 Вакансії слово «team lead»: у стрічках 145, нових 0, у базі 132",
     "🧑‍💻 Вакансії слово «teamlead»: у стрічках 145, нових 0, у базі 43"
    ]
   },
   "🧑‍💻 Вакансії: напрями й слова": {
    "never": 1,
-   "t": "28.11 01:41",
-   "ts": 1795822905,
+   "t": "28.11 03:43",
+   "ts": 1795830213,
    "ok": true,
-   "d": 23.2,
+   "d": 23.9,
    "l": [
-    "🧑‍💻 Вакансії слово «support»: у стрічках 170, нових 1, у базі 200",
+    "🧑‍💻 Вакансії слово «support»: у стрічках 170, нових 0, у базі 200",
     "🧑‍💻 Вакансії слово «team lead»: у стрічках 145, нових 0, у базі 132",
     "🧑‍💻 Вакансії слово «teamlead»: у стрічках 145, нових 0, у базі 43"
    ]
